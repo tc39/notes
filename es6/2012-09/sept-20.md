@@ -9,10 +9,10 @@ John Neumann (JN), Mark Miller (MM), Norbert Lindenberg (NL), Nebojsa Ciric (NC)
 
 REQUEST SLIDES!
 
-Aug 18th, Released an experimental implementation, spec complete, via special Chromium Build. 
+Aug 18th, Released an experimental implementation, spec complete, via special Chromium Build.
 https://github.com/rafaelw/v8
 
-Updates to strawman: 
+Updates to strawman:
 - Updating [[Prototype]] qnqueues a "prototype" changeRecord
 
 ChangeSummary.js (experimental library)
@@ -24,7 +24,7 @@ https://github.com/rafaelw/ChangeSummary
 - Array splice projection (minimal ops to syn)
 - Basis for framework usage
 
-YK: Question about splice projections being built in. When splice happens, many records change… is pathologically slow. Fine for v1 to leave it to library code. 
+YK: Question about splice projections being built in. When splice happens, many records change… is pathologically slow. Fine for v1 to leave it to library code.
 
 RWS: Opted to leave this out…
 …explains n^2 issues that arise when changes to an array occur. …explains rationale for leaving out for the foreseeable future and allow library authors to handle as they see fit for the time being.
@@ -66,7 +66,7 @@ RWS: …Is hoping to progress the strawman to harmony. A few slides that discuss
 
 LH: These represent concerns and agreements of several committee members who have been involved.
 
-### Synchronous Delivery? 
+### Synchronous Delivery?
 NO.
 
 ### Security Mitigations
@@ -85,7 +85,7 @@ MM/STH: The proxy cannot say it is frozen if the target is not. Can the proxy sa
 
 WK/MM/STH: **Proxy can say it's frozen if AND ONLY IF, the target is frozen.**
 
-MM: If the notifier is derived, then the object is frozen, the notifier will continue to work as expected. 
+MM: If the notifier is derived, then the object is frozen, the notifier will continue to work as expected.
 
 Creator of an object:
 1. creates an object
@@ -109,7 +109,7 @@ RWS: accessors don't notify
 
 WH: That's bad.
 
-MM/EA/RWS/AWB: No, this is intended. 
+MM/EA/RWS/AWB: No, this is intended.
 
 RWS: (Explains that getNotifier can be used to build synthetic events for accessors)
 
@@ -157,11 +157,11 @@ class Foo {
 var f = new Foo("hello");
 f.x = "Hola";
 
-// synthetic change event fired with "changeRecord" 
+// synthetic change event fired with "changeRecord"
 // defined in the set x() accessor
 ```
 
-Discussion regarding the feasibility of adding to ES6. 
+Discussion regarding the feasibility of adding to ES6.
 
 DH: Doesn't need to be in spec to prototype
 
@@ -212,9 +212,9 @@ Previously, all to the LEFT are in scope,
 ```js
 var b = "outer";
 function f(a = x, b = a * b, c = c * g() ) {
-  /* 
+  /*
   three scopes:
-    (a), 
+    (a),
     (a and b)
     (a, b, c)
   */
@@ -260,14 +260,14 @@ let scope with magic to break var scope: bad
 
 ARB: (whiteboard)
 
-```js        
+```js
 function f(x = (y = 42), y = 41){}
 
 f();
 
 42, 42
 ```
-        
+
 
 DH: My understanding was that temporal dead zone should error all the way to actual "blessed source code" where the binding is initialized.
 
@@ -275,7 +275,7 @@ Remind why only "no read before write"?
 
 BE: 2 years ago in redmond agreement.
 
-AWB: (explains the rationale and current semantics) 
+AWB: (explains the rationale and current semantics)
 
 DH: is this a distinction worth making, for `let`, when we're trying to say that `let` is a better `var`
 
@@ -307,7 +307,7 @@ MM: But it's not because you can forward-call functions, because JavaScript allo
 
 DH: (missed not about read barrier)
 
-WH: 
+WH:
 
 ARB: Trying to simulate C semantics within the constraints of a dynamic system.
 
@@ -341,12 +341,12 @@ Recent post on es-discuss from user that doesn't like Array.of
 
 Array.of has been implemented in all of the es6 shim libs (Paul Miller, Axel Rauschmayer, Andrea Giammarchi and others…)
 
-## Array.of() 
+## Array.of()
 
-Makes sense, nice to say and explain. 
-When I reason about a program: 
+Makes sense, nice to say and explain.
+When I reason about a program:
 
-"Here we have an array of elements" 
+"Here we have an array of elements"
 (elements, items, numbers, strings)
 
 **Conclusion/Resolution**
@@ -358,9 +358,9 @@ If we do `Foo.new()`, it must be _identical_ to `new Foo()`.
 # Thin Arrow?
 (Presented by Brendan Eich, Mozilla)
 
-We have the fat-arrow, supported by Kevin Smith's research, it's a win. Some voices in the community don't want the unexpected behaviour of the soft-bound lexical `this`
+We have the fat-arrow, supported by Kevin Smith's research, it's a win. Some voices in the community don't want the unexpected behaviour of the bound lexical `this`
 
-class, concise methods and fat-arrow are all new, powerful and composable function binding forms. 
+class, concise methods and fat-arrow are all new, powerful and composable function binding forms.
 
 WH: Don't want two slightly different concepts with a confusingly similar syntax. It would be too difficult for casual users to remember which arrow is which [in the same way as I can never remember in C++ which variant of the ++ operator overload takes an extra dummy argument].
 
@@ -384,7 +384,7 @@ r = o?.p?.q.r
 ```
 
 
-Mixed discussion about the needs and use cases as they apply to coffeescript code. 
+Mixed discussion about the needs and use cases as they apply to coffeescript code.
 
 ARB: This is non-compositional
 
@@ -423,7 +423,7 @@ Seems useful, but not now. Semantics are unclear
 
 
 
-# Generators 
+# Generators
 
 ## thisBinding
 
@@ -493,7 +493,7 @@ Continued discussion of note…
 
 LH: Using a debugger, break on throw, exceptions. Want to catch at the point where they are thrown… on a StopIteration, do I see internals?
 
-DH: Up to the debugger to determine whether or not it should expose 
+DH: Up to the debugger to determine whether or not it should expose
 
 LH: (whiteboard, example misuse of iterator)
 
@@ -511,7 +511,7 @@ Discussion about protocol specifications, where precedent exists.
 
 SpiderMonkey and v8 are writing tests, can contribute back.
 
-Need parity, it's hard. 
+Need parity, it's hard.
 
 
 
@@ -524,9 +524,3 @@ LH: Multiple implementations?
 Concerns about removal of new additions when there isn't enough evidence to support the removal.
 
 Too soon to make cuts when we don't know what to cut.
-
-
-
-
-
- 

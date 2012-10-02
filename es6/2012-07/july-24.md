@@ -513,12 +513,10 @@ Destructing and spread - no iterator protocol.
 (return to existing draft semantics of arraylike — [Cannot be both iterable
 and array-like])
 
-Array.from:
-- Will have array-like protocol, now iterable
-- Will always return a copy
 
 Array.from should… (this is a change to current specification)
-1. Attempt to use the iterable protocol, if cannot…
-2. Fall back to using Array-like protocol
+  1. Attempt to use the iterable protocol, if cannot…
+  2. Fall back to using Array-like protocol
+  3. Always return a copy
 
 (Filed: https://bugs.ecmascript.org/show_bug.cgi?id=588)

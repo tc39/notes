@@ -16,7 +16,7 @@ TVC: change return type of enumerate() trap from array-of-string to iterator. Re
 
 Drop the duplicate property check. enumerate() trap returns iterator.
 
-## Revokable Proxies 
+## Revokable Proxies
 
 TVC: The Problem
 
@@ -85,16 +85,16 @@ TVC: The only type test that is affected is typeof: once the proxy is revoked, i
 BE: It remembers "function" or "object"
 TVC: right
 
-DH: 
+DH:
 
 RWS: Does this problem exist…
 
 STH: revokable proxies don't add any new semantics b/c you can already write a direct proxy that throws the same error on every operation (it just uses more memory)
 
-WH: Direct proxy, not allowed to muck with 
+WH: Direct proxy, not allowed to muck with
 
 
-MM: Are 
+MM: Are
 
 
 TVC: Equivalent to a handler that implements all its traps to unconditionally throw
@@ -128,11 +128,11 @@ AWB: would preclude valid use cases that e.g. want to log all requested isFrozen
 Is there a situation where revoking allows an operation to throw where it previously couldn't with non-revocable proxies?
 TVC: should not be the case
 
-MM: Specify that… 
+MM: Specify that…
 
 **The revoke action is observably equivalent to changing the state of the handler to always throw on all traps.**
 
-WH: An uneasy feeling about what else is hiding 
+WH: An uneasy feeling about what else is hiding
 
 BE: Mark and Tom have significant work on this issue.
 
@@ -141,7 +141,7 @@ once frozen, stop trapping. once non-configurable, non-writable data, the value 
 
 …
 
-DH: Question of clarification re: two constructors, are they necessary because there is no way to return two things from a constructor. 
+DH: Question of clarification re: two constructors, are they necessary because there is no way to return two things from a constructor.
 
 BE/MM: They create things that are just too different
 
@@ -150,7 +150,7 @@ BE: There is no mutable state within the proxy that is actually "mutated"?
 TVC: not currently. If we want to pursue the above idea where a trap is disabled once its stable outcome is observed, then the proxy would need to be mutated.
 
 MM: If you could falsly claim to be not-frozen after being frozen, then there would be issues with reliability, but doesn't exist.
-… 
+…
 
 MM/AR: (discussion about execution points in ES5)
 
@@ -188,7 +188,7 @@ WH: What makes them non-forgeable
 
 STH: They are objects
 
-DH: And are as non-forgeable as objects, 
+DH: And are as non-forgeable as objects,
 
 WH: Why do we need both? Unique, Private?
 
@@ -202,7 +202,7 @@ DH: About the whitelist, instead of _requiring_ a WeakSet,  can it be anything t
 
 MM: Should probably use a WeakMap…
 
-EA: An object that has a method that takes the public name string and returns the private name object, if you have access to that, you can extract the private data. 
+EA: An object that has a method that takes the public name string and returns the private name object, if you have access to that, you can extract the private data.
 
 STH: Erik is right, but it a
 
@@ -231,10 +231,10 @@ STH/LH/RW: Will need to spec WeakSet
 **Conclusion/Resolution**
 Yes to third arg for whitelist, pending details to be worked out by Proxy champions.
 
-Expect to remove the "public" part of private names. 
+Expect to remove the "public" part of private names.
 
 
-## WeakSet 
+## WeakSet
 
 DH: Clear that we need WeakSet to match WeakMap (Set and Map)
 
@@ -275,10 +275,10 @@ class MyClass extends Yours {
   secret() {
     this.mine();
     super[secret]();
-  }        
+  }
 }
 
-// Not allowed: 
+// Not allowed:
 MyClass.prototype[secret] = function() {
   super[secret]();
 };
@@ -296,7 +296,7 @@ class MyClass extends Yours {
   [secret]() {
     this.mine();
     super[secret]();
-  }  
+  }
 }
 ```
 
@@ -320,7 +320,7 @@ priv @secret;
 ```
 
 - Such declarations implicitly create Name Objects
-- 
+-
 … Missed slides
 
 ### At-Name References
@@ -337,7 +337,7 @@ let o = { @secret: 42 };
 class MyClass extends Yours {
   @secret() {
     this.mine();
-  }  
+  }
 }
 ```
 
@@ -384,7 +384,7 @@ DH: (whiteboard)
 
 ```js
 let o =  {
-  private @foo: 42, 
+  private @foo: 42,
   m() {
     return this.@foo;
   }
@@ -440,7 +440,7 @@ LH: Let's work towards understanding the entire commitment
 
 DH: This does resolve an issue that stands out about max min classes: private name props cannot be added declaratively
 
-WH: classes are not worth it without this 
+WH: classes are not worth it without this
 
 BE/LH/RW: Disagree. Classes already support themselves.
 
@@ -458,7 +458,7 @@ WH: You could say the same about super() in class
 
 DH: No. We have solid, reasonable semantics for where to allow super() and where to error.
 
-LH: I don't think we're ready to design this syntax. 
+LH: I don't think we're ready to design this syntax.
 
 AR: Are we converging on this as an idea that needs solving? Just not now?
 
@@ -565,7 +565,7 @@ BE: (explains that interns and researchers at Mozilla are working on parsers tha
 
 DH: Explains sweet.js (similar to coffeescript transcompilation)
 
-DH/BE: Continue research of macros, offline. 
+DH/BE: Continue research of macros, offline.
 
 MM: List all early errors and discuss the merits
 
@@ -619,7 +619,7 @@ MM: (countering the "not common enough" argument) Presented personal experiences
 
 # Global Scope Revisit
 
-YK: Still not in agreement with discussion yesterday, but not blocking the 
+YK: Still not in agreement with discussion yesterday, but not blocking the
 
 BE: Recap the problem that revealed the issue.
 
@@ -640,14 +640,14 @@ LH:
 YK: class followed by class with the same name: error
 var followed by let with same identifier name: error
 
-BE: It happens all the time… 
+BE: It happens all the time…
 
         for (var i = 0; …) {}
 
         for (var i = 0; …) {}
 
 …Not the issue, but this:
-        
+
         var i;
         for (i = 0; …) {}
 
@@ -665,7 +665,7 @@ WH: Also don't want random HTML attributes elsewhere on the page to knock out gl
 
 AWB: No one has discussed… Any script tag, whose order can be determined… bring deferred scripts to the last script
 
-BE: 
+BE:
 
 
 ```
@@ -675,8 +675,8 @@ C <script>
 
 ( G )  <
   ^    ( D )
-( A )  
-  ^ 
+( A )
+  ^
 ( B ) <-?
   ^
 ( C ) <-?
@@ -721,7 +721,7 @@ BE: Recapping the Window.prototype issue
 
 RW: There is no reason to put _everything_ on the Window.prototype. Object APIs should be own properties of the Global object ("window" in the browser case). This doesn't mean that the needs of EventTarget specification cannot be met by using the Window.prototype. The WebIDL change to move all APIs to a different semantic "space" without understanding the consequences is the worst negligence.
 
-…More discussion…        
+…More discussion…
 
 BE: If we make let, const, class, module, function, var (all binding forms, now and in the future) are global—will this be blocked?
 
@@ -729,15 +729,15 @@ BE: If we make let, const, class, module, function, var (all binding forms, now 
 
 DH: Hard to decide if a dead zone exists for `let` on the global object.
 
-ARB: 
+ARB:
 
 LH: What are the mechanics of `let` accessors on the global?
 
-…Discussion about the 
+…Discussion about the
 
 Two models to consider:
 
-Andreas: 
+Andreas:
         When you have a `let` binding, it reflected observably as a getter/setter pair with some form of identification as a `let` binding.
 
 Luke:
@@ -758,7 +758,7 @@ WH: How are the proposed hidden attributes (such as the aforementioned identific
 DH: Tom has spec'ed these to "pass through"
 
 
-BE: Object to the idea that there is an observable getter/setter on `let` bindings. 
+BE: Object to the idea that there is an observable getter/setter on `let` bindings.
 
 ARB: If you don't do it this way, you can't have a temporal dead zone in the global scope.
 
@@ -777,7 +777,7 @@ ARB: It would be actually observable if the global object was a Proxy. Think of 
 
 LH (recapping one of the alternative models)
 
-There are two scopes: 
+There are two scopes:
         Global Object and Global Lexical Scope… when a `let` binding occurs, there are two things created, one on the Global Object and Global Lexical Scope.
 
 [people generally felt it was easier to comprehend the data living in the scope contour]
@@ -806,12 +806,13 @@ LH/RW/AWB: Needs to be an automated process, if that's possible within the scope
 IS: Needs archival snapshots. The standards body is still a classic style standards organization that needs to abide its rules and policies.
 
 **Conclusion/Resolution**
-Bill Ticehurst to produce recommendation for the automated archival of test 262 at arbitrary states, as needed. 
+Bill Ticehurst to produce recommendation for the automated archival of test 262 at arbitrary states, as needed.
 Rick Waldron volunteers to assist as necessary.
 
 
 # Create Archival Utility for ECMA Wiki
 
+2012-10-31: `wget -r -l 0 http://wiki.ecmascript.org/`
+
 **Conclusion/Resolution**
 Rick Waldron will champion this
-

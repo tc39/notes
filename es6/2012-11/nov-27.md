@@ -62,6 +62,8 @@ RW: (agrees that it's clear to follow)
 AWB: This is the first rev. that brings in Proxy, which leads to the restructuring of early sections and internal methods.
 
 Section outlines...
+
+```
 6. Source
 7. Lexical Grammar
 8. Type
@@ -77,8 +79,10 @@ Vocabulary
 12. statements
 13. functions
 15. Libraries
+```
 
 Explanation of rationale leading to the restriction and reorganization of internal methods for defining spec behaviors. Leading into the organization of...
+
 ## Meta Object Protocol, aka. MOP
 
 Discussing section on invariants and how to redefine in a reasonable way.  We need people who are interested in these invariants to make contributions to this section.

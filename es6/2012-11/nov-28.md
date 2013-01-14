@@ -424,7 +424,7 @@ In this context, within the square brackets: AssignmentExpression
 
 
 # Experience With TypeScript
-Presented by Luke Hoban (request slides)
+Presented by Luke Hoban (slides at http://sdrv.ms/W21q9e)
 
 Findings...
 **Classes: Statics**

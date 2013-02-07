@@ -688,7 +688,7 @@ AWB: Yes.
 ## 4.10 Data collection/analysis: Function-in-block, duplicate parameter names, const, strict mode, var let/let[x]=1, and maybe more
 (Presented by Brian Terlson)
 
-Brian, please submit slides for inclusion in notes.
+Slides (pdf): http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting_jan_29_2013&cache=cache&media=meetings:real-world-js-code.pdf
 
 1.85% of scripts make use of function hoisting intersection semantics. Almost all of these are due to functions defined inside arms of an if statement. Few examples of defining functions inside loops.
 No scripts do let[x].

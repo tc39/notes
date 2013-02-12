@@ -438,6 +438,7 @@ JN: Steering to break. The point of record...
 
 
 **Conclusion/Resolution**
+
 - Cannot continue this discussion without Dave Herman
 - Continue work, the understanding the next meeting is decision time.
 - Work with committee members and community to develop concrete scenarios that must be met and addressed.
@@ -456,6 +457,7 @@ MM: Seconded
 DC: Seconded
 
 **Conclusion/Resolution**
+
 We approve the new scope for RFTG Unanimously.
 
 
@@ -512,15 +514,17 @@ AWB: Outlines issues with the MOP...
 target.[[Get]]("foo");
 P?
 self.[[Get]]()
-...
+```
 
 See image.
 
 target has a method named foo, uses the "this" value,
 
 (WH's summary) The point that Allen was demonstrating on the whiteboard was that, given:
+```js
 var target = {foo() {if (someLookup(this)) {...}}};
 var p = Proxy(target, {});
+```
 
 then:
 target.foo and p.foo are the same function object.
@@ -618,6 +622,7 @@ AWB: ...Recalls discussion with Tom, re: [[Put]] creating properties on wrong ob
 STH: Resteer the discussion...
 
 **Conclusion/Resolution**
+
 Continue discussion offline.
 
 MM: What we did with hasInstance, we should audit all of the traps and determine if we can replace with @@methods.
@@ -650,6 +655,7 @@ LH: No, you'll still get class-side.
 LH/EA/RW/WH: In agreement.
 
 **Conclusion/Resolution**
+
 Class extends throws on non-constructor (extends null is still valid)
 
 
@@ -691,15 +697,15 @@ AWB, most: Yes.
 YK: No.  Maps should throw on NaN's.
 WH: Why? Why not throw on undefineds?
 
-------------------------------
-Conclusion/Resolution
-Consensus w/ comparators: "===" (currently default) and "is"
 
-Signatures:
-  - Map(iterator=undefined, comparator="===")
-  - Set(iterator=undefined, comparator="===")
-------------------------------
-(Conversation continued, this resolution was discarded)
+> Conclusion/Resolution
+> Consensus w/ comparators: "===" (currently default) and "is"
+
+> Signatures:
+>  - Map(iterator=undefined, comparator="===")
+>  - Set(iterator=undefined, comparator="===")
+>
+> **(Conversation continued, this resolution was discarded)**
 
 
 ARB: if we have a forth form of equality as "default", we should be honest, name it, and make it available separately
@@ -732,6 +738,7 @@ WH: As long as it's an equivalence class, if you allow anything else, you run in
 
 
 **Conclusion/Resolution**
+
 - `Map( iterator = undefined, comparator = undefined )`
 - `Set( iterator = undefined, comparator = undefined )`
 
@@ -776,6 +783,7 @@ WH: Expresses surprise at existence of parenthesized comprehension syntax: `(for
 STH: This is only a syntactic change. We're not altering previously agreed semantics in any way.
 
 **Conclusion/Resolution**
+
 All agree on RTL -> LTR change.
 
 [WH: Noted a moment after meeting adjourned that this is not merely a syntactic change. We had let clauses to create intermediate temporaries in the old syntax but not in the new syntax — you can't do `[for (x of y) let (z = ...) for (z of q) ...].]`

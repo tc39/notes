@@ -179,6 +179,7 @@ WH: Hypothetical discussion about new "decimal" type with a "decimal  NaN" and t
 
 
 **Conclusion/Resolution**
+
 Consensus on **No operator**
 
 Do we want API? **Yes.**
@@ -212,6 +213,7 @@ Given the existence of the other Number.is* functions, several people flip their
 
 
 **Conclusion/Resolution**
+
 Overturn the Number.toInteger=>toInt change. Restore as toInteger. (Brendan, can you fill in the rationale for this?)
 
 Number.isNaN remains in ES6
@@ -250,6 +252,7 @@ AWB: I can do this.
 
 
 **Conclusion/Resolution**
+
 To revisit, pending proposal from AWB. (See Jan 31 notes)
 
 Must address the minimal requirements on the wiki
@@ -340,6 +343,7 @@ https://mail.mozilla.org/pipermail/es-discuss/2012-May/022904.html
 
 
 **Conclusion/Resolution**
+
 Consensus that __define(G|S)etter__, __lookup(G|S)etter__ will not be standardized, nor added to an Appendix.
 
 
@@ -551,6 +555,7 @@ File:
 
 
 **Conclusion/Resolution**
+
 Consensus on @@create, allocation and initialization decoupling.
 
 
@@ -641,6 +646,7 @@ WH: Concerned about the proliferation of "types of an object"… class, prototyp
 Discussion focuses around built-ins whose prototype property are first-born instances of that object, eg. `Array.prototype` is an `Array`. The desire was to remove this from ES6, however there a slew of issues that are not specifically edge cases rise to the surface.
 
 **Conclusion/Resolution, Bullet 2**
+
 Brendan to experiment with changing the prototype properties of Boolean, Number and String away from first born instances into ordinary object ([object Object]).
 
 (Re: Bullet 4)

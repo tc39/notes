@@ -479,6 +479,7 @@ MM: Agreed not to hold up consensus
 YK/RW: No Arrows
 
 **Conclusion/Resolution**
+
 Consensus on...
 Stay the course on spec development approach
 Class, Modules implicitly strict.
@@ -506,6 +507,7 @@ Supported by TypeScript, Continuum, etc.
 
 
 **Conclusion/Resolution**
+
 Consensus in support of this proposal. (File spec update ticket)
 
 
@@ -549,6 +551,7 @@ EF: It's possible to lose the context if you alias the ClassMethod
 MM: For consistency purposes, add thisArg
 
 **Conclusion/Resolution**
+
 Consensus on this proposal, with the addition of thisArg per Mark's request.
 
 
@@ -654,6 +657,7 @@ YK: yes, as long as "?"
 
 
 **Conclusion/Resolution**
+
 1. No implicit ToObject(RHS). **consensus**
 2. Exception on missing property selected without a ?-suffix. **consensus**
 3. ?-suffix allowed on any pattern, imputing undefined deeply instead of refuting. **consensus**
@@ -762,6 +766,7 @@ MM: Explain the divergence, toString is a reflection of the source code itself a
 
 
 **Conclusion/Resolution**
+
 Consensus on the proposal, with { writable: true }
 
 
@@ -903,4 +908,5 @@ WH: This is not a lot of work for implementations, and implementations (as oppos
 that they'd have all the Array methods, some of which would throw on use (those that change length). This needs discussion at a future meeting.]
 
 **Conclusion/Resolution**
+
 Move forward with the plan presented.

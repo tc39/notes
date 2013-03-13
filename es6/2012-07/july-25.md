@@ -218,9 +218,6 @@ DH, BE: Agree on opposing concat hazards
 Summary: #3 is the path. Champions spec this out and present for next
 in-person. (AWB, ARB, DH, RW)
 
-**UPDATE**
-[Global Scope was revisited in September](https://github.com/rwldrn/tc39-notes/blob/master/es6/2012-09/sept-19.md#global-scope-revisit)
-
 
 
 # Object.observe

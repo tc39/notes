@@ -120,6 +120,8 @@ AWB: But it doesn't have to be an array
 ## 4.5 Private Symbols, WeakMaps, and Relationships
 (Presented by Mark Miller)
 
+Slides (PDF, will prompt download): http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting_mar_12_2013&cache=cache&media=meetings:relationships.pdf
+
 MM: Concerned about the overlap in functionality between WeakMaps and private Symbols.
 
 ...WeakMap named with the word "Map" inverts the thinking.
@@ -133,7 +135,7 @@ Legend:
 
 
 (Slide 2)
----------
+___
 **"Map" inverts thinking**
 (the use of ">>" signifies the that the item on the LEFT is usually better for most purposes then the RIGHT)
 
@@ -148,7 +150,7 @@ Lookup: Inherited props >> own props
 Intuition: Relationship >> Symbol >> Map
 
 Unique Symbols ok.
----------
+___
 
 STH: Weak hash tables are found in programming languages and people want them in JS, but they historically fall in the RIGHT. Why can't we declare victory and go home?
 
@@ -158,7 +160,7 @@ WH: Let's avoid a meta discussion.
 
 
 (Slide 3)
----------
+___
 **ES6 Encapsulation Mechanisms**
 
 Closures hide lexical state (ES5)
@@ -170,12 +172,12 @@ Direct Proxies hide handler and target
 WeakMaps hide keys, do rights-amplification
 
 Private Symbols
----------
+___
 
 
 
 (Slide 4)
----------
+___
 **GC: base@field = value**
 ...Not discoverable given "base". Have to have both "base" and "field" to get value.
 
@@ -194,11 +196,11 @@ by regular GC and without needing ephemeral
 2. impl(field)[base] => value
 better when base lives longer
 ...When field dies earlier, it will take the association with it, by regular GC and without needing ephemeral
----------
+___
 
 
 (Slide 5)
----------
+___
 **GC by use case**
 
 When base is known to live longer
@@ -211,7 +213,7 @@ Most remaining WeakMap use cases
 would do better with representation #1 (untested claim)
 
 (From a GC perspective)
----------
+___
 
 MM: The GC cost is significant. If you chose the wrong implementation, every object that gets trademarked is retained by the WeakMap until you invoke the ephemeron collection algorithm.
 
@@ -223,7 +225,7 @@ AWB: I don't think it's a wash, case 1 requires an index, case 2 requires a hash
 
 
 (Slide 6)
----------
+___
 **GC by use case**
 
 Only need ephemeron collection when
@@ -234,7 +236,7 @@ Felix's O(N) algorithm is affordable
 with inverted representation
 
 Examples: Membranes
----------
+___
 
 MM: Membranes are an example where you still need the ephemeron collection algorithm
 
@@ -249,7 +251,7 @@ MM: Membranes are an example where you still need the ephemeron collection algor
 **P** is proxy
 
 (Slide 7)
----------
+___
 **Transparency vs Privacy**
 ...Membrane:
 
@@ -259,7 +261,7 @@ bL@fL = vL    bR@fR === vR
 
 ...see slide
 
----------
+___
 
 [Whiteboard Example, get image from Sam]
 
@@ -327,7 +329,7 @@ MM: Thinking of them as properties is what caused me to gravitate towards addres
 
 
 (Slide 9)
----------
+___
 **Desugaring Private Relationships**
 
 ```js
@@ -336,10 +338,10 @@ base@field              base@field = value
 field.get(base)         field.set(base, value)
 
 ```
----------
+___
 
 (Slide 10)
----------
+___
 **What about symbols and strings?**
 
 ```js
@@ -358,7 +360,7 @@ String.prototype[@seti] = function(base, value) {
 };
 
 ```
----------
+___
 
 MM: Don't want to use string name "get" and "set" for the invocation, I want to use a symbol
 

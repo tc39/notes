@@ -117,18 +117,22 @@ A. No longer be a validating parser (i.e. a parser that doesn't allow any option
 B. Do a breaking change by throwing errors when seeing duplicates when parsing.
 
 **Conclusion/Resolution**
-Revisit this, after DC has made a final decision.
-FTR: Majority opposition, no consensus.
+
+- Revisit this, after DC has made a final decision.
+- FTR: Majority opposition, no consensus.
 
 
 ## 4.12 StopIteration/Generator
 (Presented by Dave Herman)
 
+https://github.com/dherman/iteration-protocols
+
+
 DH: ...Confirms that there is lack of understanding for Generator "instances"
 
 MM: Clarify terminology
 
-DH: Generator objects are instances of Iterators, in that they have next method. The current design is based on a thrown StopIteration
+DH: Generator objects are instances of Iterators, in that they have a `next` method. The current design is based on a thrown `StopIteration`
 
 C#, Java, Python apis for comparison.
 
@@ -158,7 +162,7 @@ function* f() {
 }
 ```
 
-for for-of this doesn't matter, but for libs like q, task.js this is useful for pause and resume with value
+for `for-of` this doesn't matter, but for libs like q, task.js this is useful for pause and resume with value
 
 If we didn't care, the result value can be omitted
 
@@ -409,7 +413,7 @@ var i3 = (function* h() {
 
 See: https://gist.github.com/wycats/51c96e3adcdb3a68cbc3
 
-Slides requested.
+Slides (PDF, will prompt download): http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting_mar_12_2013&cache=cache&media=meetings:modules-march-2013.pdf
 
 DH: We're committed to making this happen for ES6, it's too important to miss and I'm going to do whatever it takes. Please remember that you can always bring specific issues directly to us (DH, STH, YK).
 

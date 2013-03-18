@@ -8,24 +8,24 @@ John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Rick Waldro
 
 See: http://wiki.ecmascript.org/doku.php?id=harmony:observe
 
-(Request Slides)
+Slides (PDF, will prompt download): http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting_mar_12_2013&cache=cache&media=meetings:object.observe_implementation_report.pdf
 
 (Slide 1)
----------
+___
 - Results are encouraging
 - Two Google projects are pleanning to deploy run-time support
 - Use cases
 ?
----------
+___
 
 
 (Slide 2)
----------
+___
 - Spec fully implemented (behind flag)
 - Mostly self hosted: changRecord allocation, enqueing and delivery is in JS
 - Mutation sites of observed objects deoptimize. Observed arrays are alwas slow mode
 - Biggest perf bottleneck is feting changeRecords; plan to speed up Object.freeze()
----------
+___
 
 YK: Concern about changeRecord spam (build up of changes
 delivered at the end of the turn)
@@ -43,11 +43,11 @@ EA: With proxies, that becomes observable
 AK: There are changes to the spec since last brought to the committee...
 
 (Slide 3)
----------
+___
 - `Object.deliverChangeRecords()` continues delivery until pending
 - Added `{ type: "prototype" }` changeRecord which reports changes to `__proto__`
 - Minor changes to changeRecord generation to enforce consistency invariants
----------
+___
 
 DC: Does that cause the turn to never end?
 
@@ -57,7 +57,7 @@ ARB: Just another footgun in that respect
 
 
 (Slide 4)
----------
+___
 **ChangeSummary JS Library**
 - Supports dirty-checking and Object.observe (polyfill to fast/safe object observation)
 - Exposes semantics for a "diffing summary (Tn -> Tn+1 changes)
@@ -68,7 +68,7 @@ ARB: Just another footgun in that respect
 
 - ??
 
----------
+___
 
 WH: What is "values at a path"
 
@@ -87,7 +87,7 @@ WH: Please explain
 
 
 (Slide 5)
----------
+___
 **Per Analysis (dirty checking vs Object.observe)**
 - Results not surprising (this is good!)
 - _nothing-changed_ case is overwhelming win
@@ -95,7 +95,7 @@ WH: Please explain
 - Object.oberse case never needs to keep a copy of observed data
 - Object.observe appears to observed properties have changed (depending on observation "type")
 - Arrays encourage "hidden" everything-changed cases eg. `unshift();`
----------
+___
 
 AK: One of the worst cases is observing Arrays
 
@@ -108,7 +108,7 @@ AK: One for every index and length
 EA: We knew about this from the very beginning, but decided to address it after we had implementation experience.
 
 (Slide 6)
----------
+___
 Adding Support for Array "splice mutations"
 
 - Report on changes to Array elements (isUInt32(propertyName)) as "splice mutations"
@@ -117,7 +117,7 @@ Adding Support for Array "splice mutations"
         - array has non-data index properties
         - array has non-writable or non-configurable index properties
         - operation will affect indices > UInt32
----------
+___
 
 WH: What happens when you observe a WeakMap?
 

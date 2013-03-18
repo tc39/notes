@@ -300,6 +300,7 @@ AWB: If sloppy mode, here is a compatibility issue.
 MM/ARB: (Answering Luke's earlier question) If Option #0 is off the table, then there is no opposition to #3b or #3c.
 
 **Consensus**
+
 Allen will spec #3c static semantics with informative note for review, tentatively to fallback to #3b
 
 

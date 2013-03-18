@@ -441,8 +441,8 @@ let Point = (function() {
       return Point(this@x + point@x, this@y + point@y);
     }
   };
-
 })();
+```
 
 
 

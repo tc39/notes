@@ -91,7 +91,7 @@ ___
 **Per Analysis (dirty checking vs Object.observe)**
 - Results not surprising (this is good!)
 - _nothing-changed_ case is overwhelming win
-        - Discovering that nothing changed only incurs the cost of de-optimizing observed objects
+  - Discovering that nothing changed only incurs the cost of de-optimizing observed objects
 - Object.oberse case never needs to keep a copy of observed data
 - Object.observe appears to observed properties have changed (depending on observation "type")
 - Arrays encourage "hidden" everything-changed cases eg. `unshift();`
@@ -113,10 +113,10 @@ Adding Support for Array "splice mutations"
 
 - Report on changes to Array elements (isUInt32(propertyName)) as "splice mutations"
 - Degrade to "normal" property mutations if...
-        - !Array.isArray(array)
-        - array has non-data index properties
-        - array has non-writable or non-configurable index properties
-        - operation will affect indices > UInt32
+  - !Array.isArray(array)
+  - array has non-data index properties
+  - array has non-writable or non-configurable index properties
+  - operation will affect indices > UInt32
 ___
 
 WH: What happens when you observe a WeakMap?
@@ -283,11 +283,13 @@ AWB: ...recalling existing specification of ToString conversion
 
 
 **Conclusion/Resolution**
+
 - New addition to typeof table
-        - `typeof symbol === "symbol"`
+  - `typeof symbol === "symbol"`
 - [[ToString]](symbol) => throws
-  therefore `symbol + ""` => fails w/ error
-- `Object.prototype.toString.call(symbol)` => "[object Symbol]" (ARB: or rather something else, given that we just decided symbols shouldn't be objects)
+  - therefore `symbol + ""` => fails w/ error
+- `Object.prototype.toString.call(symbol)` => "[object Symbol]"
+(ARB: or rather something else, given that we just decided symbols shouldn't be objects)
 
 
 
@@ -302,21 +304,21 @@ See: http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting_mar_12_2
 Prior to the Sixth Edition, the ECMAScript specification did not define the occurrence of a _FunctionDeclaration_ as an element of a Block statement’s _StatementList_. However, support for that form of _FunctionDeclaration_ was an allowable extension and most browser-hosted ECMAScript implementations permitted them. Unfortunately, the semantics of such declarations differ among those implementations. Because of these semantic differences, existing web ECMAScript code that uses Block level function declarations is only portable among browser implementation if the usage only depends upon the semantic intersection of all of the browser implementations for such declarations. The following are the use cases that fall within that intersection semantics:
 
 1. A function is declared and only reference within a single block:
-        - A function declaration with the name f is declared exactly once within the function code of an enclosing function g and that declaration is nested within a Block.
-        - No other declaration of f that is not a var declaration occurs within the function code of g
-        - All references to f occur within the _StatementList_ of the Block containing the declaration of f.
+  - A function declaration with the name f is declared exactly once within the function code of an enclosing function g and that declaration is nested within a Block.
+  - No other declaration of f that is not a var declaration occurs within the function code of g
+  - All references to f occur within the _StatementList_ of the Block containing the declaration of f.
 
 2. A function is declared and possibly used within a single block but also referenced within subsequent blocks.
-        - A function declaration with the name f is declared exactly once within the function code of an enclosing function g and that declaration is nested within a Block.
-        - No other declaration of f that is not a var declaration occurs within the function code of g
-        - References to f may occur within the _StatementList_ of the Block containing the declaration of f.
-        - References to f occur within the function code of g that lexically follows the Block containing the declaration of f.
+  - A function declaration with the name f is declared exactly once within the function code of an enclosing function g and that declaration is nested within a Block.
+  - No other declaration of f that is not a var declaration occurs within the function code of g
+  - References to f may occur within the _StatementList_ of the Block containing the declaration of f.
+  - References to f occur within the function code of g that lexically follows the Block containing the declaration of f.
 
 3.  A function is declared and possibly used within a single Block but also referenced by an inner function definition that is not contained within that same Block.
-        - A function declaration with the name f is declared exactly once within the function code of an enclosing function g and that declaration is nested within a Block.
-        - No other declaration of f that is not a var declaration occurs within the function code of g
-        - References to f occur within another function h that is nested within g and no other declaration of f shadows the references to f from within h.
-        - All invocations of h occur after the declaration of f has been evaluated.
+  - A function declaration with the name f is declared exactly once within the function code of an enclosing function g and that declaration is nested within a Block.
+  - No other declaration of f that is not a var declaration occurs within the function code of g
+  - References to f occur within another function h that is nested within g and no other declaration of f shadows the references to f from within h.
+  - All invocations of h occur after the declaration of f has been evaluated.
 
 
 Use cases 2 and 3 for a given function declaration f might occur within the same function.
@@ -333,12 +335,12 @@ WH: (whiteboard)
 ```js
 function g() {}
 function f() {
-        if (false) {
-                function g(){}
+  if (false) {
+    function g(){}
   } else {
-                g();
+    g();
   }
-        g();
+  g();
 }
 ```
 
@@ -379,11 +381,11 @@ AWB: (whiteboard)
 // There is no binding to g()
 function f() {
  {
-                if (false) {
-                        function g() {}
-          }
-                g();
-        }
+    if (false) {
+      function g() {}
+    }
+    g();
+  }
 }
 ```
 
@@ -400,11 +402,11 @@ AWB: (whiteboard)
 function g() {}
 function f() {
  {
-                if (false) {
-                        function g() {}
-          }
-                g();
-        }
+    if (false) {
+      function g() {}
+    }
+    g();
+  }
 }
 ```
 ...Didn't take into account this case, will need time to consider.
@@ -417,12 +419,12 @@ WH: (whiteboard)
 ```js
 function g() {}
 function f() {
-        {
-                g();
-                if (true) {
-                        function g() {}
-          }
-        }
+  {
+    g();
+    if (true) {
+      function g() {}
+    }
+  }
 }
 ```
 
@@ -434,13 +436,13 @@ WH: (whiteboard)
 ```js
 function g() {}
 function f() {
-        {
-                g();
-                if (true) {
-                        function g() {}
-          }
-                g();
-        }
+  {
+    g();
+    if (true) {
+      function g() {}
+    }
+    g();
+  }
 }
 ```
 
@@ -521,7 +523,7 @@ Note: AC/BM please send Allen any materials that might be useful for specifying 
 
 **Conclusion/Resolution**
 
-All (esp. AWB) to continue working through known issues in the 1% cases
+- All (esp. AWB) to continue working through known issues in the 1% cases
 
 
 
@@ -556,7 +558,7 @@ DH: Common, makes sense.
 
 **Conclusion/Resolution**
 
-Exception being made. Approved for ES6.
+- Exception being made. Approved for ES6.
 
 
 
@@ -659,21 +661,21 @@ STH: (listing)
 MM: (whiteboard)
 ```js
 class DelayedQ {
-        constructor(callSiteId, ...args) {
-                this.force = function(handler) {
-                        return handler(callSiteId, ...args);
-                };
-                this.toString = function() {
-                        return stringer(callSiteId, ...args);
+  constructor(callSiteId, ...args) {
+    this.force = function(handler) {
+      return handler(callSiteId, ...args);
+    };
+    this.toString = function() {
+      return stringer(callSiteId, ...args);
     }
-        }
+  }
 }
 ```
 
 ```js
 html`<script>
-                "${...}"
-        </script>`
+  "${...}"
+</script>`
 
 ```
 
@@ -681,11 +683,11 @@ html`<script>
 WH:
 ```js
 html`<script>
-                "${foo()}"
-        </script>`
+  "${foo()}"
+</script>`
 
 function foo() {
-        return `...`;
+  return `...`;
 }
 ```
 

@@ -373,6 +373,7 @@ JP: "more" vs. "done"?
 **Conclusion/Resolution**
 
 - Rough agreement (between those present) on pure, stateless version of:
+
 ```js
 {
   next() -> { done: false , value: any }

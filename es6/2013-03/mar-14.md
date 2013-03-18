@@ -546,6 +546,18 @@ WH: ECMA's TC39 email reflector is incompatible with gmail. If a gmail user send
 
 RW: Wrote spec (using spec prose) Array.prototype.find and Array.prototype.findIndex. Found in most PL and JS libraries
 
+
+```js
+Array.prototype.find( predicate [ , thisArg ] )
+```
+https://gist.github.com/rwldrn/5079436
+
+```js
+Array.prototype.findIndex( predicate [ , thisArg ] )
+```
+https://gist.github.com/rwldrn/5079427
+
+
 MM: What about start indedx? Does it go before the thisArg or not?
 
 RW: None of the existing languages supports passing a start index.

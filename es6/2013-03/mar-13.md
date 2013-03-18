@@ -567,7 +567,10 @@ BE: We've had prototype implementations for some time, we made it through the ch
 ## 4.16 Current Status of ES6
 (Presented by Luke Hoban)
 
-(request some form of the spreadsheet?)
+
+Spreadsheet: http://sdrv.ms/Z9pQxs
+
+<iframe width="700" height="900" frameborder="0" scrolling="no" src="https://skydrive.live.com/embed?cid=704A682DC00D8AAD&resid=704A682DC00D8AAD%2159602&authkey=AHfDYaQdL8Sz2wM&em=2&wdAllowInteractivity=False&Item=Table1&wdHideGridlines=True&wdDownloadButton=True"></iframe>
 
 
 AWB: Based on this review, we should shoot for December 2014

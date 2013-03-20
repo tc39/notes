@@ -437,7 +437,7 @@ LH: Of course, there is a status quo: Creating global names that define built in
 JN: Steering to break. The point of record...
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - Cannot continue this discussion without Dave Herman
 - Continue work, the understanding the next meeting is decision time.
@@ -456,7 +456,7 @@ MM: Seconded
 
 DC: Seconded
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 We approve the new scope for RFTG Unanimously.
 
@@ -621,7 +621,7 @@ AWB: ...Recalls discussion with Tom, re: [[Put]] creating properties on wrong ob
 
 STH: Resteer the discussion...
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Continue discussion offline.
 
@@ -654,7 +654,7 @@ LH: No, you'll still get class-side.
 
 LH/EA/RW/WH: In agreement.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Class extends throws on non-constructor (extends null is still valid)
 
@@ -737,7 +737,7 @@ MM: General comparator argument, are we happy with this considering a hypothetic
 WH: As long as it's an equivalence class, if you allow anything else, you run into trouble.
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - `Map( iterator = undefined, comparator = undefined )`
 - `Set( iterator = undefined, comparator = undefined )`
@@ -782,7 +782,7 @@ WH: Expresses surprise at existence of parenthesized comprehension syntax: `(for
 
 STH: This is only a syntactic change. We're not altering previously agreed semantics in any way.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 All agree on RTL -> LTR change.
 

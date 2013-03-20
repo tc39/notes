@@ -116,7 +116,7 @@ MM: With this change ECMAScript would have two unappealing choices:
 A. No longer be a validating parser (i.e. a parser that doesn't allow any optional syntax or extensions, even though extensions are permitted by the JSON spec).
 B. Do a breaking change by throwing errors when seeing duplicates when parsing.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - Revisit this, after DC has made a final decision.
 - FTR: Majority opposition, no consensus.
@@ -370,7 +370,7 @@ JP: "more" vs. "done"?
 
 (can discuss further)
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - Rough agreement (between those present) on pure, stateless version of:
 
@@ -1045,7 +1045,7 @@ STH: This is something to be deferred without blocking progress, but ok with cha
 
 YK: agree with STH about consensus, but potentially concerned.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - Default: declarative form of a module is an error if a module of the same name already exists in the module registry.
 - Using  `System.set` to overwrite an existing module is not an error.

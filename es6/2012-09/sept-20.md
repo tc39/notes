@@ -171,7 +171,7 @@ RH: Moving from strawman to proposal/spec is meaningful to implementor teams.
 
 [some discussion about whether the above construction pattern has efficiency problems; needs implementation experience]
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Push for prototype implementations (Chrome already in progress). Encourage others to do the same
 
 Officially Promoted to proposal for ES7.
@@ -189,7 +189,7 @@ Note that the current semantic restrictions on where yield expressions can go do
 
 Resolution on the yield issue?
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 AWB will refactor grammar so that yield can only be used within the context of a generator function and yield will not be usable as an identifier there. This will require essentially doubling the number of grammar rules in an analogous way to how the no-in rules are handled today, but on a much larger scale.
 
 
@@ -197,7 +197,7 @@ BE: Need wider, complete validation that takes into account ASI and noIn.
 
 BE/AWB: Who is going to own this?
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Waldemar is going to try to work on this
 
 
@@ -330,7 +330,7 @@ Conclusion/Resolution
 ]]]]]]]]]]]]]]]]]]]]]]]
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Revisit when data is gathered, re: perf or unexpected behaviours
 
 
@@ -349,7 +349,7 @@ When I reason about a program:
 "Here we have an array of elements"
 (elements, items, numbers, strings)
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 No change, no revisit.
 
 If we do `Foo.new()`, it must be _identical_ to `new Foo()`.
@@ -368,7 +368,7 @@ WH: Don't want two slightly different concepts with a confusingly similar syntax
 
 WH: That would address the confusion, but is still unnecessary featuritis and doesn't even save much in terms of text, which was its original reason for existence. Saving a couple characters here is not worth complicating the language.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Consensus holds on fat-arrow
 
 
@@ -417,7 +417,7 @@ WH: What about other contexts such as p?[x], p?.q[x], and p?(x) ? [Note that gra
 
 General agreement.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Seems useful, but not now. Semantics are unclear
 
 
@@ -482,7 +482,7 @@ DH: Not super worried about this…
 
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 The spec should not specify built in iterators to have 3 extra generator methods (ie send, throw, close)
 (Currently in draft, needs to be refactored)
 

@@ -8,7 +8,7 @@ John Neumann (JN), Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson 
 
 JN: (presents scope document for approval)
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Approved.
 
 # Scoping for default arguments revisited
@@ -256,7 +256,7 @@ Devolved.
 
 **Break**
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Agree that Andreas will draft a proposal for next meeting.
 
 
@@ -273,7 +273,7 @@ DC/AR/YK/EF/EA: Supporting agreement
 MM/AWB/RW/BE/EF: (Discussion to determine a criteria for making this API specification distinction)
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Consensus... with the criteria that these methods are not simply a set of uncoordinated side effects that happen to have a receiver in common, but a set of coordinated side effects on a specific receiver and providing access to the target object post-mutation.
 
 
@@ -329,7 +329,7 @@ BE: Exists from the ES1 days, for VBScript-style DOM APIs in IE
 
 LH: No objection.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Consensus.
 
 
@@ -370,7 +370,7 @@ RW: No.
 Return to two step on Array.from and iterator protocol on for-of, spread.
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Add iterator protocol to arguments object (should exist on all things.
 
 Array.from:
@@ -457,7 +457,7 @@ DH: Won't have to.
 
 ARB: better name: 'entries', not 'items'. (agreed)
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Dave Herman to craft an addition to module standard library for Dict with api shown above that creates proto-less objects as Dicts and has api that can be used on all collections.
 
 Allen Wirfs-Brock to update existing spec language to reflect:
@@ -553,7 +553,7 @@ LH: A search of indexed web reveals 3 uses of var let.
 
 WH: No, negative parsing rules like that are known to cause byzantine problems. Better to disambiguate on the first two tokens alone just like we disambiguate on the first { token alone to distinguish a block from an expression statement that happens to start with an object literal. The first two tokens would be let followed by either an identifier, [, or {.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 In non-strict code: let, with single token lookahead (where the single token is either an Identifier, "[", or "{" ), at the start of a statement is a let declaration. (Accepted breaking change)
 
 
@@ -585,7 +585,7 @@ WH: I'm not opposed to parentheses in the pattern language in general, but there
 
 DH: OK
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Agreed to the semantics presented by the allowed/disallowed example above.
 
 
@@ -626,7 +626,7 @@ MM: All agreed, whatever is allowed here is also allowed between parens for gene
 
 BE: No cost, no loss, use case gains.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Consensus on Jason's proposal: for, if, let, const can be interleaved. Applies to both Array Comprehensions and Generator Comprehensions
 
 
@@ -648,7 +648,7 @@ BE: notes that es-discuss preference was to uniformly poison
 
 MM: No security problem to have the function behave the same with respect to either strict or non-strict
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 New forms are like old forms per non-strict and strict (reduce surprise factor)
 
 
@@ -669,5 +669,5 @@ MM: Yes, that is a hole. In fact, we've been blocking implementations that accep
 
 BE: Backs Mark's rationale
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Luke and Mark will chat offline.

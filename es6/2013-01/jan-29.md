@@ -178,7 +178,7 @@ AWB: No spec provisions, currently...
 WH: Hypothetical discussion about new "decimal" type with a "decimal  NaN" and the implications of NaN equality. The issue that would arise would be that a decimal NaN would be unequal to itself but would be distinguishable from the regular Number NaN. Therefore the example code for how *users* could implement `is` wouldn't work. However, if `is` is a language feature, then an implentation can fix it up to behave correctly when it adds additional primitive types such as Decimal, just as it would fix up the behavior of ==, etc.
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Consensus on **No operator**
 
@@ -212,7 +212,7 @@ WH: Number.isNaN is analogous to other Number functions such as Number.isFinite 
 Given the existence of the other Number.is* functions, several people flip their views.
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Overturn the Number.toInteger=>toInt change. Restore as toInteger. (Brendan, can you fill in the rationale for this?)
 
@@ -251,7 +251,7 @@ BE: Let's find a champion to work this out over the next two days.
 AWB: I can do this.
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 To revisit, pending proposal from AWB. (See Jan 31 notes)
 
@@ -344,7 +344,7 @@ Rationale for not adding Object.setPrototypeOf
 https://mail.mozilla.org/pipermail/es-discuss/2012-May/022904.html
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Consensus that `__define(G|S)etter__`, `__lookup(G|S)etter__` will not be standardized, nor added to an Appendix.
 
@@ -556,7 +556,7 @@ File:
 (See slides for code example)
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Consensus on @@create, allocation and initialization decoupling.
 

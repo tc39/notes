@@ -479,7 +479,7 @@ MM: Agreed not to hold up consensus
 
 YK/RW: No Arrows
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Consensus on...
 Stay the course on spec development approach
@@ -507,7 +507,7 @@ Full strawman here: http://wiki.ecmascript.org/doku.php?id=strawman:class_method
 Supported by TypeScript, Continuum, etc.
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Consensus in support of this proposal. (File spec update ticket)
 
@@ -551,7 +551,7 @@ EF: It's possible to lose the context if you alias the ClassMethod
 
 MM: For consistency purposes, add thisArg
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Consensus on this proposal, with the addition of thisArg per Mark's request.
 
@@ -657,7 +657,7 @@ BE: (to YK) have we assuaged your concerns about irrefutable destructuring?
 YK: yes, as long as "?"
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 1. No implicit ToObject(RHS). **consensus**
 2. Exception on missing property selected without a ?-suffix. **consensus**
@@ -766,7 +766,7 @@ Discussion re: history of Function.prototype.toString result.
 MM: Explain the divergence, toString is a reflection of the source code itself and the name is how you'd like to identify the function within tools.
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Consensus on the proposal, with { writable: true }
 
@@ -908,6 +908,6 @@ WH: This is not a lot of work for implementations, and implementations (as oppos
 [STH: After the end of the official meeting, there was some discussion as to why Typed Arrays wouldn't just become genuine Arrays.  This would mean
 that they'd have all the Array methods, some of which would throw on use (those that change length). This needs discussion at a future meeting.]
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Move forward with the plan presented.

@@ -282,7 +282,7 @@ AWB: ...recalling existing specification of ToString conversion
 
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - New addition to typeof table
   - `typeof symbol === "symbol"`
@@ -521,7 +521,7 @@ Note: AC/BM please send Allen any materials that might be useful for specifying 
 
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - All (esp. AWB) to continue working through known issues in the 1% cases
 
@@ -568,7 +568,7 @@ AWB: Feature creep
 
 DH: Common, makes sense.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - Exception being made. Approved for ES6.
 
@@ -905,6 +905,6 @@ DH: We won't give up, we've gained consensus under worse duress.
 
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - Tabled.

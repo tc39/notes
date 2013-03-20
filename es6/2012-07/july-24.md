@@ -232,7 +232,9 @@ to support, how can you polyfill the 4th to support the language.
 
 The constructor can re-declared?
 
-Conclusion: There is no easy way currently, second version of Intl spec
+#### Conclusion/Resolution
+
+There is no easy way currently, second version of Intl spec
 will address this.
 
 Conformance tests being written for test262.

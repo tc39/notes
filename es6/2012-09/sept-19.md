@@ -12,7 +12,7 @@ Recap of Sept 18th notes.
 
 TVC: change return type of enumerate() trap from array-of-string to iterator. Requires waiving the check for duplicate property names
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Drop the duplicate property check. enumerate() trap returns iterator.
 
@@ -167,7 +167,7 @@ WH: (summary) Not clear what the security consequences of revoking a frozen obje
 MM: This has been thought about and discussed off-line.
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 - we want revocable proxies
 - further discussion is needed on revoking frozen objects, either via revocable proxies or via traps
 
@@ -228,7 +228,7 @@ TVC: we need to specify that the proxy calls the original/intrinsic WeakSet.prot
 
 STH/LH/RW: Will need to spec WeakSet
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Yes to third arg for whitelist, pending details to be worked out by Proxy champions.
 
 Expect to remove the "public" part of private names.
@@ -243,7 +243,7 @@ AWB: Need to assure that WeakMap and WeakSet are not redefined?
 RW: Use cases in node programs where I'm using WeakMap made it apparent that it _is_ possible to leak via redefinition.
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Needs to be designed, as part of the whitelist feature's needs.
 
 SpiderMonkey tracking bug: https://bugzilla.mozilla.org/show_bug.cgi?id=792439
@@ -498,7 +498,7 @@ DH/BE: Move protected to a new strawman.
 
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Consensus on:
 - Need private binding, including: statement form, import and export.
 - Need private prefix form on class methods on object literal props and methods
@@ -519,7 +519,7 @@ DH: Gave blessing ;)  the only diff is that you can't go from string -> symbol, 
 
 YK: ok with that.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - we agree that names are now called symbols (Name => Symbol)
 - new alternatives for syntax to bind a "Unique Symbol" will be a keyword, one of: public, unique, or symbol
@@ -578,7 +578,7 @@ Discussion of label analysis
 Strict mode implementation
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 - es-discuss will get a list of all early errors that should not be
 
 
@@ -612,7 +612,7 @@ BE: (history of let in SpiderMonkey…) No outcry that performance is an issue
 
 MM: (countering the "not common enough" argument) Presented personal experiences where dead zones were essential in detecting problems.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 - No change to temporal dead zone (yet)
 - Get more data, report back
 
@@ -782,7 +782,7 @@ There are two scopes:
 
 [people generally felt it was easier to comprehend the data living in the scope contour]
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Agreed on the AWB/MM/WH alternative model
 (new binding forms)
 - Allen's 1 extra global scope contourc
@@ -805,7 +805,7 @@ LH/RW/AWB: Needs to be an automated process, if that's possible within the scope
 
 IS: Needs archival snapshots. The standards body is still a classic style standards organization that needs to abide its rules and policies.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Bill Ticehurst to produce recommendation for the automated archival of test 262 at arbitrary states, as needed.
 Rick Waldron volunteers to assist as necessary.
 
@@ -814,5 +814,5 @@ Rick Waldron volunteers to assist as necessary.
 
 2012-10-31: `wget -r -l 0 http://wiki.ecmascript.org/`
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Rick Waldron will champion this

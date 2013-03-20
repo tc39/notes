@@ -215,7 +215,7 @@ AWB: The work is already done.
 # Meeting Notes - Publish to wiki
 (side discussion, but valid to document)
 
-**Conclusion/Resolution** RW to publish meeting notes to ecma wiki (in addition to publishing on es-discuss and submission to ECMA)
+#### Conclusion/Resolution RW to publish meeting notes to ecma wiki (in addition to publishing on es-discuss and submission to ECMA)
 
 # Internationalization Update
 
@@ -350,7 +350,7 @@ NC: Yes.
 
 JN: Despite potential operational changes from ECMA, let's move forward with this project. Continue to report as adhoc group via this group.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 TC39 Approves to move forward with 2.0. NL will submit slides to ECMA for minutes record.
 
 
@@ -374,7 +374,7 @@ NL: Are we in agreement to spec this?
 MM: Requirements: (moved to resolution)
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Yes, requirements:
 - total,
 - deterministic
@@ -402,7 +402,7 @@ NL/LH: Not being in ES6 doesn't prevent implementation or spec authoring.
 
 LH: Doesn't need to be in the wrong spec just to move forward.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Goes in Internationalization but doesn't prevent specification or implementation.
 
 
@@ -446,7 +446,7 @@ var a = [];
 a[Math.pow(2, 32) - 1] = true;
 ```
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Tabled until AWB has further impact research.
 
 
@@ -564,6 +564,6 @@ f.__proto__ === GeneratorFunction.prototype;
 f.__proto__ === (function *() {}).__proto__;
 ```
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 - Per diagram (https://dl.dropbox.com/u/3531958/tc39/generator-diagram-1.jpg), but without exposing "Generator"
 - "GeneratorFunction" exposed via a module

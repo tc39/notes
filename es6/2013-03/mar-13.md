@@ -24,7 +24,7 @@ NL: Bug mixes ES5/ES6 spec language: DefaultValue/DateValue?
 AWB: Not an issue
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - When date object is passed to the Date constructor, it makes an accurate copy of the date object.
 
@@ -554,7 +554,7 @@ STH: I would like to stop this conversation and allow myself time to think about
 
 BE: Done.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - Sam, Mark and Allen to work on "relationships" and varied representation in ES6.
 
@@ -582,7 +582,7 @@ NL: Also need to look at progress on implementations.
 NL: Concerned about impact on Internationalization API 2.0 – need to evaluate whether to base on ES5 or slip to December 2014.
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - November 2013, Final review draft
 - June 2014, Editorially complete
@@ -607,6 +607,6 @@ Varying, lengthy discussions around SES techniques and the implications of the o
 Non-issue for code that doesn't freeze.
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 - Investigate instrumentation when silently fails non-writable prototype properties.

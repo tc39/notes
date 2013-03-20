@@ -400,7 +400,7 @@ DH: Could do semantics of strict mode and allow the collision
 
 MM: I don't think this introduces a strict mode runtime tax.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 STH will provide a summary.
 
 - Symbols, unique and private are runtime concepts

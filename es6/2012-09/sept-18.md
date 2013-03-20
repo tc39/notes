@@ -32,7 +32,7 @@ Primary change is to **Require Normalization By Default**
 
 DH: Is this a performance issue? Should we leave it to the lib authors
 
-AWB: Why do we assume lib authors will write wrappers. 
+AWB: Why do we assume lib authors will write wrappers.
 
 YK: Because we have no evidence to the contrary
 
@@ -70,7 +70,7 @@ NL: 137 tests, reaches almost all algorithms, coverage is still thin, draft test
 
 LH: These have been effective in identifying bugs in Chakra prototype implementation
 
-## Implementor's Report 
+## Implementor's Report
 
 (Google)
 NC: Chrome/v8 has `Intl` namespace and the implementation is working towards passing the conformance tests with ~20 failures. Some tests not yet implemented. Google internal use
@@ -86,7 +86,7 @@ NC: Will be removing the prefix
 DH/YK/STH: Discussion about globals, as they apply to the future with modules. import foo from … will reduce naming conflict overall.
 
 (Microsoft)
-LH: Currently passing 100/137 of conformance tests. Dont have direct user feedback. No one is actively using the prototype. 
+LH: Currently passing 100/137 of conformance tests. Dont have direct user feedback. No one is actively using the prototype.
 
 RW: Is there any communication between implementors?
 
@@ -115,10 +115,10 @@ AWB: In the form of an Annex
 DH/LH/AWB: (Discussion about implementation limitations)
 
 **Summary**
-Produce Annex that outlines a list of all optional implementation details. Include a rationale for each item that describes strong reasoning for optional implementations. 
+Produce Annex that outlines a list of all optional implementation details. Include a rationale for each item that describes strong reasoning for optional implementations.
 
 ## Annex
-Optional 
+Optional
 
 All Functionality
 - Supported Locales
@@ -166,7 +166,7 @@ JN: Any desire for ISO fast tracking?
 
 (Discussion re: ISO benefits.)
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 ECMA-402 Approved for submission to ECMA CC & GA
 
 ISO fasttrack postoned (with the limited time frame of 2 months notice prior to presentation the GA, approx Oct 10, 12?)
@@ -178,9 +178,9 @@ NL: There is a need to continue work, towards a 2nd edition
 
 JN: Agenda item for Nov.
 
-IS: Need to determine scope and scale of needed changes. 
+IS: Need to determine scope and scale of needed changes.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Agenda item for November 2012 to entertain a proposal.
 
 
@@ -211,21 +211,21 @@ RW: For example, when you have a constructor that has properties [[Put]] via map
 
 DH: This needs to be taken offline, away from the committee.
 
-LH: 
+LH:
 
 **Examples of Map**
 
 ```js
-paArray.map(function(element) { 
-  return element+1; 
+paArray.map(function(element) {
+  return element+1;
 });
 
-paArray.map(2, function(element) { 
-  return element+1; 
+paArray.map(2, function(element) {
+  return element+1;
 });
 
-paArray.map(2, function(element, [i, j], array) { 
-  return element+1; 
+paArray.map(2, function(element, [i, j], array) {
+  return element+1;
 });
 ```
 
@@ -299,7 +299,7 @@ DH: There was also the idea of having parallel-specific methods.
 Derailed to Array-like API issues on the whole… When to implement array API and when not. Why and why not…
 
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Further research and offline discussion.
 
 
@@ -340,7 +340,7 @@ RW: Agreed, assign/put is a cow-highway to pave, but user code has barely begun 
 
 MM: (comments about private name access concerns)
 
-AWB: 
+AWB:
 
 LH: Long term, we're going to have to consider features that are allowed to move private state.
 
@@ -361,12 +361,12 @@ AWB: …
 
 MM: Given ES6, remove the copying of private names, allow copying unique names: Can this be written as library code?
 
-DH/YK/RW: Devs want Object.define which is Object.defineProperties 
+DH/YK/RW: Devs want Object.define which is Object.defineProperties
 Object.assign() or Object.put() (these are the same, just different names)
 
-Extensive discussion around whether or not Object.define()        
+Extensive discussion around whether or not Object.define()
 
-Extensive discussion around whether or not Object.assign()        
+Extensive discussion around whether or not Object.assign()
 
 Derailed due to concise method's making non-enumerables, which means they won't copy if the rule disallows copying.
 
@@ -385,12 +385,12 @@ Object.assign( target, source )
 - Invoke [[Get]] on property list derived from source, for each property in list [[Put]] on target
 - private names are not copied
 - unique names are copied
-- super mechanism (rebind super)… AWB To determine needs 
+- super mechanism (rebind super)… AWB To determine needs
 - Returns modified "target"
 
 DH, MM, AWB: Object.assign a well worn enough cow-path to be worth paving. Object.define isn't, and so should only be standardized after libraries have explored the space.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 Accept Object.assign into ES6, but postpone Object.define (or something like it) to discussion of future versions.
 
@@ -412,7 +412,7 @@ EA: (reveals the broken-ness of the DOM)
 
 No longer arguable.
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 Concise method definitions create [[Enumerable]]: true
 
 
@@ -437,6 +437,6 @@ AWB: propose extra global contour, shared across all scripts, for new binding fo
 
 others skeptical of complexity of new scoping model for globals
 
-**Conclusion/Resolution**
+#### Conclusion/Resolution
 
 continued on second day, resolved then

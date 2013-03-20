@@ -3,9 +3,9 @@
 John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Rick Waldron (RW), Waldemar Horwat (WH), Tim Disney (TD), Eric Ferraiuolo (EF), Sam Tobin-Hochstadt (STH), Erik Arvidsson (EA), Brian Terlson (BT), Luke Hoban (LH), Matt Sweeney (MS), Doug Crockford (DC), Yehuda Katz (YK), Nebojša Ćirić (NC), Brendan Eich (BE)
 
 
-JN: …Welcome and introduction, agenda. Discussion of TG/TC procedural changes. Please review and feedback.
+JN: ...Welcome and introduction, agenda. Discussion of TG/TC procedural changes. Please review and feedback.
 
-…Adoption of the Agenda.
+...Adoption of the Agenda.
 
 WH: All of the initial agenda items are missing references. Can't figure out what some of them are referring to from just their titles.
 WH, JN: Please put proposal links (or other references) into agenda items like we did in the past.
@@ -20,7 +20,7 @@ AWB: Discussion about Proxy?
 
 STH: A lot of discussion about the interaction of Proxy and Private Names
 
-…Should we wait for Mark Miller?
+...Should we wait for Mark Miller?
 
 AWB: Nowhere near consensus on any point of discussion from the mailing list.
 
@@ -36,7 +36,7 @@ RW: Let's set this as an agenda item for the next meeting and try to reduce the 
 
 JN: Will add an agenda item for March.
 
-…Brief discussion about features that may or may not be ready; STH identifies: event loop (dependency of modules, Object.observe)
+...Brief discussion about features that may or may not be ready; STH identifies: event loop (dependency of modules, Object.observe)
 
 AWB: Two issues: Semantic completeness of the designs and what does it take to implement these into the language.
 
@@ -76,11 +76,11 @@ AWB: Revisits Dec 21, 2012 Draft changes
 
 Mixed discussion re: keeping up to date with the spec drafts, request for more technical-focused reviews.
 
-## __proto__.
+## `__proto__`.
 
-LH: Begins with raised points about __proto__…
+LH: Begins with raised points about `__proto__`...
 
-Mixed discussion about __proto__ semantics.
+Mixed discussion about `__proto__` semantics.
 
 AWB: There is an underlying feeling that we don't like this and we need to get over that.
 
@@ -88,7 +88,7 @@ LH/YK: Agree.
 
 DC, WH: Disagree.
 
-YK, DC: Discussion about __proto__ reality.
+YK, DC: Discussion about `__proto__` reality.
 
 YK: We need consistency.
 
@@ -98,11 +98,11 @@ Impasse.
 
 LH: Similar issues with block scoped function declaration incompatibilities.
 
-WH: We should give up on __proto__ in the same way that we gave up on "with"
+WH: We should give up on `__proto__` in the same way that we gave up on "with"
 
 EA: IE is implementing for web compatibility
 
-AWB: The defacto standard for mobile web uses __proto__
+AWB: The defacto standard for mobile web uses `__proto__`
 
 EA: IF we could go back, we would do it differently
 
@@ -110,23 +110,23 @@ YK: We just need compatibility
 
 LH: We need to just suck it up and standardize
 
-Mixed discussion re: user code and __proto__
+Mixed discussion re: user code and `__proto__`
 
-AWB: (clarifies) Luke is requesting that we pin down the __proto__ details as soon as possible.
+AWB: (clarifies) Luke is requesting that we pin down the `__proto__` details as soon as possible.
 
-WH/DC: (have concerns, against standardizing __proto__)
+WH/DC: (have concerns, against standardizing `__proto__`)
 
 YK/BE: Discussion re: interop with current implementations.
 
-BE: (Review of latest changes to __proto__ in Firefox)
+BE: (Review of latest changes to `__proto__` in Firefox)
 
 EA: Matches Safari
 
-BE: __proto__ is configurable (can be deleted), accessor (getter and setter throw), reflection does not leak.
+BE: `__proto__` is configurable (can be deleted), accessor (getter and setter throw), reflection does not leak.
 
 AWB: Involves magic
 
-BE: Yes, but minimal. (Confirms that latest __proto__ is out in wild, Firefox)
+BE: Yes, but minimal. (Confirms that latest `__proto__` is out in wild, Firefox)
 
 WH: Clarify "poisoning"?
 
@@ -136,15 +136,15 @@ WH: So how does it know when not to throw? (If it always throws then it won't wo
 
 EA: Throws if called with object and setter coming from different realms
 
-…Discussion re: MOP semantics with __proto__
+...Discussion re: MOP semantics with `__proto__`
 
 BE: Proxy has to stratify the MOP.
 
-AWB: Another issue… Objects that are non-extensible, can you change __proto__? Specifically, now that we're talking about being able to change __proto__, what type of objects can be changed?
+AWB: Another issue... Objects that are non-extensible, can you change `__proto__`? Specifically, now that we're talking about being able to change `__proto__`, what type of objects can be changed?
 
 BE: Wait for Mark?
 
-YK?: Changing __proto__ is a write, not adding a property, so it should not be affected by extensibility.
+YK?: Changing `__proto__` is a write, not adding a property, so it should not be affected by extensibility.
 
 AWB: Agree.
 
@@ -167,13 +167,13 @@ YK: The discussion was to move the world from ==?
 
 YK: The differences between === and is are significantly small.
 
-BE: On behalf of Dave Herman and Jason Orendorff… Syntax needs to be worth the expense and there options.
+BE: On behalf of Dave Herman and Jason Orendorff... Syntax needs to be worth the expense and there options.
 
 General agreement.
 
 WH: (question about new type NaNs)
 
-AWB: No spec provisions, currently…
+AWB: No spec provisions, currently...
 
 WH: Hypothetical discussion about new "decimal" type with a "decimal  NaN" and the implications of NaN equality. The issue that would arise would be that a decimal NaN would be unequal to itself but would be distinguishable from the regular Number NaN. Therefore the example code for how *users* could implement `is` wouldn't work. However, if `is` is a language feature, then an implentation can fix it up to behave correctly when it adds additional primitive types such as Decimal, just as it would fix up the behavior of ==, etc.
 
@@ -242,7 +242,7 @@ AWB: (Reminder of hash code pitfalls) But _only_ strict equality will be a disas
 
 AWB: [if we support both strict and other kinds of equality] suggest the default: +0/-0 are the same; NaN is a value, that is equal to itself for Map/Set equivalence.
 
-Assuming we have a mechanism to override…
+Assuming we have a mechanism to override...
 
 Ideally, we'd want to set this in the constructor, but there is already a single optional initializer argument.
 
@@ -329,13 +329,15 @@ API changes to be written up:
 - pseudo-numbering systems in NumberFormat
 
 
-## 4.5 Why standardizing on __proto__ and not __define(G|S)etter__, __lookup(G|S)etter__?
+## 4.5 Why standardizing on `__proto__` and not `__define(G|S)etter__`, `__lookup(G|S)etter__`?
 (Based on a recent es-discuss thread)
 
-Why __proto__ normative mandatory in ES6 but no __define/lookup... is:
-1. __proto__ much more used on the mobile (iOS WebKit-first) web, no equivalent interop pressure for __d/l.
-2. ES5 is in all new/evergreen browsers and it has standard APIs supplanting __d/l but nothing for writing to __proto__.
-Therefore __proto__ gets standardized, __d/l do not.
+Why `__proto__` normative mandatory in ES6 but no `__define/lookup...` is:
+
+1. `__proto__` much more used on the mobile (iOS WebKit-first) web, no equivalent interop pressure for __d/l.
+2. ES5 is in all new/evergreen browsers and it has standard APIs supplanting `__d/l` but nothing for writing to `__proto__`.
+
+Therefore `__proto__` gets standardized, `__d/l` do not.
 
 
 Rationale for not adding Object.setPrototypeOf
@@ -344,7 +346,7 @@ https://mail.mozilla.org/pipermail/es-discuss/2012-May/022904.html
 
 **Conclusion/Resolution**
 
-Consensus that __define(G|S)etter__, __lookup(G|S)etter__ will not be standardized, nor added to an Appendix.
+Consensus that `__define(G|S)etter__`, `__lookup(G|S)etter__` will not be standardized, nor added to an Appendix.
 
 
 
@@ -356,15 +358,15 @@ Slides (pdf): http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting
 
 The Basic Issue:
 * Object Allocation and object initialization are separable issues.
-* Subclassable abstractions require program level control…
+* Subclassable abstractions require program level control...
 
 
 Why Doesn't this work?
 
 ```js
 class Vector extends Array {
-  constructor(…args) {
-    super(…args);
+  constructor(...args) {
+    super(...args);
   }
 }
 
@@ -377,7 +379,7 @@ a.length; // 6
 v.length; // 0
 ```
 
-**Because…**
+**Because...**
 
 * Array uses a special exotic object representation that changes the semancs of [[DefineOwnProperty]].
 
@@ -454,7 +456,7 @@ BE: `new Number()` <=> `Number.call(Number[@@create]())`
 
 AWB: Built-in @@create methods are non-writable, non-configurable. Just like built-in "prototype" properties (From slides).
 
-… Back to slides.
+... Back to slides.
 
 **@@create Also Useful for Application Classes**
 
@@ -484,7 +486,7 @@ Object.mixin( Foo, {
 
 WK: The @@create could be hijacked and used to brand some other object with my object's brand.
 
-AWB: No different from hijacking from an Array or Date…
+AWB: No different from hijacking from an Array or Date...
 
 WK: Good for branding case, not for security
 
@@ -498,7 +500,7 @@ Consider ES5+ Reality:
 ```js
 function T() {
   var obj = [];
-  obj.__proto__ = T.prototype;
+  obj.`__proto__` = T.prototype;
   return obj;
 };
 
@@ -573,11 +575,11 @@ Consensus on @@create, allocation and initialization decoupling.
 * `Object.isInitialized(obj)` is a new method that only returns false if obj is an object that is in the initialized state.
 * Object.create(), {}, [] and various built-in functions create objects that are already initialized (backwards compat)
 
-**Semantics…**
+**Semantics...**
 
 ```js
 // Decoupling allocation and initialization:
-// Calling new X()…
+// Calling new X()...
 class X {         // 1. X[@@create](), allocation
   constructor() { // 2. Initialization
     super();
@@ -591,11 +593,11 @@ EA: Worth the additional bit? Is the need common enough to address with new lang
 
 What about @call?
 
-MM: @construct? If one is specified, otherwise … super call vs. super construct (Mark—Sorry, I had trouble following this—can you fill this in? Thanks!)
+MM: @construct? If one is specified, otherwise ... super call vs. super construct (Mark—Sorry, I had trouble following this—can you fill this in? Thanks!)
 
 MM: Are there any objections to the parallel @construct entry point.
 
-YK: It makes less sense in the ES6 context, since classes are focused around defining a constructor…
+YK: It makes less sense in the ES6 context, since classes are focused around defining a constructor...
 
 MM: I see, then call is the odd-ball. Agree with the objection.
 
@@ -615,7 +617,7 @@ AWB: All functions are constructible, when a function is "newer", something happ
 
 AWB/YK: (Discussion re: existing semantics of function call and construct)
 
-BE: The idea of having state in objects for initialization…
+BE: The idea of having state in objects for initialization...
 
 WH: The main point of the discussion was that many are uncomfortable with adding an extra bit of state to objects to define whether they're initialized or not and, worse, that state is not a reliable indicator of whether a function was called via Foo() or new Foo(). Someone could forget to set the initialized bit (in a variety of ways) and disrupt further code at a low level. The consensus seemed to be to get rid of that state and instead use either separate call and construct code or some way to detect whether code was called as a function or as a constructor, although we hadn't decided on the details
 
@@ -625,7 +627,7 @@ WH: The main point of the discussion was that many are uncomfortable with adding
 
 **Various Oddities/Backward Compat Issues, 1**
 
-…Missed first slide…
+...Missed first slide...
 
 **Various Oddities/Backward Compat Issues, 2**
 
@@ -640,7 +642,7 @@ WH: The main point of the discussion was that many are uncomfortable with adding
 * Similar result object handling for slice, splice, map, filter(?)
 
 (Re: Bullet 1)
-WH: Concerned about the proliferation of "types of an object"… class, prototype, type… species?
+WH: Concerned about the proliferation of "types of an object"... class, prototype, type... species?
 
 (Re: Bullet 2)
 Discussion focuses around built-ins whose prototype property are first-born instances of that object, eg. `Array.prototype` is an `Array`. The desire was to remove this from ES6, however there a slew of issues that are not specifically edge cases rise to the surface.
@@ -716,7 +718,7 @@ LH: (Identifies a dark future that hinges on "use strict")
 
 MM: That should be the future.
 
-…
+...
 YK: Are there intersections of existing implementations that can be spec'ed?
 
 Mixed discussion.

@@ -89,7 +89,7 @@ MM: ES has a grammatical specification for validating and parsing JSON. Anything
 
 DC: Or we don't change the spec
 
-MM: The way that you properly reject our favorite fixes, I thinkk you should apply to your favorite fixes
+MM: The way that you properly reject our favorite fixes, I think you should apply to your favorite fixes
 
 DC: I'll consider that
 

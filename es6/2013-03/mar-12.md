@@ -30,6 +30,9 @@ JP: Also excited about asm.js
 
 BM: Not sure about the spec status/prospects of asm.js.
 
+Edit (2013-03-22)
+http://blogs.adobe.com/standards/2013/03/21/adobes-ecma-tc-39-involvement
+
 
 ## 4.9 JSON, IETF changes
 (Presented by DC Crockford)

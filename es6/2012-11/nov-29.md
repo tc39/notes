@@ -374,10 +374,12 @@ Return to two step on Array.from and iterator protocol on for-of, spread.
 Add iterator protocol to arguments object (should exist on all things.
 
 Array.from:
+
 1. Iterator protocol
 2. Array-Like
 
 for-of & spread:
+
 1. Iterator protocol
 
 

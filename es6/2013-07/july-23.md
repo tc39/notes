@@ -292,12 +292,11 @@ DH: The middle ground...
   @@withinvisible, well known symbol
 
 ```js
-Array.prototype[ @@withinvisible ]
-  = [
-    "values",
-    "keys",
-    "entries"
-  ]
+Array.prototype[ @@withinvisible ] = [
+  "values",
+  "keys",
+  "entries"
+];
 ```
 
 AVK: Might have a more generic name, can be used with event handlers
@@ -306,12 +305,11 @@ DH: `@@unscopable`?
 
 
 ```js
-Array.prototype[ @@unscopeable ]
-  = [
-    "values",
-    "keys",
-    "entries"
-  ]
+Array.prototype[ @@unscopeable ] = [
+  "values",
+  "keys",
+  "entries"
+];
 ```
 
 

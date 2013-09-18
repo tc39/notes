@@ -57,10 +57,10 @@ ARB: These are simply the requirements.
   - Rest Parameters
 - New Rules:
     1. Parameter lists introduce "let bindings" in the top level scope of the function
-  A. No duplicate param names
-  B. Parameter names may not be the same as any other function top-level
+      A. No duplicate param names
+      B. Parameter names may not be the same as any other function top-level
     2. TDZ rules apply to parameter default value initializers
-  A. Hoisted top-level function/var declaration are initialized after parameter initialization
+      A. Hoisted top-level function/var declaration are initialized after parameter initialization
     3. "strict" arguments object (copy of actual args, no parameter joining)
 
 

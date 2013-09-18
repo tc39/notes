@@ -56,12 +56,12 @@ ARB: These are simply the requirements.
   - Default value initializers
   - Rest Parameters
 - New Rules:
-    1. Parameter lists introduce "let bindings" in the top level scope of the function
-      A. No duplicate param names
-      B. Parameter names may not be the same as any other function top-level
-    2. TDZ rules apply to parameter default value initializers
-      A. Hoisted top-level function/var declaration are initialized after parameter initialization
-    3. "strict" arguments object (copy of actual args, no parameter joining)
+    - Parameter lists introduce "let bindings" in the top level scope of the function
+      - No duplicate param names
+      - Parameter names may not be the same as any other function top-level
+    - TDZ rules apply to parameter default value initializers
+      - Hoisted top-level function/var declaration are initialized after parameter initialization
+    - "strict" arguments object (copy of actual args, no parameter joining)
 
 
 DH/YK/LH: This is problematic for extant offending code, that is updated to use ES6 syntax. One syntax change shouldn't have adverse effects on other, not directly related, syntax.

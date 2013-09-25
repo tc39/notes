@@ -1,4 +1,4 @@
-## # Sept 19 Meeting Notes
+### Sept 19 Meeting Notes
 
 
 John Neumann (JN), Dave Herman (DH), Istvan Sebestyen (IS), Alex Russell (AR), Allen Wirfs-Brock (AWB), Erik Arvidsson (EA), Eric Ferraiuolo (EF), Doug Crockford (DC), Luke Hoban (LH), Anne van Kesteren (AVK), Brian Terlson (BT), Rick Waldron (RW), Waldemar Horwat (WH), Rafael Weinstein (RWS), Boris Zbarsky (BZ), Domenic Denicola (DD), Tim Disney (TD), Niko Matsakis (NM), Jeff Morrison (JM), Sebastian Markbage (SM), Oliver Hunt (OH), Sam Tobin-Hochstadt (STH), Dmitry Lomov (DL), Andreas Rossberg (ARB), Matt Sweeney (MS), Reid Burke (RB), Philippe Le Hégaret (PLH), Simon Kaegi (SK), Paul Leathers (PL), Corey Frang (CF), Mark Miller (MM)
@@ -14,7 +14,7 @@ DH: That's not YK's position. He wants to not throw.
 
 DH/AR: The way you pull things out of an object is to do a [[Get]] wich does not throw and returns `undefined`
 
-WH: What about `{x} = undefined`?
+WH: What about `{a:b, c:{x}} = {}`? If you emulate the [[Get]] model, you'll still throw on a two-level destructuring pattern. Not clear what the useful point of sometimes soft-failing and sometimes hard-failing, even within the same pattern, is.
 
 DH: That is not the same issue.
 
@@ -222,6 +222,8 @@ MM: I would be over-joyed to have this in ES6
 
 DH: Most important to this: Domenic, Anne and whoever need to provide Allen with complete works as needed.
 
+WH: It's weird that if having a "then" property that's not a function is equivalent to not having a "then" property (the object is considered non-thenable), but having a "then" property that throws prevents the object from being returned from a promise. Too ad-hoc.
+
 WH: Let's say we introduce structs where if you mis-define fields it throws?
 
 DD: if you introduce changes like that, you'll have to re-factor checks throughout the spec and .then can be refactored in kind
@@ -230,7 +232,9 @@ DC: To be clear, a thenable is:
 
 DD: An object that has a .then property whose value is a function (is callable)
 
-WH/DC: ok
+WH: understood (but don't like it)
+
+DC: ok
 
 AWB: A bit of legacy around "callable"...
 
@@ -247,7 +251,7 @@ AWB: These callability tests are unnecessary?
 
 DD: Proven to be necessary
 
-WH: To avoid objects with .then that isn't callable... Why aren't we using [a well known symbol]?
+WH: To avoid objects with .then that isn't callable... Why aren't we using [a well known symbol] instead of the string "then"?
 
 AR/DH: There is no way we can introduce this feature that has a change like that.
 - A lot of existing code to interop with
@@ -303,11 +307,17 @@ MM: I'm fine with this as long as it maintains the ability to keep a replica con
 
 AWB: Would it be ok to not record property changes on array propert changes.
 
+WH: What kind of a change record would "sort" generate? In particular, how would the change record describe how the array was sorted (ascending, descending, by what key?)?
+
 RWS: If the array only said it was sorted then the code would need to keep a copy around to know what happened.
+
+WH: In that case would reverse also emit a sorted change record?
 
 AVK: Is "sort" proposed.
 
 EA: No
+
+(discussion about observing changes of attributes such as making an object non-extensable)
 
 AWB: It is uncommon to care about property changes for lists.
 
@@ -352,11 +362,11 @@ RWS: This is an antipattern. We don't want to split the callback like that becau
 
 RW: The misunderstanding: the list of change types is a "white list" of change types to include in the change list, not a 1-to-1 "events to handle" list.
 
-WH: Want the names to be present tense, new, update, delete, prototype, reconfigure
+WH: Want the names to be consistently present tense: new, update, delete, prototype, reconfigure
 
 RWS: prototype is used when [[Prototype]] is changed
 
-WH: how often do you observe an object whose prototype chain changes
+WH: how often do you observe an object whose prototype chain changes?
 
 RWS: well, a common use case is using the prototype chain to represent concentric scopes, e.g. Angular
 
@@ -378,6 +388,8 @@ WH/DD: the names on this slide are weird. "deleted" doesn't work (it's already u
 
 RWS: Agreed, there is a namespacing issue.
 
+WH: Would prefer to keep the simple notification names ("splice", "set", etc.) to match method names that generate those notifications. It would be bad if we got into a pattern where method Foo generated ArrayFoo notifications when used on arrays, MapFoo notifications when used on maps, etc. This would be an annoying abstraction leak for observers who don't care which particular data structure is used to store the things being observed.
+
 RW: Map and Set operations have potential to be deceptive; since the actual data is held internally, freeze operations have no effect (freeze is on the surface for tamper proofing), so there might be a situation where a Map or Set is "accidentally" assumed to be locked down but is still observable. FWIW, I do like the addition of change observation for Map and Set.
 
 MM: Freeze is not about freezing the object, it is about making it tamper proof. I think we can postpone this to ES7.
@@ -386,9 +398,13 @@ RW: (to RWS) we can talk about this more offline
 
 AVK: it would be nice if there was a recommendation for how to do namespacing, for other specs etc.
 
+WH: Asks about ordering semantics
+
 RWS: there is an unresolved issue about ordering of different types of work in microtasks (promises vs. `MutationObserver`s vs. `Object.observe`); this is still undecided.
 
 ... Moved on to the performance slides.
+
+WH: The slides are comparing the proposed language mechanism to polling, which is a bad choice for the comparison control group. If I were implementing observers in existing ES5, I definitely would not do polling; I'd set dirty flags and keep a list of dirty things. That should be the control group for the performance comparisons.
 
 RWS: the point of these graphs was not to show anything particularly interesting, but to show that there were no major surprises awaiting implementations.
 
@@ -452,6 +468,8 @@ DH: The order is non deterministic. That is the big difference. And this makes i
 
 NM: THe order is only crucial for reduce.
 
+WH: Even if an operation has no side effects, if several of the constituents of a map throws, you might get the wrong exception.
+
 WH/NM: (discussion about definition of side effect, whether throw is a side effect.)
 
 NM: 1) mutation of external state; throws; and straying into native code (that we don't have a safe version of).
@@ -464,7 +482,7 @@ NM: it's also useful to have a specification available for users to read to unde
 
 NM: for example we only lazily make `function.arguments` do crazy things, so that's not an easy thing to spec.
 
-WH: do we really need new parallel/nondeterministic array methods?
+WH: do we really need new nondeterministic array methods? I agree that you don't want reduce operations that have serial semantics (add first element to second, the sum to the third, the sum to fourth, etc.) but could deterministic tree operations (add elements pairwise, then add the pair sums, then add those in paris, etc.) be sufficient?
 
 NM: the main one is `reduce`. You *can* do a tree-reduction, but that is not always the right thing to do on all architectures; it has a performance cost.
 
@@ -550,11 +568,10 @@ AWB: It's useful for any objects that have iternal data (like Date)
 
 
 #### Consensus/Resolution
-
 - Global
-  - Symbol
-  - Reflect
-  - System
+- Symbol
+- Reflect
+- System
 
 - Well-known symbols defined as properties of Symbol
 - using given name, no "@@"

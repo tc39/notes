@@ -1,4 +1,4 @@
-### Sept 19 Meeting Notes
+# Sept 19 Meeting Notes
 
 
 John Neumann (JN), Dave Herman (DH), Istvan Sebestyen (IS), Alex Russell (AR), Allen Wirfs-Brock (AWB), Erik Arvidsson (EA), Eric Ferraiuolo (EF), Doug Crockford (DC), Luke Hoban (LH), Anne van Kesteren (AVK), Brian Terlson (BT), Rick Waldron (RW), Waldemar Horwat (WH), Rafael Weinstein (RWS), Boris Zbarsky (BZ), Domenic Denicola (DD), Tim Disney (TD), Niko Matsakis (NM), Jeff Morrison (JM), Sebastian Markbage (SM), Oliver Hunt (OH), Sam Tobin-Hochstadt (STH), Dmitry Lomov (DL), Andreas Rossberg (ARB), Matt Sweeney (MS), Reid Burke (RB), Philippe Le Hégaret (PLH), Simon Kaegi (SK), Paul Leathers (PL), Corey Frang (CF), Mark Miller (MM)
@@ -558,7 +558,7 @@ AWB: need to discuss @@toPrimitive
 
 RW: Does this really need to be exposed?
 
-AWB: It's useful for any objects that have iternal data (like Date)
+AWB: It's useful for any objects that have internal data (like Date)
 
 
 

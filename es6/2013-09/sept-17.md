@@ -1,4 +1,3 @@
-
 # Sept 17 Meeting Notes
 
 

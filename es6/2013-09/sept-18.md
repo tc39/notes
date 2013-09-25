@@ -26,6 +26,9 @@ Post meeting update: Dmitry and I discussed the issue and our
  recommendation is that Typed Array instances should come into existance being extensible. This is only about the objects created by the current set of built-in typed array constructors (or any subclasses derived from them). It does not imply that fixed size array types introduced by the future typed objects proposal will necesarily also be extensible.
 -- Allen
 
+As part of that consensus, variable-length (but not fixed-length!) typed array instances that are part of a future Typed Object spec should also be extensible in the same way as current Typed Array objects. In that way, full compatibility and equivalence between say "Uint8Array" and "new ArrayType(uint8)" will be maintained. As part of typed objects proposal, we will also consider having a different "type constructor" names for variable- and fixed-length typed arrays (e.g. "new ArrayType(uint8)" vs. "new FixedArrayType(uint8, 10)").
+-- Dmitry
+
 4.4 Symbols
 
 Dave Herman presenting (follow up slides)

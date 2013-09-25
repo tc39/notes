@@ -497,7 +497,7 @@ AWS: A version of region based collection.
 
 
 
-## Newly Added Global Object
+## Newly Added to Global Object
 
 DH: Straw proposal `Symbol.iterator`, `Symbol.create`
 

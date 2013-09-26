@@ -282,7 +282,6 @@ AWB: Explicitly checking for "object"
 
 DH: Existing code breaking, this needs to be considered.
 - New code can find old code that can be fixed
--
 
 RW: Will put Symbol through jQuery in test suite to see what "breaks"
 

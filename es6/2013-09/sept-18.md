@@ -703,8 +703,6 @@ ARB: Two Issues
 Solution:
 
     - Defaults should behave as if provided by wrapper function
-    -
-    -
 
 Solution:
     - Evaluate defaults in seperate scope
@@ -766,11 +764,10 @@ BE: In the example that binds
 
 
 AWB:
-    - parameters are in separate scope contour
-    - visible to the body scope
-    - the body is disallowed from creating
-
-    - "namespace" for parameters
+- parameters are in separate scope contour
+- visible to the body scope
+- the body is disallowed from creating
+- "namespace" for parameters
 
 
 
@@ -796,14 +793,14 @@ ARB: Cannot, because of eval.  A delayed eval in the parameter list must not see
 ```js
 
 function g() {
-    return 3 * 3;
+  return 3 * 3;
 }
 
 function f(h = () => eval("g()")) {
-function g() {
-return 2 * 3;
-}
-h();
+  function g() {
+    return 2 * 3;
+  }
+  h();
 }
 
 ```
@@ -813,8 +810,8 @@ AWB: Agreed
 
 DH: (post-clarification)
 - Two Scopes
-- The Function Head/parameter list
-- The Function Body
+    - The Function Head/parameter list
+    - The Function Body
 
 In the function head/parameter list, cannot see the scope to the right (the function body).
 
@@ -834,13 +831,13 @@ AWB: The spec currently says var-like bindings. If you have new syntax, they're 
 // If...
 
 function f(x) {
-var x;
+  var x;
 }
 
 // changes to...
 
 function f(x = {}) {
-var x;
+  var x;
 }
 
 // No difference.
@@ -848,7 +845,7 @@ var x;
 // But changes to...
 
 function f(x = {}) {
-let x;
+  let x;
 }
 
 // Error for redeclaration.
@@ -863,7 +860,7 @@ WH: (whiteboard) What is the value of y in this example? 5 or 2?
 
 ```js
 function f( x=(y=3, 2), y ) {
-    console.log( x, y );
+  console.log( x, y );
 }
 f(undefined, 5);
 ```
@@ -875,7 +872,7 @@ CF: What about:
 var y = 2;
 
 function f( x=y, y=3 ) {
-    console.log( x, y );
+  console.log( x, y );
 }
 f();
 ```
@@ -890,8 +887,11 @@ f(undefined, 2);
 ```
 
 AWB: The original value of the parameter is used to decide whether to default it or not.
+
 BE: Surprised. Unhappy with having to store the original values of the parameters, thereby making for two copies of each one.
+
 AWB: Already need to do this for the arguments object.
+
 BE: The arguments object is easy to statically detect. These are more insidious.
 
 (no clear resolution)
@@ -905,8 +905,8 @@ BE: We agreed on two scopes. Head and body.
 #### Consensus/Resolution
 
 - Two Scopes
-- Head/Parameter List
-- Body
+    - Head/Parameter List
+    - Body
 - Temporal dead zone?
 - Details unresolved?
 

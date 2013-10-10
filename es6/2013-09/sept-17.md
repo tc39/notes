@@ -881,7 +881,7 @@ AVK: According to Norbert, the character in question was not part of Unicode 3.0
 
 - No change
 - SpiderMonkey: https://bugzilla.mozilla.org/show_bug.cgi?id=917436
-- V8: ??
+- V8: https://code.google.com/p/v8/issues/detail?id=2892
 
 
 

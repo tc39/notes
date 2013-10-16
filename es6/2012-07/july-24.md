@@ -474,7 +474,7 @@ foo()    // 0
 
 
 Need summary.
-decision:  change spec. to make undefine trigger use of default value.
+decision:  change spec. to make undefine trigger use of default value.*
 
 
 C. Unresolved issues related to iterator naming/access
@@ -506,7 +506,9 @@ f.apply(f, args);
 
 ```
 
-Summary:
+#### Consensus/Resolution
+
+* change spec. to make undefine trigger use of default value.
 
 (DH)
 iterator is a unique name -- can't be public because iterable test not

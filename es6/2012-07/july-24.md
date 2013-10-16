@@ -18,7 +18,7 @@ July agenda adopted
 
 May minutes approved
 
-# 4.1 AWB Presents changes resulting in latest Draft
+## 4.1 AWB Presents changes resulting in latest drafts
 
 Draft related bug filing
   Increased community participation, a good thing
@@ -54,7 +54,8 @@ STH: call should be in tail position. Clarification of known call site
 syntax, per spec.
 
 
-Summary:
+#### Consensus/Resolution
+
   Anything that could invoke user written code in a tail position to
 act as a tail call.
 
@@ -68,7 +69,7 @@ an attribute grammar, but the current spec draft leaves this blank.
 Filed: https://bugs.ecmascript.org/show_bug.cgi?id=590
 
 
-# 4.5 RegEx "Web Reality"
+## 4.5 RegEx "Web Reality"
 (http://wiki.ecmascript.org/doku.php?id=strawman:match_web_reality_spec)
 
 Introduction to discussion by Luke Hoban
@@ -131,13 +132,13 @@ Decision: LH and NL to collaborate on integrated proposal
 
 
 
-# 4.7 Adding forEach to Map and Set
+## 4.7 Adding forEach to Map and Set
 http://wiki.ecmascript.org/doku.php?id=harmony:simple_maps_and_sets
 
 Deferred, got to it on third day
 
 
-# 4.9 getClassNameOf
+## 4.9 getClassNameOf
 
 BE: Recap, last meeting there was discussion about getting a strawman from
 YK
@@ -189,7 +190,7 @@ AR: 2 things:
 2. How to correctly fix w/o making more surface area for the wrong thing
 
 
-Summary
+#### Consensus/Resolution
 
 There is worry that changes to spec that affect the return of toString will
 have adverse impact on existing libraries and users when they encounter new
@@ -204,13 +205,13 @@ they happen in JS not only "because they can" -- sometimes because of
 built-ins you need to know
 
 
-# 6 Internationalization Standard
+## 6 Internationalization Standard
 
 Norbert Lindenberg: (Introduction and opening discussion)
 
 Discussion, re: contributors
 
-# 6.1 Last call for feedback before final draft
+## 6.1 Last call for feedback before final draft
 
 Function length values? Using ES5 section 15 rules would cause respecified
 functions like String.prototype.localeCompare to have larger length values;
@@ -243,9 +244,9 @@ NL will have the final draft prepared for September meeting, but will
 produce drafts leading up to that meeting.
 
 
-# 6.2 Microsoft and Google are implementing prototypes
+## 6.2 Microsoft and Google are implementing prototypes
 
-# Unicode support
+## Unicode support
 
 AWB:
 
@@ -333,7 +334,7 @@ DH: fair enough, just spitballing
 AWB: what about code point iteration from end to beginning? and also
 codePointIndexOf? don't have those yet
 
-# 4.1 (cont) Processing full Unicode Source Code
+## 4.1 (cont) Processing full Unicode Source Code
 
 String Value
 
@@ -375,7 +376,7 @@ based on UTF-16 indices. Abstractions don't require different indices.
 Need more here.
 
 
-# 4.13 Destructuring Issues
+## 4.13 Destructuring Issues
 
 A. Patterns discussion on es-discuss
 

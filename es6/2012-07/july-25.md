@@ -52,6 +52,7 @@ what happens?
 DH: (board notes)
 
 1) 2 Contours, Nested "REPL"
+
 ------------------
 - var, function go in global
 - let, const, module, class… all get modeled lexically as usual in inner
@@ -59,6 +60,7 @@ contour
 - each script's inner contour is embedded in previous script's inner contour
 
 2) 2 Contours, Not Nested "Uniform Let"
+
 ------------------
 - var, function, go in global
 - let, const, module, class… all get modeled lexically as usual in inner
@@ -66,6 +68,7 @@ contour
 - each script's inner contour is "private" to that script
 
 3) 1 Contour, Global "Traditional"
+
 ------------------
 - var, function, let, const, module, class… everything is a property of the
 global object.
@@ -75,6 +78,7 @@ global object.
 
 
 4) 2 Contours, Not Nested - Merged "Expando"
+
 ------------------
 - var, function, go in global
 - let, const, module, class… all lexical
@@ -100,6 +104,7 @@ DH: Agrees. Explains where "Expando" fixes the problems of "Traditional".
 This would identify that "x" was declared with "let" and so forth.
 
 STH:
+
 -------------------------------------------
 A.
 ```html

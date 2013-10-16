@@ -8,7 +8,7 @@ Neumann (JN), Erik Arvidsson (EA), Dave Herman (DH), Norbert Lindenberg
 (NL), Oliver Hunt (OH)
 
 
-# Scoping Rules for Global Lexical Declaration
+## Scoping Rules for Global Lexical Declaration
 
 AWB:
 
@@ -215,7 +215,9 @@ YK: The concat reality.
 
 DH, BE: Agree on opposing concat hazards
 
-Summary: #3 is the path. Champions spec this out and present for next
+#### Consensus/Resolution
+
+- #3 is the path. Champions spec this out and present for next
 in-person. (AWB, ARB, DH, RW)
 
 **UPDATE**
@@ -223,7 +225,7 @@ in-person. (AWB, ARB, DH, RW)
 
 
 
-# Object.observe
+## Object.observe
 (Presented By Rafeal Weinstein)
 http://wiki.ecmascript.org/doku.php?id=strawman:observe
 
@@ -321,6 +323,8 @@ BE: agree with DH, want to avoid premature/overlarge spec, do want
 implementation and user-testing. Let other impls know when spec is ready
 for trial impl.
 
+#### Consensus/Resolution
+
 Summary of next steps:
 
 DH: Coordinate with YK colleague, to do real world work. Update TVCs
@@ -336,7 +340,7 @@ RWS: Agree and will arrange.
 
 
 
-# Weak References
+## Weak References
 
 DH: The GC issue.
 
@@ -371,7 +375,7 @@ myself, which they can live with, but it's definitely less convenient;
 anyway, setTimeout FTW
 
 
-# Script Concat Issue
+## Script Concat Issue
 
 DH: remember that the purpose of ES6 modules is to do sync-style loading
 without runtime blocking on I/O; this means that if you want to do
@@ -417,7 +421,7 @@ Discussion about the reality of concatenation hazards of modules
 Defer, but still open for future discussion.
 
 
-# Fix "override mistake", aka. The can put check
+## Fix "override mistake", aka. The can put check
 (http://wiki.ecmascript.org/doku.php?id=strawman:fixing_override_mistake)
 
 ```js
@@ -439,5 +443,7 @@ Causes SES/Caja grief on impls that follow spec. Must replace proto-props
 in prototype object to be frozen with accessors where the set function
 manually shadows.
 
-Summary: There is no change for now, needs to be looked at when subclassing
+#### Consensus/Resolution
+
+There is no change for now, needs to be looked at when subclassing
 is addressed.

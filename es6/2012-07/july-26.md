@@ -7,7 +7,7 @@ Crockford (DC), John Neumann (JN), Erik Arvidsson (EA), Dave Herman (DH),
 Norbert Lindenberg (NL), Oliver Hunt (OH)
 
 
-# Maxmin class semantics
+## Maxmin class semantics
 
 YK: namespacing pattern: class that goes inside existing object; like
 Ember.View
@@ -493,7 +493,7 @@ there will be many, many bugs
 BE: irreducible complexity  here, caveat refactorer
 
 
-# getPrototypeOf trap
+## getPrototypeOf trap
 
 TVC: (introduction)
 
@@ -634,7 +634,7 @@ See slide?
 
 BE/AWB: defer this to reflect spec handling, non-observable way.
 
-# Proxies and private names
+## Proxies and private names
 
 TVC: getName(target, name.public) instead of get(target, name.public) --
 this way get trap that doesn't expect name objects won't break on
@@ -733,7 +733,7 @@ AWB: sounds like an ES5 bug!
 
 
 
-# VirtualHandler
+## VirtualHandler
 
 VirtualHandler
 Rename VirtualHandler to just Handler?
@@ -744,7 +744,7 @@ Tom Van-Cutsem's Proxy presentation slides:
 http://soft.vub.ac.be/~tvcutsem/invokedynamic/presentations/TC39-Proxies-July2012.pdf
 
 
-# Template strings 
+## Template strings
 (http://wiki.ecmascript.org/doku.php?id=harmony:quasis)
 
 AWB: first order of business, to ban the term "quasis"
@@ -821,7 +821,7 @@ AWB: what's left on the agenda?
 RW: Erik is gonna take another whack at the error stack proposal
 
 
-# Map and Set methods: conclusion
+## Map and Set methods: conclusion
 
 
 BE: forEach on maps and sets -- how about common signature, set passes e as
@@ -836,11 +836,11 @@ set    s.forEach((e, e, s) => ~~~)
 FILED: https://bugs.ecmascript.org/show_bug.cgi?id=591
 FILED: https://bugs.ecmascript.org/show_bug.cgi?id=592
 
-# Wiki
+## Wiki
 
 DH: I'd love help with a documentation hack day for the wiki
 
-# Scoping for C-style loops
+## Scoping for C-style loops
 
 <!--
 NL: the wiki page for `` makes it sounds like they solve problems for

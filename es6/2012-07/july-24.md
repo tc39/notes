@@ -41,7 +41,7 @@ YK: and accessors
 
 STH: Agree.
 
-…discussion of examples
+...discussion of examples
 
 AWB: Differences between accessor calls as they apply to proxy call traps,
 not definitively identifiable at syntax level. The function call operator
@@ -78,7 +78,7 @@ LH: Attempted to write a guide to make regex specification match current
 implementation wherein order of production matters. See *15.10.1 Patterns*
 in above link.
 
-…Gives specfic examples from 15.10.1
+...Gives specfic examples from 15.10.1
 
 Discussion between AWB and LH re: semantic annotations and redefinition.
 
@@ -99,7 +99,7 @@ LH: (Refers to examples)
 NL: Do these affect unicode? We had agreement at previous meeting that web
 reality changes would not be applied in Unicode mode (/re/u).
 
-LH: This is what regex is in reality… Waldemar did not want to specify
+LH: This is what regex is in reality... Waldemar did not want to specify
 because it's too hard to specify, but now the work is done
 
 AWB: Too hard is not an excuse to not specify, good that the work is now
@@ -364,9 +364,9 @@ What's here, valid surrogate pair?
 
 DH: Mixing the API levels is problematic, should it be scrapped?
 
-…The problem in naming is the "At"
+...The problem in naming is the "At"
 
-…If we're going to build code point abstractions, we really need a new data
+...If we're going to build code point abstractions, we really need a new data
 type.
 
 NL: ICU has iterators for grapheme clusters, words, sentences, lines – all
@@ -466,7 +466,7 @@ Note same rules are used for both formal parameter default values and
 destructuring default values.
 
 ```js
-let foo = (…x) => x.length;
+let foo = (...x) => x.length;
 
 foo(undefined) // 1
 foo()    // 0
@@ -495,12 +495,12 @@ function list(x) {
     x;
 }
 
-[a, …] = list(jQuery(selector));
-[a, …] = list([…]);
-[a, …] = list(function *() { … });
+[a, ...] = list(jQuery(selector));
+[a, ...] = list([...]);
+[a, ...] = list(function *() { ... });
 
 
-f.call(f, …args)
+f.call(f, ...args)
 same as
 f.apply(f, args);
 
@@ -519,8 +519,8 @@ Destructing and spread - no iterator protocol.
 and array-like])
 
 
-Array.from should… (this is a change to current specification)
-  1. Attempt to use the iterable protocol, if cannot…
+Array.from should... (this is a change to current specification)
+  1. Attempt to use the iterable protocol, if cannot...
   2. Fall back to using Array-like protocol
   3. Always return a copy
 

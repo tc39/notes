@@ -504,7 +504,7 @@ Frozen objects should continue to have stable prototype chain
 getPrototypeOf trap result should be consistent wth target object's proto
 
 
-MM: if the proto can be changed, the proxy should…?
+MM: if the proto can be changed, the proxy should...?
 
 TVC: spec interceptable [[Prototype]]
 
@@ -535,7 +535,7 @@ var p = Proxy(target, handler)
 p.__proto__ // => handler.get(target, "__proto__", p)
 p.__proto__ = x // => handler.set(target, "__proto__", x, p)
 ```
-…
+...
 
 Trapping instanceof
 
@@ -553,7 +553,7 @@ x instanceof fp // handler.hasInstance(targetFunction, x)
 
 MM: Explains concerns originally raised on es-discuss list by David Bruant,
 but shows the cap-leak is tolerable
-…
+...
 
 DH: if hasInstance private name on instanceof RHS...
 
@@ -616,14 +616,14 @@ impls and proxies. Not good for standardization. Better to make such
 built-ins generic via Name object internal property identifiers, a la AWB's
 subclassing built-ins strawman
 
-Discussion moved to Subclassing…
+Discussion moved to Subclassing...
 
 MM: re: what you want syntax wise
 
 AWB: one way to address, not use instance that is automattically created,
 create new array and patch the proto
 
-… BE: (back to nativeCall trap)
+... BE: (back to nativeCall trap)
 
 
 AWB: Let's continue the issue of subclassability on es-discuss

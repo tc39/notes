@@ -59,7 +59,7 @@ LH:
 
 
 AWB:
-- Either NL or LH can draft replacement text for 
+- Either NL or LH can draft replacement text for
 			15.9.1.6 and 15.9.1.8
 
 more discussion.
@@ -84,7 +84,7 @@ Alex Russel:
 MM:
 - Run program code to completion, etc.
 
-LH: 
+LH:
 - last execution context
 
 AWB:
@@ -142,7 +142,7 @@ RWeinstein:
 - What if this didn't apply to Proxy?
 
 BE:
-- The DOM…
+- The DOM...
 
 More discussion regarding security, naivety of proposal
 
@@ -153,7 +153,7 @@ RWeinstein:
 - Asking for blessing to prototype in v8: approved.
 
 
-Resolution: Needs more exploration	
+Resolution: Needs more exploration
 
 
 
@@ -185,7 +185,7 @@ AWB:
 - Asserts that super is defined correctly for classes
 (explanation)
 
-Should super be allowed in all function forms or restricted to classes? 
+Should super be allowed in all function forms or restricted to classes?
 
 Resolution: Defer super outside of classes
 
@@ -203,7 +203,7 @@ Resolution: Only for ArrowFunction
 
 *Property Assignment Shorthand*
 
-eg. 
+eg.
 function point(x, y) {
 	return { x, y };
 }
@@ -247,7 +247,7 @@ MM:
 - Would like to consider both moustache and Object.extend
 
 
-How about… both? 
+How about... both?
 = assign
 : define
 
@@ -263,7 +263,7 @@ Positions:
 Just Define
 Just Assign
 Both Define and Assign
-Alone 
+Alone
 Applied to object literals
 
 

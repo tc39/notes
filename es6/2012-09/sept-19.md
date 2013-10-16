@@ -46,12 +46,12 @@ Proposal:
 
 MM: We missed this in the change to Direct Proxies, thanks to David Bruant for identifying
 
-…Bikeshedding the spelling of "Revokable"
+...Bikeshedding the spelling of "Revokable"
 
 MM, WH: Should be "revocable"
 ?: "Revokable" would seem like a typo to many folks, as it's an unusual spelling of the word.
 
-LH: This is bringing another constructor…? Do we want to duplicate all of the functionality?
+LH: This is bringing another constructor...? Do we want to duplicate all of the functionality?
 
 RW/DH: Agree this is an issue.
 
@@ -59,7 +59,7 @@ MM: static on the Proxy object?
 
 Yes.
 
-… Discussion about the naming.
+... Discussion about the naming.
 
 Proposal: Proxy.revocable
 
@@ -75,7 +75,7 @@ BE: yes, non-revokable proxies have less trap overhead (no null-check)
 
 Discussion about whether revokable proxies introduce new ways for interceptable operations to behave.
 
-WH: Not sure about this as a feature, w/r to future hostility…
+WH: Not sure about this as a feature, w/r to future hostility...
 -  eg. if "===" would trap to the handler how does this work with that?
 
 MM: trapping "===" would be a significant change on its own, independent of revokable proxies
@@ -87,7 +87,7 @@ TVC: right
 
 DH:
 
-RWS: Does this problem exist…
+RWS: Does this problem exist...
 
 STH: revokable proxies don't add any new semantics b/c you can already write a direct proxy that throws the same error on every operation (it just uses more memory)
 
@@ -128,7 +128,7 @@ AWB: would preclude valid use cases that e.g. want to log all requested isFrozen
 Is there a situation where revoking allows an operation to throw where it previously couldn't with non-revocable proxies?
 TVC: should not be the case
 
-MM: Specify that…
+MM: Specify that...
 
 **The revoke action is observably equivalent to changing the state of the handler to always throw on all traps.**
 
@@ -139,7 +139,7 @@ BE: Mark and Tom have significant work on this issue.
 MM: The ability to evict a subgraph is important
 once frozen, stop trapping. once non-configurable, non-writable data, the value continues to be accessible. this loses the garbage collectability of membranes
 
-…
+...
 
 DH: Question of clarification re: two constructors, are they necessary because there is no way to return two things from a constructor.
 
@@ -150,11 +150,11 @@ BE: There is no mutable state within the proxy that is actually "mutated"?
 TVC: not currently. If we want to pursue the above idea where a trap is disabled once its stable outcome is observed, then the proxy would need to be mutated.
 
 MM: If you could falsly claim to be not-frozen after being frozen, then there would be issues with reliability, but doesn't exist.
-…
+...
 
 MM/AR: (discussion about execution points in ES5)
 
-AR: If you have a file name object, hand it into some API, it might throw, it might not throw… how is this different that what happened before?
+AR: If you have a file name object, hand it into some API, it might throw, it might not throw... how is this different that what happened before?
 
 WH: Again, still not sure about effects throughout proxy
 
@@ -200,7 +200,7 @@ MM: as opposed to the "unguessability" of randomly chosen strings
 
 DH: About the whitelist, instead of _requiring_ a WeakSet,  can it be anything that can be passed to a WeakSet, like an Array?
 
-MM: Should probably use a WeakMap…
+MM: Should probably use a WeakMap...
 
 EA: An object that has a method that takes the public name string and returns the private name object, if you have access to that, you can extract the private data.
 
@@ -286,7 +286,7 @@ MyClass.prototype[secret] = function() {
 ```
 
 
-### Computed Property Names for Object Literals Were Abandoned…
+### Computed Property Names for Object Literals Were Abandoned...
 
 ```js
 const secret = 42;
@@ -321,7 +321,7 @@ priv @secret;
 
 - Such declarations implicitly create Name Objects
 -
-… Missed slides
+... Missed slides
 
 ### At-Name References
 
@@ -343,7 +343,7 @@ class MyClass extends Yours {
 
 ### At-Names in Primary Expressions
 
-- When used as Primary expression, an At-Name… (see slides)
+- When used as Primary expression, an At-Name... (see slides)
 
 ```js
 obj.@secret
@@ -396,7 +396,7 @@ o.m(); // 42
 { m() {} }
 ```
 
-…Discussion about varying semantics lacking in previous proposals.
+...Discussion about varying semantics lacking in previous proposals.
 
 MM: Cannot avoid runtime collision?
 
@@ -436,7 +436,7 @@ RW: Fully support this.
 
 LH: Let's work towards understanding the entire commitment
 
-…Discussion about path forward and whether it's too late.
+...Discussion about path forward and whether it's too late.
 
 DH: This does resolve an issue that stands out about max min classes: private name props cannot be added declaratively
 
@@ -571,7 +571,7 @@ MM: List all early errors and discuss the merits
 
 AWB: Are we ok with a class of errors that are reported on each function entry? Static function analysis will simplify certain runtime semantics.
 
-…Will allay performance issues discovered through Chakra and v8 prototyping.
+...Will allay performance issues discovered through Chakra and v8 prototyping.
 
 Discussion of label analysis
 
@@ -596,7 +596,7 @@ BE: early-boyer is likely not an accurate test for let. There are closures that 
 
 LH: We suspect that a majority of the overhead was caused by the read barrier created by temporal dead zones.
 
-…Will continue with testing and gather evidence.
+...Will continue with testing and gather evidence.
 
 MM/STH/BE: early-boyer is probably innappropriate.
 
@@ -608,7 +608,7 @@ LH: meta concern is that cases are adding up against let. If the perceived cost 
 
 WH: [as previously mentioned by Brendan], having a lot more scopes to close over (i.e. creating a new one for each loop iteration, etc.) is likely to be the main performance cost of let. What if let is slower merely due to having many more scopes?
 
-BE: (history of let in SpiderMonkey…) No outcry that performance is an issue
+BE: (history of let in SpiderMonkey...) No outcry that performance is an issue
 
 MM: (countering the "not common enough" argument) Presented personal experiences where dead zones were essential in detecting problems.
 
@@ -625,7 +625,7 @@ BE: Recap the problem that revealed the issue.
 
 LH: Can we talk about let/var at the top level?
 
-Current proposal… let would shadow var
+Current proposal... let would shadow var
 
 ARB: Why?
 
@@ -640,30 +640,30 @@ LH:
 YK: class followed by class with the same name: error
 var followed by let with same identifier name: error
 
-BE: It happens all the time…
+BE: It happens all the time...
 
-        for (var i = 0; …) {}
+        for (var i = 0; ...) {}
 
-        for (var i = 0; …) {}
+        for (var i = 0; ...) {}
 
-…Not the issue, but this:
-
-        var i;
-        for (i = 0; …) {}
+...Not the issue, but this:
 
         var i;
-        for (i = 0; …) {}
+        for (i = 0; ...) {}
 
-…is a problem if `let` throws when name collision occurs.
+        var i;
+        for (i = 0; ...) {}
+
+...is a problem if `let` throws when name collision occurs.
 
 
-DH: A serious issue exists… the single global object. It's beginning to feel like we're adding to the issue.
+DH: A serious issue exists... the single global object. It's beginning to feel like we're adding to the issue.
 
 WH: The complexity is not on the number of scopes, but what they do. I'm concerned about the complexity of reflecting let, const, @names, etc. onto a global object.
 
 WH: Also don't want random HTML attributes elsewhere on the page to knock out global let/const/etc. bindings.
 
-AWB: No one has discussed… Any script tag, whose order can be determined… bring deferred scripts to the last script
+AWB: No one has discussed... Any script tag, whose order can be determined... bring deferred scripts to the last script
 
 BE:
 
@@ -697,7 +697,7 @@ BE: Points out in chart above that a function in A that refers to a `let x = 1;`
 
 DH: Users make recursive dependencies that they don't realize.
 
-ARB: The way I understood `let`… we resolve every variable at compile time, (I missed the next part, ARB: Can you fill this in?)
+ARB: The way I understood `let`... we resolve every variable at compile time, (I missed the next part, ARB: Can you fill this in?)
 
 YK: (whiteboard)
 
@@ -711,7 +711,7 @@ YK: (whiteboard)
 <script>
   let requestAnimationFrame;
   if ( typeof requestAnimationFrame === "undefined" ) {
-    requestAnimationFrame = …polyfill.
+    requestAnimationFrame = ...polyfill.
   }
   animate();
 </script>
@@ -721,11 +721,11 @@ BE: Recapping the Window.prototype issue
 
 RW: There is no reason to put _everything_ on the Window.prototype. Object APIs should be own properties of the Global object ("window" in the browser case). This doesn't mean that the needs of EventTarget specification cannot be met by using the Window.prototype. The WebIDL change to move all APIs to a different semantic "space" without understanding the consequences is the worst negligence.
 
-…More discussion…
+...More discussion...
 
 BE: If we make let, const, class, module, function, var (all binding forms, now and in the future) are global—will this be blocked?
 
-…Discussion…
+...Discussion...
 
 DH: Hard to decide if a dead zone exists for `let` on the global object.
 
@@ -733,7 +733,7 @@ ARB:
 
 LH: What are the mechanics of `let` accessors on the global?
 
-…Discussion about the
+...Discussion about the
 
 Two models to consider:
 
@@ -764,11 +764,11 @@ ARB: If you don't do it this way, you can't have a temporal dead zone in the glo
 
 DH: (to BE) Can you recap your objection to getter/setter pairs on `let` bindings? Optimization doesn't seem like a long term motivation if we're moving to `module`
 
-BE/DH/ARB…
+BE/DH/ARB...
 
 Like modules, need to have global getter/setter pairs on let/const bindings
 
-Unless there is a lexical scope or hidden data store…
+Unless there is a lexical scope or hidden data store...
 
 LH: Observability?
 
@@ -778,7 +778,7 @@ ARB: It would be actually observable if the global object was a Proxy. Think of 
 LH (recapping one of the alternative models)
 
 There are two scopes:
-        Global Object and Global Lexical Scope… when a `let` binding occurs, there are two things created, one on the Global Object and Global Lexical Scope.
+        Global Object and Global Lexical Scope... when a `let` binding occurs, there are two things created, one on the Global Object and Global Lexical Scope.
 
 [people generally felt it was easier to comprehend the data living in the scope contour]
 

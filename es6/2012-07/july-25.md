@@ -55,7 +55,7 @@ DH: (board notes)
 
 ------------------
 - var, function go in global
-- let, const, module, class… all get modeled lexically as usual in inner
+- let, const, module, class... all get modeled lexically as usual in inner
 contour
 - each script's inner contour is embedded in previous script's inner contour
 
@@ -63,14 +63,14 @@ contour
 
 ------------------
 - var, function, go in global
-- let, const, module, class… all get modeled lexically as usual in inner
+- let, const, module, class... all get modeled lexically as usual in inner
 contour
 - each script's inner contour is "private" to that script
 
 3) 1 Contour, Global "Traditional"
 
 ------------------
-- var, function, let, const, module, class… everything is a property of the
+- var, function, let, const, module, class... everything is a property of the
 global object.
 - Additional scope refs in a side table of global, shared across scripts
 - each script updates the side table
@@ -81,7 +81,7 @@ global object.
 
 ------------------
 - var, function, go in global
-- let, const, module, class… all lexical
+- let, const, module, class... all lexical
 - each script updates lexical contour of previous scripts
 
 
@@ -162,7 +162,7 @@ object someday.
 DH: Points out that non-reification will result in "WAT" from community (I
 agree).
 
-Discussion about module unloading…
+Discussion about module unloading...
 
 BE: Let's talk about unloading as a seperate, secondary conversation.
 
@@ -185,8 +185,8 @@ DH: If you consider each script to be a "block" ie. { block }
 
 YK/DC: Agree
 
-DH: I have a crazy alternative… We could special case unconditional brace
-blocks in … scope. If you write a pair of block braces at the global scope
+DH: I have a crazy alternative... We could special case unconditional brace
+blocks in ... scope. If you write a pair of block braces at the global scope
 and a let inside it, it will exist in that scope, but not global.
 functions, var hoisted out of the block brace.
 
@@ -261,7 +261,7 @@ When a data property is mutated on an object, change records are delivered.
 Object.deliverChangeRecords(callback);
 ```
 
-…mitigates side-channel communication by preventing change records from
+...mitigates side-channel communication by preventing change records from
 escaping.
 
 
@@ -396,7 +396,7 @@ import widget from "@widget";
 </script>
 ```
 
-not the same as…
+not the same as...
 
 ```html
 <script defer>
@@ -409,7 +409,7 @@ import widget from "@widget";
 Not possible for people to concat scripts for deployment and have the
 configuration happen before the loading
 
-Submitting for discussion: the shebang as "a concat seperator" that…
+Submitting for discussion: the shebang as "a concat seperator" that...
 
 - Fixes the concat ASI hazard
 - Allows for artificial parsing boundary

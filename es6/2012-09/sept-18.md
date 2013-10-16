@@ -83,7 +83,7 @@ AWB: Issues with name conflict? Wouldn't know if it was prefixed.
 
 NC: Will be removing the prefix
 
-DH/YK/STH: Discussion about globals, as they apply to the future with modules. import foo from … will reduce naming conflict overall.
+DH/YK/STH: Discussion about globals, as they apply to the future with modules. import foo from ... will reduce naming conflict overall.
 
 (Microsoft)
 LH: Currently passing 100/137 of conformance tests. Dont have direct user feedback. No one is actively using the prototype.
@@ -158,7 +158,7 @@ LH: Of course, we'll work together to be as consistent as possible.
 
 JN: If there are no objections, we will forward this document specification, ECMA-402 to the CC & General Assembly for final approval.
 
-…No objection.
+...No objection.
 
 JN: With the final modifcations, this document will be submitted to the CC & GA for final approval. NL and NC to produce a list for an Annex of optional details.
 
@@ -236,7 +236,7 @@ LH: Is it the claim of this proposal to follow the ECMA 262 Semantics.
 
 DH: Yes, up to the issue of floating point non-determinism
 
-LH: Which means an engine cannot detect… (lost)
+LH: Which means an engine cannot detect... (lost)
 
 RH: We do rely on the programmer to know that they need to write an associative and commutative function. Tools can be provided to help.
 
@@ -250,7 +250,7 @@ YK: If it's straight forward, then why not specify how Parallelization is accomp
 
 DH/BE: Too early to attempt to specify Parallelization detection.
 
-Lengthy discussion of Parallelization "mode" switching semantics… Devolved. Ended abruptly when no progress was made.
+Lengthy discussion of Parallelization "mode" switching semantics... Devolved. Ended abruptly when no progress was made.
 
 **Shape**
 
@@ -268,7 +268,7 @@ Between the two:
 
 
 
-LH: Asks for explanation…
+LH: Asks for explanation...
 
 DH: Will fill in blanks offline
 
@@ -292,11 +292,11 @@ MM: The proliferation of Array-like things is unfortunate
 
 RW: And ES6 reduces that pain by effectively eliminating arguments via rest and Array.from()
 
-…
+...
 
 DH: There was also the idea of having parallel-specific methods.
 
-Derailed to Array-like API issues on the whole… When to implement array API and when not. Why and why not…
+Derailed to Array-like API issues on the whole... When to implement array API and when not. Why and why not...
 
 
 #### Conclusion/Resolution
@@ -313,7 +313,7 @@ Introduction, rationale as published:
 
 DH/AWB/RW: (discussion) Object.define, Object.put
 
-RW: Have research and supporting cases from jQuery, Dojo, YUI, Node core, Underscore… Always exists an approximation of "merging" or "extending"
+RW: Have research and supporting cases from jQuery, Dojo, YUI, Node core, Underscore... Always exists an approximation of "merging" or "extending"
 
 AWB: We should strive to fix the future and correct developers thinking about "define" and "assign"
 
@@ -321,7 +321,7 @@ LH: That's a dangerous scenario to put developers in, where they have to think a
 
 RW: The newly created dom node case, for batch property assignment (originally brought forth by Doug) is the second most important use-case, but implicit define will pave innerHTML (or any dom node properties)
 
-…
+...
 
 DH: Shouldn't create syntax for the less common operation.
 
@@ -357,7 +357,7 @@ YK: Can we tell people to use Unique Name when they want copyable and Private Na
 
 BE: I thought of this earlier, but wasn't sure, but it could work
 
-AWB: …
+AWB: ...
 
 MM: Given ES6, remove the copying of private names, allow copying unique names: Can this be written as library code?
 
@@ -370,7 +370,7 @@ Extensive discussion around whether or not Object.assign()
 
 Derailed due to concise method's making non-enumerables, which means they won't copy if the rule disallows copying.
 
-…Revisit "Concise Method Definition" (add anchor)
+...Revisit "Concise Method Definition" (add anchor)
 
 
 Object.define( target, source )
@@ -385,7 +385,7 @@ Object.assign( target, source )
 - Invoke [[Get]] on property list derived from source, for each property in list [[Put]] on target
 - private names are not copied
 - unique names are copied
-- super mechanism (rebind super)… AWB To determine needs
+- super mechanism (rebind super)... AWB To determine needs
 - Returns modified "target"
 
 DH, MM, AWB: Object.assign a well worn enough cow-path to be worth paving. Object.define isn't, and so should only be standardized after libraries have explored the space.

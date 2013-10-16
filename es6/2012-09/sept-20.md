@@ -24,10 +24,10 @@ https://github.com/rafaelw/ChangeSummary
 - Array splice projection (minimal ops to syn)
 - Basis for framework usage
 
-YK: Question about splice projections being built in. When splice happens, many records change… is pathologically slow. Fine for v1 to leave it to library code.
+YK: Question about splice projections being built in. When splice happens, many records change... is pathologically slow. Fine for v1 to leave it to library code.
 
-RWS: Opted to leave this out…
-…explains n^2 issues that arise when changes to an array occur. …explains rationale for leaving out for the foreseeable future and allow library authors to handle as they see fit for the time being.
+RWS: Opted to leave this out...
+...explains n^2 issues that arise when changes to an array occur. ...explains rationale for leaving out for the foreseeable future and allow library authors to handle as they see fit for the time being.
 
 DH: How to make a policy decision about "what" to look at in the change of an object. Agrees with this v1 decision, in favor of allowing library optimization patterns to emerge. [We can't determine the "policies" before the needs are fully understood]
 
@@ -62,7 +62,7 @@ RWS: Believe that it is not in scope now or ever.
 
 ## Tuning Spec, Implementation Complexity
 
-RWS: …Is hoping to progress the strawman to harmony. A few slides that discuss remaining issues.
+RWS: ...Is hoping to progress the strawman to harmony. A few slides that discuss remaining issues.
 
 LH: These represent concerns and agreements of several committee members who have been involved.
 
@@ -119,7 +119,7 @@ RWS: (Revisits demo to show example of what an abstraction over this looks like)
 
 YK: (Supported use story in Ember)
 
-…Mixed discussion about far future notifier patterns:
+...Mixed discussion about far future notifier patterns:
 
 ```js
 // no-op, just for example...
@@ -204,7 +204,7 @@ Waldemar is going to try to work on this
 # Formal Parameter Scope
 (Presented by Brendan Eich, Mozilla)
 
-With regard to default formal parameters…
+With regard to default formal parameters...
 
 Previously, all to the LEFT are in scope,
 `let *`:
@@ -315,7 +315,7 @@ AWB: Yes, this was the agreement before temporal dead zone. throw if used before
 
 MM, WH: Halting further discussion. We frequently eat up time on subjects like this that have already reached consensus. Let's postpone unnec revisitings.
 
-AWB: Ok to revisit for valid reasons…
+AWB: Ok to revisit for valid reasons...
 
 YK: worried that if no performance issues are found then it wont be revisited.
 
@@ -339,7 +339,7 @@ Revisit when data is gathered, re: perf or unexpected behaviours
 
 Recent post on es-discuss from user that doesn't like Array.of
 
-Array.of has been implemented in all of the es6 shim libs (Paul Miller, Axel Rauschmayer, Andrea Giammarchi and others…)
+Array.of has been implemented in all of the es6 shim libs (Paul Miller, Axel Rauschmayer, Andrea Giammarchi and others...)
 
 ## Array.of()
 
@@ -393,7 +393,7 @@ ARB: This is non-compositional
         r = (o?.p).q.r
         r = o?.p.q.r()
 
-Results in…
+Results in...
 
         var o, r;
         o = {};
@@ -453,7 +453,7 @@ class MyArray extends Array {
 
 new MyArray(4, 8, 15, 16, 23, 42).iterator();
 ```
-…returns a generator instance that will have generator methods
+...returns a generator instance that will have generator methods
 
 
 MM: Take a care to expose the APIs that you expect to expose.
@@ -478,7 +478,7 @@ AWB: Need something for spec
 
 YK: If everyone implemented iterators with generators
 
-DH: Not super worried about this…
+DH: Not super worried about this...
 
 
 
@@ -489,9 +489,9 @@ The spec should not specify built in iterators to have 3 extra generator methods
 Notably: Significant dissent on throwing exceptions for control flow.
 
 
-Continued discussion of note…
+Continued discussion of note...
 
-LH: Using a debugger, break on throw, exceptions. Want to catch at the point where they are thrown… on a StopIteration, do I see internals?
+LH: Using a debugger, break on throw, exceptions. Want to catch at the point where they are thrown... on a StopIteration, do I see internals?
 
 DH: Up to the debugger to determine whether or not it should expose
 

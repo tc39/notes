@@ -328,9 +328,9 @@ MM: (whiteboard)
 
 ```js
 function f() {
-var arguments = 1;
+  var arguments = 1;
 
-[3, 2, 1].forEach(v => v + arguments);
+  [3, 2, 1].forEach(v => v + arguments);
 }
 ```
 
@@ -443,7 +443,7 @@ function foo() {
     yield
         * baz
     yield (baz) => yield * baz
-   }
+  }
 }
 ```
 
@@ -460,7 +460,7 @@ function foo() {
     yield // The yield * expression rule doesn't. No optional semicolon here!
         * baz;
     yield (baz) => yield * baz; // The * here is a product of two variables
-   }
+  }
 }
 ```
 

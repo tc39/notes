@@ -371,7 +371,7 @@ realm: r, // a Realm object
 
 https://gist.github.com/dherman/7568885
 
-``js
+```js
 let r = new Realm({ ... });
 
 r.global.myGlobal = 17;

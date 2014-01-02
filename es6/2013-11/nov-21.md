@@ -108,7 +108,7 @@ YK: can you show me what's secure today that does blacklisting?
 AR: no, but that's not the argument.
 
 
-<module> is a better 1JS
+`<module>` is a better 1JS
 
 - Better global scoping: starts in a nested scope
 - To Create persistent globals, must opt in, by mutating window/this

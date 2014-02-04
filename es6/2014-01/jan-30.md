@@ -46,8 +46,7 @@ RH: Not less surprising. Just as surprising.
 parallelModule.map(arr, func, ...)
 // [T] -> .... -> [T]  // same return type
 ```
-
-NM: What would you call `from`?
+ NM: What would you call `from`?
 
 WH: It's too confusing to require completely different static function style for invoking parallel maps as compared to non-parallel maps. mapPar etc. method style is better than the proposed alternatives.
 
@@ -61,9 +60,10 @@ MM: Worked well for Promises.
 
 YK/MN to talk through the concern about a "ton of methods".
 
-#### Consensus/resolution:
-    * Move Parallel JavaScript to phase 1
-    * Talk offline about design issues further
+#### Conclusion/resolution
+
+- Move Parallel JavaScript to phase 1
+- Talk offline about design issues further
 
 
 ## Structured Clone
@@ -136,9 +136,10 @@ RW: What sites?
 
 BT: Will attempt to furnish a list of sites...
 
-#### Consensus/Resolution:
-    * Makes sense to put in ES7 annex B
-    * Brian to write an initial speec draft
+#### Conclusion/resolution:
+
+- Makes sense to put in ES7 annex B
+- Brian to write an initial speec draft
 
 
 ## Process document
@@ -194,9 +195,10 @@ General agreement
 
 AWB: This means that we agree that this is something in a future version of ES
 
-Conclusion/resolution:
-    * Moved async/await to stage 1.
-    * Next step is to write real spec language
+#### Conclusion/Resolution
+
+- Moved async/await to stage 1.
+- Next step is to write real spec language
 
 
 ## Promises discussion
@@ -221,10 +223,11 @@ YK: This persuades me that we shouldn't have .chain()
 STH: I strongly disagree, but I'm not going to hold up ES6 over this
 
 
-Conslusion/resolution:
-    * Promise.cast is renamed to Promise.resolve (remove old Promise.resolve)
-    * Keep then, reject chain (NOT DEFER, reject!)
-    * Renaming .cast thus removes over-wrapping (always-wrap) deoptimization in old Promise.resolve
+#### Conclusion/Resolution
+
+- Promise.cast is renamed to Promise.resolve (remove old Promise.resolve)
+- Keep then, reject chain (NOT DEFER, reject!)
+- Renaming .cast thus removes over-wrapping (always-wrap) deoptimization in old Promise.resolve
 
 Some further discussion on keeping the spec inheritance/AOP-friendly by not using .then internally some times, short-cutting through internal methods or internal helpers other times
 YK, MM, AWB have details

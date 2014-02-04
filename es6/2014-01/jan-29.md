@@ -97,12 +97,13 @@ WH: [points out (and likes) warning on cases "for which the above steps are perf
 
 LH:  A SHOULD warning seems a reasonable addition to the proposal here.
 
-#### Conclusion/resolution:
-    * 2 bindings.
-    * Hoist a var binding for the FunctionDeclaration, unless it would introduce a static error (ie. hoisting past a let will not cause an error but also not create the var binding).
-    * Also create a let binding as per pure (strict mode) ES6 semantics. (Change from IE11 semantics). Within the scope of the let binding, assignment will only touch the let binding (ie. normal semantics).
-    * The var binding is only initialized at dynamic evaluation of function declaration.
-    * A SHOULD warning if there is a reference to any such var binding of a function
+#### Conclusion/resolution
+
+- 2 bindings.
+- Hoist a var binding for the FunctionDeclaration, unless it would introduce a static error (ie. hoisting past a let will not cause an error but also not create the var binding).
+- Also create a let binding as per pure (strict mode) ES6 semantics. (Change from IE11 semantics). Within the scope of the let binding, assignment will only touch the let binding (ie. normal semantics).
+- The var binding is only initialized at dynamic evaluation of function declaration.
+- A SHOULD warning if there is a reference to any such var binding of a function
 
 
 ## Object.observe Status Report
@@ -186,8 +187,8 @@ DH: Primary reviewer.
 
 #### Conclusion/resolution
 
-    * do-expressions as generailsation of block statements
-    * Progresses do-expressions to the next state in the new process.
+- do-expressions as generailsation of block statements
+- Progresses do-expressions to the next state in the new process.
 
 ## Security Review for Loaders/Realms
 
@@ -210,7 +211,8 @@ DH: Unpolyfillable, YK + DH tried some things w/ iframes, didn't work
 DH: That's part of why we think it's a fundamental new primitive
 
 #### Conclusion/Resolution
-* MM et al to port SES to ES6, contact module champions w/ results
+
+- MM et al to port SES to ES6, contact module champions w/ results
 
 ## Typed Objects
 

@@ -72,8 +72,9 @@ Potential solutions:
   * Possibly use file extensions...
 
 
-#### Resolution
-DH to do the work?
+#### Conclusion/resolution:
+
+  - DH to do the work?
 
 
 ## Task and Tasks Queues
@@ -143,9 +144,9 @@ BE: Agree, so fourth option above.
 
 YK/LH: High bar to make a change, does this meet the bar?
 
-#### Resolution
+#### Conclusion/Resolution
 
-Status quo. Keep concise methods enumerable.
+- Status quo. Keep concise methods enumerable.
 
 
 ## More on toMethod
@@ -192,9 +193,9 @@ MM: to preserve possibility of transparent monkey-patching, either make toMethod
 
 #### Conclusion/Resolution
 
-Allen to take it back to the lab. To get it to work with bound functions and built-ins.
-    * Make it match old concensus `func.bind().toMethod(...)` should throw
-    * Does not work on proxies
+- Allen to take it back to the lab. To get it to work with bound functions and built-ins.
+  - Make it match old concensus `func.bind().toMethod(...)` should throw
+  - Does not work on proxies
 
 
 ## Clz (count leading zeros)
@@ -211,7 +212,8 @@ BE:  CLZ - for cases when you're doing DSP-level hacking, and want to count  the
 BE: Math.clz32 wins.
 
 #### Conclusion/Resolution
-Rename to Math.clz32 (rename and move from Number.prototype)
+
+- Rename to Math.clz32 (rename and move from Number.prototype)
 
 
 
@@ -276,7 +278,8 @@ YK: task.js requires (yield a) + (yield b) paren style
 BE: revenge of Lisp, you get used to it
 
 #### Conclusion/Resolution
-Status Quo
+
+- Status Quo
 
 
 ## More generators (Ben)
@@ -314,7 +317,7 @@ function*() first {
 
 #### Concensus/Resolution
 
-BN: Have to go back and think more about this. Maybe a helper function can be created.
+- BN: Have to go back and think more about this. Maybe a helper function can be created.
 
 
 ## ECMA-404 and IETF interactions

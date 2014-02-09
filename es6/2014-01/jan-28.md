@@ -282,7 +282,9 @@ BE: revenge of Lisp, you get used to it
 - Status Quo
 
 
-## More generators (Ben)
+## Newborn generator behavior 
+
+(Ben)
 
 See issue here: https://github.com/tc39/agendas/pull/25
 
@@ -298,19 +300,20 @@ BN: Can be fixed... but is hairy. Presents updated wrapper code... Proposal is t
 DH: Possibly other alternatives to fix this?
 
 WH: There are two problems here:
-    1. A function* can't capture the first value passed to the 'next' that invoked it. Instead, it currently requires it to be undefined.
-    2. No way to pass an initial 'next' value to yield*. This means that manually doing the first yield followed by a yield* wouldn't help because the problem would then reappear on the second yield.
+
+  1. A function* can't capture the first value passed to the 'next' that invoked it. Instead, it currently requires it to be undefined.
+  2. No way to pass an initial 'next' value to `yield *`. This means that manually doing the first yield followed by a `yield *` wouldn't help because the problem would then reappear on the second yield.
 
 WH: The proposal is proposing a hidden channel (a la Perl's $_) that ties 1 to 2 here. Would prefer mechanisms to do those separately and more explicitly.
 
-BN: yield` syntax that says delegate but don't care about value?
+BN: `yield` syntax that says delegate but don't care about value?
 
 DH: Let's think about it more...
 
 DH: Went through the mental excercise to do an implicit yield upon calling the generator. Leads to a lot of other issues.
 
 ```js
-function*() first {
+function* first() {
   return yield* push(first, delegate);
 }
 ```

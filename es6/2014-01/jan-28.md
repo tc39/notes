@@ -232,9 +232,9 @@ BE: "Holes are from the devil"
 #### Conclusion/Resolution
 
 Keep as spec'ed.
-    * `Array.from` will throw on `undefined` and `null`
-    * `Array.from` will return `[]` for `3`
-    * `Array.from([0, , 2])` => `[0, undefined, 2]`
+ - `Array.from` will throw on `undefined` and `null`
+ - `Array.from` will return `[]` for `3`
+ - `Array.from([0, , 2])` => `[0, undefined, 2]`
 
 
 ## Test 262

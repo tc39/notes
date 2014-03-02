@@ -639,7 +639,7 @@ with (a) {
 Cross-Domain Modules
 
 - browser loader should allow cross-domain loads
-- ServiceWorker requires cross-domain sources (XHR) and sinks (<img>, <script>, etc)
+- ServiceWorker requires cross-domain sources (XHR) and sinks (`img`, `script`, etc)
 - Browser's `System.define` should be a sink
 - No Problem:  type of src parameter unconstrained in ES Semantics—polymorphism to the rescue
 - IOW each loader determines for itself what types are allowed for source

@@ -242,15 +242,43 @@ JH: Generators can't abstract over sync or async IO.
 
 ```js
 var nums = function*() {
-yield 1
+  yield 1;
+  yield 2;
 }
-
+```
 
 **Iterable**
 
 ```js
-function Iterable(generator) {
- ... missed
+function Iterable(generatorFunction) {
+  this[@@iterator] = generatorFunction;
+}
+```
+
+**Creating Iterables**
+
+```js
+let nums = new Iterable(function*() {
+  yield 1;
+  yield 2;
+  yield 3;
+});
+```
+
+**Iterating Iterables**
+
+```js
+for(let x of nums()) {
+  console.log(x);
+}
+
+//...becomes...
+
+let iterator = nums()[@@iterator],
+  pair;
+
+while(!(pair = iterator.next()).done) {
+  console.log(pair.value);
 }
 ```
 
@@ -258,31 +286,45 @@ function Iterable(generator) {
 
 
 ```js
-function getLines(filename) {
-  return new Iterable(function *() {
-  let reader = new SyncReader(filename);
-  try {
-    while(!reader.eof) {
- yield reader.readLine();
+function getLines(fileName) {
+  return new Iterable(function*() {
+    let reader = new SyncReader(fileName);
+    try {
+      while(!reader.eof) {
+        yield reader.readLine();
+      }
     }
-  } finally {
-    reader.close();
-  }
-  });
+    finally {
+      reader.close();
+    }
+  })
 }
 ```
 
 **Iterable Composition**
 
 ```js
-Iterable.prototype.map = function() {
+Iterable.prototype.map = function(projection) {
+   let self = this;
+  return new Iterable(function*() {
+    for(let x of self) {
+      yield projection(x);
+    }
+  });
+};
+
+Iterable.prototype.takeWhile = function(predicate) {
   let self = this;
-  return new Iterable(function *() {
-    ...
+  return new Iterable(function*() {
+    for(let x of self) {
+      if (!predicate(x)) {
+        break;
+      }
+      yield x;
+    }
   });
 };
 ```
-
 
 
 YK: Need to address Brendan's objections from yesterday

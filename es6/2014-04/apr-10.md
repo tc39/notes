@@ -234,7 +234,7 @@ BT: If all three browsers continue supporting, we agree to put it in the spec, a
 ## Revisiting: Generator Issues
 (Jafar Husain)
 
-Slides: Allowing-Generators-to-Compose-over-IO.pptx
+Slides: [Allowing-Generators-to-Compose-over-IO.pptx](https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-04/Allowing-Generators-to-Compose-over-IO.pptx)
 
 JH: Generators can't abstract over sync or async IO.
 

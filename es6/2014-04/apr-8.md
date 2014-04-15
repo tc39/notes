@@ -32,7 +32,7 @@ JN: Approval of minutes from Jan 2014, Ecma document 007
 ## 4.1 Review Latest Spec Draft
 (Allen Wirfs-Brock)
 
-Slides: April-meeting-status-ES6-spec.pdf
+Slides: [April-meeting-status-ES6-spec.pdf](https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-04/April-meeting-status-ES6-spec.pdf)
 
 AWB: Updates to formatting, etc.
 Summary of changes: http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts#august_23_2013_draft_rev_17
@@ -335,7 +335,7 @@ Confirm.
 
 ## Presentation by Samsung Representatives
 
-Slides: ecma-tc39-talk-v1.0.pptx
+Slides: [ecma-tc39-talk-v1.0.pptx](https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-04/ecma-tc39-talk-v1.0.pptx)
 
 Presentation focus on intent of committee participation
 

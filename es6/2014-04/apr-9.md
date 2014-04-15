@@ -150,7 +150,7 @@ AWB: The vote is to approve the policy, the forms already exist.
 ## Parallel JS Spec Report
 (Rick Hudson)
 
-Slides: [TC39PJSApril2013.pptx](https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-04/TC39PJSApril2013.pptx)
+Slides: [TC39PJSApril2013.pdf](https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-04/TC39PJSApril2013.pdf)
 
 RH:
 Summary

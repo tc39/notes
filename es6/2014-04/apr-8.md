@@ -335,7 +335,7 @@ Confirm.
 
 ## Presentation by Samsung Representatives
 
-Slides: [ecma-tc39-talk-v1.0.pptx](https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-04/ecma-tc39-talk-v1.0.pptx)
+Slides: [ecma-tc39-talk-v1.0.pdf](https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-04/ecma-tc39-talk-v1.0.pdf)
 
 Presentation focus on intent of committee participation
 

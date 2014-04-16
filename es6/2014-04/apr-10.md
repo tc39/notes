@@ -118,7 +118,7 @@ var Foo = require("foo");
 var Foo = require("foo").Foo;
 
 // The latter is the same as:
-var f = require("foo);
+var f = require("foo");
 var Foo = f.Foo;
 ```
 

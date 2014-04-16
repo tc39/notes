@@ -549,7 +549,7 @@ class Person extends Ember.Object {
     // ...deal with the change
   }
 }
-
+```
 
 YK: Goals:
 

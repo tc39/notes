@@ -720,7 +720,7 @@ LH: This works today (returns `0`). This is a breaking change...
 
 AWB: Applications may not want this behavior...
 
-MB: You can use `Number("0b11")` or `Number("0o42")` instead.
+MB: You can use `Number("0b11")` or `Number("0o42")` instead, at least in V8. (`ToNumber` in the spec should be updated to make this official: https://bugs.ecmascript.org/show_bug.cgi?id=1584)
 
 LH: Was that a breaking change? Looks like, but we went from `NaN` to actually returning a number.
 

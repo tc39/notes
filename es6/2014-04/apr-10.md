@@ -485,7 +485,7 @@ WH: Objects to this problem *not* being solved. Object to the status quo of doin
 ## Decorators for ES7
 (Yehuda Katz)
 
-Slides: (need slides)
+[Slides](https://github.com/rwaldron/tc39-notes/raw/master/es6/2014-04/Decorators.pdf)
 
 YK: Presenting aspects of common use cases not yet covered by ES6 `class`.
 

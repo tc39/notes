@@ -255,14 +255,14 @@ MM: `<script type="module">` would inherit the special termination rules of </sc
 
 AR: `<script type="module">` means the browser won't even try to parse it as JS, which is what we want [so that we can execute the script contents as a module, via some sort of polyfill]
 
-DH: `<script type="worker">` might also need to have the `<script type="module">` semantics, and type= attribute syntax makes it hard to mix and match those attributes; maybe <script worker module> would be better? (i.e. the type attribute values become optional value-less attribute names)
+DH: `<script type="worker">` might also need to have the `<script type="module">` semantics, and type= attribute syntax makes it hard to mix and match those attributes; maybe `<script worker module>` would be better? (i.e. the type attribute values become optional value-less attribute names)
 
 DH: The difference between `<script type="module">` and <module> is that as long as there's … you always have the option of writing `<script>System.import("main.js")</script>`
 TODO: Get DH to clarify this point when we edit the notes.
 
-MM: The `<module>` tag still has HTML misparsing consequences that <script> wouldn't have.
+MM: The `<module>` tag still has HTML misparsing consequences that `<script>` wouldn't have.
 
-YK: The success of <template> proves that we can introduce a new `<script>`-like `<module>` tag.
+YK: The success of `<template>` proves that we can introduce a new `<script>`-like `<module>` tag.
 
 DH: Need to create ways of doing this with pure JS, like `<script>System.import("main.js")</script>` and then add new HTML sugar later, like `<script type="module">`.
 
@@ -288,7 +288,7 @@ The issue is interleaving Promise response tasks with other tasks.
 
 MM: Let's just not use the term "task" because it's confusing with other tasks (microtasks, etc).
 
-Brainstorming names: job, tick (seems too close to process.nextTick), slice, turn, chore (lots of enthusiasm for chore!), quest (fits with realms!), schlep
+Brainstorming names: job, tick (seems too close to `process.nextTick`), `slice`, `turn`, `chore` (lots of enthusiasm for chore!), `quest` (fits with realms!), schlep
 
 ## Conclusion/Resolution:
 

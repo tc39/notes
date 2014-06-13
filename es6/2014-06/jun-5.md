@@ -307,4 +307,4 @@ MM: Breakout sessions for the rest of today?
 
 ## Modules breakout session:
 
-Notes: https://gist.github.com/ericf/a7b40bf8324cd1f5dc73
+[Notes](jun-5-modules.md)

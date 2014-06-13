@@ -123,7 +123,7 @@ function * a() {
 }
 
 for (let b of a()) {
-    break;
+  break;
 }
 ```
 
@@ -142,7 +142,7 @@ DH: Next issue: What if iterator, when given opportunity to stop, decides to kee
 (see slides for details)
 
 function* g() {
-    yield;
+  yield;
 }
 g = g();
 g.next();
@@ -156,15 +156,15 @@ DH: No.
 Brendan's Example
 ```js
 function* gen() { 
-    try {
-        yield 1;
-    } finally {
-        yield 2;
-    }
+  try {
+    yield 1;
+  } finally {
+    yield 2;
+  }
 }
 
 for (let i of gen()) {
-    break;
+  break;
 }
 
 // The for-of loop unrolls to this:

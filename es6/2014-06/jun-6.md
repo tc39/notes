@@ -139,7 +139,7 @@ WH: I want substitutability, so that I can pick of properties one by one.
 
 BE:
 
- ```js
+```js
 z = Object.create({w: 42});
 obj = {x, y, ...z};
 ```
@@ -222,17 +222,17 @@ Need to rationalize
 Need Domenic, Raf, and Jafar together to work it out.
 
 WH: What does this do inside an async function*?
+
 ```js
 while (...) {
   yield line1;
   await yield line2;
 }
 ```
+
 Is it just a backpressure issue, or can the first yield (without the await) surprise the observer in some kind of an unexpected state?
 
-YK: I think it's important that the first value in an observable can be published synchronously. Importantly, there are well-motivated use-cases for Observables whose
-initial value is ALWAYS synchronously available (like Object.observe), but there are no well-motivated use-cases for APIs that consume promises whose values
-are ALWAYS synchronously available.
+YK: I think it's important that the first value in an observable can be published synchronously. Importantly, there are well-motivated use-cases for Observables whose initial value is ALWAYS synchronously available (like Object.observe), but there are no well-motivated use-cases for APIs that consume promises whose values are ALWAYS synchronously available.
 
 ## Conclusion/Resolution
 

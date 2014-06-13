@@ -119,7 +119,7 @@ AWB: for (let x in x) -- "bombs" because referring to x before temporal dead zon
 ```js
 let o;
 for (let x in (o={ f(){ return x }, x=42 }) {
-    o[x](); // gives TDZ error
+  o[x](); // gives TDZ error
 }
 ```
 

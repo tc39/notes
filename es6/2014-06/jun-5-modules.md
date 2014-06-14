@@ -1,3 +1,6 @@
+# WARNING: THESE NOTES DO NOT REFLECT TC39 CONSENSUS, ONLY THE DOCUMENTATION OF DISCUSSIONS THAT WILL BE USED AS RECOMMENDATIONS.
+
+
 # June 5, 2014 Modules Breakout Session Notes
 
 Jeff Morrison (JM), Caridy Patino (CP), Yehuda Katz (YK), Guy Bedford (GB), Dave Herman (DH), Erik Arvidsson (EA), Reid Burke (RB), Eric Ferraiuolo (EF)

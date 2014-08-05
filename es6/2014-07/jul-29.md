@@ -24,7 +24,7 @@ Approved.
 
 (Allen Wirfs-Brock)
 
-rev26-summary.pdf
+https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-07/rev26-summary.pdf
 
 
 AWB: 
@@ -178,7 +178,7 @@ AWB: Spec is up to date, without the modules work.
 
 (Erik Arvidsson)
 
-es6-unscopables.pdf
+https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-07/es6-unscopables.pdf
 
 (https://bugs.ecmascript.org/show_bug.cgi?id=1908#c14)
 

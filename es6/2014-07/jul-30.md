@@ -10,7 +10,7 @@ Brian Terlson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (
 
 (Allen Wirfs-Brock)
 
-ecma-262-6-optout1.pdf
+https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-07/ecma-262-6-optout1.pdf
 
 AWB: This is the opt-out period: Aug. 11, 2014 - Oct. 11, 2014
 
@@ -26,7 +26,7 @@ The opt-out version of the spec is: ECMA-262 6th Edition, revision 26, document:
 
 (Mark Miller, Allen Wirfs-Brock, Dmitry Lomov, Tom Van Cutsem. Based on Claude Pache proposal )
 
-instantiation-reform.pdf
+https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-07/instantiation-reform.pdf
 
 AWB: Currently: 
     
@@ -432,7 +432,7 @@ MM: Break on this discussion until JM has adequate examples.
 
 (Peter Jensen and John McCutchan)
 
-simd-128-tc39.pdf
+https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-07/simd-128-tc39.pdf
 
 Other slides: https://peterjensen.github.io/html5-simd/html5-simd.html#/
 
@@ -762,7 +762,7 @@ DH: Needs to be the same semantics as value types, if we ship this sooner and le
 
 (Allen Wirfs-Brock)
 
-parameter-scoping-7-14.pdf
+https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-07/parameter-scoping-7-14.pdf
 
 
 Current spec, Controversial: 

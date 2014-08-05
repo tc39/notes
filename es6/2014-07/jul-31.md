@@ -236,7 +236,7 @@ DH: People are now starting to implement these algorithms in js since they canno
 
 DL: Java lies. Implementations do not follow the Java rules.
 
-WH: Looked at the posted data and found it pretty compelling that the status quo free-for-all is not good. Some functions that should be monotonous aren't. Some results are significantly off.
+WH: Looked at the posted data and found it pretty compelling that the status quo free-for-all is not good. Some functions that should be monotonic aren't. Some results are significantly off.
 
 WH: fdlibm should be the lower bar for precision. It almost always gets things exact or within 1 ulp.
 

@@ -267,7 +267,7 @@ YK: ES2015 is the first train.
 JT: Goals
 - Short term
 - Reserve syntax used by TypeScript, Flow, etc. for some form of annotation
-- Venue for collaboration among interested committtee members
+- Venue for collaboration among interested committee members
 - Long term 
 - Consensus on a shared syntax fr many varied type annotation implementations
 - Consensus on 

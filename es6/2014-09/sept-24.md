@@ -6,6 +6,8 @@ Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW
 ## Object Instantiation Redo
 (Allen Wirfs-Brock)
 
+instantiation-reform-sept2014.pdf
+
 AWB: (introducing discussion from last meeting)
 
 AWB: how many people here have read these gists? (hands are raised) OK, about half the people... The others are going to have a hard time.

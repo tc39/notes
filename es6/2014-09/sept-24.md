@@ -777,7 +777,7 @@ YK: Subclassing DOM, @@create returns dummy object, return new super
 
 BT: least risk: punt on all this discussion and let people come up with subclassing protocols that meet needs
 
-#6 results in syntactic lock-in. Devs will write `super()` and then we can't do `this = new super()` later.
+\#6 results in syntactic lock-in. Devs will write `super()` and then we can't do `this = new super()` later.
 
 MM: If we do #6 does it preclude having a future proposal with TDZ, unfulfilled this
 
@@ -967,11 +967,12 @@ DH: As long as we have a way in the future of doing something like:
     
 ```js
 class Stack extends Array {   
-new() { // overrides the create -- strawman syntax only!!     
-return [];   
-}      
-constructor() { ... } 
+  new() { // overrides the create -- strawman syntax only!!     
+    return [];   
+  }      
+  constructor() { ... } 
 } 
+```
     
 DH: Gives a way to transform the args
 

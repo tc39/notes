@@ -118,7 +118,7 @@ AWB: Open work items:
 
 AWB: Is anyone interesting in analysing the changes in ES5 to determine things that may have been wrong and need to be rolled back?
 
-RW: Should reach out to Matthias Bynens
+RW: Should reach out to Mathias Bynens
 
 AWB: Ideally someone willing to become fully aware of the issues and propose/execute on solutions (if necessary)
 

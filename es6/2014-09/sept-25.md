@@ -262,7 +262,7 @@ YK: ES2015 is the first train.
 ## Types
 (Jonathan Turner)
 
-type_annotations.pdf
+[type_annotations.pdf](./type_annotations.pdf)
 
 JT: Goals
 - Short term

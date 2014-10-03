@@ -30,7 +30,7 @@ JN: Approval of minutes (July 2014)
 
 (Allen Wirfs-Brock)
 
-Rev27meeting_review.pdf
+[Rev27meeting_review.pdf](./Rev27meeting_review.pdf)
 
 AWB: 
     

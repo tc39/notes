@@ -6,7 +6,7 @@ Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW
 ## Object Instantiation Redo
 (Allen Wirfs-Brock)
 
-instantiation-reform-sept2014.pdf
+[instantiation-reform-sept2014.pdf](./instantiation-reform-sept2014.pdf)
 
 AWB: (introducing discussion from last meeting)
 
@@ -270,7 +270,7 @@ B.call(this) => this = new super();
 
 Dave Herman and Yehuda Katz present counter proposal
 
-atat.pdf
+[atat.pdf](./atat.pdf)
 
 Slide 1
 
@@ -1061,7 +1061,7 @@ DH: [repeats] Would be nice to have good syntax eventually, but good for now.
 
 (Jeff Morrison)
 
-trailing_comma_proposal.pdf
+[trailing_comma_proposal.pdf](./trailing_comma_proposal.pdf)
 
 JM: Review...
 

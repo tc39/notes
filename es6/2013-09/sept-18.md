@@ -29,7 +29,7 @@ Post meeting update: Dmitry and I discussed the issue and our
 As part of that consensus, variable-length (but not fixed-length!) typed array instances that are part of a future Typed Object spec should also be extensible in the same way as current Typed Array objects. In that way, full compatibility and equivalence between say "Uint8Array" and "new ArrayType(uint8)" will be maintained. As part of typed objects proposal, we will also consider having a different "type constructor" names for variable- and fixed-length typed arrays (e.g. "new ArrayType(uint8)" vs. "new FixedArrayType(uint8, 10)").
 -- Dmitry
 
-4.4 Symbols
+## 4.4 Symbols
 
 Dave Herman presenting (follow up slides)
 

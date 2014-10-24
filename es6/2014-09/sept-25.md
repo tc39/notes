@@ -356,7 +356,6 @@ YK: decorators suffered the same syntactic space arguments.
 
 MM: I'd propose that you enter Stage 0 with TypeScript.
 - TS made a choice and proved that this choice has utility.
-- 
 
 DH: Don't need TC39
 

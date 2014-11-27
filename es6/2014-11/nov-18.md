@@ -170,7 +170,7 @@ AWB: Right.
 #### Conclusion/Resolution
 
 - Runtime assignment to const bindings (ie. bindings introduced by the const keyword) throw in all modes (strict and non-strict). 
-- Legacy const bindings (function name bindingin in function expressions) in sloppy mode continue to be no ops
+- Legacy const bindings (function name binding in function expressions) in sloppy mode continue to be no ops
 
 ## 4.4 Array.prototype.contains breaks MooTools
 (Allen Wirfs-Brock)

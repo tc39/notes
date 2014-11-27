@@ -510,7 +510,7 @@ BE: T
 
 DD: Wouldn't unreified private state, by analogy to spec-internal properties, have the same non-transparency across proxies that spec-internal properties do?
 
-MM: The only non-transparency in both cases is over non-membrane uses of proxies, whose ad hoc nature cause many necessary non-transparencies. For example, applying Data.prototype.getYear to a proxy for a Date. But in a full membrane scenario, you'd apply a proxy for getYear to a proxy for Date, which turns into applying the real getYear to the real Date on the other side of the membrane. Non-reified private state would avoid the membrane tranparency issues in the same way. These issues only arise once you reify the designator into something first class which enables access to that private state.
+MM: The only non-transparency in both cases is over non-membrane uses of proxies, whose ad hoc nature cause many necessary non-transparencies. For example, applying Date.prototype.getYear to a proxy for a Date. But in a full membrane scenario, you'd apply a proxy for getYear to a proxy for Date, which turns into applying the real getYear to the real Date on the other side of the membrane. Non-reified private state would avoid the membrane tranparency issues in the same way. These issues only arise once you reify the designator into something first class which enables access to that private state.
 
 
 YK: The only real disagreement is whether the mental model is private state or the model that [Mark just described]

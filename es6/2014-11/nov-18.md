@@ -141,7 +141,7 @@ x = 32; // early error?
 ```
 
 - es-discuss consensus: eliminate early error, because analysis during parsing is hard and no clear consensus that's work the parser should be taking on
-- current spec. draft (leagcy) ES5 semantics only throws on assignment to an immutable binding in strict mode:
+- current spec. draft (legacy) ES5 semantics only throws on assignment to an immutable binding in strict mode:
   
 
 

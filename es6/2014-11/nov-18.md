@@ -15,7 +15,7 @@ JN: Introduction
 # 4.1 ES6 Draft Status Update
 (Allen Wirfs-Brock)
 
-es6-status-update.pdf
+[es6-status-update.pdf](./es6-status-update.pdf)
 
 AWB: One revision since last meeting, rev 28.
 - http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts#october_14_2014_draft_rev_28

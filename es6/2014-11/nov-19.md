@@ -75,7 +75,7 @@ Various: Discussion of the annoying ambiguities in using colons to add types to 
 ## 5.8 Map.prototype.map and Map.prototype.filter (spec) + Set 
 (Dmitry Soshnikov)
 
-Map.prototype-extensions.pdf
+[Map.prototype-extensions.pdf](./Map.prototype-extensions.pdf)
 
 DS: Map.prototype extensions
 - map

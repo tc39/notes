@@ -322,7 +322,7 @@ var obj.__proto__
 
 ```
 
-The problem is that ES6 Array methods do not explicitly create new Arrays anymore, but instead call `this.constructor`. Zepto uses a plain object with __proto__ assigned... 
+The problem is that ES6 Array methods do not explicitly create new Arrays anymore, but instead call `this.constructor`. Zepto uses a plain object with `__proto__` assigned...
 
 fill in later
 
@@ -625,7 +625,7 @@ new Uint32Array()| false
 WH: (adds row to BE's table, based on the proposed isArray pseudocode on the slide that turns exotic objects that share Array's constructor into being themselves arrays)
 Any exotic object that inherits from Array | ?!@#
 
-DH: let d = new Date; d.__proto__ = Array.prototype; Array.isArray(d)
+DH: `let d = new Date; d.__proto__ = Array.prototype; Array.isArray(d)`
 
 DH: can allow typed objects where 
 

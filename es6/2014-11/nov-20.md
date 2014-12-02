@@ -58,7 +58,7 @@ YK: Approach that's been discussed is an API mechanism that allows me to specify
 
 EA: I think you're making a bigger problem of this, it's inherently dangerous
 
-RW: Waldemar just illutrated a danger
+RW: Waldemar just illustrated a danger
 
 YK: (gives more examples of problems)
 
@@ -76,7 +76,7 @@ BT: On the other side, there are a lot of developers waiting for this feature. I
 
 YK: Not opposed to the feature, just want to get it right.
 
-AWB: We need address issues that we'vIe identified and gain consensus.
+AWB: We need address issues that we've identified and gain consensus.
 
 DH: Look at it in two parts:
 - "I want an efficient way of being notified of changes that I care about"
@@ -235,7 +235,7 @@ DD:
     
 BT: Honest: The best way you'll get good participation from MS is in TC39, because the legal processes and agreements are in place to protect work here. We can work in w3c for same reason. Whatwg is less clear, and therefore not easy for us to be involved. 
 
-AWB: Very complex, legally. To be resolved for whatwg, they'd have to become a recognized standaUrds organization. In the legal/governmental recognition sense.
+AWB: Very complex, legally. To be resolved for whatwg, they'd have to become a recognized standards organization. In the legal/governmental recognition sense.
 
 MM: We've provided plenty of reason why TC39 would take this, can you explain why you'd rather work in whatwg?
 
@@ -389,7 +389,7 @@ More discussion about backpressure
 - Comparison documentation 
 
 
-Thanks to Paypal for the meeting accomodations. Thanks to Ecma.
+Thanks to Paypal for the meeting accommodations. Thanks to Ecma.
 
 
 

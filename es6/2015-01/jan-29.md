@@ -192,9 +192,9 @@ BT: https://github.com/bterlson/ecmarkup
 
 AWB: what is the difference between ecmarkup and ecmarkdown?
 
-BT: Ecmarkup is HTML markup, such as <emu-clause>, <emu-alg> etc
+BT: Ecmarkup is HTML markup, such as `<emu-clause>`, `<emu-alg>` etc
 
-BT: Ecmarkdown is a markdown syntax for specifying algorithms steps. Ecmarkup uses ecmarkdown inside <emu-alg> and a few other elements.
+BT: Ecmarkdown is a markdown syntax for specifying algorithms steps. Ecmarkup uses ecmarkdown inside `<emu-alg>` and a few other elements.
 
 BT: http://bterlson.github.io/ecmarkup/
 

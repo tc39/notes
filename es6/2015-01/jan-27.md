@@ -276,7 +276,7 @@ AWB: Next, do we need syntax to manifest NewTarget?
 
 YK: Early strawman was `arguments.constructor`.
 
-MM: <keyword>.prop gives us new 
+MM: `<keyword>`.prop gives us new 
 
 AWB: Sees options in the future to add things like `function.callee`
 

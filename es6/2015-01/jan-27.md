@@ -296,9 +296,9 @@ ARB: Makes sense at this point. We have had multiple threads about this?
 
 DD: Would `new.target` work in FunctionDeclaration/FunctionExpression?
 
-AWB: Shoudl work.
+AWB: Should work.
 
-YK: Objects. We should opnly allow `new.target` in places where super is allowed.
+YK: Objects. We should only allow `new.target` in places where super is allowed.
 
 AWB: `new.target` can be used anywhere where [[Construct]] is used
 

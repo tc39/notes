@@ -297,7 +297,7 @@ ARB: Typed racket great, but occurrence typing can potentially get expensive.
 
 STH: That is not accurate. There are ways that you can make things slow but there is no inherent reasons it needs to be slow.
 
-BE: If you want adoption. Peopke will go the extra distance to get the predicable performance.
+BE: If you want adoption. People will go the extra distance to get the predicable performance.
 
 YK: Can imagine a world where a language significantly compatible with JS has usages.
 

@@ -295,7 +295,7 @@ ARB: Flow is going in the opposite direction. It is doing more inference. It is 
 
 ARB: Typed racket great, but occurrence typing can potentially get expensive.
 
-STH: That is not accurate. THere are ways that you can make things slow but there is no inherent reasons it needs to be slow.
+STH: That is not accurate. There are ways that you can make things slow but there is no inherent reasons it needs to be slow.
 
 BE: If you want adoption. Peopke will go the extra distance to get the predicable performance.
 

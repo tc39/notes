@@ -544,7 +544,7 @@ class Person extends Ember.Object {
   }
 
   - on('init')
-  - obeserves('fullName)
+  - obeserves('fullName')
   fullNameChanged() {
     // ...deal with the change
   }

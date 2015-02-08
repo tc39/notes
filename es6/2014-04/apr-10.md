@@ -683,7 +683,7 @@ class Article {
 
   }
 
-  - dependsOn('title', 'author)
+  - dependsOn('title', 'author')
   get byline() {
     return `${this.title} by ${this.author}`;
   }
@@ -711,10 +711,10 @@ class Article {
   + attr('author')
   + attr('body')
 
-  - dependsOn('title', 'author)
+  - dependsOn('title', 'author')
   + generateMeAMethod
 
-  - dependsOn('title', 'author)
+  - dependsOn('title', 'author')
   get byline() {
     return `${this.title} by ${this.author}`;
   }

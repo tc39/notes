@@ -625,7 +625,7 @@ DH: Suggests stage 1, but audit the space which may lead to changes.
 
 Proposal: https://github.com/leebyron/ecmascript-reverse-iterator
 
-LB: [presents slides] (found in github repo)
+LB: [presents slides](https://github.com/leebyron/ecmascript-reverse-iterable/blob/master/TC39-March2015.pdf)
 
 [lots of discussion about how to extend iterators/iterables]
 

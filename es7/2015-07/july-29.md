@@ -165,7 +165,7 @@ BE: Suggestion fixes the right-to-left violation
 DH: Could enumerate all those cases and make errors, but much harder. 
 - Fixes, but means new rule
 
-YK: Poisioning `function () { "use strict" }`
+YK: Poisoning `function () { "use strict" }`
 
 BE: use top level "use strict"
 

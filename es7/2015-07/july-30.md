@@ -307,7 +307,6 @@ BT: want to be very clear about rationalization, so that same can be applied to 
 
 AWB: The generator function returns its value before evaluating its body. 
 - A generator is a function
-- 
 
 MM: An async generator... I missed the rest of this
 
@@ -854,7 +853,6 @@ MM: further semantics need to be explored
 - Approved for Stage 2
 - Reviewers
   - Andreas Rossberg
-  - 
 
 
 

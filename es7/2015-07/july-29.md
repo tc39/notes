@@ -846,7 +846,6 @@ WH: Note that I'm not alone with that argument. I don't want this to become pers
 
 - `new` throws
 - not separate spec
-- 
 - spec mechansisms: Allen, Brian, Rick and Dan to work through
 - Reviewers:
     - Waldemar Horwat

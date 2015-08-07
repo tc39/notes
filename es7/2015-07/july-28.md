@@ -145,7 +145,6 @@ WH: But much longer since 5.1
 AWB: 
   
 - Errata?
-- 
 
 
 Discussion re: schedule, responsibilities, etc. 

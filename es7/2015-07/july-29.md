@@ -363,7 +363,7 @@ With Sam's proposa, this would return `[undefined, Global]`, despite expecting `
   "use strict";
   return [this, foo];
 })();
-
+```
 
 DH: In ES5, there was a fundamental confusion about "use strict" in functions. This was excacerbated by es6. In the fullness of time, TC39 is saying, the directive prologue should be used:
 

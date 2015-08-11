@@ -145,10 +145,9 @@ WH: But much longer since 5.1
 AWB: 
   
 - Errata?
-- 
 
 
-Discusson re: schedule, responsibilities, etc. 
+Discussion re: schedule, responsibilities, etc. 
 
 AWB: We will submit to ISO, with exact same text (subject to ISO naming, etc). But the text will include any known errors. 
 
@@ -169,7 +168,7 @@ WH: Not a lot of work
 
 DD: You're saying that you no longer agree to fast track
 
-WH: We will get ocmments from ISO reviewers, these will identify defects, these need to be fixed. It is our job to fix
+WH: We will get comments from ISO reviewers, these will identify defects, these need to be fixed. It is our job to fix
 
 CM: Exactly the proposal: take the existing text and put it in the pipeline and publish the errata later. 
 
@@ -364,10 +363,10 @@ AWB: Used as argument to the RegExp constructor
 
 DD: yes
 
-Safe Wth Extra Escape Set
+Safe With Extra Escape Set
 
 - Escapes everything the SyntaxCharacter proposal does
-- Escapes `-` addl. for the context sentive inside-character-class matching
+- Escapes `-` addl. for the context sensitive inside-character-class matching
 - Escapes hex numeric literals (0-9a-f) at the start of the string in order to 
 - Less readable output but safer
 

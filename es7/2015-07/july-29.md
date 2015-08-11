@@ -165,7 +165,7 @@ BE: Suggestion fixes the right-to-left violation
 DH: Could enumerate all those cases and make errors, but much harder. 
 - Fixes, but means new rule
 
-YK: Poisioning `function () { "use strict" }`
+YK: Poisoning `function () { "use strict" }`
 
 BE: use top level "use strict"
 
@@ -363,9 +363,9 @@ With Sam's proposa, this would return `[undefined, Global]`, despite expecting `
   "use strict";
   return [this, foo];
 })();
+```
 
-
-DH: In ES5, there was a fundamental confusion about "use strict" in functions. This was excacerbated by es6. In the fullness of time, TC39 is saying, the directive prologue should be used:
+DH: In ES5, there was a fundamental confusion about "use strict" in functions. This was exacerbated by ES6. In the fullness of time, TC39 is saying, the directive prologue should be used:
 
 - Global "use strict" (being careful of script concatenation)
 - Top-level IIFE "use strict"
@@ -846,7 +846,6 @@ WH: Note that I'm not alone with that argument. I don't want this to become pers
 
 - `new` throws
 - not separate spec
-- 
 - spec mechansisms: Allen, Brian, Rick and Dan to work through
 - Reviewers:
     - Waldemar Horwat

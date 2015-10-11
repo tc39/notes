@@ -492,7 +492,6 @@ LH: (pre lunch summary)
 
 - This feature has cost
 - sophisticated shared memory given to those that don't know how to use it
-- 
 
 YK: better to allow the ecosystem to help us design the higher level sync operations than try to design ourselves
 
@@ -717,7 +716,7 @@ AWB: Didn't have to.
 
 DE: targeting asm style compilers and normal JS JITs
 
-AWB: One possibility: build heirarchy. eg. All the integer types can share an add method. You need to check the arguments anyway. 
+AWB: One possibility: build hierarchy. eg. All the integer types can share an add method. You need to check the arguments anyway. 
 
 BE: this is class-side inheritance
 
@@ -849,7 +848,7 @@ DE: you already have to do that with floats.
 
 MM: not if we say that === is non-reflixive with the values
 
-DE: Impemented in some browsers, seem convenient to us. 
+DE: Implemented in some browsers, seem convenient to us. 
 
 MM: strong preference. when it is applied to anything other than direct application to a scalar, mathematical equivalence class must be reflexive
 
@@ -960,7 +959,7 @@ YK: TLDR here is if you still want to make this change, you need to signal to th
 
 DE: Can decide now that we're not going to do this change. 
 
-PJ: problem is that we want people to use constants for accesing the lane, but they don't have to, and that needs to work
+PJ: problem is that we want people to use constants for accessing the lane, but they don't have to, and that needs to work
 
 JHD: how hard would it be to split the load/store methods into stage 2, and the others move to stage 3. Does it work without those methods?
 

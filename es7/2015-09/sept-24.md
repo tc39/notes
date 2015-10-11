@@ -788,7 +788,7 @@ AK: need some syntax that says "where am i?"
 
 DH: we want the smallest number of constructs, there is benefit to users for this. However, inband vs. outband is real ergonomics issue. Ability to correspond syntatic forms between declarative and imperative forms has value
 
-DH: Moving on. Need global APIs here, reflective API for dynically creating a module instance. I want Reflect.Module (or something living under Reflect), DD wants...
+DH: Moving on. Need global APIs here, reflective API for dynamically creating a module instance. I want Reflect.Module (or something living under Reflect), DD wants...
 
 tl;dr: Spec defines a module namespace exotic object, need a way to create these. Custom loaders need to make these. 
 

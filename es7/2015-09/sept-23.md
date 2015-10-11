@@ -363,9 +363,9 @@ DD:
     
 ```js
 async function foo() {
-setup();    
-await delay(5000);
-cleanup();
+  setup();    
+  await delay(5000);
+  cleanup();
 }
 
 const p = foo();
@@ -374,13 +374,13 @@ p.cancel();
 
 // Would need to be...
 async function foo() {
-setup();    
-
-try {
-await delay(5000);
-} finally {
-cleanup();
-}
+  setup();    
+  
+  try {
+    await delay(5000);
+  } finally {
+    cleanup();
+  }
 }
 
 const p = foo();
@@ -436,10 +436,10 @@ Hazard:
     
 ```js
 async function foo() {
-setup();    
-await delay(5000);
-cleanup(); // <-- not called if canceled. 
-}
+  setup();    
+  await delay(5000);
+  cleanup(); // <-- not called if canceled. 
+}  
 ```
 
 ...
@@ -464,15 +464,15 @@ DD:
     
 ```js
 async function foo() {
-setup();    
-
-try {
-await promise;
-} catch cancel {
-// recover and continue?
-} finally {
-cleanup();
-}
+  setup();    
+  
+  try {
+    await promise;
+  } catch cancel {
+    // recover and continue?
+  } finally {
+    cleanup();
+  }
 }
 
 promise.cancel();

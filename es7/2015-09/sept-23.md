@@ -315,7 +315,7 @@ YK: Doesn't mean it's slow
 
 AK: In the short term, maybe. 
 
-DH: need to udnerstand challenges:
+DH: need to understand challenges:
 
 - already ahave machinery to analyze and find optimizations
 - accept that decorators may have a slow first implementation
@@ -403,7 +403,7 @@ YK: Generator, call `return()`
 
 "Return Abrupt Completion" is for any kind of return from current execution 
 
-BT: case where promise returned by async function, awaiting 5 promises? A promise is canceled, reasonable to handle that promuse and move onto the next thing—otherwise have to nest 5 try/finally deep. 
+BT: case where promise returned by async function, awaiting 5 promises? A promise is canceled, reasonable to handle that promise and move onto the next thing—otherwise have to nest 5 try/finally deep. 
 
 Discussion of return, cancelation and recovery. 
 

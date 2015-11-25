@@ -113,7 +113,13 @@ Slide 10
 Works in both class constructors and function constructors 
                                                 
 ```js
-SubArray.__proto__ = Array;  SubArray.prototype = Object.create([].prototype);   function SubArray(...args) {    if (!this^) this = new SubArray(...args);    else this = new super(...args);  }  
+SubArray.__proto__=Array;
+SubArray.prototype=Object.create([].prototype);
+func,on SubArray(...args) {
+	if (!this^) this = new SubArray(...args);
+	else this = new super(...args);
+} 
+```
 
 MM: You can do assignment to `this` when called as a function?
 

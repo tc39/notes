@@ -524,12 +524,12 @@ JH: Point out that this is inert meta data
 Userland Classes: Ember
 
 ```js
-App.Pserson = Ember.Object.create({
-firstName: null,
-lastName: null,
-fullName: Em.computed(function() {
-return this.get('firstName') + ' ' + this.get('lastName');
-}, 'firstName', 'lastName')
+App.Person = Ember.Object.create({
+  firstName: null,
+  lastName: null,
+  fullName: Em.computed(function() {
+    return this.get('firstName') + ' ' + this.get('lastName');
+  }, 'firstName', 'lastName')
 });
 ```
 
@@ -544,7 +544,7 @@ class Person extends Ember.Object {
   }
 
   - on('init')
-  - obeserves('fullName)
+  - observes('fullName')
   fullNameChanged() {
     // ...deal with the change
   }
@@ -683,7 +683,7 @@ class Article {
 
   }
 
-  - dependsOn('title', 'author)
+  - dependsOn('title', 'author')
   get byline() {
     return `${this.title} by ${this.author}`;
   }
@@ -711,10 +711,10 @@ class Article {
   + attr('author')
   + attr('body')
 
-  - dependsOn('title', 'author)
+  - dependsOn('title', 'author')
   + generateMeAMethod
 
-  - dependsOn('title', 'author)
+  - dependsOn('title', 'author')
   get byline() {
     return `${this.title} by ${this.author}`;
   }

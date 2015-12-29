@@ -996,6 +996,7 @@ BT: As an implementor, I need to frontload the work that the group feels appropr
 DE: it would be optimal to have high quality tests, if there are issues / failing tests we can and judge the risk associated.
 
 … deciding core semantics …
+
 BT: 95% confidence interval on “core concepts” or tests related to non-trivial changes. Or issues unrelated to performance/stability.
 
 MM: populate visible primordials must be populated

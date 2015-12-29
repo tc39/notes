@@ -673,7 +673,7 @@ JHD: the risk grows the longer we wait.
 DD: it sounds like more information is needed.
 
 #### Conclusion/Resolution
-    - More research
+- More research
 
 DE: can i propose I18n?
 

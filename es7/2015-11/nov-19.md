@@ -94,7 +94,7 @@ DD: its not really clear cut
 
 DD: one thing that catches me, where is the second thisArg to forEach.
 
-YK: its bad in async siutations, thisArg entangles the lifetime
+YK: its bad in async situations, thisArg entangles the lifetime
 
 DD: other constructs do already
 
@@ -112,7 +112,7 @@ YK: yes, a loop re-entering during iteration, seems fatal
 
 YK: in the middle of a block, jumping to the top of the block is unexpected
 
-DD: yes in a for loop, run to completeion invariant should not be broken
+DD: yes in a for loop, run to completion invariant should not be broken
 
 YK: if the observable has no buffering, this will just happen
 
@@ -139,7 +139,7 @@ YK: when someone calls next on the producer, without buffering the consumer then
 
 MM: is the producer something that calls next? Or something that gets next get called one. Lets be careful to prevent confusion
 
-YK: there is code that calls next, and code that recieves next.
+YK: there is code that calls next, and code that receives next.
 
 MM: is the object
 

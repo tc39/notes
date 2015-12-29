@@ -419,7 +419,7 @@ AWB: Thats fine, i don’t expect such subclasses to have the same performance c
 
 DE: that sounds like a big task for a subclass
 
-AWB: that is unfortunate, that subclasses cannot benifit from existing platform optimizations
+AWB: that is unfortunate, that subclasses cannot benefit from existing platform optimizations
 
 DE: to give more context. JHD is working on the ES6 shim and ran into some issues
 
@@ -949,7 +949,7 @@ DD: TC39 believes the global isn’t a mess already
 
 MM: well, because of this, we should take extra care. We should not contribute to the problem
 
-MM: we discussed that modules will be a mechanism for us to prevent additional polution.
+MM: we discussed that modules will be a mechanism for us to prevent additional pollution.
 
 YK: yes its a risk, modules are a way out of this.
 

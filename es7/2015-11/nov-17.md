@@ -208,7 +208,7 @@ YK: Maybe the framework wars will be settled and we can revisit this question
 #### Conclusion/Resolution
 Object.observe is withdrawn
 
-#### Should destructuring declarations without bindings throw?
+## Should destructuring declarations without bindings throw?
 
 ```js
 let { } = obj;

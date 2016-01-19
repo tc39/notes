@@ -208,7 +208,7 @@ YK: Maybe the framework wars will be settled and we can revisit this question
 #### Conclusion/Resolution
 Object.observe is withdrawn
 
-#### Should destructuring declarations without bindings throw?
+## Should destructuring declarations without bindings throw?
 
 ```js
 let { } = obj;
@@ -233,7 +233,7 @@ YK: it has to be recursively defined.
 
 DH: refactoring transformations breaking down, due to this restriction is is unfortunate
 
-DH: without a good argument, I error on the ergomoics wins composition over the error.
+DH: without a good argument, I error on the ergonomics wins composition over the error.
 
 WH: This is like trying to delete the number zero from the number line. It’s cognitively simpler to keep it than to avoid it. {} and [] are legitimate objects and shouldn’t be a special case.
 

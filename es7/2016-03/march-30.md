@@ -4,7 +4,7 @@ March 30th 2016 Meeting Notes
 
 Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson, JF Bastien (JFB), Joe Lencioni, Sebastian Markbage, Jeff Morrison, Kevin Smith (KS), Jafar Husain (JH), Lars Hansen (LH), Saam Barati, Keith Miller, Michael Saboff, Eric Ferraiuolo (EF),Eric Faust (FST), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SG), Tim Disney, Waldemar Horwat (WH), Bert Belder, Peter Jensen, Daniel Ehrenberg (DE), Caridy Patiño, Diego Ferreiro Val, Jean Fraucois Paradis, Shelby Hubick, Leo Balter (LB), Misko Hevery, Allen Wirfs-Brock (AWB), Kevin Gibbons (KG)
 
-#### Length argument normalization for TypedArrays, ArrayBuffer and DataView constructors
+## Length argument normalization for TypedArrays, ArrayBuffer and DataView constructors
 
 slide presentation by Leo Balter
 
@@ -18,11 +18,11 @@ LB: Do you want to see more work at this meeting?
 
 AWB: Doing it on a github issue might be sufficient, the important thing is to think deeply about the issues
 
-#### Conclusion
+#### Conclusion/resolution
 
 LB: to work out details on a github issue.
 
-#### Duplicate sloppy mode function in block web compatibility fix
+## Duplicate sloppy mode function in block web compatibility fix
 
 Shu-yu Guo and Daniel Ehrenberg presenting slides: https://docs.google.com/presentation/d/1E LM_X4_EMEhcmfiA_AHJ4zw0aKDM8DBxqFOmNsiMHig/edit#slide=id.p
 
@@ -80,15 +80,14 @@ WH: Would like to understand exactly which function will be chosen when reparing
 
 [whiteboarding ensues]
 
-#### Conclusion
+#### Conclusion/resolution
 
-Fix #1 (multiple declarations)
+- Fix #1 (multiple declarations)
+- Leave #2 as-is (f = 42)
+- DE: to push forward his pull request
 
-Leave #2 as-is (f = 42)
 
-DE: to push forward his pull request
-
-#### Make RegExps more consistent in their treatment of flags
+## Make RegExps more consistent in their treatment of flags
 
 Michael Saboff and Daniel Ehrenberg presenting slides: https://docs.google.com/presentation/d/1BZiysQL4YMXgexwTmcZTFOD0nxGSAGz7PbzAotoDiGw/edit#slide=id.g127bcf3e41_1_0
 
@@ -96,13 +95,13 @@ AWB: I think this is uncontroversial
 
 WH: Do it!
 
-#### Conclusion
+#### Conclusion/resolution
 
 Exec will read from [[OriginalFlags]] for all flags, including global and sticky
 
 DE: will push forward his pull request
 
-#### RegExp feature testing and web compat
+## RegExp feature testing and web compat
 
 Daniel Ehrenberg and Michael Saboff presenting slides: https://docs.google.com/presentation/d/1BZiysQL4YMXgexwTmcZTFOD0nxGSAGz7PbzAotoDiGw/edit?pref=2&pli=1#slide=id.g127bcf3e41_1_10
 
@@ -132,11 +131,11 @@ AK: The spec for toString doesn't check [[RegExpMatcher]] directly, it delegates
 
 JHD: So we should just make 'source' behave the same way as everything else, and fixing toString will fall out of that
 
-#### Conclusion
+#### Conclusion/resolution
 
 DE: will push forward the pull request
 
-#### Private fields
+## Private fields
 
 Kevin Smith presenting slides (TODO(KS): Please add slides here)
 
@@ -522,17 +521,17 @@ AWB: I don't want to send a message that this proposal is what private state wil
 
 DH: that's what stage 1 means.
 
-#### Conclusion
+#### Conclusion/resolution
 
-#### Revisiting Function.prototype.toString
+## Revisiting Function.prototype.toString
 
 MF: presenting the changes from yesterday
 
-##### Conclusion
+#### Conclusion/resolution
 
 Approved to proceed to stage 3
 
-#### Map/Set to JSON
+## Map/Set to JSON
 
 JHD
 
@@ -548,7 +547,7 @@ AWB: How confident are we that this is right thing, since users can add it thems
 
 MM: They could also create a replacer
 
-#### Draft Proposed Frozen Realm API
+## Draft Proposed Frozen Realm API
 
 Chip Morningstar presenting slides (TODO: CM, please add slides)
 
@@ -872,7 +871,7 @@ DH: We could back off Realms to Stage 0
 
 WH: I want a presentation 
 
-#### Conclusion
+#### Conclusion/resolution
 
 Frozen realms is stage 1, Realms is Stage 0
 

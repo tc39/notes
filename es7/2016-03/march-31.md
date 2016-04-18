@@ -14,7 +14,7 @@ ECMAScript Specification Suite (pointer spec for ISO): Approved
 
 Note that everyone has until May 1st to review the document for patent issues.
 
-#### Tail Calls
+## Tail Calls
 
 AWB: objected that the current standard language is sufficient
 
@@ -70,9 +70,8 @@ AWB: You're using heavyweight stack frames for all calls?
 
 BT: Except for inline calls, which have a side table. That's the main problem. A side problem is, tail calls affect the value of error.stack, which is important. For example, telemetry tools which bucket based on the value of error.stack. And there is an ergonomic position as well: if you use tail calls, you don't get much feedback from the language. Instead, you have to put it in the right position, and hope that you have enough tests that exhaust the stack space. So an explicit sigil may help, for users to explicitly opt in. The benefits:
 
-    - Explicitly opt-in, to avoid slow cases where it's slower on some platforms.
-
-    - Give a SyntaxError when it's not a valid tail call, or some kind of error to help the programmer
+- Explicitly opt-in, to avoid slow cases where it's slower on some platforms.
+- Give a SyntaxError when it's not a valid tail call, or some kind of error to help the programmer
 
 MF: Clojure has a sigil for this, recur instead of return, which similarly helps
 
@@ -116,7 +115,7 @@ EF: For web compatibility, programmers can already debug
 
 MM: JS is unique in the span of programmers it tries to accommodate. In the absence of this debugger issue, many programmers will not know that a call is a tail call. In the absence of TCO, this would be fine. But having the default behavior of TCO on is counter to developer intuition in terms of when you'd get the stack
 
-<fill in DE's point>
+(fill in DE's point)
 
 MS: To me, it seems more intuitive to opt out of tail calls than to opt in.
 
@@ -156,7 +155,7 @@ AWB: What do you do when inlining? Do you still synthesize a stack frame for it?
 
 KM: Yes, every browser does this
 
-<a side thing, everyone says>
+(a side thing, everyone says)
 
 MS: Wouldn't you argue, based on your stack analysis, that this means that we shouldn't make a decision based on any kind of cross-browser support of stack scraping?
 
@@ -272,11 +271,11 @@ DH: We have an implementer who has implemented [proper tail calls] as an optimiz
 
 DH: BT wants to put forward a new proposal, and I want to make sure that he's going to be heard. From what I've understood today, it seems totally reasonable.
 
-##### Conclusion
+#### Conclusion/resolution
 
 Brian Terlson (with EF as co-champion) to champion a stage 0 proposal to amend existing tail call spec language to require extra syntax to implement a tail call
 
-#### Reference type and implementation reality (double-evaluation of computed property expression)
+## Reference type and implementation reality (double-evaluation of computed property expression)
 
 MF: IE6-8 and some versions of Opera has the correct (specified) semantics.
 
@@ -296,11 +295,11 @@ AWB: Not if ...
 
 BT: This doesn't matter all that much.
 
-##### Conclusion
+#### Conclusion/resolution
 
 Let the current spec stand.
 
-#### Intl
+## Intl
 
 ZB: presenting gi
 
@@ -316,7 +315,7 @@ DH: Naming is bikeshedding.
 
 WH, AWB: But we're setting precedent here.
 
-##### Conclusion
+#### Conclusion/resolution
 
 formatToParts advances to stage 3
 
@@ -328,7 +327,7 @@ The ECMA 402 group encourages Microsoft to use ICU
 
 AWB: TC39 is not supposed to be telling parties how to implement the standards, only what to implement.
 
-#### Public class fields
+## Public class fields
 
 JM: talking (no presentation)
 
@@ -398,15 +397,16 @@ BT: TypeScript also does not impose top to bottom ordering.  And noone has been 
 
 DH: puts up another code sample to show that class elements are not really ordered.
 
+```js
 class C {
 
-      state a = console.log("A");
+  state a = console.log("A");
 
-      b = console.log("b");
+  b = console.log("b");
 
-      static c = console.log("C");
-
+  static c = console.log("C");
 }
+```
 
 MM: my proposal is that we don't allow initializers and then this issue evaporates.
 
@@ -432,17 +432,14 @@ MM: scoping of this, super, and arguments, and ...
 
 MM: for all these, file issues on teh proposal
 
-##### Conclusion
+#### Conclusion/resolution
 
- - JM will bring a proposal in May
+- JM will bring a proposal in May
+- DE will try to organize a call in advance
+- please file issues on the proposal repo for all specific concerns
+- some concerns seem to be: 1) execution order, 2) this/super/arguments scoping in both instance and statics, 3) initializers allowed in class body?
 
- - DE will try to organize a call in advance
-
- - please file issues on the proposal repo for all specific concerns
-
- - some concerns seem to be: 1) execution order, 2) this/super/arguments scoping in both instance and statics, 3) initializers allowed in class body?
-
-#### Weak References
+## Weak References
 
 Dean Tribble presenting slides (https://github.com/tc39/proposal-weakrefs/blob/master/specs/Weak%20References%20for%20EcmaScript.pdf)
 
@@ -512,25 +509,25 @@ WH: So how do you define reachability?
 
 WH: Ah, then this will not fly:
 
+```js
 async function f() {
 
-    let x = ...;
+  let x = ...;
 
-    let w = MakeWeakRef(...x...);
+  let w = MakeWeakRef(...x...);
 
-    await a;
+  await a;
 
-    await b;
+  await b;
 
-    foo(w);
-
+  foo(w);
 }
 
 function foo(w) {
 
-    assert(w.get());  // this assert can fail in an optimizing compiler
-
+  assert(w.get());  // this assert can fail in an optimizing compiler
 }
+```
 
 MM: Yes, that's correct.
 
@@ -640,7 +637,7 @@ AWB: This needs debate, and it needs implementation experience.
 
 EF: The core of the problem is that the worries about the proposal are exactly those things that the proposal explicitly does not address.
 
-##### Conclusion
+#### Conclusion/resolution
 
 Stage 1
 
@@ -650,7 +647,8 @@ Open issue: .get() -> strong as a side channel
 
 Open issue:  address this turn-based behavior in a non-turn-based execution environment.
 
-#### Template Literals Are Broken (TD)
+## Template Literals Are Broken 
+(TD)
 
 (see slides)
 
@@ -706,32 +704,31 @@ WH: similar to regexes, which have a cover grammar
 
 … discussion about compat issue …
 
-##### Conclusion
+#### Conclusion/resolution
 
-Stage 1
+- Stage 1
 
-#### Map.prototype.toJSON/Set.prototype.toJSON (JHD)
+## Map.prototype.toJSON/Set.prototype.toJSON 
+(JHD)
 
 Continued discussion from yesterday.
 
-##### Conclusion
+#### Conclusion/resolution
 
-Rejected.
+- Rejected.
 
 `toJSON` is a legacy artifact, and a better approach is to use a custom `replacer` that, for example, checks `[Symbol.toStringTag]` and dispatches to appropriate serializations.
 
 The committee did not want to bless the `toJSON` approach by adding what would be an incomplete representation - one that would not obviate the need for developers to define their own serialization format and revivification logic.
 
-#### Aggregated FOSS parser pass-fail and equivalence tests (KG)
+## Aggregated FOSS parser pass-fail and equivalence tests 
+(KG)
 
-##### Conclusion
+#### Conclusion/resolution
 
- - needs lots of review, nobody volunteered
-
- - decision left to test262 maintainers
-
- - test262 are not conformance tests
-
- - having additional repositories that are part of the test262 project but not part of test262 is OK
+- needs lots of review, nobody volunteered
+- decision left to test262 maintainers
+- test262 are not conformance tests
+- having additional repositories that are part of the test262 project but not part of test262 is OK
 
 

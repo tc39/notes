@@ -18,7 +18,8 @@ Agenda approved.
 
 Minutes approved.
 
-#### Object.values & Object.entries (JHD)
+## Object.values & Object.entries 
+(JHD)
 
 BT: This should be quick.
 
@@ -60,11 +61,12 @@ JHD: the only negative feedback was disappointment that it didn't make it in and
 
 BT/JHD/etc consensus agreed that it proceeds to stage 4.
 
-###### Conclusion / Resolution
+#### Conclusion/resolution
 
-1. Stage 4!
+- Stage 4!
 
-### System.global (JHD) 
+## System.global 
+(JHD) 
 
 JHD: I did a whole bunch of research, and found that there's a whole bunch of code that uses self, window and global which would break, as it assumes that 'global' implies Node, 'self' or 'window' imply web.
 
@@ -92,11 +94,12 @@ JHD: self might be OK, but there were a few examples; didn't find a particular c
 
 MM: is opposed to having bare "global". They should be gathered; having that be System is fine, but it shoudl be someplace.
 
-#### Conclusion / Resolution
+#### Conclusion/resolution
 
-Stage 2, reviewers for Stage 3 are Caridy Patino, Mark Miller, Michael Ficarra
+- Stage 2, reviewers for Stage 3 are Caridy Patino, Mark Miller, Michael Ficarra
 
-### String.prototype.padStart/padEnd (JHD)
+## String.prototype.padStart/padEnd 
+(JHD)
 
 JHD: will ship in stable behind a flag.  Not currently trying to get to stage 4 today (currently at Stage 3). Just wanted to update because of recent discussion.  there is not enough implementations to move it forward in stage.
 
@@ -134,7 +137,7 @@ WH: Why not always keep the last instance of the substitution string intact?
 
 DH: POLS--disrespect Unicode. But this feels like a potential security vulnerability (injection attacks?)
 
-DD: Substitute with that <?> character?
+DD: Substitute with that (?) character?
 
 BT: But we don't substitute for String.prototype.slice(), property access
 
@@ -146,13 +149,13 @@ JHD: Like graphemes!
 
 DE: Intl could be a good place for this; Intl.v8BreakIterator does it today but is not standardized
 
-#### Conclusion/Resolution
+#### Conclusion/resolution
 
 1. Absent or undefined, default to single space string.
 2. ToString the thing.
 3. If empty string, return the original string. Otherwise, pad using the pad string.
 
-#### Object.getOwnPropertyDescriptors
+## Object.getOwnPropertyDescriptors
 
 JHD: Status update, things going well, waiting for implementors and feedback
 
@@ -168,7 +171,7 @@ MM: What if it's modified during iteration?
 
 BT: It may be nondeterministic if it's modified during iteration and has a non-null prototype
 
-#### Error.isError
+## Error.isError
 
 JHD: Brand checking === bad (apparently). But I forgot about error objects. There does not exist anything in the spec that throws with non-errors. Errors cannot be reliably checked for.
 
@@ -214,9 +217,9 @@ MM: to minimize the window, JHD should collaborate with MM on the getStack API. 
 
 •JHD will work with MM on the stack proposal, and move this proposal into the "withdrawn proposals" section
 
-#### ECMA402
+### ECMA402
 
-DE: Compatibility fix for v1 --> v2 (call with a receiver that is created via Object.create, it would initialize the object). For V2, spec was changed to be normal JS semantics. Tried to fix V2 semantics, but couldn't ship in V8 due to breaking websites. Now have implemented a compromise semantics: if you call the NumberFormat and DateTimeFormat constructor with a receiver that is an instance of the respective constructor and it's not initialized.... (continues to describe) details here: https://github.com/tc39/ecma402/pull/84. There is a symbol that it indirects to and the fix seems to work.
+DE: Compatibility fix for v1 -> v2 (call with a receiver that is created via Object.create, it would initialize the object). For V2, spec was changed to be normal JS semantics. Tried to fix V2 semantics, but couldn't ship in V8 due to breaking websites. Now have implemented a compromise semantics: if you call the NumberFormat and DateTimeFormat constructor with a receiver that is an instance of the respective constructor and it's not initialized.... (continues to describe) details here: https://github.com/tc39/ecma402/pull/84. There is a symbol that it indirects to and the fix seems to work.
 
 MM: there is a self-hosted piece of code that illustrates the algorithm.
 
@@ -288,7 +291,7 @@ CP: Targeting edition 4.
 
 PR: is ok once the editorial issues are worked out (including a non-normative note describing the back-compat requirement and other relevant information). Said note should not link to GitHub issues.
 
-#### Zones update
+## Zones update
 
 (DD: Presenting slides)
 
@@ -322,7 +325,7 @@ DD: yes they are otherwise the same and so could be reasoned about similarly.
 
 * misc people expressed approval for the changes
 
-#### Function.prototype.toString() 
+## Function.prototype.toString() 
 
 Michael Ficarra (MF)
 
@@ -390,7 +393,7 @@ MF: will make fix to clearly exclude surrounding whitespace: "the source text ma
 
 MF: will bring those tomorrow to get final approval for stage 3
 
-#### Reference type and the implementation reality
+## Reference type and the implementation reality
 
 https://github.com/tc39/ecma262/issues/467
 
@@ -430,11 +433,11 @@ WH: I view this as an old bug. We should fix the bug in the implementations inst
 
 BT: it would be nice to update test262 to test the semantics eventually
 
-#####
+#### Conclusion/resolution
 
 We will revisit the proposed resolution with Allen Wed.
 
-#### Async Iteration
+## Async Iteration
 
 KS: presenting slide with the changes
 
@@ -450,7 +453,7 @@ KS: correct. there is no longer a special case for promises
 
 JH: where before we were relying on then to do the flattening, here we are relying on the for await?
 
-*discusison
+*discussion
 
 MM: the typical consumer should see the flattened value.  The principle here is that for the producer yields a value, they must not get blocked because they didn't block.
 
@@ -514,7 +517,7 @@ Approved for Stage 2
 
 DD: and DH volunteered as reviewers.
 
-#### Shared Memory and atomics
+## Shared Memory and atomics
 
 LH: presenting
 
@@ -562,7 +565,7 @@ LH: Maybe older ARM chips?
 
     
 
-#### Aynsc Functions
+## Aynsc Functions
 
 BT: is summarizing status. All good, no implementation concerns raised by anyone, Chakra impl passes almost all tests, firefox implementation is making progress. I would push for Stage 4 but Google has objected so I am only giving a status update.
 
@@ -574,7 +577,7 @@ FST: the spec seems straightforward
 
 *unrelated promise discussion happened and various morasses were narrowly avoided.
 
-#### TCO
+## TCO
 
 SG, EF: Cross realm proper tail calls conflict with the SpiderMonkey security model, which needs to allocate memory (either on the stack or the heap) in order to do something on function return. You can tail call into the membrane thing, but it will take some space
 
@@ -584,13 +587,13 @@ MS: We'll have fixed stack space anyway; we already implemented it.
 
 SG, EF: Let's make that a separate question, and discuss it Thursday. What if we start with a pull request which encodes that cross-realm calls don't to make cross-realm tail calls not have fixed stack space, while also allowing that it *may* have fixed stack space
 
-<General consensus on at least allowing non-tail-call behavior>
+(General consensus on at least allowing non-tail-call behavior)
 
 MM: What shows up in a stack trace? This becomes observable.
 
 EF: Let's delay this larger discussion until Thursday.
 
-####
+#### Conclusion/resolution
 
 SM: will write spec language for tail calls (likely involving an update to PRepareForTailCAll) that will allow implementations to do a PTC across realm boundary or not (implementation defined).
 

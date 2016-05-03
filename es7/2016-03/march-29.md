@@ -6,7 +6,7 @@ Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), M
 
 ## Agenda
 
-https://github.com/tc39/agendas/blob/master/2016/01.md
+https://github.com/tc39/agendas/blob/master/2016/03.md
 
 ## Dial-in
 

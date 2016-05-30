@@ -36,9 +36,9 @@ AWB: doesn't mind saying it's implementation dependent
 
 ...
 
-BT: it woudl be preferable if the spec test calls out that if it's possible ot have the membrane crossing be a tail call, it should be.
+BT: it would be preferable if the spec test calls out that if it's possible ot have the membrane crossing be a tail call, it should be.
 
-AWB: given that there's an issue inke dhere to realms, are there other non-=specified things that might be tied to calls for which the same argument shoudl be made.  "The spec says this shoudl be a tail call, but if we do then e.g., debugging information will be lost so...."
+AWB: given that there's an issue inke dhere to realms, are there other non-=specified things that might be tied to calls for which the same argument shoudl be made.  "The spec says this should be a tail call, but if we do then e.g., debugging information will be lost so...."
 
 AK: How did we arrive at consensus that this is normatively required?
 
@@ -52,7 +52,7 @@ BT: We all fail the reference types
 
 MS: We'd rather it say that it's preferred to use proper tail calls in the cross-realm case, and it's OK to do an ordinary call as Mozilla will do
 
-EF: But that's the same, it's logcally equivalent
+EF: But that's the same, it's logically equivalent
 
 MM, BT: But there's different conntations
 
@@ -64,7 +64,7 @@ EF: The spec text should say it's implementation dependent, but aspirational, to
 
 -- second part of tail calls, presented by BT
 
-BT: For Chakra, implementing tail calls is hard because of some platform constraints: the Windows ABI is strict with when we can touch stack, and our calling conventions make it so that, in an ideal case, we can approach tail calls with roughly equivalent performance, however in pathological cases (e.g., mutually recursive functions wiht varying numbers of arguments) those will be slower for the forseeable future. We are concerned that if we just turn tail calls on on the internet, many sites will be slower, because existing callsites will happen to be in tail position. We use the Windows ABI for setting up stack; we have C++ exceptions, and doing this with tail calls is hard.
+BT: For Chakra, implementing tail calls is hard because of some platform constraints: the Windows ABI is strict with when we can touch stack, and our calling conventions make it so that, in an ideal case, we can approach tail calls with roughly equivalent performance, however in pathological cases (e.g., mutually recursive functions with varying numbers of arguments) those will be slower for the forseeable future. We are concerned that if we just turn tail calls on on the internet, many sites will be slower, because existing callsites will happen to be in tail position. We use the Windows ABI for setting up stack; we have C++ exceptions, and doing this with tail calls is hard.
 
 AWB: You're using heavyweight stack frames for all calls?
 
@@ -309,7 +309,7 @@ Fundamentally, it's that all future formatters will have *.formatToParts
 
 AWB: objectected to the long name
 
-ZB: the longer name is moslty used by libraries. Most people will just use format and so it's a good compromise
+ZB: the longer name is mostly used by libraries. Most people will just use format and so it's a good compromise
 
 DH: Naming is bikeshedding.
 
@@ -335,9 +335,9 @@ JM: An update on two major concerns. From Mark, public class fields in the const
 
 MM: Even though there's no scoping mechanism, there is a scoping intuition. The use of the property name is in the body of the class, and therefore the property is intuitively scoped to the class body, and should be declared in the class body rather than the constructor.
 
-AWB: are there initlaizaation expressions on the public class fields?  what is the scoping and eveluation time
+AWB: are there initlaizaation expressions on the public class fields?  what is the scoping and evaluation time
 
-JM: eval time is immediatley at the last stage after calling super (the proposal documents it). It is part of construction
+JM: eval time is immediately at the last stage after calling super (the proposal documents it). It is part of construction
 
 WH: this is similar to the alternate implementation of private fields?
 
@@ -349,7 +349,7 @@ JM: The properties get added to whatever object super returns.
 
 WH: OK; just checking that the private and public field proposals are harmonious here, and it looks like they are.
 
-AWB: you can think about it as an anonymous fucntion that is invoked at the time of...
+AWB: you can think about it as an anonymous function that is invoked at the time of...
 
 JM: you can think of it that way.  there are edge cases that don't quite match that intuition
 
@@ -363,9 +363,9 @@ AWB: what about constructor parameters
 
 AWB: whatever the answer here, it needs to apply to both this and privates
 
-JS: we could go with lexial this and instance this. we don't know yet which one is right.  there's more utility in "this" representing instance and "super" making sense.
+JS: we could go with lexical this and instance this. we don't know yet which one is right.  there's more utility in "this" representing instance and "super" making sense.
 
-DH: argues that we should start from the intuition at the programming model not the implementation of hte featuere.  so the "this means instance" is that intuition. they may lead to different conclusions for this vs. fields/properties.  this praticular feature is lexically scoped to the class body. 
+DH: argues that we should start from the intuition at the programming model not the implementation of the feature.  so the "this means instance" is that intuition. they may lead to different conclusions for this vs. fields/properties.  this praticular feature is lexically scoped to the class body. 
 
 AK: describing it in terms of a function call led to the confusion, but thinking in terms of instantiation avoided the confusion.
 
@@ -383,13 +383,13 @@ WH: What about `this`?
 
 MM: "this" inside an initializer evals ot the instance being initialized.
 
-DD: shows and example such that there's two differnt definitions of this at differtnt places in the class defintion.  that's super confusing.
+DD: shows and example such that there's two different definitions of this at different places in the class definition.  that's super confusing.
 
 DH: this issue comes up repeatedly because an intuition about class bodies is wrong. People assume tha thtey are executed once. But in JS they are not.  You will always see things described in orde that will execute in a different order
 
-DD: but this woudl be the first time that we have introduced such a drastic difference in timing.
+DD: but this would be the first time that we have introduced such a drastic difference in timing.
 
-MM: DD is bringing up two points. 1) wrt scoping 2) wrt execution time.  Jeff and I had previosuly talked abotu execution time.  If you accept the declaration being in teh class body, but you don't allow an initializer, then we avoid the multilayer issue. This is how it has been in Babel and people have not reported an issue.
+MM: DD is bringing up two points. 1) wrt scoping 2) wrt execution time.  Jeff and I had previously talked abotu execution time.  If you accept the declaration being in teh class body, but you don't allow an initializer, then we avoid the multilayer issue. This is how it has been in Babel and people have not reported an issue.
 
 DH: the intuition of top to bottom does not survive contact with reality. 
 
@@ -412,11 +412,11 @@ MM: my proposal is that we don't allow initializers and then this issue evaporat
 
 JHD: then you lose a lot of value of the proposals.
 
-WH: in this example, statics woudl get executed only once or more than once?
+WH: in this example, statics would get executed only once or more than once?
 
 DH: only once
 
-DH: if don't allow for the idea that there can be multipel rounds of execution within a class, we will stall out class development. 
+DH: if don't allow for the idea that there can be multiple rounds of execution within a class, we will stall out class development. 
 
 JS: I need to know what concerns need to be addressed to make progress.
 
@@ -424,7 +424,7 @@ AWB:
 
 WH: We already have staged execution that doesn't follow textual order. Functions get lifted to the top of their scopes.
 
-MM: JS made the point about a bunch of data from existign users not being confuse. BT also reports users are not confused.  So that corroborates JS position that execution order is not a problem. (that's separate from scoping).  also combined with decorators that affect eecution order, I retract my objection to changing execution order.
+MM: JS made the point about a bunch of data from existing users not being confuse. BT also reports users are not confused.  So that corroborates JS position that execution order is not a problem. (that's separate from scoping).  also combined with decorators that affect execution order, I retract my objection to changing execution order.
 
 DH: some options: abandoned phased execution, [... I missed the rest]
 
@@ -678,7 +678,7 @@ MF: ?
 
 MM: for template literal tags that only pay attention to "raw" still see same raw content
 
-DH: quesiton is "can that be fixed", answer is no
+DH: question is "can that be fixed", answer is no
 
 MM: agree
 

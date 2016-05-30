@@ -163,7 +163,7 @@ BT: You'd have to do something special to make it slow
 
 DD: Chrome has optimized Object.getOwnPropertyDescriptor over time
 
-DH: Do we have determinsm for Object.getOwnPropertyKeys?
+DH: Do we have determinism for Object.getOwnPropertyKeys?
 
 BT: Yes, it's just for-in that's nondeterministic. Work is in progress. If an ordinary object has no prototype, the for-in order is deterministic
 
@@ -399,7 +399,7 @@ https://github.com/tc39/ecma262/issues/467
 
 BT: presenting a summary of the issue. further Discussion to be had Thursday
 
-{BT presentign slides}
+{BT presenting slides}
 
 Implementations are evaluating references multiple times
 
@@ -409,7 +409,7 @@ WH: Note that side effects in LHS expressions are evaluated only once:
 
 doesn't increment i twice.
 
-MM: we agree that the expression is evaluted once, its the underlying reference tha tis eval'd twice.
+MM: we agree that the expression is evaluated once, its the underlying reference tha tis eval'd twice.
 
 BT: yes. 
 
@@ -523,7 +523,7 @@ LH: presenting
 
 DH: did we convince ourselves that using strings instead of integers for futex codes is not too onerous for asm.js?
 
-LH: they discssed this and determined that it wasn't an issue
+LH: they discussed this and determined that it wasn't an issue
 
 MM: please unpack "int32 sots are always lock-free"?
 
@@ -531,7 +531,7 @@ WH: Lock-free is only a performance assertion on atomics. Atomics are atomic and
 
 LH: atomicLoad and atomicStore are atomic operations. Are you guaranteed that atomic load or store will ever need to take a lock to implement that operation
 
-MM: is it semantically a synchronizing operations rather than a racy opration?
+MM: is it semantically a synchronizing operations rather than a racy operation?
 
 LH: yes
 
@@ -610,9 +610,3 @@ Thursday morning
 Tail calls
 
 Reference type
-
-#### 
-
-#
-
-

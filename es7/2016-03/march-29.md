@@ -72,7 +72,7 @@ JHD: I did a whole bunch of research, and found that there's a whole bunch of co
 
 JHD: global.global won't work. System.global could be ok.
 
-MM: System is a namespace is for things that should not be globally available.  If we can use module imports, that woudl be bettter to adddres the same set of issues
+MM: System is a namespace is for things that should not be globally available. If we can use module imports, that would be better to address the same set of issues
 
 JHD: agrees he would refactor for that once that's available..
 

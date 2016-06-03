@@ -2,7 +2,7 @@ May 24th 2016 Meeting Notes
 
 ## Attendees
 
-Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (AR), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Jeff Morrison (JM), Louis Lafreniere (LL, via Hangouts, part-time), Dean Tribble (DT, via Hangouts, part-time)
+Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Jeff Morrison (JM), Louis Lafreniere (LL, via Hangouts, part-time), Dean Tribble (DT, via Hangouts, part-time)
 
 In the morning we've had 22 Face-to-face participants but Hangouts is not switched on yet.
 
@@ -31,7 +31,7 @@ DE: More pedantically: per 754, the NaN payload is unspecified so it's not canon
 
 DH: Plus does not guarantee any of its inputs. It's making a new value. Anywhere a new value is created out of thin air we can simply say it's allowed to pick a bit pattern. A sensible way to spec this is every NaN value carries with it a bit value.
 
-AR: I don't think that's true <?>
+ARB: I don't think that's true ?
 
 DH: We need to enumerate the places where a value is passed into an operation and is required to be preserved. We can say we have these traces where bit patterns are stable, but otherwise NaN is completely unpredictable.
 
@@ -150,7 +150,7 @@ CM: rephrase: STC allows the programmer to mark specific calls that are in tail 
 
 BT: correct.
 
-AR: worth noting that v8 has an implementation of this (only PTC is in Canary with "experimental JS" flag, command line flag is required for STC)
+ARB: worth noting that v8 has an implementation of this (only PTC is in Canary with "experimental JS" flag, command line flag is required for STC)
 
 YK: I dont understand why we ... . It seems like there is a coupling of the relaxing of the PTC feature with the STC feature, this concerns me.
 
@@ -164,13 +164,13 @@ BT: I think this proposal is good for stage 1.
 
 YK: To whatever extent consensus requires for stage 0, I think this does not exist yet. I don't like that we're trying to bus relaxing PTC with STC. STC needs to be considered on its own merits. My positions on PTC and STC are unrelated.
 
-AR: I don't think it makes sense to discuss these things in separation. I think the right way to look at this is as an erratum to ES6.
+ARB: I don't think it makes sense to discuss these things in separation. I think the right way to look at this is as an erratum to ES6.
 
 DH: I would never be ok with new syntax as an erratum. New syntax is a high bar.
 
 YK: I don't think STC is strictly better than PTC. I don't think it has strictly less problems than PTC.
 
-DH/AR: I don't think anyone thinks that.
+DH/ARB: I don't think anyone thinks that.
 
 DH: PTC is one option, STC is one option, and none of the above is on the table.
 
@@ -178,11 +178,11 @@ MS: Another option is that PTC and STC can coexist.
 
 YK: Status quo of reality is none of the above, but there are real world requirements for it.
 
-AR: V8 is blocked on decision from this committee to ship.
+ARB: V8 is blocked on decision from this committee to ship.
 
 YK: PTC/STC or none of the above? If none, there's nothing to ship.
 
-AR: I don't think there will be consensus for such an option.
+ARB: I don't think there will be consensus for such an option.
 
 MS: Can we eliminate no tail calls?
 
@@ -192,7 +192,7 @@ YK: I think this claim misses the empirical story. STC requires consensus. In th
 
 MS: I did not sense that this is the case.
 
-AR: We want a decision, whatever the decision is.
+ARB: We want a decision, whatever the decision is.
 
 DH: I agree to the consensus to accept PTC, but I don't accept the requirement to ship PTC.
 
@@ -301,7 +301,7 @@ DH: I agree, there has to be human judgement to do this.
 
 YK: The alternatives are manual versions of the same thing, stack data structure or tramoline, these things have guaranteed space. I would be happy if these data structures are specced then I would be happy with STC over the engine's choice.
 
-AR: Those space gurantees don't apply to the general case.
+ARB: Those space gurantees don't apply to the general case.
 
 YK: Once  I notice I have unbounded input, I do a data structure version of the same problem. In all cases, I do know the cost model. I do not understand the cost model of PTC.
 
@@ -342,16 +342,16 @@ JM: Do we agree that exceptions are cross realms and membranes?
 
 YK: One also has to structure their program to use TC.
 
-MS: Lets move on. Slides <Response to PTC Issues>
-As the first implementer of tail calls, we think there's lots of invalid fear. BT asked for data, so here it is. <PTC statistics>.
+MS: Lets move on. Slides (Response to PTC Issues)
+As the first implementer of tail calls, we think there's lots of invalid fear. BT asked for data, so here it is. (PTC statistics).
 
-AR: (Google Search is mostly sloppy mode, hence only 29 TC calls compiled.)
+ARB: (Google Search is mostly sloppy mode, hence only 29 TC calls compiled.)
 
 MS: The reason for showing this, today we're looking at 5% TC. We're talking about 1/20 missing things from stack frames etc. In terms of % of performance loss, my understanding of perf loss is only for TC?
 
 LL: That is correct.
 
-MS: <Three Issues Raised> I'd like to approach each. <PTC Performance Concerns> We have seen no issue with TC perf. Most work was Calling convention changes (6 weeks).
+MS: (Three Issues Raised) I'd like to approach each. (PTC Performance Concerns) We have seen no issue with TC perf. Most work was Calling convention changes (6 weeks).
 
 DE: v8 perspective: a lot of optimisations in various compilers, not enough implementing in certain compiler tiers -- all tiers required changes.
 
@@ -385,7 +385,7 @@ FST: yes.
 
 DE: For v8's part, we have considered whether it was required in all compiler tiers, if it were with explicit syntax then you could say you have opted into a particular compiler tier.
 
-AR: But you can do that with PTC too.
+ARB: But you can do that with PTC too.
 
 DE: STC has a lower implementation load to ship it.
 
@@ -409,13 +409,13 @@ YK: I agree that is the goal.
 
 DH: That's not what got consensus, more ad-hoc, code generators won people over, not styles of programming. Transpilers can do their own data structures if they need.
 
-AR: necessary for compiling languages that use this
+ARB: necessary for compiling languages that use this
 
 DE: the trampoline pattern is already used on the web (js_of_ocaml, closure compiler).
 
-AR: ...and its performance generally sucks.
+ARB: ...and its performance generally sucks.
 
-MS: Lets move on <PTC Performance Concerns, bullet *>. We have to swallow loss of perfomance
+MS: Lets move on (PTC Performance Concerns, bullet *). We have to swallow loss of perfomance
 
 FST: we could not implement the feature with cross realm without API changes. Microsoft could not implement this feature with no performance cost.
 
@@ -439,9 +439,9 @@ YK: Almost everyone has implemented almost everything of ES2015, except PTC, the
 
 JM: reality leads, not the spec. Nobody shipped TC yet.
 
-AR: Can we all agree that performance is not an issue?
+ARB: Can we all agree that performance is not an issue?
 
-MS: <Last point> 2.6x speedup for some benchmarks, possibly x86 CPU caching/returned stack. We did not expect this, and got this.
+MS: (Last point) 2.6x speedup for some benchmarks, possibly x86 CPU caching/returned stack. We did not expect this, and got this.
 Implementation perfomance is not an issue.
 
 DE: Was there other Chakra perf issues raised?
@@ -606,7 +606,7 @@ WH: Lots of experience with lisp debugging, and in most cases turning off TC wor
 
 YK: Sometimes the error occurs in the base frames, sometimes in the middle, sometimes in the leaves.
 
-MS: <Summary slide> In nightly since October.
+MS: (Summary slide) In nightly since October.
 
 BT: Regularly open the dev tools after error occurs, not always able to refresh to reproduce bug - don't want to lose state.
 
@@ -656,7 +656,7 @@ DE: I think the change has consensus to say that TC doesn't work across realms.
 
 FST: Web developers don't know that TC doesn't work across realms, even if we do.
 
-AR: there are many other things that do not work across realms.
+ARB: there are many other things that do not work across realms.
 
 KS: I think there's consensus to changing the spec regarding cross-realm, the spec should not change from PTC to STC, or to remove PTC.
 
@@ -732,9 +732,9 @@ YK: I don't have a mental model to write a PTC program. I can imagine how to do 
 
 DE: To respond to performance of debug not being resolved by STC: when user expresses STC intent, user doesn't want to see elided frames as they're looping. "return contunue" doesn't expect a shadowchicken stack. I would advise against calling out to user code with STC.
 
-AR, MS: I disagree with that, there are libraries that need to do exactly that.
+ARB, MS: I disagree with that, there are libraries that need to do exactly that.
 
-AR: for instance when you have a continuation as a parameter
+ARB: for instance when you have a continuation as a parameter
 
 FST: I'm unhappy about implementation specific type errors, MM says he is unhappy with implementations that are being forced to throw implementation specific type errors.
 
@@ -876,7 +876,7 @@ CM: The reason you need to do this is because the arg list got bigger, when it d
 
 BT: when we grow our frame we're not reusing the older frame
 
-AR: but this is not observable
+ARB: but this is not observable
 
 WH: Releasing resources only matters (i.e. is observable) in the asymptote. If you have a function that calls itself n times with a constant number of arguments, then using Ω(n) space resources would definitely be observable. If the arguments are growing, say you allocate frame sizes in powers of 2 and reuse them until you cross the next power-of-2, eventually you'll reach a max function frame size s, and, important, the total size of all frames will be O(s). You can then do amortized analysis and pretend that the original frame had size s. If you do increase the number of arguments without limits, you're going to run out of memory anyway, with or without tailcalls, because you won't have enough resources to hold even one frame.
 
@@ -970,7 +970,7 @@ JHD: I don't know what a proper tail position is.
 
 _discussion about using trampolines vs CPS and tail calls for code generators_
 
-AR: one stated goal of Harmony was to make JS a good target language for compilation
+ARB: one stated goal of Harmony was to make JS a good target language for compilation
 
 YK: for that use case STC is acceptable
 
@@ -1014,7 +1014,7 @@ DE: which issues should we reconsider?
 
 YK: What the stack trace looks like in PTC, What happens in the dev experience? I agree apple has done good work on the second issue. Nothing done to nullify concerns about the first.
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - No consensus on removing PTC
 - No consensus and no rejection to advace STC to stage 1

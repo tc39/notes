@@ -2,7 +2,7 @@ May 23rd 2016 Meeting Notes
 
 ## Attendees
 
-Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (AR), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Yang Guo (YG)
+Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Yang Guo (YG)
 
 on Google Hangouts we've had some local Google folks: Michael Hablich, Yang Guo, Taon Ver Naest, Daniel Clifford, Nikolas Papapyrou, Ben Titzer.
 
@@ -12,7 +12,9 @@ PTC/STC on Tuesday morning/afternoon for MS employees to call in
 9 hours differences between CET and US Pacific time. Only afternoon works...
 First YK/BT class evaluation order, then PRs, then features for advancement, then other features
 
-## Class evaluation order (YK, BT)
+## Class Evaluation Order 
+
+(Yehuda Katz, Brian Terlson)
 
 [_Presentation (with slides)_] # __TODO: add link to the slide__
 
@@ -57,6 +59,7 @@ YK: If you have a @nonconfigurable decorator, then you need the getter/setters t
 YK: Forward references: the static initializer should be able to call all kinds of methods, even using computed property names, which are declared textually *after* the initializer
 
 WH: What if Symbol.iterator referred to a static initializer? Example:
+
 ```js
     class Args {
         static LIST = [... new Args()];
@@ -233,7 +236,7 @@ JHD: Although it would be a breaking change, maybe it would be reasonable to eva
 
 MM, WH: Agree.
 
-AR: You could have arbitrary side effects in computed property names or property values!
+ARB: You could have arbitrary side effects in computed property names or property values!
 
 MM: If the feature was recently deployed, then the code that's using the feature is generally code that's still being maintained.
 
@@ -243,7 +246,7 @@ JHD: Cases 1) Babel 2) Web but not caring about compat 3) Node, and then v8 chan
 
 KS: Prototype in Babel?
 
-AR: I don't like this change because I think left-to-right is a good thing to have.
+ARB: I don't like this change because I think left-to-right is a good thing to have.
 
 EF: I'm also vaguely uncomfortable, but not being able to write decorators in object literals anyway seems
 
@@ -312,7 +315,9 @@ __NOTE__: The ECMAScript standards currently contribute to about 2/3 of all Ecma
 
 Another point only mentioned here but not in the verbal report: He gets a great external interest for ECMAScript Security Projects and how to speed up ECMAScript performance (e.g. by parallel processing) for Media Codecs running in ECMAScript.
 
-## [Standardize a RangeError for call stack overflow](https://github.com/tc39/ecma262/pull/319) (Mike Pennisi)
+## [Standardize a RangeError for call stack overflow](https://github.com/tc39/ecma262/pull/319) 
+
+(Mike Pennisi)
 
 BT: Leading discussion on this proposal. This would help write tests to see if resources are exhausted for stacks.
 
@@ -354,12 +359,14 @@ MF: Proper tail calls are unobservable and should not have a test262 test
 
 BT: But it is very useful and works on all implementations
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - Consensus to not standardize RangeError (impossible to implement reliably)
 - Continue discussion on a GitHub bug about possible reorganization of test262 to take into account that the PTC tests are implementation-specific/not technically correct
 
-## [\w and \W semantics in case-insensitive Unicode RegExps](https://github.com/tc39/ecma262/pull/525) (MS)
+## [\w and \W semantics in case-insensitive Unicode RegExps](https://github.com/tc39/ecma262/pull/525) 
+
+(Michael Saboff)
 
 WH: This is the exact same problem that I solved in ES3 by adding the prohibition to case-canonicalization of non-ASCII Unicode characters into ASCII characters. Without that, the same \W weirdness would have appeared in ES3.
 
@@ -407,11 +414,13 @@ WH: Unicode defining new characters which case-convert into ASCII letters.
 
 _discussion: Good to follow Unicode going forward, as it has changed over time, both in adding new characters and revisions to existing characters_.
 
-#### Conclusion
+#### Conclusion/Resolution
 
 Consensus on MS's pull request, and working out \b and \B as he indicated.
 
-## [Function names](https://github.com/tc39/ecma262/pull/575) (MS)
+## [Function names](https://github.com/tc39/ecma262/pull/575) 
+
+(Michael Saboff)
 
 MS: Proposal: When the inferred name is a reserved word, use "" rather than the current name. The problem is that the .name property won't eval.
 
@@ -445,11 +454,14 @@ BT: good to have an evidence-based overturning of previous decisions
 
 MS: Hard to do telemetry for this
 
-#### Conclusion
+#### Conclusion/Resolution
 
 No change in the spec for now; MS says Safari will likely ship their compat workaround for now, and see if it can get more information for the next meeting or the one after that to consider the decision
 
-## [TypedArray/ArrayBuffer/DataView constructor changes](https://github.com/tc39/ecma262/pull/410) (LB)
+
+## [TypedArray/ArrayBuffer/DataView constructor changes](https://github.com/tc39/ecma262/pull/410) 
+
+(Leo Balter)
 
 LB: [_Presented bug comment showing behavior across browsers_]
 
@@ -537,7 +549,7 @@ MS: Were you concerned about compat, DE?
 
 DE: No, I was concerned about compat for other proposals. I think this will probably work.
 
-#### Conclusion
+#### Conclusion/Resolution
 
 _Consensus!_
 
@@ -555,7 +567,9 @@ YK, MM: Seems like it'd be more intuitive that each function declaration does th
 
 Consensus on DE's PR to do an assignment for each function
 
-## [Throwing an error for returning primitives from base class constructors](https://github.com/tc39/ecma262/pull/469) (Claude Pache)
+## [Throwing an error for returning primitives from base class constructors](https://github.com/tc39/ecma262/pull/469) 
+
+(Claude Pache)
 
 DE: I'm concerned it wouldn't be web-compatible to change this. We've apparently always supported returning non-object from a construct leading to returning this
 
@@ -566,11 +580,13 @@ Realizations:
 - Broader concern: ES2015 and this proposal both ensure that objects are always returned from new; the question is just does a primitive return this, or throw a TypeError
 - DE: Web compat may not be so big of an issue since this only applies to ES2015 class syntax, not ordinary function constructors
 
-#### Conclusion
+#### Conclusion/Resolution
 
 Yes on the PR, though we will have to take web compatibility feedback into account as implementations attempt this
 
-## [Always update object properties if property descriptor is applicable (NaN issue)](https://github.com/tc39/ecma262/pull/353) (DE)
+## [Always update object properties if property descriptor is applicable (NaN issue)](https://github.com/tc39/ecma262/pull/353) 
+
+(Daniel Ehrenberg)
 
 DE: This PR makes writes of a new NaN value to an existing writable property in an ordinary object take effect. That way, a non-canonicalizing implementation like V8 does not have to do a check on ordinary property sets to meet correctness. It continues to prevent information leaks on nonwritable properties by making those writes not change which NaN is there, though return success. Seems like a great change towards web reality while keeping both implementation constraints and desirable language properties in mind.
 

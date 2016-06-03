@@ -2,7 +2,7 @@ May 25th 2016 Meeting Notes
 
 ## Attendees
 
-Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (AR), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BN), István Sebestyén (IS), John Neumann (JN), Jeff Morrison (JM), Domenic Denicola (DD)
+Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BN), István Sebestyén (IS), John Neumann (JN), Jeff Morrison (JM), Domenic Denicola (DD)
 
 Over Hangouts (part-time): Dean Tribble (DT), Nikolaus Papaspyrou
 
@@ -16,7 +16,7 @@ __NOTE from Istvan__: The formal Ecma rule is that any proposal that has to be v
 
 [_slides_] __TODO:__ link to slides
 
-AR: the fact that classes are declarative is a feature
+ARB: the fact that classes are declarative is a feature
 
 WH: adding a link to the proposal to the agenda 30 min before presenting a proposal looking to advance is unreasonable
 
@@ -186,7 +186,7 @@ MF: I agree with DD, previous stage 2 proposals have often had full spec text.
 
 MS: Seems like spelling them out would help, and giving
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - Proposal does not reach stage 2 yet
 
@@ -301,7 +301,7 @@ YK: I'm concerned this could have cost for real implementations.
 
 DE: It seems like it would work to me, based on how we do hidden classes today.
 
-AR: We already have to do this same kind of check exactly the same way for existing property accesses. It happens whether you return undefined or a TypeError.
+ARB: We already have to do this same kind of check exactly the same way for existing property accesses. It happens whether you return undefined or a TypeError.
 
 MM: can we agree that if while implementing it we run into perf issues, we can revisit, since right now all implementors in the room seem comfortable with it?
 
@@ -409,7 +409,7 @@ WH: There is complete spec text here and not in your proposal which lays out the
 
 YK: The answer was given and committee members did not believe it.
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - No consensus on stage 2 yet due to barring process issues
 
@@ -447,7 +447,7 @@ justify/rationalise the breakage.
 
 YK: Agreed
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - will continue iterating
 
@@ -457,7 +457,7 @@ JHD: implemented in all major browsers; stage 4?
 
 all: yes
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - stage 4!
 
@@ -481,7 +481,7 @@ JHD: some browsers say they won't ship things that are not stage 4
 
 YK: I'm fine with stage 4 in this situation
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - stage 4!
 - __*TC39 needs to schedule a discussion in the next meeting to review the stages process document*__
@@ -504,7 +504,7 @@ MM: I volunteer to review this
 
 WH: Me too.
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - stage 2
 - reviewers: MM and WH
@@ -551,7 +551,7 @@ WH: A flaw of the stage process is that it doesn't deal well with dependencies.
 
 _more discussion about meaning of stage 2_
 
-#### Conclusion
+#### Conclusion/Resolution
 
 We agree that this is a feature that we have consensus on and hope to eventually include in a version of the standard, but we have not worked out major semantics with respect to cross-cutting concerns with cancellation, promises and the async iterable symbol. So this meets some of the Stage 2 criteria and not others, and remains Stage 1 for now. This is an advancement on previous concerns, where we were not convinced that we wanted to eventually include this feature.
 
@@ -619,7 +619,7 @@ MM: To be clear, a cancelled promise is settled, right?
 
 BT: Concerned that people will reuse options bags and pass them into various places with options not suitable for those contexts.
 
-AR: The synchronous third state freaks me out. This needs more discussion. We are suddenly adding a totally new continuation across the whole language.
+ARB: The synchronous third state freaks me out. This needs more discussion. We are suddenly adding a totally new continuation across the whole language.
 
 DD: Want to fast-track this through the stages
 

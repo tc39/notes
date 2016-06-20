@@ -277,6 +277,7 @@ YK: It's not really three types
 ...
 
 BE: Fair to say there are three observably different kinds of arguments
+
 -
 
 YK:
@@ -311,7 +312,7 @@ WH: Easier to explain if the rules are compositional.
 
 ... Continue discussion re: do Arrow Functions have an arguments object?
 
-## 4.3 Should 'arguments' in an arrow body be from nearest outer defining scope, or early error?
+#### 4.3 Should 'arguments' in an arrow body be from nearest outer defining scope, or early error?
 (Brendan Eich)
 
 AWB: Arrows don't have an arguments object, but `arguments` is a keyword inside arrow functions.
@@ -368,7 +369,7 @@ console.log(f().next().value);
 ```
 
 
-AWB: ...Computed property keys: No dynamic checking for duplicate computed property name in object literals or classes
+#### AWB: ...Computed property keys: No dynamic checking for duplicate computed property name in object literals or classes
 
 ```js
 {

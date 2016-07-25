@@ -230,7 +230,7 @@ MS: How does STC solve your problem?
 
 BT: it doesnt, but scopes problem to specifically one case.
 
-YK: In the sense you;re note able to implement PTC then you're not able to implement STC.
+YK: In the sense you're not able to implement PTC then you're not able to implement STC.
 
 DE: One strategy is to implement a large stack frame to allow for it to grow. An intervening return will give more stack space anyway.
 

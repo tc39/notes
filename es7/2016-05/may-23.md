@@ -317,7 +317,7 @@ Another point only mentioned here but not in the verbal report: He gets a great 
 
 ## [Standardize a RangeError for call stack overflow](https://github.com/tc39/ecma262/pull/319) 
 
-(Mike Pennisi)
+(Mike Pennisi) https://github.com/tc39/ecma262/pull/319 
 
 BT: Leading discussion on this proposal. This would help write tests to see if resources are exhausted for stacks.
 

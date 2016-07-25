@@ -805,7 +805,7 @@ Possible Solution:
   - GenerationFunction doesn't implement constructor, so new throws
   - `this` is not a dynamic ReferenceError, but instead refers to the GeneratorFunction instance (align with current implementations: Babel, V8, SM)
 
-AWB: Doesn't act like derived constructor, does ave a prototype property that's used to initialize instances
+AWB: Doesn't act like derived constructor, does have a prototype property that's used to initialize instances
 
 BT: No case where a subclass will always throw
 

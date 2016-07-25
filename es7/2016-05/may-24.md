@@ -156,7 +156,7 @@ YK: I dont understand why we ... . It seems like there is a coupling of the rela
 
 DH: we were concerned about honoring the consensus process and not lightly pulling things back that were already in the spec. Instead of pulling back PTC for some "future STC", we wanted a concrete STC approach first. Maybe at some point it makes sense to separate them.
 
-YK: Are you propsosing stage 0 today or stage 1?
+YK: Are you proposing stage 0 today or stage 1?
 
 ??: It was already moved to stage 0 at last meeting.
 
@@ -375,7 +375,7 @@ MS: We think 0%, according to our experience and the Chrome experience.
 
 DE: Except micro-benchmarks.
 
-YK: 5% of calls are acidentally used? if we made STC opt in, would people use it?
+YK: 5% of calls are accidentally used? if we made STC opt in, would people use it?
 
 MS: STC does not resolve the performance issue, and if PTC is used, all browsers will want to optimise it.
 
@@ -421,7 +421,7 @@ FST: we could not implement the feature with cross realm without API changes. 
 
 MS: Not ability to implement, but how it slows me down.
 
-DE: I don;t think this will be revisited for much more ES2015 features. All have implemented much of these features. Some Es2015 Compat things such as TypedArrays need revisiting
+DE: I don't think this will be revisited for much more ES2015 features. All have implemented much of these features. Some ES2015 Compat things such as TypedArrays need revisiting
 
 MS: if performance is a reason to re-consider something in the spec, it is not a valid concern.
 
@@ -458,7 +458,7 @@ BT: it would also have implementation constraints. Many tools would have no idea
 
 MM: if the total number of arguments and local variables is over 1000 …
 
-DE: Math.max.apply (_large number of things_), in v8 that works up to 16k. We don't do somehting different for apply from normal.
+DE: Math.max.apply (_large number of things_), in v8 that works up to 16k. We don't do something different for apply from normal.
 
 MM: Choice of large number of arguments + locals, such it is rarely hit to exempt from TC vs completely giving up on normative TC vs accepting some kind of TC unfaithfully implemented.
 
@@ -471,7 +471,7 @@ FST: No intuitive knowledge of membrane use inside SpiderMonkey by programmers, 
 DE: The argument ceiling seems very random
 MM: I wouldn't have suggested it except for Chakra. You're not obligated not to allocate.
 
-YK: If i write code using STC using V8 or JSC and I don't know about the restriction, but it blows up without my knowlede on Firefox?
+YK: If i write code using STC using V8 or JSC and I don't know about the restriction, but it blows up without my knowledge on Firefox?
 
 MM: I write call using STC, and you're calling across a membrane that is not using STC. If the implementation is good enough to do tail call optimization, it might still work.
 
@@ -632,7 +632,7 @@ MS: not implemented yet.
 
 YK: 128 frames not sufficient
 
-MS: arbitrary chosen constant, can be changed. no imlementor wants shadowchicken on all the time due to overheads.
+MS: arbitrary chosen constant, can be changed. no implementor wants shadowchicken on all the time due to overheads.
 
 MM: Regarding Error.stack and telemetry, the only thing relevant is the program counter. If you had a 128 cycle buffer with just the PC in it, it may have little overhead. Depending on the detail of Error.stack
 
@@ -664,7 +664,7 @@ YK: Basically this feature cannot make stage 4 because it cannot be implemented 
 
 MS: It is.
 
-CM: v8 has it behing a flag. Chakra have not started it, but they have a strategy that could work for me as a user.
+CM: v8 has it behind a flag. Chakra have not started it, but they have a strategy that could work for me as a user.
 
 YK: they cannot implement it in SpiderMonkey because of cross realms issues. A serious change is needed no matter what.
 
@@ -1017,6 +1017,6 @@ YK: What the stack trace looks like in PTC, What happens in the dev experience? 
 #### Conclusion/Resolution
 
 - No consensus on removing PTC
-- No consensus and no rejection to advace STC to stage 1
+- No consensus and no rejection to advance STC to stage 1
 
 Meeting ended 17:30.

@@ -58,7 +58,7 @@ YK: decorators that replace the original constructor will incur some cost
 
 DD: you have to produce a wrapper for all decorated classes
 
-BT: we could also not ahve them be SameValue
+BT: we could also not have them be SameValue
 
 DE: I would prefer we have no runtime overhead from a class that has been decorated
 

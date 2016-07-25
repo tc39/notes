@@ -16,7 +16,7 @@ First YK/BT class evaluation order, then PRs, then features for advancement, the
 
 (Yehuda Katz, Brian Terlson)
 
-[_Presentation (with slides)_] # __TODO: add link to the slide__
+[_Presentation (with slides)_] https://github.com/tc39/tc39-notes/blob/master/es7/2016-05/classevalorder.pdf 
 
 BT: We need consensus, as this comes up with decorators and other new language features.
 

@@ -400,7 +400,7 @@ YG: I was suggesting bringing in Unicode because it seems ad-hoc to bring in jus
 
 MS: Or, we could make it not cross the ASCII boundary, and not do Unicode case folding with respect to the evaluation of this character class.
 
-JHB: But seems like we should be aligned with Unicode.
+JHD: But seems like we should be aligned with Unicode.
 
 MS: My proposal just uses UnicodeCaseFolding.txt and will be future-compatible
 
@@ -501,7 +501,7 @@ LB: Sometimes, it represents an offset index, e.g., the TypedArray byteOffset ar
 
 CM: Question: How does ToIndex differ from ToLength? Are there places where ToLength is used which don't go through this?
 
-JHB: There are many uses
+JHD: There are many uses
 
 LB: Many cases use ToLength that I cannot apply this check for ToIndex to.
 

@@ -2,7 +2,7 @@ March 29th 2016 Meeting Notes
 
 ## Attendees
 
-Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson, JF Bastien (JFB), Joe Lencioni, Sebastian Markbage, Jeff Morrison, Kevin Smith (KS), Jafar Husain (JH), Lars Hansen (LH), Saam Barati, Keith Miller, Michael Saboff, Eric Ferraiuolo (EF),Eric Faust (FST), Chip Morningstar, Dean Tribble (DT), Shu-yu Guo (SG), Tim Disney, Waldemar Horwat (WH), Bert Belder, Peter Jensen, Daniel Ehrenberg (DE), Caridy Patiño, Diego Ferreiro Val, Jean Fraucois Paradis, Shelby Hubick, Leo Balter, Misko Hevery.
+Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson, JF Bastien (JFB), Joe Lencioni, Sebastian Markbage, Jeff Morrison, Kevin Smith (KS), Jafar Husain (JH), Lars Hansen (LHN), Saam Barati, Keith Miller, Michael Saboff, Eric Ferraiuolo (EF),Eric Faust (FST), Chip Morningstar, Dean Tribble (DT), Shu-yu Guo (SG), Tim Disney, Waldemar Horwat (WH), Bert Belder, Peter Jensen, Daniel Ehrenberg (DE), Caridy Patiño, Diego Ferreiro Val, Jean Fraucois Paradis, Shelby Hubick, Leo Balter, Misko Hevery.
 
 ## Agenda
 
@@ -519,21 +519,21 @@ DD: and DH volunteered as reviewers.
 
 ## Shared Memory and atomics
 
-LH: presenting
+LHN: presenting
 
 DH: did we convince ourselves that using strings instead of integers for futex codes is not too onerous for asm.js?
 
-LH: they discussed this and determined that it wasn't an issue
+LHN: they discussed this and determined that it wasn't an issue
 
 MM: please unpack "int32 sots are always lock-free"?
 
 WH: Lock-free is only a performance assertion on atomics. Atomics are atomic and synchronize regardless of whether they are lock-free or not. Lock-free indicates that the atomic operation won't need to wait for another thread that might hold a lock that's used to internally implement the atomic.
 
-LH: atomicLoad and atomicStore are atomic operations. Are you guaranteed that atomic load or store will ever need to take a lock to implement that operation
+LHN: atomicLoad and atomicStore are atomic operations. Are you guaranteed that atomic load or store will ever need to take a lock to implement that operation
 
 MM: is it semantically a synchronizing operations rather than a racy operation?
 
-LH: yes
+LHN: yes
 
 ?? describes an example with lock-free linked list
 
@@ -543,7 +543,7 @@ Issue #54 discussion
 
 MM: wants to verify: there's no danger of inconsistency or blocking if your counterparty if preemptively terminated.
 
-LH: they will come back to it.
+LHN: they will come back to it.
 
 WH: Good that rematerialization producing quantum garbage is disallowed.
 
@@ -553,7 +553,7 @@ WH: Would like to know whether it's a legal optimization to swap two adjacent no
 
 WH: Can get tearing on racy unaligned accesses.
 
-LH: Racy accesses are aligned
+LHN: Racy accesses are aligned
 
 WH: But in the spec you allow accesses at arbitrary unaligned byte offsets in DataViews.
 
@@ -561,7 +561,7 @@ WH: The memory model has issues with dealing with atomic object lifetime. Suppos
 
 WH: What useful processors don't have lock-free 1 or 2-byte atomics?
 
-LH: Maybe older ARM chips?
+LHN: Maybe older ARM chips?
 
     
 

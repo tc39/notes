@@ -1,6 +1,6 @@
 January 28th 2016 Meeting Notes
 
-Eric Farriauolo (EF), Caridy Patino (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LH), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), MarkS. Miller (MM), Sebastian Markbage (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Misko Hevery (MH), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
+Eric Farriauolo (EF), Caridy Patino (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), MarkS. Miller (MM), Sebastian Markbage (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Misko Hevery (MH), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
 
 
 ## Agenda
@@ -105,15 +105,15 @@ Keep exactly the original source text starting from the position of the first to
 
 ## larse
 
-LH: slide (formal reviewers)
+LHN: slide (formal reviewers)
 
-LH: looking for multiple reviewers
+LHN: looking for multiple reviewers
 
 WH: I have memory model expertise and will review that aspect. Also suggest having Hans Boehm look at it.
 
 BT: this specification requires continent etc.
 
-LH: it doesn't have to be deep, but we require some framework to be in-place.
+LHN: it doesn't have to be deep, but we require some framework to be in-place.
 
 DE: any typed array designers inovled
 
@@ -125,7 +125,7 @@ DD: last time the TC made changes quite late, it would be great to catch those e
 
 ...
 
-LH: some changes to the typed array spec, to accomodate SharedArrayBuffer, should be vetted
+LHN: some changes to the typed array spec, to accomodate SharedArrayBuffer, should be vetted
 
 AWB: I would be happy to discuss
 
@@ -142,7 +142,7 @@ Rundown of reviewers (from LH's notes):
 - allen (informally possibly) for TypedArray changes
 - domenic for agents/vats/whatever
 
-LH: Also desirable for everyone to read the spec and pitch in, the more eyeballs the better.
+LHN: Also desirable for everyone to read the spec and pitch in, the more eyeballs the better.
 
 ## 5.xix Proxy Enumerate - revisit decision to exhaust iterator 
 

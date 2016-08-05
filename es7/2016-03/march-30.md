@@ -2,7 +2,7 @@ March 30th 2016 Meeting Notes
 
 ## Attendees
 
-Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson, JF Bastien (JFB), Joe Lencioni, Sebastian Markbage, Jeff Morrison, Kevin Smith (KS), Jafar Husain (JH), Lars Hansen (LH), Saam Barati, Keith Miller, Michael Saboff, Eric Ferraiuolo (EF),Eric Faust (FST), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SG), Tim Disney, Waldemar Horwat (WH), Bert Belder, Peter Jensen, Daniel Ehrenberg (DE), Caridy Patiño, Diego Ferreiro Val, Jean Fraucois Paradis, Shelby Hubick, Leo Balter (LB), Misko Hevery, Allen Wirfs-Brock (AWB), Kevin Gibbons (KG)
+Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson, JF Bastien (JFB), Joe Lencioni, Sebastian Markbage, Jeff Morrison, Kevin Smith (KS), Jafar Husain (JH), Lars Hansen (LHN), Saam Barati, Keith Miller, Michael Saboff, Eric Ferraiuolo (EF),Eric Faust (FST), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SG), Tim Disney, Waldemar Horwat (WH), Bert Belder, Peter Jensen, Daniel Ehrenberg (DE), Caridy Patiño, Diego Ferreiro Val, Jean Fraucois Paradis, Shelby Hubick, Leo Balter (LB), Misko Hevery, Allen Wirfs-Brock (AWB), Kevin Gibbons (KG)
 
 ## Length argument normalization for TypedArrays, ArrayBuffer and DataView constructors
 

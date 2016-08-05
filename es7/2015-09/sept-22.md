@@ -1,6 +1,6 @@
 # Sept 22 2015 Meeting Notes    
 
-Allen Wirfs-Brock (AWB), Sebastian Markbage (SM), Jafar Husain (JH), Eric Farriauolo (EF), Caridy Patino (CP), Mark Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann  (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Ben Smith (BS), Lars Hansen (LH), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Gorkem Yakin (GY), Stefan Penner (SP)
+Allen Wirfs-Brock (AWB), Sebastian Markbage (SM), Jafar Husain (JH), Eric Farriauolo (EF), Caridy Patino (CP), Mark Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann  (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Ben Smith (BS), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Gorkem Yakin (GY), Stefan Penner (SP)
 
 
 On the phone: Mark Miller (MM), Dan Gohmann (DG), John McCutchan (JMC)
@@ -55,7 +55,7 @@ http://lars-t-hansen.github.io/ecmascript_sharedmem/shmem.html
 
 Need slides
 
-LH: Work in progress at Mozilla, Google, etc. 
+LHN: Work in progress at Mozilla, Google, etc. 
 
 Use Cases
 
@@ -149,7 +149,7 @@ CM: Understanding there would never be shared state threads in JS. This appears 
 
 (Discuss after presentation, Moving on)
 
-LH: 
+LHN: 
     
 Agent Model
 
@@ -177,7 +177,7 @@ DD: A different group could approach to define generic
 
 AWB: Dont want a mechanism that will only work in a browser. 
 
-LH: (Confirms)
+LHN: (Confirms)
 
 Implementation Concerns
 
@@ -192,17 +192,17 @@ DD: An early version of this proposal said that these APIs were not on the main 
 
 YK: Scary to have locks on the main thread
 
-LH: Not that scary, it's no different than a loop 
+LHN: Not that scary, it's no different than a loop 
 
 YK: Async functions are the solution that has evolved
 
 AWB: Are the workers multiplexed?
 
-LH: If JS on main thread creates a worker and waits on the location, it will hang because the worker doesnt get started.
+LHN: If JS on main thread creates a worker and waits on the location, it will hang because the worker doesnt get started.
 
 AWB: Semantically observable? 
 
-LH: Can observe remotely (a corner case)
+LHN: Can observe remotely (a corner case)
 
 Memory Model (1)
 
@@ -234,7 +234,7 @@ DH: Say there is a non deterministic collection of memory bits in location
 
 YK: What happens when you read the garbage?
 
-LH: Currently will get the garbage
+LHN: Currently will get the garbage
 
 
 Memory Model (4)
@@ -251,7 +251,7 @@ Java Better? But complex and subtle
 
 DH: if mem model says data structure, behavior localized to data structure. integration with rest of language impacts jit compilers, spec semantics (how deep). Not sure what the biggest risk is... limited to array buffer and only in specific case? Invariants in loads and stores
 
-LH: optimization to load value from typed array, use it for something, eg. function call. If not affected, can reload. 
+LHN: optimization to load value from typed array, use it for something, eg. function call. If not affected, can reload. 
 
 DH: Already know typed array, can assume not shared array buffer. Cases where I _don't_ know the backing store, nervous
 
@@ -276,7 +276,7 @@ Other Memory Model Issues
 
 BE: Like mips load, link (re: "acquire-release")
 
-LH: (state of "acquire-release" on current platforms)
+LHN: (state of "acquire-release" on current platforms)
 
 
 Status
@@ -321,7 +321,7 @@ Why Not Just for asm.js?
 - The callout needs at least some shmem access
 
 
-LH: need to satisfy both use cases
+LHN: need to satisfy both use cases
 
 DE: Any program can already get into an infinite loop, unresponsive.
 
@@ -340,7 +340,7 @@ MM: Will read emails from waldemar:
 - Introducing a high bandwidth side-channel
 - Even if only computation with coarse granularity, the ability to access shared memory seems fatal.
 
-LH: Only fatal if you can prove it's not already possible
+LHN: Only fatal if you can prove it's not already possible
 
 MM: No way to do high-bandwidth side channels, such as cache attacks
 
@@ -383,7 +383,7 @@ BE: The
 
 (http://www.theregister.co.uk/2015/04/21/cache_creeps_can_spy_on_web_histories_for_80_of_net_users/) / http://arxiv.org/pdf/1502.07373v2.pdf
 
-LH: the resolution of performance.now has been reduced to help prevent the caching attack
+LHN: the resolution of performance.now has been reduced to help prevent the caching attack
 
 DD: not concerned about the paternalistic argument, rather the actual security concerns?
 
@@ -396,7 +396,7 @@ CM: concerned about DOS attacks from third parties
 
 YK: Right way: expose async futexWait
 
-LH: Originally had an async futexWait
+LHN: Originally had an async futexWait
 
 CM: Proposing non-blocking-but-blocking?
 
@@ -405,7 +405,7 @@ YK: No, want to express sequencing in a local way. This will be done with async 
 
 MM: Q: motivation for SAB proposal: conventional c/c++ pthreads code can be compiled through asm.js can still fnction?
 
-LH: That's one of the case
+LHN: That's one of the case
 
 YK: Shared Memory is a useful primitive. 
 
@@ -420,7 +420,7 @@ DH: Tried to build higher level primitives to give deterministic parallelusm to 
 
 YK: Should give 0.01% more credit (like authors of gzip, etc)
 
-LH: first thing I did when I finished the prototype
+LHN: first thing I did when I finished the prototype
 
 MM: fan of the Rust/Pony approach, low-level, universal. Arrived independently at a similar result.
 
@@ -441,23 +441,23 @@ BE: circles back to earlier point: don't have time to find SAB alternatives, wit
 
 MM: The potential show stopper: the side channel. I want to see some real analysis of this danger and why we should be confident that the danger is minimal, before we proceed. 
 
-LH: we have security people working on that, we can try to expedite.
+LHN: we have security people working on that, we can try to expedite.
 - danger is that page load, you think its safe. Allows to fork off a worker with shared memory, and there's the attack. 
 
 YK: Might want restrictions on the main thread, so ads can't own your site
 
-LH: is this appropriate for the language or the browser embedding?
+LHN: is this appropriate for the language or the browser embedding?
 
-LH: whole thing with service workers/shared workers is tricky.
+LHN: whole thing with service workers/shared workers is tricky.
 
 YK: Thing is (oksoclap disconnected on me, notes lost)
 
-LH: fundamental constraints with blocking on the main thread? Or can the browser implementations work around this.
+LHN: fundamental constraints with blocking on the main thread? Or can the browser implementations work around this.
 
 YK: is this a fundamental C++ problem? 
 - fetch in browser: fork off a thread, do the work, wait for response. 
 
-LH: depends on which web APIs are avai
+LHN: depends on which web APIs are avai
 - want to update webgl 
 
 "shared" or "transferrable" canvas
@@ -480,7 +480,7 @@ BE: if we have web assembly in all the browsers, why would we need these in JS?
 
 MM: Memory model discussion?
 
-LH: we talked about that.
+LHN: we talked about that.
 
 BE: If we say out of bounds "no and forever", something else will happen (see: flash, java). We need to work towards something. 
 
@@ -488,7 +488,7 @@ YK: concrete example: VLC in the browser, don't want to write C, write JS, chunk
 
 AK: Can't use argument of "needs" c/c++ pthreads.
 
-LH: (pre lunch summary)
+LHN: (pre lunch summary)
 
 - This feature has cost
 - sophisticated shared memory given to those that don't know how to use it
@@ -516,18 +516,18 @@ YK: actually, yeah.
 
 BT: True that impl. shared array buffers in wasm is easier than normal JS? 
 
-LH: Different, not easy
+LHN: Different, not easy
 ...Optimizing generics atomics, backend implementation
 
 BT: SAB in wasm have same security concerns?
 
-LH: Yes.
+LHN: Yes.
 
 BT: Need a sense, wasm is a ways out.
 
 BE: something will happen if we don't act    
 
-LH: thought about having it only in asm.js, not sufficient. runtime and IO services need accesses to shared memory and atomics. some of it could be moved into asm.js, but not all of it. to do so asm.js would need access to DOM APIs.
+LHN: thought about having it only in asm.js, not sufficient. runtime and IO services need accesses to shared memory and atomics. some of it could be moved into asm.js, but not all of it. to do so asm.js would need access to DOM APIs.
 
 DH: Value? Same potential security concerns. Same access from JS. Also brought in requirement to standard another thing. If done in asm, then need to standardize all of asm. 
 
@@ -584,11 +584,11 @@ BE: But do we want to add it to JavaScript for all time? Maybe that's not the ri
 
 BT: But you can still do that from wasm, right?
 
-LH: we need to make sure we support both use cases, compile to asm.js and data parallel in JS. Much more useful to have both than not
+LHN: we need to make sure we support both use cases, compile to asm.js and data parallel in JS. Much more useful to have both than not
 
 BT: I agree we shouldn't be telling JavaScript devs that they can't use these features, but do we save anything but focusing only on asm.js? It sounds like no
 
-LH: I don't think the extra burden to the JS dev is very big
+LHN: I don't think the extra burden to the JS dev is very big
 
 AWB: It doesn't seem like it would be optimized very well if we force JS devs to communicate through asm.js for this feature
 
@@ -599,13 +599,13 @@ DH: I see this as a building block for the long term
 BE: we need to reach consensus, but we don't have to say this is going to be in JS forever just yet
 
 
-LH: Request Stage 1, with a list of things to investigate. 
+LHN: Request Stage 1, with a list of things to investigate. 
 
 MM: w/r to SAB, discussed extensively that burden of proof to show cache sniffing vulnerability is on the champion
 
 ... memory model is not contained. This will bleed into anything that touches the SAB. We need to try to find a way to contain it.
 
-LH: sounds reasonable
+LHN: sounds reasonable
 
 AWB: Object to Stage 1?
 

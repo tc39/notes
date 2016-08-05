@@ -1,6 +1,6 @@
 January 26th 2016 Meeting Notes
 
-Eric Farriauolo (EF), Caridy Patino (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Leland Richardson (LM), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LH), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), Mark S. Miller (MM), Paul Leathers (PL), Sebastian Markbage (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Misko Hevery (MH), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
+Eric Farriauolo (EF), Caridy Patino (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Leland Richardson (LM), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), Mark S. Miller (MM), Paul Leathers (PL), Sebastian Markbage (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Misko Hevery (MH), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
 
 
 ## Agenda
@@ -383,60 +383,60 @@ Presented by Lars Hansen
 
 (request slides)
 
-LH: motivation, why we need this. We will also go over some of the september concerns
+LHN: motivation, why we need this. We will also go over some of the september concerns
 
 (presenting slides)
 
 Slides: https://github.com/tc39/ecmascript_sharedmem/blob/master/tc39/presentation-jan-2016.odp
 
-LH: Why not only for wasm?
+LHN: Why not only for wasm?
 YK: wasm will want to be sync exposable from JS which transitively means these constructs need to shared.
 
-LH:  next slide willl cover that
+LHN:  next slide willl cover that
 
-LH: Why not only for wasm (2)
+LHN: Why not only for wasm (2)
 
 YK: we could say, wasm is only accesible async
 
-LH: we can't really
+LHN: we can't really
 
 YK: this is a platform feature
 
 MM: workers that have access to shared memory, are only available async.
 
-LH: what i am proposing is that we are proposing, is that JS define these semantics. This would give it some teeth, and enable healthier interopt.
+LHN: what i am proposing is that we are proposing, is that JS define these semantics. This would give it some teeth, and enable healthier interopt.
 
 DH: "if you're gonna drink, you're doing it under my roof"?
 
-LH: Why not only for wasm? (3)
+LHN: Why not only for wasm? (3)
 
 MM:  given a shared memory buffer, each worker would be seeing it through a set of types. There is nothing that enforces which types, corect?
 
-LH: correct
+LHN: correct
 
-LH: why not something completely different?
+LHN: why not something completely different?
 
 YK: we also don't know what it is
 
 DH: if we want, I could put a team on it for a couple of years
 
-LH: what is Pjs?
+LHN: what is Pjs?
 
 ** parallel JavaScript **
 
 A: Why is racy required
 
-LH: its hard to imagine C++ program that isn't racy
+LHN: its hard to imagine C++ program that isn't racy
 
 WH: Depends on what you mean by "racy". You can trivially eliminate all data race undefined behavior from a C++ program by turning all memory accesses into atomics. The execution would still be racy (i.e. unpredictable), but it would not be racy (i.e. have races causing undefined C++ behavior according to its memory model). The two meanings of "racy" are quite distinct.
 
 A: one approach I could see, is the JS side only has synchronized acess to the array buffer.
 
-LH: concerns about slow
+LHN: concerns about slow
 
 MM: pony + rust provide strong rules, can we enforce this?
 
-LH: that is off the table
+LHN: that is off the table
 
 DH: Don't know how to track ownership and infer types inside the asm.js typed array.
 
@@ -454,9 +454,9 @@ YK: do you believe this cost would be cheap?
 
 MM: im assuming (hope) it will be cheap
 
-LH: I would like to present this proposal not what MM is speaking about, but what MM is speaking of is interesting.
+LHN: I would like to present this proposal not what MM is speaking about, but what MM is speaking of is interesting.
 
-LH: Some sort of integrity
+LHN: Some sort of integrity
 
 DH: I was thrown off, because it is much more general.
 
@@ -464,65 +464,65 @@ DH: I was thrown off, because it is much more general.
 
 DH: imagine that we had 1 big typed array, but where you could checkout sections of the array with different permissions (rw r) the sharing would be controller based on the permissions one had. This would allow improved concurrency, and safety. It can be data-race free, but would require some clunkyness. Alll this could be done via the message passing system, this could be spec'd and implemented.
 
-LH:  the point is, this kind of sharing DH is talking about has some issues and likely requires a better type system than JS has. Multidimensional arrays make this more complicated, (what killed it, i missed it..) 
+LHN:  the point is, this kind of sharing DH is talking about has some issues and likely requires a better type system than JS has. Multidimensional arrays make this more complicated, (what killed it, i missed it..) 
 
-LH: for ecmascript, we likely require a better system. But we have this system today.
+LHN: for ecmascript, we likely require a better system. But we have this system today.
 
-LH: I have decided to provide a low level system, and build a better system on top.
+LHN: I have decided to provide a low level system, and build a better system on top.
 
 DH: A bigger KO, is that this can't come anywhere near the performance of the pure shared array buffer. Message passing comes at a heavy cost, as the hardware support for racy shared access enables order of magnitudes better performance
 
 ... Would a more constrained compile target not just solve this.
 
-LH: unity compiled some benchmarks, using shared buffer they benifited from 4x speed-up. 
+LHN: unity compiled some benchmarks, using shared buffer they benifited from 4x speed-up. 
 
-LH: this API is a good basis to build a system on
+LHN: this API is a good basis to build a system on
 
 WH: what is the API
 
-LH: 
+LHN: 
     
 DH: We have done multiple years exploring this. With intel + Mozilla, we looked at race free high level API's and we really couldn't come to something that would work. It's not to say we are the only people to solve this problem, but their is limit to how much we can explore.
 
 BE: WH you were ill and were not present to attend when this was presented the last time.
 
-LH: the shared buffer spec is small and stable
+LHN: the shared buffer spec is small and stable
 
 DE: In release behind a flag (in chrome)
 
-LH: alpha/beta/release will be behind a flag (on FF)
+LHN: alpha/beta/release will be behind a flag (on FF)
 
-LH: slide (API: Shared memory)
+LHN: slide (API: Shared memory)
 
-LH: slide (API: Atomic Operations)
+LHN: slide (API: Atomic Operations)
 
-LH: regular access to not guarentee tearing
+LHN: regular access to not guarentee tearing
 
 WH: so everything is sequentially consistent, which is far slower than acquire/release on, say, x86
     
-LH: atomic access are sequentially consistent
+LHN: atomic access are sequentially consistent
 
 What is the safe guarentee?
 
-LH: you cannot step outside the array, and the types remain safe.
+LHN: you cannot step outside the array, and the types remain safe.
 
 WH: There is more to memory safety than that. Java got into trouble with this, and it caused grief for C++. Reading a value and using it twice, due to common optimizations, could result in seeing different values. Booleans that are neiter true or false, not because of strange bit patterns, but because of optimizations affecting the order of memory operations. If you try to nail this down so that it could never happen, we must restrict the optimizations to a level that hurts performance.
 
-LH: slide (API: Agent sleep and wakeup)
+LHN: slide (API: Agent sleep and wakeup)
 
-LH: futexWait must no longer be used on the main thread of the browser.
+LHN: futexWait must no longer be used on the main thread of the browser.
 
-LH: slide (Agent model)
+LHN: slide (Agent model)
 
 DH: what does a forward progress guarentee mean
 
-LH: more or less a fair scheduling guarentee
+LHN: more or less a fair scheduling guarentee
 
 DD: are agents continents?
 
 MM: worker goes through a sequence of jobs, there is a full ordering of jobs in any one worker. Each worker is a sequential program. Concurrency is between workers. I would be surprised if the division into jobs becomes relevant
 
-LH: i likely misspoke, my agents are most likely similar to what you call a vat. 
+LHN: i likely misspoke, my agents are most likely similar to what you call a vat. 
 
 MM: ok, so each agent executes a fully order sequences of jobs, where each job is executed to completion before starting the next job.
 
@@ -530,27 +530,27 @@ JFB: C++ is exploring forward progress guarentees to support weaker models, such
 
 JFB: C++ has spent many hours discussion this, it is quite complex.
 
-LH: slide (Agent Mapping)
+LHN: slide (Agent Mapping)
 
-LH: to wrap this up, how you create agents, what they are and how you share them is all mapping specific. Browser vs node would be totally different.
+LHN: to wrap this up, how you create agents, what they are and how you share them is all mapping specific. Browser vs node would be totally different.
 
-LH: in a browser it would be a worker, WW semantics need much work.
+LHN: in a browser it would be a worker, WW semantics need much work.
 
-LH: again, no futuxWait on the main thread.
+LHN: again, no futuxWait on the main thread.
 
 MM: you are assuming agents are only coupled via shared array buffer or asynchronously
 
-LH: Slide (Memory model)
+LHN: Slide (Memory model)
 
 Totally ordered relative to a thread?
 
-LH: totally ordered base don the atomics
+LHN: totally ordered base don the atomics
 
 Physics doesn't let you have that, so..
 
 WH: no you can
 
-LH: atomic operations from JS on all shared array buffers in your browser are totally ordered
+LHN: atomic operations from JS on all shared array buffers in your browser are totally ordered
 
 JFB: the non atomic operations are all unordered, if you don't have atomics between them, everything can be re-ordered. The atomics provide ordering through happens-before with the non-atomic operations. The atomics provide inter-threads-happens-before between each other.
 
@@ -566,11 +566,11 @@ M: any atomic operation is sequentially consistent even if it is unrelated.
 
 Browser that is spending many independent process, sharing memory is complicated. Im not sure what it means for them to be ordered
 
-LH: total order not sequential order.
+LHN: total order not sequential order.
 
-LH: slide (memory model 2)
+LHN: slide (memory model 2)
 
-LH: this is easy to reason about, but slower then alternatives
+LHN: this is easy to reason about, but slower then alternatives
 
 WH: what happens during a race?
 
@@ -578,37 +578,37 @@ MM: once you read a value, does it remain stable or can it change?
 
 WH: Do you get classical garbage or quantum garbage? (Quantum garbage is what happens in C++: reading a racy value and storing it into a temporary can cause the temporary to later spontaneously change its value).
 
-LH: i don't believe so
+LHN: i don't believe so
 
 MM: so quantum garbage
 
-LH: Yes, quantum garbage.
+LHN: Yes, quantum garbage.
 
 JFB: architecture differences can make this impossible.
 
-LH: im wrestling with if that is reasonable, we have already defined races will create garbage, we are defining now how bad that garbage is. Even if you read garbage, the garbage is sensible for the type that you are reading.
+LHN: im wrestling with if that is reasonable, we have already defined races will create garbage, we are defining now how bad that garbage is. Even if you read garbage, the garbage is sensible for the type that you are reading.
 
-LH: some interesting complications, since we are using typed arrays, we can alias arrays, we can have atomic and non-atomic operations operating on the same array at the same time. Interesting problem for weakly ordered scenarios. We would like to give races a little bit of meaning. We want them to have enough meaning, so we don't crash the system
+LHN: some interesting complications, since we are using typed arrays, we can alias arrays, we can have atomic and non-atomic operations operating on the same array at the same time. Interesting problem for weakly ordered scenarios. We would like to give races a little bit of meaning. We want them to have enough meaning, so we don't crash the system
 
 MM: weakly ordered data describes this
 
-LH: yes
+LHN: yes
 
 MM: tearing is a out of thin-air value
 
-LH: nono that happens in a non-racy scenarios
+LHN: nono that happens in a non-racy scenarios
 
 WH: That is a different concept, memory models do not always match the intuitive notion of causality. For example, the C++ memory model allows you to write programs that test whether an atomic value is 42, and set it to 42 if it was 42, and the optimizer can cause, via various memory model deduction rules, to cause the test to become self-fulfilling.
 
-LH: relaxed atomics can cause this, we address this with strong atomics
+LHN: relaxed atomics can cause this, we address this with strong atomics
 
 ...
 
-LH: lets  continue
+LHN: lets  continue
 
-LH: slide (Other memory model issues)
+LHN: slide (Other memory model issues)
 
-LH: the goal is to high performance, but we will get there
+LHN: the goal is to high performance, but we will get there
 
 WH: i am concerned that this is the wrong starting point
 
@@ -616,35 +616,35 @@ can we get some numbers and see the difference
 
 WH: Providing a low-level library that implements sequential consistency only instead of also supporting acquire-release-relaxed seems like defeating the purpose of the effort. Requiring sequential consistency on reads/writes is several times slower than just doing acquire-release semantics on reads/writes on x86. Sequential consistency only seems like the wrong starting point because it throws away so much performance compared to acquire/release, which almost always suffices. The point of this effort is to go for high performance.
 
-LH: any questions:
+LHN: any questions:
     
 MM: you mentioned we avoid blocking the main thread, can we also make it so high-speed access is ???.
 
-LH: in principle yes, TypedArray constructers made illegal on the main thread would enable this. This may strike some people as strange, but in principle yes
+LHN: in principle yes, TypedArray constructers made illegal on the main thread would enable this. This may strike some people as strange, but in principle yes
 
 YK: UI and IO threads blocking is a well known thing, I suspect not one will notice
 
-LH: I believe MM was thinking disabled access to the shared memory from the same thread. But i would suggest that would be practical.
+LHN: I believe MM was thinking disabled access to the shared memory from the same thread. But i would suggest that would be practical.
 
 BN: WebGL is on the main thread, not having access to shared memory on the main thread would be unfortunate
 
-LH: i believe MM proposes workers having access to such things
+LHN: i believe MM proposes workers having access to such things
 
-LH: slide (futexWait on the main thread)
+LHN: slide (futexWait on the main thread)
 
-LH: slide (futuxWaitCallback)
+LHN: slide (futuxWaitCallback)
 
 YK: isn't message channel more compisition then postMessage
 
-LH: maybe we should hold off on this then
+LHN: maybe we should hold off on this then
 
-LH: slide (side-channel attack)
+LHN: slide (side-channel attack)
 
-LH: slide (cache attack)
+LHN: slide (cache attack)
 
 YK: i have a general question, other sandboxes allow this, how are we different? iOS sandbox etc. Prior art?
 
-LH: Im sure they have thought about this, but not alot of evidence they care about it
+LHN: Im sure they have thought about this, but not alot of evidence they care about it
 
 WH: Those things were designed at a time when timing attacks just weren't on the radar. They're all vulnerable to cache timing attack mischief. A large mitigating factor is that evil apps can be reviewed and revoked with at least a modicum of success. Browsers on the other hand must deal with arbitrary evil content.
 
@@ -652,13 +652,13 @@ DH: We live in a world, were forcing users to essentially install by merely navi
 
 DH: we have strong signals, we can detect if an API caused the navigation or a user. This may be sufficient.
 
-LH: lets push this on the stack for two more slides
+LHN: lets push this on the stack for two more slides
 
-LH: Existing tech (Flash/Java/PNaCL/NaCL) already demonstrate them.
+LHN: Existing tech (Flash/Java/PNaCL/NaCL) already demonstrate them.
 
 MM: I would like to point out on this slide (status quo?) flash, java, nacl/pnacl are dead or dying. The fact that those exists, does not mean we need to put up with this.
 
-LH: I'm not saying that, only stating the current state.
+LHN: I'm not saying that, only stating the current state.
 
 (MM: A clearer statement I wish I said: "if we find the danger is bad enough, browser makers could turn off flash, java, and nacl/pnacl. iPad has already turned off flash. Many have turned off java. No one but chrome runs nacl or pnacl. OTOH, once this goes into javascript, it becomes impossible to turn off. So these prior systems do not commit us so strongly that we can deny that our actions today make things worse." Some of this was said in the unrecorded verbal discussion, but not as clearly.)
 
@@ -676,53 +676,53 @@ JFB: when the performance.now thing happened, it seems low cost to change (likel
 
 JFB: given this is going to happen, there will be high resolution timer. The course of action is to fix the route causes. 
 
-LH: the current resolution is already sufficient for these issues.
+LHN: the current resolution is already sufficient for these issues.
 
 JFB: with row hammer you can flip bits without atomics, because of hardware issues.
 
-LH: I haven't found any evidence of this making it worse.
+LHN: I haven't found any evidence of this making it worse.
 
 YK: it doesn't seem like we are the first to encounter this
 
-LH: we may be exposing something, so we should becareful
+LHN: we may be exposing something, so we should becareful
 
 YK: it merely feels inappropriate to have panic mode
 
-LH: i can agree with this.
+LHN: i can agree with this.
 
 WH: I believe in defence in depth, it is extremely difficult to transition all code that handles secrets to run in constant time with data-invariant memory access patterns. It's likely impossible. This applies to all code running on the machine, not just the browser.
 
 MM: Other secrets exist, that can't be protected by constant time algorithms. For example, say some code is handed a graph containing secrets, where that code must traverse the graph to process the secrets. Clearly the pattern of memory accesses or their timing is not going to be independent of the topology of the graph. This claim that one can practically write side-channel-free constant time algorithms applies only to very specialized algorithms such as crypto.
 
-LH: moving along
+LHN: moving along
 
-LH: slide (Mitigations for side-channel)
+LHN: slide (Mitigations for side-channel)
 
 YK: existing API/flows exist to prevent driveby
 
 DH/YK: let me unpack it, when navigating to a web app with an install banner, the JS code can trigger the install banner, but only if the browser believes it is not a drive by
 
-LH: slide (complexity)
+LHN: slide (complexity)
 
-LH: slide (compiler can't introduce races)
+LHN: slide (compiler can't introduce races)
 
-LH: slide (Shared Memory)
+LHN: slide (Shared Memory)
 
-LH: slide (User affected "only" by races)
+LHN: slide (User affected "only" by races)
 
 WH: these are easy to deal with, the quantum garbage is not
 
-LH: yes, i believe my next slides will cover
+LHN: yes, i believe my next slides will cover
 
-LH: slide (Where do we stand?)
+LHN: slide (Where do we stand?)
 
-LH: do we want this?
+LHN: do we want this?
 
 MM: let me verify, can we negotiate re: deny shared memory buffer to the main thread?
 
-LH: we can talk about it
+LHN: we can talk about it
 
-LH: slide (Where do we stand? 2)
+LHN: slide (Where do we stand? 2)
 
 YK: can you do this with PNacL or flash?
 
@@ -732,7 +732,7 @@ YK: stronger point, not only is it going to happen but it has already happened.
 
 WH: Quantum garbage issue is new
 
-LH: We need more direct input, need help fixing it, or finding bugs. Stage 2 has the notion of reviewrs.
+LHN: We need more direct input, need help fixing it, or finding bugs. Stage 2 has the notion of reviewrs.
 
 For the review, memory model stuff is very hard. This one may be worth getting outside help
 
@@ -740,11 +740,11 @@ JFB: we have contacted several and have been getting feedback from industry stan
 
 DD: this TC can help best with integration with the language, deferring the memory model issues to the experts seems appropriate.
 
-LH: for example WH doesn't want quantom garbage, this is good feedback. The current 2 month cycle isn't a tight enough loop.
+LHN: for example WH doesn't want quantom garbage, this is good feedback. The current 2 month cycle isn't a tight enough loop.
 
 WH: in the last few months, I haven't seen much improvement. Especially with the quantom garbage
 
-LH: Until now, it was unclear we wanted to fix that issue.
+LHN: Until now, it was unclear we wanted to fix that issue.
 
 WH: I haven't seen enough progress
 
@@ -756,7 +756,7 @@ MM: if their was a boundary between code directly interacting with the shared bu
 
 no
 
-LH: if two works are running with shared memory, if X reads a value and Y writes that value. X reads into local var. It is possible to.
+LHN: if two works are running with shared memory, if X reads a value and Y writes that value. X reads into local var. It is possible to.
 
 ```
 x = mem[a];
@@ -774,7 +774,7 @@ MM: it is possible to fix it at the atomic operation level?
 
 WH: No. This problem is independent of any atomic operations.
 
-LH: no
+LHN: no
 
 * lots of talking *
 
@@ -819,9 +819,9 @@ MM: I merely argued that it was not fatal, due to nearly all the language featur
 
 MM: When you (Dave) figured out how to avoid the non-determinism without introducing the other problems my proposal was trying to avoid, I quickly accepted it as superior.
 
-LH: no actually their is a distinction, compilers today can optimize this to be single lookup
+LHN: no actually their is a distinction, compilers today can optimize this to be single lookup
 
-LH: shared memory invalidates that, even in trivial ways
+LHN: shared memory invalidates that, even in trivial ways
 
 MM: can this be isolated?
 
@@ -831,18 +831,18 @@ JFB: we should define that if it leaves the shared buffer, the value no longer c
 
 MM: could the compiler mark those object, preventing them from polluting.
 
-LH: it could
+LHN: it could
 
 
 MM: it seems like we want something the same as volatile
 
-LH: I believe the compiler could detect these cases and prevent the issues.
+LHN: I believe the compiler could detect these cases and prevent the issues.
 
 JFB: yes, the memory model needs to be defined.
 
 BE: does this help approaching stage 2?
 
-LH: I believe we can address the quantum garbage issue as mentioned above, we should take a pool and see if their are other blockers.
+LHN: I believe we can address the quantum garbage issue as mentioned above, we should take a pool and see if their are other blockers.
 
 WH: timing attack is still an issue
 
@@ -868,15 +868,15 @@ DD: not every stage 2 feature makes it in the spec.
 
 YK: it is ok to say, I am willing to advance it but not beyond 3 or 4, until this issue has been addressed.
 
-LH: Yes it has to be solved, it is rediculous for JS to have this. Even if it means we take a performance hit.
+LHN: Yes it has to be solved, it is rediculous for JS to have this. Even if it means we take a performance hit.
 
 DH: Helps us hans booms, yous're our only hope.
 
 ... some process discussion...
 
-LH: slide ("where do we stand? 3)
+LHN: slide ("where do we stand? 3)
 
-LH: market place pressure, showing our seriousness is healthy. We are now at the point, were additional reviewers are important, which stage 2 is for.
+LHN: market place pressure, showing our seriousness is healthy. We are now at the point, were additional reviewers are important, which stage 2 is for.
 
 MM: let me rephrase, what we believe we are advancing is a proposal that includes removing the quantom garbage propagation
 
@@ -948,7 +948,7 @@ DT: not currently on TC-39
 
 MM: the individual who does the work, doesn't need to be on the TC, though it does help. I am happy to be the on-TC-advocate of the proposal if necessary.
 
-LH: have you looked at guardians (paper: http://www.cs.indiana.edu/~dyb/pubs/guardians-pldi93.pdf )
+LHN: have you looked at guardians (paper: http://www.cs.indiana.edu/~dyb/pubs/guardians-pldi93.pdf )
 
 MM: I am very much interested in looking at it, and preferring the small talk approach. In small talk 80, they added post mortem finalization.
 

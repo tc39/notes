@@ -10,13 +10,13 @@ Morgan Phillips
 https://github.com/mrrrgn/proposal-date-time-string-format
 
 
-MP: (see link) Date.parse accepts strings that are implementation specific, this is causing incompatibilities across runtimes with new and repeat bugs filed regularly. 
+MP: (see link) Date.parse accepts strings that are implementation specific. This is causing incompatibilities across runtimes with new and repeat bugs filed regularly. 
 
 Suggesting: specify the _intersection_ of supported string formats, specify this as the _fallback_ for Date.parse. 
 
 https://github.com/mrrrgn/proposal-date-time-string-format/blob/master/data/results.csv
 
-DE: How much which is currently allowed to parse is banned under this proposal?
+DE: How much of what is currently allowed to parse is banned under this proposal?
 
 AWB: In general, implementations are allowed to add extensions to do something else rather than throwing whenever they want.
 
@@ -73,9 +73,9 @@ YK: [Agree, but Date API is generally the sort of thing that accepts junk and is
 
 DE: Unfortunately, browsers don't have the luxury of doing what AWB suggests, and the demands of web compatibility mean that we have to support what other browsers support.
 
-MP: noting reports that a company identified some large number of bugs being date based.
+MP: noting reports that a company identified some large number of bugs being date-based.
 
-DE: We have found that at least 4 out of 10k page loads uses the "legacy date parser" in Chrome
+DE: We have found that at least 4 out of 10k page loads use the "legacy date parser" in Chrome
 
 
 #### Conclusion/Resolution
@@ -89,7 +89,7 @@ Jordan Harband
 
 https://github.com/tc39/proposal-global
 
-JHD: We reached Stage 2 previously, and the remaining open question is which name should be used. window would break lots of code, since everyone assumes 'typeof window' indictates whether you're running in a main page. The remaining options are self, global, and System.global
+JHD: We reached Stage 2 previously, and the remaining open question is which name should be used. window would break lots of code, since everyone assumes 'typeof window' indicates whether you're running in a main page. The remaining options are self, global, and System.global
 
 DD: there's also frames! (jokingly)
 
@@ -101,7 +101,7 @@ JHD: This is a very common pattern, though it sometimes dispatches on window or 
 
 DD: We already have a lot of ways to refer to the global. Do we really need another one? Further (lower priority), there is a distinction between the global proxy and the global object. Setting properties on the global scope sets it on the global object, but referring to it gets the global proxy.
 
-(Discussing Domenic's concerns listed here: https://github.com/tc39/proposal-global/issues/16#issuecomment-221558082 )
+(Discussion of Domenic's concerns listed here: https://github.com/tc39/proposal-global/issues/16#issuecomment-221558082 )
 
 WH: How does this work across realms? The global object is a funny thing, as depending on where you evaluate it from, you may get different ones. If the global object is a proxy, is the system object also a proxy?
 
@@ -137,7 +137,7 @@ JHD: But actually everyone uses 'typeof process' together with that when detecti
 
 AWB: Two other options for names: Object.global
 
-MM: I veto that as it would violate authority separation. I want to separate authority-carrying objects from non-autority-separating objects.
+MM: I veto that as it would violate authority separation. I want to separate authority-carrying objects from non-authority-separating objects.
 
 DD: But Object.__proto__ is Function, which gives you the authority to get the global object anyway.
 
@@ -153,11 +153,11 @@ MM: Let's not spend time on things that are strictly worse
 
 JHD: Mark has argued that this cannot be a global variable so that it's more easily secured.
 
-DH: Sounds like a good time to bring in the Realms API and the global scope contour, which introduce additional concepts that want work in the language. It's an open area for discussion, where we might want to expose the actual current realm.
+DH: Sounds like a good time to bring in the Realms API and the global scope contour, which introduce additional concepts that need work in the language. It's an open area for discussion, where we might want to expose the actual current realm.
 
 AK: There's something special about global. There's already three ways to access this thing; adding new ways is sorta bad. We're not adding a bunch of things; this is just accessing one thing.
 
-MM: Right now, none of the ways of accessing global are not in the ECMAScript spec, and it's a beautiful thing that the boundary between the ES spec and the host corresponds very closely to user-mode computation and system mode computation. ES standardizes no way to cause effects on the outside world; the host provides bindings on the global object to cause effects on the outside world. Because the other things are put on the global, the global itself should be considered a host object that provides access to these things. Because there is no binding to the global object, nothing grants authority. There are several future proposals which do things like that.
+MM: Right now, none of the ways of accessing global are in the ECMAScript spec, and it's a beautiful thing that the boundary between the ES spec and the host corresponds very closely to user-mode computation and system mode computation. ES standardizes no way to cause effects on the outside world; the host provides bindings on the global object to cause effects on the outside world. Because the other things are put on the global, the global itself should be considered a host object that provides access to these things. Because there is no binding to the global object, nothing grants authority. There are several future proposals which do things like that.
 
 AK: We don't have any of those. Global is special. There is some advantage to making the name short. Let's say it doesn't set a convention.
 
@@ -175,7 +175,7 @@ JHD: I went with System.global because of the nonzero compat risk of bare 'globa
 
 YK: SES already has to care about this kind of thing.
 
-MM: We currently have a whitelist in SES. global is not one of them.]
+MM: We currently have a whitelist in SES. global is not one of them.
 
 JHD: So if you're OK with not adding a global, you don't have to do anything to SES?
 
@@ -189,7 +189,7 @@ MM: I hope that frozen realms will be added and hide the global object.
 
 JHD: It sounds like the requirement that it be under a namespace is not very strong, simply a preference
 
-MM: "simply a reference is too weak. The issue of distinctions and psychological burden and precedent setting are pretty important.
+MM: "simply a preference" is too weak. The issue of distinctions and psychological burden and precedent setting are pretty important.
 
 DT: You're talking about the burden on developers?
 
@@ -209,7 +209,7 @@ DD: Would prefer `self`
 
 AK: 'global' seems fine.  Most people don't seem to want 'self', Domenic.
     
-YK, AK: This doesn't give any new capability as 
+YK, AK: This doesn't give any new capability 
 
 JHD: Sounds like the next steps are for Mark to think through Yehuda's objection and see if he can support bare 'global', and for me to follow up with Mark, Dean and <who?>
 
@@ -229,7 +229,7 @@ Reviewers: Mark Miller and Waldemar Horwat
 
 TD: (recap) w/ tagged template literals, escape seq. illegal. Changes seek to allow
 
-- Only change: https://tc39.github.io/proposal-template-literal-revision/#sec-static-semantics-template-early-errors removed the parametrization of the lexical grammar productions and instead enforce early errors via static semantics attached to the syntactic grammar. This change was result of Mark and Waldemar's review. 
+- Only change: https://tc39.github.io/proposal-template-literal-revision/#sec-static-semantics-template-early-errors removed the parameterization of the lexical grammar productions and instead enforces early errors via static semantics attached to the syntactic grammar. This change was a result of Mark and Waldemar's review. 
 
 TD: Approval Stage 3?
 
@@ -239,7 +239,7 @@ TD: Approval Stage 3?
 - Stage 3 approved
 
 
-## 9.i.i ECMA402 formatToParts
+## 9.i.i ECMA-402 formatToParts
 
 Zibi Braniecki 
 
@@ -270,7 +270,7 @@ AWB: Compatibility issues?
 
 ZB: Shipped in SM behind flag
 
-CP: There are alot of new Intl features that need formatToParts
+CP: There are a lot of new Intl features that need formatToParts
 
 DD: They can just be dependent
 
@@ -278,7 +278,7 @@ EFT/RW: That's bogus.
 
 AWB: There is experience from significant usage? Want to hear about that
 
-ZB: Used in consumer facing product, Panasonic TVs running FirefoxOS. Proven that necessity to format is satisfied by this API. 
+ZB: Used in consumer-facing product, Panasonic TVs running FirefoxOS. Proven that necessity to format is satisfied by this API. 
 
 AWB: With this exact proposal? 
 
@@ -312,7 +312,7 @@ AK/DE: Some cases need 2 or more browsers, but this is not one.
 - https://github.com/tc39/test262/pull/734/files
 
 
-## 9.i.j ECMA402 Intl.PluralRules
+## 9.i.j ECMA-402 Intl.PluralRules
 
 Zibi Braniecki
 
@@ -355,7 +355,7 @@ BT: This won't be added in the future, but they can't be "fixed" because they ca
 
 DT: Should the requirements be clear for ES implementations?
 
-BT: risk w/r to breaking change updating Unicode, larger possibility with `\p`
+BT: risk with respect to breaking change updating Unicode, larger possibility with `\p`
 - Unicode is reluctant to touch case mapping
 - characters might move
 
@@ -367,7 +367,7 @@ BT: Still a risk of a breaking change
 #### Conclusion/Resolution
 
 - Do not merge the PR
-- Use language for "the latest" ie. unbounded reference
+- Use language for "the latest", i.e. unbounded reference
 - This should be applied to 402 as well
 
 
@@ -460,7 +460,7 @@ JM: main issues
 
 JM: What should be available inside the initializer?
 
-- Banning arguments, new.target (b/c unclear) -- these are static semantics errors when occurring literally, and `undefined` in direct eval
+- Banning arguments, new.target (because unclear) -- these are static semantics errors when occurring literally, and `undefined` in direct eval
 - Allowing this and super property access
 
 YK: It would be confusing to have the old enclosing copies of new.target or arguments inside of the initializers, which run later
@@ -471,7 +471,7 @@ YK: We discussed this in the context of the cross-cutting class proposal with Br
 
 - You might want this in a static property to refer to the class you just created
 
-JM: There have been issues created in the Babel tracker filed about the scoping of this
+JM: There have been issues created in the Babel tracker about the scoping of this
 
 AWB: In a static method this refers to the constructor function
 
@@ -487,9 +487,9 @@ AWB: These initializers are very shorthand for a function, which always has new.
 
 MM: In favor of banning
 
-AWB: A usecase is a static method on subclasses that filters the initializers, as called from a superclass constructor. In that case, you want to call |new.target.initializerFilter()|, and so want new.target to work
+AWB: A use case is a static method on subclasses that filters the initializers, as called from a superclass constructor. In that case, you want to call |new.target.initializerFilter()|, and so want new.target to work
 
-YK: Even though you can construct models which are consistent about which is which with new.target and arguemtns, it's equally hard to construct one that is unambiguously clear which one you are referring to
+YK: Even though you can construct models which are consistent about which is which with new.target and arguments, it's equally hard to construct one that is unambiguously clear which one you are referring to
 
 YK: This isn't a catchall; there will still be imperative cases that benefit from being written in the constructor
 
@@ -503,7 +503,7 @@ MM: Presumably if it's an early error without eval, then it will throw early dur
 
 MM: Because this is a convenience tool, we can ban eval without loss of expressiveness. It's just a loss of convenience
 
-DH: On instinct, this scares me. Just because we can't come up with a usecase, doesn't mean that something won't ever come up
+DH: On instinct, this scares me. Just because we can't come up with a use case, doesn't mean that something won't ever come up
 
 WH: How deep would the direct eval ban go? Expression, subexpressions, within arrow functions inside subexpressions, ...?
 
@@ -513,13 +513,13 @@ YK: Yeah, we'd have to ban the entire class of things that could wind up being d
 
 MM; The only reason we're allowing these outside of the constructor at all, is for common well-behaved cases
 
-AWB: This of this as shorthand for function. If it was a function, all functions define new.target. When invoked you get undefined. Functions have arguments. There are no functions. If you just treat an initializer like an anonymous function, then you get exactly everything falling out
+AWB: Think of this as shorthand for function. If it was a function, all functions define new.target. When invoked you get undefined. Functions have arguments. There are no functions. If you just treat an initializer like an anonymous function, then you get exactly everything falling out
 
 DE: If you treat it like just a method, then you get everything you want
 
 AWB: This avoids a laundry list of special cases
 
-KG: What about statics? The easy corolary is that for statics, it's an anonymous static method.
+KG: What about statics? The easy corollary is that for statics, it's an anonymous static method.
 
 YK: This also allows for sane semantics for `this`
 
@@ -537,7 +537,7 @@ class Derived extends Base {
 ```
 
 
-AK: Does this restrict impl ablitie to optimize away? No, we should be able to statically determine whether eval or arguments are possible.
+AK: Does this restrict implementation's ablity to optimize away? No, we should be able to statically determine whether eval or arguments are possible.
 
 EF: This is a simple front-end optimization.
 
@@ -556,7 +556,7 @@ YK: Users would likely expect to get a Set; most users don't understand setters,
 
 WH, MM: Would be really surprised by a Set in this example. The intuition is for initializers to use define.
 
-JM: You could phrase this either way; either it's a hazard, or it sets the expectations that users can depend on a predictable DefinePropertyOrThrow.
+JM: You could phrase this either way; either it's a hazard, or it sets the expectation that users can depend on a predictable DefinePropertyOrThrow.
 
 WH: The reason why Set doesn't work is that it's not extensible to const, to typed properties, all of these can only be done on DefinePropertyOrThrow
 
@@ -591,7 +591,7 @@ SP: How is this conflated?
 
 MM: The idea that an initializer does a Set(), but a const does a DefinePropertyOrThrow() is just (confusing?)
 
-MM: We already have in ES6 practice for how to initialize objects imperatively, with `this.textValue = "asdf"` inside the constructor. That's imperative, that does a Set(), it has all the properties that Yehuda is advocating. Any proposal that adds new syntax should, to justify the cost of the new syntax, it should have less overlap with something you can easily say already.
+MM: We already have in ES6 practice for how to initialize objects imperatively, with `this.textValue = "asdf"` inside the constructor. That's imperative, that does a Set(), it has all the properties that Yehuda is advocating. Any proposal that adds new syntax should, to justify the cost of the new syntax, have less overlap with something you can easily say already.
 
 
 ```js
@@ -608,7 +608,7 @@ YK: But most people will have the imperfect but good-enough mental model to view
 
 BE: This isn't true, as object literals already do something different compared to manipulating the object, if you put a setter on Object.prototype
 
-YK: But that is suprising to many useres
+YK: But that is suprising to many users
 
 AK: What about developers of other languages who define fields and expect those to not trigger setters (as in other languages, where setters don't happen when you declare fields)
 
@@ -628,7 +628,7 @@ DD: That's a good point; people do deprecations by adding setters or getters, an
 
 MM: If the semantics of this is Set, I would ask, what is the added value of the proposal as a whole such that the proposal pulls its weight. You could get these semantics just by writing the right lines in the constructor.
 
-DE: Good from an optimizability stand point. We've been encouraging people to be explicit about properties on `this` by adding them all in the constructor, assigning `undefined` if necessary. This is a nice synaxt for that.
+DE: Good from an optimizability standpoint. We've been encouraging people to be explicit about properties on `this` by adding them all in the constructor, assigning `undefined` if necessary. This is a nice syntax for that.
 
 WH: Using Set() is dangerous, if derived class has foo, exposes you to a super class that didn't have accessor foo, which is later added.
 
@@ -691,14 +691,14 @@ JM: I see the analogy with methods as being stronger. Anyway, most use cases wil
 
 AWB: Want consistency across the whole construct, whether method, field or getter/setter
 
-AK: This isn't thought of as a statement, but rather as a declaration, so the evaluation of the computed property names gods with the other declarations
+AK: This isn't thought of as a statement, but rather as a declaration, so the evaluation of the computed property names goes with the other declarations
 
 
 (discussion re: transpilers)
 
 DH: "identifier : identifier" currently means type annotation 
 
-w/r to this ^^ https://tc39.github.io/ecma262/#sec-forbidden-extensions: 
+with respect to this ^^ https://tc39.github.io/ecma262/#sec-forbidden-extensions: 
     
     
 > The Syntactic Grammar must not be extended in any manner that allows the token : to immediate follow source text that matches the BindingIdentifier nonterminal symbol.
@@ -712,7 +712,7 @@ JM: Currently it creates a non-configurable property with DefinePropertyOrThrow
 
 YK: Seems strange why we would do it differently from methods
 
-MM: I strongly prefer non-configurable. We already have an imperative syntax for imperative initialization, properties that are configurable and disappear. The time-dependent nature of configurable properties don't give you as many guarantees. Non-configurable properties lets you minimize gratuitious differences with private state and get static analyzability and static shape. The behavior of private fields is more like a nonconfigurable property than anything else.
+MM: I strongly prefer non-configurable. We already have an imperative syntax for imperative initialization, properties that are configurable and disappear. The time-dependent nature of configurable properties don't give you as many guarantees. Non-configurable properties let you minimize gratuitious differences with private state and get static analyzability and static shape. The behavior of private fields is more like a non-configurable property than anything else.
 
 AWB: I support your position, but in addition: one of the advantages of this new syntax, is that it allows to declaratively define the shape of the object. 
 - Value in readability
@@ -751,7 +751,7 @@ Ben Newman
 
 BN: Potentially relaxing restriction that `import` can only appear at the top level.
 
-BN: proposal would allow `import`s that are nestable; hoisted (declarative over imperative); lexically scoped; sync evald; back compat.
+BN: proposal would allow `import`s that are nestable; hoisted (declarative over imperative); lexically scoped; sync eval'd; back compat.
 
 BN: We have been shipping this to the Meteor community in a transpiler context. The semantics are more subtle than you would expect to allow, due to the subtleties of modules. They are synchronous (hoisted to the top of the scope) and backwards compatible.
 
@@ -771,9 +771,9 @@ WH: Is the module specifier still restricted to only being a string literal?
 
 BN: Yes.
 
-DH: in this proposal, no matter what, all imports will be loaded beforehand. it's only that evaluation will be deferred until it reaches that point in the code.
+DH: In this proposal, no matter what, all imports will be loaded beforehand. It's only that evaluation will be deferred until it reaches that point in the code.
 
-AWB: do you hoist evaluation as well as instantiation - i would expect that hoisting for consistency with top-level imports
+AWB: Do you hoist evaluation as well as instantiation? - I would expect hoisting, for consistency with top-level imports
 
 BN: the ability to have nested imports gives you a tool to control relative execution of import declarations to other statements
 
@@ -787,17 +787,17 @@ WH: So then what happens if a module is missing when being loaded? How do Optimi
 
 BN: necessarily an error if it fails to load.
 
-BN: … talking about a use case for cross-env code with conditional imports … if it turns out that the fetching of the module source fails, it is entirely conceivable that the dev knows this was a possibility and that that import is inside a conditional block that prevents it from evaluating - so i think it's less fatal for the fetch to fail.
+BN: … talking about a use case for cross-env code with conditional imports … if it turns out that the fetching of the module source fails, it is entirely conceivable that the dev knows this was a possibility and that that import is inside a conditional block that prevents it from evaluating - so I think it's less fatal for the fetch to fail.
 
-YK: an important use case for this is "if i'm in env X, import stuff for env X"
+YK: an important use case for this is "if I'm in env X, import stuff for env X"
 
-DH: proposal: we unconditionally do all the fetches, but if any fail, we don't actually fail - just hang onto the error for later. and only if control flow reaches the point where it's needed, does it end up being an error. iow, if you only have conditional imports, failures will not create a compile time error, and only create a runtime error when the module is needed and missing.
+DH: proposal: we unconditionally do all the fetches, but if any fail, we don't actually fail - just hang onto the error for later. and only if control flow reaches the point where it's needed, does it end up being an error. iow, if you only have conditional imports, failures will not create a compile-time error, and only create a runtime error when the module is needed and missing.
 
 AWB: consistent with the current spec.
 
 AK: changing what used to be early errors into not-early errors.
 
-AWB: i mean consistent in that it treats each block as if it's its own module.
+AWB: I mean consistent in that it treats each block as if it's its own module.
 
 YK: ?? conditional importing means the dev knows it's benign if it's missing, and can work around that.
 
@@ -811,7 +811,7 @@ CP: at what point in this program is the error triggered? we intentionally chose
 
 BN: the specific "it" test in my example will fail if the import nested inside it fails to load.
 
-BN: it should fail every time it's import is attempted
+BN: it should fail every time its import is attempted
 
 DH: it should be possible via the registry to clear things out and make it possible to retry, but only in a staged way - ie, you have to kick off an evaluation, not in the middle of a module.
 
@@ -916,7 +916,7 @@ async fn() {
 }
 ```
 
-AWB, YK: We should merge this group with the loader group to come back in a few moths.
+AWB, YK: We should merge this group with the loader group to come back in a few months.
 
 AK: I'm surprised you're not upset about it being a promise.
 

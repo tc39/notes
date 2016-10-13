@@ -14,23 +14,23 @@ Slides: https://docs.google.com/presentation/d/1aq_QjBUQTovj9aQZQrVzS7l1aiOs3ZNl
 
 
 
-BF: We will be talking about host-dependent behavior: The Node module loading hook is specified in a way that meets ES spec requirements. There is a global and local cache <explain details>
+BF: We will be talking about host-dependent behavior: The Node module loading hook is specified in a way that meets ES spec requirements. There is a global and local cache \<explain details\>
 
 
 (from slide)
 
 
-Resolve (as absolute URL) => Fetch => Parse
-1. Make Module Record
-1. Place in Global Cache using Absolute URL*
-1. Errors remove records from Global Cache*
-Traversal of import declarations recursively
-1. Ensure step 2 has been performed on the dependency
-1. Place dependency in Local Cache using Import Specifier*
-1. Link dependency to module
-1. Errors prevent any evaluation
-Evaluate in post order traversal 
-1. Errors prevent further evaluation
+1. Resolve (as absolute URL) => Fetch => Parse
+    1. Make Module Record
+    1. Place in Global Cache using Absolute URL*
+    1. Errors remove records from Global Cache*
+1. Traversal of import declarations recursively
+    1. Ensure step 2 has been performed on the dependency
+    1. Place dependency in Local Cache using Import Specifier*
+    1. Link dependency to module
+    1. Errors prevent any evaluation
+1. Evaluate in post order traversal 
+    1. Errors prevent further evaluation
 
     
 CP/YK/AWB: (There are items here that are strictly host-specific)
@@ -753,7 +753,7 @@ https://github.com/domenic/proposal-import-function#an-actual-function
 
 https://github.com/domenic/proposal-import-function#a-new-binding-form
 
-DD: This is better than inserting <script type=module> tags dynamically because it's based directly on module specifiers, easier to use, doesn't pollute DOM, etc. Not introducing a new binding form.
+DD: This is better than inserting `<script type=module>` tags dynamically because it's based directly on module specifiers, easier to use, doesn't pollute DOM, etc. Not introducing a new binding form.
 
 DD: New embedder hook, HostFetchImportedModule (runtime equivalent of [[RequestedModules]])
 

@@ -426,7 +426,7 @@ discussion about "__" names.
 
 LH: if you use any english word, someone _could_ create a conflict. If you use "__", there is no accidental conflict.
 
-YK: Using "iterator" or "__iterator__", no one can reliably ducktype for an ES6 iterator
+YK: Using "iterator" or "`__iterator__`", no one can reliably ducktype for an ES6 iterator
 
 
 

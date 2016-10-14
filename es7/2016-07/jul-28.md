@@ -16,7 +16,7 @@ LHN:
 
 Blocking: an agent can block waiting to be woken without returning to its event loop 
 
-Web awareness: an embeddinging can deny some agents the abiluty to block (eg. browsers man thread)
+Web awareness: an embedding can deny some agents the ability to block (eg. browsers main thread)
 
 Forward progress: agents must eventually advance if
 
@@ -55,7 +55,7 @@ Atomic access:
 
 
 
-BF: Is it possible to have another worker store between wake
+BF: Is it possible to have another worker store between wake?
 
 EFT: Yes
 
@@ -63,14 +63,13 @@ DT: A spin instruction that doesn't spin, on x86?
 
 LHN: Yes
 
-- Investigated `pause` as a lightweight `wait`, that wouldn't go into a spin, but 
-- `wait` for a short time
+- Investigated `pause` as a lightweight `wait`, that wouldn't go into a spin, but `wait` for a short time
 - if hot `wait`, could've used `pause` before going into a `wait`
 - you could use `pause` instead of direct into `wait`
 
 
 
-(I'm not sure I captured this as well as it could be, wuold appreciate more eyes/brains to revise appropriately)
+(I'm not sure I captured this as well as it could be, would appreciate more eyes/brains to revise appropriately)
 
 
 ### Memory Model
@@ -182,14 +181,14 @@ PR from Claude Pache https://github.com/tc39/ecma262/pull/627
 LB: The change is: "don't do the lastIndex step unless isn't actually necessary"
 https://github.com/tc39/ecma262/issues/625
 
-DE: Global regexp don't make sense when frozen
+DE: Global regexps don't make sense when frozen
 
 - Some programs freeze regexps, unsure why.
 - This is in use, received bug reports
 
 (discussion, re: how long this might've been allowed?)
 
-AWB: user freezable properties and strict mode introduced in ES5
+AWB: user-freezable properties and strict mode introduced in ES5
 
 DE: Doesn't make sense to read/write lastIndex unless actually necessary.
 
@@ -340,11 +339,11 @@ FST: We intern some strings, but not all.
 
 (discussion, re: hashing, string interning)
 
-YK: MM, are you not worried about the moving gc leak?
+YK: MM, are you not worried about the moving GC leak?
 
 MM: I am.
 
-YK: Moving GC... do a comparison, it's true. The object is changed by gc, and becomes false
+YK: Moving GC... do a comparison, it's true. The object is changed by GC, and becomes false
 
 STH: No
 
@@ -360,7 +359,7 @@ AWB: Essentially same as my suggestion
 
 Agreement, but comments from implementors that I didn't quite catch
 
-SM: Object.assign could be done much faster in VM, WeakRefs... Plausible to find other ways to accomplish same thing. Difficult reach non-leaking solution.
+SM: Object.assign could be done much faster in VM, WeakRefs... Plausible to find other ways to accomplish same thing. Difficult to reach non-leaking solution.
 
 MM: 
     
@@ -430,7 +429,7 @@ DD: Could be naming, ie. "fin" for ES3?
 
 BE: `promise['finally'](...)`
 
-JHD: No conflict re: cancellable promises proposal
+JHD: No conflict re: cancelable promises proposal
 
 YK: Might be good to have finally in language, before 3rd state
 
@@ -468,14 +467,14 @@ YK: We frequently have disagreements about the process.
 
 DD: Disagreements on process aren't helpful 
 
-AWB: Don't wqant to jump feature two stages in one meeting
+AWB: Don't want to jump feature two stages in one meeting
 
 YK: The criteria is met
 - I want criteria that's objectively applicable
 
 AK: The criteria is "there is spec text to review"
 
-JHD: Since this was on the agenda for May, then everyone diligently reviewed—Right?
+JHD: Since this was on the agenda for May, then everyone diligently reviewed, right?
 
 AK: There is no review requirement on Stage 2 spec text. Achieving Stage 3 requires review and revision, etc.
 
@@ -502,7 +501,7 @@ Slides: https://docs.google.com/presentation/d/1kSY7X1ymw5f2oatDrZaMJh4Z_wpd0ynZ
 
 DD: Major change: third state
 
-- A new completion type is unable o achieve consensus
+- A new completion type is unable to achieve consensus
 - Concern: 
 ```js
 try {
@@ -612,17 +611,17 @@ DT: A wants to suppress errors if A is being canceled, regardless of what B does
 
 DD: I recall this concern, I disagree that this matches all reality
 
-DT: Back to try/else. Q: try this thing and my local token is cancelling, suppress error, otherwise...
+DT: Back to try/else. Q: try this thing and my local token is canceling, suppress error, otherwise...
 - Need 
 
-MM: The test: is it a cancellation?
+MM: The test: is it a cancelation?
 
-DT: A cancellation is a fine way to implement shut down
+DT: A cancelation is a fine way to implement shut down
 - Need to allow the shutdown, avoid thrashing 
 
 DD: Experience shows that it's important to suppress the...
 
-DE: Sounds like the disagreement between Dean and Domenic is whether to just supress the one cancellation, right?
+DE: Sounds like the disagreement between Dean and Domenic is whether to just suppress the one cancelation, right?
 
 MM: Asking for: source of information is a distinct thing, expanding the syntax taking into account the token as a source of information. 
 
@@ -630,7 +629,7 @@ DT: I'm saying we can get a syntactic form that can do both
 
 DD: I'm only trying to address this problem, 
 
-DT: (describing example of cancellation where a download was stopped, but results in a parse error of the incomplete download the contents)
+DT: (describing example of cancelation where a download was stopped, but results in a parse error of the incompletely downloaded contents)
 
 YK: hard to imagine a library creating a cancel token... (I missed the entire scenario, Dean started talking)
 
@@ -638,21 +637,21 @@ DT: I create a file and a cancel token and hand the file to the parser, then tri
 
 DD: Stopping a page is a bigger deal
 
-BE: (asking for summary of what needs to actually be address)
+BE: (asking for summary of what needs to actually be addressed)
 
 DD: The question is, is there an unobtrusive way to have syntax that provides the semantics that Dean wants?
 
 
-DT: The Question: The indirect cancellation, does it turn into an error?
+DT: The Question: The indirect cancelation, does it turn into an error?
 
 DD: Don't think we need to address the case of "buggy code"
 - Part of why no longer championing try/catch/else
 
-DD: The concern is about calling into a library which, you cancel the library's overall operation, and it gives you an error rather than a cancellation. The conclusion is that that is very hard for the library to do; these syntactic affordances make it hard to do as you'd have to do a catch, followed by a brand check, which is intentionally hard.
+DD: The concern is about calling into a library which, you cancel the library's overall operation, and it gives you an error rather than a cancelation. The conclusion is that that is very hard for the library to do; these syntactic affordances make it hard to do as you'd have to do a catch, followed by a brand check, which is intentionally hard.
 
 DD: I'd like the committee's feedback on the full spec, which is now much smaller due to fewer modifications to promises, etc.
 
-DD: Some more ideas on making Promises more ergonomic: Make cancellation easy in async functions.
+DD: Some more ideas on making Promsies more ergonomic: Make cancelation easy in async functions.
 
 More Ideas...
 
@@ -668,7 +667,7 @@ async function cancelMe(cancelToken) {
 }
 ```
 
-What about uncancellable things?
+What about uncancelable things?
 
 With the current proposal...
 ```js
@@ -732,7 +731,7 @@ SP: An await inside an arrow function?
 DD: Syntax error
 
 
-DT: Do uncancellable thing might be multi-turn, the only reason for race is you might want to do the stuff after to as a result of cancellation
+DT: Do uncancelable thing might be multi-turn, the only reason for race is you might want to do the stuff after as a result of cancelation
 (I need that double checked, I don't think I got it correctly)
 
 (We're looking at...)
@@ -772,7 +771,7 @@ YK: Arrow functions do not inherit await.cancelToken because they do not general
 
 SP: There is a potential memory leak to discuss.
 
-DD: CAn we defer that?
+DD: Can we defer that?
 
 SP: Yes.
 
@@ -878,11 +877,11 @@ Still unsure what the exact use cases are, but it seems plausible.
 DD: Call it "some" or "any"
 
 
-SP: The leak: scenario where cancel token is much longer lived thatn the code being canceled. 
+SP: The leak: scenario where cancel token is much longer lived than the code being canceled. 
 
 DD: You have one cancel token with long lifetime and components with shorter lifetime 
 
-YK: In Ember's cases, you rapidly get into situations where the cancellation is complicated to thread, e.g., async methods.
+YK: In Ember's cases, you rapidly get into situations where the cancelation is complicated to thread, e.g., async methods.
 
 DT: You end up creating links at different points in lifecycles
 
@@ -896,7 +895,7 @@ DT: Never needed it [in Midori]
 
 YK: We should think about it because it's symmetric
 
-DT: It's asymmetric; cancellation is monotonoic. We just don't get this pattern in Midori.
+DT: It's asymmetric; cancelation is monotonoic. We just don't get this pattern in Midori.
 
 SP: Doesn't sound useful
 
@@ -980,19 +979,19 @@ function fetch(
 
 ```
 
-DD: What I'm hearing is that people are not heavily concerned. Sounds like this might be worth pursuing. Cancellation already has a lot of stuff in it, and it's hard to get a read on how many people are going to have objections. Dean already raised several objections and we didn't have time in the timebox to raise all of them.
+DD: What I'm hearing is that people are not heavily concerned. Sounds like this might be worth pursuing. Cancelation already has a lot of stuff in it, and it's hard to get a read on how many people are going to have objections. Dean already raised several objections and we didn't have time in the timebox to raise all of them.
 
 DT: good effort and really want something along the lines
 
 YK: If the implicit argument fails, I'm not sure whether I'll be OK with this whole proposal.
 
-DD: There is some enthusiasm for this proposal, it seems, including some of the additions.  More is available in the repo. I'll add more spec'd things, including await.cancelToken, Promise.cancellable, and CancelToken.any
+DD: There is some enthusiasm for this proposal, it seems, including some of the additions.  More is available in the repo. I'll add more spec'd things, including await.cancelToken, Promise.cancelable, and CancelToken.any
 
-BT: What do cancellable promises change about async functions? Seems purely additive.
+BT: What do cancelable promises change about async functions? Seems purely additive.
 
 DD: Yes, seems purely additive. We don't have third state.
 
-YK: It'd be possible for await to send cancellation tokens, but only if you do extra things to thread things through.
+YK: It'd be possible for await to send cancelation tokens, but only if you do extra things to thread things through.
 
 BT: Another question about Domenic's proposal: Is the rationale for why third state is bad documented?
 
@@ -1019,7 +1018,7 @@ Brian Terlson
 https://tc39.github.io/ecmascript-asyncawait
 
 
-BT: When we got async functions to Stage 3, we did spend hours talking about possible futures for cancellation and how those futures would impact async functions. We found that additive things to async functions would also be additive things to Promises. So whatever you would add to one that would be a breaking change would be a breaking change for the other. I didn't see anything in Domenic's preentation that made me think otherwise. Even the third state proposal, I'm not sure would run afowl of that.
+BT: When we got async functions to Stage 3, we did spend hours talking about possible futures for cancelation and how those futures would impact async functions. We found that additive things to async functions would also be additive things to Promises. So whatever you would add to one that would be a breaking change would be a breaking change for the other. I didn't see anything in Domenic's preentation that made me think otherwise. Even the third state proposal, I'm not sure would run afoul of that.
 
 YK: The only issue is that, in the syntactic form there's a try/catch/finally, and in the method form there isn't
 
@@ -1031,7 +1030,7 @@ MM: The only one that makes me nervous about a possible cross-cutting concern is
 
 YK: I feel pretty confident that the kind of syntaxes that we would want to use would be the same syntax for regular functions. We need the same mechanism to work within functions that aren't async functions anyway, as they need to have the parallel calling convention.
 
-MM: of the things we heard in the previous conversation. the only cross coupling concern is the issue that YK brought up is trying ot get some useful syntact for threading the cancelToken.
+MM: of the things we heard in the previous conversation. the only cross-coupling concern is the issue that YK brought up is trying ot get some useful syntax for threading the cancelToken.
 
 MM: I don't think we should implicitly pass a parameter to existing sync function calls and change the semantics retroactively. Anyway, given the overall situation, I'm not arguing that we should hold async functions back.
 
@@ -1155,7 +1154,7 @@ YK: The Annotations feature requires evaluation of expressions, is not itself st
 
 YK: Is the concern that adding this encourages too much dynamism in class declaration code?
 
-SM: Will existance slow it down? 
+SM: Will existence slow it down? 
 - Believes optimizations can be made to mitigate 
 
 YK: The decorator returns a descriptor that can be used, but cannot have effects on the object itself.
@@ -1192,7 +1191,7 @@ DE: I've taken on Private State proposal from Kevin Smith
 AWB: Get WeakMaps out of the proposal! I don't want to see them anywhere near this proposal, whether in implementation or spec language.
 - Remove the layering violation
 
-WH: Don't want proposal formalized in terms of weak maps either because of gc correctness concerns.
+WH: Don't want proposal formalized in terms of weak maps either because of GC correctness concerns.
 
 See slides
 
@@ -1211,19 +1210,19 @@ See "Why inaccessible private state?" slide
 
 "Soft Private" already available through explicit Symbol use
 
-AWB: Big issue: we changed class instantiation to predictable shapes at the request of google. This completely throws that away
+AWB: Big issue: we changed class instantiation to predictable shapes at the request of Google. This completely throws that away
 
 DE: We addressed that two meetings ago.
 
 MM: The shape is static enough for the fast path to be fast. The only things that cause it not to have the shape that you expect are bizarre, rare things such as a return override or prototype mutations. Engines can still optimize for the fast path.
 
-DE: two things we want to optimize for. 1) at the allocation site, how large (allocation size). 2) map transitions between different object states.
+DE: two things we want to optimize for: 1) at the allocation site, how large (allocation size). 2) map transitions between different object states.
 
 AWB: that's plausible; i'll need to think through it and reserve the right to bring it up again.
 
 YK: I realize a lot of people disagree with me wanting soft-private, but we actually have to discuss it.
 
-BT: could you expose a lower-level capability without syntax for now? (ie with computed properties + private symbols)
+BT: could you expose a lower-level capability without syntax for now? (i.e., with computed properties + private symbols)
 
 MM: private symbols don't work
 
@@ -1235,7 +1234,7 @@ MM: if you reify private symbols, you break membranes.
 
 MM: We're rehashing arguments we had years ago like "should private be soft or hard". There are notes.
 
-YK: i object to the precedent "we had a binding conversation 5 years ago"
+YK: I object to the precedent "we had a binding conversation 5 years ago"
 
 
 

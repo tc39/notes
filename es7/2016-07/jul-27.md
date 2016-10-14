@@ -139,7 +139,7 @@ AWB: Two other options for names: Object.global
 
 MM: I veto that as it would violate authority separation. I want to separate authority-carrying objects from non-autority-separating objects.
 
-DD: But Object.__proto__ is Function, which gives you the authority to get the global object anyway.
+DD: But `Object.__proto__` is Function, which gives you the authority to get the global object anyway.
 
 MM: Function and eval are evaluators; CSP gives you the option to turn off evaluators. Any other environment such as SES/frozen realms has to intervene in the evaluators in order to constrain the scope of the evaluation. In any such environment, the function constructor has to be sanitized.
 
@@ -175,7 +175,7 @@ JHD: I went with System.global because of the nonzero compat risk of bare 'globa
 
 YK: SES already has to care about this kind of thing.
 
-MM: We currently have a whitelist in SES. global is not one of them.]
+MM: We currently have a whitelist in SES. global is not one of them.
 
 JHD: So if you're OK with not adding a global, you don't have to do anything to SES?
 
@@ -489,7 +489,7 @@ MM: In favor of banning
 
 AWB: A usecase is a static method on subclasses that filters the initializers, as called from a superclass constructor. In that case, you want to call |new.target.initializerFilter()|, and so want new.target to work
 
-YK: Even though you can construct models which are consistent about which is which with new.target and arguemtns, it's equally hard to construct one that is unambiguously clear which one you are referring to
+YK: Even though you can construct models which are consistent about which is which with new.target and arguments, it's equally hard to construct one that is unambiguously clear which one you are referring to
 
 YK: This isn't a catchall; there will still be imperative cases that benefit from being written in the constructor
 
@@ -537,7 +537,7 @@ class Derived extends Base {
 ```
 
 
-AK: Does this restrict impl ablitie to optimize away? No, we should be able to statically determine whether eval or arguments are possible.
+AK: Does this restrict impl abilities to optimize away? No, we should be able to statically determine whether eval or arguments are possible.
 
 EF: This is a simple front-end optimization.
 
@@ -614,7 +614,7 @@ AK: What about developers of other languages who define fields and expect those 
 
 MM: This is just like an object literal. Writing object literals has the same problem.
 
-YK: That's different because object literals don't have superclasses. People don't use __proto__: very much
+YK: That's different because object literals don't have superclasses. People don't use `__proto__`: very much
 
 BE: What's the robust, future-proof semantics? Seems like DefinePropertyOrThrow, as Waldemar says.
 
@@ -628,13 +628,13 @@ DD: That's a good point; people do deprecations by adding setters or getters, an
 
 MM: If the semantics of this is Set, I would ask, what is the added value of the proposal as a whole such that the proposal pulls its weight. You could get these semantics just by writing the right lines in the constructor.
 
-DE: Good from an optimizability stand point. We've been encouraging people to be explicit about properties on `this` by adding them all in the constructor, assigning `undefined` if necessary. This is a nice synaxt for that.
+DE: Good from an optimizability stand point. We've been encouraging people to be explicit about properties on `this` by adding them all in the constructor, assigning `undefined` if necessary. This is a nice syntax for that.
 
 WH: Using Set() is dangerous, if derived class has foo, exposes you to a super class that didn't have accessor foo, which is later added.
 
 YK: Lots of classes which are designed to be subclassed assume that they can intercept Set()s
 
-DT: Initialization in C#, Java, etc is explicitly settting up the world and invariants aren't there
+DT: Initialization in C#, Java, etc is explicitly setting up the world and invariants aren't there
 
 DD: For us it's different, because super has already returned, etc
 

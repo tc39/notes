@@ -14,7 +14,7 @@ LHN:
     
 ### Agent Semantics
 
-Blocking: an agent can block waiting to be woken without rturning to its event loop 
+Blocking: an agent can block waiting to be woken without returning to its event loop 
 
 Web awareness: an embeddinging can deny some agents the abiluty to block (eg. browsers man thread)
 
@@ -44,7 +44,7 @@ Atomic access:
 - `store`
 - `add`
 - `sub`
-- `and
+- `and`
 - `or`
 - `xor`
 - `exchange`
@@ -85,7 +85,7 @@ LHN: Yes
 
 ES is "easier" than C/C++
 - Performance demands slightly lower
-- Shared Mrmory sep. from non-shared
+- Shared Memory sep. from non-shared
 - Only flat shared memory, no pointers or objects
 
 ... see slide
@@ -428,7 +428,7 @@ JHD: Will identify and note if necessary
 
 DD: Could be naming, ie. "fin" for ES3?
 
-BE: promise['finally'](...)
+BE: `promise['finally'](...)`
 
 JHD: No conflict re: cancellable promises proposal
 
@@ -652,7 +652,7 @@ DD: The concern is about calling into a library which, you cancel the library's 
 
 DD: I'd like the committee's feedback on the full spec, which is now much smaller due to fewer modifications to promises, etc.
 
-DD: Some more ideas on making Promsies more ergonomic: Make cancellation easy in async functions.
+DD: Some more ideas on making Promises more ergonomic: Make cancellation easy in async functions.
 
 More Ideas...
 
@@ -1023,7 +1023,7 @@ BT: When we got async functions to Stage 3, we did spend hours talking about pos
 
 YK: The only issue is that, in the syntactic form there's a try/catch/finally, and in the method form there isn't
 
-AK: There is also a conern about using try and catch, without finally
+AK: There is also a concern about using try and catch, without finally
 
 YK: And it's just worse in Promises anyway
 

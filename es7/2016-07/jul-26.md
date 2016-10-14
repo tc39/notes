@@ -42,11 +42,13 @@ BT: Let's go with Rick taking notes for now, since he volunteered, but long-term
 
 - Moving on, further discussion to be on github as before this meeting. Interested members are encouraged to participate there directly.
 
+## 3 Agenda Adoption
 
-## 3 Agenda Adoption 
 - Approved
+
 ## 4 May Minutes Approval
--Approved
+
+- Approved
 
 JN: Agenda?
 
@@ -56,7 +58,7 @@ WH: I'm fine with occasional items not having backing materials — there are si
 
 WH: ECMA has a global policy (we all agreed to) that documents up for significant decisions shall be provided 2-3 weeks in advance. I'd interpret this as applying to proposals looking to advance in TC39.
 
-IS: It's 3 weeks. This is e.g. to formally move forward or approve a TC39 draft speciafication. But for things for information, to start a discussion on new items, not to strive for a formal decision anything until the meeting is allowed. But of course it is encouraged to submit and post on Github as soon as possible. 
+IS: It's 3 weeks. This is e.g. to formally move forward or approve a TC39 draft specification. But for things for information, to start a discussion on new items, not to strive for a formal decision anything until the meeting is allowed. But of course it is encouraged to submit and post on Github as soon as possible. 
 
 JN: Approval of minutes?
 
@@ -77,18 +79,15 @@ IS: Submitted the ECMAScript Suite Standard (approved by the GA as Ecma 414) to 
 - On the issue we are in close contacts with the IETF. When we get the IETF spec number (when available) we will make a 2nd Edition of ECMA-404 and fast track that edition to JTC1. With that we want to link the Ecma Standrad with the IETF specification that they should be in full harmony.
 - Awards: BT and RW received ECMA awards for ECMA-262 7 th Edition and ECMA-402 (plus the many notetaking). Congratulations!
 - New Executive Committee, made from a combination of ECMA management and the former Coordinating Committee.
-  - A change from the past is that up to two ECMA members from categories other than ordinary members may now be elected into the the Executive Committee. Nominations for that can come from anybody, but in the end the December GA will vote on the nominations. The membership in the Executive comiittee is always one year, but with the possibility of reelection. 
+  - A change from the past is that up to two ECMA members from categories other than ordinary members may now be elected into the the Executive Committee. Nominations for that can come from anybody, but in the end the December GA will vote on the nominations. The membership in the Executive Committee is always one year, but with the possibility of reelection. 
   - All members can now participate in the General Assembly and take actively part in the discussions, not just ordinary members. However, only ordinary members can vote (that is unchanged).
-  
-  -IS also noted that TC39 is now by far the largest Ecma Group and it has grown to a size where he feels that we have to organize our structure and work better, otherwise at the face-to-face meetings there might be disappointment by some who prepare for a topic for discussion and presentation but in the shortness of time the subject is not discussed properly. Discussion on that to be continued by those who are interested on GitHub.
-  
-  
+  - IS also noted that TC39 is now by far the largest Ecma Group and it has grown to a size where he feels that we have to organize our structure and work better, otherwise at the face-to-face meetings there might be disappointment by some who prepare for a topic for discussion and presentation but in the shortness of time the subject is not discussed properly. Discussion on that to be continued by those who are interested on GitHub.
   - What IS forgot to tell, that actually with the publication of ECMAScript 2016 and ECMA-402 new Edition etc. it would be a good idea to make more PR, e.g. Press Release.
 
 
 ## 8. Test 262 Status Update
 
-IS: Technical Report 104 needs to be updated. He added that all specs related to TC39 work are being downloaded very heavily (actually at  least 2/3 of all Ecma downloads are TC39 related).  The HTML version of ECMA-262 and ECMA-402 is in addition to it, and compared to full downloads that is even significantly higher.This is actually more than e.g. what is being downloaded from the ISO Shop (of course that is not free of charge...).  So automativally also TR-104 gets downloaded rather heavily. But e.g. in TR/104 the URL to the tests does not work. Also the text needs to be updated. It reflects a situation when only ES5 was covered, but  e.g. not ECMA-402. 
+IS: Technical Report 104 needs to be updated. He added that all specs related to TC39 work are being downloaded very heavily (actually at  least 2/3 of all Ecma downloads are TC39 related).  The HTML version of ECMA-262 and ECMA-402 is in addition to it, and compared to full downloads that is even significantly higher.This is actually more than e.g. what is being downloaded from the ISO Shop (of course that is not free of charge...).  So automatically also TR-104 gets downloaded rather heavily. But e.g. in TR/104 the URL to the tests does not work. Also the text needs to be updated. It reflects a situation when only ES5 was covered, but  e.g. not ECMA-402. 
 
 AWB: Propose updating TR 104 to be descriptive only?
 
@@ -258,7 +257,7 @@ Generally, no.
 #### Conclusion/Resolution
 
 - Add for-var-in initializers with the old semantics to Annex B, for non-strict mode only.
-- ecma262/pull/614
+- [ecma262/pull/614](https://github.com/tc39/ecma262/pull/614)
 - Kevin will write tests for the change, based on the new policy
 
 
@@ -640,11 +639,11 @@ Slides: https://docs.google.com/presentation/d/1o31S9RqDdkoWW2zfPMNIZdPDIp25Rr0-
 DE: Expose more unicode data to RegExps
 
 - Properties with values:
-/\p{UnicodePropertyName=UnicodePropertyValue}/
+`/\p{UnicodePropertyName=UnicodePropertyValue}/`
 - Binary properties:
-/\p{LoneUnicodePropertyNameOrValue}/
-Inverse:                                 
-- \P
+`/\p{LoneUnicodePropertyNameOrValue}/`
+- Inverse:
+`\P`
 
 Example: 
     
@@ -654,19 +653,17 @@ In text form: https://github.com/mathiasbynens/es-regexp-unicode-property-escape
 
 DE: Have full spec text, implementation in V8, tests for V8 (need to be updated for test262)
 
-BT: If ok with deviating from what’s allowed inside \u, then we can overload \u instead of \p
+BT: If ok with deviating from what’s allowed inside `\u`, then we can overload `\u` instead of `\p`
 
-(TODO: @rick we'll likely have to escape those ^^^^^ when this is published as markdown)
+DD: Are there conflicts with other languages and use of `\u`?
 
-DD: Are there conflicts with other languages and use of \u?
+WH: `\u` could be trouble if anyone comes up with classname consisting entirely of characters A-F
 
-WH: \u could be trouble if anyone comes up with classname consisting entirely of characters A-F
-
-DE: I can find out if this is an invariant that will be maintained. If it is, then we should use \u, otherwise \p. If Unicode advises us _not_ to depend on existing \u invariants, then we won't
+DE: I can find out if this is an invariant that will be maintained. If it is, then we should use `\u`, otherwise `\p`. If Unicode advises us _not_ to depend on existing `\u` invariants, then we won't
 
 DE: Stage 2?
 
-MF: Is there a syntax error when type any random character where in /\p{UnicodePropertyName=UnicodePropertyValue}/, /\p{LoneUnicodePropertyNameOrValue}/ ?
+MF: Is there a syntax error when type any random character where in `/\p{UnicodePropertyName=UnicodePropertyValue}/`, `/\p{LoneUnicodePropertyNameOrValue}/` ?
 
 DE: No UnicodePropertyName syntactic restrictions in present spec
 
@@ -674,7 +671,7 @@ Addendum by Mathias: a SyntaxError is thrown at runtime in such cases. But yeah,
 
 AWB: Need to specify the syntax
 
-WH: If we choose to use \u{}, then we must make unknown classes (or typos) into early errors because we need typos in hex numbers to be early errors. With \p{} we'd have a choice of standardizing on early or runtime errors.
+WH: If we choose to use `\u{}`, then we must make unknown classes (or typos) into early errors because we need typos in hex numbers to be early errors. With `\p{}` we'd have a choice of standardizing on early or runtime errors.
 
 
 Revisiting String.prototype.normalize specification. 
@@ -692,7 +689,7 @@ DE: Stage 1?
 #### Conclusion/Resolution
 
 - Stage 1: Approved.
-- YK wants confirmation about \u
+- YK wants confirmation about `\u`
 
 
 ## 9.ii.d Async Functions for Stage 4
@@ -895,7 +892,7 @@ DH: Neither of those has anything to do with whether it's in Math. Domenic makes
 
 WH: I would have expected math library extensions to include common math functions like the gamma function. Why aren't those in here?
 
-RW: That was my long list, but I pared it down. Maybe we should be incuding a lot of functions from other standard libraries.
+RW: That was my long list, but I pared it down. Maybe we should be including a lot of functions from other standard libraries.
 
 AWB: We went through a similar process in ES2015 where we made a big spreadsheet of various languages and functions, and chose what to add to Math based on that
 

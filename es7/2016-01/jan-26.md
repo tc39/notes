@@ -1,6 +1,6 @@
 January 26th 2016 Meeting Notes
 
-Eric Farriauolo (EF), Caridy Patino (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Leland Richardson (LM), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), Mark S. Miller (MM), Paul Leathers (PL), Sebastian Markbage (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Misko Hevery (MH), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
+Eric Farriauolo (EF), Caridy Patino (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Leland Richardson (LM), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), Mark S. Miller (MM), Paul Leathers (PL), Sebastian Markbage (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Misko Hevery (MH), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BNN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
 
 
 ## Agenda
@@ -626,7 +626,7 @@ YK: UI and IO threads blocking is a well known thing, I suspect not one will not
 
 LHN: I believe MM was thinking disabled access to the shared memory from the same thread. But i would suggest that would be practical.
 
-BN: WebGL is on the main thread, not having access to shared memory on the main thread would be unfortunate
+BNN: WebGL is on the main thread, not having access to shared memory on the main thread would be unfortunate
 
 LHN: i believe MM proposes workers having access to such things
 

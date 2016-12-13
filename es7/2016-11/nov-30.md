@@ -708,8 +708,6 @@ WH: Historically, this is the right move; we have over the past 16 years created
 
 DE: no back compat concerns, new form added: 
     
-```
-
 DE: earlier semantics was modeled after Perl (fixed-width lookbehind), but no reason not to do variable-width lookbehind
 
 WH: Will backreferences backtrack to x a number of times if y doesn't match?

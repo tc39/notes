@@ -340,7 +340,7 @@ MM: if integration reveals issues for one and not the other? THen we can address
 
 AWB: Or drop entirely?
 
-YK/AWB/DE: (dscussion of the merging concerns, but only w/ regard to Stage 3?)
+YK/AWB/DE: (discussion of the merging concerns, but only w/ regard to Stage 3?)
 
 AWB: Concerns about separate proposals modifying the same spec algorithms. They need to be merged when we get to that level of detail.
 
@@ -564,7 +564,7 @@ AWB: We use IdentifierName in the grammar
 WH: It seems odd to have a PrivateName be a single token. The more natural way to express it would be as two tokens, `#` followed by an IdentifierName.
 
 KG: Won't that allow whitespace between `#` and IdentifierName?
-- The hash is intended to be thought of as part of the proeprty name, ie: 
+- The hash is intended to be thought of as part of the property name, ie: 
     
 ```js
 this.

@@ -36,7 +36,7 @@ AWB: No desire to continue long-term, even if funding issues were resolved. I've
 
 YK: Thanks to DE for improvements to meeting process, has assisted chair.
 
-YK: FInding a good chair is not an emergency, in case we end up with a bad chair.
+YK: Finding a good chair is not an emergency, in case we end up with a bad chair.
 
 AWB: We need a collective sense of urgency here.
 IS: What is also important that TC39 members think about what kind of chair / vice chair (that position is also open...) they would like to see for the next period. In the past 6 years we had a chair who was not an ECMAScript expert, so really neutral, but with the current new requirements maybe a chair with some strategic guidance would be good. This is really something TC39 should think about and decide.
@@ -769,7 +769,7 @@ Room: yes.
 
 (Daniel Ehrenberg)
 
-- [proposa](https://github.com/tc39/proposal-intl-segmenter)
+- [proposal](https://github.com/tc39/proposal-intl-segmenter)
 
 DE: Motivation: https://github.com/tc39/proposal-intl-segmenter#motivation
 
@@ -842,8 +842,8 @@ DE: Don't know the entire history?
 
 Terminology: 
     
-    - scramble: replace a nan with another arbitrary nan
-    - canonicalize: replace a nan with a _particular_ nan value. 
+- scramble: replace a nan with another arbitrary nan
+- canonicalize: replace a nan with a _particular_ nan value. 
 
 DE: V8 may violate the ES standard for NaN observable behavior, but I want to argue that it’s OK
 

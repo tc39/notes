@@ -125,11 +125,14 @@ DE: OK, so if I do this some time over the next two months will that be in time?
 AWB: ye
 
 DE: PRs to get into ES2018:
-    - https://github.com/tc39/ecma402/pull/84
-    - https://github.com/tc39/ecma402/pull/114
+
+- https://github.com/tc39/ecma402/pull/84
+- https://github.com/tc39/ecma402/pull/114
+
 Possible proposals at Stage 3 which may reach Stage 4 by January and be integrated:
-    - https://github.com/tc39/ecma402/issues/30
-    - https://github.com/tc39/proposal-intl-plural-rules
+
+- https://github.com/tc39/ecma402/issues/30
+- https://github.com/tc39/proposal-intl-plural-rules
 
 ## 9 ECMA404 and ECMA414 Updates
 
@@ -188,7 +191,7 @@ BT: other languages have it. It's easy for Chakra to implement. Spec changes are
 
 JHD: This could start off a chain of calls to .then. To run the code on the same tick and return a Promise, so it's different from Promise.resolve().then().
 
-_DIscussion about what the semantics of the job loop are_
+_Discussion about what the semantics of the job loop are_
 
 JHD: This avoids creating an immediately invoked async function, avoids the Promise constructor, etc.
 
@@ -382,6 +385,9 @@ BT: We should either come to consensus that we don't want Promise subclassing, a
 
 DE: _shows the PR_
 
+- [Issue](https://github.com/tc39/ecma262/issues/713)
+- [PR](https://github.com/tc39/ecma262/pull/724)
+
 DE: For TypedArrays we want to be consistent, same for `length`  checks.
 
 BT: We could refactor the iterators to be different if we can get away with changing the same-valueness between TA iterator and Array iterator.
@@ -412,7 +418,7 @@ DE: Possible...
 - Consensus on taking the PR (aka throwing on detached typed array during iteration via ValidateTypedArray)
 - consensus example [found here](https://github.com/tc39/ecma262/issues/713#issuecomment-255878360) (the first option, "a")
 
-```js
+```
 8. If a has a [[TypedArrayName]] internal slot, then
   a. Perform ? ValidateTypedArray(a).
   b. Let len be a.[[ArrayLength]].
@@ -607,8 +613,9 @@ KG: Would it be an actual function?
 
 DD: No, needs to be a function-like form.
 Pros for function-like:
-    - Future extensibility (second argument)
-    - Ambiguity with 'import x' form in modules. You could use this from a script, and you might expect that you can write 'import x' in a script. But that would not be the same--it would create a Promise and then throw it away
+
+- Future extensibility (second argument)
+- Ambiguity with 'import x' form in modules. You could use this from a script, and you might expect that you can write 'import x' in a script. But that would not be the same--it would create a Promise and then throw it away
     
 AWB: You could require it to be parenthesized when it's in statement position, with the same logic that prohibits a function expression there
 
@@ -618,9 +625,9 @@ DH: If there's a lookahead restriction on expressions...
 
 DD, WH: There's no lookahead involved here; this is just what grammars do, and by the time you get to the reduce part of the grammar you know which form you have
 
-    - Parens are usually required anyway, e.g., if you'll then the result
-    - If we were to do `await import x`, then it would be impossible because we've already used the unary operator
-    - Another possibility (though AWB expressed dislike) is local import being hoisted, which this would disallow
+- Parens are usually required anyway, e.g., if you'll then the result
+- If we were to do `await import x`, then it would be impossible because we've already used the unary operator
+- Another possibility (though AWB expressed dislike) is local import being hoisted, which this would disallow
     
 AWB: Pros for unary operator, with a low precedence like yield:
     - We are looking at something which is not a call, it's really based on conceptual state

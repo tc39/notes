@@ -706,8 +706,8 @@ WH: Historically, this is the right move; we have over the past 16 years created
 - [proposal](https://github.com/littledan/es-regexp-lookbehind/blob/master/README.md)
 - [slides](https://docs.google.com/presentation/d/1jOwKkqQGfRsPH6X9jWNqwMvRB9MbxWJ3NgD_s9jGyRk/edit#slide=id.g199589a01b_0_15)
 
-DE: no back compat concerns, new form added: 
-    
+DE: no back compat concerns, new form added:
+
 DE: earlier semantics was modeled after Perl (fixed-width lookbehind), but no reason not to do variable-width lookbehind
 
 WH: Will backreferences backtrack to x a number of times if y doesn't match?
@@ -721,7 +721,7 @@ DE: (need concrete examples to address issues)
 WH: Example of what I was asking about:  `/(?<=(\d+))A\1/` applied to the string "01234A2345" should succeed and match the "A234" substring with capture 1 set to "234".
 
 Current status: (see slide)
-    
+
 - Implemented in V8 (behind flag)
 - Have spec, doesn't merge clean, but can be updated; seems to match implementation
 

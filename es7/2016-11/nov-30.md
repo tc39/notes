@@ -583,7 +583,7 @@ AK: I would recommend to the champion to discuss further with Waldemar about pos
 (Brendan Eich)
 
 - [Proposal](https://github.com/BrendanEich/ecma262/tree/int64)
-- [Slides](fill in)
+- [Slides](https://www.slideshare.net/BrendanEich/int64)
 
 BE: We need a new plan not based on waiting for SIMD and/or value types, but let's do a way that doesn't depend on those and just hard-code this one to start.
 

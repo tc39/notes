@@ -293,7 +293,6 @@ Rationale: Why Type Annotations?
 - API specification
 - DefinitelyTyped/.d.ts
 - WebIDL
-- JSDoc
 - Runtime checks/Guarantees
 - Guards
 - Contracts

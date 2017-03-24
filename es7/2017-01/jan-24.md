@@ -186,7 +186,7 @@ JHD: Is invoking user written code less expensive?
 
 AK: Yes, and potentially the generated code. We don't care how fast the error case is.
 
-DH: 99% of code tha thas this bug... they are doing extra test at runtime all the time
+DH: 99% of code that has this bug... they are doing extra test at runtime all the time
 
 AK: Right, if they have one super call, they have to check after
 

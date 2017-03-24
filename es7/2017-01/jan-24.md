@@ -604,7 +604,7 @@ AK: There was a recent change to allow extending null to "do something". (Previo
 
 Slide: https://docs.google.com/presentation/d/1makDPBGA3fo-jjOpjhD97_GqlKRQHvh9Mya-B2Spxng/edit#slide=id.g1c26b27b69_1_55
 
-AK: This leads to some funny syntactical things. If you have a derived class, you cain always change what something extends from later. The super call is dynamic. The first time you instantiate a thing, you get an object ( a subclass of object), mess with it a little bit and then.
+AK: This leads to some funny syntactical things. If you have a derived class, you can always change what something extends from later. The super call is dynamic. The first time you instantiate a thing, you get an object ( a subclass of object), mess with it a little bit and then.
 
 AWB: Actually, to change the super construct call change, you want to modify Derived's `[[Prototype]]`, not `Derived.prototype`'s `[[Prototype]]`. Then, you'd observe the behavior changing. (Note: This was to correct a previous version of the slide, which has now already been corrected)
 

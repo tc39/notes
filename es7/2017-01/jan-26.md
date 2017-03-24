@@ -94,7 +94,7 @@ JL: So are we going to remove more things from the main proposals list?
 
 DH: What I am hearing is an emerging consensus around proposals into some separate file that...
 
-JHD: We already have withdrawn proposals, for things that are abandonded,r jected, etc. WE can add something for things which are potentialy still acive. It's more likely that list will contain stage 0 or 1 proposals than 2 or 3. If that is the status of the simd spec, for example, okay
+JHD: We already have withdrawn proposals, for things that are abandonded, rejected, etc. We can add something for things which are potentially still active. It's more likely that list will contain stage 0 or 1 proposals than 2 or 3. If that is the status of the simd spec, for example, okay
 
 DH: I'm unclear how backburner SIMD is.
 
@@ -476,7 +476,7 @@ MF: How about gl0bal?
 
 MPT: globalThisPascal
 
-JHD: Global, $global, __global__, anyway, I'll open a bug and we can come together and make a list of possibilities.  This will take a while, since each time we try aname, we'll have to find a browser willing to try it, if it breaks, we'll have to roll it back, hope that trust hasn't been broken enough to try again. Both Safari and FF are willing to try again but I don't want to just try again every two months.
+JHD: `Global`, `$global`, `__global__`, anyway, I'll open a bug and we can come together and make a list of possibilities.  This will take a while, since each time we try a name, we'll have to find a browser willing to try it, if it breaks, we'll have to roll it back, hope that trust hasn't been broken enough to try again. Both Safari and FF are willing to try again but I don't want to just try again every two months.
 
 WH: What was the cause of the flickr breakage?
 
@@ -664,7 +664,7 @@ JL: It seems like this privilege doesn't correspond to what users would think.
 
 AWB: It seems strange to say SuperPrivilegedObject.global--who'd want to say that
 
-MF: The global object isn't typically being used to say like, i for iterating over an array. It's a system level thing it is seen as a priroity.
+MF: The global object isn't typically being used to say like, i for iterating over an array. It's a system level thing it is seen as a priority.
 
 JHD: People access the global variable a lot because historically we had no module system.
 
@@ -854,13 +854,13 @@ DE: You would be okay if you could do class x=1 and anew line and y=2.
 
 AWB: I will always be sad that there isn't a keyword in front of those things but I would prefer if you're going to go that route that yes, it not include commas.
 
-DE: I think we could defer commas. If you do put a comma it's... the real motivation is for the decorator proposal to have a more convientint syntax. Yeah, you could do this but I don't see it as being really important.
+DE: I think we could defer commas. If you do put a comma it's... the real motivation is for the decorator proposal to have a more convenient syntax. Yeah, you could do this but I don't see it as being really important.
 
-AWB: YOu've had public feedback on this, right? I believe the public feeback, my sense is there has been fedback o both sides.
+AWB: You've had public feedback on this, right? I believe the public feedback, my sense is there has been feedback on both sides.
 
-DE: Most people said please stop the propsal, we can stand the sigil
+DE: Most people said please stop the proposal, we can't stand the sigil
 
-AWB: YOu have to have it
+AWB: You have to have it
 
 JM: To be clear, to drop the sigil is specific to private state.
 
@@ -1054,7 +1054,7 @@ MS: A lot of the confusion goes away if there is an error.
 
 DE: We actually had those semantics in a previous version of this proposal, where it was an error to add a field if it was there in the object. We ended up removing it as it seemed redundant, and creating an implementation burden (you need a different set of ICs, for one) but we could revisit adding it.
 
-JHD: All of the existing complaint code with the spec will have this.foo = bar in the constructor. If I try to use public fields, if I am subclassing a library using a setter on the protoype chain, that will be confusing. Maybe i'll just move stuff into my constructor, but if I do this.foo = bar brings about the problem again. The metnal model is that I think users will hold is that this is something I am taking out of the constructor and putting in the class body.
+JHD: All of the existing compliant code with the spec will have this.foo = bar in the constructor. If I try to use public fields, if I am subclassing a library using a setter on the prototype chain, that will be confusing. Maybe i'll just move stuff into my constructor, but if I do this.foo = bar brings about the problem again. The mental model is that I think users will hold is that this is something I am taking out of the constructor and putting in the class body.
 
 WH: That argument means you can never improve the safety of the language.
 

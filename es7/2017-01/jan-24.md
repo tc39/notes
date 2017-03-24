@@ -644,7 +644,7 @@ Slide: https://docs.google.com/presentation/d/1makDPBGA3fo-jjOpjhD97_GqlKRQHvh9M
 
 AK: Proposal is that literal "extends null" is a special syntactic form to get at the base class with null prototype. If you extend an expression that evaluates to null, then it is a derived class.
 
-AWB: Anyway, mutating the prototype in the super call is not a mainline use case; it's largely for consistency with the way that __proto__ has always worked. As a separate program, we may look into adding immutable prototypes.
+AWB: Anyway, mutating the prototype in the super call is not a mainline use case; it's largely for consistency with the way that `__proto__` has always worked. As a separate program, we may look into adding immutable prototypes.
 
 JHD: This is a pretty core part of the semantics, and we expect everything to be analogous. What if, if there's no extends clause, that could always be dynamically mutated to be a derived class?
 

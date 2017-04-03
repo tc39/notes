@@ -491,7 +491,7 @@ DD: will work with KS to explo
 
 KS: How should for await work on sync iterables? Initially, for/await fell back to sync iterables. However, concerns were raised, and now that's gone. But, at least, you should be able to yield* a regular iterable within an async iterable, right?
 
-JF: I can wait a non-boxed value. is that the reasoning for falling back to Symbol.iterator in the async iteration support.
+JFB: I can wait a non-boxed value. is that the reasoning for falling back to Symbol.iterator in the async iteration support.
 
 ?? if you have an async iterator of async iterators does it flatten those?
 

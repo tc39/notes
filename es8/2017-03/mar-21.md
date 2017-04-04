@@ -303,6 +303,8 @@ AWB:  We'll go ahead and move on to the 15-minute items.
 
 (Tim Disney)
 
+- https://github.com/tc39/proposal-template-literal-revision
+
 TD: Lifting the escape sequence revision to tagged template literals. It is in multiple browsers (Chrome behind a flag and Firefox), Test 262, no recent changes, asking for stage 4.
 
 YK: TL;DR: It makes things easier to implement overall.
@@ -340,6 +342,8 @@ YK: A use case would be putting JS code into a template string for documentation
 ## 10.i.b RegExp Lookbehind Assertions
 
 (Daniel Ehrenberg)
+
+- https://github.com/tc39/proposal-regexp-lookbehind
 
 There's a presentation linked from the agenda.
 
@@ -420,9 +424,11 @@ CP: This is the ECMA-402 Proposals.
 
 No specific conclusion, let's review the current proposals for ECMA-402.
 
-## 10.i.f ECMA-402 Presentation of the three formatters for stage 2
+## 10.i.g ECMA-402 Presentation of the three formatters for stage 2
 
 (Zibi Braniecki)
+
+- https://docs.google.com/presentation/d/1ddnQB8oUYyv7qtsmRFgcsScAI4uHTj8z9z_cPJxlOe4/edit
 
 ### Intl.ListFormat
 
@@ -803,6 +809,8 @@ DE: Mathias wrote it, and I read it.
 
 (Brian Terlson)
 
+- https://github.com/mathiasbynens/es-regexp-dotall-flag
+
 BT: We want stage 2 for dotAll. There have been no changes since stage 1. It remains an extremely simple feature. For those who haven't heard of it before, it adds a new flag `s` to the expression (like other engines) literal that allows `.` to match _everything_ rather then _most everything_. There's a high-level API in [the proposal](https://github.com/mathiasbynens/es-regexp-dotall-flag).
 
 MM: Why "s"?
@@ -975,6 +983,8 @@ BE: Nice, thanks Dan!
 ## 10.i.e RegExp Legacy Features for stage 3
 
 (Mark Miller)
+
+- https://github.com/tc39/proposal-regexp-legacy-features
 
 AWB: That was the last RegExp item. Anyone have more to say about that?
 

@@ -12,7 +12,8 @@ Before the TC39 meeting, there will be a meetup with the NodeJS CTC.
 
 (Caridy Patiño)
 
-- [slides](https://github.com/tc39/proposal-dynamic-modules)
+- https://github.com/tc39/proposal-dynamic-modules
+- https://docs.google.com/presentation/d/1EYOysPhgjXtgmuNoZ_wUCMElZ8GKLxJmCLeF0EvUXkc/edit#slide=id.g1f19d52d1f_0_0
 
 YK: Even if node doesn't want this feature.
 
@@ -1212,8 +1213,8 @@ BT: We have consensus % this question of the specific wording...
 
 ## 12.ii.a Date Proposal - NodaTime as a built-in Module for stage 1
 
-[proposal](https://github.com/maggiepint/proposal-temporal)
-[slides]()
+- https://github.com/maggiepint/proposal-temporal
+- https://docs.google.com/presentation/d/1b6gTBphc-QEYE6rqYZ6VkFDRLE8K-EDx464tGfZ-Q6Q/edit?usp=sharing
 
 (Maggie Pint)
 

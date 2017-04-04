@@ -174,6 +174,7 @@ AWB: When I said that someone should step up to being the chair, that was really
 
 ##  10.iii.a Orthogonal Classes
 
+- https://github.com/erights/Orthogonal-Classes
 
 MM: There's a strong push that when assignment happens it should look like assignment. We had an Aha thought that cuts through this and other proposals: There's a whole bunch of different proposals to enhance classes. Original classes we did the minimum we could agree to, postponed other things. Proposals coming through are lots of those proposed issues. We're wrestling with them individually. Each one has its own proposed syntax, semantics. We try to pay attention to how they cross-cut. But most of these proposals have something to do with adding class members or new thing to classes.
 

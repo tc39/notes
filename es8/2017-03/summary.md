@@ -10,6 +10,7 @@ review and approval.
   - Named Capture Groups: [notes][named-groups-notes], [proposal][named-groups]
   - `s` (dotAll) flag: [notes][dotall-flag-notes], [proposal][dotall-flag]
 - [Arbitrary-precision Integers][] were introduced and reached Stage 2. [notes](mar-23.md#10iva-arbitrary-precision-integer-type-for-stage-2)
+- A [proposal](https://github.com/tc39/proposal-template-literal-revision) allowing what would otherwise be invalid escape sequences in tagged template literals reached stage 4.
 - A [new built-in Date replacement][date] reached Stage 1. [notes](mar-23.md#12iia-date-proposal---nodatime-as-a-built-in-module-for-stage-1)
 - The Stage 1 [Realms][] proposal has been solidifying, with hooks for the module loading pipeline. [notes](mar-23.md#10iic-realms-update)
 - Several Intl proposals were presented [notes](mar-21.md#7-ecma-402-status-update-1)

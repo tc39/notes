@@ -24,7 +24,7 @@ review and approval.
   - [#856](https://github.com/tc39/ecma262/pull/856) ([notes](mar-22.md#856-avoid-duplicate-tafill-value-coercions)), [#854](https://github.com/tc39/ecma262/pull/854) ([notes](mar-22.md#854-remove-implementation-defined-behavior-for-number-methods)), [#785](https://github.com/tc39/ecma262/pull/785) ([notes](mar-22.md#785-arrayprototoypesort-checks-for-comparefn-being-valid)), [#833](https://github.com/tc39/ecma262/pull/833) ([notes](mar-22.md#833-remove-duplicate-keys-from-proxies)), [#852](https://github.com/tc39/ecma262/pull/852) ([notes](mar-22.md#852-move-side-effecty-toindex-in-ta-constructor-to-before-detached-check)), [#853](https://github.com/tc39/ecma262/pull/853) ([notes](mar-22.md#853-stringprototypereplace-edge-case-alignment))
 
 [Code of Conduct]: https://tc39.github.io/code-of-conduct-proposal/
-[Orthogonal-Classes]: https://github.com/rwaldron/tc39-notes/pull/github.com/erights/Orthogonal-Classes
+[Orthogonal-Classes]: https://github.com/erights/Orthogonal-Classes
 [Orthogonal-Classes-notes]: mar-22.md#10iiia-orthogonal-classes
 [lookbehind]: https://github.com/tc39/proposal-regexp-lookbehind
 [lookbehind-notes]: mar-21.md#10ib-regexp-lookbehind-assertions

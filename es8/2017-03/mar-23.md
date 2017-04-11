@@ -103,7 +103,7 @@ AK: The last time we talked about this, there was a discussion of circularity an
 
 CP: Yeah, we were doing more work on the module evaluation? phase... We settled on the idea of simply making sure all these imports can be created during evaluation and if they're not ready we throw an error. In the previous proposal we were still evaluating the importer source text and then running an extra step to make sure everything was ready. The conclusion is in node today you cannot do those things. You cannot have circular dependencies in this way because the export update hasn't been created yet. We were trying to solve a problem that wasn't really a problem.
 
-AK: Going back to the previous dicussion, you basically cause the module to export all the things that anyone tried to get from it, and then if that fails you get an error.
+AK: Going back to the previous discussion, you basically cause the module to export all the things that anyone tried to get from it, and then if that fails you get an error.
 
 MM: What is "tried to cause the module to export anything anyone tried to get from it"?
 
@@ -173,7 +173,7 @@ WH: Do we have any idea as to which lexical binding when it gets created.
 
 AK: It could be global.
 
-```
+```js
 import {a} from 'a'
 export function f() {
     console.log(a)
@@ -285,7 +285,7 @@ AWB: They're just names.
 
 DH: From the outside it doesn't change with those things. For pre-existing systems, they'll just have the static shape of one export called `default` which is a dynamic binding that can be anything. So unless the author opts-in, they'll get the single anonymous default export. That's pretty close to what Node has planned already. We're just hypothetically creating a flexible system they could build on top of.
 
-AK: This is an interesting area of dicussion. I'm starting to wonder though if these dyn modules are going to be modeled as providing a static set of exports. Does that reduce the amount of spec change needed to support them?
+AK: This is an interesting area of discussion. I'm starting to wonder though if these dyn modules are going to be modeled as providing a static set of exports. Does that reduce the amount of spec change needed to support them?
 
 DH: Yes, this is what I'm saying is that we've identified a much simpler system here.
 
@@ -299,7 +299,7 @@ DH: I'm excited, I think this is a good place to wrap things up unless anyone ha
 
 AWB: I'm going to pile on. I think that the fundamental thing here is that if you say `import foo.js` is there a way to determine the exported names from that module without having to evaluate code?
 
-DH: The quickest way to explain is that Node discovered a key thing. We can make the default mode for the whole ecosystem to be `default` export and we can opt-into named export. That gives us strong backward compatility. Once you have that it's easier to see your way to semantics that makes sense. Is that right Bradley?
+DH: The quickest way to explain is that Node discovered a key thing. We can make the default mode for the whole ecosystem to be `default` export and we can opt-into named export. That gives us strong backward compatibility. Once you have that it's easier to see your way to semantics that makes sense. Is that right Bradley?
 
 BF: Yes.
 
@@ -914,13 +914,13 @@ DE: The last question is the standard library. There are a lot of things that co
 
 BE: What issue number is this?
 
-DE: #20.
+DE: [#20](https://github.com/tc39/proposal-integer/issues/20).
 
 DT: Is Number 0 truthy?
 
 DE: No, that's an open question.
 
-WH: The current proposal is that 0 is falsey and all other numbers are truthy.
+WH: The current proposal is that 0 is falsy and all other numbers are truthy.
 
 BE: There's precedence in the committee going back to decimal.
 
@@ -936,7 +936,7 @@ DE: Is this ready for stage 2?
 
 WH: I am happy with it. I did a good review of it with DE. The remaining question for me is how this will work with Array buffers. There are some interesting questions there.
 
-DE: There is an issue on that: issue #23.
+DE: There is an issue on that: [issue #23](https://github.com/tc39/proposal-integer/issues/23).
 
 #### Conclusion/Resolution
 
@@ -1265,8 +1265,8 @@ _laughter_
 ### Slide: code examples (timeline math vs. calendar math)
 
 ```js
-moment('2016-01-01').add(1.5, ' hours').format('LLL) // " January 1, 2016 1:30AM"
-moment('2016-01-01').add(1.5, ' days').format('LLL) // " January 3, 2016 12:00AM"
+moment('2016-01-01').add(1.5, ' hours').format('LLL') // " January 1, 2016 1:30AM"
+ moment('2016-01-01').add(1.5, ' days').format('LLL') // " January 3, 2016 12:00AM"
 ```
 
 MPT: More explanation of slides.
@@ -1484,7 +1484,7 @@ YK: I made a strong claim. Let me jump to the punch-line. There are specific det
 
 BT: The point that I want to make more clear is that we would all like there to be a small `Date` object that would function as the kernel of date-innovation, but I'm not convinced that's possible.
 
-MPT: To the contrary, the developer community in JavaSCript has been living with moment.js for 5 years. Moment.js is a ZonedDateTime. You can do everything you need to do with it, it just isn't pretty.
+MPT: To the contrary, the developer community in JavaScript has been living with moment.js for 5 years. Moment.js is a ZonedDateTime. You can do everything you need to do with it, it just isn't pretty.
 
 YK: Are you saying there may be consensus that something like this may ??
 

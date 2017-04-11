@@ -270,9 +270,9 @@ AWB: In this proposal, we have reserved the meaning of the #constructor because 
 
 MM: 3 reasons to prohibit something from the cross-product:
 
-    - it would be harmful
-    - it would be non-sensical
-    - we have not decided whether to allow but could decide later
+- it would be harmful
+- it would be non-sensical
+- we have not decided whether to allow but could decide later
 
 YK: So what does it mean if something has method-like syntax?
 
@@ -288,7 +288,7 @@ AWB: Third dimension where methods occur. Two points, syntactic, what is the syn
 
 YK: What is the syntactic difference between things that are data-like—
 
-AWB: That dimension is a syntactic dimension; whether it's a binding list or a standlone single declaration.
+AWB: That dimension is a syntactic dimension; whether it's a binding list or a standalone single declaration.
 
 MM: And you can't declare an accessor method as part of a binding list.
 
@@ -354,7 +354,7 @@ AWB: Since classes now have lexical scopes. There's no reason you couldn't have 
 
 WH: No reason, other than that the syntax is already taken.
 
-MM: The reason I'm resisting knocking out methods is exactly what Allen says. Once you have an orthogonal frameowrk. Once you knock it out, everything has a ....
+MM: The reason I'm resisting knocking out methods is exactly what Allen says. Once you have an orthogonal framework. Once you knock it out, everything has a ....
 
 DT: It's useful like Dan where he's mentioning these things, let's not chase down resolving particular ones. With respect to going to stage 1, these don't have to be decided now. Want to be sure we don't deep dive.
 
@@ -370,7 +370,7 @@ MM: This proposal cross-cuts a lot of existing proposals and the whole process a
 
 DE: Alan has raised this before but the cross-cutting discussions have been happening the whole time among the champions of decorators and public state and private state.
 
-MM: There's been discusion of cross-cutting concerns, but there hasn't been a proposal on the table whose effect is to have cross-cutting impact on proposals that are e.g., farther ahead of them.
+MM: There's been discussion of cross-cutting concerns, but there hasn't been a proposal on the table whose effect is to have cross-cutting impact on proposals that are e.g., farther ahead of them.
 
 AK: Let me restate from Dan's perspective. The fact that this comes as a separate proposal instead of part of what's being done from those other proposals, which seems like a change in process from what's already been happening with the other proposals.
 
@@ -395,11 +395,11 @@ DE: I'm not sure how to proceed as the champion of the private state proposal. I
 DT: It seems like it's approximately both. The idea of doing this consistent thing seems good, we should discuss. There are champions of current proposals, championing their use case. We should make things consistent across the use cases. As the consolidated thing catches up, then we can decide whether or not to merge it. We don't have to couple them so strongly.
 
 
-AWB: To some degree both the public state and private state proposlas were stalled at stage 2, but there were enough issues with the edge cases that they were having trouble advancing to stage 3.  Take this as an offer and approach to being able to advance them all.
+AWB: To some degree both the public state and private state proposals were stalled at stage 2, but there were enough issues with the edge cases that they were having trouble advancing to stage 3.  Take this as an offer and approach to being able to advance them all.
 
 DE: I don't think there are that many issues. At the last meeting I laid out the issues that were open, we disagree about them, but there's a small number of issues. I would like to be able to have a discussion about which syntax we like better: the one that ?? and I are championing or this one so that we can decide and we can advance one of the syntaxes.
 
-AK: This reminds me of the dicussion of decorators and annotations.  We could have had them advancing together, racing to get the "@" symbol usage.  But that would have been bad.  Having multiple competing proposals seems like a bad thing.
+AK: This reminds me of the discussion of decorators and annotations.  We could have had them advancing together, racing to get the "@" symbol usage.  But that would have been bad.  Having multiple competing proposals seems like a bad thing.
 
 MM: When it's procedurally possible, I will propose merging the proposals.
 
@@ -415,7 +415,7 @@ DE: No.
 
 WH: So we haven't resolved the cross-cutting syntax issues.
 
-AWB: At the last meeting we still had intense dicussions about the syntax and we didn't have consensus.
+AWB: At the last meeting we still had intense discussions about the syntax and we didn't have consensus.
 
 DE: But we identified all the issues...
 

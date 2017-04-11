@@ -723,6 +723,8 @@ LBR: People asked me to mention. We are using an integrated test generation tool
 
 ## 10.i.c RegExp Unicode Property Escapes for stage 3
 
+https://github.com/tc39/proposal-regexp-unicode-property-escapes
+
 DE: There's a link from the agenda. These have barely changed. [DE talks through the slides]. The thing that has been narrowed down recently, is that the list of properties that are supported is explicitly enumerated. Previously implementations could expose anything they wanted, which would lead to needless differences between platforms.  It is implemented in V8 behind a flag.  I asked for reviewers last meeting.  The potential reviewers were Waldemar, James Gibbons, and someone from MS.
 
 YK: Are the new properties...???

@@ -195,7 +195,7 @@ MBS: Would it make sense to have an open group internally with internal stakehol
 
 BT: We should do it weekly until we have a document ready. Coordinate it via the reflector.
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - Start an issue on the reflector for building a working group internally.
 - That group will work with Ecma to ensure that we're all on the same page.

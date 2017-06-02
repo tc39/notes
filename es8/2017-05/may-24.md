@@ -443,25 +443,13 @@ KG: The backing for Array Buffers....
 
 _more discussion_
 
-#### Consensus / resolution
-Changes to the current proposal
-- "hello" == 1n => `false`
-- 0n == '' => `true`
-- Rename `Int64Array` → `BigInt64Array`; `Uint64Array` → `BigUint64Array`
-- [Tomorrow] Stage 3 pending WH's final review
+#### Conclusion/Resolution
+
+- Changes to the current proposal:
+  - "hello" == 1n => `false`
+  - 0n == '' => `true`
+  - Rename `Int64Array` → `BigInt64Array`; `Uint64Array` → `BigUint64Array`
+  - (Tomorrow) Stage 3 pending WH's final review
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     

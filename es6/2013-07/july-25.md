@@ -1,4 +1,4 @@
-# July 25 Meeting Notes
+# July 25, 2013 Meeting Notes
 
 
 John Neumann (JN), Luke Hoban (LH), Rick Hudson (RH), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Anne van Kesteren (AVK), Jeff Morrison (JM), Sebastian Markbage (SM), Alex Russell (AR), Istvan Sebestyen (IS), Mark Miller (MM), Norbert Lindenberg (NL), Erik Arvidsson (EA), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Rick Waldron (RW), Rafael Weinstein (RWS), Dmitry Lomov (DL), Brendan Eich (BE), Ian Halliday (IH), Paul Leathers (PL),

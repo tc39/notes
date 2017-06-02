@@ -1,4 +1,4 @@
-# May 22 Meeting Notes
+# May 22, 2013 Meeting Notes
 (by Erik Arvidsson)
 
 John Neumann (JN), Allen Wirfs-Brock (AWB), Eric Ferraiuolo (EF), Erik

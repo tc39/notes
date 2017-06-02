@@ -1,4 +1,4 @@
-# Sept 17 Meeting Notes
+# Sept 17, 2013 Meeting Notes
 
 
 John Neumann (JN), Dave Herman (DH), Istvan Sebestyen (IS), Alex Russell (AR), Allen Wirfs-Brock (AWB), Erik Arvidsson (EA), Eric Ferraiuolo (EF), Doug Crockford (DC), Luke Hoban (LH), Anne van Kesteren (AVK), Brendan Eich (BE), Brian Terlson (BT), Rick Waldron (RW), Waldemar Horwat (WH), Rafael Weinstein (RWS), Boris Zbarsky (BZ), Domenic Denicola (DD), Tim Disney (TD), Niko Matsakis (NM), Jeff Morrrison (JM), Sebastian Markbage (SM), Oliver Hunt (OH), Sam Tobin-Hochstadt (STH), Dmitry Lomov (DL), Andreas Rossberg (ARB), Reid Burke (RB)

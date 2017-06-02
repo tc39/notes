@@ -1,6 +1,6 @@
 # ECMA, TC39 Meeting Notes
 
-These are the notes that I've taken since joining TC39 as a representative of the jQuery Foundation.
+Published at: 
 
-
-Follow me [@rwaldron](http://twitter.com/rwaldron) for updates
+- http://tc39.github.io/tc39-notes
+- http://rwaldron.github.io/tc39-notes

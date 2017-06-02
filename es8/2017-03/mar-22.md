@@ -1,6 +1,6 @@
 # March 22, 2017 Meeting Notes
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbage (SM), Bradley Farias (BF), Maggie Pint (MPT), Jamund Ferguson (JF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SD), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patino (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LG), Istvan Sebestyen (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbage (SM), Bradley Farias (BF), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SD), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patino (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LG), Istvan Sebestyen (IS)
 
 ## Report from the Ecma Secretariat
 
@@ -110,7 +110,7 @@ AWB: I don't know what the Ecma executive committee and the GA is likely to say,
 
 WH: Istvan said, we can do some things, but the process would have to be approved by them [Ecma]. We can't have a separate patent policy from other TCs. The process is something we need to coordinate with them.
 
-JF: Are we going to punt? Are there a set of things that we can approve on and move forward? If we can agree on 95%, we can move forward instead of punting.
+JXF: Are we going to punt? Are there a set of things that we can approve on and move forward? If we can agree on 95%, we can move forward instead of punting.
 
 AWB: If we have a set of documents that we're willing to pass on to the executive committee via Istvan, total agreement isn't even needed, we can move those documents up the pipeline and get the initial feedback. There's an EC meeting in April. That's a possible next step.
 
@@ -136,7 +136,7 @@ YK: If Istvan comes back and says we can't enforce, that would be bad.
 
 AWB: Let's be clear, it's not Istvan who approves: it's the executive committee. It's "us" because it's got members of our own companies on it.
 
-JF: We have a CoC, which most people agree are good aspirational goals. But we're asking what enforcement looks like? Is there a minimal agreement that when there's a violation that there's a set of people get notified?
+JXF: We have a CoC, which most people agree are good aspirational goals. But we're asking what enforcement looks like? Is there a minimal agreement that when there's a violation that there's a set of people get notified?
 
 DH: It seems like we're being sloppy about what "enforcement" means to different people here. What's the meaning here? If the meaning is, literally, that there is a group of people who will meet and decide what to do...if that's a good starting point or if people think that's not enough of a starting point... I hypothesize that there is a set of people who review complaints—might be acceptable to everybody.
 
@@ -160,7 +160,7 @@ IS: And of course the secretariat is there but we don't have decision power. We'
 
 BT: So it seems like we do have consensus on this document as-is?
 
-JF: No removing that paragraph [4]?
+JXF: No removing that paragraph [4]?
 
 BT: As-is, yes. OK, I move for lunch recess. Reconvene 2PM.
 

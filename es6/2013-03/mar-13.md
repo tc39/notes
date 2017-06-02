@@ -1,6 +1,6 @@
 # March 13 2013 Meeting Notes
 
-John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Rick Waldron (RW), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Luke Hoban (LH), Matt Sweeney (MS), Doug Crockford (DC), Yehuda Katz (YK), Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Alex Russell (AR), Dave Herman (DH), Adam Klein (AK), Bernd Mathiske (BM), John Pampuch (JP), Avik Chaudhuri (AC), Edward O'Connor (EOC), Rick Hudson (RH), Andreas Rossberg (ARB), Rafeal Weinstein (RWN), Mark Miller (MM), Reid Burke (RB), Edward Yang (EY), Dan Stefan (DS),
+John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Rick Waldron (RW), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Luke Hoban (LH), Matt Sweeney (MS), Doug Crockford (DC), Yehuda Katz (YK), Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Alex Russell (AR), Dave Herman (DH), Adam Klein (AK), Bernd Mathiske (BM), John Pampuch (JP), Avik Chaudhuri (AC), Theresa O'Connor (TOC), Rick Hudson (RH), Andreas Rossberg (ARB), Rafeal Weinstein (RWN), Mark Miller (MM), Reid Burke (RB), Edward Yang (EY), Dan Stefan (DS),
 
 
 

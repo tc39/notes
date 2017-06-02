@@ -1,6 +1,6 @@
 # March 21, 2017 Meeting Notes
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbage (SM), Bradley Farias (BF), Maggie Pint (MPT), Jamund Ferguson (JF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SD), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patino (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LG), Mathias Bynens (MB)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbage (SM), Bradley Farias (BF), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SD), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patino (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LG), Mathias Bynens (MB)
 
 ## 3. Adopting the agenda
 
@@ -480,7 +480,7 @@ ZB: I think that's for stage 3.
 
 DE: We nominate reviewers at stage 3.
 
-JF: I know the folks at PayPal were working on something similar and would probably like to review this.
+JXF: I know the folks at PayPal were working on something similar and would probably like to review this.
 
 ZB: It really depends on ...???? They are separate spec proposals. I don't think the spec is finalized for them. How about we have ListFormat advance to stage 2 and get interest on the others later.
 
@@ -488,7 +488,7 @@ AWB: Yes, let's do that.
 
 ZB: So PayPal said they may be interested in helping review this?
 
-JF: Yeah, I think we should be able to help out.
+JXF: Yeah, I think we should be able to help out.
 
 ### Intl.UnitFormat
 
@@ -1343,7 +1343,7 @@ DE: Unicode also defines an algorithm for finding breaks between words and sente
 
 CP: I can review.
 
-JF: I think I can get someone from PayPal to review.
+JXF: I think I can get someone from PayPal to review.
 
 DE: Any thoughts on the change in the design?
 

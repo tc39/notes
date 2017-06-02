@@ -1,6 +1,6 @@
 # March 23, 2017 Meeting Notes
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbage (SM), Bradley Farias (BF), Maggie Pint (MPT), Jamund Ferguson (JF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SD), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patino (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LG), Istvan Sebestyen (IS), Matt Johnson (MJ)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbage (SM), Bradley Farias (BF), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SD), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patino (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LG), Istvan Sebestyen (IS), Matt Johnson (MJ)
 
 ## General Discussion
 

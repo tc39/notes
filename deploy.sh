@@ -12,6 +12,13 @@ MINE="git@github.com:rwaldron/tc39-notes.git";
 TC39="git@github.com:tc39/tc39-notes.git";
 SHA=`git rev-parse --verify HEAD`
 
+# Update masters:
+# rwaldron/tc39-notes#gh-pages
+git push $MINE $SOURCE_BRANCH
+# tc39/tc39-notes#gh-pages
+git push $TC39 $SOURCE_BRANCH
+
+
 # Checkout "gh-pages"
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 
@@ -19,7 +26,7 @@ git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 git reset --hard
 
 # Merge master for latest content
-git merge $SOURCE_BRANCH
+git pull --rebase origin $SOURCE_BRANCH
 
 # Build it!
 buildGHPages

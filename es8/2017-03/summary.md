@@ -1,4 +1,4 @@
-## Summary for the 57th meeting of Ecma TC39
+# Summary for the 57th meeting of Ecma TC39
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2017/03.md)
 - ES2017 was officially approved by the committee to be sent to the ECMA General Assembly for approval. [notes](mar-21.md#6ii-vote-to-accept-ecma-262-2017-final-draft-and-forward-it-to-ecma-ga-approval-subject-to-completion-of-rf-opt-out-period-with-no-opt-outs)

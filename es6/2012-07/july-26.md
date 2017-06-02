@@ -1,4 +1,4 @@
-# July 26 2012 Meeting Notes
+# July 26, 2012 Meeting Notes
 
 Present: Mark Miller (MM), Brendan Eich (BE), Yehuda Katz (YK), Luke Hoban
 (LH), Rick Waldron (RW), Alex Russell (AR), Tom Van-Cutsem (TVC), Bill

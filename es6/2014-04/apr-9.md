@@ -1,4 +1,4 @@
-# April 9 2014 Meeting Notes
+# April 9, 2014 Meeting Notes
 
 Doug Crockford (DC), Brian Terleson (BT), Luke Hoban (LH), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Hudson (RH), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Seo-Young Hwang (SYH), Mark Honenberg (MH), Caridy Patino (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Norbert Lindenberg (NL), Sebastian Markbage (SM), Mathias Bynens (MB), Rafael Weinstein (RWS), Jaswanth Sreeram (JS), Alex Russell (AR), Istvan Sebestyen (IS), Mark Miller (MM), Tatiana Shpeisman (TS), Brandon Benvie (BB), Brendan Eich (BE)
 
@@ -952,7 +952,7 @@ JH: Confirmed.
 #### ~~Conclusion/Resolution~~
 - ~~Generator.prototype.return()~~
 
-(continued to April 10 2014)
+(continued to April 10, 2014)
 
 
 

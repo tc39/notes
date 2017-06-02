@@ -1,4 +1,4 @@
-# July 25 2012 Meeting Notes
+# July 25, 2012 Meeting Notes
 
 Present: Mark Miller (MM), Brendan Eich (BE), Yehuda Katz (YK), Luke Hoban
 (LH), Andreas Rossberg (ARB), Rick Waldron (RW), Alex Russell (AR), Tom

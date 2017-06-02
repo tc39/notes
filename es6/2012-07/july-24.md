@@ -1,4 +1,4 @@
-# July 24 2012 Meeting Notes
+# July 24, 2012 Meeting Notes
 
 Present: Yehuda Katz (YK), Luke Hoban (LH), Rick Waldron (RW), Alex Russell
 (AR), Tom Van Cutsem (TVC), Bill Ticehurst (BT), Brendan Eich (BE), Sam

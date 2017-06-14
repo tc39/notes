@@ -488,7 +488,7 @@ MM: I just don't want Domenic to be blind sided
 
 (Jeff Morrison)
 
-- https://littledan.github.io/proposal-class-fields/
+- ~https://littledan.github.io/proposal-class-fields/~ https://tc39.github.io/proposal-class-fields/
 - slides: https://drive.google.com/file/d/0B-TAClBGyqSxWHpyYmg2UnRHc28/view
 
 JM: integrating public and private into one proposal to avoid proposals racing
@@ -679,7 +679,7 @@ JM: We have consensus for solution 2?
 We are agreeing to the syntactic specification that Dan has put together in thel ink proposal in teh agenda. which is a merge of a private fields and public fields proposal
 
 
-Moving on to DE's https://littledan.github.io/proposal-class-fields/
+Moving on to DE's ~https://littledan.github.io/proposal-class-fields/~ https://tc39.github.io/proposal-class-fields/
 
 
 WH: The proposed spec does not have an `own` keyword, but does not preclude supporting `own` to designate instance methods 
@@ -724,7 +724,9 @@ JM: What do we need for this proposal to be in stage 3?
 #### Conclusion/Resolution
 
 - No `own`
-- Moving forward on DE's https://littledan.github.io/proposal-class-fields/
+- Moving forward on DE's [Integrated public and private fields proposal](https://tc39.github.io/proposal-class-fields/)
+  + This is the active proposal for class fields
+  + This supercedes (by way of integration) all previous proposals
 - Reviewers: 
     - Waldemar Horwat
     - Kevin Gibbons

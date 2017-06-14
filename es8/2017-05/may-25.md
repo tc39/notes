@@ -226,7 +226,7 @@ YK: No particular concern if there aren't user-facing changes. Happy to delegate
 
 
 
-17.ii Web compatibility issues / Needs-consensus PRs
+## 17.ii Web compatibility issues / Needs-consensus PRs
 
 (Brian Terlson)
 
@@ -235,7 +235,7 @@ YK: No particular concern if there aren't user-facing changes. Happy to delegate
 - https://github.com/tc39/ecma262/issues?q=is%3Aopen+is%3Aissue+label%3A%22needs+consensus%22
 
 
-### 884
+## Prohibit async methods named 'function' #884
     
 - https://github.com/tc39/ecma262/pull/884
 - https://github.com/tc39/ecma262/issues/832
@@ -276,7 +276,7 @@ MM: Implementors should take a look and raise concerns when needed.
 WH: (a few minutes later) Having looked at the implications of this in more detail, I'm fine with rejecting the issue with no action.
 
 
-### 864
+## Normative: Specify RegExp malformed character class behavior #864
 
 - https://github.com/tc39/ecma262/pull/864
 - https://github.com/tc39/ecma262/issues/863
@@ -295,7 +295,7 @@ DE: All the surrounding parts are Annex B
 - Accept PR
 
 
-### 858
+## Relax [[DefineOwnProperty]] on module namespace exotic objects. #858
 
 - https://github.com/tc39/ecma262/pull/858
 
@@ -346,7 +346,7 @@ LBR: We need to provide tests before merging. Okay to mark as consensus.
 - Accept PR
 
 
-### 857
+## Normative: Define particular precision for toFixed and friends #857
 
 - https://github.com/tc39/ecma262/pull/857
 
@@ -384,7 +384,7 @@ BT: Can also change it to _not_ throw for negative to
 
 
 
-### 850
+## Normative: Date.prototype.toString throws on non-Date receiver #850
 
 - https://github.com/tc39/ecma262/pull/850
 

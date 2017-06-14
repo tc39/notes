@@ -30,17 +30,33 @@ const remarkable = new Remarkable("full", {
 });
 
 remarkable.use(remarkable => {
-  let conclusion = 0;
+  let heading = "";
+  let conclusion = "";
+  let counter = 0;
+
   remarkable.renderer.rules.heading_open = (tokens, index) => {
     const next = tokens[index + 1].content;
     let isConclusion = false;
     if (/conclusion|resolution/i.test(next)) {
-      conclusion++;
       isConclusion = true;
+      if (heading) {
+        conclusion = toc.slugify(heading);
+      } else {
+        // Fallback.
+        conclusion = counter;
+        counter++;
+      }
+    } else {
+      // Agenda Items are <h2> (## foo)
+      if (tokens[index].hLevel === 2) {
+        heading = next;
+      }
     }
-    const id = `${toc.slugify(`${next}`)}${isConclusion ? `-${conclusion}` : ``}`;
+    const id = `${toc.slugify(`${next}`)}${isConclusion ? `-${conclusion}` : ``}`.replace(/#/g, "");
+
     return `<a href="#${id}"><h${tokens[index].hLevel} id="${id}">`;
   };
+
   remarkable.renderer.rules.heading_close = (tokens, index) => {
     return `</h${tokens[index].hLevel}></a>`;
   };

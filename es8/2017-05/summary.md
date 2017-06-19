@@ -1,0 +1,26 @@
+# Summary for the 58th meeting of Ecma TC39
+
+- [Agenda](https://github.com/tc39/agendas/blob/master/2017/05.md)
+- The Code of Conduct received positive feedback and support from the Ecma's Executive Committee and the Ecma General Assembly may eventually use it Ecma-wide. TC39 is talking with the Executive Committee and the Ecma's Secretariat to make sure everyone is on the same page along with the proposal. [Notes](may-25.md#18i-code-of-conduct-follow-up)
+- New Leadership Status. TC39 is looking for a new Chairperson, Allen Wirfs-Brock was the interim Chair for the first semester of 2017 and Leo Balter will be acting Chair for the next meeting. TC39 will invite Rex Jaeschke - from TC49, C# - for the next meeting as a candidate. [notes](may-25.md#tc39-leadership-status)
+- Long and productive discussion on BigInt, not advancing to Stage 3 yet, but found new improvements and reviewers, [notes](may-24.md#15iv-bigint-towards-stage-3)
+- The RegExp Legacy Features proposal advanced to Stage 3, [notes](may-25.md#15ia-regexp-legacy-features-for-stage-3), [proposal](https://github.com/tc39/proposal-regexp-legacy-features)
+- The Class Field proposals - private and public - are now merged in a single proposal, [notes](may-25.md#15iiib-updates-on-class-field-proposals-both-public-and-private), [slides](https://drive.google.com/file/d/0B-TAClBGyqSxWHpyYmg2UnRHc28/view)
+- The behavior of `yield` on Async Generator was reviewed and improved, the proposal remains on Stage 3. [notes](may-25.md#15iva-revisiting-async-generator-yield-behavior), [issue](https://github.com/tc39/proposal-async-iteration/issues/93), [slides](https://docs.google.com/presentation/d/1U6PivKbFO0YgoFlrYB82MtXf1ofCp1xSVOODOvranBM/edit#slide=id.g223fba4116_0_235)
+- Consensus to disallow object and array patterns in the Binding Rest parameter - `...[` and `...{` - for Object properties destructuring, [notes](may-23.md#16ih-why-allow-bindingpattern-for-bindingrestparameter-for-object-rest-maybe-we-should-just-allow-identifiers)
+- Modules:
+  - TC39 discussed implementing options for Module import, not advancing to Stage 1 yet. [notes](may-23.md#16iib-module-import-options-discussion-potentially-for-stage-1)
+  - See also the [notes](may-23.md#16iic-importing-modules-which-failed-evaluation) for importing modules which failed evaluation.
+  - `import.meta` to access host-specific module metadata from inside a module, now on Stage 2 [notes](may-23.md#16iiia-accessing-host-specific-module-metadata-from-inside-a-module), [notes+](may-25.md#15iif-importmeta-for-stage-2), [proposal](https://github.com/tc39/proposal-import-meta)
+- Advancing to Stage 1:
+  - `Atomics.waitNonBlocking`, name is going to be reviewed, [notes](may-23.md#16iia-atomicswaitnonblocking-for-stage-1) and [more info](https://github.com/lars-t-hansen/moz-sandbox/blob/master/sab/waitNonblocking.md)
+  - Numeric separators - `1_000_000`, [notes](may-23.md#16iie-advance-numeric-separators-proposal-to-stage-1), [proposal](https://github.com/samuelgoto/proposal-numeric-separator)
+  - Float16 for TypedArrays and DataView, [notes](may-23.md#16ig-float16-on-typedarrays-dataview-mathhfround-for-stage-1)
+- Presentations:
+  - Towards Trustworthy Verification of JavaScript, Philippa Gardner, [notes](may-24.md#14i-towards-trustworthy-verification-of-javascript)
+  - ECMAScript design process, Kevin Gibbons and Tim Disney, [notes](may-24.md#14ii-shape-security), [slides](https://docs.google.com/presentation/d/1CPAusyG_TRgQ4gy5pw_RzH4JWWmxfDU8AeqaDCa3mJw/edit#slide=id.p)
+  - Follow the user, Daniel Ehrenberg, [notes](may-24.md#14ii-daniel-ehrenberg), [slides](https://docs.google.com/presentation/d/1jgHPsSqCP0aAYcyvYBRYw3db1jUm0pyu7Vj88DHUOGg/edit#slide=id.p)
+  - Moddable on ES6 in 48K of RAM, Patrick Soquet and Peter Hoddie, [notes](may-24.md#14iii)
+  - Role of Babel in JS, Henry Zhu, [notes](may-24.md#14iv-role-of-babel-in-js), [slides](https://github.com/hzoo/role-of-babel-in-js)
+  - TC39/ECMAScript: The Next 20 Years, Allen Wirfs-Brock, [notes](may-24.md#14v-tc39ecmascript-the-next-20-years), [slides](https://github.com/tc39/agendas/blob/master/2017/ES-next20.pdf)
+- Several needs-consensus pull requests on the Ecma262 project reached consensus, tightening up semantics in edge cases. They are on track through the [need consensus](https://github.com/tc39/ecma262/pulls?q=is%3Aopen+is%3Apr+label%3A%22needs+consensus%22) label.

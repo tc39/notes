@@ -2,6 +2,7 @@
 
 // System objects
 const fs = require("fs");
+const path = require("path");
 
 // Third party objects
 const ct = require("common-tags");
@@ -72,13 +73,23 @@ const script = `<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js
 glob("./es*/**/*.md", (error, results) => {
   const links = [];
 
-  results.reverse().forEach(file => {
-    const content = fs.readFileSync(file, "utf8");
-    const alias = file.replace(/\.\/es.\//, "");
-    const fileName = alias.replace(/(\d{4}-\d{2})\//, "$1_").replace(".md", ".html");
+  results.reverse().forEach(originalPath => {
+    const content = fs.readFileSync(originalPath, "utf8");
+
+    const fileName = originalPath
+      .replace(/\.\/es.\//, "")
+      .replace(/(\d{4}-\d{2})\//, "$1_")
+      .replace(".md", ".html");
+
     const title = content.split('\n')[0].replace("# ", "").trim();
 
-    fs.writeFileSync(fileName, makePage({ title, content }));
+    const yearMonth = originalPath.match(/\/(\d{4}-\d{2})\//)[1];
+    const contentWithHtmlLinks = content.replace(/([a-z]+-\d{1,2})\.md/g, `${yearMonth}_$1.html`);
+
+    fs.writeFileSync(fileName, makePage({
+      title,
+      content: contentWithHtmlLinks
+    }));
     links.push(`- [${title.replace(" Meeting Notes", "")}](${fileName})`);
   });
 

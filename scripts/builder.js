@@ -84,7 +84,9 @@ glob("./es*/**/*.md", (error, results) => {
     const title = content.split('\n')[0].replace("# ", "").trim();
 
     const yearMonth = originalPath.match(/\/(\d{4}-\d{2})\//)[1];
-    const contentWithHtmlLinks = content.replace(/([a-z]+-\d{1,2})\.md/g, `${yearMonth}_$1.html`);
+    const contentWithHtmlLinks = content
+      .replace(/\]\(([a-z]+-\d{1,2})\.md/g, `](${yearMonth}_$1.html`)
+      .replace(/^\[([^\]]+)\]: ([a-z]+-\d{1,2})\.md/gm, `[$1]: ${yearMonth}_$2.html`);
 
     fs.writeFileSync(fileName, makePage({
       title,

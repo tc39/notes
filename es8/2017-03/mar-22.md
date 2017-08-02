@@ -578,7 +578,7 @@ AWB: I do, too, but I want to be fair. This is one of those things that Ecma as 
 
 - Consensus reached to approve and forward to Ecma GA
 
-## 12. i. Needs-Consensus PRs
+## 12.i. Needs-Consensus PRs
 
 ### [#856 Avoid Duplicate TA#fill value coercions](https://github.com/tc39/ecma262/pull/856)
 

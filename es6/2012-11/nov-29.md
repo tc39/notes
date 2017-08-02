@@ -274,6 +274,7 @@ MM/AWB/RW/BE/EF: (Discussion to determine a criteria for making this API specifi
 
 
 #### Conclusion/Resolution
+
 Consensus... with the criteria that these methods are not simply a set of uncoordinated side effects that happen to have a receiver in common, but a set of coordinated side effects on a specific receiver and providing access to the target object post-mutation.
 
 
@@ -317,8 +318,9 @@ eval("let x; delete x;");
 
 ARB/MM: Illegal.
 
-**Consensus/Resolution**
-New declaration forms, even from non-strict mode eval cannot be deleted.
+## Conclusion/Resolution
+
+- New declaration forms, even from non-strict mode eval cannot be deleted.
 
 
 # Eliminate functions returning Reference values from the specification.
@@ -330,7 +332,8 @@ BE: Exists from the ES1 days, for VBScript-style DOM APIs in IE
 LH: No objection.
 
 #### Conclusion/Resolution
-Consensus.
+
+- Consensus.
 
 
 # Revisit Nov. 27 Resolution on iterables in spread.
@@ -629,7 +632,8 @@ MM: All agreed, whatever is allowed here is also allowed between parens for gene
 BE: No cost, no loss, use case gains.
 
 #### Conclusion/Resolution
-Consensus on Jason's proposal: for, if, let, const can be interleaved. Applies to both Array Comprehensions and Generator Comprehensions
+
+- Consensus on Jason's proposal: for, if, let, const can be interleaved. Applies to both Array Comprehensions and Generator Comprehensions
 
 
 # yield, the identifier?

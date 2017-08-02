@@ -369,7 +369,8 @@ WH: Don't want two slightly different concepts with a confusingly similar syntax
 WH: That would address the confusion, but is still unnecessary featuritis and doesn't even save much in terms of text, which was its original reason for existence. Saving a couple characters here is not worth complicating the language.
 
 #### Conclusion/Resolution
-Consensus holds on fat-arrow
+
+- Consensus holds on fat-arrow
 
 
 # Existential Operator (strawman discussion)

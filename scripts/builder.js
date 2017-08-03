@@ -99,6 +99,7 @@ function makeIndex({links}) {
   return ct.stripIndent`
 <!doctype html>
 <meta charset="utf-8">
+<title>ECMA, TC39 Meeting Notes</title>
 ${css}
 ${script}
 <body class="markdown-body">

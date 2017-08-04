@@ -481,12 +481,6 @@ WH: There are at least two ways in the existing spec to get at the description:
 
 ...They differ in their treatment of undefined descriptions. `Symbol.prototype.toString` treats it as though it were an empty description, while *SetFunctionName* distinguishes it. Do we want to distinguish between undefined and empty string?
 
-JHD: Just tried to set the name of a function. It doesn't distinguish between undefined and empty symbol descriptions.
-
-WH: It does in the standard.
-
-KG: Sounds like a bug in the implementation.
-
 ?: String slicing Object.prototype.toString.call(symbol) gets undefined/"" names wrong.
 
 BN: It feels legitimate to support cases like this.

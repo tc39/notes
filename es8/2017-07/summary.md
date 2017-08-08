@@ -24,7 +24,7 @@
 - [BigInt `10n`](jul-26.md#11iiia-bigint-for-stage-3): advanced to Stage 3
 - [Numeric Separators `1_000`](jul-27.md#11iig-numeric-separators-for-stage-2): advanced to Stage 2
 - [export-ns-from `export * as ns from 'mod'`](jul-27.md#11iie-export-ns-from-and-export-default-from-for-stage-2): advanced as a "needs consensus PR" to be presented in a further meetings for final approval.
-- [Temporal Proposal](jul-27.md#11iif-temporal-proposal-updates): remained on Stage 2, but addressed important questions for futher advancing.
+- [Temporal Proposal](jul-27.md#11iif-temporal-proposal-updates): remained on Stage 1, but addressed important questions for futher advancing.
 - [Class Fields](jul-27.md#11ivc-class-fields-for-stage-3): advanced to Stage 3
 - [Private methods and accessors](jul-27.md#11ivd-private-methods-and-accessors-for-stage-2): advanced to Stage 2
 

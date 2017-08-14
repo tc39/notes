@@ -292,7 +292,7 @@ DH: Because is an immutable API, which is a good thing
 
 BF: Are you freezing those properties?
 
-MPT: Yes, the pollyfill right now is a getter
+MPT: Yes, the polyfill right now is a getter
 
 DD: That makes sense; I'd think of these as calculated from internal slots
     

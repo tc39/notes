@@ -166,7 +166,7 @@ TODO: link to slides
 
 CM: We (TC39) have a love / hate relationship with JS..  Our Prime Directive is "Don't break the web".  Fixes can break crappy software, which breaks the web.  Opinion is that this crappy software is an obstacle to innovation.  Our current tool is Compartmentalization.  Limit the scope of changes to avoid interference.  Examples from past / current work.  Lexical scoping, modules, realms and frozen realms.  These are "Islands of Sanity".  Many are asking for JavaScript to morph into language XXX.  "JavaScript should be more like JavaScript"   Quote from Tony Hoare - "Inside every large program is a small program struggling to get out."  
 
-WH: It's easier to compartmentalize syntax features, like "use strict" or modules do. What about semantic quirks, e.g. if you want to forbid __proto__?
+WH: It's easier to compartmentalize syntax features, like "use strict" or modules do. What about semantic quirks, e.g. if you want to forbid `__proto__`?
 
 CM: Frozen realms allow bringing in two separate pieces of SW and limiting there linking to a small surface area
 

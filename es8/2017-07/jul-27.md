@@ -992,7 +992,7 @@ YK: I am also concerned about how one is supposed to reason about the rest of th
 
 (Michael Ficarra)
 
-- [proposal](https://michaelficarra.github.io/optional-catch-binding-proposal/)
+- [proposal](https://tc39.github.io/proposal-optional-catch-binding/)
 
 MF: The proposal is to make the catch binding optional. i.e. `try {} catch {}` with no parenthesised binding follow the catch.
 

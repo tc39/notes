@@ -224,7 +224,7 @@ MPT: Not really, I think the prefix does a lot to help the user understand the c
 
 DH: You're making it clear that it is a time located in a particular place
 
-MPT: "local" has gotten a lot of adoption because it's part of the JodaTime API that became part of Java 8. But when I discussed this with people, "Civil" was overwhelmingly the choice. There is a long thread on GitHub about the issue
+MPT: "local" has gotten a lot of adoption because it's part of the JodaTime API that became part of Java 8. But when I discussed this with people, "Civil" was overwhelmingly the choice. There is a long [thread](https://github.com/tc39/proposal-temporal/issues/33) on GitHub about the issue
 
 MJN: The prefix also helps distinguish all of these from the Date object. We also have 1-based months, rather than 0-based; this helps avoid conflicts
 

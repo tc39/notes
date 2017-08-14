@@ -285,7 +285,7 @@ SYG: This calls for some semantic changes to handling of early errors in ECMA 26
 
 DD: The fact that new proposals need to provice integration into the binary grammar is a big reason for pursuing in this committee.
 
-MS: The speed comparsion was in Firefox, right? I'd like to see performance on other browsers. In terms of, where we are at today in parsing performance--we can see in one browser that there's a 3-8x improvement on one browser. This is a short-term solution--it'll give us 3 years in Moore's law, but what do you do next? This is just a short-term solution. I imagine it will take significant implementation effort
+MS: The speed comparison was in Firefox, right? I'd like to see performance on other browsers. In terms of, where we are at today in parsing performance--we can see in one browser that there's a 3-8x improvement on one browser. This is a short-term solution--it'll give us 3 years in Moore's law, but what do you do next? This is just a short-term solution. I imagine it will take significant implementation effort
 
 YK: Developers are sincerely trying to save time, not waste resources opened up by new optimizations.
 

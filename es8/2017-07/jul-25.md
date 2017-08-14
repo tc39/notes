@@ -466,7 +466,7 @@ PHE: I would have no problem moving the sentence that requires F.p.toString to i
 
 (Michael Ficarra)
 
-- [proposal](https://michaelficarra.github.io/Symbol-description-proposal/)
+- [proposal](https://tc39.github.io/proposal-Symbol-description/)
 
 MF: Proposal to put a "description" getter on Symbol.prototype that returns `desc` given a symbol created with `Symbol(desc)`
 

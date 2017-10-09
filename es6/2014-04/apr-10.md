@@ -824,6 +824,7 @@ Several:  Sounds okay.
 
 
 #### Conclusion/Resolution
+
 - "await" needs to be reserved in module context
 - Keep async arrows, and keep the conservative grammar with [no line terminator] annotations
 - Tentatively believe await at top level in modules should be okay.
@@ -834,6 +835,7 @@ Several:  Sounds okay.
 JN: Want to thank Mozilla for hosting us and appreciation to Ecma for dinner last night.
 
 #### Conclusion/Resolution
+
 - Unanimous agreement :)
 
 

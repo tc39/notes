@@ -201,6 +201,8 @@ DH: Maybe I think about that. Sorry for the hijack!
 
 (Daniel Ehrenberg)
 
+- [Explainer](https://github.com/tc39/ecma262/pull/890)
+
 DE: (Presenting)
 
 WH: The current behavior is observable by using ===. Is there any other way to observe it?

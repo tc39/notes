@@ -480,7 +480,7 @@ JHD: No, exec doesn’t change. match and exec work differently. I'll file a few
 - Note: Conclusion revised on the following day. See the notes from the third day of this meeting below.
 
 
-12.iii.b Optional chaining operator for Stage 2 
+## 12.iii.b Optional chaining operator for Stage 2 
 
 (Gabriel Isenberg)
 
@@ -703,8 +703,7 @@ YK: We should discuss this fully in writing - the incoherence will become more o
 - Disagreement about whether [] and () should be included in short circuiting or ?. versions
 
 
-
-12.iii.c import.meta for stage 3
+## 12.iii.c import.meta for stage 3
 
 (Domenic Denicola)
 
@@ -772,7 +771,7 @@ DD: Let's push for not working in scripts or eval. Maybe going to stage 3 tomorr
 
 - Revisit Tomorrow
 
-12.iv.a Private methods and accessors for Stage 3
+## 12.iv.a Private methods and accessors for Stage 3
 
  - [Slides](https://docs.google.com/presentation/d/1aI89Jgl7CdtKV6D5-ydieUn_-kgRqAD2X8gGzh62xzc/edit#slide=id.p)
  - [Explainer](https://github.com/littledan/proposal-private-methods)
@@ -1006,7 +1005,7 @@ DE: This is not necessarily what implementors are saying. I think we can work th
 - Stage 3
 - Implementers are encouraged not to ship private class fields or methods unflagged yet, pending the outcome of this issue
 
-12.iv.b Decorators: detailed discussion of proposed semantics
+## 12.iv.b Decorators: detailed discussion of proposed semantics
 
 (Daniel Ehrenberg)
 

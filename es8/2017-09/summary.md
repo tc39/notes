@@ -1,6 +1,6 @@
-# Summary for the 59th meeting of Ecma TC39
+# Summary for the 60th meeting of Ecma TC39
 
-- [Agenda](/master/2017/09.md)
+- [Agenda](https://github.com/tc39/agendas/blob/master/2017/09.md)
 
 ## General
 

@@ -33,7 +33,7 @@ LBR: To confirm this is approved by consensus, I'd like to ask if anyone has any
 
 (Michael Ficarra)
 
-- [Explainer] (https://github.com/tc39/proposal-flatMap)
+- [Explainer](https://github.com/tc39/proposal-flatMap)
 
 MF: Updates:
 

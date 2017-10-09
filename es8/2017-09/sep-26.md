@@ -936,8 +936,8 @@ DE: We have agreement on this particular case, right?
 
 (Daniel Ehrenberg)
 
-- [slides] (https://docs.google.com/presentation/d/1I4Ormej3A5911MxQww2k-Cn46T3ZMpRSxN89gYYMHds/edit#slide=id.p)
-- [explainer] (https://github.com/zbraniecki/proposal-intl-locale)
+- [slides](https://docs.google.com/presentation/d/1I4Ormej3A5911MxQww2k-Cn46T3ZMpRSxN89gYYMHds/edit#slide=id.p)
+- [explainer](https://github.com/zbraniecki/proposal-intl-locale)
 
 DE: (presenting slides)
 

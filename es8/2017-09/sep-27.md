@@ -13,7 +13,7 @@ Istvan Sebastian (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM), 
 
 ## ii.30.b BigInt status update (Daniel Ehrenberg)
 
-- [Explainer] (https://github.com/tc39/proposal-bigint)
+- [Explainer](https://github.com/tc39/proposal-bigint)
 - [Presentation](https://docs.google.com/presentation/d/1wwI7858NPaXV4xTzQwCqPUj7Hp1baHvQodS7MUbZzbU/edit#slide=id.p)
 
 DE: (Presenting Slides)

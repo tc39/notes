@@ -388,7 +388,7 @@ DE: No, we'll leave things as they are.
 
 (Daniel Ehrenberg) 
 
-
+- [Explainer](https://github.com/tc39/proposal-intl-formatToParts)
 - [slides](https://docs.google.com/presentation/d/1--PmAca3qyQQfQz4OXj7l8QxpzfUF1GS4ET3ampvg_M/edit#slide=id.g255358455f_0_63)
 
 DE: (presenting slides)
@@ -628,6 +628,7 @@ DH: As long as we note that this does not stop us seeking other proposals.
 
 (Daniel Ehrenberg)
 
+- [Explainer](https://github.com/tc39/proposal-class-fields)
 - [slides](https://docs.google.com/presentation/d/169hWHIKFnX8E-N90FJQS3u5xpo5Tt-s4IFdheLySVfQ/edit#slide=id.p)
 
 DE: (presenting slides)
@@ -708,6 +709,7 @@ SYG: I understand the concerns here. I'll open an issue on the tracker. To recap
 
 (Daniel Ehrenberg)
 
+- [Explainer](https://github.com/tc39/proposal-intl-plural-rules/blob/master/PROPOSAL.md)
 - [Slides](https://docs.google.com/presentation/d/1--PmAca3qyQQfQz4OXj7l8QxpzfUF1GS4ET3ampvg_M/edit#slide=id.g255358455f_0_78)
 
 MB: Intl.PluralRules also has the capability to figure out plurals but also ordinals. Should we split into two methods, since ordinals have nothing to do with pluralization?

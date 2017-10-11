@@ -23,7 +23,7 @@
 - [`Array.prototype.flatMap` and `Array.prototype.flatten`](sep-26.md#12if-flatmap-for-stage-2) from Stage 1 to [Stage 2](sep-28.md#15i-flatmap-for-stage-3)
 - [`String.prototype.matchAll`](sep-27.md#12iiia-stringprototypematchall) to [Stage 2](sep-28.md#15iii-stringprototypematchall-for-stage-2)
 - Intl:
-  - [`Intl.NumberFormat.prototype.formatToParts`]() to Stage 4
+  - [`Intl.NumberFormat.prototype.formatToParts`](sep-26.md#12ia-intlnumberformatprototypeformattoparts-for-stage-4) to Stage 4
   - [`Intl.PluralRules`](sep-26.md#12ig-intlpluralrules-for-stage-4) to Stage 4
   - [`Intl.Segmenter`](sep-26.md#12ib-intlsegmenter-for-stage-3) to Stage 3
   - [`Intl.RelativeTimeFormat`](sep-26.md#12ic-intlrelativetimeformat-for-stage-3) to Stage 3

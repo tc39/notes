@@ -22,9 +22,11 @@ DE: (Presenting Slides)
 - [PR](https://github.com/tc39/proposal-bigint/pull/80)
 
 WH: Why torn?
+
 DE: Writes into a Float64Array are also torn
 
 SYG: Why do we want only 64 bit operations?
+
 WH: What important architectures do not support atomic 64-bit operations? Even 32-bit architectures often support 64-bit atomic operations.
 
 MS: 32 bit operations are being deprecated but they're still around. MIPS is still being used.

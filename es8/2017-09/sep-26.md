@@ -269,7 +269,7 @@ YK: Question for Node are you planning to implement this?
 
 PST: Nope
 
-DE: It's up to implementers, there is no requirements for this. (Added clarification later: Node already ships V8's Intl support by default; there's nothing for Node to do here. However, V8 currently exposes a compile-time flag which some users switch off to disable ECMa 402, which RW is using.)
+DE: It's up to implementers, there is no requirements for this. (Added clarification later: Node already ships V8's Intl support by default; there's nothing for Node to do here. However, V8 currently exposes a compile-time flag which some users switch off to disable ECMA 402, which RW is using.)
 
 RW: We're already shipping Node without `Intl` support
 

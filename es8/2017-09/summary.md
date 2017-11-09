@@ -26,7 +26,6 @@
   - [`Intl.NumberFormat.prototype.formatToParts`](sep-26.md#12ia-intlnumberformatprototypeformattoparts-for-stage-4) to Stage 4
   - [`Intl.PluralRules`](sep-26.md#12ig-intlpluralrules-for-stage-4) to Stage 4
   - [`Intl.Segmenter`](sep-26.md#12ib-intlsegmenter-for-stage-3) to Stage 3
-  - [`Intl.RelativeTimeFormat`](sep-26.md#12ic-intlrelativetimeformat-for-stage-3) to Stage 3
   - [`Intl.Locale`](sep-26.md#12iia-introducing-intllocale-for-stage-2) to Stage 1
 
 ### Others
@@ -41,6 +40,7 @@ _Proposals not advancing to new a new stage. e.g.: development updates, needs wo
 - [Float16 TypedArrays](sep-28.md#float16-typed-arrays)
 - [Object Shorthand Improvements](sep-28.md#13i-object-shorthand-improvements) not promoted to Stage 1
 - [`Builtins.typeOf()` and `Builtins.is()`](sep-28.md#14ia-builtinstypeof-and-builtinsis) not promoted to Stage 1
+- [`Intl.RelativeTimeFormat`](sep-26.md#12ic-intlrelativetimeformat-for-stage-3) is proposed for Stage 3; reviewers identified
 
 ### Pull Requests with normative changes
 

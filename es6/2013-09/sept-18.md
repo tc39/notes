@@ -681,7 +681,7 @@ WH: Once every two years would be more reasonable.
 
 Andreas Rossberg
 
-[Slides](need to commit for a link)
+[Slides](default-arguments.pdf)
 
 
 Default Parameters/Arguments
@@ -705,6 +705,7 @@ Solution:
     - Defaults should behave as if provided by wrapper function
 
 Solution:
+
     - Evaluate defaults in seperate scope
     - Can see "this", "arguments" and function name (where applicable)
     - Can see other parameters
@@ -729,6 +730,7 @@ AWB: (describes the TDZ)
 
 
 Solution:
+
 - parameters have TDZ
 - Initialized in sequence
 
@@ -736,7 +738,6 @@ Solution:
 WH: No distinction between a missing parameter and explicit undefined?
 
 AWB: We agreed on that a long time ago.
-
 
 BE: I thought there was agreement/discussion?
 
@@ -764,14 +765,11 @@ BE: In the example that binds
 
 
 AWB:
+
 - parameters are in separate scope contour
 - visible to the body scope
 - the body is disallowed from creating
 - "namespace" for parameters
-
-
-
-
 
 
 NM/RW: (agreeable points about curly brace boundaries reinforcing scope)
@@ -809,6 +807,7 @@ AWB: Agreed
 
 
 DH: (post-clarification)
+
 - Two Scopes
     - The Function Head/parameter list
     - The Function Body
@@ -824,7 +823,7 @@ AWB: The spec currently says var-like bindings. If you have new syntax, they're 
 
 - Duplicates are illegal
 - Rules about redeclaration
--
+
 
 
 ```js

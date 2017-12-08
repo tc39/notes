@@ -461,7 +461,7 @@ MS: You want an iterator that gives you all the captures - a "sticky plus" could
 
 JHD: Like an alternative flag?
 
-MS: Yes. I share Waldemar's concern. What flag should I give the regexp? What do I get back? And so forth. Having something like this with all caputres for every single match is good.
+MS: Yes. I share Waldemar's concern. What flag should I give the regexp? What do I get back? And so forth. Having something like this with all captures for every single match is good.
 
 JHD: I feel more hesistant about adding a flag over naming this `scan`.
 

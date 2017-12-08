@@ -898,7 +898,7 @@ JHD: Static methods being able to access private fields is fine.
 
 DE: Walking the prototype chain for private fields is a significant departure from what we have now.
 
-TST: To clarify its highly useful to have pirvate static fields in normal static methods. But its a foot-gun, this is a targeted way to illiminate the footgun
+TST: To clarify its highly useful to have private static fields in normal static methods. But its a foot-gun, this is a targeted way to illiminate the footgun
 
 DE: I was skeptical on this it seems ad-hoc. How does the community feel about banning `this.#` if the field is static?
 

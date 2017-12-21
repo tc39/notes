@@ -135,7 +135,7 @@ DE: Its hard for me to understand the code evolution idea. When would you actual
 
 MF: It might be possible to just _also allow_ yield. 
 
-DE: I'm sort of fine with allowing yield, but hesitant because people on the bug threads have anticipated yield having different semantics, where yield is treated more like a pseudo-function, yielding the previous thing that came from the pipeline. Here, though, we'd be using yield to get the argument that someone passes into .next(). I'm kind of happy about yield being banned by the grammar because of the ambiguous interpretation. Let's keep discussing this offline.
+DE: I'm sort of fine with not allowing yield. I'm hesitant to do what you suggest because people on the bug threads have anticipated yield having different semantics, where yield is treated more like a pseudo-function, yielding the previous thing that came from the pipeline. Here, though, we'd be using yield to get the argument that someone passes into .next(). I'm kind of happy about yield being banned by the grammar because of the ambiguous interpretation. Let's keep discussing this offline.
 
 DE: (Continues Presenting)
 

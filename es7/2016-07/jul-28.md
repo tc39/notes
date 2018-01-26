@@ -1,6 +1,6 @@
-# July 28 2016 Meeting Notes 
+# July 28, 2016 Meeting Notes 
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff(phone) (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Rick Waldron (RW), Stefan Penner (SP), Jonathan Sampson (JS), Caridy Patiño (CP), Sam Tobin-Hochstadt (STH), John Buchanan (JB), Kevin Gibbons (KG), Lars Hansen (LHN), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Kris Gray (KSG), Adam Klein (AK), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbage (SM), Saam Barati (SB), Kris Gray (KGY), John David Dalton (JDD), Ben Newman (BN), Morgan Phillips (phone) (MP), Shu-yu Guo (SYG), Paul Leathers (PL), Ben Smith (BS), Zibi Braniecki (ZB)
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff(phone) (MS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Rick Waldron (RW), Stefan Penner (SP), Jonathan Sampson (JSN), Caridy Patiño (CP), Sam Tobin-Hochstadt (STH), John Buchanan (JB), Kevin Gibbons (KG), Lars Hansen (LHN), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Kris Gray (KSG), Adam Klein (AK), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbage (SM), Saam Barati (SB), Kris Gray (KGY), John David Dalton (JDD), Ben Newman (BN), Morgan Phillips (MPS), Shu-yu Guo (SYG), Paul Leathers (PL), Ben Smith (BS), Zibi Braniecki (ZB)
 
 
 ## 10.ii.a Shared Memory And Atomics
@@ -178,7 +178,7 @@ Leo Balter
 PR from Claude Pache https://github.com/tc39/ecma262/pull/627
 
 
-LB: The change is: "don't do the lastIndex step unless isn't actually necessary"
+LBR: The change is: "don't do the lastIndex step unless isn't actually necessary"
 https://github.com/tc39/ecma262/issues/625
 
 DE: Global regexps don't make sense when frozen
@@ -199,7 +199,7 @@ DE: True
 
 AWB: (recapping the proposed fix)
 
-LB: This PR also adds a change to avoid get and ToLength operations on lastIndex for the same regexps. A poisoned RegExp lastIndex property wouldn't affect it.
+LBR: This PR also adds a change to avoid get and ToLength operations on lastIndex for the same regexps. A poisoned RegExp lastIndex property wouldn't affect it.
 
 ```js
 function test(rx) {
@@ -215,7 +215,7 @@ function test(rx) {
 }
 ```
 
-LB: After this patch, a `test(/a/)` should return false.
+LBR: After this patch, a `test(/a/)` should return false.
 
 MM: That does not only address the web compatibility issue, but does a clean-up on the lastIndex.
 

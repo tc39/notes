@@ -1,8 +1,6 @@
-March 31st 2016 Meeting Notes
+# March 31, 2016 Meeting Notes
 
-## Attendees
-
-Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson (BNN), JF Bastien (JFB), Joe Lencioni, Sebastian Markbage, Jeff Morrison (JM), Kevin Smith (KS), Lars Hansen (LHN), Saam Barati, Keith Miller, Michael Saboff, Eric Ferraiuolo (EF),Eric Faust (FST), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SG), Tim Disney (TD), Waldemar Horwat (WH), Bert Belder, Peter Jensen, Daniel Ehrenberg (DE), Caridy Patiño, Diego Ferreiro Val, Jean Fraucois Paradis, Shelby Hubick, Leo Balter (LB), Misko Hevery, Allen Wirfs-Brock (AWB), Kevin Gibbons (KG), Steven Lumis (SL), Zibi Braniecki (ZB)
+Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson (BNN), JF Bastien (JFB), Joe Lencioni (JLI), Sebastian Markbage (SM), Jeff Morrison (JM), Kevin Smith (KS), Lars Hansen (LHN), Saam Barati (SBI), Keith Miller (KMR), Michael Saboff (MS), Eric Ferraiuolo (EF), Eric Faust (FST), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SYG), Tim Disney (TD), Waldemar Horwat (WH), Bert Belder (BBR), Peter Jensen (PJ), Daniel Ehrenberg (DE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Jean Fraucois Paradis (JFP), Shelby Hubick (SHK), Leo Balter (LBR), Misko Hevery (MHY), Allen Wirfs-Brock (AWB), Kevin Gibbons (KG), Steven Loomis (SLS), Zibi Braniecki (ZB)
 
 ## Final Draft Standards Approval
 
@@ -18,7 +16,7 @@ Note that everyone has until May 1st to review the document for patent issues.
 
 AWB: objected that the current standard language is sufficient
 
-SG: *objected to AWB's objection and clarified the issue*
+SYG: *objected to AWB's objection and clarified the issue*
 
     
 
@@ -26,7 +24,7 @@ BT: The sec says the implementation must release any transient resource associat
 
 AWB: if the current function is a cross realm call. so it's return has extra state to handle the return. ... people don't follow so he goes to draw a picture...
 
-SG: do you think it is spec compliant if two mutually recursive functions doing tail calls across a realm boundary caused the stack to continue to grow with each call?
+SYG: do you think it is spec compliant if two mutually recursive functions doing tail calls across a realm boundary caused the stack to continue to grow with each call?
 
 AWB: No
 
@@ -119,11 +117,11 @@ MM: JS is unique in the span of programmers it tries to accommodate. In the abse
 
 MS: To me, it seems more intuitive to opt out of tail calls than to opt in.
 
-SG: I agree with Mark's intuition that this is not what programmers expect. TCO is not a time optimization. Because of various parts of implementation complexity, at best it could be a time savings, but it is not an 
+SYG: I agree with Mark's intuition that this is not what programmers expect. TCO is not a time optimization. Because of various parts of implementation complexity, at best it could be a time savings, but it is not an 
 
 MS: TCO lets us omit popping the stack and running epilogue code. And if I use less stack space, we touch less memory and are more cache friendly
 
-SG: I think most cases of accidental opt-in are not loops, and are simply function calls.
+SYG: I think most cases of accidental opt-in are not loops, and are simply function calls.
 
 MS: Performance benefits of tail calls: If you reuse a frame, you'll likely do less writes to a frame. Likely some things will already be valid there, and you're writing to the same cache lines.
 
@@ -167,7 +165,7 @@ EF: FWIW when I discussed this with Dave, he found the devtools argument compell
 
 AWB: So is the first, performance issue important enough?
 
-SG: I see these (perf, debugging) as the same issue, in that an explicit opt-in solves more issues than an explicit opt-out.
+SYG: I see these (perf, debugging) as the same issue, in that an explicit opt-in solves more issues than an explicit opt-out.
 
 MS: The issue about what Mark said earlier, in an eloquent way, about the quality of JavaScript programmers, is relevant because it's a compiler trick to give better performance
 
@@ -475,7 +473,7 @@ DT: Let's cut this off and make it an issue.
 
 DT: It's important that makeWeakRef is replaceable with something that has reproducible, deterministic behavior, e.g. for testing
 
-SG: How does the "Unintended retention mitigated" slide prevent bad programmer behavior?
+SYG: How does the "Unintended retention mitigated" slide prevent bad programmer behavior?
 
 DT: It throws an error
 
@@ -497,7 +495,7 @@ KS: I'm not entirely sure that separating the holdings into a separate argument,
 
 DT: You could have a lint rule, though: holdings provides a pattern for doing the right thing.
 
-SG: What if you 'yield' after calling weakRef.get()?
+SYG: What if you 'yield' after calling weakRef.get()?
 
 MM: That's up to the consumer of the generator: you have to assume that state may change between yield points.
 
@@ -585,7 +583,7 @@ DH: The problem is that this can't be polyfilled, so there's no good way to get 
 
 DE: Node has a weak reference API that can provide some of the same functionality which might provide code to use for this purpose.
 
-SG: What if you had an implementation that changed the weak ref to null at some point during the execution?
+SYG: What if you had an implementation that changed the weak ref to null at some point during the execution?
 
 DT: You couldn't do that, since the object might still be reachable.
 
@@ -631,7 +629,7 @@ DT: Would one of the implementers to volunteer to implement this?
 
 DE: You could use Node, which already has a weak reference implementation.
 
-SG: I would volunteer to help one of the champions prototype this in our engine
+SYG: I would volunteer to help one of the champions prototype this in our engine
 
 AWB: This needs debate, and it needs implementation experience.
 

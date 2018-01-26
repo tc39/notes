@@ -1,6 +1,6 @@
-# Sept 27 2016 Meeting Notes
+# September 27, 2016 Meeting Notes
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Dean Tribble (DT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SB), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Mikeal Rogers (MRS), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), James Snell (JSL), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Brendan Eich (BE)
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Dean Tribble (DT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SB), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Mikeal Rogers (MRS), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), James Snell (JSL), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Brendan Eich (BE)
 
 
 (I need the list when it's complete)
@@ -189,14 +189,14 @@ DE: formatToParts has been removed from draft due to missing implementation. The
 
 (Leo Balter)
 
-LB: Small updates, harness, etc. I would like some help on reviewing test262 patches and writing tests, as I don't have enough time for everything.
+LBR: Small updates, harness, etc. I would like some help on reviewing test262 patches and writing tests, as I don't have enough time for everything.
 
 BT: If used node harness in the past and didn't like it, try it again!
 - host specific stuff separated
 - 
 
 
-LB: Need to work on update for TR104
+LBR: Need to work on update for TR104
 
 DE: Were we going to retract this document?
 
@@ -204,7 +204,7 @@ AWB: This document is informatively referenced by ECMA 414; Istvan was suggestin
 Istvan Sebestyen (sitting in CH...): No, that was a mistake on my side... Sorry... I wanted to keep the original TR number (but 2nd Edition), which I think it is TR/104? I do not have the Ecma TR list in front of me....  
 
 
-LB: Need to arrange further Test262 work
+LBR: Need to arrange further Test262 work
 
 
 (discussion, re: agenda ordering, etc)

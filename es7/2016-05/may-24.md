@@ -1,8 +1,6 @@
-May 24th 2016 Meeting Notes
+# May 24, 2016 Meeting Notes
 
-## Attendees
-
-Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Jeff Morrison (JM), Louis Lafreniere (LL, via Hangouts, part-time), Dean Tribble (DT, via Hangouts, part-time)
+Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Jeff Morrison (JM), Louis Lafreniere (LL, via Hangouts, part-time), Dean Tribble (DT, via Hangouts, part-time)
 
 In the morning we've had 22 Face-to-face participants but Hangouts is not switched on yet.
 
@@ -267,7 +265,7 @@ BT: Our x64 implementation can't grow our stack frames due to the Windows ABI. P
 
 LL: The main thing on perf is the only case it could be a perf win is tail recursive case, in all others we have to check a call is a jump to a function with a jump to callback(?) need a test at the bottom for parameter count. In terms of stack space, if calling out with same number or less then fine, but more will cause break, no way to change return address of caller , breaks unwinding mechanism of window. Rely heavily for excp handling , stack locks(?), telemetry etc.
 
-SG: is it the windows stack unwinder? The stack that is outside the scope of JS?
+SYG: is it the windows stack unwinder? The stack that is outside the scope of JS?
 
 LL: Yes, windows stack walker, we follow the ABI for telemetry, the windows stack walker. There's also downsides in code size, because we don't know # parameters, we have to handle this every time there's a tail call.
 
@@ -287,11 +285,11 @@ MM: if there is no asymptot that is approached, it is not compliant.
 
 MS: Log growth is not spec compliant, but not useful for the sorts of programs this is intended.
 
-SG: for the spec, there is no such thing as half compliance.
+SYG: for the spec, there is no such thing as half compliance.
 
 DH: has a programmer, are you going to use these features that sometimes work, or will you fall back to a loop?
 
-SG: It is useless to talk about anything with space, the spec assumes infinite stack space, is this a well defined spec question?
+SYG: It is useless to talk about anything with space, the spec assumes infinite stack space, is this a well defined spec question?
 
 DH: Perfect is the enemy of the good. Literature on this requires a complete cost model with a lots of complex formal semantics detail. We don't want this in ecma262, too complex. We can specify this morally. We don't have to be mathematical here.
 
@@ -306,7 +304,7 @@ ARB: Those space gurantees don't apply to the general case.
 YK: Once  I notice I have unbounded input, I do a data structure version of the same problem. In all cases, I do know the cost model. I do not understand the cost model of PTC.
 
 DE: We heard last tinme that tail calls are hard to implement from SG and Eric, this would be good to recap. (Cross-realm)
-SG: we reached consensus on this
+SYG: we reached consensus on this
 
 MS: A cross realm growth for the stack is fine.
 
@@ -584,7 +582,7 @@ YK: Are we adding more cases to when frames are elided. It is not speculative th
 
 BT: F# has tail call. You can deploy F# to windows store. There is an app insights tool that does telemetry, and that was impacted by F# apps. The solution was to say that you don't get stack traces for these tail call using apps.
 
-SG: Do people who put apps on the app store always opt for the telemetry? Or is this thing just that exists?
+SYG: Do people who put apps on the app store always opt for the telemetry? Or is this thing just that exists?
 
 BT: We have sufficient evidence that telemetry is impacted by eliding frames.
 
@@ -744,7 +742,7 @@ MS: The point about STC, the user wants it but I can't do it, do I throw an exce
 
 FST: If someone wrote a module loader with each module in its own realm. This would impose problems.
 
-SG: what things do not work cross realms?
+SYG: what things do not work cross realms?
 
 MM: For identity of continuity, I would like cross realms to be as little surprising as possible.
 

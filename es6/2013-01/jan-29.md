@@ -52,7 +52,8 @@ JN summarizes as part of 4.16 discussion
 ## November 2012 Minutes Approved
 
 ## 4.16 Spec Status Update
-(Presented by Allen Wirfs-Brock)
+
+(Allen Wirfs-Brock)
 
 AWB: Revisits Nov 22, http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts
 
@@ -158,7 +159,8 @@ BE: Let's get back to this with Mark present and come to a conclusion.
 
 
 ## 4.1 is/isnt operators
-(Presented by Allen Wirfs-Brock)
+
+(Allen Wirfs-Brock)
 http://wiki.ecmascript.org/doku.php?id=harmony:egal
 
 AWB: The plan of record on the wiki is that there is an "is" and "isnt" operator. There are various discussions on the mailing list that refer to this, but also to Object.is and Object.isnt. We need a _final_ decision on the operator form.
@@ -351,7 +353,8 @@ Consensus that `__define(G|S)etter__`, `__lookup(G|S)etter__` will not be standa
 
 
 ## 4.8 Refactored new operator and the @@create method
-(Presented by Allen Wirfs-Brock)
+
+(Allen Wirfs-Brock)
 
 Slides (pdf): http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting_jan_29_2013&cache=cache&media=meetings:subclassing_builtins.pdf
 
@@ -694,7 +697,8 @@ AWB: Yes.
 
 
 ## 4.10 Data collection/analysis: Function-in-block, duplicate parameter names, const, strict mode, var let/let[x]=1, and maybe more
-(Presented by Brian Terlson)
+
+(Brian Terlson)
 
 Slides (pdf): http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting_jan_29_2013&cache=cache&media=meetings:real-world-js-code.pdf
 

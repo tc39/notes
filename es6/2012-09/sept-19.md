@@ -5,8 +5,9 @@ John Neumann (JN), Mark Miller (MM), Norbert Lindenberg (NL), Nebojsa Ciric (NC)
 
 Recap of Sept 18th notes.
 
-# Proxy
-(Presented by Tom Van Cutsem, Free University of Brussels)
+## Proxy
+
+(Tom Van Cutsem, Free University of Brussels)
 
 ## Enumerate Traps Return Types
 
@@ -14,7 +15,7 @@ TVC: change return type of enumerate() trap from array-of-string to iterator. Re
 
 #### Conclusion/Resolution
 
-Drop the duplicate property check. enumerate() trap returns iterator.
+- Drop the duplicate property check. enumerate() trap returns iterator.
 
 ## Revokable Proxies
 
@@ -249,8 +250,9 @@ Needs to be designed, as part of the whitelist feature's needs.
 SpiderMonkey tracking bug: https://bugzilla.mozilla.org/show_bug.cgi?id=792439
 
 
-# Syntactic Support for Private Names
-(Presented by Allen Wirfs-Brock, Mozilla)
+## Syntactic Support for Private Names
+
+(Allen Wirfs-Brock, Mozilla)
 
 Slides: https://members.ecma-international.org/get.php?group=TC39&file=2012_sub_tc39-2012-066.pdf
 
@@ -510,8 +512,9 @@ Deferred to separate proposal:
 
 
 
-# Renaming Name to Symbol
-(Presented by Dave Herman, Mozilla)
+## Renaming Name to Symbol
+
+(Dave Herman, Mozilla)
 
 YK: A little nervous that not identical to Lisp
 
@@ -527,8 +530,9 @@ ie. `public @foo;` vs `symbol @foo;` vs `unique @foo;`
 
 
 
-# Early Errors That Possibly Should Not Be
-(Presented by Luke Hoban, Microsoft)
+## Early Errors That Possibly Should Not Be
+
+(Luke Hoban, Microsoft)
 
 LH: Concerns about detecting assignment to constants. Want to just parse, not build name environments, parse trees, etc.
 
@@ -579,12 +583,14 @@ Strict mode implementation
 
 
 #### Conclusion/Resolution
+
 - es-discuss will get a list of all early errors that should not be
 
 
 
-# Performance Costs of Temporal Dead Zone
-(Presented by Luke Hoban, Microsoft)
+## Performance Costs of Temporal Dead Zone
+
+(Luke Hoban, Microsoft)
 
 https://mail.mozilla.org/pipermail/es-discuss/2012-September/024993.html
 
@@ -617,7 +623,7 @@ MM: (countering the "not common enough" argument) Presented personal experiences
 - Get more data, report back
 
 
-# Global Scope Revisit
+## Global Scope Revisit
 
 YK: Still not in agreement with discussion yesterday, but not blocking the
 
@@ -796,8 +802,9 @@ Agreed on the AWB/MM/WH alternative model
 
 
 
-# Test 262
-(Presented by Istvan Sebastian, ECMA)
+## Test 262
+
+(Istvan Sebastian, ECMA)
 
 IS: Someone needs to update the site with the latest version of the test suite in zip file format.
 
@@ -806,11 +813,12 @@ LH/RW/AWB: Needs to be an automated process, if that's possible within the scope
 IS: Needs archival snapshots. The standards body is still a classic style standards organization that needs to abide its rules and policies.
 
 #### Conclusion/Resolution
-Bill Ticehurst to produce recommendation for the automated archival of test 262 at arbitrary states, as needed.
+
+- Bill Ticehurst to produce recommendation for the automated archival of test 262 at arbitrary states, as needed.
 Rick Waldron volunteers to assist as necessary.
 
 
-# Create Archival Utility for ECMA Wiki
+## Create Archival Utility for ECMA Wiki
 
 2012-10-31: `wget -r -l 0 http://wiki.ecmascript.org/`
 

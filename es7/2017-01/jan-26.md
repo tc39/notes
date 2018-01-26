@@ -1,6 +1,6 @@
 # January 26, 2017 Meeting Notes
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FH), Anna Henningsen (AH), John Lenz (JL), Sebastian Markbage (SM), Bradley Farias (BF), Jeff Morrison (JM), Tyler Kellen (TK), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Gabriel Isenberg (GI), Bert Belder (BB), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Istvan Sebestyen (IS), Keith Miller (KM), Myles Borins (MBS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbage (SM), Bradley Farias (BF), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Istvan Sebestyen (IS), Keith Miller (KM), Myles Borins (MBS)
 
 ## Looking at the proposal list
 
@@ -86,11 +86,11 @@ DH: Jordan is doing really important work and I think we should acknowldge that
 
 AWB: Can we put that in the minutes?
 
-TK: Getting it all
+TKN: Getting it all
 
 DH: Thanks Tyler
 
-JL: So are we going to remove more things from the main proposals list?
+JLZ: So are we going to remove more things from the main proposals list?
 
 DH: What I am hearing is an emerging consensus around proposals into some separate file that...
 
@@ -122,7 +122,7 @@ DH: If something is removed, we should remove it....
 
 AK: I don't think we need to cull the deferred list.
 
-TK: It's the backlog
+TKN: It's the backlog
 
 DH: I officially have no opinion anymore
 
@@ -290,7 +290,7 @@ JHD: but the do doesn't catch it right?
 
 DH: Correct, it just propagates them
 
-TK: So i think we are over our timebox. I think the original idea behind this was to get to stage 1. It seems clear it's worth taking the time since we're already doing that, maybe we should just move on.
+TKN: So i think we are over our timebox. I think the original idea behind this was to get to stage 1. It seems clear it's worth taking the time since we're already doing that, maybe we should just move on.
 
 KG: One more thing, async do is really interesting idea. It would be worth making sure there can be symmetry. Nonexceptional control flow makes no sense in an async do context. An await 0 and a continue the loop the do expression is in the loop has already exited. E.g.
 
@@ -660,7 +660,7 @@ AK: I don't think it's likely that the web would do that.
 
 DH: We have restricted privilege in JavaScript, so it makes sense to separate this.
 
-JL: It seems like this privilege doesn't correspond to what users would think.
+JLZ: It seems like this privilege doesn't correspond to what users would think.
 
 AWB: It seems strange to say SuperPrivilegedObject.global--who'd want to say that
 
@@ -1036,7 +1036,7 @@ DH: The other part that might be helpful.
 
 CM: This kind of ties with what Jeff said. I'm concerned about our awareness of what users think. We have an availabililty bias by talking on github. Are the typical JavaScript developers even aware of Set and Define.
 
-TK/MPT: No
+TKN/MPT: No
 
 CM: I would submit people think it is a Set and end of discussion
 
@@ -1080,7 +1080,7 @@ DH: maybe the problem is that nobody ever uses setters
 
 DE: We have them all over the place
 
-JL: it doesn't come up in practice much
+JLZ: it doesn't come up in practice much
 
 DH: What I mean is more, look at real code and see... put yourself in the position of the person writing the code and imagine refactoring scenarios. Put yourself directly in the drivers seat of the code.
 

@@ -1,8 +1,6 @@
-March 30th 2016 Meeting Notes
+# March 30, 2016 Meeting Notes
 
-## Attendees
-
-Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson (BNN), JF Bastien (JFB), Joe Lencioni, Sebastian Markbage, Jeff Morrison, Kevin Smith (KS), Jafar Husain (JH), Lars Hansen (LHN), Saam Barati, Keith Miller, Michael Saboff, Eric Ferraiuolo (EF),Eric Faust (FST), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SG), Tim Disney, Waldemar Horwat (WH), Bert Belder, Peter Jensen, Daniel Ehrenberg (DE), Caridy Patiño, Diego Ferreiro Val, Jean Fraucois Paradis, Shelby Hubick, Leo Balter (LB), Misko Hevery, Allen Wirfs-Brock (AWB), Kevin Gibbons (KG)
+Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson (BNN), JF Bastien (JFB), Joe Lencioni (JLI), Sebastian Markbage (SM), Jeff Morrison (JM), Kevin Smith (KS), Jafar Husain (JH), Lars Hansen (LHN), Saam Barati (SBI), Keith Miller (KM), Michael Saboff (MS), Eric Ferraiuolo (EF), Eric Faust (FST), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SYG), Tim Disney (TD), Waldemar Horwat (WH), Bert Belder (BBR), Peter Jensen (PJ), Daniel Ehrenberg (DE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Jean Fraucois Paradis (JFP), Shelby Hubick (SHK), Leo Balter (LBR), Misko Hevery (MHY), Allen Wirfs-Brock (AWB), Kevin Gibbons (KG)
 
 ## Length argument normalization for TypedArrays, ArrayBuffer and DataView constructors
 
@@ -14,13 +12,13 @@ DD: Current implementation status seems like the best guide here
 
 DE: But there might be things we could tighten down, and things we can't (like requiring integer indices)
 
-LB: Do you want to see more work at this meeting?
+LBR: Do you want to see more work at this meeting?
 
 AWB: Doing it on a github issue might be sufficient, the important thing is to think deeply about the issues
 
 #### Conclusion/resolution
 
-LB: to work out details on a github issue.
+LBR: to work out details on a github issue.
 
 ## Duplicate sloppy mode function in block web compatibility fix
 

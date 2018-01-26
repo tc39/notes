@@ -1,6 +1,6 @@
-# Sept 29 2016 Meeting Notes
+# September 29, 2016 Meeting Notes
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Dean Tribble (DT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SB), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Jacob Groundwater (JGR), Adam Klein (AK), Istvan Sebestyen (IST), Tom Van Cutsem (TVC), Istvan Sebestyen (partly, via Hangouts), Claude Pache (CP), James Kyle
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Dean Tribble (DT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SB), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Jacob Groundwater (JGR), Adam Klein (AK), Istvan Sebestyen (IST), Tom Van Cutsem (TVC), Istvan Sebestyen (partly, via Hangouts), Claude Pache (CPE), James Kyle (JK)
 
 Istvan Sebestyen: The audio is very bad, unfortunately. ... Maybe I better write....
 Regarding the 2017 European meeting tell me when should it be. In March it would probably be cheaper. Also still skiing would be possible after or before the meeting if someone cares for that.
@@ -367,7 +367,7 @@ Netflix: Yes
 Tilde: Yes
 Airbnb: Yes
 
-Next: ok to delegate TR104 updating to AWB and LB?
+Next: ok to delegate TR104 updating to AWB and LBR?
 
 YES
 
@@ -805,7 +805,7 @@ BT: Nothing missing, no major concerns
 https://github.com/leobalter/proposal-setmap-offrom
 
 
-LB: Adding `of` and `from` to `Map`, `Set`, `WeakMap` & `WeakSet`
+LBR: Adding `of` and `from` to `Map`, `Set`, `WeakMap` & `WeakSet`
 
 - Provide collection creation symmetry with Array
 
@@ -834,7 +834,7 @@ KG: insane not to provide a way to make the collection without forcing the brack
 
 AK: Other evidence from the wild about demand? Is there a widely used library for this?
 
-LB: When working on test262 tests, we needed many tests for the constructor taking iterables of iterables.
+LBR: When working on test262 tests, we needed many tests for the constructor taking iterables of iterables.
 
 JH: Any polymorphism involved?
 

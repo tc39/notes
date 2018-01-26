@@ -147,12 +147,12 @@ MM: Goals: minimal semantic pollution, while matching web reality as closely
 
 https://tc39.github.io/proposal-Math.signbit/Math.signbit.html
 
-KMR: propose a signbit function that will behave as a signbit function should
+KM: propose a signbit function that will behave as a signbit function should
 - The existing Math.sign gives results that are unexpected
 
 WH: I disagree with how it's presented, but don't disagree with the feature
 
-KMR: 
+KM: 
     
 https://tc39.github.io/proposal-Math.signbit/Math.signbit.html#sign
 
@@ -164,7 +164,7 @@ https://tc39.github.io/proposal-Math.signbit/Math.signbit.html#sign
 WH/MM: Why is Math.sign inadequate? Why would you like to get this information?
 
 
-KMR: want to do low level operations that require the signbit
+KM: want to do low level operations that require the signbit
 
 RW: I spend a lot of time writing bit shifting operations to determine sign of values assembled from 8 bit, looking for signs. 
 (After revisiting real driver code, and further discussion re: this is about the IEEE754 double precision sign bit, I retract this use case evidence. Determining signbit for these cases would require knowing the number of bits the value should be clamped to). 
@@ -181,11 +181,11 @@ YK: There may be cases that exist that can be satisfied with this operation in o
 
 MM echoes: let's take a look at other languages.
 
-KMR: There are many results for signbit in Apple codebase
+KM: There are many results for signbit in Apple codebase
 
 WH: How many of them are bugs?
 
-KMR: Need to answer these questions: 
+KM: Need to answer these questions: 
 
 https://tc39.github.io/proposal-Math.signbit/Math.signbit.html#alts
 
@@ -235,7 +235,7 @@ AWB: Looking for an additional implementor for Stage 4
 
 SYG: Does Firefox count?
 
-KMR: Michael Saboff is on board, as in: "supports the idea"
+KM: Michael Saboff is on board, as in: "supports the idea"
 
 #### Conclusion/Resolution
 
@@ -429,7 +429,7 @@ LBR: A polyfill exists, but not efficient
 AWB: If the concern is memory compactness, not performance, and there are no operations... add extra zeroes?
 - Can produce a memory buffer containing Float 16s...missed
 
-KMR: is it a matter of costing X times as much in software?
+KM: is it a matter of costing X times as much in software?
 
 DE/SM: Already supported in webgl... serving hardware that can only use half-floats in a render target... passing data through, computational format use cases. Best way to get the most amount of bits through the process. 
 
@@ -461,7 +461,7 @@ DH: Can pass along to them to find need.
 
 https://github.com/tc39/ecma262/issues/915
 
-KMR: (walking through the issue linked above)
+KM: (walking through the issue linked above)
 
 The simplest example: 
     
@@ -497,7 +497,7 @@ BN: Does that work for `{ a, ...{ b, c }}`?
 
 SM: We would specify that case separately, so we would not create the iterator AWB proposed.
 
-KMR: We could say it's disallowed to write `...[` for now, then design the behavior later.
+KM: We could say it's disallowed to write `...[` for now, then design the behavior later.
 
 HZ: `...[` used to be a syntax error in Babel in 6.0, but we changed it to be allowed in 7.0 (still alpha) so we can make a patch.
 
@@ -602,7 +602,7 @@ DH: Strong "EWM" (Extensible Web Manifesto) story... service worker hook vs. new
 
 WH: What does SRI stand for?
 
-SS/KMR: "Subresource Integrity" (see: https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
+SS/KM: "Subresource Integrity" (see: https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
 
 
 DD: sharing feedback from team

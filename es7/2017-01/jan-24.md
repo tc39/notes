@@ -1,6 +1,6 @@
 # January 24, 2017 Meeting Notes
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FH), Anna Henningsen (AH), John Lenz (JL), Sebastian Markbage (SM), Bradley Farias (BF), Jeff Morrison (JM), Tyler Kellen (TK), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Gabriel Isenberg (GI), Bert Belder (BB), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Mathias Bynens (MB), Leo Balter (LB), Istvan Sebestyen (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbage (SM), Bradley Farias (BF), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Gabriel Isenberg (GI), Bert Belder (BB), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Mathias Bynens (MB), Leo Balter (LB), Istvan Sebestyen (IS)
 
 ## Adopting the agenda
 
@@ -335,7 +335,7 @@ AWB: If the primary issue is user confusion, give them a paragraph of text
 
 DH: I'm not sure that's accurate. It doesn't matter what the error message said, It's that they got the error after the super ran and din't know ecma backwards and forwards. Nobody should be expected to memorize these semantics. Their experience was the constructor ran, but i got an error saying it couldn't run. It's one of those up is down kind of experiences where you question yoru grasp of basic logic. It doesn't matter what the error messages says, the confusion you draw is that you are both running and not running this
 
-JL: I think you could word it properly, this rebinding attempt, this or that
+JLZ: I think you could word it properly, this rebinding attempt, this or that
 
 DH: That's true, I guess you could say you could make it clear that wafter we ran it a second time we realized we ran it a second time
 
@@ -754,7 +754,7 @@ AK: Okay, i'm 3x my timebox!
 
 - [slides](https://docs.google.com/presentation/d/11O_wIBBbZgE1bMVRJI8kGnmC6dWCBOwutbN9SWOK0fU/view#slide=id.p)
 
-GI: I'm Gabriel Isenberg, here to talk about null propagation operator. This proposal is also know as "elvis operator" ?.
+GI: I'm Gabriel Isenberg, here to talk about null propagation operator. This proposal is also know as "existential operator" ?.
 
 All: having a hard time reading the screen
 
@@ -774,13 +774,13 @@ BT: I'd support this
 
 DH: It's not an accident that this is in high demand is that most applications read data that comes in from a dynamic source. Very often you can't predict statically whether all the pieces will be there. Maybe the data is ill formed, or you have a format with multiple options. Either way, this need to dynamically dig into nested structure happens all the time.
 
-TK: This pattern has been in every application I've ever written, all over the place.
+TKN: This pattern has been in every application I've ever written, all over the place.
 
-JL: I think this is needed, but it shouldn't be the only place it's added (support for brackets, calls, etc)., as Claude Pache's proposal does. We should also avoid encouraging ||
+JLZ: I think this is needed, but it shouldn't be the only place it's added (support for brackets, calls, etc)., as Claude Pache's proposal does. We should also avoid encouraging ||
 
 DH: There is an important sense for which this ties into the specific semantics of this operator. How does this operator treat falsy values. If we want a cohesive overall story. None of that is a stage 1 concern.
 
-JL: Before we finalize it, even before we, we should consider additional operators. 
+JLZ: Before we finalize it, even before we, we should consider additional operators. 
 
 AWB: Relevant to stage one is what are we making stage 1? Is it just this operator? Or is it the general problem dealing with accessing and invoking properties. Is it the dot operator, is it new? The scope of this item should be large enough to explore this space.
 
@@ -806,7 +806,7 @@ WH: I like the proposal, but the free grouping section seems odd. From the docum
 
 I understand how that came about but I don't think that parentheses-overriding weirdness should be included.
 
-JL: I'm not sold on the weird short circuiting.
+JLZ: I'm not sold on the weird short circuiting.
 
 DH: I'm not sure the call case is so important.
 
@@ -840,11 +840,11 @@ WH: ?.( is not a syntax issue. I don't think you should be calling functions on 
 
 AWB: Isn't that your classic, "I want to call this method if it is there?"
 
-JL: I agree that the .? or whatever syntax we use, the property accessors we use are the most valuable. The rest of them seem like they have reasonable alternatives. 
+JLZ: I agree that the .? or whatever syntax we use, the property accessors we use are the most valuable. The rest of them seem like they have reasonable alternatives. 
 
 DH: To my mind, when you're adding syntax to the language it's for the most common idioms that you're trying to bless with the most concise notation. That you might ever want to say something is not the bar, it's that it's very common and idiomatic. I could be convinced otherwise, but pulling out a function from something that might not be there is much much less common than accessing a piece of data. In the cases where you might need to access a function you can handle using the existing && syntax but accessing field data is so common that we want concise syntax.
 
-JL: My motivation for the call was basically lots of setter/getter chains (getFoo()/setFoo(), not actually accessors). Maybe i should put together an example.
+JLZ: My motivation for the call was basically lots of setter/getter chains (getFoo()/setFoo(), not actually accessors). Maybe i should put together an example.
 
 MM: Concerned about semantics like `a?.b.c().d`, where the first "?" changes the meaning of all subsequent operators such as the  () and . attached to c and d. In this example c and d don't have ? operators and it's surprising to find out that, for example, c might not be called.
 
@@ -1209,7 +1209,7 @@ SYB: We have consensus that it is a bug. We want it to print x and we may need a
 
 MF: The small mechanics around it can be resolved in a PR
 
-JL: Random question. There are no bugs around global properties here, right? So what, if you have window.f, what happens?
+JLZ: Random question. There are no bugs around global properties here, right? So what, if you have window.f, what happens?
 
 SYG: I think the same thing happens. Properties of window are just like "var f" in the global scope
 

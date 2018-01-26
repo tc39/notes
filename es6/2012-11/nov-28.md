@@ -3,7 +3,7 @@
 John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Luke Hoban (LH), Rick Waldron (RW), Eric Ferraiuolo (EF), Doug Crockford (DC), Yehuda Katz (YK), Erik Arvidsson (EA), Mark Miller (MM), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Istvan Sebastian (IS), Andreas Rossberg (ARB), Brendan Eich (BE), Alex Russel (AR)
 
 
-# Syntactic Support for Private Names
+## Syntactic Support for Private Names
 
 BE/LH: Concern that the syntax required too much declaration
 
@@ -423,8 +423,11 @@ In this context, within the square brackets: AssignmentExpression
 (Re: Symbol constructor binding: http://wiki.ecmascript.org/doku.php?id=harmony:modules_standard)
 
 
-# Experience With TypeScript
-Presented by Luke Hoban (slides at http://sdrv.ms/W21q9e)
+## Experience With TypeScript
+
+(Luke Hoban)
+
+- [slides](http://sdrv.ms/W21q9e)
 
 Findings...
 **Classes: Statics**
@@ -513,8 +516,9 @@ foo();
 Mixed discussion about the history of async discussion through generators, promises, Q.async
 
 
-# Modules Update
-Presented by Dave Herman
+## Modules Update
+
+(Dave Herman)
 
 (whiteboard)
 ```js

@@ -1,6 +1,6 @@
-# July 26 2016 Meeting Notes 
+# July 26, 2016 Meeting Notes 
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Rick Waldron (RW), Stefan Penner (SP), Jonathan Sampson (JS), Caridy Patiño (CP), Sam Tobin-Hochstadt (STH), John Buchanan (JB), Kevin Gibbons (KG), Lars Hansen (LHN), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Kris Gray (KSG), Adam Klein (AK), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SB), Kris Gray (KGY), John-David Dalton (JDD), Ben Newman (BN)
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Rick Waldron (RW), Stefan Penner (SP), Jonathan Sampson (JSN), Caridy Patiño (CP), Sam Tobin-Hochstadt (STH), John Buchanan (JB), Kevin Gibbons (KG), Lars Hansen (LHN), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Kris Gray (KSG), Adam Klein (AK), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SB), Kris Gray (KGY), John-David Dalton (JDD), Ben Newman (BN)
 
 (I need the list when it's complete)
 
@@ -173,7 +173,7 @@ BT: Champions responsible
 
 ## 7. Ecma 402 Status Update
 
-Caridy Patiño
+(Caridy Patiño)
 
 
 No updates
@@ -181,9 +181,9 @@ No updates
 
 ## 8. Test262 Update Revisit
 
-Leo Balter
+(Leo Balter)
 
-LB: Bocoup has just wrapped project delivering coverage for ES2015
+LBR: Bocoup has just wrapped project delivering coverage for ES2015
 
 - Iterating on feedback from other members
 - Moving forward on ES2016 tests
@@ -195,7 +195,7 @@ DE: Work to be done on test262 presence
 
 - Spoke with Kangax about including test262 in the compat table sites
 
-LB: More visibility for test262
+LBR: More visibility for test262
 
 TC: Need help with reviewing contributions
 
@@ -226,9 +226,9 @@ SP: Block merge?
 
 ## 9.i.a Reintroduce for-in-initializer 
 
-Kevin Gibbons
+(Kevin Gibbons)
 
-Slides: https://docs.google.com/presentation/d/19LVVdCHfokJWQnNvkyu8M2vdpMAz8yIE1wB8yK7hLB4/edit#slide=id.gc6f980f91_0_0Slides: 
+Slides: https://docs.google.com/presentation/d/19LVVdCHfokJWQnNvkyu8M2vdpMAz8yIE1wB8yK7hLBR4/edit#slide=id.gc6f980f91_0_0Slides: 
 
 KG: V8, SM, JSC implemented and later reverted. Chakra did not implement
 
@@ -263,7 +263,7 @@ Generally, no.
 
 ## 9.i.b Update on Async Iteration
 
-Domenic Denicola
+(Domenic Denicola)
 
 (No slides)
 
@@ -278,7 +278,7 @@ AWB: Going back to the previous topic, Kevin, could you please share a PDF on th
 
 ## 9.i.e Trailing commas in functions 
 
-Jeff Morrison
+(Jeff Morrison)
 
 JM: It's implemented in two browsers (JSC, Edge)
 
@@ -301,7 +301,7 @@ WH: I don't object to advancing this to stage 4, but I'm sad to see this in the 
 
 ## 9.i.f Unify String and Array maximum lengths
 
-Michael Saboff
+(Michael Saboff)
 
 MS: Unify the length of strings and arrays. Strings are 2^53-1, Arrays are 2^32-1 indexed elements. A few APIs cross over. Really, browsers are all 2^31 or less. I don't care which way we go, but I'd like Strings and Arrays to be unified.  Maybe we should delay this a little until we figure out how to make Arrays bigger; I originally proposed reducing everything to 2^32-1
 
@@ -372,7 +372,7 @@ MS: This isn't a hill for me to die on; i think it's something we should address
 
 ## 9.i.h Standardize Date.UTC when called with < 2 arguments
 
-Brian Terlson
+(Brian Terlson)
 
 BT: All implementations except Edge return NaN for Date.UTC for < 2 arguments, but Edge treats those missing arguments as 0.
 
@@ -449,7 +449,7 @@ AWB: The Date constructor has an overload for one argument, so it can't treat th
 
 ## 9.i.d Revisiting NaN
 
-Daniel Ehrenberg
+(Daniel Ehrenberg)
 
 https://github.com/tc39/ecma262/issues/635
 
@@ -533,7 +533,7 @@ DH: Some predictable behavior that has changed over the years and some implement
 
 ## 9.ii.a Object.getOwnPropertyDescriptors: when a Proxy returns an undefined descriptor?
 
-Jordan Harband
+(Jordan Harband)
 
 JHD: Any non-proxy, call built-in op claims foo in object, call Object.getOwnPropertyDescriptor(foo, "prop"), you get that property descriptor. Proxy can lie, which is problematic when passing the returned value from `Object.getOwnPropertyDescriptors(...)`
 
@@ -563,9 +563,9 @@ JHD: Implementors are aware and following progress
 
 ## 9.ii.b Object.enumerable{Keys,Values,Entries} 
 
-Leo Balter & John-David Dalton
+(Leo Balter & John-David Dalton)
 
-LB: Discussing https://github.com/leobalter/object-enumerables
+LBR: Discussing https://github.com/leobalter/object-enumerables
     
 JDD: No built-in API that allows getting own and inherited properties
     
@@ -629,7 +629,7 @@ MM: I don't think this is going to get consensus
 
 ## 9.ii.c RegExp Unicode Property Escapes
 
-Brian Terlson, Daniel Ehrenberg, Mathias Bynens
+(Brian Terlson, Daniel Ehrenberg, Mathias Bynens)
 
 https://github.com/mathiasbynens/es-regex-unicode-property-escapes
 
@@ -694,7 +694,7 @@ DE: Stage 1?
 
 ## 9.ii.d Async Functions for Stage 4
     
-Brian Terlson
+(Brian Terlson)
 
 
 BT: no updates, no changes
@@ -796,7 +796,8 @@ JHD: In the case of Promises, if you're returning a promise that you didn't crea
 Will revisit after discussing cancels more; hopefully reshuffle non-timeboxed agenda items to enable that to happen in this meeting.
 
 ## 9.ii.e Math extensions
-Rick Waldron
+
+(Rick Waldron)
 
 RW: There are some nasty npm modules for these sorts of math functions. This comes up in IoT, cool animations, etc.  We could add some more functions to the standard library. This stuff happens over and over and over again; typing things into consoles.
 

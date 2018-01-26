@@ -1,8 +1,6 @@
-May 23rd 2016 Meeting Notes
+# May 23, 2016 Meeting Notes
 
-## Attendees
-
-Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Yang Guo (YG)
+Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Yang Guo (YG)
 
 on Google Hangouts we've had some local Google folks: Michael Hablich, Yang Guo, Toon Verwaest, Daniel Clifford, Nikolas Papapyrou, Ben Titzer.
 
@@ -351,7 +349,7 @@ BT: Isn't it possible for this to come to a variable outcome?
 
 MS: I wrote this routine, and it's very hard to do it correctly determine the exact outcome. It required growing exponentially, then backing off, etc
 
-LB: After a lot of research, this was the best we found. It is not the happiest solution, but we couldn't find anything better. We just wanted to offer some form of tests on test262 for each feature of the spec, and that's what we did for tail call optimization. You already have to have a $PRINT function that implementations support, and this is similarly parameterized.
+LBR: After a lot of research, this was the best we found. It is not the happiest solution, but we couldn't find anything better. We just wanted to offer some form of tests on test262 for each feature of the spec, and that's what we did for tail call optimization. You already have to have a $PRINT function that implementations support, and this is similarly parameterized.
 
 BT: It's a pragmatic solution
 
@@ -463,17 +461,17 @@ No change in the spec for now; MS says Safari will likely ship their compat work
 
 (Leo Balter)
 
-LB: [_Presented bug comment showing behavior across browsers_]
+LBR: [_Presented bug comment showing behavior across browsers_]
 
 MM: What does n/a mean?
 
-LB: not providing that argument
+LBR: not providing that argument
 
 MS: JSC gives somewhat changed and more standards-compliant behavior for some cases listed here, more in line with all other implementations
 
 JHD: Seems like some of these have multiple browsers throwing, but your PR makes it not throw, in alignment with only V8. Why?
 
-LB: I'm trying to make a canonical approach
+LBR: I'm trying to make a canonical approach
 
 DE: We should consider web compatibility also for things that are not strictly at the intersection
 
@@ -481,29 +479,29 @@ YK: E.g., Mobile web
 
 MM: When there's no hard rule applicable, about intersection semantics, then we can rely on soft factors. Another factor here is consistency among approaches.
 
-LB: Some of the real motivation is also web compatibility. For example, throwing errors for things which are not integers, or some other things, which did not throw in any browser but throws in the spec.
+LBR: Some of the real motivation is also web compatibility. For example, throwing errors for things which are not integers, or some other things, which did not throw in any browser but throws in the spec.
 
 MM: Is a particular -0 value correct?
 
 BT: We have had some -0-related bugs in the past; not sure if this is that.
 
-LB: What I have here is a new abstract operation, ToIndex, to uniformly treat all of these arguments.
+LBR: What I have here is a new abstract operation, ToIndex, to uniformly treat all of these arguments.
 
-_MM, LB: Going through the details of the spec_
+_MM, LBR: Going through the details of the spec_
 
-LB: The new semantics for ToIndex are ToInteger, then check that it equals toLength of that (which asserts the range basically), allowing -0.
+LBR: The new semantics for ToIndex are ToInteger, then check that it equals toLength of that (which asserts the range basically), allowing -0.
 
 YK: Point of hesitation that in some cases, almost all browsers throw, but one browser does not throw and the resulting semantics do not throw.
 
 MM: Seems like this is representing the length, rather than the index
 
-LB: Sometimes, it represents an offset index, e.g., the TypedArray byteOffset argument has ToIndex applied to it. I've bikeshedded a lot of different names!
+LBR: Sometimes, it represents an offset index, e.g., the TypedArray byteOffset argument has ToIndex applied to it. I've bikeshedded a lot of different names!
 
 CM: Question: How does ToIndex differ from ToLength? Are there places where ToLength is used which don't go through this?
 
 JHD: There are many uses
 
-LB: Many cases use ToLength that I cannot apply this check for ToIndex to.
+LBR: Many cases use ToLength that I cannot apply this check for ToIndex to.
 
 DE: e.g., all of the Array methods
 
@@ -517,11 +515,11 @@ MM: Although I prefer errors to no errors, I prefer smaller specs to larger spec
 
 DE: I think Allen wanted to make TypedArrays as strict as possible. This PR seems like a good compromise.
 
-LB: It's also nice that we have stricter infinity behavior.
+LBR: It's also nice that we have stricter infinity behavior.
 
 MM: This sounds OK then
 
-LB: From TC39 philosophy, we could change later for throwing to not throwing, right?
+LBR: From TC39 philosophy, we could change later for throwing to not throwing, right?
 
 MM: Let's throw the error because want to throw the error
 
@@ -533,15 +531,15 @@ CM: Some of these things seem like weird cases that should throw an error, and s
 
 DE: One thing I really like about this proposal is how it's consistent between the different callsites. Some callsites cast to 0 in all browsers on NaN
 
-LB: I'm not totally stuck one way on NaN. Maybe we could throw. But I believe this proposal is the most consistent way. One historical reason Allen mentioned was to make it compatible with WebIDL. It's true that this is not exactly the same as WebIDL, but I also consulted with developers who use TypedArrays every day, and they liked this proposal.
+LBR: I'm not totally stuck one way on NaN. Maybe we could throw. But I believe this proposal is the most consistent way. One historical reason Allen mentioned was to make it compatible with WebIDL. It's true that this is not exactly the same as WebIDL, but I also consulted with developers who use TypedArrays every day, and they liked this proposal.
 
 MM: there are cases where it's an error to make a 0-length array?
 
-LB: I found all kinds of cases of inconsistencies here. This PR makes things more regular.
+LBR: I found all kinds of cases of inconsistencies here. This PR makes things more regular.
 
 MM: If the PR is adopted, then for all kinds of arrays, can you make zero-length arrays?
 
-LB: You will be able to create empty ArrayBuffers. TypedArrays may have additional checks.
+LBR: You will be able to create empty ArrayBuffers. TypedArrays may have additional checks.
 
 MM: any objections?
 

@@ -17,15 +17,15 @@ JN: Minutes from Sept 2012: Approved.
 
 Review and approval of agenda.  Labeled as rev42 will be sent to Patrick for publication.
 
-# ES6 feedback via TypeScript
+## ES6 feedback via TypeScript
 
 LH: Move TypeScript feedback update to later, as part of module discussion.
 
-# Review Proposals for inclusion in ES6
+## Review Proposals for inclusion in ES6
 
 JN/AWB: Discussion re: harmony:proposals page and status of listed items.
 
-# Spread Operation accepting Iterables
+## Spread Operation accepting Iterables
 
 RW: SpiderMonkey has implemented spread to accept iterables despite the resolution from July. Would like to revisit the resolution.
 
@@ -33,7 +33,7 @@ DH: The implementation was likely just a misunderstanding, will file a bug for t
 
 EA: Let's add to the agenda for further discussion.
 
-# Agenda Discussion
+## Agenda Discussion
 
 Missing agenda items re-added.
 
@@ -41,7 +41,7 @@ Missing agenda items re-added.
 
 Begin Technical discussion  as item 4 on agenda
 
-# Review of new draft spec
+## Review of new draft spec
 
 AWB: Summary of changes in recent spec. drafts, including:
 - Global declaration instantiation added, "global object + lexical scope" model.
@@ -210,14 +210,14 @@ AWB: The work is already done.
 
 ... Discussion.
 
-# Break.
+## Break.
 
-# Meeting Notes - Publish to wiki
+## Meeting Notes - Publish to wiki
 (side discussion, but valid to document)
 
 #### Conclusion/Resolution RW to publish meeting notes to ecma wiki (in addition to publishing on es-discuss and submission to ECMA)
 
-# Internationalization Update
+## Internationalization Update
 
 NL: (Summary of changes based on feedback) Spec document submitted to general assembly for approval. HTML version of the spec has been prepared, will be posted to ECMA site after GA approval. Demonstration of test402 (INTL spec testing) running on Firefox (special build, not in Mozilla repository yet).
 
@@ -354,7 +354,7 @@ JN: Despite potential operational changes from ECMA, let's move forward with thi
 TC39 Approves to move forward with 2.0. NL will submit slides to ECMA for minutes record.
 
 
-# String Normalization
+## String Normalization
 http://wiki.ecmascript.org/doku.php?id=strawman:unicode_normalization#add_normalize_method
 
 NL: AWB has removed a number of references to normalization from the current spec that did not reflect reality
@@ -383,7 +383,7 @@ Yes, requirements:
 WH: Note that Unicode got this wrong a while back (their normalization algorithm wasn't idempotent, and it didn't even form proper equivalence relations). They fixed it since then and now explicitly state that it's idempotent.
 
 
-# String Case Conversion
+## String Case Conversion
 http://wiki.ecmascript.org/doku.php?id=strawman:case_conversion
 
 LH: Why isn't this in the Internationalization standard?
@@ -406,7 +406,7 @@ LH: Doesn't need to be in the wrong spec just to move forward.
 Goes in Internationalization but doesn't prevent specification or implementation.
 
 
-# Eliminate ToUInt32() warping on array access
+## Eliminate ToUInt32() warping on array access
 
 AWB: Sparse parameter on Array iterator constructors (eg. Array.prototype.keys/values/items that determines whether or not "holes" are included in the iteration.?
 Can we eliminate functions returning Reference values from the specification
@@ -450,7 +450,7 @@ a[Math.pow(2, 32) - 1] = true;
 Tabled until AWB has further impact research.
 
 
-# The prototype/constructor object model supporting Generators/use of instanceof with generators and generator instances
+## The prototype/constructor object model supporting Generators/use of instanceof with generators and generator instances
 
 AWB, presents UML diagram to illustrate...
 

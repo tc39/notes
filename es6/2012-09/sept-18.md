@@ -17,8 +17,9 @@ JN: Would like Internationalization tests to be included with test262
 
 AWB: Finalize by June
 
-# Internationalization
-(Presented by Norbert Lindenberg, Mozilla)
+## Internationalization
+
+(Norbert Lindenberg, Mozilla)
 
 [Slides](https://members.ecma-international.org/get.php?group=TC39&file=2012_sub_tc39-2012-065.pdf)
 
@@ -184,12 +185,13 @@ IS: Need to determine scope and scale of needed changes.
 Agenda item for November 2012 to entertain a proposal.
 
 
-# Parallel JavaScript
-(Presented by Rick Hudson, Intel)
+## Parallel JavaScript
 
-## River Trail (Intel)
+(Rick Hudson, Intel)
 
-[Slides](https://members.ecma-international.org/get.php?group=TC39&file=2012_sub_tc39-2012-064.ppt)
+### River Trail (Intel)
+
+- [slides](https://members.ecma-international.org/get.php?group=TC39&file=2012_sub_tc39-2012-064.ppt)
 
 **Map**
 
@@ -304,8 +306,9 @@ Further research and offline discussion.
 
 
 
-# Define Properties Operator ":="
-(Presented by Allen Wirfs-Brock, Mozilla)
+## Define Properties Operator ":="
+
+(Allen Wirfs-Brock, Mozilla)
 
 Introduction, rationale as published:
         http://wiki.ecmascript.org/doku.php?id=strawman:define_properties_operator
@@ -392,15 +395,14 @@ DH, MM, AWB: Object.assign a well worn enough cow-path to be worth paving. Objec
 
 #### Conclusion/Resolution
 
-Accept Object.assign into ES6, but postpone Object.define (or something like it) to discussion of future versions.
+- Accept Object.assign into ES6, but postpone Object.define (or something like it) to discussion of future versions.
+- Reference materials and use cases: https://gist.github.com/3744794
 
-Reference materials and use cases: https://gist.github.com/3744794
-
-(** The inclusion of variable length sources is imperative to match real world patterns found in the most ubiquitous JS libraries)
-
+(\*\* The inclusion of variable length sources is imperative to match real world patterns found in the most ubiquitous JS libraries)
 
 
-# Concise Method Definition, Revisited
+
+## Concise Method Definition, Revisited
 
 RW: Defaulting concise methods to non-enumerable is a mistake
 
@@ -413,10 +415,11 @@ EA: (reveals the broken-ness of the DOM)
 No longer arguable.
 
 #### Conclusion/Resolution
-Concise method definitions create [[Enumerable]]: true
+
+- Concise method definitions create [[Enumerable]]: true
 
 
-# Scoping of the Top Level
+## Scoping of the Top Level
 
 
 

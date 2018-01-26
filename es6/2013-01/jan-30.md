@@ -4,7 +4,8 @@ John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Rick Waldro
 
 
 ## Function In Block Options
-(Presented by Luke Hoban)
+
+(Luke Hoban)
 
 Option #1: No let and const in non-strict mode
 Option #2: Taking the breaking change, w/ evangelism
@@ -494,7 +495,8 @@ BE: (Out of band) I think that's a good consensus, arrows can't have intrinsic n
 
 
 ## Static/Class Side Methods
-(Presented by Yehuda Katz)
+
+(Yehuda Katz)
 
 ```
 ClassElement:
@@ -513,7 +515,8 @@ Consensus in support of this proposal. (File spec update ticket)
 
 
 ## Revising The Array Subclassing "Kind" Issue
-(Presented by Allen Wirfs-Brock)
+
+(Allen Wirfs-Brock)
 
 Reiterates the issue at hand, illustrated here:
 
@@ -557,7 +560,8 @@ Consensus on this proposal, with the addition of thisArg per Mark's request.
 
 
 ## 4.7  Fail-fast destructuring with ?-syntax for irrefutable opt-in
-(Presented by Brendan Eich, Andreas Rossberg)
+
+(Brendan Eich, Andreas Rossberg)
 
 1. No ToObject(RHS).
 2. Exception on missing property selected without a ?-suffix.
@@ -702,7 +706,8 @@ will fail.
 **General Agreement**
 
 ## 4.11 Name Property of Functions
-(Presented by Brendan Eich, with additions by Brandon Benvie)
+
+(Brendan Eich, with additions by Brandon Benvie)
 http://wiki.ecmascript.org/doku.php?id=strawman:name_property_of_functions
 
 BE: Early approaches...
@@ -768,11 +773,12 @@ MM: Explain the divergence, toString is a reflection of the source code itself a
 
 #### Conclusion/Resolution
 
-Consensus on the proposal, with { writable: true }
+- Consensus on the proposal, with { writable: true }
 
 
 ## 4.12 Typed Arrays Update
-(Presented by Allen Wirfs-Brock)
+
+(Allen Wirfs-Brock)
 
 Slides (pdf): http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting_jan_29_2013&cache=cache&media=meetings:typedarray_status.pdf
 
@@ -825,7 +831,7 @@ LH: UintClampedArray, which used to be CanvasPixelArray
 
 AWB: 10 Prototype objects, 6 distinct method/get accessor functions per Realm.
 
-#10, TypedArray.prototype
+# 10, TypedArray.prototype
 + [ BYTES_PER_ELEMENT: int abstract ]
 + set() void
 + subarray() void
@@ -910,4 +916,4 @@ that they'd have all the Array methods, some of which would throw on use (those 
 
 #### Conclusion/Resolution
 
-Move forward with the plan presented.
+- Move forward with the plan presented.

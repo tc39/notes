@@ -1,6 +1,6 @@
 # January 25, 2017 Meeting Notes
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FH), Anna Henningsen (AH), John Lenz (JL), Sebastian Markbage (SM), Bradley Farias (BF), Jeff Morrison (JM), Tyler Kellen (TK), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Gabriel Isenberg (GI), Bert Belder (BB), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Brendan Eich (BE), Istvan Sebestyen (IS) (part-time, on conference call), Keith Miller (KM), Brendan Eich (BE), Myles Borins (MB)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbage (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Brendan Eich (BE), Istvan Sebestyen (IS), Keith Miller (KM), Brendan Eich (BE), Myles Borins (MBS)
 
 ## Istvan update, items 4-10 on the agenda
 
@@ -403,7 +403,7 @@ BF: Would any of your polyfills break if they were swapped into the module gramm
 
 JHD: The ones that were written in ES5 would break, they are intentioally in sloppy mode. The ones that are ES6 and later tend to run in strict mode and would not break/
 
-JL: Anything that is declaring a global to communicat between scripts will break if they are modules.
+JLZ: Anything that is declaring a global to communicat between scripts will break if they are modules.
 
 AK: Jordan your polyfills are extensive. If you have a targetted one, that is ... for instance Polymer is targeting very spceific APIs. They know they are focused on some baseline of browsers. I don't think it's crazy to say modules in the near term woud be use for polyfills
 
@@ -411,11 +411,11 @@ WH: Two things:
     1.When we adopted modules in the first place we had a big conversation about having an introductory sigil. We decided that no, we shouldn't. We are revisiting past decisions.
     2. If we have 10,000 line program, having an import or export at line 3042 shouldn't change what it is, it should be obvious at the top.
 
-JL: I just want to say, from my experience with our internal migrations from different module systems, there is a LOT of confusion when you have to start loading module code in a different way. If you accidentally load a module as a script and it just works, it's going to be a big user issue, more than oh, i'm ediing this module.
+JLZ: I just want to say, from my experience with our internal migrations from different module systems, there is a LOT of confusion when you have to start loading module code in a different way. If you accidentally load a module as a script and it just works, it's going to be a big user issue, more than oh, i'm ediing this module.
 
 BF: are you against changing the grammar?
 
-JL: no
+JLZ: no
 
 AWB: For a ecma262 perspective, it's a false dichotmomy to say we have scripts and modules. It's higher than that. We have ESScripts, ESModules and CJS modules. Those are all source files that have distinct syntax and semantics
 
@@ -766,7 +766,7 @@ BE: maybe i should reconsider if it would be more work. let's not worry about th
 
 AWB: There are two aspects to this, one is the spec time, the other is time to implement. Particularly, time to implement across all the major implementations. Do people actually think they can manage to implement BigInts? What are the differences?
 
-FH: Shouldn't we value users over implementability?
+FHN: Shouldn't we value users over implementability?
 
 AWB: Where there is a usecase for this, and there are usecases, it's becoming a relatively critical need, this is not something we should be looking for 5 years from now. If we said it was bignums, when can we reasonably expect that implementations would have produced viable performant implementations in browsers?
 
@@ -964,11 +964,11 @@ AWB: We have a complexity budget. Yes it would be slightly better for a small nu
 
 JFB: Sure, but you already have this complexity. IF you are going to quack like a duck quack like a duck.
 
-JL: Are you proposing to add a series of operators.
+JLZ: Are you proposing to add a series of operators.
 
 JFB: I'm feeling the waters... can we add this or should we each roll our own?
 
-JL: I would be inclined to see a series of additions rather than single function
+JLZ: I would be inclined to see a series of additions rather than single function
 
 JFB: 23 mathematical operations were proposed for C++ 20 years ago, and they were only just now added to C++. It's hard to get these right, and it takes a long time.
 
@@ -1053,7 +1053,7 @@ DE: If we look at the value of the .then method and it's the original builtin va
 
 JHD: That was my primary concern to make the change. It seems in the majority case that seems like the right way to go (to be consistent with .catch). I'm going to merge this PR, get spec review, await the outcome of the .catch investigation and renew my request for stage three. I don't see future changes.
 
-JL: I'm pretty sure that angular and some others depend on .catch calling .then or that they can override .then
+JLZ: I'm pretty sure that angular and some others depend on .catch calling .then or that they can override .then
 
 JDH: And then the native .catch calls into that? If that's the case, it's not compatible to make that change
 
@@ -1073,7 +1073,7 @@ JHD: okay, I'm going to merge the pull request where it observably calls .then, 
 
 MM: Given the topic let me say that I approve that when this issue is settled you can go to stage 3.
 
-JL: Do we do conditional Stage 3 approval?
+JLZ: Do we do conditional Stage 3 approval?
 
 MM: Given the topic it felt poetically appropriate to share this ;)
 
@@ -1337,7 +1337,7 @@ WH: How useful would this proposal be without those things nailed down? The clai
 
 JHD: They break once in a while.
 
-JL: You should remember the problems with stack frame elision from the tail call discussions.
+JLZ: You should remember the problems with stack frame elision from the tail call discussions.
 
 JHD: again, during these discussions, stacks came up. Mark or I, one of us said we are not intending to normatively require or prevent omissions 
 
@@ -1371,7 +1371,7 @@ BB: I am still a little uncomfortable that we're not specifying what is captured
 
 MM: Yes! It's in the original README 
 
-JL: I would really like to see this as the maximally minimal. I would object to adding the additional capabilities.
+JLZ: I would really like to see this as the maximally minimal. I would object to adding the additional capabilities.
 
 JHD: Would you be content if we could add this later?
 
@@ -1421,7 +1421,7 @@ MM: Once again, open to suggestions. Browsers do very bizarre things that differ
 
 JK: This is a bit of a jump. Right now this doesn't affect the stack in JS. Chrome does have an async mode of viewing stacks, to see stacks that happened across Promises, async/await and Web API callbacks. That async operation needs to be represented somehow. Is there room for that?
 
-JL: That isn't visible from the code
+JLZ: That isn't visible from the code
 
 MM: This format came from Causeway, and Causeway is all about stitching together each of those separate turns and async operations into an overall causality graph. ( https://github.com/cocoonfx/causeway http://www.hpl.hp.com/techreports/2009/HPL-2009-78.html ) So, that's one of the reasons there is an outer object here. The identifying of what turn you're in, and then for an async operation, identifying what turn it is causing, with separately logged information, not in this schema, those are all follow-on things that i'm hoping to propose. When I took a look at overall, all the information that causeway logs that allows us to stitch this back together into a causality trace, this was definitely the place to start. As a place to start this is also the closest to all things browsers agree on. That's exactly why I've reserved some space there. FF by the way, already does deep stacks, though in a different way.
 

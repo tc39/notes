@@ -1,6 +1,6 @@
 # July 25, 2012 Meeting Notes
 
-Present: Mark Miller (MM), Brendan Eich (BE), Yehuda Katz (YK), Luke Hoban
+Mark Miller (MM), Brendan Eich (BE), Yehuda Katz (YK), Luke Hoban
 (LH), Andreas Rossberg (ARB), Rick Waldron (RW), Alex Russell (AR), Tom
 Van-Cutsem (TVC), Bill Ticehurst (BT), Rafeal Weinstein (RWS), Sam
 Tobin-Hochstadt (STH), Allen Wirfs-Brock (AWB), Doug Crockford (DC), John

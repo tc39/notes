@@ -3,16 +3,18 @@
 John Neumann (JN), Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Luke Hoban (LH), Rick Waldron (RW), Eric Ferraiuolo (EF), Doug Crockford (DC), Yehuda Katz (YK), Erik Arvidsson (EA), Mark Miller (MM), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Istvan Sebastian (IS), Andreas Rossberg (ARB), Brendan Eich (BE), Alex Russell (AR), Matt Sweeney (MS)
 
 
-# Approval of ECMA/TC39 Scope Declaration
-(Presented by John Neumann)
+## Approval of ECMA/TC39 Scope Declaration
+
+(John Neumann)
 
 JN: (presents scope document for approval)
 
 #### Conclusion/Resolution
 Approved.
 
-# Scoping for default arguments revisited
-(Presented by Allen Wirfs-Brock)
+## Scoping for default arguments revisited
+
+(Allen Wirfs-Brock)
 See Slides
 
 AWB: (Review legacy requirements)
@@ -257,13 +259,15 @@ Devolved.
 **Break**
 
 #### Conclusion/Resolution
-Agree that Andreas will draft a proposal for next meeting.
+
+- Agree that Andreas will draft a proposal for next meeting.
 
 
 
 
-# Cascading this returns
-(presented by Rick Waldron)
+## Cascading this returns
+
+(Rick Waldron)
 
 RW: returning "this" from
 Map.prototype.set, Set.prototype.add, WeakMap.prototype.set
@@ -275,11 +279,12 @@ MM/AWB/RW/BE/EF: (Discussion to determine a criteria for making this API specifi
 
 #### Conclusion/Resolution
 
-Consensus... with the criteria that these methods are not simply a set of uncoordinated side effects that happen to have a receiver in common, but a set of coordinated side effects on a specific receiver and providing access to the target object post-mutation.
+- Consensus... with the criteria that these methods are not simply a set of uncoordinated side effects that happen to have a receiver in common, but a set of coordinated side effects on a specific receiver and providing access to the target object post-mutation.
 
 
-# Issues With Eval
-(presented by Allen Wirfs-Brock)
+## Issues With Eval
+
+(Allen Wirfs-Brock)
 
 AWB: Existing issues with eval w/r to new declarative forms, strict mode, etc In particular, what grammar is allowed in eval.
 
@@ -318,12 +323,12 @@ eval("let x; delete x;");
 
 ARB/MM: Illegal.
 
-## Conclusion/Resolution
+#### Conclusion/Resolution
 
 - New declaration forms, even from non-strict mode eval cannot be deleted.
 
 
-# Eliminate functions returning Reference values from the specification.
+## Eliminate functions returning Reference values from the specification.
 
 AWB: Only want to remove the language from the spec, not reason to be a feature of the spec.
 
@@ -336,7 +341,7 @@ LH: No objection.
 - Consensus.
 
 
-# Revisit Nov. 27 Resolution on iterables in spread.
+## Revisit Nov. 27 Resolution on iterables in spread.
 
 BE/RW: Recounting history, re: Array.from & spread delegation
 
@@ -374,7 +379,8 @@ Return to two step on Array.from and iterator protocol on for-of, spread.
 
 
 #### Conclusion/Resolution
-Add iterator protocol to arguments object (should exist on all things.
+
+- Add iterator protocol to arguments object (should exist on all things.
 
 Array.from:
 
@@ -386,7 +392,7 @@ for-of & spread:
 1. Iterator protocol
 
 
-# Collection APIs review...
+## Collection APIs review...
 
 AWB/BE: Mixed discussion re generalized iterator API
 
@@ -463,7 +469,8 @@ DH: Won't have to.
 ARB: better name: 'entries', not 'items'. (agreed)
 
 #### Conclusion/Resolution
-Dave Herman to craft an addition to module standard library for Dict with api shown above that creates proto-less objects as Dicts and has api that can be used on all collections.
+
+- Dave Herman to craft an addition to module standard library for Dict with api shown above that creates proto-less objects as Dicts and has api that can be used on all collections.
 
 Allen Wirfs-Brock to update existing spec language to reflect:
 ```js
@@ -476,7 +483,7 @@ Allen Wirfs-Brock to update existing spec language to reflect:
 ```
 
 
-# The syntax of let
+## The syntax of let
 
 AWB: Making let a reserved word breaks the web.
 - Removing let from non-strict?
@@ -559,10 +566,11 @@ LH: A search of indexed web reveals 3 uses of var let.
 WH: No, negative parsing rules like that are known to cause byzantine problems. Better to disambiguate on the first two tokens alone just like we disambiguate on the first { token alone to distinguish a block from an expression statement that happens to start with an object literal. The first two tokens would be let followed by either an identifier, [, or {.
 
 #### Conclusion/Resolution
-In non-strict code: let, with single token lookahead (where the single token is either an Identifier, "[", or "{" ), at the start of a statement is a let declaration. (Accepted breaking change)
+
+- In non-strict code: let, with single token lookahead (where the single token is either an Identifier, "[", or "{" ), at the start of a statement is a let declaration. (Accepted breaking change)
 
 
-# Extend new let grammar restriction?
+## Extend new let grammar restriction?
 
 ```js
 let (x) = ...
@@ -591,12 +599,14 @@ WH: I'm not opposed to parentheses in the pattern language in general, but there
 DH: OK
 
 #### Conclusion/Resolution
-Agreed to the semantics presented by the allowed/disallowed example above.
+
+- Agreed to the semantics presented by the allowed/disallowed example above.
 
 
 
-# Extending Array Comprehension
-(Presented by Brendan Eich on behalf of Jason Orendorff)
+## Extending Array Comprehension
+
+(Brendan Eich on behalf of Jason Orendorff)
 Begins here: https://mail.mozilla.org/pipermail/es-discuss/2012-September/025044.html
 
 BE: Originally seen in ES4 but never made it to ES6 (brief history of comprehension and rationale)
@@ -636,14 +646,14 @@ BE: No cost, no loss, use case gains.
 - Consensus on Jason's proposal: for, if, let, const can be interleaved. Applies to both Array Comprehensions and Generator Comprehensions
 
 
-# yield, the identifier?
+## yield, the identifier?
 
 AWB: yield * 5?
 
 BE: yield is reserved inside of generators
 
 
-# Function Poison Pill Methods and new Function Syntactic Forms
+## Function Poison Pill Methods and new Function Syntactic Forms
 Reference: https://mail.mozilla.org/pipermail/es-discuss/2012-October/026030.html
 
 AWB: Should all new function forms, in non-strict mode, all have poison-pill properties for arguments.caller, arguments.callee, Function.caller, Function.callee.
@@ -655,10 +665,12 @@ BE: notes that es-discuss preference was to uniformly poison
 MM: No security problem to have the function behave the same with respect to either strict or non-strict
 
 #### Conclusion/Resolution
-New forms are like old forms per non-strict and strict (reduce surprise factor)
+
+- New forms are like old forms per non-strict and strict (reduce surprise factor)
 
 
-# Conventions make non-standard properties configurable
+## Conventions make non-standard properties configurable
+
 http://wiki.ecmascript.org/doku.php?id=conventions:make_non-standard_properties_configurable
 
 MM: The other non-standard bits that implementations add, should be configurable so SES can repair or remove it.
@@ -676,4 +688,5 @@ MM: Yes, that is a hole. In fact, we've been blocking implementations that accep
 BE: Backs Mark's rationale
 
 #### Conclusion/Resolution
-Luke and Mark will chat offline.
+
+- Luke and Mark will chat offline.

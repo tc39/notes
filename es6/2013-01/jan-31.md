@@ -5,7 +5,9 @@ John Neumann (JN), Allen Wirfs-Brock (AWB), Rick Waldron (RW), Waldemar Horwat (
 
 
 ## 4.14 Module Update
-(Presented by Sam Tobin-Hochstadt)
+
+
+(Sam Tobin-Hochstadt)
 TODO: Request Slides
 
 STH: (Slide 1)
@@ -660,7 +662,8 @@ Class extends throws on non-constructor (extends null is still valid)
 
 
 ## Map/Set comparator
-(Presented by Allen Wirfs-Brock)
+
+(Allen Wirfs-Brock)
 
 Issue: Allow Map or Set to have a custom comparator for set, get, has, delete
 
@@ -752,7 +755,8 @@ Set.defaultComparator( a, b )
 
 
 ## Comprehensions/Generator Syntax
-(Presented by Sam Tobin-Hochstadt)
+
+(Sam Tobin-Hochstadt)
 
 Dave Herman's proposal: https://gist.github.com/b250d1fad15dbb5f77a5
 

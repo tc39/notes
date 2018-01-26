@@ -1,8 +1,6 @@
-May 25th 2016 Meeting Notes
+# May 25, 2016 Meeting Notes
 
-## Attendees
-
-Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LB), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Jeff Morrison (JM), Domenic Denicola (DD)
+Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Jeff Morrison (JM), Domenic Denicola (DD)
 
 Over Hangouts (part-time): Dean Tribble (DT), Nikolaus Papaspyrou
 
@@ -34,7 +32,7 @@ DD: is the value property a method or a function?
 
 YK: it is an uninitialised closure that errors on invocation
 
-SG: what if the list has multiple entries with the same name?
+SYG: what if the list has multiple entries with the same name?
 
 YK: we may want to validate
 
@@ -429,7 +427,7 @@ BT: Would like to be able to set a conditional breakpoint on the ref interpreter
 
 WH: A similar "reference implementation" previously attempted in ES4
 
-SG: This seems very familiar, did I request this of the authors a couple of years ago?
+SYG: This seems very familiar, did I request this of the authors a couple of years ago?
 
 AS: Yes, you were the direct inspiration for this!
 
@@ -567,7 +565,7 @@ DD: Maybe it doesn't need one, but it seems nice and analogous to exceptions.
 
 MM: Cancellation should be as fast as normal control flow and should not collect stack traces. It doesn't collect stack traces.
 
-SG: try-catch is not slow because it is an exceptional event, it is slow because of the non-locality itself
+SYG: try-catch is not slow because it is an exceptional event, it is slow because of the non-locality itself
 
 FST: motivation?
 
@@ -631,7 +629,7 @@ WH: I like this a lot but am concerned about the ergonomics of practical use pat
 
 ## [Definitive decision for test262 python runner](https://github.com/tc39/test262/issues/647) (Mike Pennisi)
 
-LB: TC39 agreed to deprecate the python runner in 2014, we want to remove it from test262 as it demands extra energy on a deprecated tool while implementing new features.
+LBR: TC39 agreed to deprecate the python runner in 2014, we want to remove it from test262 as it demands extra energy on a deprecated tool while implementing new features.
 
 FST: We can work it out. It does not need to move it to a new TC39's repository.
 

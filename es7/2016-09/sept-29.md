@@ -145,7 +145,7 @@ DD: Sounds like a good non-normative change that could be done in collaboration 
 
 ## 10.ii.b Rest/Spread Properties
 
-(Sebastian Markbage)
+(Sebastian Markbåge)
 
 http://sebmarkbage.github.io/ecmascript-rest-spread/
 

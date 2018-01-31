@@ -5,7 +5,7 @@
 
 
 
-Jeff Morrison (JM), Caridy Patino (CP), Yehuda Katz (YK), Guy Bedford (GB), Dave Herman (DH), Erik Arvidsson (EA), Reid Burke (RB), Eric Ferraiuolo (EF)
+Jeff Morrison (JM), Caridy Patiño (CP), Yehuda Katz (YK), Guy Bedford (GB), Dave Herman (DH), Erik Arvidsson (EA), Reid Burke (RB), Eric Ferraiuolo (EF)
 
 ## Current Open Issues
 

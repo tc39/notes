@@ -1,6 +1,6 @@
 # June 4 2014 Meeting Notes  
 
-Brian Terleson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patino (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbage (SM), Rafael Weinstein (RWS), Jaswanth Sreeram (JS), Alex Russell (AR), Istvan Sebestyen (IS), Simon Kaegi (SK), Arnoud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark Miller (MM), Peter Jensen (PJ)
+Brian Terleson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbåge (SM), Rafael Weinstein (RWS), Jaswanth Sreeram (JS), Alex Russell (AR), Istvan Sebestyen (IS), Simon Kaegi (SK), Arnoud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark Miller (MM), Peter Jensen (PJ)
 
 
 ## Adoption of the agenda

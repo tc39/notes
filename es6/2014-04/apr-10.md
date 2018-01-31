@@ -1,6 +1,6 @@
 # April 10, 2014 Meeting Notes
 
-Doug Crockford (DC), Brian Terleson (BT), Luke Hoban (LH), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Hudson (RH), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Seo-Young Hwang (SYH), Mark Honenberg (MH), Caridy Patino (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Sebastian Markbage (SM), Mathias Bynens (MB), Rafael Weinstein (RWS), Mark Miller (MM),
+Doug Crockford (DC), Brian Terleson (BT), Luke Hoban (LH), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Hudson (RH), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Seo-Young Hwang (SYH), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Sebastian Markbåge (SM), Mathias Bynens (MB), Rafael Weinstein (RWS), Mark Miller (MM),
 
 
 YK: Revisit new TC39 process. Phase 2?

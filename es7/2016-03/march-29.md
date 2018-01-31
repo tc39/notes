@@ -1,6 +1,6 @@
 # March 29, 2016 Meeting Notes
 
-Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson (BNN), JF Bastien (JFB), Joe Lencioni (JLI), Sebastian Markbage (SM), Jeff Morrison (JM), Kevin Smith (KS), Jafar Husain (JH), Lars Hansen (LHN), Saam Barati (SBI), Keith Miller (KM), Michael Saboff, Eric Ferraiuolo (EF),Eric Faust (FST), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SYG), Tim Disney (TD), Waldemar Horwat (WH), Bert Belder (BBR), Peter Jensen (PJ), Daniel Ehrenberg (DE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Jean Fraucois Paradis (JFP), Shelby Hubick (SHK), Leo Balter (LBR), Misko Hevery (MHY).
+Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson (BNN), JF Bastien (JFB), Joe Lencioni (JLI), Sebastian Markbåge (SM), Jeff Morrison (JM), Kevin Smith (KS), Jafar Husain (JH), Lars Hansen (LHN), Saam Barati (SBI), Keith Miller (KM), Michael Saboff, Eric Ferraiuolo (EF),Eric Faust (FST), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SYG), Tim Disney (TD), Waldemar Horwat (WH), Bert Belder (BBR), Peter Jensen (PJ), Daniel Ehrenberg (DE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Jean Fraucois Paradis (JFP), Shelby Hubick (SHK), Leo Balter (LBR), Misko Hevery (MHY).
 
 ## Agenda
 
@@ -94,7 +94,7 @@ MM: is opposed to having bare "global". They should be gathered; having that be 
 
 #### Conclusion/resolution
 
-- Stage 2, reviewers for Stage 3 are Caridy Patino, Mark Miller, Michael Ficarra
+- Stage 2, reviewers for Stage 3 are Caridy Patiño, Mark Miller, Michael Ficarra
 
 ## String.prototype.padStart/padEnd 
 (JHD)

@@ -4,7 +4,7 @@ John Neumann (JN), Allen Wirfs-Brock (AWB), Eric Ferraiuolo (EF), Erik
 Arvidsson (EA), Luke Hoban (LH), Doug Crockford (DC), Yehuda Katz (YK),
 Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Alex Russell (AR), Dave
 Herman (DH) (calling in), Bernd Mathiske (BM), Andreas Rossberg (ARB), Mark
-Miller (MM), Tom Van Cutsem (TVC), Jasvir Naga (JNA), Istvan Sebestyen (IS)
+Miller (MM), Tom Van Cutsem (TVC), Jasvir Naga (JNA), Istvan Sebestyén (IS)
 
 ## Agenda 
 

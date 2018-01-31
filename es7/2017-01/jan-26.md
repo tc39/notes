@@ -1,6 +1,6 @@
 # January 26, 2017 Meeting Notes
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BF), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Istvan Sebestyen (IS), Keith Miller (KM), Myles Borins (MBS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BF), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Istvan Sebestyén (IS), Keith Miller (KM), Myles Borins (MBS)
 
 ## Looking at the proposal list
 

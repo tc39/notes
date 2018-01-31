@@ -1,7 +1,7 @@
 # July 30, 2014 Meeting Notes    
 
 
-Brian Terlson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Sebastian Markbåge (SM), Istvan Sebestyen (IS), Erik Arvidsson (EA), Brendan Eich (BE), Mark Miller (MM), Sam Tobin-Hochstadt (STH), Domenic Denicola (DD), Peter Jensen (PJ), John McCutchan (JMC), Paul Leathers (PL), Eric Toth (ET), Abhijith Chatra (AC), Jaswanth Sreeram (JS), Yehuda Katz (YK), Dave Herman (DH), Brendan Eich (BE), 
+Brian Terlson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Sebastian Markbåge (SM), Istvan Sebestyén (IS), Erik Arvidsson (EA), Brendan Eich (BE), Mark Miller (MM), Sam Tobin-Hochstadt (STH), Domenic Denicola (DD), Peter Jensen (PJ), John McCutchan (JMC), Paul Leathers (PL), Eric Toth (ET), Abhijith Chatra (AC), Jaswanth Sreeram (JS), Yehuda Katz (YK), Dave Herman (DH), Brendan Eich (BE), 
 
 
 
@@ -16,7 +16,7 @@ AWB: This is the opt-out period: Aug. 11, 2014 - Oct. 11, 2014
 
 Final opt-out window: March 16, 2015 - May 18, 2015
 
-Read the policy, speak with Istvan Sebestyen for further information. 
+Read the policy, speak with Istvan Sebestyén for further information. 
 
 The opt-out version of the spec is: ECMA-262 6th Edition, revision 26, document: tc39/2014/031
 

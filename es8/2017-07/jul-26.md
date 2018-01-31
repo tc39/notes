@@ -1,6 +1,6 @@
 # July 26, 2017 Meeting Notes
 
-Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE),Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BF), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CLP), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GIG), Istvan Sebestyen (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark Miller (MM), Michael Ficarra (MF), Michael Saboff (MS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Robert Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK), 
+Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE),Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BF), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CLP), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GIG), Istvan Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark Miller (MM), Michael Ficarra (MF), Michael Saboff (MS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Robert Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK), 
 
 
 ## 13.iii.c Binary AST 
@@ -355,7 +355,7 @@ TODO: insert slides
 
 ## 5. Report from the Ecma Secretariat
 
-(Istvan Sebastian) 
+(Istvan Sebestyén) 
 
 The report has been uploaded to the GitHub under Reflector as 2017 July Ecma Secretariat Report
 It will be published also as a Ecma TC39 document.

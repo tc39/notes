@@ -1,6 +1,6 @@
 # September 19, 2012 Meeting Notes
 
-John Neumann (JN), Mark Miller (MM), Norbert Lindenberg (NL), Nebojsa Ciric (NC), Allen Wirfs-Brock (AWB), Istvan Sebastian (IS), Luke Hoban (LH), Paul Leathers (PB), Sam Tobin-Hochstadt (STH), Andreas Rossberg (ARB), Brendan Eich (BE), Erik Arvidsson (EA), Dave Herman (DH), Yehuda Katz (YK), Rick Waldron (RW), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Alex Russell (AR), Rafael Weinstein (RWS), Waldemar Horwat (WH), Tom Van Cutsem (TVC, phone)
+John Neumann (JN), Mark Miller (MM), Norbert Lindenberg (NL), Nebojsa Ciric (NC), Allen Wirfs-Brock (AWB), Istvan Sebestyén (IS), Luke Hoban (LH), Paul Leathers (PB), Sam Tobin-Hochstadt (STH), Andreas Rossberg (ARB), Brendan Eich (BE), Erik Arvidsson (EA), Dave Herman (DH), Yehuda Katz (YK), Rick Waldron (RW), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Alex Russell (AR), Rafael Weinstein (RWS), Waldemar Horwat (WH), Tom Van Cutsem (TVC, phone)
 
 ## Agenda 
 
@@ -811,7 +811,7 @@ Agreed on the AWB/MM/WH alternative model
 
 ## Test 262
 
-(Istvan Sebastian, ECMA)
+(Istvan Sebestyén, ECMA)
 
 IS: Someone needs to update the site with the latest version of the test suite in zip file format.
 

@@ -5,7 +5,7 @@ John Neumann (JN), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Eric Ferraiuolo (E
 
 
 ## Report from the Ecma Secretariat (CC Report)
-(Istvan Sebestyen)
+(Istvan Sebestyén)
 
 ### Status of the TC39 RFTG
 

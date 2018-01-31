@@ -225,7 +225,7 @@ AWB: tc39 reflector -> github private repo
 
 ## TC39 Invited Experts Fund - Proposal
 
-AWB: Istvan Sebestyen floated this, this is actually Istvan's deck
+AWB: Istvan Sebestyén floated this, this is actually Istvan's deck
 
 AWB: root problem is as follows, how to pay for AWB to come to the meeting.... I am an instance of the problem. We have in the past invited experts, we cannot assume it is reasonable for them to cover this. Is their a way for a group like TC39, which is made up of orgs. Is there a means for it to provide some level of support to unaffiliated individuals who would be important contributors and such.
 

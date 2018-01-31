@@ -1,7 +1,7 @@
 # January 27, 2015 Meeting Notes    
 
 
-Brian Terlson (BT), Jonathan Turner (JT), Jordan Harband (JHD), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jeff Morrison (JM), Sebastian Markbåge (SM), Erik Arvidsson (EA), Peter Jensen (PJ), Yehuda Katz (YK), Dave Herman (DH), Waldemar Horwat (WH), Alan Schmitt (AS), Michael Ficarra (MF), Lee Byron (LB), Dmitry Lomov (DL), Arnaud Le Hors (ALH), Chip Morningstar (CM), Caridy Patiño (CP), Domenic Denicola (DD), Mark Miller (MM), Kevin Smith (KS), Andreas Rossberg (ARB), Istvan Sebastian (IS), Sam Tobin-Hochstadt (STH), Brendan Eich (BE), Jafar Hussain (JH)
+Brian Terlson (BT), Jonathan Turner (JT), Jordan Harband (JHD), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jeff Morrison (JM), Sebastian Markbåge (SM), Erik Arvidsson (EA), Peter Jensen (PJ), Yehuda Katz (YK), Dave Herman (DH), Waldemar Horwat (WH), Alan Schmitt (AS), Michael Ficarra (MF), Lee Byron (LB), Dmitry Lomov (DL), Arnaud Le Hors (ALH), Chip Morningstar (CM), Caridy Patiño (CP), Domenic Denicola (DD), Mark Miller (MM), Kevin Smith (KS), Andreas Rossberg (ARB), Istvan Sebestyén (IS), Sam Tobin-Hochstadt (STH), Brendan Eich (BE), Jafar Hussain (JH)
 
 
 

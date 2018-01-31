@@ -1,7 +1,7 @@
 # January 28, 2014 Meeting Notes
 
 
-John Neumann (JN), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Rick Hudson (RH), Matt Sweeney (MS), Dmitry Soshnikov (DS), Sebastian Markbåge (SM), Ben Newman (BN), Jeff Morrison (JM), Reid Burke (RB), Waldemar Horwat (WH), Doug Crockford (DC), Mark Miller (MM), Brian Terlson (BT), Luke Hoban (LH), Andreas Rossberg (ARB), Istvan Sebestyen (IS), Niko Matsakis (NM), Brendan Eich (BE), Rick Waldron (RW), Sam Tobin-Hochstadt (STH), Simon Kaegi (SK), Dave Herman (DH)
+John Neumann (JN), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Rick Hudson (RH), Matt Sweeney (MS), Dmitry Soshnikov (DS), Sebastian Markbåge (SM), Ben Newman (BN), Jeff Morrison (JM), Reid Burke (RB), Waldemar Horwat (WH), Doug Crockford (DC), Mark Miller (MM), Brian Terlson (BT), Luke Hoban (LH), Andreas Rossberg (ARB), Istvan Sebestyén (IS), Niko Matsakis (NM), Brendan Eich (BE), Rick Waldron (RW), Sam Tobin-Hochstadt (STH), Simon Kaegi (SK), Dave Herman (DH)
 
 
 ## Welcome

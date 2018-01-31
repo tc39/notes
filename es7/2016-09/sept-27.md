@@ -201,7 +201,7 @@ LBR: Need to work on update for TR104
 DE: Were we going to retract this document?
 
 AWB: This document is informatively referenced by ECMA 414; Istvan was suggesting to retitle as TR414? (since it also includes ECMA-402 tests)
-Istvan Sebestyen (sitting in CH...): No, that was a mistake on my side... Sorry... I wanted to keep the original TR number (but 2nd Edition), which I think it is TR/104? I do not have the Ecma TR list in front of me....  
+Istvan Sebestyén (sitting in CH...): No, that was a mistake on my side... Sorry... I wanted to keep the original TR number (but 2nd Edition), which I think it is TR/104? I do not have the Ecma TR list in front of me....  
 
 
 LBR: Need to arrange further Test262 work

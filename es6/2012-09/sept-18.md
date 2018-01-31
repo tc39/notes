@@ -1,6 +1,6 @@
 # September 18, 2012 Meeting Notes
 
-Rick Hudson (RH), John Neumann (JN), Mark Miller (MM), Norbert Lindenberg (NL), Nebojsa Ciric (NC), Allen Wirfs-Brock (AWB), Istvan Sebastian (IS), Luke Hoban (LH), Paul Leathers (PB), Sam Tobin-Hochstadt (STH), Andreas Rossberg (ARB), Brendan Eich (BE), Erik Arvidsson (EA), Dave Herman (DH), Yehuda Katz (YK), Rick Waldron (RW), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC)
+Rick Hudson (RH), John Neumann (JN), Mark Miller (MM), Norbert Lindenberg (NL), Nebojsa Ciric (NC), Allen Wirfs-Brock (AWB), Istvan Sebestyén (IS), Luke Hoban (LH), Paul Leathers (PB), Sam Tobin-Hochstadt (STH), Andreas Rossberg (ARB), Brendan Eich (BE), Erik Arvidsson (EA), Dave Herman (DH), Yehuda Katz (YK), Rick Waldron (RW), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC)
 
 ## Agenda 
 

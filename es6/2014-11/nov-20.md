@@ -155,7 +155,7 @@ EA: Will add normative text for exotic objects. Will help update the DOM.
 
 RW: Next version will coincide with ES6. Future versions will coincide with future versions of 262.
 
-RW: After ES6 the Yahoo team (Eric Ferraiuolo, Caridy Patino)  is taking over.
+RW: After ES6 the Yahoo team (Eric Ferraiuolo, Caridy Patiño)  is taking over.
 
 RW: Intl 1 provides ...
 

@@ -5,7 +5,7 @@ Brian Terlson (BT), Jonathan Turner (JT), Jordan Harband (JHD), Allen Wirfs-Broc
 
 
 
-# Introductions
+## Welcome
 
 JN: No changes to agenda? We can change the order as we go
 
@@ -22,6 +22,7 @@ JN: Previous meeting minutes?
 
 
 ## 4.1 ES6 End-game schedule review
+
 (Allen Wirfs-Brock)
 
 (include link to slides)

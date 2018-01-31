@@ -3,14 +3,9 @@
 
 Brian Terlson (BT), Jonathan Turner (JT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Erik Arvidsson (EA), Dave Herman (DH), Waldemar Horwat (WH), Domenic Denicola (DD), Kevin Smith (KS), Michael Ficarra (MF), Jordan Harband (JHD), Chip Morningstar (CM), Adam Klein (AK), Igor Minar (IM), Misko Hevery (MH), Istvan Sebastyan (IS), Rick Waldron (RW), Ben Newman (BN), Yehuda Katz (YK)
 
-Not present? 
-
-Peter Jensen (PJ), Dmitry Lomov (DL), Sam Tobin-Hochstadt (STH), Mark Miller (MM), Brendan Eich (BE), 
-
-PLEASE UPDATE THE PARTICIPANTS LIST!
-
 
 ## ES6 Introduction text
+
 (Allen Wirfs-Brock)
 
 [Ask for slides] 

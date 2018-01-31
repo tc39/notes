@@ -2,11 +2,8 @@
 
 Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Rick Waldron (RW), Stefan Penner (SP), Jonathan Sampson (JSN), Caridy Patiño (CP), Sam Tobin-Hochstadt (STH), John Buchanan (JB), Kevin Gibbons (KG), Lars Hansen (LHN), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Kris Gray (KSG), Adam Klein (AK), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SB), Kris Gray (KGY), John-David Dalton (JDD), Ben Newman (BN)
 
-(I need the list when it's complete)
+## Welcome
 
-Template link: https://github.com/tc39/Reflector/issues/19#issuecomment-234276510
-
-## Introduction
 
 JN: (agenda)
 

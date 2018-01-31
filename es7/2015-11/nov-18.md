@@ -2,7 +2,10 @@
 
 Jafar Husain (JH), Eric Farriauolo (EF), Caridy Patiño (CP), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann  (JN), Dave Herman (DH), Brendan Eich (BE), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Stefan Penner (SP), Waldemar Horwat (WH), Mark Miller (MM), Paul Leathers (PL), Georg Neis (GN), Sebastian Markbåge (SM)
 
-## RegExp Buffet (BT)
+## RegExp Buffet 
+
+(Brian Terlson)
+
 something about composed RegExp
 
 YK: composing regexp does not have a algebraic decomposition
@@ -575,10 +578,12 @@ KS:
 
 #### Conclusion/Resolution
 
- - %TypedArray% constructor is directly called rather than having a super constructor and a proto chain walk
+- %TypedArray% constructor is directly called rather than having a super constructor and a proto chain walk
 
 
-### Improving consistency of @@species (Kevin Smith)
+## Improving consistency of @@species 
+
+(Kevin Smith)
 
 KS: on map and set, they are not used in the spec themselves, But subclasses should be able to override
 
@@ -701,9 +706,12 @@ DD: i see two paths forward,
 
 #### Conclusion/Resolution
 
-  - remove `@@species` handing from `Promise.all`/`Promise.race`
-  - no decisions made on other `@@species` handling
-  - investigate `Function.prototype[Symbol.species]`
+- remove `@@species` handing from `Promise.all`/`Promise.race`
+- no decisions made on other `@@species` handling
+- investigate `Function.prototype[Symbol.species]`
+
+
+## Promise Rejection Hooks
 
 BT: discussion on various GH threads, this should be easy.
 
@@ -771,8 +779,9 @@ BT: bi-weekly changelog, with highlights called out. Grouped sections, to draw a
 
 #### Conclusion/Resolution
 
-  - promise rejection hooks are in
-  - editor may apply own discretion on further “implementation hook” proposals
+- promise rejection hooks are in
+- editor may apply own discretion on further “implementation hook” proposals
+- 
 
 ## Proposal Repos, and where they live + editor update
 
@@ -840,9 +849,12 @@ DE: Proxy Implementation for in issues
 
 #### Conclusion/Resolution
 
- - any stage 1 or above proposal repos must be transferred to the TC39 org, as a stage 1 entry requirement
+- any stage 1 or above proposal repos must be transferred to the TC39 org, as a stage 1 entry requirement
 
-## JEFMO: trailing commas
+
+## Trailing commas in function parameter lists
+
+(Jeff Morrison)
 
 JM: stage 3?
 
@@ -870,7 +882,7 @@ JM: yes
 
 #### Conclusion/Resolution
 
- - hopefully stage 3 tomorrow after arrows are added
+- hopefully stage 3 tomorrow after arrows are added
 
 
 ## Proxy [[Enumerate]] ocerconstrains implementations (AK)
@@ -925,9 +937,9 @@ MM: we should have deterministic specs, remember our target audience is many web
 
 #### Conclusion/Resolution
 
-  - specify that [[Enumerate]] spreads before entering the loop https://github.com/tc39/ecma262/issues/161#issuecomment-157910543
-  - the committee would not agree to underspecified behavior
-  - there is a compat risk for Chakra but the assumption is that it’s not a problem until there’s data saying so
+- specify that [[Enumerate]] spreads before entering the loop https://github.com/tc39/ecma262/issues/161#issuecomment-157910543
+- the committee would not agree to underspecified behavior
+- there is a compat risk for Chakra but the assumption is that it’s not a problem until there’s data saying so
 
 
 
@@ -939,7 +951,7 @@ DE: did you add internal slots
 
 #### Conclusion/Resolution
 
-deferred till tomorrow…
+- deferred till tomorrow…
 
 
 ### Async Await
@@ -1023,4 +1035,4 @@ AK: That is a good reason why multiple implementations are good, as it they will
 
 #### Conclusion/Resolution
 
- - do not add GeneratorFunction or AsyncFunction constructors to the global object
+- do not add GeneratorFunction or AsyncFunction constructors to the global object

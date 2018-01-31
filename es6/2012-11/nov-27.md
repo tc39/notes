@@ -3,6 +3,9 @@
 John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Luke Hoban (LH), Rick Waldron (RW), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Nebojša Ćirić (NC), Yehuda Katz (YK), Erik Arvidsson (EA), Mark Miller (MM), D. Herman, Sam Tobin-Hochstadt
 JN: (Identify missing members or those that will be here tomorrow)
 
+
+## Welcome
+
 ...Welcome and introductions.JN welcomed members and introductions were made.  DC gave us facility and logistical information.  Dinner for Wednesday is set for 6 PM.
 
 ## Agenda 

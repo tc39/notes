@@ -1,10 +1,8 @@
 # May 22, 2012 Meeting Notes
 
-Introduction...
+This pre-dates the recording of a complete attendees list. 
 
-
-
-Binary Data
+## Binary Data
 
 Dave Herman:
   - explains CPU -> GPU
@@ -323,4 +321,3 @@ v...
     ----> object pointing to offset starting at 17
   y
 
-#

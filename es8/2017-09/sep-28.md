@@ -5,8 +5,6 @@ Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (
 Remote: 
 Istvan Sebastian (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM), Gabriel Isenberg (GI), Zibi Braniecki (ZB) James M Snell (JSL)
 
-TODO: We'll need to update this attendance list
-
 ## 1. Opening, welcome and roll call
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2017/09.md)

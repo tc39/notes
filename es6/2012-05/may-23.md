@@ -1,13 +1,14 @@
 # May 23, 2012 Meeting Notes
 
+This pre-dates the recording of a complete attendees list. 
 
-# Override Mistake (Allen Wirfs-Brock, Mark Miller)
+## Override Mistake (Allen Wirfs-Brock, Mark Miller)
 
 AWB:
 - The correct people are not here for this discussion, defer to next meeting
 
 
-# 4.14, Unicode (Norbert Lindenderg)
+## 4.14, Unicode (Norbert Lindenderg)
 
 NL:
 - Regular expressions
@@ -43,7 +44,7 @@ NL, AWB:
 Resolution: Promoted unanimously to harmony status
 
 
-# 4.11, Daylight Savings (Luke Hoban)
+## 4.11, Daylight Savings (Luke Hoban)
 
 Move to remove/reword:
 
@@ -71,7 +72,7 @@ Resolution: Remove the spec text, new additions will be considered as new propos
 
 *Not* errata.
 
-# 4.10 Object.observe (Rafeal Weinstein)
+## 4.10 Object.observe (Rafeal Weinstein)
 
 Rafeal Weinstein:
 - Introduction to proposal
@@ -160,7 +161,9 @@ Resolution: Needs more exploration
 
 
 
-# Spec Issues (Allen Wirfs-Brock)
+## Spec Issues 
+
+(Allen Wirfs-Brock)
 
 *Object.isObject*
 
@@ -236,10 +239,12 @@ BE:
 2. grawlix
 
 
-Resolution: Indefinite postpone
+#### Conclusion/Resolution
+
+- Indefinite postpone
 
 
-*Moustache*
+## Moustache
 
 o.{ p: v }
 
@@ -270,45 +275,57 @@ Alone
 Applied to object literals
 
 
-Resolution: Return to strawman for revision, needs own wiki page.
+#### Conclusion/Resolution
+
+- Return to strawman for revision, needs own wiki page.
 
 
-*Computed Keys*
+## Computed Keys
 
 Erik Arvidsson:
 - Today, properties are static and knowable, computed keys are not knowable.
 
-Resolution: Deferred.
+#### Conclusion/Resolution
+
+- Deferred.
 
 
-*SealedObjectLiteral*
+## SealedObjectLiteral
 
 See: https://bugs.ecmascript.org/show_bug.cgi?id=362
 
-Resolution: Postponed until ES7.
+#### Conclusion/Resolution
+
+- Postponed until ES7.
 
 
-*String.prototype.toArray*
+## String.prototype.toArray
 
-Resolution: Removal from draft.
+#### Conclusion/Resolution
+
+- Removal from draft.
 
 
 
-# Weak Refs
+## Weak Refs
 
 Yehuda Katz:
 - Use case: observers
 
 
-Resolution: Continued, due to lack of time.
+#### Conclusion/Resolution
+
+- Continued, due to lack of time.
 
 
 
-# Value Objects
+## Value Objects
 
 Brendan demos, explanation of the implementation and operator overloading
 
+#### Conclusion/Resolution
 
+- none
 
 
 

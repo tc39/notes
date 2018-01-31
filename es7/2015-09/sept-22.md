@@ -3,9 +3,8 @@
 Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Farriauolo (EF), Caridy Patiño (CP), Mark Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann  (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Ben Smith (BS), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Gorkem Yakin (GY), Stefan Penner (SP)
 
 
-On the phone: Mark Miller (MM), Dan Gohmann (DG), John McCutchan (JMC)
-
-(Need attendance list)
+Remote: 
+Mark Miller (MM), Dan Gohmann (DG), John McCutchan (JMC)
 
 
 ## 1. Opening Items
@@ -47,11 +46,9 @@ JN: 1 o'clock on Thursday
 
 ## 5.1 Shared memory and atomics 
 
-(Lars T Hansen, Mozilla)
+(Lars T Hansen)
 
-https://github.com/lars-t-hansen/ecmascript_sharedmem
-
-http://lars-t-hansen.github.io/ecmascript_sharedmem/shmem.html
+- [proposal](http://lars-t-hansen.github.io/ecmascript_sharedmem/shmem.html)
 
 Need slides
 

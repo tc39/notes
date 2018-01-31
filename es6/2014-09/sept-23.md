@@ -4,7 +4,7 @@ Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW
 
 
 
-# Introduction
+## Welcome
 
 RW: (explanation of evening meetup)
 

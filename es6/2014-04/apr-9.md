@@ -108,8 +108,9 @@ discussion about filtering in general)
 - AWB: “Don’t approve stuff without reading the spec text, dammit” :)
 
 
-(Istvan Sebestyen joins remotely)
-## RF Status
+## Royalty Free Status
+
+(Istvan Sebestyen)
 
 JN: (recaps decisions)
 

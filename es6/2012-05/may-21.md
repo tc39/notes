@@ -1,9 +1,13 @@
 # May 21, 2012 Meeting Notes
 
+This pre-dates the recording of a complete attendees list. 
+
+## Royalty Free Status
+
 Royalty free contribution... seems obvious
 
 
-Internationalization Notes...
+## Internationalization
 
 
 

@@ -1,6 +1,6 @@
 # November 29, 2017 Meeting Notes
 
-Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KGS), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (ARE), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AKN), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KMR), Sebastian Markbage (SME), Dean Tribble (DT), Jafar Husain (JHN)
+Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KGS), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (ARE), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AKN), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KMR), Sebastian Markbage (SM), Dean Tribble (DT), Jafar Husain (JHN)
 
 Remote: 
 Istvan Sebastian (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
@@ -429,11 +429,11 @@ AKN: I don't think that solution works well in the general case. The vulnerabili
 
 KMR: You could just ban creating trusted objects in eval.
 
-SME: Have you considered an opt-out mechanism instead?
+SM: Have you considered an opt-out mechanism instead?
 
 AKN: This tied into Marks thing about eval.
 
-SME: I also noticed the discussion around concatenating and what we'd want to allow. I see a problem with each option. If you do a lot of concat, thats a lot less safe. We often see adding prefixes to something is what causes the security holes. But if we dont allow concat then this fails for other cases, like `'' + string` for coercion.
+SM: I also noticed the discussion around concatenating and what we'd want to allow. I see a problem with each option. If you do a lot of concat, thats a lot less safe. We often see adding prefixes to something is what causes the security holes. But if we dont allow concat then this fails for other cases, like `'' + string` for coercion.
 
 MWT: Yes, there are cases where its safe and not safe. I dont know the google library well enough to see what we do here, but in general I agree with you compeletely. In general concatenation is not a safe operation. On the web I'd rather we do this with templates than concat.
 
@@ -441,13 +441,13 @@ MM: With concatenation we could have a `cat` method which could wor like ` cat`$
 
 DT: So the point is: what is your security goal. If its "im combining stuff we took from developers vs users" thats really useful, but its different to "i dont trust anyone". So when to use cat vs not is just a lint tooling.
 
-SME: We probably shouldnt allow additon with the + operator, but if we dont it creates new problems. Again, `'' + somestring` can be stripped out.
+SM: We probably shouldnt allow additon with the + operator, but if we dont it creates new problems. Again, `'' + somestring` can be stripped out.
 
 MM: Let's not get confused about the words here. Its never a string itself thats branded, its an object that contains the string such as a template object.
 
 CM: If I have 2 trusted strings, concatting gets me back a trusted string - this doesnt need to be true at all.
 
-SME: Im basing this on the example on GitHub. One example is two declared literals which are added together. Treating that has having literalness. 
+SM: Im basing this on the example on GitHub. One example is two declared literals which are added together. Treating that has having literalness. 
 
 YK: Security proposals need to enumerate their exact threat models; it seems like we are talking over a number of different threat models.
 

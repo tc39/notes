@@ -6,6 +6,7 @@ Doug Crockford (DC), Brian Terleson (BT), Luke Hoban (LH), Dmitry Lomov (DL), Wa
 
 
 ## RF Status
+
 (John Neumann)
 
 The May version of the specification is the opt-out version
@@ -15,10 +16,12 @@ See:
     http://www.ecma-international.org/memento/TC39%20policy/Opt%20Out%20Form%20for%20a%20TC39%20Royalty%20Free%20%28RF%29%20Task%20Group%20%28TG%29.pdf
 
 #### Conclusion/Resolution
+
 - May document will be opt-out
 
 
 ## RF/TG Item
+
 (John Neumann)
 
 JN: Vote to request lifetime membership waiver for Brendan Eich
@@ -29,10 +32,13 @@ Yes, seconded
 No discussion, No objection
 
 #### Conclusion/Resolution
+
+
 - unanimously in favor
 
 
 ## Object.observe Update
+
 (Rafael Weinstein)
 
 
@@ -95,6 +101,7 @@ Relevant: https://github.com/rwaldron/tc39-notes/blob/master/es6/2013-09/sept-19
 discussion about filtering in general)
 
 #### Conclusion/Resolution
+
 - RWS withdrawing request for stage 3
 - YK commits to prioritize working through remaining issues prior to next meeting.
 - RW commits to reviewing for spec mechanics
@@ -144,6 +151,7 @@ EF: Is the vote for just the forms/agreements?
 AWB: The vote is to approve the policy, the forms already exist.
 
 #### Conclusion/Resolution
+
 - RW/BT/AWB to send CLA requirements (noted above) as need to be successful
 
 
@@ -432,6 +440,7 @@ RH: We find the index very valuable for picking up stuff from free vars
 RW: Let's provide index/key for both paths, but not the 3rd param. If you need that you can use a closed over free-var
 
 #### Conclusion/Resolution
+
 - Change usingIterator path callback signature to: value, index
 - Change array like path callback signature to: value, index
 - Removes "items" from 17.d.3.1 (array like path)
@@ -467,6 +476,7 @@ BT: A lot but probably not enough
 
 
 #### Conclusion/Resolution
+
 - Roll back the ES5 change
 
 
@@ -487,6 +497,7 @@ WH: No, it's not that either. The grammar has a lookahead restriction that state
 
 
 #### Conclusion/Resolution
+
 - Follow up on the bug report
 (AWB: who/how?  Action items without names don't get done...)
 
@@ -498,6 +509,7 @@ AWB: 21.1.3.14 "Table 40 — Replacement Text Symbol Substitutions": someone sho
 This issue dates back to ES3
 
 #### Conclusion/Resolution
+
 - LH to follow up
 
 
@@ -531,6 +543,7 @@ AWB: Some browsers haven't been paying close attention to this.
 WH: Best fixable by putting a few test cases in test262.
 
 #### Conclusion/Resolution
+
 - Leave `RegExp.prototype.toString` definition as-is, but consider adding requirement https://bugs.ecmascript.org/show_bug.cgi?id=2609
 
 ## Allen's TODO Summary
@@ -553,6 +566,7 @@ AWB: There are outstanding enumeration issues that we need to finally address.
 
 
 #### Conclusion/Resolution
+
 - RW volunteers to write first draft of language overview
 
 
@@ -582,6 +596,7 @@ https://github.com/tc39/ecma262
 AWB/BT/LH/RW: mixed discussion and agreement to replace the wiki.
 
 #### Conclusion/Resolution
+
 - All in favor!
 
 RW: Should this github repo contain actual proposal info?
@@ -663,6 +678,7 @@ RW: You get back a descriptor. There is already a getOwnPropertyDescriptor.
 ACHIEVEMENT UNLOCKED: Longer API name than getOwnPropertyDescriptor!
 
 #### Conclusion/Resolution
+
 - Pursue for ES7. RW has spec text. Approved for Stage 0.
 - RW to send a PR to add to github.com/tc39/ecma262 tracker
 
@@ -692,6 +708,7 @@ BT: Is this different than `indexOf`?
 RW: Open question.
 
 #### Conclusion/Resolution
+
 - Sounds good, need strawman to approve stage 0.
 
 
@@ -727,6 +744,7 @@ LH: Was that a breaking change? Looks like, but we went from `NaN` to actually r
 WH: It's a breaking change. parseInt looks for a valid prefix and ignores the rest. parseInt('0o123') currently returns 0 because it sees the starting 0.
 
 #### Conclusion/Resolution
+
 It's dead. RW to close the bug wontfix.
 
 ## 4.3, Update Object.assign to accept multiple sources
@@ -792,6 +810,7 @@ AWB: I'm not enthusiastic. Won't stand in the way.
 BE: Seems strictly winning to have multiple arguments.
 
 #### Conclusion/Resolution
+
 - Object.assign gets multiple source objects.
 
 ## 5.1 Object.entries, Object.values
@@ -817,6 +836,7 @@ AWB: We'll get them.
 
 
 #### Conclusion/Resolution
+
 - Need strawman for stage 0
 
 
@@ -856,6 +876,7 @@ MM: Detect Annex B features, then if they’re present, test if they behave as p
 BT: Continue to report test coverage gaps.
 
 #### Conclusion/Resolution
+
 - BT to publish test criteria/guidelines
 - Inform current contributors of guidelines to prepare
 - Establish rules for testing Annex B

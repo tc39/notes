@@ -10,7 +10,8 @@ John Neumann (JN), Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson 
 JN: (presents scope document for approval)
 
 #### Conclusion/Resolution
-Approved.
+
+- Approved.
 
 ## Scoping for default arguments revisited
 
@@ -43,7 +44,7 @@ function h(x) {
 h(function() { return 1; }); // logs: 2
 ```
 
-## Proposal Part 1
+### Proposal Part 1
 - Simple ES<=5.1 parameter lists introduce "var bindings" in the top level scope of a function
 - All ES<=5.1 rules apply
   - Duplicated parameter names
@@ -52,7 +53,7 @@ h(function() { return 1; }); // logs: 2
 
 ARB: These are simply the requirements.
 
-## Proposal Part 2
+### Proposal Part 2
 - If a parameter list uses ANY parameter syntax introduced in ES6, new rules apply:
   - Destructuring Parameters
   - Default value initializers
@@ -255,8 +256,6 @@ WH: (in response to rant about scoping of let itself) This is not on the agenda
 AWB/STH: This is absolutely the agenda.
 
 Devolved.
-
-**Break**
 
 #### Conclusion/Resolution
 

@@ -4,11 +4,11 @@
 John Neumann (JN), Dave Herman (DH), Istvan Sebestyen (IS), Alex Russell (AR), Allen Wirfs-Brock (AWB), Erik Arvidsson (EA), Eric Ferraiuolo (EF), Doug Crockford (DC), Luke Hoban (LH), Anne van Kesteren (AVK), Brendan Eich (BE), Brian Terlson (BT), Rick Waldron (RW), Waldemar Horwat (WH), Rafael Weinstein (RWS), Boris Zbarsky (BZ), Domenic Denicola (DD), Tim Disney (TD), Niko Matsakis (NM), Jeff Morrrison (JM), Sebastian Markbåge (SM), Oliver Hunt (OH), Sam Tobin-Hochstadt (STH), Dmitry Lomov (DL), Andreas Rossberg (ARB), Reid Burke (RB)
 
 
-## Welcome
-
-RW: ...Logistics...
-
 ## Agenda
+
+RW: (Logistics)
+
+## Welcome
 
 Promises to be discussed Thurs. PLH from W3C will be here on Wed/Thurs.
 
@@ -16,7 +16,7 @@ BE: won't be here thurs, and that suits me.
 
 JN: objections to using this agenda?
 
-(crickets>
+(crickets)
 
 JN: next issue is approving the agenda.
 

@@ -5,6 +5,7 @@ John Neumann (JN), Luke Hoban (LH), Rick Hudson (RH), Allen Wirfs-Brock (AWB), Y
 
 
 ## 4.6 Binary Data Update
+
 (Dave Herman & Dmitry Lomov)
 
 DH: (Introduces Binary Data) A mechanism for creating objects that guarantee a shape (Struct)
@@ -306,6 +307,7 @@ WH: Don't want to repeat the C++ vector<bool> mistake that tried to pack it to 1
 
 
 ## 9 JSON (Continued)
+
 (Doug Crockford)
 
 
@@ -532,11 +534,13 @@ MM: We might only be testing the slow path of JavaScript engines. Testing things
 [Insert poison attack.]
 
 #### Consensus/Resolution
+
 - move the repo and test262 web presence to github.com/tc39
 
 
 
 ## 5.2 Can computed properties name in object literals produce string prop names? Duplicates?
+
 (Allen Wirfs-Brock)
 
 
@@ -646,6 +650,7 @@ Post break discussion, after the points made about @@iterator and @@create
 
 
 ## 5.3 Special syntax for `__proto__` in an object literal
+
 (Allen Wirfs-Brock)
 
 AWB:
@@ -729,6 +734,7 @@ AR: does anyone think they _should_ be extensible?
 
 
 ## 5.5 concat and typed arrays
+
 (Allen Wirfs-Brock)
 
 AWB: Anything that's an exotic array (ie. Array.isArray(a) === true), will "spread"
@@ -780,6 +786,7 @@ AR: with science. Look around the world and see what's most common; then put tho
 
 
 ## 5.11 ToUint32(length) and Array.prototype methods
+
 (Allen Wirfs-Brock)
 
 AWB:
@@ -872,6 +879,7 @@ General agreement
 
 
 ## 5.7 Does Object.freeze need an extensibility hook?
+
 (Allen Wirfs-Brock)
 
 

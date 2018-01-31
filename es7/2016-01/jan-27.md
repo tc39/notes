@@ -900,6 +900,7 @@ MH: 1) dependency injection, example shows on constructor parameters
 MH: motivation: testing (@timeout), @flaky, @disabled, @slow/@expensive, @description, @async, etc
 
 #### Conclusion/Resolution
+
  - Method param decorators at stage 0
   - Function expression decorators at stage 0
 
@@ -988,6 +989,7 @@ YK: No, they shouldn't.
 MF: "possible solutions" slide
 
 #### Conclusion/Resolution
+
  - none yet, will continue tomorrow morning, first thing
 
 

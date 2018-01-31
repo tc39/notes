@@ -549,6 +549,7 @@ BE: A functionally pure kernel would be great.
 AWB: one reason i didn’t go that way, is due to some hesitation do to adding additional @@ methods.
 
 #### Conclusion/Resolution
+
   - no major change
   - DE/AWB will make minor changes + tweaks
   - AWB/JHD to investigate Symbol.exec + a pure functional exec kernel
@@ -573,6 +574,7 @@ BT: other issues for AWB while we have him?
 KS:
 
 #### Conclusion/Resolution
+
  - %TypedArray% constructor is directly called rather than having a super constructor and a proto chain walk
 
 
@@ -698,6 +700,7 @@ DD: i see two paths forward,
 2. Map and Set shouldn’t have it, we should add it on-demand, and do no carry it forward.
 
 #### Conclusion/Resolution
+
   - remove `@@species` handing from `Promise.all`/`Promise.race`
   - no decisions made on other `@@species` handling
   - investigate `Function.prototype[Symbol.species]`
@@ -767,6 +770,7 @@ YK: a small process may solve, for example. The editor of a given group tags cha
 BT: bi-weekly changelog, with highlights called out. Grouped sections, to draw attention to various interested parties.
 
 #### Conclusion/Resolution
+
   - promise rejection hooks are in
   - editor may apply own discretion on further “implementation hook” proposals
 
@@ -835,6 +839,7 @@ SP: editor doing this, acts as a good filter.
 DE: Proxy Implementation for in issues
 
 #### Conclusion/Resolution
+
  - any stage 1 or above proposal repos must be transferred to the TC39 org, as a stage 1 entry requirement
 
 ## JEFMO: trailing commas
@@ -864,6 +869,7 @@ DD: stage 3 tomorrow?
 JM: yes
 
 #### Conclusion/Resolution
+
  - hopefully stage 3 tomorrow after arrows are added
 
 
@@ -918,6 +924,7 @@ YK: I feel MM should care we shouldn’t under specify
 MM: we should have deterministic specs, remember our target audience is many web programmers for many websites. Reproducible behavior is important for this environment
 
 #### Conclusion/Resolution
+
   - specify that [[Enumerate]] spreads before entering the loop https://github.com/tc39/ecma262/issues/161#issuecomment-157910543
   - the committee would not agree to underspecified behavior
   - there is a compat risk for Chakra but the assumption is that it’s not a problem until there’s data saying so
@@ -931,6 +938,7 @@ BT: its in babel
 DE: did you add internal slots
 
 #### Conclusion/Resolution
+
 deferred till tomorrow…
 
 
@@ -1014,4 +1022,5 @@ BT: its a risk forsure
 AK: That is a good reason why multiple implementations are good, as it they will hope to have overlapping bugs
 
 #### Conclusion/Resolution
+
  - do not add GeneratorFunction or AsyncFunction constructors to the global object

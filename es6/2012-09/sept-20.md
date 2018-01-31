@@ -4,8 +4,9 @@ John Neumann (JN), Mark Miller (MM), Norbert Lindenberg (NL), Nebojsa Ciric (NC)
 
 
 
-# Object.observe Update
-(Presented by Rafael Weinstein, Google)
+## Object.observe Update
+
+(Rafael Weinstein)
 
 REQUEST SLIDES!
 
@@ -56,11 +57,11 @@ EF: Did Angular replace all dirty checking?
 YK/RWS: Not really possible to remove all dirty checking.
 
 
-## Observing Computed Properties and Dependencies
+### Observing Computed Properties and Dependencies
 
 RWS: Believe that it is not in scope now or ever.
 
-## Tuning Spec, Implementation Complexity
+### Tuning Spec, Implementation Complexity
 
 RWS: ...Is hoping to progress the strawman to harmony. A few slides that discuss remaining issues.
 
@@ -172,13 +173,14 @@ RH: Moving from strawman to proposal/spec is meaningful to implementor teams.
 [some discussion about whether the above construction pattern has efficiency problems; needs implementation experience]
 
 #### Conclusion/Resolution
-Push for prototype implementations (Chrome already in progress). Encourage others to do the same
 
-Officially Promoted to proposal for ES7.
+- Push for prototype implementations (Chrome already in progress). Encourage others to do the same
+- Officially Promoted to proposal for ES7.
 
 
-# Grammar Validation
-(Presented by Brendan Eich, Mozilla, Waldemar Horwat, Google, Rick Waldron, jQuery/Bocoup)
+## Grammar Validation
+
+(Brendan Eich, Waldemar Horwat, Rick Waldron)
 
 Overdue for grammar validation, would be ideal to re-validate.
 
@@ -190,19 +192,16 @@ Note that the current semantic restrictions on where yield expressions can go do
 Resolution on the yield issue?
 
 #### Conclusion/Resolution
-AWB will refactor grammar so that yield can only be used within the context of a generator function and yield will not be usable as an identifier there. This will require essentially doubling the number of grammar rules in an analogous way to how the no-in rules are handled today, but on a much larger scale.
+
+- AWB will refactor grammar so that yield can only be used within the context of a generator function and yield will not be usable as an identifier there. This will require essentially doubling the number of grammar rules in an analogous way to how the no-in rules are handled today, but on a much larger scale.
+- Grammar Validation
+  - Waldemar is going to try to work on this
 
 
-BE: Need wider, complete validation that takes into account ASI and noIn.
 
-BE/AWB: Who is going to own this?
+## Formal Parameter Scope
 
-#### Conclusion/Resolution
-Waldemar is going to try to work on this
-
-
-# Formal Parameter Scope
-(Presented by Brendan Eich, Mozilla)
+(Brendan Eich)
 
 With regard to default formal parameters...
 
@@ -331,17 +330,18 @@ Conclusion/Resolution
 
 
 #### Conclusion/Resolution
-Revisit when data is gathered, re: perf or unexpected behaviours
+
+- Revisit when data is gathered, re: perf or unexpected behaviours
 
 
 
-# Array.of Rename?
+## Array.of Rename?
 
 Recent post on es-discuss from user that doesn't like Array.of
 
 Array.of has been implemented in all of the es6 shim libs (Paul Miller, Axel Rauschmayer, Andrea Giammarchi and others...)
 
-## Array.of()
+### Array.of()
 
 Makes sense, nice to say and explain.
 When I reason about a program:
@@ -350,13 +350,14 @@ When I reason about a program:
 (elements, items, numbers, strings)
 
 #### Conclusion/Resolution
-No change, no revisit.
 
-If we do `Foo.new()`, it must be _identical_ to `new Foo()`.
+- No change, no revisit.
+- If we do `Foo.new()`, it must be _identical_ to `new Foo()`.
 
 
-# Thin Arrow?
-(Presented by Brendan Eich, Mozilla)
+## Thin Arrow?
+
+(Brendan Eich)
 
 We have the fat-arrow, supported by Kevin Smith's research, it's a win. Some voices in the community don't want the unexpected behaviour of the bound lexical `this`
 
@@ -373,8 +374,9 @@ WH: That would address the confusion, but is still unnecessary featuritis and do
 - Consensus holds on fat-arrow
 
 
-# Existential Operator (strawman discussion)
-(Presented by Brendan Eich, Mozilla)
+## Existential Operator (strawman discussion)
+
+(Brendan Eich)
 
 Significant desire include a null and undefined check in syntax/operator form (a la coffeescipt)
 
@@ -419,14 +421,15 @@ WH: What about other contexts such as p?[x], p?.q[x], and p?(x) ? [Note that gra
 General agreement.
 
 #### Conclusion/Resolution
+
 Seems useful, but not now. Semantics are unclear
 
 
 
 
-# Generators
+## Generators
 
-## thisBinding
+### thisBinding
 
 Generator thisBinding is the thisBinding of the original generator call.
 
@@ -441,7 +444,7 @@ class MyArray extends Array {
 ```
 
 
-## Generator object API?
+### Generator object API?
 
 ```js
 class MyArray extends Array {
@@ -484,7 +487,8 @@ DH: Not super worried about this...
 
 
 #### Conclusion/Resolution
-The spec should not specify built in iterators to have 3 extra generator methods (ie send, throw, close)
+
+- The spec should not specify built in iterators to have 3 extra generator methods (ie send, throw, close)
 (Currently in draft, needs to be refactored)
 
 Notably: Significant dissent on throwing exceptions for control flow.
@@ -508,7 +512,7 @@ Discussion about protocol specifications, where precedent exists.
 
 
 
-# Supplemental tests for Tests 262
+## Supplemental tests for Tests 262
 
 SpiderMonkey and v8 are writing tests, can contribute back.
 
@@ -516,7 +520,7 @@ Need parity, it's hard.
 
 
 
-# Goals
+## Goals
 
 AWB: January, spec: feature complete.
 

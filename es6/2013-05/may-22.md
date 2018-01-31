@@ -1,5 +1,4 @@
 # May 22, 2013 Meeting Notes
-(by Erik Arvidsson)
 
 John Neumann (JN), Allen Wirfs-Brock (AWB), Eric Ferraiuolo (EF), Erik
 Arvidsson (EA), Luke Hoban (LH), Doug Crockford (DC), Yehuda Katz (YK),

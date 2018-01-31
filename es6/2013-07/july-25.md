@@ -5,6 +5,7 @@ John Neumann (JN), Luke Hoban (LH), Rick Hudson (RH), Allen Wirfs-Brock (AWB), Y
 
 
 ## 5.6 Can let/const/class/function* in non-strict code bind "eval" and "arguments"
+
 (Allen Wirfs-Brock)
 
 AWB: Currently, only var and function have any rules: non-strict is not
@@ -100,18 +101,16 @@ MM: That's more complex
 
 #### Consensus/Resolution
 
-General Rule
-
-- Non-strict code operates in consistently non-strict manner (This covers the let/const/function* cases)
-- Exception:
-- Only allow duplicate parameter names in simple parameter lists
-- Simple parameter lists are defined by those that do not include rest or defaults or destructuring.
-
-
-Consensus: The name of the ClassDeclaration/ClassExpression follows the strict rules for its name. So it cannot be named "eval" or "arguments". Just like for strict function names.
+- General Rule: 
+    - Non-strict code operates in consistently non-strict manner (This covers the let/const/function* cases)
+    - Exception:
+    - Only allow duplicate parameter names in simple parameter lists
+    - Simple parameter lists are defined by those that do not include rest or defaults or destructuring.
+- Consensus: The name of the ClassDeclaration/ClassExpression follows the strict rules for its name. So it cannot be named "eval" or "arguments". Just like for strict function names.
 
 
 ## 5.9 Semantics and bounds of Number.isInteger and Number.MAX_INTEGER
+
 (Allen Wirfs-Brock, originally proposed by Doug Crockford?)
 
 AWB: What is the value of MAX_INTEGER
@@ -248,6 +247,7 @@ Remove Number.toInteger (already exists as Math.trunc)
 
 
 ## 5.13 Which existing built-in properties that are read-only/non-configurable do we want to make read-only/configurable?
+
 (Allen Wirfs-Brock)
 
 AWB: Previously, we've discussed setting data properties as {writable: false, configurable: true}
@@ -332,6 +332,7 @@ Discussion joint meeting with W3C at TPAC, Nov 11-15, in Shenzhen, China.
 
 
 ## 5.1 Symbol primitive value or object? One more time.
+
 (Allen Wirfs-Brock)
 
 EA: There is discontent that there isn't private state. Symbols don't cover this. Unique Strings solve the uniqueness case
@@ -394,6 +395,7 @@ BE: ARB says that v8 internal architecture makes it hard to add new
 
 
 ## 5.12 Should we remove [[Construct]] from the MOP and Proxy handler API?
+
 (Allen Wirfs-Brock)
 
 AWB: recapping @@create changes...
@@ -446,6 +448,7 @@ BE/YK: Keep
 
 
 ## Anti-Pattern to call a constructor without new
+
 (Allen Wirfs-Brock)
 
 AWB: In ES6, with class, it will be an anti-pattern... Don't call without "new"

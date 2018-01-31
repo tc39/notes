@@ -5,7 +5,8 @@ John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Rick Waldro
 
 
 ## 4.14 Make new Date(dateObj)
-(Presented by Allen Wirfs-Brock)
+
+(Allen Wirfs-Brock)
 
 See: https://bugs.ecmascript.org/show_bug.cgi?id=1257
 
@@ -30,7 +31,8 @@ AWB: Not an issue
 
 
 ## 4.4 Spec Update
-(Presented by Allen Wirfs-Brock)
+
+(Allen Wirfs-Brock)
 
 http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts
 
@@ -118,7 +120,8 @@ AWB: But it doesn't have to be an array
 
 
 ## 4.5 Private Symbols, WeakMaps, and Relationships
-(Presented by Mark Miller)
+
+(Mark Miller)
 
 Slides (PDF, will prompt download): http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting_mar_12_2013&cache=cache&media=meetings:relationships.pdf
 
@@ -565,7 +568,8 @@ BE: We've had prototype implementations for some time, we made it through the ch
 
 
 ## 4.16 Current Status of ES6
-(Presented by Luke Hoban)
+
+(Luke Hoban)
 
 
 Spreadsheet: http://sdrv.ms/Z9pQxs
@@ -591,7 +595,8 @@ NL: Concerned about impact on Internationalization API 2.0 – need to evaluate 
 
 
 ## 4.7 Runtime costs of the override mistake
-(Presented by Mark Miller)
+
+(Mark Miller)
 
 Override Mistake
 http://wiki.ecmascript.org/doku.php?id=strawman:fixing_override_mistake

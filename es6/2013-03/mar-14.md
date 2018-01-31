@@ -4,7 +4,8 @@ John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Rick Waldro
 
 
 ## 4.8 Object.observe Implementation Report
-(Presented by Adam Klein, on behalf of Rafael Weinstein)
+
+(Adam Klein, on behalf of Rafael Weinstein)
 
 See: http://wiki.ecmascript.org/doku.php?id=harmony:observe
 
@@ -191,7 +192,8 @@ AR: To clarify, we call this the "slow path", but for apps that are going to use
 
 
 ## 4.6 Symbols
-(Presented by Andreas Rossberg)
+
+(Andreas Rossberg)
 
 ARB: Update on implementation of (unique) symbols in V8: mostly finished, and as efficient as strings as property names.
 But symbols don't fully behave like objects yet, as would be required by current spec.
@@ -295,7 +297,8 @@ AWB: ...recalling existing specification of ToString conversion
 
 
 ## 4.17 Legacy Compatibility for Block Level Function Declarations
-(Presented by Allen Wirfs-Brock)
+
+(Allen Wirfs-Brock)
 
 See: http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting_mar_12_2013&cache=cache&media=meetings:legacyblockfunctiondcl2.pdf (This is a PDF that will initiate a download!)
 
@@ -541,7 +544,8 @@ WH: ECMA's TC39 email reflector is incompatible with gmail. If a gmail user send
 
 
 ## 4.10 Array Extras
-(Presented by Rick Waldron)
+
+(Rick Waldron)
 (notes from EA)
 
 RW: Wrote spec (using spec prose) Array.prototype.find and Array.prototype.findIndex. Found in most PL and JS libraries
@@ -577,7 +581,8 @@ DH: Common, makes sense.
 
 
 ## 4.15 Template Strings
-(Presented by Adam Barth [present], Mike Samuel [phone] guests from Google)
+
+(Adam Barth [present], Mike Samuel [phone] guests from Google)
 
 BE: What can we do to template strings to make them secure by default and not an XSS hazard.
 

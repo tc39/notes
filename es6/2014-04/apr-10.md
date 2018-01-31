@@ -146,6 +146,7 @@ CP: We've been able to prove that this works quite well.
 
 
 #### Conclusion/Resolution
+
 - Revisit `module foo from "..."` (YK)
 
 
@@ -227,6 +228,7 @@ WH: In favor of taking it out and seeing if we can get away with it. We can put 
 BT: If all three browsers continue supporting, we agree to put it in the spec, at least in Annex B
 
 #### Conclusion/Resolution
+
 - Mozilla willing to ship a patch in nightly for experimentation
 
 
@@ -476,6 +478,7 @@ WH: Objects to this problem *not* being solved. Object to the status quo of doin
 
 
 #### Conclusion/Resolution
+
 - Unanimous agreement to allow the champions, Allen Wirfs-Brock, Brendan Eich, Dave Herman, Andy Wingo, Jafar Husain, Ben Newman to solve this problem.
 - Allen Wirfs-Brock to originate the email for discussion.
 - Reference material: https://mail.mozilla.org/pipermail/es-discuss/2013-May/030683.html
@@ -759,6 +762,7 @@ YK/RW: configurable (sets configurable: true), nonconfigurable (sets configurabl
 LH: Encourage the Angular designers to bring forward their proposal as well.
 
 #### Conclusion/Resolution
+
 - Start a strawman
 - work together with others that have class syntax extension proposals
 - consider other proposals
@@ -769,6 +773,7 @@ LH: Encourage the Angular designers to bring forward their proposal as well.
 AWB: updates need to be made to Ecma 402, but I dont have the time/bandwidth
 
 #### Conclusion/Resolution
+
 - RW volunteers to attempt
 - AWB will provide basic summary information
 

@@ -673,6 +673,7 @@ JHD: the risk grows the longer we wait.
 DD: it sounds like more information is needed.
 
 #### Conclusion/Resolution
+
 - More research
 
 DE: can i propose I18n?
@@ -1049,6 +1050,7 @@ JHD: in all reasonable platforms, the global is accessible. This merely provides
 YK: SES is ok with this, even though they provide no global access.
 
 #### Conclusion/Resolution
+
  - stage 1
 
 

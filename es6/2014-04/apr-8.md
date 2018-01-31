@@ -2,9 +2,6 @@
 
 Doug Crockford (DC), Brian Terleson (BT), Luke Hoban (LH), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Hudson (RH), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Sung-Jae Lee (SJL), Seo-Young Hwang, Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Satish Chondra (SC), Domenic Denicola (DD), Mark Miller (MM)
 
-(one late arrival, need name)
-
-
 ## Welcome
 
 JN: (open remarks)
@@ -244,6 +241,7 @@ AWB: Need to go back, we may initialize that outer binding and maybe we shouldn'
 
 
 #### Conclusion/Resolution
+
 - Be consistent
 - Look at the initialization scope and be sure to intentionally _never_ initialize the for bindings in that scope
 - Solution to open issue: extra scope with uninitialized x. Throws TDZ error
@@ -312,6 +310,7 @@ WH: Disallow this and see if there is any pushback.
 
 
 #### Conclusion/Resolution
+
 - Keep the catch as a `let` binding, but make it not an error in Annex B, just for `catch` (no other)
 - If redeclaration with `let` or `const` is still a redeclaration error (this is no change)
 - Continue to disallow function declaration in catch
@@ -432,6 +431,7 @@ AWB: Ask Tom about intervening when user sets prototype
 YK/MM: Agree.
 
 #### Conclusion/Resolution
+
 - Prevent proxy cycles. If the target is a proxy, the proxy target prototype records what it thinks the proxy prototype is, and returns the targets protototype and setPrototype is never called
 - Whenever you change a prototype, you run a circulartity check immediately.
 
@@ -667,6 +667,7 @@ The decision for how to handle this non-callable case could inform all cases tha
 MM/WH: Don't really like the silently tolerant behaviour in general. Want the general precedent to be to throw errors when calling something that can't be called, but willing to make an exception in this case due to the established library usage.
 
 #### Conclusion/Resolution
+
 - w/r to .then, respect libraries: no error.
 - do not adopt this as a principle for non-callables passed where callables are expected, the general principal: if something is neither a callable or undefined, indicate an error.
 
@@ -722,6 +723,7 @@ YK: Implementations can optimize.
 
 
 #### Conclusion/Resolution
+
 - @@iterator on arguments object
 - specified as an own property (no creation of exposed Arguments.prototype)
 - Updated: https://bugs.ecmascript.org/show_bug.cgi?id=1114
@@ -754,6 +756,7 @@ RW: There is a rule that was created, which is relevant to this discussion: http
 MM: Avoidance of micromodes if possible. (Mark, can you fill this in? It was re: craziness)
 
 #### Conclusion/Resolution
+
 - An argument list that only has identifiers in sloppy mode has mapped arguments object. ALL other arguments objects (ie. any that contain default, destructuring, or rest, or those in strict mode)  don't map.
 
 ## Initializer in for-in
@@ -781,6 +784,7 @@ AWB: So basically it was a matter of seeing if we can
 YK: As a rule, we should err on the side of caution when faced with these minor changes that create incompatibilities once we find real-world problems.
 
 #### Conclusion/Resolution
+
 - Punt on a decision until May
 
 
@@ -817,6 +821,7 @@ YK: If we can get implementors to agree to make this an error, then we'll specif
 AWB: note: file bug to have this tested in Firefox
 
 #### Conclusion/Resolution
+
 - Allen will file bug to have this tested in Firefox
 
 
@@ -845,6 +850,7 @@ MM: What about function properties named "get foo"?
 MM: I guess this is ok. These names are not high-integrity -- mostly intended for debugging info.
 
 #### Conclusion/Resolution
+
 - toMethod: no prefix qualifier
 - Bound functions: "bound foo"
 - Adopt uniformly:
@@ -868,6 +874,7 @@ MM: Too late to
 - Should constructor work like %TypedArray%.from?
 
 #### Conclusion/Resolution
+
 - Make all %TypedArray% constructors accept iterable
 
 
@@ -877,6 +884,7 @@ DL: %TypedArray% actually coerces this to a number first to create a typed array
 
 
 #### Conclusion/Resolution
+
 - Do string coercion to number before handling iterable to avoid mishandling a string argument.
 
 
@@ -891,6 +899,7 @@ RW: Revisiting:
 - https://github.com/rwaldron/tc39-notes/blob/master/es6/2013-07/july-24.md#consensusresolution-2
 
 #### Conclusion/Resolution
+
 - No error, last property wins, eg. map.get("x") === 2
 
 

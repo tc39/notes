@@ -2,6 +2,7 @@
 
 John Neumann (JN), Mark Miller (MM), Norbert Lindenberg (NL), Nebojsa Ciric (NC), Allen Wirfs-Brock (AWB), Istvan Sebastian (IS), Luke Hoban (LH), Paul Leathers (PB), Sam Tobin-Hochstadt (STH), Andreas Rossberg (ARB), Brendan Eich (BE), Erik Arvidsson (EA), Dave Herman (DH), Yehuda Katz (YK), Rick Waldron (RW), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Alex Russell (AR), Rafael Weinstein (RWS), Waldemar Horwat (WH), Tom Van Cutsem (TVC, phone)
 
+## Agenda 
 
 Recap of Sept 18th notes.
 
@@ -169,6 +170,7 @@ MM: This has been thought about and discussed off-line.
 
 
 #### Conclusion/Resolution
+
 - we want revocable proxies
 - further discussion is needed on revoking frozen objects, either via revocable proxies or via traps
 
@@ -230,6 +232,7 @@ TVC: we need to specify that the proxy calls the original/intrinsic WeakSet.prot
 STH/LH/RW: Will need to spec WeakSet
 
 #### Conclusion/Resolution
+
 Yes to third arg for whitelist, pending details to be worked out by Proxy champions.
 
 Expect to remove the "public" part of private names.
@@ -245,6 +248,7 @@ RW: Use cases in node programs where I'm using WeakMap made it apparent that it 
 
 
 #### Conclusion/Resolution
+
 Needs to be designed, as part of the whitelist feature's needs.
 
 SpiderMonkey tracking bug: https://bugzilla.mozilla.org/show_bug.cgi?id=792439
@@ -501,6 +505,7 @@ DH/BE: Move protected to a new strawman.
 
 
 #### Conclusion/Resolution
+
 Consensus on:
 - Need private binding, including: statement form, import and export.
 - Need private prefix form on class methods on object literal props and methods
@@ -619,6 +624,7 @@ BE: (history of let in SpiderMonkey...) No outcry that performance is an issue
 MM: (countering the "not common enough" argument) Presented personal experiences where dead zones were essential in detecting problems.
 
 #### Conclusion/Resolution
+
 - No change to temporal dead zone (yet)
 - Get more data, report back
 
@@ -789,6 +795,7 @@ There are two scopes:
 [people generally felt it was easier to comprehend the data living in the scope contour]
 
 #### Conclusion/Resolution
+
 Agreed on the AWB/MM/WH alternative model
 (new binding forms)
 - Allen's 1 extra global scope contourc

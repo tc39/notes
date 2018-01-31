@@ -94,6 +94,7 @@ BT: time for a regexp talk ?
 
 
 #### Conclusion/Resolution
+
 None yet.
 
 
@@ -103,6 +104,7 @@ JHD: OK for stage 3? It got signoff
 … [general consensus]
 
 #### Conclusion/Resolution
+
 Object.values/entries approved for stage 3
 
 ## String.pad{Left,Right}
@@ -139,6 +141,7 @@ CM: Remaining parallel with trimLeft/trimRight, established names?
 DD: Add trimStart, trimEnd and rename to padStart, padEnd as part of annex B.
 
 #### Conclusion/Resolution
+
 Rename to `padStart`/`padEnd`, update trimLeft/trimRight proposal to also include trimStart/trimEnd. padStart/padEnd approved for Stage 3.
 
 
@@ -165,6 +168,7 @@ DD: stage 4?
 YK: yup
 
 #### Conclusion/Resolution
+
 Move to stage 4 (tomorrow when it’s added to @@unscopables)
 
 ## function.sent
@@ -192,6 +196,7 @@ AK: The thing we’re trying to avoid is adding something to the language that w
 BT: Implementing something at Stage 2 carries quite a bit of risk
 
 #### Conclusion/Resolution
+
  - Designated reviewers: DE and DD
  - Side process conversation: AK, YK, BT
 
@@ -206,6 +211,7 @@ AK: I haven’t gotten very much negative feedback
 YK: Maybe the framework wars will be settled and we can revisit this question
 
 #### Conclusion/Resolution
+
 Object.observe is withdrawn
 
 ## Should destructuring declarations without bindings throw?
@@ -260,6 +266,7 @@ BT: current semantic remains?
 everyone: agrees
 
 #### Conclusion/Resolution
+
 Current semantics stand
 
 ## legacy function hoisting semantics in sloppy mode (DE)
@@ -393,6 +400,7 @@ BE: once we made our call (assuming we did due deligence) we should risk chasing
 BT: we should be prescriptive. GWT should fix its emit. Inbox should fix its app. Chrome should attempt to ship standard semantics.
 
 #### Conclusion/Resolution
+
 No consensus on changing the existing Annex B semantics.
 
 ## RegExp simplication semantics (DE)
@@ -433,6 +441,7 @@ BE: we screwed up, it needed more implementor feedback and further iteration.
 MM: lets defer this conversation for tomorrow, when Alan can call it successfully.
 
 #### Conclusion/Resolution
+
 defer until we can talk to Allen tomorrow
 
 

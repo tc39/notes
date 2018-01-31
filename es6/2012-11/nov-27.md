@@ -5,8 +5,9 @@ JN: (Identify missing members or those that will be here tomorrow)
 
 ...Welcome and introductions.JN welcomed members and introductions were made.  DC gave us facility and logistical information.  Dinner for Wednesday is set for 6 PM.
 
+## Agenda 
 
-JN# Previous Meeting Minutes
+JN: Previous Meeting Minutes
 
 JN: Review and approve?
 
@@ -83,7 +84,7 @@ Vocabulary
 
 Explanation of rationale leading to the restriction and reorganization of internal methods for defining spec behaviors. Leading into the organization of...
 
-## Meta Object Protocol, aka. MOP
+### Meta Object Protocol, aka. MOP
 
 Discussing section on invariants and how to redefine in a reasonable way.  We need people who are interested in these invariants to make contributions to this section.
 
@@ -215,7 +216,9 @@ AWB: The work is already done.
 ## Meeting Notes - Publish to wiki
 (side discussion, but valid to document)
 
-#### Conclusion/Resolution RW to publish meeting notes to ecma wiki (in addition to publishing on es-discuss and submission to ECMA)
+#### Conclusion/Resolution 
+
+- RW to publish meeting notes to ecma wiki (in addition to publishing on es-discuss and submission to ECMA)
 
 ## Internationalization Update
 
@@ -243,7 +246,7 @@ JN: Anything for submission to the GA?
 
 NL: We'll provide a technical report of some form for submission. Will provide the number of tests, (approx) and that coverage (missing and not) is understood.
 
-## International 2.0
+### International 2.0
 (get slides from NL)
 
 (1)
@@ -351,6 +354,7 @@ NC: Yes.
 JN: Despite potential operational changes from ECMA, let's move forward with this project. Continue to report as adhoc group via this group.
 
 #### Conclusion/Resolution
+
 TC39 Approves to move forward with 2.0. NL will submit slides to ECMA for minutes record.
 
 
@@ -375,15 +379,17 @@ MM: Requirements: (moved to resolution)
 
 
 #### Conclusion/Resolution
-Yes, requirements:
-- total,
-- deterministic
-- idempotent normalization (normalizing the result of normalization again will return the first result)
+
+- Yes, requirements:
+  - total,
+  - deterministic
+  - idempotent normalization (normalizing the result of normalization again will return the first result)
 
 WH: Note that Unicode got this wrong a while back (their normalization algorithm wasn't idempotent, and it didn't even form proper equivalence relations). They fixed it since then and now explicitly state that it's idempotent.
 
 
 ## String Case Conversion
+
 http://wiki.ecmascript.org/doku.php?id=strawman:case_conversion
 
 LH: Why isn't this in the Internationalization standard?
@@ -403,7 +409,8 @@ NL/LH: Not being in ES6 doesn't prevent implementation or spec authoring.
 LH: Doesn't need to be in the wrong spec just to move forward.
 
 #### Conclusion/Resolution
-Goes in Internationalization but doesn't prevent specification or implementation.
+
+- Goes in Internationalization but doesn't prevent specification or implementation.
 
 
 ## Eliminate ToUInt32() warping on array access
@@ -447,7 +454,8 @@ a[Math.pow(2, 32) - 1] = true;
 ```
 
 #### Conclusion/Resolution
-Tabled until AWB has further impact research.
+
+- Tabled until AWB has further impact research.
 
 
 ## The prototype/constructor object model supporting Generators/use of instanceof with generators and generator instances
@@ -565,5 +573,6 @@ f.__proto__ === (function *() {}).__proto__;
 ```
 
 #### Conclusion/Resolution
+
 - Per diagram (https://dl.dropbox.com/u/3531958/tc39/generator-diagram-1.jpg), but without exposing "Generator"
 - "GeneratorFunction" exposed via a module

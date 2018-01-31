@@ -2,7 +2,6 @@
 
 John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Luke Hoban (LH), Rick Waldron (RW), Eric Ferraiuolo (EF), Doug Crockford (DC), Yehuda Katz (YK), Erik Arvidsson (EA), Mark Miller (MM), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Istvan Sebastian (IS), Andreas Rossberg (ARB), Brendan Eich (BE), Alex Russel (AR)
 
-
 ## Syntactic Support for Private Names
 
 BE/LH: Concern that the syntax required too much declaration
@@ -401,6 +400,7 @@ DH: Could do semantics of strict mode and allow the collision
 MM: I don't think this introduces a strict mode runtime tax.
 
 #### Conclusion/Resolution
+
 STH will provide a summary.
 
 - Symbols, unique and private are runtime concepts

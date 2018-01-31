@@ -2,6 +2,7 @@
 
 Rick Hudson (RH), John Neumann (JN), Mark Miller (MM), Norbert Lindenberg (NL), Nebojsa Ciric (NC), Allen Wirfs-Brock (AWB), Istvan Sebastian (IS), Luke Hoban (LH), Paul Leathers (PB), Sam Tobin-Hochstadt (STH), Andreas Rossberg (ARB), Brendan Eich (BE), Erik Arvidsson (EA), Dave Herman (DH), Yehuda Katz (YK), Rick Waldron (RW), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC)
 
+## Agenda 
 
 Introductions. Brief Agenda tweaks
 
@@ -168,6 +169,7 @@ JN: Any desire for ISO fast tracking?
 (Discussion re: ISO benefits.)
 
 #### Conclusion/Resolution
+
 ECMA-402 Approved for submission to ECMA CC & GA
 
 ISO fasttrack postoned (with the limited time frame of 2 months notice prior to presentation the GA, approx Oct 10, 12?)
@@ -182,6 +184,7 @@ JN: Agenda item for Nov.
 IS: Need to determine scope and scale of needed changes.
 
 #### Conclusion/Resolution
+
 Agenda item for November 2012 to entertain a proposal.
 
 
@@ -302,6 +305,7 @@ Derailed to Array-like API issues on the whole... When to implement array API an
 
 
 #### Conclusion/Resolution
+
 Further research and offline discussion.
 
 

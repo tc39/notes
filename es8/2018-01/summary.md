@@ -20,6 +20,7 @@
 - [Function.prototype.toString() censorship](jan-23.md#functionprototypetostring-censorship-for-stage-1) Stage 1
 - [Top-level await](jan-24.md#13iiil-top-level-await-for-stage-0) to Stage 1
 - [Maximally minimal mixins proposal](jan-23.md#13iiie-maximally-minimal-mixins-proposal) to [Stage 1](jan-24.md#revisiting-mixins-vs-protocols-proposal).
+- [Getting last item from Array](jan-24.md#13iiim-getting-last-item-from-array-for-stage-2) remained on Stage 1 with plans for further work.
 
 ### Moving Forward
 
@@ -46,7 +47,6 @@ _Proposals not advancing to new a new stage. e.g.: development updates, needs wo
 - [Making nullish values iterable, or at least array-spreadable](jan-23.md#13iiif-pr-making-nullish-values-iterable-or-at-least-array-spreadable) discussion to follow up on the respective [PR](https://github.com/tc39/ecma262/pull/1069).
 - [new Set builtin methods](jan-23.md#13iiik-new-set-builtin-methods-for-stage-2) for further discussion before advancing to Stage 2.
 - [Optional Chaining updates](jan-24.md#13iiin-optional-chaining-update).
-- [Getting last item from Array](jan-24.md#13iiim-getting-last-item-from-array-for-stage-2) remained on Stage 1 with plans for further work.
 - Discussion on [operator overloading](jan-24.md#13vd-operator-overloading-for-stage-1), not advancing to Stage 1 for now to collect requirements.
 - [TC39 should endorse use of a (one-of-several, not one specific recommended) parsing linter or actual compiler, not any particular semicolon style](jan-24.md#15iiia-tc39-should-endorse-use-of-a-one-of-several-not-one-specific-recommended-parsing-linter-or-actual-compiler-not-any-particular-semicolon-style).
 - Discussion on [use cases of Decorators](jan-24.md#13iiij-decorators-use-cases).

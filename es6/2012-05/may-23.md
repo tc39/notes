@@ -1,6 +1,8 @@
 # May 23, 2012 Meeting Notes
+-----
 
 This pre-dates the recording of a complete attendees list. 
+-----
 
 ## Override Mistake (Allen Wirfs-Brock, Mark Miller)
 

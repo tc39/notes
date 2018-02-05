@@ -1,8 +1,10 @@
 # January 29, 2015 Meeting Notes    
+-----
 
 
 Brian Terlson (BT), Jonathan Turner (JT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Erik Arvidsson (EA), Dave Herman (DH), Waldemar Horwat (WH), Domenic Denicola (DD), Kevin Smith (KS), Michael Ficarra (MF), Jordan Harband (JHD), Chip Morningstar (CM), Adam Klein (AK), Igor Minar (IM), Misko Hevery (MH), Istvan Sebastyan (IS), Rick Waldron (RW), Ben Newman (BN), Yehuda Katz (YK)
 
+-----
 
 ## ES6 Introduction text
 

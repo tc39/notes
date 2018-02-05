@@ -1,6 +1,8 @@
 # March 24, 2015 Meeting Notes
+-----
 
 Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Alan Schmitt (AS), Lee Byron (LB), Domenic Denicola (DD), Kevin Smith (KS), Andreas Rossberg (ARB), Brendan Eich (BE), Erik Arvidsson (EA), Adam Klein (AK), Jordan Harband (JHD), Mark Miller (MM), Istvan Sebestyén (IS), Jafar Husain (JH), Rick Waldron (RW)
+-----
 
 ## 4 ECMA-262 6th Edition
 (AWB)

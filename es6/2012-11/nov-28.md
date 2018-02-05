@@ -1,6 +1,8 @@
 # November 28, 2012 Meeting Notes
+-----
 
 John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Luke Hoban (LH), Rick Waldron (RW), Eric Ferraiuolo (EF), Doug Crockford (DC), Yehuda Katz (YK), Erik Arvidsson (EA), Mark Miller (MM), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Istvan Sebestyén (IS), Andreas Rossberg (ARB), Brendan Eich (BE), Alex Russel (AR)
+-----
 
 ## Syntactic Support for Private Names
 

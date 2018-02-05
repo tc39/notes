@@ -1,6 +1,8 @@
 # May 27, 2015 Meeting Notes    
+-----
 
 Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Lee Byron (LB), Kevin Smith (KS), Daniel Ehrenberg (DE), John McCutchan (JM), Dan Gohman (DG), Brendan Eich (BE), Adam Klein (AK), Jordan Harband (JHD), Mark Miller (MM), Michael Ficarra (MF), Waldemar Horwat (WH), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Farriauolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Matt Sweeney
+-----
 
 ## Agenda approval.
 

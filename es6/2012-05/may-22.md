@@ -1,6 +1,8 @@
 # May 22, 2012 Meeting Notes
+-----
 
 This pre-dates the recording of a complete attendees list. 
+-----
 
 ## Binary Data
 

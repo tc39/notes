@@ -1,4 +1,5 @@
 # July 26, 2012 Meeting Notes
+-----
 
 Mark Miller (MM), Brendan Eich (BE), Yehuda Katz (YK), Luke Hoban
 (LH), Rick Waldron (RW), Alex Russell (AR), Tom Van-Cutsem (TVC), Bill
@@ -6,6 +7,7 @@ Ticehurst (BT), Sam Tobin-Hochstadt (STH), Allen Wirfs-Brock (AWB), Doug
 Crockford (DC), John Neumann (JN), Erik Arvidsson (EA), Dave Herman (DH),
 Norbert Lindenberg (NL), Oliver Hunt (OH)
 
+-----
 
 ## Maxmin class semantics
 

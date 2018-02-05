@@ -1,10 +1,12 @@
 # July 30, 2014 Meeting Notes    
+-----
 
 
 Brian Terlson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Sebastian Markbåge (SM), Istvan Sebestyén (IS), Erik Arvidsson (EA), Brendan Eich (BE), Mark Miller (MM), Sam Tobin-Hochstadt (STH), Domenic Denicola (DD), Peter Jensen (PJ), John McCutchan (JMC), Paul Leathers (PL), Eric Toth (ET), Abhijith Chatra (AC), Jaswanth Sreeram (JS), Yehuda Katz (YK), Dave Herman (DH), Brendan Eich (BE), 
 
 
 
+-----
 
 ## RFTG Admin: ES6 Opt-out period. 
 

@@ -1,8 +1,10 @@
 # November 20, 2013 Meeting Notes
+-----
 
 
 John Neumann (JN), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Rick Hudson (RH), Matt Sweeney (MS), Rick Waldron (RW), Dmitry Soshnikov (DS), Sebastian Markbåge (SM), Ben Newman (BN), Reid Burke (RB), Waldemar Horwat (WH), Doug Crockford (DC), Tom Van Custem (TVC), Mark Miller (MM), Brian Terlson (BT), Andreas Rossberg (ARB), Alex Russell (AR)
 
+-----
 
 ## Report from the Ecma Secretariat (CC Report)
 (Istvan Sebestyén)

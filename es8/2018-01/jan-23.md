@@ -105,7 +105,7 @@ ZB: Minor additions like hourCycle to the option bag.
 
 ZB: Reviewing Stage 4 features, we had reps from all major browser engines, was useful to verify that we have no reason to worry about non-impl. There has been convos with Edge about timing, they're locked on stable features in ICU than we are, but that's all a 3-4 month period we think.
 
-ZB: So pluralRules, hourCycle, and formatToParts ar eall good to go.
+ZB: So pluralRules, hourCycle, and formatToParts are all good to go.
 
 ZB: Stage 3, Segmenter, Locale, RelativeTimeFormat, Listformat, we got support from all attendees on the call to promote them to next stage.
 
@@ -118,7 +118,7 @@ ZB: Stage 3, Segmenter, Locale, RelativeTimeFormat, Listformat, we got support f
 
 (Chip Morningstar)
 
-CM: Summary - no news is good news.   What they call "fast track" thru ISO has happened, 404 is now ISO-21778, that's it.
+CM: Summary - no news is good news. What they call "fast track" thru ISO has happened, 404 is now ISO-21778, that's it.
 
 #### Conclusion/Resolution
 
@@ -126,7 +126,7 @@ CM: Summary - no news is good news.   What they call "fast track" thru ISO has h
 
 ## 10. ECMA414 status updates
 
-(iBrian Terlson)
+(Brian Terlson)
 
 BT: No updates. The suite is ready.
 
@@ -192,7 +192,7 @@ RW: (added post meeting)
     - resolution: occurs during module resolution.
     - runtime: occurs during evaluation.
   - previously this was just "early" and "runtime"
-- testharness code is now also tested
+- test-harness code is now also tested
 
 - Community users, non-browser JS engines and tools: 
   - Acorn
@@ -295,7 +295,7 @@ MB: (Presenting)
 
 MB: Wanted to start with something small and talk about ESHost... talking about command-line utilities. Useful for people on the community. Makes it really easy to run a piece of JS code in various engines from the command line. On a system with Node and npm, you just install ESHost-CLI (demonstrates).  It runs a given code snippet in all the engines it knows about. For it to know about these engines you have to tell it "I have a V8 binary here, Chakra there...".  You do have to set up build systems, compile from source, repeat every few weeks to get up-to-date engine builds. This was painful unless you're already working on these. So now I want to talk about a new tool to set these up locally rather than doing the whole compile dance. It's called JSVU (version updater) and it's also a command-line utility. On a system with Node and npm, you just install jsvu globally, and then run it {demonstrates}. The first time it asks for confirmation on which engines + arch, then it does its thing, figures out the latest version of each engine, downloads and installs the binaries, and that's it. So you only have to remember a single command, jsvu, and run it whenever you want to auto-update all those engines to the latest version. Then you can directly use the JS engines from the command line.
 
-MB: Specifically for eshost-cli, you just need to install es-host and tell it where the engines are, which for jsvu is all in the same directory, and that's it. Immensely useful for compat testing. Any time you find yourself in need of a JS engine binary you can use jsvu to easily automate the install and get a recent version. I'm interested in other use-cases, too, like web assembly waterfall — in that project, a lot of engineering time is spent maintaining the build infrastructure for all JS engines. This can be avoided by just using jsvu instead of building it all from source. If you use this, let me know what you use it for. And shoutout to eshost, it's a very nice tool.
+MB: Specifically for eshost-cli, you just need to install eshost and tell it where the engines are, which for jsvu is all in the same directory, and that's it. Immensely useful for compat testing. Any time you find yourself in need of a JS engine binary you can use jsvu to easily automate the install and get a recent version. I'm interested in other use-cases, too, like web assembly waterfall — in that project, a lot of engineering time is spent maintaining the build infrastructure for all JS engines. This can be avoided by just using jsvu instead of building it all from source. If you use this, let me know what you use it for. And shoutout to eshost, it's a very nice tool.
 
 YK: At minimum, a use-case in my space is having JS code that you expect to not need browser code (I write a library like this), this is a quick way to ensure it runs on all the engines.
 
@@ -1393,25 +1393,3 @@ MM: I support both at stage 1
  - Stage 1 for Set-specific methods
  - Stage 1 for the more generic methods Array-like methods (for both Set and Map)
  
-
-
-
--------------------------------------------------------------------------------------------------------------------------------------------
-Example:
--------------------------------------------------------------------------------------------------------------------------------------------
-    
-    
-## X.Y.Z Agenda Item 
- 
-(Presenter Full Name)
- 
- - [proposal](...link to proposal...)
- - [slides](...link to slides...)
- 
- FOO: hello
- 
- BAR: world
- 
-#### Conclusion/Resolution
- 
-- Stage -1 

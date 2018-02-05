@@ -452,9 +452,7 @@ DE: what about the advantage of avoiding needing to add a new token
 
 MM: I'd rather introduce the new token
 
-AK: 
-    
-    YK: ron's proposal, I may agree with mark, but I'd like to explore before we add more things to the class body
+YK: ron's proposal, I may agree with mark, but I'd like to explore before we add more things to the class body
     
 MM: I'm in favor of exploration
 
@@ -900,13 +898,13 @@ JHD: thanks for that. I recently learned about a WeakValueMap map being consider
 
 MM: webassembly is a very interesting interaction, I'm on the wasm team at google and involved in the standard. There's pressure to introduce weak references or something morally equivalent into wasm. There's a weird disconnect between that and the same team having advocated that weakreference *not* be available in javascript, and not denying that wasm and JS are synchronously coupled, so anything in one is also in the other. SharedArrayBuffers, as available in javascript and standardized by ecma, are available in wasm and standardized by w3c, this will continue to be painful. There's a need for both bodies to track and agree on precisely the same spec. That's a very weird thing to try to coordinate. In order for neither side to feel they've been forced by the other, you need consensus across both groups across both organizations.
 
-AK: I second's JF's suggestion to not imply bad faith or malice
+AK: I second's JFB's suggestion to not imply bad faith or malice
 
 JHD: I apologize, thanks
 
 AK: thanks, we might want to consider changes to our process, to address these process failures. Mark's example is interested, it involves large numbers of people trying to agree on things, difficult
 
-DE: a classic way for standards groups to address these things is with liasons, ecma has a special form to sign to be a liason from a different committee. we've relied heavily on specific people who cross over between organizations. It's great we have several members who cross over to wasm. Maybe we should actively promote being these liason positions, splitting up that work among multiple people so we can do a good job
+DE: a classic way for standards groups to address these things is with liasons. Ecma has a special form to sign to be a liason from a different committee. we've relied heavily on specific people who cross over between organizations. It's great we have several members who cross over to wasm. Maybe we should actively promote being these liason positions, splitting up that work among multiple people so we can do a good job
 
 YK: agree strongly about "nefarious", no mustache-twirling villans here. But also, people aren't always behaving solely on rational technical reasons.. about venue, which standards body is responsible, people react strongly to questions of venue, used to accomplish certain goals. It was hard to figure out what happened with that. As a person without a lot of leverage, I'm not at a browser company, tc39 is special, it gives leverage to people who aren't at big companies, attempts to move things to other venues that are mostly populated by large-company, serves to reduce influence of smaller parties, might contribute to more heated conversations
 

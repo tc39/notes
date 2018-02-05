@@ -1,11 +1,7 @@
 # July 24, 2012 Meeting Notes
 -----
 
-Yehuda Katz (YK), Luke Hoban (LH), Rick Waldron (RW), Alex Russell
-(AR), Tom Van Cutsem (TVC), Bill Ticehurst (BT), Brendan Eich (BE), Sam
-Tobin-Hochstadt (STH), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB),
-Doug Crockford (DC), John Neumann (JN), Oliver Hunt (OH), Erik Arvidsson
-(EA), Dave Herman (DH)
+Yehuda Katz (YK), Luke Hoban (LH), Rick Waldron (RW), Alex Russell (AR), Tom Van-Cutsem (TVC), Bill Ticehurst (BT), Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Doug Crockford (DC), John Neumann (JN), Oliver Hunt (OH), Erik Arvidsson (EA), Dave Herman (DH)
 
 -----
 

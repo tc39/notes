@@ -1,7 +1,7 @@
 # May 25, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Jeff Morrison (JM), James Snell (JSL), Keith Miller (KM), Myles Borins (MBS), Rick Waldron (RW), Mariko Kosaka (MKA), Stephen Murphy (SMY), Robert Palmer (RPR), Andrew Paprocki(API), Philippa Gardner (PGR), Sam Goto (SGO), Mark Miller (MM), Nathan Hammond (NHD), Masud Rahman (MRN), Henry Zhu (HZU), Sebastian Markbåge (SM), Joe Mordetsky (JMY), Franziska Hinkelmann (FHN), Caridy Patiño (CP), Myles Borins (MBS), Ron Buckton (RBN), Ashley Williams (AWS), Domenic Denicola (DD), Patrick Soquet (PST), Peter Hoddie (PHE), Leo Balter (LBR), Ben Newman (BN), Jafar Husain (JH), Yehuda Katz (YK), Sarah D'Onofrio (SDO), Kirill Cherkoshin (KCN), Andres Suarez (ASZ), Diego Ferreiro Val (DFV), Tzvetan Mikov (TMV), Brendan Eich (BE), Istvan Sebestyén (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Jeff Morrison (JM), James Snell (JSL), Keith Miller (KM), Myles Borins (MBS), Rick Waldron (RW), Mariko Kosaka (MKA), Stephen Murphy (SMY), Rob Palmer (RPR), Andrew Paprocki (API), Philippa Gardner (PGR), Sam Goto (SGO), Mark S. Miller (MM), Nathan Hammond (NHD), Masud Rahman (MRN), Henry Zhu (HZU), Sebastian Markbåge (SM), Joe Mordetsky (JMY), Franziska Hinkelmann (FHN), Caridy Patiño (CP), Myles Borins (MBS), Ron Buckton (RBN), Ashley Williams (AWS), Domenic Denicola (DD), Patrick Soquet (PST), Peter Hoddie (PHE), Leo Balter (LBR), Ben Newman (BN), Jafar Husain (JH), Yehuda Katz (YK), Sarah D'Onofrio (SDO), Kirill Cherkoshin (KCN), Andres Suarez (ASZ), Diego Ferreiro Val (DFV), Tzvetan Mikov (TMV), Brendan Eich (BE), István Sebestyén (IS)
 
 -----
 
@@ -159,7 +159,7 @@ LBR: Will need to define and document the role.
 
 https://github.com/tc39/code-of-conduct-proposal/issues/25
 
-(Istvan)
+(István)
 
 IS: Executive committee's reaction to the proposal was immediately positive and received broad support.
 
@@ -256,7 +256,7 @@ MM: is two token lookahead concretely a problem for implementors?
 
 KG:  Seems ok since its already very complicated.
 
-KMR: non-issue
+KM: non-issue
 
 WH: Can get us unintentionally stuck in a corner, where we can't extend language in the future 
 
@@ -390,7 +390,7 @@ BT: Can also change it to _not_ throw for negative to
 
 - https://github.com/tc39/ecma262/pull/850
 
-KMR: The error is also thrown by typed arrays.
+KM: The error is also thrown by typed arrays.
 
 MM: We should be consistent across all of the occasions to not throw, or this is fine.
 
@@ -940,7 +940,7 @@ SM: Never fully integrated into React.
 
 YK: Observables fundamentally push, where pull is proven to be more effective
 
-KMR: Are there use cases in Node.js?
+KM: Are there use cases in Node.js?
 
 API: Bloomberg data (more here, Andrew please fill in)
 

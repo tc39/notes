@@ -1,7 +1,7 @@
 # September 27, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Dean Tribble (DT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SB), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Mikeal Rogers (MRS), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), James Snell (JSL), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Brendan Eich (BE)
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Dean Tribble (DT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Mikeal Rogers (MRS), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), James Snell (JSL), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Brendan Eich (BE)
 -----
 
 ## Introduction
@@ -36,7 +36,7 @@ AWB: ECMA414 Approval?
 MM: (clarifying motivation?)
 
 WH: I had the same feedback when this initially came up in TC39. A standard can't be just a bibliography; it needs to state what it's standardizing.
-Istvan SEBESTYEN: Waldemar, it is more than a bibliography. It is a compilation of normative and not-normative ECMAScript components, with normative and informative links. What is important that it is standard that will not change every year, and when fast-tracked is fine under the RAND IPR Regime of ISO/IEC. This solves the problem that Ecma will not have to fast-track its RF ECMASCript standards every year, which would not work...Too fast, for keeping the Ecma and ISO specs in synchronization.  
+István SEBESTYEN: Waldemar, it is more than a bibliography. It is a compilation of normative and not-normative ECMAScript components, with normative and informative links. What is important that it is standard that will not change every year, and when fast-tracked is fine under the RAND IPR Regime of ISO/IEC. This solves the problem that Ecma will not have to fast-track its RF ECMASCript standards every year, which would not work...Too fast, for keeping the Ecma and ISO specs in synchronization.  
 
 AWB: Please look at linked pdf, review and have decision for Thursday
 
@@ -117,7 +117,7 @@ AWB: How many implementations are?
 
 BT: At least two
 
-FST: We have full patches, I think that's implementation experience
+EFT: We have full patches, I think that's implementation experience
 
 AWB: If we found bugs, they should be reported
 
@@ -202,8 +202,8 @@ LBR: Need to work on update for TR104
 
 DE: Were we going to retract this document?
 
-AWB: This document is informatively referenced by ECMA 414; Istvan was suggesting to retitle as TR414? (since it also includes ECMA-402 tests)
-Istvan Sebestyén (sitting in CH...): No, that was a mistake on my side... Sorry... I wanted to keep the original TR number (but 2nd Edition), which I think it is TR/104? I do not have the Ecma TR list in front of me....  
+AWB: This document is informatively referenced by ECMA 414; István was suggesting to retitle as TR414? (since it also includes ECMA-402 tests)
+István Sebestyén (sitting in CH...): No, that was a mistake on my side... Sorry... I wanted to keep the original TR number (but 2nd Edition), which I think it is TR/104? I do not have the Ecma TR list in front of me....  
 
 
 LBR: Need to arrange further Test262 work
@@ -220,7 +220,7 @@ LBR: Need to arrange further Test262 work
 
 https://docs.google.com/presentation/d/1kHuEtVc-GPp3rbddMVBATKYQ5qLz2o4LnNGUNg8cCz4/edit?usp=sharing
 
-SB: The cycle check in OrdinarySetPrototypeOf bails out on Proxies, which it has to, as it can run any code for the prototype. It's only possible to really validate in that case.
+SBI: The cycle check in OrdinarySetPrototypeOf bails out on Proxies, which it has to, as it can run any code for the prototype. It's only possible to really validate in that case.
 
 - bug: anything with setPrototypeOf
 
@@ -228,17 +228,17 @@ MM: Does this allow users to detect whether an object is a Proxy?
 
 MS: Let's discuss the feature first
 
-SB: Maybe, we'll have to think about this
+SBI: Maybe, we'll have to think about this
 
-SB: The general motivation is to make Window or Location, which use the ordinary get/set prototype methods, but still make sense to have cycle checks for.
+SBI: The general motivation is to make Window or Location, which use the ordinary get/set prototype methods, but still make sense to have cycle checks for.
 
-FST: We ran into this in Firefox as well
+EFT: We ran into this in Firefox as well
 
-SB: Do we think it's a goal to prevent prototype loops? I'm thinking about cases that use [[Prototype]], which ordinary objects use, and host objects like Window and Location should have these checks as well
+SBI: Do we think it's a goal to prevent prototype loops? I'm thinking about cases that use [[Prototype]], which ordinary objects use, and host objects like Window and Location should have these checks as well
 
 MM: disagree, re: proxy
 
-SB: The proposal is: embedders like HTML should have the benefits of this cycle check
+SBI: The proposal is: embedders like HTML should have the benefits of this cycle check
 
 - get the benefit of the cycle trap
 
@@ -247,13 +247,13 @@ BT: objects that have exotic GetPrototypeOf should be allowed to have cycle trap
 
 AWB: You have to be more restrictive than simply an exotic SetPrototypeOf
 
-SB: Can you detect whether something is a Proxy by trying to induce a cycle check?
+SBI: Can you detect whether something is a Proxy by trying to induce a cycle check?
 
 MM: The simplest stance would be to drop the cycle prohibition altogether, since it can't coherently be enforced 
 
 AWB: Spec has no cycle prohibition
 
-SB: Proxy not have [[Prototype]] ...
+SBI: Proxy not have [[Prototype]] ...
 
 MM: If circularity requirement dropped...
 
@@ -264,11 +264,11 @@ DH:
 
 MM: Last time we discussed this, one proposal was to use the [[Prototype]] of the target for the loop checks (going down the target chain as necessary). That's coherent because it proves there can't be an instant in time where there's a cycle.
 
-SB: I think this is not what I'm trying to argue. I'm saying, consider other objects, do we care about cycle checks? I am proposing 
+SBI: I think this is not what I'm trying to argue. I'm saying, consider other objects, do we care about cycle checks? I am proposing 
 
 MM: w/o proxy no cycle checks agree. But we have proxy, so disagree
 
-SB: This spec proposal is just to keep Proxies with the same behavior, and bail out in that case as we do now, but allow embedder exotic objects to have the cycle check.
+SBI: This spec proposal is just to keep Proxies with the same behavior, and bail out in that case as we do now, but allow embedder exotic objects to have the cycle check.
 
 Proposal: 
     
@@ -281,27 +281,27 @@ AWB: to host objects, ie. location. Anything else where host might create, but n
 
 - An exotic object that uses [[Prototype]], can override GetPrototypeOf, but has to be idempotent. 
 
-FST: 
+EFT: 
     
 DD: Doesn't work because document.domain, which allows to change whether window is same origin or cross origin. Window will change from prototype to null
 
 AWB: If you can only change to null, can't create a circularity
 
-SB: Could give Proxy [[Prototype]] of null just for this case
+SBI: Could give Proxy [[Prototype]] of null just for this case
 
 AWB: How?
 
 DD: This would blacklist proxy
 
-SB: some flag? A square-bracket whatever, my GetPrototypeOf should make me terminate the lookup 
+SBI: some flag? A square-bracket whatever, my GetPrototypeOf should make me terminate the lookup 
 
 MM: Using the proxy target's prototype, follow the target's chain?
 
-SB: Would work
+SBI: Would work
 
 AWB: How relates to HTML problem?
 
-FST: Don't know
+EFT: Don't know
 
 KG: Instead of whitelisting ordinary objects, we would change this loop for Proxy.
 
@@ -335,7 +335,7 @@ AWB: Have now is what we want. Overhead on a [[Set]], which almost never happens
 
 MM: I think it's important to note that we have a "yes" for the ability for Proxies to be undetectable
 
-SB: This proposal, with respect to Proxies, is indistinguishable from current behavior
+SBI: This proposal, with respect to Proxies, is indistinguishable from current behavior
 
 YK: if possible to demonstrate that a proxy can evade, then we need to be aware of that 
 
@@ -368,7 +368,7 @@ AWB: Do we need affordance for _this_ particular case?
 
 BT: This case: reasonable for impl to want to have a custom SetPrototypeOf trap for the purpose of stability
 
-FST: We have hit the end of the timebox
+EFT: We have hit the end of the timebox
 
 BT: Should be possible for impl to impl HTML and ES and conform to the spec. Arguably, Normative prose: an impl "might" say "do circ check..."
 
@@ -535,7 +535,7 @@ BT: I am proposing that JSDOM would not be able to have a ULEO. It would be a sp
 
 DD: I think that's fine that JSDOM doesn't emulate document.all
 
-BF: I think that's fine; I don't think Node cares
+BFS: I think that's fine; I don't think Node cares
 
 DH: Either nobody wants this, in which case why write it in the spec, or it is wanted, in which case we need to expose it more generally.
 
@@ -586,7 +586,7 @@ AWB: Annex B is exclusively about things that are already in the language
 
 RW: We added the dunders to Annex B, which were host extensions but reflected reality
 
-FST: Agrees
+EFT: Agrees
 
 AWB: But those pertain to Object
 
@@ -726,7 +726,7 @@ JHD: Yes
 
 JHD: Node semantics are a little different, since it's enumerable and writable.
 
-BF: It doesn't seem like this should be a problem, to make it non-enumerable and configurable and non-writable.
+BFS: It doesn't seem like this should be a problem, to make it non-enumerable and configurable and non-writable.
 
 MF: Wasn't this supposed to be reliable? Making it configurable makes it unreliable.
 
@@ -783,7 +783,7 @@ DD: There are a lot of notions of mixins; let's scope this discussion to 'classe
 
 YK: Actually, extending objects reintroduces all of the ambiguity of ES5
 
-BF: Let's take a step back from the syntax, and from making this on classes. People want mixins. People want to set the prototype of something. They have a big grab bag of objects, and a big grab bag of things they want to attach with a prototype. They see that class is a way of setting the prototype syntactically, in a manner. I'm asking, do they really want it on a class, or do they really want this syntactic prototype delegation? __proto__ feels like a second-class citizen.
+BFS: Let's take a step back from the syntax, and from making this on classes. People want mixins. People want to set the prototype of something. They have a big grab bag of objects, and a big grab bag of things they want to attach with a prototype. They see that class is a way of setting the prototype syntactically, in a manner. I'm asking, do they really want it on a class, or do they really want this syntactic prototype delegation? __proto__ feels like a second-class citizen.
 
 RW: My question to this room is, should we put time into the syntax like class-mixin-basic.js?
 
@@ -795,7 +795,7 @@ MF: Is this proposal dependent on this particular syntax, or would you be open t
 
 RW: I just want to raise the general discussion. Would the committee be interested in pursuing this concept of inheriting from an object?
 
-BF: I'm not in favor of this current proposal, with a runtime check
+BFS: I'm not in favor of this current proposal, with a runtime check
 
 DE: Can we discuss mixins generally?
 

@@ -1,7 +1,7 @@
 # March 23, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbåge (SM), Bradley Farias (BF), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SD), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LG), Istvan Sebestyén (IS), Matt Johnson (MJ)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LG), István Sebestyén (IS), Matt Johnson (MJ)
 -----
 
 ## General Discussion
@@ -45,11 +45,11 @@ AWB: In this example you are only using default exports.  Can it have named expo
 
 CP: Yes, it's the same thing.
 
-BF: The current plan is to only support default exports. We're working on other things... Much like this, you ??
+BFS: The current plan is to only support default exports. We're working on other things... Much like this, you ??
 
 AWB: It's clear that it wouldn't be very hard to make default work, but it wasn't clear that you could make an open-ended set of names work.
 
-BF: Correct.
+BFS: Correct.
 
 CP: It's the same, we do have the details of the binding. We have the local name for the binding, the import name for the one we're importing from. One more point is that this solution is not just for CommonJS modules, but for any other dynamic modules (like wasm)
 
@@ -111,11 +111,11 @@ MM: What is "tried to cause the module to export anything anyone tried to get fr
 
 AK: For ES modules they export the things they declare as exporting. For dynamic modules their set of exports is defined by their importers. I could say `import atom from underscore` and atom will now be exported from underscore.
 
-BF: I don't think that's entirely true if we go back to module declaration and instantiation, I think it's statically checked.
+BFS: I don't think that's entirely true if we go back to module declaration and instantiation, I think it's statically checked.
 
 CP: You can resolve to pending because you haven't evaluated the dynamic module.
 
-BF: So if the loader does not generate a pending, does that mean it's an error?
+BFS: So if the loader does not generate a pending, does that mean it's an error?
 
 CP: If you know the shape of it without evaluating it, you don't need to return pending.
 
@@ -251,7 +251,7 @@ DH: We heard Bradley say they're investigating ways to see how you could state w
 
 YK: I would be happy to explore that.
 
-BF: We have prototyped out exactly that. You can model it with two ES modules right now.
+BFS: We have prototyped out exactly that. You can model it with two ES modules right now.
 
 DH: Sure, perfect. And we could make that API nicely. The going assumption we had is that the only way to discover the shape was to execute it. I'm suggesting that instead of that, we could say you have to declare before you execute what the static shape is.
 
@@ -265,15 +265,15 @@ DH: It would be computed dynamically, but it is staged, in the sense that once y
 
 WH: What does that computation have access to?  Does it have access to other modules or is it purely local?
 
-BF: Let me explain what we have right now. Basically when you get a list of exports for some sort of dynamic record, we're generating a static list of specifiers (like we saw earlier), and that needs to be available at or before module instantiation, by that time it is static and frozen. That's when observable effects come into play.
+BFS: Let me explain what we have right now. Basically when you get a list of exports for some sort of dynamic record, we're generating a static list of specifiers (like we saw earlier), and that needs to be available at or before module instantiation, by that time it is static and frozen. That's when observable effects come into play.
 
 CP: Does that mean that you evaluate the module?
 
-BF: We have a couple of different shapes of modules but we know all their shapes prior to evaluating them currently.
+BFS: We have a couple of different shapes of modules but we know all their shapes prior to evaluating them currently.
 
 AK: When you say node, this is in some thing outside the language, you aren't evaluating expression to figure it out right?
 
-BF: No, there are a few different approaches (Dave mentioned one: an out of band file), or some pragma at the top.
+BFS: No, there are a few different approaches (Dave mentioned one: an out of band file), or some pragma at the top.
 
 DH: I want to continue answering WH's question.  If you are making it dynamic, that is exactly the right question to poke at when looking for soundness or initialization order problems. I believe that a staged system makes it possible to avoid that problem, but we need to investigate this further.
 
@@ -303,7 +303,7 @@ AWB: I'm going to pile on. I think that the fundamental thing here is that if yo
 
 DH: The quickest way to explain is that Node discovered a key thing. We can make the default mode for the whole ecosystem to be `default` export and we can opt-into named export. That gives us strong backward compatibility. Once you have that it's easier to see your way to semantics that makes sense. Is that right Bradley?
 
-BF: Yes.
+BFS: Yes.
 
 YK: One other closing the loop.  There's also AMD modules. They don't trivially have a solution. I think that having them default to default export works fine.  Because they are eval'd with an outer wrapper and an inner function, you can add to the outer wrapper pretty easily.
 
@@ -387,11 +387,11 @@ DH: So top level usage of this, we create a realm, we use eval, use `import()` a
 
 KCD: So what you normally get, is that going to be whatever is exported from that module?
 
-BF: The completion value?
+BFS: The completion value?
 
 DH: The result of `eval()` is going to be the completion value of eval.  I'm forgetting the details of the import-parens syntax.
 
-BF: It needs to be in an expression position.
+BFS: It needs to be in an expression position.
 
 DH: So I'd have to put parens around the eval here (in the example)?
 
@@ -439,7 +439,7 @@ DH: Should people have the power to modify the environment they're running in? T
 
 YK: You mean illegal URL?
 
-BF: The specifiers are different.
+BFS: The specifiers are different.
 
 YK: ServiceWorker intercepts network requests, and it's unclear ??
 
@@ -453,7 +453,7 @@ AK: So you're not suggesting this is the way to solve this.
 
 DH: That seems like an obvious reaction to have, sorry. I'm considering these separate.
 
-BF: Your comment on being a recovering functional programmer. We have this already implemented and we're moving to a functional approach for reasons we can discuss.
+BFS: Your comment on being a recovering functional programmer. We have this already implemented and we're moving to a functional approach for reasons we can discuss.
 
 DH: I'd be happy to discuss that.
 
@@ -467,7 +467,7 @@ WH: Trivial question... Where did `this.#jquery` come from?
 
 DH: From the constructor. That came from when the registry was instantiated. But the point is that's coming from the outer realm and sharing that explicitly to the child realm. You never get implicit sharing. Ok, concepts: parseModule, import hook, a way to satisfy modules independently, and a way to link those modules.
 
-BF: Is there a reason we used a computed property instead of just a name?
+BFS: Is there a reason we used a computed property instead of just a name?
 
 DH: (new slide) Example: a dynamic loader. Here's another TinyLittleRealm class. Uses a TinlyLittleLoader class which is sharing jQuery from the outer realm to the inner realm. Referrer is used to deal with de-relativization. The loader is going to produce a custom type relative to this program. The final stage of loading this module is it's fully linked and here's the finally linked module. So `linked` is a promise of the fully linked module. `module.ensureEvaluated()` ensures that if it hasn't been evaluated so far it will be evaluated now.
 
@@ -475,11 +475,11 @@ WH: Is `[Realm.import]` always async?
 
 DH: Yes.
 
-BF: We can have this discussion, but with async functions...?? I don't want to talk about this now. It looks fine to me :)
+BFS: We can have this discussion, but with async functions...?? I don't want to talk about this now. It looks fine to me :)
 
 DH: Same top-level usage.
 
-BF: I do have a question on `ensureEvaluated` here, in the previous slide I thought `realm.import` returned an unevaluated dependency and this one looks like it ensures it's evaluated. If it's coming from something that's not evaluated, you're hoisting evaluation.
+BFS: I do have a question on `ensureEvaluated` here, in the previous slide I thought `realm.import` returned an unevaluated dependency and this one looks like it ensures it's evaluated. If it's coming from something that's not evaluated, you're hoisting evaluation.
 
 DH: It's a bug in the first demo. You should just call `ensureEvaluated`.
 
@@ -513,11 +513,11 @@ AWB: At least in the spec, names and bindings might be mixed up. Let's be more s
 
 DH: Name is a pretty overloaded term...
 
-BF: I think there's still a little more API work to be done here (I guess we're at stage 1 so that's expected). I don't think you should expose as much of the low level hooks as you have here.
+BFS: I think there's still a little more API work to be done here (I guess we're at stage 1 so that's expected). I don't think you should expose as much of the low level hooks as you have here.
 
 DH: Oh, interesting.
 
-BF: We should always make sure that ??? is a promise.
+BFS: We should always make sure that ??? is a promise.
 
 CP: We do have an issue in the loader spec, so we will not utilize the name here.
 
@@ -551,19 +551,19 @@ YK: No I was simply arguing that you could also solve that with the parseModule 
 
 DH: Do you mind if I do a quick synthesis. What we're all taking about is sort of the classic problems of sharing and mutation. And there are sort of classic solutions which include mutability and copying. And so I think this is the first trip around the block to explore, and we'll keep exploring that and not trying to solve more than we need at this point. I think making it inexpensive so that you can instantiate a module across realms is (very good).... Frozen realms. I like immutable data structure. I think frozen realms have a lot of promise as well.
 
-BF: I agree with everything you just said, so that's good. Has any thought been given to the behavior of the window.proxy object?
+BFS: I agree with everything you just said, so that's good. Has any thought been given to the behavior of the window.proxy object?
 
 DH: Domenic has been asking useful questions about this on one of the issues. We have some discussion here.
 
-BF: In node, we don't have a proxy object for example so we just need to make sure..
+BFS: In node, we don't have a proxy object for example so we just need to make sure..
 
 MM: Just need to head off the term confusion. The `WindowProxy` object cannot be modeled with an ES6 Proxy.
 
-BF: Has there been any consideration of job queues?  e.g., the promise realm is shared across realms?
+BFS: Has there been any consideration of job queues?  e.g., the promise realm is shared across realms?
 
 MM: Yeah, they're pro-worker per agent. Not per-realm.
 
-BF: I didn't see anything about controlling promises here. Is that separate?
+BFS: I didn't see anything about controlling promises here. Is that separate?
 
 MM: Yes, once Dave revives the old wiki.ecmascript.org pages. I can point you at a bare start at an API to try to re-ify agent.
 
@@ -1059,7 +1059,7 @@ MPT: That would only cover formatting, that would not cover date.
 
 MJ: Correct, it needs to be merged back into 262.
 
-BF: Is this timeboxed?
+BFS: Is this timeboxed?
 
 _Everyone: No..._
 
@@ -1396,17 +1396,17 @@ MF: Does everyone agree that using date arithmetic is a common thing. If so, I t
 
 YK: I disagree with some aspects of what you said. Cloning an existing popular thing is not correct.
 
-BF: Pretty early on we talked about how it didn't make sense to combine types. Are we thinking we will try to prevent people from trying to add them together.
+BFS: Pretty early on we talked about how it didn't make sense to combine types. Are we thinking we will try to prevent people from trying to add them together.
 
 MPT: You can combine LocalDate and LocalTime, but you can't put it on the timeline because you don't have timezone information.
 
 MJ: So you can't do something like LocalDate and then say at 3:00, what is that exact value in UTC. You can't say that because then you involve a timezone.
 
-BF: So we couldn't for example compare with an instant.
+BFS: So we couldn't for example compare with an instant.
 
 MPT: Correct, you can't compare `LocalDateTime` with an instant, because you can't compare two instances that aren't on the global timeline.
 
-BF: This is what is concerning to me, having people do ambiguous things like what we talked about in the previous discussion (about time zone problems with the current `Date` API)
+BFS: This is what is concerning to me, having people do ambiguous things like what we talked about in the previous discussion (about time zone problems with the current `Date` API)
 
 MJ: Another clear example of why this is neccessary. One of the biggest things that comes up on S.O. is why do I have a disconect between HTML5 dateTime types and the ES6 Date types. Someone will take something from an `<input type='date'>` and throw it into a `Date` constructor.
 

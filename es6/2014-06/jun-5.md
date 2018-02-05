@@ -1,7 +1,7 @@
 # June 5, 2014 Meeting Notes  
 -----
 
-Brian Terleson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbåge (SM), Rafael Weinstein (RWS), Jaswanth Sreeram (JS), Alex Russell (AR), Istvan Sebestyén (IS), Simon Kaegi (SK), Arnoud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark Miller (MM), Peter Jensen (PJ)
+Brian Terleson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbåge (SM), Rafeal Weinstein (RWN), Jaswanth Sreeram (JS), Alex Russell (AR), István Sebestyén (IS), Simon Kaegi (SK), Arnaud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark S. Miller (MM), Peter Jensen (PJ)
 
 -----
 
@@ -9,7 +9,7 @@ Brian Terleson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock 
 
 (Agenda item 5.2 added)
 
-(Istvan on the phone discussing non-member CLA process)
+(István on the phone discussing non-member CLA process)
 
 AR: It sounds like we're making the process difficult for non-members simply because it's currently difficult for members. Can we change the goal to just make the process simpler for everyone?
 
@@ -22,7 +22,7 @@ IS: Yes, I can do that
 **discussion**
 
 ## Conclusion/Resolution
-- Allen will continue to work with Istvan on this
+- Allen will continue to work with István on this
 - Not clear how to proceed concretely other than having members continue to push for this
 - Current process includes printing pdf, signing it, scanning it
 

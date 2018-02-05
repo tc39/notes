@@ -790,7 +790,7 @@ W3C has dependencies on the Khronos spec.
 
 This specification will not include any parts of the Khronos spec, but will be compatible.
 
-JN: We need to make sure we're not violating anyone's IPR, Istvan can inquire.
+JN: We need to make sure we're not violating anyone's IPR, István can inquire.
 
 EA: We can have Ken (Kenneth Russell, Google) review the drafts.
 

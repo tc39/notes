@@ -1,12 +1,12 @@
 # January 24, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BF), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Gabriel Isenberg (GI), Bert Belder (BB), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Mathias Bynens (MB), Leo Balter (LB), Istvan Sebestyén (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Gabriel Isenberg (GI), Bert Belder (BB), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Mathias Bynens (MB), Leo Balter (LB), István Sebestyén (IS)
 -----
 
 ## Adopting the agenda
 
-- Start with Istvan's items to get them out of the way
+- Start with István's items to get them out of the way
 - Jeff Morrison more free on Tuesday, preferably
 
 AK: This may take less than three days.
@@ -61,7 +61,7 @@ AK: Do you mean big proposals, or do bugs count?
 
 BT: Any needs-consensus PRs after January 31st becomes a part of ES2018 (if at all). 
 
-BT: For those new to the committee, we're not a technical committee, we're a royalty free task group (of the technical committee). All that means is that there is a royalty free commitment to the content we create in the specification. If you would like to patent something that is in ECMA or if you think you have a patent that is pertinent to something we are standardizing in this version. You should talk to your lawyers and potentially opt out of the royalty free agreement. you'd be the first person to do this. We've never had an opt out. Talking to Istvan, I'm not sure we even know what happens.
+BT: For those new to the committee, we're not a technical committee, we're a royalty free task group (of the technical committee). All that means is that there is a royalty free commitment to the content we create in the specification. If you would like to patent something that is in ECMA or if you think you have a patent that is pertinent to something we are standardizing in this version. You should talk to your lawyers and potentially opt out of the royalty free agreement. you'd be the first person to do this. We've never had an opt out. Talking to István, I'm not sure we even know what happens.
 
 IS: Brian is right. In the current TC39 RFTG everything is expected to be RF. At an "opt out" - which we did not have so far - we have to see how that part of the policy plays out. But it will be difficult because a) who decides and how if the claim for the opt out is valid? b) If valid then either an alternative method has to be found or the RF project cancelled... So, if TC39 wants also "RAND" components in the standard, maybe for some special case, options that must be done in a new, different TG working with a RAND based policy.  
 
@@ -217,11 +217,11 @@ AWB: The real point here is that you can do all sorts of crazy stuff. The primar
 
 JHD: Is that any reason to not minimize it?
 
-BF: My concern with removing the second call, if you can catch the error already, I'd be surprised, just personally if the function didn't run but it generated an error. In the other case if I call super the first time and it DOES throw I'm presuming the second one would throw too because it's been set to initialize.
+BFS: My concern with removing the second call, if you can catch the error already, I'd be surprised, just personally if the function didn't run but it generated an error. In the other case if I call super the first time and it DOES throw I'm presuming the second one would throw too because it's been set to initialize.
 
 AWB: That seems to be in this space of crazy stuff can happen depending on how they structure their code. We just want consistency.
 
-BF:  Do you know what happens if you throw on the first super but not the second?
+BFS:  Do you know what happens if you throw on the first super but not the second?
 
 AWB: The second one would run and you would get a bound super and it would be fine
 
@@ -498,11 +498,11 @@ DH: Let me find out.
 
 ## Scheduling aside
 
-BT: Is Istvan calling in? I have urgent ISO plans to discuss
+BT: Is István calling in? I have urgent ISO plans to discuss
 
 AWB: The plan is a Thursday morning call. Someone suggested we do this tomorrow rather than Thursday because they think maybe we don't need to be here. We should decide that soon. We have the room for three days.
 
-BT: Should we say tomorrow for Istvan's update? I need to communicate that with Brendan.
+BT: Should we say tomorrow for István's update? I need to communicate that with Brendan.
 
 AWB: Is that so Brendan -won't- have to be here?
 

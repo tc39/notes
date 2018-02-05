@@ -1,10 +1,10 @@
 # November 28, 2017 Meeting Notes
 -----
 
-Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KGS), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (ARE), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AKN), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KMR)
+Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (ARE), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM)
 
 Remote: 
-Istvan Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
+István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
 -----
 
 ## 1. Opening, welcome and roll call
@@ -375,11 +375,11 @@ BE: Remember in July we raised an issue of oddities with Number.parseInt cleanup
 
 DE: Does BigInt.parseInt pay for itself?
 
-AKN: having looked at the implementation of parseInt it does a bunch of weird stuff that you don't want.
+AK: having looked at the implementation of parseInt it does a bunch of weird stuff that you don't want.
 
 DE: Ignoring trailing garbage is perhaps the worst of those things.
 
-AKN: Also the 0x prefix support is very bad.
+AK: Also the 0x prefix support is very bad.
 
 BE: Do these criticisms apply to any Number.parseInt, BigInt.parseInt, Decimal.parseInt?
 
@@ -389,11 +389,11 @@ BE: Yes we can call it fromString and cleanup. The global imprint becomes bigger
 
 YK: 
 
-AKN: This is a good argument for leaving it out and adding it later I guess.
+AK: This is a good argument for leaving it out and adding it later I guess.
 
 DE: Any feeling in the room of preference among these options then? Absent any feedback I'll go for fromString.
 
-AKN: I'd say leave it out for now.
+AK: I'd say leave it out for now.
 
 YK: I agree
 
@@ -446,7 +446,7 @@ KCL: Me
 
 DE: (Presenting)
 
-KMR: A lot of proposals make it to stage 3, get implemented by 1 or 2 engines, and for whatever reason they die. For example SIMD. If it had shipped, they'd be locked into it - but it would never make it into the standard. The problem is shipping features that - beyond a reasonable doubt - wont make it into the spec locks us into shipping non-spec features.
+KM: A lot of proposals make it to stage 3, get implemented by 1 or 2 engines, and for whatever reason they die. For example SIMD. If it had shipped, they'd be locked into it - but it would never make it into the standard. The problem is shipping features that - beyond a reasonable doubt - wont make it into the spec locks us into shipping non-spec features.
 
 MS: Keith and I are in alignment. SIMD sat at stage 3 for a long time. 
 
@@ -508,15 +508,15 @@ DH: So you think the requirements are too strict?
 
 DE: Well, the objection presented in committee was actionable; we had Chrome and Safari implementing it, and we just needed to wait for another browser to implement which has a different sort of shipping policy from Safari to meet the requirement stated by a committee memer.
 
-AKN: I don't think not going to stage 4 is a concrete problem. What Godfrey said was good - let's think about what are we trying to get out of the process, rather than focusing too much on the process.
+AK: I don't think not going to stage 4 is a concrete problem. What Godfrey said was good - let's think about what are we trying to get out of the process, rather than focusing too much on the process.
 
 BT: From the ChakraCore perspective we're in the similar boat to JSC - around what we can implement. We don't have a rapid shipping channel to the public, I definitely don't like the idea of waiting for implementations in stable browsers. I also agree that we shouldn't nail down a hard process here. I like the idea of champions identifying risk areas. That info will be different per proposal.
 
-AKN: As Domenic is not here I'm going to try and express his feelings. He doesn't want things to end up in the spec that are not supported by JavaScript implementations; e.g., SIMD.js could have ended up getting to stage 4 given the relaxed requirements (read in isolation). Domenic is worried that the way to block something is to hold up the consensus. 
+AK: As Domenic is not here I'm going to try and express his feelings. He doesn't want things to end up in the spec that are not supported by JavaScript implementations; e.g., SIMD.js could have ended up getting to stage 4 given the relaxed requirements (read in isolation). Domenic is worried that the way to block something is to hold up the consensus. 
 
 DE: Maybe we could have signoff from implementations?
 
-AKN: Well getting to any stage at all is effective signoff. I'm worried that this takes power from the committee to say that if you're stage 3 two implementations means you're stage 4 - without committee involvement. 
+AK: Well getting to any stage at all is effective signoff. I'm worried that this takes power from the committee to say that if you're stage 3 two implementations means you're stage 4 - without committee involvement. 
 
 SYG: What was the original motivation for this PR? To reduce the deadlock situation? That we can be blocked waiting for another implementor?
 
@@ -548,7 +548,7 @@ DE: Maybe we don't need to formalise this right now.
 
 MB: Jordan if you do that you're going to need to address "significant" and "such as".
 
-AKN: The ambiguity was here so we keep talking about this. This is the discussion we wanted per feature when we added this ambiguity.
+AK: The ambiguity was here so we keep talking about this. This is the discussion we wanted per feature when we added this ambiguity.
 
 #### Conclusion/Resolution
 
@@ -718,11 +718,11 @@ DH: Why do you want to change the order to evaluate B first?
 
 BFS: There was a PR against Node that was seeking to do this. It was one route towards providing Babel like named exports from CJS
 
-AKN: I'm glad this has landed I dont think we should do a TopLevelModuleEvaluationJob - I dont think it really does anything. Concrete html implementation of the loader does not use TopLevelModuleEvaluationJob.
+AK: I'm glad this has landed I dont think we should do a TopLevelModuleEvaluationJob - I dont think it really does anything. Concrete html implementation of the loader does not use TopLevelModuleEvaluationJob.
 
 BFS: Node does the same
 
-AKN: I don't think its reasonable to add normative text to the spec 
+AK: I don't think its reasonable to add normative text to the spec 
 
 DH: Bradley's  instinct here is good, we have to know what we can reasonably say. How do we specify this invariant? We can add English language invariants, they are in the spec already for example Array.prototype.sort. I want to point out we have discussed this exact topic at some length. In Portland a few years ago we did this. We landed on semantics where async execution of subgraphs are possible but only if they follow the ordering. The goal is to allow browsers to fetch modules and evaluate them as they come available while still respect ordering. In reality its a meek optimisation. Serious webapps will use offline transformations, not modules. The optimisations are useful for small to medium apps but don't scale to big apps. Maintaining ordering invariance is worthwhile.
 
@@ -740,7 +740,7 @@ BFS: I'm not eager to try to move the host specific stuff to where it could be d
 
 DH: It feels like sometimes a spec is trailing reality, not leading it. We can just go away to implementations and after studying what the implementation details are we can spec it. I feel from the room we have a consensus of wanting something in spec but not knowing enough about the problem.
 
-AKN: Agreed that the race cases may be fatal to having normative language around this.
+AK: Agreed that the race cases may be fatal to having normative language around this.
 
 BFS: This feels right.
 
@@ -760,7 +760,7 @@ DH: Firstly the work you're doing is super important. Thank you for your awesome
 
 NSH: Sure - perhaps we could say "is it worth relooking at deprecating in 5 years if usage is still low"
 
-KMR: What are the semantics of index array accessors?
+KM: What are the semantics of index array accessors?
 
 MM: Back in ES3 days accessors were not part of the standard but most browsers implemented them. The detailed semantics were never written down - so I cant tell you semantics for them. I will say there is a Frozen Realm proposal which allows for an environment of secure execution. Primordial objects like prototypes are frozen before the environment executes.
 
@@ -804,7 +804,7 @@ NSH: Yes this is all easy to say in hindsight, I don't want to attack the origin
 
 JRL: Surely test262 coverage could add this.
 
-AKN: Well in my experience conformance testing is not right for this. Fuzz testing or security analysis is how we get these.
+AK: Well in my experience conformance testing is not right for this. Fuzz testing or security analysis is how we get these.
 
 NSH: I think we should add shared tests for known vulnerabilities.
 

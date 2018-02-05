@@ -1,7 +1,7 @@
 # November 20, 2014 Meeting Notes
 -----
 
-Brian Terlson (BT), Taylor Woll (TW), Jordan Harband (JHD), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jeff Morrison (JM), Sebastian Markbåge (SM), Erik Arvidsson (EA), Peter Jensen (PJ), Eric Toth (ET), Yehuda Katz (YK), Dave Herman (DH), Brendan Eich (BE), Ben Newman (BN), Forrest Norvell (FN), Waldemar Horwat (WH), Alan Schmitt (AS), Michael Ficarra (MF), Jafar Husain (JH), Lee Byron (LB), Dmitry Lomov (DL), Arnaud Le Hors (ALH), Chip Morningstar (CM), Caridy Patiño (CP), Domenic Denicola (DD), Mark Miller (MM), Yehuda Katz (YK), Dmitry Soshnikov (DS), Kevin Smith (KS), Rafael Weinstein (RWS)
+Brian Terlson (BT), Taylor Woll (TW), Jordan Harband (JHD), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jeff Morrison (JM), Sebastian Markbåge (SM), Erik Arvidsson (EA), Peter Jensen (PJ), Eric Toth (ET), Yehuda Katz (YK), Dave Herman (DH), Brendan Eich (BE), Ben Newman (BN), Forrest Norvell (FN), Waldemar Horwat (WH), Alan Schmitt (AS), Michael Ficarra (MF), Jafar Husain (JH), Lee Byron (LB), Dmitry Lomov (DL), Arnaud Le Hors (ALH), Chip Morningstar (CM), Caridy Patiño (CP), Domenic Denicola (DD), Mark S. Miller (MM), Yehuda Katz (YK), Dmitry Soshnikov (DS), Kevin Smith (KS), Rafeal Weinstein (RWN)
 
 -----
 
@@ -26,15 +26,15 @@ AWB: For Ecma record, need PDF
 ## 5.6 Object.observe: proposal to move to Stage 3.
 (Rafael Weinstein)
 
-RWS: Move Object.observe to Stage 3?
+RWN: Move Object.observe to Stage 3?
 
 RW: Can you list out the updates?
 
-RWS: Conferred with Ember team, issues were theoretical
+RWN: Conferred with Ember team, issues were theoretical
 
 YK: Conceptual
 
-RWS: Appears to be objections from YK and Ember, provided examples that should overcome
+RWN: Appears to be objections from YK and Ember, provided examples that should overcome
 
 YK: Yes, but the actual solution does address the problem with the specification of the feature.
 - There are process issues. I've repeatedly provided feedback and repeatedly dismissed. 
@@ -64,7 +64,7 @@ RW: Waldemar just illustrated a danger
 
 YK: (gives more examples of problems)
 
-RWS: Restate: 
+RWN: Restate: 
 - Too many allocations, all of the change records.
 - Retaining all of the changes
 
@@ -94,7 +94,7 @@ DD: No, wouldn't you want all the data and then add mechanism to limit?
 
 YK: Want use case
 
-RWS: If you have a generic write barrier on the array, you'd have to hold onto the original array and compute the difference, which is expensive. Providing the intermediary values significantly reduces that expense. 
+RWN: If you have a generic write barrier on the array, you'd have to hold onto the original array and compute the difference, which is expensive. Providing the intermediary values significantly reduces that expense. 
 
 JM: Is there an objection to adding the configurability?
 
@@ -102,7 +102,7 @@ EA/YK: (discussion re: performance of configurability)
 
 JM: But still no objection to configurability, which can be omitted and give you all the change records. 
 
-RWS: (provides background of the design)
+RWN: (provides background of the design)
 
 YK: Changes: 
 1. List of properties that I want to observe
@@ -117,7 +117,7 @@ AWB: How do you know when you need to start making notifications again?
 YK: Same as now, when the changes are delivered, start over. 
 - Recapping the concern and what's desired. 
 
-RWS: Concerned that what you want will start to unravel the design. 
+RWN: Concerned that what you want will start to unravel the design. 
 
 (Discussion of authoring responsibilities).
 
@@ -128,7 +128,7 @@ AWB: More concerns:
 - Need to use the Job mechanisms, likely everything you need is there for you. 
 - Need to define the interactions with Proxy's (alot of "[[...]]" stuff that doesn't correspond to MOP in ES6)
 
-RWS: My understanding was that Proxy's wouldn't do anything automatic with regard to `Object.observe`
+RWN: My understanding was that Proxy's wouldn't do anything automatic with regard to `Object.observe`
 
 EA: Right now the spec is defined to tie into DefineOwnProperty. If Plain Object or Exotic Array, then it works. Some other Exotic? No.
 

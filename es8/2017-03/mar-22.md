@@ -1,12 +1,12 @@
 # March 22, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbåge (SM), Bradley Farias (BF), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SD), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), Istvan Sebestyén (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), István Sebestyén (IS)
 -----
 
 ## Report from the Ecma Secretariat
 
-(Istvan Sebestyén)
+(István Sebestyén)
 
 IS: ECMA-404 received a negative ISO vote. Have to do another go-around and address the comment. Should do it within a month. Ball in our court.
 
@@ -14,7 +14,7 @@ WH: What was the negative vote?
 
 AWB: It was a long list of objections from Japan, both editorial and larger items. Need to coordinate with Chip.
 
-IS: ECMAScript Specification Suite fast track got an ISO number but hasn't started voting. Need eight weeks to start voting and working on translation to other official languages. Will start the ballot on April 12th. It will be a 3-month ballot. Istvan thinks that somebody will likely make some comments, which will necessitate a second round and disposition of comments.
+IS: ECMAScript Specification Suite fast track got an ISO number but hasn't started voting. Need eight weeks to start voting and working on translation to other official languages. Will start the ballot on April 12th. It will be a 3-month ballot. István thinks that somebody will likely make some comments, which will necessitate a second round and disposition of comments.
 
 IS: Next Ecma General Assembly is in June. All documents are due two months in advance. We're in the RF 2-month opt-out period as of Feb 14th. Opt-out period closes on April 14th.
 
@@ -24,7 +24,7 @@ AWB: I'm only available until May as temporary chair. Need to work out a permane
 
 IS: Chairman needs to be neutral when wearing chairman hat, but can represent his company's interests when not wearing that hat. This situation comes up often in other standards committees.
 
-AWB: Our next agenda item is a non-technical item about Code of Conduct and it might be good for Istvan to be here.
+AWB: Our next agenda item is a non-technical item about Code of Conduct and it might be good for István to be here.
 
 ## Review of Code of Conduct
 
@@ -62,7 +62,7 @@ DE: We've heard some strong arguments for separation of powers, having a separat
 
 DH: Have you worked with HR departments?
 
-DT: Obviously you can escalate to Istvan, but formally that's the primary thing for chair: moderating discussion.
+DT: Obviously you can escalate to István, but formally that's the primary thing for chair: moderating discussion.
 
 MS: It doesn't sound like we're going to be able to reach consensus on the "remedial" part of this document, but not the enforcement.
 
@@ -80,19 +80,19 @@ MS: Can we add the chair and the Ecma Representative for the time being?
 
 LBR: We've had a discussion around an individual person, I'm not really...I don't think an individual person would be able to solve, for example, sexual harassment. If I'm chair, and someone brings an issue like this to me... I need support to help and/or talk to this person.
 
-AWB: Istvan or the chair in this case would go to the accused person and talk to them.
+AWB: István or the chair in this case would go to the accused person and talk to them.
 
 BT: What if the person involved is self-employed and company policy doesn't apply?
 
-AWB: That's not most of us, but if that's the case I would hear from Istvan.
+AWB: That's not most of us, but if that's the case I would hear from István.
 
 IS: We have appropriate measures in place; we do not need enforcement here.
 
-SD: I would say it's not just for sexual harassment. But is there ever a reason where the chair may be non-partial in a proposal?
+SDO: I would say it's not just for sexual harassment. But is there ever a reason where the chair may be non-partial in a proposal?
 
 AWB: What should happen in that case, and in the past it has, that's the point where the chair should step away from his "chair hat" and someone else should step into the chair position.
 
-SD: Do we ever talk about that anywhere? It's not really something we talk about. It's maybe something we want to have written down.
+SDO: Do we ever talk about that anywhere? It's not really something we talk about. It's maybe something we want to have written down.
 
 AWB: This morning we talked about this. You really want the chair to be knowledgeable but for the most part detached from the tech arguments.
 
@@ -110,11 +110,11 @@ MS: But recusal, if you had a committee of four, that's easier than trying to fo
 
 AWB: I don't know what the Ecma executive committee and the GA is likely to say, but I suspect that at the point where you talk about enforcement, they may step up and say "that's not our job".
 
-WH: Istvan said, we can do some things, but the process would have to be approved by them [Ecma]. We can't have a separate patent policy from other TCs. The process is something we need to coordinate with them.
+WH: István said, we can do some things, but the process would have to be approved by them [Ecma]. We can't have a separate patent policy from other TCs. The process is something we need to coordinate with them.
 
 JXF: Are we going to punt? Are there a set of things that we can approve on and move forward? If we can agree on 95%, we can move forward instead of punting.
 
-AWB: If we have a set of documents that we're willing to pass on to the executive committee via Istvan, total agreement isn't even needed, we can move those documents up the pipeline and get the initial feedback. There's an EC meeting in April. That's a possible next step.
+AWB: If we have a set of documents that we're willing to pass on to the executive committee via István, total agreement isn't even needed, we can move those documents up the pipeline and get the initial feedback. There's an EC meeting in April. That's a possible next step.
 
 IS: I think this is a good idea. You will have the first reaction by the next meeting.
 
@@ -124,7 +124,7 @@ MPT: You will get social-media blowback if you put this out without enforcement.
 
 AWB: I wasn't suggesting putting a document out anywhere except up to Ecma for additional feedback. We can have enforcement in it, just note that they might disagree.
 
-MPT: Can we get consensus for Istvan/Ecma to review? On the document as-is.
+MPT: Can we get consensus for István/Ecma to review? On the document as-is.
 
 MF: Is this without defining any members of a sub-committee or an email address? How are they meant to review that?
 
@@ -134,9 +134,9 @@ YK: I think we should move forward with the document.
 
 BT: It would be disastrous for this group's continued existence to not let us enforce this CoC.
 
-YK: If Istvan comes back and says we can't enforce, that would be bad.
+YK: If István comes back and says we can't enforce, that would be bad.
 
-AWB: Let's be clear, it's not Istvan who approves: it's the executive committee. It's "us" because it's got members of our own companies on it.
+AWB: Let's be clear, it's not István who approves: it's the executive committee. It's "us" because it's got members of our own companies on it.
 
 JXF: We have a CoC, which most people agree are good aspirational goals. But we're asking what enforcement looks like? Is there a minimal agreement that when there's a violation that there's a set of people get notified?
 
@@ -144,7 +144,7 @@ DH: It seems like we're being sloppy about what "enforcement" means to different
 
 WH: I'm fine with that. If that's the only thing that the group reviewing complaints does under the policy. It would be more controversial if, as some suggested earlier today, that group were also tasked with creating additional more detailed discussion and participation policies than what's contained in the policy we're adopting. If that were the direction, we should figure out the policies first.
 
-SD: I just wanted to make a quick closing comment too. We have managed to get through this discussion without causing offense. The focus of terminology has been violators, but actually this is more about helping people feel more welcome. You know I've been terrified of this group for the last month, I'm grateful for how people have presented themselves and hope we can can continue in that spirit.
+SDO: I just wanted to make a quick closing comment too. We have managed to get through this discussion without causing offense. The focus of terminology has been violators, but actually this is more about helping people feel more welcome. You know I've been terrified of this group for the last month, I'm grateful for how people have presented themselves and hope we can can continue in that spirit.
 
 AWB: What do we need to do so we have lunch?
 
@@ -451,7 +451,7 @@ BT: I also want to make a broader point: I'm not saying that people I talked to 
 
 AWB: And when you talk to developers who have already been using some syntax to do this, that's a different sample than talking to developers who have not had a syntax.
 
-SD: From the F12 development perspective, I've had to remove the word "proto" from Intellisense when they type in `window.`...the average JavaScript developer doesn't think this deeply. We've had to remove things because people don't know this stuff.
+SDO: From the F12 development perspective, I've had to remove the word "proto" from Intellisense when they type in `window.`...the average JavaScript developer doesn't think this deeply. We've had to remove things because people don't know this stuff.
 
 YK: My concern is part of the way I've been thinking about decorators. And as Dan pointed out working with people working on these other features. Decorators are a descriptive API. If you can do "@own" I'd also like "own static". There is a problem where you may be forced to type a thing that gets over-written by the decorator. In your code you may have to .... have some code to put something on the prototype.
 
@@ -503,17 +503,17 @@ DH: Another quick ...... the shape of the code related to the code around it.
 
 MM: I accept that this is a needed form of validation. Since there is a large body of Babel and TypeScript code...
 
-SD: What's the difference between some of the other related proposals and this one? We need to decide about that before we can judge how this would be for users...
+SDO: What's the difference between some of the other related proposals and this one? We need to decide about that before we can judge how this would be for users...
 
 MM: My premise in all of this work —...
 
-SD: Is there some way that we could have these three back-to-back and agree where the difference is and figure out the stop-gaps?
+SDO: Is there some way that we could have these three back-to-back and agree where the difference is and figure out the stop-gaps?
 
 WH: This discussion is an outgrowth of the issues from the last meeting. That's what we're doing.
 
 MM: What remote-Dan was also suggesting, now that this is on the table, that we use the issues list on all three proposals to discuss what it takes to reconcile them with each other.
 
-SD: Sounds like your proposal is an addendum with placement, but then we branched out to think about what customers think. How do we get back to focus about ...moving this to stage 1?
+SDO: Sounds like your proposal is an addendum with placement, but then we branched out to think about what customers think. How do we get back to focus about ...moving this to stage 1?
 
 MM: There's a special focus on leading "own" because, concretely, existing proposals are incompatible with this one in this exact way. Except for that, I think that everyone would accept that this proposal is upwards-compatible.
 

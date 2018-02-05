@@ -1,10 +1,10 @@
 # November 29, 2017 Meeting Notes
 -----
 
-Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KGS), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (ARE), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AKN), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KMR), Sebastian Markbåge (SM), Dean Tribble (DT), Jafar Husain (JHN)
+Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (ARE), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM), Sebastian Markbåge (SM), Dean Tribble (DT), Jafar Husain (JH)
 
 Remote: 
-Istvan Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
+István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
 
 -----
 
@@ -83,7 +83,7 @@ JHD: You mentioned invariant with parentheses. This isn't a precedent we have th
 
 DE: Yes, I think it'd be very strange if we didn't allow this.
 
-KMR: Would you not allow arbitrary expressions?
+KM: Would you not allow arbitrary expressions?
 
 DE: No, we would not prevent arbitrary expressions; we don't have other situations where we permit some expressions and not others.
 
@@ -131,7 +131,7 @@ MF: No, just like await, we would want to get a function out of a Promise.
 
 JRL: Babel reports using yield in right hand as a syntax error.
 
-KMR: Its the same problem as await
+KM: Its the same problem as await
 
 DE: Its hard for me to understand the code evolution idea. When would you actually put a yield here?
 
@@ -169,7 +169,7 @@ DE: Well, pipeline is in lots of languages, and they are kind of split whether t
 
 ### Un-spoofable call operator
 
-KMR: Can i clarify with receiver and bind operator, how would you do this? `receiver::function`?
+KM: Can i clarify with receiver and bind operator, how would you do this? `receiver::function`?
 
 DE: Yes
 
@@ -186,11 +186,11 @@ DE: This is going very over time. Can we add this to overflow items in the agend
 - [proposal](https://gist.github.com/ajklein/b947351835cc77ad0040db9a55813f51)
 - [slides](https://docs.google.com/presentation/d/11xRhQlcNGBdmKC43lEx7fUP0wl-QtFLg55FwgAvLE2k/edit?usp=sharing)
 
-AKN: (Presenting)
+AK: (Presenting)
 
 YK: Andreas Rossberg spent time on this, and option 4 was discussed and rejected.
 
-AKN: I haven't seen this in the notes.
+AK: I haven't seen this in the notes.
 
 RW: I did this earlier with regard to this bug, I'll share those notes with you.
 
@@ -202,15 +202,15 @@ MF: Have you contacted Allen about this? Allen had talked about why the design h
 
 YK: My opinion is that I always preferred option 4, but I think I lost that argument. If we can reconcile whatever technical reasons not doing this, then I'd be for option 4. There may be good reasons but in the absense of them I'd be for this.
 
-KMR: At least 1 point is that JSC has implemented option 4 - and we haven't gotten any bug reports. So I dont know what the technical point is but we have it implemented.
+KM: At least 1 point is that JSC has implemented option 4 - and we haven't gotten any bug reports. So I dont know what the technical point is but we have it implemented.
 
 MM: Clarifying question - does JSC do this only in sloppy mode?
 
-AKN: Its not visible in sloppy mode.
+AK: Its not visible in sloppy mode.
 
 DT: How are you going to propose this?
 
-AKN: I was planning to do a spec pr, but analysis is the next step.
+AK: I was planning to do a spec pr, but analysis is the next step.
 
 MM: Do we have a rationale for if something should be a proposal vs pr?
 
@@ -280,17 +280,17 @@ CM: It's more about what Dan was saying, if we have a sequence of codepoints tha
 
 MF: Having multiple views over a string is just like data views on TypedArrays, we can look at it as code points, graphemes, words. This is not problematic to introduce because of that.
 
-KGS: JS strings are not sequences of code points - you can have lone surrogates. I'd be surprised if a code points iterator gave you something that’s not a codepoint.
+KG: JS strings are not sequences of code points - you can have lone surrogates. I'd be surprised if a code points iterator gave you something that’s not a codepoint.
 
 MB: Ahh, are you saying you want to blacklist lone surrogates?
 
-KGS: If it gives you U+D800 on its own it’s not a codepoint.
+KG: If it gives you U+D800 on its own it’s not a codepoint.
 
 MB: It is a codepoint but not a scalar value.
 
-KGS: I'd be happy to see something like the iterator throw an error for these cases but I just want it to the be thought about.
+KG: I'd be happy to see something like the iterator throw an error for these cases but I just want it to the be thought about.
 
-KMR: I like the idea of using object destructing — array destructing is problematic for data structures because it's another iterator call to destructure arrays — so generally I approve of the object destructuring
+KM: I like the idea of using object destructing — array destructing is problematic for data structures because it's another iterator call to destructure arrays — so generally I approve of the object destructuring
 
 YK: You did a good job of describing the use case. The low level improvements here are good. Size on iterators are a good thing, maybe we could look at this and explore it? I think this proposal is good on its own though.
 
@@ -324,7 +324,7 @@ DT: You made the point of unambiguous language designs. But we have unambiguous 
 
 DH: Yes I don't want LR(1) to just be the constraints. Its a mechanical solution to other restraints. Like we dont want proposals with large amounts of lookahead, LR(1) sets a constraint to highlight that these proposals might get push back. Separately, the grammar being formally unambiguous is a useful constraint. I'm curious about people with academic or encyclopedic knowledge of the grammar - can we set up a system for verifying the determinism to check this?
 
-KGS: It's probably doable currently. We could probably arrange things so it is always doable.
+KG: It's probably doable currently. We could probably arrange things so it is always doable.
 
 BFS: I somewhat agree LR(1) could be loosened, implementations are not using LR(1). There are complexities on going beyond that that we haven't talked about. Catastropic backtracking, ASI are guaranteed on single token lookahead with LR(1). Multiple lookaheads for arrow functions are just a convenience. I would strongly suggest ASI is single token lookahead only.
 
@@ -344,7 +344,7 @@ DH: Again, its the intuitive goal vs specific. We don't want to have too much lo
 
 SYG: Is it correct that v8 doesn't do backtracking?
 
-AKN: We don't rewind the token stream but we keep a record of info so we can construct things.
+AK: We don't rewind the token stream but we keep a record of info so we can construct things.
 
 SYG: So for Spidermonkey, JSC and V8 theres some unbounded lookahead then. We don't have a problem with this. If we say we want a bounded lookahead does this fix ourselves to a specific parsing strategy?
 
@@ -358,7 +358,7 @@ SYG: Let me try again. The question is: even if we make it possible to not do un
 
 DH: I don't have an intiution for this.
 
-KGS: Having bounded lookahead for descent parsers may be good. Even if its only valuable for recursive descent parsers, as far as I know every JS parser is this. Stating bounded lookahead constraint even if not for recurive descent parsers might be valuable.
+KG: Having bounded lookahead for descent parsers may be good. Even if its only valuable for recursive descent parsers, as far as I know every JS parser is this. Stating bounded lookahead constraint even if not for recurive descent parsers might be valuable.
 
 #### Conclusion/Resolution
 
@@ -377,19 +377,19 @@ MWT: On one side we have trusted types that we want to add to the dom. The goal 
 
 DT: When building systems you quickly go from embedded in the source to a config file, which is equally as trusted. But we need a way to quickly safely dynamically create these. As opposed to string literals just in source.
 
-KMR: How does it work if you send a literal cross bounds, say `postMessage`?
+KM: How does it work if you send a literal cross bounds, say `postMessage`?
 
-AKN: Almost certainly.
+AK: Almost certainly.
 
 YK: Much earlier versions of Glimmer used the TypeScript type system to do this. It was hard to do performantly. I'm interested in this idea about strings being perceived safe for code. Is this a goal of this proposal?
 
-AKN: Its a goal to make this perfomant yes.
+AK: Its a goal to make this perfomant yes.
 
 YK: Secondly, I think it could be interesting to have it create a POJO with a brand that can be checked by the code. If its a POJO with a reliable shape then the code can check the brand, which addresses Dean's issue - it gives you a nice way to handle dynamic strings too - you just need the brand to be a shared secret.
 
 BFS: Have you thought of making a new type instead of making strings have hidden options? This way if I pass it to a function I can still have a brand check.
 
-AKN: Im not sure what you mean by new type?
+AK: Im not sure what you mean by new type?
 
 BFS: Well we have integer types.
 
@@ -399,19 +399,19 @@ BFS: If it changes over time, yes. If I cannot observe how a template object is 
 
 DT: We've done this before using a Subclass of string, which is useful as it gets discarded when concated and the like.
 
-AKN: So, strings wouldn't change at all. It'd be about the way template tags are called.
+AK: So, strings wouldn't change at all. It'd be about the way template tags are called.
 
 BFS: Yes. Does this have any impact on template objects currently being shareable in the same realm.
 
-AKN: That seems orthogonal.
+AK: That seems orthogonal.
 
 MF: I want to talk about how we expect this flag to propagate. Two trusted strings concatenated could be trusted, but there are subtle variances. A good example of where the flag needs propagating - e.g. keys on objects.
 
-AKN: The proposal is in an early point. The most promising iteration is this one where the data is stored on the template object, not a string.
+AK: The proposal is in an early point. The most promising iteration is this one where the data is stored on the template object, not a string.
 
 MF: It sounds equivalent when we need to consider propagation though.
 
-AKN: It basically doesn't propagate.
+AK: It basically doesn't propagate.
 
 MF: Let's say I have a trusted url and port, and I want to concatenate. How does the result get marked trusted?
 
@@ -421,19 +421,19 @@ MF: So the type may have prototype methods for these compositions. But what if w
 
 MWT: At Google we have those, called SafeURL - not TrustedURL. The literal mechanism in the google code is based on goog.string.const. Those const object can be concatenated. This maps to the idea of tagging a string as being literal and tracking that tag through operations. Its conceivable we can concat two literals and persist the tagging. This happens inside the google code. In discussions we've had, it seems obligatory to have this in the langauge. Adding a special case for this looked a lot simpler than adding taint tracking. That said if y'all are interested in doing taint tracking.
 
-AKN: For the record there was a crowd uproar against taint tracking.
+AK: For the record there was a crowd uproar against taint tracking.
 
 DE: Clarification about the internal slot. If you're concerned about it being only exposed through internals, there was a discussion about exposing it on the JS layer. We could expose it.
 
 MM: There's an attack on this - we can change the proposal to address this though. With this represenation a genuine template object that comes from anywhere will pass this check. An eval can create a template object that carries this brand and pass that around. Another branding mechanism that is in the language on purpose exists for this - that is WeakSets. If you have an encapsulated WeakSet that is not visible outside the trusted function, it can use that to check the brand, keeping it in the scope of the trusted function. This also keeps us from adding an exotic object which I really dont want to add, and avoids an internal slot which fails for Proxies and Proxy transparency. A proxy to the WeakSet will check through the same membrane. So now an evaluator can fail to brand these, or go ahead a brand them specific to that evaluation. So anything in the program that called eval is using the brand check continue to work _within_ eval, but outside of it.
 
-AKN: I don't think that solution works well in the general case. The vulnerability I recognise is problematic.
+AK: I don't think that solution works well in the general case. The vulnerability I recognise is problematic.
 
-KMR: You could just ban creating trusted objects in eval.
+KM: You could just ban creating trusted objects in eval.
 
 SM: Have you considered an opt-out mechanism instead?
 
-AKN: This tied into Marks thing about eval.
+AK: This tied into Marks thing about eval.
 
 SM: I also noticed the discussion around concatenating and what we'd want to allow. I see a problem with each option. If you do a lot of concat, thats a lot less safe. We often see adding prefixes to something is what causes the security holes. But if we dont allow concat then this fails for other cases, like `'' + string` for coercion.
 
@@ -453,29 +453,29 @@ SM: Im basing this on the example on GitHub. One example is two declared literal
 
 YK: Security proposals need to enumerate their exact threat models; it seems like we are talking over a number of different threat models.
 
-AKN: This is more to take the temperature of the room; more details for threat models next. Stage 1?
+AK: This is more to take the temperature of the room; more details for threat models next. Stage 1?
 
 MF: is this well-defined enough for Stage 1 without a well-specified threat model? Can we actually solve this?
 
-AKN: Mike's interest is integrating with the DOM trusted types proposal. Maybe the committee would like broader goals, though. XSS in strings is what this proposal is about.
+AK: Mike's interest is integrating with the DOM trusted types proposal. Maybe the committee would like broader goals, though. XSS in strings is what this proposal is about.
 
 MF: That's quite general.
 
 BFS: Why focus on strings? Good to document while moving forward.
 
-AKN: Due to the way web specs are handled in multiple bodies, larger complex objects are handled in that other spec body.
+AK: Due to the way web specs are handled in multiple bodies, larger complex objects are handled in that other spec body.
 
 BFS: I'm thinking about things like numbers
 
-AKN: I was trying to *narrow* it, but I agree that literal numbers can have similar properties.
+AK: I was trying to *narrow* it, but I agree that literal numbers can have similar properties.
 
 MM: I find this proposal reasonable and want to see it go forward _only_ if the only things are branded are objects with identity. Branded values I would hate to see go forward.
 
-AKN: Discussions with implementations, I think that does make sense.
+AK: Discussions with implementations, I think that does make sense.
 
 YK: I want to back Bradley up, TypedArrays, WASM.
 
-KMR: WASM has different solutions.
+KM: WASM has different solutions.
 
 RJE: So any opposition to Stage 1?
 
@@ -490,11 +490,11 @@ RJE: So any opposition to Stage 1?
 - [proposal](https://github.com/tc39/proposal-class-fields/issues/43)
 - [slides](https://docs.google.com/presentation/d/1wgus0BykoVk_qqCpr0TjgO0TV0Y4ql4d9iY212phzbY/edit#slide=id.p)
 
-KGS: (Presenting)
+KG: (Presenting)
 
 BFS: On the static public fields shadowing, what happens when you assign to null?
 
-KGS: Nothing
+KG: Nothing
 
 BFS: That is the behaviour of super.* now
 
@@ -502,21 +502,21 @@ DE: You can still use super.constructor.
 
 MM: How does super property access in initializers work when the super constructor is called from a different place?
 
-KGS: The superclass is thunked--references to this, super, etc are lexical, not based on where super() is called.
+KG: The superclass is thunked--references to this, super, etc are lexical, not based on where super() is called.
 
 RBN: Is it worth changing the spec to support a prototype chain walk for private names so they behave similar to ordinary properties? Then we just have to solve one issue - if static fields need initialisers or something else.
 
-KGS: The current spec is heavily based around lexical scope. I'm not sure how it'd work with this.
+KG: The current spec is heavily based around lexical scope. I'm not sure how it'd work with this.
 
 RBN: I can raise the issue again on GitHub
 
 DE: The basic idea is the design goal for private fields is they should be unobservable from the meta object protocol - we cannot have things intercept this. If we start looking up the prototype chain we call things that are interceptable.
 
-KMR: For class you could walk up the home object chain and verify the class matches the one you're looking it up from. You walk until you find ones that match. When you do `class extends somethingelse` you have an invisible side prototype chain.
+KM: For class you could walk up the home object chain and verify the class matches the one you're looking it up from. You walk until you find ones that match. When you do `class extends somethingelse` you have an invisible side prototype chain.
 
 DE: No the method has a home object which is the current class.
 
-KMR: The super chain?
+KM: The super chain?
 
 DE: There's no separate super chain; it's just the __proto__ chain of the home object. For static methods and fields, this is the constructor and its prototype chain; for instance methods and fields, it's the prototype chain of the prototype object. We can't make a parallel "super chain" because if you mutate the prototype chain it should be reflected.
 
@@ -526,11 +526,11 @@ JHD: I have the same concern. If even the existence is observable, I have a prob
 
 MM: If we completely ban all static data, and a programmer using JavaScript in which decorators have been implemented - the currently anticipated semantics. If the decorator gets a thunking of the initialiser - could not a programmer who wanted _some static data semantics_ not implement an @static decorator.
 
-KGS: Yes but its use would be awkward. You couldn't refer to `this.#field`... so I don't know how you'd get that.
+KG: Yes but its use would be awkward. You couldn't refer to `this.#field`... so I don't know how you'd get that.
 
 MM: Good point thank you. I think we should get rid of both public and private static data. Not introducing things that cause confusion is better than implementing with some confusion.
 
-KGS: That would also mean banning private static methods.
+KG: That would also mean banning private static methods.
 
 DE: Are all proposed solutions insufficient?
 
@@ -540,21 +540,21 @@ DE: For the private static methods - they don't share the second concern.
 
 RBN: Back to walking prototype chains - you wanted privates to work in light of changing the prototype chain. I agree. Changing these today doesn't effect it as they're assigned to the object not the chain. The lexical side chain which you have available during class declaration could be an approach. For private members you can follow this rather than the prototype slot. Similar behaviour to how public fields/properties work today. Maintaining a list of base classes during declaration and using this to walk solves this.
 
-KGS: Would this be equivalent to the proposal of copying fields? But not rerunning the initialiser. Just pointing to the fields.
+KG: Would this be equivalent to the proposal of copying fields? But not rerunning the initialiser. Just pointing to the fields.
 
 RBN: No I'm saying maintaining an internal slot pointing to lexically scoped super class. Walking that chain over the prototype chain.
 
-KGS: I dont think you'd even need that, you could copy a reference.
+KG: I dont think you'd even need that, you could copy a reference.
 
 RBN: Whatever we pick for public static, we could emulate for private static
 
-KGS: We really don't want to do that, public static walks prototypes.
+KG: We really don't want to do that, public static walks prototypes.
 
 JHD: Public statics are very very important to React. Banning them is unnaceptable to me. I want to make sure we note this. I'm content to see privates statics banned, but not public statics.
 
 DE: To Ron's comment about walking prototypes, private fields can only be filled in within the class. Mutating constructors prototype chain, you could subclass the super from outside and have a class that observes these fields. Keeping a side prototype chain is a significant complexity. Traits tried this, its too complex. Meta object protocol is very complex already.
 
-KGS: We should discuss this more on GitHub to ensure everyone is clear.
+KG: We should discuss this more on GitHub to ensure everyone is clear.
 
 YK: Im not in favour of rewriting intialisers. Value and reference types should be included in footgun examples. I want to echo Kat's sentiment - originally hearing of static privates I don't understand why you wouldn't just close a scope over your class. Private methods have this same problem. Should we just evangelise lexical scoped data for static private?
 
@@ -564,29 +564,29 @@ YK: This doesn't matter for fields. The worry is we're taking a long time to add
 
 RBN: TypeScript now has a behavior for static fields which is like the current behavior. Subclasses inherit. We haven't had too much in the way of negative feedback for this. Our first implementation targeted ES3/5 and so we eventually migrated to ES6 for things like static methods and super. Our field implementation was changed to work the same way.
 
-KGS: The argument that this won't be surprising is not valid for me. I wrote JS for 10 years without realising this footgun, static fields makes this much more common.
+KG: The argument that this won't be surprising is not valid for me. I wrote JS for 10 years without realising this footgun, static fields makes this much more common.
 
 RBN: My point we've had this in TypeScript for several years without issue.
 
-AKN: V8 has recently finished out public static fields implementation for now so I'm curious; the process document says only changes critical based on implementation should change. How are these that?
+AK: V8 has recently finished out public static fields implementation for now so I'm curious; the process document says only changes critical based on implementation should change. How are these that?
 
-KGS: We saw these as it was being implemented in Babel.
+KG: We saw these as it was being implemented in Babel.
 
 DE: I'd like to solve this in this meeting. We're at stage 3, and we have had these issues around for months. I don't believe the alternatives will present implementation difficulty, but we need to come to a conclusion.
 
-AKN: I'm not concerned about how hard it'd be to implement. It's the signal I'm concerned about. Now it seems working on stage 3 proposals these too early could require significant late stage changes.
+AK: I'm not concerned about how hard it'd be to implement. It's the signal I'm concerned about. Now it seems working on stage 3 proposals these too early could require significant late stage changes.
 
-KGS: Thats always been the case, SIMD.
+KG: Thats always been the case, SIMD.
 
-AKN: Yes, its more about _is this critical_. These don't look _critical_.
+AK: Yes, its more about _is this critical_. These don't look _critical_.
 
 DE: I wanted to give a chance to discuss both and how they're related. The first one is generating a lot of interest. My goal is to resolve this as quickly as possible after reaching stage 3. I should have allocated more time in the previous meeting to discuss it.
 
-KGS: I spoke about public statics in the context of a change which would fix the problem for private statics; would not have raised on its own.
+KG: I spoke about public statics in the context of a change which would fix the problem for private statics; would not have raised on its own.
 
 MM: If we rewrote the static public field as an accessor with a closed variable - would this help?
 
-KGS: It wouldn't do us any good for static private.
+KG: It wouldn't do us any good for static private.
 
 MM: Okay, well my first choice is we should ban these for both cases. Issues of user confusion is more critical than implementation concern.
 
@@ -600,7 +600,7 @@ TST: Yehuda pointed a fatal flaw in `let field` solution. I also dislike the `{c
 
 YK: Yes, I agree. As far as I can tell all the issues are around typing `subclass.something` or `this.something` - maybe we could explore options of stopping people doing that. I will likely add a decorator to my own code for this.
 
-KGS: It's still useful to do the sharing of data across the body of a field. Having methods work in a subclass is useful.
+KG: It's still useful to do the sharing of data across the body of a field. Having methods work in a subclass is useful.
 
 YK: Its good to be allowed to write that but its also good to be allowed to say "I do not intend that". The fact these get subclassed by default might be a case of exploring more narrow mitigations.
 
@@ -618,7 +618,7 @@ JHD: We'd be fine banning private, not public.
 
 MM: What about accessors for public?
 
-KGS: It wouldn't be worth it as it doesn't fix private static.
+KG: It wouldn't be worth it as it doesn't fix private static.
 
 DE: We could ban just static private fields and methods while permitting static public fields with current semantics.
 
@@ -628,7 +628,7 @@ CM: Yes, but the ship has already sailed. In my opinion everything within classe
 
 MS: So my feeling here is we can incrementally make it worse to make it better later on.
 
-KMR: I'd like to avoid entering to a place where things don't interact well together.
+KM: I'd like to avoid entering to a place where things don't interact well together.
 
 DE: So the third method is `{classname}.#{field}` to get an element. Allow public static, fields with `this` but private static only be accessed via the class name.
 
@@ -636,7 +636,7 @@ MM: Yehuda's point is the functionality is equivalent to lexical variables in sc
 
 DE: The downside to this is you don't have access to private methods and fields inside of the class from outside of the class.
 
-KGS: Let's say I'd be able to write a brand check, I need to access instance private fields to do this.
+KG: Let's say I'd be able to write a brand check, I need to access instance private fields to do this.
 
 MM: Right, I got it.
 
@@ -648,7 +648,7 @@ YK: We can't have this advance.
 
 DE: Its not looking to advance - its stage 3. We also talked about demoting to stage 2 last meeting and it was rejected.
 
-AKN: Again I'd like to talk about the process term "critical". Justin you want to solve this as "critical"?
+AK: Again I'd like to talk about the process term "critical". Justin you want to solve this as "critical"?
 
 JRL: Yes, we had multiple problems with Backbone. It'll crop up again.
 
@@ -658,7 +658,7 @@ DE: I want to bring back the idea of leaving out static fields and private stati
 
 MS: Didn't we bring them together to solve this?
 
-KGS: The issues for why we brought them together have been resolved. They had cross cutting concerns, those are now solved. Are we are all comfortable with instance fields, private and public?
+KG: The issues for why we brought them together have been resolved. They had cross cutting concerns, those are now solved. Are we are all comfortable with instance fields, private and public?
 
 JHD: One of the main arguments for merging proposals was they all had similar semantics. Splitting them up is fine if we can keep them all looking similar.
 
@@ -676,23 +676,23 @@ MS: Do you think it'd delay _past_ ES2019? A delay of 3 or 4 meetings wont matte
 
 DE: I don't think the annual cutoffs are as important as the actual time when we reach Stage 4; 3 or 4 meetings is that many months of delay. Anyway, it seems we've lost consensus for stage 3, it seems appropriate to demote to stage 2.
 
-AKN: The option is to be clearer about what is up in the air.
+AK: The option is to be clearer about what is up in the air.
 
 YK: Why isn't that identical to just demoting the _part_ that is up in the air?
 
 DE: If there's anything we can do to make the GitHub issues or forums more accessible then we should do that.
 
-KGS: I'd be happy to say instance fields won't change. The problem with semantics for statics is we're revisiting because we discovered an important issue. Absent that discovery for public they wont change.
+KG: I'd be happy to say instance fields won't change. The problem with semantics for statics is we're revisiting because we discovered an important issue. Absent that discovery for public they wont change.
 
-AKN: What's the downside to moving to stage 2?
+AK: What's the downside to moving to stage 2?
 
 DE: This is important for a lot of users. Demoting means it takes longer to get to those users.
 
-KGS: So consensus on moving down to stage 2?
+KG: So consensus on moving down to stage 2?
 
 YK: Why don't we move to stage 2 and come back with a concrete proposal to separate these.
 
-KGS: So consensus to stage 2?
+KG: So consensus to stage 2?
 
 #### Conclusion/Resolution
 
@@ -739,7 +739,7 @@ KCL: I was going to propose operator overloading this meeting but didnt have tim
 TST: A year ago we worked on typed objects but stopped because of WASM. Value types may not suffer these problems. It makes sense to explore value types more.
 --> Link to last version of the value types explainer: https://github.com/tschneidereit/typed-objects-explainer/blob/value-types/valuetypes.md
 
-KMR: In particular with Rationals, if we did it in an engine I'm not sure it'd be substantially faster than a userland library.
+KM: In particular with Rationals, if we did it in an engine I'm not sure it'd be substantially faster than a userland library.
 
 API: I don't have data on Rationals, we don't use Rationals. IEEE fixed decimal is a lot faster for tight C code. The key is more representation inside the engine than performance - I'm not saying performance isn't important but standardised interchange is.
 
@@ -763,7 +763,7 @@ DT: A thing to think about is there is a question of precision - so we have a qu
 
 API: Yes it's something we have to gather data on.
 
-JHN: Is it as important, given WASM - to let value types bloom? Someone will end up with something like Rational, and it'll be good, it'll be fine for the use case. I'm happy with stage 0 though.
+JH: Is it as important, given WASM - to let value types bloom? Someone will end up with something like Rational, and it'll be good, it'll be fine for the use case. I'm happy with stage 0 though.
 
 API: Everyone's raising good points. We want to come back with the data gathered and see if one path shines over another. If that exists to feed into value types, then I'm happy. Is anybody opposed to stage 0?
 

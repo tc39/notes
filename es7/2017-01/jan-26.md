@@ -1,7 +1,7 @@
 # January 26, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BF), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Istvan Sebestyén (IS), Keith Miller (KM), Myles Borins (MBS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), István Sebestyén (IS), Keith Miller (KM), Myles Borins (MBS)
 -----
 
 ## Looking at the proposal list
@@ -172,7 +172,7 @@ DH: There's a babel plugin for do expressions, I think it's pretty popular
 
 SM: We don't use it, but it's pretty popular with JSX
 
-BF: It's pretty popular
+BFS: It's pretty popular
 
 DH: So, the basic idea here is to allow more expression forms in the language, a more expression based style of programming, a nice thing FP brough tot the world. I'm not trying to get folks to drink the koolaid about it, I myself have stopped drinking it. Expression are nice though, because they plug together well. Philospohically, that's why they are good. Do expressions contain statements in expression context and evaluate to the completion value of the enclosed statements. They let you have locally scoped lexical variables. Prettier ternary operator. For JSX, if you want to use more expressive control flow when having something that becomes an expression. Long-run, it would be nice to have more statement forms with expression analogues, but do expressions bridge the gap. We should avoid refactoring hazards. No spec written up, but it should just be, "return the value of evaluating |Body|".
 
@@ -328,7 +328,7 @@ DH: Well, people actually use workers this way, and run into the lack of synchro
 
 DH: Generally, this can provide security isolation, text editor plugins not affecting the state of the rest of the editor, or server-side rendering running in a fresh space that can be set up properly separately.
 
-BF: Another thing is using ServiceWorker to avoid redundant evaluation of module loading, and transpilation
+BFS: Another thing is using ServiceWorker to avoid redundant evaluation of module loading, and transpilation
 
 DH: When you have a realm object, you have super privileges over the realm: you can get its global, evalScript
 
@@ -384,13 +384,13 @@ WH: Why not just put the init() user code in the user constructor after it calls
 
 DH: That wouldn't let you do your own default initialization. Going further, symbols could be a nice way to add some more hooks, e.g., direct and indirect eval, for live transpilation. One powerful use case is language polyfilling. Could also be used for security restrictions disallowing some language forms--eval is a potential hole, and hooking into eval can address it. Then, hooking into module loading could be part, but I don't have a concrete proposal.
 
-BF: Should the job queue have hooks?
+BFS: Should the job queue have hooks?
 
 MM: This is per-agent, not per-realm
 
 DE: There's a new V8 API for PromiseHooks
 
-BF: I want something from JavaScript
+BFS: I want something from JavaScript
 
 DH: This is a clear cross-cutting issue to look into
 
@@ -414,11 +414,11 @@ DH: But the fact that you can share objects gives a lot of power. Realms plus Pr
 
 AWB: You'd probably want to instantiate global.Proxy rather than Proxy/
 
-BF: is the global going to have Proxy hooks?
+BFS: is the global going to have Proxy hooks?
 
 DH: You could set a handler to the global object, yes, that's part of the design.
 
-BF: The global object has a proxy
+BFS: The global object has a proxy
 
 MM: the Window vs WindowProxy thing is actually orthogonal from EcmaScript Proxies. It is an unfortunate name coincidence. A so-called WindowProxy is not a Proxy.
 
@@ -444,7 +444,7 @@ DE: I don't understand what's required to virtualize an execution environment ex
 
 AWB: It's important to think through the cross-cutting concerns first.
 
-BF: This ties into the global module registry; I am not sure it's needed.
+BFS: This ties into the global module registry; I am not sure it's needed.
 
 DH: I think the registry could be in userspace
 
@@ -569,7 +569,7 @@ AWB: Why wouldn't some new namespace object like a hypotehical system, why isn't
 
 MM: The reason is because thats the purpose for it to exist. Its not unexpected, it's not a problem for it to be differently privileged.
 
-BF: I'm curious, we have spoken about this before, about importing a powertool on my side, curren tscript identifier. Would this suffer the same problems as an import you could never mutated?
+BFS: I'm curious, we have spoken about this before, about importing a powertool on my side, curren tscript identifier. Would this suffer the same problems as an import you could never mutated?
 
 JHD: If you want to lock down a realm oyu need to change waht the global this eappears to be. you can't do that if you import unless you can virtualize it or change what the import is.
 
@@ -579,7 +579,7 @@ JHD: As long as you can virtualize it (or anything that needs it)
 
 DH: That requires not only that we have worked out all of our mechanisms for putting std libraries in or systematic changes to how imports work.
 
-BF: If there are well defined specifiers that shouldn't be true
+BFS: If there are well defined specifiers that shouldn't be true
 
 DH: Currently the spec says nothing about the string you import. This is changing modules to indicate some are special
 
@@ -601,11 +601,11 @@ DH: That's fine.
 
 DH: I apolgize, that's legit. We should not block this on path dependence
 
-BF: Domenic is only not in favor of System, he did not say veto it.
+BFS: Domenic is only not in favor of System, he did not say veto it.
 
 JHD: He's opposed but won't die on a hill for it
 
-BF: He says it is minor and he can talk about it later
+BFS: He says it is minor and he can talk about it later
 
 JHD: I am not seeking a stage change. I am looking for a direction from the committee with the hope in a meting or two we have two implementations that are web compat and we can move to stage 4.
 
@@ -680,7 +680,7 @@ AK: I don't think the global object is internals, it's right there
 
 JHD: it's privileged enough to coordinate
 
-BF: Why can't I freeze it then?
+BFS: Why can't I freeze it then?
 
 AK: That's a separate question
 
@@ -886,11 +886,11 @@ J: I thinkw e have a consistent design without them
 
 AWB: Final though, if you could go with own you could use it for both purposes as the sigil. It's private and otherwise a rpoperty.
 
-BF: I'm hesistate because we have all of these getOWn properties.
+BFS: I'm hesistate because we have all of these getOWn properties.
 
 MM/AWB: It's the same meeting
 
-BF: it's not about privacy
+BFS: it's not about privacy
 
 DE: the own is not about private properties
 
@@ -1112,7 +1112,7 @@ BT: I like own
 
 MPT: All I was going to say, not that I don't know the difference, can someone write why the average developer would want define over set? Wouldn't people expect setters to run, based on the fact that most people don't really get the JS object model and the other operations that you might do?
 
-BF: I can speak for Node core, that we don't want lots of interception points for setters to be called in places like this
+BFS: I can speak for Node core, that we don't want lots of interception points for setters to be called in places like this
 
 MPT: not for people who know a ton about JS
 
@@ -1122,7 +1122,7 @@ MPT: That's all that matters to the average developer?
 
 AK: this is what Jeff was saying...
 
-BF: We don't really know what the average developer expects. This is not something we should be stating. This isn't about intuition. This is really about what are the advantages of these things. I think it should be define bceause basically working on node core, people do things do their prototypes and it breaks internals because node hasn't fully harded them. It does things in very suprising ways either to the developer or people who are.
+BFS: We don't really know what the average developer expects. This is not something we should be stating. This isn't about intuition. This is really about what are the advantages of these things. I think it should be define bceause basically working on node core, people do things do their prototypes and it breaks internals because node hasn't fully harded them. It does things in very suprising ways either to the developer or people who are.
 
 MPT: At the end of the day we're asking if people are worried about a setter climbing the inheritance chain.
 
@@ -1142,7 +1142,7 @@ DE: Should private state be reflected? Our current view is "no", but you can def
 
 WH: No, we should not swap them. Hard private should be the default. I don't want to have to write `IReallyMeanPrivate #privateFoo` to get a hard private field.
 
-BF: Node wants hard private.
+BFS: Node wants hard private.
 
 (Class initialization evaluation order)
 

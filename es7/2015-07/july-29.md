@@ -1,7 +1,7 @@
 # July 29, 2015 Meeting Notes    
 -----
 
-Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Farriauolo (EF), Caridy Patiño (CP), Waldemar Horwat (WH), Istvan Sebestyén (IS), Mark Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Jonathan Turner (JT), Paul Leathers (PL), Chip Morningstar (CM), Vladimir Matveev (VM), Ron Buckton (MS), Brian Terlson (BT), Alan Schmitt (AS), Ben Newman (BN), Mohamed Hegazy (MH), Abhijith Chatra (AC), Tom Care (TC), John Neumann  (JN), Dave Herman (DH), Brendan Eich (BE), Daniel Ehrenberg (DE), Dan Gohman (DG), Andreas Rossberg (ARB), Rick Waldron (RW), Mike Pennisi (MP), Akrosh Gandhi (AG), Jonathan Sampson (JSN)
+Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Waldemar Horwat (WH), István Sebestyén (IS), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Jonathan Turner (JT), Paul Leathers (PL), Chip Morningstar (CM), Vladimir Matveev (VM), Ron Buckton (RBN), Brian Terlson (BT), Alan Schmitt (AS), Ben Newman (BN), Mohamed Hegazy (MH), Abhijith Chatra (AC), Tom Care (TC), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Daniel Ehrenberg (DE), Dan Gohman (DGN), Andreas Rossberg (ARB), Rick Waldron (RW), Mike Pennisi (MP), Akrosh Gandhi (AGI), Jonathan Sampson (JSN)
 
 
 -----
@@ -600,7 +600,7 @@ AWB: if int8 array, extracting floar 64, does it
 
 DE: No, it is element-aligned. The hardware supports this.
 
-DG: (phone) confirms hardware support
+DGN: (phone) confirms hardware support
 
 AWB: If you're talking about a float32array and you're extracting int16's, that just seems like a type error.
 
@@ -756,7 +756,7 @@ WH: [later in the discussion] Intel has FTZ and DAZ bits which control these sep
 
 (Difference between Arm and Intel)
 
-DG: Arm 64, arm v8 corrects this
+DGN: Arm 64, arm v8 corrects this
 
 MM: this non-determinism is actually just difference between platform
 
@@ -784,11 +784,11 @@ DE: spec says a platform will have one endianess or the other; this can be appli
 
 WH: What do relational operations (.equal, .lessThan, etc.) do when they see a denorm? treat as zero?
 
-DG: treat as zero
+DGN: treat as zero
 
 WH: So then what will === do? Do they equate all distinct denorms to zero (which would be really weird as ES behavior)? Are you going for the fast implementation of === or the precise implementation?
 
-DG: === does not equate denorms to zero, even on platforms that flush denorms. It can be slower than .equal.
+DGN: === does not equate denorms to zero, even on platforms that flush denorms. It can be slower than .equal.
 
 
 

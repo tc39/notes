@@ -2,12 +2,12 @@
 -----
 
 
-Brian Terlson (BT), Jonathan Turner (JT), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Jeff Morrison (JM), Erik Arvidsson (EA), Peter Jensen (PJ), Yehuda Katz (YK), Dave Herman (DH), Waldemar Horwat (WH), Dmitry Lomov (DL), Domenic Denicola (DD), Kevin Smith (KS), Andreas Rossberg (ARB), Istvan Sebestyén (IS), Sam Tobin-Hochstadt (STH), Michael Ficarra (MF), Jordan Harband (JHD), Chip Morningstar (CM), Mark Miller (MM), Ben Newman (BN), Brendan Eich (BE), Adam Klein (AK), Igor Minar (IM), Misko Hevery (MH)
+Brian Terlson (BT), Jonathan Turner (JT), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Jeff Morrison (JM), Erik Arvidsson (EA), Peter Jensen (PJ), Yehuda Katz (YK), Dave Herman (DH), Waldemar Horwat (WH), Dmitry Lomov (DL), Domenic Denicola (DD), Kevin Smith (KS), Andreas Rossberg (ARB), István Sebestyén (IS), Sam Tobin-Hochstadt (STH), Michael Ficarra (MF), Jordan Harband (JHD), Chip Morningstar (CM), Mark S. Miller (MM), Ben Newman (BN), Brendan Eich (BE), Adam Klein (AK), Igor Minar (IM), Miško Hevery (MHY)
 
 -----
 
 ## Report from the Ecma Secretariat
-(Istvan Sebestyén)
+(István Sebestyén)
 
 IS: Strange JSON development: The government of the Netherlands wants to get an EU recognition on IETF's JSON future standard as part of the European Commission's Multi-Stakeholder Platform. Netherlands submitted 27 IETF standards to the Multi-Stakeholder Platform, and IETF's JSON happens to be among them. Normally only long-standing in the market already proved standards should be recognized. Also no "consortium specification" should be recognized where appropriate International Standard (like of ISO, IEC, ITU) exists. JSON in ECMA-262 is already part of ISO/IEC 16262:2011. In addition TC39 has standardized in 2013 ECMA-404 (JSON). We had originally a TC39 decision to fast-track it to JTC1, but after discussion the GA in December 2013 has approved the possibility of a Postal Balot on the JTC1 fast track upon a new request  from TC39.  The iisue has been reported to the last Ecma GA and was worried about the situation.     
 

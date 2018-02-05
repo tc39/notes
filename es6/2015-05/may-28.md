@@ -1,10 +1,10 @@
 # May 28, 2015 Meeting Notes    
 -----
 
-Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Kevin Smith (KS), Daniel Ehrenberg (DE), Adam Klein (AK), Jordan Harband (JHD), Jafar Husain (JH), Mark Miller (MM), Michael Ficarra (MF), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Farriauolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Brendan Eich (BE), Dan Gohman (DG), Miško Hevery (MH, Matt Sweeney
+Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Kevin Smith (KS), Daniel Ehrenberg (DE), Adam Klein (AK), Jordan Harband (JHD), Jafar Husain (JH), Mark S. Miller (MM), Michael Ficarra (MF), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Ferraiuolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Brendan Eich (BE), Dan Gohman (DGN), Miško Hevery (MHY), Matt Sweeney (MSY)
 -----
 
-## ECMA Update (Istvan)
+## ECMA Update (István)
 
 Do we still withdraw E4X and etc?
 

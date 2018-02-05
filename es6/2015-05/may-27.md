@@ -1,7 +1,8 @@
 # May 27, 2015 Meeting Notes    
 -----
 
-Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Lee Byron (LB), Kevin Smith (KS), Daniel Ehrenberg (DE), John McCutchan (JM), Dan Gohman (DG), Brendan Eich (BE), Adam Klein (AK), Jordan Harband (JHD), Mark Miller (MM), Michael Ficarra (MF), Waldemar Horwat (WH), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Farriauolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Matt Sweeney
+Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Lee Byron (LB), Kevin Smith (KS), Daniel Ehrenberg (DE), John McCutchan (JMC), Dan Gohman (DGN), Brendan Eich (BE), Adam Klein (AK), Jordan Harband (JHD), Mark S. Miller (MM), Michael Ficarra (MF), Waldemar Horwat (WH), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Ferraiuolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Matt Sweeney (MSY)
+
 -----
 
 ## Agenda approval.
@@ -124,7 +125,7 @@ BT:  Developers were interested in games.
 
 SK: Why 128 bits
 
-DG: 128bits is a natural size for many operations and was the largest common size across SIMD architectures we considered
+DGN: 128bits is a natural size for many operations and was the largest common size across SIMD architectures we considered
 
 CM: Makes sense for performance use cases, but it seems weird to have the implemention detial bubble up.
 
@@ -136,20 +137,20 @@ JM:  In graphics programming the name swizzle is the right choice
 
 WH: How does endianness become visible?
 
-DG: First lane is always at offset 0 of the typed array, second follows first lane, etc. The endianness within a lane is implementation-dependent.
+DGN: First lane is always at offset 0 of the typed array, second follows first lane, etc. The endianness within a lane is implementation-dependent.
   (discussion about little endian/big endian)
 
-DG:  Contents of the lane are byte order dependent on platform
+DGN:  Contents of the lane are byte order dependent on platform
 
 WH: SIMD reinterpret cast will do different things on different systems?
 
-DG: Yes.
+DGN: Yes.
 
 AWB:  You see the same thing with TypedArray.
 
 WH: You have load, load1, load2, load3, but no load6, for instance?
 
-DG: You could imagine what a load6 might be, but not particularly useful.
+DGN: You could imagine what a load6 might be, but not particularly useful.
 
 BE: It could be added in the future.
 
@@ -189,7 +190,7 @@ JHD: Are properties of SIMD supposed to be nonwritable, nonconfigurable?
 
 MM: The general style we've agreed upon is that primordial properties are either configurable or writable.  This is important for initialization of realms, to make it seem like a different kind of realm.
 
-DG: I believe that Firefox JIT can handle that.
+DGN: I believe that Firefox JIT can handle that.
 
 JM:  Should we think about standard modules?
 
@@ -203,7 +204,7 @@ DH:  It's OK if we wait for userland module convensions to emerge.
 
 MM: We can let this proceed to stage 2 without having to specify in terms of value types or standard modules, with the idea that we will eventually get there.
 
-DG:  If we want to get this done in 2015, can we agree to have a SIMD global?
+DGN:  If we want to get this done in 2015, can we agree to have a SIMD global?
 
 DH:  There's nothing wrong with having a global named SIMD and a standard module for the same thing.
 
@@ -217,7 +218,7 @@ AWB:  With globals, each realm now has to have all of these duplications, depend
 
 MM: SES has to make sure that none of the primordials expose mutable state.  They have to freeze them, and the only way to do that is to walk eagerly.
 
-DG: What about the large number of SVG bindings?
+DGN: What about the large number of SVG bindings?
 
 MM: The SVG bindings are provided through a membrane.
 
@@ -399,7 +400,7 @@ Advance to stage 2, update proposal to use "sent"
 
 BT: Test262 is super active. Much es6 coverage now. Strict clean.
 
-DG speaks to Math method test result variation, proposes fdlibm (+/- 1 ulp accuracy for most methods including sin)
+DGN speaks to Math method test result variation, proposes fdlibm (+/- 1 ulp accuracy for most methods including sin)
 [debate about whether to go for precision-based limits or mandate one particular implementation for reproducibilty]
 
 
@@ -408,7 +409,7 @@ WH: The state of the art advances. Had we mandated one implementation for reprod
 WH: For some functions, such as sqrt, it is practical to require correctly rounded exact results. For others there are no known efficient implementations yet without a bit of tolerance.
 
 
-DG: In the context that math libraries have the power in ECMAScript to deliver high-quality results at a variety of performance/precision tradeoffs and can evolve over time, the committee has three main approaches for the builtin math functions:
+DGN: In the context that math libraries have the power in ECMAScript to deliver high-quality results at a variety of performance/precision tradeoffs and can evolve over time, the committee has three main approaches for the builtin math functions:
 
 - Stay with the status quo. Math functions in the spec are entirely ungoverened. This has been the reality for a long time and it's not necessarily problematic.
 - Specify particular implementations for each function, possibly including algorithms from fdlibm, crlibm, or other places. The main advantage of this would be that floating point in the spec bit-for-bit reproducible, which is an interesting property.
@@ -418,4 +419,4 @@ What do you prefer?
 
 WH: Efficient and precise standard math libraries do a large amount of bit-banging. They can't be implemented efficiently in userland ECMAScript code using just +, -, /, etc. They need additional primitives.
 
-DG: We can do everything we need with the existing math primitives in ECMAScript. It'd be nice to add a few things, like reinterpret cast, but we can do that with typed arrays if needed.
+DGN: We can do everything we need with the existing math primitives in ECMAScript. It'd be nice to add a few things, like reinterpret cast, but we can do that with typed arrays if needed.

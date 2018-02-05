@@ -1,11 +1,7 @@
 # May 22, 2013 Meeting Notes
 -----
 
-John Neumann (JN), Allen Wirfs-Brock (AWB), Eric Ferraiuolo (EF), Erik
-Arvidsson (EA), Luke Hoban (LH), Doug Crockford (DC), Yehuda Katz (YK),
-Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Alex Russell (AR), Dave
-Herman (DH) (calling in), Bernd Mathiske (BM), Andreas Rossberg (ARB), Mark
-Miller (MM), Tom Van Cutsem (TVC), Istvan Sebestyén (IS), Jasvir Naga (JNA)
+John Neumann (JN), Allen Wirfs-Brock (AWB), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Luke Hoban (LH), Doug Crockford (DC), Yehuda Katz (YK), Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Alex Russell (AR), Dave Herman (DH), Bernd Mathiske (BM), Andreas Rossberg (ARB), Mark S. Miller (MM), Tom Van-Cutsem (TVC), István Sebestyén (IS), Jasvir Naga (JNA)
 
 -----
 

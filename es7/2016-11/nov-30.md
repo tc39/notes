@@ -1,18 +1,18 @@
 # November 30, 2016 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TW), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LBR), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), Istvan Sebestyén (IS), Mark Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TW), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LBR), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS), Mark S. Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
 
 
 -----
 
 ## 5 Report from the Ecma Secretariat
 
-(Istvan Sebestyén)
+(István Sebestyén)
 
 IS: ...
 
-(Istvan was speaking remotely, over a broken audio connection, so I have no idea what he was saying. Please fill in)
+(István was speaking remotely, over a broken audio connection, so I have no idea what he was saying. Please fill in)
 (Link to slides please)
 
 IS: The slides shown have been distributed via Github and the Ecma Tc39 reflector 1 hour before the meeting. He said that 1 TC39 Standard and 1 TC39 TR will be approved (hopefully) by the Ecma General Assembly next week. He said that the JSON fast-track in JTC1 DIS ballot will end soon in December. WE have received comments from the Japanese NB, and Allen Wirfs-Brock looked at them and we took up contacts with the JApanse NB in order to eliminate the problems. According to Allen not really a big problem. Then he talked about the necessity to have a new TC39 Chair / Vice Chair selected. Until a solution is found, for a few meeting Allen Wirfs-Brock on behalf of the Secretariat will jump in. Unfortuantely, he is only willing to that that short-term. 

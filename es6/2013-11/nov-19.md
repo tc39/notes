@@ -2,7 +2,7 @@
 -----
 
 
-John Neumann (JN), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Rick Hudson (RH), Matt Sweeney (MS),  Rafael Weinstein (RWS), Alex Russell (AR),  Rick Waldron (RW), Dmitry Soshnikov (DS), Jeff Morrison (JM), Sebastian Markbåge (SM), Ben Newman (BN), Reid Burke (RB), Waldemar Horwat (WH),  Doug Crockford (DC), Tom Van Custem (TVC), Mark Miller (MM)
+John Neumann (JN), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Rick Hudson (RH), Matt Sweeney (MS),  Rafeal Weinstein (RWN), Alex Russell (AR),  Rick Waldron (RW), Dmitry Soshnikov (DS), Jeff Morrison (JM), Sebastian Markbåge (SM), Ben Newman (BN), Reid Burke (RB), Waldemar Horwat (WH),  Doug Crockford (DC), Tom Van-Cutsem (TVC), Mark S. Miller (MM)
 
 -----
 

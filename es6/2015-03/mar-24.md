@@ -1,7 +1,7 @@
 # March 24, 2015 Meeting Notes
 -----
 
-Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Alan Schmitt (AS), Lee Byron (LB), Domenic Denicola (DD), Kevin Smith (KS), Andreas Rossberg (ARB), Brendan Eich (BE), Erik Arvidsson (EA), Adam Klein (AK), Jordan Harband (JHD), Mark Miller (MM), Istvan Sebestyén (IS), Jafar Husain (JH), Rick Waldron (RW)
+Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Alan Schmitt (AS), Lee Byron (LB), Domenic Denicola (DD), Kevin Smith (KS), Andreas Rossberg (ARB), Brendan Eich (BE), Erik Arvidsson (EA), Adam Klein (AK), Jordan Harband (JHD), Mark S. Miller (MM), István Sebestyén (IS), Jafar Husain (JH), Rick Waldron (RW)
 -----
 
 ## 4 ECMA-262 6th Edition
@@ -281,7 +281,7 @@ YK: Will ECMA be upset if we normatively reference a non-normative spec?
 
 AWB: Yes.
 
-AWB: Istvan, do we need a opt-out period for ECMA-402.
+AWB: István, do we need a opt-out period for ECMA-402.
 
 IS: Yes.
 
@@ -322,7 +322,7 @@ IS: We approved ECMA404 before we had the RF agreement. Should we start an opt-o
 
 #### Conclusion/Resolution
 
-- Istvan to follow up with Adobe and the CC to see if they would object to withdrawing E4X
+- István to follow up with Adobe and the CC to see if they would object to withdrawing E4X
 
 
 ## ECMA404 RF?
@@ -347,7 +347,7 @@ AWB: I think there is consensus to kill 327.
 
 #### Conclusion/Resolution
 
-- Istvan to follow up with Adobe and the CC to see if they would object to withdrawing the compact profile.
+- István to follow up with Adobe and the CC to see if they would object to withdrawing the compact profile.
 
 
 ## Fast track ECMA-404

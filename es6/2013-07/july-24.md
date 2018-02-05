@@ -2,7 +2,7 @@
 -----
 
 
-John Neumann (JN), Luke Hoban (LH), Rick Hudson (RH), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Anne van Kesteren (AVK), Jeff Morrison (JM), Sebastian Markbåge (SM), Paul Leathers (PL), Avik Chaudhuri (AC), Ian Halliday (IH), Alex Russell (AR), Dave Herman (DH), Istvan Sebestyén (IS), Mark Miller (MM), Norbert Lindenberg (NL), Erik Arvidsson (EA), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Rick Waldron (RW), Rafael Weinstein (RWS), Dmitry Lomov (DL), Brendan Eich (BE), Brian Terlson (BT)
+John Neumann (JN), Luke Hoban (LH), Rick Hudson (RH), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Anne van Kesteren (AVK), Jeff Morrison (JM), Sebastian Markbåge (SM), Paul Leathers (PL), Avik Chaudhuri (AC), Ian Halliday (IH), Alex Russell (AR), Dave Herman (DH), István Sebestyén (IS), Mark S. Miller (MM), Norbert Lindenberg (NL), Erik Arvidsson (EA), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Rick Waldron (RW), Rafeal Weinstein (RWN), Dmitry Lomov (DL), Brendan Eich (BE), Brian Terlson (BT)
 
 -----
 

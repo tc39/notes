@@ -1,6 +1,6 @@
 # June 4 2014 Meeting Notes  
 
-Brian Terleson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbåge (SM), Rafael Weinstein (RWS), Jaswanth Sreeram (JS), Alex Russell (AR), Istvan Sebestyén (IS), Simon Kaegi (SK), Arnoud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark Miller (MM), Peter Jensen (PJ)
+Brian Terleson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbåge (SM), Rafeal Weinstein (RWN), Jaswanth Sreeram (JS), Alex Russell (AR), István Sebestyén (IS), Simon Kaegi (SK), Arnaud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark S. Miller (MM), Peter Jensen (PJ)
 
 
 ## Adoption of the agenda
@@ -153,7 +153,7 @@ MM: I no longer object to making .caller and .arguments configurable, so that yo
 
 ## Conclusion/Resolution
 
-- Postpone until tomorrow morning at ~10:30, after Istvan's talk at 10:15.
+- Postpone until tomorrow morning at ~10:30, after István's talk at 10:15.
 
 
 ## 4.6 Reserving additional words (`yield`, `async`, and `await` in particular)
@@ -258,7 +258,7 @@ BT: Have the CLA as a PDF document, now need to tell everyone with pull requests
 
 AWB: How can we streamline that process?
 
-BT: Continuing to have that conversation with Istvan and Norbert.
+BT: Continuing to have that conversation with István and Norbert.
 
 AWB: Where do contributors send the CLA?
 

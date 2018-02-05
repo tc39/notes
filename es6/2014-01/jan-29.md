@@ -2,7 +2,7 @@
 -----
 
 
-John Neumann (JN), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Rick Hudson (RH), Matt Sweeney (MS), Dmitry Soshnikov (DS), Sebastian Markbåge (SM), Ben Newman (BN), Jeff Morrison (JM), Reid Burke (RB), Waldemar Horwat (WH), Doug Crockford (DC), Mark Miller (MM), Brian Terlson (BT), Luke Hoban (LH), Andreas Rossberg (ARB), Istvan Sebestyén (IS), Niko Matsakis (NM), Brendan Eich (BE), Rick Waldron (RW), Sam Tobin-Hochstadt (STH), Rafael Weinstein (RWS), Dmitry Lomov (DL), Niko Matsakis (NM), Simon Kaegi (SK), Kevin Reid (KR), Dave Herman (DH)
+John Neumann (JN), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Rick Hudson (RH), Matt Sweeney (MS), Dmitry Soshnikov (DS), Sebastian Markbåge (SM), Ben Newman (BN), Jeff Morrison (JM), Reid Burke (RB), Waldemar Horwat (WH), Doug Crockford (DC), Mark S. Miller (MM), Brian Terlson (BT), Luke Hoban (LH), Andreas Rossberg (ARB), István Sebestyén (IS), Niko Matsakis (NM), Brendan Eich (BE), Rick Waldron (RW), Sam Tobin-Hochstadt (STH), Rafeal Weinstein (RWN), Dmitry Lomov (DL), Niko Matsakis (NM), Simon Kaegi (SK), Kevin Reid (KR), Dave Herman (DH)
 -----
 
 ## Function in Blocks in non strict mode.
@@ -110,16 +110,16 @@ LH:  A SHOULD warning seems a reasonable addition to the proposal here.
 
 ## Object.observe Status Report
 
-RWS: Suggest moving OO to the second stage.
+RWN: Suggest moving OO to the second stage.
 :: Approved
 
-RWS: Wants to move OO to the third stage, which requires a spec text review.
+RWN: Wants to move OO to the third stage, which requires a spec text review.
 
 YK: Has reviewed it already.
 
 AWB: Might have time to review.
 
-RWS: The plan is to ship OO in Chrome sometime around April.
+RWN: The plan is to ship OO in Chrome sometime around April.
 
 AWB: Should not be a problem to advance without scrutizing the proposal. Willing to rubber stamp at this point. Since we are in a state where we are. (?)
 
@@ -149,11 +149,11 @@ EA: We should also move the meeting notes from rwaldron/* to TC39/*
 
 YK: We should use the GitHub API to extract the comments for keeping the paper-trail.
 
-RWS: Agenda changes since last time
+RWN: Agenda changes since last time
     1. Add a designated reviewer.
     2. At step 3 and 4 there is a requirement to get an approval from the spec editor.
 
-RWS: Also managing spec in flight
+RWN: Also managing spec in flight
 
 YK: I'm going to work in that.
 

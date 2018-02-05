@@ -1,12 +1,7 @@
 # July 25, 2012 Meeting Notes
 -----
 
-Mark Miller (MM), Brendan Eich (BE), Yehuda Katz (YK), Luke Hoban
-(LH), Andreas Rossberg (ARB), Rick Waldron (RW), Alex Russell (AR), Tom
-Van-Cutsem (TVC), Bill Ticehurst (BT), Rafeal Weinstein (RWS), Sam
-Tobin-Hochstadt (STH), Allen Wirfs-Brock (AWB), Doug Crockford (DC), John
-Neumann (JN), Erik Arvidsson (EA), Dave Herman (DH), Norbert Lindenberg
-(NL), Oliver Hunt (OH)
+Mark S. Miller (MM), Brendan Eich (BE), Yehuda Katz (YK), Luke Hoban (LH), Andreas Rossberg (ARB), Rick Waldron (RW), Alex Russell (AR), Tom Van-Cutsem (TVC), Bill Ticehurst (BT), Rafeal Weinstein (RWN), Sam Tobin-Hochstadt (STH), Allen Wirfs-Brock (AWB), Doug Crockford (DC), John Neumann (JN), Erik Arvidsson (EA), Dave Herman (DH), Norbert Lindenberg (NL), Oliver Hunt (OH)
 
 -----
 
@@ -272,7 +267,7 @@ mechanism.
 
 AWB: Is this sufficient for implementing DOM mutation event mechanisms?
 
-RWS: Yes, those could be built on top of Object.observe
+RWN: Yes, those could be built on top of Object.observe
 
 AWB/AR: Good, that should be a goal as well.
 
@@ -283,18 +278,18 @@ MM: FIFO event queue, deliveries run to completion
 
 DH: Consider a two level, nested event queue
 
-RWS: Very close to internal event queue, but is not. A single observer is
+RWN: Very close to internal event queue, but is not. A single observer is
 being delivered changes, but not necessarily in the order that they
 occurred.
 
-YK/RWS: Agree on delivery of script data mutation first, in any context.
+YK/RWN: Agree on delivery of script data mutation first, in any context.
 
-RWS: Explanation of how mutation is handled and data binding as a whole.
+RWN: Explanation of how mutation is handled and data binding as a whole.
 
 DH: Concerned that it's too complicated and may conflict with expectation
 of run-to-completion.
 
-RWS: Agree, but feel as though it is unavoidably complex, but this is for
+RWN: Agree, but feel as though it is unavoidably complex, but this is for
 library authors to build better data binding abstractions.
 
 YK: Can confirm that this proposal addresses web reality pain points.
@@ -343,7 +338,7 @@ RW: Would like to get access to a build that I can bring back to devs at
 Bocoup, where we can put dev resources towards developing projects with
 Object.observe; for example converting existing Backbone applications, etc.
 
-RWS: Agree and will arrange.
+RWN: Agree and will arrange.
 
 
 

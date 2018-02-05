@@ -1,7 +1,7 @@
 # April 9, 2014 Meeting Notes
 -----
 
-Doug Crockford (DC), Brian Terleson (BT), Luke Hoban (LH), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Hudson (RH), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Seo-Young Hwang (SYH), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Norbert Lindenberg (NL), Sebastian Markbåge (SM), Mathias Bynens (MB), Rafael Weinstein (RWS), Jaswanth Sreeram (JS), Alex Russell (AR), Istvan Sebestyén (IS), Mark Miller (MM), Tatiana Shpeisman (TS), Brandon Benvie (BB), Brendan Eich (BE)
+Doug Crockford (DC), Brian Terleson (BT), Luke Hoban (LH), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Hudson (RH), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Seo-Young Hwang (SYH), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Norbert Lindenberg (NL), Sebastian Markbåge (SM), Mathias Bynens (MB), Rafeal Weinstein (RWN), Jaswanth Sreeram (JS), Alex Russell (AR), István Sebestyén (IS), Mark S. Miller (MM), Tatiana Shpeisman (TS), Brandon Benvie (BB), Brendan Eich (BE)
 
 
 
@@ -44,7 +44,7 @@ No discussion, No objection
 (Rafael Weinstein)
 
 
-RWS: The next step was spec text review.
+RWN: The next step was spec text review.
 
 YK: Reviewed but have feedback
 
@@ -56,7 +56,7 @@ AR: Can you be more concrete, with regard to Object.observe
 
 YK: There is a need for filtering of change records
 
-RWS: We had hoped to work on this post 1.0
+RWN: We had hoped to work on this post 1.0
 
 YK: We tried this and it's messy and complicated, so it's either a matter of being messy and complicated in user code or in V8
 
@@ -70,11 +70,11 @@ YK: But needs to be useful to library code.
 
 AWB: (continuing) I'd feel more confident if more committee members reviewed the spec for correctness.
 
-RWS: What is the purpose of the reviewer role, in this stage? I assumed it was for the mechanics, not the feature itself. I'm confident we can work through the existing concerns.
+RWN: What is the purpose of the reviewer role, in this stage? I assumed it was for the mechanics, not the feature itself. I'm confident we can work through the existing concerns.
 
 YK: I think that practitioners need to be given an opportunity to review in real use
 
-RWS: This should be done much earlier in the process.
+RWN: This should be done much earlier in the process.
 
 JH: How long is needed to feel comfortable with this?
 
@@ -83,15 +83,15 @@ YK: We already made implementation attempts and ultimately view them as failures
 LH: So you're not comfortable giving consensus at this point, based on your actual experience.
 ...Concern that consensus blocking this late
 
-RWS: Propose that we don't move to stage 3, but I want a commitment from Yehuda that to prioritize working through the remaining issues.
+RWN: Propose that we don't move to stage 3, but I want a commitment from Yehuda that to prioritize working through the remaining issues.
 
 YK: Confirm
 
-RWS: We should view this as feedback for the new process
+RWN: We should view this as feedback for the new process
 
 YK: There was feedback, but no action
 
-RWS: There have been many updates and if there were issues, that was on you to follow up... If there is criticism, it needs to be on record.
+RWN: There have been many updates and if there were issues, that was on you to follow up... If there is criticism, it needs to be on record.
 
 AWB: In addition to meeting notes record, file bugs to track progress
 
@@ -112,7 +112,7 @@ discussion about filtering in general)
 
 ## Royalty Free Status
 
-(Istvan Sebestyén)
+(István Sebestyén)
 
 JN: (recaps decisions)
 
@@ -141,7 +141,7 @@ IS: Fast track ISO?
 
 (will follow up)
 
-RW: Istvan, please send link to FAQ for inclusion.
+RW: István, please send link to FAQ for inclusion.
 
 confirmed
 

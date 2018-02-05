@@ -1,11 +1,11 @@
 # September 22, 2015 Meeting Notes    
 -----
 
-Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Farriauolo (EF), Caridy Patiño (CP), Mark Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann  (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Ben Smith (BS), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Gorkem Yakin (GY), Stefan Penner (SP)
+Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Ben Smith (BS), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Gorkem Yakin (GY), Stefan Penner (SP)
 
 
 Remote: 
-Mark Miller (MM), Dan Gohmann (DG), John McCutchan (JMC)
+Mark S. Miller (MM), Dan Gohman (DGN), John McCutchan (JMC)
 
 -----
 
@@ -692,7 +692,7 @@ DE: Diff in how hardware works, between ARM and x86. Proposal to have opaque typ
 
 BE: Don't know how to fix this without support from hardware?
 
-DG: We have a proposal that works, but we don't have enough confidence. Current proposal doesn't use an intermediate type
+DGN: We have a proposal that works, but we don't have enough confidence. Current proposal doesn't use an intermediate type
 
 
 (Copy from slide "questiosn raised by reviewers")
@@ -968,7 +968,7 @@ BE: will we learn more to help us decide?
 
 JMC: this is a relatively new suggestion. I don't think we'll learn anything new performance-wise. If compiler cannot be sure that it is a constant, it can choose not to optimize. Let's just make a call
 
-DG: difference from extract lane: there are indexes in bounds that we can't be sure to make fast. Slow and tricky to implement
+DGN: difference from extract lane: there are indexes in bounds that we can't be sure to make fast. Slow and tricky to implement
 
 DE: behavior is strange to have operation throw if it would be slow
 

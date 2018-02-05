@@ -2,7 +2,7 @@
 -----
 
 
-John Neumann (JN), Dave Herman (DH), Istvan Sebestyén (IS), Alex Russell (AR), Allen Wirfs-Brock (AWB), Erik Arvidsson (EA), Eric Ferraiuolo (EF), Doug Crockford (DC), Luke Hoban (LH), Anne van Kesteren (AVK), Brian Terlson (BT), Rick Waldron (RW), Waldemar Horwat (WH), Rafael Weinstein (RWS), Boris Zbarsky (BZ), Domenic Denicola (DD), Tim Disney (TD), Niko Matsakis (NM), Jeff Morrison (JM), Sebastian Markbåge (SM), Oliver Hunt (OH), Sam Tobin-Hochstadt (STH), Dmitry Lomov (DL), Andreas Rossberg (ARB), Matt Sweeney (MS), Reid Burke (RB), Philippe Le Hégaret (PLH), Simon Kaegi (SK), Paul Leathers (PL), Corey Frang (CF), Mark Miller (MM)
+John Neumann (JN), Dave Herman (DH), István Sebestyén (IS), Alex Russell (AR), Allen Wirfs-Brock (AWB), Erik Arvidsson (EA), Eric Ferraiuolo (EF), Doug Crockford (DC), Luke Hoban (LH), Anne van Kesteren (AVK), Brian Terlson (BT), Rick Waldron (RW), Waldemar Horwat (WH), Rafeal Weinstein (RWN), Boris Zbarsky (BZ), Domenic Denicola (DD), Tim Disney (TD), Niko Matsakis (NM), Jeff Morrison (JM), Sebastian Markbåge (SM), Oliver Hunt (OH), Sam Tobin-Hochstadt (STH), Dmitry Lomov (DL), Andreas Rossberg (ARB), Matt Sweeney (MS), Reid Burke (RB), Philippe Le Hégaret (PLH), Simon Kaegi (SK), Paul Leathers (PL), Corey Frang (CF), Mark S. Miller (MM)
 
 -----
 
@@ -300,11 +300,11 @@ AVK: You can skip the `object` in the record because the notifier knows which ob
 
 MM: Does not seem like a good path to not handle expecptions???
 
-RWS: The mutation records from array methods are about the intent to mutate the object. It cannot tell what the new state is of the object.
+RWN: The mutation records from array methods are about the intent to mutate the object. It cannot tell what the new state is of the object.
 
 MM: If somethings fails, and you try to perform the same operation on a replica you will get the same failure on the replica.
 
-RWS: I attempted to do the work and this what I intended to do.
+RWN: I attempted to do the work and this what I intended to do.
 
 MM: I'm fine with this as long as it maintains the ability to keep a replica consistent.
 
@@ -312,7 +312,7 @@ AWB: Would it be ok to not record property changes on array propert changes.
 
 WH: What kind of a change record would "sort" generate? In particular, how would the change record describe how the array was sorted (ascending, descending, by what key?)?
 
-RWS: If the array only said it was sorted then the code would need to keep a copy around to know what happened.
+RWN: If the array only said it was sorted then the code would need to keep a copy around to know what happened.
 
 WH: In that case would reverse also emit a sorted change record?
 
@@ -336,7 +336,7 @@ AWB: Use more specific class than array.
 
 (Discussion about Array.observe vs. Object.observe.)
 
-RWS: Allen, I think what you're saying makes sense, and it's a specific instance of a more general thing of filtering, which we may want for performance. Let's defer that.
+RWN: Allen, I think what you're saying makes sense, and it's a specific instance of a more general thing of filtering, which we may want for performance. Let's defer that.
 
 CF: An API question---what about { new: newCallback, updated: updateCallback, ... }, instead of (callback, ['new', 'updated', ...]).
 
@@ -344,7 +344,7 @@ DH: yes, callback-last is definitely important
 
 RW: (explains in depth the benefits of this)
 
-RWS: I'm not especially excited about separate callbacks, because often you want a stream of change records, and not to react individually to each of the operations.
+RWN: I'm not especially excited about separate callbacks, because often you want a stream of change records, and not to react individually to each of the operations.
 
 RW clarifies with some code Corey's proposal:
 
@@ -361,17 +361,17 @@ Object.observe(foo, {
 Object.observe(foo, function() {});
 ```
 
-RWS: This is an antipattern. We don't want to split the callback like that because the change log is the important part and if you split it it is hard to get ordering right.
+RWN: This is an antipattern. We don't want to split the callback like that because the change log is the important part and if you split it it is hard to get ordering right.
 
 RW: The misunderstanding: the list of change types is a "white list" of change types to include in the change list, not a 1-to-1 "events to handle" list.
 
 WH: Want the names to be consistently present tense: new, update, delete, prototype, reconfigure
 
-RWS: prototype is used when [[Prototype]] is changed
+RWN: prototype is used when [[Prototype]] is changed
 
 WH: how often do you observe an object whose prototype chain changes?
 
-RWS: well, a common use case is using the prototype chain to represent concentric scopes, e.g. Angular
+RWN: well, a common use case is using the prototype chain to represent concentric scopes, e.g. Angular
 
 RW: It is valid to want to observe changes in the prototype chain, but I don't think Angular is a good supporting argument.
 
@@ -389,7 +389,7 @@ Moved on to "Thought Experimental" slide.
 
 WH/DD: the names on this slide are weird. "deleted" doesn't work (it's already used by normal objects). "set" vs. "updated". It seems like namespacing is necessary.
 
-RWS: Agreed, there is a namespacing issue.
+RWN: Agreed, there is a namespacing issue.
 
 WH: Would prefer to keep the simple notification names ("splice", "set", etc.) to match method names that generate those notifications. It would be bad if we got into a pattern where method Foo generated ArrayFoo notifications when used on arrays, MapFoo notifications when used on maps, etc. This would be an annoying abstraction leak for observers who don't care which particular data structure is used to store the things being observed.
 
@@ -403,17 +403,17 @@ AVK: it would be nice if there was a recommendation for how to do namespacing, f
 
 WH: Asks about ordering semantics
 
-RWS: there is an unresolved issue about ordering of different types of work in microtasks (promises vs. `MutationObserver`s vs. `Object.observe`); this is still undecided.
+RWN: there is an unresolved issue about ordering of different types of work in microtasks (promises vs. `MutationObserver`s vs. `Object.observe`); this is still undecided.
 
 ... Moved on to the performance slides.
 
 WH: The slides are comparing the proposed language mechanism to polling, which is a bad choice for the comparison control group. If I were implementing observers in existing ES5, I definitely would not do polling; I'd set dirty flags and keep a list of dirty things. That should be the control group for the performance comparisons.
 
-RWS: the point of these graphs was not to show anything particularly interesting, but to show that there were no major surprises awaiting implementations.
+RWN: the point of these graphs was not to show anything particularly interesting, but to show that there were no major surprises awaiting implementations.
 
 AR: What do you need from this group? How close are we to being "done"?
 
-RWS: Got good feedback on a few things to change. Maybe next meeting we'll have something that's really "done" and we can't go any further without implementations.
+RWN: Got good feedback on a few things to change. Maybe next meeting we'll have something that's really "done" and we can't go any further without implementations.
 
 AVK/RW: just be sure to update us on es-discuss when you make changes.
 

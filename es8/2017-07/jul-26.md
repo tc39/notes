@@ -1,7 +1,7 @@
 # July 26, 2017 Meeting Notes
 -----
 
-Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE),Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BF), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CLP), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GIG), Istvan Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark Miller (MM), Michael Ficarra (MF), Michael Saboff (MS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Robert Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK), 
+Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE), Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK), 
 
 -----
 
@@ -95,7 +95,7 @@ BE: There is some research in procedurally generating ASTs from data; it would r
 
 SYG: It's unclear to me whether we could really specify such a *transform* practically; it sounds hard to specify and hard to maintain.
 
-BF: We're just talking about the structure, right?
+BFS: We're just talking about the structure, right?
 
 SYG: Right
 
@@ -118,7 +118,7 @@ KG: You had something in the proposal about exemplars, right? For example, we're
 
 SYG: There is a slide about this later.
 
-BF: The burden is on the tools to produce valid ASTs.
+BFS: The burden is on the tools to produce valid ASTs.
 
 SYG: The Shape folks have worked to ensure that there are fewer invalid ASTs expressible in their type, compared to Babylon. OTOH, Babel is based on a de-facto AST standard which is widely used by JS code, but it's not as much thought out.
 
@@ -140,11 +140,11 @@ YK: Is it possible to encode a syntax error in the binary AST?
 
 SYG: I'll get into errors later.
 
-BF: It's possible to have an AST format that forbids certain early errors / well-formedness errors by construction.
+BFS: It's possible to have an AST format that forbids certain early errors / well-formedness errors by construction.
 
 AWB: Many well-formedness checks are not specified at the level of the exact errors you'll get (if there are multiple early errors in a file, the spec doesn't say which one you'll get), just that there will be early well-formedness errors.
 
-BF: You could have a binary AST with a `with` statement in it, which is not an error according to the AST format, but it's an early (parsing) error in strict mode.
+BFS: You could have a binary AST with a `with` statement in it, which is not an error according to the AST format, but it's an early (parsing) error in strict mode.
 
 YK: The binary AST should say what the root parsing goal is (Script or Module).
 
@@ -173,7 +173,7 @@ AK: Transpilers and faulty compilers have similar consequences for debuggability
 
 MP: And that's a bad experience for programmers too.
 
-BF: ASTs can have a reduced number of early errors compared to source code.
+BFS: ASTs can have a reduced number of early errors compared to source code.
 
 SYG: …continuing presentation… ("How to Encode Set of Binding Names?" slide)
 
@@ -215,7 +215,7 @@ SYG: Like a more advanced minifier.
 
 DH: We'll need a format for annotating a sourcemap, at some point, right?
 
-BF: There are out-of-band ways to do that (YK: such as HTTP headers).
+BFS: There are out-of-band ways to do that (YK: such as HTTP headers).
 
 YK: There may be benefits to thinking about the source map format at the same time as the AST format. Traditional source maps are text-to-text mappings (and the binary AST isn't text with lines and columns).
 
@@ -323,7 +323,7 @@ JHD: If I want my code to detect if generators are natively supported, I have to
 
 DTL: Yes, I think this can be solved outside of ECMAScript.
 
-BF: From the non-webbrowser side, Webpack has people looking at this on their performance team. Getting binary formats would be great. JSON parsing is a big source of overhead, as well.
+BFS: From the non-webbrowser side, Webpack has people looking at this on their performance team. Getting binary formats would be great. JSON parsing is a big source of overhead, as well.
 This proposal would benefit tools, too; not purely for the web.
 
 WH: With modules, would you just parse it, or would you also try to bind imported with exported identifiers across files?
@@ -357,7 +357,7 @@ TODO: insert slides
 
 ## 5. Report from the Ecma Secretariat
 
-(Istvan Sebestyén) 
+(István Sebestyén) 
 
 The report has been uploaded to the GitHub under Reflector as 2017 July Ecma Secretariat Report
 It will be published also as a Ecma TC39 document.
@@ -432,7 +432,7 @@ DH: Ignore the proposed spec. It should be deleted.
 
 WH: The spec draft is incoherent and in major conflict with the presentation. Given the incoherence and conflict between the proposed spec and presentation, I am not comfortable with the spec meeting stage 2 entry requirements.
 
-BF: This is additive to and compatible with Node's plans.
+BFS: This is additive to and compatible with Node's plans.
 
 DD: Chrome is not comfortable moving this to stage 2, as we believe it's a strength of the language that this determination is left up to the host to decide. Mandating something in ECMA-262 is not the right path here.
 
@@ -456,7 +456,7 @@ DD: We don't believe "use module" is useful because `export {}` exists for the "
 
 DH: This is not adding a new mode, just an assertion about the current mode.
 
-BF: The "use nomodule" pragma would be useful for bundlers that rely on Script semantics. Similarly, I would like `import "./common.js"` to fail if "use module" is present.
+BFS: The "use nomodule" pragma would be useful for bundlers that rely on Script semantics. Similarly, I would like `import "./common.js"` to fail if "use module" is present.
 
 DD: Data about accidental script/module inclusion could persuade us that this is useful across environments. E.g., data on how often people ship code using `<script>` (without `type=module`) but used `export`/`import`, causing an error. Or vice-versa.
 
@@ -498,7 +498,7 @@ YK: You can make a tool that converts "use module" to `export {}`.
 
 ??: This also affects editors that need to know whether to interpret files as modules.
 
-BF: Node is not going to diverge from the browser on this topic. If "use module" is not supported by browsers, Node is not going to use "use module" either.
+BFS: Node is not going to diverge from the browser on this topic. If "use module" is not supported by browsers, Node is not going to use "use module" either.
 
 ??: As soon as you say this is going to be host-specific behavior, hosts are going to shy away from it.
 

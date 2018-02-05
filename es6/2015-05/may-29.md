@@ -1,7 +1,7 @@
 # May 29, 2015 Meeting Notes    
 -----
 
-Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Kevin Smith (KS), Daniel Ehrenberg (DE), Adam Klein (AK), Jordan Harband (JHD), Jafar Husain (JH), Mark Miller (MM), Michael Ficarra (MF), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Farriauolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Brendan Eich (BE), Dan Gohman (DG), Miško Hevery (MH, Matt Sweeney
+Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Kevin Smith (KS), Daniel Ehrenberg (DE), Adam Klein (AK), Jordan Harband (JHD), Jafar Husain (JH), Mark S. Miller (MM), Michael Ficarra (MF), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Ferraiuolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Brendan Eich (BE), Dan Gohman (DGN), Miško Hevery (MHY), Matt Sweeney (MSY)
 -----
 
 ## Relaxed semantics for Promise.resolve nominal check (MM)
@@ -77,7 +77,7 @@ DE: Why not use an implicitly named, lexically scoped object for literals (liter
 
 BE: Don't overload ===, instanceof, in
 
-DG: Most operators could be useful for SIMD, except == < <= is probably not a good idea since it'll return a SIMD vector which is truthy
+DGN: Most operators could be useful for SIMD, except == < <= is probably not a good idea since it'll return a SIMD vector which is truthy
 
 BE: Strict equality is still via a structural recursive strict equality check not overloadable, or do we want to change that?
 
@@ -120,7 +120,7 @@ y = Float32.[[Cast]](2);
 ```
 
 
-DG: how about Complex?
+DGN: how about Complex?
 
 DE: `3+2i` is a "literal" that can be partially evaluated by smart implementations; the `2i` uses literal suffix `i` to make imaginary-2, and `+` operator does rest.
 

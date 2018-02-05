@@ -1,10 +1,10 @@
 # January 25, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Brendan Eich (BE), Istvan Sebestyén (IS), Keith Miller (KM), Brendan Eich (BE), Myles Borins (MBS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Brendan Eich (BE), István Sebestyén (IS), Keith Miller (KM), Brendan Eich (BE), Myles Borins (MBS)
 -----
 
-## Istvan update, items 4-10 on the agenda
+## István update, items 4-10 on the agenda
 
 ### 4. Approval of the minutes from the last meeting
 
@@ -302,7 +302,7 @@ KG: It would be nice to be more specific about when it applies and when it doesn
 
 WH: Here's a real-world instance of this related to TC39: A long time ago Brendan had made some purely personal political contributions. Pretty much no one knew about them until someone outed them. Would such personal political activity be regulated by a CoC?
 
-AWB: Istvan, anything else?
+AWB: István, anything else?
 
 IS: I'd like to encourage participation on GitHub between this meeting and next one. I'd be interested in seeing this document as well.
 

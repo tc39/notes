@@ -2,7 +2,7 @@
 -----
 
 
-John Neumann (JN), Dave Herman (DH), Istvan Sebestyén (IS), Alex Russell (AR), Allen Wirfs-Brock (AWB), Erik Arvidsson (EA), Eric Ferraiuolo (EF), Doug Crockford (DC), Luke Hoban (LH), Anne van Kesteren (AVK), Brendan Eich (BE), Brian Terlson (BT), Rick Waldron (RW), Waldemar Horwat (WH), Rafael Weinstein (RWS), Boris Zbarsky (BZ), Domenic Denicola (DD), Tim Disney (TD), Niko Matsakis (NM), Jeff Morrison (JM), Sebastian Markbåge (SM), Oliver Hunt (OH), Sam Tobin-Hochstadt (STH), Dmitry Lomov (DL), Andreas Rossberg (ARB), Matt Sweeney (MS), Reid Burke (RB), Philippe Le Hégaret (PLH), Simon Kaegi (SK), Paul Leathers (PL), Corey Frang (CF)
+John Neumann (JN), Dave Herman (DH), István Sebestyén (IS), Alex Russell (AR), Allen Wirfs-Brock (AWB), Erik Arvidsson (EA), Eric Ferraiuolo (EF), Doug Crockford (DC), Luke Hoban (LH), Anne van Kesteren (AVK), Brendan Eich (BE), Brian Terlson (BT), Rick Waldron (RW), Waldemar Horwat (WH), Rafeal Weinstein (RWN), Boris Zbarsky (BZ), Domenic Denicola (DD), Tim Disney (TD), Niko Matsakis (NM), Jeff Morrison (JM), Sebastian Markbåge (SM), Oliver Hunt (OH), Sam Tobin-Hochstadt (STH), Dmitry Lomov (DL), Andreas Rossberg (ARB), Matt Sweeney (MS), Reid Burke (RB), Philippe Le Hégaret (PLH), Simon Kaegi (SK), Paul Leathers (PL), Corey Frang (CF)
 
 
 -----
@@ -481,83 +481,83 @@ Additionally:
 
 
 
-RWS: put together some thoughts after the last meeting with DL, EA, AWB, etc.
+RWN: put together some thoughts after the last meeting with DL, EA, AWB, etc.
 
-RWS: most of it is good except that it's date driven and the consensus requirements lead to a high-stakes game for getting features into the game.
+RWN: most of it is good except that it's date driven and the consensus requirements lead to a high-stakes game for getting features into the game.
 
-RWS: The second problem is that with large-quanta spec releases, there's a varrying maturity level for proposals. Stable stuff is "held hostage" to newer features.
+RWN: The second problem is that with large-quanta spec releases, there's a varrying maturity level for proposals. Stable stuff is "held hostage" to newer features.
 
-RWS: as we near a release, we end up with large pressure around things which may or may-not make it. Argue that this is destructive to feature quality.
+RWN: as we near a release, we end up with large pressure around things which may or may-not make it. Argue that this is destructive to feature quality.
 
-RWS: we also have an informal process. It occurs to us that acceptance of features comes before details are sorted out. Implementers, therefore, lack a clear signal about when it's time to start implementing features. Might be unavoidable, but other groups show a different way (W3C, e.g.)
+RWN: we also have an informal process. It occurs to us that acceptance of features comes before details are sorted out. Implementers, therefore, lack a clear signal about when it's time to start implementing features. Might be unavoidable, but other groups show a different way (W3C, e.g.)
 
-RWS: we also have a single spec writer who bears the full burden of authoring spec text.
+RWN: we also have a single spec writer who bears the full burden of authoring spec text.
 
-RWS: a few ideas:
+RWN: a few ideas:
 - decouple additions from dates
 - put structure around stages of maturity
 - what does each stage mean? Get clarity
 
-RWS: non-goal: componentize the spec or break apart responsibility from the whole group. Also a non-goal to change the rate of evolution (necessarialy).
+RWN: non-goal: componentize the spec or break apart responsibility from the whole group. Also a non-goal to change the rate of evolution (necessarialy).
 
-RWS: looked at how the W3C works and tried to extract the bits that seem to work well. A 4-stage process:
+RWN: looked at how the W3C works and tried to extract the bits that seem to work well. A 4-stage process:
     1.) proposal
     2.) working draft
     3.) candidate draft
     4.) last call
 
-RWS: At a (much more) regular interval, we'd post (smaller delta) drafts to ECMA.
+RWN: At a (much more) regular interval, we'd post (smaller delta) drafts to ECMA.
 
 AWB: do these stages line up with W3C terminology?
 
 (sort of, not really)
 
-RWS: proposals outline the problem, need, API, key algorithms, and identification of cross-cutting concerns. Also, and identified champion. Acceptance signifies the idea that the solution is something the committee wants to keep working on.
+RWN: proposals outline the problem, need, API, key algorithms, and identification of cross-cutting concerns. Also, and identified champion. Acceptance signifies the idea that the solution is something the committee wants to keep working on.
 
-RWS: note that we don't explicitly slate a specific revision is targeted for a proposal. That comes later.
+RWN: note that we don't explicitly slate a specific revision is targeted for a proposal. That comes later.
 
 AWB: concerned that we might accumulate accepted proposals that there's no activity on. How can we structure a cull?
 
 BE: as needed. FileSystem API as example.
 
-RWS: the analog might be the "deliverables list" used by W3C -- removing something from the list on the wiki could be that thing
+RWN: the analog might be the "deliverables list" used by W3C -- removing something from the list on the wiki could be that thing
 
 DH: Not to componentize? Seems like there is something of a componentization and that's the value?
 
-RWS: don't want to abandon the goal of language coherence. CSS did this wrong and have lots of weirdness as a result. Non-communicating editors lead to pain. This model is different: everything merges into a single spec.
+RWN: don't want to abandon the goal of language coherence. CSS did this wrong and have lots of weirdness as a result. Non-communicating editors lead to pain. This model is different: everything merges into a single spec.
 
 DH: how is this different to what we're doing now? Maybe this is a smaller tweak?
 
 BE: What this does is adds more staging before "proposal"
 
-RWS: this is saying the first stage doesn't have spec text, but the second stage does.
+RWN: this is saying the first stage doesn't have spec text, but the second stage does.
 
 DH: Makes a lot of sense, might make sense to spell out the earlier "incubator" stage.
 
-RWS: so there might be a stage-0, which is sort of the strawman we've had before
+RWN: so there might be a stage-0, which is sort of the strawman we've had before
 
-RWS: what we want to see at stage 2 is draft spec text. It can have early-quality notes, etc. but thought should be put into the text for the feature before we collectively accept the feature.
+RWN: what we want to see at stage 2 is draft spec text. It can have early-quality notes, etc. but thought should be put into the text for the feature before we collectively accept the feature.
 
-RWS: there are a couple of key things to look at: can we decouple spec editions from specific features? what are the substantives stages of maturity?
+RWN: there are a couple of key things to look at: can we decouple spec editions from specific features? what are the substantives stages of maturity?
 
 BE: quick question: the i18n spec was on a different track, is this only for core stuff
 (quotes FakeAlexRussell??)
 
 (sort of, might be a way to draw stuff into the main spec)
 
-RWS: stage 3 is the "Candidate Draft". It signifies that the committee thinks the scope of the feature is set. We can incorporate changes, but the key thing is that implementations are potentially costly. This stage is a green-light for implementing and final feed-back
+RWN: stage 3 is the "Candidate Draft". It signifies that the committee thinks the scope of the feature is set. We can incorporate changes, but the key thing is that implementations are potentially costly. This stage is a green-light for implementing and final feed-back
 
-RWS: stage 4 is "last call draft". 2 implementations and an acceptance test that they pass. Once accepted at this stage, the draft can be scheduled for the next spec to be published.
+RWN: stage 4 is "last call draft". 2 implementations and an acceptance test that they pass. Once accepted at this stage, the draft can be scheduled for the next spec to be published.
 
-RWS: what about dependencies? The committee isn't absolved of this. IT's up to us to manage them and there isn't any silver bullet. We need to make decisions.
+RWN: what about dependencies? The committee isn't absolved of this. IT's up to us to manage them and there isn't any silver bullet. We need to make decisions.
 
-RWS: thought a lot about linkage as a part of this. A champion's interests might work against the language (ducking dependencies, etc.). The committee still needs to advise and continue to look over the landscape.
+RWN: thought a lot about linkage as a part of this. A champion's interests might work against the language (ducking dependencies, etc.). The committee still needs to advise and continue to look over the landscape.
 
 (discussion)
 
 AWB: implicit in this is redefining the role of the editor to be more of an EDITOR, and less of an author. Should probably have a role in advancing proposals.
 
-RWS: so still a world where there's a single editor?
+RWN: so still a world where there's a single editor?
 
 AWB: yes.
 
@@ -565,11 +565,11 @@ AWB: yes.
 
 PLH: Noting that some of the process order might be confusing/out of order, with regard to naming?
 
-RWS: yes, "last call" means somethign different in W3C that doesn't map well
+RWN: yes, "last call" means somethign different in W3C that doesn't map well
 
 YK: the year might be a red-herring. The point isn't the date and the goal isn't to rush things under the wire.
 
-RWS: (refers to Chrome release process) (not quite Chrome, but close and relevant: https://developers.google.com/v8/launchprocess )
+RWN: (refers to Chrome release process) (not quite Chrome, but close and relevant: https://developers.google.com/v8/launchprocess )
 
 AWS: some of the non-technical overhead can be offloaded
 
@@ -583,7 +583,7 @@ BE: spidermonkey has shipped many things over the years, but at a cost
 
 (discussion about implementations and style)
 
-RWS: so we can imagine that you'd have different styles of implamentations at each stage? Makes sense.
+RWN: so we can imagine that you'd have different styles of implamentations at each stage? Makes sense.
 
 (agreement)
 
@@ -603,7 +603,7 @@ WH: What about mutualy beneficial features?
 
 AR: that's the dependency question, we talked about that
 
-RWS: it's sort of arbitrary, but that exists no matter what. There's no silver bullet. It's the job of the committee to keep an eye on what's in flight. Not sure a process can ensure that we can do that well or poorly.
+RWN: it's sort of arbitrary, but that exists no matter what. There's no silver bullet. It's the job of the committee to keep an eye on what's in flight. Not sure a process can ensure that we can do that well or poorly.
 
 WH: not componentizing is good, but want to make sure that the process doesn't get in the way.
 
@@ -611,11 +611,11 @@ BE: true.
 
 AWS: if we see things that are tightly linked, we might treat them that way
 
-RWS: as I said earlier, the committee can choose to merge them
+RWN: as I said earlier, the committee can choose to merge them
 
 WH: is the intent that the spec will be written by many people? or a single author?
 
-RWS: the hope is that we'll have more authors for sections of the text, and it'll continue to be the responsibility of the (single) editor to maintain quality.
+RWN: the hope is that we'll have more authors for sections of the text, and it'll continue to be the responsibility of the (single) editor to maintain quality.
 
 YK: I've found it useful to go throuh the exercise of writing spec text
 

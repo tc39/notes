@@ -1,7 +1,7 @@
 # July 27, 2017 Meeting Notes
 -----
 
-Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE), Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BF), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CLP), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GIG), Istvan Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark Miller (MM), Michael Ficarra (MF), Michael Saboff (MS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Robert Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK), 
+Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE), Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK), 
 
 -----
 
@@ -22,7 +22,7 @@ AWB: similar issue in ES6 when we introduced new numeric literal syntax (0x, 0o,
 
 RW: We are following the precedent to the letter: only making changes to `Number`, nothing else. Let's also think about a new method that can match new numeric grammar! Just don't want to couple that to numeric separators.
 
-BF: HTML isn't changing their behavior.
+BFS: HTML isn't changing their behavior.
 
 AWB: Application level user input should not be tied to the syntax of an implementation language.
 
@@ -88,7 +88,7 @@ BN: The parts were previously one proposal but were broken out in two. Lee Byron
 
 BN: This is a similar syntactic sugar. Motivation is that is strictly better than the two lines. It has a nice symmetry with import.
 
-BF: Do tools currently have this? Is it built-in to the core?
+BFS: Do tools currently have this? Is it built-in to the core?
 
 BN: Babel has this as a Stage 1 plugin, separate from the modules plugin
 
@@ -106,7 +106,7 @@ AK: For this one (`export v from "mod"`), I think the existing syntax is pretty 
 
 LBR: Maybe a real use-case/example will help.
 
-BF: This a real compiler use, it's sort of a microbenchmark. 
+BFS: This a real compiler use, it's sort of a microbenchmark. 
 
 BN: The reason we have special handling of default exports is because we want people to be able to operate in the mental model of the old CommonJS-style exports. If we require people to say `export { default as v }` then, better or worse, people have to know that default is another named export. Then, they have to depart from the illusion that default exports are sort of special.
 
@@ -212,7 +212,7 @@ API: Instant allow you to do map operation, but if you are trying to do subtract
 
 MPT: We can decide how pedantic we want to make the API. Some APIs would force you to do these conversions, though I was not intending to structure the API that way.
 
-BF: You mentioned  that you removed two, which ones they were?
+BFS: You mentioned  that you removed two, which ones they were?
 
 MJN: (List of removal Object types here)
 
@@ -236,7 +236,7 @@ DD: We had a big discussion about module/namespace/global
 
 MJN: As with other proposals, this decision will be deferred, depending on where the committee sits at the time with built-in modules
 
-BF: Subtracting dates?
+BFS: Subtracting dates?
 
 MPT: Subtraction is a little more complicated to get right and is not included right now; it's a common source of potential bugs in Moment where people have the wrong intuition.
 
@@ -292,7 +292,7 @@ MJN: If anybody feel strongly about Leap seconds, we can talk about it in git, a
 
 DH: Because is an immutable API, which is a good thing
 
-BF: Are you freezing those properties?
+BFS: Are you freezing those properties?
 
 MPT: Yes, the polyfill right now is a getter
 
@@ -794,7 +794,7 @@ DE: correct. If you want to add new private fields, there's a hack to do it but 
 
 MM: So, at the `PrivateName` level of abstraction, the registration of a name in the (conceptual) weak map is something that happens by magic. There isn't actually a weak map that's directly accessible to decorators.
 
-BF: I have problems using a global prototype for this purpose.
+BFS: I have problems using a global prototype for this purpose.
 
 YK: can we resolve that before stage 3?
 
@@ -872,7 +872,7 @@ WH: I will review all the class proposals. <huzzahs>
 #### Conclusion/Resolution
 
 - Remains at stage 2.
-- Reviewers:  WH, BF, AK
+- Reviewers:  WH, BFS, AK
 
 
 ## 13.ii.a Optional Chaining Operator 

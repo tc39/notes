@@ -1,7 +1,7 @@
 # January 23, 2018 Meeting Notes
 -----
 
-Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), JF Bastien (JFB), Mattijs Hoitink (MHK) , Kyle Verrier (KVR), Brian Terlson (BT), Shu Yu-Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagniani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
+Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark S. Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), JF Bastien (JFB), Mattijs Hoitink (MHK) , Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagniani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
 
 Remote: Bradley Farias (BFS), Thomas Wood (TW), Ben Newman (BN), Rick Waldron (RW), Valerie Young (VYG), David Turissini (DTI)
 
@@ -31,7 +31,7 @@ RJE: (agenda construction?)
 
 ## 5. Report from the Ecma Secretariat 
 
-RJE: Report of the Secretariat - Istvan has the flu, won't attend.
+RJE: Report of the Secretariat - István has the flu, won't attend.
 
 RJE: I've been working behind the scenes with ECMA for membership issues. She's coming to the dinner, and I'll be meeting with her Thursday night clarifying things for the not-for-profit membership, and see if projects like Babel can be included. Also, a non-voting membership, like distinguished membership or Fellow; discussion seems quite positive.
 
@@ -628,7 +628,7 @@ MM: it needs to be possible to naturally give out the ability to ask for more ra
 
 YK: the save/resume use case is important for the testing use case, you should be able to pick up after a failure without needing to repeat what you already did
 
-KGS: the API should accept an options bag, not just a single number as seed, maybe a simple case that just takes a number, but with complex state we want an options bag
+KG: the API should accept an options bag, not just a single number as seed, maybe a simple case that just takes a number, but with complex state we want an options bag
 
 ```js
 Math.seededRandoms({ ... })
@@ -636,13 +636,13 @@ Math.seededRandoms({ ... })
 
 TAB: usual thought is that things which are required are positional? But fine with either using solely an options bag, or unioning the types for simplicity.
 
-KGS: maybe the options bag just contains all of the state
+KG: maybe the options bag just contains all of the state
 
-KGS: the current design is a generator, rather than a function you call repeatedly, for my use cases I want a function to call repeatedly. For test cases, I'd just swap out Math.random with this deterministic thing. Harder to do with a generator
+KG: the current design is a generator, rather than a function you call repeatedly, for my use cases I want a function to call repeatedly. For test cases, I'd just swap out Math.random with this deterministic thing. Harder to do with a generator
 
 TAB: the non-determinancy of the call is exactly what I'm worried about, which is why I want instance-based 
 
-KGS: I wouldn't want this on a web page
+KG: I wouldn't want this on a web page
 
 TAB: To replace Math.random, you can just sub in `Math.seededRandoms().next`.
 
@@ -650,7 +650,7 @@ DD: are you ever going to iterate over this?
 
 TAB: In the rough-borders example I led with, yeah, you just want to do some simple iteration.
 
-KGS: ok this is a later-stage concern
+KG: ok this is a later-stage concern
 
 SM: one use case, one source of non-determinism in their ? is to hard-code a seed, but current Math.random is used in both the use case of ?? (ed: didn't understand, sorry)
 
@@ -671,7 +671,7 @@ DE: Since 2015 we've been using GitHub for development, accepting contributions 
 
 DE: Proposal is to retire the old form and switch to the new form. Proposal: for each contribtion for normative changes, check that the contributor is of a member company, or has signed form. For new attendees, declare whether they're an observer (and not make contributions), or a prospective Ecma members can attend as guests or invited experts and sign the form (and talk and contribute, with contributions licensed to ecma).
 
-DE: This plan has been developed with Allen Wirfs-Brock and Istvan Sebastyen. See Reflector thread for discussion about text.
+DE: This plan has been developed with Allen Wirfs-Brock and István Sebastyen. See Reflector thread for discussion about text.
 
 DE: if there are no objections, I'll move the new form to tc39, will start enforcing it for patches/PRs
 

@@ -1,7 +1,7 @@
 # December 1, 2016 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TW), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LB), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), Istvan Sebestyén (IS), Mark Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TW), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LB), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS), Mark S. Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
 
 
 
@@ -642,7 +642,7 @@ AWB: member companies need to send more diverse language implementors
 
 WH: Code of Conduct and meeting participation changes must be handled at the ECMA General Assembly level. Also, ECMA has a code regulating conduct.
 
-RW: We should talk to Istvan to have ECMA adopting this Code of Conduct
+RW: We should talk to István to have ECMA adopting this Code of Conduct
 
 (general agreement)
 
@@ -696,7 +696,7 @@ LB: Some companies may have trouble/refuse participating because they see the la
 
 - Consensus that diversity is important and something we'd like to address and improve 
 - Take initial steps to adopt a Code of Conduct and determine how to enforce
-- Rick Waldron will contact Istvan 
+- Rick Waldron will contact István 
 - Rick to review with Kevin Smith
 - Representatives should work with their member organizations to promote more diverse representatives, via scholarship/sponsorship or diversification of member team
 - Extend our charter to include social commitment to committee representative diversity. 

@@ -1,7 +1,7 @@
 # September 28, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Dean Tribble (DT), Eric Faust (FST), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SB), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Mikeal Rogers (MRS), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), James Snell (JSL), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Brendan Eich (BE), Jacob Groundwater (JGR), Adam Klein (AK)
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Mikeal Rogers (MRS), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), James Snell (JSL), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Brendan Eich (BE), Jacob Groundwater (JGR), Adam Klein (AK)
 
 
 
@@ -16,7 +16,7 @@ Slides: https://docs.google.com/presentation/d/1aq_QjBUQTovj9aQZQrVzS7l1aiOs3ZNl
 
 
 
-BF: We will be talking about host-dependent behavior: The Node module loading hook is specified in a way that meets ES spec requirements. There is a global and local cache \<explain details\>
+BFS: We will be talking about host-dependent behavior: The Node module loading hook is specified in a way that meets ES spec requirements. There is a global and local cache \<explain details\>
 
 
 (from slide)
@@ -37,11 +37,11 @@ BF: We will be talking about host-dependent behavior: The Node module loading ho
     
 CP/YK/AWB: (There are items here that are strictly host-specific)
 
-BF: Necessary for Node
+BFS: Necessary for Node
 
 DD: for example the local cache is not required by the spec; we don't have one in browsers
 
-BF: agreed.
+BFS: agreed.
 
 DH: Inherently, dynamic module systems that would want to interact with ESM need a late linking mechanism. Another option would be to delay linking for everything. I would be open to this option. It might not preclude reasonable implementation optimizations.
 
@@ -54,7 +54,7 @@ AWB: Appears to be an "interpretation" of the requirements, but we need to under
 
 MR: We have caching; we need it
 
-BF: [~Lifecycle Errors slide]
+BFS: [~Lifecycle Errors slide]
 
 
 ```js
@@ -84,7 +84,7 @@ throw Error();
 
 
 
-BF: This causes a link error. no evaluation occurs. B exports to A, C exports to B, and we fail. To implement this in Node, we store things in the global cache, and remove when there are errors resulting.
+BFS: This causes a link error. no evaluation occurs. B exports to A, C exports to B, and we fail. To implement this in Node, we store things in the global cache, and remove when there are errors resulting.
 
 https://docs.google.com/presentation/d/1aq_QjBUQTovj9aQZQrVzS7l1aiOs3ZNlk7wgNTUEMy0/edit#slide=id.g16ab11d101_51_0
 
@@ -110,20 +110,20 @@ DH: The slides discuss the idempotency requirements?
 
 (confirmed)
 
-BF: (remove FIXME)
+BFS: (remove FIXME)
     
 ![](https://i.gyazo.com/db559bf71469f069698fb765d08b4844.png)
 
 
 AWB: The top level was aborted before reaching the end, and result was...? 
 
-BF: One function of the cache is to make sure the module evaluation only occurs for the first time the module was imported, and not again on subsequent imports
+BFS: One function of the cache is to make sure the module evaluation only occurs for the first time the module was imported, and not again on subsequent imports
 
-BF: [~Lifecycle parallel loading slide] Diamond imports. We actually plan to evaluate in the order d, b, c, a
+BFS: [~Lifecycle parallel loading slide] Diamond imports. We actually plan to evaluate in the order d, b, c, a
 
 AK: Why are the linking and evaluation orders different?
 
-BF: The linking and initializing bindings steps are logically the same
+BFS: The linking and initializing bindings steps are logically the same
 
 ![](https://i.gyazo.com/af2eb75c6dff2b72e7946b2eab37a0df.png)
 
@@ -134,37 +134,37 @@ YK: Spec bug? If hoistable decl and linkage occur in wrong order?
 
 WH: Can anyone produce a concrete example of where this matters?
 
-BF: This...
+BFS: This...
 
 (Note: this is far in the future of the deck)
 
 ![](https://i.gyazo.com/a1c0ea7e6590d8844f33a5013c0b05a1.png)
 
-BF: [Timing example - hoistable] After linking, functions are available to be called [since functions are hoisted]. If we get some things wrong, foo could be undefined when we try to call it.
+BFS: [Timing example - hoistable] After linking, functions are available to be called [since functions are hoisted]. If we get some things wrong, foo could be undefined when we try to call it.
 
 AWB: This can't happen.
 
 YK: Is this related to cycles?
 
-BF: Most of the problems are related to cycles, or things that cross them
+BFS: Most of the problems are related to cycles, or things that cross them
 
 YK: If you have a cycle, make sure the hoistable decls are evaluated ...?
 
 BE: How observable?
 
-BF: In pure ESM, you never run code before it's completely linked, but when interacting with commonjs, we have to be able to execute some code earlier.
+BFS: In pure ESM, you never run code before it's completely linked, but when interacting with commonjs, we have to be able to execute some code earlier.
 
 DH: ES2015 does not cope with dynamic modules. 
 
-BF: If we have any interop, the distinctions between 
+BFS: If we have any interop, the distinctions between 
 
-BF: let's go back instead of skipping ahead a bunch of slides
+BFS: let's go back instead of skipping ahead a bunch of slides
 
 AWB: Need to understand differences between static and dynamic per spec. 
 
 BE/DH: need to address interop, dynamic code that can execute before link
 
-BF: CommonJS/ESM interop: conceptual distinctions are fundamentally at odds, material distinctions are at odds due to spec/implementation details
+BFS: CommonJS/ESM interop: conceptual distinctions are fundamentally at odds, material distinctions are at odds due to spec/implementation details
 
 AWB: Conceptually, ESM is based around sharing bindings, whereas CJS is based on sharing values
 
@@ -179,18 +179,18 @@ WH: Why are conceptual and material required to be at odds by definition?
 
 AWB: clarify? "conceptually" ES modules are based around sharing of "bindings" vs commonjs sharing of "values"
 
-BF: More than that
+BFS: More than that
 
 
-BF: There's more than that in terms of conceptual differences
+BFS: There's more than that in terms of conceptual differences
 
 YK: We were intending for the loader to fill that gap
 
-BF: Conceptual difference: Mode detection: The spec expects things to be declared out of band; this could be a grammar change
+BFS: Conceptual difference: Mode detection: The spec expects things to be declared out of band; this could be a grammar change
 
-BF: Material: Some cases are ambiguous. This isn't the most important issue.
+BFS: Material: Some cases are ambiguous. This isn't the most important issue.
 
-BF: Cache data structures: We will have module maps analogous to browsers
+BFS: Cache data structures: We will have module maps analogous to browsers
 
 DD: This is what enforces the idempotency
 
@@ -202,11 +202,11 @@ DD: This is what enforces the idempotency
 
 BE: Can you unload from this?
 
-BF: From given module record, import some string it's permanent: cannot remove it.
+BFS: From given module record, import some string it's permanent: cannot remove it.
 
 AWB: depends. linkage errors you could
 
-BF: expect to completely recreate your dep graph
+BFS: expect to completely recreate your dep graph
 
 AWB: once mod is instantiated and linked into the system, it's in. If not past the point of linking, then no one has seen it. 
 
@@ -230,7 +230,7 @@ YK: Is an issue that node needs to be things to go away
 
 (fell behind)
 
-BF: example: a mocking library that wants to replace things in cache
+BFS: example: a mocking library that wants to replace things in cache
 
 JSL: The default behavior in Node is to get the same behavior back once it's initialized
 
@@ -283,7 +283,7 @@ DH: just a narrow constraint
 
 YK: The intermediate string is where people are thinking about the api
 
-BF: This is a fine constraint for semantics
+BFS: This is a fine constraint for semantics
 
 DD: Bradley's implementation is based on a map, as shown in his slides. The constraint of the spec means that,
 
@@ -291,15 +291,15 @@ if you want to use a map to satisfy this requirement
 
 MRS: To get back to the core point, with Domenic's interpretation (i.e. that the spec only restricts that `import "x"` twice in the same file must return the same thing), are there any problems this?
 
-BF: No, no problem. We can implement this; I was just explaining what this is.
+BFS: No, no problem. We can implement this; I was just explaining what this is.
 
-BF: [Cache data structures slide]
+BFS: [Cache data structures slide]
 
 
 ![](https://i.gyazo.com/d50ec1630faf59996f0f720959701d86.png)
 
 
-BF: Using `import()` to illustrate
+BFS: Using `import()` to illustrate
 
 ![](https://i.gyazo.com/6ab58a8d0a94937375e141b4240c7df1.png)
 
@@ -307,22 +307,22 @@ AWB: Remember that import sets up bindings
 
 AK: The example would be identical if it said import "f"; import "f"; in semantics
 
-BF: The idempotency is prior to any evaluation. ESM import declaration links prior to evaluation, so idempotent prior to evaluation
+BFS: The idempotency is prior to any evaluation. ESM import declaration links prior to evaluation, so idempotent prior to evaluation
 - CJS declares its exports occur during or at the end
 
 AWB: Doesnt matter what you did for exports, nothing to link. 
 
-BF: let's say I have `import "foo"`
+BFS: let's say I have `import "foo"`
 
 AWB: The difference between import and require is that require returns a value, so as long as you get the value, you have it, unlike linking bindings and pre-initializing them
 
-BF: The current feeling of how modules work is based on the Babel implementation, where that is not quite true. They use member expressions for variable access, rather than creating bindings
+BFS: The current feeling of how modules work is based on the Babel implementation, where that is not quite true. They use member expressions for variable access, rather than creating bindings
 
 - using member expressions to simulate live bindings for variable access, not making bindings
 
 YK: Babel might be leaky, but it allowed people in node to do things that need to be understood
 
-BF: [Timing slide] ESM was designed for async loading, conceptually
+BFS: [Timing slide] ESM was designed for async loading, conceptually
 
 ![](https://i.gyazo.com/deb57838dccb6937b8eb4b4e29704d0a.png)
 
@@ -330,11 +330,11 @@ AWB: My primary spec goal was static linking; I wasn't thinking about async link
 
 YK: AWB's spec is well written to separate the steps (re: sync and async are irrelevant)
 
-BF: To import CommonJS, you need to know their shape, which occurs during evaluation, after linking. For an ES module to import a CommonJS module, we need to hoist the evaluation of the CommonJS module into the linking phase
+BFS: To import CommonJS, you need to know their shape, which occurs during evaluation, after linking. For an ES module to import a CommonJS module, we need to hoist the evaluation of the CommonJS module into the linking phase
 
 AWB: So if you want to treat a CJS module as an ESM, you can think of it as <?>
 
-BF: You still need to perform eval at some point
+BFS: You still need to perform eval at some point
 
 YK: b/c cjs modules need to be evaluated to know what the exports are, and have to evaluate esm, the cjs modules have to be run first (declarative vs. non)
 
@@ -355,7 +355,7 @@ DH: Doesn't exist anymore.
 
 CP: If you happen to have a module that is not esm, can create binding that is default
 
-BF: These slides are based on the intent that we would have the same level of compatibility as Babel, where you can have named imports from CJS. We'd like to not lose that.
+BFS: These slides are based on the intent that we would have the same level of compatibility as Babel, where you can have named imports from CJS. We'd like to not lose that.
 
 CP: not a requirement
 
@@ -365,10 +365,10 @@ YK: desirable
 
 DD: Allow him to get to the slides...
 
-BF: Without eval occurring during linking, we have no path to transition from transpilers to native modules.
+BFS: Without eval occurring during linking, we have no path to transition from transpilers to native modules.
 
 
-BF: [Timing example - Circular] Circular dependency between CJS and ESM, with `module.exports = null` from CJS
+BFS: [Timing example - Circular] Circular dependency between CJS and ESM, with `module.exports = null` from CJS
 
 ![](https://i.gyazo.com/a36044bb7e3306007b007ddc9b87d6a1.png)
 
@@ -376,20 +376,20 @@ YK: Is this a realistic example?
 
 JSL: Sometimes people do actually blow away exports from within the module
 
-BF: entry is our commonJS, dep is ESM. Dep tries to link, but entry's shape is not finalized. We can snapshot the shape at the end of the evaluation, but we can't link it earlier as we don't know the shape.
+BFS: entry is our commonJS, dep is ESM. Dep tries to link, but entry's shape is not finalized. We can snapshot the shape at the end of the evaluation, but we can't link it earlier as we don't know the shape.
 
 ![](https://i.gyazo.com/fbe3b4b28a7171f56ea077835f57cc79.png)
 
 
 AWB: is the problem circ deps back to CJS?
 
-BF: You run into this sort of issue whenever you cross the bridge.
+BFS: You run into this sort of issue whenever you cross the bridge.
 
 
 AWB: Requiring a dep starts a new root level load of the module. Not an import.
 
 
-BF: expectation is that esm cannot import cjs?
+BFS: expectation is that esm cannot import cjs?
 
 AWB: circularly.
 
@@ -403,11 +403,11 @@ AWB: Can get a loop or an error
 
 YK: banning cycles between cjs and esm seems more palatable 
 
-BF: An alternate solution: Making loading esm from cjs an async op. This makes it so that you can't do eval circularly. This is a pretty drastic change, as some of your loading is async, so your whole dep graph is async
+BFS: An alternate solution: Making loading esm from cjs an async op. This makes it so that you can't do eval circularly. This is a pretty drastic change, as some of your loading is async, so your whole dep graph is async
 
 YK: would node consider disallowing cycles between cjs and esm?
 
-BF: Disallowing (throwing on attempt) was part of the original proposal
+BFS: Disallowing (throwing on attempt) was part of the original proposal
 
 BBR: fine to drop support for circular deps?
 
@@ -435,7 +435,7 @@ MRS: npm3 makes this worse by circularly depending on things flattening implicit
 
 JSL: There are multiple problems: When you do change the exports (insert explanation)
 
-BF: The two things which come up the most for Node CTC:
+BFS: The two things which come up the most for Node CTC:
     - Named imports being supported in whatever fashion for `import <named thing>` from CommonJS
     - Can we do something synchronously? require(ESM) synchronously returns the module namespace object
 That's mostly what this is about.
@@ -479,11 +479,11 @@ DH: Do not want to throw away the guarantees from static constraints
 
 AWB: With babel's loose interpretation of ESM, you're able to take a CJS module, apply its semantics, and it mostly works
 
-BF: It uses CJS under the hood, with ESM syntax
+BFS: It uses CJS under the hood, with ESM syntax
 
 AWB: In the spirit of migrating, maybe just do exactly what Babel does?
 
-BF: are you suggesting we use the syntax of ESM, but not the semantics?
+BFS: are you suggesting we use the syntax of ESM, but not the semantics?
 
 AWB: transpilation
 
@@ -495,7 +495,7 @@ AWB: Babel translates ES module binding semantics into CommonJS value semantics
 
 AWB: Not just syntax, fundamentally different semantics
 
-BF: But community things about modules as CJS
+BFS: But community things about modules as CJS
 
 DH: concrete level: live bindings, aliasing 
 
@@ -511,7 +511,7 @@ AWB: With binding semantics, you can't look at a binding that hasn't been initia
 
 JSL: The community would really want named imports
 
-BF: We are here to discuss the problem. For timing, we have fixes, for named imports, we are here to discuss
+BFS: We are here to discuss the problem. For timing, we have fixes, for named imports, we are here to discuss
 
 JM: Sounds like we're going to break Babel somehow. We should be discussing how we will break Babel, but rather what's the way to break Babel that's minimally invasive.
 
@@ -535,20 +535,20 @@ DRR: It would be hard to get the tool to be run
 
 MRS: This would be a Python3-style incompatibility
 
-BF: skeptical that we can put in loader?
+BFS: skeptical that we can put in loader?
 
 MRS: vast majority of modules will not be upgraded, more worried about these and users having expectations that they are 
 
 BBR: allow two different entry points, if package maintainer wants to do that?
 - Or a tool that requires it, looks at the exports and creates a wrapper?
 
-BF: Not sure?
+BFS: Not sure?
 
 BBR: We accept that there is no automatic transition
 
 MRS: We want to avoid module authors doing any explicit work
 
-BF: If default is 
+BFS: If default is 
 
 DRR: (fill in point)
 
@@ -556,7 +556,7 @@ DH: important to look at named imports and exports that don't change, vs. do
 
 MRS: (spoke to fast for me to follow, but basically something about `module.exports = function() {}`?)
 
-BF: If we had a way to observe mutations, we may be able to track them, but it's not clear how we would do that 
+BFS: If we had a way to observe mutations, we may be able to track them, but it's not clear how we would do that 
 
 YK: Empirically, most modules don't do mutation.
 
@@ -568,12 +568,12 @@ MRS: We are trying to make these tradeoffs, but we want to make them in a sane m
 
 YK: approach, get as close to the spec as possible, and come back to the committee with concrete points that need to be fixed.
 
-BF: [Hoistable fix slide]
+BFS: [Hoistable fix slide]
 
 
 ![](https://i.gyazo.com/5f8b121af6cf3742ea6d81e0f1f6ac64.png)
 
-BF: you currently have access to calling the functions defined in a module even if you never evaluate it at all. In this proposal, that behavior would be removed, and you'd only get the functions if you really do it.
+BFS: you currently have access to calling the functions defined in a module even if you never evaluate it at all. In this proposal, that behavior would be removed, and you'd only get the functions if you really do it.
 
 AWB: introducing new hypothetical API, need to define its semantics
 
@@ -586,7 +586,7 @@ AK: This is all about the interaction between circular dependencies between CJS 
 
 YK: Why care if esm can or cannot see cjs 
 
-BF: We want a single module system that can be used for ES
+BFS: We want a single module system that can be used for ES
 
 
 I'm unable to type fast enough to keep up with this. Its hard to tease out the point when people start and stop statements mid-statement. 
@@ -609,19 +609,19 @@ DH: That's why it's called zebra stripes
 
 (break)
 
-BF: Linking is very dynamic. The popular npm module "meow" relinks its parent. Used for CLI. When you require it, you get a new particular module per importer, which gives a modified version of it. We may need to revisit linking to support this.
+BFS: Linking is very dynamic. The popular npm module "meow" relinks its parent. Used for CLI. When you require it, you get a new particular module per importer, which gives a modified version of it. We may need to revisit linking to support this.
 
 WH: What does this achieve?
 
-BF: This lets you tool out your CLI without knowing anything about your dependent. It lets your dependency learn about your module by reading its package.json.
+BFS: This lets you tool out your CLI without knowing anything about your dependent. It lets your dependency learn about your module by reading its package.json.
 
-BF: [Named imports slide] ESM cannot do named imports from CJS dependencies without mitigations. Our proposal is to hoist evaluation of the CJS module up to the linking phase.
+BFS: [Named imports slide] ESM cannot do named imports from CJS dependencies without mitigations. Our proposal is to hoist evaluation of the CJS module up to the linking phase.
 
 ![](https://i.gyazo.com/58ca70760c349d34ffa72d156e83b032.png)
 
 JSL: No matter what we do, we will break Babel somehow, the question is just how.
 
-BF: In our current proposal, we would take a snapshot of the exported properties of the object and export those names. We had considered more flexible behavior, but it seems unworkable.
+BFS: In our current proposal, we would take a snapshot of the exported properties of the object and export those names. We had considered more flexible behavior, but it seems unworkable.
 
 CP: How many people are using this?
 
@@ -631,7 +631,7 @@ JSL, MRS: Some? It's unclear how many rely on it.
 
 MRS: We could say that it just doesn't work properly if you import it as ES6.
 
-BF: Common on npm: "import {Component} from 'React'".
+BFS: Common on npm: "import {Component} from 'React'".
 
 ESM Doable needs
 - Context:
@@ -659,7 +659,7 @@ MSR: For extensibility, there are various cases, bundling loader, etc. These may
 
 YK: I'm concerned about compatibility with __filename__ and __dirname__
 
-BF: Although the spec would allow it, we will not modify the absolute URLs. The main thing we would need is import.url; we may want another path for CJS metadata, but no other properties shared between environments.
+BFS: Although the spec would allow it, we will not modify the absolute URLs. The main thing we would need is import.url; we may want another path for CJS metadata, but no other properties shared between environments.
 
 DH: I'm skeptical
 
@@ -675,11 +675,11 @@ Generally: There is agreement in the room that getting the url and having a way 
 
 DH: New interoperability linking suggestion: The validation to linking would not always be performed statically, but rather dynamically when hitting a CJS module, and in that case, deferring the invalidation until the beginning of the execution of the top-level ESM module body. The next part is, what does the dynamic validation look like. One option is, we preserve live bindings from CJS, and the other option is a snapshot. The latter option guarantees nothing disappearing, but this loses the aliasing semantics of ES6. This is all for the case of importing a CJS from ESM.
 
-BF: There's a difference between snapshotting the list of property keys, and snapshotting the values of properties. I have proposed doing a live binding to the list of property keys which are available as one is exported from a CJS module after the initial evaluation, but to have bindings that are live from the CJS object to the module namespace object or direct usages
+BFS: There's a difference between snapshotting the list of property keys, and snapshotting the values of properties. I have proposed doing a live binding to the list of property keys which are available as one is exported from a CJS module after the initial evaluation, but to have bindings that are live from the CJS object to the module namespace object or direct usages
 
 AK: The Babel version does have some notion of live binding [because it translates named lookups to member expressions on the exports object]
 
-BF: e.g., used in Promisify.all. Changing the values is much more common than changing the keys.
+BFS: e.g., used in Promisify.all. Changing the values is much more common than changing the keys.
 
 WH: Trying to pin things down. What is the specific evaluation order of an ESM module A importing from an ESM module B, and what exactly changes if B were a CJS module instead?
 
@@ -714,7 +714,7 @@ AK: Cycles would not work with the idea I was describing before as requiring the
 
 Prohibit export* of a CJS module from an ESM module.
 
-BF: We shouldn't return different shapes of modules at different times, e.g. if an ESM module imports a CJS module while CJS hasn't finished evaluating
+BFS: We shouldn't return different shapes of modules at different times, e.g. if an ESM module imports a CJS module while CJS hasn't finished evaluating
 
 JSL: We do support that in CJS right now, as a side-effect of how require works
 
@@ -741,13 +741,13 @@ AWB: Does the occurrence of `import` turn the script into a module?
 
 DD: Initially, I thought to restrict it to modules, but no reason to restrict it.
 
-BF: Many reasons to include for use in Node
+BFS: Many reasons to include for use in Node
 
 DD: Good way to bootstrap into modules
 
 AWB: Why special form, not a function?
 
-BF: To give you a context
+BFS: To give you a context
 
 DD: Want to be given a module specifier, e.g., for some embedders, a relative path which is resolved based on where you're calling this from.
 
@@ -773,13 +773,13 @@ Promise.all(["a", "b"].map(name => import(name)).then(() => ...)
 
 
 
-BF: To clarify, even in Node, it would return a Promise
+BFS: To clarify, even in Node, it would return a Promise
 
 DD: Even if Node wants require to be synchronous, asynchronous background loading of modules is useful, e.g. lazily loading things from JSDOM.
 
 MRS: In Node, we'd probably still do sync I/O and just return a Promise
 
-BF: Can still use require to _basically_ this. The advantage to load the dep graph in a non-blocking way was explored via `require.async()` (pfft. whoops)
+BFS: Can still use require to _basically_ this. The advantage to load the dep graph in a non-blocking way was explored via `require.async()` (pfft. whoops)
 
 AWB: I was initially skeptical but like this proposal. Good for scripts, including for using built-in modules from scripts. Though you may want built-in modules to resolve synchronously.
 
@@ -789,7 +789,7 @@ AWB: Also, we could add the import statement to scripts
 
 CP: Do you plan to allow require within module source text in Node?
 
-BF: Probably we'll have some way to get ahold of require, but we'd really encourage people to use import.
+BFS: Probably we'll have some way to get ahold of require, but we'd really encourage people to use import.
 
 BB: Maybe you'd import require from a built-in module.
 

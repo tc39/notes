@@ -1,9 +1,10 @@
 # May 23, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Yang Guo (YG)
+Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark S. Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD)
 
-on Google Hangouts we've had some local Google folks: Michael Hablich, Yang Guo, Toon Verwaest, Daniel Clifford, Nikolas Papapyrou, Ben Titzer.
+Remote: 
+Michael Hablich (MHH), Yang Guo (YGO), Toon Verwaest (TVT), Daniel Clifford DCD), Nikolaus Papaspyrou (NPU), Ben Titzer (BTR)
 -----
 
 ## Discussion of the agenda and timing
@@ -293,7 +294,7 @@ DE: I'm still uncomfortable with static initializers running before the class de
 - Interest in seeing more development towards how getters/setters will interact with rest/spread properties, including reconsidering whether they should be non-enumerable
 - Consensus that decorating getters and setters separately should be a dynamic error; you are decorating the pair, not individually.
 
-## Updates from Istvan
+## Updates from István
 
 _Record all members present, including on VC, in the notes_
 
@@ -309,7 +310,7 @@ _Consensus_. TC39 approved TC39/2016/019 Rev1 minutes of the March 2016 San Fran
 
 - ECMA 404 (JSON) will be up for ISO fast track from the 2013 version, aligned with IETF standard, unlikely to change in the future. Actually we have a go ahead from the Ecma GA this from 2014, but only now we are submitting the fast track. The only reason for the JTC1 fast-track of JSON to demonstrate the world that JSON is stable and there is no intention to change it. When there will be a similar IETF Standard (not FRC) we will issue a new ECMA-404 Edition when we will take up that and get it synchronized with ECMA-404.
 
-- Brian Terlson and Rick Waldron has been proposed to the Ecma Management and the CC by Istvan for the GA ECMA award of recognition at their June 2016 meeting. Caridy Patiño (as ECMA-402) Editor may also be proposed for an award (this was seconded by TC39). We are also open to nominating other TC39 committee members for ECMA recognition awards for any outstanding TC39 related contribution. This occurs twice a year at the GA. E.g. Allen W-B. or Waldemar H. has received this award in the past.
+- Brian Terlson and Rick Waldron has been proposed to the Ecma Management and the CC by István for the GA ECMA award of recognition at their June 2016 meeting. Caridy Patiño (as ECMA-402) Editor may also be proposed for an award (this was seconded by TC39). We are also open to nominating other TC39 committee members for ECMA recognition awards for any outstanding TC39 related contribution. This occurs twice a year at the GA. E.g. Allen W-B. or Waldemar H. has received this award in the past.
 
 __NOTE__: The ECMAScript standards currently contribute to about 2/3 of all Ecma downloads of standards. Constantly we have about 5000-7000 downloads of ECMA-262 per month. That is the record holder standard. The HTML version has about 100000 visits in 2016 so far.
 

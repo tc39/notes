@@ -1,7 +1,7 @@
 # May 25, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Jeff Morrison (JM), Domenic Denicola (DD)
+Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark S. Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Jeff Morrison (JM), Domenic Denicola (DD)
 
 Remote: 
 Dean Tribble (DT), Nikolaus Papaspyrou (NPU)
@@ -11,7 +11,7 @@ Dean Tribble (DT), Nikolaus Papaspyrou (NPU)
 
 ??: Unfortunately we will not able to cover all topics. There is a priority for proposals that have to advance in this meeting. The target is for each topic one hour of discussion maximum. We will see how that will work out...
 
-__NOTE from Istvan__: The formal Ecma rule is that any proposal that has to be voted upon formally (i.e. one vote per member company present in the voting) in an Ecma TC is a publication at least 15 days before the TC meeting. Anything shorten that that can be introduced, discussed, move forward for further discussion, consideration, etc... but a "formal" TC decision is not possible.
+__NOTE from István__: The formal Ecma rule is that any proposal that has to be voted upon formally (i.e. one vote per member company present in the voting) in an Ecma TC is a publication at least 15 days before the TC meeting. Anything shorten that that can be introduced, discussed, move forward for further discussion, consideration, etc... but a "formal" TC decision is not possible.
 
 ## [Decorators](https://github.com/tc39/proposal-decorators) (YK, BT)
 
@@ -63,7 +63,7 @@ BT: we could also not have them be SameValue
 
 DE: I would prefer we have no runtime overhead from a class that has been decorated
 
-FST: classes already have additional cost (derived class constructors' this value)
+EFT: classes already have additional cost (derived class constructors' this value)
 
 YK: the set of functions and values conveyed in this proposal is quite small
 
@@ -141,7 +141,7 @@ DH: it happens to be written "make a function that is unintialised"; question re
 
 DH: can be a single it that marks the function as uninitialised
 
-FST: then it should specify it that way
+EFT: then it should specify it that way
 
 JHD: can it be a live binding to a different function that always throws, that's updated later?
 
@@ -570,7 +570,7 @@ MM: Cancellation should be as fast as normal control flow and should not collect
 
 SYG: try-catch is not slow because it is an exceptional event, it is slow because of the non-locality itself
 
-FST: motivation?
+EFT: motivation?
 
 YK: XHR has an abort feature; fetch API is Promise-based and cannot have a similar feature
 
@@ -634,7 +634,7 @@ WH: I like this a lot but am concerned about the ergonomics of practical use pat
 
 LBR: TC39 agreed to deprecate the python runner in 2014, we want to remove it from test262 as it demands extra energy on a deprecated tool while implementing new features.
 
-FST: We can work it out. It does not need to move it to a new TC39's repository.
+EFT: We can work it out. It does not need to move it to a new TC39's repository.
 
 _many_: let's remove it.
 

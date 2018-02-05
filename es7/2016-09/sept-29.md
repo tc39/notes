@@ -1,12 +1,15 @@
 # September 29, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Eric Faust (FST), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BF), Dean Tribble (DT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SB), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Jacob Groundwater (JGR), Adam Klein (AK), Istvan Sebestyén (IST), Tom Van Cutsem (TVC), Istvan Sebestyén (partly, via Hangouts), Claude Pache (CPE), James Kyle (JK)
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Dean Tribble (DT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Jacob Groundwater (JGR), Adam Klein (AK), István Sebestyén (IS), Tom Van-Cutsem (TVC), Claude Pache (CPE), James Kyle (JK)
+
+Remote:
+István Sebestyén (IS)
 -----
 
 ## Secretariat's Report 
 
-Istvan Sebestyén: The audio is very bad, unfortunately. ... Maybe I better write....
+István Sebestyén: The audio is very bad, unfortunately. ... Maybe I better write....
 Regarding the 2017 European meeting tell me when should it be. In March it would probably be cheaper. Also still skiing would be possible after or before the meeting if someone cares for that.
 May will be more expensive. Meeting place suggestion: Montreux - Royal Plaza Hotel.
 
@@ -226,7 +229,7 @@ AWB: I don't think there's an easy fix here. Objects have two roles:
 
 Normal usage is one of those two worlds. Proposal: Remove the own restriction
 
-FST: Some getters you want to be shared, some not. 
+EFT: Some getters you want to be shared, some not. 
 - Augment definition syntax?
 
 DD: Decorators will address this
@@ -255,7 +258,7 @@ YK: Anytime you make a prototype thing, you add cost.
 
 MM: cases where you want g/s to show up as own property: make it own. The overhead of per-instance g/s to have it be own, seems like fair cost
 
-FST: I might disagree, depending how common the pattern is. There is real memory overhead.
+EFT: I might disagree, depending how common the pattern is. There is real memory overhead.
 
 AWB: proposing to possibly eliminate own restriction, but only for inherited enumerable getters
 
@@ -271,7 +274,7 @@ AWB: No, use Object.defineProperty or a decorator
 
 MM: Theory that there is no overhead for the pattern of using own getters — can reuse same getter function objects on multiple instances
 
-FST: It seems like there would be some overhead still
+EFT: It seems like there would be some overhead still
 
 - SM proposal stay at no change
 - given sharing of g/s is minimal enough to use as a way to work around book keeping
@@ -630,7 +633,7 @@ BBR: Node.js looks for `#` on first line. A decorator could be at top level, but
 # IdentifierName 
 ```
 
-FST: All other languages use @ for annotation/decorator?
+EFT: All other languages use @ for annotation/decorator?
 
 Generally, this is not the only cultural motivation for design decisions.
 
@@ -681,7 +684,7 @@ JHD: If you're using a non-standard syntax, you shouldn't have expectations that
 
 YK: Generally, we should be able to make changes, but we should also be able to weigh existing users vs rational arguments
 
-BF: JSDoc, etc use the @sigil to document something about the following declaration. If it also represents private state, I would find it confusing personally.
+BFS: JSDoc, etc use the @sigil to document something about the following declaration. If it also represents private state, I would find it confusing personally.
 
 JHD: But doc comments are entirely different from runtime decorator semantics
 
@@ -691,7 +694,7 @@ DRR: But there is motivation to look at what exists in programming culture
 
 DT: It'd actually be great to have a different syntax separating the comment and code syntaxes
 
-FST: Confusion about what appears in comments vs what appears in code?
+EFT: Confusion about what appears in comments vs what appears in code?
 
 No. But some think it matters what exists in the ecosystem. 
 
@@ -828,11 +831,11 @@ AWB: And we added that to make a general convention
 
 YK: We have to teach people something about the idiom of the constructor. Given that we already have new Set, it would seem to make sense to use here.
 
-FST: What is the cost of adding consistent APIs across all collection classes?
+EFT: What is the cost of adding consistent APIs across all collection classes?
 
 DD: Not deprecating the constructor
 
-FST: don't need to deprecate
+EFT: don't need to deprecate
 
 KG: insane not to provide a way to make the collection without forcing the brackets
 
@@ -849,7 +852,7 @@ AWB: Subclassing or .call'ing this on other constructors would encounter this is
 
 MM: A clean API surface is not necessarily a larger API surface. 
 
-FST: Without these, I would think that this would result in user "wat"
+EFT: Without these, I would think that this would result in user "wat"
 
 YK: A lot of this could be avoided by giving better error messages in our implementations.
 
@@ -919,7 +922,7 @@ DD: We should not move to world where features added after 2018 are in modules. 
 
 DH: Strong point, not specifically in agreement. 
 
-FST: We could make duplicate modules for existing built-in things, and maybe eventually we'll take things out of the global namespace in 10 years
+EFT: We could make duplicate modules for existing built-in things, and maybe eventually we'll take things out of the global namespace in 10 years
 - Long term cleanup? (Probably not)
 
 DH: One view of the future is that we wont have an enormous library, expanded without bound. Maybe individual ecosystems will introduce standard built-ins
@@ -972,7 +975,7 @@ DD:
 
 AK: As to breaking users by adding things to the global object: I didn't remember Set breaking anything, anyway. And modules for user code make this nicer, with the lexical tier making it even nicer and less risk of an overlap. So this does not seem to be a very strong piece of motivation for built-in modules.
 
-BF: We have to do the global/local cache for exactly this reason, for polyfillability, namely punching something out locally so it can be replaced. This is a huge topic.
+BFS: We have to do the global/local cache for exactly this reason, for polyfillability, namely punching something out locally so it can be replaced. This is a huge topic.
 
 MM: As a counterpoint to AK, Adding JSON broke Facebook, Facebook changed
 

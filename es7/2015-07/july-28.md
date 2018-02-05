@@ -1,7 +1,7 @@
 # July 28, 2015 Meeting Notes    
 -----
 
-Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Farriauolo (EF), Caridy Patiño (CP), Waldemar Horwat (WH), István Sebestyén (IS), Mark Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Jonathan Turner (JT), Paul Leathers (PL), Chip Morningstar (CM), Vladimir Matveev (VM), Ron Buckton (MS), Brian Terlson (BT), Alan Schmitt (AS), Ben Newman (BN), Mohamed Hegazy (MH), Abhijith Chatra (AC), Tom Care (TC), John Neumann  (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Mike Pennisi (MP)
+Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Waldemar Horwat (WH), István Sebestyén (IS), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Jonathan Turner (JT), Paul Leathers (PL), Chip Morningstar (CM), Vladimir Matveev (VM), Ron Buckton (RBN), Brian Terlson (BT), Alan Schmitt (AS), Ben Newman (BN), Mohamed Hegazy (MH), Abhijith Chatra (AC), Tom Care (TC), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Mike Pennisi (MP)
 
 -----
 
@@ -212,7 +212,7 @@ WH: This is agreed to an incorrect assumption. All ISO comments must be addresse
 
 IS: That's correct. That's required by the ISO process.
 
-BT: If Istvan can convince ISO to accept yearly releases "as-is", are you ok with this?
+BT: If István can convince ISO to accept yearly releases "as-is", are you ok with this?
 
 WH: If ISO can accept as-is, then let's discuss this again, but I don't think they can
 
@@ -231,7 +231,7 @@ WH: Not ok with making decision until we know where they stand.
 - No sub releases
 - Publish errata as follow up
 - Take their reivew comments/changes and integrate them into next year's edition.
-- Istvan will present this to ISO as a solution
+- István will present this to ISO as a solution
 
 
 
@@ -246,7 +246,7 @@ IS: Such a category does not exists officially at Ecma, only some freedom for th
 
 #### Conclusion/Resolution  
 
-- Istvan to get approval
+- István to get approval
 
 
 

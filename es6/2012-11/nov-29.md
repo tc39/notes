@@ -1,7 +1,7 @@
 # November 29, 2012 Meeting Notes
 -----
 
-John Neumann (JN), Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Luke Hoban (LH), Rick Waldron (RW), Eric Ferraiuolo (EF), Doug Crockford (DC), Yehuda Katz (YK), Erik Arvidsson (EA), Mark Miller (MM), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Istvan Sebestyén (IS), Andreas Rossberg (ARB), Brendan Eich (BE), Alex Russell (AR), Matt Sweeney (MS)
+John Neumann (JN), Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Luke Hoban (LH), Rick Waldron (RW), Eric Ferraiuolo (EF), Doug Crockford (DC), Yehuda Katz (YK), Erik Arvidsson (EA), Mark S. Miller (MM), Dave Herman (DH), Sam Tobin-Hochstadt (STH), István Sebestyén (IS), Andreas Rossberg (ARB), Brendan Eich (BE), Alex Russell (AR), Matt Sweeney (MS)
 
 -----
 

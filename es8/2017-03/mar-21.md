@@ -1,7 +1,7 @@
 # March 21, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbåge (SM), Bradley Farias (BF), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SD), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LG), Mathias Bynens (MB)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LS), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LG), Mathias Bynens (MB)
 -----
 
 ## 3. Adopting the agenda
@@ -20,7 +20,7 @@ Minutes approved
 
 ## 5. Report from the Ecma Secretariat
 
-AWB: Istvan will do this later.
+AWB: István will do this later.
 
 ## 6. ECMA-262 Status Updates
 
@@ -74,7 +74,7 @@ SM: FB Yes.
 
 MS: Apple Yes.
 
-BF: GoDaddy Yes.
+BFS: GoDaddy Yes.
 
 BT: Microsoft Yes.
 
@@ -863,7 +863,7 @@ WH: There's nothing to do to get it to stage 3...
 
 BT: We actually have final [spec text](https://mathiasbynens.github.io/es-regexp-dotall-flag/). You'll find changes to flags, adding the `dotAll` property and the various other changes that need to happen.
 
-SD: Does it need to go up with the Unicode changes?
+SDO: Does it need to go up with the Unicode changes?
 
 WH: It's orthogonal to Unicode. See above "character" definition.
 
@@ -1441,7 +1441,7 @@ AWB: We have to go through a committee of lawyers.
 
 #### Conclusion
 
-There was no objection from the committee to removing the headers, and Leo will escalate this with Istvan.
+There was no objection from the committee to removing the headers, and Leo will escalate this with István.
 
 
 ## Weak References status update
@@ -1458,7 +1458,7 @@ DT: If there's an engine that's less production and simpler to add this kind of 
 
 MM: So you're looking for someone who can volunteer to help with it.
 
-BF: I can help, but I'm only going to help with V8, because that's what I know.
+BFS: I can help, but I'm only going to help with V8, because that's what I know.
 
 MM: And thank you, that makes a huge difference.
 

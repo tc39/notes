@@ -1,7 +1,7 @@
 # July 25, 2017 Meeting Notes
 -----
 
-Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE),Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BF), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CLP), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GIG), Istvan Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark Miller (MM), Michael Ficarra (MF), Michael Saboff (MS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Robert Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK), 
+Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE),Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK), 
 -----
 
 ## Welcome
@@ -173,7 +173,7 @@ WH: It's easier to compartmentalize syntax features, like "use strict" or module
 
 CM: Frozen realms allow bringing in two separate pieces of SW and limiting there linking to a small surface area
 
-BF: Are you proposing more compartments like "use strict"?
+BFS: Are you proposing more compartments like "use strict"?
 
 CM: We learned from strict mode that if we continued that model it would be a recipe for chaos.
 CM: Experimenting with new compartments needs to be independent from the language specification process, ideally.
@@ -198,7 +198,7 @@ CM: I think there is something there to what your are saying.  There are some th
 
 BN: Need to get the communications channel right between the compartments. WASM already has an import mechanism of its own, not exactly the same as ES modules. Should we standardize this?
 
-BF: That may not be within our scope as TC39.
+BFS: That may not be within our scope as TC39.
 
 MS: Browsers are already basically OSes in that there is JS, WASM, Workers, memory protection, scheduling, thread, ...
 
@@ -351,7 +351,7 @@ DD: In general, we do not stand in the way of this proposal proceeding if it can
 
 YK: I would object to a host-specific inheritance chain.
 
-BF: I would object to a web compatible EventTarget-based API, since Node's abstraction is EventEmitter.
+BFS: I would object to a web compatible EventTarget-based API, since Node's abstraction is EventEmitter.
 
 BT: Cancelation is something that is very important, and while this proposal is just API, I imagine that ECMA will grow to support other async operations that needs cancelation tokens. How do we make it interoperable, I don't know, but we should  pursue looking for a solution and solve, regardless of the host.
 In some fashion, TC39 must support a cancellation primitive, since our async APIs are only going to grow (e.g. dynamic import). If we don't want to change the AbortController API, then TC39 needs to bring the AbortController API into this standards process. I worry that we're leading with the browser and not making sure this is a primitive that works with different host environments.
@@ -376,9 +376,9 @@ BE: How many browsers implement this?
 
 BT: Zero (but two are implementing)
 
-YK: (to BF) Would you object to add EventTarget API?
+YK: (to BFS) Would you object to add EventTarget API?
 
-BF: Node OK with the EventTarget API but not the exact .prototype inheritance chain.
+BFS: Node OK with the EventTarget API but not the exact .prototype inheritance chain.
 
 BT: It seems like a red flag that AbortController (extending EventTarget) may not necessarily be compatible with Node.
 
@@ -402,7 +402,7 @@ RBN: What I can summarize with:
 - Brian Terlson (BT)
 - Ron Buckton (RBN)
 - Domenic Denicola (DD)
-- Bradley Farias (BF)
+- Bradley Farias (BFS)
 - Dean Tribble (DT)
 
 

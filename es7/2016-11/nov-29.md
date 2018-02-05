@@ -1,14 +1,14 @@
 # November 29, 2016 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Adam Klein (AK), Thomas Wood (TW), Mark Miller (MM), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LB), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), Istvan Sebestyén (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Adam Klein (AK), Thomas Wood (TW), Mark S. Miller (MM), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LB), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS)
 
 -----
 
 ## Introduction
 
 
-Discussion with Istvan, dinner on Wednesday, etc.
+Discussion with István, dinner on Wednesday, etc.
 
 WH: ECMA member site is down and email is bouncing. How do we vote on standards at next week's GA when we can't get them and don't even know where the GA is?
 
@@ -46,7 +46,7 @@ Basically I did prepare the minutes as usual and published it about 3-4 weeks af
 
 ## 5 Report from ECMA Secretariat
 
-Scheduled for tomorrow in conversation with Istvan
+Scheduled for tomorrow in conversation with István
 
 ##  6 Administrative matters
 

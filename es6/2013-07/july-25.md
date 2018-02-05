@@ -2,7 +2,7 @@
 -----
 
 
-John Neumann (JN), Luke Hoban (LH), Rick Hudson (RH), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Anne van Kesteren (AVK), Jeff Morrison (JM), Sebastian Markbåge (SM), Alex Russell (AR), Istvan Sebestyén (IS), Mark Miller (MM), Norbert Lindenberg (NL), Erik Arvidsson (EA), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Rick Waldron (RW), Rafael Weinstein (RWS), Dmitry Lomov (DL), Brendan Eich (BE), Ian Halliday (IH), Paul Leathers (PL),
+John Neumann (JN), Luke Hoban (LH), Rick Hudson (RH), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Anne van Kesteren (AVK), Jeff Morrison (JM), Sebastian Markbåge (SM), Alex Russell (AR), István Sebestyén (IS), Mark S. Miller (MM), Norbert Lindenberg (NL), Erik Arvidsson (EA), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Rick Waldron (RW), Rafeal Weinstein (RWN), Dmitry Lomov (DL), Brendan Eich (BE), Ian Halliday (IH), Paul Leathers (PL),
 
 -----
 
@@ -492,7 +492,7 @@ JN: Send proposal to ???. If you don't reply to this thread then it is an implic
 ## 6.2 Interfacing ECMAScript & HTML/DOM Event Loops
 (Rafael Weinstein)
 
-RWS: (A single slide) How does ES inegrate with the rest of the specified environment with regard to scheduling tasks.
+RWN: (A single slide) How does ES inegrate with the rest of the specified environment with regard to scheduling tasks.
 
 
 - Enqueue A Task

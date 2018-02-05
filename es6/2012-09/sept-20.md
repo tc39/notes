@@ -1,7 +1,7 @@
 # September 20, 2012 Meeting Notes
 -----
 
-John Neumann (JN), Mark Miller (MM), Norbert Lindenberg (NL), Nebojsa Ciric (NC), Allen Wirfs-Brock (AWB), Luke Hoban (LH), Paul Leathers (PB), Sam Tobin-Hochstadt (STH), Andreas Rossberg (ARB), Brendan Eich (BE), Erik Arvidsson (EA), Dave Herman (DH), Yehuda Katz (YK), Rick Waldron (RW), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Alex Russell (AR), Rafael Weinstein (RWS), Waldemar Horwat (WH), Rick Hudson (RH)
+John Neumann (JN), Mark S. Miller (MM), Norbert Lindenberg (NL), Nebojša Ćirić (NC), Allen Wirfs-Brock (AWB), Luke Hoban (LH), Paul Leathers (PB), Sam Tobin-Hochstadt (STH), Andreas Rossberg (ARB), Brendan Eich (BE), Erik Arvidsson (EA), Dave Herman (DH), Yehuda Katz (YK), Rick Waldron (RW), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Alex Russell (AR), Rafeal Weinstein (RWN), Waldemar Horwat (WH), Rick Hudson (RH)
 
 
 -----
@@ -29,14 +29,14 @@ https://github.com/rafaelw/ChangeSummary
 
 YK: Question about splice projections being built in. When splice happens, many records change... is pathologically slow. Fine for v1 to leave it to library code.
 
-RWS: Opted to leave this out...
+RWN: Opted to leave this out...
 ...explains n^2 issues that arise when changes to an array occur. ...explains rationale for leaving out for the foreseeable future and allow library authors to handle as they see fit for the time being.
 
 DH: How to make a policy decision about "what" to look at in the change of an object. Agrees with this v1 decision, in favor of allowing library optimization patterns to emerge. [We can't determine the "policies" before the needs are fully understood]
 
 AWB: Not just large scale libs, but everyday data type abstractions.
 
-RWS: Sounds like there are specific issues?
+RWN: Sounds like there are specific issues?
 
 AWB: Yes, but not to be addressed in this timeline
 
@@ -46,7 +46,7 @@ AWB: Yes, sufficient.
 
 RW: (shared anecdotal experience writing "Fact" with Object.observe: https://github.com/rwldrn/fact )
 
-RWS: (presenting demo)
+RWN: (presenting demo)
 
 ADD LINK
 
@@ -56,16 +56,16 @@ YK: Willing to move Ember, despite the scale
 
 EF: Did Angular replace all dirty checking?
 
-YK/RWS: Not really possible to remove all dirty checking.
+YK/RWN: Not really possible to remove all dirty checking.
 
 
 ### Observing Computed Properties and Dependencies
 
-RWS: Believe that it is not in scope now or ever.
+RWN: Believe that it is not in scope now or ever.
 
 ### Tuning Spec, Implementation Complexity
 
-RWS: ...Is hoping to progress the strawman to harmony. A few slides that discuss remaining issues.
+RWN: ...Is hoping to progress the strawman to harmony. A few slides that discuss remaining issues.
 
 LH: These represent concerns and agreements of several committee members who have been involved.
 
@@ -78,7 +78,7 @@ Object.getNotifier( frozenObject ) returns null
 
 WH: What happens when the argument is a Proxy?
 
-RWS: Returns the Proxy's notifier
+RWN: Returns the Proxy's notifier
 
 STH: An invariant maintained internally, that if the proxy is frozen it ensures the target is frozen.
 
@@ -108,17 +108,17 @@ Most use cases would create copy of all observed data
 
 WH: What about accessors?
 
-RWS: accessors don't notify
+RWN: accessors don't notify
 
 WH: That's bad.
 
 MM/EA/RWS/AWB: No, this is intended.
 
-RWS: (Explains that getNotifier can be used to build synthetic events for accessors)
+RWN: (Explains that getNotifier can be used to build synthetic events for accessors)
 
 RW: Yes, accomplished this while experimenting with "Fact"
 
-RWS: (Revisits demo to show example of what an abstraction over this looks like)
+RWN: (Revisits demo to show example of what an abstraction over this looks like)
 
 YK: (Supported use story in Ember)
 

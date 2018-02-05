@@ -1,4 +1,4 @@
-# Summary for the 62th meeting of Ecma TC39
+# Summary for the 62nd meeting of Ecma TC39
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2018/01.md)
 

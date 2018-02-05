@@ -20,7 +20,7 @@
 - [Function.prototype.toString() censorship](jan-23.md#functionprototypetostring-censorship-for-stage-1) Stage 1
 - [Top-level await](jan-24.md#13iiil-top-level-await-for-stage-0) to Stage 1
 - [Maximally minimal mixins proposal](jan-23.md#13iiie-maximally-minimal-mixins-proposal) to [Stage 1](jan-24.md#revisiting-mixins-vs-protocols-proposal).
-- [Getting last item from Array](jan-24.md#13iiim-getting-last-item-from-array-for-stage-2) remained on Stage 1 with plans for further work.
+- [Getting last item from Array](jan-24.md#13iiim-getting-last-item-from-array-for-stage-2) to Stage 1 with plans for further work.
 
 ### Moving Forward
 

@@ -37,7 +37,7 @@ RJE: I've been working behind the scenes with ECMA for membership issues. She's 
 
 RJE: Officers positions: we'll take a formal vote, unusual in TCs. Need to ascertain the voting members, will discuss tomorrow. Unless I got objection, it's my intent to have one motion for all three positions as a slate; if not we'll take them one-by-one. Should be straightforward to do tomorrow.
 
-YK: Can I request we attempt to approve thru unanimous consent and avoid a formal vote?
+YK: Can I request we attempt to approve through unanimous consent and avoid a formal vote?
 
 RJE: Sounds good.
 
@@ -52,13 +52,13 @@ YK: Nothing to do if we have no patents?
 
 BT: Yes.
 
-BT: Two new things - regex dotall flag and template literal.  Reviewing regex unicode property escapes and lookbehind. Also looking for Stage 4 is Promise.finally(). I've also review rest spread.
+BT: Two new things - regex dotall flag and template literal. Reviewing regex unicode property escapes and lookbehind. Also looking for Stage 4 is Promise.finally(). I've also review rest spread.
 
-BT: Big thing is async iteration, that will probaby take me a while. I'm comfortable with it from a tech perspective. Are you looking for it to reach Stage 4 this meeting?
+BT: Big thing is async iteration, that will probably take me a while. I'm comfortable with it from a tech perspective. Are you looking for it to reach Stage 4 this meeting?
 
 DD: Yeah, but I'm fine if it slips to Stage 4, whatever.
 
-BT: I'd like to get it in 2018 if possible.  Anyone else have a proposal not mentioned that they want on the 2018 train?
+BT: I'd like to get it in 2018 if possible. Anyone else have a proposal not mentioned that they want on the 2018 train?
 
 no hands for additional proposals that want to get on the 2018 train
 
@@ -68,7 +68,7 @@ BT: Didn't see named capture groups yet. We'll discuss named-captures groups dur
 
 MF: Named capture groups not in the agenda.
 
-BT: Ah, miss the train then I guess. Weird since it does have ipmlementations.
+BT: Ah, miss the train then I guess. Weird since it does have implementations.
 
 BT: So nothing else for 2018. My work going forward is going to be finishing the normative PRs, I have editorial work to do. Once the changes stop coming in, I'm gonna do the major change of autolinking for syntax-directed operations. Major source of merge-conflict pain, so I've been putting it off til we stabilize. Probably spending like 5 days to make a PDF.
 
@@ -183,7 +183,7 @@ RW: (added post meeting)
   - new RegExp features
   - Unicode test maintenance
   - new Intl feature
-  - Obejct Rest & Spread
+  - Object Rest & Spread
 
 - Improvements for parsers: 
   - support negative tests that are more explicit about where and when they occur: 
@@ -293,7 +293,7 @@ DD: I support putting logo contents as CC0
 
 MB: (Presenting)
 
-MB: Wanted to start with something small and talk about ESHost... talking about command-line utilities. Useful for people on the community. Makes it really easy to run a piece of JS code in various engines from the command line. On a system with Node and npm, you just install ESHost-CLI (demonstrates).  It runs a given code snippet in all the engines it knows about. For it to know about these engines you have to tell it "I have a V8 binary here, Chakra there...".  You do have to set up build systems, compile from source, repeat every few weeks to get up-to-date engine builds. This was painful unless you're already working on these. So now I want to talk about a new tool to set these up locally rather than doing the whole compile dance. It's called JSVU (version updater) and it's also a command-line utility. On a system with Node and npm, you just install jsvu globally, and then run it {demonstrates}. The first time it asks for confirmation on which engines + arch, then it does its thing, figures out the latest version of each engine, downloads and installs the binaries, and that's it. So you only have to remember a single command, jsvu, and run it whenever you want to auto-update all those engines to the latest version. Then you can directly use the JS engines from the command line.
+MB: Wanted to start with something small and talk about ESHost... talking about command-line utilities. Useful for people on the community. Makes it really easy to run a piece of JS code in various engines from the command line. On a system with Node and npm, you just install ESHost-CLI (demonstrates).  It runs a given code snippet in all the engines it knows about. For it to know about these engines you have to tell it "I have a V8 binary here, Chakra there...".  You do have to set up build systems, compile from source, repeat every few weeks to get up-to-date engine builds. This was painful unless you're already working on these. So now I want to talk about a new tool to set these up locally rather than doing the whole compile dance. It's called JSVU (version updater) and it's also a command-line utility. On a system with Node and npm, you just install jsvu globally, and then run it (demonstrates). The first time it asks for confirmation on which engines + arch, then it does its thing, figures out the latest version of each engine, downloads and installs the binaries, and that's it. So you only have to remember a single command, jsvu, and run it whenever you want to auto-update all those engines to the latest version. Then you can directly use the JS engines from the command line.
 
 MB: Specifically for eshost-cli, you just need to install eshost and tell it where the engines are, which for jsvu is all in the same directory, and that's it. Immensely useful for compat testing. Any time you find yourself in need of a JS engine binary you can use jsvu to easily automate the install and get a recent version. I'm interested in other use-cases, too, like web assembly waterfall — in that project, a lot of engineering time is spent maintaining the build infrastructure for all JS engines. This can be avoided by just using jsvu instead of building it all from source. If you use this, let me know what you use it for. And shoutout to eshost, it's a very nice tool.
 
@@ -373,7 +373,7 @@ MB: BigInt used to have .parseInt(), but it was removed because parseInt behavio
 
 ... discussion about the pronunciation of "radix"; loosely settled on "radd-ix" ...
 
-MB: Suggestion is {BigInt, Number}.fromString(). Symmetric with toString. We want something to BigInt that fulfils this functionality and we can add the same thing to Number.  Main problem that motivates this is there's no way to do the inverse — go from string back to number — but Number can through parseInt, although in a surprising way. 
+MB: Suggestion is {BigInt, Number}.fromString(). Symmetric with toString. We want something to BigInt that fulfills this functionality and we can add the same thing to Number.  Main problem that motivates this is there's no way to do the inverse — go from string back to number — but Number can through parseInt, although in a surprising way. 
 
 MB: Reasons parseInt is weird: gives NaN when string is bad, gives NaN when radix is bad, accepts radix 0 and pretends it's 10, accepts hex literal prefixes but not the octal and binary prefixes. Can't go back and add support, might be backwards-incompatible. It also ignores leading whitespace and trailing non-digits.  And having some support for integer literal prefixes means it's not the inverse of toString - it accepts some things that toString can't produce. 
 
@@ -499,13 +499,13 @@ MB: Stage 3 *thumbs up*
 
 JHD: status update, thanks to Jory and Dan for helping with slides. 3 meetings so far, every two weeks, lots of good discussions, what our role and obligations are, reporting mechanisms. learning from Node's approach to online discussions, they have a good model.
 
-JHD: there were three open PRs: member list, confidentaility guarantees, clarification role of chair group. created a separate moderation repo, exploring how to use it, e.g. in the node community, whne anything that is published in a public venue needs attention ,t it is called out in the moderation repo, all delegates (and maybe invited experts) have access, if any 
+JHD: there were three open PRs: member list, confidentiality guarantees, clarification role of chair group. created a separate moderation repo, exploring how to use it, e.g. in the node community, when anything that is published in a public venue needs attention ,t it is called out in the moderation repo, all delegates (and maybe invited experts) have access, if any 
 
 JHD: proposed list of membership of CoC committee. Anyone on this list can leave the room so everyone else can discuss them privately. If anyone wants to be added to this list, let Jordan/John/Dan know. They'll leave the room after the slides.
 
-JHD: PR about confidentaility: original idea was to have arports go to an email list, but what if the issue involves someone on the list? This PR says you can email anyone individually and will be guaranteed confidentiality unless you explicitly opt-in to sharing with others, including rest of CoC
+JHD: PR about confidentiality: original idea was to have reports go to an email list, but what if the issue involves someone on the list? This PR says you can email anyone individually and will be guaranteed confidentiality unless you explicitly opt-in to sharing with others, including rest of CoC
 
-WH: very uncomfortable with this change, this is creating opportunities for a hostile environment. I've been in an organization with rules like this and it's turned out very badly. What this allows is somebody to email complaints to one person on the CoC and they're not allowed to share the substance of the complaint with anyone else, so one person on the CoC has absolute power over decision making, and aren't allowed to share the complaint with the person being accused. In the case I'm familiar with, the wrong person got ejected from the group, and didn't get to learn why, later turned out to be a case of mistaken identity. This is such a radical change, I understand the desire for sensitivity, but we already have a clause that says if anyone on the CoC has a conflict of interest (for example, is accused or the accuser), they are recused from discussions. We need to have the CoC committee discuss complaints as a whole, except for the cases where they are the accusser or accused. We must also guarantee that the person being accused of something is told what they're being accused of before making any decisions. This change doesn't allow that.
+WH: very uncomfortable with this change, this is creating opportunities for a hostile environment. I've been in an organization with rules like this and it's turned out very badly. What this allows is somebody to email complaints to one person on the CoC and they're not allowed to share the substance of the complaint with anyone else, so one person on the CoC has absolute power over decision making, and aren't allowed to share the complaint with the person being accused. In the case I'm familiar with, the wrong person got ejected from the group, and didn't get to learn why, later turned out to be a case of mistaken identity. This is such a radical change, I understand the desire for sensitivity, but we already have a clause that says if anyone on the CoC has a conflict of interest (for example, is accused or the accuser), they are recused from discussions. We need to have the CoC committee discuss complaints as a whole, except for the cases where they are the accuser or accused. We must also guarantee that the person being accused of something is told what they're being accused of before making any decisions. This change doesn't allow that.
 
 JHD: base on that , that's a very valid concern, that's not the intent of this change. we need further discussion on this
 
@@ -523,7 +523,7 @@ JHD: next PR is about chair participation. Not everyone in the chair group will 
 
 JHD: next ideas: communication and Action "playbooks": document how CoC members should address things, will evolve over time, taking inspiration from Node for a lot of things
 
-JHD: engagement, need enough people on the committe to have "quorum"
+JHD: engagement, need enough people on the committee to have "quorum"
 
 JHD: (Presenting)
 
@@ -588,7 +588,7 @@ TAB: that's a relevant question: how do you resume a value? you could just be ou
 
 TAB: a lot of other languages have their normal RNG function take a seed to make "seeded test runs". But most use cases don't want just a single predictable RNG, they want multiple ones. Ok, questions.
 
-YK: seeded test run case is important, most of the use cases I see are for test runs, cross-user-agent is important for the reasons you sdescribed, also for CI environments to locally reproduce a failure seen on remote CI
+YK: seeded test run case is important, most of the use cases I see are for test runs, cross-user-agent is important for the reasons you described, also for CI environments to locally reproduce a failure seen on remote CI
 
 MF: feeding the output of the RNG back in as a seed really limits the set of algorithms we could use. But resumption is really valuable. First we need to decide what are the kinds of use cases we need to support, which way to we lean there.
 
@@ -669,7 +669,7 @@ SM: one use case, one source of non-determinism in their ? is to hard-code a see
 
 DE: Since 2015 we've been using GitHub for development, accepting contributions on GitHub. Have occasional non-members attending meetings. We need confirmation that contributions can be legal (patent/IPR). We ask them to sign a web form. There are technical issues with this form. To fix those, we made a second form, with different text about the agreements/licensing, for non-members to sign when making contributions. Thomas Wood of Imperial College London has promised to help with automating.
 
-DE: Proposal is to retire the old form and switch to the new form. Proposal: for each contribtion for normative changes, check that the contributor is of a member company, or has signed form. For new attendees, declare whether they're an observer (and not make contributions), or a prospective Ecma members can attend as guests or invited experts and sign the form (and talk and contribute, with contributions licensed to ecma).
+DE: Proposal is to retire the old form and switch to the new form. Proposal: for each contribution for normative changes, check that the contributor is of a member company, or has signed form. For new attendees, declare whether they're an observer (and not make contributions), or a prospective Ecma members can attend as guests or invited experts and sign the form (and talk and contribute, with contributions licensed to ecma).
 
 DE: This plan has been developed with Allen Wirfs-Brock and István Sebastyen. See Reflector thread for discussion about text.
 
@@ -713,13 +713,13 @@ JHD: trying to be more precise about the requirement, to reduce need for debate.
 
 JHD: different proposals have different risk areas: interoperability, ergonomic, etc. Things with a web-compatibility risk, it's not controversial to require two implementations (to minimize that risk). But committee sometimes interpreted requirements differently: flagged, canary, nightly or a babel implementation might qualify.
 
-JHD: explicitly mention possible risk areas ("this proposal may create compatiblity risk") in proposals, stage 4 requirement would mean the committee would agree that the risk areas identified had in fact been met before reaching stage 4. E.g. web-compatibility may require two non-flagged non-nightly browsers have the feature.
+JHD: explicitly mention possible risk areas ("this proposal may create compatibility risk") in proposals, stage 4 requirement would mean the committee would agree that the risk areas identified had in fact been met before reaching stage 4. E.g. web-compatibility may require two non-flagged non-nightly browsers have the feature.
 
-JHD: that was my take on the conversation, wanted to get the comittee thoughts on if that would be useful/palatable, to reduce debate in the cases where two unflagged browers aren't really necessary, without allowing some risky changes to squeak throught. Wanted to open the floor for thoughts.
+JHD: that was my take on the conversation, wanted to get the comittee thoughts on if that would be useful/palatable, to reduce debate in the cases where two unflagged browers aren't really necessary, without allowing some risky changes to squeak through. Wanted to open the floor for thoughts.
 
 BT: this doesn't imply any change to the process, right?
 
-JHD: the only change would be that, as part of going to stage 2, is to identify the risk areas. And then as part of the discussion about "significant in-the-field experience" that we already have for going to stage 4, we use those risk areas to refine that conversation. The PR has explicit language to continue to allow the committee to do whatever it wants, so the intent isn't to constrain the comittee, but to debate more efficiently.
+JHD: the only change would be that, as part of going to stage 2, is to identify the risk areas. And then as part of the discussion about "significant in-the-field experience" that we already have for going to stage 4, we use those risk areas to refine that conversation. The PR has explicit language to continue to allow the committee to do whatever it wants, so the intent isn't to constrain the committee, but to debate more efficiently.
 
 MF: Can we make sure this doesn't go into effect for this meeting, but for some later one
 
@@ -737,7 +737,7 @@ MS: if there are risk areas that can be identified, they should be tracked. Stag
 
 JHD: making it a stage-2 entrance criteria means to me that it's being tracked. Making it clear that these are implementation risks sounds good to me.
 
-YK: most of my concerns have to do with usablity, so e.g. "I'd like to see more feedback from Babel users", doesn't sound like an implementation risk, but I'd like to see it get tracked. General desire to see more concerns raised earlier in the process, so folks don't get blindsided by it later.
+YK: most of my concerns have to do with usability, so e.g. "I'd like to see more feedback from Babel users", doesn't sound like an implementation risk, but I'd like to see it get tracked. General desire to see more concerns raised earlier in the process, so folks don't get blindsided by it later.
 
 JHD: specific debate is whether it must be in two unflagged web browsers, we have this debate a lot. For some issues this is unnecessary.
 
@@ -810,7 +810,7 @@ AK: we had another thing like this, do you want to defer this?
 
 JHD: didn't want to rush the PR if there were other objections
 
-BT: I dont think I'll have time to get to approving this before async iteration.
+BT: I don't think I'll have time to get to approving this before async iteration.
 
 JHD: sounds like no objections, except it might not fit into BT's schedule. Will write PR, bring back up thursday, else bring up in a future meeting.
 
@@ -825,9 +825,9 @@ JHD: sounds like no objections, except it might not fit into BT's schedule. Will
 
  - [proposal](https://github.com/tc39/proposal-string-matchall)
 
-JHD: was originally hoping to ask for stage 3, but issues raised. when you pass a string argument, the orig semantics was to convert it into a regexp like the way match does. I was discussing with Dan about making that regexp automatically have the Global flag, but two other questions came up. Should that regexp be in full unicode mode? Bigger question is the replaceAll proposal from the last meeting was looking for ways to do exact string searches in the absence of a regexp.escape function, if you pass a string into matchall, instead of a regexp lookup, could it do a substring search. My initial reaction was that solving that one API method at a time wasn't great, doubles spec complexity, need a different well-known symbol to handle exact string searches. Wanted the committee's thoughts on how to pass an exact string in here. Committe rejected my original proposal to throw exception. Not asking for stage 3.
+JHD: was originally hoping to ask for stage 3, but issues raised. when you pass a string argument, the orig semantics was to convert it into a regexp like the way match does. I was discussing with Dan about making that regexp automatically have the Global flag, but two other questions came up. Should that regexp be in full unicode mode? Bigger question is the replaceAll proposal from the last meeting was looking for ways to do exact string searches in the absence of a regexp.escape function, if you pass a string into matchall, instead of a regexp lookup, could it do a substring search. My initial reaction was that solving that one API method at a time wasn't great, doubles spec complexity, need a different well-known symbol to handle exact string searches. Wanted the committee's thoughts on how to pass an exact string in here. Committee rejected my original proposal to throw exception. Not asking for stage 3.
 
-DE: example of distrinction: x.matchall(".") : original semantics is to throw because that's not a regexp. Current semantics return one match. Half of existing regexp functions have special behavior for psasing in strings. WH? do you remember why they have this divergent behavior?
+DE: example of distinction: x.matchall(".") : original semantics is to throw because that's not a regexp. Current semantics return one match. Half of existing regexp functions have special behavior for passing in strings. WH? do you remember why they have this divergent behavior?
 
 WH: nope
 
@@ -835,7 +835,7 @@ JHD: if we felt it should have the regexp coercing behavior of .match(), we coul
 
 DE: why do we need a second symbol?
 
-JHD: maybe it doesn't, maybe the mechanism doesn't need to be exposed, we can review that in the PR that adds the spec text. But it adds a lot of algorithm text to the spec, branches for the different types. It's an iterator, do we can't just re-use the algorith in split(), which is fine but we'd like to hear about the intuitiveness of one vs the other
+JHD: maybe it doesn't, maybe the mechanism doesn't need to be exposed, we can review that in the PR that adds the spec text. But it adds a lot of algorithm text to the spec, branches for the different types. It's an iterator, do we can't just re-use the algorithm in split(), which is fine but we'd like to hear about the intuitiveness of one vs the other
 
 Dan?: the second issue subsumes the first one
 
@@ -970,7 +970,7 @@ JFI: I'm going to propose a mixin idea. This my first time ,here, not sure of th
 
 JFI: currently lots of patterns in use (pre-Classes), variations of Object.assign(MyClsas.prototype, mxin). I claim ES2015 already added mixins. Subclass Factory Mixins. Takes advantange of the fact that extends accepts an arbitrary expression. Works today, with built-in classes like Array and Map. USed by Polymer, others. Example. (see slides).
 
-JFI: this pattern avoids difficult problems: by creating a fresh prototype for each mixin application ,it avoids multiple prototypes, no changes to property lookup.
+JFI: this pattern avoids difficult problems: by creating a fresh prototype for each mixin application, it avoids multiple prototypes, no changes to property lookup.
 
 JFI: proposal is to add syntax for this kind of mixin. e.g. `class C extends S with M`, desugars to.. . Or declarative form.
 
@@ -980,7 +980,7 @@ JFI: yes, maybe `class C extends S with M1, M2`. S is innermost, M1 is next, M2 
 
 JFI: nice feature is backwards/forwards compatibility with the desugaring.
 
-JFI: Why do this? It's strictly less powerful than what's already there. Allows static analysis, improves ergonomics, encrouages class-compatible mixins. Static analysis: TypeScript has a (cumbersome) syntax to teach the compiler about what is a mixin, can't refer to the type defined by the mixin without a duplicate definition.
+JFI: Why do this? It's strictly less powerful than what's already there. Allows static analysis, improves ergonomics, encourages class-compatible mixins. Static analysis: TypeScript has a (cumbersome) syntax to teach the compiler about what is a mixin, can't refer to the type defined by the mixin without a duplicate definition.
 
 YK: one other gotcha, TS can't have abstract members for other reasons, whenever the encoding of the function gets to complicated, typescript fails
 
@@ -994,17 +994,17 @@ RBN: what happens when you mix in two mixins that share the same base, do you ov
 
 JFI: will explain later, but one advantage of mixins is that you don't have the diamond problem
 
-MM: in the mixin form, can you write a constructor? yes, so I wil lhave many questions about constructor chaining
+MM: in the mixin form, can you write a constructor? yes, so I will have many questions about constructor chaining
 
 JFI: difficulty with static analysis: recognizing a function is a mixin, etc
 
-JFI: what kind of future evolution this would enable: mixins can evolve independently from classes. Class features are inherited by mixins: member visibliity, namespacing, requirements/interface checking.
+JFI: what kind of future evolution this would enable: mixins can evolve independently from classes. Class features are inherited by mixins: member visibility, namespacing, requirements/interface checking.
 
 JFI: Member namespacing: declare and use a symbol in a single place. Gets you close to the namespacing in First Class Protocols proposal. Need a new scheme for defining it.
 
 YK: could use private
 
-JFI: most trait implementaions can require that your mixin requires a member. Not critical to proposal, but nice to have. 
+JFI: most trait implementations can require that your mixin requires a member. Not critical to proposal, but nice to have. 
 
 JFI: (Presenting)
 
@@ -1020,7 +1020,7 @@ YK: I like it. Very similar to the ruby mixin system, which more or less copied 
 
 JFI: this seems compatible, maybe we can layer them.
 
-DT: I currently use mixins in ruby and suffer from them every day :). Lots of work is being done with classes, but haven't seen mixins as much (except in React). Is this prevalent enough to justify new syntax? And it will complicate further discussion of classes: when we add osmething to a class, do we also have to add it to mixins?
+DT: I currently use mixins in ruby and suffer from them every day :). Lots of work is being done with classes, but haven't seen mixins as much (except in React). Is this prevalent enough to justify new syntax? And it will complicate further discussion of classes: when we add something to a class, do we also have to add it to mixins?
 
 JFI: there are hundreds of pacakges on npm that do some bespoke mixin mechanism, so the concept seems heavily used. Lots of pendulum swinging about whether it's actually a good idea. Having syntax makes tools better: typescript can jump to definition of a mixin. Polymer and WebComponents use pieces like this.
 
@@ -1072,7 +1072,7 @@ RJE: let's think about it over the break
 
 RJE: allocate 10min to close this
 
-JFI: obvious opporutnity to collaborate with the Protocols folks, to at least identify the different problems we're trying to solve. To best reflect reality: two line items, both at stage 1, or one item with two links.
+JFI: obvious opportunity to collaborate with the Protocols folks, to at least identify the different problems we're trying to solve. To best reflect reality: two line items, both at stage 1, or one item with two links.
 
 BT: having two repos for this would be hard for people to track. Other proposals have had multiple alternatives in the same, repo, this seems similar, would be nice to have a single place for this discussion. What's the benefit for having two separate repos?
 
@@ -1237,7 +1237,7 @@ MM: no difference in the treatment of the text that appears before the directive
 
 AK: so you have to hold on to the source text until you finish parsing
 
-DD: strengths of this are similar to those of use strict: can bundle together censored/non-censored code, makes it easy to censor a whole file. cons: can't opt out from within a censored scope, not immediately obvious why a given function is censored (like use strict). Would need to introduce pramgas into clsas bodies. Not trivial to censor third-party libraries (must preprocess their source files)
+DD: strengths of this are similar to those of use strict: can bundle together censored/non-censored code, makes it easy to censor a whole file. cons: can't opt out from within a censored scope, not immediately obvious why a given function is censored (like use strict). Would need to introduce pramgas into class bodies. Not trivial to censor third-party libraries (must preprocess their source files)
 
 DD: proposal 2: external-to-JS flag, let implementations return a censored string under host-defined conditions. E.g. `node --no-fn-tostring myapp.js`. Makes it trivial to censor third-party libraries. But now code is less portable, libraries can't depend upon themselves being censored.
 
@@ -1247,17 +1247,17 @@ DD: `delete Function.prototype.toString`: blunt, doesn't work with multiple real
 
 DD: should this censor the function name itself? What about a meta-API with a well-known symbol? (but enables uncensoring later, messy)
 
-DD: pragma variant is opt-in by author of the library, external version is opt-in by host or by user of the library. Pragma doesn't break existing code. Lots of ways to modify behavior of code included inthe app that don't edit your source text, this would add another one, apps are already making choices about whether to depend upon such things.
+DD: pragma variant is opt-in by author of the library, external version is opt-in by host or by user of the library. Pragma doesn't break existing code. Lots of ways to modify behavior of code included in the app that don't edit your source text, this would add another one, apps are already making choices about whether to depend upon such things.
 
-DD: requires only mimimal preprocessing
+DD: requires only minimal preprocessing
 
 DD: precedent for out-of-band controls :CSP disallows eval(), proposed realms API is controlled externally, Node.js enables/disables i18n features with flags
 
 DD: please give me feedback
 
-YK: seems fine, agree with your arguments. Test environments want toString, so maybe this API would be enabled in production environments but not during development. Any kind of self-hosting probably needs this behavior. The inline pragma probably works better with existing bundling tools, people today are still taking source code and assemlbing them into a single script. If it couldn't be used in existing bundling strategies, it wouldn't be used as much. Testing tools could un-insert the pragma.
+YK: seems fine, agree with your arguments. Test environments want toString, so maybe this API would be enabled in production environments but not during development. Any kind of self-hosting probably needs this behavior. The inline pragma probably works better with existing bundling tools, people today are still taking source code and assembling them into a single script. If it couldn't be used in existing bundling strategies, it wouldn't be used as much. Testing tools could un-insert the pragma.
 
-KCL: testing is important, it's hard enough to just get the name of a function. I can imagine folks cargo-culting the pragma in their libraries which will coincide with a lack of introspection in testing environments like Chai. I can imagine us gettings tons of issues about this. I prefer option 2.
+KCL: testing is important, it's hard enough to just get the name of a function. I can imagine folks cargo-culting the pragma in their libraries which will coincide with a lack of introspection in testing environments like Chai. I can imagine us getting tons of issues about this. I prefer option 2.
 
 BFS: binary AST would also lose the source code, we haven't yet objected to that
 
@@ -1348,11 +1348,11 @@ SGN: questions: include these on Map too? Or make two separate proposals (one fo
 
 JFI: I'd like to see the array-like methods for any iterable, not just Set/Map
 
-MM: addAll/removeAll sounds like it should be imperative (modify existing array), union/substract return new object.
+MM: addAll/removeAll sounds like it should be imperative (modify existing array), union/subtract return new object.
 
 TAB: Python has both, with different (maybe bad) names
 
-TAB: "difference" doesn't suggest which side is which (A-B vs B-A), docs are opposite of what python does. "substract"/"minus" is more clear. "symmetricDifference" is a very complicated spelling, "xor" would be better.
+TAB: "difference" doesn't suggest which side is which (A-B vs B-A), docs are opposite of what python does. "subtract"/"minus" is more clear. "symmetricDifference" is a very complicated spelling, "xor" would be better.
 
 SGN: major programming languages use "symmetricDifference". Please comment on the issue
 
@@ -1364,7 +1364,7 @@ JHD: want an is-it-the-same-set method, sounds like shallowEqual, sounds like Se
 
 MM: that was because it doesn't generalize. With a set, "shallow compare" is clear, but in other areas it doesn't make as much sense. There is no general abstraction-independent meaning to "shallow".
 
-JHD: I woulnd't want to see these useful Set methods blocked because we're waiting to figure out the Map methods. But, looking to the future, being able to say "collections of things have a unified way to deal with them" would be important. Might want to consider carefully before breaking naming consistency with e.g. Array, the naming choices might be subpar, but consistency is good, so maybe avoid shipping some methods now if that breaks consistency in the future.
+JHD: I wouldn't want to see these useful Set methods blocked because we're waiting to figure out the Map methods. But, looking to the future, being able to say "collections of things have a unified way to deal with them" would be important. Might want to consider carefully before breaking naming consistency with e.g. Array, the naming choices might be subpar, but consistency is good, so maybe avoid shipping some methods now if that breaks consistency in the future.
 
 DD: methods on iterator.prototype isn't sufficiently ergonomic, you need an extra set at the end to re-convert it into a map or set, which is silly. you should be able to map over a set and get another set.
 

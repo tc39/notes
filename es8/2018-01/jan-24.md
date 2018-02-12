@@ -64,7 +64,7 @@ JHD: We have tests, editor-reviewed spec PR. Asking for Stage 4. Any objections?
 (Gabriel Isenberg)
 
  - [proposal](https://github.com/tc39/proposal-optional-chaining)
-
+ - [slides](https://docs.google.com/presentation/d/1tAxG8y-lfMty2-qdiCAtQjD9rS8xzBe9Y4b_ti9DIMQ/edit?usp=sharing)
 
 GI: proposing: obj??.prop obj??[expr] func??(...args) and some day someValue ??: defaultValue
 
@@ -921,6 +921,7 @@ DE: we can iterate on the wording on github
 
 (Diego Ferreiro Val, Yehuda Katz and Carido Patino)
 
+ - [slides](https://docs.google.com/presentation/d/178WoBNhXBBB1M_LlSqnKEic4SD4CFYtO9Fkr9rvsHaA/view)
 
 YK: purpose is to share use cases, not to propose anything for advancement
 

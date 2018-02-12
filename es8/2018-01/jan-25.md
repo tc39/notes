@@ -44,7 +44,7 @@ BT: has been implemented a number of times, in chrome, safari, firefox, babel, t
 
 ZB: Intl.Locale is a building block for any i18n. Previously all APIs accepted a (string) BCP47? language tag. now we ..?
 
-ZB: allows for language negotiation, allows people to implement their own formaters, avoids need for people to do pseudo-parsing of the language tag strings
+ZB: allows for language negotiation, allows people to implement their own formatters, avoids need for people to do pseudo-parsing of the language tag strings
 
 ZB: at stage 2, had some recommended changes. Accept well-formed language tags even if we don't recognize that language. Internal changes to rely on Intl.Locale in constructors, can pass one into date/time constructors. Compared to BCP47 we do one more operation: deduplicate, sort. BCP47 does not standardize that, so that's our extension.
 

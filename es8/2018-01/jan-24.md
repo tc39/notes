@@ -64,7 +64,7 @@ JHD: We have tests, editor-reviewed spec PR. Asking for Stage 4. Any objections?
 (Gabriel Isenberg)
 
  - [proposal](https://github.com/tc39/proposal-optional-chaining)
- - [slides]()
+
 
 GI: proposing: obj??.prop obj??[expr] func??(...args) and some day someValue ??: defaultValue
 
@@ -439,7 +439,7 @@ ZB: any objections to stage 3?
 (Ron Buckton)
 
  - [proposal](https://github.com/tc39/proposal-throw-expressions)
- - [slides]()
+
 
 RBN: for the past couple of meetings we've been discussing throw expressions, relatively small change to the spec, but pretty interesting, moving some statements over to expression forms. Allow the use of "throw" in an expression context. For required parameters, arrow function bodies, conditionals, logical, nullish coalesce
 
@@ -921,7 +921,6 @@ DE: we can iterate on the wording on github
 
 (Diego Ferreiro Val, Yehuda Katz and Carido Patino)
 
-- [slides]()
 
 YK: purpose is to share use cases, not to propose anything for advancement
 

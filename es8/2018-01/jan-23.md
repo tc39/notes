@@ -877,7 +877,6 @@ JHD: any objections to moving this to stage 3?
 (Michael Ficarra)
 
  - [proposal](https://github.com/tc39/Function-prototype-toString-revision)
- - [slides]()
 
 MF: has been sitting in stage 3 for a while, spec text hasn't changed for a year. Now have multiple implementations..
 

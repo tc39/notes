@@ -665,7 +665,7 @@ SM: one use case, one source of non-determinism in their ? is to hard-code a see
 
 - [Issue](https://github.com/tc39/Reflector/issues/104)
 - [old form](http://tc39.github.io/test262-cla/)
-- [new form](https://littledan.github.io/agreements/contributor/)
+- [new form](https://tc39.github.io/agreements/contributor/)
 
 DE: Since 2015 we've been using GitHub for development, accepting contributions on GitHub. Have occasional non-members attending meetings. We need confirmation that contributions can be legal (patent/IPR). We ask them to sign a web form. There are technical issues with this form. To fix those, we made a second form, with different text about the agreements/licensing, for non-members to sign when making contributions. Thomas Wood of Imperial College London has promised to help with automating.
 

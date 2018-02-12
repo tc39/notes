@@ -46,7 +46,7 @@ ZB: Intl.Locale is a building block for any i18n. Previously all APIs accepted a
 
 ZB: allows for language negotiation, allows people to implement their own formaters, avoids need for people to do pseudo-parsing of the language tag strings
 
-ZB: at stage 2, had some recommended changes. Accept well-formed language tags even if we don't recognize that language. Internal changes to rely on Intl.Locale in contsructors, can pass one into date/time constructors. Compared to BCP47 we do one more operation: deduplicate, sort. BCP47 does not standardize that, so that's our extension.
+ZB: at stage 2, had some recommended changes. Accept well-formed language tags even if we don't recognize that language. Internal changes to rely on Intl.Locale in constructors, can pass one into date/time constructors. Compared to BCP47 we do one more operation: deduplicate, sort. BCP47 does not standardize that, so that's our extension.
 
 ZB: propose to advance to stage 3. Questions?
 

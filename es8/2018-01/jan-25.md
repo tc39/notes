@@ -639,7 +639,7 @@ AWB: I think changing `set` (doing lossy casts when appropriate) is consistent w
 
 Jakob: for existing typed arrays, you can assign a string, if it contains a number, it converts the string to a number, then takes the bits from the number that it needs depending upon how wide the array is. For the ? proposal I'm not sure it does any more.
 
-Jakob: this is an exmpla of the type conversion that arrays have always done. these new typedarrays are doing it differently. I'm fine with doing it differently, just wanted to point out the inconsistently
+Jakob: this is an example of the type conversion that arrays have always done. these new typedarrays are doing it differently. I'm fine with doing it differently, just wanted to point out the inconsistently
 
 AWB: general job of value conversion.. I can see an argument that TypedArrays themselves are kind of special in how they map between different numeric element types, and in that context, bigints .. would be a reasonable expectations
 

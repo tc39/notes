@@ -542,7 +542,7 @@ YK: isn't that an objection for all variants?
 
 DD: your D seem very exotic
 
-MBS: use cases: dynamic dependency pathing: `const strings = await import(`/i18n/${navigator.language}`);`
+MBS: use cases: dynamic dependency pathing: ``const strings = await import(`/i18n/${navigator.language}`);``
 
 MBS: resource initialization: `const connection = await dbConnector();` Lets modules represent resources and produce errors, instead of putting all of your code inside the on()
 

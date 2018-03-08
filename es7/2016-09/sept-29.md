@@ -5,6 +5,7 @@ Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat 
 
 Remote:
 István Sebestyén (IS)
+
 -----
 
 ## Secretariat's Report 

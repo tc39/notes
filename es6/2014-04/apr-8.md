@@ -2,6 +2,7 @@
 -----
 
 Doug Crockford (DC), Brian Terleson (BT), Luke Hoban (LH), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Hudson (RH), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Sung-Jae Lee (SJL), Seo-Young Hwang, Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Satish Chondra (SC), Domenic Denicola (DD), Mark S. Miller (MM)
+
 -----
 
 ## Welcome

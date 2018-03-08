@@ -5,6 +5,7 @@ Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD)
 
 Remote: 
 Michael Hablich (MHH), Yang Guo (YGO), Toon Verwaest (TVT), Daniel Clifford DCD), Nikolaus Papaspyrou (NPU), Ben Titzer (BTR)
+
 -----
 
 ## Discussion of the agenda and timing

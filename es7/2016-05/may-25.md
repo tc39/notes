@@ -5,6 +5,7 @@ Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD)
 
 Remote: 
 Dean Tribble (DT), Nikolaus Papaspyrou (NPU)
+
 -----
 
 ## Agenda

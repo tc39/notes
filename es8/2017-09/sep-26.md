@@ -5,6 +5,7 @@ Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (
 
 Remote: 
 István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM), Gabriel Isenberg (GI), Zibi Braniecki (ZB)
+
 -----
 
 ## 1. Opening, welcome and roll call

@@ -1,8 +1,7 @@
 # January 31, 2013 Meeting Notes
 -----
 
-John Neumann (JN), Allen Wirfs-Brock (AWB), Rick Waldron (RW), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Luke Hoban (LH), Matt Sweeney (MS), Doug Crockford (DC), Yehuda Katz (YK), Andreas Rossberg (ARB), Sam Tobin-Hochstadt (STH), Brendan Eich (BE),
-
+John Neumann (JN), Allen Wirfs-Brock (AWB), Rick Waldron (RW), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Luke Hoban (LH), Matt Sweeney (MS), Doug Crockford (DC), Yehuda Katz (YK), Andreas Rossberg (ARB), Sam Tobin-Hochstadt (STH), Brendan Eich (BE)
 
 -----
 

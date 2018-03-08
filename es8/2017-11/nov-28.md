@@ -5,6 +5,7 @@ Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (C
 
 Remote: 
 István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
+
 -----
 
 ## 1. Opening, welcome and roll call

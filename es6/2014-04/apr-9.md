@@ -3,8 +3,6 @@
 
 Doug Crockford (DC), Brian Terleson (BT), Luke Hoban (LH), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Hudson (RH), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Seo-Young Hwang (SYH), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Norbert Lindenberg (NL), Sebastian Markbåge (SM), Mathias Bynens (MB), Rafeal Weinstein (RWN), Jaswanth Sreeram (JS), Alex Russell (AR), István Sebestyén (IS), Mark S. Miller (MM), Tatiana Shpeisman (TS), Brandon Benvie (BB), Brendan Eich (BE)
 
-
-
 -----
 
 ## RF Status

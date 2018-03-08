@@ -5,6 +5,7 @@ Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW
 
 Remote: 
 István Sebestyén (IS)
+
 -----
 
 ## Welcome

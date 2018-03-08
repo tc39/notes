@@ -1,8 +1,8 @@
 # January 29, 2014 Meeting Notes
 -----
 
-
 John Neumann (JN), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Rick Hudson (RH), Matt Sweeney (MS), Dmitry Soshnikov (DS), Sebastian Markbåge (SM), Ben Newman (BN), Jeff Morrison (JM), Reid Burke (RB), Waldemar Horwat (WH), Doug Crockford (DC), Mark S. Miller (MM), Brian Terlson (BT), Luke Hoban (LH), Andreas Rossberg (ARB), István Sebestyén (IS), Niko Matsakis (NM), Brendan Eich (BE), Rick Waldron (RW), Sam Tobin-Hochstadt (STH), Rafeal Weinstein (RWN), Dmitry Lomov (DL), Niko Matsakis (NM), Simon Kaegi (SK), Kevin Reid (KR), Dave Herman (DH)
+
 -----
 
 ## Function in Blocks in non strict mode.

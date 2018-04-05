@@ -89,11 +89,11 @@ IS: two things about this. the opt out period is for two month. Final opt out li
 
 BT: we already have it 
 
-IS: is this published on ECMA? Because this is what we have to do formally. GitHub unfortunately is not enough for that.
+IS: Is this published on Ecma? Because this is what we have to do formally. GitHub unfortunately is not enough for that.
 
 BT: we have it on the reflector but let me take a look
 
-IS: Ok let's make sure that we communicate -- it was mentioned at the last time at the ECMA meeting that this was only circulated internally within the TC39. So this is an action between Brian and the Ecma Secretariat.
+IS: Ok let's make sure that we communicate -- it was mentioned at the last time at the Ecma meeting that this was only circulated internally within the TC39. So this is an action between Brian and the Ecma Secretariat.
 
 BT: the next step in the next meeting in NYC  we will be making one of the rare votes that we make for the ratification of ecma262 2018 -- so be prepared in may to cast your vote for your company regarding if you support the new edition. we have never had a vote against it but we've had abstentions in the past.
 
@@ -101,15 +101,15 @@ IS: Officially we need to publish the draft standards two months before the GA a
 
 BT: well we haven't finished the opt out period
 
-IS: these two things are actually separate, and we can handle them separately. the document needs to be published two months before the ECMA general assembly
+IS: these two things are actually separate, and we can handle them separately. the document needs to be published two months before the Ecma general assembly
 
 BT: so you are recommending that we vote today?
 
 IS: Yes because editorial changes between now and June 27, are ok. But no major technical changes
 
-BT: we have a stable document for some times already. If it works better for ecma we can ratify at this meeting.
+BT: we have a stable document for some times already. If it works better for Ecma we can ratify at this meeting.
 
-IS: that would be good. my second question is do we have two standards: Ecma-262 and Ecma-402. For both of these standards you need official approval which is separate from the opt out period
+IS: that would be good. my second question is do we have two standards: ECMA-262 and ECMA-402. For both of these standards you need official approval which is separate from the opt out period
 
 RJE: ok lets do the vote on Thursday afternoon
 
@@ -123,12 +123,12 @@ BT: They have been helping somewhat on the issues already. Do we have anyone to 
 
 IS: (I DID NOT SAY IT IN THE MEETING, NOT TO WASTE TIME, BUT IMPORTANT): The ECMA-262 and ECMA-402 are the only standards in Ecma in HTML main format. The PDF Version for ECMA-262 - which is the main Ecma publication format, e.g. for downloading, going to national archives etc. is also important, not only the HTML version. Until ECMA-262 (2016) version the PDF version looked good. The latests version not anymore. E.g. no page numbers, No proper formating at page breaks etc. We need the Editors help with that. The Ecma Secretariat can help, but we need a good tool for HTML to PDF conversion... Please to help us to solve this issue.
 
-DE: I'll do ECMA-402 updates, the main features are PluralRules and hourCycle, we had no complaints so far, There are four stage 3 proposals for Ecma 402, and We are having monthly meeting to discuss ECMA-402, please let me know if you are interested in attending.
-( https://www.ecma-international.org/publications/standards/Ecma-402.htm )
+DE: I'll do ECMA-402 updates, the main features are PluralRules and hourCycle, we had no complaints so far, There are four stage 3 proposals for ECMA-402, and We are having monthly meeting to discuss ECMA-402, please let me know if you are interested in attending.
+( https://www.ECMA-international.org/publications/standards/ECMA-402.htm )
 
 RJE: ECMA-404? 
 
-IS: ECMA-404 as far as I understood is completed. We have finished the fast track approval and this is now a stable standard so it will now last "forever". So at the moment the next one - 414 - can I say something about that? it will make the ECMA fast track proposals not necessary as in the fast. As you know we have had problems in the past with fast track approvals. yearly cycles are simply too fast for the process. Once 414 is approved it will never change. Once it is approved it will contain non-dated references to 262 and 402 that means that it will still be working with 414 - as always the last version of ECMA-262 and ECMA-402 will count. From Japan we had a negative vote in the DIS vote which we took into account for the final  FDIS vote., which is finally already out. It is a 2 months vote, Maybe at the end of 28 of April will be the termination date (I do not remember out of my head the exact date). Since everyone else approved the DIS already this will probably go forward as ISO/IEC Standard. So this is the status. It is now in ISO in the final balloting process and will be done in a month.
+IS: ECMA-404 as far as I understood is completed. We have finished the fast track approval and this is now a stable standard so it will now last "forever". So at the moment the next one - 414 - can I say something about that? it will make the Ecma fast track proposals not necessary as in the fast. As you know we have had problems in the past with fast track approvals. yearly cycles are simply too fast for the process. Once 414 is approved it will never change. Once it is approved it will contain non-dated references to 262 and 402 that means that it will still be working with 414 - as always the last version of ECMA-262 and ECMA-402 will count. From Japan we had a negative vote in the DIS vote which we took into account for the final  FDIS vote., which is finally already out. It is a 2 months vote, Maybe at the end of 28 of April will be the termination date (I do not remember out of my head the exact date). Since everyone else approved the DIS already this will probably go forward as ISO/IEC Standard. So this is the status. It is now in ISO in the final balloting process and will be done in a month.
 
 RJE: Test262 update?
 
@@ -358,7 +358,7 @@ BFS: I basically stole this discussion from DE.
 
 DE: thanks for taking this on
 
-BFS: I am going to talk about the standard library. We have a relatively small standard library for JS. The best thing for us maybe not, we are here to propose things, but not as much for standard library as I'd hope. Most of the proposals are for syntax. Dan wrote up a list of everything that has changed that might be of concern. Java has a huge standard library, which is not something I'm very interested in copying. We have a cultural reason for why we've moved a little slower than some languages.We've been very conservative - we think through features and APIs on a year scale and we spend time on it.We have consistent interaction from the community regarding what features should be added (features from known libraries) Let's talk about what we're thinking about when we talk about what to add to the standard library. Optimizability and performance. Expressiveness... these are all important factors. We have weakMap, weakRef. also one of the main purposes of JS is the glue for the world wide web, everything that we can pull out from the standard library, everything that we add to the standard library is less stuff that needs to be pulled from the internet. We don't really have a bar for this right now. There is an expectation from userland that if something is useful that it has proven itself as useful and should belong in the spec. We try our best to go with what causes the least amount of friction not always the best though. We even have other specifications that are using javascript, and as we evolve our library we need to take that into consideration. There's been some cross-pollination with Node and the web. Some of these examples like TextEncoder, but they haven't landed in the JS spec for some reason, maybe we should look into why they haven't landed in the JS spec even though they're applicable to multiple environments. One idea that I have had after only a couple of months of trying to be an editor is perhaps we should think of another way to document and publish our constraints for the standard library. These standards were written by Dan (thank you so much). There are some different expectations of how we use IDL, but maybe we should look at producing this new domain language for JS. And that might be a way to ease people reading the specs and quickly skim over things
+BFS: I am going to talk about the standard library. We have a relatively small standard library for JS. The best thing for us maybe not, we are here to propose things, but not as much for standard library as I'd hope. Most of the proposals are for syntax. Dan wrote up a list of everything that has changed that might be of concern. Java has a huge standard library, which is not something I'm very interested in copying. We have a cultural reason for why we've moved a little slower than some languages.We've been very conservative - we think through features and APIs on a year scale and we spend time on it.We have consistent interaction from the community regarding what features should be added (features from known libraries) Let's talk about what we're thinking about when we talk about what to add to the standard library. Optimizability and performance. Expressiveness... these are all important factors. We have `WeakMap`, `WeakRef`. also one of the main purposes of JS is the glue for the world wide web, everything that we can pull out from the standard library, everything that we add to the standard library is less stuff that needs to be pulled from the internet. We don't really have a bar for this right now. There is an expectation from userland that if something is useful that it has proven itself as useful and should belong in the spec. We try our best to go with what causes the least amount of friction not always the best though. We even have other specifications that are using javascript, and as we evolve our library we need to take that into consideration. There's been some cross-pollination with Node and the web. Some of these examples like TextEncoder, but they haven't landed in the JS spec for some reason, maybe we should look into why they haven't landed in the JS spec even though they're applicable to multiple environments. One idea that I have had after only a couple of months of trying to be an editor is perhaps we should think of another way to document and publish our constraints for the standard library. These standards were written by Dan (thank you so much). There are some different expectations of how we use IDL, but maybe we should look at producing this new domain language for JS. And that might be a way to ease people reading the specs and quickly skim over things
 
 BFS: Built-in modules. We just had that whole thing about arrays. We've tried for years to describe built-in modules, some of us liked them but some of us don't liked them. There have also been some philosophical differences such as people wanting things to be available on the global or not.
 
@@ -401,17 +401,17 @@ AK: There's a lot of value with moving this into a separate meeting but there is
 
 (István Sebestyén)
 
-IS: Something I already wrote into the meeting notes. It's a very mechanical one regarding the editorships in the past. In 2016 we also had a very good pdf version. We have a problem with the latest pdf version of ecma262. The main format for ecma is the pdf version. But here for ECMAScript what we are doing the html version, but we still need the pdf version. The main format for TC39 is the HTML version. The PDF version created from the HTML doesn't look good. For instance, the page numbers are broken. Luckily, I have somebody in the ECMA secretary that can do the transformation but unfortunately we don't have a good tool for the transformation of html to PDF.  If someone has a tool that we can buy or that we can get; that would be a great thing. My request would be that for this edition to help with this. we are getting still a lot of requests for full downloads of the pdf version. The PDF is still the #1 standard that everyone is taking from us. Public libraries and other organizations would also like to have a good looking copy, that asked for the PDF version. So I will need some sort of help on that.
+IS: Something I already wrote into the meeting notes. It's a very mechanical one regarding the editorships in the past. In 2016 we also had a very good pdf version. We have a problem with the latest pdf version of ecma262. The main format for Ecma is the pdf version. But here for ECMAScript what we are doing the html version, but we still need the pdf version. The main format for TC39 is the HTML version. The PDF version created from the HTML doesn't look good. For instance, the page numbers are broken. Luckily, I have somebody in the Ecma secretary that can do the transformation but unfortunately we don't have a good tool for the transformation of html to PDF.  If someone has a tool that we can buy or that we can get; that would be a great thing. My request would be that for this edition to help with this. we are getting still a lot of requests for full downloads of the pdf version. The PDF is still the #1 standard that everyone is taking from us. Public libraries and other organizations would also like to have a good looking copy, that asked for the PDF version. So I will need some sort of help on that.
 
 MB: (after the meeting) What's wrong with `chrome --headless --disable-gpu --print-to-pdf 'https://tc39.github.io/ecma262/'`? Page numbers seem to work fine. There is one minor rendering issue which is patched [here](https://github.com/bterlson/ecmarkup/pull/134).
 
-IS: There are several issues regarding tc39 practices. For me they are not problems. The issues we are having here are basically that TC39 operates in a different manner than any of the other ECMA communities but this brings up issues and we have to solve it.
+IS: There are several issues regarding tc39 practices. For me they are not problems. The issues we are having here are basically that TC39 operates in a different manner than any of the other Ecma communities but this brings up issues and we have to solve it.
 
-And we are doing it with the mangagment and only to bring this to the management committee - which really belongs to them. each time they hear that there are problems, there are some people in the management who are really thinking about big problems, etc. In my opinion, this is an extremely good group with real problems we don't have to solve, to the next executive committee meetings and this is how to handle the, not the external participants that are not TC39, but for instance for one of the categories of people who are coming here, that we should make a new category of people in ECMA who have been working for 20 years, who have really shown continued support—I don't know what this special group should be called—
+And we are doing it with the mangagment and only to bring this to the management committee - which really belongs to them. each time they hear that there are problems, there are some people in the management who are really thinking about big problems, etc. In my opinion, this is an extremely good group with real problems we don't have to solve, to the next executive committee meetings and this is how to handle the, not the external participants that are not TC39, but for instance for one of the categories of people who are coming here, that we should make a new category of people in Ecma who have been working for 20 years, who have really shown continued support—I don't know what this special group should be called—
 
 ??: Ecma Fellows?
 
-IS: This is something that really that would be defined by the Executive committee. The only thing that they cannot do is voting and they should follow the ECMA rules. This is something we must discuss in the executive committee. How should we handle those who are not part of this organization. Babel community doesn't have any legal status, so they can't sign up as members. For an organization that doesn't have any legal status. they must follow some ... this is a dilemma - ECMA has the royalty free on one side, on the other hand, the strengths of TC39 that we are trying to reach out the the open source community like Nodejs and Babel. it s a little bit of a contradiction, and I call this an issue -- how do we solve this. 
+IS: This is something that really that would be defined by the Executive committee. The only thing that they cannot do is voting and they should follow the Ecma rules. This is something we must discuss in the executive committee. How should we handle those who are not part of this organization. Babel community doesn't have any legal status, so they can't sign up as members. For an organization that doesn't have any legal status. they must follow some ... this is a dilemma - Ecma has the royalty free on one side, on the other hand, the strengths of TC39 that we are trying to reach out the the open source community like Nodejs and Babel. it s a little bit of a contradiction, and I call this an issue -- how do we solve this. 
 
 BT: I would like to make a comment about the PDF. For those who aren't aware of the history, we used to use a word document. But we're now doing development on GitHub with a html spec format. If anyone else is on the CSS working group there's a print media spec that could help with this! (Laughs...)
 
@@ -437,7 +437,7 @@ BT: I have a suggestion I can't justify spending a significant amount of effort 
 
 And now the website is now many times more usable than the PDF for finding references and highlighting things
 
-So I want to point out that there are contractors who will take your html site and produce a very nice pdf out of it. They just need to be paid money. If ECMA would be willing to put money towards this, I'll be happy to work with those people.
+So I want to point out that there are contractors who will take your html site and produce a very nice pdf out of it. They just need to be paid money. If Ecma would be willing to put money towards this, I'll be happy to work with those people.
 
 IS: Absolutely, we just want to get closer. Perhaps we get more man power, or perhaps a tool, then we can get closer (to achieving that).
 
@@ -454,7 +454,7 @@ BT: Well, what we currently have is also a best effort... (Laughs) Making a PDF 
 IS: no no, the community is happy with the current verions and I do not want to over burden anyone
 
 
-DE: thanks for your work over the years with communicating and handling the ECMA coordination with our committee's practices. Finding a right balance between ECMA sustainability and being open to a larger community.
+DE: thanks for your work over the years with communicating and handling the Ecma coordination with our committee's practices. Finding a right balance between Ecma sustainability and being open to a larger community.
 
 (applause)
 

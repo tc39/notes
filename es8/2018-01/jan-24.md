@@ -16,7 +16,7 @@ Agenda: https://github.com/tc39/agendas/blob/master/2018/01.md
 
 (Mathias Bynens)
 
- - [proposal](https://github.com/tc39/proposal-regexp-lookbehind)
+- [proposal](https://github.com/tc39/proposal-regexp-lookbehind)
 
 MB: With the updates, any objections to Stage 4?
 
@@ -31,7 +31,7 @@ MB: With the updates, any objections to Stage 4?
 
 (Mathias Bynens)
 
- - [proposal](https://github.com/tc39/proposal-regexp-unicode-property-escapes)
+- [proposal](https://github.com/tc39/proposal-regexp-unicode-property-escapes)
 
 MB: We've fixed the bugs Waldemar found in this. Any objections for Stage 4?
 
@@ -48,7 +48,7 @@ WH: I'm now happy with it.
 
 (Jordan Harband)
 
- - [proposal](https://github.com/tc39/proposal-promise-finally/)
+- [proposal](https://github.com/tc39/proposal-promise-finally/)
 
 JHD: We have tests, editor-reviewed spec PR. Asking for Stage 4. Any objections?
 
@@ -63,8 +63,8 @@ JHD: We have tests, editor-reviewed spec PR. Asking for Stage 4. Any objections?
 
 (Gabriel Isenberg)
 
- - [proposal](https://github.com/tc39/proposal-optional-chaining)
- - [slides](https://docs.google.com/presentation/d/1tAxG8y-lfMty2-qdiCAtQjD9rS8xzBe9Y4b_ti9DIMQ/edit?usp=sharing)
+- [proposal](https://github.com/tc39/proposal-optional-chaining)
+- [slides](https://docs.google.com/presentation/d/1tAxG8y-lfMty2-qdiCAtQjD9rS8xzBe9Y4b_ti9DIMQ/edit?usp=sharing)
 
 GI: proposing: obj??.prop obj??[expr] func??(...args) and some day someValue ??: defaultValue
 
@@ -183,7 +183,7 @@ JHD: I'm not specifically attached to this syntax, but developers should be able
 
 (Keith Cirkel)
 
- - [proposal](https://github.com/keithamus/proposal-array-last)
+- [proposal](https://github.com/keithamus/proposal-array-last)
 
 KCL: common footguns around array lengths: myArray[myArray.length] always gets undefined, overcooking index (idx=arr.length - 1; arr[idx-1] returns next-to-last, not last
 
@@ -438,7 +438,7 @@ ZB: any objections to stage 3?
 
 (Ron Buckton)
 
- - [proposal](https://github.com/tc39/proposal-throw-expressions)
+- [proposal](https://github.com/tc39/proposal-throw-expressions)
 
 
 RBN: for the past couple of meetings we've been discussing throw expressions, relatively small change to the spec, but pretty interesting, moving some statements over to expression forms. Allow the use of "throw" in an expression context. For required parameters, arrow function bodies, conditionals, logical, nullish coalesce
@@ -483,7 +483,7 @@ RBN: Dave and I don't think either one must obviate the other
  
  (Myles Borins)
  
- - [slides](https://docs.google.com/presentation/d/1B0csbsot4HTrk30ueYMDqd1S-nRkCiIcVXaWgtSU_0Q/edit?usp=sharing)
+- [slides](https://docs.google.com/presentation/d/1B0csbsot4HTrk30ueYMDqd1S-nRkCiIcVXaWgtSU_0Q/edit?usp=sharing)
  
 MBS: I wantd to get a pulse from the committee if this feature has a future at all, and get a feel for the different implementations we could explore, which are more interesting to the committee
 
@@ -921,7 +921,7 @@ DE: we can iterate on the wording on github
 
 (Diego Ferreiro Val, Yehuda Katz and Carido Patino)
 
- - [slides](https://docs.google.com/presentation/d/178WoBNhXBBB1M_LlSqnKEic4SD4CFYtO9Fkr9rvsHaA/view)
+- [slides](https://docs.google.com/presentation/d/178WoBNhXBBB1M_LlSqnKEic4SD4CFYtO9Fkr9rvsHaA/view)
 
 YK: purpose is to share use cases, not to propose anything for advancement
 

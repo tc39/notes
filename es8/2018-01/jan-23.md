@@ -1,7 +1,7 @@
 # January 23, 2018 Meeting Notes
 -----
 
-Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark S. Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), JF Bastien (JFB), Mattijs Hoitink (MHK) , Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagniani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
+Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark S. Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), JF Bastien (JFB), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagniani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
 
 Remote: Bradley Farias (BFS), Thomas Wood (TW), Ben Newman (BN), Rick Waldron (RW), Valerie Young (VYG), David Turissini (DTI)
 
@@ -97,7 +97,7 @@ ZB: Summary is we have good traction on a call, people not in this meeting. We d
 
 DE: This is the timebox for that.
 
- - [slides](https://docs.google.com/presentation/d/1JlVOkn21jyF4YlsxBeisfvyYKzf5AZYNUzrUeZD12CQ/edit#slide=id.g2e1d914bb7_0_47)
+- [slides](https://docs.google.com/presentation/d/1JlVOkn21jyF4YlsxBeisfvyYKzf5AZYNUzrUeZD12CQ/edit#slide=id.g2e1d914bb7_0_47)
 
 ZB: Started a 2-hour meeting, open to invited experts, got more attendees than expected, awesome. First meeting in Dec, did current workings of 402, in this meeting we reviewed proposals going to Stage 3/4. If you want to join, contact Ben and he'll put you on the list.
 
@@ -111,7 +111,7 @@ ZB: Stage 3, Segmenter, Locale, RelativeTimeFormat, Listformat, we got support f
 
 #### Conclusion/Resolution
 
- - WG will propose Intl.Locale, Intl.RelativeTimeFormat and Intl.ListFormat for Stage 3 later at this meeting
+- WG will propose Intl.Locale, Intl.RelativeTimeFormat and Intl.ListFormat for Stage 3 later at this meeting
 
 
 ## 9. ECMA404 status updates
@@ -122,7 +122,7 @@ CM: Summary - no news is good news. What they call "fast track" thru ISO has hap
 
 #### Conclusion/Resolution
 
- - ECMA404 is an ISO standard (ISO-21778)
+- ECMA404 is an ISO standard (ISO-21778)
 
 ## 10. ECMA414 status updates
 
@@ -134,7 +134,7 @@ RJE: Seems like we don't need this for future updates
 
 #### Conclusion/Resolution
 
- - No updates
+- No updates
  
 
 ## 11. Test262 status updates
@@ -280,8 +280,8 @@ DD: I support putting logo contents as CC0
 
 #### Conclusion/Resolution
 
- - Consensus on logo: yes! will adopt.
- - Trademark/license to decide later, RJE to take as action item
+- Consensus on logo: yes! will adopt.
+- Trademark/license to decide later, RJE to take as action item
 
 
 ## 13.ii.a. Making eshost workflow more accessible with jsvu
@@ -346,8 +346,8 @@ MB: Ok, maybe part of the problem is that I'm lazy, kinda. ^_^ Best solution wou
 
 ## 13.ii.b. Make ECMAScript a syntactic superset of JSON for Stage 3
 
- - [proposal](https://github.com/tc39/proposal-json-superset)
- - [slides](https://docs.google.com/presentation/d/1eDW_u6dI8iFUx77m8rjRbF6C0grLZuVFJmJq620qD-I/edit)
+- [proposal](https://github.com/tc39/proposal-json-superset)
+- [slides](https://docs.google.com/presentation/d/1eDW_u6dI8iFUx77m8rjRbF6C0grLZuVFJmJq620qD-I/edit)
 
 MB: Back onto ECMAScript being a syntactic superset of JSON, a proposal by Richard Gibson.
 
@@ -359,15 +359,15 @@ WH: I also have reviewed this and I approve it
 
 #### Conclusion/Resolution
 
- - Stage 3
+- Stage 3
 
 
 ## 13.ii.c. {BigInt,Number}.fromString for Stage 1
 
 (Mathias Bynens)
 
- - [proposal]( https://github.com/mathiasbynens/proposal-number-fromstring )
- - [slides](https://docs.google.com/presentation/d/1Cs3FcclB_Vsb3YqU7dLRbsBqLmn7Bb4qEYs7bX8lOsQ/edit)
+- [proposal]( https://github.com/mathiasbynens/proposal-number-fromstring )
+- [slides](https://docs.google.com/presentation/d/1Cs3FcclB_Vsb3YqU7dLRbsBqLmn7Bb4qEYs7bX8lOsQ/edit)
 
 MB: BigInt used to have .parseInt(), but it was removed because parseInt behavior is weird. So conclusion was to remove it and come up with something more sensible. This is that proposal.
 
@@ -399,7 +399,7 @@ MB: I have a slide on that later, and the answer is no.
 
 (slides)
 
-MB: We can avoid all these problems in fromString by throwing an error for anything that can't be produced by toString.l
+MB: We can avoid all these problems in fromString by throwing an error for anything that can't be produced by toString.
 
 WH: You don't want to throw an error for everything that can't be produced by toString, e.g., "1" or "1.5" can be produced by toString, but "1.0" or "1.50" will never be produced.
 
@@ -463,7 +463,7 @@ MB: Any suggestions on what the guiding principle should be, let us know. [The l
 
 (Sebastian Markbåge)
 
- - [proposal](https://github.com/tc39/proposal-string-left-right-trim/)
+- [proposal](https://github.com/tc39/proposal-string-left-right-trim/)
 
 SM: We're also adding a new property to string.prototype with ..
 
@@ -688,7 +688,7 @@ DE: i hear no objections. Is there anything I should do beyond the reflector thr
 
 (Domenic Denicola)
 
- - [proposal](https://github.com/tc39/ecma262/pull/1066)
+- [proposal](https://github.com/tc39/ecma262/pull/1066)
 
 DD: been pretty stable since changes in stage 3, shipping in at least two browsers, I've submitted PR, BT is reviewing notes
 
@@ -764,7 +764,7 @@ JHD: let's discuss further in the PR
 
 (Mathias Bynens)
 
- - [proposal](https://github.com/tc39/proposal-regexp-lookbehind)
+- [proposal](https://github.com/tc39/proposal-regexp-lookbehind)
 
 MB: I want to give a status update on the RegExp proposals. I’ll present the first half today, but I’d like to defer the rest until tomorrow. You’ll see why in a minute.
 
@@ -802,7 +802,7 @@ MB: Noted. I'll work with Waldemar to fix the spec issues and bring this up agai
 
 (Jordan Harband)
 
- - [proposal](https://github.com/tc39/proposal-promise-finally/)
+- [proposal](https://github.com/tc39/proposal-promise-finally/)
 
 JHD: Promise.prototype.finally is stage 3, shipped in Firefox and chrome and Webkit nightly, two polyfill implementations. Hoping to get committee approval for stage 4 (pending approval of PR). There are already test262 tests written and merged.
 
@@ -823,7 +823,7 @@ JHD: sounds like no objections, except it might not fit into BT's schedule. Will
 
 (Jordan Harband)
 
- - [proposal](https://github.com/tc39/proposal-string-matchall)
+- [proposal](https://github.com/tc39/proposal-string-matchall)
 
 JHD: was originally hoping to ask for stage 3, but issues raised. when you pass a string argument, the orig semantics was to convert it into a regexp like the way match does. I was discussing with Dan about making that regexp automatically have the Global flag, but two other questions came up. Should that regexp be in full unicode mode? Bigger question is the replaceAll proposal from the last meeting was looking for ways to do exact string searches in the absence of a regexp.escape function, if you pass a string into matchall, instead of a regexp lookup, could it do a substring search. My initial reaction was that solving that one API method at a time wasn't great, doubles spec complexity, need a different well-known symbol to handle exact string searches. Wanted the committee's thoughts on how to pass an exact string in here. Committee rejected my original proposal to throw exception. Not asking for stage 3.
 
@@ -876,7 +876,7 @@ JHD: any objections to moving this to stage 3?
 
 (Michael Ficarra)
 
- - [proposal](https://github.com/tc39/Function-prototype-toString-revision)
+- [proposal](https://github.com/tc39/Function-prototype-toString-revision)
 
 MF: has been sitting in stage 3 for a while, spec text hasn't changed for a year. Now have multiple implementations..
 
@@ -908,7 +908,7 @@ MF: ok, thanks for feedback
 
 (Michael Ficarra)
 
- - [proposal](https://github.com/tc39/proposal-Symbol-description)
+- [proposal](https://github.com/tc39/proposal-Symbol-description)
 
 MF: currently stage 1, looking for stage 2 and reviewers. Has full spec text, general idea is that you can give a symbol ..
 
@@ -963,7 +963,7 @@ KCL: me too
 
 (Justin Fagnani)
 
- - [proposal](https://gist.github.com/justinfagnani/9502b5f46599f474a67a5fce2f7af910)
+- [proposal](https://gist.github.com/justinfagnani/9502b5f46599f474a67a5fce2f7af910)
 
 JFI: I'm going to propose a mixin idea. This my first time ,here, not sure of the process, wanted to spark a discussion. I'm at google, use mixins a lot. Want to inspire a champion or find a mentor for this. Maybe this is stage 0. Non goal: get agreement on any specifics. Not as important. Goals: pave existing cowpaths for mixins, improve their ergonomics, improve static analysis, leverage classes, be compatible with existing APIs.
 
@@ -1124,7 +1124,7 @@ RJE: let's talk about this offline and revisit it later
 (Mathias Bynens)
 
  - [PR](https://github.com/tc39/ecma262/pull/1069)
- - [slides](https://docs.google.com/presentation/d/1SWf5ZN2C-CFTde0SBdo01eZKwcYPAJUfPTCZf54VCB8/edit)
+- [slides](https://docs.google.com/presentation/d/1SWf5ZN2C-CFTde0SBdo01eZKwcYPAJUfPTCZf54VCB8/edit)
 
 MB: array spread and object spread aren't consistent, should we fix it? Option 1: leave it alone, live with the inconsistency. 2: make object spread match array spread: throw when spreading null or undefined (explicit and helps find bugs, but still not consistent with Object.assign and similar userland utilities)
 
@@ -1337,7 +1337,7 @@ MM: I'm up for stage-1 but not for doing both.
 
 (Sathya Gunasekaran)
 
- - [slides](https://docs.google.com/presentation/d/e/2PACX-1vR3U78vWdnSujZoGKR1EZOvhrIDJMcypwq3T0FY4bz-lG8LncSD_x89N2eS8anu5adviz1mhSrnf9lG/pub?start=false&loop=false&delayms=3000)
+- [slides](https://docs.google.com/presentation/d/e/2PACX-1vR3U78vWdnSujZoGKR1EZOvhrIDJMcypwq3T0FY4bz-lG8LncSD_x89N2eS8anu5adviz1mhSrnf9lG/pub?start=false&loop=false&delayms=3000)
 
 SGN: I'm championing a proposal by michael wadas, add Set.prototype.union(iterable), returns new Set with the intersection. Also Set.prototype.difference, symmetricDifference. Also all the other Array methods: filter, map, find, etc
 

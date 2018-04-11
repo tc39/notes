@@ -24,30 +24,7 @@ BT: Let's just discuss it as part of the normative PR section.
 
 ## 3. Adoption of Agenda
 
-DE: Let's timebox for 15 min.
-
-RJE: After lunch, 1pm, for the topic memory model fixes. Dan there's another issue?
-
-DE: Mike Pennisi has a topic that he wants to discuss some time in the afternoon. Needs consensus. PR needs to be in the afternoon.
-
-RJE: Tomorrow we want to do the class discussion, so it will need to be on Thursday, or later today. Decorators - where are they?
-
-RJE: After the lunch break Thursday?
-
-GI: I would like to do nullish coalescing after Optional Chaining.
-
-RJE: Any other constraints?
-
-RJE: It was suggested that we do all class related issues on Wednesday. Are there any objections to this? Dan you might know what is impacted by this.
-
-DE: Decorators and everything that's class related will be impacted.
-
-RJE: So Wednesday would be appropriated, static fields is also impacted. Classes 1.1 is as well. Ok, what else do we have that's class related?
-
-DE: Sorry there is one more: The transpiler relationship discussion that Brian and I have. I'm proposing that as a response to the classes 1.1 discussion.
-
-RJE: I see four topics, then under the category of what would be done tomorrow. 10.4.b, c and d. and 12.3.b. and anything else that is class related. Any issues with the agenda?
-
+RJE: (agenda planning)
 
 #### Conclusion/Resolution
 
@@ -85,29 +62,29 @@ IS: It would be great if we could come back to this for five minutes tomorrow.
 
 BT: There isn't much to report from last time. Editorial changes only. Where we are at right now with the spec is that we are in the midst of the royalty-free opt-out period. If you have concerns about patents, hopefully you have sent this to lawyers. In practice, I realize that this probably isn't of concern to you.
 
-IS: Two things about this. The opt out period is for two month. Final opt-out limit is June 27, which is the date of the formal approval of the standard by the ECMA GA. The latest that the opt-out period can start is April 27. I have to notify the ECMA GA about the start of the opt-out, because last year some members complained that we only announced it in TC39.
+IS: Two things about this. The opt out period is for two month. Final opt-out limit is June 27, which is the date of the formal approval of the standard by the Ecma GA. The latest that the opt-out period can start is April 27. I have to notify the Ecma GA about the start of the opt-out, because last year some members complained that we only announced it in TC39.
 
 BT: We already have it. 
 
-IS: Is this published on ECMA? Because this is what we have to do formally. GitHub unfortunately is not enough for that.
+IS: Is this published on Ecma? Because this is what we have to do formally. GitHub unfortunately is not enough for that.
 
 BT: We have it on the reflector, but let me take a look.
 
-IS: Ok, let's make sure that we communicate -- it was mentioned at the last time at the ECMA meeting that this was only circulated internally within the TC39. So, this is an action between Brian and the ECMA Secretariat.
+IS: Ok, let's make sure that we communicate -- it was mentioned at the last time at the Ecma meeting that this was only circulated internally within the TC39. So, this is an action between Brian and the Ecma Secretariat.
 
-BT: The next step in the next meeting in NYC is that we will be making one of the rare votes that we make for the ratification of ECMA262 2018 -- so be prepared in May to cast your vote for your company regarding if you support the new edition. We have never had a vote against it, but we've had abstentions in the past.
+BT: The next step in the next meeting in NYC is that we will be making one of the rare votes that we make for the ratification of ECMA-262 2018 -- so be prepared in May to cast your vote for your company regarding if you support the new edition. We have never had a vote against it, but we've had abstentions in the past.
 
-IS: Officially, we need to publish the draft standards two months before the GA approval. We normally assume and we get it so that TCs formally approve such standards already by that time. So if you say in May that is very unusual in ECMA, then it is perhaps just a conditional publishing for the GA; TC39 then need to give the yes or no, and depending on that, the standard will stand up for GA approval as it is, or be withdrawn from approval in the GA.
+IS: Officially, we need to publish the draft standards two months before the GA approval. We normally assume and we get it so that TCs formally approve such standards already by that time. So if you say in May that is very unusual in Ecma, then it is perhaps just a conditional publishing for the GA; TC39 then need to give the yes or no, and depending on that, the standard will stand up for GA approval as it is, or be withdrawn from approval in the GA.
 
 BT: Well we haven't finished the opt-out period.
 
-IS: These two things are actually separate, and we can handle them separately. The document needs to be published two months before the ECMA General Assembly.
+IS: These two things are actually separate, and we can handle them separately. The document needs to be published two months before the Ecma General Assembly.
 
 BT: So you are recommending that we vote today?
 
 IS: Yes, because editorial changes between now and June 27 are okay. But no major technical changes.
 
-BT: We have a stable document for some times already. If it works better for ECMA, we can ratify at this meeting.
+BT: We have a stable document for some times already. If it works better for Ecma, we can ratify at this meeting.
 
 IS: That would be good. My second question is, do we have two standards: ECMA-262 and ECMA-402? For both of these standards, you need official approval which is separate from the opt-out period.
 
@@ -121,14 +98,14 @@ BT: Over the last couple of years, I realized that editorship is a big job. It i
 
 BT: They have been helping somewhat on the issues already. Do we have anyone to do 402 updates?
 
-IS: (I DID NOT SAY IT IN THE MEETING, NOT TO WASTE TIME, BUT IMPORTANT): The ECMA-262 and ECMA-402 are the only standards in ECMA in HTML main format. The PDF Version for ECMA-262 - which is the main ECMA publication format, e.g. for downloading, going to national archives etc. is also important, not only the HTML version. Until ECMA-262 (2016) version, the PDF version looked good. The latest version not anymore. E.g. no page numbers, No proper formatting at page breaks, etc. We need the Editors' help with that. The ECMA Secretariat can help, but we need a good tool for HTML-to- PDF conversion... Please to help us to solve this issue.
+IS: (I DID NOT SAY IT IN THE MEETING, NOT TO WASTE TIME, BUT IMPORTANT): The ECMA-262 and ECMA-402 are the only standards in Ecma in HTML main format. The PDF Version for ECMA-262 - which is the main Ecma publication format, e.g. for downloading, going to national archives etc. is also important, not only the HTML version. Until ECMA-262 (2016) version, the PDF version looked good. The latest version not anymore. E.g. no page numbers, No proper formatting at page breaks, etc. We need the Editors' help with that. The Ecma Secretariat can help, but we need a good tool for HTML-to- PDF conversion... Please to help us to solve this issue.
 
 DE: I'll do ECMA-402 updates, the main features are PluralRules and hourCycle, we had no complaints so far. There are four Stage 3 proposals for ECMA-402, and we are having monthly meetings to discuss ECMA-402. Please let me know if you are interested in attending.
-( https://www.ECMA-international.org/publications/standards/ECMA-402.htm )
+(https://www.ECMA-international.org/publications/standards/ECMA-402.htm)
 
 RJE: ECMA-404? 
 
-IS: ECMA-404 as far as I understood is completed. We have finished the fast track approval and this is now a stable standard so it will now last "forever". So at the moment, the next one - 414 - can I say something about that? It will make the ECMA fast track proposals not necessary, as in the past. As you know, we have had problems in the past with fast track approvals. Yearly cycles are simply too fast for the process. Once 414 is approved, it will never change. Once it is approved, it will contain non-dated references to 262 and 402 that mean that it will still be working with 414 - as always the last version of ECMA-262 and ECMA-402 will count. From Japan, we had a negative vote in the DIS vote which we took into account for the final FDIS vote, which is finally already out. It is a 2 months vote. Maybe at the end of (the 28th of) April, will be the termination date (I do not remember out of my head the exact date). Since everyone else approved, the DIS already this will probably go forward as ISO/IEC Standard. So this is the status. It is now in ISO in the final balloting process and will be done in a month.
+IS: ECMA-404 as far as I understood is completed. We have finished the fast track approval and this is now a stable standard so it will now last "forever". So at the moment, the next one - 414 - can I say something about that? It will make the Ecma fast track proposals not necessary, as in the past. As you know, we have had problems in the past with fast track approvals. Yearly cycles are simply too fast for the process. Once 414 is approved, it will never change. Once it is approved, it will contain non-dated references to 262 and 402 that mean that it will still be working with 414 - as always the last version of ECMA-262 and ECMA-402 will count. From Japan, we had a negative vote in the DIS vote which we took into account for the final FDIS vote, which is finally already out. It is a 2 months vote. Maybe at the end of (the 28th of) April, will be the termination date (I do not remember out of my head the exact date). Since everyone else approved, the DIS already this will probably go forward as ISO/IEC Standard. So this is the status. It is now in ISO in the final balloting process and will be done in a month.
 
 RJE: Test262 update?
 
@@ -401,17 +378,17 @@ AK: There's a lot of value with moving this into a separate meeting, but there i
 
 (István Sebestyén)
 
-IS: Something I already wrote into the meeting notes. It's a very mechanical one regarding the editorships in the past. In 2016 we also had a very good PDF version. We have a problem with the latest PDF version of ECMA262. The main format for ECMA is the PDF version. But here for ECMAScript what we are doing the HTML version, but we still need the PDF version. The main format for TC39 is the HTML version. The PDF version created from the HTML doesn't look good. For instance, the page numbers are broken. Luckily, I have somebody in the Ecma secretary that can do the transformation but unfortunately we don't have a good tool for the transformation of HTML to PDF.  If someone has a tool that we can buy or that we can get; that would be a great thing. My request would be that for this edition to help with this. We are getting still a lot of requests for full downloads of the PDF version. The PDF is still the #1 standard that everyone is taking from us. Public libraries and other organizations would also like to have a good looking copy, that asked for the PDF version. So I will need some sort of help on that.
+IS: Something I already wrote into the meeting notes. It's a very mechanical one regarding the editorships in the past. In 2016 we also had a very good PDF version. We have a problem with the latest PDF version of ECMA-262. The main format for Ecma is the PDF version. But here for ECMAScript what we are doing the HTML version, but we still need the PDF version. The main format for TC39 is the HTML version. The PDF version created from the HTML doesn't look good. For instance, the page numbers are broken. Luckily, I have somebody in the Ecma secretary that can do the transformation but unfortunately we don't have a good tool for the transformation of HTML to PDF.  If someone has a tool that we can buy or that we can get; that would be a great thing. My request would be that for this edition to help with this. We are getting still a lot of requests for full downloads of the PDF version. The PDF is still the #1 standard that everyone is taking from us. Public libraries and other organizations would also like to have a good looking copy, that asked for the PDF version. So I will need some sort of help on that.
 
 MB: (after the meeting) What's wrong with `chrome --headless --disable-gpu --print-to-pdf 'https://tc39.github.io/ecma262/'`? Page numbers seem to work fine. There is one minor rendering issue which is patched [here](https://github.com/bterlson/ecmarkup/pull/134).
 
-IS: There are several issues regarding TC39 practices. For me, they are not problems. The issues we are having here are basically that TC39 operates in a different manner than any of the other ECMA communities, but this brings up issues and we have to solve it.
+IS: There are several issues regarding TC39 practices. For me, they are not problems. The issues we are having here are basically that TC39 operates in a different manner than any of the other Ecma communities, but this brings up issues and we have to solve it.
 
-And we are doing it with the mangagment and only to bring this to the management committee - which really belongs to them. Each time they hear that there are problems, there are some people in the management who are really thinking about big problems, etc. In my opinion, this is an extremely good group with real problems we don't have to solve. To the next executive committee meetings and this is how to handle the, not the external participants that are not TC39, but for instance for one of the categories of people who are coming here, that we should make a new category of people in ECMA who have been working for 20 years, who have really shown continued support—I don't know what this special group should be called—
+And we are doing it with the mangagment and only to bring this to the management committee - which really belongs to them. Each time they hear that there are problems, there are some people in the management who are really thinking about big problems, etc. In my opinion, this is an extremely good group with real problems we don't have to solve. To the next executive committee meetings and this is how to handle the, not the external participants that are not TC39, but for instance for one of the categories of people who are coming here, that we should make a new category of people in Ecma who have been working for 20 years, who have really shown continued support—I don't know what this special group should be called—
 
-??: ECMA Fellows?
+??: Ecma Fellows?
 
-IS: This is something that really that would be defined by the Executive committee. The only thing that they cannot do is voting and they should follow the ECMA rules. This is something we must discuss in the executive committee. How should we handle those who are not part of this organization? Babel community doesn't have any legal status, so they can't sign up as members. For an organization that doesn't have any legal status. they must follow some ... this is a dilemma - ECMA has the royalty free on one side, on the other hand, the strengths of TC39 that we are trying to reach out the the open source community like Nodes and Babel. It's a little bit of a contradiction, and I call this an issue -- how do we solve this? 
+IS: This is something that really that would be defined by the Executive committee. The only thing that they cannot do is voting and they should follow the Ecma rules. This is something we must discuss in the executive committee. How should we handle those who are not part of this organization? Babel community doesn't have any legal status, so they can't sign up as members. For an organization that doesn't have any legal status. they must follow some ... this is a dilemma - Ecma has the royalty free on one side, on the other hand, the strengths of TC39 that we are trying to reach out the the open source community like Nodes and Babel. It's a little bit of a contradiction, and I call this an issue -- how do we solve this? 
 
 BT: I would like to make a comment about the PDF. For those who aren't aware of the history, we used to use a word document. But we're now doing development on GitHub with a HTML spec format. If anyone else is on the CSS working group, there's a print media spec that could help with this! (Laughs...)
 
@@ -437,7 +414,7 @@ BT: I have a suggestion, I can't justify spending a significant amount of effort
 
 And now the website is many times more usable than the PDF for finding references and highlighting things.
 
-So, I want to point out that there are contractors who will take your HTML site and produce a very nice PDF out of it. They just need to be paid money. If ECMA would be willing to put money towards this, I'll be happy to work with those people.
+So, I want to point out that there are contractors who will take your HTML site and produce a very nice PDF out of it. They just need to be paid money. If Ecma would be willing to put money towards this, I'll be happy to work with those people.
 
 IS: Absolutely, we just want to get closer. Perhaps, we get more man power, or perhaps a tool, then we can get closer (to achieving that).
 
@@ -454,7 +431,7 @@ BT: Well, what we currently have is also a best effort... (Laughs) Making a PDF 
 IS: No no, the community is happy with the current versions and I do not want to over burden anyone.
 
 
-DE: Thanks for your work over the years with communicating and handling the ECMA coordination with our committee's practices. Finding a right balance between ECMA sustainability and being open to a larger community.
+DE: Thanks for your work over the years with communicating and handling the Ecma coordination with our committee's practices. Finding a right balance between Ecma sustainability and being open to a larger community.
 
 #### Conclusion/Resolution
 

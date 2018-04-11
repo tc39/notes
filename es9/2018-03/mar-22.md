@@ -91,8 +91,6 @@ KM: It execute more or less like a script, it's an assignement and puts flatten 
 
 JHD: If it not an import, there's no symbol. I wouldn't be ergonomic to use. If you're importing a function with a receiver that you can't use, that would be a less ergonimic. Either method syntax is critical, or the static Array.flatten is a better option than importing it. We don't have built modules, so that would be a huge thing. I would love it that we could just agree, when we have builtin modules we can just decide about ???.
 
-RJE: KG what do you think it's the best way the proceed from that?
-
 KG: If we stop now, the champions will pick a name (it will not be smoosh). If someone doesn't want to outcome should speak now please.
 
 BT: Don't just pick a name. Any name can be contingent on approval of the TC39.
@@ -231,8 +229,6 @@ YK: Are you asking for stage 1?
 
 SGN: Yes
 
-RJE: the queue, I believe, Is empty. Any objections to stage 1?
-
 #### Conclusion/Resolution
 
 - Stage 1
@@ -350,8 +346,6 @@ Maybe they would be happier if there were multple different ones and you could o
 
 DE: I'd rather come to a single answer on this question. "We are having a debate, so let's put in a menu option so users can decide the answer" is kind of an antipattern. I don't think we have a use case for this kind of things.
 
-RJE: We've got 1 more left, Waldamer?
-
 WH: In my mind there are only two ways of converting a finite Number to BigInt that make sense:
     * One is if you have an integral number, convert to a mathematically equal BigInt, and throw if you have a fractional part.
     * Another acceptable choice is round finite Numbers towards 0 and return the mathematically equal BigInt.
@@ -423,11 +417,7 @@ AK: lets discuss
 
 DT: we can clear the queu
 
-RJE: you have 10 minutes...
-
 DT: ok queue
-
-RJE: YK??
 
 YK: first of all I just want to agree that the WebAssembly use case ??? I create some object in wasm and I would like to leak it into JS as a GCable object, but when the Gc cleans up I want to clean up the wasm side.
 
@@ -467,8 +457,6 @@ implementers who were present on the phone call expressed that this was somethin
 AK: I jsut wanted to agress with MM overveiw, the WebAsembly case became more and more objvious that's become a problem. THere's a lot of issue that's going into, both when you are using wasm in js with the current memory model and the dangers of using a lot of memory which we at least are looking at -- reducing memory usage overall
 this seems like a good fit for improvement
 
-RJE: WH?
-
 DT: there hvae also been some changes in the api to more strongly stay away 
 
 TST: WH, I don't think that should be on the queue
@@ -482,8 +470,6 @@ I want to have wasm object in js that are GC'able the only thing I can do right 
 
 MM: Just one more clarification, part of the reason why people were ok living with the cycle problem for now is  we do expect that there will be a wasm gc in the futture; it uses heap allocated and uses the garbage collector of the embedder. thats one graph that it sees in both the js and wasm gc objects.
 
-RJE: any objective to extend during the lunch?
-
 -- extended
 
 SYG: my question is ??: it seems like the anwser to ??? it seems the be yes. With respect to finalization, what is the standard what can we tell users that they can rely on
@@ -491,8 +477,6 @@ SYG: my question is ??: it seems like the anwser to ??? it seems the be yes. Wit
 DT: I don't want to anwser that. This is a stage 2 discussion. 
 
 MM: I have a very short answer. an implementation taht never garbage collects in the absense of weak reference and that never pops a stack, it sill conforms to, the spec doesn't ever talk about finite memory or memory exhaustion.
-
-RJE: DH?
 
 DH: I like this, ive always been in favor of weak refs. the thing that I got stuck on when I first started n this ...? program tends on rely on surprising bugs. and then this idea of doing turn based collection is very clever and fits js very well. but what I dont have an answer to one qustion which is sure on the main thread the javascript way of doing things is short turns but in workers you can have unbounded threads doing long turns if you ahve this weak ref, that by definition never be collected (sven: unsure) they just become strong references in an unbound? turn. is it that we should never use weak refs on a thread, or ...  what's the anwser for a language that ahve both weak-ref and unbounded turn?
 
@@ -514,8 +498,6 @@ WH: That's not actually a weak reference. It only supports finalization.
 
 DT: it has a weak reference you just can't de reference it. This doesn't do weak reference in long turns so this doesn't satisfy all cases. We have an addijtional solution for wasm, we haven't look if it would work in js
 
-RJE: ok ??
-
 TST: I want to explcitily support moving this to stage 2, i'm fairly confident the proposal as is right now, the things that it touches, the usecases that are important and addresses them sufficiently well. and the space for use cases is known well, and there are plossible solution in there. I'm very confident that we're going to find that.
 
 DH: (quick reply) im prepared to believe that, my main concern is ecosystem effects. you can only use this api one way, if you are in the context of the main thread or in the context in the worker.
@@ -524,8 +506,6 @@ I'm just saying that anyway that forks the behavior is a community smell, it's n
 TST: I strongly believe that's not a case we're going into.
 
 DT: I don't like the name either
-
-RJE: no objections on stage-2
 
 #### Conclusion/Resolution
 
@@ -545,8 +525,6 @@ MM: What is the unwelcome grammar surprise?
 
 WH: I filed the bug. I'll show you offline. (The bug is https://github.com/tc39/proposal-optional-chaining/issues/56 )
 
-RJE: YK?
-
 YK: two comments. The first one is I appreciate we have the coffeescript corpus But I don't know how much to amplify this objection. Coffeescript was quite a different language that took quite a bit of direction from Ruby. how people do things in js is really different. I think its good for rough approximation but. the other thing is that largely for that reason I have concerns for anything with ?. because it has nothing to do with what . means in js. I think it would be confusing, I think this is already a power tool, and making a syntax that has tokens that don't match their usage in other languages is just confusing. The last thing that you kind of address, how the question mark token works with nullish collao, and later on feel regretful for what we have on nullish coallessing. We should decide together, what does question mark mean in javascript, do we want null coalescing
 
 BFS: I guess this is partially a general question. We've had inconsistnecies with syntax brought up a couple of times in this meeting, im trying to gauge. This is a generally objections to add more inconsistency in the language syntax.
@@ -565,8 +543,6 @@ BHS: That anwser my question
 
 JHD:  I think that the teachability depends strongly there being some token in front of a . or in front of a parent based on the current options I prefere the ??. ??( ??{ for the consistency reasons.
 
-RJE: Dan?
-
 DE: I might not be the most exposed to lots of javascript developers, but from conferences ive been to it seems like a lot of people are interested in this proposal. It feels really common use case, where you have some nested structure that's you're going into. This proposal doesn't really present any implementation burder. Learnability in both direction is ??? And its legitimate to talk about whether its unneccesary, but it looks like the explainer document goes through a load of common scenarios where this happens. The explainer document goes through a lot of versions. To the quetion that YK raised, this is considred together with null colleasin??? This is like class fields private and public again, where we went back and forth between proposals. 
 
 YK: I want to make it clear I did not suggest a specific process point, I don't mean to imply people did not do the work to consider cross-cutting concerns. I was nervus about advancing both proposal at the same time
@@ -583,8 +559,6 @@ GI: I was looking at the github repo before presenting today, and as far as star
 
 JRL: I would like to register my storng dislke of the ?.( --it looks like a property access It's very strange when you want to access a propery on an optionally called object (obj.method?.().prop), I posted a link to the IRC which describe it. It doesn't look like a function call anymore, it looks like a really random parenthesis. The `??(` is similar to php's ?? which is a nullish coallesing syntax. My argument against that is your linter will be able to determine what you're actually doing here. For actual membership access theres no spaces around the operator. For nullish coalescing where you could have ?? in PHP and ??: here you would have spaces around a binary operator. They look different, php would have one style of spaces are around the operator, and js has different spaces around the operator. Telling you that they are actually different operators even if they use the same symbols.
 
-RJE: WH?
-
 WH: We've gone around the block of possible syntaxes a few times already. The only one that survives is the current proposal. `??(` looks like the null coalescing operator `??` and not everyone adds spaces to their program to disambiguate the two. `??:` is not a good name for the null coalescing operator. I am not comfortable putting in a feature which depends on any particular spacing style. If you don`t like `?.`, what are you proposing that works consistently?
 
 GI: With regard to the syntax options we've gone throiugh a list of over a dosen possible candidantes. ?. is the current proposal or ?? anything else is too difficult to get through the community and committee
@@ -600,8 +574,6 @@ WH: I don't believe that `??:` will fly for nullish coalescing.
 DE: What's the divantage of that?
 
 WH: The short-circuiting operators would be `&&`, `||`, and `??:`. The colon is too weird.
-
-RJE: YK?
 
 YK; I'm ot proposing the thing ??? which is restricting the syntax, I think this proposal is fine on that front, I objecting to ?.[] and ?.() . I don't see why this is required. There are definitely some people who feel who only question It seems like many people don't want to do `??` (sven: unsure token here) now.
 
@@ -644,8 +616,6 @@ DE: To the point YK had about ??? I agree with the future proofing strategy even
 JRL: wanted to clarify the support of whitespace support, was also with ??: for null coalling, it would not be significant white space around the `??(`, it would just be whitespace the programmer see while reading.
 it doesn't change the grammar by just having the space there. The majority of programmers put spaces around binary operators (`??:`), and don't put space around property access (`fn??().prop`)That's just how the majority of programmer would have it written.
 
-RJE: Jordan?
-
 JHD: we ve been chatting in irc and it seems like some of us were not on the same page. a number of us more or less require that optional member access and optional braket access be supported. this is whywe cannot proceed wiht optional member access without optional bracket access. let's just talk about the semantics on the operators and not the syntax. It needs to be the same token, the current syntax is not somthing that I would like to see further.
 In order to avoid the conflict that JRL just talking about, could someone that's oppose to that syntax, can someone who objects to this clarify why?
 
@@ -655,11 +625,7 @@ BT: What does the note say?
 
 JHD: I know but I didn't hear that ,so the consistnace with the and and the or operator is the objection. 
 
-RJE: that's the last in the queue ???
-
 GI: so as I understand that 
-
-RJE: we have objections to both sides.
 
 BFS: I just want to clarify, are you objecting on the alternative syntax? Are you objecting to `??`?
 
@@ -710,8 +676,6 @@ DE: Wait, the proposal is triple pipe for nullish coalescing?
 WH: Let's discuss nullish coalesing first and revisit this item based on our decision there.
 
 GI: ok
-
-RJE: we are revisit that base on ???
 
 
 ## 7.iv Test262 Status Updates (15m) 
@@ -766,16 +730,10 @@ Eshost Updates
 * SharedArrayBuffer and Atomics can now be tested in the plaform agnostic toolkit. Test harness now support agents do to contribution sot Eshost
   * Contribution from Rick Waldron and Amal Hussien
 
-RJE: Any questions? comments?
-
 BT: since we have a bunch of new folk in the room I think it would begood to call out that test262 to get practice with spec reading skills and a lot of  sort of disciplines and work that go into the committe
 so if you a re looking for a good place to make contributions to the committee. test 262 is a good place to do that. I also want to thank the people that worked on ES host. Theres been a lot of really awesome changes there. for the new people who are here , eshost is a way to run a script across a lot of engins at the same time. its a good way to get an idea of how the same script runs across several implementations.
 
-RJE: Thank you BT, anybody else?
-
-DE: I just wanted to say im really happy that you've joined the test262 team valarie, this allows the communtee to roll out new feature and ??? across many implementation. This is just very core work that you're working on, and thank you very much.
-
-RJE: Thank you Valerie. Leo while we have you there was an issue pending on ??. There is an issue pending from JRL.
+DE: I just wanted to say im really happy that you've joined the test262 team valarie, this allows the communtee to roll out new feature and ??? across many implementation. This is just very core work that you're working on, and thank you very much.??. There is an issue pending from JRL.
 
 LBR: I also have Mike trying to join the call
 
@@ -800,8 +758,6 @@ WH: If no one else objects, you won't object either?
 
 LBR: if im the only one then I will not block. if tc39 wants this then its ok for. but its really good to talk about this. It's really good ??? as a warming, because we might end creating this while lot of complexity. When we had this 1js thing, I think it's what we all want.
 
-RJE: YK??
-
 YK: I just want to say that I appreciate that you took seriously what I said yesterday.
 
 JRL: yes, this proposal can not be moved forward if null coallsing isn't ready.
@@ -820,8 +776,6 @@ AK: Ok I see
 
 DH: I don't actually buy that's not a complexity budget because it does introduce a new hazard into the language without reducing the complexity budget. I just want to be clear that the issue with these operators, unless you stricly use booleans on both sides, you are under the risk of bugs.The reason why im withdrawing my objection is under the assumption that we have something like ??= for defaulting situations use the defaulting situation. but to me that demonstrates that the value of this is very very minimal. its nice to hve symmetry but I think it will be important for us, that's not a good thing that recommending people to use ???
 
-RJE: Any objections for stage 1?
-
 ## conclusion/ Resolution
 
 - stage 1
@@ -834,26 +788,22 @@ RJE: Any objections for stage 1?
 [Prior discussion](https://bugs.ecmascript.org/show_bug.cgi?id=4243)
 [slides](https://jugglinmike.github.io/presentations/2018/tc39-fn-name)
 
-MP: Thanks for having me today. I've been working to improve Test262 to better support consumption by JavaScript parsers. I stumbled on a contentious question: is the BindingIdentifier in function expressions and declarations part of "function code"? In ECMA 2017, you see that no, it does not include the binding identifier, but if you were to refer to the implementations, you would have a different story. Most of them include the binding identifier when enforcing strict mode restrictions. So, the initial question would.. well maybe you would say the implementations are wrong and we should change them. That may seem a bit presumptuous of me. I'd like to point out that by enforcing the current spec text, we would actually be lifting restrictions. So it's always controversial to change running code. but in this case, the risk of web incompatabilities is very low. However, there's a third alternative that's worth considering. The way that function declaration affect the surrounding environment record differs from the way function expressions affect the environment record. Since the BindingIdentifier of a function declaration creates an entry in the outer environment record, the strictness of the function body doesn't seem particularly relevant. On the other hand, the BindingIdentifier of a function expression creates an entry within the function body, so the strictness has more bearing in that case. The third alternative I'm offering is to extend the definition to say that function code includes the BindingIdentifier only for function expressions. So thats it in a nutshell, this is a pretty self contained issue, so I just want to give you an overview of the options we have on the table. The issue I'm seeking consensus on is how we treat these pieces of code. Is anyone seeing a value in changing the spec?
+MP: Thanks for having me today. I've been working to improve Test262 to better support consumption by JavaScript parsers. I stumbled on a contentious question: is the BindingIdentifier in function expressions and declarations part of "function code"? In ECMA-262 2017, you see that no, it does not include the binding identifier, but if you were to refer to the implementations, you would have a different story. Most of them include the binding identifier when enforcing strict mode restrictions. So, the initial question would.. well maybe you would say the implementations are wrong and we should change them. That may seem a bit presumptuous of me. I'd like to point out that by enforcing the current spec text, we would actually be lifting restrictions. So it's always controversial to change running code. but in this case, the risk of web incompatabilities is very low. However, there's a third alternative that's worth considering. The way that function declaration affect the surrounding environment record differs from the way function expressions affect the environment record. Since the BindingIdentifier of a function declaration creates an entry in the outer environment record, the strictness of the function body doesn't seem particularly relevant. On the other hand, the BindingIdentifier of a function expression creates an entry within the function body, so the strictness has more bearing in that case. The third alternative I'm offering is to extend the definition to say that function code includes the BindingIdentifier only for function expressions. So thats it in a nutshell, this is a pretty self contained issue, so I just want to give you an overview of the options we have on the table. The issue I'm seeking consensus on is how we treat these pieces of code. Is anyone seeing a value in changing the spec?
 
 (Participants in the following discussion reference the following table)
 
-                                           // ES2017 | Implementations | Proposal
-                                           // -------|-----------------|------------
-    function static() { 'use strict'; }    // valid  | SyntaxError     | valid
-    (function static() { 'use strict'; }); // valid  | SyntaxError     | SyntaxError
+ES2017 | Implementations | Proposal
+-------|-----------------|------------
+function static() { 'use strict'; }    // valid  | SyntaxError     | valid
+(function static() { 'use strict'; }); // valid  | SyntaxError     | SyntaxError
 
 KG: I have been discussed with you, I endorse Mike's proposal, but I just wanted to say that I care more about consistency between the specificatoin and the implementation. Going back to the BugZilla thread, this is an issue for me in maintaining the parser tests. Currently, there's an open issue, that's kind of silly when no implementations matches with the spec. I think the most natural is what Mike has proposed, but I would appreciate if the committee is picking any of the options today.
-
-RJE: MM?
 
 MM: I strongly feel like the middle column what implementations are currently doing now is the right answer, the right column it has an elegance that only a deep language lawyer would ever appreciate. For a normal programmer both of this lines of code are just confusing. The only reason someone would like to take the first, static is not reserved in sloppy mode. Rejecting the code that's not ??? and to lead people to not ??? The third column which is splitting a hair that no one will understand is not doing our end users a favour.
 
 DH: Just as a data point I do not understand it
 
 MM: would you find the middle column understandable? It suprised me when It was raised. What I thought the spec said is the middle column
-
-RJE: WH?
 
 WH: So now that I actually understand this proposal, it kind of makes sense to me. I had read the proposed PR and couldn't make heads of tails out of it. Could anybody tell me what this sentence means: "Function code includes the BindingIdentifier of function expressions because of the effect that the identifier has on the lexical environment of such functions"?
 
@@ -885,8 +835,6 @@ MM: Since the implementation are already doing this I don't think it matterns.
 
 AK: There are a lot of JS users that care about this.
 
-RJE: im hearing that we let this slide for a bit
-
 BT: No we are approving the spec change
 
 KG: We are not approving _THIS_ spec change
@@ -898,8 +846,6 @@ KMR: are we doing some thing about ???
 KG: No that's going to remain valid.
 
 ** multiple conversations **
-
-RJE: We are over time, can we have a summarize
 
 BT: I think the question is ???
 
@@ -917,15 +863,9 @@ KG: So consensus on middle column?
 
 BT: And we'll interate on the text spec in the PR 
 
-RJE: So we're done with this topic.
-
 ?? Thanks folks
 
-RJE: Lets take a 10 minute break
-
 BT: are we going to get to pipeline?
-
-RJE: Maybe, Maybe not
 
 #### Conclusion/Resolution
  
@@ -933,11 +873,12 @@ RJE: Maybe, Maybe not
 - Mike will follow up with a change for his patch
 
 
-## nullish-coallsing for stage -2
+## 10.ii.f Nullish coalescing for stage 2
 (Gabriel Isenberg) 
 
-[PR](https://github.com/tc39/proposal-nullish-coalescing)
-[slides](https://docs.google.com/presentation/d/1vRiLFVYOXrKrqCxe-xEAkhAEaWXAdfZ0h8MPAIQ6mtc/edit#slide=id.p)
+- [explainer](https://github.com/tc39/proposal-nullish-coalescing)
+- [proposal](https://tc39.github.io/proposal-nullish-coalescing/)
+- [slides](https://docs.google.com/presentation/d/1vRiLFVYOXrKrqCxe-xEAkhAEaWXAdfZ0h8MPAIQ6mtc/edit#slide=id.p)
 
 GI: Its an operator that provides some value. The rational is that the current syntax is ?? and that can provide surprising results. The current status is initial spec text and we're at stage 1
 
@@ -967,13 +908,11 @@ BFS: Yes, I'd want the example to evaluate to 0.
 
 JRL: Returning 0 is also my intuition
 
-GI: So the developer intuition in the room matches giving lower precedence than ||
+GI: So the developer intuition in the room matches giving lower precedence than `||`
 
 WH: Or making the operators all right associative, which would be a transparent language for the language.
 
 JRL: Making this right associative would be really bad for ASTs and Babel
-
-RJE: YK?
 
 YK: there's something interesting about what should be truthy for this operator, I think its interesting in at least Ruby which just has false and nil.
 I don't know what to say about that, maybe null undefined and false is fine.
@@ -997,7 +936,7 @@ DE: it is left associated
 
 WH: Zero is truthy so you never evaluate the `null`.
 
-JHD: So you're saying the short circuiting would be such that it would never hit the || 7?
+JHD: So you're saying the short circuiting would be such that it would never hit the `|| 7`?
 
 GI: what I want to spend a little time on is the syntax. would everyone be ok with the three token as a syntax.
 
@@ -1008,8 +947,6 @@ GI: So the fourth bullet point on this slide
 DH: I don't like it very much. These are just a super-cross-cutting collection of these proposals. we would have to deal with it as a collection. I dont see why we deal with the m seperately
 
 GI: That's fair
-
-RJE: YK?
 
 YK: I agree with what everyone has said. you shouldn't feel stuck I think three is enough in the air so that you can ???????
 It seems like theres some desire to do triple pipe
@@ -1022,11 +959,7 @@ WH: I cringe at treating just undefined, null, and false as falsy values here. I
 
 YK: there is a use case for double type. boolean is always what you mean. ?? I dont know what to say about that other than, I think that if you tryed to use that it wouldnt work
 
-RJE: RB are you there?
-
 RBN: one issue in the issue tracker is ?: and I know its considered to be ?? There are a number of languags that use ?: as null coales.e. im personally more favor in ???
-
-RJE: nothing else in the queue, so we done. We have appro 45min left.
 
 ** discussing the agenda **
 
@@ -1081,8 +1014,6 @@ please let me know if you are interested in championing that
 - [proposal](https://github.com/tc39/proposal-pipeline-operator/)
 - [slides](https://docs.google.com/presentation/d/1eFFRK1wLIazIuK0F6fY974OIDvvWXS890XAMB59PUBA/edit#slide=id.p)
 
-RJE: Sounds like we've got 40 mins for pipeline..
-
 DE: we've discussed the pipeline operator before. Rather that having nested function calls you use a pipeline operators. A nice thing about the pipeline operator is that for this usecase today you would use method chaining. It's easier to reason about the flow of data in nested expressions and there's less indentation. A lot of programmers view what you would see at the top here as not even a feasable option. A lot of programmers view deeply nested expression as unreadable. Giving the chaining style is useful instead of using variable names. We actually have a few parallel investigations of pipeline operators. Given that this is purely syntactic sugar, I thought we should make the right choice for the syntax. This isnt something like BigInt where we can reason about, we're really thinking about erganomics. We're really thinking about ergonomics. They way we get better ergonomics is with user feedback. We're trying 3 different proposals. We're trying the minimal proposal called the "smart pipeline" proposal. We're also working on the F# pipeline proposal. And there's a minimal proposal. Both of them are collaborating together on explainer texts and babel transforms. Sometimes in this room, discussing proposal alternatives can seem contentious, but these two seem to have formed a good working relationship around comparing the alternatives. Minimal Proposal: Arrow functions require parenthesis due to complicated grammar issues. Not requiring the parenthesis causes a SyntaxError. If you use a property access in the pipleline, the receiver of the propery access is used as the `this` context. We've also talked about async/await intergration. This minimal proposal bans await, so later proposals can use it. So for this there's explainer and specification written. It's at stage 1 presented at TC39 meeting last September. Arrow functions in a pipeline is a syntax error: `a |> b => c |> b`. There is an issue with precedence, requiring parentheses to disambiguate. In this proposal is just a syntax error. I was also talking about await in pipelines, it's unclear how we should handle this. There are two proposals, either wait for the value it has to be a function, or if we wait for the return value. if you just have in your pipeline an async function, it won't really work if you have synchronous function after it unless the following functions in the pipeline expect a Promise as an argument This was a requirement that was made in previous TC39 meetings. There were two proposal made, let's show one by one.
 
 YK: I have a clarification question. What do you mean by "fixed" context in the pipeline
@@ -1129,8 +1060,6 @@ DE: We can't stop people from doing currying. I don't see these as in conflict w
 
 DE: . One of these proposals are trying to make sure arrows are sufficiently easy to use, the other is trying to use `#` as the placeholder to solve the same thing. One is more minimal than the other.
 
-RJE: MM?
-
 MM: I want to bring up the issue of the punctuation budget. The punctuation overload of the language - we can look at Perl, and those unfamiliar with it - different people will eek out a subset of the language and stick with it. But they will use code from someone else and it'll be a different subset. We've talked about null coalescing, logical assignment, debugger operands, slice notation, optional chaining, and pipelines. The total number of new punctuation - all the options of adding private field - all new punctuation. We need to prioritize how much this imposes on new people learning the language. If you allow yourself to pick 2, which two would they be? Which are the two most important punctuation proposals? Maybe you think a budget of 3 is reasonable. A budget of 5 is not reasonable. We need to constrain ourselves. I am terrified how much we're adding punctuation wise. Considered individually many of these proposals may be good. In life, there are many things we want that are genuinely good that we do not buy because we cannot afford them.
 
 DE: This is a really good point. We don't have an unlimited budget of punctuation characters and they don't name what they do. There are a few different things we can use to not break that budget. Some data sources we can look at  - do we _need_ a punctuation? Thats the state of public fields, they need a new punctuation things. Another data source is looking across programming languages. Optional chaining and null coalescing are across other languages. This gives us data about what programmers are interested in. I've seen comments about people saying how much cleaner their code will be with these things. If the optional chaining is going to clean up a bunch of these things then it may pay for itself. Similarly with pipeline if this is going to in practice enable more modularity with less monkey patching then it may pay for itself. I want to bring up another point about criticising this feature. What this means is a little bit vague, but some people claim, "the future is functional". I like elements like immutable data structures and the likes, but I don't think the committee can come down on one stance like "the future is functional". Part of getting involved in this feature is a nod to that community - its the first small step to other things like pattern matching which is also "functional". Neither of these have to do with immutable data structures so I feel funny about calling it functional - its a constellation of attributes though - such as not passing the left operand as the receiver. One of the goals of functional programming in JS is avoiding `this` which is seen as confusing. Theres been some discussion leading up to this meeting where members are discussing the previous :: bind operator proposal, and the tradeoff of passing as the receiver vs the first argument; serving the functional community is what led to some of these design goals.
@@ -1145,11 +1074,7 @@ MM: The sharp sign thing. The first minimal proposal has arrow functions. We've 
 
 DE: I share your intuition. I think the F# proposal is my favourite. I am just laying this out as a investigation.
 
-RJE: We've used up our time.
-
 BT: Tab Atkins has been waiting to talk about this with fairly well reasoned motivations of why smart pipe is a good idea which the slides don't convey. It'd be good if we could let him talk.
-
-RJE: Any objections? Tab can talk then we can cut it off.
 
 TAB: First I highly recommend you go read this proposal. Its an extremely well written readme. A lot of what I've seen in this discussions is not arguing against what has been proposed. The two major points: first the F# style priviledges functional programming style things for anything beyond the basic case. As soon as we go beyond... by piping a value into one arg of the function call you have to switch over to writing pure functions F# style or more FP shenanigans like manipulating how arguments are passed around. This isn't the way people write things they mostly write "light functional style" Smart pipes allows for this style of code for the majority of cases. You don't have to do function math or currying - or organising your functions to be maximally beneficial to this feature - you just organise your function arguments to whatever makes sense and people can just call it how they need to. F# ... allow alternate styles, its a handful of extra characters -a bit of extra weight. The two are comfortable if you have to the opposite style - but we should prefer the one that encourages the style most JS devs are comfortable with - so using placeholder slots rather than argument ordering shenanigans. Smart pipes mixed with the variadic pipelines totally subsume already 3 other syntax proposals this committee is interested in. The method abstraction +> a.b..... 2. It replaces and improves on partial application, You have to use the argument exactly once.If you're using 2 the first one had to .... The slide Dan passed over shows how using topic style, you get the benefits of partial application and you can arrange arguments, use it multiple times, use an operator instead of a function. Functions are easy to reason about but operators are also important! If you don't allow operators you end up with functions like lamda add which is much less convenient. The point is all of these extra things which take in extra proposals and making them part of pipelines - its all very 
 natural. They automatically achieve other goals. Natural every day way we'd use them. its a fairly light weight synrax proposal that punches way above its weight class given the amount of conceptual space it covers - we can drop several other things. 

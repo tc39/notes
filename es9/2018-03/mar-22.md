@@ -360,7 +360,8 @@ DE: what about doing the rounding operation first, anyway to conclude on this to
 WH: (Nods.)
 
 #### Conclusion/Resolution
--  Use StringToBigInt for Abstract Relational Comparison between BigInt and String
+
+- Use StringToBigInt for Abstract Relational Comparison between BigInt and String
 - Throw on non-integral values in BigInt(Number), but permit non-safe integer range
 
 ## Weak References for stage 2 
@@ -482,11 +483,11 @@ DH: I like this, ive always been in favor of weak refs. the thing that I got stu
 
 DT: So the answer is in the rest of my proposal it turns out i'm happy to talk to you offline. I think of that as being stage 2 enhancements, which I is why we didn't try to address it before.
 
-DH: i'm fine with that, I just want to say that for stage-2 I don't know to block ??? Ideally I would like to hear a polausibility ?? before I agree to something stage 3
+DH: I'm fine with that, I just want to say that for stage-2 I don't know to block ??? Ideally I would like to hear a plausibility ?? before I agree to something stage 3
 
 I would need to hear more ...
 
-MM: We have two possibles anwser
+MM: We have two possible answers
 
 DH: happy to hear that.
 
@@ -681,7 +682,7 @@ GI: ok
 ## 7.iv Test262 Status Updates (15m) 
 (Leo Balter and Valerie Young)
 
-Leo (on the call): I like to have Valerie, that can talk about ???
+LBR: I like to have Valerie Young presenting the latest updates, as she did very nice summary for it.
 
 VYG: (updates)
 
@@ -730,14 +731,13 @@ Eshost Updates
 * SharedArrayBuffer and Atomics can now be tested in the plaform agnostic toolkit. Test harness now support agents do to contribution sot Eshost
   * Contribution from Rick Waldron and Amal Hussien
 
-BT: since we have a bunch of new folk in the room I think it would begood to call out that test262 to get practice with spec reading skills and a lot of  sort of disciplines and work that go into the committe
-so if you a re looking for a good place to make contributions to the committee. test 262 is a good place to do that. I also want to thank the people that worked on ES host. Theres been a lot of really awesome changes there. for the new people who are here , eshost is a way to run a script across a lot of engins at the same time. its a good way to get an idea of how the same script runs across several implementations.
+BT: since we have a bunch of new folk in the room I think it would begood to call out that Test262 to get practice with spec reading skills and a lot of  sort of disciplines and work that go into the committe so if you a re looking for a good place to make contributions to the committee. Test262 is a good place to do that. I also want to thank the people that worked on ES host. Theres been a lot of really awesome changes there. for the new people who are here , eshost is a way to run a script across a lot of engins at the same time. its a good way to get an idea of how the same script runs across several implementations.
 
-DE: I just wanted to say im really happy that you've joined the test262 team valarie, this allows the communtee to roll out new feature and ??? across many implementation. This is just very core work that you're working on, and thank you very much.??. There is an issue pending from JRL.
+DE: I just wanted to say im really happy that you've joined the Test262 team, Valerie, this allows the community to roll out new feature and ??? across many implementation. This is just very core work that you're working on, and thank you very much.??. There is an issue pending from JRL.
 
-LBR: I also have Mike trying to join the call
+## 10.i.e Logical Assignment Operators for Stage 1 (cont)
 
-JRL: to recap the discssion we had yesterday both DH and YK objected to adding logical assignment operators. Specifcally yehuda's objection it would it will likely push people to use ||= syntax instead of explicit if statements, to using the sugar syntax. This will likely hit falsey error. With that I suggested if we add ??=, so we would have all 3 logical assignment operators, with that he said he would would withdraw his objection.
+JRL: to recap the discussion we had yesterday both DH and YK objected to adding logical assignment operators. Specifcally Yehuda's objection it would it will likely push people to use ||= syntax instead of explicit if statements, to using the sugar syntax. This will likely hit falsey error. With that I suggested if we add ??=, so we would have all 3 logical assignment operators, with that he said he would would withdraw his objection.
 
 WH: Or whatever we change nullish coalescing operator to.
 
@@ -1004,8 +1004,7 @@ AK: We still won't want ot have that in mainline before ??
 
 ## function.sent needs a champion
 
-JHD: so I asked alan on github issues for the proposal of `function.sent` somewhere, his response was that he was out of the proposal writing championing business. Is anybody interested in picking this up and championinig it, if so great... You can ping me offline. Howeveer if nobody is interested in championing it we should question if this is still a problem we expect to solve in the language. 
-please let me know if you are interested in championing that
+JHD: so I asked AWB on GitHub issues for the proposal of `function.sent` somewhere, his response was that he was out of the proposal writing championing business. Is anybody interested in picking this up and championinig it, if so great... You can ping me offline. Howeveer if nobody is interested in championing it we should question if this is still a problem we expect to solve in the language. Please let me know if you are interested in championing that
 
 ## Pipeline operator
 
@@ -1076,12 +1075,4 @@ DE: I share your intuition. I think the F# proposal is my favourite. I am just l
 
 BT: Tab Atkins has been waiting to talk about this with fairly well reasoned motivations of why smart pipe is a good idea which the slides don't convey. It'd be good if we could let him talk.
 
-TAB: First I highly recommend you go read this proposal. Its an extremely well written readme. A lot of what I've seen in this discussions is not arguing against what has been proposed. The two major points: first the F# style priviledges functional programming style things for anything beyond the basic case. As soon as we go beyond... by piping a value into one arg of the function call you have to switch over to writing pure functions F# style or more FP shenanigans like manipulating how arguments are passed around. This isn't the way people write things they mostly write "light functional style" Smart pipes allows for this style of code for the majority of cases. You don't have to do function math or currying - or organising your functions to be maximally beneficial to this feature - you just organise your function arguments to whatever makes sense and people can just call it how they need to. F# ... allow alternate styles, its a handful of extra characters -a bit of extra weight. The two are comfortable if you have to the opposite style - but we should prefer the one that encourages the style most JS devs are comfortable with - so using placeholder slots rather than argument ordering shenanigans. Smart pipes mixed with the variadic pipelines totally subsume already 3 other syntax proposals this committee is interested in. The method abstraction +> a.b..... 2. It replaces and improves on partial application, You have to use the argument exactly once.If you're using 2 the first one had to .... The slide Dan passed over shows how using topic style, you get the benefits of partial application and you can arrange arguments, use it multiple times, use an operator instead of a function. Functions are easy to reason about but operators are also important! If you don't allow operators you end up with functions like lamda add which is much less convenient. The point is all of these extra things which take in extra proposals and making them part of pipelines - its all very 
-natural. They automatically achieve other goals. Natural every day way we'd use them. its a fairly light weight synrax proposal that punches way above its weight class given the amount of conceptual space it covers - we can drop several other things. 
-
-
-
-
-
-
-
+TAB: First I highly recommend you go read this proposal. Its an extremely well written readme. A lot of what I've seen in this discussions is not arguing against what has been proposed. The two major points: first the F# style priviledges functional programming style things for anything beyond the basic case. As soon as we go beyond... by piping a value into one arg of the function call you have to switch over to writing pure functions F# style or more FP shenanigans like manipulating how arguments are passed around. This isn't the way people write things they mostly write "light functional style" Smart pipes allows for this style of code for the majority of cases. You don't have to do function math or currying - or organising your functions to be maximally beneficial to this feature - you just organise your function arguments to whatever makes sense and people can just call it how they need to. F# ... allow alternate styles, its a handful of extra characters -a bit of extra weight. The two are comfortable if you have to the opposite style - but we should prefer the one that encourages the style most JS devs are comfortable with - so using placeholder slots rather than argument ordering shenanigans. Smart pipes mixed with the variadic pipelines totally subsume already 3 other syntax proposals this committee is interested in. The method abstraction +> a.b..... 2. It replaces and improves on partial application, You have to use the argument exactly once.If you're using 2 the first one had to .... The slide Dan passed over shows how using topic style, you get the benefits of partial application and you can arrange arguments, use it multiple times, use an operator instead of a function. Functions are easy to reason about but operators are also important! If you don't allow operators you end up with functions like lamda add which is much less convenient. The point is all of these extra things which take in extra proposals and making them part of pipelines - its all very natural. They automatically achieve other goals. Natural every day way we'd use them. its a fairly light weight synrax proposal that punches way above its weight class given the amount of conceptual space it covers - we can drop several other things.

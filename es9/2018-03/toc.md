@@ -38,6 +38,7 @@
   * [Weak References for stage 2](mar-22.md#weak-references-for-stage-2)
   * [Optional chaining for stage 2](mar-22.md#optional-chaining-for-stage-2)
   * [7.iv Test262 Status Updates (15m)](mar-22.md#7iv-test262-status-updates-15m)
+  * [10.i.e Logical Assignment Operators for Stage 1 (cont)](mar-22.md#10ie-logical-assignment-operators-for-stage-1-cont)
   * [8.i.c Expand text included in "function code"](mar-22.md#8ic-expand-text-included-in-function-code)
   * [10.ii.f Nullish coalescing for stage 2](mar-22.md#10iif-nullish-coalescing-for-stage-2)
   * [Summarize classes](mar-22.md#summarize-classes)

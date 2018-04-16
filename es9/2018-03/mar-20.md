@@ -839,11 +839,10 @@ DE: I don't think TC39 should just make a standard and send it to the devtools i
 
 #### Conclusion/Resolution
 
-- stage 1
+- Stage 1
 - Stage 2 requirements:
   - Get more devtools/debugger stakeholders involved
   - Draft out a protocol for what the objects should mean (even if it's not within TC39)
-
 
 ## 10.i.e Logical Assignment Operators for Stage 1 
 
@@ -1091,8 +1090,6 @@ LCK: Domenic and George raised this in PR #916, it's definitely going to need mo
 #### Conclusion/Resolution
 
 - Nothing Recorded
-
-
 
 ## 10.i.i Update on improved TC39 documentation efforts 
 

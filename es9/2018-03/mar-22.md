@@ -776,9 +776,9 @@ AK: Ok I see
 
 DH: I don't actually buy that's not a complexity budget because it does introduce a new hazard into the language without reducing the complexity budget. I just want to be clear that the issue with these operators, unless you stricly use booleans on both sides, you are under the risk of bugs.The reason why im withdrawing my objection is under the assumption that we have something like ??= for defaulting situations use the defaulting situation. but to me that demonstrates that the value of this is very very minimal. its nice to hve symmetry but I think it will be important for us, that's not a good thing that recommending people to use ???
 
-## conclusion/ Resolution
+#### Conclusion/Resolution
 
-- stage 1
+- Stage 1
 
 ## 8.i.c Expand text included in "function code"
 
@@ -963,7 +963,7 @@ RBN: one issue in the issue tracker is ?: and I know its considered to be ?? The
 
 ** discussing the agenda **
 
-## Conlusion
+#### Conclusion/Resolution
 
 - more discussion needed
 

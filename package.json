@@ -24,7 +24,7 @@
     "highlight.js": "^9.12.0",
     "markdown-link": "^0.1.1",
     "markdown-toc": "^1.1.0",
-    "minimist": "^1.2.0",
-    "remarkable": "^1.7.1"
+    "remarkable": "^1.7.1",
+    "yargs": "^11.0.0"
   }
 }

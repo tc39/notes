@@ -8,22 +8,21 @@ const path = require("path");
 const glob = require("glob");
 const toc = require("markdown-toc");
 const mdlink = require("markdown-link", "mdlink");
-const argv = require("minimist")(process.argv.slice(2), {
-    string: ["_"]
-});
+const yargs = require('yargs');
+const yargv = yargs
+  .strict()
+  .usage('Usage: ./scripts/summary.js <notes-folder>')
+  .example('./scripts/summary.js es9/2018-03/');
 
-if (!argv._.length) {
-    console.error(`Folder not specified.
-    
-Usage example:
+const argv = yargv.argv;
 
-./scripts/summary.js es9/2018-03`);
+if (argv._.length) {
+    main(argv._[0]);
 } else {
-    main();
+    yargv.showHelp();
 }
 
-function main() {
-    const folder = argv._[0];
+function main(folder) {
     glob(`./${folder}/*.md`, (error, results) => {
         if (error) {
             throw error;

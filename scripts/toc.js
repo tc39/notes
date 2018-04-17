@@ -7,12 +7,12 @@ const path = require("path");
 // Third party objects
 const glob = require("glob");
 const toc = require("markdown-toc");
-const mdlink = require("markdown-link", "mdlink");
-const yargs = require('yargs');
+const mdlink = require("markdown-link");
+const yargs = require("yargs");
 const yargv = yargs
   .strict()
-  .usage('Usage: ./scripts/toc.js <notes-folder>')
-  .example('./scripts/toc.js es9/2018-03/');
+  .usage("Usage: ./scripts/toc.js <notes-folder>")
+  .example("./scripts/toc.js es9/2018-03/");
 
 const argv = yargv.argv;
 
@@ -28,7 +28,7 @@ function main(folder) {
       throw error;
     }
 
-    const writable = fs.createWriteStream(`${folder}/toc.md`, { flags: 'w' });
+    const writable = fs.createWriteStream(`${folder}/toc.md`, { flags: "w" });
     const filePattern = /^\w*-\d+\.[mM][dD]$/;
 
     results.forEach(file => {

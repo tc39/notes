@@ -29,8 +29,6 @@
   * [Rest/Spread properties for stage 4](jan-23.md#restspread-properties-for-stage-4)
   * [Function.prototype.toString() censorship for stage 1](jan-23.md#functionprototypetostring-censorship-for-stage-1)
   * [13.iii.k new Set builtin methods for stage 2](jan-23.md#13iiik-new-set-builtin-methods-for-stage-2)
-# January 2018 - Table of Contents
-
 - [January 24, 2018 Meeting Notes](jan-24.md#january-24-2018-meeting-notes)
   * [Agenda](jan-24.md#agenda)
   * [13.ii.j RegExp lookbehind assertions for Stage 4](jan-24.md#13iij-regexp-lookbehind-assertions-for-stage-4)
@@ -48,8 +46,6 @@
   * [13.iii.j Decorators use cases](jan-24.md#13iiij-decorators-use-cases)
   * [13.iv.a Discussion of cache timing attack (Meltdown and Spectre being just the latest examples) consequences](jan-24.md#13iva-discussion-of-cache-timing-attack-meltdown-and-spectre-being-just-the-latest-examples-consequences)
   * [Revisiting mixins-vs-protocols proposal](jan-24.md#revisiting-mixins-vs-protocols-proposal)
-# January 2018 - Table of Contents
-
 - [January 25, 2018 Meeting Notes](jan-25.md#january-25-2018-meeting-notes)
   * [Agenda](jan-25.md#agenda)
   * [13.ii.h Async Iteration for stage 4](jan-25.md#13iih-async-iteration-for-stage-4)

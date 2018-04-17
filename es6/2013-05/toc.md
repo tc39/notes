@@ -11,15 +11,11 @@
   * [4.18 __proto__](may-21.md#418-__proto__)
   * [Naming of @@iterator](may-21.md#naming-of-iterator)
   * [Generators and iterators](may-21.md#generators-and-iterators)
-# May 2013 - Table of Contents
-
 - [May 22, 2013 Meeting Notes](may-22.md#may-22-2013-meeting-notes)
   * [4.16 Spec update](may-22.md#416-spec-update)
   * [4.9 Template Strings (Template Literals)](may-22.md#49-template-strings-template-literals)
   * [JSON](may-22.md#json)
   * [4.10 Modules](may-22.md#410-modules)
-# May 2013 - Table of Contents
-
 - [May 23, 2013 Meeting Notes](may-23.md#may-23-2013-meeting-notes)
   * [Promises vs Monads](may-23.md#promises-vs-monads)
   * [ES6, ES7, ES8... Mark's Strawman Roadmap](may-23.md#es6-es7-es8-marks-strawman-roadmap)

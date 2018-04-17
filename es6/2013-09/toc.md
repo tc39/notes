@@ -17,8 +17,6 @@
   * [5.9 12.2.4 note says we decided (Jan 2012) tail calls only in strict mode. Is this still correct?](sept-17.md#59-1224-note-says-we-decided-jan-2012-tail-calls-only-in-strict-mode-is-this-still-correct)
   * [5.11 Disallow? let undefined; const undefined; class undefined {}; module undefined from "foo";](sept-17.md#511-disallow-let-undefined-const-undefined-class-undefined--module-undefined-from-foo)
   * [4.2 Reconsider decision to make Typed Arrays non-extensible](sept-17.md#42-reconsider-decision-to-make-typed-arrays-non-extensible)
-# September 2013 - Table of Contents
-
 - [September 18, 2013 Meeting Notes](sept-18.md#september-18-2013-meeting-notes)
   * [4.2 Reconsider decision to make Typed Arrays non-extensible (Cont)](sept-18.md#42-reconsider-decision-to-make-typed-arrays-non-extensible-cont)
   * [4.4 Symbols](sept-18.md#44-symbols)
@@ -28,8 +26,6 @@
   * [4.6 Unbound variable checking](sept-18.md#46-unbound-variable-checking)
   * [Module loading](sept-18.md#module-loading)
   * [Back to Static Checking](sept-18.md#back-to-static-checking)
-# September 2013 - Table of Contents
-
 - [September 19, 2013 Meeting Notes](sept-19.md#september-19-2013-meeting-notes)
   * [Agenda](sept-19.md#agenda)
   * [9. Promises](sept-19.md#9-promises)

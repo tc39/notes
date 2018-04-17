@@ -10,8 +10,6 @@
   * [Ecma 402 Updates](apr-10.md#ecma-402-updates)
   * [Preview of asnyc/await](apr-10.md#preview-of-asnycawait)
   * [Closing](apr-10.md#closing)
-# April 2014 - Table of Contents
-
 - [April 8, 2014 Meeting Notes](apr-8.md#april-8-2014-meeting-notes)
   * [Welcome](apr-8.md#welcome)
   * [Introductions](apr-8.md#introductions)
@@ -29,8 +27,6 @@
   * [new %TypedArray%(iterable)](apr-8.md#new-%25typedarray%25iterable)
   * [new %TypedArray%("2")](apr-8.md#new-%25typedarray%252)
   * [Map Constructor and Duplicate Keys](apr-8.md#map-constructor-and-duplicate-keys)
-# April 2014 - Table of Contents
-
 - [April 9, 2014 Meeting Notes](apr-9.md#april-9-2014-meeting-notes)
   * [RF Status](apr-9.md#rf-status)
   * [RF/TG Item](apr-9.md#rftg-item)

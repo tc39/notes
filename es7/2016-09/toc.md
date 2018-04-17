@@ -18,17 +18,11 @@
   * [11.i.c Generator arrow functions](sept-27.md#11ic-generator-arrow-functions)
   * [11.2.a Named Capture Groups](sept-27.md#112a-named-capture-groups)
   * [11.ii.e Unicode property escapes in regular expressions](sept-27.md#11iie-unicode-property-escapes-in-regular-expressions)
-# September 2016 - Table of Contents
-
 - [September 28, 2016 Meeting Notes](sept-28.md#september-28-2016-meeting-notes)
   * [ES Modules Lifecycle](sept-28.md#es-modules-lifecycle)
   * [11.3.a import()](sept-28.md#113a-import)
   * [Revisit System.global => global](sept-28.md#revisit-systemglobal--global)
   * [11.2.b Intl.Segmenter](sept-28.md#112b-intlsegmenter)
-# September 2016 - Table of Contents
-
-# for decorator - Table of Contents
-
 - [September 29, 2016 Meeting Notes](sept-29.md#september-29-2016-meeting-notes)
   * [Secretariat's Report](sept-29.md#secretariats-report)
   * [11.iv.c Consolidating Proxy integrity checks,](sept-29.md#11ivc-consolidating-proxy-integrity-checks)

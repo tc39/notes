@@ -28,8 +28,6 @@
   * [Web APIs that could move to ES(7+)](jun-4.md#web-apis-that-could-move-to-es7)
   * [Conclusion/Resolution](jun-4.md#conclusionresolution-10)
   * [Conclusion/Resolution](jun-4.md#conclusionresolution-11)
-# June 2014 - Table of Contents
-
 - [June 5, 2014 Meeting Notes](jun-5.md#june-5-2014-meeting-notes)
   * [Agenda](jun-5.md#agenda)
   * [Conclusion/Resolution](jun-5.md#conclusionresolution)
@@ -47,8 +45,6 @@
   * [Conclusion/Resolution:](jun-5.md#conclusionresolution)
   * [Two or Three-day TC39 meetings in the future?](jun-5.md#two-or-three-day-tc39-meetings-in-the-future)
   * [Modules breakout session:](jun-5.md#modules-breakout-session)
-# June 2014 - Table of Contents
-
 - [June 6, 2014 Meeting Notes](jun-6.md#june-6-2014-meeting-notes)
   * [Follow up on deferring comprehensions](jun-6.md#follow-up-on-deferring-comprehensions)
   * [Conclusion/Resolution](jun-6.md#conclusionresolution)

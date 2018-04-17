@@ -17,14 +17,10 @@
   * [5.6 NoSuchProperty built-in proxy](sept-23.md#56-nosuchproperty-built-in-proxy)
   * [5.8 Exponentiation Operator Update](sept-23.md#58-exponentiation-operator-update)
   * [5.5 Math.iaddh, etc. polyfillable 64-bit int helpers](sept-23.md#55-mathiaddh-etc-polyfillable-64-bit-int-helpers)
-# September 2014 - Table of Contents
-
 - [September 24, 2014 Meeting Notes](sept-24.md#september-24-2014-meeting-notes)
   * [Object Instantiation Redo](sept-24.md#object-instantiation-redo)
   * [5.1 Trailing Commas in Function Call Expressions and Declarations](sept-24.md#51-trailing-commas-in-function-call-expressions-and-declarations)
   * [RegExp Globals](sept-24.md#regexp-globals)
-# September 2014 - Table of Contents
-
 - [September 25, 2014 Meeting Notes](sept-25.md#september-25-2014-meeting-notes)
   * [5.8 Object Rest Destructuring and Spread Properties](sept-25.md#58-object-rest-destructuring-and-spread-properties)
   * [Loader pipeline](sept-25.md#loader-pipeline)

@@ -55,7 +55,7 @@ function main(folder) {
         },
         append: "\n",
         linkify({ lvl }, title, slug) {
-          if (!hasTitle, lvl === 1) {
+          if (!hasTitle && lvl === 1) {
             const part = title.replace(/^(\w*)\s*\d*,\s*(20\d+) Meeting Notes/, "$1 $2");
             writable.write(`# ${part} - Table of Contents\n\n`);
             hasTitle = true;

@@ -17,8 +17,6 @@
   * [Scoping of the Top Level](sept-18.md#scoping-of-the-top-level)
   * [var and the window.prototype issue](sept-18.md#var-and-the-windowprototype-issue)
   * [let, const, module, class](sept-18.md#let-const-module-class)
-# September 2012 - Table of Contents
-
 - [September 19, 2012 Meeting Notes](sept-19.md#september-19-2012-meeting-notes)
   * [Agenda](sept-19.md#agenda)
   * [Proxy](sept-19.md#proxy)
@@ -35,8 +33,6 @@
   * [Global Scope Revisit](sept-19.md#global-scope-revisit)
   * [Test 262](sept-19.md#test-262)
   * [Create Archival Utility for ECMA Wiki](sept-19.md#create-archival-utility-for-ecma-wiki)
-# September 2012 - Table of Contents
-
 - [September 20, 2012 Meeting Notes](sept-20.md#september-20-2012-meeting-notes)
   * [Object.observe Update](sept-20.md#objectobserve-update)
   * [Grammar Validation](sept-20.md#grammar-validation)

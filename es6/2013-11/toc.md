@@ -13,8 +13,6 @@
   * [(function Foo() {}).bind(x).name?](nov-19.md#function-foo-bindxname)
   * [9 ECMA 404 W3C TAG / TPAC report](nov-19.md#9-ecma-404-w3c-tag--tpac-report)
   * [4.9 Reconsidering Object.is](nov-19.md#49-reconsidering-objectis)
-# November 2013 - Table of Contents
-
 - [November 20, 2013 Meeting Notes](nov-20.md#november-20-2013-meeting-notes)
   * [Report from the Ecma Secretariat (CC Report)](nov-20.md#report-from-the-ecma-secretariat-cc-report)
   * [4.2 Clarification of the interaction of unicode escapes and identification syntax](nov-20.md#42-clarification-of-the-interaction-of-unicode-escapes-and-identification-syntax)
@@ -26,8 +24,6 @@
   * [for-let](nov-20.md#for-let)
   * [5 Post ES6 Spec Process.](nov-20.md#5-post-es6-spec-process)
   * [Ordering of scheduling of microtasks](nov-20.md#ordering-of-scheduling-of-microtasks)
-# November 2013 - Table of Contents
-
 - [November 21, 2013 Meeting Notes](nov-21.md#november-21-2013-meeting-notes)
   * [Follow Up on IETF JSON WG Communication document](nov-21.md#follow-up-on-ietf-json-wg-communication-document)
   * [4.5 Modules](nov-21.md#45-modules)

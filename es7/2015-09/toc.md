@@ -8,8 +8,6 @@
   * [5.2 SIMD.js Stage 3 proposal](sept-22.md#52-simdjs-stage-3-proposal)
   * [10 Tooling Update](sept-22.md#10-tooling-update)
   * [5.4 Updates on class-properties proposal](sept-22.md#54-updates-on-class-properties-proposal)
-# September 2015 - Table of Contents
-
 - [September 23, 2015 Meeting Notes](sept-23.md#september-23-2015-meeting-notes)
   * [5.5 Decorators Update](sept-23.md#55-decorators-update)
   * [5.3 Async Functions](sept-23.md#53-async-functions)
@@ -19,8 +17,6 @@
   * [5.12 Proposal: String#matchAll](sept-23.md#512-proposal-string%23matchall)
   * [5.9 Trailing commas in function parameter lists](sept-23.md#59-trailing-commas-in-function-parameter-lists)
   * [Process Discussion](sept-23.md#process-discussion)
-# September 2015 - Table of Contents
-
 - [September 24, 2015 Meeting Notes](sept-24.md#september-24-2015-meeting-notes)
   * [Exponentiation Operator](sept-24.md#exponentiation-operator)
   * [8. Test262 Update](sept-24.md#8-test262-update)

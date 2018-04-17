@@ -16,8 +16,6 @@
   * [Shared Memory and atomics](march-29.md#shared-memory-and-atomics)
   * [Aynsc Functions](march-29.md#aynsc-functions)
   * [TCO](march-29.md#tco)
-# March 2016 - Table of Contents
-
 - [March 30, 2016 Meeting Notes](march-30.md#march-30-2016-meeting-notes)
   * [Length argument normalization for TypedArrays, ArrayBuffer and DataView constructors](march-30.md#length-argument-normalization-for-typedarrays-arraybuffer-and-dataview-constructors)
   * [Duplicate sloppy mode function in block web compatibility fix](march-30.md#duplicate-sloppy-mode-function-in-block-web-compatibility-fix)
@@ -27,8 +25,6 @@
   * [Revisiting Function.prototype.toString](march-30.md#revisiting-functionprototypetostring)
   * [Map/Set to JSON](march-30.md#mapset-to-json)
   * [Draft Proposed Frozen Realm API](march-30.md#draft-proposed-frozen-realm-api)
-# March 2016 - Table of Contents
-
 - [March 31, 2016 Meeting Notes](march-31.md#march-31-2016-meeting-notes)
   * [Final Draft Standards Approval](march-31.md#final-draft-standards-approval)
   * [Tail Calls](march-31.md#tail-calls)

@@ -11,8 +11,6 @@
   * [6.1 ES6 Class Properties](mar-24.md#61-es6-class-properties)
   * [6.2 Decorators](mar-24.md#62-decorators)
   * [6.3 ReverseIterable interface](mar-24.md#63-reverseiterable-interface)
-# March 2015 - Table of Contents
-
 - [March 25, 2015 Meeting Notes](mar-25.md#march-25-2015-meeting-notes)
   * [6(iv) A Declarative Alternative to toMethod (Allen Wirfs-Brock)](mar-25.md#6iv-a-declarative-alternative-to-tomethod-allen-wirfs-brock)
   * [6(v) Additional Meta-Properties in ES7 (Allen Wirfs-Brock)](mar-25.md#6v-additional-meta-properties-in-es7-allen-wirfs-brock)
@@ -20,8 +18,6 @@
   * [Report on 402](mar-25.md#report-on-402)
   * [6(vi) Function Bind and Private Fields Redux (Kevin Smith)](mar-25.md#6vi-function-bind-and-private-fields-redux-kevin-smith)
   * [Part 2 of KS presentation: Private Fields](mar-25.md#part-2-of-ks-presentation-private-fields)
-# March 2015 - Table of Contents
-
 - [March 26, 2015 Meeting Notes](mar-26.md#march-26-2015-meeting-notes)
   * [Private state continued](mar-26.md#private-state-continued)
   * [Immutable Records, Tuples, Maps and Sets](mar-26.md#immutable-records-tuples-maps-and-sets)

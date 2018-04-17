@@ -8,14 +8,10 @@
   * [SIMD.js Stage 2 (PJ, JM presenting)](may-27.md#simdjs-stage-2-pj-jm-presenting)
   * [Generator function.next Meta Property (AWB presenting)](may-27.md#generator-functionnext-meta-property-awb-presenting)
   * [Test 262 Update (BT presenting)](may-27.md#test-262-update-bt-presenting)
-# May 2015 - Table of Contents
-
 - [May 28, 2015 Meeting Notes](may-28.md#may-28-2015-meeting-notes)
   * [ECMA Update (István)](may-28.md#ecma-update-istvan)
   * [Function.prototype.toString revision (Michael Ficarra presenting)](may-28.md#functionprototypetostring-revision-michael-ficarra-presenting)
   * [Decorators (Yehuda Katz, Jonathan Turner) (Need slides)](may-28.md#decorators-yehuda-katz-jonathan-turner-need-slides)
-# May 2015 - Table of Contents
-
 - [May 29, 2015 Meeting Notes](may-29.md#may-29-2015-meeting-notes)
   * [Relaxed semantics for Promise.resolve nominal check (MM)](may-29.md#relaxed-semantics-for-promiseresolve-nominal-check-mm)
   * [Fresh realms breakout](may-29.md#fresh-realms-breakout)

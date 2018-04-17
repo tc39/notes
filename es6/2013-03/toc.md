@@ -10,8 +10,6 @@
   * [4.9 JSON, IETF changes](mar-12.md#49-json-ietf-changes)
   * [4.12 StopIteration/Generator](mar-12.md#412-stopiterationgenerator)
   * [4.2 Modules](mar-12.md#42-modules)
-# March 2013 - Table of Contents
-
 - [March 13, 2013 Meeting Notes](mar-13.md#march-13-2013-meeting-notes)
   * [4.14 Make new Date(dateObj)](mar-13.md#414-make-new-datedateobj)
   * [4.4 Spec Update](mar-13.md#44-spec-update)
@@ -19,8 +17,6 @@
   * [4.3 Proxy](mar-13.md#43-proxy)
   * [4.16 Current Status of ES6](mar-13.md#416-current-status-of-es6)
   * [4.7 Runtime costs of the override mistake](mar-13.md#47-runtime-costs-of-the-override-mistake)
-# March 2013 - Table of Contents
-
 - [March 14, 2013 Meeting Notes](mar-14.md#march-14-2013-meeting-notes)
   * [4.8 Object.observe Implementation Report](mar-14.md#48-objectobserve-implementation-report)
   * [4.6 Symbols](mar-14.md#46-symbols)

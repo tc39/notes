@@ -20,8 +20,6 @@
   * [16.ii.c Importing modules which failed evaluation](may-23.md#16iic-importing-modules-which-failed-evaluation)
   * [16.ii.e Advance Numeric separators proposal to Stage 1](may-23.md#16iie-advance-numeric-separators-proposal-to-stage-1)
   * [16.iii.a Accessing host-specific module metadata from inside a module](may-23.md#16iiia-accessing-host-specific-module-metadata-from-inside-a-module)
-# May 2017 - Table of Contents
-
 - [May 24, 2017 Meeting Notes](may-24.md#may-24-2017-meeting-notes)
   * [14.i Towards Trustworthy Verification of JavaScript](may-24.md#14i-towards-trustworthy-verification-of-javascript)
   * [14.ii Shape Security](may-24.md#14ii-shape-security)
@@ -30,8 +28,6 @@
   * [14.iv Role of Babel in JS](may-24.md#14iv-role-of-babel-in-js)
   * [14.v TC39/ECMAScript: The Next 20 Years](may-24.md#14v-tc39ecmascript-the-next-20-years)
   * [15.iv BigInt towards Stage 3](may-24.md#15iv-bigint-towards-stage-3)
-# May 2017 - Table of Contents
-
 - [May 25, 2017 Meeting Notes](may-25.md#may-25-2017-meeting-notes)
   * [7. Approval of the minutes from last meeting](may-25.md#7-approval-of-the-minutes-from-last-meeting)
   * [8. Report from the Ecma Secretariat](may-25.md#8-report-from-the-ecma-secretariat)

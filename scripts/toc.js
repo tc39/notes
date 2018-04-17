@@ -12,11 +12,23 @@ const yargs = require("yargs");
 const yargv = yargs
   .strict()
   .usage("Usage: ./scripts/toc.js <notes-folder>")
-  .example("./scripts/toc.js es9/2018-03/");
+  .example("./scripts/toc.js es9/2018-03/")
+  .option("all", {
+    alias: "a",
+    default: false
+  });
 
 const argv = yargv.argv;
 
-if (argv._.length) {
+if (argv.all) {
+  glob('./es+([0-9])/20[1-2][0-9]-[0-3][0-9]', (error, results) => {
+    if (error) {
+      throw error;
+    }
+
+    results.forEach(folder => main(folder));
+  });
+} else if (argv._.length) {
   main(argv._[0]);
 } else {
   yargv.showHelp();

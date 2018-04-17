@@ -1,4 +1,4 @@
-# Table of Contents
+# January 2014 - Table of Contents
 
 - [January 28, 2014 Meeting Notes](jan-28.md#january-28-2014-meeting-notes)
   * [Welcome](jan-28.md#welcome)
@@ -15,6 +15,8 @@
   * [Yield and its precendence](jan-28.md#yield-and-its-precendence)
   * [Newborn generator behavior](jan-28.md#newborn-generator-behavior)
   * [ECMA-404 and IETF interactions](jan-28.md#ecma-404-and-ietf-interactions)
+# January 2014 - Table of Contents
+
 - [January 29, 2014 Meeting Notes](jan-29.md#january-29-2014-meeting-notes)
   * [Function in Blocks in non strict mode.](jan-29.md#function-in-blocks-in-non-strict-mode)
   * [Object.observe Status Report](jan-29.md#objectobserve-status-report)
@@ -23,6 +25,8 @@
   * [Security Review for Loaders/Realms](jan-29.md#security-review-for-loadersrealms)
   * [Typed Objects](jan-29.md#typed-objects)
   * [Value Objects](jan-29.md#value-objects)
+# January 2014 - Table of Contents
+
 - [January 30, 2014 Meeting Notes](jan-30.md#january-30-2014-meeting-notes)
   * [Parallel JavaScript](jan-30.md#parallel-javascript)
   * [Structured Clone](jan-30.md#structured-clone)

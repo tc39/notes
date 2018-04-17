@@ -1,4 +1,4 @@
-# Table of Contents
+# November 2015 - Table of Contents
 
 - [November 17, 2015 Meeting Notes](nov-17.md#november-17-2015-meeting-notes)
   * [Async functions (Stage 4 Process Discussion) (BT)](nov-17.md#async-functions-stage-4-process-discussion-bt)
@@ -12,6 +12,8 @@
   * [RegExp simplication semantics (DE)](nov-17.md#regexp-simplication-semantics-de)
   * [Remove generator `.return`? (DE)](nov-17.md#remove-generator-return-de)
   * [RegExp Buffet](nov-17.md#regexp-buffet)
+# November 2015 - Table of Contents
+
 - [November 18, 2015 Meeting Notes](nov-18.md#november-18-2015-meeting-notes)
   * [RegExp Buffet](nov-18.md#regexp-buffet)
   * [Unicode++ - Syntax & Semantics (BT)](nov-18.md#unicode---syntax--semantics-bt)
@@ -22,6 +24,10 @@
   * [Trailing commas in function parameter lists](nov-18.md#trailing-commas-in-function-parameter-lists)
   * [Proxy [[Enumerate]] ocerconstrains implementations (AK)](nov-18.md#proxy-enumerate-ocerconstrains-implementations-ak)
   * [Function.sent (BT)](nov-18.md#functionsent-bt)
+# November 2015 - Table of Contents
+
+# Wrap-up - Table of Contents
+
 - [November 19, 2015 Meeting Notes](nov-19.md#november-19-2015-meeting-notes)
   * [Agenda](nov-19.md#agenda)
   * [Observables (JH)](nov-19.md#observables-jh)

@@ -1,4 +1,4 @@
-# Table of Contents
+# September 2017 - Table of Contents
 
 - [September 26, 2017 Meeting Notes](sep-26.md#september-26-2017-meeting-notes)
   * [1. Opening, welcome and roll call](sep-26.md#1-opening-welcome-and-roll-call)
@@ -29,6 +29,8 @@
   * [12.i.l export-ns-from](sep-26.md#12il-export-ns-from)
   * [12.i.m Iteration protocol change](sep-26.md#12im-iteration-protocol-change)
   * [12.ii.a Introducing Intl.Locale for Stage 2](sep-26.md#12iia-introducing-intllocale-for-stage-2)
+# September 2017 - Table of Contents
+
 - [September 27, 2017 Meeting Notes](sep-27.md#september-27-2017-meeting-notes)
   * [1. Opening, welcome and roll call](sep-27.md#1-opening-welcome-and-roll-call)
   * [ii.30.b BigInt status update (Daniel Ehrenberg)](sep-27.md#ii30b-bigint-status-update-daniel-ehrenberg)
@@ -40,6 +42,8 @@
   * [12.iii.c import.meta for stage 3](sep-27.md#12iiic-importmeta-for-stage-3)
   * [12.iv.a Private methods and accessors for Stage 3](sep-27.md#12iva-private-methods-and-accessors-for-stage-3)
   * [12.iv.b Decorators: detailed discussion of proposed semantics](sep-27.md#12ivb-decorators-detailed-discussion-of-proposed-semantics)
+# September 2017 - Table of Contents
+
 - [September 28, 2017 Meeting Notes](sep-28.md#september-28-2017-meeting-notes)
   * [1. Opening, welcome and roll call](sep-28.md#1-opening-welcome-and-roll-call)
   * [Other Test262 updates](sep-28.md#other-test262-updates)

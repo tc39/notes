@@ -1,4 +1,4 @@
-# Table of Contents
+# July 2014 - Table of Contents
 
 - [July 29, 2014 Meeting Notes](jul-29.md#july-29-2014-meeting-notes)
   * [Introduction](jul-29.md#introduction)
@@ -13,6 +13,8 @@
   * [Postpone Realm API to ES7](jul-29.md#postpone-realm-api-to-es7)
   * [Revisit Object.assign()](jul-29.md#revisit-objectassign)
   * [Test 262 Update](jul-29.md#test-262-update)
+# July 2014 - Table of Contents
+
 - [July 30, 2014 Meeting Notes](jul-30.md#july-30-2014-meeting-notes)
   * [RFTG Admin: ES6 Opt-out period.](jul-30.md#rftg-admin-es6-opt-out-period)
   * [4.4 Instantiation Reform (Review @@create design rationale and possible alternatives)](jul-30.md#44-instantiation-reform-review-create-design-rationale-and-possible-alternatives)
@@ -21,6 +23,8 @@
   * [4.7 Revisit Comprehension decision from last meeting.](jul-30.md#47-revisit-comprehension-decision-from-last-meeting)
   * [4.12 Revisit spread and destructuring of string](jul-30.md#412-revisit-spread-and-destructuring-of-string)
   * [4.5 Import-into-namespace syntax (Dave)](jul-30.md#45-import-into-namespace-syntax-dave)
+# July 2014 - Table of Contents
+
 - [July 31, 2014 Meeting Notes](jul-31.md#july-31-2014-meeting-notes)
   * [Notes from secretariat](jul-31.md#notes-from-secretariat)
   * [9.1-8 Date and place of the next meeting(s)](jul-31.md#91-8-date-and-place-of-the-next-meetings)

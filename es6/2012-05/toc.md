@@ -1,10 +1,14 @@
-# Table of Contents
+# May 2012 - Table of Contents
 
 - [May 21, 2012 Meeting Notes](may-21.md#may-21-2012-meeting-notes)
   * [Royalty Free Status](may-21.md#royalty-free-status)
   * [Internationalization](may-21.md#internationalization)
+# May 2012 - Table of Contents
+
 - [May 22, 2012 Meeting Notes](may-22.md#may-22-2012-meeting-notes)
   * [Binary Data](may-22.md#binary-data)
+# May 2012 - Table of Contents
+
 - [May 23, 2012 Meeting Notes](may-23.md#may-23-2012-meeting-notes)
   * [Override Mistake (Allen Wirfs-Brock, Mark Miller)](may-23.md#override-mistake-allen-wirfs-brock-mark-miller)
   * [4.14, Unicode (Norbert Lindenderg)](may-23.md#414-unicode-norbert-lindenderg)

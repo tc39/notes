@@ -1,4 +1,4 @@
-# Table of Contents
+# March 2018 - Table of Contents
 
 - [March 20, 2018 Meeting Notes](mar-20.md#march-20-2018-meeting-notes)
   * [Agenda](mar-20.md#agenda)
@@ -25,6 +25,8 @@
   * [10.i.i Update on improved TC39 documentation efforts](mar-20.md#10ii-update-on-improved-tc39-documentation-efforts)
   * [10.i.j Await in parameter defaults for non-arrow async functions](mar-20.md#10ij-await-in-parameter-defaults-for-non-arrow-async-functions)
   * [Agenda Organization](mar-20.md#agenda-organization)
+# March 2018 - Table of Contents
+
 - [March 21, 2018 Meeting Notes](mar-21.md#march-21-2018-meeting-notes)
   * [10.ii.c Hashbang Grammar for Stage 2](mar-21.md#10iic-hashbang-grammar-for-stage-2)
   * [10.ii.b Richer Keys for stage 1](mar-21.md#10iib-richer-keys-for-stage-1)
@@ -32,6 +34,8 @@
   * [10.iv.c Static public fields for Stage 3](mar-21.md#10ivc-static-public-fields-for-stage-3)
   * [Decorators towards Stage 3](mar-21.md#decorators-towards-stage-3)
   * [12.iii.b. What does 1JS mean in a world of transpilers?](mar-21.md#12iiib-what-does-1js-mean-in-a-world-of-transpilers)
+# March 2018 - Table of Contents
+
 - [March 22, 2018 Meeting Notes](mar-22.md#march-22-2018-meeting-notes)
   * [Meeting planning](mar-22.md#meeting-planning)
   * [10.i.g Update on Array.prototype.flatten web incompatibility](mar-22.md#10ig-update-on-arrayprototypeflatten-web-incompatibility)

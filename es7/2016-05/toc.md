@@ -1,4 +1,4 @@
-# Table of Contents
+# May 2016 - Table of Contents
 
 - [May 23, 2016 Meeting Notes](may-23.md#may-23-2016-meeting-notes)
   * [Discussion of the agenda and timing](may-23.md#discussion-of-the-agenda-and-timing)
@@ -11,10 +11,14 @@
   * [Revisiting "Duplicate Function Declarations in Blocks"](may-23.md#revisiting-duplicate-function-declarations-in-blocks)
   * [Throwing an error for returning primitives from base class constructors](may-23.md#throwing-an-error-for-returning-primitives-from-base-class-constructors)
   * [Always update object properties if property descriptor is applicable (NaN issue)](may-23.md#always-update-object-properties-if-property-descriptor-is-applicable-nan-issue)
+# May 2016 - Table of Contents
+
 - [May 24, 2016 Meeting Notes](may-24.md#may-24-2016-meeting-notes)
   * [Attendee Update](may-24.md#attendee-update)
   * [Always update object properties if property descriptor is applicable (NaN issue)](may-24.md#always-update-object-properties-if-property-descriptor-is-applicable-nan-issue)
   * [Syntactic Tail Calls (BT)](may-24.md#syntactic-tail-calls-bt)
+# May 2016 - Table of Contents
+
 - [May 25, 2016 Meeting Notes](may-25.md#may-25-2016-meeting-notes)
   * [Agenda](may-25.md#agenda)
   * [Decorators](may-25.md#decorators)

@@ -1,4 +1,4 @@
-# Table of Contents
+# July 2015 - Table of Contents
 
 - [July 28, 2015 Meeting Notes](july-28.md#july-28-2015-meeting-notes)
   * [Introduction](july-28.md#introduction)
@@ -17,6 +17,8 @@
   * [6.6 BindingRestElement should allow a BindingPattern ala AssignmentRestElement](july-28.md#66-bindingrestelement-should-allow-a-bindingpattern-ala-assignmentrestelement)
   * [6.7 new & GeneratorFunction](july-28.md#67-new--generatorfunction)
   * [6.12 String.prototype.split, its limit argument, and ToLength vs ToUint32](july-28.md#612-stringprototypesplit-its-limit-argument-and-tolength-vs-touint32)
+# July 2015 - Table of Contents
+
 - [July 29, 2015 Meeting Notes](july-29.md#july-29-2015-meeting-notes)
   * [6.11 The scope of "use strict" with respect to destructuring in parameter lists](july-29.md#611-the-scope-of-use-strict-with-respect-to-destructuring-in-parameter-lists)
   * [6.9 Reconsidering the Number.prototype-as-an-ordinary-object change](july-29.md#69-reconsidering-the-numberprototype-as-an-ordinary-object-change)
@@ -26,6 +28,8 @@
   * [Process Document discussion (to settle things once and for all)](july-29.md#process-document-discussion-to-settle-things-once-and-for-all)
   * [What is an "implementation"?](july-29.md#what-is-an-implementation)
   * [6.8 SIMD.js: Start the process to move towards Stage 3](july-29.md#68-simdjs-start-the-process-to-move-towards-stage-3)
+# July 2015 - Table of Contents
+
 - [July 30, 2015 Meeting Notes](july-30.md#july-30-2015-meeting-notes)
   * [7 Test262 Updates](july-30.md#7-test262-updates)
   * [Meeting Schedule](july-30.md#meeting-schedule)

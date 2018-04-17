@@ -42,8 +42,7 @@ function main(folder) {
 
     const writable = fs.createWriteStream(`${folder}/toc.md`, { flags: "w" });
     const filePattern = /^\w*-\d+\.[mM][dD]$/;
-
-    writable.write("# Table of Contents\n\n");
+    let hasTitle = false;
 
     results.forEach(file => {
       if (!filePattern.test(path.basename(file))) {
@@ -56,6 +55,11 @@ function main(folder) {
         },
         append: "\n",
         linkify({ lvl }, title, slug) {
+          if (!hasTitle, lvl === 1) {
+            const part = title.replace(/^(\w*)\s*\d*,\s*(20\d+) Meeting Notes/, "$1 $2");
+            writable.write(`# ${part} - Table of Contents\n\n`);
+            hasTitle = true;
+          }
           // prepends the filename to the link
           let content = mdlink(title, `${path.basename(file)}#${slug}`);
           return {

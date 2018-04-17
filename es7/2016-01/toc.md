@@ -1,4 +1,4 @@
-# Table of Contents
+# January 2016 - Table of Contents
 
 - [January 26, 2016 Meeting Notes](jan-26.md#january-26-2016-meeting-notes)
   * [Agenda](jan-26.md#agenda)
@@ -14,6 +14,8 @@
   * [Object.getOwnPropertyDescriptors proposal email (JHD)](jan-26.md#objectgetownpropertydescriptors-proposal-email-jhd)
   * [Object.getOwnPropertyDescriptors object: null or Object.prototype as [[Prototype]]?](jan-26.md#objectgetownpropertydescriptors-object-null-or-objectprototype-as-prototype)
   * [5.xi Daniel, presenting SIMD changes since December](jan-26.md#5xi-daniel-presenting-simd-changes-since-december)
+# January 2016 - Table of Contents
+
 - [January 27, 2016 Meeting Notes](jan-27.md#january-27-2016-meeting-notes)
   * [Agenda](jan-27.md#agenda)
   * [FastTrack](jan-27.md#fasttrack)
@@ -22,6 +24,14 @@
   * [TC39 Invited Experts Fund - Proposal](jan-27.md#tc39-invited-experts-fund---proposal)
   * [quick interjection: method param decorators, function expression decorators (YK, MH)](jan-27.md#quick-interjection-method-param-decorators-function-expression-decorators-yk-mh)
   * [Function#toString && Function#isPortable (MF)](jan-27.md#function%23tostring--function%23isportable-mf)
+# January 2016 - Table of Contents
+
+# Test262 Updates - Table of Contents
+
+# Progress review: Callable class constructors (Allen) - Table of Contents
+
+# Object.getOwnPropertyDescriptors to stage 3? (Jordan Harband, low priority, but super quick!) - Table of Contents
+
 - [January 28, 2016 Meeting Notes](jan-28.md#january-28-2016-meeting-notes)
   * [Agenda](jan-28.md#agenda)
   * [Function#toString && Function#isPortable (MF)](jan-28.md#function%23tostring--function%23isportable-mf)

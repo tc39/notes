@@ -1,4 +1,4 @@
-# Table of Contents
+# July 2013 - Table of Contents
 
 - [July 23, 2013 Meeting Notes](july-23.md#july-23-2013-meeting-notes)
   * [Agenda](july-23.md#agenda)
@@ -14,6 +14,8 @@
   * [4.9 Time zones 1: Bugs or spec issues?](july-23.md#49-time-zones-1-bugs-or-spec-issues)
   * [4.10 Time zones 2: Time zone as property](july-23.md#410-time-zones-2-time-zone-as-property)
   * [Date/Timezone](july-23.md#datetimezone)
+# July 2013 - Table of Contents
+
 - [July 24, 2013 Meeting Notes](july-24.md#july-24-2013-meeting-notes)
   * [4.6 Binary Data Update](july-24.md#46-binary-data-update)
   * [9 JSON (Continued)](july-24.md#9-json-continued)
@@ -26,6 +28,8 @@
   * [5.14 keys(), entries() return numbers for array index properties](july-24.md#514-keys-entries-return-numbers-for-array-index-properties)
   * [5.7 Does Object.freeze need an extensibility hook?](july-24.md#57-does-objectfreeze-need-an-extensibility-hook)
   * [5.4 Typed Array MOP behaviours (Continued)](july-24.md#54-typed-array-mop-behaviours-continued)
+# July 2013 - Table of Contents
+
 - [July 25, 2013 Meeting Notes](july-25.md#july-25-2013-meeting-notes)
   * [5.6 Can let/const/class/function* in non-strict code bind "eval" and "arguments"](july-25.md#56-can-letconstclassfunction-in-non-strict-code-bind-eval-and-arguments)
   * [5.9 Semantics and bounds of Number.isInteger and Number.MAX_INTEGER](july-25.md#59-semantics-and-bounds-of-numberisinteger-and-numbermax_integer)

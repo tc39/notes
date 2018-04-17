@@ -1,4 +1,4 @@
-# Table of Contents
+# July 2012 - Table of Contents
 
 - [July 24, 2012 Meeting Notes](july-24.md#july-24-2012-meeting-notes)
   * [Agenda](july-24.md#agenda)
@@ -12,12 +12,16 @@
   * [Unicode support](july-24.md#unicode-support)
   * [4.1 (cont) Processing full Unicode Source Code](july-24.md#41-cont-processing-full-unicode-source-code)
   * [4.13 Destructuring Issues](july-24.md#413-destructuring-issues)
+# July 2012 - Table of Contents
+
 - [July 25, 2012 Meeting Notes](july-25.md#july-25-2012-meeting-notes)
   * [Scoping Rules for Global Lexical Declaration](july-25.md#scoping-rules-for-global-lexical-declaration)
   * [Object.observe](july-25.md#objectobserve)
   * [Weak References](july-25.md#weak-references)
   * [Script Concat Issue](july-25.md#script-concat-issue)
   * [Fix "override mistake", aka. The can put check](july-25.md#fix-override-mistake-aka-the-can-put-check)
+# July 2012 - Table of Contents
+
 - [July 26, 2012 Meeting Notes](july-26.md#july-26-2012-meeting-notes)
   * [Maxmin class semantics](july-26.md#maxmin-class-semantics)
   * [getPrototypeOf trap](july-26.md#getprototypeof-trap)

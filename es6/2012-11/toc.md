@@ -1,4 +1,4 @@
-# Table of Contents
+# November 2012 - Table of Contents
 
 - [November 27, 2012 Meeting Notes](nov-27.md#november-27-2012-meeting-notes)
   * [Welcome](nov-27.md#welcome)
@@ -15,10 +15,14 @@
   * [String Case Conversion](nov-27.md#string-case-conversion)
   * [Eliminate ToUInt32() warping on array access](nov-27.md#eliminate-touint32-warping-on-array-access)
   * [The prototype/constructor object model supporting Generators/use of instanceof with generators and generator instances](nov-27.md#the-prototypeconstructor-object-model-supporting-generatorsuse-of-instanceof-with-generators-and-generator-instances)
+# November 2012 - Table of Contents
+
 - [November 28, 2012 Meeting Notes](nov-28.md#november-28-2012-meeting-notes)
   * [Syntactic Support for Private Names](nov-28.md#syntactic-support-for-private-names)
   * [Experience With TypeScript](nov-28.md#experience-with-typescript)
   * [Modules Update](nov-28.md#modules-update)
+# November 2012 - Table of Contents
+
 - [November 29, 2012 Meeting Notes](nov-29.md#november-29-2012-meeting-notes)
   * [Approval of ECMA/TC39 Scope Declaration](nov-29.md#approval-of-ecmatc39-scope-declaration)
   * [Scoping for default arguments revisited](nov-29.md#scoping-for-default-arguments-revisited)

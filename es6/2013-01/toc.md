@@ -1,4 +1,4 @@
-# Table of Contents
+# January 2013 - Table of Contents
 
 - [January 29, 2013 Meeting Notes](jan-29.md#january-29-2013-meeting-notes)
   * [Agenda](jan-29.md#agenda)
@@ -17,6 +17,10 @@
   * [4.5 Why standardizing on `__proto__` and not `__define(G|S)etter__`, `__lookup(G|S)etter__`?](jan-29.md#45-why-standardizing-on-__proto__-and-not-__definegsetter__-__lookupgsetter__)
   * [4.8 Refactored new operator and the @@create method](jan-29.md#48-refactored-new-operator-and-the-create-method)
   * [4.10 Data collection/analysis: Function-in-block, duplicate parameter names, const, strict mode, var let/let[x]=1, and maybe more](jan-29.md#410-data-collectionanalysis-function-in-block-duplicate-parameter-names-const-strict-mode-var-letletx1-and-maybe-more)
+# January 2013 - Table of Contents
+
+# 10, TypedArray.prototype - Table of Contents
+
 - [January 30, 2013 Meeting Notes](jan-30.md#january-30-2013-meeting-notes)
   * [Function In Block Options](jan-30.md#function-in-block-options)
   * [Static/Class Side Methods](jan-30.md#staticclass-side-methods)
@@ -25,6 +29,8 @@
   * [4.11 Name Property of Functions](jan-30.md#411-name-property-of-functions)
   * [4.12 Typed Arrays Update](jan-30.md#412-typed-arrays-update)
 - [10, TypedArray.prototype](jan-30.md#10-typedarrayprototype)
+# January 2013 - Table of Contents
+
 - [January 31, 2013 Meeting Notes](jan-31.md#january-31-2013-meeting-notes)
   * [4.14 Module Update](jan-31.md#414-module-update)
   * [New Scope of the Royalty-Free Task Group (TC39TG1)](jan-31.md#new-scope-of-the-royalty-free-task-group-tc39tg1)

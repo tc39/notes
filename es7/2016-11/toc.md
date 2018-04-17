@@ -1,4 +1,4 @@
-# Table of Contents
+# December 2016 - Table of Contents
 
 - [December 1, 2016 Meeting Notes](dec-1.md#december-1-2016-meeting-notes)
   * [4 Approval minutes from last meeting](dec-1.md#4-approval-minutes-from-last-meeting)
@@ -10,6 +10,8 @@
   * [DE: The plan is to merge the specs for Stage 3](dec-1.md#de-the-plan-is-to-merge-the-specs-for-stage-3)
   * [13.vi Process proposal: require an implementation to land a normative PR to the spec](dec-1.md#13vi-process-proposal-require-an-implementation-to-land-a-normative-pr-to-the-spec)
   * [13.vii Open-ended: How can we promote diversity and inclusion in TC39](dec-1.md#13vii-open-ended-how-can-we-promote-diversity-and-inclusion-in-tc39)
+# November 2016 - Table of Contents
+
 - [November 29, 2016 Meeting Notes](nov-29.md#november-29-2016-meeting-notes)
   * [Introduction](nov-29.md#introduction)
   * [3 Adoption of the agenda](nov-29.md#3-adoption-of-the-agenda)
@@ -27,6 +29,8 @@
   * [12.ii.b Module Namespace Objects: Various Oddities](nov-29.md#12iib-module-namespace-objects-various-oddities)
   * [12.ii.d Proposal to reform the spec to include default export in export * from 'module'](nov-29.md#12iid-proposal-to-reform-the-spec-to-include-default-export-in-export--from-module)
   * [12.iv.a import()](nov-29.md#12iva-import)
+# November 2016 - Table of Contents
+
 - [November 30, 2016 Meeting Notes](nov-30.md#november-30-2016-meeting-notes)
   * [5 Report from the Ecma Secretariat](nov-30.md#5-report-from-the-ecma-secretariat)
   * [6.i Meeting scheduling](nov-30.md#6i-meeting-scheduling)

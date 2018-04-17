@@ -1,4 +1,4 @@
-# Table of Contents
+# January 2017 - Table of Contents
 
 - [January 24, 2017 Meeting Notes](jan-24.md#january-24-2017-meeting-notes)
   * [Adopting the agenda](jan-24.md#adopting-the-agenda)
@@ -16,6 +16,8 @@
   * [13.i.e Discussion of Annex B.3.3.3 EvalDeclarationInstantiation overwriting bindings](jan-24.md#13ie-discussion-of-annex-b333-evaldeclarationinstantiation-overwriting-bindings)
   * [13.ii.b Function.prototype.toString updates](jan-24.md#13iib-functionprototypetostring-updates)
   * [13.ii.c Seeking Stage 2 for named capture groups](jan-24.md#13iic-seeking-stage-2-for-named-capture-groups)
+# January 2017 - Table of Contents
+
 - [January 25, 2017 Meeting Notes](jan-25.md#january-25-2017-meeting-notes)
   * [István update, items 4-10 on the agenda](jan-25.md#istvan-update-items-4-10-on-the-agenda)
   * [6.ii. Who should be the chair?](jan-25.md#6ii-who-should-be-the-chair)
@@ -26,6 +28,8 @@
   * [13.ii.f Promise.prototype.finally to stage 3?](jan-25.md#13iif-promiseprototypefinally-to-stage-3)
   * [15.iii.a Error stacks (seeking stage 1)](jan-25.md#15iiia-error-stacks-seeking-stage-1)
   * [Discuss non-technical long-term vision for ECMAScript](jan-25.md#discuss-non-technical-long-term-vision-for-ecmascript)
+# January 2017 - Table of Contents
+
 - [January 26, 2017 Meeting Notes](jan-26.md#january-26-2017-meeting-notes)
   * [Looking at the proposal list](jan-26.md#looking-at-the-proposal-list)
   * [13.ii.e Seeking Stage-1 for "do expressions"](jan-26.md#13iie-seeking-stage-1-for-do-expressions)

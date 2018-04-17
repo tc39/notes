@@ -1,4 +1,4 @@
-# Table of Contents
+# November 2017 - Table of Contents
 
 - [November 28, 2017 Meeting Notes](nov-28.md#november-28-2017-meeting-notes)
   * [1. Opening, welcome and roll call](nov-28.md#1-opening-welcome-and-roll-call)
@@ -24,6 +24,8 @@
   * [9.ii.e Discuss module order instantiation/evaluation guarantees](nov-28.md#9iie-discuss-module-order-instantiationevaluation-guarantees)
   * [Array[@@Species], Array Index Accessors and Security](nov-28.md#arrayspecies-array-index-accessors-and-security)
   * [9.ii.h Intl.Locale for Stage 2](nov-28.md#9iih-intllocale-for-stage-2)
+# November 2017 - Table of Contents
+
 - [November 29, 2017 Meeting Notes](nov-29.md#november-29-2017-meeting-notes)
   * [1. Opening, welcome and roll call](nov-29.md#1-opening-welcome-and-roll-call)
   * [9.i.n XS engine (embedded JavaScript) update on conformance, source code availability, and graphical user interface capabilities](nov-29.md#9in-xs-engine-embedded-javascript-update-on-conformance-source-code-availability-and-graphical-user-interface-capabilities)
@@ -34,6 +36,8 @@
   * [9.iv.c Distinguishing literal strings proposal for Stage 0](nov-29.md#9ivc-distinguishing-literal-strings-proposal-for-stage-0)
   * [Inheriting private static class elements discussion and resolution](nov-29.md#inheriting-private-static-class-elements-discussion-and-resolution)
   * [9.iv.b Decimal for Stage 0](nov-29.md#9ivb-decimal-for-stage-0)
+# November 2017 - Table of Contents
+
 - [November 30, 2017 Meeting Notes](nov-30.md#november-30-2017-meeting-notes)
   * [10.iv.d Object.freeze + Object.seal syntax proposal for Stage 0](nov-30.md#10ivd-objectfreeze--objectseal-syntax-proposal-for-stage-0)
   * [9.iii.a Block Params to Stage 1](nov-30.md#9iiia-block-params-to-stage-1)

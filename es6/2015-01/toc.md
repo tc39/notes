@@ -1,4 +1,4 @@
-# Table of Contents
+# January 2015 - Table of Contents
 
 - [January 27, 2015 Meeting Notes](jan-27.md#january-27-2015-meeting-notes)
   * [Welcome](jan-27.md#welcome)
@@ -7,6 +7,8 @@
   * [4.4 Subclass instantiation reformation: status and open issues](jan-27.md#44-subclass-instantiation-reformation-status-and-open-issues)
   * [super() outside class constructor body](jan-27.md#super-outside-class-constructor-body)
   * [Methods in class bodies enumerability?](jan-27.md#methods-in-class-bodies-enumerability)
+# January 2015 - Table of Contents
+
 - [January 28, 2015 Meeting Notes](jan-28.md#january-28-2015-meeting-notes)
   * [Report from the Ecma Secretariat](jan-28.md#report-from-the-ecma-secretariat)
   * [ES6: Generator issues](jan-28.md#es6-generator-issues)
@@ -14,6 +16,8 @@
   * [Super revisited](jan-28.md#super-revisited)
   * [Experimental new directions for JavaScript at Google](jan-28.md#experimental-new-directions-for-javascript-at-google)
   * [6.3 Decorators](jan-28.md#63-decorators)
+# January 2015 - Table of Contents
+
 - [January 29, 2015 Meeting Notes](jan-29.md#january-29-2015-meeting-notes)
   * [ES6 Introduction text](jan-29.md#es6-introduction-text)
   * [List of contributors?](jan-29.md#list-of-contributors)

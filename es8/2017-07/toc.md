@@ -1,4 +1,4 @@
-# Table of Contents
+# July 2017 - Table of Contents
 
 - [July 25, 2017 Meeting Notes](jul-25.md#july-25-2017-meeting-notes)
   * [Welcome](jul-25.md#welcome)
@@ -17,6 +17,8 @@
   * [11.ii.b. Symbol.prototype.description](jul-25.md#11iib-symbolprototypedescription)
   * [11.ii.c. Promise.prototype.finally seeking stage 3](jul-25.md#11iic-promiseprototypefinally-seeking-stage-3)
   * [11.ii.d. Intl.RelativeTimeFormat for Stage 2](jul-25.md#11iid-intlrelativetimeformat-for-stage-2)
+# July 2017 - Table of Contents
+
 - [July 26, 2017 Meeting Notes](jul-26.md#july-26-2017-meeting-notes)
   * [13.iii.c Binary AST](jul-26.md#13iiic-binary-ast)
   * [10.iv JavaScript - Composition and Compliance](jul-26.md#10iv-javascript---composition-and-compliance)
@@ -25,6 +27,8 @@
   * [10.i Extremely Modular Distributed JavaScript](jul-26.md#10i-extremely-modular-distributed-javascript)
   * [11.iii.a. BigInt for Stage 3](jul-26.md#11iiia-bigint-for-stage-3)
   * [13.ii.b. Consider changing Number.parseInt and Number.parseFloat](jul-26.md#13iib-consider-changing-numberparseint-and-numberparsefloat)
+# July 2017 - Table of Contents
+
 - [July 27, 2017 Meeting Notes](jul-27.md#july-27-2017-meeting-notes)
   * [11.ii.g. Numeric separators for Stage 2](jul-27.md#11iig-numeric-separators-for-stage-2)
   * [11.ii.e. export-ns-from and export-default-from for Stage 2](jul-27.md#11iie-export-ns-from-and-export-default-from-for-stage-2)

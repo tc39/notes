@@ -1,4 +1,6 @@
-# Table of Contents
+# November 2014 - Table of Contents
+
+# 4.1 ES6 Draft Status Update - Table of Contents
 
 - [November 18, 2014 Meeting Notes](nov-18.md#november-18-2014-meeting-notes)
   * [Welcome](nov-18.md#welcome)
@@ -15,6 +17,8 @@
   * [4.10 RegExp subclassing fixes](nov-18.md#410-regexp-subclassing-fixes)
   * [4.13 Add async as FutureReservedWord](nov-18.md#413-add-async-as-futurereservedword)
   * [4.11 Performance issue: `Object.defineProperties`, `Object.create`, `Object.assign`.](nov-18.md#411-performance-issue-objectdefineproperties-objectcreate-objectassign)
+# November 2014 - Table of Contents
+
 - [November 19, 2014 Meeting Notes](nov-19.md#november-19-2014-meeting-notes)
   * [6. Test 262 Status](nov-19.md#6-test-262-status)
   * [4.11 Performance issue: `Object.defineProperties`, `Object.create`, `Object.assign`.](nov-19.md#411-performance-issue-objectdefineproperties-objectcreate-objectassign)
@@ -25,6 +29,8 @@
   * [Abstract references as a solution to LTR composition and private state](nov-19.md#abstract-references-as-a-solution-to-ltr-composition-and-private-state)
   * [5.7 Can security monitors reliably detect monkey-patching of primordials?](nov-19.md#57-can-security-monitors-reliably-detect-monkey-patching-of-primordials)
   * [5.2 Pure Functions](nov-19.md#52-pure-functions)
+# November 2014 - Table of Contents
+
 - [November 20, 2014 Meeting Notes](nov-20.md#november-20-2014-meeting-notes)
   * [5.5 Array.prototype.includes() proposal to move to Stage 2.](nov-20.md#55-arrayprototypeincludes-proposal-to-move-to-stage-2)
   * [5.6 Object.observe: proposal to move to Stage 3.](nov-20.md#56-objectobserve-proposal-to-move-to-stage-3)

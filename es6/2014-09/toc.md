@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [September 23, 2014 Meeting Notes](sept-23.md#september-23-2014-meeting-notes)
   * [Welcome](sept-23.md#welcome)
   * [4.1 Spec status report](sept-23.md#41-spec-status-report)

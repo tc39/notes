@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [November 18, 2014 Meeting Notes](nov-18.md#november-18-2014-meeting-notes)
   * [Welcome](nov-18.md#welcome)
 - [4.1 ES6 Draft Status Update](nov-18.md#41-es6-draft-status-update)

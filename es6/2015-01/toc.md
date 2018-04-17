@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [January 27, 2015 Meeting Notes](jan-27.md#january-27-2015-meeting-notes)
   * [Welcome](jan-27.md#welcome)
   * [4.1 ES6 End-game schedule review](jan-27.md#41-es6-end-game-schedule-review)

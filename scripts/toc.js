@@ -21,7 +21,7 @@ const yargv = yargs
 const argv = yargv.argv;
 
 if (argv.all) {
-  glob('./es+([0-9])/20[1-2][0-9]-[0-3][0-9]', (error, results) => {
+  glob("./es+([0-9])/20[1-2][0-9]-[0-3][0-9]", (error, results) => {
     if (error) {
       throw error;
     }
@@ -42,6 +42,8 @@ function main(folder) {
 
     const writable = fs.createWriteStream(`${folder}/toc.md`, { flags: "w" });
     const filePattern = /^\w*-\d+\.[mM][dD]$/;
+
+    writable.write("# Table of Contents\n\n");
 
     results.forEach(file => {
       if (!filePattern.test(path.basename(file))) {

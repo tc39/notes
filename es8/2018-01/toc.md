@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [January 23, 2018 Meeting Notes](jan-23.md#january-23-2018-meeting-notes)
   * [Welcome](jan-23.md#welcome)
   * [3. Adoption of Agenda](jan-23.md#3-adoption-of-agenda)

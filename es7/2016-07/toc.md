@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [July 26, 2016 Meeting Notes](jul-26.md#july-26-2016-meeting-notes)
   * [Welcome](jul-26.md#welcome)
   * [3 Agenda Adoption](jul-26.md#3-agenda-adoption)

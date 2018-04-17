@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [July 25, 2017 Meeting Notes](jul-25.md#july-25-2017-meeting-notes)
   * [Welcome](jul-25.md#welcome)
   * [3. Adoption of the agenda](jul-25.md#3-adoption-of-the-agenda)

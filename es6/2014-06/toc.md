@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [June 4 2014 Meeting Notes](jun-4.md#june-4-2014-meeting-notes)
   * [Adoption of the agenda](jun-4.md#adoption-of-the-agenda)
   * [Conclusion/Resolution](jun-4.md#conclusionresolution)

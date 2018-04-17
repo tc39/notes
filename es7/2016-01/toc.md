@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [January 26, 2016 Meeting Notes](jan-26.md#january-26-2016-meeting-notes)
   * [Agenda](jan-26.md#agenda)
   * [Approval of the minutes from November 2015](jan-26.md#approval-of-the-minutes-from-november-2015)

@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [July 24, 2012 Meeting Notes](july-24.md#july-24-2012-meeting-notes)
   * [Agenda](july-24.md#agenda)
   * [4.1 AWB Presents changes resulting in latest drafts](july-24.md#41-awb-presents-changes-resulting-in-latest-drafts)

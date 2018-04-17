@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [July 28, 2015 Meeting Notes](july-28.md#july-28-2015-meeting-notes)
   * [Introduction](july-28.md#introduction)
   * [Adoption of Agenda](july-28.md#adoption-of-agenda)

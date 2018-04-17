@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [May 21, 2013 Meeting Notes](may-21.md#may-21-2013-meeting-notes)
   * [Agenda](may-21.md#agenda)
   * [4.1 Object.freeze](may-21.md#41-objectfreeze)

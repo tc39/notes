@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [July 23, 2013 Meeting Notes](july-23.md#july-23-2013-meeting-notes)
   * [Agenda](july-23.md#agenda)
   * [4.1 ES6 Status Report](july-23.md#41-es6-status-report)

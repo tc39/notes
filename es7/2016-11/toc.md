@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [December 1, 2016 Meeting Notes](dec-1.md#december-1-2016-meeting-notes)
   * [4 Approval minutes from last meeting](dec-1.md#4-approval-minutes-from-last-meeting)
   * [6.i Determine 2017 TC39 meeting dates, locations, and hosts.](dec-1.md#6i-determine-2017-tc39-meeting-dates-locations-and-hosts)

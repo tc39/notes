@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [May 23, 2016 Meeting Notes](may-23.md#may-23-2016-meeting-notes)
   * [Discussion of the agenda and timing](may-23.md#discussion-of-the-agenda-and-timing)
   * [Class Evaluation Order](may-23.md#class-evaluation-order)

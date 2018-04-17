@@ -1,3 +1,5 @@
+# Table of Contents
+
 - [September 18, 2012 Meeting Notes](sept-18.md#september-18-2012-meeting-notes)
   * [Agenda](sept-18.md#agenda)
   * [Internationalization](sept-18.md#internationalization)

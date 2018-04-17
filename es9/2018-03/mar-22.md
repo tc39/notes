@@ -882,11 +882,7 @@ BT: are we going to get to pipeline?
 
 GI: Its an operator that provides some value. The rational is that the current syntax is ?? and that can provide surprising results. The current status is initial spec text and we're at stage 1
 
-** presenting slide **
 
-open issues
-
-** presenting slide **
 
 GI: If optional chaining take that operator we're going to look for something else. The favourite 3 tokens that come up were `???` and `|||`. There's another issue related to precendence, its currently speced out to have the same precedence as the OR operator. In the examples above, if you do a mix of null coalecing and ORs you might get some suprising results. There are some possible solutions, we could forbid mixing the operators without parenthesis or we could do nothing. I would like to present it for stage 2?
 
@@ -967,6 +963,7 @@ RBN: one issue in the issue tracker is ?: and I know its considered to be ?? The
 
 - more discussion needed
 
+
 ## Summarize classes
 
 (Daniel Ehrenberg)
@@ -989,9 +986,12 @@ DE: I want to just mention that static public fields is also in scope as somethi
 
 - Please follow up with Dan (littledan@igalia.com) if you want to champion carrying forward any JS classes 1.1 features, or have any feedback on this plan
 
-## Follow-up on WeakRefs
+## 10.iv.a. Weak References for stage 2
 
 (Dean Tribble)
+
+- [proposal](https://github.com/tc39/proposal-weakrefs/blob/master/specs/weakrefs.md)
+- [slides](https://github.com/tc39/proposal-weakrefs/blob/master/specs/Weak%20References%20for%20EcmaScript.pdf)
 
 DT: only two or three things. First off a big chunk of the presentation I did not go into was around the wasm stuff, we've been working 3 or 4 people there. TST eseptcially has been helping drive the ?? on this. so he is joining as a co champion. And there are 2 and hopefully 3 implementations Bradley Meck has an implementation last API and working to bring it to the new API. TST has a version in the SpiderMonkey shell. to be able to prototype and implement on top of that. my goal for stage 3 is to have a fully working interface that will talk to wasm and that will be some of what we work through so that we nail down all the issues that we care about but if you have a use case that is interesting and diffreent
 I am interested in other usecases, Dominic has one for many of those what I would like is some real code and we can put them in the proposal. If you want an example please put into proposal repository.
@@ -1002,13 +1002,18 @@ BHS: we should coordinate
 
 AK: We still won't want ot have that in mainline before ??
 
-## function.sent needs a champion
+## 12.iii.c function.sent needs a champion
 
 JHD: so I asked AWB on GitHub issues for the proposal of `function.sent` somewhere, his response was that he was out of the proposal writing championing business. Is anybody interested in picking this up and championinig it, if so great... You can ping me offline. Howeveer if nobody is interested in championing it we should question if this is still a problem we expect to solve in the language. Please let me know if you are interested in championing that
 
-## Pipeline operator
+#### Conclusion/Resolution
 
-(J S Choi, James DiGioia, Daniel Ehrenberg) 
+- No conclusion recorded
+
+
+## 10.iv.e Pipeline operator
+
+(JS Choi, James DiGioia, Daniel Ehrenberg) 
 
 - [proposal](https://github.com/tc39/proposal-pipeline-operator/)
 - [slides](https://docs.google.com/presentation/d/1eFFRK1wLIazIuK0F6fY974OIDvvWXS890XAMB59PUBA/edit#slide=id.p)
@@ -1076,3 +1081,7 @@ DE: I share your intuition. I think the F# proposal is my favourite. I am just l
 BT: Tab Atkins has been waiting to talk about this with fairly well reasoned motivations of why smart pipe is a good idea which the slides don't convey. It'd be good if we could let him talk.
 
 TAB: First I highly recommend you go read this proposal. Its an extremely well written readme. A lot of what I've seen in this discussions is not arguing against what has been proposed. The two major points: first the F# style priviledges functional programming style things for anything beyond the basic case. As soon as we go beyond... by piping a value into one arg of the function call you have to switch over to writing pure functions F# style or more FP shenanigans like manipulating how arguments are passed around. This isn't the way people write things they mostly write "light functional style" Smart pipes allows for this style of code for the majority of cases. You don't have to do function math or currying - or organising your functions to be maximally beneficial to this feature - you just organise your function arguments to whatever makes sense and people can just call it how they need to. F# ... allow alternate styles, its a handful of extra characters -a bit of extra weight. The two are comfortable if you have to the opposite style - but we should prefer the one that encourages the style most JS devs are comfortable with - so using placeholder slots rather than argument ordering shenanigans. Smart pipes mixed with the variadic pipelines totally subsume already 3 other syntax proposals this committee is interested in. The method abstraction +> a.b..... 2. It replaces and improves on partial application, You have to use the argument exactly once.If you're using 2 the first one had to .... The slide Dan passed over shows how using topic style, you get the benefits of partial application and you can arrange arguments, use it multiple times, use an operator instead of a function. Functions are easy to reason about but operators are also important! If you don't allow operators you end up with functions like lamda add which is much less convenient. The point is all of these extra things which take in extra proposals and making them part of pipelines - its all very natural. They automatically achieve other goals. Natural every day way we'd use them. its a fairly light weight synrax proposal that punches way above its weight class given the amount of conceptual space it covers - we can drop several other things.
+
+#### Conclusion/Resolution
+
+- No conclusion recorded

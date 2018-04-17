@@ -17,47 +17,47 @@ const yargv = yargs
 const argv = yargv.argv;
 
 if (argv._.length) {
-    main(argv._[0]);
+  main(argv._[0]);
 } else {
-    yargv.showHelp();
+  yargv.showHelp();
 }
 
 function main(folder) {
-    glob(`./${folder}/*.md`, (error, results) => {
-        if (error) {
-            throw error;
+  glob(`./${folder}/*.md`, (error, results) => {
+    if (error) {
+      throw error;
+    }
+
+    const writable = fs.createWriteStream(`${folder}/toc.md`, { flags: 'w' });
+    const filePattern = /^\w*-\d+\.[mM][dD]$/;
+
+    results.forEach(file => {
+      if (!filePattern.test(path.basename(file))) {
+        return;
+      }
+      const contents = fs.readFileSync(file, "utf8");
+      const fileToc = toc(contents, {
+        filter(str, ele) {
+          return ele.lvl < 3;
+        },
+        append: "\n",
+        linkify({ lvl }, title, slug) {
+          // prepends the filename to the link
+          let content = mdlink(title, `${path.basename(file)}#${slug}`);
+          return {
+            content,
+
+            // lvl is required to find the highest level links and order it
+            lvl
+          };;
         }
+      });
 
-        const writable = fs.createWriteStream(`${folder}/toc.md`, { flags: 'w' });
-        const filePattern = /^\w*-\d+\.[mM][dD]$/;
+      const rendered = fileToc.content;
 
-        results.forEach(file => {
-            if (!filePattern.test(path.basename(file))) {
-                return;
-            }
-            const contents = fs.readFileSync(file, "utf8");
-            const fileToc = toc(contents, {
-                filter(str, ele) {
-                    return ele.lvl < 3;
-                },
-                append: "\n",
-                linkify({ lvl }, title, slug) {
-                    // prepends the filename to the link
-                    let content = mdlink(title, `${path.basename(file)}#${slug}`);
-                    return {
-                        content,
-
-                        // lvl is required to find the highest level links and order it
-                        lvl
-                    };;
-                }
-            });
-
-            const rendered = fileToc.content;
-
-            writable.write(rendered);
-        });
-
-        writable.end();
+      writable.write(rendered);
     });
+
+    writable.end();
+  });
 }

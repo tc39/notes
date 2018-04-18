@@ -138,6 +138,7 @@ ${css}
 ${script}
 <title>${title}</title>
 <body class="markdown-body">
+<a href="javascript:history.back()">Back</a>
 ${remarkable.render(content)}
 </body>
 `;

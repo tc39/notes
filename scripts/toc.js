@@ -66,7 +66,8 @@ function main(folder) {
             writable.write(`# ${part} - Table of Contents\n\n`);
 
             if (hasSummary) {
-              writable.write(`- [Summary](${folder}_summary.html)\n`);
+              const yearMonth = folder.match(/(\d{4}-\d{2})/)[1];
+              writable.write(`- [Summary](${yearMonth}_summary.html)\n`);
             }
             hasTitle = true;
           }

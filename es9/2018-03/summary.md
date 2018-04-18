@@ -1,7 +1,6 @@
 # Summary for the 63rd meeting of Ecma TC39
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2018/03.md)
-- [TOC](toc.md)
 
 ## General
 

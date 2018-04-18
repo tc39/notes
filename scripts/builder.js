@@ -62,12 +62,23 @@ remarkable.use(remarkable => {
   };
 });
 
-const css = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.6.0/github-markdown.css" />
+const css = `
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.6.0/github-markdown.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" />
-`;
-const script = `<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+`.trim();
+
+const script = `
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
-`;
+`.trim();
+
+const favicon = `
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="manifest" href="img/site.webmanifest">
+<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+`.trim();
 
 const indents = {
   ".md": 2,
@@ -110,6 +121,7 @@ function makeIndex({links}) {
   return ct.stripIndent`
 <!doctype html>
 <meta charset="utf-8">
+${favicon}
 <title>ECMA, TC39 Meeting Notes</title>
 ${css}
 ${script}
@@ -124,6 +136,7 @@ function makePage({title, content}) {
   return ct.stripIndent`
 <!doctype html>
 <meta charset="utf-8">
+${favicon}
 ${css}
 ${script}
 <title>${title}</title>

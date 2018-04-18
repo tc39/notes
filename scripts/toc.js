@@ -26,7 +26,7 @@ if (argv.all) {
       throw error;
     }
 
-    results.forEach(folder => main(folder));
+    results.forEach(main);
   });
 } else if (argv._.length) {
   main(argv._[0]);
@@ -43,7 +43,13 @@ function main(folder) {
     const writable = fs.createWriteStream(`${folder}/toc.md`, { flags: "w" });
     const filePattern = /^\w*-\d+\.[mM][dD]$/;
     let hasTitle = false;
+    let hasSummary = false;
 
+    try {
+      hasSummary = fs.existsSync(`${folder}/summary.md`);
+    } catch (error) {}
+
+    // writable.
     results.forEach(file => {
       if (!filePattern.test(path.basename(file))) {
         return;
@@ -58,6 +64,10 @@ function main(folder) {
           if (!hasTitle && lvl === 1) {
             const part = title.replace(/^(\w*)\s*\d*,\s*(20\d+) Meeting Notes/, "$1 $2");
             writable.write(`# ${part} - Table of Contents\n\n`);
+
+            if (hasSummary) {
+              writable.write(`- [Summary](summary.html)\n`);
+            }
             hasTitle = true;
           }
           // prepends the filename to the link
@@ -67,13 +77,11 @@ function main(folder) {
 
             // lvl is required to find the highest level links and order it
             lvl
-          };;
+          };
         }
       });
 
-      const rendered = fileToc.content;
-
-      writable.write(rendered);
+      writable.write(fileToc.content);
     });
 
     writable.end();

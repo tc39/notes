@@ -66,7 +66,7 @@ function main(folder) {
             writable.write(`# ${part} - Table of Contents\n\n`);
 
             if (hasSummary) {
-              writable.write(`- [Summary](summary.html)\n`);
+              writable.write(`- [Summary](${folder}_summary.html)\n`);
             }
             hasTitle = true;
           }

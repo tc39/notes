@@ -69,29 +69,49 @@ const script = `<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
 `;
 
+const indents = {
+  ".md": 4,
+  "summary.md": 2,
+  "toc.md": 2,
+};
+
+function indentation(filename) {
+  return Object.keys(indents).reduce((width, ending) => {
+    return filename.endsWith(ending) ? indents[ending] : width;
+  }, 0);
+}
+
 glob("./es*/**/*.md", (error, results) => {
   const links = [];
+  let meeting = "";
 
   results.reverse().forEach(file => {
-    const orignal = fs.readFileSync(file, "utf8");
+    const original = fs.readFileSync(file, "utf8");
+    const indent = " ".repeat(indentation(file));
+    const title = original.split('\n')[0].replace("# ", "").trim();
+    const isToc = file.endsWith("toc.md");
+
+    if (isToc) {
+      const thisMeeting = title.replace(" - Table of Contents", "").trim();
+      if (meeting !== thisMeeting) {
+        meeting = thisMeeting;
+        links.push(`- ${meeting}`);
+      }
+    }
 
     const fileName = file
       .replace(/\.\/es.\//, "")
       .replace(/(\d{4}-\d{2})\//, "$1_")
       .replace(".md", ".html");
 
-    const title = orignal.split('\n')[0].replace("# ", "").trim();
-
     const yearMonth = file.match(/\/(\d{4}-\d{2})\//)[1];
-    const content = orignal
+    const content = original
       .replace(/\]\(([a-z]+-\d{1,2})\.md/g, `](${yearMonth}_$1.html`)
       .replace(/^\[([^\]]+)\]: ([a-z]+-\d{1,2})\.md/gm, `[$1]: ${yearMonth}_$2.html`);
 
     fs.writeFileSync(fileName, makePage({ title, content }));
-
-    links.push(`- [${title.replace(" Meeting Notes", "")}](${fileName})`);
+    links.push(`${indent}- [${title.replace(" Meeting Notes", "")}](${fileName})`);
   });
-
   fs.writeFileSync("index.html", makeIndex({ links }));
 });
 

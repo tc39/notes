@@ -70,9 +70,9 @@ const script = `<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js
 `;
 
 const indents = {
-  ".md": 4,
-  "summary.md": 4,
-  "toc.md": 2,
+  ".md": 2,
+  "summary.md": 2,
+  "toc.md": 0,
 };
 
 function indentation(filename) {
@@ -87,18 +87,9 @@ glob("./es*/**/*.md", (error, results) => {
 
   results.reverse().forEach(file => {
     const original = fs.readFileSync(file, "utf8");
-    const indent = " ".repeat(indentation(file));
+    const indentWidth = indentation(file);
+    const indent = indentWidth ? " ".repeat(indentWidth) : "";
     const title = original.split('\n')[0].replace("# ", "").trim();
-    const isToc = file.endsWith("toc.md");
-
-    if (isToc) {
-      const thisMeeting = title.replace(" - Table of Contents", "").trim();
-      if (meeting !== thisMeeting) {
-        meeting = thisMeeting;
-        links.push(`- ${meeting}`);
-      }
-    }
-
     const fileName = file
       .replace(/\.\/es.\//, "")
       .replace(/(\d{4}-\d{2})\//, "$1_")
@@ -123,9 +114,8 @@ function makeIndex({links}) {
 ${css}
 ${script}
 <body class="markdown-body">
-<ul>
+${remarkable.render("# TC39 Meeting Notes")}
 ${remarkable.render(links.join('\n'))}
-</ul>
 </body>
 `;
 }

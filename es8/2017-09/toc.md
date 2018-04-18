@@ -1,6 +1,6 @@
 # September 2017 - Table of Contents
 
-- [Summary](summary.html)
+- [Summary](2017-09_summary.html)
 - [September 26, 2017 Meeting Notes](sep-26.md#september-26-2017-meeting-notes)
   * [1. Opening, welcome and roll call](sep-26.md#1-opening-welcome-and-roll-call)
   * [3. Adoption of Agenda](sep-26.md#3-adoption-of-agenda)

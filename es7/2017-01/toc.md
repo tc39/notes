@@ -1,5 +1,6 @@
 # January 2017 - Table of Contents
 
+- [Summary](summary.html)
 - [January 24, 2017 Meeting Notes](jan-24.md#january-24-2017-meeting-notes)
   * [Adopting the agenda](jan-24.md#adopting-the-agenda)
   * [Adopting the minutes](jan-24.md#adopting-the-minutes)

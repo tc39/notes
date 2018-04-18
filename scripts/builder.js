@@ -71,7 +71,7 @@ const script = `<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js
 
 const indents = {
   ".md": 4,
-  "summary.md": 2,
+  "summary.md": 4,
   "toc.md": 2,
 };
 

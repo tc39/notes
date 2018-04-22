@@ -425,7 +425,7 @@ YK: first of all I just want to agree that the WebAssembly use case ??? I create
 DT: this is almost the same ??? stuff. And we're going to do some cleanup call that is going to call into the wasm.
 
 YK: and in that use case it really doesn't matter to be, I basically want the same GC timing rules as regular GC and I suspect that engines will use roughly equivalent heuristics.
-I will expecte that engine will ??? basically I just want to keep my memory.
+I will expect that engine will ??? basically I just want to keep my memory.
 
 DT: ??? is in some csense changing the language terminology. We're not proposing that you can rely on things getting cleaned up properly
 

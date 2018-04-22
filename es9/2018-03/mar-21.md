@@ -363,7 +363,7 @@ AK: I doesn't help that much because it doesn't access static private state.
 
 DE: There's been a variety of intuitions about what hazards are hazardous. Some people view static private methods not working with subclass receivers is worse than ... ? So for that intuition switching to these (no-brandcheck) semantics would address the concern. Other people view them as both being significant.
 
-BE: This is a differeent design choose, thanks for bribing up. Class initialization blocks: I think this is uncontroversial.
+BE: This is a different design choose, thanks for bribing up. Class initialization blocks: I think this is uncontroversial.
 
 DE: We will discuss it later, in the static public fields presentation.
 

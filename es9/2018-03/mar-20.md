@@ -1129,7 +1129,7 @@ SGO: If you want to help, please reach out, we'll happy to have this conversatio
 
 YK: You pointed out that a lot of people are interested, do you have any thoughts on what we can do to help people who want to province feedback?
 
-YSV: There are few directions we could go.This is a quesion that needs more time, people want to help and I think people come with good intentions, but I think people get into bike-shedding conversations, because they're the easiest ones, which can be difficult to comprehend. Making sure that they know what's the discussion has been ???, making sure that people understand the constraints. Theres a contraint that excludes that possibility. I think having explainer docs - maybe a technical solution explaining things already ruled out. This is the most intuitive way of doing this, but it's also the most difficult way.
+YSV: There are few directions we could go.This is a question that needs more time, people want to help and I think people come with good intentions, but I think people get into bike-shedding conversations, because they're the easiest ones, which can be difficult to comprehend. Making sure that they know what's the discussion has been ???, making sure that people understand the constraints. Theres a contraint that excludes that possibility. I think having explainer docs - maybe a technical solution explaining things already ruled out. This is the most intuitive way of doing this, but it's also the most difficult way.
 
 DH: A couple quick thoughts on something I know isn't final. You mentioned es-discuss before, but I wouldn't recommend you going on es-discuss, I don't know if we want to get into an argument about es-discuss, because if we're sending people someplace that won't have a good outcome...
 

@@ -416,7 +416,7 @@ BT: we have a queue
 
 AK: lets discuss
 
-DT: we can clear the queu
+DT: we can clear the question
 
 DT: ok queue
 

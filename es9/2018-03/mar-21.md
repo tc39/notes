@@ -423,7 +423,7 @@ MM: You could create a `WeakMap`-like collection in the user space. I would stil
 
 BFS: the point about define vs assign though is critical. 
 
-BE: One of the lesser arguments here is consistency with the use of equal, assignment uses equal as well... This proposal uses a seperate selector, and avoids the define vs assign by construction,
+BE: One of the lesser arguments here is consistency with the use of equal, assignment uses equal as well... This proposal uses a separate selector, and avoids the define vs assign by construction,
 
 MM: the only difference that I see is the lack of initializer. and then syntactically there are of course a number of difference. The fact that there is a leading keyword makes the equals less confusing. Declaring keyword variable name equals expression is never thought to have assignment. 
 

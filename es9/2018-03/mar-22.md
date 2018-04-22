@@ -458,7 +458,7 @@ implementers who were present on the phone call expressed that this was somethin
 AK: I just wanted to agress with MM overview, the WebAssembly case became more and more obvious that's become a problem. THere's a lot of issue that's going into, both when you are using wasm in js with the current memory model and the dangers of using a lot of memory which we at least are looking at -- reducing memory usage overall
 this seems like a good fit for improvement
 
-DT: there hvae also been some changes in the api to more strongly stay away 
+DT: there have also been some changes in the api to more strongly stay away 
 
 TST: WH, I don't think that should be on the queue
 

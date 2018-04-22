@@ -684,7 +684,7 @@ MM: Doesn't leave us discussion time for the overall complexity of the language.
 
 BE:  There is definitely some fear that the committee will add too much. Never say never use namespaces—except for regards to  Common Lisp there's name packages 
 
-MM: There is a very particular kind of "never". There are safety properties that people come to depend on, and adding features can break existing safety properties. I really feel like it's a distraction from the classes that we're dicussing. There's concern with focusing too much on safety features that it ends up as destroying an added feature.
+MM: There is a very particular kind of "never". There are safety properties that people come to depend on, and adding features can break existing safety properties. I really feel like it's a distraction from the classes that we're discussing. There's concern with focusing too much on safety features that it ends up as destroying an added feature.
 
 the way we talk about safety properties is really important. I would love to formalize it so that we do not lose it over time. 
 

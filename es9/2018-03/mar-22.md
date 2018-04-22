@@ -784,9 +784,9 @@ DH: I don't actually buy that's not a complexity budget because it does introduc
 
 (Mike Pennisi) 
 
-[PR](https://github.com/tc39/ecma262/pull/1091)
-[Prior discussion](https://bugs.ecmascript.org/show_bug.cgi?id=4243)
-[slides](https://jugglinmike.github.io/presentations/2018/tc39-fn-name)
+- [PR](https://github.com/tc39/ecma262/pull/1091)
+- [Prior discussion](https://bugs.ecmascript.org/show_bug.cgi?id=4243)
+- [slides](https://jugglinmike.github.io/presentations/2018/tc39-fn-name)
 
 MP: Thanks for having me today. I've been working to improve Test262 to better support consumption by JavaScript parsers. I stumbled on a contentious question: is the BindingIdentifier in function expressions and declarations part of "function code"? In ECMA-262 2017, you see that no, it does not include the binding identifier, but if you were to refer to the implementations, you would have a different story. Most of them include the binding identifier when enforcing strict mode restrictions. So, the initial question would.. well maybe you would say the implementations are wrong and we should change them. That may seem a bit presumptuous of me. I'd like to point out that by enforcing the current spec text, we would actually be lifting restrictions. So it's always controversial to change running code. but in this case, the risk of web incompatabilities is very low. However, there's a third alternative that's worth considering. The way that function declaration affect the surrounding environment record differs from the way function expressions affect the environment record. Since the BindingIdentifier of a function declaration creates an entry in the outer environment record, the strictness of the function body doesn't seem particularly relevant. On the other hand, the BindingIdentifier of a function expression creates an entry within the function body, so the strictness has more bearing in that case. The third alternative I'm offering is to extend the definition to say that function code includes the BindingIdentifier only for function expressions. So thats it in a nutshell, this is a pretty self contained issue, so I just want to give you an overview of the options we have on the table. The issue I'm seeking consensus on is how we treat these pieces of code. Is anyone seeing a value in changing the spec?
 

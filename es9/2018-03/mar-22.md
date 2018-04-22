@@ -79,7 +79,7 @@ KG: sure, that's one options that we're not gone to, dropping the flat from the 
 
 DE: Any objections to flat?
 
-KM: You could imagine having a future where because of web compatibility issues, we've basically turned most of these proposals. We could use something like require array.prototype.flatten, or import flatten, and that would change the Array method installed. Mootols just don't have it. This is really a new precedent I guess for how we would do language design. What is the right way to go? I don't really know, but there doesn't seem to be much option apart from picking weird names amongst other things
+KM: You could imagine having a future where because of web compatibility issues, we've basically turned most of these proposals. We could use something like require array.prototype.flatten, or import flatten, and that would change the Array method installed. MooTools just don't have it. This is really a new precedent I guess for how we would do language design. What is the right way to go? I don't really know, but there doesn't seem to be much option apart from picking weird names amongst other things
 
 YK: I thought you meant flatten? Instead it seems like you want lexical support?
 

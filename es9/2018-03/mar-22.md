@@ -1046,7 +1046,7 @@ function mutate() {
 
 DE: I was trying to clarify the evaluation order. There a few things that are in common between proposals. (Explaining code sample)
 
-YK: There are two explainations of "fixed". Does this evaluate all of the references at the start of the pipeline, or as it executes? 
+YK: There are two explanations of "fixed". Does this evaluate all of the references at the start of the pipeline, or as it executes? 
 
 DE: It evaluates references as it executes, with some interleaving.
 

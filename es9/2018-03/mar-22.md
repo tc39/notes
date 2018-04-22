@@ -914,7 +914,7 @@ YK: there's something interesting about what should be truthy for this operator,
 I don't know what to say about that, maybe null undefined and false is fine.
 Another way of saying that is this project is really about reforming falsey in javascript
 
-GI: Is there strong consusensus that nullish colleasing should include ??? falsy values.
+GI: Is there strong consensus that nullish colleasing should include ??? falsy values.
 
 JHD: So YK just to make sure are you suggesting it should be including undefined null and false. The use case I have is being able to default things on an options object
 

@@ -144,7 +144,7 @@ MM: But, are you suggesting–I'll let Bradley speak to the details of the propo
 
 YK: Right, that's not what i'm proposing.
 
-MM: I think I can reduce your question down to the symbols themselves, we could have allowed symbols that are not created by smbol.for
+MM: I think I can reduce your question down to the symbols themselves, we could have allowed symbols that are not created by `symbol.for`
 
 YK: I dont think symbols are a good mechanism for this. 
 

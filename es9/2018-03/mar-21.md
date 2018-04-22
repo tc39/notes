@@ -649,7 +649,7 @@ BE: Yeah, This isn't like a kitchen sink process, I agree with that.
 
 DH; I really like the way that you frame this as a thought exercise, while i'm not comfortable with the proposal ??
 
-BE: Considering this under a SmallTalk  halo, I think it's interesting to discuss, the arrow and the static resolution is interesting. I agree with brad
+BE: Considering this under a Smalltalk  halo, I think it's interesting to discuss, the arrow and the static resolution is interesting. I agree with brad
 
 DE: So I really like this phrasing of it, I wanted to go back to  what we were talking about before with the intuition of arrow vs dot hash. The way I've been explaining this proposal is that "hash is the new underscore. Basically, like
 basically its like a `WeakMap`". Private fields can be thought of as internal slots or as properties of a `WeakMap`, and the semantics in the private field case is a subset of the public field case (plus more exceptions).  We talk about public and private "fields" because they are in correspondence with each other. We should make it clear to programmers that private is different from public so people don't get confused. I want to make the opposite point. So that developers can migrate between these things, they should be parallel. Developers who are currently using public can easily migrate their code to private. JavaScript programmers understand these patterns of leading things with underscores with intent to not make things visible outside of the class. This sort of intent in creating this analogy lead in a way that it took .... ? and copied it over and I agree with what ??? was saying that hash should be part of the name. is really sort of core to our model that we hope programmers won't mix it up.
@@ -701,7 +701,7 @@ We need to be able to say "the process is on the rails". We have to repeat the f
 
 I think its just a consequence, the opposite of those things not what everyone wants.
 
-DT: you already addressed one of my comments. Allan bringing in SmallTalk things, so this thing is kind of important, but This isn't really smalltalky at all, this is a lot of new stuff that seems very thoughtful about JavaScript.
+DT: you already addressed one of my comments. Allan bringing in Smalltalk things, so this thing is kind of important, but This isn't really smalltalky at all, this is a lot of new stuff that seems very thoughtful about JavaScript.
 
 BE: I didn't say grinding the axe... what I find small talky here is not the variables, but the instance varibales being private in a lexical way. Not the details but the instance variable being private and not in a flexible way. That also feel smalltakly. Its more about philosophy of doing things in an integrety way and doing things through methods.  I think its fair to say that thats smalltalky, I think its a useful point of view
 

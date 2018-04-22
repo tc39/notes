@@ -1275,7 +1275,7 @@ BFS: I think it's fine.
 
 DE:  I wanted to take the time to analyze the 1.1 proposal, as soon as possible. Before this meeting, I don't think we considered the -> syntax in the committee, just on GitHub. But other things we did discuss. We arrived we arrived at this particular case. I don't think switching to a different position will be easy and if we do want to do that, that I hope we do so soon.
 
-BE: I'm not going to chapmion, Allen probably won't either. It may just be a strawman. My intention wasn't to advance a proposal.
+BE: I'm not going to champion, Allen probably won't either. It may just be a strawman. My intention wasn't to advance a proposal.
 
 DE: I don't see any new cross cutting concerns. Reading the explainer, I don't understand if there's any synergy -- to see If we do want to make some of these changes. If not, maybe we come with a conclusion. We have very carefully considered various cost cutting concerns, and I'd like to discuss those.
 

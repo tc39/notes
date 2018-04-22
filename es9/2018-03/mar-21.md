@@ -445,7 +445,7 @@ BE: Public fields?
 
 YK yes, you don't have to reject them, but if you do add them in the future what makes this nice would be less nice
 
-BE: Allen or Kevin does argue that it's better to put the initliazer in the constructor body.
+BE: Allen or Kevin does argue that it's better to put the initializer in the constructor body.
 
 YK: I think that whole perspective hangs together and we should consider it as a cohesive thing. 
 

@@ -940,7 +940,7 @@ WH: Depends on which one.
 
 GI: So the fourth bullet point on this slide
 
-DH: I don't like it very much. These are just a super-cross-cutting collection of these proposals. we would have to deal with it as a collection. I dont see why we deal with the m seperately
+DH: I don't like it very much. These are just a super-cross-cutting collection of these proposals. we would have to deal with it as a collection. I dont see why we deal with the m separately
 
 GI: That's fair
 

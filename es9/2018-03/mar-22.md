@@ -87,7 +87,7 @@ KM: you could import it ...
 
 YK: The reason I ask is that the effectful import is a useful idea, and it does solve the mootool option
 
-KM: It execute more or less like a script, it's an assignement and puts flatten on the propotype
+KM: It execute more or less like a script, it's an assignement and puts flatten on the prototype
 
 JHD: If it not an import, there's no symbol. I wouldn't be ergonomic to use. If you're importing a function with a receiver that you can't use, that would be a less ergonimic. Either method syntax is critical, or the static Array.flatten is a better option than importing it. We don't have built modules, so that would be a huge thing. I would love it that we could just agree, when we have builtin modules we can just decide about ???.
 

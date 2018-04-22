@@ -355,7 +355,7 @@ DE: Yeah
 
 WH: I'd happy with either choice you make.
 
-DE: what about doing the rounding operation first, anyway to conclude on this topic on the specficiation. I think we have the consuensus in the room to throw ???For the second question on exact comparisons, it seems like we have consensus. Using string to bigint rather than isNumeric
+DE: what about doing the rounding operation first, anyway to conclude on this topic on the specification. I think we have the consuensus in the room to throw ???For the second question on exact comparisons, it seems like we have consensus. Using string to bigint rather than isNumeric
 
 WH: (Nods.)
 

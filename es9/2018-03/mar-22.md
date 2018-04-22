@@ -148,7 +148,7 @@ WH: (referring to the slide stating that `..` is not possible due to the current
 
 SGN: `1..toString()` is valid syntax which is all I'm saying.
 
-YK: Clariiying question, earlier you said that it's a strawman proposal but you already have opinion about the syntax.
+YK: Clarifying question, earlier you said that it's a strawman proposal but you already have opinion about the syntax.
 
 SGN: I don't have strong opinions, im just saying these are the challenges we face if we use this syntax
 Why not the triple dot? because its slightly confusing with the spread operator, which already exists.

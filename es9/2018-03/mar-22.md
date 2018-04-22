@@ -473,13 +473,13 @@ MM: Just one more clarification, part of the reason why people were ok living wi
 
 -- extended
 
-SYG: my question is ??: it seems like the anwser to ??? it seems the be yes. With respect to finalization, what is the standard what can we tell users that they can rely on
+SYG: my question is ??: it seems like the answer to ??? it seems the be yes. With respect to finalization, what is the standard what can we tell users that they can rely on
 
-DT: I don't want to anwser that. This is a stage 2 discussion. 
+DT: I don't want to answer that. This is a stage 2 discussion. 
 
 MM: I have a very short answer. an implementation taht never garbage collects in the absense of weak reference and that never pops a stack, it sill conforms to, the spec doesn't ever talk about finite memory or memory exhaustion.
 
-DH: I like this, ive always been in favor of weak refs. the thing that I got stuck on when I first started n this ...? program tends on rely on surprising bugs. and then this idea of doing turn based collection is very clever and fits js very well. but what I dont have an answer to one qustion which is sure on the main thread the javascript way of doing things is short turns but in workers you can have unbounded threads doing long turns if you ahve this weak ref, that by definition never be collected (sven: unsure) they just become strong references in an unbound? turn. is it that we should never use weak refs on a thread, or ...  what's the anwser for a language that ahve both weak-ref and unbounded turn?
+DH: I like this, ive always been in favor of weak refs. the thing that I got stuck on when I first started n this ...? program tends on rely on surprising bugs. and then this idea of doing turn based collection is very clever and fits js very well. but what I dont have an answer to one qustion which is sure on the main thread the javascript way of doing things is short turns but in workers you can have unbounded threads doing long turns if you ahve this weak ref, that by definition never be collected (sven: unsure) they just become strong references in an unbound? turn. is it that we should never use weak refs on a thread, or ...  what's the answer for a language that ahve both weak-ref and unbounded turn?
 
 DT: So the answer is in the rest of my proposal it turns out i'm happy to talk to you offline. I think of that as being stage 2 enhancements, which I is why we didn't try to address it before.
 
@@ -540,7 +540,7 @@ BHS: I'm question is still what's the ??? in the feature. You just mentioned hav
 
 YK: I don't know what to you say, there's a dot there. Its a micro syntax that doesnt justify ???
 
-BHS: That anwser my question
+BHS: That answer my question
 
 JHD:  I think that the teachability depends strongly there being some token in front of a . or in front of a parent based on the current options I prefere the ??. ??( ??{ for the consistency reasons.
 

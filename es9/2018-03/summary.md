@@ -41,7 +41,7 @@ _Proposals not advancing to new a new stage. e.g.: development updates, needs wo
 - [Getting last item of Array](mar-20.md#10ic-getting-last-item-of-array-for-stage-2) not advancing to Stage 2 yet.
 - [Await in parameter defaults for non-arrow async functions](mar-20.md#10ij-await-in-parameter-defaults-for-non-arrow-async-functions)
 - [JavaScript Classes 1.1](mar-21.md#10ivb-javascript-classes-11), no consensus for the proposal as a whole but lots of thoughts for discussion. _The committee was critical of several aspects of the JS classes 1.1 proposal, but there was some support for a couple aspects_.
-- [Static public fields](mar-21.md#10ivc-static-public-fields-for-stage-3) not advacing to Stage 3 yet.
+- [Static public fields](mar-21.md#10ivc-static-public-fields-for-stage-3) not advancing to Stage 3 yet.
 - [Decorators towards](mar-21.md#decorators-towards-stage-3) not advancing to Stage 3 yet, still needs work over syntax and a follow up over private names semantics.
 - [BigInt status update](mar-22.md#bigint-status-update) with follow ups for the semantics
 - [Optional chaining](mar-22.md#optional-chaining-for-stage-2) not advancing to stage 2 yet.

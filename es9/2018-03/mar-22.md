@@ -455,7 +455,7 @@ within a turn with ??? we mitigate this hazard as much as possible.
 
 implementers who were present on the phone call expressed that this was something they were happy with
 
-AK: I just wanted to agress with MM overveiw, the WebAsembly case became more and more objvious that's become a problem. THere's a lot of issue that's going into, both when you are using wasm in js with the current memory model and the dangers of using a lot of memory which we at least are looking at -- reducing memory usage overall
+AK: I just wanted to agress with MM overveiw, the WebAssembly case became more and more objvious that's become a problem. THere's a lot of issue that's going into, both when you are using wasm in js with the current memory model and the dangers of using a lot of memory which we at least are looking at -- reducing memory usage overall
 this seems like a good fit for improvement
 
 DT: there hvae also been some changes in the api to more strongly stay away 

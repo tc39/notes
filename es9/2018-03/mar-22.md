@@ -447,7 +447,7 @@ MM: I'll clarify that, I had a lot of talk with the wasm team, and the mozilla/v
 which is you have the hazard that programmes that are not actually correct by the specification just happen to work because of the way garbage collation timing works
 code that always work that was incorrect starts to beark.
 that objection is just as valid as it always was.
-it's a real hazrad. what broke the log jam was this wasm use case, which yehuda just pointed out
+it's a real hazard. what broke the log jam was this wasm use case, which yehuda just pointed out
 this was seen as an overwhelming use case by the implementers
 they wanted to have an obersvable GC on the plateform with all the hazard.
 what is does, it treats the GC, which is where interleveing haards usually happn, and each turn boundering ??? the hazard which is exactly where the javascript programmer is used to interleving hazards

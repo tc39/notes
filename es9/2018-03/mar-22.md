@@ -1004,7 +1004,7 @@ AK: We still won't want ot have that in mainline before ??
 
 ## 12.iii.c function.sent needs a champion
 
-JHD: so I asked AWB on GitHub issues for the proposal of `function.sent` somewhere, his response was that he was out of the proposal writing championing business. Is anybody interested in picking this up and championinig it, if so great... You can ping me offline. Howeveer if nobody is interested in championing it we should question if this is still a problem we expect to solve in the language. Please let me know if you are interested in championing that
+JHD: so I asked AWB on GitHub issues for the proposal of `function.sent` somewhere, his response was that he was out of the proposal writing championing business. Is anybody interested in picking this up and championinig it, if so great... You can ping me offline. However if nobody is interested in championing it we should question if this is still a problem we expect to solve in the language. Please let me know if you are interested in championing that
 
 #### Conclusion/Resolution
 

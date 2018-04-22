@@ -288,7 +288,7 @@ DE: Not really. This wasn't my idea, this was an idea from Andreas Rossberg. Unt
 
 DE: Any more suggestion about it?
 
-AK: I think Allen is asking us for more system design but a lot of it it's out of EMCA. ECMAScript had a pretty well thought spec on modules. But I don't think it should be a requirement that every system design discussion has to be exposed to JS to integrate with JS. JS is used in a lot of different env. And in a lot of different ways, it seems there's no use case for exposing this. 
+AK: I think Allen is asking us for more system design but a lot of it it's out of ECMA. ECMAScript had a pretty well thought spec on modules. But I don't think it should be a requirement that every system design discussion has to be exposed to JS to integrate with JS. JS is used in a lot of different env. And in a lot of different ways, it seems there's no use case for exposing this. 
 
 BT: That's my preferred response as well, but nobody has came up with what system design would look like. Let's do this thing.
 

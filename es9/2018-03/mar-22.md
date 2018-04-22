@@ -922,7 +922,7 @@ YK: but that same problem exists  with null. with various reasons we are not goi
 
 JHD: undefined and null are the same to me, from an initialization pov
 
-DH: I dont agree with that, in implementations we ahve something different
+DH: I dont agree with that, in implementations we have something different
 
 JHD: we have a table in the proposal which shows that more often we see that they are treated the same. I'm not clear on left assc vs right associative. So I see zero questions null. ?? One of hte additional reasons that I see precedense as important is because ..? I havent thought out the hazards in all the places where I would want to do that follower precedence
 

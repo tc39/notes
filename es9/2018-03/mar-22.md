@@ -517,8 +517,8 @@ DT: I don't like the name either
 
 (Gabriel Isenberg) 
 
--[explainer](https://github.com/tc39/proposal-optional-chaining )
-- [slides](https://docs.google.com/presentation/d/1XDUB1gGRmD6cIUu2-bVXEA-ZrWUIfQfhWxFKALCAXOQ/edit#slide=id.p )
+- [explainer](https://github.com/tc39/proposal-optional-chaining)
+- [slides](https://docs.google.com/presentation/d/1XDUB1gGRmD6cIUu2-bVXEA-ZrWUIfQfhWxFKALCAXOQ/edit#slide=id.p)
 
 GI: i'll recap the features and go through the syntax and finally ask for stage 2. It's for optional property access, racket accses and optional method invokation. The current status is stage 1 with implementation in Babel. Before i'm showing you the syntax I would like to go through the other languages. People asked in the last meetings if people are using ??? The current scope of short circuiting fulfils almost 90% of the use cases in coffee script. Syntax is probably one of the more challenging issues for this. we want something that is backward compatbility, something that's easy enought to parse, we want something that works for our use cases such as member access and bracket access, we want to pick something that's not used in other maintream languages, we want something that is uniform across the three cases, looks lnice , esay to parse, and intuitive for the developer. the current syntax that's in the proposal, are ?., ?.( ?.[ and ??. There is a related proposla wichi is ... (see slides) it allows the ideal syntax for nullish coalis, fallback syntax: last meeting I discussed ?? as an alternative to ?. (explaination) since we're using ?? we need other token for nullish coalis, and ?? is the strawman for the future, there's a pr to switch the syntax from ?? to ??? because it's easier to parse. The big con here is that we can no longer do that ??  Another con the method invokation ??? looks like other ??? The status is that we are at stage 1, I am seeking stage 2 for the community favorite syntax. That optimizes for the most common cases. We have babylon and transform support. There is one open issue with unwelcome grammar suprised with tagged template literals with that I would like to open it up to the queue.
 

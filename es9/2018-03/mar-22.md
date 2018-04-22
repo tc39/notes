@@ -444,7 +444,7 @@ DT: i'll explain this a little bit more for the questions.
 DE: previously we heard concern from implmenters of any kind of ... ?
 
 MM: I'll clarify that, I had a lot of talk with the wasm team, and the mozilla/v8 folks. And the previous objection to weakref was a completely valid objection that caused the proposal to be stuck
-which is you have the hazard that programmes that are not actually correct by the specification just happen to work because of the way garbage colletion timing works
+which is you have the hazard that programmes that are not actually correct by the specification just happen to work because of the way garbage collation timing works
 code that always work that was incorrect starts to beark.
 that objection is just as valid as it always was.
 it's a real hazrad. what broke the log jam was this wasm use case, which yehuda just pointed out

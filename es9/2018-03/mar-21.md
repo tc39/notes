@@ -763,7 +763,7 @@ alert(C.count) // 1
 alert(D.count) // 2
 ```
 
-D proptotype's is C. The count of C becomes 1 and D doesn't have a count property, because there's not reason it has a this property because it's on C. And this is exactly how it works with objects. if you use object literals and object.create which are all idoams that are well known from JavaScript programmers.
+D prototype's is C. The count of C becomes 1 and D doesn't have a count property, because there's not reason it has a this property because it's on C. And this is exactly how it works with objects. if you use object literals and object.create which are all idoams that are well known from JavaScript programmers.
 
 KG: this isn't the surprising bit.
 

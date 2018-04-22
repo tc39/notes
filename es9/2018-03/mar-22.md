@@ -178,7 +178,7 @@ SGN: I also heard from people in the community that other operator could be conf
 YK: the worst thing about the Ruby syntax, the fact that dot dot came first and means incluseive, and the ... came later and means exclusive. Rust did it better. there's a proposal for dot dot equal.
 I find it confusing therefor I think we should do ????
 
-BHS: with inclusive and exclusive I at least get a bit confused with negative 1 and negative 0 when takling about indices. I understand that people liek inclusive, I would just recommend we look at exclusive first.
+BHS: with inclusive and exclusive I at least get a bit confused with negative 1 and negative 0 when takling about indices. I understand that people like inclusive, I would just recommend we look at exclusive first.
 
 SGN: It wouldn't match the slice method, is that ok? (some confusion about what BHS said) .. It doesn't include the upper bound.
 

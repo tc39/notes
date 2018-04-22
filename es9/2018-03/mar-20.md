@@ -515,7 +515,7 @@ TST: We need at least a rectangular room where people don't have to shout and ha
 
 DE: One thing is finding a place with a good video conference setup, what we should do about that?
 
-API: It might be a requirement to specify a system, and have a system brought in. It's becoming increasingly difficult when trying to set up a meeting to get rooms that are large enough to have a group as big. If a host needs to also have microphones etc. Tthis further narrows the number of spaces we can use. Can we bring the mic and speaker setup with us?
+API: It might be a requirement to specify a system, and have a system brought in. It's becoming increasingly difficult when trying to set up a meeting to get rooms that are large enough to have a group as big. If a host needs to also have microphones etc. This further narrows the number of spaces we can use. Can we bring the mic and speaker setup with us?
 
 KM: On the mic thing, it's good to not shuffling the mic around, it's a bit slow to pass it around.
 

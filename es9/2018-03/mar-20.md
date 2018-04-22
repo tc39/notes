@@ -1083,7 +1083,7 @@ BFS: I think Allan wanted to add this? I don't think this was added for any othe
 
 We should explore the space of trying to make cycles work.
 
-DH: I think this is definitly open for discuss
+DH: I think this is definitely open for discuss
 
 LCK: Domenic and George raised this in PR #916, it's definitely going to need more work. Once we talk face to face at the next WebAssembly meeting, We will have a chance to clarify it and then I can present it for the next TC39 meeting.
 

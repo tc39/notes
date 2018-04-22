@@ -341,7 +341,7 @@ WH: That's exactly what the proposal is, assuming the change I am advocating get
 
 DE: to address your concern, the other sort of conversion it the bitwise conversion. I prefered to leave that out in the current proposal. Other conversion operators can also be considered to be added in future proposals. Jacob has mentioned multiple times of implementation in the core engine that may be difficult to do in JavaScript code. I want to continue to think about how to extend the library.
 
-KM: My point in this was not that stating its a requirement, it was more wanting to resolve the conflict of the strictness. people have differnt debate of what the strictness of the conversion should be.
+KM: My point in this was not that stating its a requirement, it was more wanting to resolve the conflict of the strictness. people have different debate of what the strictness of the conversion should be.
 Maybe they would be happier if there were multple different ones and you could opt in to which you want anyway.
 
 DE: I'd rather come to a single answer on this question. "We are having a debate, so let's put in a menu option so users can decide the answer" is kind of an antipattern. I don't think we have a use case for this kind of things.

@@ -955,7 +955,7 @@ WH: I cringe at treating just undefined, null, and false as falsy values here. I
 
 YK: there is a use case for double type. boolean is always what you mean. ?? I dont know what to say about that other than, I think that if you tryed to use that it wouldnt work
 
-RBN: one issue in the issue tracker is ?: and I know its considered to be ?? There are a number of languags that use ?: as null coales.e. im personally more favor in ???
+RBN: one issue in the issue tracker is ?: and I know its considered to be ?? There are a number of language that use ?: as null coales.e. im personally more favor in ???
 
 ** discussing the agenda **
 

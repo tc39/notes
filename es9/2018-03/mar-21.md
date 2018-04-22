@@ -934,7 +934,7 @@ AK: you mentioned static blocks, and in Brendan's proposal this was present to g
 
 DE: one is that it is not as terse as the current syntax. I think people like the current syntax, I don't know if people wants to reply in the queue. There's a lot of JavaScript programmer in the room.
 
-AK I dont know how we could do a really objective study on that. It just strikes me and I'm interested in WH would be OK with static blocks and NO static fields. I'm just trying to figoure out some middle-ground here.
+AK I dont know how we could do a really objective study on that. It just strikes me and I'm interested in WH would be OK with static blocks and NO static fields. I'm just trying to figure out some middle-ground here.
 
 YK: I would personally be OK with that largely because the use cases that I care about are protocol cases where someone told you you gotta put that static thing in this. I also think that it addresses the issue of static / private ?
 

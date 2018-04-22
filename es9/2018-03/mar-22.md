@@ -410,7 +410,7 @@ DE: you're 20 mins in
 
 DT: we can do multiple weak refs on the same target, they wil be finalised independently in their own group. and we can unregister from ??? by doing ??? Ok so let me pause for a moment thats the stage 2 api, it is what we originally planned to propose, and that hasn't change in months What we've been doing since then we're doing specification, there is a question for the committee, which is from the point of view of stage 2. we do have spec tests for this stuff. The thing I would like you to think about is everything after this a believe is approximately stage 2 requirements the question is, are we ok with saying that's stage 2? Or do we have significate ??? to address in order to go to stage 2? 
 
-DT: Can I take a moment to ask that question??Ddoes people want to go to stage 2
+DT: Can I take a moment to ask that question?? Does people want to go to stage 2
 
 BT: we have a queue
 

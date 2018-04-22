@@ -469,7 +469,7 @@ MM: yes I can answer that. yes it suffers from cycles. this came up in the inter
 YK: I can only speak for myself for the webassembly use-case, the cycle problem is really apparent to me, where im at right now, I cannot reference into the wasm heap from js at all. 
 I want to have wasm object in js that are GC'able the only thing I can do right now is ??? this allows me to reference into wasm directly from js in a gc'able way I want to reference js from wasm from a gc(able referancle way.
 
-MM: Just one more clarification, part of the reason why people were ok living with the cycle problem for now is  we do expect that there will be a wasm gc in the futture; it uses heap allocated and uses the garbage collector of the embedder. thats one graph that it sees in both the js and wasm gc objects.
+MM: Just one more clarification, part of the reason why people were ok living with the cycle problem for now is  we do expect that there will be a wasm gc in the future; it uses heap allocated and uses the garbage collector of the embedder. thats one graph that it sees in both the js and wasm gc objects.
 
 -- extended
 

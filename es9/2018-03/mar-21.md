@@ -672,7 +672,7 @@ BE: We've already got "this" meaning different things
 
 AK: but it adds another one
 
-BE: which we might want, I believe static locks might be desired? The static initliazer we could talk about it seperatly. We have problems where this changes meaning, it could be good if it was as small as possible
+BE: which we might want, I believe static locks might be desired? The static initliazer we could talk about it separately. We have problems where this changes meaning, it could be good if it was as small as possible
 
 MM:  I want to discuss an answer to Brian with regard to Process. One of the dynamics that has repeatedly come up, the suggestion here is calling into question decision X and has decision X already some into consensus. and that happening again for decision y and decision z... Our process is not broken as long as we don't take our process too seriously. There are reasons why sticking with the process literally would be broken, but the right fix to that is not to try to design and write down an amended process. the right way to deal with that is to deal with it when it comes up. The particular thing that's triggering this for me, is that (and the reason I pulled my item from the queue) is that the consensus of decisions is perfectly sensible, for Y by itself and Z by itself. Is that the reason is that I called my item in the queue " the atom of consensus" But as stewards as the language as a whole, we are to put all of those things together, that have consensus back on the table to see if they still have concesnsus when they are combined together.
 

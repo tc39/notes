@@ -464,7 +464,7 @@ TST: WH, I don't think that should be on the queue
 
 WH: You presented WebAssembly being a motivation for this feature, but doesn't it suffer from the problem of cycles?
 
-MM: yes I can answer that. yes it suffers from cycles. this came up in the internal v8 discussion. This solution can not cleanup  cross zone  cycles, and we did examine what would be a solution to clean up cross zone cycles and it was ugly and everyone backed away from it the current agreement in order to go forward is too ??? There will be leakage, but it will be conservative anyway. There is the question how much the cyle problem ends up ??? even if some additional mechanism needed for cross zone cycles there is still use case for this.
+MM: yes I can answer that. yes it suffers from cycles. this came up in the internal v8 discussion. This solution can not cleanup  cross zone  cycles, and we did examine what would be a solution to clean up cross zone cycles and it was ugly and everyone backed away from it the current agreement in order to go forward is too ??? There will be leakage, but it will be conservative anyway. There is the question how much the cycle problem ends up ??? even if some additional mechanism needed for cross zone cycles there is still use case for this.
 
 YK: I can only speak for myself for the webassembly use-case, the cycle probleme is really apparent to me, where im at right now, I cannot reference into the wasm heap from js at all. 
 I want to have wasm object in js that are GC'able the only thing I can do right now is ??? this allows me to reference into wasm directly from js in a gc'able way I want to reference js from wasm from a gc(able referancle way.

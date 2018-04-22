@@ -331,7 +331,7 @@ TST: That should help us with this things;
 
 DE: Great, I just wanted to mention that Jason and Till are not the only Mozillian are not the only Mozillians that helped. We've also had a lot of great specification reviews from Boris Zbarsky and Anne van Kesternen, in HTML and WebIDL, and these sorts of things, so thanks.
 
-AK: About the V8 implementation, we thought this would be a lot of work. This turned out to be fun for Jacob but not that hard, actually. there's a lot of work to do on the various runtime implementation. I'm not worried about that, implemeting this in multiple engine would require a lot more of work.
+AK: About the V8 implementation, we thought this would be a lot of work. This turned out to be fun for Jacob but not that hard, actually. there's a lot of work to do on the various runtime implementation. I'm not worried about that, implementing this in multiple engine would require a lot more of work.
 
 TST: I agree.
 

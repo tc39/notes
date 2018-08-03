@@ -726,7 +726,7 @@ function f(x = (y = 3, 1), y = 2) {}
 ```
 
 
-ARB: Preferably should be const bindings _in that scope_ (not the funciton body)
+ARB: Preferably should be const bindings _in that scope_ (not the function body)
 
 AWB: (describes the TDZ)
 

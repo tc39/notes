@@ -566,7 +566,7 @@ ARE: I had a question on Tuesday night: how much unpaid time do you put into thi
 
 YK: For me that is definitely not true.
 
-#### Conclusions/Resolution
+#### Conclusion/Resolution
 
 - Starting tc39/how-we-work
   - Creating a jargon.md

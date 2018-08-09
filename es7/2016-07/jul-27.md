@@ -82,7 +82,7 @@ DE: We have found that at least 4 out of 10k page loads use the "legacy date par
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 ## 9.iii.a System.global
@@ -217,7 +217,7 @@ JHD: Sounds like the next steps are for Mark to think through Yehuda's objection
 
 #### Conclusion/Resolution
 
-- Remain at Stage 2
+- Stage 2 holds
 
 
 
@@ -238,7 +238,7 @@ TD: Approval Stage 3?
 
 #### Conclusion/Resolution
 
-- Stage 3 approved
+- Stage 3 acceptance
 
 
 ## 9.i.i ECMA-402 formatToParts
@@ -310,7 +310,7 @@ AK/DE: Some cases need 2 or more browsers, but this is not one.
 
 #### Conclusion/Resolution
 
-- Stage 4 Approved
+- Stage 4 acceptance
 - https://github.com/tc39/test262/pull/734/files
 
 
@@ -330,7 +330,7 @@ ZB: All data needed for PluralRules to function are already in place, and used b
 
 #### Conclusion/Resolution
 
-- Stage 3 Approved
+- Stage 3 acceptance
 
 
 ## 10.i.a Require Unicode 9.0.0
@@ -405,7 +405,7 @@ JHD: Yes, otherwise there is no issue
 
 #### Conclusion/Resolution
 
-- Stage 2 Approved
+- Stage 2 acceptance
 
 ## Array.prototype.values
 
@@ -739,12 +739,12 @@ AWB: I want to see this and private fields merged. I don't think we should advan
 
 #### Conclusion/Resolution
 
+- Stage 2 acceptance
 - Initializers run with the semantics of individual anonymous methods with no arguments being run on the class. That explains the scope of this and super property access; new.target would be undefined, and each would get a new empty arguments object.
 - No consensus on Set() vs. DefinePropertyOrThrow()
 - A field with no initializer should create the property with the value undefined
 - No consensus on configurable vs non-configurable
 - Revisit initializer token choice of =
-- Stage 2
 
 
 ## 10.iii.c [Nested import declaration](https://github.com/benjamn/reify/blob/master/PROPOSAL.md)
@@ -928,7 +928,8 @@ BN: I would prefer synchronous semantics, if possible, but we could live with th
 
 #### Conclusion/Resolution 
 
-- Does not reach Stage 1; a synthesis proposal will be pursued at a future meeting. Remains at Stage 0.
+- Stage 0 holds.
+  - A synthesis proposal will be pursued at a future meeting. 
 
 
 

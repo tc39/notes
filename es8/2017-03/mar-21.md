@@ -340,7 +340,8 @@ YK: A use case would be putting JS code into a template string for documentation
 
 #### Conclusion/Resolution
 
-- Stage 4, our first ES2018 feature
+- Stage 4 acceptance
+  - our first ES2018 feature
 
 ## 10.i.b RegExp Lookbehind Assertions
 
@@ -399,7 +400,9 @@ MM: I can talk about it.
 
 #### Conclusion/Resolution
 
-- RegExp: Lookbehind is stage 3.
+- Stage 3 acceptance
+  - RegExp Lookbehind
+
 
 ## 7. ECMA-402 status update
 
@@ -706,18 +709,20 @@ AWB: I think we've covered this. One take-away, as this library grows, there's i
 
 We will treat the 3 proposals independently.
 
-- Intl.ListFormat
-  - advanced to stage 2
+- `Intl.ListFormat`
+  - Stage 2 acceptance
   - Reviewers:
     - PayPal
     - Daniel Ehrenberg
+- `Intl.UnitFormat`
+  - Stage 1 holds
+  - Issues raised
+- `Intl.RelativeTimeFormat`
+  - Stage 1 holds
+  - Pending more understanding of durations.
+- `dateStyle/timeStyle`
+  - Stage 1 acceptance
 
-- Intl.UnitFormat - remaining at stage 1
-  - Issues raised by
-
-- Intl.RelativeTimeFormat - stays at stage 1 pending more understanding of durations.
-
-- dateStyle/timeStyle gets to stage 1.
 
 ## 6. Addendum to test262 item
 
@@ -806,7 +811,7 @@ DE: Mathias wrote it, and I read it.
 
 #### Conclusion/Resolution
 
-- Stage 3 approved.
+- Stage 3 acceptance
   - WH reviewed it
 
 
@@ -878,7 +883,7 @@ BT: Then we're good process-wise.
 
 #### Conclusion/Resolution
 
-- Stage 3 approved.
+- Stage 3 acceptance
 - Reviewers: WH, LB
   - they previously reviewed it.
 
@@ -982,7 +987,7 @@ BE: Nice, thanks Dan!
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 ## 10.i.e RegExp Legacy Features for stage 3

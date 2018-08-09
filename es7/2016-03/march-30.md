@@ -530,7 +530,7 @@ MF: presenting the changes from yesterday
 
 #### Conclusion/resolution
 
-Approved to proceed to stage 3
+- Stage 3 acceptance
 
 ## Map/Set to JSON
 

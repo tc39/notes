@@ -197,7 +197,7 @@ DH: Maybe I think about that. Sorry for the hijack!
 
 #### Conclusion/Resolution
 
- - Stage 1
+- Stage1 acceptance
 
 
 ## 12.ii.c Needs Consensus PR: Template literal memory leak fix
@@ -330,7 +330,7 @@ Everyone: Agreement
 
 #### Conclusion/Resolution
 
- - Stage 2
+- Stage2 acceptance
 
 ## 12.iii.a String.prototype.matchAll
 
@@ -1007,7 +1007,7 @@ DE: This is not necessarily what implementors are saying. I think we can work th
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 - Implementers are encouraged not to ship private class fields or methods unflagged yet, pending the outcome of this issue
 
 ## 12.iv.b Decorators: detailed discussion of proposed semantics

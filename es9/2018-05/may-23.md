@@ -214,7 +214,7 @@ MM: The precedent is same-origin iframes and vms in node.
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 
 
 ## ECMA Secretariat Update
@@ -426,7 +426,7 @@ BT: I think we should continue pursuing it. I just think 2019 is really soon. We
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 ## Decorators towards Stage 3
@@ -643,7 +643,7 @@ RBN: Two motivations for this proposal. One is extracting private helpers. I sti
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 ## Class Access Expressions
@@ -702,7 +702,7 @@ EFT: (...something about super)
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 

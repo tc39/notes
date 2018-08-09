@@ -298,7 +298,7 @@ MB: Can we have this as stage 1? Great, stage 1 it is.
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 ## 9.ii.k Grammar constraints
 
@@ -481,7 +481,7 @@ RJE: So any opposition to Stage 1?
 
 #### Conclusion/Resolution
 
- - Stage 1, with a goal of this proposal being to provide necessary language-level support for the WICG Trusted Types proposal (https://github.com/WICG/trusted-types)
+- Stage1, with a goal of this proposal being to provide necessary language-level support for the WICG Trusted Types proposal (https://github.com/WICG/trusted-types)
 
 ##  Inheriting private static class elements discussion and resolution
 

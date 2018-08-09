@@ -680,10 +680,12 @@ ACHIEVEMENT UNLOCKED: Longer API name than getOwnPropertyDescriptor!
 
 #### Conclusion/Resolution
 
-- Pursue for ES7. RW has spec text. Approved for Stage 0.
+- Stage 0 acceptance
+- Pursue for ES7. RW has spec text.
 - RW to send a PR to add to github.com/tc39/ecma262 tracker
 
 ## 4.5 Array.prototype.contains
+
 (Rick Waldron)
 
 RW: ES5 adds String.prototype.contains. Seems oversight that we don't have the same thing in Array. But, we can wait until ES7.
@@ -710,10 +712,11 @@ RW: Open question.
 
 #### Conclusion/Resolution
 
-- Sounds good, need strawman to approve stage 0.
+- Stage 0 acceptance
 
 
 ## 4.6 Updates to parseInt
+
 (Rick Waldron)
 
 RW: Should `parseInt` handle new octal and binary integer literal syntax? [bug #1585](https://bugs.ecmascript.org/show_bug.cgi?id=1585)
@@ -746,9 +749,11 @@ WH: It's a breaking change. parseInt looks for a valid prefix and ignores the re
 
 #### Conclusion/Resolution
 
-It's dead. RW to close the bug wontfix.
+- It's dead. RW to close the bug wontfix.
+
 
 ## 4.3, Update Object.assign to accept multiple sources
+
 (Rick Waldron)
 
 RW: `Object.assign` is useful. Multiple real-world APIs do this, but most allow multiple sources.
@@ -814,7 +819,9 @@ BE: Seems strictly winning to have multiple arguments.
 
 - Object.assign gets multiple source objects.
 
+
 ## 5.1 Object.entries, Object.values
+
 (Rick Waldron)
 
 RW: ES5 added `Object.keys`. For ES7, `Object.entries` and `Object.values` make sense. These return arrays.

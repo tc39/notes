@@ -187,7 +187,7 @@ SM: Stage 1?
 
 #### Conclusion/Resolution
 
-- Stage 1 approval
+- Stage 1 acceptance
 
 
 AWB: Be sure to mark agenda items that want to advance with some kind of notation, this will help to get pre-meeting attention.
@@ -505,7 +505,7 @@ DH: Think this is awesome
 
 #### Conclusion/Resolution
 
-- Stage 0: 
+- Stage 0 acceptance
   - Some way to publish into a queue
   - priority queueing
   

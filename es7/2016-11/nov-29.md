@@ -182,7 +182,7 @@ BT: other languages have it. It's easy for Chakra to implement. Spec changes are
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Once Brian figures out why he put the thing about surrogate pairs in there and removes or clarifies it, it will come back for stage 2
 
 ## 11.ii.b Promise.try
@@ -326,7 +326,7 @@ BT: Let's look at the codebases of people who use try, the people who say they'r
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Not ready for Stage 2, pending more evidence of motivation.
 
 ## 12.i.a Promise.resolve constructor check

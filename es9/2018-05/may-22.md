@@ -374,7 +374,7 @@ wants to promote patterns like `throw null`.
 
 #### Conclusion/Resolution
 
-- Stage 4
+- Stage 4 acceptance
 
 
 ## 11.i.e ECMAScript as a superset of JSON 
@@ -398,7 +398,7 @@ MB: I'd like to thanks Richard Gibson, he's the community proposal author.
 
 #### Conclusion/Resolution
 
-- Stage 4
+- Stage 4 acceptance
 
 
 
@@ -661,7 +661,7 @@ MF: Stage 3 proposal, hasn't changed since last meeting. Has received reviews fr
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 ## Object.fromEntries to stage 2
@@ -679,7 +679,7 @@ KG: There are lots of APIs that take a list of key-value tuples _from_ an Object
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 - Reviewers: Michael Ficarra, 
 
 
@@ -995,7 +995,7 @@ SGN: Will update the spec.
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 - Reviewers: Rick Waldron, Kevin Gibbons, Michael Ficarra, Tab Atkins
 
 ## String.prototype.codePoints for Stage 2
@@ -1147,7 +1147,7 @@ API: (after the meeting) https://github.com/gibson042/ecma262-proposal-well-form
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 - Reviewers: YK, MF, DE, MSL
 
 

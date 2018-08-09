@@ -240,7 +240,7 @@ BFS: Asking for Stage 1, so if we need to add features or change it to a subclas
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 ## 10.iv.b JavaScript Classes 1.1

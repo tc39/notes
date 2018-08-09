@@ -272,7 +272,7 @@ DH: We have an implementer who has implemented [proper tail calls] as an optimiz
 
 DH: BT wants to put forward a new proposal, and I want to make sure that he's going to be heard. From what I've understood today, it seems totally reasonable.
 
-#### Conclusion/resolution
+#### Conclusion/Resolution
 
 Brian Terlson (with EF as co-champion) to champion a stage 0 proposal to amend existing tail call spec language to require extra syntax to implement a tail call
 
@@ -296,7 +296,7 @@ AWB: Not if ...
 
 BT: This doesn't matter all that much.
 
-#### Conclusion/resolution
+#### Conclusion/Resolution
 
 Let the current spec stand.
 
@@ -316,9 +316,10 @@ DH: Naming is bikeshedding.
 
 WH, AWB: But we're setting precedent here.
 
-#### Conclusion/resolution
+#### Conclusion/Resolution
 
-formatToParts advances to stage 3
+- Stage 3 acceptance
+
 
 Additional Intl List/Unit/RelativeTime/Duration entries advance to stage 1
 
@@ -433,7 +434,7 @@ MM: scoping of this, super, and arguments, and ...
 
 MM: for all these, file issues on teh proposal
 
-#### Conclusion/resolution
+#### Conclusion/Resolution
 
 - JM will bring a proposal in May
 - DE will try to organize a call in advance
@@ -638,7 +639,7 @@ AWB: This needs debate, and it needs implementation experience.
 
 EF: The core of the problem is that the worries about the proposal are exactly those things that the proposal explicitly does not address.
 
-#### Conclusion/resolution
+#### Conclusion/Resolution
 
 Stage 1
 
@@ -705,16 +706,16 @@ WH: similar to regexes, which have a cover grammar
 
 … discussion about compat issue …
 
-#### Conclusion/resolution
+#### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 ## Map.prototype.toJSON/Set.prototype.toJSON 
 (JHD)
 
 Continued discussion from yesterday.
 
-#### Conclusion/resolution
+#### Conclusion/Resolution
 
 - Rejected.
 
@@ -725,7 +726,7 @@ The committee did not want to bless the `toJSON` approach by adding what would b
 ## Aggregated FOSS parser pass-fail and equivalence tests 
 (KG)
 
-#### Conclusion/resolution
+#### Conclusion/Resolution
 
 - needs lots of review, nobody volunteered
 - decision left to test262 maintainers

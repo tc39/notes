@@ -29,7 +29,7 @@ AWB: Previous meeting notes approval?
 
 - Approved
 
-AWB: ECMA414 Approval?
+AWB: ECMA414 acceptance?
 
 - Feedback was: missing normative text
 - Second edition written to address those issues
@@ -48,9 +48,6 @@ DH: Someone on my team can archive ecmascript.org in a way which is more maintai
 DE: preserve open/unaddressed items?
 
 DH: Looking for approval of snap shot?
-
-- Approval 
-
 
 #### Conclusion/Resolution 
 
@@ -185,7 +182,7 @@ DE: formatToParts has been removed from draft due to missing implementation. The
 
 #### Conclusion/Resolution 
 
-- Set back to Stage 3
+- Stage 3 downgrade
 
 
 ## 9 Test262 Status
@@ -478,8 +475,8 @@ AWB/MM/MS all agree that with verification, intersection is best
 
 #### Conclusion/Resolution 
 
-- Stage 1 Approval
-- Stage 2 Approval
+- Stage 1 acceptance
+- Stage 2 acceptance
 - More work needed to come to clarity on the realm issue, namely when realms are saved and checked against what
 
 - Move repo to tc39
@@ -960,7 +957,7 @@ https://github.com/littledan/es-regexp-named-groups#overlapping-group-names
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Property Smashing
 
 
@@ -984,7 +981,7 @@ DE:
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 - Reviewers: 
     - Bradley Farias
     - Waldemar Horwat

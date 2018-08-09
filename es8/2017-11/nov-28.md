@@ -123,7 +123,7 @@ JRL: Seems weird to create the initial array just to call flatten on it.
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 ## 10.i.c Numeric separators for Stage 3
 
@@ -183,7 +183,7 @@ RJE: No objections.
 
 #### Conclusion/Resolution
 
- - Stage 3
+- Stage3 acceptance
  - Follow up: the spec text should define ToNumber and Number semantics equivalently regarding separators
 
 
@@ -211,7 +211,7 @@ BFS: Stage 1? Stage 1 yay!
 
 #### Conclusion/Resolution
 
- - Stage 1
+- Stage1 acceptance
 
 ## 10.i.h String.prototype.replaceAll for Stage 1
 
@@ -292,7 +292,7 @@ MB: So stage 1?
 
 #### Conclusion/Resolution
 
- - Stage 1
+- Stage1 acceptance
 
 ### 10.i.i Throw expressions request for reviewers for Stage 3 (Brian Terlson, Ron Buckton).
 
@@ -435,7 +435,7 @@ TST: Me
 
 KCL: Me
 
-### Conclusions/Resolutions
+### Conclusions/Resolution
 
  - Till Schneidereit & Keith Cirkel to review
 
@@ -592,8 +592,8 @@ DE: And the three values for the length seems fine too?
 
 #### Conclusion/Resolution
 
- - Not promoted to stage 3
- - Consensus on the previous previously contentious questions about the singular+plural unit names as well as the size names
+- Stage 2 holds
+  - Consensus on the previous previously contentious questions about the singular+plural unit names as well as the size names
 
 
 MM: Side note, I'd like to withdraw my proposal for Repair Proxy Transparency.
@@ -629,7 +629,7 @@ MB: Any objection to stage 2? Stage 2 it is then
 
 #### Conclusion/Resolution
 
- - Stage 2
+- Stage2 acceptance
  - Reviewers for Stage 3: 
      - Michael Ficarra
      - Jordan Harband
@@ -843,5 +843,7 @@ KCL: I will
 
 #### Conclusion/Resolution
 
- - Stage 2
- - Reviewers for stage 3: Bradley Farias, Keith Cirkel
+- Stage 2 acceptance
+- Reviewers:
+  - Bradley Farias
+  - Keith Cirkel

@@ -986,7 +986,7 @@ AWB: more comfortable in another spec
 
 #### Conclusion/Resolution
 
-- Stage 3 Approval
+- Stage 3 acceptance
 - `{load|store}[123]`
 - Consensus on existing
 - Equality Semantics

@@ -301,7 +301,8 @@ SM: We could also do that for Arrays.
 
 #### Conclusion/Resolution
 
-- Stage 3, currently with the "no change" option from the Plausible Solutions slide
+- Stage 3 acceptance
+  - currently with the "no change" option from the Plausible Solutions slide
 - We could add a new feature in the future that overrides the default behavior, but that does not block this in any way
 
 
@@ -801,7 +802,7 @@ BT: Nothing missing, no major concerns
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 
@@ -869,7 +870,7 @@ MM: Don't want this in the language, but don't object to stage 1.
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 
@@ -897,7 +898,7 @@ DD: Need to go back and get more evidence.
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Please look into use cases
 - Discuss syntax details and analogies further.
 
@@ -1014,7 +1015,7 @@ DE: Seems a little confusing with the analog to `import "DateTime"` doing someth
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Need to craft a plan in accordance with committee concerns
 - Polyfillability, including Mark's concern about ensuring you can disallow access to the original
 - Domenic's concerns about bifurcating the world between pre-2019 APIs and post-2019 APIs 

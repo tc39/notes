@@ -461,7 +461,8 @@ all: yes
 
 #### Conclusion/Resolution
 
-- stage 4!
+- Stage 4 acceptance
+
 
 ## Object.getOwnPropertyDescriptors (JHD)
 
@@ -485,7 +486,7 @@ YK: I'm fine with stage 4 in this situation
 
 #### Conclusion/Resolution
 
-- stage 4!
+- Stage 4 acceptance
 - __*TC39 needs to schedule a discussion in the next meeting to review the stages process document*__
 
 ## Template Literals (http://slides.com/disnet/template-literal-problems-7) (TD)
@@ -508,7 +509,7 @@ WH: Me too.
 
 #### Conclusion/Resolution
 
-- stage 2
+- Stage 2
 - reviewers: MM and WH
 
 TD: Also, relatedly:
@@ -555,7 +556,7 @@ _more discussion about meaning of stage 2_
 
 #### Conclusion/Resolution
 
-We agree that this is a feature that we have consensus on and hope to eventually include in a version of the standard, but we have not worked out major semantics with respect to cross-cutting concerns with cancellation, promises and the async iterable symbol. So this meets some of the Stage 2 criteria and not others, and remains Stage 1 for now. This is an advancement on previous concerns, where we were not convinced that we wanted to eventually include this feature.
+- We agree that this is a feature that we have consensus on and hope to eventually include in a version of the standard, but we have not worked out major semantics with respect to cross-cutting concerns with cancellation, promises and the async iterable symbol. So this meets some of the Stage 2 criteria and not others, and remains Stage 1 for now. This is an advancement on previous concerns, where we were not convinced that we wanted to eventually include this feature.
 
 ## [Cancelable Promises](https://docs.google.com/presentation/d/1V4vmC54gJkwAss1nfEt9ywc-QOVOfleRxD5qtpMpc8U/edit?usp=sharing) (DD)
 
@@ -629,7 +630,8 @@ WH: I like this a lot but am concerned about the ergonomics of practical use pat
 
 #### Conclusion/Resolution
 
-- Stage 1!
+- Stage 1 acceptance
+
 
 ## [Definitive decision for test262 python runner](https://github.com/tc39/test262/issues/647) (Mike Pennisi)
 

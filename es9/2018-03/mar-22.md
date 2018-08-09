@@ -231,7 +231,7 @@ SGN: Yes
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 ##  BigInt status update
 
@@ -778,7 +778,7 @@ DH: I don't actually buy that's not a complexity budget because it does introduc
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 ## 8.i.c Expand text included in "function code"
 

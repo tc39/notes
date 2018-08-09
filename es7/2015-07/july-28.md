@@ -329,7 +329,7 @@ AWB/DH: We have technical questions, but they have no bearing on advancement to 
 
 #### Conclusion/Resolution
 
-- Approved for stage 3
+- Stage 3 acceptance
 
 
 
@@ -598,7 +598,7 @@ DD: Walking through https://github.com/tc39/Array.prototype.includes/issues/12
 
 #### Conclusion/Resolution
 
-- Approved Stage 3
+- Stage 3 acceptance
 
 
 
@@ -685,7 +685,7 @@ Discussion, re: stage process? Yes.
 - Filed: https://github.com/domenic/unhandled-rejections-browser-spec/issues/14
 - Non-normative note: "If operation is "handle", it must not hold a reference to promise in a way that would interfere with garbage collection."
 - Filed: https://github.com/domenic/unhandled-rejections-browser-spec/issues/15
-- Approved for stage 2 
+- Stage 2 acceptance
 
 
 

@@ -132,7 +132,7 @@ YK: I'm up for Stage 1, though
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 ## 9.iii.a Block Params to Stage 1
@@ -485,7 +485,7 @@ DH: It does feel like there are pieces you can factor out - and layer this. You 
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 ## TC39 Community Engagement Discussion
@@ -566,7 +566,7 @@ ARE: I had a question on Tuesday night: how much unpaid time do you put into thi
 
 YK: For me that is definitely not true.
 
-#### Conclusions/Resolutions
+#### Conclusions/Resolution
 
 - Starting tc39/how-we-work
   - Creating a jargon.md

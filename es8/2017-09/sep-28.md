@@ -54,7 +54,7 @@ JHD: (reporting follow up items from discussion: questions and change requests a
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 - Reviewers for Stage 3:
     - Daniel Ehrenberg
     - Mathias Bynens
@@ -246,7 +246,7 @@ YK: Yes, but don't just go away and write an explanation of why null or undefine
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Need to work out syntax with respect to optional chaining operator
 
 ## 13.i Partial application
@@ -308,7 +308,7 @@ WH: I'm happy to advance to stage 1 — I think the general closure capture this
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 MF: I don't object to stage 1, but don't believe that we'll be able to come up with a syntax that makes this proposal viable.
 
@@ -327,7 +327,7 @@ Everyone: Agreement
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 ## 14.i.a Builtins.typeOf() and Builtins.is()
 

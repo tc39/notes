@@ -541,7 +541,8 @@ AWB: Any objections to Stage 4?
 
 #### Conclusion/Resolution
 
-- Stage 4 for SharedArrayBuffer! *applause*
+- Stage 4 acceptance
+  - SharedArrayBuffer
 
 AWB: And that's it for ES2017
 
@@ -1270,7 +1271,9 @@ MF: Yup :)
 
 #### Conclusion/Resolution
 
- - Proposal stays at Stage 3, going forward without line terminator normalization.
+- Stage 3 holds
+  - Going forward without line terminator normalization.
+
 
 ### What to discuss next
 

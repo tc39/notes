@@ -1512,4 +1512,4 @@ MPT: Let's start with that. Thanks!
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance

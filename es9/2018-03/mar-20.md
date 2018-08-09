@@ -839,7 +839,7 @@ DE: I don't think TC39 should just make a standard and send it to the devtools i
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Stage 2 requirements:
   - Get more devtools/debugger stakeholders involved
   - Draft out a protocol for what the objects should mean (even if it's not within TC39)
@@ -953,7 +953,7 @@ KG: Only asking for Stage 1. Note that this was written by a community member, h
 
 #### Conclusion/Resolution
 
-- Approved for Stage 1
+- Stage 1 acceptance
 
 
 MM: Do new constructors inherit from the Object constructor, other class would inherent from entries.

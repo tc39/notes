@@ -130,7 +130,8 @@ DH: I'll prototype a good error in my own parser
 
 #### Conclusion/Resolution
 
-- Stage 3, with the provision that option 4 goes in
+- Stage 3 acceptance
+  - with the provision that option 4 goes in
 - http://jsbin.com/baquqokujo/1/edit?output
 
 
@@ -422,7 +423,7 @@ AK/BT: _discussion potential implementation details_
 
 #### Conclusion/Resolution
 
-- Stage 1 Approval
+- Stage 1 acceptance
 - toString includes call constructor body in output
 - Goal for Stage 3 next meeting. 
 
@@ -820,7 +821,8 @@ DH: milestone 0 doesn't depend on this syntax, but milestone 1 does, and we don'
 
 #### Conclusion/Resolution
 
-- Stage 0 granted for dynamic relative loading
+- Stage 0 acceptance 
+  - granted for dynamic relative loading
 - Module Record thing goes in Reflect, full-stop. ("Reflect.Module", perhaps)
 - `Reflect.Loader`, `Reflect.Module`
 

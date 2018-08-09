@@ -509,7 +509,7 @@ JHD: I'm hoping to advance it to Stage 3
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 ## 11.ii.d. Intl.RelativeTimeFormat for Stage 2
@@ -540,6 +540,6 @@ AWB: Seem that those are things that we can flush out  in Stage 2
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 - Short/medium/long/narrow terminology can be discussed in an issue thread during Stage 2
 

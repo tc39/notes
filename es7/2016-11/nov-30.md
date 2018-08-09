@@ -278,7 +278,7 @@ LH: Firefox has a shell function for creating agents, and a shell function for s
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 - Intended to reach Stage 4 at the next meeting pending test262 tests; integration work can begin now.
 
 ## 10 Test262 update
@@ -698,7 +698,7 @@ WH: Historically, this is the right move; we have over the past 16 years created
 - specify overflow/underflow
 - specify division by zero
 - communicate with WebAssembly folks to make sure everyone's on the same page
-- stage 1
+- Stage 1
 
 
 ## 12.iv.c RegExp lookbehind 
@@ -760,8 +760,8 @@ Room: yes.
 - Group capture numbering: not backwards
 - Cross language comparison of regexp look behind syntax
 - Include negated look ahead and look behind?
-- Stage 1
-- Stage 2
+- Stage 1 acceptance
+- Stage 2 acceptance
 
 
 
@@ -834,7 +834,7 @@ DE: Don't know the entire history?
 
 #### Conclusion / Resolution
 
-- Stage 2
+- Stage 2 acceptance
 
 
 ## 11.ii.a Revisit NaN Again!

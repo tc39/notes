@@ -801,8 +801,11 @@ EF: we would like to advance to stage 1, we dont have spec test. But we have dra
 BT: I have to get the windows guys to sign-off to on the new API, so something concrete (spec text) would be best.
 
 
-### Resolution: (for exposing abstract operations)
-## Stage 1
+#### Conclusion/Resolution
+
+- Stage 1 acceptance
+  - for exposing abstract operations
+
 
 ### PluralRules
 
@@ -1056,7 +1059,7 @@ YK: SES is ok with this, even though they provide no global access.
 
 #### Conclusion/Resolution
 
- - stage 1
+ - Stage 1
 
 
 # Wrap-up

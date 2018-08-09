@@ -206,7 +206,7 @@ DE: We can explore syntactic versions of that. Should we be Stage 1 or 0 then? A
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Before Stage 2: investigate strawman for method extraction, which may simply be prefix form of `::`
 
 
@@ -382,7 +382,7 @@ DE: No, we'll leave things as they are.
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 
@@ -404,7 +404,7 @@ Everyone: Applause
 
 #### Conclusion/Resolution
 
-- Stage 4!
+- Stage 4 acceptance
 
 
 ## 12.i.b Intl.Segmenter for Stage 3 
@@ -417,7 +417,7 @@ Everyone: Signs of approval
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 ## Secretariat
@@ -624,7 +624,7 @@ DH: As long as we note that this does not stop us seeking other proposals.
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 ## 12.i.b Class fields status update 
@@ -704,7 +704,7 @@ SYG: I understand the concerns here. I'll open an issue on the tracker. To recap
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 
 
 
@@ -759,7 +759,7 @@ ZB: Correct.
 
 #### Conclusion/Resolution
 
-- Stage 4
+- Stage 4 acceptance
 
 
 ## 12.i.c Intl.RelativeTimeFormat for Stage 3
@@ -833,7 +833,7 @@ JHD: Me too.
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 - Will address it again in this meeting for Stage 3
 - Reviewers for Stage 3:
     - Rick Waldron, co-reviewing with Valerie Young
@@ -990,6 +990,6 @@ BT: Let's push it to stage 1.
 
 #### Conclusion/Resolution
 
- - Stage 1 proposal
+- Stage1 proposal
  - Point of further research: What should be the behavior when an unknown locale is passed in--throw an exception or parse it anyway?
 

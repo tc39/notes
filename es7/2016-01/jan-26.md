@@ -363,7 +363,7 @@ YK: Stage zero seems fine.
 
 #### Conclusion/Resolution
 
- - stage 0 approved
+ - Stage 0 approved
 
 
 ### Announcement
@@ -1017,15 +1017,18 @@ YK: People maybe confused with async/await, entries/values introduces potential 
 
 #### Conclusion/Resolution
 
- - Stay stage 3, wait for 2 shipping browsers to confirm web compat.
+- Stage 3 holds
+  - wait for 2 shipping browsers to confirm web compat.
 
 
 ## `String#padStart`/`padEnd` (JHD)
 
 #### Conclusion/Resolution
 
-  - stay stage 3, no further concerns about unicode/graphemes/RTL, Intl will handle that.
-  - will pursue stage 4 when enough browsers have shipped it to allay web compat concerns
+- Stage 3 holds
+  - no further concerns about unicode/graphemes/RTL, Intl will handle that.
+- will pursue Stage 4 when enough browsers have shipped it to allay web compat concerns
+
 
 ## Unicode fix: https://github.com/tc39/ecma262/pull/300 (DE)
 

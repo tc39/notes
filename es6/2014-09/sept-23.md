@@ -525,11 +525,9 @@ BE/AWB: That's the big red switch.
 
 BE: Leads to all black-box/other-module functions needing save/restore advice around calls from your module
 
-- Stage 1?
-
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 ## 5.3 ArrayBuffer.transfer 
@@ -551,7 +549,7 @@ AWB: Subclass of `ArrayBuffer`? What is the class of the object returned by `tra
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 ## 5.6 NoSuchProperty built-in proxy 
@@ -607,7 +605,7 @@ Confirm.
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 
 
 ## 5.5 Math.iaddh, etc. polyfillable 64-bit int helpers 
@@ -634,7 +632,7 @@ Math.isubh();
 #### Conclusion/Resolution
 
 - Rename imuluh to umulh
-- Stage 0
+- Stage 0 acceptance
 
 
 

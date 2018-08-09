@@ -169,13 +169,14 @@ SYG: How to test the actual implementation
 
 #### Conclusion/Resolution
 
+- Stage 3 acceptance
+  - After Waldemar is satisfied with rewrite of memory model
 - API freeze granted?
-- Stage 3 after Waldemar is satisfied with rewrite of memory model
 
 
 ## 10.i.b Disregard lastIndex for non-global non-sticky regexps
 
-Leo Balter
+(Leo Balter)
 
 PR from Claude Pache https://github.com/tc39/ecma262/pull/627
 
@@ -230,9 +231,9 @@ MM: That does not only address the web compatibility issue, but does a clean-up 
 
 ## 10.iii.d Object.shallowEqual
 
-Sebastian Markbage 
+(Sebastian Markbage) 
 
-https://github.com/sebmarkbage/ecmascript-shallow-equal
+- [proposal](https://github.com/sebmarkbage/ecmascript-shallow-equal)
 
 
 SBI: Problem...
@@ -489,8 +490,8 @@ WH: Have no objection to this, but in the future I'd love a prior notice on the 
 
 #### Conclusion/Resolution
 
-- Stage 1 approved
-- Stage 2 approved
+- Stage 1 acceptance
+- Stage 2 acceptance
 
 
 
@@ -1056,7 +1057,8 @@ BE: is there a way to look at the grammar of "yield" to have it work?
 
 #### Conclusion/Resolution
 
-- Stage 4
+- Stage 4 acceptance
+
 
 ## 9.iii.c Decorators
 
@@ -1128,8 +1130,8 @@ WH: I like decorators! I just want to make sure that we create a consistent desi
 YK: Willing to champion additions to this proposal to satisfy outstanding needs. 
 - The interop issue (with "annotations") has existed for some time, we can keep coming back with new features
 - The work can be done in Stage 2 
-- Babel is skeptical now
-- Stage 2 signals to community
+  - Babel is skeptical now
+  - Stage 2 signals to community
 
 
 AWB: My understanding is that Stage 2 is "not locked down", the language wants to solve this problem and will eventually include the feature. 
@@ -1175,7 +1177,7 @@ NO.
 
 #### Conclusion/Resolution
 
-- Stage 2 Approval
+- Stage 2 acceptance
 
 
 

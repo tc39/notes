@@ -296,7 +296,8 @@ WH: I don't object to advancing this to stage 4, but I'm sad to see this in the 
 
 #### Conclusion/Resolution
 
-- Stage 4 pending on writing and merging test262 tests
+- Stage 4 acceptance
+  - pending on writing and merging test262 tests
 
 
 ## 9.i.f Unify String and Array maximum lengths
@@ -688,7 +689,7 @@ DE: Stage 1?
 
 #### Conclusion/Resolution
 
-- Stage 1: Approved.
+- Stage 1 acceptance
 - YK wants confirmation about `\u`
 
 
@@ -915,4 +916,4 @@ CM: If there are subtleties in the implementation, that's a good reason for stan
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance

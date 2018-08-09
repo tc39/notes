@@ -452,7 +452,7 @@ DH: I think the registry could be in userspace
 AWB: The Realm API was previously in the ES2015 spec, and it was pulled out due to exactly this issue, interactions between module loading and realm hooks.
 
 #### Conclusion/Resolution
-- Stage 1
+- Stage 1 acceptance
 
 
 ## Meeting Minutes

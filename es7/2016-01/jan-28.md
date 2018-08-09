@@ -53,7 +53,7 @@ AWB: Not all code runs on the web.
 
 AWB: Seems like a value add.
 
-MM: It would be a value add for an implementation not to support sloppy mode.... but it can't claim to be conformant.
+MM: It would be a value add for an implementation not to support sloppy mode... but it can't claim to be conformant.
 
 (Discussion of how imortant toString returning source is...)
 
@@ -150,7 +150,6 @@ LHN: Also desirable for everyone to read the spec and pitch in, the more eyeball
 
 (Brian Terlson)
 https://github.com/tc39/ecma262/issues/160
-
 
 
 BT: issue with proxy enumerate trap and for-in, where implementations are prevented from pre-populating the list of keys in the object, because the iterator causes observable affects. Which means the iterate must be pulled for every iteration. Last meeting we thought it would be ok if the enumerate trap exhausts the iterator, we thought that would solve the problem. The issue was, now their is an observable difference between an object and proxy of that object, mainly due to delete.
@@ -251,7 +250,7 @@ ARB: one reason for enumerate trap may be that the set of all properties is larg
 
 YK: getOwnPropertyDescriptors + filter out enumerable, covers this
 
-BT: what is the trap name for all property names .... getOwnPropertyNames
+BT: what is the trap name for all property names ... getOwnPropertyNames
 
 BT: should for-in just be implemented as that.
 
@@ -272,32 +271,28 @@ AWB: the only way to doit, is to set some requirements, vague or not
  - provisional consensus to kill enumerate trap, contingent on running it by tom
  - for-in does [[HasProperty]]
  
-
-************** Response from Tom: ************** 
+----------------------------
+Response from Tom:
 
 A few things come to mind:
 
-1) Faithful virtualization of the prototype chain. We decided that the Proxy should always be in control of operations involving prototype inheritance. This includes has, get, set and enumerate. For all of these operations, when executed on a normal object, they will walk the prototype chain until they hit a Proxy. After that point, full control is delegated to the Proxy. If a Proxy would only be able to override get() and set() but not enumerate(), this may lead to inconsistencies (without an enumerate() trap, the VM will have to externally walk the prototype chain of the Proxy via getPrototypeOf()).
-
-2) When we designed Proxies originally, we made the design decision to map many built-in operations directly to specific traps, even if these operations could be expressed in terms of more fundamental operations (get, set, has, enumerate are all examples here). The design argument here was always improved performance by reducing the number of temporary allocations.
-
+1. Faithful virtualization of the prototype chain. We decided that the Proxy should always be in control of operations involving prototype inheritance. This includes has, get, set and enumerate. For all of these operations, when executed on a normal object, they will walk the prototype chain until they hit a Proxy. After that point, full control is delegated to the Proxy. If a Proxy would only be able to override get() and set() but not enumerate(), this may lead to inconsistencies (without an enumerate() trap, the VM will have to externally walk the prototype chain of the Proxy via getPrototypeOf()).
+2. When we designed Proxies originally, we made the design decision to map many built-in operations directly to specific traps, even if these operations could be expressed in terms of more fundamental operations (get, set, has, enumerate are all examples here). The design argument here was always improved performance by reducing the number of temporary allocations.
 Much later in the design, others started pushing back on the number of traps, leading us to reconsider some traps, e.g. I recall the "hasOwn" trap was dropped in favor of checking whether (getOwnProperty() !== undefined), even though it is strictly less efficient. I don't have a view on the actual cost of expressing enumerate() in terms of lower-level MOP operations, but it seems obvious that there will be more allocation costs involved. The question is then: if enumerate() gets dropped on these grounds, why not get(), set() and has()?
-
-3) As far as I recall, enumerate() is the only trap that actually returns an *iterator* over the property names, allowing efficient virtualization of objects with a large (or potentially, infinite) number of properties. The only other trap that returns a list of property keys, "ownKeys", returns a manifest array of property names.
-
-4) enumerate() had weaker invariants than ownKeys() [just like all the traps that deal with prototype inheritance, since a frozen object can still inherit from a non-frozen object, leading to weaker observable invariants in general]. If one would express for-in in terms of repeated calls to ownKeys(), the invariant check overhead may be substantial compared to just calling enumerate().
+3. As far as I recall, enumerate() is the only trap that actually returns an *iterator* over the property names, allowing efficient virtualization of objects with a large (or potentially, infinite) number of properties. The only other trap that returns a list of property keys, "ownKeys", returns a manifest array of property names.
+4. enumerate() had weaker invariants than ownKeys() [just like all the traps that deal with prototype inheritance, since a frozen object can still inherit from a non-frozen object, leading to weaker observable invariants in general]. If one would express for-in in terms of repeated calls to ownKeys(), the invariant check overhead may be substantial compared to just calling enumerate().
 
 Unless there are really good reasons to get rid of enumerate(), I think it should remain in. For me, (1) and (3) are the killer arguments: consistency with has(),get(),set() and efficient enumeration via iteration.
 
 Feel free to forward this mail to TC39. I'm happy to engage in follow-up discussions, just ping me when needed.
 
 
-*********************************************************
+----------------------------
  
 
 ## 5.xviii Exponentiation Operator (RW)
 
-RW: i implemented the changes, tried to get brendan to review it (no luck). BT reviewed, and chakra implements
+RW: I implemented the changes, tried to get brendan to review it (no luck). BT reviewed, and chakra implements
 
 RW: BT and I went over it line/line, followed up with new tests, and in the last 20 minutes per domenics suggestion I duplicated the applying ** operater tests, so both map.pow and ** tests. the SM folks will be happy that they all passed (except for one, but that's expected).
 
@@ -311,7 +306,8 @@ RW: any objections
 
 #### Conclusion/Resolution
 
- - stage 4!
+- Stage 4 acceptance
+
 
 (Lunch)
 
@@ -321,7 +317,8 @@ RW: any objections
 
 #### Conclusion/Resolution
 
-Meet in Munich Monday May 23-Wednesday May 25
+- Meet in Munich Monday May 23-Wednesday May 25
+- 
 
 ## 2. 402 needs reviewers (20min)
 
@@ -448,30 +445,6 @@ MM: We need to check with Tom Van Cutsem first.
 
 - Remove Reflect.enumerate, contingent on further information from Tom
 
-
-************** Response from Tom: ************** 
-
-A few things come to mind:
-
-1) Faithful virtualization of the prototype chain. We decided that the Proxy should always be in control of operations involving prototype inheritance. This includes has, get, set and enumerate. For all of these operations, when executed on a normal object, they will walk the prototype chain until they hit a Proxy. After that point, full control is delegated to the Proxy. If a Proxy would only be able to override get() and set() but not enumerate(), this may lead to inconsistencies (without an enumerate() trap, the VM will have to externally walk the prototype chain of the Proxy via getPrototypeOf()).
-
-2) When we designed Proxies originally, we made the design decision to map many built-in operations directly to specific traps, even if these operations could be expressed in terms of more fundamental operations (get, set, has, enumerate are all examples here). The design argument here was always improved performance by reducing the number of temporary allocations.
-
-Much later in the design, others started pushing back on the number of traps, leading us to reconsider some traps, e.g. I recall the "hasOwn" trap was dropped in favor of checking whether (getOwnProperty() !== undefined), even though it is strictly less efficient. I don't have a view on the actual cost of expressing enumerate() in terms of lower-level MOP operations, but it seems obvious that there will be more allocation costs involved. The question is then: if enumerate() gets dropped on these grounds, why not get(), set() and has()?
-
-3) As far as I recall, enumerate() is the only trap that actually returns an *iterator* over the property names, allowing efficient virtualization of objects with a large (or potentially, infinite) number of properties. The only other trap that returns a list of property keys, "ownKeys", returns a manifest array of property names.
-
-4) enumerate() had weaker invariants than ownKeys() [just like all the traps that deal with prototype inheritance, since a frozen object can still inherit from a non-frozen object, leading to weaker observable invariants in general]. If one would express for-in in terms of repeated calls to ownKeys(), the invariant check overhead may be substantial compared to just calling enumerate().
-
-Unless there are really good reasons to get rid of enumerate(), I think it should remain in. For me, (1) and (3) are the killer arguments: consistency with has(),get(),set() and efficient enumeration via iteration.
-
-Feel free to forward this mail to TC39. I'm happy to engage in follow-up discussions, just ping me when needed.
-
-
-*********************************************************
-
-
-
 ## 8 Ecma 402, Edition 3, Advance stage 2
 
 (Zibi Braniecki)
@@ -500,13 +473,13 @@ DE: I will review
 
 RW: I will review
 
-
 #### Conclusion/Resolution
 
-- stage 2
+- Stage 2 acceptance
 - Reviewers: 
     - Rick Waldron
     - Daniel Ehrenberg
+
 
 ## Intl.PluralRules
 
@@ -558,7 +531,7 @@ DE: me
 
 #### Conclusion/Resolution
 
-- stage 2
+- Stage 2 acceptance
 - Reviewers: 
     - Daniel Ehrenberg
     - Stefan Penner
@@ -615,13 +588,15 @@ CP: whats in the content of the object returned, is it spec'd
 
 SP: needs further exploration
 
-### Conclusion
-- stage 2
-reviewers
-    - Stefan Penner
-    - Daniel Ehrenberg
+#### Conclusion/Resolution
 
-### Intl Formatter preview
+- Stage 2 acceptance
+- reviewers
+  - Stefan Penner
+  - Daniel Ehrenberg
+
+
+## Intl Formatter preview
 
 ZB: this is still exploration
 
@@ -649,11 +624,12 @@ CP: considerable existing bikeshedding, but more are invited to join.
 
 ZB: stage 0?
 
-### Conclusion
+#### Conclusion/Resolution
 
-- advanced to stage 0
+- Stage 0 acceptance
 
-### Async generator functions
+
+## Async generator functions
 presenter: Kevin Smith
 link to presentation:  https://docs.google.com/presentation/d/1OwDb4WH9pkdEFVhsY5kjaJ6MF1KrxBNQWpWc9SymweQ/edit#slide=id.p
     
@@ -903,7 +879,7 @@ DD: does anyone have fundamental disagreement?
 
 YK: someone needs to respond to my exploration request. I am pretty uncomfortable combining the two types.
 
-.... discussion ....
+... discussion ...
 
 DH: let me add structure
 
@@ -963,15 +939,15 @@ Big advantages of not collapsing at the generation side:
 * yielding a rejected promise does not cause a generation-side exception. Rather it simply transmits the rejected promise. A simple for-await consumer is stopped by the rejection throwing the reason.
 * (Pointed out by Dean): An implicit "await" at the "yield" violates the rule that we can find all interleaving points by looking for "await".
 
-### Conclusion/resolution
+#### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - needs more exploration as per above discussion.
 
-### Strong Mode Discussion
 
-Presenter: Andreas Rossberg
-link:
+## Strong Mode Discussion
+
+(Andreas Rossberg)
     
 ARB: slide (recap)
 
@@ -1008,25 +984,17 @@ ARB: slide (takeaway)
 ARB: slide (soundscript)
 
 
-### Teset262
-presenter: Dan
+## Test262 Updates
 
-DE: reptitive tests, lots of tests that repeat each other. Their exists a proposal to generate tests precedurally, we require implementors feedback. Ask me and I will provide more information
+(Dan Ehrenberg)
 
-### Conclusion / resolution
-
-- implementors need to provide feedback
-
-#### Conclusion/resolution
-
-# Test262 Updates
-Presenter: DE
+DE: reptitive tests, lots of tests that repeat each other. There exists a proposal to generate tests precedurally, we require implementors feedback. Ask me and I will provide more information
 
 DE: We have some changes coming into test262, e.g., https://github.com/tc39/test262/issues/470 https://github.com/tc39/test262/issues/467. Users, please give feedback as to whether these are appropriate for you! Please reach out to me if you have any concerns.
 
-#### Conclusion/resolution
 
-# Progress review: Callable class constructors (Allen)
+## Progress review: Callable class constructors (Allen)
+
 presenters: AWB / YK
 
 AWB: slide (callable Class Constructors)
@@ -1119,7 +1087,7 @@ class RegExp {
 
 MM the only thing that gives me pause here, if long term we will only address this with a specified mechanism. Date case goign back to es5, then we are not gaining any value from having the default constructor throwing.
 
-YK: incorrect.... i would make a looser term.
+YK: incorrect... i would make a looser term.
 
 YK: lets go back to es5, a massive hazard to forget use. This made many people not want the newless behavior.
 
@@ -1175,9 +1143,9 @@ YK: decorators could enable this ergonomically
 
 MM: we should drop this completely, and solve it with decorators. 
 
-#### Conclusion/resolution
+#### Conclusion/Resolution
 
-Proposal dropped.
+- Proposal dropped.
 
 
 # Object.getOwnPropertyDescriptors to stage 3? (Jordan Harband, low priority, but super quick!)
@@ -1187,9 +1155,12 @@ JDH: reviewers and editors +1'd, can we move to stage 3
 
 all: yes
 
-## Conclusion/resolution
-- advance stage 3
+#### Conclusion/Resolution
 
+- Stage 3 acceptance
+
+
+## Agenda
 
 6. private state
 7. Progress review: Callable class constructors (Allen)

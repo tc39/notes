@@ -108,7 +108,9 @@ JHD: OK for stage 3? It got signoff
 
 #### Conclusion/Resolution
 
-Object.values/entries approved for stage 3
+- Stage 3 acceptance
+  - Object.values/entries
+
 
 ## String.pad{Left,Right}
 
@@ -145,7 +147,8 @@ DD: Add trimStart, trimEnd and rename to padStart, padEnd as part of annex B.
 
 #### Conclusion/Resolution
 
-Rename to `padStart`/`padEnd`, update trimLeft/trimRight proposal to also include trimStart/trimEnd. padStart/padEnd approved for Stage 3.
+- Stage 3 acceptance
+  - Rename to `padStart`/`padEnd`, update trimLeft/trimRight proposal to also include trimStart/trimEnd. padStart/padEnd approved
 
 
 ## Array.prototype.includes

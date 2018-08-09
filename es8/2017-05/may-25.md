@@ -428,7 +428,7 @@ WH: Another issue: for polyfilling, want to run regexp without polluting static 
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 ## 15.ii.f import.meta for stage 2 
@@ -479,7 +479,7 @@ MM: I just don't want Domenic to be blind sided
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 - Reviewers
 - Adam Klein
 - Dave Herman

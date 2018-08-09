@@ -359,7 +359,7 @@ WH: I also have reviewed this and I approve it
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 ## 13.ii.c. {BigInt,Number}.fromString for Stage 1
@@ -456,7 +456,7 @@ MB: Any suggestions on what the guiding principle should be, let us know. [The l
 
 #### Conclusion/Resolution
 
- - Stage 1
+- Stage1 acceptance
 
 
 ## 13.ii.d. String.prototype.{trimStart,trimEnd} for stage 3
@@ -487,7 +487,7 @@ MB: Stage 3 *thumbs up*
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 ## 13.ii.e Code of Conduct Committee update (PRs, call for participants) 
@@ -656,7 +656,7 @@ SM: one use case, one source of non-determinism in their ? is to hard-code a see
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 ## 13.ii.g. Invited expert/specification contributor forms 
@@ -869,7 +869,8 @@ JHD: any objections to moving this to stage 3?
 
 #### Conclusion/Resolution
 
- - move to stage 3 with semantics of: coerce to regexp, add global flag
+- Stage 3 acceptance 
+- with semantics: coerce to regexp, add global flag
 
 
 ## 13.iii.c Function.prototype.toString (PR) for stage 4
@@ -900,7 +901,7 @@ MF: ok, thanks for feedback
 
 #### Conclusion/Resolution
 
-- still stage 3
+- Stage 3 holds
 - include as part of this proposal a way for engines which cannot produce function source text to provide some alternative (involve Moddable reps + DD)
 
 
@@ -952,7 +953,7 @@ KCL: me too
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 - Reviewers: 
   - Mark Miller
   - Jordan Harband
@@ -1115,8 +1116,8 @@ RJE: let's talk about this offline and revisit it later
  
 #### Conclusion/Resolution
 
- - talk to Protocols people
- - talk more offline, revisit it later with a plan for the next step
+- talk to Protocols people
+- talk more offline, revisit it later with a plan for the next step
 
 
 ## 13.iii.f PR: Making nullish values iterable, or at least array-spreadable
@@ -1199,7 +1200,7 @@ MB: we could revisit this later
 
 ## Rest/Spread properties for stage 4
 
- - [pull](https://github.com/tc39/ecma262/pull/1048)
+- [pull](https://github.com/tc39/ecma262/pull/1048)
 
 (Sebastian Markbåge)
 
@@ -1211,7 +1212,7 @@ MM: approves
 
 #### Conclusion/Resolution
 
-- Stage 4
+- Stage 4 acceptance
 
 
 ## Function.prototype.toString() censorship for stage 1
@@ -1330,7 +1331,7 @@ MM: I'm up for stage-1 but not for doing both.
 
 #### Conclusion/Resolution
 
- - Stage 1
+- Stage 1 acceptance
 
 
 ## 13.iii.k new Set builtin methods for stage 2
@@ -1389,6 +1390,6 @@ MM: I support both at stage 1
 
 #### Conclusion/Resolution
 
- - Stage 1 for Set-specific methods
- - Stage 1 for the more generic methods Array-like methods (for both Set and Map)
+- Stage1 for Set-specific methods
+- Stage1 for the more generic methods Array-like methods (for both Set and Map)
  

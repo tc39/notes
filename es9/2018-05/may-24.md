@@ -283,7 +283,7 @@ WH: Not objecting to Stage 1, but I want to reiterate that I'm uncomfortable bec
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 
@@ -676,7 +676,7 @@ DD: I appreciate the Stage 3 concerns, do we have Stage 2 approval?
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 
 ## SuperProperty evaluation order
 
@@ -857,7 +857,7 @@ RBN: Any regular expressions have to take on that cost, even if they're not usin
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 ## Meeting Planning Update 

@@ -95,7 +95,8 @@ SK: Type definition...
 
 ## Conclusion/Resolution
 
-- Stage 0 to work on JSDoc
+- Stage 0 acceptance
+- Work on JSDoc
 
 ## Closing Iterators
 (Dave presenting, send slides!)

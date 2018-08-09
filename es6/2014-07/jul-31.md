@@ -165,7 +165,7 @@ MM: Consistently inconsistent parity with indexOf
 
 #### Conclusion/Resolution
 
-- Advance to Stage 1
+- Stage 1 acceptance
 
 
 DD: Would like to do Stage 2 and 3 asynchronously due to the simplicitly of this proposal. 
@@ -201,7 +201,7 @@ MM: Opposed: one letter shorter, not well known, not well taught. PI is known, t
 
 
 
-## Exponentiations operator
+## Exponentiation Operator
 
 (Rick Waldron)
 
@@ -225,7 +225,7 @@ DH: Wants to point out that adding syntax does have a cost. But thinks it is fin
 
 #### Conclusion/Resolution
 
-- Approved for Stage 0, in 6 minutes.
+- Stage 0 acceptance (in 6 minutes)
 
 
 ## Precision of Math trig functions

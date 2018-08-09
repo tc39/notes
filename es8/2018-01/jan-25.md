@@ -31,7 +31,7 @@ BT: has been implemented a number of times, in chrome, safari, firefox, babel, t
 
 #### Conclusion/Resolution
 
-- Stage 4
+- Stage 4 acceptance
 
 
 ## 13.iii.o Intl.RelativeTimeFormat, Intl.Locale for Stage 3

@@ -20,7 +20,7 @@ AWB: For Ecma record, need PDF
 
 #### Conclusion/Resolution 
 
-- Proceeds to Stage 2
+- Stage 2 acceptance
 
 
 ## 5.6 Object.observe: proposal to move to Stage 3.

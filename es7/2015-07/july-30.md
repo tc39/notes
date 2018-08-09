@@ -674,14 +674,14 @@ BT: Those that know execution model should review this.
 
 #### Conclusion/Resolution  
 
-- `async (a, b) => await a + await b;` contingent on grammar validation
-- `async` functions: no construct slot
-- errors occuring in parameter initialization take the catch path
-- Approved for Stage 2
+- Stage 2 acceptance
 - Reviewers
   - Waldemar Horwat
   - Jafar Husain
   - Yehuda Katz
+- `async (a, b) => await a + await b;` contingent on grammar validation
+- `async` functions: no construct slot
+- errors occuring in parameter initialization take the catch path
 
 
 
@@ -801,7 +801,7 @@ All scalar combinators produce promises or observables
 
 #### Conclusion/Resolution  
 
-- Approved for Stage 1 (which means: nothing changed here)
+- Stage 1 holds
 - Offline discussion, re: sync subscription
 
 
@@ -852,7 +852,7 @@ MM: further semantics need to be explored
 
 #### Conclusion/Resolution  
 
-- Approved for Stage 2
+- Stage 2 acceptance
 - Reviewers
   - Andreas Rossberg
 

@@ -24,7 +24,7 @@ MB: With the updates, any objections to Stage 4?
 
 #### Conclusion/Resolution
 
- - Stage 4
+- Stage4 acceptance
 
 
 ## 13.ii.k RegExp Unicode property escapes for Stage 4
@@ -41,7 +41,7 @@ WH: I'm now happy with it.
 
 #### Conclusion/Resolution
 
- - Stage 4
+- Stage4 acceptance
  
 
 ## 13.iii.a Promise.prototype.finally for stage 4
@@ -56,7 +56,7 @@ JHD: We have tests, editor-reviewed spec PR. Asking for Stage 4. Any objections?
 
 #### Conclusion/Resolution
 
- - Stage 4
+- Stage4 acceptance
 
 
 ## 13.iii.n Optional Chaining update
@@ -341,7 +341,7 @@ KCL: OK, any objections to stage 1 with me coming back with a name?
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - champion will investigate web compat and other possible names
 
 
@@ -431,7 +431,7 @@ ZB: any objections to stage 3?
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 ## 13.iii.i throw expressions for stage 3
@@ -628,7 +628,7 @@ MBS: I'll start a thread to connect everybody
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - no commitment to any particular variant
 
 

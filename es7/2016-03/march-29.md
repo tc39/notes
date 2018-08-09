@@ -62,9 +62,9 @@ JHD: the only negative feedback was disappointment that it didn't make it in and
 
 BT/JHD/etc consensus agreed that it proceeds to stage 4.
 
-#### Conclusion/resolution
+#### Conclusion/Resolution
 
-- Stage 4!
+- Stage 4 acceptance
 
 ## System.global 
 (JHD) 
@@ -97,9 +97,15 @@ MM: is opposed to having bare "global". They should be gathered; having that be 
 
 #### Conclusion/resolution
 
-- Stage 2, reviewers for Stage 3 are Caridy Patiño, Mark Miller, Michael Ficarra
+- Stage 2 acceptance
+  - Reviewers:
+    - Caridy Patiño
+    - Mark Miller
+    - Michael Ficarra
+
 
 ## String.prototype.padStart/padEnd 
+
 (JHD)
 
 JHD: will ship in stable behind a flag.  Not currently trying to get to stage 4 today (currently at Stage 3). Just wanted to update because of recent discussion.  there is not enough implementations to move it forward in stage.
@@ -514,7 +520,7 @@ BT: Matt the author of ReactiveX wants to work with Matt Podwysocki
 
 ##### Conclusion
 
-Approved for Stage 2
+Stage 2 acceptance
 
 DD: and DH volunteered as reviewers.
 

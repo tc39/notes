@@ -337,7 +337,7 @@ LBR: Would like to ensure that someone from Microsoft is formally reviewing.
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 - Reviews still needed
 - Caridy Patino
 - Kent C. Dodds will find someone at PayPal
@@ -448,7 +448,7 @@ DH: Can pass along to them to find need.
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - need to explore and answer questions discussed above. 
 - Ask browser-based game developers if this is of broad value
 
@@ -745,7 +745,7 @@ RW: Volunteer to write tests for this
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Needs grammar written, etc.
 
 

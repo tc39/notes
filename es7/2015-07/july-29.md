@@ -298,7 +298,7 @@ DH: There is precedence for JavaScript interpreting the word "right" to mean "th
 
 #### Conclusion/Resolution  
 
-- Approved for Stage 1?
+- Stage 1 acceptance
 
 
 

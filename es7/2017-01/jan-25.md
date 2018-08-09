@@ -1489,7 +1489,7 @@ MM: Good point. We need a way of rendering for virtualization. This suggests inc
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Open Questions:
   - Determine if this belongs in annex b or if other normative-optional text is allowed
   - Add a separate method to convert stack frames to a stack string?

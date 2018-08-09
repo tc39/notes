@@ -223,7 +223,7 @@ BT: This is a feature request from an important user of JavaScript and we should
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - The committee has deep doubts about this proposal
 
 
@@ -283,7 +283,7 @@ AK: We'll initially develop it behind a flag, and it will go through normal Chro
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 
@@ -587,7 +587,7 @@ DE: Should private state be accessible within eval?
 
 #### Conclusion/Resolution
 
-- Stage 2
+- Stage 2 acceptance
 - hard private, lexical scoping
 
 

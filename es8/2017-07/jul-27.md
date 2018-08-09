@@ -661,7 +661,7 @@ WH: I reviewed this and all the other class-related proposals for this meeting. 
 
 #### Conclusion/Resolution
 
-- Stage 3 approved
+- Stage 3 acceptance
 
 
 ## Agenda review
@@ -1032,7 +1032,7 @@ CM: Still uncomfortable with how fast this is moving, but I'm not going to block
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 - Reviewers: Waldemar, Dan
 
 
@@ -1125,7 +1125,7 @@ BE: The name should tell you not to use this for anything except concat.
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Explore alternatives to isConcatSpreadable
 
 
@@ -1170,7 +1170,7 @@ WH: I'm OK with stage 1 but am concerned that we should explore the space more f
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Explore the space of turning statements into expressions.
 
 

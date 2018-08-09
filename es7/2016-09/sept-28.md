@@ -800,12 +800,12 @@ DE: Isn't this like adding something to [[RequestedModules]] dynamically?
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Becomes Stage 2 at the end of the day tomorrow, noting that we are seeking feedback from DH and YK which may affect this.
-- Reviewers
-- Caridy Patiño
-- Allen Wirfs-Brock
-- James Snell
+- Reviewers:
+  - Caridy Patiño
+  - Allen Wirfs-Brock
+  - James Snell
 
 
 
@@ -820,7 +820,7 @@ JHD: Hope to have as many browser implementations before Stage 4
 
 #### Conclusion/Resolution
 
-- Stage 3
+- Stage 3 acceptance
 
 
 ## 11.2.b Intl.Segmenter
@@ -917,7 +917,7 @@ JSL: ideal to get rid of prefixed.
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 
 
 

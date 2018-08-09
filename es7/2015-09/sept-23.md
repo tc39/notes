@@ -504,7 +504,7 @@ More totally useful, important, completely clear and not repetitive discussion a
 
 #### Conclusion/Resolution
 
-- Stage 3 Approval 
+- Stage 3 acceptance 
 
 
 
@@ -585,7 +585,7 @@ JHD: Then stage 1.
 
 #### Conclusion/Resolution
 
-- Stage 1
+- Stage 1 acceptance
 - Reviewers to be assigned.
 
 
@@ -603,7 +603,7 @@ DH: Confirm, when array you get a snapshot. If an iterator, then updates would b
 
 #### Conclusion/Resolution
 
-- Stage 2 Approval
+- Stage 2 acceptance
 
 
 ## 5.12 Proposal: String#matchAll 
@@ -669,7 +669,7 @@ nah.
 
 #### Conclusion/Resolution
 
-- Stage 1 approval
+- Stage 1 acceptance
 - Accept strings
 - Allow RegExp subclass
 - Default impl of `@@matchAll`, see default `@@match` 
@@ -706,10 +706,10 @@ nah.
 
 #### Conclusion/Resolution
 
-- Stage 2
-- Reviewers?
-- Michael Ficarra 
-- Brian Terlson
+- Stage 2 acceptance
+- Reviewers
+  - Michael Ficarra 
+  - Brian Terlson
 
 
 ## Process Discussion

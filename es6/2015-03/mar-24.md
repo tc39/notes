@@ -477,7 +477,7 @@ EA: It is important that the descriptor of these own instance properties is immu
 
 #### Conclusion/Resolution
 
-- Stage 0
+- Stage 0 acceptance
 - Do not use descriptors for initializer state.
 
 
@@ -499,7 +499,7 @@ Object.defineProperty(Person.prototype, 'name',
     writable: true,     
     value: <closure>   
 })); 
-```  
+```
 
 MM: When defineProperty runs, does Person.prototype have an undecorated name property?  
 
@@ -620,7 +620,8 @@ DH: Suggests stage 1, but audit the space which may lead to changes.
 
 #### Conclusion
 
-- Stage 1, YK will audit the space.
+- Stage 1 acceptance
+  - YK will audit the space.
 
 
 ## 6.3 ReverseIterable interface

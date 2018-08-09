@@ -596,7 +596,7 @@ WH, LBR: Can we advance this to Stage 3?
 
 #### Conclusion/Resolution
 
-- Stage 3!
+- Stage 3 acceptance
 - Reviewers: ??
 
 

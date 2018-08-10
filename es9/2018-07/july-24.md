@@ -500,7 +500,7 @@ JHD: To the choice of the name or the concept of a global identifier?
 
 MM: Both.
 
-Diego: Has there been any debate about adding some non-alpha numeric names? Like __global__?
+Diego: Has there been any debate about adding some non-alpha numeric names? Like `__global__`?
 
 JHD: That seems much uglier, and we'd have to pull metrics about it all over again. Plus, we use __ for proto, so there's a high chance it's being used in webcode already.
 

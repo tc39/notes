@@ -488,9 +488,9 @@ BE: Has anyone thought of `function.global` or  `eval.this` or something else?
 
 MM: No! (Laughs). The global object must NEVER be accessible from syntax. We MUST be able to intercept it.
 
-BE: Or `yagni`(*) to indicate people shouldn't use it.
+BE: Or `yagni`(\*) to indicate people shouldn't use it.
 
-(*) "You Ain't Gonna Need It"
+(\*) "You Ain't Gonna Need It"
 
 JHD: I think **redacted** is good for it being pretty obvious, but obscure enough that you won't accidentally using it without knowing what you're doing.
 
@@ -502,7 +502,7 @@ MM: Both.
 
 Diego: Has there been any debate about adding some non-alpha numeric names? Like `__global__`?
 
-JHD: That seems much uglier, and we'd have to pull metrics about it all over again. Plus, we use __ for proto, so there's a high chance it's being used in webcode already.
+JHD: That seems much uglier, and we'd have to pull metrics about it all over again. Plus, we use `__` for proto, so there's a high chance it's being used in webcode already.
 
 BE: Are you looking for an identifier or a deniable special form?
 

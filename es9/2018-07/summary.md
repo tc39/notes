@@ -28,7 +28,7 @@ TC39 discussed 6 new proposals. 3 entered staging process to discuss towards spe
 - [`Intl.NumberFormat` Unified Feature](july-26.md#intlnumberformat-unified-feature-proposal-for-stage-2)
 
 ### Advanced to Stage 3 from Stage 2
-- [`Object.fromEntries`](july-24.md#new-name-for-global)
+- [`Object.fromEntries`](july-24.md#objectfromentries-to-stage-3)
 
 
 ### Needs more discussion/information
@@ -75,6 +75,6 @@ ES2019 now includes:
 ## Organizational update
 - TC39 welcomed 4 new voting members, Agoric Systems (SPC), npm (SME), Stripe (OM), and Igalia (SME).
 - TC39 Chairperson or Chair Group for 2019 will be nominated for September meeting and planned to have vote at November meeting. 
-- ECMA has approved “Ecma Fellow" to accomodate indiviruals with extraordinery contribution to participate in TCs. TC39 can nominate such member to be approved at December 2018 General Assembly
+- ECMA has approved “Ecma Fellow" to accomodate individuals with extraordinary, contribution to participate in TCs. TC39 can nominate such members to be approved at December 2018 General Assembly
 - [Management/infrastructure tasks; invited expert policy; meeting planning](july-24.md#managementinfrastructure-tasks-invited-expert-policy-meeting-planning) ([slides](https://docs.google.com/presentation/d/1eTBTMZzylhZR4v7Hgfd3UJYwLBgQZgX8q8fGvsvcNDE/edit#slide=id.p))
 - [September 2019 Meeting Locations](july-26.md#september-2019-meeting-location)

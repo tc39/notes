@@ -465,11 +465,11 @@ AWB/WH: Doug needs to finish an editorial pass
 
 
 
-## Test 262 Update
+## Test262 Update
 (Brian Terlson)
 Test262-ES6.pdf
 
-Talk about moving test262 to github.
+Talk about moving Test262 to github.
 
 BT: What do we need to make that happen?
 
@@ -513,9 +513,9 @@ MM: Back to tests, I want test directories to match spec chapters.
 
 BT: Agreed.
 
-BT: Contributors: http://wiki.ecmascript.org/doku.php?id=test262:coreteam Need to expand.
+BT: Contributors: http://wiki.ecmascript.org/doku.php?id=Test262:coreteam Need to expand.
 
-DH: We could use github pages and make test262.ecmascript.org point to that.
+DH: We could use github pages and make Test262.ecmascript.org point to that.
 
 DH: BT, you set up a mirror for the site. I will do the DNS switch, call me, maybe.
 
@@ -537,7 +537,7 @@ MM: We might only be testing the slow path of JavaScript engines. Testing things
 
 #### Consensus/Resolution
 
-- move the repo and test262 web presence to github.com/tc39
+- move the repo and Test262 web presence to github.com/tc39
 
 
 

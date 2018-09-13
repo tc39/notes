@@ -114,7 +114,7 @@ TST: Moment.js and Moment Locale is 66kb, so they’ve made it quite small. I th
 
 MPT: So, what's the concern here?  Sure, we could expose CLDR data in Intl.  What's the concern in going in this way?  The proposal is large?
 
-TST: This is already a complex proposal, so would do ECMA 402 follow-up in a separate proposal.  That sounds like too much complexity if you can't do it in an atomic proposal.
+TST: This is already a complex proposal, so would do ECMA-402 follow-up in a separate proposal.  That sounds like too much complexity if you can't do it in an atomic proposal.
 
 MPT: OK. I think that’s a valid concern.
 

@@ -16,7 +16,7 @@ SGN: New member get-together at 5 PM on Tuesday, dinner Wednesday at 6:30 PM
 BT: Use the #tc39-delegates IRC channel on Freenode, ask me for help
 
 
-## 3. Adoption of Agenda
+## Adoption of Agenda
 
 (Rex Jaeschke)
 
@@ -85,7 +85,7 @@ BT: The royalty-free opt-out period I'm shooting for the beginning of Feb. I bel
 - RF opt-out begins in Feb. (Brian Terlson to fill exact date)
 
 
-## 4. ECMA402 status updates
+## ECMA402 status updates
 
 (Caridy Patiño)
 
@@ -221,14 +221,14 @@ RW: (added post meeting)
   - Three.js
   - UglifyJS
   - zeparser
-  (are testing against test262 or some part of test262)
+  (are testing against Test262 or some part of Test262)
 
 - New tools to make test consumption easier: 
-  - test262-stream
+  - Test262-stream
     - Produces a stream of "compiled" test sources, with both strict and non-strict 
       versions (as needed) of each test; ready to be executed in a given runtime or engine
       - bootstrapped with harness, assert and helper code (as needed)
-  - test262-features
+  - Test262-features
     - In progress!
     - Detect and validate features tag
     - autofix features tag lists 
@@ -664,7 +664,7 @@ SM: one use case, one source of non-determinism in their ? is to hard-code a see
 (Daniel Ehrenberg)
 
 - [Issue](https://github.com/tc39/Reflector/issues/104)
-- [old form](http://tc39.github.io/test262-cla/)
+- [old form](http://tc39.github.io/Test262-cla/)
 - [new form](https://tc39.github.io/agreements/contributor/)
 
 DE: Since 2015 we've been using GitHub for development, accepting contributions on GitHub. Have occasional non-members attending meetings. We need confirmation that contributions can be legal (patent/IPR). We ask them to sign a web form. There are technical issues with this form. To fix those, we made a second form, with different text about the agreements/licensing, for non-members to sign when making contributions. Thomas Wood of Imperial College London has promised to help with automating.
@@ -804,7 +804,7 @@ MB: Noted. I'll work with Waldemar to fix the spec issues and bring this up agai
 
 - [proposal](https://github.com/tc39/proposal-promise-finally/)
 
-JHD: Promise.prototype.finally is stage 3, shipped in Firefox and chrome and Webkit nightly, two polyfill implementations. Hoping to get committee approval for stage 4 (pending approval of PR). There are already test262 tests written and merged.
+JHD: Promise.prototype.finally is stage 3, shipped in Firefox and chrome and Webkit nightly, two polyfill implementations. Hoping to get committee approval for stage 4 (pending approval of PR). There are already Test262 tests written and merged.
 
 AK: we had another thing like this, do you want to defer this?
 

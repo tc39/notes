@@ -311,7 +311,7 @@ AK/DE: Some cases need 2 or more browsers, but this is not one.
 #### Conclusion/Resolution
 
 - Stage 4 acceptance
-- https://github.com/tc39/test262/pull/734/files
+- https://github.com/tc39/Test262/pull/734/files
 
 
 ## 9.i.j ECMA-402 Intl.PluralRules

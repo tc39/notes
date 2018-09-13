@@ -221,7 +221,7 @@ OH: Performance punishment (log messages for features that need to be discourage
 
 BT: Willing to wait for Mozilla to guide
 
-WH: Does test262 cover this?
+WH: Does Test262 cover this?
 
 BT: Probably, the test will have to be removed.
 ...Spec should reflect reality.

@@ -185,7 +185,7 @@ AVK: I believe that Mark and Domenic have given plenty of thought here
 
 DD: (confirms)
 
-MM: Notes that test262 will need to be extended to support async testing
+MM: Notes that Test262 will need to be extended to support async testing
 
 DH: This is really well developed and thoroughly spec'ed... what is the possibility of getting this into ES6?
 

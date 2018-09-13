@@ -65,7 +65,7 @@ Topics related to ECMAScript specification activities.
 - [Get Originals](july-26.md#get-originals)
 
 
-## Updates from ECMA 262 Editors Group
+## Updates from ECMA-262 Editors Group
 ES2019 now includes:
 1. ECMAScript is now a superset of JSON.
 2. The catch binding is now optional. 

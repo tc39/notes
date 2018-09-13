@@ -5,7 +5,7 @@ Brian Terlson (BT), Taylor Woll (TW), Jordan Harband (JHD), Allen Wirfs-Brock (A
 
 -----
 
-## 6. Test 262 Status
+## 6. Test262 Status
 (Brian Terlson)
 
 BT:

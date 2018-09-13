@@ -515,9 +515,9 @@ BT: I won't claim to know! Dave, you have what you need?
 (Shu-Yu Guo)
 
 - [spec PR](https://github.com/tc39/ecma262/pull/769)
-- [test262 PR](https://github.com/tc39/test262/pull/839)
+- [Test262 PR](https://github.com/tc39/Test262/pull/839)
 
-SYG: Last time, we were missing a mergeable PR and test262 tests. Now we have both of those. The memory model is now a top-level clause.
+SYG: Last time, we were missing a mergeable PR and Test262 tests. Now we have both of those. The memory model is now a top-level clause.
 
 BT: I suggest that even people who are not familiar with memory models could read the notes which are specifically targeted to the developer intuition for the memory model.
 
@@ -527,7 +527,7 @@ BT: This is a new thing, including extensive non-normative explanatory text. It 
 
 SYG: There haven't been any big normative changes since the last time; @@toStringTag, etc. The initial PR tests the coverage of the ECMAScript parts, like that the properties are hooked up correctly, the methods have the right property descriptors, etc. The difficulty is that it requires that test harnesses can spawn agents, which is provided by the embedding. The PR includes a description of what harnesses should provide, but the harness isn't part of the PR.
 
-BT: If test262 tests exist but can only be run on one engine, due to lacking the time to implement the harness for every engine. Does that meet the stage 4 requirement?
+BT: If Test262 tests exist but can only be run on one engine, due to lacking the time to implement the harness for every engine. Does that meet the stage 4 requirement?
 
 SYG: It's also not all functionality; wait and wake need agents, but other atomics can be tested on one thread.
 
@@ -1257,7 +1257,7 @@ MF:I know Mozilla was working on this when they realized the performance implica
 
 BT: I implemented this in chakra but i didn't do the line termination. I only did it to fix another bug, it's not close to the spec.
 
-MF: I've updated all the test262 tests to not enforce this. I can test this in the wild to confirm the current state of things. The new tests actually enforce the opposite. I'll do some research tonight.
+MF: I've updated all the Test262 tests to not enforce this. I can test this in the wild to confirm the current state of things. The new tests actually enforce the opposite. I'll do some research tonight.
 
 DE/AK: We aren't shipping, our patch is not checked in.
 

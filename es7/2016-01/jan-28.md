@@ -320,7 +320,7 @@ RW: any objections
 - Meet in Munich Monday May 23-Wednesday May 25
 - 
 
-## 2. 402 needs reviewers (20min)
+## 402 needs reviewers (20min)
 
 CP: HTML version of the second edition is now public (www.ecma-international.org/ecma-402/2.0/),  just like 262. We have done some re-orgs on the spec to make the new features easier to include. Many new features have been proposed, lots of new contributors, good momentum. At this point we need reviewers
 
@@ -990,7 +990,7 @@ ARB: slide (soundscript)
 
 DE: reptitive tests, lots of tests that repeat each other. There exists a proposal to generate tests precedurally, we require implementors feedback. Ask me and I will provide more information
 
-DE: We have some changes coming into test262, e.g., https://github.com/tc39/test262/issues/470 https://github.com/tc39/test262/issues/467. Users, please give feedback as to whether these are appropriate for you! Please reach out to me if you have any concerns.
+DE: We have some changes coming into Test262, e.g., https://github.com/tc39/Test262/issues/470 https://github.com/tc39/Test262/issues/467. Users, please give feedback as to whether these are appropriate for you! Please reach out to me if you have any concerns.
 
 
 ## Progress review: Callable class constructors (Allen)

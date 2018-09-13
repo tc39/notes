@@ -8,7 +8,7 @@ István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM)
 
 -----
 
-## 1. Opening, welcome and roll call
+## Opening, welcome and roll call
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2017/09.md)
 

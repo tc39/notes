@@ -812,7 +812,7 @@ Agreed on the AWB/MM/WH alternative model
 
 
 
-## Test 262
+## Test262
 
 (István Sebestyén, ECMA)
 

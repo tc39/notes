@@ -46,5 +46,5 @@
   * [4.6 Updates to parseInt](apr-9.md#46-updates-to-parseint)
   * [4.3, Update Object.assign to accept multiple sources](apr-9.md#43-update-objectassign-to-accept-multiple-sources)
   * [5.1 Object.entries, Object.values](apr-9.md#51-objectentries-objectvalues)
-  * [Test 262 Update](apr-9.md#test-262-update)
+  * [Test262 Update](apr-9.md#test262-update)
   * [Async Functions Question](apr-9.md#async-functions-question)

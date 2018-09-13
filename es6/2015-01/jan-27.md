@@ -48,7 +48,7 @@ IS: Question about different dates and document versions. His problem was that t
 
 AWB: Will get to it on the next slide
 
-AWB: Everything I say here also applies to ECMA 402 (the i18n spec). Rick Waldron is responsible for that and it needs to follow the same milestones.
+AWB: Everything I say here also applies to ECMA-402 (the i18n spec). Rick Waldron is responsible for that and it needs to follow the same milestones.
 
 RW: This will not be a problem for 402
 
@@ -181,7 +181,7 @@ YK: I recalled that we talked about not changing the name until we announced the
 
 
 (still during the break) discussion between MM and YK: about Window/WindowProxy issue, discussing concerns, esp as relates to jQuery.
-MM: preferred to keep invariants, add test262 tests, wait for browsers to fix
+MM: preferred to keep invariants, add Test262 tests, wait for browsers to fix
 YK: points out Object.prototype.toString.call(window) results differ (Chrome: 'global', Safari: 'window', eg)
 … more discussion about configurability, differences between Window and a WindowProxy …
 

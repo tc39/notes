@@ -11,7 +11,7 @@ Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell 
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2018/07.md)
 
-## 1. Welcome
+## Opening, welcome and roll call
 
 RJE: (housekeeping)
 
@@ -22,7 +22,7 @@ BT: (Talking about logistics) We have a queue app. To talk about a certain agend
 DE: A reminder: to contribute to TC39, you must be a member of a delegate company or sign our IP agreement. If you are a non-member and didn't sign this form, you must attend as an observer (and not contribute).
 
 
-## 3. Agenda Scheduling
+## Adoption of Agenda
 
 RJE: Item 9 deferred to Wednesday morning for Maya to attend. Could someone please ping Maya. For Item 10, I propose 2:00pm today. (Approved). Could Brian or Maggie ping him on that? I propose Yulia presents on Wednesday at 10:00am.
 
@@ -45,7 +45,7 @@ MM: The reason why I proposed to present for an hour was because there's flexibi
 - Agenda Adopted
 
 
-## 4. Approval of the minutes from last meeting
+## Approval of the minutes from last meeting
 
 RJE: Approval?
 
@@ -54,13 +54,13 @@ RJE: Approval?
 - Minutes Approved
 
 
-## 5. Dates for next meetings
+## Dates for next meetings
 
 RJE: September 25-27, 2018 at PayPal in New York
 
 ARE: Next meeting will be hosted at PayPal in Lower Manhattan. Logistics will be posted as soon as I have them. While I'm talking, I also have a quick CoC update: everyone is expected to uphold the code of conduct, which is [on GitHub](https://tc39.github.io/code-of-conduct/). This explains our expectations as well as how to handle things when they go wrong. Separately, I have stickers for TC39, please let me know if you want one (and didn't already take one at JSConf EU).
 
-## 6. Report from the Ecma Secretariat 
+## Report from the Ecma Secretariat 
 
 (Istvan Sebestyen)
 
@@ -85,15 +85,15 @@ BFS: Do we need to do anything to proceed with the "Submission of JavaScript (EC
 
 IS: No, I will submit it on the committee's behalf.
 
-## 7. Project Editors' Reports
+## Project Editors' Reports
 
-### ECMA 262
+### ECMA-262
 
 (Brian Terlson)
 
 BT: A couple of new additions in ES2019: 1) ECMAScript is now a superset of JSON. 2) The catch binding is now optional. Other than that, a few bugfixes, and a few remaining things will be filed in needs-consensus PRs.
 
-### ECMA 402
+### ECMA-402
 
 (Dan Ehrenberg)
 
@@ -109,7 +109,7 @@ DE: In terms of PRs, we have:
 
 RJE: Questions for DE? (None). Thank you DE!
 
-### ECMA 404
+### ECMA-404
 
 ...
 
@@ -117,7 +117,7 @@ RJE: Questions for DE? (None). Thank you DE!
 
 (Leo Balter)
 
-LBR: Some updates since the last meeting. (Reads slide about Git diff; quite a few changes to test262). We refactored several tests for Atomics and reviewed repeatedly these changes. Thanks to Rick Waldron and André Bargull for their efforts on this. We're ready to rename Atomics.wake to Atomics.notify (we will discuss this more). We have coverage for Symbol.prototype.description. We also updated RegExp Unicode property escape tests for Unicode 11. We now have tests for `export *` as namespace from `foo` syntaxDynamic Imports. We've had our first implementation-contributed where bots will check for updates and verify test262 coverage, starting with JavaScriptCore; initial curation is in progress here, though it requires a lot of manual work. Lastly, we have a new test262 harness in C++! 
+LBR: Some updates since the last meeting. (Reads slide about Git diff; quite a few changes to Test262). We refactored several tests for Atomics and reviewed repeatedly these changes. Thanks to Rick Waldron and André Bargull for their efforts on this. We're ready to rename Atomics.wake to Atomics.notify (we will discuss this more). We have coverage for Symbol.prototype.description. We also updated RegExp Unicode property escape tests for Unicode 11. We now have tests for `export *` as namespace from `foo` syntaxDynamic Imports. We've had our first implementation-contributed where bots will check for updates and verify Test262 coverage, starting with JavaScriptCore; initial curation is in progress here, though it requires a lot of manual work. Lastly, we have a new Test262 harness in C++! 
 
 
 
@@ -223,7 +223,7 @@ DD: I agree, I think it is an interesting area to explore. There are a lot more 
 
 YK: First of all, I've used this idiom in the web platform, and I think it's great to add better workarounds. As a person who writes a lot of Rust code, I think the ownership transfer idiom is a good one, and I'm not concerned that the style would leak into your other code that doesn't use this idiom. Rust has something very similar – I would be happy to see it in JavaScript.
 
-LBR: I like the proposal, from test262, it's great to have the observable points of ArrayBuffers from ECMAScript tools. Is the second part of the proposal (realloc) also going for Stage 2?
+LBR: I like the proposal, from Test262, it's great to have the observable points of ArrayBuffers from ECMAScript tools. Is the second part of the proposal (realloc) also going for Stage 2?
 
 DD: More realistically, that will probably spin out into a separate proposal.
 

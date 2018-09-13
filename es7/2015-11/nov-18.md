@@ -85,16 +85,16 @@ WH: So ISO would make a tiny “pointer standard” that points to whatever the 
 
 IS: Yes.
 
-WH: What would the ISO rules be on the references we can make from ECMA 262?
+WH: What would the ISO rules be on the references we can make from ECMA-262?
 
 [confusion; no answer after repeated questions]
 WH: What would happen to ISO 16262? Would the new ISO pointer spec replace it?
 
 IS: The pointer spec would be a new ISO standard. ISO 16262 would then be withdrawn.
 
-WH: What about the internationalization library (ECMA 402)? Would it have its own ISO pointer spec?
+WH: What about the internationalization library (ECMA-402)? Would it have its own ISO pointer spec?
 
-IS: Just one ISO standard would refer to both the latest ECMA 262 and the latest ECMA 402.
+IS: Just one ISO standard would refer to both the latest ECMA-262 and the latest ECMA-402.
 
 WH: How would contributions of ISO members interact with ECMA patent policies?
 

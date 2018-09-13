@@ -140,7 +140,7 @@ DH: I'll prototype a good error in my own parser
 
 (Gorkem Yakin)
 
-GY: (General update on status of ES6/ES2015 support in test262)
+GY: (General update on status of ES6/ES2015 support in Test262)
 
 BT: previously we decided it was important to have clear delineation between test artifacts at specific spec versions, but that's hard.
 
@@ -154,23 +154,23 @@ AWB: strictly speaking, only yearly releases approved by GA that are final
 AWB: nothing becomes stage 4 until version of the spec they're in is approved
 (more discussion about stage 4 vs. stage 5)
 
-BT: I see it this way. for implementors, there is value in having tests checked in to test262 when they're working on the features, ~ stage 2/3. Only consideration here is what implemetors find useful
+BT: I see it this way. for implementors, there is value in having tests checked in to Test262 when they're working on the features, ~ stage 2/3. Only consideration here is what implemetors find useful
 
 YK: ok stage 3 seems fine
 
-BT: if things break, git has tools for this. going forward let's not have branches, just say test262 is living
+BT: if things break, git has tools for this. going forward let's not have branches, just say Test262 is living
 
 AK: I say stage 3
 
 (RW agree, this aligns with implementation step)
 
-YK: I think stage 2 criteria is test262 tests. For me, as spec author this is valuable
+YK: I think stage 2 criteria is Test262 tests. For me, as spec author this is valuable
 
 AWB: during stage 2, I expect these to change a lot. These are part of the artifacts
 
-DE: for the SIMD tests, we went through a lot of churn. it makes sense to have them outside of test262, now we're stage 3, we're ok with test262
+DE: for the SIMD tests, we went through a lot of churn. it makes sense to have them outside of Test262, now we're stage 3, we're ok with Test262
 
-YK: I think that implementors should have commit access to test262 while they're working on it
+YK: I think that implementors should have commit access to Test262 while they're working on it
 
 BT: difficulty mentioned by DE is real
 
@@ -190,15 +190,15 @@ DE: problem with stage 2 is that the API is not stable, so it doesn't provide va
 
 DH: having tests are similar to having spec, helpful to make it clear to people how the feature works
 
-AK: we have automated process pulling test262, we don't want to have to triage unstable changes 
+AK: we have automated process pulling Test262, we don't want to have to triage unstable changes 
 
 YK: feature flags should solve this problem
 
-BT: difficulty is that numerous different test262 harnesses, I understand Google has their own
+BT: difficulty is that numerous different Test262 harnesses, I understand Google has their own
 
-_ general agreement that test262 tests should be stage 3 _
+_ general agreement that Test262 tests should be stage 3 _
 
-DE: YK and others are going to look into adding feature flags to implementors test262 harnesses
+DE: YK and others are going to look into adding feature flags to implementors Test262 harnesses
 
 BT: difficult to test features in isolation, they are often cross-cutting
 

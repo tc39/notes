@@ -8,7 +8,7 @@ István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
 
 -----
 
-## 1. Opening, welcome and roll call
+## Opening, welcome and roll call
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2017/09.md)
 

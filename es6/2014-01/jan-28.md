@@ -94,7 +94,7 @@ LH:  We have now effectively met the "feature complete draft" requirement we wer
 BE: Have nothing, same as ES5.
 (Discussion about whether we can be strict)
 
-LH: For example, do we have "multiple compatibile implementations" requirements?  Or "test262 coverage" requirements?  Our ES7 process proposal has these, but do we want/need some limitied version of this for ES6?
+LH: For example, do we have "multiple compatibile implementations" requirements?  Or "Test262 coverage" requirements?  Our ES7 process proposal has these, but do we want/need some limitied version of this for ES6?
 
 AWB: We just need to ship it and get to the stricter process for ES7.
 
@@ -242,9 +242,9 @@ Keep as spec'ed.
  - `Array.from([0, , 2])` => `[0, undefined, 2]`
 
 
-## Test 262
+## Test262
 
-BT: Up on GitHub. https://github.com/tc39/test262. Conversion from Mercurial done by Brandon Benvie.
+BT: Up on GitHub. https://github.com/tc39/Test262. Conversion from Mercurial done by Brandon Benvie.
 
 BT: AttendedTest the web forward. Got a lot of PR (22).
 

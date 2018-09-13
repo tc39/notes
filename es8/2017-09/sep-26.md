@@ -8,12 +8,12 @@ István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM)
 
 -----
 
-## 1. Opening, welcome and roll call
+## Opening, welcome and roll call
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2017/09.md)
 - Lunch here at noon each day
 
-## 3. Adoption of Agenda
+## Adoption of Agenda
 
 
 #### Conclusion/Resolution
@@ -21,7 +21,7 @@ István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM)
 - Adopted
 
 
-## 4. Approval of previous meeting minutes
+## Approval of previous meeting minutes
 
 There were no issues with the minutes of the July 2017 meeting (Ecma/TC39/2017/034).
 
@@ -107,9 +107,9 @@ CM: 262 only
 
 (Leo Balter)
 
-LBR: Have updates on test 262. We have more comtributors since last meeting. We've been working with contributors from Igalia, partnership with Bloomberg. At Bocoup we have partnership with Facebook on test262 - thankful for these. Valerie Young joining us for test262 with interesting work, really appreciate. Test runners added that we're incorporating with, allow us to integrate with projects that want to use test262. We're going beyond browser implementations and making sure test262 is useful for other projects - brings us more feedback, more contributors & improvements. Really appreciate work so far. Rick & I are doing mentorship for contributors. Almost 60,000 tests right now in test262. Thankyou
+LBR: Have updates on test 262. We have more comtributors since last meeting. We've been working with contributors from Igalia, partnership with Bloomberg. At Bocoup we have partnership with Facebook on Test262 - thankful for these. Valerie Young joining us for Test262 with interesting work, really appreciate. Test runners added that we're incorporating with, allow us to integrate with projects that want to use Test262. We're going beyond browser implementations and making sure Test262 is useful for other projects - brings us more feedback, more contributors & improvements. Really appreciate work so far. Rick & I are doing mentorship for contributors. Almost 60,000 tests right now in Test262. Thankyou
 
-BT: Related projects are [eshost-cli](https://github.com/bterlson/eshost-cli) and [eshost](https://github.com/bterlson/eshost)… It's used in the test262 harness to run scripts uniformly across node, browsers. Gotten a lot better recently. If you're testing scripts in different engines, `eshost` is going to help a lot. Check it out!
+BT: Related projects are [eshost-cli](https://github.com/bterlson/eshost-cli) and [eshost](https://github.com/bterlson/eshost)… It's used in the Test262 harness to run scripts uniformly across node, browsers. Gotten a lot better recently. If you're testing scripts in different engines, `eshost` is going to help a lot. Check it out!
 
 #### Conclusion/Resolution
 
@@ -226,7 +226,7 @@ LBR: Since last meeting we have Code of Conduct approved. We expect everyone to 
 - We already have an email for reporting. It currently goes to the chair group (Rex, Dan, Leo) and the Editor (Brian Terlson). 
 - tc39-conduct-reports@googlegroups.com
 
-## 11.ii.b How should ECMA 402 proceed in light of "ICU standardization" concerns
+## 11.ii.b How should ECMA-402 proceed in light of "ICU standardization" concerns
 - https://github.com/tc39/ecma402/pull/172
 
 (Daniel Ehrenberg)
@@ -252,7 +252,7 @@ RW: I just wanted to ensure we're not codifying this. Even though implementation
 
 DE: The underlying locale data is even tailored to different vendors. No one ships the exact contents of CLDR, so it's not reasonable to require using it.
 
-MB: The added paragraph makes sense as it matches reality, but how does this affect test262 tests?
+MB: The added paragraph makes sense as it matches reality, but how does this affect Test262 tests?
 
 DE: Test262 will not be able to assert on string output of these methods.
 
@@ -272,7 +272,7 @@ YK: Question for Node are you planning to implement this?
 
 PST: Nope
 
-DE: It's up to implementers, there is no requirements for this. (Added clarification later: Node already ships V8's Intl support by default; there's nothing for Node to do here. However, V8 currently exposes a compile-time flag which some users switch off to disable ECMA 402, which RW is using.)
+DE: It's up to implementers, there is no requirements for this. (Added clarification later: Node already ships V8's Intl support by default; there's nothing for Node to do here. However, V8 currently exposes a compile-time flag which some users switch off to disable ECMA-402, which RW is using.)
 
 RW: We're already shipping Node without `Intl` support
 
@@ -424,7 +424,7 @@ Everyone: Signs of approval
 
 (István Sebestyén)
 
-IS: (briefing on ECMA 262, 402, 404)
+IS: (briefing on ECMA-262, 402, 404)
 
 
 #### Conclusion/Resolution
@@ -773,13 +773,13 @@ DE: Some pushback to making changes for singular vs plural. Temporal proposal us
 
 MPT: The values differ depending on the use case. Are we talking duration of time or unit of time?
 
-DE: The ECMA 402 working group encouraged singular for consistency; we have to have a break somewhere given the mismatch between Temporal and Intl.DateTimeFormat
+DE: The ECMA-402 working group encouraged singular for consistency; we have to have a break somewhere given the mismatch between Temporal and Intl.DateTimeFormat
 
 MPT: But the careful convention is, singular for date, plural for duration. This is like a duration.
 
 DE: Oh, I see your point.
 
-DE: For style, we are sticking with the CLDR convention, following feedback from the ECMA 402 working group.
+DE: For style, we are sticking with the CLDR convention, following feedback from the ECMA-402 working group.
 
 MS: Medium seems to be used in Date formatters for macOS and Windows APIs.
 

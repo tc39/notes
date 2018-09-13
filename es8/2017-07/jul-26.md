@@ -271,11 +271,11 @@ SYG: We'll build it, use normal security practices, fuzzers, etc. It sounds like
 
 WH: Yes
 
-AWB: I don't have a problem with this at Stage 1, but not obvious that it's ECMA 262 standards-track stuff.
+AWB: I don't have a problem with this at Stage 1, but not obvious that it's ECMA-262 standards-track stuff.
 
 BE: A wire format has to be standardized
 
-AWB: Maybe not part of ECMA 262. It really needs to be built and proven, not prematurely standardized.
+AWB: Maybe not part of ECMA-262. It really needs to be built and proven, not prematurely standardized.
 
 DH: There's actually a remarkable amount of homework done, which is reasonable with this big scope. I think this is the right amount of work for Stage 1, but it's not Stage 2
 
@@ -283,7 +283,7 @@ SYG: I think it would be very bad if this was not standards track, and somebody 
 
 MP: You could put it in a different standard; Sourcemaps and HTML are different
 
-SYG: This calls for some semantic changes to handling of early errors in ECMA 262 (for example).
+SYG: This calls for some semantic changes to handling of early errors in ECMA-262 (for example).
 
 DD: The fact that new proposals need to provice integration into the binary grammar is a big reason for pursuing in this committee.
 

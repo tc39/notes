@@ -8,10 +8,10 @@
 - ECMA404 is an [ISO standard (ISO-21778)](jan-23.md#9-ecma404-status-updates)
 - TC39 [adopted](jan-23.md#13ia-tc39-logo) an [official logo](https://github.com/tc39/logo)
 - Mathias Bynens introduced jsvu to provide [an easier use of eshost workflow](jan-23.md#13iia-making-eshost-workflow-more-accessible-with-jsvu)
-- A [new form for contributions is adopted](jan-23.md#13iig-invited-expertspecification-contributor-forms). It's already applied for the [Test262 CLA sign up](http://tc39.github.io/test262-cla/).
+- A [new form for contributions is adopted](jan-23.md#13iig-invited-expertspecification-contributor-forms). It's already applied for the [Test262 CLA sign up](http://tc39.github.io/Test262-cla/).
 - The Chair group (Rex, Dan, Leo) was [unanimously reelected for 2018](jan-24.md#6i-chair-group-in-2018).
 - TC39 has now an Editor Group with Brian Terlson, Jordan Harbard, and Bradley Farias [to present in March, tentatively planning for the three of them to be joint editors](jan-24.md#6ii-editor-group).
-- Status updates on Test262 with [contribution reports and lists of recent coverages, improvements, a non-browsers community users](jan-23.md#11-test262-status-updates).
+- Status updates on Test262 with [contribution reports and lists of recent coverages, improvements, a non-browsers community users](jan-23.md#11-Test262-status-updates).
 
 ### New Proposals
 

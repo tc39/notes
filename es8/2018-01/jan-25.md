@@ -19,7 +19,7 @@ Agenda: https://github.com/tc39/agendas/blob/master/2018/01.md
 
 - [proposal](https://github.com/tc39/ecma262/pull/1066)
 
-BT: technical content is all good, there are test262 tests, I don't know how complete they are, there are still gaps in coverage, but I think those are normal test bugs, not blocking
+BT: technical content is all good, there are Test262 tests, I don't know how complete they are, there are still gaps in coverage, but I think those are normal test bugs, not blocking
 
 AK: I think our stage 4 requirements are covered
 
@@ -589,7 +589,7 @@ DE: one update since last meeting, TypedArrays have ops to convert from one elem
 
 DE: other change, BigInt.parseInt was removed, Mathias Bynens' fromString subsumes this, more clean/uniform, this is a pattern we want for further numeric types
 
-DE: test262 testing continues to improve, almost all the surface, still adding tests for type coersion, test by josh wolfe and robin templeton. Spidermonkey has a bug open with a feature-complete implementation, V8 is in progress, plain bigints are done, new typedarrays are not done, good performance. JSC impl is in progress
+DE: Test262 testing continues to improve, almost all the surface, still adding tests for type coersion, test by josh wolfe and robin templeton. Spidermonkey has a bug open with a feature-complete implementation, V8 is in progress, plain bigints are done, new typedarrays are not done, good performance. JSC impl is in progress
 
 DE: that's it, any thoughts?
 

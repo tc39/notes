@@ -1,7 +1,7 @@
 # November 2017 - Table of Contents
 
 - [November 28, 2017 Meeting Notes](nov-28.md#november-28-2017-meeting-notes)
-  * [1. Opening, welcome and roll call](nov-28.md#1-opening-welcome-and-roll-call)
+  * [Opening, welcome and roll call](nov-28.md#opening-welcome-and-roll-call)
   * [7.i ECMA262 Status Updates (15m)](nov-28.md#7i-ecma262-status-updates-15m)
   * [7.ii ECMA-402 Status Updates (15m)](nov-28.md#7ii-ecma-402-status-updates-15m)
   * [7.iii ECMA-404 Status Updates (15m)](nov-28.md#7iii-ecma-404-status-updates-15m)
@@ -25,7 +25,7 @@
   * [Array[@@Species], Array Index Accessors and Security](nov-28.md#arrayspecies-array-index-accessors-and-security)
   * [9.ii.h Intl.Locale for Stage 2](nov-28.md#9iih-intllocale-for-stage-2)
 - [November 29, 2017 Meeting Notes](nov-29.md#november-29-2017-meeting-notes)
-  * [1. Opening, welcome and roll call](nov-29.md#1-opening-welcome-and-roll-call)
+  * [Opening, welcome and roll call](nov-29.md#opening-welcome-and-roll-call)
   * [9.i.n XS engine (embedded JavaScript) update on conformance, source code availability, and graphical user interface capabilities](nov-29.md#9in-xs-engine-embedded-javascript-update-on-conformance-source-code-availability-and-graphical-user-interface-capabilities)
   * [9.ii.i Pipeline Operator for Stage 2](nov-29.md#9iii-pipeline-operator-for-stage-2)
   * [9.ii.d Revisiting parameter initializers and sloppy eval](nov-29.md#9iid-revisiting-parameter-initializers-and-sloppy-eval)

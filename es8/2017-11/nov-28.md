@@ -8,7 +8,7 @@ István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
 
 -----
 
-## 1. Opening, welcome and roll call
+## Opening, welcome and roll call
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2017/11.md)
 
@@ -152,7 +152,7 @@ AK: Champions, please keep your explainers up to date.
 
 JHD: You can use multiple separators, just not sequentially right?
 
-RW: Yes! For example a binary literal might be separated every 4 digits. This has test262 coverage. Sorry for not having an example on the slides.
+RW: Yes! For example a binary literal might be separated every 4 digits. This has Test262 coverage. Sorry for not having an example on the slides.
 
 RW: So, stage 3?
 
@@ -328,7 +328,7 @@ CP: Most of these changes are simply adding wording and options for conformance,
 
 YK: Yes, maybe follow the staging process yourself but move it along quicker - external to TC39. I would hope you would still follow a staging process for the same reasons we do.
 
-DE: We have the ECMA 402 update at the beginning of each meeting so we could use that time to discuss these changes rather than these additional 15 minute timeboxes.
+DE: We have the ECMA-402 update at the beginning of each meeting so we could use that time to discuss these changes rather than these additional 15 minute timeboxes.
 
 DE: Any other questions? No? Thank you!
 
@@ -803,7 +803,7 @@ DH: Species was intentionally extensibility design. Subclassing an OO were key g
 
 NSH: Yes this is all easy to say in hindsight, I don't want to attack the original decisions just highlight the vulnerabilities.
 
-JRL: Surely test262 coverage could add this.
+JRL: Surely Test262 coverage could add this.
 
 AK: Well in my experience conformance testing is not right for this. Fuzz testing or security analysis is how we get these.
 

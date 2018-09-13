@@ -17,7 +17,7 @@
 - [July 24, 2013 Meeting Notes](july-24.md#july-24-2013-meeting-notes)
   * [4.6 Binary Data Update](july-24.md#46-binary-data-update)
   * [9 JSON (Continued)](july-24.md#9-json-continued)
-  * [Test 262 Update](july-24.md#test-262-update)
+  * [Test262 Update](july-24.md#test262-update)
   * [5.2 Can computed properties name in object literals produce string prop names? Duplicates?](july-24.md#52-can-computed-properties-name-in-object-literals-produce-string-prop-names-duplicates)
   * [5.3 Special syntax for `__proto__` in an object literal](july-24.md#53-special-syntax-for-__proto__-in-an-object-literal)
   * [5.4 Are TypedArray insances born non-extensible?](july-24.md#54-are-typedarray-insances-born-non-extensible)

@@ -471,7 +471,7 @@ DC: Did this make it into the bug suites?
 
 LH: Must not have, because no major browser is failing.
 
-WH: How much does test262 test detection of syntax errors?
+WH: How much does Test262 test detection of syntax errors?
 
 BT: A lot but probably not enough
 
@@ -541,7 +541,7 @@ WH: That would be a browser bug.
 
 AWB: Some browsers haven't been paying close attention to this.
 
-WH: Best fixable by putting a few test cases in test262.
+WH: Best fixable by putting a few test cases in Test262.
 
 #### Conclusion/Resolution
 
@@ -848,7 +848,7 @@ AWB: We'll get them.
 - Need strawman for stage 0
 
 
-## Test 262 Update
+## Test262 Update
 
 BT: A lot of pull requests piling up
 ... Domenic will port promise tests
@@ -862,7 +862,7 @@ DL: V8 is beginning to implement ES6 and will want to contribute back the tests
 
 RW: We'll need to update the current PRs with any guidelines
 
-MM: For tests that are not specifically specified as strict-only or sloppy-only, currently the test262 harness only tests these in sloppy mode. Must test these in both strict and sloppy by default.
+MM: For tests that are not specifically specified as strict-only or sloppy-only, currently the Test262 harness only tests these in sloppy mode. Must test these in both strict and sloppy by default.
 
 BT: Issues with the error message string varying across platforms
 

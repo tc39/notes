@@ -12,7 +12,7 @@
   * [4.10 Signaling stability of existing features](jul-29.md#410-signaling-stability-of-existing-features)
   * [Postpone Realm API to ES7](jul-29.md#postpone-realm-api-to-es7)
   * [Revisit Object.assign()](jul-29.md#revisit-objectassign)
-  * [Test 262 Update](jul-29.md#test-262-update)
+  * [Test262 Update](jul-29.md#test262-update)
 - [July 30, 2014 Meeting Notes](jul-30.md#july-30-2014-meeting-notes)
   * [RFTG Admin: ES6 Opt-out period.](jul-30.md#rftg-admin-es6-opt-out-period)
   * [4.4 Instantiation Reform (Review @@create design rationale and possible alternatives)](jul-30.md#44-instantiation-reform-review-create-design-rationale-and-possible-alternatives)

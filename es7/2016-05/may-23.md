@@ -309,7 +309,7 @@ _Consensus_. TC39 approved TC39/2016/019 Rev1 minutes of the March 2016 San Fran
 
 - ECMAScript Suite (ECMA-414) for ISO fast track up for approval, going to be presented to ECMA GA. The ECMA Management are all very impressed with the ability to release ECMAScript 2016 so quickly. To avoid getting out of date with frequent updates, we will not submit future ECMAScript "components" (like ECMA-402, ECMA-262) updates for ISO fast track and just submit the one suite standard as the new Edition of IS 16262. Unclear whether this will work practically (actually ISO secretariat suggested this, but some national bodies may object to it - one never knows), but it is very important to ECMA that the annual version be standardized and published.
 
-- ECMA 404 (JSON) will be up for ISO fast track from the 2013 version, aligned with IETF standard, unlikely to change in the future. Actually we have a go ahead from the Ecma GA this from 2014, but only now we are submitting the fast track. The only reason for the JTC1 fast-track of JSON to demonstrate the world that JSON is stable and there is no intention to change it. When there will be a similar IETF Standard (not FRC) we will issue a new ECMA-404 Edition when we will take up that and get it synchronized with ECMA-404.
+- ECMA-404 (JSON) will be up for ISO fast track from the 2013 version, aligned with IETF standard, unlikely to change in the future. Actually we have a go ahead from the Ecma GA this from 2014, but only now we are submitting the fast track. The only reason for the JTC1 fast-track of JSON to demonstrate the world that JSON is stable and there is no intention to change it. When there will be a similar IETF Standard (not FRC) we will issue a new ECMA-404 Edition when we will take up that and get it synchronized with ECMA-404.
 
 - Brian Terlson and Rick Waldron has been proposed to the Ecma Management and the CC by István for the GA ECMA award of recognition at their June 2016 meeting. Caridy Patiño (as ECMA-402) Editor may also be proposed for an award (this was seconded by TC39). We are also open to nominating other TC39 committee members for ECMA recognition awards for any outstanding TC39 related contribution. This occurs twice a year at the GA. E.g. Allen W-B. or Waldemar H. has received this award in the past.
 
@@ -345,26 +345,26 @@ _General discussion about the unimplementability of throwing correctly all the t
 
 DH: We have to do good science here.
 
-DE: The test262 tests are parameterized, and there are both positive and negative tests
+DE: The Test262 tests are parameterized, and there are both positive and negative tests
 
-DH: Recommendation to test262: write a routine to experimentally determine the maximum stack size, and run this at the beginning, rather than starting at 100k.
+DH: Recommendation to Test262: write a routine to experimentally determine the maximum stack size, and run this at the beginning, rather than starting at 100k.
 
 BT: Isn't it possible for this to come to a variable outcome?
 
 MS: I wrote this routine, and it's very hard to do it correctly determine the exact outcome. It required growing exponentially, then backing off, etc
 
-LBR: After a lot of research, this was the best we found. It is not the happiest solution, but we couldn't find anything better. We just wanted to offer some form of tests on test262 for each feature of the spec, and that's what we did for tail call optimization. You already have to have a $PRINT function that implementations support, and this is similarly parameterized.
+LBR: After a lot of research, this was the best we found. It is not the happiest solution, but we couldn't find anything better. We just wanted to offer some form of tests on Test262 for each feature of the spec, and that's what we did for tail call optimization. You already have to have a $PRINT function that implementations support, and this is similarly parameterized.
 
 BT: It's a pragmatic solution
 
-MF: Proper tail calls are unobservable and should not have a test262 test
+MF: Proper tail calls are unobservable and should not have a Test262 test
 
 BT: But it is very useful and works on all implementations
 
 #### Conclusion/Resolution
 
 - Consensus to not standardize RangeError (impossible to implement reliably)
-- Continue discussion on a GitHub bug about possible reorganization of test262 to take into account that the PTC tests are implementation-specific/not technically correct
+- Continue discussion on a GitHub bug about possible reorganization of Test262 to take into account that the PTC tests are implementation-specific/not technically correct
 
 ## [\w and \W semantics in case-insensitive Unicode RegExps](https://github.com/tc39/ecma262/pull/525) 
 

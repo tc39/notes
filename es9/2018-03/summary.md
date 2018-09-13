@@ -10,7 +10,7 @@
 - [Update on WASM ES modules](mar-20.md#10ih-update-on-wasm-es-modules)
 - [Update on improved TC39 documentation efforts](mar-20.md#10ii-update-on-improved-tc39-documentation-efforts)
 - [What does 1JS mean in a world of transpilers?](mar-21.md#12iiib-what-does-1js-mean-in-a-world-of-transpilers)
-- [Test262 Status Updates](mar-22.md#7iv-test262-status-updates-15m) with a short summary from the latest work.
+- [Test262 Status Updates](mar-22.md#7iv-Test262-status-updates-15m) with a short summary from the latest work.
 - [Summarize classes](mar-22.md#summarize-classes)
 
 ### New Proposals

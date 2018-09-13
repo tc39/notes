@@ -565,13 +565,13 @@ MM: We agreed that some discussions need to happen whether or not we achieved co
 
 AK: Can you give a two-sentence summary of this?
 
-AWB: TR-104 directs people to say "yes, test262 consists of all of these things on GitHub. Go look at GitHub."
+AWB: TR-104 directs people to say "yes, Test262 consists of all of these things on GitHub. Go look at GitHub."
 
-LBR: Basically a description of test262 with formalities and ready to bring to Ecma.
+LBR: Basically a description of Test262 with formalities and ready to bring to Ecma.
 
-AWB: Blesses test262 as official Ecma work product. Non-normative.
+AWB: Blesses Test262 as official Ecma work product. Non-normative.
 
-LBR: There are a few facts. As of September 2016, test262 consisted of over 23k test files...
+LBR: There are a few facts. As of September 2016, Test262 consisted of over 23k test files...
 
 AK: I skimmed it. I will give it affirmative: yes. I find it hard to imagine someone objecting.
 
@@ -677,7 +677,7 @@ AK: My intuition is probably that it's web compatible to change this.
 
 MPT: This seems like a great up-for-grabs.
 
-LBR: No tests for this. This is the most frustrating function I have for test262, everything is implementation-defined. I'm really positive to anything that allows me to write a test on this.
+LBR: No tests for this. This is the most frustrating function I have for Test262, everything is implementation-defined. I'm really positive to anything that allows me to write a test on this.
 
 MS: The first row there [in table]: shouldn't that also throw an error...OK, so it's callable but you're not going to call it because only one element.
 

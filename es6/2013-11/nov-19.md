@@ -644,7 +644,7 @@ BE: Might be interesting to find out, can chat with Brandon about this.
 
 
 
-## 9 ECMA 404 W3C TAG / TPAC report
+## 9 ECMA-404 W3C TAG / TPAC report
 (Alex Russell)
 
 AR: (recapping JSON specification leading to 404)
@@ -664,7 +664,7 @@ AR: (proposal to work together)
 STH: 3 levels.
 
 1. Bytes on the wire. For example reject UTF-32
-2. Sequence of unicode code points that make up a valid JSON sequence. This is covered by ECMA 404.
+2. Sequence of unicode code points that make up a valid JSON sequence. This is covered by ECMA-404.
 3. Semantics of this structure. For example, reject numbers with a thousand digits.
 
 

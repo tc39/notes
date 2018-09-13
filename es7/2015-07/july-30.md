@@ -9,14 +9,14 @@ Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferra
 
 (Brian Terlson, Mike Pennisi)
 
-[Slides](https://jugglinmike.github.io/presentations/2015/tc39-test262-update)
+[Slides](https://jugglinmike.github.io/presentations/2015/tc39-Test262-update)
 
 
 MP: Introduction
 
 See slides
 
-WH: (re: http://jugglinmike.github.io/presentations/2015/tc39-test262-update/#7 ) question, re: es6draft, ecmascript spec, before/after publication?
+WH: (re: http://jugglinmike.github.io/presentations/2015/tc39-Test262-update/#7 ) question, re: es6draft, ecmascript spec, before/after publication?
 
 ?: es6draft ? ECMAScript 6 draft
 
@@ -27,9 +27,9 @@ MF: raw flag? Does this prevent issues other than directive prologue issues?
 
 MP/BT: "raw" means: don't touch the file, just run it. No access to assert features, useful for syntax only tests
 
-[discussing distinction between early errors and parse errors that test262 does]
+[discussing distinction between early errors and parse errors that Test262 does]
 
-http://jugglinmike.github.io/presentations/2015/tc39-test262-update/#12
+http://jugglinmike.github.io/presentations/2015/tc39-Test262-update/#12
 
 AWB: These are a specification artifact. An implementation doesn't have to do parsing and early errors in separate passes.
 
@@ -41,15 +41,15 @@ AWB: Distinguishing early and parsing errors in tests is overspecifying.
 
 (re: website improvements)
 
-BT: current test262 site does not have ES6 collatoral.
+BT: current Test262 site does not have ES6 collatoral.
 - Implementing ToLength appears to lock up the website
-- Alot of work needed to get the test262 site into a functional state
+- Alot of work needed to get the Test262 site into a functional state
 - Is the work something that Bocoup is going to do?
 
 MP: Nearing end of time, but ideally would like to take on this work
 
 BT: Then we need to find a "resource" for this project
-- Enumerating outstanding issues with test262 website
+- Enumerating outstanding issues with Test262 website
 
 YK: Considered running tests in iframe or worker and timing out?
 
@@ -60,7 +60,7 @@ Discussion of implementation details of test harness
 BT: Requirement of new site: use web workers
 
 
-Moving on to http://jugglinmike.github.io/presentations/2015/tc39-test262-update/#15
+Moving on to http://jugglinmike.github.io/presentations/2015/tc39-Test262-update/#15
 
 MP: (first example) TypedArray, 9 sets of the same tests. The tests might start in sync, but it's hard to maintain over time. 
 

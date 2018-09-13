@@ -298,11 +298,11 @@ MM: Applied to anything other than a non-strict function?
 
 MM's overall concern is to make sure the behavior is nailed down for built-ins as well as for strict functions.
 
-## Somehow we started talking about test262
+## Somehow we started talking about Test262
 
-Discussion of test262's (lack of) coverage.
+Discussion of Test262's (lack of) coverage.
 
-BT: We didn't have coverage in test262 of a non-enumerable property shadowing an enumerable property.
+BT: We didn't have coverage in Test262 of a non-enumerable property shadowing an enumerable property.
 
 JM: it would be good to have a place to list the open coverage holes.
 
@@ -310,11 +310,11 @@ SK/DD: while reviewing sections of the spec, people should write down a list of 
 
 AWB: Perhaps we should try to get a rough statement of what our coverage areas are. Some areas are covered because they were in ES3 tests; Microsoft contributed a lot of standard library tests; there are probably lots of gaps.
 
-(Discussion of running test262 tests against implementations, especially given their optimizations.)
+(Discussion of running Test262 tests against implementations, especially given their optimizations.)
 
 YK: ideally we should not run the tests in interpreted mode.
 
-AR: there is no hot code in test262, so right now we only run in interpreted mode.
+AR: there is no hot code in Test262, so right now we only run in interpreted mode.
 
 YK: could we use switches to turn up optimizations?
 
@@ -324,7 +324,7 @@ AR: there are complications that in V8 at least make that unlikely to be useful.
 
 AWB: I'm mostly interested in whether there is a useful set of tests for most areas of the spec
 
-BT: was this the test262 agenda item?
+BT: was this the Test262 agenda item?
 
 BE: this was the "depress the room" agenda item
 
@@ -344,14 +344,14 @@ BT: Implementations have to take care to not rely on user modifiable built-ins.
 - Testing is hard
 
 
-## Test 262 Update
+## Test262 Update
 
 (Brian Terlson)
 
 BT: A number of PRs remain open from the Test The Web Forward event: people haven't signed CLA despite request, haven't updated patch according to review feedback. These will be closed. 
 
 - Browser will currently hang on 2**32 ToLength tests; these are initializing and iterating
-- Previous consensus was to not update test262 on ecmascript.org. Any objections to creating a preview of ES6 test262?
+- Previous consensus was to not update Test262 on ecmascript.org. Any objections to creating a preview of ES6 Test262?
 - extracted test runner harness, wip.
 - Suggest transferring test harness to ecma
 
@@ -396,7 +396,7 @@ AR: so we should put experimental things into a separate directory
 
 YK: no. You don't do that in Chrome; you use feature flags.
 
-(Discussion of folder vs. feature flags for new test262 tests for post-ES6 experimental features.)
+(Discussion of folder vs. feature flags for new Test262 tests for post-ES6 experimental features.)
 
 AWB: ok with stage 3 being in the repo
 
@@ -416,13 +416,13 @@ ARB: Fine to have early stage features, as long as they're not intermingled.
 
 BT: The file system isn't ideal.
 
-(Discussion of whether to accept stage 1 onward into test262.)
+(Discussion of whether to accept stage 1 onward into Test262.)
 
-DD: Want to make test262 writing easy, so will be adding helpers.
+DD: Want to make Test262 writing easy, so will be adding helpers.
 
 #### Conclusion/Resolution
 
-- Create a subdomain to host test262's ES6 tests
+- Create a subdomain to host Test262's ES6 tests
 - Deprecation plan for Python harness: contact
 - Domenic or Andreas for V8
 - Dave for SpiderMonkey

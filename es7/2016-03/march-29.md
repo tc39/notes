@@ -438,7 +438,7 @@ MM: he reluctantly agrees with BTs conclusion
 
 WH: I view this as an old bug. We should fix the bug in the implementations instead of copying the bug to the spec.
 
-BT: it would be nice to update test262 to test the semantics eventually
+BT: it would be nice to update Test262 to test the semantics eventually
 
 #### Conclusion/resolution
 

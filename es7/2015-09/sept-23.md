@@ -508,7 +508,7 @@ More totally useful, important, completely clear and not repetitive discussion a
 
 
 
-## ECMA 402 Update
+## ECMA-402 Update
 
 RW: blah blah blah 
 

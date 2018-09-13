@@ -5,7 +5,7 @@ Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficar
 
 -----
 
-## 3. Adopting the agenda
+## Adopting the agenda
 
 - [agenda](https://github.com/tc39/agendas/blob/master/2017/03.md)
 
@@ -15,7 +15,7 @@ AK: Please add items 1 week in advance.
 
 Agenda adopted
 
-## 4. Adopting the minutes
+## Adopting the minutes
 
 Minutes approved
 
@@ -101,11 +101,11 @@ All: _clapping_
 
 (Leo Balter)
 
-LBR: Need help from Ecma for an email for use by test262 so that private emails don't need to be used.
+LBR: Need help from Ecma for an email for use by Test262 so that private emails don't need to be used.
 
-LBR: In other updates. I was able to do a bug triage on more than 100 issues and pull requests in the last month. There were many many closed issues (around 50) including tests on rest and spread properties. We now have over 100k LOC for async/generator tests. For object rest/spread, we have a new JSC contributor from my country who has been very helpful with the tests. He also implemented it in JSC. We need more support--I'm glad Google is supporting me, but I need more support for test262 development.
+LBR: In other updates. I was able to do a bug triage on more than 100 issues and pull requests in the last month. There were many many closed issues (around 50) including tests on rest and spread properties. We now have over 100k LOC for async/generator tests. For object rest/spread, we have a new JSC contributor from my country who has been very helpful with the tests. He also implemented it in JSC. We need more support--I'm glad Google is supporting me, but I need more support for Test262 development.
 
-LBR: I'd like to discuss removing the copyright line in test262 tests in a timebox.
+LBR: I'd like to discuss removing the copyright line in Test262 tests in a timebox.
 
 AWB: Let's discuss TR 104.
 
@@ -113,7 +113,7 @@ LBR: There's still a draft.
 
 AWB: People have probably not reviewed it adequately to vote on it yet. Post a link here for TR104.
 
-__[link](https://github.com/tc39/test262/blob/master/Draft%20TR%20ECMA-104%202nd%20edition.doc)__
+__[link](https://github.com/tc39/Test262/blob/master/Draft%20TR%20ECMA-104%202nd%20edition.doc)__
 
 LBR: Yes, I will post a link. We didn't have any updates on it since last year.
 
@@ -308,7 +308,7 @@ AWB:  We'll go ahead and move on to the 15-minute items.
 
 - https://github.com/tc39/proposal-template-literal-revision
 
-TD: Lifting the escape sequence revision to tagged template literals. It is in multiple browsers (Chrome behind a flag and Firefox), Test 262, no recent changes, asking for stage 4.
+TD: Lifting the escape sequence revision to tagged template literals. It is in multiple browsers (Chrome behind a flag and Firefox), Test262, no recent changes, asking for stage 4.
 
 YK: TL;DR: It makes things easier to implement overall.
 
@@ -365,9 +365,9 @@ DE: We have two implementations. One in V8 and one in the Dart VM. It's not a JS
 
 AWB: 2 implementations are not required for stage 3 anyway.
 
-LBR: Writing a test for this (test262) would be the best thing to review the proposed syntax.
+LBR: Writing a test for this (Test262) would be the best thing to review the proposed syntax.
 
-DE: We would love your help in writing tests!! There are some tests already on github, but we would love and plan to do work on these tests, but having started porting them to test262.  .... Okay, I think we had a few reviewers, trying to find the notes from the last meeting to be sure. So the reviewers were: someone from Microsoft, Kevin Gibbons, WH. Did anyone from the Microsoft team look at this?
+DE: We would love your help in writing tests!! There are some tests already on github, but we would love and plan to do work on these tests, but having started porting them to Test262.  .... Okay, I think we had a few reviewers, trying to find the notes from the last meeting to be sure. So the reviewers were: someone from Microsoft, Kevin Gibbons, WH. Did anyone from the Microsoft team look at this?
 
 BT: Not thoroughly. I couldn't find any regex experts. I love it, but I suppose it should get a proper review.
 
@@ -724,9 +724,9 @@ We will treat the 3 proposals independently.
   - Stage 1 acceptance
 
 
-## 6. Addendum to test262 item
+## 6. Addendum to Test262 item
 
-LBR: People asked me to mention. We are using an integrated test generation tool. That's why we have so many lines of code.  It has documentation on test262. I would be very happy to show this test generation tool to anyone who is interested. The automated deployment I mentioned earlier uses this tool to confirm that tests are properly generated.
+LBR: People asked me to mention. We are using an integrated test generation tool. That's why we have so many lines of code.  It has documentation on Test262. I would be very happy to show this test generation tool to anyone who is interested. The automated deployment I mentioned earlier uses this tool to confirm that tests are properly generated.
 
 
 ## 10.i.c RegExp Unicode Property Escapes for stage 3

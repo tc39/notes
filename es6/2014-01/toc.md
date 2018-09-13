@@ -11,7 +11,7 @@
   * [More on toMethod](jan-28.md#more-on-tomethod)
   * [Clz (count leading zeros)](jan-28.md#clz-count-leading-zeros)
   * [Array.from](jan-28.md#arrayfrom)
-  * [Test 262](jan-28.md#test-262)
+  * [Test262](jan-28.md#test262)
   * [Yield and its precendence](jan-28.md#yield-and-its-precendence)
   * [Newborn generator behavior](jan-28.md#newborn-generator-behavior)
   * [ECMA-404 and IETF interactions](jan-28.md#ecma-404-and-ietf-interactions)

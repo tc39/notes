@@ -750,7 +750,7 @@ DH: To avoid rehashing, guiding principle:
 - Adhere to the guiding principle stated above
 
 
-## Test 262 Update
+## Test262 Update
 
 (Brian Terlson)
 
@@ -771,7 +771,7 @@ BT: Yes.
 
 DD: Node runner?
 
-BT: MS has been using a node runner internally, I've pulled out the useful pieces and pushed to github: https://github.com/bterlson/test262-harness
+BT: MS has been using a node runner internally, I've pulled out the useful pieces and pushed to github: https://github.com/bterlson/Test262-harness
 
 
 #### Conclusion/Resolution

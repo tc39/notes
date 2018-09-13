@@ -16,9 +16,9 @@ IS: Presented ECMA award to Caridy Patiño. Congratulations!
 RJE: Presented his background, has worked on C# spec, PHP spec, involved with language specs for 20 years, here to observe at first and see what involvement may be useful in the future.
 
 
-## 3. Adoption of the agenda
+## Adoption of the agenda
 
-## 4. Approval of the minutes from last meeting
+## Approval of the minutes from last meeting
 
 LBR: Any objections to adopting the agenda?
 
@@ -63,7 +63,7 @@ BT: Plenty of stuff to give feedback on
 
 CP: Small editorial changes, and hourCycle option for DateTimeFormat to replace hour12.
 
-DE, CP: Implementations close to shipping in two engines, which could be included in ECMA 402-2018: NumberFormat.formatToParts (Stage 3), PluralRules (stage 3), both waiting for two implementations and almost there
+DE, CP: Implementations close to shipping in two engines, which could be included in ECMA-402-2018: NumberFormat.formatToParts (Stage 3), PluralRules (stage 3), both waiting for two implementations and almost there
 
 DE: There are two other features which may reach 2018, which have presentations today, Intl.RelativeTimeFormat and Intl.Segmenter, which are less far along
 
@@ -96,26 +96,26 @@ LBR: Please reach out to me by this weekend if you're interested in being involv
 
 ### 8.ii Using Frontmatter tags that matter
 
-LBR: https://github.com/tc39/test262/blob/master/features.txt defines features that can be used to filter or group tests.
+LBR: https://github.com/tc39/Test262/blob/master/features.txt defines features that can be used to filter or group tests.
 
 MM: Is this for semantic purposes, or just organization?
 
 LBR: Organization, and also to avoid running tests you expect to fail, and to skip unrelated tests.
 
-LBR: Bocoup is looking for more contributors to test262!
+LBR: Bocoup is looking for more contributors to Test262!
 
-KG: I'm working with projects like Babel (and other projects that parse/process ECMAScript) to integrate test262.
+KG: I'm working with projects like Babel (and other projects that parse/process ECMAScript) to integrate Test262.
 
 LBR: Would love to have a compatibility table that ensures features are fully implemented, not just that the API seems to exist (e.g. typeof Map === "function").
 
-AWB: When test262 was started, the original understanding was there wouldn't be any comparison of engines/browsers.
+AWB: When Test262 was started, the original understanding was there wouldn't be any comparison of engines/browsers.
 
 LBR: The compatibility table is being done by Bocoup. We don't intend to only compare, but provide a good compatibility perspective as WPT does.
 
 MM: Feelings may have changed, since more browsers pass many more of the tests now.
 
 
-## 2. Note taking
+## Note taking
 
 BT: Make sure to include the proper consensus/resolution in the notes; we had an error there last time
 

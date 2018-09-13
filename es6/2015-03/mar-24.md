@@ -270,7 +270,7 @@ opposed: (none)
 
 abstain: jQuery
 
-IS: ECMA 402 can be an ECMA-only standard according to Patrick. ECMA-only standards can be used as normative standards, so it's up to us whether we want to fast-track. Doesn't seem critical. ECMA-404 is the more interesting one.
+IS: ECMA-402 can be an ECMA-only standard according to Patrick. ECMA-only standards can be used as normative standards, so it's up to us whether we want to fast-track. Doesn't seem critical. ECMA-404 is the more interesting one.
 
 AWB: Rick isn't here - are we also going to approve 402 right now?
 

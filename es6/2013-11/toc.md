@@ -11,7 +11,7 @@
   * [Introduce a Prototype object that contains sloppy arguments object @@iterator function?](nov-19.md#introduce-a-prototype-object-that-contains-sloppy-arguments-object-iterator-function)
   * [Conventions for ignore over-ride of @@iterator](nov-19.md#conventions-for-ignore-over-ride-of-iterator)
   * [(function Foo() {}).bind(x).name?](nov-19.md#function-foo-bindxname)
-  * [9 ECMA 404 W3C TAG / TPAC report](nov-19.md#9-ecma-404-w3c-tag--tpac-report)
+  * [9 ECMA-404 W3C TAG / TPAC report](nov-19.md#9-ecma-404-w3c-tag--tpac-report)
   * [4.9 Reconsidering Object.is](nov-19.md#49-reconsidering-objectis)
 - [November 20, 2013 Meeting Notes](nov-20.md#november-20-2013-meeting-notes)
   * [Report from the Ecma Secretariat (CC Report)](nov-20.md#report-from-the-ecma-secretariat-cc-report)

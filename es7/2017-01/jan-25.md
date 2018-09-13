@@ -5,9 +5,7 @@ Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terls
 
 -----
 
-## István update, items 4-10 on the agenda
-
-### 4. Approval of the minutes from the last meeting
+## Approval of the minutes from the last meeting
 
 AWB: We are having trouble getting the minutes to approve
 
@@ -24,7 +22,7 @@ IS: From a content point of view, these minutes is the same as what is mirrored 
 
 AWB: We'll take care of the review tomorrow
 
-### 5. Report from the ECMA secretariat
+## Report from the ECMA secretariat
 
 IS: Explains the current status of the TC39 Fast-track projects to JTC1. We have various components in ECMA to standardize in ISO. For ECMA-262 (the main ECMAWScript standard), we now have an agreement with ISO that we will not fast track it anymore; instead, the ECMAScript Suite ECMA-414 will supercede it (with normative references also to the needed Ecma standards), and the other redundant standard ISO IS 16262 (which is out of date) will be withdrawn. The only standards in common will be ECMA-414 (on the way to fast track), which happened after the Dec 7 ECMA GA. As you remember ECMA-414 has undergone some minor revisions for ISO requests. We have also provided an explanatory report to ISO (what has been published also as an TC39 document). We have published the document TC39/2016/050. The ISO number of the suite will be ISO-/EC IS  22275. Currently it is registeredasa DIS, but the voting has not started yet. When we change the suite standard, then it will get a new Edition number. ECMA-402 will also remain an Ecma only standard and its latest version is just referenced by the ECMAScript Suite.
 
@@ -42,7 +40,7 @@ IS: On JSON, there is some work to do: It got the DIS number 21778. The DIS voti
 
 IS: In the ECMA GA, Waldemar was there, so he can fill in any details and corrections of my verbal report. People in the GA are happy about the work of TC39. Participation is growing to-40-50 people each meeting, which is good, but can cause organizational problems..
 
-## 6.ii. Who should be the chair?
+## Who should be the chair?
 
 IS: We discussed the TC39 leadership--we have to put into place a leadership body to ensure that it is functioning long-term; in the short-term, Allen has been very helpful, but this is a short-term solution and we need to find a new leadership structure. The best possibility is to have the chairmanship position held by an ordinary ECMA member, but ECMA bylaws also now permit other categories of ECMA members to be the chairman. We have had the strange situation in ECMA TC39 where we had a chairman who was financed by three member companies; this has finished. We also had the strange situation where the chairman did not understand much of what was going on on the technical part (this had entirely historic reasons). The chairman cannot be an impartial adjudicator of disputes if they are not following discussions, but anyway, we have a cooperative spirit on TC39. Strangely enough we did not have in TC39 a Vice Chair, which is in most Ecma TCs the case. A Vice Chair really can help in carrying out the Chairs function. IE.g. f there is a vice-chairman, and the Chair has a company proposal which he has to present then the two chairs can switch off, as one of them is acting as chairman and the other is presenting, so member companies in a chair position can still present their own ideas. So, we can have a Vice Chair, but in addition  we may also put a management layer below the chairman. TC39 has the freedom to organize its management structure.
 
@@ -337,13 +335,13 @@ AK: In the past, Bocoup has imported V8 tests, but later wrote new tests
 
 SYG: Would you be interested in fuzzer-generated tests that might be hard to read?
 
-DE: Fuzzer tests often can be reduced to something readable and intelligible, at least the ones that have come up for V8. In my opinion, we should be relatively liberal for what we put into test262.
+DE: Fuzzer tests often can be reduced to something readable and intelligible, at least the ones that have come up for V8. In my opinion, we should be relatively liberal for what we put into Test262.
 
 AWB: I could imagine a failure mode for the tests where they become difficult to maintain because of too many tests for obscure optimizations
 
 KM: For JSC, we try to wire in all the tests from all the other browsers to find any bugs. It can be really useful.
 
-DE: web-platform-tests is very liberal in what it accepts, and it's more like an upstreamed version of what KM describes JSC has; this is way on the other end of the spectrum from test262's review, and it provides some value, but I understand if we don't go that far.
+DE: web-platform-tests is very liberal in what it accepts, and it's more like an upstreamed version of what KM describes JSC has; this is way on the other end of the spectrum from Test262's review, and it provides some value, but I understand if we don't go that far.
 
 SYG: Could we use wpt more for testing JavaScript implementations?
 
@@ -355,7 +353,7 @@ SYG: Event loops are more complicated, and so it's even more relevant there, whe
 
 DH: Maybe this is a heuristic signal that this is something missing in the ECMAScript standard.
 
-KG: Announcement: when you pull in the latest test262 tests, you'll find that $ changed to $262 for harness hooks
+KG: Announcement: when you pull in the latest Test262 tests, you'll find that $ changed to $262 for harness hooks
 
 BT: There are new tests for SharedArrayBuffer, requiring extensive API surface to run the tests; you have to be able to create an agent, sleep an agent, etc. Expect to do some implementation work in your console hosts.
 

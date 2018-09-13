@@ -17,7 +17,7 @@ AWB: Start with Internationalization
 
 IS: We need two products: The spec and a technical report (via test suite)
 
-JN: Would like Internationalization tests to be included with test262
+JN: Would like Internationalization tests to be included with Test262
 
 AWB: Finalize by June
 
@@ -240,7 +240,7 @@ paArray.map(2, function(element, [i, j], array) {
 
 LH/DH: (Discussion of explanation of River Trail semantics and the use cases)
 
-LH: Is it the claim of this proposal to follow the ECMA 262 Semantics.
+LH: Is it the claim of this proposal to follow the ECMA-262 Semantics.
 
 DH: Yes, up to the issue of floating point non-determinism
 
@@ -248,7 +248,7 @@ LH: Which means an engine cannot detect... (lost)
 
 RH: We do rely on the programmer to know that they need to write an associative and commutative function. Tools can be provided to help.
 
-LH: Worried about implicitly saying that a function does not match what ECMA 262 says it will mean.
+LH: Worried about implicitly saying that a function does not match what ECMA-262 says it will mean.
 
 DH: (Clarifies that it's _just_ JavaScript)
 

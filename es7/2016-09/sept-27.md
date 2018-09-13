@@ -189,7 +189,7 @@ DE: formatToParts has been removed from draft due to missing implementation. The
 
 (Leo Balter)
 
-LBR: Small updates, harness, etc. I would like some help on reviewing test262 patches and writing tests, as I don't have enough time for everything.
+LBR: Small updates, harness, etc. I would like some help on reviewing Test262 patches and writing tests, as I don't have enough time for everything.
 
 BT: If used node harness in the past and didn't like it, try it again!
 - host specific stuff separated

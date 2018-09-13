@@ -50,7 +50,7 @@ WH: thanks
 
 MH: another example is testing, existing solutions result in test "flickering", but using zones would enable some determism.
 
-BT: test262 would benefit from this, existing solutions require manual book keeping and tracking. No way to tell in the browser when a set of async operations have completed.
+BT: Test262 would benefit from this, existing solutions require manual book keeping and tracking. No way to tell in the browser when a set of async operations have completed.
 
 SP: it adds determism
 
@@ -1040,7 +1040,7 @@ DE: should we stay at unicode 5.1?
 
 DD: now, it seems like we should move to 8
 
-WH: I am worried this will cause too much noise in the test262 tests. I think it is legitmate for implementations to lag if they rely on the OS's support for unicode and don't want to penalize them with test262 failures for being lightweight.
+WH: I am worried this will cause too much noise in the Test262 tests. I think it is legitmate for implementations to lag if they rely on the OS's support for unicode and don't want to penalize them with Test262 failures for being lightweight.
 
 DD: I think its no less legitimate to implement all of ES2016
 
@@ -1102,7 +1102,7 @@ DD: how do you feel about the test coverage
 
 DE: test coverage feels pretty good, the tests for the value semantics will need some more work, but largely the test suite is good.
 
-DE: we will need to do some work on the test harness, test262 would like to generate the tests precedurally 
+DE: we will need to do some work on the test harness, Test262 would like to generate the tests precedurally 
 
 DE: test harness may want sameValue sameValue0
 

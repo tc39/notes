@@ -45,9 +45,9 @@ AK: How did we arrive at consensus that this is normatively required?
 
 AWB: It wouldn't bother me if Firefox didn't meet all of the normative requirements.
 
-BT: I think that would bother Firefox once they started failing test262 tests
+BT: I think that would bother Firefox once they started failing Test262 tests
 
-EF: Yes, we want to pass test262
+EF: Yes, we want to pass Test262
 
 BT: We all fail the reference types
 
@@ -325,7 +325,7 @@ Additional Intl List/Unit/RelativeTime/Duration entries advance to stage 1
 
 BT: Reserve the right to come back later and object more strongly. Not sure if ICU has the APIs that we can use to support this.
 
-The ECMA 402 group encourages Microsoft to use ICU
+The ECMA-402 group encourages Microsoft to use ICU
 
 AWB: TC39 is not supposed to be telling parties how to implement the standards, only what to implement.
 
@@ -729,8 +729,8 @@ The committee did not want to bless the `toJSON` approach by adding what would b
 #### Conclusion/Resolution
 
 - needs lots of review, nobody volunteered
-- decision left to test262 maintainers
-- test262 are not conformance tests
-- having additional repositories that are part of the test262 project but not part of test262 is OK
+- decision left to Test262 maintainers
+- Test262 are not conformance tests
+- having additional repositories that are part of the Test262 project but not part of Test262 is OK
 
 

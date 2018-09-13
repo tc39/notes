@@ -8,7 +8,7 @@ István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM)
 
 -----
 
-## 1. Opening, welcome and roll call
+## Opening, welcome and roll call
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2017/09.md)
 
@@ -367,7 +367,7 @@ JSL: I will take this away and work on it some more.
 
 (Rick Waldron)
 
-RW: Would like to move to stage 3. Reviews -- all concerns in reviews resolved. Implementation in babel. We have test262 tests ready to merge.
+RW: Would like to move to stage 3. Reviews -- all concerns in reviews resolved. Implementation in babel. We have Test262 tests ready to merge.
 
 RW: (lists all concerns/issues from reviewers in explainer)
 

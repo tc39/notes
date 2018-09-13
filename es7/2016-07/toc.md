@@ -5,7 +5,7 @@
   * [3 Agenda Adoption](jul-26.md#3-agenda-adoption)
   * [4 May Minutes Approval](jul-26.md#4-may-minutes-approval)
   * [5. Report from the Ecma Secretariat](jul-26.md#5-report-from-the-ecma-secretariat)
-  * [8. Test 262 Status Update](jul-26.md#8-test-262-status-update)
+  * [8. Test262 Status Update](jul-26.md#8-test262-status-update)
   * [6. Ecma 262 Status Update](jul-26.md#6-ecma-262-status-update)
   * [7. Ecma 402 Status Update](jul-26.md#7-ecma-402-status-update)
   * [8. Test262 Update Revisit](jul-26.md#8-test262-update-revisit)

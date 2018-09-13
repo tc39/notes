@@ -254,7 +254,7 @@ DH: I've just transiitoned closer to the none of the above option.
 MM: I really don't want to transition to yet another consensus that we don't implement.
 If you can state the way you're not expecting to implement the feature faithfully, please put it into the proposed spec.
 
-DE: I don't think there's any implementation that passes 100% of test262 performance tests for PTC.
+DE: I don't think there's any implementation that passes 100% of Test262 performance tests for PTC.
 
 MM: we don't go into the process of proposing things we don't expect to implement.
 

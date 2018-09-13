@@ -427,7 +427,7 @@ MM: because of the very close textual correspondence between the reference imple
 
 AS: _show more slides_
 
-BT: Would like to be able to set a conditional breakpoint on the ref interpreter to test if test262 hits it.
+BT: Would like to be able to set a conditional breakpoint on the ref interpreter to test if Test262 hits it.
 
 WH: A similar "reference implementation" previously attempted in ES4
 
@@ -633,9 +633,9 @@ WH: I like this a lot but am concerned about the ergonomics of practical use pat
 - Stage 1 acceptance
 
 
-## [Definitive decision for test262 python runner](https://github.com/tc39/test262/issues/647) (Mike Pennisi)
+## [Definitive decision for Test262 python runner](https://github.com/tc39/Test262/issues/647) (Mike Pennisi)
 
-LBR: TC39 agreed to deprecate the python runner in 2014, we want to remove it from test262 as it demands extra energy on a deprecated tool while implementing new features.
+LBR: TC39 agreed to deprecate the python runner in 2014, we want to remove it from Test262 as it demands extra energy on a deprecated tool while implementing new features.
 
 EFT: We can work it out. It does not need to move it to a new TC39's repository.
 

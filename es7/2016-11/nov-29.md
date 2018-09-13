@@ -104,7 +104,7 @@ AWB: Ideally, members can review before sending to Ecma--some time before the ne
 AWB: Sounds like the big undetermined part is SharedArrayBuffer. If it goes to Stage 4 for ES2017, it would have to be decided at this meeting.
 SG: We could get to Stage 3 at this meeting; I will present on the memory model at this meeting. Test262 tests are still needed, but we already have implementations.
 BT: The integration work could be done before we get to Stage 4
-DD: The test262 tests will be technically difficult to write
+DD: The Test262 tests will be technically difficult to write
 AWB: If we have a committment from implementers for tests by June, maybe we could go forward with it.
 SG: How about the HTML integration?
 DD: This is in progress, but it is also out of scope for this committee
@@ -116,7 +116,7 @@ DE: not much has changed since the last meeting; one small bug fix. There are a 
 
 AWB: the endgame schedule for 402 needs to be the same as for 262.
 
-DE: yes. Note that those two stage 3 features already have test262 tests. One feature that did make it in is DateTimeFormat formatToParts. There was this change I got consensus on a while ago about resolving the constructor semantics (which changed from v1 to v2), but we're still waiting on infrastructure work to put that into the spec. I hope it can get into v4.
+DE: yes. Note that those two stage 3 features already have Test262 tests. One feature that did make it in is DateTimeFormat formatToParts. There was this change I got consensus on a while ago about resolving the constructor semantics (which changed from v1 to v2), but we're still waiting on infrastructure work to put that into the spec. I hope it can get into v4.
 
 DE: (clarifies that the infrastructure missing is the spec infrastructure for noting something as normative-optional but putting it inline instead of in an Annex)
 

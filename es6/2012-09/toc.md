@@ -31,7 +31,7 @@
   * [Early Errors That Possibly Should Not Be](sept-19.md#early-errors-that-possibly-should-not-be)
   * [Performance Costs of Temporal Dead Zone](sept-19.md#performance-costs-of-temporal-dead-zone)
   * [Global Scope Revisit](sept-19.md#global-scope-revisit)
-  * [Test 262](sept-19.md#test-262)
+  * [Test262](sept-19.md#test262)
   * [Create Archival Utility for ECMA Wiki](sept-19.md#create-archival-utility-for-ecma-wiki)
 - [September 20, 2012 Meeting Notes](sept-20.md#september-20-2012-meeting-notes)
   * [Object.observe Update](sept-20.md#objectobserve-update)

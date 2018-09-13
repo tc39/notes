@@ -696,7 +696,7 @@ BigInt
     * 100s tests by Robin Templeton
 * File reorganization and renaming for consistency with the rest of Test262
     * 100s of tests, by Leo Balter and Valerie Young
-* BigInt test262 bug fixes:
+* BigInt Test262 bug fixes:
   * During review of SpiderMonkey implementation of BigInt by André Bargull, 100s bugs in BigInt tests were surfaced
   * fixes submited by Leo Balter, Rick Waldron, and Valerie Young
 * Specification Review:

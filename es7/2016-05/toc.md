@@ -25,4 +25,4 @@
   * [Template Literals (http://slides.com/disnet/template-literal-problems-7) (TD)](may-25.md#template-literals-httpslidescomdisnettemplate-literal-problems-7-td)
   * [Observables (JH)](may-25.md#observables-jh)
   * [Cancelable Promises](may-25.md#cancelable-promises)
-  * [Definitive decision for test262 python runner](may-25.md#definitive-decision-for-test262-python-runner)
+  * [Definitive decision for Test262 python runner](may-25.md#definitive-decision-for-test262-python-runner)

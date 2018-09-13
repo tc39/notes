@@ -688,7 +688,7 @@ DE: can i propose I18n?
 ## INTL
 
 CP: todays meeting update:
-    1. html version of  ECMA 402
+    1. html version of  ECMA-402
     2. just sent to istvan
 CP: same workflow for 262
 
@@ -786,7 +786,7 @@ BT: yes
 
 BT: I agree this should be doable, and in general I’m not concerned. I don’t think it constraints implementations too much. Edge might need to ask Windows for a better API.
 
-EF: (next slide) "How: Adding to ECMA 402"
+EF: (next slide) "How: Adding to ECMA-402"
 
 DD: is it possible to move away from the bound method pattern?
 
@@ -981,7 +981,7 @@ DH: looks good!
 
 ### resolution: advance to stage 3
 
-#### Test 262 updated
+#### Test262 updated
 
 BT: not many new tests recently, except for SIMD.
 

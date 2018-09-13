@@ -15,9 +15,9 @@ BT: async function process discussion, they have been stage 3 for 2 months, impl
 
 YK: babel version i
 
-DD: does babel pass test262
+DD: does babel pass Test262
 
-BT: no test262 yet
+BT: no Test262 yet
 
 YK: thats a blocker
 
@@ -39,7 +39,7 @@ YK: high fedility simulation should be sufficent
 
 BT: edge is basically desuguring to promises + generators
 
-AK: two implementations that pass the test, should be sufficient. (tests implied as test262)
+AK: two implementations that pass the test, should be sufficient. (tests implied as Test262)
 
 BT: I believe we as a group should be able to deem that the current landscape is or is not sufficient.
 
@@ -155,7 +155,7 @@ DD: Add trimStart, trimEnd and rename to padStart, padEnd as part of annex B.
 
 DD: CC + FF in betas
 
-DD: test262 works
+DD: Test262 works
 
 DD: Safari doesn’t have TypeArray.prototype.includes
 

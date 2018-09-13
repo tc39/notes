@@ -238,7 +238,7 @@ The constructor can re-declared?
 There is no easy way currently, second version of Intl spec
 will address this.
 
-Conformance tests being written for test262.
+Conformance tests being written for Test262.
 
 NL will have the final draft prepared for September meeting, but will
 produce drafts leading up to that meeting.

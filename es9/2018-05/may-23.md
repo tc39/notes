@@ -328,7 +328,7 @@ LCK: In WASM, we'll be instantiating all the variables during the first phase of
 - [proposal](https://github.com/tc39/proposal-class-fields)
 - [slides](https://docs.google.com/presentation/d/1oDQOS9b8wnuP5-o8zInsEO9lpRbhduawAmvfRzbxkOs/)
 
-DE: We changed a funny TDZ thing with class field initializers, making `this` binding initialization a little bit earlier. We have test262 tests for the change.
+DE: We changed a funny TDZ thing with class field initializers, making `this` binding initialization a little bit earlier. We have Test262 tests for the change.
 
 WH: Can you explain the “Tweak in `this` TDZ” slide again?
 

@@ -1,7 +1,7 @@
 # Summary for the 56th meeting of Ecma TC39
 
 - [SharedArrayBuffer](https://github.com/tc39/ecmascript_sharedmem) reached Stage 4
-  - test262 tests written
+  - Test262 tests written
   - Specification is done, integration in progress
     - See especially detailed notes for users and implementers about memory model
   - Four browsers have implementations behind a flag
@@ -20,7 +20,7 @@
   - In the May meeting, we'll devote three days for discussing the vision for JavaScript
 - Null propagation operator reached stage 1 [slides](https://docs.google.com/presentation/d/11O_wIBBbZgE1bMVRJI8kGnmC6dWCBOwutbN9SWOK0fU/view#slide=id.p)
   - Strawman syntax: `x?.y` => `x === undefined ? x : x.y`
-- Intl (ECMA 402)
+- Intl (ECMA-402)
   - New proposals for options for DateTimeFormat: [hourCycle](https://github.com/zbraniecki/proposal-ecma402-hourcycle) and [style](https://github.com/tc39/ecma402/issues/108)
   - Intl in ES2017 will have [Intl.DateTimeFormat.prototype.formatToParts](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat/formatToParts) and [constructor web-compat fix](https://github.com/tc39/ecma402/pull/84)
 - Administration

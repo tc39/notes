@@ -79,7 +79,7 @@ LBR:
 - New coverage for object spread (rest properties)
 - Documenting new feature tests via front matter flags
     - this allows consumers to filter tests as needed
-    - https://github.com/tc39/test262/blob/master/FEATURES.md
+    - https://github.com/tc39/Test262/blob/master/FEATURES.md
     - Aiming to grow the contributor base.
     
 LBR: (explaining clean up of erroneous tests that interact with implied global, re: "length" and "name")

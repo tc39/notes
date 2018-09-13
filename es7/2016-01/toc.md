@@ -29,7 +29,7 @@
   * [5.xix Proxy Enumerate - revisit decision to exhaust iterator](jan-28.md#5xix-proxy-enumerate---revisit-decision-to-exhaust-iterator)
   * [5.xviii Exponentiation Operator (RW)](jan-28.md#5xviii-exponentiation-operator-rw)
   * [Afternoon Agenda](jan-28.md#afternoon-agenda)
-  * [2. 402 needs reviewers (20min)](jan-28.md#2-402-needs-reviewers-20min)
+  * [402 needs reviewers (20min)](jan-28.md#402-needs-reviewers-20min)
   * [5.xix (Revisit) Proxy Enumerate - revisit decision to exhaust iterator](jan-28.md#5xix-revisit-proxy-enumerate---revisit-decision-to-exhaust-iterator)
   * [8 Ecma 402, Edition 3, Advance stage 2](jan-28.md#8-ecma-402-edition-3-advance-stage-2)
   * [formatToParts](jan-28.md#formattoparts)

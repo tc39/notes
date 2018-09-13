@@ -244,13 +244,13 @@ DH: Memory models are hard, so it's OK for us to refine this in the future. But 
 
 SYG: There will be bugs, and academics will write papers on our bugs for the next 10 years
 
-DD: We will be able to write test262 tests  
+DD: We will be able to write Test262 tests  
 
 WH: In prior iterations of the memory model over the last several months, I had discovered fatal counterexamples exhibiting both too much synchronization and too little. Those had required several complete rewrites of the spec to fix. I am happy with the model now.
 
 AWB: Stage 4?
 
-SYG: We don't have test262 tests, that's what's missing.
+SYG: We don't have Test262 tests, that's what's missing.
 
 JHD: How can I access an implementation?
 
@@ -262,7 +262,7 @@ AWB: If it's likely to go in soon, it'd be good for the editor to get started on
 
 AK: The editor can start on the integration work before the it really reaches Stage 4; that seems unnecessary.
 
-AWB: Who is committing to doing test262 tests?
+AWB: Who is committing to doing Test262 tests?
 
 SYG: I'll do them.
 
@@ -279,15 +279,15 @@ LH: Firefox has a shell function for creating agents, and a shell function for s
 #### Conclusion/Resolution
 
 - Stage 3 acceptance
-- Intended to reach Stage 4 at the next meeting pending test262 tests; integration work can begin now.
+- Intended to reach Stage 4 at the next meeting pending Test262 tests; integration work can begin now.
 
 ## 10 Test262 update
 
 (Leo Balter)
 
-LBR: Bocoup has a new contract with Google, so we will work on maintanence of test262, but this is a smaller contract, just a single day per week. We are looking for other partnerships to provide skilled work for the maintanence of test262 to fund its development.
+LBR: Bocoup has a new contract with Google, so we will work on maintanence of Test262, but this is a smaller contract, just a single day per week. We are looking for other partnerships to provide skilled work for the maintanence of Test262 to fund its development.
 
-KG: I made a web-based test262 runner, which we hadn't had for a while. It loads from the repository, so it should only need updates for harness changes. https://bakkot.github.io/test262-web-runner/
+KG: I made a web-based Test262 runner, which we hadn't had for a while. It loads from the repository, so it should only need updates for harness changes. https://bakkot.github.io/Test262-web-runner/
 
 
 ## 12.ii.a. Proposal to reform the spec to solve Node.js ecosystem compatibility breaks w/ ES Modules

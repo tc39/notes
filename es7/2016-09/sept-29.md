@@ -136,7 +136,7 @@ AWB: Spec.
 Yes
 
 DE: Tests for Test262?
-- Will help TVC proceed, getting oriented in test262.
+- Will help TVC proceed, getting oriented in Test262.
 
 AWB: Claude's methodology for describing invariants is something we could incorporate into the spec, but this is more than the bug fix.
 
@@ -147,7 +147,7 @@ DD: Sounds like a good non-normative change that could be done in collaboration 
 #### Conclusion/Resolution
 
 - Two parts for TVC/CP as next steps: 
-- Treat PR 666 as spec bug fix, which needs test262 tests to land
+- Treat PR 666 as spec bug fix, which needs Test262 tests to land
 - Treat Claude's new formalism as new content via PR to incorporate into spec
 
 
@@ -843,7 +843,7 @@ KG: insane not to provide a way to make the collection without forcing the brack
 
 AK: Other evidence from the wild about demand? Is there a widely used library for this?
 
-LBR: When working on test262 tests, we needed many tests for the constructor taking iterables of iterables.
+LBR: When working on Test262 tests, we needed many tests for the constructor taking iterables of iterables.
 
 JH: Any polymorphism involved?
 

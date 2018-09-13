@@ -25,7 +25,8 @@ DE: Michael suggested sorting agenda items by reverse stage, so later stages get
 - We'll discuss this after lunch
 
 
-## 4. Approval of the minutes from last meeting
+## Approval of the minutes from last meeting
+
 RW: Submitted to Ecma, archived, no issues
 
 #### Conclusion/Resolution
@@ -38,9 +39,9 @@ RW: Submitted to Ecma, archived, no issues
 RJE: July 24-56 in Redmond. Register early and let the host know if you have special dietary requirements (Microsoft)
 
 
-## 7. Project Editors' Reports
+## Project Editors' Reports
 
-### ECMA 262
+### ECMA-262
 
 RJE: New editor group proposed, Brian Terlson, Jordan Harband, Bradley Farias. Do we need to do anything formal to approve that?
 
@@ -48,11 +49,11 @@ DE: I thought we were going to hear about a plan for how the editor group will w
 
 (deferred)
 
-### ECMA 402
+### ECMA-402
 
 CP: Defer to later
 
-### ECMA 404
+### ECMA-404
 
 CM: No news is good news
 
@@ -137,7 +138,7 @@ routine maintenance:
 
 
 
-##  8. Updates from the CoC Committee
+## Updates from the CoC Committee
 
 (Jory Burson)
 
@@ -177,7 +178,7 @@ AR: To clarify, this isn't changing anything, just clarifying
 
 - None
 
-## 9.i.a. Normative: Cleanup Time Values and Time Range Needs Consensus PR
+## Normative: Cleanup Time Values and Time Range Needs Consensus PR
 
 (Andrew Paprocki)
 
@@ -222,7 +223,7 @@ BT: Chakra has similar behavior to V8
 - Consensus
 
 
-## 9.i.c. Array.prototype.values web compat update 
+## Array.prototype.values web compat update 
 (Sathya Gunasekaran)
 
 SGN: The update is Chrome tried to ship this twice, finally did recently. Now Firefox has shipped it as well, so it has been implemented in all major browsers. [Thunderous cheers in the room].
@@ -253,7 +254,7 @@ DD: I'm unclear at what point we decided to treat this as a PR without implement
 
 RW: I agree with DD. We should still go through something similar to Staging process. Already done Stage 1 effectively, and this is Stage 2, so Stage 3 next?
 
-DE: We didn't want to go through the full stage process. It can be in the middle, where we do a PR _and_ get implementers to do it at the same time. Maybe we can treat this as a “Needs Consensus” PR and then get the test262 changes merged, then land the PR once we get implementers.
+DE: We didn't want to go through the full stage process. It can be in the middle, where we do a PR _and_ get implementers to do it at the same time. Maybe we can treat this as a “Needs Consensus” PR and then get the Test262 changes merged, then land the PR once we get implementers.
 
 KG: We discussed a requirement for Normative PRs for this process.
 

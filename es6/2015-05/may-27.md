@@ -396,7 +396,7 @@ CM: Would that be "dissent"?
 
 Advance to stage 2, update proposal to use "sent"
 
-## Test 262 Update (BT presenting)
+## Test262 Update (BT presenting)
 
 BT: Test262 is super active. Much es6 coverage now. Strict clean.
 

@@ -22,7 +22,7 @@ DE: Conrad is here to discuss the memory model, but it was not added to the agen
 
 BT: Let's just discuss it as part of the normative PR section.
 
-## 3. Adoption of Agenda
+## Adoption of Agenda
 
 RJE: (agenda planning)
 
@@ -31,7 +31,7 @@ RJE: (agenda planning)
 - Agenda Adopted
 
 
-## 4. Approval of the minutes from last meeting
+## Approval of the minutes from last meeting
 
 RJE: Any issues from the minutes last meeting?
 
@@ -148,7 +148,7 @@ DE: Do we have consensus? We already have Test262 tests and it has already shipp
 
 - [Restore original definition of DataView.length #1131](https://github.com/tc39/ecma262/pull/1131)
 
-DE: DataView constructor view was noted as 3 even though ... ( ? ).. to give it a more comprehensive memory model. There are two different proposals. A minimal one and another more complex unification. It seems like given implementation and test262 converged on 3 as ? .... any other thoughts on this proposal?
+DE: DataView constructor view was noted as 3 even though ... ( ? ).. to give it a more comprehensive memory model. There are two different proposals. A minimal one and another more complex unification. It seems like given implementation and Test262 converged on 3 as ? .... any other thoughts on this proposal?
 
 MS: Can you show Leo Balter's table?
 
@@ -162,11 +162,11 @@ AK: I think its a waste of time to change length. Let's take the simplest path.
 
 BT: I'm fine with changing the spec. It's a bug that will get fixed when it gets fixed, when it's time.
 
-JHD: Can we make it so that the test262 is changed to 1 to match the spec? Should we shoot for that?
+JHD: Can we make it so that the Test262 is changed to 1 to match the spec? Should we shoot for that?
 
 ??: The browsers will fail the tests. The browsers do their thing but the spec should be ..?
 
-DE: Three options: leave the spec as is and update the test262 to have the length of 1 instead of 3. Option 1: Total alignment with Chakra core and the spec draft being one. The other option is to create a new consensus concept that Leo had. Proposal two is to make a rough consensus between implementer. 
+DE: Three options: leave the spec as is and update the Test262 to have the length of 1 instead of 3. Option 1: Total alignment with Chakra core and the spec draft being one. The other option is to create a new consensus concept that Leo had. Proposal two is to make a rough consensus between implementer. 
 
 YK: I want to hear if vendors agree that 1 is the correct solution.
 
@@ -1155,7 +1155,7 @@ SGO: The document is not in a really good state, and we could probably polish it
 - [issue](https://github.com/tc39/ecma262/issues/917 )
 - [PR](https://github.com/tc39/ecma262/pull/1136 )
 
-DE: My colleagues noticed that `await` is not permitted in a default param, you might've expected that you can do this (see slides). If you're using this for some sort of dependencies injection. The restriction here historically is from generators where you can't do yields. An example of the dependency injection case, is taking a module as a parameter, and using `import()` as the default. I'm not entirely sure prohibiting await expressions in parameter defaults was intentional. Unfortunately, in this PR, we couldn't implement `await` in all cases. Grammar-wise, in async arrow functions, you'd have to look too far ahead to be able to parse it. The proposal here is just to enable `await` in all async function declaration parameters—function declarations as well as methods. Thanks to Pedram for rewriting test262 tests as well as spec text. The current PR doesn't include async generators because the PR started before async generators landed. The specification changes is sort of a small refactoring of where function declarations vs instantiation happens, but its a very small change in the specification. Are we ok to allowing await in async function declaration but not allowing in async arrow functions?
+DE: My colleagues noticed that `await` is not permitted in a default param, you might've expected that you can do this (see slides). If you're using this for some sort of dependencies injection. The restriction here historically is from generators where you can't do yields. An example of the dependency injection case, is taking a module as a parameter, and using `import()` as the default. I'm not entirely sure prohibiting await expressions in parameter defaults was intentional. Unfortunately, in this PR, we couldn't implement `await` in all cases. Grammar-wise, in async arrow functions, you'd have to look too far ahead to be able to parse it. The proposal here is just to enable `await` in all async function declaration parameters—function declarations as well as methods. Thanks to Pedram for rewriting Test262 tests as well as spec text. The current PR doesn't include async generators because the PR started before async generators landed. The specification changes is sort of a small refactoring of where function declarations vs instantiation happens, but its a very small change in the specification. Are we ok to allowing await in async function declaration but not allowing in async arrow functions?
 
 MM: What's the reason for not allowing them in async arrow functions?
 

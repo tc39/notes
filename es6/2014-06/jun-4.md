@@ -72,7 +72,7 @@ AWB: This committee can tell the difference between fixing bugs and revisiting c
 
 AWB: Focus energy on ES7 [if you want to revisit conclusions]!
 
-AWB: Other factor playing into spec review is test262, to which we've just gotten approval to accept contributions
+AWB: Other factor playing into spec review is Test262, to which we've just gotten approval to accept contributions
 
 JN: Can we approve the change of dates (presenting finished draft to TC39 committee in November rather than July)?
 
@@ -282,9 +282,9 @@ BT: Don't want to discourage people from submitting less formal tests.
 
 MM: Are we running tests that should succeed in both strict and sloppy modes in both modes?
 
-BT: I'll open an issue on https://github.com/tc39/test262 for that.
+BT: I'll open an issue on https://github.com/tc39/Test262 for that.
 
-EA: Tests don't closely follow the spec, and don't tend to be written as test262 tests from the start, just because it's easier.
+EA: Tests don't closely follow the spec, and don't tend to be written as Test262 tests from the start, just because it's easier.
 
 JM: Not clear how to run tests against new implementations.
 

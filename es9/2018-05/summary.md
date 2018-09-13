@@ -71,7 +71,7 @@ Topics related to ECMAScript specification activities.
 - [Stopping exfiltration: Massive privacy violations vs boundaries](may-23.md#stopping-exfiltration-massive-privacy-violations-vs-boundaries)
 
 ## Organizational update
-- [~400 new tests added to Test262](may-22.md#test262) from various contributors.
+- [~400 new tests added to Test262](may-22.md#Test262) from various contributors.
 - [CoC commmittee updates](may-22.md#8-updates-from-the-coc-committee)
 - [Update to the How We Work Documentation project and Website](may-22.md#11if-update-to-the-how-we-work-documentation-project-and-website)
 - [2019 / 2020 meeting scheduling](may-22.md#11ic-20192020-meeting-scheduling-update)

@@ -9,7 +9,7 @@ Mark S. Miller (MM), Dan Gohman (DGN), John McCutchan (JMC)
 
 -----
 
-## 1. Opening Items
+## Opening Items
 
 JN: (Introduction)
 
@@ -41,7 +41,7 @@ BE: Helpful for me to know which features are on track
 - Agenda approved
 
 
-## 4. Secretariat Report
+## Secretariat Report
 
 JN: 1 o'clock on Thursday
 

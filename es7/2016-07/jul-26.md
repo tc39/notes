@@ -85,7 +85,7 @@ IS: Submitted the ECMAScript Suite Standard (approved by the GA as Ecma 414) to 
   - What IS forgot to tell, that actually with the publication of ECMAScript 2016 and ECMA-402 new Edition etc. it would be a good idea to make more PR, e.g. Press Release.
 
 
-## 8. Test 262 Status Update
+## 8. Test262 Status Update
 
 IS: Technical Report 104 needs to be updated. He added that all specs related to TC39 work are being downloaded very heavily (actually at  least 2/3 of all Ecma downloads are TC39 related).  The HTML version of ECMA-262 and ECMA-402 is in addition to it, and compared to full downloads that is even significantly higher.This is actually more than e.g. what is being downloaded from the ISO Shop (of course that is not free of charge...).  So automatically also TR-104 gets downloaded rather heavily. But e.g. in TR/104 the URL to the tests does not work. Also the text needs to be updated. It reflects a situation when only ES5 was covered, but  e.g. not ECMA-402. 
 
@@ -93,7 +93,7 @@ AWB: Propose updating TR 104 to be descriptive only?
 
 BT: Is this just a readme? Possible get rid of it?
 
-AWB: Just reduce to an abstract description of the content and motivation of test262
+AWB: Just reduce to an abstract description of the content and motivation of Test262
 
 
 DE: Should ecma site link to draft spec?
@@ -189,13 +189,13 @@ LBR: Bocoup has just wrapped project delivering coverage for ES2015
 - Moving forward on ES2016 tests
 - More work to be done, but need volunteers
 - Deprecated Python runner
-- Working on test262 harness that runs from node.js
+- Working on Test262 harness that runs from node.js
 
-DE: Work to be done on test262 presence
+DE: Work to be done on Test262 presence
 
-- Spoke with Kangax about including test262 in the compat table sites
+- Spoke with Kangax about including Test262 in the compat table sites
 
-LBR: More visibility for test262
+LBR: More visibility for Test262
 
 TC: Need help with reviewing contributions
 
@@ -210,7 +210,7 @@ BT: Staged features require tests. Known issue: normative changes haven't been b
 
 RW: Previously, not a lot of contribution, so this wasn't an issue. Now we're seeing more contribution, so it needs to be addressed (this is a concern that we have at Bocoup)
 
-BT: Possibly a requirement to create an issue on test262?
+BT: Possibly a requirement to create an issue on Test262?
 
 SP: Block merge?
 
@@ -284,7 +284,7 @@ JM: It's implemented in two browsers (JSC, Edge)
 
 AK: Actually V8 also
 
-BT: Actually we ship it already. Are there test262 tests?
+BT: Actually we ship it already. Are there Test262 tests?
 
 JM: I thought so. Stage 4?
 
@@ -297,7 +297,7 @@ WH: I don't object to advancing this to stage 4, but I'm sad to see this in the 
 #### Conclusion/Resolution
 
 - Stage 4 acceptance
-  - pending on writing and merging test262 tests
+  - pending on writing and merging Test262 tests
 
 
 ## 9.i.f Unify String and Array maximum lengths
@@ -387,7 +387,7 @@ DD: Actually the spec had a specific cop-out there
 
 BT: OK, consensus on the change?
 
-AK: Are there test262 tests?
+AK: Are there Test262 tests?
 
 BT: I'll write them! But I'll merge the Chakra PR first
 
@@ -652,7 +652,7 @@ https://i.gyazo.com/0dcfc195d891a36c4b0c04d460cb5d72.png
 In text form: https://github.com/mathiasbynens/es-regexp-unicode-property-escapes#illustrative-examples
 
 
-DE: Have full spec text, implementation in V8, tests for V8 (need to be updated for test262)
+DE: Have full spec text, implementation in V8, tests for V8 (need to be updated for Test262)
 
 BT: If ok with deviating from what’s allowed inside `\u`, then we can overload `\u` instead of `\p`
 

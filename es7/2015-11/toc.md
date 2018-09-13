@@ -26,6 +26,5 @@
   * [Agenda](nov-19.md#agenda)
   * [Observables (JH)](nov-19.md#observables-jh)
   * [INTL](nov-19.md#intl)
-  * [Stage 1](nov-19.md#stage-1)
   * [Abstract Locale Operations](nov-19.md#abstract-locale-operations)
 - [Wrap-up](nov-19.md#wrap-up)

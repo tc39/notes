@@ -28,5 +28,5 @@
   * [ES7 Items?](jul-31.md#es7-items)
   * [5.7 Array.prototype.contains](jul-31.md#57-arrayprototypecontains)
   * [5.1 Math.TAU](jul-31.md#51-mathtau)
-  * [Exponentiations operator](jul-31.md#exponentiations-operator)
+  * [Exponentiation Operator](jul-31.md#exponentiation-operator)
   * [Precision of Math trig functions](jul-31.md#precision-of-math-trig-functions)

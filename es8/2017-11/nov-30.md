@@ -64,7 +64,7 @@ KCL: Maybe we can discuss offline more. My motivations come more from invariants
 
 DH: I've also realized over the years that the offline (tool) world is a legitimate piece of the puzzle. You can use TypeScript and Flow, and linters, to catch many of these errors without runtime costs.
 
-KCL: I agree; GitHub uses flow, and I'd like to tell you why I'm presenting this: There's a huge sunk cost in Flow. We get a lot of application engineers developing features; they don't necesarily understand the intricacies of Flow, but are expected to use it. The problem here is that while their JavsScript knowledge is applicable, more esoteric tools like Flow are perhaps not common in a developer's repotois. Obscure error messages are confusing. I'd like to push these common features into the language.
+KCL: I agree; GitHub uses flow, and I'd like to tell you why I'm presenting this: There's a huge sunk cost in Flow. We get a lot of application engineers developing features; they don't necesarily understand the intricacies of Flow, but are expected to use it. The problem here is that while their JavaScript knowledge is applicable, more esoteric tools like Flow are perhaps not common in a developer's repertoire. Obscure error messages are confusing. I'd like to push these common features into the language.
 
 DH: I think type systems will become a strong fixture in the overall ecosystem.
 

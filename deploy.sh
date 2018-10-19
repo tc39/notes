@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function buildGHPages {
+  npm run generate-tocs
   npm run build
 }
 

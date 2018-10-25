@@ -68,7 +68,7 @@ Topics related to ECMAScript specification activities that were presented at the
 
 ## Updates from ECMA-262 Editors Group
 - Starting to finalize ES2019. Proposals that make it to stage-4 by November meeting will be part of ES2019.  
-- Brian Terlson will be stepping down from the Editor Group after ES2019 is finalized (around January 2019)
+- Brian Terlson will be stepping down from the Editor Group after ES2019 is finalized (around May 2019)
 
 ## Organizational update
 - 2019 Chair Group was nominated

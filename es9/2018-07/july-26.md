@@ -1,6 +1,6 @@
 # July 26, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB),  Maxim Aleksa (MA), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (ARE), Ross Kirsling (RKG), Shane Carr (SFC), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontin (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage (SME), Dustin Savery (DSY), Mike Murry (MMY), John David Dalton (JDD), Alex Vincent (AVT)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB), Maxim Aleksa (MAA), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (ARE), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontin (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage (SME), Dustin Savery (DSY), Mike Murry (MMY), John David Dalton (JDD), Alex Vincent (AVT)
 
 Remote: 
 Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell (JRL), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG), Ben Newman (BN), Edd Yerburgh (EYH), Nathan Hammond (NHD)
@@ -46,7 +46,7 @@ AW: Maybe "Simple"?
 
 MPT: Elixir uses "Naive", but that’s a bit controversial too. I like Simple, but again we’re really not sure yet. Another controversy is whether this should be a new global called `Temporal`, or a built-in module.
 
-SFC: I was wondering how this interops with Intl.DateTimeFormat, etc. I would like to see any APIs that generate DateStrings to be Intl first. Where is toLocaleString?
+SCR:I was wondering how this interops with Intl.DateTimeFormat, etc. I would like to see any APIs that generate DateStrings to be Intl first. Where is toLocaleString?
 
 MPT: Sort of by definition this would have to be a separate proposal.
 
@@ -138,12 +138,11 @@ MPT: So if someone made a object with 2018 and no other values, should it print 
 
 NHD: My question is whether or not this is a goal to account for significant figures given a certain input.
 
-
 MPT: My instinct is no, simply because if we really want a year-month type or similar, my feeling is that if it's that useful, then introduce it in a follow-up proposal.  At the end of the day, the no-surprises model is super important for a proposal like this.  The developer should be explicit about what they want.ˆ
 
 NHD: Thank you for your thoughts.
 
-MA: The point of we shouldn’t add dates together (separate from the plus method), but have we considered the TimeSpan/TimeInterval type? 
+MAA: The point of we shouldn’t add dates together (separate from the plus method), but have we considered the TimeSpan/TimeInterval type? 
 
 MPT: Isn't it YK who really likes the idea of a datetime span type?  A lot of libraries have an interval types.  I'm trying to keep this reasonable in scope.  A lot of these questions come down to, "can we have another type?"  and the answer is yes, but I'm just trying to get these current ones done.
 
@@ -165,19 +164,19 @@ AWB: You need to look carefully at those operators.
 
 MPT: There’s merit in having an internal number representing the date since the computations become linear, when otherwise they would not be. (Though the leap seconds point, throws a wrench in this). The valueOf result doesn’t need to be that number, however, it could be some other representation. 
 
-SFC: Could you return a Date from valueOf?
+SCR:Could you return a Date from valueOf?
 
 MPT: A lot of the reason for this API is that there is no mapping between a CivilDate and a Date; it’s lossy. 
 
 WH: For the question of valueOf being numeric, I don’t think leap seconds will preclude that since you could have two variants of valueOf with a default less accurate one representing the Unix computation and a more accurate one supporting leap seconds.
 
-SFC: If we do separate these concerns into multiple proposals (including the concerns regarding Intl compatibility), I would like to at least see the two proposals land at the same time.
+SCR:If we do separate these concerns into multiple proposals (including the concerns regarding Intl compatibility), I would like to at least see the two proposals land at the same time.
 
 MPT: Unfortunately, there’s not a lot structure into this process to guarantee for these proposals to land at the same time. 
 
 LBR: I think what Maggie is doing is to follow the philosophy of this committee. It would be nice to have someone working at the same time on 402, but I think what Maggie’s doing is excellent and we have a huge group of people that could volunteer to work on the 402 component Shane is talking about.
 
-SFC: I will open an issue to discuss.
+SCR:I will open an issue to discuss.
 
 SYG: Are daylight saving times automatically not in this proposal? When you make a ZoneInstant with an explicit timezone,
 
@@ -271,7 +270,7 @@ LBR: I really like this perspective. I tried to cover this from a high-level poi
 
 BT: The proposal process gives us an opportunity to think about costs and tradeoffs, but we don’t have the ability to grant something Stage 2, for example while considering all the other stuff that comes along with it. And that’s a problem, we should aim to do that better.
 
-SFC: These are new features when you’re writing JavaScript natively, but I’ve noticed there’s increasingly a movement of languages that compile to JavaScript. With CoffeeScript and TypeScript now, these languages clearly offer something that the industry wants. JavaScript needs to be extremely efficient, since that’s what these languages ultimately compile to. JavaScript should have almost a bigger emphasis on performance than expressiveness for this reason. There’s no single one-size-fits-all solution for this, people may want different syntax features, however one thing that everyone wants is performance.
+SCR:These are new features when you’re writing JavaScript natively, but I’ve noticed there’s increasingly a movement of languages that compile to JavaScript. With CoffeeScript and TypeScript now, these languages clearly offer something that the industry wants. JavaScript needs to be extremely efficient, since that’s what these languages ultimately compile to. JavaScript should have almost a bigger emphasis on performance than expressiveness for this reason. There’s no single one-size-fits-all solution for this, people may want different syntax features, however one thing that everyone wants is performance.
 
 LBR: That’s a great point and kind of what I’m trying to talk about when I use the term "sandboxes". 
 
@@ -390,7 +389,7 @@ AK: I believe JHD was pushing strongly against 2 Europe trips.
 
 YK: I am also against two Europe trips.
 
-SFC: I’ve never been to Barcelona and it seems like a cool place to go. With slides, it’s not terribly difficult to attend remotely.
+SCR:I’ve never been to Barcelona and it seems like a cool place to go. With slides, it’s not terribly difficult to attend remotely.
 
 JHD: I think that’s aspirational. It’s difficult to attend these meetings remotely.
 
@@ -424,41 +423,41 @@ TST: Flying here isn’t too much the issue, even dialing in is quite difficult 
 -[proposal](https://github.com/sffc/proposal-unified-intl-numberformat)
 -[slides](https://docs.google.com/presentation/d/1_1D15PWniTlbLu1BOU9aDf5H87Ecq85i0CuLl5KA4DE/edit#slide=id.g3db4b37152_0_0)
 
-SFC: This proposal essentially adds new features within the options object to add features that have been requested by many users. First, spec updates: we add the option narrowSymbol to the currencyDisplay property (i.e. $ instead of $US). Next, Units. The Intl API has a concept called Style, and we add this style entry called `unit`, which has narrow, short or long options: (i.e. Narrow `"º"`, Short `"º F"`, Long `"º Fahrenheit`"). Next, Scientific and Compact Notation will now be represented using the new option `notation`, with options "compact", "compactDisplay", "scientific".  Another feature that’s been requested is Sign display, and this is a good things for Intl to govern best practices for locales. Sign Display uses various options like `auto`, `always`, `never`, `except-zero`. 
+SCR:This proposal essentially adds new features within the options object to add features that have been requested by many users. First, spec updates: we add the option narrowSymbol to the currencyDisplay property (i.e. $ instead of $US). Next, Units. The Intl API has a concept called Style, and we add this style entry called `unit`, which has narrow, short or long options: (i.e. Narrow `"º"`, Short `"º F"`, Long `"º Fahrenheit`"). Next, Scientific and Compact Notation will now be represented using the new option `notation`, with options "compact", "compactDisplay", "scientific".  Another feature that’s been requested is Sign display, and this is a good things for Intl to govern best practices for locales. Sign Display uses various options like `auto`, `always`, `never`, `except-zero`. 
 
 WH: If you provide -0 and always show sign, does it return "-0" or "+0"?
 
-SFC: There was a question about this on the GitHub issue. I would refer to that.
+SCR:There was a question about this on the GitHub issue. I would refer to that.
 
-SFC: There’s also the option of `currencySign` which enables an accounting format. Now, let’s talk about combining options. Most options are orthogonal, and can be used together. Thanks to DE and the Ecma402 subcommittee for helping me with this proposal.
+SCR:There’s also the option of `currencySign` which enables an accounting format. Now, let’s talk about combining options. Most options are orthogonal, and can be used together. Thanks to DE and the Ecma402 subcommittee for helping me with this proposal.
 
 JHD: WHat happens if I pass in an invalid option?
 
-SFC: If your option is not in that set, the spec says throw a RangeError. The one exception is `unit`, not all browsers will support all units, but we will list a minimum set of units. Browsers can 
+SCR:If your option is not in that set, the spec says throw a RangeError. The one exception is `unit`, not all browsers will support all units, but we will list a minimum set of units. Browsers can 
 
 JHD: If I pass a non-option name, what happens? i.e. `uni` (missing the `t`)
 
-SFC: The options bag is handled internally by ignoring invalid option names.
+SCR:The options bag is handled internally by ignoring invalid option names.
 
 JHD: Are the options using get (does it use the prototype)?
 
-SFC: The way the properties are accessed is the same way the Intl spec already processes properties, for consistency.
+SCR:The way the properties are accessed is the same way the Intl spec already processes properties, for consistency.
 
 WH: What about rounding behavior?
 
-SFC: That’s out of scope.
+SCR:That’s out of scope.
 
 WH: What do you mean out-of-scope?
 
-SFC: Designing a good rounding API is not an easy thing to do. 
+SCR:Designing a good rounding API is not an easy thing to do. 
 
 WH: It’s kind of inherent for the compact notation you’re proposing here.  How can it not be in scope? In your rounding behavior issue you mention that 1230 in compact notation would be "1.2K". Multiply it by 10, you get "12K". Multiply it by 10 again, you get three significant digits: "123K". Multiplying by 10 again gets back to two significant digits: "1.2M".
 
-SFC: It’s a very good question and if you have ideas for how we should implement this in the spec, please let us know.
+SCR:It’s a very good question and if you have ideas for how we should implement this in the spec, please let us know.
 
 DE: This is great work in the proposal, although the spec text isn’t complete on insertions, it’s definitely sufficient for Stage 2. 
 
-SFC: Thank you, and I really appreciate all the great discussions in GitHub. So to WH, if you add more questions like that on GitHub, please do.
+SCR:Thank you, and I really appreciate all the great discussions in GitHub. So to WH, if you add more questions like that on GitHub, please do.
 
 #### Conclusion/Resolution
 
@@ -566,7 +565,7 @@ DD: Well, C++ will put `web_view` in `std::`. (Laughs)
 
 MS: I agree, you want some functionality, not some broad capability. We want something that’s easy for people to remember.
 
-SFC: In Android, for example the standard library will get implemented but then it will take years to make it into the actual platform and widespread enough to use.  You end up with messy ways that you implement fallbacks and polyfills; for example, you need to pull in polyfill code for everyone, even browsers that support said feature, unless you have sophisticated fallback mechanisms.  I think that a really important part of this discussion is how do we deal with this and make a transparent and standard way for dealing with these fallbacks/polyfills rather than dumping the fallback/polyfill problem into user land.
+SCR:In Android, for example the standard library will get implemented but then it will take years to make it into the actual platform and widespread enough to use.  You end up with messy ways that you implement fallbacks and polyfills; for example, you need to pull in polyfill code for everyone, even browsers that support said feature, unless you have sophisticated fallback mechanisms.  I think that a really important part of this discussion is how do we deal with this and make a transparent and standard way for dealing with these fallbacks/polyfills rather than dumping the fallback/polyfill problem into user land.
 
 AK: This seems like a good segue to the TAG meetup.
 

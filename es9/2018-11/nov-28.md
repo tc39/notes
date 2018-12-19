@@ -673,9 +673,10 @@ MM: the way people informally process text as opposed to the view from parsingâ€
 DS: Thanks for the discussion. Anyone have additional concerns, please discuss.
 
 #### Conclusion/Resolution
-Continue discussion more contact Dustin with thoughts
 
-break
+- Continue discussion more contact Dustin with thoughts
+
+(break)
 
 ## Editor in Chief selection
 

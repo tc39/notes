@@ -17,7 +17,7 @@ RJE: (housekeeping)
 
 ## 3. Agenda Scheduling
 
-SYG: Conrad Watts tuning in from UK tomorrow morning would like to speak about memory model issue (https://github.com/tc39/ecma-262/issues/1354) so will move in the agenda earlier (10 AM time? Please confirm)
+SYG: Conrad Watts tuning in from UK tomorrow morning would like to speak about memory model issue (https://github.com/tc39/ecma262/issues/1354) so will move in the agenda earlier (10 AM time? Please confirm)
 
 DE: Would like to have breakout sessions or longer discussions with extra time in meeting agenda. I have a pull request open to the agenda. Think about what topics you'd like to discuss in breakout session.
 
@@ -105,7 +105,7 @@ Stage 0/1 proposals:
 - dateStyle/timeStyle stage 1 proposed for stage 2 later
 - Display names (stage 0) gives you strings that are locale sensitive
 
-DE: Please get involved at the [repo](https://github.com/tc39/ecma-402/)
+DE: Please get involved at the [repo](https://github.com/tc39/ecma402/)
 
 DE: I won't be able to organize these meetings in 2019. If you are interested in helping out, please let me know.
 
@@ -219,7 +219,7 @@ YSV: Because meetings run quite long, in order to avoid conflicts, we'll rotate 
 
 ## New intermediate class "circular module records"
 
-- [Proposal](https://github.com/tc39/ecma-262/pull/1311)
+- [Proposal](https://github.com/tc39/ecma262/pull/1311)
 
 DE: This is a continuation of the work from Lin Clark about making non-JS modules able to participate in the module dependency graph. Currently there is an abstract class for modules. The only subclass that exists right now is source-text module records, which have certain semantics, and recursing to dependencies is something that source-text module records own. In this PR there is an intermediate class, circular module records, that takes over the searching dependency records part. source-text module records can be a subclass of this new class, and other classes can also be a child of it. HTML modules, CSS modules, etc., might also take advantage of this. WebAssembly modules are the first user.
 
@@ -248,7 +248,7 @@ Rex: Any objections?  Looks like we're okay.
 
 ## A name change from "Module.Instantiate" to "Module.Link".
 
-https://github.com/tc39/ecma-262/pull/1312
+https://github.com/tc39/ecma262/pull/1312
 
 DE: The motivation is that, from WebAssembly perspective, we have a separate phase called instantiate, which happens in the instantiation phase of the JS module pipeline. Link is a better, more clear name. Some identifiers within programs might want to be renamed.
 
@@ -263,7 +263,7 @@ DH: I think the linking terminology is good. My question is, is this the phase w
 (Guy Bedford)
 
 - [proposal](https://github.com/nodejs/dynamic-modules)
-- [pull request](https://github.com/tc39/ecma-262/pull/1306)
+- [pull request](https://github.com/tc39/ecma262/pull/1306)
 
 GB: This is something we need in Node.js. It's been discussed quite a bit. I'll do a quick recap. In node, the idea is to support commonjs modules is to import directly. Eg, `import { name } from "cjs"`. The problem is that named exports of a commonjs module, you have to execute it. It's not static. We can execute the cjs modules during the instantiate phase, but this causes problems. If you have execution errors in commonjs, you can't guarantee statements execute in order. This is not intuitive behavior.
 
@@ -500,7 +500,7 @@ BT: TODO: Editor hats for the editors.
 (Mathias Bynens)
 
 - [slides](https://docs.google.com/presentation/d/1Io53b2Bi3_N0_wguWoA9OKuPRpHch34EVbS1H8zISes/edit)
-- [proposal](https://github.com/tc39/ecma-262/pull/1340)
+- [proposal](https://github.com/tc39/ecma262/pull/1340)
 
 
 MB: ChakraCore merged a stable merge sort. Moddable added a stable sort as well. Chrome 69 stable sorting is all green on the sort stability page. 
@@ -520,7 +520,7 @@ MB: Hoping to get consensus to make sort stable in Array.prototype.sort. See PR#
 
 (Daniel Ehrenberg)
 
-- [proposal](https://github.com/tc39/ecma-262/pull/1320)
+- [proposal](https://github.com/tc39/ecma262/pull/1320)
 
 DE: (describes the PR above)
 

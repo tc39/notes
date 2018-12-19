@@ -15,7 +15,7 @@ Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), 
 
 (Shu-yu Guo)
 
-- [issue](https://github.com/tc39/ecma-262/issues/1354)
+- [issue](https://github.com/tc39/ecma262/issues/1354)
 
 
 SYG: Want to recap that there is a memory model bug. The good news is the spec is wrong. Evaluation results in candidate executions: set of events. CAndidate executions are constrained by the memory model. If your program doesn't have any data races, it should be sequentially be consistent. Data race free programs are sequentially consistent (DRF-SC). The relations in the memory model are listed 
@@ -358,7 +358,7 @@ DE: I share MM's interest. I'm presenting on it now.
 
 (Daniel Ehrenberg)
 
-- [PR](https://github.com/tc39/ecma-262/pull/1350)
+- [PR](https://github.com/tc39/ecma262/pull/1350)
 
 
 DE: I went to an annual conference where they talk about web standard proposals. Had the proposal of trusted types. History of what adam is talking and they heard tc39 would take a long time... that's disappointing. The direction they went in was instead of checking for literal strings, you had checks that would follow that policy that could sanitize strings of certain trusted types. I think what they were proposing with user configurable policies is complementary. Since the TPAC meeting, I think it would make sense to propose if we could do something here in tc39. I want make a way not for literal strings, checking if  a string is equal (what if one is literal and one isn't) but we don't need strings, templates is enough. Trusted types have a constructor so you have a trusted script source.
@@ -838,7 +838,7 @@ AK: So I am relaying with dominic and he gave me a quick statement. I think this
 
 (Jordan Harband)
 
-- [proposal](https://github.com/tc39/ecma-262/pull/1318)
+- [proposal](https://github.com/tc39/ecma262/pull/1318)
 
 JHD: So the current isRegExp algorithm are used in 4 places and 3 of them are used for throwing an error.. What the algorithm does is it returns true if it has a regex slot. It has an additional case though which I will talk about later. If isRegExp returns true, it looks up its source and flag properties, to otherwise it treats as a string and stringifies it, and constructs a regex from the string.
 

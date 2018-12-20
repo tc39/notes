@@ -873,7 +873,7 @@ CM: But also, the different libraries don't have to be in sync with each other.
 
 MHK: Alright.
 
-#### Bikeshedding names
+### Bikeshedding names
 
 Namespace suggestions: std, js, es, lib, standard, e
 Prefix suggestions: `@`

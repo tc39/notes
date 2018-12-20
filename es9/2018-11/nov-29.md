@@ -1,6 +1,6 @@
 # November 29, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (PO), Aki Rose (ARE), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), Adam Klein (AK), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Justin Ridgewell (JRL), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Kevin Gibbons (KG), Alan Schmitt (AS), Ross Kirsling (RKG), Shane Carr (SCR), Nathan Hammond (NHD), Ilias Tsangaris (IT), Brian Terlson (BT), Augustus Yuan (AYN), Frank Yung-Fong Tang (FTG), Felipe Balbontin (FAB), Thomas Levy (TL), Yulia Startsev (YSV), Natalie Silvanovich (NSH), J.F. Paradis (JFP), Sebastian Markbage (SM), Taaeu Zagallo (TZO), Eric Faust (EFT), Dustin Savery (DSY), Patrick Soquet (PST), Sebastian McKenzie (SMK), Tab Atkins (TAB), Lin Clark (LCK), Reefath Rajali (RRI), Devin Rousso (DRO), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE)
+Mattijs Hoitink (MHK), Michael Saboff (MS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbage (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontin (FAB), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (ARE), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
 
 Remote: 
 Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), Istvan Sebestyen (IS), Richard Gibson (RG), Guy Bedford (GB), Conrad Watts (CWS)
@@ -765,7 +765,7 @@ MHK: The desire of having these things available is having them be correct. i th
 
 MHK: Another big reason is, if we use the module system to do this, we can save space for the committee to develop features that don't pollute the global namespace. This helps problems like
 
-TL: Doesn't using prototypes make it hard to add features in the future?
+TLY: Doesn't using prototypes make it hard to add features in the future?
 
 DE: There are mechanisms or that. For me, build-in modules have scopable virtualization. With the ___ maps proposal, you can take a built-in module, and ...
 
@@ -881,7 +881,7 @@ Separator suggestions: `/`, `:`, `.`, `|`, `://`
 
 MHK: We have the distinction between string vs not. I would want to stick with string. Most obvious option is `std:`.
 
-TL: Would we want to register a scheme
+TLY: Would we want to register a scheme
 
 DE: Yes
 
@@ -909,13 +909,13 @@ DE: Why is that hard?
 
 MF: You don't need to go to npm...
 
-TL: Eminent domain it.
+TLY: Eminent domain it.
 
 DE: Sounds like we want `::` because don't want it to be a URN.
 
 PST: No dot, too many dots in our codebase.
 
-TL: Slash looks like a path.
+TLY: Slash looks like a path.
 
 PST: Yes, I cannot look like a URI or a path—must look like a language namespace. `::` works well for me as someone from C-world.
 
@@ -925,7 +925,7 @@ NHD: Want to avoid URI, want to make it clear that it doesn't look like a path.
 
 DE: `@key/` may or may not satisfy that.
 
-TL: Looks like an annotation to me.
+TLY: Looks like an annotation to me.
 
 MHK: Or decorators.
 
@@ -946,7 +946,7 @@ DE: I think it would be great to have someone who documents this is the js stand
 
 MHK: I would have concerns—I wouldn't want everything in the std library to be specified by TC39... It would have to live in the engine.
 
-TL: I would be intended that all these things would be implementable as JavaScript.
+TLY: I would be intended that all these things would be implementable as JavaScript.
 
 DE: Not a requirement.
 
@@ -986,7 +986,7 @@ NHD: DE is saying that we should be able to adopt other namespaces.
 
 DE: Ok with multiple namespaces as long as we do it well. We can specifically endorse specific things being in our shared namespace for isomorphic. I have concerns about inclusion in WHATWG—they don't have a formal governance structure...
 
-TL: Is there a middle ground where we reference their spec. Let the other spec specify the behavior, but we specify the API surface.
+TLY: Is there a middle ground where we reference their spec. Let the other spec specify the behavior, but we specify the API surface.
 
 MHK: That may get us in trouble if they break the web.
 

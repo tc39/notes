@@ -1,6 +1,6 @@
 # November 27, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (PO), Aki Rose (ARE), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), Adam Klein (AK), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Justin Ridgewell (JRL), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Kevin Gibbons (KG), Alan Schmitt (AS), Ross Kirsling (RKG), Shane Carr (SCR), Nathan Hammond (NHD), Ilias Tsangaris (IT), Brian Terlson (BT), Augustus Yuan (AYN), Frank Yung-Fong Tang (FTG), Felipe Balbontin (FAB), Thomas Levy (TL), Yulia Startsev (YSV), Natalie Silvanovich (NSH), J.F. Paradis (JFP), Sebastian Markbage (SM), Taaeu Zagallo (TZO), Eric Faust (EFT), Dustin Savery (DSY), Patrick Soquet (PST), Sebastian McKenzie (SMK), Tab Atkins (TAB), Lin Clark (LCK), Reefath Rajali (RRI), Devin Rousso (DRO), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS)
+Mattijs Hoitink (MHK), Michael Saboff (MS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbage (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontin (FAB), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (ARE), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
 
 Remote: 
 Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), Istvan Sebestyen (IS), Richard Gibson (RG), Guy Bedford (GB), Conrad Watts (CWS)
@@ -743,7 +743,7 @@ MB: Noooo! Nothing good can come from exposing either implementation details or 
 
 ??: It's covered in custom engine... goo.. 
 
-TL: I am getting the impression this is intentional ingenuous to mark things as native code when they are native code. 
+TLY: I am getting the impression this is intentional ingenuous to mark things as native code when they are native code. 
 
 MF: We've done that with bound functions
 

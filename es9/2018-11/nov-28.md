@@ -1,9 +1,9 @@
 # November 28, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (PO), Aki Rose (ARE), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), Adam Klein (AK), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Justin Ridgewell (JRL), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Kevin Gibbons (KG), Alan Schmitt (AS), Ross Kirsling (RKG), Shane Carr (SCR), Nathan Hammond (NHD), Ilias Tsangaris (IT), Brian Terlson (BT), Augustus Yuan (AYN), Frank Yung-Fong Tang (FTG), Felipe Balbontin (FAB), Thomas Levy (TL), Yulia Startsev (YSV), Natalie Silvanovich (NSH), J.F. Paradis (JFP), Sebastian Markbage (SM), Taaeu Zagallo (TZO), Eric Faust (EFT), Dustin Savery (DSY), Patrick Soquet (PST), Sebastian McKenzie (SMK), Tab Atkins (TAB), Lin Clark (LCK), Reefath Rajali (RRI), Devin Rousso (DRO), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE)
+Mattijs Hoitink (MHK), Michael Saboff (MS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbage (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontin (FAB), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (ARE), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
 
 Remote: 
-Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), Istvan Sebestyen (IS), Richard Gibson (RG), Guy Bedford (GB), CWS Watts (CWS)
+Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), Istvan Sebestyen (IS), Richard Gibson (RG), Guy Bedford (GB), Conrad Watts (CWS)
 -----
 
 
@@ -124,7 +124,7 @@ WH: Intuition here isn't that Ry is doing something strange. Instead, the combin
 
 DH: Because SAB is a data structure.. You can abstract around it. A javascript programmer can understand that. X[0] is never gonna be a scary thing as long as it's not operating on a shared array buffer (SAB)
 
-TL: Wanted to point well don't we use atomics for these full memory fences, other languages allow you to release the fence. Shouldn't we have that option?
+TLY: Wanted to point well don't we use atomics for these full memory fences, other languages allow you to release the fence. Shouldn't we have that option?
 
 SYG: In JavaScript there is no weaker ordering that... there is no sequentially consistent fences. A sequentially consistent fences are too slow in that if people depend on it, we can't back out of it. As the need arises we have room to grow the model but currently it's here or nothing.
 

@@ -1,7 +1,7 @@
 # September 26, 2017 Meeting Notes
 -----
 
-Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (ARE), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), 
+Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), 
 
 Remote: 
 István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM), Gabriel Isenberg (GI), Zibi Braniecki (ZB)
@@ -46,7 +46,7 @@ Ecma/TC39/2017/041,  Disposition of comments regarding ISO/IEC DIS 22275 complet
 
 ## 6. Meeting Schedule
 
-DE: Dan set up list of proposed locations & times.  Proposed 2 East Coast meetings, 3 west coast meetings, 1 Europe.
+DE: Dan set up list of proposed locations & times. Proposed 2 East Coast meetings, 3 west coast meetings, 1 Europe.
 
 Schedule postponed to Thursday with hope of Bay Area hosting of January meeting
 
@@ -54,7 +54,7 @@ Schedule postponed to Thursday with hope of Bay Area hosting of January meeting
 
 - Revisit first thing Thursday to confirm contentious meeting hosts/areas
 
-## 7. ECMA262 Status Updates
+## 7. ECMA-262 Status Updates
 
 (Brian Terlson)
 
@@ -68,7 +68,7 @@ BT: Normative bug fixes added to spec; [Missing toNumber coercion](https://githu
 
 MB: The security issue was in ChakraCore / Edge.
 
-BT: Working on unifying conventions, using standard set of conventions for looping, get/set values, parameters, concatting strings. Spec is getting a lot better factories & uniform conventions. Hoping to support polymorphic references so one can see a list of all parts of spec that use a polymorphic reference. Changed grammar params, supporting better tooling in ES code.  I promise Ron's work will blow us away
+BT: Working on unifying conventions, using standard set of conventions for looping, get/set values, parameters, concatting strings. Spec is getting a lot better factories & uniform conventions. Hoping to support polymorphic references so one can see a list of all parts of spec that use a polymorphic reference. Changed grammar params, supporting better tooling in ES code. I promise Ron's work will blow us away
 
 RBN: I can't promise that.
 
@@ -80,7 +80,7 @@ BT: If anyone has any questions I'm happy to answer them around the state of 262
 
 - On track for publication
 
-## 8. ECMA402 Status Updates
+## 8. ECMA-402 Status Updates
 
 (Daniel Ehrenberg) 
 
@@ -93,13 +93,13 @@ DE: One other change: make all the `Intl.*` objects ES6-style classes where the 
 - On track
 
 
-## 9.  ECMA404 Status Updates
+## 9. ECMA-404 Status Updates
 
 (Chip Morningstar)
 
-CM: Been finalised for a while; we're in the process of running through JTC1 fast track. Need to update spec to reflect new RFC numbers; but through finalisation+specification we have to formally bless as a change. Patrick emailed this - the same ECMA404 spec but with new RFC reference.
+CM: Been finalised for a while; we're in the process of running through JTC1 fast track. Need to update spec to reflect new RFC numbers; but through finalisation+specification we have to formally bless as a change. Patrick emailed this - the same ECMA-404 spec but with new RFC reference.
 
-YK: I saw there was a proposal to make this JSON a proper subset of ECMA262; is this a change to 404 or 262?
+YK: I saw there was a proposal to make this JSON a proper subset of ECMA-262; is this a change to 404 or 262?
 
 CM: 262 only
 
@@ -109,7 +109,7 @@ CM: 262 only
 
 LBR: Have updates on test 262. We have more comtributors since last meeting. We've been working with contributors from Igalia, partnership with Bloomberg. At Bocoup we have partnership with Facebook on Test262 - thankful for these. Valerie Young joining us for Test262 with interesting work, really appreciate. Test runners added that we're incorporating with, allow us to integrate with projects that want to use Test262. We're going beyond browser implementations and making sure Test262 is useful for other projects - brings us more feedback, more contributors & improvements. Really appreciate work so far. Rick & I are doing mentorship for contributors. Almost 60,000 tests right now in Test262. Thankyou
 
-BT: Related projects are [eshost-cli](https://github.com/bterlson/eshost-cli) and [eshost](https://github.com/bterlson/eshost)… It's used in the Test262 harness to run scripts uniformly across node, browsers. Gotten a lot better recently. If you're testing scripts in different engines, `eshost` is going to help a lot. Check it out!
+BT: Related projects are [eshost-cli](https://github.com/bterlson/eshost-cli) and [eshost](https://github.com/bterlson/eshost)... It's used in the Test262 harness to run scripts uniformly across node, browsers. Gotten a lot better recently. If you're testing scripts in different engines, `eshost` is going to help a lot. Check it out!
 
 #### Conclusion/Resolution
 
@@ -160,7 +160,7 @@ WH: My fear is we end up with too many independent features and lose sight of ov
 
 TST: How does this work for async functions? Async function calls will become more and more common and this may cause friction.
 
-DE: Only supported in as much as async functions return Promises. We've discussed implicit awaits for Async Generators; coupled with yield. We’ve been careful about adding points where the function pauses without having explicit syntax — this is problematic. Should we add explicit await support? 
+DE: Only supported in as much as async functions return Promises. We've discussed implicit awaits for Async Generators; coupled with yield. We've been careful about adding points where the function pauses without having explicit syntax — this is problematic. Should we add explicit await support? 
 
 TST: My preference would be a combinating operator for async function calls.
 
@@ -231,11 +231,11 @@ LBR: Since last meeting we have Code of Conduct approved. We expect everyone to 
 
 (Daniel Ehrenberg)
 
-DE: 3 browsers use ICU, 1 uses its own. ECMA402 tries to be as specific as possible about what the algorithms mean without reference to ICU, but compatibility issues arise none-the-less
+DE: 3 browsers use ICU, 1 uses its own. ECMA-402 tries to be as specific as possible about what the algorithms mean without reference to ICU, but compatibility issues arise none-the-less
 
 - https://github.com/tc39/ecma402/pull/172
 
-Proposing to add text to ECMA402 to specify goals as we evolve. Not complete solution but attempts to address concerns before, involving Intl standards. 
+Proposing to add text to ECMA-402 to specify goals as we evolve. Not complete solution but attempts to address concerns before, involving Intl standards. 
 
 BT: ChakraCore is most likely to be using ICU, we'll be closing all of our Intl bugs per compatibility with other browsers. The added paragraph is good. We won't be hearing differences in spec though; as we'll be using the same API.
 
@@ -258,7 +258,7 @@ DE: Test262 will not be able to assert on string output of these methods.
 
 BT: A bunch of tests do this.
 
-DE: New ones won’t be able to. These should be moved to a separate area.
+DE: New ones won't be able to. These should be moved to a separate area.
 
 BT: These are good tests. The spec says you can return empty string if you want to though, so I guess they're all invalid?
 
@@ -276,7 +276,7 @@ DE: It's up to implementers, there is no requirements for this. (Added clarifica
 
 RW: We're already shipping Node without `Intl` support
 
-YK: So you can not ship Intl, but is there possibility of shipping a different Intl to what’s specced?
+YK: So you can not ship Intl, but is there possibility of shipping a different Intl to what's specced?
 
 MB: When working on implementations, Unicode property escapes proposal depends on various documents; Unicode Standard, Emoji spec published by Unicode. ICU has its version.
 
@@ -662,7 +662,7 @@ LBR: We already have semicolons in class bodies, we already have ASI within meth
 
 SM: (an example of class fields assigned with arrow function)
 
-DE: It does not seem we're at consensus on this topic.  As a default, I think we should stick with ASI.
+DE: It does not seem we're at consensus on this topic. As a default, I think we should stick with ASI.
 
 #### Conclusion/Resolution
 
@@ -727,7 +727,7 @@ MB: What I'm saying is that plurals and ordinals could have their own API method
 
 DE: But they have the same API shape
 
-MB: Yes - but that doesn’t mean they are the same. I'm not looking to block this, just raising the point.
+MB: Yes - but that doesn't mean they are the same. I'm not looking to block this, just raising the point.
 
 DE: We could unship this from Chrome to resolve this, but is this just a superficial change?
 
@@ -745,7 +745,7 @@ MB: I'm not suggesting we should completely reinvent the API, just to separate i
 
 DE: How would we do that without changing the API?
 
-MB: Well it would be the same class, just separated into two e.g. Intl.PluralRules & Intl.Ordinals, and without the need for the options object.  Still returns the same results.
+MB: Well it would be the same class, just separated into two e.g. Intl.PluralRules & Intl.Ordinals, and without the need for the options object. Still returns the same results.
 
 DE: Options are useful for future extensions
 
@@ -811,7 +811,7 @@ MB: Me too
 
 MF: Current issue is what do we consider "flattenable"? Candidates are Iterable - but unexpected behaviour with Strings; or another Symbol. For Stage 2 we've stuck with `isConcatSpreadable` Symbol.
 
-YK: I'm fine with isConcatSpreadable. I think Domenic's position is that a lot of things pretend to be arrays, the platform can’t continue to pretend things are arrays. `isConcatSpreadable` is - for better or worse - what we can use to continue pretending "thing" is an array. Or we could look at a "new thing".
+YK: I'm fine with isConcatSpreadable. I think Domenic's position is that a lot of things pretend to be arrays, the platform can't continue to pretend things are arrays. `isConcatSpreadable` is - for better or worse - what we can use to continue pretending "thing" is an array. Or we could look at a "new thing".
 
 BT: Is there a concrete proposal for new thing?
 
@@ -992,4 +992,3 @@ BT: Let's push it to stage 1.
 
 - Stage1 proposal
  - Point of further research: What should be the behavior when an unknown locale is passed in--throw an exception or parse it anyway?
-

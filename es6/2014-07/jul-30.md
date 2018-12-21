@@ -322,7 +322,7 @@ function Date() {
   let now = $$GetSystemTime();
   if (new*) {
     let obj = Object.create(new*.prototype);
-    // obj@now = now; // private “now” state
+    // obj@now = now; // private "now" state
     return obj;
   } else {
     return ToTimeString(now);

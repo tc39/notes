@@ -87,7 +87,7 @@ IS: Submitted the ECMAScript Suite Standard (approved by the GA as Ecma 414) to 
 
 ## 8. Test262 Status Update
 
-IS: Technical Report 104 needs to be updated. He added that all specs related to TC39 work are being downloaded very heavily (actually at  least 2/3 of all Ecma downloads are TC39 related).  The HTML version of ECMA-262 and ECMA-402 is in addition to it, and compared to full downloads that is even significantly higher.This is actually more than e.g. what is being downloaded from the ISO Shop (of course that is not free of charge...).  So automatically also TR-104 gets downloaded rather heavily. But e.g. in TR/104 the URL to the tests does not work. Also the text needs to be updated. It reflects a situation when only ES5 was covered, but  e.g. not ECMA-402. 
+IS: Technical Report 104 needs to be updated. He added that all specs related to TC39 work are being downloaded very heavily (actually at  least 2/3 of all Ecma downloads are TC39 related). The HTML version of ECMA-262 and ECMA-402 is in addition to it, and compared to full downloads that is even significantly higher.This is actually more than e.g. what is being downloaded from the ISO Shop (of course that is not free of charge...). So automatically also TR-104 gets downloaded rather heavily. But e.g. in TR/104 the URL to the tests does not work. Also the text needs to be updated. It reflects a situation when only ES5 was covered, but  e.g. not ECMA-402. 
 
 AWB: Propose updating TR 104 to be descriptive only?
 
@@ -257,7 +257,7 @@ Generally, no.
 #### Conclusion/Resolution
 
 - Add for-var-in initializers with the old semantics to Annex B, for non-strict mode only.
-- [ecma262/pull/614](https://github.com/tc39/ecma262/pull/614)
+- [ECMA-262/pull/614](https://github.com/tc39/ecma262/pull/614)
 - Kevin will write tests for the change, based on the new policy
 
 
@@ -304,7 +304,7 @@ WH: I don't object to advancing this to stage 4, but I'm sad to see this in the 
 
 (Michael Saboff)
 
-MS: Unify the length of strings and arrays. Strings are 2^53-1, Arrays are 2^32-1 indexed elements. A few APIs cross over. Really, browsers are all 2^31 or less. I don't care which way we go, but I'd like Strings and Arrays to be unified.  Maybe we should delay this a little until we figure out how to make Arrays bigger; I originally proposed reducing everything to 2^32-1
+MS: Unify the length of strings and arrays. Strings are 2^53-1, Arrays are 2^32-1 indexed elements. A few APIs cross over. Really, browsers are all 2^31 or less. I don't care which way we go, but I'd like Strings and Arrays to be unified. Maybe we should delay this a little until we figure out how to make Arrays bigger; I originally proposed reducing everything to 2^32-1
 
 MF: What's the motivation?
 
@@ -654,7 +654,7 @@ In text form: https://github.com/mathiasbynens/es-regexp-unicode-property-escape
 
 DE: Have full spec text, implementation in V8, tests for V8 (need to be updated for Test262)
 
-BT: If ok with deviating from what’s allowed inside `\u`, then we can overload `\u` instead of `\p`
+BT: If ok with deviating from what's allowed inside `\u`, then we can overload `\u` instead of `\p`
 
 DD: Are there conflicts with other languages and use of `\u`?
 
@@ -800,7 +800,7 @@ Will revisit after discussing cancels more; hopefully reshuffle non-timeboxed ag
 
 (Rick Waldron)
 
-RW: There are some nasty npm modules for these sorts of math functions. This comes up in IoT, cool animations, etc.  We could add some more functions to the standard library. This stuff happens over and over and over again; typing things into consoles.
+RW: There are some nasty npm modules for these sorts of math functions. This comes up in IoT, cool animations, etc. We could add some more functions to the standard library. This stuff happens over and over and over again; typing things into consoles.
 
 YK: leftPad went well
 

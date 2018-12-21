@@ -386,7 +386,7 @@ MM: I have experienced traumas in my life that were less fun
 
 (Discussion of whether we should move the ES5 stuff piecemeal, e.g. as they get fixed.)
 
-BT: It might be OK to move by feature, e.g. all the Array.prototype.forEach tests could move at once.  
+BT: It might be OK to move by feature, e.g. all the Array.prototype.forEach tests could move at once. 
 
 (Discussion of how to incorporate post-ES6 tests into the repo, as they are written, but before ES6 tests are finalized.)
 
@@ -633,6 +633,3 @@ Math.isubh();
 
 - Rename imuluh to umulh
 - Stage 0 acceptance
-
-
-

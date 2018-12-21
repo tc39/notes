@@ -540,7 +540,7 @@ The proposal is to add the Map/Set a function so the toJson is useful
 
 get the iterator on the receiver, create an array from it, and return it.
 
-Serializes a nmap as an array of entries.  It's equivalent to spreading the map to an array.
+Serializes a nmap as an array of entries. It's equivalent to spreading the map to an array.
 
 The proposal is linked form the agenda.
 
@@ -877,5 +877,3 @@ WH: I want a presentation
 Frozen realms is stage 1, Realms is Stage 0
 
 DH: promises to present on Realms soon
-
-

@@ -990,7 +990,7 @@ ARB: slide (soundscript)
 
 DE: reptitive tests, lots of tests that repeat each other. There exists a proposal to generate tests precedurally, we require implementors feedback. Ask me and I will provide more information
 
-DE: We have some changes coming into Test262, e.g., https://github.com/tc39/Test262/issues/470 https://github.com/tc39/Test262/issues/467. Users, please give feedback as to whether these are appropriate for you! Please reach out to me if you have any concerns.
+DE: We have some changes coming into Test262, e.g., https://github.com/tc39/test262/issues/470 https://github.com/tc39/test262/issues/467. Users, please give feedback as to whether these are appropriate for you! Please reach out to me if you have any concerns.
 
 
 ## Progress review: Callable class constructors (Allen)
@@ -1113,7 +1113,7 @@ AWB: the factory world is almost noise
 
 WH: This is unnecessary. It's creating a redundant way to create instance, for those who don't like `new`. Given the implementation concerns, we should not be doing this at all.
 
-...  (the implementors) it will be crappy
+... (the implementors) it will be crappy
 
 MM: could we make something shorter than "factory constructor"
 
@@ -1176,6 +1176,3 @@ Pending Topics: (un-ordered)
 1. Module loading update (Dave Herman, Caridy Patiño)
 1. Introduce the continents concept to the spec? (Domenic Denicola; low priority)
 1. Object.getOwnPropertyDescriptors to stage 3? (Jordan Harband, low priority, but super quick!)
-
-
-

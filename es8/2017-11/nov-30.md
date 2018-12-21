@@ -1,7 +1,7 @@
 # November 30, 2017 Meeting Notes
 -----
 
-Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CP), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (ARE), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM), Sebastian Markbåge (SM), Dean Tribble (DT), Jafar Husain (JH)
+Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CP), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (AKI), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM), Sebastian Markbåge (SM), Dean Tribble (DT), Jafar Husain (JH)
 
 Remote: 
 István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
@@ -54,7 +54,7 @@ KCL: This finds utility in a variety of places, including arguments; this makes 
 
 AK: I disagree with the intuition that these are similar. I think sealing arguments are better done by type systems, and maybe if statements at runtime. I'm sort of opposed to using up this syntactic space when we could be using it for something new.
 
-DH: The comparison to rest/spread is interesting. Unlike rest/spread, this creates a sort of combinatorial explosion. This increases the decision space--will we have the hash wars next, among people who are debating whether you should use hash everywhere? This comes at a big cost for the jobs of programmers and the ecosystem to figure out what the preferred style. We end up not resolving them, just getting factions.  I agree on the motivations, but I'm stuck on the cost.
+DH: The comparison to rest/spread is interesting. Unlike rest/spread, this creates a sort of combinatorial explosion. This increases the decision space--will we have the hash wars next, among people who are debating whether you should use hash everywhere? This comes at a big cost for the jobs of programmers and the ecosystem to figure out what the preferred style. We end up not resolving them, just getting factions. I agree on the motivations, but I'm stuck on the cost.
 
 KCL: Do you see a lower-cost path?
 
@@ -287,9 +287,9 @@ DE: I want to split them so we can use this as an opportunity to clarify and pro
 
 MB: would enabling ASI here make the spec more complex?
 
-DE: There’s no algorithmic complexity, adding ASI here doesn’t complicate the spec nor implementations. Actually, there is no spec text needed at all--the existing description of ASI is sufficient.
+DE: There's no algorithmic complexity, adding ASI here doesn't complicate the spec nor implementations. Actually, there is no spec text needed at all--the existing description of ASI is sufficient.
  
-BFS: I’m not a fan of ASI in general, but I don't want to disallow ASI *only* inside class bodies.
+BFS: I'm not a fan of ASI in general, but I don't want to disallow ASI *only* inside class bodies.
  
 YK: I do want to disallow ASI in class bodies.
 
@@ -301,7 +301,7 @@ KCL: A quick run through GitHub's codebase, which uses standardjs and omits semi
 
 YK: Are you sure the rest of the code is correct?
 
-MKA: Want to add a user perspective: I recently worked at a small company that used the "standard" (no semicolons) linter, and we used it because we never had to argue about the code style. I've seen similar issues in small companies, and have seen people choose the "standard" linter to avoid having to think about semicolons. Point is: many people use “Standard” but it doesn’t mean they all feel strongly about avoiding semicolons.
+MKA: Want to add a user perspective: I recently worked at a small company that used the "standard" (no semicolons) linter, and we used it because we never had to argue about the code style. I've seen similar issues in small companies, and have seen people choose the "standard" linter to avoid having to think about semicolons. Point is: many people use "Standard" but it doesn't mean they all feel strongly about avoiding semicolons.
 
 DE: So does that mean that many programmers who omit semicolons don't care particularly about semicolons, just about following the linter rules?
 
@@ -339,7 +339,7 @@ RW: So I concede you can write parseable code without semicolons but I'm saying 
 
 YK: When Brendan tried to coerce people away from this is that ASI is a form of error correction - so writing semi-colon free code is making a lot of errors.
 
-DE: That’s a good case for taking a stance as a committee and saying, we’ll require semicolons here.
+DE: That's a good case for taking a stance as a committee and saying, we'll require semicolons here.
 
 YK: I think we could set a point of saying that we should avoid introducing new ASI hazards as a reasonable compromise
 
@@ -353,7 +353,7 @@ DE: Does anyone have any strong concerns about having ASI hazards in class bodie
 
 KZM: My opinion is that ASI is there for beginners who make mistakes. We just catch them when they fall and accidentally omit a semicolon. The aggressive ASI proponents are experienced programmers who intentionally do this. By the community requiring semicolons here we are sending a signal saying we're no longer bothering with ASI. There may be a community backlash for this. Its not that we cant do it its just extra work
 
-DE: Well, I mean it’s not extra work now as we have Babel and V8 implementing these with the ASI hazards in place. What we're concerned about though is providing a set of footguns for users. What do you think about this?
+DE: Well, I mean it's not extra work now as we have Babel and V8 implementing these with the ASI hazards in place. What we're concerned about though is providing a set of footguns for users. What do you think about this?
 
 KZM: Well people will still hit errors.
 
@@ -375,11 +375,11 @@ MM: A good suggestion
 
 DE: I'm not sure we can make a statement like that.
 
-MB: Yehuda pointed out that Brendan always said ASI was error correction. Kat repeated that point. That fact won’t change, we're just saying there are new rules that apply to new things. It sounds like we already have a statement.
+MB: Yehuda pointed out that Brendan always said ASI was error correction. Kat repeated that point. That fact won't change, we're just saying there are new rules that apply to new things. It sounds like we already have a statement.
 
 DE: It seems like the conclusion is we don't have strong arguments to either.
 
-JHD: I think there is one objective point on how it prevents the future additions to the language. Adding things like `const` keywords or `+` or `*` - any new prefix sigil for methods or functions is now restricted. We always say we don’t want to take up syntactic space - partly because of user cognitive load but also because we dont want to limit future evolution of the language.
+JHD: I think there is one objective point on how it prevents the future additions to the language. Adding things like `const` keywords or `+` or `*` - any new prefix sigil for methods or functions is now restricted. We always say we don't want to take up syntactic space - partly because of user cognitive load but also because we dont want to limit future evolution of the language.
 
 AK: Well we add NLTs to every keyword which goes inside class bodies. For extra tokens which work like `*`, probably better to just not do that since it's difficult to understand.
 
@@ -409,7 +409,7 @@ ZB: We seem to operating on extremes - either banning or encouraging it. We can 
 
 DE: It seems a clear way forward to say we can support ASI here but we're not sure how many more features will continue to work out like this.
 
-ARE: I was going to say the same thing - we should think about a long term path in general, around making decisions of including ASI in future features.
+AKI: I was going to say the same thing - we should think about a long term path in general, around making decisions of including ASI in future features.
 
 CM: It sounds like what we're coming to is "we'll continue supporting ASI while it's not too much trouble". If it gets in our way we'll stop using it but otherwise keep using it.
 
@@ -494,19 +494,19 @@ DH: It does feel like there are pieces you can factor out - and layer this. You 
 
 ### Positive culture
 
-ARE: I've noticed examples of people coming to disagreements in issues in bad faith. Shutting debates down often by making it person because they don't agree with the premise or don't want to give time or air to the pepole they disagree with. It makes the targets of  those bad-faith arguments feel bad and sends a message to new people that it's not worth contributing when that's how we treat each other. One thing keeping women and marginalised folks out of open source is brashness around the responses to issues on the repos. It can make a massive difference.
+AKI: I've noticed examples of people coming to disagreements in issues in bad faith. Shutting debates down often by making it person because they don't agree with the premise or don't want to give time or air to the pepole they disagree with. It makes the targets of  those bad-faith arguments feel bad and sends a message to new people that it's not worth contributing when that's how we treat each other. One thing keeping women and marginalised folks out of open source is brashness around the responses to issues on the repos. It can make a massive difference.
 
 ZB: We had a very similar issue on our bug tracking. We had developers who were very brash and shut down issues without - perhaps empathy is the word? One thing that fixed that is we started adding tags indicating new users. For the first time users this is important.
 
 KCL: GitHub does this for you!
 
-ARE: I've fallen down this trap before. Especially for ESLs, it makes a massive difference. Additionally I think the GitHub canned replies feature can be useful here - for starting an issue 
+AKI: I've fallen down this trap before. Especially for ESLs, it makes a massive difference. Additionally I think the GitHub canned replies feature can be useful here - for starting an issue 
 
 KCL: (Presenting canned replies and GitHub contributor labels)
 
 ### Encouraging more presenters
 
-ARE: I think it would be great to have some documentation around these processes, but also to be able to provide short TL;DRs to see if people are actually interested. The existing documentation has _so many words_ and its very difficult just to read this.
+AKI: I think it would be great to have some documentation around these processes, but also to be able to provide short TL;DRs to see if people are actually interested. The existing documentation has _so many words_ and its very difficult just to read this.
 
 JHD: Having rationale - explaining some things we care about that aren't in process documents or specs - would be useful. I understand we've had concerns about bringing discussions from es-discuss into here - but only because the proposals aren't of a quality _because_ we have no documents explaining how to make quality contributions.
 
@@ -522,7 +522,7 @@ CM: Its also shared culture that forms a point of reference for conversations. I
 
 DT: Jargon is essential to any technical community - but actually theres some value in capturing it. We should have a page which enumerates the jargon, like what does TCP mean to this group.
 
-ARE: This is a great opportunity to have an FAQ repo, higher level less dense documentation, a dictionary, a glossary. Footgun could go in there.
+AKI: This is a great opportunity to have an FAQ repo, higher level less dense documentation, a dictionary, a glossary. Footgun could go in there.
 
 DH: A simple practice of a jargon definition is fun, its shared culture. This is one of the easy things we can do.
 
@@ -542,7 +542,7 @@ DE: If you look at TC39's internal IRC channel, maybe not even half the people i
 
 KM: Maybe it'd be useful to have people on their own - having a buddy system where people can quietly ask questions can be useful.
 
-ARE: How do we feel about a tc39/how-we-work repo?
+AKI: How do we feel about a tc39/how-we-work repo?
 
 Everyone: thumbs up
 
@@ -562,7 +562,7 @@ SYG: I made a logo for the committee hats; what do you think? It uses the font o
 
 DE: One final point - Brian announced he will no longer be editor after 2018. We're currently looking for a new editor for ES2019. He says it takes around 20 hours a week every week. 
 
-ARE: I had a question on Tuesday night: how much unpaid time do you put into this and how much do you expect to? Fingers crossed this was 0.
+AKI: I had a question on Tuesday night: how much unpaid time do you put into this and how much do you expect to? Fingers crossed this was 0.
 
 YK: For me that is definitely not true.
 
@@ -573,4 +573,3 @@ YK: For me that is definitely not true.
   - Documenting rationale
   - Document about how to get a proposal in the spec
   - Everyone should be involved in documenting procedure & culture
-

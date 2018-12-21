@@ -339,7 +339,7 @@ ARB: This is actually the path you'd want in typed languages, minimizes state sp
 
 DH: I want to see a better overall interface for iterators and generators, without jeopardizing the acceptance.
 
-MM: In favor of this API, if the implementors are not objecting.  Although I don't like the API itself.
+MM: In favor of this API, if the implementors are not objecting. Although I don't like the API itself.
 
 DH: Agree, I prefer the pure, stateless proposal
 
@@ -730,7 +730,7 @@ import { a } from "some.js"
 ... a ...
 ```
 
-where `"some.js"` is an AMD library, then there's no static checking, but if you refactor `"some.js"` to be an ES6 module, you automatically get static checking.  But if you don't support this use case, then there's indirection:
+where `"some.js"` is an AMD library, then there's no static checking, but if you refactor `"some.js"` to be an ES6 module, you automatically get static checking. But if you don't support this use case, then there's indirection:
 
 ```js
 import { exports } from "some.js"
@@ -787,7 +787,7 @@ WH: What if module A depends on both B and C and the initialization of B fails?
 
 DH: C remains uninitialized but present in the registry
 
-WH: This breaks the model.  It's not C's fault that its initializer didn't run.
+WH: This breaks the model. It's not C's fault that its initializer didn't run.
 
 AWB: Mark C as never having its initializer attempt to run and run it the next time it's imported.
 

@@ -1,7 +1,7 @@
 # September 28, 2017 Meeting Notes
 -----
 
-Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (ARE), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), Caio Gondim (CGM), Brittany Storoz (BSZ), Sathya Gunasekaran (SGN), Domenic Denicola (DD), Richard Gibson (RGN), Michael Z Goddard (MZG)
+Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), Caio Gondim (CGM), Brittany Storoz (BSZ), Sathya Gunasekaran (SGN), Domenic Denicola (DD), Richard Gibson (RGN), Michael Z Goddard (MZG)
 
 Remote: 
 István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM), Gabriel Isenberg (GI), Zibi Braniecki (ZB), James M Snell (JSL)
@@ -288,7 +288,7 @@ WH: The main issue with this is the syntax. This is garden-path syntax. Consider
 
 Everyone: Yes a function call
 
-WH: Now let’s remove that last `a` and change this to `foo(x++, Y(g, h, k, l), m*n, "hello", bar, ...)` - this is no longer a function call, it is a closure capture. My issue is that it looks like a function call but it is not. I think the syntax is a non starter because of this. If we had a syntax at the beginning that suggested to the user that it is not a function call then this would be fine. Syntax before or after the identifier that starts the closure: `{HERE}foo{OR_HERE}(x++)`
+WH: Now let's remove that last `a` and change this to `foo(x++, Y(g, h, k, l), m*n, "hello", bar, ...)` - this is no longer a function call, it is a closure capture. My issue is that it looks like a function call but it is not. I think the syntax is a non starter because of this. If we had a syntax at the beginning that suggested to the user that it is not a function call then this would be fine. Syntax before or after the identifier that starts the closure: `{HERE}foo{OR_HERE}(x++)`
 
 WH: The other problem with the syntax is that this allows no way to create a closure that takes no parameters. When the semantics were to defer everything, that was kind of ok because you could just wrap the whole thing in an arrow function. With eager evaluation, the lack of a way to define a closure that takes no parameters hurts because wrapping in an arrow function switches from eager to lazy evaluation of the arguments.
 
@@ -450,11 +450,11 @@ JHD: No that's not quite the argument. I'm just expressing intuition that if it 
 
 MF: I don't see why it is problematic to allow property keys.
 
-WH: The reason for banning it for `+` was because there are no reasonable definitions of adding a BigInt and a Number.  Which ever way we come up with to define it would be wrong a significant fraction of the time. That problem doesn't arise here. I don't see any good arguments to diverge from what `toString` does.
+WH: The reason for banning it for `+` was because there are no reasonable definitions of adding a BigInt and a Number. Which ever way we come up with to define it would be wrong a significant fraction of the time. That problem doesn't arise here. I don't see any good arguments to diverge from what `toString` does.
 
 DD: My intuition - not my understanding - is that `x[1] = 5` is desugared to `x['1'] = 5` - so I would also apply the same intuition that `x[1n] = 5` would desugar to `x['1n'] = 5`. But to counterpoint my own point this is not true of `x[0x1] = 5`. 
 
-MB: It’s also not true for exponents, e.g. `x[1e3] = 5`. The same thing applies for the example in the slide: `x = { 3n: 'a' }` should work the way `x = { 1e3: 'a' }` does.
+MB: It's also not true for exponents, e.g. `x[1e3] = 5`. The same thing applies for the example in the slide: `x = { 3n: 'a' }` should work the way `x = { 1e3: 'a' }` does.
 
 DE: But your intuition won't follow for variables, e.g. `x[foo] = 5` isn't `x['foo'] = 5`.
 

@@ -67,7 +67,7 @@ AWB: Good to communicate to ISO
 
 IS: Explained to Rex Jaeschke (JTC1 SC22 Chair) the new schedule. Normally ISO likes to update standards every three years, have expressed our one year schedule plans.
 
-WH: Afraid ISO might not like "take it or leave it".  In the past, we got excellent technical reviews from them and have integrated the changes into the ISO standard and to the Ecma standard.
+WH: Afraid ISO might not like "take it or leave it". In the past, we got excellent technical reviews from them and have integrated the changes into the ISO standard and to the Ecma standard.
 
 AWB: But that would be next June 
 
@@ -126,7 +126,7 @@ BT: Are there concrete examples of using ISO specification over Ecma?
 
 DD: Propose that we don't do this process unless an external request for it is made. 
 
-IS: We are already for 17 years in this process, and it is expected that we continue for future editions as well. So this is automatic and not exteranl request is needed.  How to explain why ES 1, 2, 3, 5 & 5.1 are ISO standards, but 6 and 7 etc. not and what if Ecma is already e.g. at 7 and ISO still on 5.1?. 
+IS: We are already for 17 years in this process, and it is expected that we continue for future editions as well. So this is automatic and not exteranl request is needed. How to explain why ES 1, 2, 3, 5 & 5.1 are ISO standards, but 6 and 7 etc. not and what if Ecma is already e.g. at 7 and ISO still on 5.1?. 
 
 Can we be forced to do this?
 
@@ -340,7 +340,7 @@ AWB/DH: We have technical questions, but they have no bearing on advancement to 
 
 https://github.com/benjamingr/RegExp.escape
 
-[Slides](http://slides.com/benjamingruenbaum/regexp-escape)
+- [slides](http://slides.com/benjamingruenbaum/regexp-escape)
 
 DD: (presents slides)
 
@@ -693,7 +693,7 @@ Discussion, re: stage process? Yes.
 
 (Brian Terlson)
 
-[Slides](tooling-updates.pdf)
+- [slides](tooling-updates.pdf)
 
 BT:
   
@@ -747,7 +747,7 @@ Ecmarkdown (Emd)
 
 (Brian Terlson)
 
-[Slides](binding-rest-element.pdf)
+- [slides](binding-rest-element.pdf)
 
 
 BT: AssignmentRestElement allows destructuring, BindingRestElement throws. Destructure rest on assignment, but not on binding
@@ -788,7 +788,7 @@ BT: Babel already treats the same
 
 (Brian Terlson)
 
-[Slides](new-generator-function.pdf)
+- [slides](new-generator-function.pdf)
 
 BT: 
 
@@ -1038,6 +1038,3 @@ WH: The spec needs a geocities-style "Under Construction" animated GIF here ;). 
 
 - Revert this spec change. Existing implementations still match ES5, and the old behavior still makes sense (even with ES6's longer String length limit).
 - Filed https://bugs.ecmascript.org/show_bug.cgi?id=4432
-
-
-

@@ -1,6 +1,6 @@
 # July 24, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (ARE), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontin (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson(RGN), Lin Clark (LCK), Allen Wirfs-Brock(AW), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage(SME), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent (AVT) John-David Dalton (JDD)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontin (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson(RGN), Lin Clark (LCK), Allen Wirfs-Brock(AW), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage(SME), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent (AVT) John-David Dalton (JDD)
 
 Remote: 
 Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell (JRL), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
@@ -58,7 +58,7 @@ RJE: Approval?
 
 RJE: September 25-27, 2018 at PayPal in New York
 
-ARE: Next meeting will be hosted at PayPal in Lower Manhattan. Logistics will be posted as soon as I have them. While I'm talking, I also have a quick CoC update: everyone is expected to uphold the code of conduct, which is [on GitHub](https://tc39.github.io/code-of-conduct/). This explains our expectations as well as how to handle things when they go wrong. Separately, I have stickers for TC39, please let me know if you want one (and didn't already take one at JSConf EU).
+AKI: Next meeting will be hosted at PayPal in Lower Manhattan. Logistics will be posted as soon as I have them. While I'm talking, I also have a quick CoC update: everyone is expected to uphold the code of conduct, which is [on GitHub](https://tc39.github.io/code-of-conduct/). This explains our expectations as well as how to handle things when they go wrong. Separately, I have stickers for TC39, please let me know if you want one (and didn't already take one at JSConf EU).
 
 ## Report from the Ecma Secretariat 
 
@@ -393,7 +393,7 @@ BT: If anyone wants to attend our meetings, please let us know and we will forwa
 
 DE: Then there's the code of conduct committee. 
 
-ARE: CoC committee gets together every other week on Thursdays at 1:30 EST. We review any comments or complaints we receive and decide how to respond as a group. There hasn't been a lot; we're pretty good as a group. When something does come up though, we're very thoughtful about how to proceed. If you want to help in any way, please let us know.
+AKI: CoC committee gets together every other week on Thursdays at 1:30 EST. We review any comments or complaints we receive and decide how to respond as a group. There hasn't been a lot; we're pretty good as a group. When something does come up though, we're very thoughtful about how to proceed. If you want to help in any way, please let us know.
 
 DE: Website and How we work group, we're trying to improve explaining to the public what TC39 is. As you can see there's a lot of ways to get involved and to help out. This is a cry for help. Please help!
 
@@ -432,7 +432,7 @@ DH: I just want to get feedback as we go along, instead of batching it up at the
 WH: What does `do {continue}` do in the first expression of a for-loop header, for which the loop hasn't started yet?
 
 ```js
-lab: for (let x = do {continue lab;}, y = 17; x; ++x} …
+lab: for (let x = do {continue lab;}, y = 17; x; ++x} ...
 ```
 
 BFS: What do you mean when you say disallow? ARe you disallowing do-expressions in this context or the grammar constructs within the do-expression? 
@@ -559,5 +559,4 @@ YK: There's an anecdotal structure where using these results can get you useful 
 
 DR: So at Microsoft we speak to a lot of customers and try to find their pain-points. I was very skeptical of process, but I've found that occasionally, you do find answers to something else entirely, and you may find trends which are very helpful. So, I think that's one of the key values, there's a lot of anecdotal evidence where you can say definitively, but you can use it for motivation and put it into concrete terms to help people determine users' pain-points.
 
-SYG: I think this was a good discussion. 
-
+SYG: I think this was a good discussion.

@@ -30,7 +30,7 @@ IS:  Just to remind. Anybody can add them via the reflector, at any time. We agr
 
 ### Public Relations
 
-IS: Allens remark about 20 years of ECMAScript approval in Ecma is well-taken.  This is always a good opportunity for PR.  You may wish to organize some conference/press conference given the opportunities presented by the size of the community. (Presented as an idea.)
+IS: Allens remark about 20 years of ECMAScript approval in Ecma is well-taken. This is always a good opportunity for PR. You may wish to organize some conference/press conference given the opportunities presented by the size of the community. (Presented as an idea.)
 
 IS: Would like to bring attention to the work that this committee is doing, and the community built around the language and specification.
 
@@ -203,11 +203,11 @@ BT: We should do it weekly until we have a document ready. Coordinate it via the
 - That group will work with Ecma to ensure that we're all on the same page.
 
 
-## 11. ECMA404 (JSON) ISO fast-track. Review/approve disposition of comments responses and 404 2nd edition draft.
+## 11. ECMA-404 (JSON) ISO fast-track. Review/approve disposition of comments responses and 404 2nd edition draft.
 
 Documents TC39-2017-016, TC39-2017-017 (pdfs of documents available in Reflector repository).
 
-AWB: Questions on the fast track of Ecma404 (JSON specification).
+AWB: Questions on the fast track of ECMA-404 (JSON specification).
 
 AWB: Seeking consent that we don't want to review everything that comes out of Ecma 404.
 
@@ -987,7 +987,3 @@ RW: (shared experience with Observable "zealotry" in the case of Generic Sensor)
 #### Conclusion/Resolution
 
 - No Stage 2
-
-
-
-

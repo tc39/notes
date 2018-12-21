@@ -318,7 +318,7 @@ AWB: We had this conversation 5 years ago. Things have evolved. Maybe adobe stil
 
 BE: It can be withdrawn without breaking other standards.
 
-IS: We approved ECMA404 before we had the RF agreement. Should we start an opt-out period for ECMA404?
+IS: We approved ECMA-404 before we had the RF agreement. Should we start an opt-out period for ECMA-404?
 
 
 #### Conclusion/Resolution
@@ -326,9 +326,9 @@ IS: We approved ECMA404 before we had the RF agreement. Should we start an opt-o
 - István to follow up with Adobe and the CC to see if they would object to withdrawing E4X
 
 
-## ECMA404 RF?
+## ECMA-404 RF?
 
-IS: We approved ECMA404 before we had the RF agreement. Should we start an opt-out period for ECMA404?
+IS: We approved ECMA-404 before we had the RF agreement. Should we start an opt-out period for ECMA-404?
 
 AWB: Can we retroactively make ECMA-404 Royalty Free?
 
@@ -503,22 +503,22 @@ Object.defineProperty(Person.prototype, 'name',
 
 MM: When defineProperty runs, does Person.prototype have an undecorated name property?  
 
-YK: No.  The thing that you pass to the decorator looks like a descriptor, but is just an object.  
+YK: No. The thing that you pass to the decorator looks like a descriptor, but is just an object. 
 
-AWB: We need to think about what the built in ones should be.  
+AWB: We need to think about what the built in ones should be. 
 
-YK: Things that update descriptors seem like good candidates.  
+YK: Things that update descriptors seem like good candidates. 
 
 http://bit.ly/ember-js-classes  
 
-Examples of things that Ember might do with decorators.  
+Examples of things that Ember might do with decorators. 
 
 YK:  Shows example of more complex decorator usage:  
 
 ```js 
 class Person {   
-    firstName = “…”;   
-    lastName = “…”;   
+    firstName = "...";   
+    lastName = "...";   
     @concat('firstName', 'lastName', ' ') fullName;   
     @concat('lastName', 'firstName', ', ') formalName; } 
 ```  
@@ -527,7 +527,7 @@ MM:  Can create a read-only getter from a declared property
 
 AWB:  Do you have a more plausible use case for more complex decorators  
 
-YK:  (Shows ember gist.  Shows @service which does dependency injection.)  
+YK:  (Shows ember gist. Shows @service which does dependency injection.)  
 
 AWB:  Why would I use a decorator instead of a property initializer?  
 
@@ -537,7 +537,7 @@ JM:  Decorators run once per class
 
 AWB:  This is an own property?  
 
-YK:  The decorator would attach a more complex getter.  @service does a lazy lookup.  
+YK:  The decorator would attach a more complex getter. @service does a lazy lookup. 
 
 DD:  When you return a descriptor does it return an own property?  
 
@@ -545,55 +545,55 @@ YK:  ?
 
 MM:  Since this is integrated into TypeScript, how does TypeScript type the decorator method?  
 
-YK:  Another way to ask question is I would prefer a more immutable API so that I know what the type is.  Decorators themselves are typed, 
-but they can mutate.  
+YK:  Another way to ask question is I would prefer a more immutable API so that I know what the type is. Decorators themselves are typed, 
+but they can mutate. 
 
-MM:  It's a functional transformation of a descriptor.  There's nothing being mutated on.  
+MM:  It's a functional transformation of a descriptor. There's nothing being mutated on. 
 
-ARB:  This is reified as a first class value.  How can you track that without a full blown dependent type system?  
+ARB:  This is reified as a first class value. How can you track that without a full blown dependent type system?  
 
-YK:  (Shows examples of decorators with no mutating effect).  
+YK:  (Shows examples of decorators with no mutating effect). 
 
-DH:  ARB is saying that the set of properties that end of being in the class ends up depending on what happens with these decorators.  
-Mutation is a red herring. The issue is computably determining the class type.  You're saying that there is an expressive subset of this 
-system for which this is not a problem.  
+DH:  ARB is saying that the set of properties that end of being in the class ends up depending on what happens with these decorators. 
+Mutation is a red herring. The issue is computably determining the class type. You're saying that there is an expressive subset of this 
+system for which this is not a problem. 
 
-ARB:  To know what to reject you'd have to know the returned value at type-check time.  
+ARB:  To know what to reject you'd have to know the returned value at type-check time. 
 
-JM:  ARB is saying that the value is dependent on runtime.  Enumerable true and enumerable false produce very different things.  
+JM:  ARB is saying that the value is dependent on runtime. Enumerable true and enumerable false produce very different things. 
 
-ARB:  Hard to forsee the implications, because annotations will want to spread.  
+ARB:  Hard to forsee the implications, because annotations will want to spread. 
 
-YK:  We should consider them on a case-by-case basis, but I am conservative.  I'm not proposing targeting general declarations.  
-Use case is that with class syntax we aren't able to do things we could with object literals.  
+YK:  We should consider them on a case-by-case basis, but I am conservative. I'm not proposing targeting general declarations. 
+Use case is that with class syntax we aren't able to do things we could with object literals. 
 
 MM:  Are you proposing that you can decorate fields in an object literal?  
 
-YK:  I don't consider it fundamental but there is a symmetry concern.  
+YK:  I don't consider it fundamental but there is a symmetry concern. 
 
-ARB:  Still missing the big picture.  Don't you ever want to decorate parameters and other things?  
+ARB:  Still missing the big picture. Don't you ever want to decorate parameters and other things?  
 
-YK:  These are things we might want to consider.  
+YK:  These are things we might want to consider. 
 
-ARB:  Take modules, it seems like people will want to do some metaprogramming by annotating imports.  
+ARB:  Take modules, it seems like people will want to do some metaprogramming by annotating imports. 
 
-YK:  Proposal is addressing an expressive hole introduced by ES6.  There is not a way  to do higher order things with methods.  
+YK:  Proposal is addressing an expressive hole introduced by ES6. There is not a way  to do higher order things with methods. 
 
-DH:  We're targeting the class syntax but we need to focus on the whole and not the part. The broad category is metaprogramming.  What is our model?  
-In Scheme, it's static.  In Ruby, it's dynamic.  We should do a zoom out and look at what metaprogramming might mean for the language.  
+DH:  We're targeting the class syntax but we need to focus on the whole and not the part. The broad category is metaprogramming. What is our model?  
+In Scheme, it's static. In Ruby, it's dynamic. We should do a zoom out and look at what metaprogramming might mean for the language. 
 
 ARB:  (Objects to saying that JS implies dynamic metaprogramming.)  
 
-DH:  (Mentions objection to staging.)  With a first class class system, a lot of meta- programming stuff you just do at runtime.  If 
-you've gone down the path of dynamic  metaprogramming, then it's probably best to keep going that way.  ARB:  I think class expressions are a 
-red herring.  
+DH:  (Mentions objection to staging.)  With a first class class system, a lot of meta- programming stuff you just do at runtime. If 
+you've gone down the path of dynamic  metaprogramming, then it's probably best to keep going that way. ARB:  I think class expressions are a 
+red herring. 
 
-DH:  I just don't believe that we should do staging.  
+DH:  I just don't believe that we should do staging. 
 
 BE: staging not seriously proposed but noted as possible accidental outcome of generalizing decorators across first- and second-class parts of ES6.
 We want a principled approach that's not just for classes.
 
-AWB:  Say you had a decorator that was enumerable or non-enumerable...  
+AWB:  Say you had a decorator that was enumerable or non-enumerable... 
 
 YK:  Users will want to apply descriptor decorators to object literals as well.
 
@@ -610,7 +610,7 @@ DH: Need a more general system for "twiddling" knobs.
 ARB:  My question is how does this generalize?
 
 DH: Current instinct is that first class things (classes, object literals) are easy to apply this to, but for second class things
-we'll fall off a complexity cliff.  Agree that we should look at the bigger picture.
+we'll fall off a complexity cliff. Agree that we should look at the bigger picture.
 
 ARB:  readonly is an example that we might want to have a more direct way.
 
@@ -618,7 +618,7 @@ YK:  If readonly were built-in and you imported it, then the engine could do sma
 
 DH: Suggests stage 1, but audit the space which may lead to changes.
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - Stage 1 acceptance
   - YK will audit the space.
@@ -633,6 +633,6 @@ LB: [presents slides](https://github.com/leebyron/ecmascript-reverse-iterable/bl
 
 [lots of discussion about how to extend iterators/iterables]
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - More work to be done in breakouts to figure out path forward for iteration.

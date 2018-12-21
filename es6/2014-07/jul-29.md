@@ -97,7 +97,7 @@ MM: (filing bug to make language more specific to avoid memory safety violations
 
 AWB: There was never a concern about violating memory safety because we don't define memory safety
 
-WH: I tried to formalize it in ES3 but it was too much trouble.  I wanted  to state that the sort always produces a permutation, but that doesn't  apply to sorting oddball input objects containing things such as holes with prototype properties showing through, read-only properties,  getters/setters, proxies, ....  Can't write "sort doesn't violate memory  safety" without formalizing what memory safety is.
+WH: I tried to formalize it in ES3 but it was too much trouble. I wanted  to state that the sort always produces a permutation, but that doesn't  apply to sorting oddball input objects containing things such as holes with prototype properties showing through, read-only properties,  getters/setters, proxies, .... Can't write "sort doesn't violate memory  safety" without formalizing what memory safety is.
 
 MM: Will write concrete suggestion for handling and submit as part of bug
 
@@ -189,7 +189,7 @@ https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-07/es6-unscopables.p
 
 ```js
 Array.prototype[Symbol.unscopables] = {
-  ...  
+  ... 
 };
 ```
 (with null prototype)
@@ -777,6 +777,3 @@ BT: MS has been using a node runner internally, I've pulled out the useful piece
 #### Conclusion/Resolution
 
 - announcement effort
-
-
-

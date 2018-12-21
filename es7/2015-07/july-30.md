@@ -9,7 +9,7 @@ Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferra
 
 (Brian Terlson, Mike Pennisi)
 
-[Slides](https://jugglinmike.github.io/presentations/2015/tc39-Test262-update)
+- [slides](https://jugglinmike.github.io/presentations/2015/tc39-Test262-update)
 
 
 MP: Introduction
@@ -171,7 +171,7 @@ Discussion re: time needed for Brian to integrate the stage 4 features.
 
 (Brian Terlson)
 
-[Slides](async-function-updates.pdf)
+- [slides](async-function-updates.pdf)
 
 BT: 
     
@@ -368,7 +368,7 @@ MM: Agreed that the hazard to aync functions is smaller than that to Promises. T
 DD: no cost to go back to the event loop
     
     
-YK: not true.  
+YK: not true. 
 - hot code is always awaiting some promise, could be optimized to consider inline-able. Never true if you always have to go back to the queue
 
 MM: If an implementation can optimize, which is very hard and hazardous
@@ -692,7 +692,7 @@ BT: Those that know execution model should review this.
 
 https://github.com/zenparsing/es-observable/tree/zenlike
 
-[Slides](https://docs.google.com/file/d/1uEVcOgJIMsHjN1vypKKyfmDRg_bz5cKXpo0v4Nc0q8NfqKolBeSDHIj8z9GS8A4EiMpZ8QQ3l87Q_wF3/edit?usp=docslist_api)
+- [slides](https://docs.google.com/file/d/1uEVcOgJIMsHjN1vypKKyfmDRg_bz5cKXpo0v4Nc0q8NfqKolBeSDHIj8z9GS8A4EiMpZ8QQ3l87Q_wF3/edit?usp=docslist_api)
 
 JH: 
     
@@ -855,15 +855,3 @@ MM: further semantics need to be explored
 - Stage 2 acceptance
 - Reviewers
   - Andreas Rossberg
-
-
-
-
-
-
-
-
-
-
-
-

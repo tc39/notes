@@ -78,7 +78,7 @@ SYG: No, it will be an optimization for tools like minifiers.
 
 SYG: Not looking to implement any new concepts to the language itself.
 
-SYG: …continuing presentation… ("What Tree Grammar?" slide)
+SYG: ...continuing presentation... ("What Tree Grammar?" slide)
 
 BN: These ASTs seem like a better starting point than the formal grammar
 
@@ -175,7 +175,7 @@ MP: And that's a bad experience for programmers too.
 
 BFS: ASTs can have a reduced number of early errors compared to source code.
 
-SYG: …continuing presentation… ("How to Encode Set of Binding Names?" slide)
+SYG: ...continuing presentation... ("How to Encode Set of Binding Names?" slide)
 
 WH: What if you're inside a `with` statement? Then you may not know which `x` you're referring to.
 
@@ -223,7 +223,7 @@ MS: Concerned about effort to validate the AST, to protect the engine against ma
 
 SYG: I'm going to work with all the engines to design the binary AST format. Details have not been designed yet.
 
-SYG: …continuing presentation… ("Versioning" slide)
+SYG: ...continuing presentation... ("Versioning" slide)
 
 JHD: Would there be any possibility of providing an AST fallback? Different ASTs for browsers that understand different formats?
 
@@ -315,7 +315,7 @@ MS: This proposal is not "compartmentalized" in the sense of CM's vision talk. W
 
 DTL: Lots of websites have things like Facebook like buttons; even if just large applications like that upgraded, that would benefit all users. The part of this proposal that's about standardizing the AST will definitely benefit developers. About browsers working in lockstep, this is a problem we already have: if a browser doesn't support generators, it doesn't support generators. AST vs text file doesn't change anything to this problem.
 
-MS: You can provide a polyfill for source; you can't do that in AST.  By contrast, you could send transpiled source code normally.
+MS: You can provide a polyfill for source; you can't do that in AST. By contrast, you could send transpiled source code normally.
 
 DTL: It's not clear what you mean; are you talking about shipping Babel output? Why would this not be possible for ASTs?
 

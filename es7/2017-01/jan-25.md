@@ -9,7 +9,7 @@ Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terls
 
 AWB: We are having trouble getting the minutes to approve
 
-IS: I prepared the TC39 November meeting minutes (16/052) before the 2016 December GA meeting, but we had technical issues with the hosting. The old Ecma private website is down and we have to replace it. That will take at least two months. In the meantime we have put all the data on a NAS storage on the office network and that has been released to all Ecma members (this is the Pydio system on a Netgear box).  We have also a parallel implementation on a Synology NAS that will be released soon. For approval, I could upload the minutes to GitHub and send them by email.
+IS: I prepared the TC39 November meeting minutes (16/052) before the 2016 December GA meeting, but we had technical issues with the hosting. The old Ecma private website is down and we have to replace it. That will take at least two months. In the meantime we have put all the data on a NAS storage on the office network and that has been released to all Ecma members (this is the Pydio system on a Netgear box). We have also a parallel implementation on a Synology NAS that will be released soon. For approval, I could upload the minutes to GitHub and send them by email.
 
 AWB: If you email me the document, I can make sure everyone here can see it.
 IS: This has been done immediately after the completion of the conference call.
@@ -50,7 +50,7 @@ IS: Absolutely. ECMA is very flexible on this. If you suggest three, I am sure I
 
 AWB: The thought I am having here is perhaps we had a chair and two vice chairs that collectively formed a management team but shared the burden of doing that work and, running the meetings, and managing the agenda and other items that came up maybe it would be easier to get three people than it would be to get one.
 
-IS: Absolutely. You are free to set up any sort of management structure. We are very flexible on that. For instance I noticed that people are extremely bored about this subject in the TC39 meeting. So It is possible that e.g.  you install a separate small group just for "procedures," on I don't know, "strategy planning". Such groups then could report back to the full TC39 committee who could listen to the recommendations and make decisions. You have a lot of freedom in shaping how you want to do the work in TC39. It is really not our goal from the ECMA point of view to bind you in any way. So this is really just think about--we don't have too long time to do this. Our temporary solution with Allen (which I think is good) unfortunately cannot last forever, because he has other priorities . We want to get rid of this issue as quickly as possible.
+IS: Absolutely. You are free to set up any sort of management structure. We are very flexible on that. For instance I noticed that people are extremely bored about this subject in the TC39 meeting. So It is possible that e.g. you install a separate small group just for "procedures," on I don't know, "strategy planning". Such groups then could report back to the full TC39 committee who could listen to the recommendations and make decisions. You have a lot of freedom in shaping how you want to do the work in TC39. It is really not our goal from the ECMA point of view to bind you in any way. So this is really just think about--we don't have too long time to do this. Our temporary solution with Allen (which I think is good) unfortunately cannot last forever, because he has other priorities . We want to get rid of this issue as quickly as possible.
 
 AWB: I'll do the next meeting in Portland because I do not need to travel. From my perspective it would be ideal if we could have stuff resolved so maybe by the May meeting we have a different structure in place. At the latest the July meeting. I wondering, going to throw out something here. The question is how are we going to make progress on this decision?
 
@@ -418,11 +418,11 @@ BF: are you against changing the grammar?
 
 JLZ: no
 
-AWB: For a ecma262 perspective, it's a false dichotmomy to say we have scripts and modules. It's higher than that. We have ESScripts, ESModules and CJS modules. Those are all source files that have distinct syntax and semantics
+AWB: For a ECMA-262 perspective, it's a false dichotmomy to say we have scripts and modules. It's higher than that. We have ESScripts, ESModules and CJS modules. Those are all source files that have distinct syntax and semantics
 
 BF: I would agree
 
-AWB: Distinguishing all three is useful to a tool. It would be wrong for ecma262 to only address one of those vectors, the difference between scripts and modules. I haven't heard any discussion to how to tackle the broader issue other than the fact that external metadata doesn't. Any solution that is strictly saying this is about distinguishing for the purposes of node distinguishing modules from scripts is not a complete solution and we shouldn't adopt it because that. I agree with Dave that it would be perfectly fine for node from a standards perspective to say is the way We distinguish for modules is import/export boilerplate. I don't think that will cause issues cross-platform. I don't think we should be addressing this here. It's implementation or platform level concern.
+AWB: Distinguishing all three is useful to a tool. It would be wrong for ECMA-262 to only address one of those vectors, the difference between scripts and modules. I haven't heard any discussion to how to tackle the broader issue other than the fact that external metadata doesn't. Any solution that is strictly saying this is about distinguishing for the purposes of node distinguishing modules from scripts is not a complete solution and we shouldn't adopt it because that. I agree with Dave that it would be perfectly fine for node from a standards perspective to say is the way We distinguish for modules is import/export boilerplate. I don't think that will cause issues cross-platform. I don't think we should be addressing this here. It's implementation or platform level concern.
 
 BM: I'm guessing you're still against
 
@@ -500,7 +500,7 @@ DH: It's just not our call
 
 AWB: It's not even... we don't deal with files.
 
-BF: I will say if time goes on eventually there will be a true cutoff and we ship something and that will be it. Whatever we do, we do need it to be the same on the web. WE can't have the web not require something that is required in node.  I can have myscript.php
+BF: I will say if time goes on eventually there will be a true cutoff and we ship something and that will be it. Whatever we do, we do need it to be the same on the web. WE can't have the web not require something that is required in node. I can have myscript.php
 
 AK: The web's not going to require file extensions
 
@@ -1114,7 +1114,7 @@ WH: We had the same issue with browsers showing the arguments to functions as a 
 
 AWB: I know, for strict mode functions in particular we tried to prevent stack walking to observe the callers. 
 
-MM: And we were able to get rid of it due to the (strict-mode) opt-in.  If I thought we could simply remove the stack trace information, not codify it, but get all browsers to remove it. If I thought that was possible this proposal would be very different. Since all browsers currently implement it, I'm not going to try to argue for that. I'm looking for the least dangerous thing that is compatible with what the web currently does.
+MM: And we were able to get rid of it due to the (strict-mode) opt-in. If I thought we could simply remove the stack trace information, not codify it, but get all browsers to remove it. If I thought that was possible this proposal would be very different. Since all browsers currently implement it, I'm not going to try to argue for that. I'm looking for the least dangerous thing that is compatible with what the web currently does.
 
 JHD: There is huge ecosystems relying on stack traces, we can't ban these.
 
@@ -1210,7 +1210,7 @@ AK: I don't think there is normative text in the spec to describe what a browser
 
 AWB: When I wrote this language I was not thinking about piecemeal application. It's plausible to interpret it, but that isn't what I was thinking about.
 
-DE: I think the discussion would probably be helped by more concrete current nonannex-b implementations. We know that SES is one non-Annex B environment; other possibilities could help us refine our ideas for what we should have in spec text. The other thing I want to say (shameless plug) I have a PR for ecma 402 and I have inline annex b stuff and I have different formatting for it. I would be interested in anyone's review because apparently there are a lot of feelings about what annex b is...  https://github.com/tc39/ecma402/pull/84/
+DE: I think the discussion would probably be helped by more concrete current nonannex-b implementations. We know that SES is one non-Annex B environment; other possibilities could help us refine our ideas for what we should have in spec text. The other thing I want to say (shameless plug) I have a PR for ecma 402 and I have inline annex b stuff and I have different formatting for it. I would be interested in anyone's review because apparently there are a lot of feelings about what annex b is... https://github.com/tc39/ecma402/pull/84/
 
 MM: I would like to review it
 
@@ -1444,7 +1444,7 @@ JHD: My assumption was that like any other object, implementations can extend th
 
 AWB: Why is it important that these are frozen? They are a snapshot of data you have now, let people hack on it.
 
-MM: if you generate two error objects which have a common stack at some state, basically a common caller, and we have a call tree and we have joins with a common caller. You don't want to obligate them to be made separate. But you don't want the sharing to be a communication channel.  It's observable that they are sharing but two entities that otherwise can't communicate, with common access, can't use them to communicate with each other. When we haven't specified that something is frozen, like getOwnPropertyDescriptor, that's a great example. I desperately wish we had specced those as frozen. We now obligate the implementation to generate a fresh one every time.
+MM: if you generate two error objects which have a common stack at some state, basically a common caller, and we have a call tree and we have joins with a common caller. You don't want to obligate them to be made separate. But you don't want the sharing to be a communication channel. It's observable that they are sharing but two entities that otherwise can't communicate, with common access, can't use them to communicate with each other. When we haven't specified that something is frozen, like getOwnPropertyDescriptor, that's a great example. I desperately wish we had specced those as frozen. We now obligate the implementation to generate a fresh one every time.
 
 AK: Why not?
 

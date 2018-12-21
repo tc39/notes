@@ -217,7 +217,7 @@ AWB: issues:
 - Make it illegal to shadow a global property would mean future global properties are breaking changes
 
 Proposal:
-Runtime error when instantiating a script if a lexical declaration shadows a non-configurable property of global object.     
+Runtime error when instantiating a script if a lexical declaration shadows a non-configurable property of global object. 
 
 WH: Any new non-configurable global properties would be a breaking change
 
@@ -310,7 +310,7 @@ AWB: Anytime there are local scripts with top level var and let bindings, you ha
 
 #### Conclusion/Resolution
 
-- Error when instantiating a script if a lexical declaration shadows an own, non-configurable property of global object.     
+- Error when instantiating a script if a lexical declaration shadows an own, non-configurable property of global object. 
 
 
 
@@ -335,10 +335,10 @@ AWB: Spec text that breaks Zepto:
 ```
 4. If O is an exotic Array object, then
    a. Let C be Get(O, "constructor").
-   b. ReturnIfAbrupt(C).   
+   b. ReturnIfAbrupt(C). 
    c. If IsConstructor(C) is true, then     
-i.  Let thisRealm be the running execution context’s Realm.     
-ii.  If SameValue(thisRealm, GetFunctionRealm(C)) is true, then     
+i. Let thisRealm be the running execution context's Realm. 
+ii. If SameValue(thisRealm, GetFunctionRealm(C)) is true, then     
 iii. Let A be the result of calling the [[Construct]] internal method of C with argument (0). 
 5. If A is undefined, then   
 a. Let A be ArrayCreate(0).
@@ -358,8 +358,8 @@ Zepto Proposed Fix
 6. If IsConstructor(C) is true, then
 a. Let thisRealm be the running execution context's Realm. 
 b. If SameValue(thisRealm, GetFunctionRealm(C)) is true, then 
-i.   Let species be Get(C, @@species);
-ii.  ReturnIfAbrupt(species)
+i. Let species be Get(C, @@species);
+ii. ReturnIfAbrupt(species)
 iii. If IsConstructor(species) is true, then 
 1. Let A be the resu;t of calling the [[Construct]] internal method of species with argument O. 
 7. If A is undefined, then   
@@ -904,9 +904,4 @@ BE: if we made a mistake in not specifying order for Object.defineProperties or 
 
 #### Conclusion/Resolution
 
-Continue tomorrow. 
-
-
-
-
-
+Continue tomorrow.

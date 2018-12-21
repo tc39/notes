@@ -215,7 +215,7 @@ DH: Structs, always. These examples are just to show what you can do with them
 
 MM: the idea that these things inherit from the struct-making function's prototype...was that always there?
 
-BE: I'd like to intervene. We're mixing things up still. Can I be blunt? The thing that set mark off was the "I don't have a strong opinion about that".  If it's too late for ES6, it's ES7. We need details and there's sentiment in favor of stratification.
+BE: I'd like to intervene. We're mixing things up still. Can I be blunt? The thing that set mark off was the "I don't have a strong opinion about that". If it's too late for ES6, it's ES7. We need details and there's sentiment in favor of stratification.
 
 ...Champions should have a strong opinion about these aspects
 

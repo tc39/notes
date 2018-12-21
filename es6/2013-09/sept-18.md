@@ -683,7 +683,7 @@ WH: Once every two years would be more reasonable.
 
 Andreas Rossberg
 
-[Slides](default-arguments.pdf)
+- [slides](default-arguments.pdf)
 
 
 Default Parameters/Arguments
@@ -788,7 +788,7 @@ YK: (recalling names declared in parameter scopes being rebound in the function 
 
 AWB: I can express this with one Environment Record
 
-ARB: Cannot, because of eval.  A delayed eval in the parameter list must not see bindings from the body
+ARB: Cannot, because of eval. A delayed eval in the parameter list must not see bindings from the body
 
 ```js
 
@@ -916,7 +916,7 @@ BE: We agreed on two scopes. Head and body.
 
 Dave Herman
 
-[Slides](need to commit for a link)
+- [slides](need to commit for a link)
 
 ### Generic Bundling Slide
 

@@ -70,7 +70,7 @@ ZB: minor issue, the +0 vs -0 case, we expect people to use "now" but "in 0 days
 
 AK: when we're advancing to stage 3, I assume you've already got internal approval?
 
-ZB: yes, it was approved by ecma402
+ZB: yes, it was approved by ECMA-402
 
 reviewers thumbs up
 
@@ -358,7 +358,7 @@ WH: we'll talk later
 
 DE: similar situation with object literals. So we decided regularity/consistency is more important than creating a special case for this.
 
-DE: replacing "static private" with lexical declarations in class bodies.  DD's refactoring example (see slides). Using "function" would be confusing, if there's a different token that'd be more clear.
+DE: replacing "static private" with lexical declarations in class bodies. DD's refactoring example (see slides). Using "function" would be confusing, if there's a different token that'd be more clear.
 
 WH: could remove `function` from that example, use `local finalizeFactoryCreated(..)`
 
@@ -490,7 +490,7 @@ AWB: yes
 
 MM: what was the frequency of use of those mechanisms?
 
-AWB: it evolved over time, originally class variables were most frequently. As people discovered that class instance variables existed, they began to be used in more complex abstractions. This is somewhat different in smalltalk because none of these have the privacy aspects of "private" and how visibility is shared via inheritance.  [Update, Smalltalk class instance variables are essentially "protected", while class variables are public.
+AWB: it evolved over time, originally class variables were most frequently. As people discovered that class instance variables existed, they began to be used in more complex abstractions. This is somewhat different in smalltalk because none of these have the privacy aspects of "private" and how visibility is shared via inheritance. [Update, Smalltalk class instance variables are essentially "protected", while class variables are public.
 
 AWB: in terms of public, 
 
@@ -726,7 +726,7 @@ RBN: yeah, we'd have to consider an option for return.. ASI issues to consider
 
 WH: `a + return / c` . the slash is both a division symbol `a + (return) / c`, or it returns a regular expression starting with `/ c`
 
-RBN: yeah, one of the purposes of this discussion is, is this a direction ecma262 wants to go for expressions, if it is, other than throw, none of these are proposed for any stage right now. Concerns like whether return requires an expression should be had. For cases like the throw operator, does it make sense to have throw in light of do, or have do in light of all these statements possibly becoming expressions, how do all these decisions correlate, want to hear from the committee
+RBN: yeah, one of the purposes of this discussion is, is this a direction ECMA-262 wants to go for expressions, if it is, other than throw, none of these are proposed for any stage right now. Concerns like whether return requires an expression should be had. For cases like the throw operator, does it make sense to have throw in light of do, or have do in light of all these statements possibly becoming expressions, how do all these decisions correlate, want to hear from the committee
 
 YK: I'm strongly interested in this direction. Sometimes people object: don't do this piecemeal, why do X with out also doing Y. Is there any intuitive understanding of the relationship between expressions and staements today? Any grammatical reason to not do it is a good one. I don't think there's a current strong intuition as to whether yo uvan treat any given things as an expression or a statement. I wouldn't feel bad if we went down the path and stopped halfway
 
@@ -792,7 +792,7 @@ MM: noticing that if for/switch/labeled-statements comes to have a value, then `
 
 DH: .. I proposed this 8 years ago..
 
-WH: my concern is how complicated it makes the language. `throw` expressions feel natural and are useful and grammatically unproblematic.  `debugger` seems harmless. I see the use case of embedding statements inside expressions. However, we can do all of those with the `do`-block-expression proposal. The others bother me because they make the language more complicated: they cannot use the same grammar as statements for a variety of reasons. I don't want to create a second statement grammar just for statements inside expressions. If you need statements inside expressions, just use do-expressions.
+WH: my concern is how complicated it makes the language. `throw` expressions feel natural and are useful and grammatically unproblematic. `debugger` seems harmless. I see the use case of embedding statements inside expressions. However, we can do all of those with the `do`-block-expression proposal. The others bother me because they make the language more complicated: they cannot use the same grammar as statements for a variety of reasons. I don't want to create a second statement grammar just for statements inside expressions. If you need statements inside expressions, just use do-expressions.
 
 SG: you ask a question about sequencing, we're already starting with throw-expressions, I agree tha the other arbupt .. but in the control-flow bucket, those seem motivated to me.. ternary operator. I'd start with throw, then if/switch/try, then either iteration or the other abrupt completions, or just stop there. I tihnk if/switch/try would provide enough value, and give you some of the infrastructure to solve the other ones
 
@@ -918,5 +918,4 @@ YK: I don't think it's malice, it just makes it hard to include the non-implemen
 
 DD, remotely, after the fact: I contest that characterization and believe it's based on a misperception. The priority of constituencies puts users over web developers over implementers.
 
-RJE: ok, we've run down the clock. Please check the Doodle poll for the London meeting, the host needs to get numbers for the room. Thanks to Sam Goto and Google for a great job hosting the meeting, the new-comers’ get-together, and the Wednesday dinner.
-
+RJE: ok, we've run down the clock. Please check the Doodle poll for the London meeting, the host needs to get numbers for the room. Thanks to Sam Goto and Google for a great job hosting the meeting, the new-comers' get-together, and the Wednesday dinner.

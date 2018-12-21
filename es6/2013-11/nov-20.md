@@ -659,6 +659,3 @@ AWB: In ES6 we only have one class of priority which is the priority of Promises
 - ES6 spec needs to spec that Promises are serviced in a FIFO queue
 - Other non ES6 tasks might be interleaved arbitrarily
 - Interleaving of the Promise queue by other non ES6 operations
-
-
-

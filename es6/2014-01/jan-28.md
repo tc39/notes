@@ -36,7 +36,7 @@ Loaders and Realms are integrated into the spec draft. Lots of review needed.
 
 EA: Standard modules were deferred at last F2F
 
-LH:  We agreed on globally reachable names for all pre-modules APIs last September.  New names for module loaders APIs need similar design.
+LH:  We agreed on globally reachable names for all pre-modules APIs last September. New names for module loaders APIs need similar design.
 
 AWB: Loader and Realm are speced as %Loader% and %Realm% since we haven't talked about their public names.
 
@@ -89,7 +89,7 @@ Postponed until tomorrow when Raf is here.
 
 ## Process for ratifying ES6?
 
-LH:  We have now effectively met the "feature complete draft" requirement we were targetting.  Are there any process requirements this group is placing on progressing the spec to ratifica
+LH:  We have now effectively met the "feature complete draft" requirement we were targetting. Are there any process requirements this group is placing on progressing the spec to ratifica
 
 BE: Have nothing, same as ES5.
 (Discussion about whether we can be strict)
@@ -244,7 +244,7 @@ Keep as spec'ed.
 
 ## Test262
 
-BT: Up on GitHub. https://github.com/tc39/Test262. Conversion from Mercurial done by Brandon Benvie.
+BT: Up on GitHub. https://github.com/tc39/test262. Conversion from Mercurial done by Brandon Benvie.
 
 BT: AttendedTest the web forward. Got a lot of PR (22).
 
@@ -276,7 +276,7 @@ LH: concede
 
 BN: Status quo causes more errors but errors encourage parenthesization, and enables `yield 1 + 2` to yield the value 3
 
-LH: For the async use case, important to have high precendence, but willing to concede that `yield` should remain low precenedence due to iterators use cases.  Async use cases could have new "await" syntax with high precendence.
+LH: For the async use case, important to have high precendence, but willing to concede that `yield` should remain low precenedence due to iterators use cases. Async use cases could have new "await" syntax with high precendence.
 
 YK: task.js requires (yield a) + (yield b) paren style
 

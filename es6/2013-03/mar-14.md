@@ -86,7 +86,7 @@ observe.observePath(foo, "bar.baz");
 
 WH: Please explain
 
-?: Path observers observe mutations anywhere on an object path a.b.c.d.  Without weak refs these will leak a if d is still alive but a wouldn't otherwise be.
+?: Path observers observe mutations anywhere on an object path a.b.c.d. Without weak refs these will leak a if d is still alive but a wouldn't otherwise be.
 
 
 (Slide 5)
@@ -306,7 +306,7 @@ See: http://wiki.ecmascript.org/lib/exe/fetch.php?id=meetings%3Ameeting_mar_12_2
 
 (Copied from PDF)
 
-Prior to the Sixth Edition, the ECMAScript specification did not define the occurrence of a _FunctionDeclaration_ as an element of a Block statement’s _StatementList_. However, support for that form of _FunctionDeclaration_ was an allowable extension and most browser-hosted ECMAScript implementations permitted them. Unfortunately, the semantics of such declarations differ among those implementations. Because of these semantic differences, existing web ECMAScript code that uses Block level function declarations is only portable among browser implementation if the usage only depends upon the semantic intersection of all of the browser implementations for such declarations. The following are the use cases that fall within that intersection semantics:
+Prior to the Sixth Edition, the ECMAScript specification did not define the occurrence of a _FunctionDeclaration_ as an element of a Block statement's _StatementList_. However, support for that form of _FunctionDeclaration_ was an allowable extension and most browser-hosted ECMAScript implementations permitted them. Unfortunately, the semantics of such declarations differ among those implementations. Because of these semantic differences, existing web ECMAScript code that uses Block level function declarations is only portable among browser implementation if the usage only depends upon the semantic intersection of all of the browser implementations for such declarations. The following are the use cases that fall within that intersection semantics:
 
 1. A function is declared and only reference within a single block:
   - A function declaration with the name f is declared exactly once within the function code of an enclosing function g and that declaration is nested within a Block.
@@ -319,7 +319,7 @@ Prior to the Sixth Edition, the ECMAScript specification did not define the occu
   - References to f may occur within the _StatementList_ of the Block containing the declaration of f.
   - References to f occur within the function code of g that lexically follows the Block containing the declaration of f.
 
-3.  A function is declared and possibly used within a single Block but also referenced by an inner function definition that is not contained within that same Block.
+3. A function is declared and possibly used within a single Block but also referenced by an inner function definition that is not contained within that same Block.
   - A function declaration with the name f is declared exactly once within the function code of an enclosing function g and that declaration is nested within a Block.
   - No other declaration of f that is not a var declaration occurs within the function code of g
   - References to f occur within another function h that is nested within g and no other declaration of f shadows the references to f from within h.

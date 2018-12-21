@@ -166,7 +166,7 @@ MM: only becomes observably different in the future were it could be reified
 
 YK: I agree. My proposal doesn't make it a weakmap, but from a programmer perspective, you could see it that way
 
-AWB: difference: a mirror of private state needs to be presented to decorator, mirror is presented at class definition time not instantiation time…
+AWB: difference: a mirror of private state needs to be presented to decorator, mirror is presented at class definition time not instantiation time...
 
 YK: there's one difference, it's a *read only* WeakMap - you aren't allowed to set the fields
 
@@ -287,7 +287,7 @@ YK: Not actually proposing this.
 
 MM: Happy with this at stage 1, no controversy.
 
-YK: Important change: If expression, thunk on it.  (thunking in lieu of quoting)
+YK: Important change: If expression, thunk on it. (thunking in lieu of quoting)
 
 AWB: is there specifically a name parameter that is that thunk?
 

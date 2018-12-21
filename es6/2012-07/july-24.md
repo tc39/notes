@@ -61,7 +61,7 @@ act as a tail call.
 
 call, apply, accessors, quasi (interpolation), proxy calls
 
-  We still need to specify the tail positions in the syntax.  There's
+  We still need to specify the tail positions in the syntax. There's
 a start by DH on
 http://wiki.ecmascript.org/doku.php?id=harmony:proper_tail_calls which uses
 an attribute grammar, but the current spec draft leaves this blank.
@@ -448,7 +448,7 @@ foo()    // returns 5 by current draft
 ```
 
 Issue:  is this desirable?  dherman and others think an explicit undefined
-should trigger use of default value.   use case in support
+should trigger use of default value. use case in support
 
 ```js
    function setLevel(newLevel=0) {light.intensity = newLevel}

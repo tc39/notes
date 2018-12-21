@@ -1,6 +1,6 @@
 # May 24, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (ARE), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW), Tom Dale (TDE), István Sebestyén (IS), Lin Clark (LCK), Vladan Djeric (VDC)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (AKI), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW), Tom Dale (TDE), István Sebestyén (IS), Lin Clark (LCK), Vladan Djeric (VDC)
 
 Remote: 
 Valerie Young (VYG), Maggie Pint (MPT), Ben Newman (BN), Brendan Eich (BE), Dean Tribble (DT), Robert Pamely (RPY), David Turissini (DTI), Felipe Balbontin (FBN), Pedram Emrouznejad (PED), Tim McClure (TME), Bradley Farias (BFS), Jason Williams (JWS), Trevor Bliss (TBS), Robin Ricard (RRD)
@@ -30,7 +30,7 @@ SGO: This represents work from Rick, Dan, Leo, and myself. We've converged on a 
 
 SGO: The first feature allows underscores exclusively for readability. These Numeric Separators are Ignored at runtime, and must be between two numbers to improve reading large numbers. The second feature is numeric literals extensions, which offered to write a number, followed by an underscore and an identifier, which translates to be transformed into that number with units. This was designed to make it easier for userland numbers to be more expressive. The problem was that this conflicted with Numeric Separators—we both use the same delimiter. 
 
-SGO: The thing that follows a number is an identifier, so it literally transpiles `1234_i` to `_i(Object.freeze(string: “1234”))`, which assumes the function `_i` is defined somewhere.
+SGO: The thing that follows a number is an identifier, so it literally transpiles `1234_i` to `_i(Object.freeze(string: "1234"))`, which assumes the function `_i` is defined somewhere.
 
 RW: A couple of alternatives: note that these are listed in order of simplicity/preference. 
 
@@ -46,7 +46,7 @@ JH: Between 1 and 2, (Alt 1 is basically the same as the original, with a differ
 
 RW: I can speak to that. When you have all these names floating around in a program, there's a belief that forcing this convention, we reduce the likelihood of variable name collision. Whether or not you agree with that, 
 
-DD: Not being able to use imaginary numbers in a for loop seems pretty terrible… With `for (let i = 0; …) { 123i }` the `i` would now refer to the wrong thing.
+DD: Not being able to use imaginary numbers in a for loop seems pretty terrible... With `for (let i = 0; ...) { 123i }` the `i` would now refer to the wrong thing.
 
 JH: I hear the conflict, but I feel if that one case is an issue, we can use j or k in a for loop, if i conflicts with imaginary numbers, or just to use the more common pattern of iteration.
 
@@ -76,7 +76,7 @@ RW: But, again as Jeffrey from C++ told us, they said if they could go back and 
 
 DE: A minor point about C++, the user defining numeric literals was from a user extension, not part of the language specification.
 
-DH: Anything that requires multiple underscores is aesthetically gross, it's a non-starter for me. The second one, the single apostrophe also bothers me a lot. I love the let's call them “GDPR” separators—if you squint really hard they seem like a natural compromise between US and European separators. It's unclear how extensive the precedence is, and how far the divergence from precedence is—like the first time you see 1_000_000 might be surprising, but it's an easy thing to figure out in context.
+DH: Anything that requires multiple underscores is aesthetically gross, it's a non-starter for me. The second one, the single apostrophe also bothers me a lot. I love the let's call them "GDPR" separators—if you squint really hard they seem like a natural compromise between US and European separators. It's unclear how extensive the precedence is, and how far the divergence from precedence is—like the first time you see 1_000_000 might be surprising, but it's an easy thing to figure out in context.
 
 RW: To clarify: row 4 means this _might_ happen when we go back to the drawing board to redo this Spec. Since you said you really like the way that this works, I want to mention this as a caveat; we may not end up choosing the _, so you liking that may not ultimately 
 
@@ -108,7 +108,7 @@ RW: If you use parseInt, nothing changes—you're feeding parseInt a string, so 
 
 RJE: Sounds like we're going with Alternative 4.
 
-RW: Rather than run through pop-quizzes about “what happens when,” I suggest you look through the Spec which fully defines the semantics of Numeric Separator Literals, including behavior in the terms of Number, parseInt, parseFloat, etc. 
+RW: Rather than run through pop-quizzes about "what happens when," I suggest you look through the Spec which fully defines the semantics of Numeric Separator Literals, including behavior in the terms of Number, parseInt, parseFloat, etc. 
 
 #### Conclusion/Resolution
 
@@ -132,7 +132,7 @@ KMN: Core Proposal: the semantics are based on the structuring assignment. Using
 
 WH: What does `when 1` mean? (Object Equality) Does `when 0` match -0? 
 
-KMN: This applies to numeric literals, and I believe -0 is not a numeric literal. Continuing… `when x` is an irrefutable pattern. You can also have guards using something like `when x if ()`
+KMN: This applies to numeric literals, and I believe -0 is not a numeric literal. Continuing... `when x` is an irrefutable pattern. You can also have guards using something like `when x if ()`
 
 DD: What is the match doing here? If you do this on an object that doesn't have a match method, will that throw an exception?
 
@@ -160,7 +160,7 @@ MM: Does the syntax use parens to wrap expressions?
 
 KMN: I don't think you should be able to do that. I'd rather avoid it.
 
-MS: (something…)
+MS: (something...)
 
 MM: There's too much ambiguity
 
@@ -239,7 +239,7 @@ KMN: Object spread is object spread - including its oddities. For example, the .
 
 DH: First, this is a ton of great work. Years ago, I wanted to do similar things, but not nearly as much work so I appreciate this. One other syntactic option is to keep `switch` for the name but use `when` for the cases?
 
-KMN: It's been brought up and there's reasons…
+KMN: It's been brought up and there's reasons...
 
 DH: If we have `do` expressions, having to wrap this in the `do` expression just to get a result out. This is way too verbose and there's no ambiguity for the precedence there. You may want to couple the challenges of `do` expressions, but that's very difficult, so if you need collaboration from other team members, we can make progress on that. Of course we shouldn't block landing this on `do` expressions. We should try to make statement right hand sides to work, and we can discuss do.
 
@@ -357,17 +357,17 @@ SYG: Update on Binary AST. Currently at Stage 1, will remain at Stage 1, likely.
 
 SYG: To enable per-function laziness, we need to enable scope annotations. We can also do a single-pass and streaming code generation (a sort of magic, go fast button). These are not orthogonal, it _is_ possible to do both.
 
-SYG: On the Spec front, we want to incorporate these semantic changes and a new over-the-wire format. We explicitly don't want to “handcuff” people on the spec side or implementation side. The binary AST spec will not limit the possibilities of JS as source code. We're speccing a basic tree grammar. It's a shift off an AST, with some differences (written in a WebIDL-like thing). It works backwards from an implementation—you take a source text and transform it into an AST, the spec takes the AST and transform it into an ?? to “Ecmaify” it and to avoid bifurcating the language. The new semantic stuff like scope annotations (which we call “asserted scopes”) are checked during the Ecmaify stage. 
+SYG: On the Spec front, we want to incorporate these semantic changes and a new over-the-wire format. We explicitly don't want to "handcuff" people on the spec side or implementation side. The binary AST spec will not limit the possibilities of JS as source code. We're speccing a basic tree grammar. It's a shift off an AST, with some differences (written in a WebIDL-like thing). It works backwards from an implementation—you take a source text and transform it into an AST, the spec takes the AST and transform it into an ?? to "Ecmaify" it and to avoid bifurcating the language. The new semantic stuff like scope annotations (which we call "asserted scopes") are checked during the Ecmaify stage. 
 
 MM: The variables that appear to be free within `with`, may actually be looked-up in a with block?
 
 SYG: Yes. And that's what implementations must do already.
 
-SYG: The things in the asserted scope are effectively the outputs of static semantics (we're encoding them). This introduces the concept of “free names “
+SYG: The things in the asserted scope are effectively the outputs of static semantics (we're encoding them). This introduces the concept of "free names "
 
-MM: What's the difference between “free” and “captured” names?
+MM: What's the difference between "free" and "captured" names?
 
-SYG: “Free” means identifiers that refer to a variable not declared in the current scope. “Captured” names are declared names that an inner function closes over.
+SYG: "Free" means identifiers that refer to a variable not declared in the current scope. "Captured" names are declared names that an inner function closes over.
 
 SYG: This opens up a smoother adoption process, where implementers can decide, without changing any existing semantics. What do we do about compatibility? Once we output a tree, we cannot change the semantics, and for forwards compatibility the set of AST nodes is purely additive.
 
@@ -467,7 +467,7 @@ SG: Agree. Not advocating for this solution. Problems are valid. If it's less ac
 
 MS: I don't think this is solving a long-term problem for the web.
 
-TST: Curious why it won't solve for lots of content producers. If it solves what … wants to get it, content producers should treat it like GZIP. Accept-header should switch it to CDN. You do not have the explosion in test surface. If you don't believe it will pan out I want to know what the concerns are.
+TST: Curious why it won't solve for lots of content producers. If it solves what ... wants to get it, content producers should treat it like GZIP. Accept-header should switch it to CDN. You do not have the explosion in test surface. If you don't believe it will pan out I want to know what the concerns are.
 
 
 MS: Experience tells me the test explosion will happen.
@@ -528,7 +528,7 @@ DD: Maybe Mark is talking about something a bit different. We should own the AST
 
 SYG: To clarify, if you see the spec that says byte 2 means this, etc.
 
-DD: We need to be extremely involved, like what should be in the default dictionary? We should do a corpus crawl…
+DD: We need to be extremely involved, like what should be in the default dictionary? We should do a corpus crawl...
 
 MM: The result of applying the expertise, wherever we find it must be included in our spec.
 
@@ -586,7 +586,7 @@ YK: I have been the consumer of many of these improvements. The cost of targetin
 
 DD: Earlier, the analogy to Brotl was brought up. I find it interesting. Not implementing something and still be just as good is not a loss - it is unique for this proposal. It may be interesting exploring this as an optional thing. Maybe not in TC39. If you think about this more as an compression format, then there are different conclusions you can make with different committees, for example.
 
-SYG: A complete spec with the well-understood caveat that the binary encoding may change drastically. Sufficient evidence that we get the perf wins we are aiming for. Some like “across implementations”. We hope to work with implementers to find less than 1 engineer year ways to show promise. We can't do 5 years engineering and hope something happens.
+SYG: A complete spec with the well-understood caveat that the binary encoding may change drastically. Sufficient evidence that we get the perf wins we are aiming for. Some like "across implementations". We hope to work with implementers to find less than 1 engineer year ways to show promise. We can't do 5 years engineering and hope something happens.
 
 SYG: I'd like to reiterate the other point that MB brought up to look at the other design specs to see if there are other potential alternatives that could give us similar performance wins.
 
@@ -599,7 +599,7 @@ SYG: In case we progress, Sathya mentioned it will incur spec author cost. The i
 - Stage 2 entrance criteria:
   - A complete spec with the well understood caveat that the binary encoding may change drastically. 
   - Sufficient evidence that we get the perf wins we are aiming for across websites.
-  - Some like “across implementations” We hope to work with implementers to find less than 1 engineer year ways to show promise. We can't do 5 years engineering and hope something happens.
+  - Some like "across implementations" We hope to work with implementers to find less than 1 engineer year ways to show promise. We can't do 5 years engineering and hope something happens.
 
 
 ## Function.prototype.toString() censorship for stage 2 (continued discussion)
@@ -624,7 +624,7 @@ DD: If we ever saw signs that this was optimizable, we would certainly seek that
 
 YK: If we have Binary AST, then why would you use this?
 
-WH: The question of misspelled pragmas comes up—it's easy to mess up a long name like what's proposed here (unlike “use strict”), in which case nothing happens (silently). Another concern is retroactivity — a pragma inside a function takes effect considerably before the pragma is seen, which caused the “use strict” pragma to be banned there in some situations. If we're addressing cross-cutting concerns of pragmas, we should look into both of these things.
+WH: The question of misspelled pragmas comes up—it's easy to mess up a long name like what's proposed here (unlike "use strict"), in which case nothing happens (silently). Another concern is retroactivity — a pragma inside a function takes effect considerably before the pragma is seen, which caused the "use strict" pragma to be banned there in some situations. If we're addressing cross-cutting concerns of pragmas, we should look into both of these things.
 
 TST: There does seem to be enough of a consensus that this is worth pursuing. WH seems to have some concerns with using a pragma.
 
@@ -638,7 +638,7 @@ MS: I'm worried this opens the door for more pragmas (with misspelling). I do sh
 
 LBR: I'm concerned for a precedent of adding new pragmas. Following Brian's concerns, if we are going to use these pragmas everywhere, we should first collect data from the host implementation.
 
-DD: I can just repeat my presentation yesterday…
+DD: I can just repeat my presentation yesterday...
 
 DE: It seems exceeding clear that we don't have a consensus.
 
@@ -646,8 +646,8 @@ MS: I really don't want the pragma.
 
 BT: This is our chance to say no. 
 
-MM: The history—when we first introduced “use strict”. Doug Crockford suggested both a 
-“use strict”; 
+MM: The history—when we first introduced "use strict". Doug Crockford suggested both a 
+"use strict"; 
 with the quotes and a
 use strict;
 without the quotes. The first is ignored on earlier versions of the platform that don't recognize it, falling back to sloppy mode. The second causes a static rejection on platforms that don't recognize it. The first pragma form is the only syntactic marker we've got that is ignored, rather than causing failure, on earlier versions of the platform.
@@ -692,7 +692,7 @@ MM: Yeah
 SGN: Sounds good
 MB: Agreed
 
-#### Conclusion
+#### Conclusion/Resolution
 
  - Consensus
 
@@ -702,7 +702,7 @@ MB: Agreed
  - [proposal](https://github.com/devsnek/proposal-symbol-thenable)
  - [slides]()
 
-JHD: Exporting a named `then` function from a module makes the module a thenable. This logically follows the promise protocol, but means there is now no way to dynamically import a module with a then function. Refactoring hazards exist. Someone could write a module that blocks itself from dynamic import. It's super weird conceptually, but it logically follows from the way Promises work, but it is a problem. This came up with members trying to implement custom module loader in node. There is no way to get a dynamically imported module record. V8 can provide hooks, there are workaround but it surfaced the issue. DD said it would be bad if module namespace objects were magick where they weren't thennable. Namespace objects are thennable now, they shouldn't be through dynamic import - it should be a static picture of the module. Its weird if we make them magick. `import(‘bar')` would give different output to `import foo from ‘bar'`. Generic solution is to make a thennable object not be thennable. 
+JHD: Exporting a named `then` function from a module makes the module a thenable. This logically follows the promise protocol, but means there is now no way to dynamically import a module with a then function. Refactoring hazards exist. Someone could write a module that blocks itself from dynamic import. It's super weird conceptually, but it logically follows from the way Promises work, but it is a problem. This came up with members trying to implement custom module loader in node. There is no way to get a dynamically imported module record. V8 can provide hooks, there are workaround but it surfaced the issue. DD said it would be bad if module namespace objects were magick where they weren't thennable. Namespace objects are thennable now, they shouldn't be through dynamic import - it should be a static picture of the module. Its weird if we make them magick. `import('bar')` would give different output to `import foo from 'bar'`. Generic solution is to make a thennable object not be thennable. 
 
 DD: I was saying this is a generic problem, not that we should solve it.
 
@@ -748,7 +748,7 @@ CM: Domenic's proposal feels less wrong
 
 SGN: Promises are already super complicated, let's not complicate it more. The status quo is fine.
 
-MM: Some people will be confused. Principle of least surprise. `Symbol.unthenable` creates confusion. When we cannot avoid surprises the way to chose is: static rejection is the least surprising. Static rejection is surprising but I can handle it ahead of time. This suggest the solution which was glossed over: banning “then” as an export - it seems weird but its a good solution considering the human factor.
+MM: Some people will be confused. Principle of least surprise. `Symbol.unthenable` creates confusion. When we cannot avoid surprises the way to chose is: static rejection is the least surprising. Static rejection is surprising but I can handle it ahead of time. This suggest the solution which was glossed over: banning "then" as an export - it seems weird but its a good solution considering the human factor.
 
 JHD: I'm content with that, I cannot imagine any reasonable case when you'd need to do that. It would take a lot less spec test, wouldn't complicate promises.
 
@@ -788,9 +788,9 @@ MM: Safari too
 
 DD: I'm not sure but I think Edge too.
 
-BFS: A boolean seems odd. I'll remind everyone of `Symbol.toPrimitive` though. Instead of as a Symbol maybe we could look to a different design. Could we change the Symbol to be a function or look at dynamic imports that… . I think this might help the situation.
+BFS: A boolean seems odd. I'll remind everyone of `Symbol.toPrimitive` though. Instead of as a Symbol maybe we could look to a different design. Could we change the Symbol to be a function or look at dynamic imports that... . I think this might help the situation.
 
-BN: I've changed my mind. Initially I was okay with static rejection of `then` exports, since I agree with Mark that static failures are not so bad, but then I thought of a legitimate use case. If you have a module with one default export and consider it unergonomic for your users to have to do `import(“your-module”).then(ns => ns.default).then(x => …)`, then you could export a `then` function that returns the default export. Importantly, this is not the same as the namespace object, so it won't cause an infinite resolution loop like the namespace object would. Then your users could do either `import x from “your-module”` or `import(“your-module”).then(x => …)` or `const x = await import(“your-module”)` without worrying about accessing the `default` property explicitly. This is a slight but real ergonomic win, for module authors who know what they're doing. So I have changed my mind and prefer the status quo.
+BN: I've changed my mind. Initially I was okay with static rejection of `then` exports, since I agree with Mark that static failures are not so bad, but then I thought of a legitimate use case. If you have a module with one default export and consider it unergonomic for your users to have to do `import("your-module").then(ns => ns.default).then(x => ...)`, then you could export a `then` function that returns the default export. Importantly, this is not the same as the namespace object, so it won't cause an infinite resolution loop like the namespace object would. Then your users could do either `import x from "your-module"` or `import("your-module").then(x => ...)` or `const x = await import("your-module")` without worrying about accessing the `default` property explicitly. This is a slight but real ergonomic win, for module authors who know what they're doing. So I have changed my mind and prefer the status quo.
 
 JHD: Sticking with status quo means that's just a babel transform (and one that I would be tempted to use!). It seems we won't get Stage 2 - Stage 1 means examining the problem. So is this something TC39 wants to hear from me again on or do you want to reject for stage 1?
 
@@ -863,5 +863,3 @@ RBN: Any regular expressions have to take on that cost, even if they're not usin
 ## Meeting Planning Update 
 
 DE: Some concerns about the 2019 meeting at JS Interactive, please don't consider that to be final.
-
-

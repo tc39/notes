@@ -522,7 +522,7 @@ A new exception that is not an error: Cancel
 - Branded with a [[CancelBrand]] internal slot
 - Does not get reported to the host
   - window.onerror
-  - process.on("uncaughtException", …)
+  - process.on("uncaughtException", ...)
 - Does not get tracked as an unhandled rejection either
 - throw Cancel("message")
 
@@ -572,7 +572,7 @@ JHD: Any catch cancel?
 DD: No, this is everything _but_
 
 
-Cancel token’s cancel() always creates a Cancel
+Cancel token's cancel() always creates a Cancel
 
 ```js
 const { token, cancel } = CancelToken.source();
@@ -598,7 +598,7 @@ MM: I disagree with your opinion on the usefulness of `.then`'s second argument
 
 DD: it's more of a power user feature.
 
-DE: This works better with the two argument `then`.  previously there was a back compat concern (with third state), and with this proposal, it's more compatible with 2-arg then.
+DE: This works better with the two argument `then`. previously there was a back compat concern (with third state), and with this proposal, it's more compatible with 2-arg then.
 
 MM: Having `else` in relation to `then`..,
 
@@ -855,20 +855,20 @@ Cancel Token Composition?
 
 Precedent from .NET:
 
-`const { token, cancel } = CancelToken.linked([ct1, ct2, …]);`
+`const { token, cancel } = CancelToken.linked([ct1, ct2, ...]);`
 Here token is canceled if any of the following is true:
 cancel() is called
 ct1 becomes canceled
 ct2 becomes canceled
-…
-I haven’t really investigated what this is used for in the .NET ecosystem…
+...
+I haven't really investigated what this is used for in the .NET ecosystem...
 
 The extra cancel() seems useless and an artifact of the .NET setup, so instead:
 
-.NET’s version but a little better
+.NET's version but a little better
 
 
-`const token = CancelToken.some([ct1, ct2, …]);`
+`const token = CancelToken.some([ct1, ct2, ...]);`
 Here token is canceled if any of the following is true:
 ct1 becomes canceled
 ct2 becomes canceled
@@ -941,7 +941,7 @@ async function cancelMe() {
 }
 ```
 
-YK: This would continue with our tradition of implicit parameters, e.g. implicitly passing 'this'.  You don't want to have to add it explicitly
+YK: This would continue with our tradition of implicit parameters, e.g. implicitly passing 'this'. You don't want to have to add it explicitly
 
 
 YK: 
@@ -988,7 +988,7 @@ DT: good effort and really want something along the lines
 
 YK: If the implicit argument fails, I'm not sure whether I'll be OK with this whole proposal.
 
-DD: There is some enthusiasm for this proposal, it seems, including some of the additions.  More is available in the repo. I'll add more spec'd things, including await.cancelToken, Promise.cancelable, and CancelToken.any
+DD: There is some enthusiasm for this proposal, it seems, including some of the additions. More is available in the repo. I'll add more spec'd things, including await.cancelToken, Promise.cancelable, and CancelToken.any
 
 BT: What do cancelable promises change about async functions? Seems purely additive.
 
@@ -1041,7 +1041,7 @@ WH: The grammar is both impressive and really scary, trying to see how much it c
 
 When is "await" usable as an identifier?
 
-DE: anytime you are not in an async function.  <then more details> We implemented it all in V8
+DE: anytime you are not in an async function. <then more details> We implemented it all in V8
 
 BT: It's just like yield
 
@@ -1071,7 +1071,7 @@ YK: Has been working closely with Dan since the last meeting to come up with how
 
 MM: I was surprised by the idea of just doing this in the transpiler world.
 
-YK: This will be standardized somehow; there are already two implementations. We should have a document that defines it, with some sort of spec.  So it would have to be a delta on top of the JavaScript spec, if we keep it in transpiler land.
+YK: This will be standardized somehow; there are already two implementations. We should have a document that defines it, with some sort of spec. So it would have to be a delta on top of the JavaScript spec, if we keep it in transpiler land.
 
 AWB: if it's done as a preprocessor, you'd have to do it to standard JavaScript semantics. So everything would have to be expressible in terms of the core syntax/semantics. So if the core isn't sufficient, it won't be possible to do it correctly.
 
@@ -1248,20 +1248,3 @@ Call for Stage 2?
 #### Conclusion/Resolution
 
 - We don't have enough time?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

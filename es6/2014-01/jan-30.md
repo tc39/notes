@@ -80,7 +80,7 @@ AWB: Cloning framework in ES.
 
 DH: Is it possible to reform or do we have to start from scratch? Seems hard to reform. Too many issues.
 
-MM: Fears that if we do not take it over and introduce something new. The old will continue to exist.  We need a path to replace the existing system, including what PostMessage does.
+MM: Fears that if we do not take it over and introduce something new. The old will continue to exist. We need a path to replace the existing system, including what PostMessage does.
 
 DH: We need a roadmap. How do we handle transferables?
 

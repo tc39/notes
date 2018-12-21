@@ -782,7 +782,7 @@ JW: the browser cache is sufficient, each new script element gets invoked.
 
 YK: throttling that seems like one way to mitigate
 
-… some discussion to clarify the attack vectors of CSRF …
+... some discussion to clarify the attack vectors of CSRF ...
 
 JW: slide (The attack: Some-origin policy workdaround)
 
@@ -871,11 +871,11 @@ YK: stage 0 for function decorators?
 
 AWB/MM: stage 0 is exploratory, make it part of the same proposal?
 
-… discussion about splitting/decoupling proposals …
+... discussion about splitting/decoupling proposals ...
 
-… MH putting up slides …
+... MH putting up slides ...
 
-MH: first slide, method param decorators example: `refresh(@lastRefreshTime timeStamp) { … }` as example
+MH: first slide, method param decorators example: `refresh(@lastRefreshTime timeStamp) { ... }` as example
 
 YK: additional metadata about the param they're attached to
 
@@ -889,9 +889,9 @@ MH: function param decorators: `schedule(@memoize (value) => ...)`
 
 WH: Syntax conflict with the method param decorator example `@leg('right') rightLeg`. When used with arrow functions above, the `@memoize` decorator would swallow the arrow parameter list `(value)`, just like the `@leg` decorator swallows `('right')`.
 
-MH: corrected function param decorators example: `schedule(@memoize function (value) { … })`
+MH: corrected function param decorators example: `schedule(@memoize function (value) { ... })`
 
-… discussion that clarifies that they could replace the value, like all decorators …
+... discussion that clarifies that they could replace the value, like all decorators ...
 
 MM: keep as separate stage 0 proposals
 
@@ -986,15 +986,10 @@ DH: White space and comments should be preserved.
 YK: No, they shouldn't.
 
 
-… discussion about parseability, errors, `new Function` to detect, toSource, etc …
+... discussion about parseability, errors, `new Function` to detect, toSource, etc ...
 
 MF: "possible solutions" slide
 
 #### Conclusion/Resolution
 
  - none yet, will continue tomorrow morning, first thing
-
-
-
-
-

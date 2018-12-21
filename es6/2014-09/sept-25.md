@@ -205,7 +205,7 @@ RW: :D
 
 ## Loader pipeline
 
-AWB: Working on module spec. Questions: Loader pipeline.  Can we simplify modules for ES spec?
+AWB: Working on module spec. Questions: Loader pipeline. Can we simplify modules for ES spec?
 
 "A.js"
 ```js
@@ -508,6 +508,3 @@ DH: Think this is awesome
 - Stage 0 acceptance
   - Some way to publish into a queue
   - priority queueing
-  
-
-

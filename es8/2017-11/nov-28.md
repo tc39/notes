@@ -1,7 +1,7 @@
 # November 28, 2017 Meeting Notes
 -----
 
-Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (ARE), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM)
+Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (AKI), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM)
 
 Remote: 
 István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
@@ -12,7 +12,7 @@ István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2017/11.md)
 
-## 7.i ECMA262 Status Updates (15m)
+## 7.i ECMA-262 Status Updates (15m)
 
 BT: I've updated the queue tool
 
@@ -166,7 +166,7 @@ RW: That's the number 10 in parseFloat
 
 AK: So a string being implicitly converted to a number
 
-RW: The underscores have no mathematical value so they get ignored. Implicit conversion of `'1_0'` is `10`.  T
+RW: The underscores have no mathematical value so they get ignored. Implicit conversion of `'1_0'` is `10`. T
 
 (RW: Important to note that I was presenting remotely and misheard Adam's question, which is why my answer "broke the web"—sorry for any confusion there. The correct answer is that there is NO CHANGE to the existing behavior of implicitly coerced strings that contain an underscore, eg: `1 + "1_0" === "11_0"` and `"1_0" + 1 === "1_01"`)
 
@@ -280,7 +280,7 @@ MB: So can we say stage 1 still though?
 
 MM: It certainly qualifies, and I won't object. But my preference is we drop it. One of the functions of the committee is to be the guardian of the overall language complexity. We lose sight when we look at each proposal in isolation. We should ask ourselves if the benefit this brings is worth the extra surface. My opinion is no.
 
-MB: My opinion is different. Whether it’s worth it depends on the exact shape of the solution.
+MB: My opinion is different. Whether it's worth it depends on the exact shape of the solution.
 
 MS: To counter Mark, there is no good way to do a global string search of another string without regular expressions.
 

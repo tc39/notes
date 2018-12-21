@@ -29,12 +29,12 @@ In a nutshell: with direct proxies, one can no longer write a caretaker proxy th
 
 As pointed out by David Bruant, caretakers are often useful precisely for memory management, where one uses revocation of the caretaker to release the underlying resources, as described here.
 
-Such caretakers were easy to define in the old Proxy design, since the link between a proxy and its target was fully under the control of the handler (i.e. fully virtual). However, with direct proxies, the proxy has a built-in, immutable reference directly to its target. This reference can’t be modified or nulled out.
+Such caretakers were easy to define in the old Proxy design, since the link between a proxy and its target was fully under the control of the handler (i.e. fully virtual). However, with direct proxies, the proxy has a built-in, immutable reference directly to its target. This reference can't be modified or nulled out.
 
 
 Proposed Solution
 
-Provide an extension to the Proxy API that allows scripts to null out the proxy-target reference. Of course, the API must be designed with care so that this link can’t be nulled out by any old client of the proxy. Only the creator of the proxy should have the right to revoke it.
+Provide an extension to the Proxy API that allows scripts to null out the proxy-target reference. Of course, the API must be designed with care so that this link can't be nulled out by any old client of the proxy. Only the creator of the proxy should have the right to revoke it.
 
 Because revokable proxies appear to be a niche abstraction, we propose to introduce a separate Proxy constructor dedicated to creating revokable proxies. Proxies created with the regular Proxy constructor would remain unrevokable.
 
@@ -318,7 +318,7 @@ Issues:
 
 ### Proposal At-Names
 
-[Slides](https://members.ecma-international.org/get.php?group=TC39&file=2012_sub_tc39-2012-066.pdf)
+- [slides](https://members.ecma-international.org/get.php?group=TC39&file=2012_sub_tc39-2012-066.pdf)
 
 - An At-Names is an IdentifierName that is lexically prefixed with @
 - At-Names are const bound to Name values by new declaration forms

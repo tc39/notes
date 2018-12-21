@@ -1,6 +1,6 @@
 # May 22, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Mattijs Hoitink (MHK), Kyle Verrier (KVR),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (ARE), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Mattijs Hoitink (MHK), Kyle Verrier (KVR),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (AKI), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW)
 
 Remote: 
 Valerie Young (VYG), Maggie Pint (MPT)
@@ -142,9 +142,9 @@ routine maintenance:
 
 (Jory Burson)
 
-JBN: A brief update on the CoC committee: introduce committee members, Daniel, Aki, Jordan and Keith, Brian, and Myles, Leo. Happy to discuss over the break… We're interested in participation, moderation, guiding principles. Coming up with a playbook on situations that don't feel right. Follow along on our repo. If there were questions about how to file support issues, talk to everyone collectively via TC39 Report email or individually (to maintain anonymity). When a report happens, we try to respond within a few hours. We meet biweekly at 1pm EST to discuss appropriate steps. We haven't had any issues yet. We are definitely going to plan to avoid choosing individuals who may have a conflict of interest (?). That's the general process we have so far. A lot of this work is in Bootstrapping phase still—trying to figure out what's most welcoming and efficient. Not just reactive but also proactive responses, building off work that Yulia has done. If you're at all interested in participating, please let one of the committee members know.
+JBN: A brief update on the CoC committee: introduce committee members, Daniel, Aki, Jordan and Keith, Brian, and Myles, Leo. Happy to discuss over the break... We're interested in participation, moderation, guiding principles. Coming up with a playbook on situations that don't feel right. Follow along on our repo. If there were questions about how to file support issues, talk to everyone collectively via TC39 Report email or individually (to maintain anonymity). When a report happens, we try to respond within a few hours. We meet biweekly at 1pm EST to discuss appropriate steps. We haven't had any issues yet. We are definitely going to plan to avoid choosing individuals who may have a conflict of interest (?). That's the general process we have so far. A lot of this work is in Bootstrapping phase still—trying to figure out what's most welcoming and efficient. Not just reactive but also proactive responses, building off work that Yulia has done. If you're at all interested in participating, please let one of the committee members know.
 
-WH: I have some questions about what you just presented. You are working on “moderations”, what does that mean?
+WH: I have some questions about what you just presented. You are working on "moderations", what does that mean?
 
 JBN: Right now we just have a draft in the committee. Giving people a better sense of what they can expect if something is reported. 
 
@@ -152,7 +152,7 @@ WH: Are these additional rules we have to follow?
 
 JBN: They're being framed as guiding principles.
 
-WH: I don't understand what “Guiding Principles” are? If they are rules, you should solicit feedback on them rather than keeping them confidential inside the code of conduct committee.
+WH: I don't understand what "Guiding Principles" are? If they are rules, you should solicit feedback on them rather than keeping them confidential inside the code of conduct committee.
 
 JBN: I'm happy to get your feedback, I would just hate to share my typo filled document already.
 
@@ -162,7 +162,7 @@ WH: You mentioned the repository earlier, what's the link?
 
 JBN: We're a team on github. https://github.com/orgs/tc39/teams/code-of-conduct-committee
 
-DE: Is the question “where is the repo”? Or who are the members?
+DE: Is the question "where is the repo"? Or who are the members?
 
 WH: JBN said that there's a draft for us on the repo, so I wanted to know where that is.
 
@@ -233,11 +233,11 @@ SGN: The update is Chrome tried to ship this twice, finally did recently. Now Fi
 - Shipping in all major browsers!
 
 
-## 9.i.b. Normative: Add export * as ns from "mod” to Export production and Module Semantics
+## 9.i.b. Normative: Add export * as ns from "mod" to Export production and Module Semantics
 (Valerie Young)
 
 - [slides](https://docs.google.com/presentation/d/1FmaW2p4DIBOO2fWVUIVhFRz7N4ekVVLqGqmjqV-uaj8/edit?usp=sharing)
-- [Normative: Add export * as ns from "mod” to Export production and Module Semantics](https://github.com/tc39/ecma262/pull/1174)
+- [Normative: Add export * as ns from "mod" to Export production and Module Semantics](https://github.com/tc39/ecma262/pull/1174)
 
 
 VYG: Seems like a natural addition to the language, because it can be done in two steps easily. Semantics seem clear. We thought it would just be a grammatical change. Just needs consensus. We have incomplete tests in March 2018. 
@@ -254,7 +254,7 @@ DD: I'm unclear at what point we decided to treat this as a PR without implement
 
 RW: I agree with DD. We should still go through something similar to Staging process. Already done Stage 1 effectively, and this is Stage 2, so Stage 3 next?
 
-DE: We didn't want to go through the full stage process. It can be in the middle, where we do a PR _and_ get implementers to do it at the same time. Maybe we can treat this as a “Needs Consensus” PR and then get the Test262 changes merged, then land the PR once we get implementers.
+DE: We didn't want to go through the full stage process. It can be in the middle, where we do a PR _and_ get implementers to do it at the same time. Maybe we can treat this as a "Needs Consensus" PR and then get the Test262 changes merged, then land the PR once we get implementers.
 
 KG: We discussed a requirement for Normative PRs for this process.
 
@@ -304,7 +304,7 @@ WH: Boston was extraordinarily expensive at the last September meeting. It was h
 (RW: Boston will always be extraordinarily expensive)
 YK: We discussed last time that doing events on the East Coast makes it easier for Europeans to attend.
 
-ARE: (On the topic of the 2-week JSConfEU/TC39 meeting burden) I support co-locating with JSConfEU, since jetlag for many North Americans is rough; a longer time for travelling isn't exclusively bad.
+AKI: (On the topic of the 2-week JSConfEU/TC39 meeting burden) I support co-locating with JSConfEU, since jetlag for many North Americans is rough; a longer time for travelling isn't exclusively bad.
 
 JBN: Maybe someone else can help with meeting planning?
 
@@ -416,7 +416,7 @@ MB: Mentally you can think of property escapes as a [abc] character class. There
 ```js
 \p{Script_Extensions=Greek}
 // maps to
-[\u0342\u0345…\uDE00-\uDE45]
+[\u0342\u0345...\uDE00-\uDE45]
 ```
 
 MB: Currently, sequence properties in Unicode deal with Emoji, but I'm proposing we support the general feature, and then once more sequence properties are added to Unicode we can just support them in ECMAScript regular expressions as well. The proposal makes it easy to match things like keycap emoji, which consist of sequences e.g. `"4\uFE0f\u20E3"`.
@@ -427,7 +427,7 @@ regexEmojiKeycap.test('4️⃣'); // '4\uFE0F\u20E3'
 // → true
 ```
 
-MB: If you want to match emoji sequences, it's hard to come up with a Regular Expression that matches all of them. In the Unicode standard, however, there are Unicode properties that define all these categories of emoji, and which of them form the concept of “emoji sequences”.
+MB: If you want to match emoji sequences, it's hard to come up with a Regular Expression that matches all of them. In the Unicode standard, however, there are Unicode properties that define all these categories of emoji, and which of them form the concept of "emoji sequences".
 
 ```js
 const reEmojiSequence =
@@ -536,28 +536,28 @@ JHD: There are 4 methods that take symbol regex:
 
 JHD: Split and replace fall back to spec defined algorithms. Alan probably wanted to make sure no one broke legacy behavior. The other two methods, match and search both create a regex and then invoke their symbol on it. In matchAll, I propose we do what split and replace do.
 
-JHD: Symbol.match actually provides two purposes. One is the methods, and one is a brand that says “I am a regexp”. To subclass a regex, you really have to also define the special regex symbol methods on your prototype.
+JHD: Symbol.match actually provides two purposes. One is the methods, and one is a brand that says "I am a regexp". To subclass a regex, you really have to also define the special regex symbol methods on your prototype.
 
 JHD: Symbol.match has conflated purposes. matchAll extends and is consistent with match in terms of getting a match out of a string. The one deviation is...
 
 JHD: If the match symbol is not present it's not a regexp. If matchAll is not present it could still be a regexp.
-During implementation, Andre Barghul raised a concern as spec feedback.  Open question: should there be that fallback? One path is to keep it as spec'd, if the symbol isn't present fall back to the spec algorithm. The other path is to fail if the symbol isn't present.
+During implementation, Andre Barghul raised a concern as spec feedback. Open question: should there be that fallback? One path is to keep it as spec'd, if the symbol isn't present fall back to the spec algorithm. The other path is to fail if the symbol isn't present.
 
 JHD: Another thing that motivates my preference for current behaviour is that all symbols on symbol.prototype, all of the behaviour is still the same except the match symbol.
 
-DE: I thought there was a second question about whether there should be these defensive “is regex” calls.
+DE: I thought there was a second question about whether there should be these defensive "is regex" calls.
 
-JHD: I thought we resolved most in the thread.  Tried to tease apart. Merged a PR in April. The only remaining issue…
+JHD: I thought we resolved most in the thread. Tried to tease apart. Merged a PR in April. The only remaining issue...
 
-DE: You call createRegex, then call isRegex on the result.  Is that normal?
+DE: You call createRegex, then call isRegex on the result. Is that normal?
 
-JHD: If you pass a string into matchAll … it throws a type error.  This is a secondary concern we can answer today.  The matchAll abstract op takes two args: regexp + string.  I should come back to the committee for the second question.  Let's defer to later in this meeting.
+JHD: If you pass a string into matchAll ... it throws a type error. This is a secondary concern we can answer today. The matchAll abstract op takes two args: regexp + string. I should come back to the committee for the second question. Let's defer to later in this meeting.
 
-MLS: We discussed removing the expression.  We did not remove it. I was an advocate for removing.  It seems weird we wouldn't add a matchAll.  If we don't they will operate different to match.
+MLS: We discussed removing the expression. We did not remove it. I was an advocate for removing. It seems weird we wouldn't add a matchAll. If we don't they will operate different to match.
 
 JHD: There is a Symbol.matchAll in the current spec.
 
-MLS: Understood.  I am arguing for it.
+MLS: Understood. I am arguing for it.
 
 DE: We should address polarity. Will follow up offline.
 
@@ -571,7 +571,7 @@ DE: We should address polarity. Will follow up offline.
 
 (Daniel Ehrenberg)
 
-DE: BigInt is at stage 3.  Based on operator overloading.  ONe change: a number casted explicitly using BigInt constructor and is an integer out of safe range 2^53, it's now permitted. We allow the conversion.  Robin Templeton implemented tc262 tests for this. Comparison greater than or double equals, number is cast to a bigint.  Implemented tests and implementation in SpiderMonkey.  I have a PR against main spec that changes how math values work.  This will make it more explicit - more feasible to add BigInts. The other change is BigInt.p.toLocaleString support is an alias of toString(). It takes an argument that is a locale.  The PR for review in ECMA402 is based on Intl format. This has consensus. Will be in Node when it goes to V8 6.7. Thanks to Bocoup and Igalia colleagues.
+DE: BigInt is at stage 3. Based on operator overloading. ONe change: a number casted explicitly using BigInt constructor and is an integer out of safe range 2^53, it's now permitted. We allow the conversion. Robin Templeton implemented tc262 tests for this. Comparison greater than or double equals, number is cast to a bigint. Implemented tests and implementation in SpiderMonkey. I have a PR against main spec that changes how math values work. This will make it more explicit - more feasible to add BigInts. The other change is BigInt.p.toLocaleString support is an alias of toString(). It takes an argument that is a locale. The PR for review in ECMA-402 is based on Intl format. This has consensus. Will be in Node when it goes to V8 6.7. Thanks to Bocoup and Igalia colleagues.
 
 MM: In the 2**60 case, it has to be an integer value, but it changes to BigInt and therefore doesn't need to throw? Is that correct? 
 
@@ -595,28 +595,28 @@ WH: I reviewed and am happy with the new updates. They addressed my concerns fro
 MF: Added support for Async functions and Async generators. Added HasSourceTextAvailable host-defined abstraction. Committee reviewed. Agreed by Dominic how it affects Function.censorship. Allow for anonymous, well-known intrinsics (the spec supports omitting the name now). Biggest change is to allow PropertyName. 
 Going in more detail: HasSourceTextAvailable should always complete normally (return true/false) and the source text is preserved.
 
-MM: “must return a consistent result” so everytime you ask a question it always gives the same answer?
+MM: "must return a consistent result" so everytime you ask a question it always gives the same answer?
 
 MF: Yes.
 
 MF: PropertyName in NativeFunction name position is the biggest thing in the proposal: in SpiderMonkey, the implementation generated a .get, which we decided to allow the first but not the second.
 It would confuse the user to see something they couldn't type. So computed property naming, OK, get/set before the name isn't.
 
-KG: This is only something allowed for implementers.  So even though it allows arbitrary expressions in that position, just don't put dumb things there and that isn't a problem.
+KG: This is only something allowed for implementers. So even though it allows arbitrary expressions in that position, just don't put dumb things there and that isn't a problem.
 
 MM: Does the propertyname ever show up in the function name in a code block?
 
 MF: Yes, from the first token to the last token. This is actually why I think the second form is not acceptable. 
-I have reviews from Jordan and Bradley in the editors group.  And Brian.  Only objection: Firefox has not updated.  Proposal has caused engines to make changes of similar sort.
+I have reviews from Jordan and Bradley in the editors group. And Brian. Only objection: Firefox has not updated. Proposal has caused engines to make changes of similar sort.
 
-WH: I reviewed.  A concern is how this interacts with decorators.  We can discuss that in the decorators topic.
+WH: I reviewed. A concern is how this interacts with decorators. We can discuss that in the decorators topic.
 
 MM: When you toString, the printed form, if evaluated, in a similar lexical scope, either the eval throws or creates a function whose call behaviour is the same as the original to the extent that the lexical scope and evaluation is similar.
 
 MF: Yes but if it's [native code] then no.
 
 MF: The sourcetext is produced from first token to last token, you can see the points are clearly defined.
-MM: If Waldemar is says he's confident a string that results from a precise expression…
+MM: If Waldemar is says he's confident a string that results from a precise expression...
 
 MF: So you need more time to review the proposal?
 
@@ -637,9 +637,9 @@ MF: Flatten name conflicted with MooTools. Flatten is still in Safari TP.
 
 MLS: We can smoosh that.
 
-MF: Assuming `flatten` is not possible would like to choose another.  Propose `flat` to avoid renaming `flatMap`.  How about `flatten` to `flat`?
+MF: Assuming `flatten` is not possible would like to choose another. Propose `flat` to avoid renaming `flatMap`. How about `flatten` to `flat`?
 
-YK: Changing to `flat`… implies infinity is the depth. Other than that no objections.
+YK: Changing to `flat`... implies infinity is the depth. Other than that no objections.
 
 RKG: Using an adjective for a method name seems pretty unusual for JavaScript. It would seem suitable in a language that doesn't require parens for argumentless calls, but a bit awkward here.
 
@@ -699,13 +699,13 @@ MBS: The other variant is that TLA wouldn't block sibling evaluation for other m
 
 MBS: A constraint that could be introduced is allowing TLA for only modules without exports, enabling modules without deadlock. 
 
-One way to think about it is either sequential evaluations in A, or parallel evaluations in B (as though resolved via a Promise.all). import(‘a') will still evaluate first, but if it contains an await inside it, it will start evaluating the import(‘b') module.
+One way to think about it is either sequential evaluations in A, or parallel evaluations in B (as though resolved via a Promise.all). import('a') will still evaluate first, but if it contains an await inside it, it will start evaluating the import('b') module.
 
 DD: To clarify, the top-level statements up until the first await will still run in the order that things are imported.
 
 MBS: Any questions?  No.
 
-MBS: New things are all in the GitHub repo. As recently started in the spec, AsyncBlockStart, which is what gives the functions their promise capabilities…
+MBS: New things are all in the GitHub repo. As recently started in the spec, AsyncBlockStart, which is what gives the functions their promise capabilities...
 
 (Discussing spec grammars and what gives what capabilities to the syntax using that grammar for Variant A)
 
@@ -719,7 +719,7 @@ MBS: What about deadlock? This change can help detect and prevent deadlock when 
 
 MBS: We're exploring this as an option for the module loader in Node. Currently, we're looking at pluggable-loaders, and generally exploring what options could exist. We're imagining TLA won't be available to script goal code, only module code. Our current plan is to not implement the specification text about deadlock, or handling cycles.
 
-DH: You claim an equivalence between dynamic and regular imports. Can that really be true? Is there not a way to split apart the static portions of loading modules from the dynamic execution. When you write it as await.thing you tell the JS engine this is a thing we're going to start retrieving…
+DH: You claim an equivalence between dynamic and regular imports. Can that really be true? Is there not a way to split apart the static portions of loading modules from the dynamic execution. When you write it as await.thing you tell the JS engine this is a thing we're going to start retrieving...
 
 DD: You might be taking it too literally. The semantics are not really sequential or Promise.all, it's hand-wavey similar.
 
@@ -739,11 +739,11 @@ DD: I am sympathetic. If you're in the perspective of a module author, if you ha
 
 MM: If we're in a module and it's the only one that imports A, B, and C, and B is fetched faster than A, can the code on the right, would A be evaluated first?
 
-DD: In the real semantics, it cannot happen. The slide's example desugaring isn't perfect. But it's only at evaluate time, regardless of network, import(‘a') must execute first. It'll continue that way until a TLA is encountered.
+DD: In the real semantics, it cannot happen. The slide's example desugaring isn't perfect. But it's only at evaluate time, regardless of network, import('a') must execute first. It'll continue that way until a TLA is encountered.
 
 MM: I don't object to Variant B then.
 
-DH: The only thing that we're racing here is “await-y” top-level execution. We're only making this case for top-level await, correct? (Yes)
+DH: The only thing that we're racing here is "await-y" top-level execution. We're only making this case for top-level await, correct? (Yes)
 
 DE: Do we want a timebox extension? We've overrun.
 
@@ -788,7 +788,7 @@ There's also the Intl.ListFormat API. Not much has changed in that. The Intl.Seg
 
 New Proposals: Intl.NumberFormat options by Shane Carr. 
 
-SCR: Over a dozen requests for various new number format features. The spirit is to most of the features to make the API more thorough. It already supports many of the features, and we add four “measuring” features (i.e. things like gallons, the forms them into a localized string. 
+SCR: Over a dozen requests for various new number format features. The spirit is to most of the features to make the API more thorough. It already supports many of the features, and we add four "measuring" features (i.e. things like gallons, the forms them into a localized string. 
 
 SCR: Also number formatting (with commas or decimal precision), and scientific notation have become very popular methods for people to implement, so we're proposing adding them to ECMAScript. Showing the sign on numbers. To show a change in something, like an increase of 43¢. I'm working on a proposal for July to spec these new features. I propose this for Stage 0 today.
 
@@ -806,7 +806,7 @@ DE: There are a number of features needed. If you want to participate, please jo
 
 - [proposal](https://domenic.github.io/proposal-function-prototype-tostring-censorship/)
 
-DD: The desirability to censor Function.p.toString, solves encapsulability and leakage. Encapsulation leakage is mainly for library authors. For library authors a pragma is better. For app authors, an out-of-band (like a header) is better. We're now changing this to discuss only the pragma. Everything that the pragma applies to gets censored, their toString gets “[native code]”. Every place that saves the source text checks if it's censored. It's very analogous to “use strict”. We have full spec text for this. Looking for Stage 2.
+DD: The desirability to censor Function.p.toString, solves encapsulability and leakage. Encapsulation leakage is mainly for library authors. For library authors a pragma is better. For app authors, an out-of-band (like a header) is better. We're now changing this to discuss only the pragma. Everything that the pragma applies to gets censored, their toString gets "[native code]". Every place that saves the source text checks if it's censored. It's very analogous to "use strict". We have full spec text for this. Looking for Stage 2.
 
 MM: Want to check: you can put the directive at the top of a function or at the top of a module/script.
 
@@ -834,7 +834,7 @@ DD: Just toString a function you create to see if it return [native code].
 
 MSL: (something something something mumble mumble mumble)
 
-DD: A property doesn't work at all… There is no such thing as a single-set property. I think introducing the interface for a single-set property for this would be a bad interface.
+DD: A property doesn't work at all... There is no such thing as a single-set property. I think introducing the interface for a single-set property for this would be a bad interface.
 
 WH: In a few places in the spec, you state that functions become strict if they contain a Use No Function.prototype.toString() directive. Intentional or bugs?
 
@@ -846,7 +846,7 @@ MM: What is retroactive?
 
 WH: In a few places in the language they can affect entire functions defined textually before the directive. Examples are decorators and initializers inside function parameter lists that themselves contain nested functions.
 
-KG: That's why we banned “use strict” directives from inside functions that contain such things.
+KG: That's why we banned "use strict" directives from inside functions that contain such things.
 
 DD: That would be unfortunate for this directive.
 
@@ -858,13 +858,13 @@ DD: My main problem is it's not ergonomic for the main library use case. It'd ha
 
 YK: I'm not suggesting we block it, just something that seems relevant.
 
-DE: This memory usage discussion makes me wonder if it's not ready for Stage 2. This conflicts with our One JS message…
+DE: This memory usage discussion makes me wonder if it's not ready for Stage 2. This conflicts with our One JS message...
 
 DD: I disagree.
 
 DE: Adding more pragmas adds a lot of complexity.
 
-DD: I think it has a very limited amount of extra complexity. This much (gestures nothing)… The problem is adding modes, and like a matrix of modes, but this is not a mode. This is just a switch that gets associated with a lexical group.
+DD: I think it has a very limited amount of extra complexity. This much (gestures nothing)... The problem is adding modes, and like a matrix of modes, but this is not a mode. This is just a switch that gets associated with a lexical group.
 
 DE: I don't mean my concern is fatally bad. I just mean that we can take our time to adding the pragmas. For me the memory savings was the strong motivation. Without that, I think we should think whether the feature makes sense.
 
@@ -876,7 +876,7 @@ DD: Happy to remove that sentence if that is what's preventing us from Stage 2.
 
 SYG: What you got back from the implementers is there's no immediate win because of lazy parsing. Is the worry beyond that? Once you de-lazify, you can drop it. Why would you re-lazify it.
 
-SGN: When you call a function that's undefined (i.e. “undefined is not a function”), we need to reparse that source file to throw an error with the name. 
+SGN: When you call a function that's undefined (i.e. "undefined is not a function"), we need to reparse that source file to throw an error with the name. 
 
 YK: Can we reparse from disk?
 
@@ -888,7 +888,7 @@ MSL: What should we do when the censored function is inlined within a non-censor
 
 DD: I'd leave it up to the tool authors. You could invoke an IIFE with the censor pragma.
 
-Eric Faust: Are we worried about “use language feature” pragmas?
+Eric Faust: Are we worried about "use language feature" pragmas?
 
 DD: this isn't about function code, it's about source code text. You want to put this at the top of the file/class/block, and have it apply. In terms of precedent, I think it's ok to add esoteric pragmas. 
 
@@ -966,7 +966,7 @@ JHD: That would also be consistent with array methods that can take generic {len
 KG: I think these methods (the set specific methods) are also useful on WeakSets. That's not true of the helper methods isSubSet, isSuperSet; I am planning on getting those into the Spec as well.
 I don't think the iterable stuff affects the helpers methods.
 
-TAB: symmetricDifference is too complicated. I would formally object to this if it were proposed in a CSS spec, “diff and symDiff” would be better. They are long, terrible names. 
+TAB: symmetricDifference is too complicated. I would formally object to this if it were proposed in a CSS spec, "diff and symDiff" would be better. They are long, terrible names. 
 
 MB: All other programing languages uses these already.
 
@@ -980,7 +980,7 @@ TAB: A lot of people use dumb text editors. Long names are not victimless.
 
 SGN: I agree, but we need this.
 
-KVR: Due to the math nature of the API. I like algebraic laws in the spec text. Let's talk offline. Keeps talking… (note from KVR: This is the flavor of what I was talking about that might be worth incorporating into the spec https://en.wikipedia.org/wiki/Algebra_of_sets )
+KVR: Due to the math nature of the API. I like algebraic laws in the spec text. Let's talk offline. Keeps talking... (note from KVR: This is the flavor of what I was talking about that might be worth incorporating into the spec https://en.wikipedia.org/wiki/Algebra_of_sets )
 
 SGN: let's talk offline.
 
@@ -1006,7 +1006,7 @@ SGN: Will update the spec.
 - [proposal](https://github.com/RReverser/string-prototype-codepoints)
 - [slides](https://docs.google.com/presentation/d/1hzaEVp9Z4NoUDg0n05hffPuw3fSnIZlI46MzNAHEU5s)
 
-MB: Proposal by Ingvar Stepanyan. The last time this was presented, we agreed that the `{position, codePoint}` return value is the best approach. The proposal has been updated accordingly, and there is now spec text. At a high-level we added a new `[[StringIterationKind]]` internal slot to string iterator instances. It has two possible values: `"string"` (resulting in the current string iterator behavior) and `"descriptor"` (resulting in the new proposed behavior).  We can switch between those two in `%StringIteratorPrototype%.next()` to avoid duplicating code. Asking for Stage 2.
+MB: Proposal by Ingvar Stepanyan. The last time this was presented, we agreed that the `{position, codePoint}` return value is the best approach. The proposal has been updated accordingly, and there is now spec text. At a high-level we added a new `[[StringIterationKind]]` internal slot to string iterator instances. It has two possible values: `"string"` (resulting in the current string iterator behavior) and `"descriptor"` (resulting in the new proposed behavior). We can switch between those two in `%StringIteratorPrototype%.next()` to avoid duplicating code. Asking for Stage 2.
 
 DE: SGN raised a question about quantifying the performance difference.
 
@@ -1026,7 +1026,7 @@ CM: I don't care about performance.
 
 YK: Unless performance gets worse, I'm happy with this.
 
-JRL: We can delete a lot of code if we get this.  We're using this in Node for Babel / Babylon.
+JRL: We can delete a lot of code if we get this. We're using this in Node for Babel / Babylon.
 
 DE: How do you take advantage of this?
 
@@ -1040,13 +1040,13 @@ DE: Will it be practical to do a for-loop?
 
 JRL: Yes.
 
-DE: I filed a bug with Intl.Segmenter — perf concerns by SebM.  Version that avoids allocating.  Cursor advances and read value there.  If perf is a motivation, it makes sense to use that as a protocol. Reasoning applies both ways.
+DE: I filed a bug with Intl.Segmenter — perf concerns by SebM. Version that avoids allocating. Cursor advances and read value there. If perf is a motivation, it makes sense to use that as a protocol. Reasoning applies both ways.
 
 YK: To understand, what you're saying is that there's another iterator approach?
 
-DE: What do you mean? The Intl segmenter has two APIs…
+DE: What do you mean? The Intl segmenter has two APIs...
 
-YK: This all makes sense.  One thing that iterators help with is to avoid O(n) scanning. I want to agree but not 100% sure.  What we do in handlebars is we have an iterator version and use it for both nodes and increment manually to avoid doing things synchronously.  Can they use for-of or iterators?
+YK: This all makes sense. One thing that iterators help with is to avoid O(n) scanning. I want to agree but not 100% sure. What we do in handlebars is we have an iterator version and use it for both nodes and increment manually to avoid doing things synchronously. Can they use for-of or iterators?
 
 DE: In `for-of`, engines can unbox. If you do it manually it's harder. Also less ergonomic using iterator vs. segmenter API. What next?
 
@@ -1063,16 +1063,16 @@ MB: It doesn't feel right to me to advance a proposal without everyone on board.
 
 (Mathias Bynens)
 
-- [proposal](https://github.com/gibson042/ecma262-proposal-well-formed-stringify)
+- [proposal](https://github.com/gibson042/ECMA-262-proposal-well-formed-stringify)
 - [slides](https://docs.google.com/presentation/d/1A6sQphLdaUe56V0lEp4wVT6Q2r9tjmIITZBbudKZtDU)
 
 MB: Proposal by Richard Gibson.
 
 MB: 
 
-> RFC 8259: “JSON text exchanged between systems that are not part of a closed ecosystem MUST be encoded using UTF-8”
+> RFC 8259: "JSON text exchanged between systems that are not part of a closed ecosystem MUST be encoded using UTF-8"
 
-MB: Using UTF-8 is best practice.  But `JSON.stringify` can return symbols that are technically not valid, and that cannot be represented in UTF-8. Many problems. 
+MB: Using UTF-8 is best practice. But `JSON.stringify` can return symbols that are technically not valid, and that cannot be represented in UTF-8. Many problems. 
 
 MB: Even the description of `JSON.stringify` in the spec is incorrect. It says it returns a string in UTF-16-encoded JSON format, but UTF-16 does not support lone surrogates either!
 
@@ -1084,7 +1084,7 @@ MB: If you have a lone surrogate, then with `JSON.stringify` you currently just 
 
 MB: If you parse a stringified input string, you get the same string value as the original. This proposal doesn't change that invariant. `JSON.parse(JSON.stringify(string)) === string`
 
-MB: But more importantly… You can take either the current serialization, or the proposed serialization with escapes in it, and pass it through `JSON.parse`. The result remains exactly the same. And that's why we believe this change to be backwards compatible. These escape sequences are specified as part of JSON, so any valid JSON parser already supports them.
+MB: But more importantly... You can take either the current serialization, or the proposed serialization with escapes in it, and pass it through `JSON.parse`. The result remains exactly the same. And that's why we believe this change to be backwards compatible. These escape sequences are specified as part of JSON, so any valid JSON parser already supports them.
 
 YK: Are you saying that after changing, old JSON.parse will return the original value?
 
@@ -1104,15 +1104,15 @@ sendOverWebSocketConnection(payload);
 // → error/crash/DoS
 ```
 
-You can cause errors or crashes just by using lone surrogates. If you want to store such a payload in a database, it can crash your web server. If you send such a payload over a WebSocket connection, which uses UTF-8 per spec, the connection would be closed. Socket.io used to auto-restart in this case, resulting in a DoS vulnerability just by repeatedly sending a payload based on a single character. This was a real issue in a real product. Lone surrogates cause real problems. Anything we can do to help prevent these issues from happening, is a good change. Of course, we can solve this in userland using libraries like [jsesc](https://github.com/mathiasbynens/jsesc) which has a `json` option; jsesc produces ASCII-safe output by default. However I'd prefer fixing this in the spec, to avoid need for such userland solutions. There's one edge casey issue with backwards compatibility: There might be non-JSON-compliant userland “JSON parsers” that support `\uXXXX` escape sequences only for those specific symbols that `JSON.stringify` currently escapes (i.e. non-printable ASCII). These would break once they see an escape sequence for another character.
+You can cause errors or crashes just by using lone surrogates. If you want to store such a payload in a database, it can crash your web server. If you send such a payload over a WebSocket connection, which uses UTF-8 per spec, the connection would be closed. Socket.io used to auto-restart in this case, resulting in a DoS vulnerability just by repeatedly sending a payload based on a single character. This was a real issue in a real product. Lone surrogates cause real problems. Anything we can do to help prevent these issues from happening, is a good change. Of course, we can solve this in userland using libraries like [jsesc](https://github.com/mathiasbynens/jsesc) which has a `json` option; jsesc produces ASCII-safe output by default. However I'd prefer fixing this in the spec, to avoid need for such userland solutions. There's one edge casey issue with backwards compatibility: There might be non-JSON-compliant userland "JSON parsers" that support `\uXXXX` escape sequences only for those specific symbols that `JSON.stringify` currently escapes (i.e. non-printable ASCII). These would break once they see an escape sequence for another character.
 
-DD: It would “break” in that they would just not decode the escape sequence. So after “parsing” (incorrectly), instead of a lone surrogate, you'd still see the escape sequence. It won't crash. This doesn't seem too bad.
+DD: It would "break" in that they would just not decode the escape sequence. So after "parsing" (incorrectly), instead of a lone surrogate, you'd still see the escape sequence. It won't crash. This doesn't seem too bad.
 
-YK: The problem I see is that they've…(something) I wouldn't be surprised if such broken parsers actually existed.
+YK: The problem I see is that they've...(something) I wouldn't be surprised if such broken parsers actually existed.
 
-DD: I second that lone surrogates do cause problems in real life.  Chrome has 3-4 JSON parsers — some only operate on Unicode. We had bugs where it was not safe to pass through. Would be great if default did not produce problematic output.
+DD: I second that lone surrogates do cause problems in real life. Chrome has 3-4 JSON parsers — some only operate on Unicode. We had bugs where it was not safe to pass through. Would be great if default did not produce problematic output.
 
-MSL: I've seen systems that produce this, things that transcode, trim strings at 40 “characters”, and end up breaking up a surrogate pair, etc.
+MSL: I've seen systems that produce this, things that transcode, trim strings at 40 "characters", and end up breaking up a surrogate pair, etc.
 
 CM: As custodian of JSON, I endorse this proposal. The edge case concerns are not a worry, because they happen as a result of lazy/sloppy code (non-compliant parsers).
 
@@ -1144,7 +1144,7 @@ API: Not sure; I only just found this code.
 
 MB: Please post a follow-up on the repo so we can look into it.
 
-API: (after the meeting) https://github.com/gibson042/ecma262-proposal-well-formed-stringify/issues/5
+API: (after the meeting) https://github.com/gibson042/ECMA-262-proposal-well-formed-stringify/issues/5
 
 #### Conclusion/Resolution
 
@@ -1165,5 +1165,3 @@ JHD: I removed the problematic statement.
 #### Conclusion/Resolution
 
 - matchAll remains at stage 3 and has no further blockers towards stage 4 besides implementations
-
-

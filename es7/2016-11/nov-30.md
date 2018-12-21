@@ -584,7 +584,7 @@ AK: I would recommend to the champion to discuss further with Waldemar about pos
 
 (Brendan Eich)
 
-- [Proposal](https://github.com/BrendanEich/ecma262/tree/int64)
+- [Proposal](https://github.com/BrendanEich/ECMA-262/tree/int64)
 - [Slides](https://www.slideshare.net/BrendanEich/int64)
 
 BE: We need a new plan not based on waiting for SIMD and/or value types, but let's do a way that doesn't depend on those and just hard-code this one to start.
@@ -847,12 +847,12 @@ Terminology:
 - scramble: replace a nan with another arbitrary nan
 - canonicalize: replace a nan with a _particular_ nan value. 
 
-DE: V8 may violate the ES standard for NaN observable behavior, but I want to argue that it’s OK
+DE: V8 may violate the ES standard for NaN observable behavior, but I want to argue that it's OK
 
 From ES2015:
     
 > SetValueInBuffer ( arrayBuffer, byteIndex, type, value [ , isLittleEndian ] )
-> “An implementation must always choose the same encoding for each implementation distinguishable NaN value.” 
+> "An implementation must always choose the same encoding for each implementation distinguishable NaN value." 
 
 
 Every time you get a new number, it can be scrambled at _that_ point. Wen you put it into an ArrayBuffer, it doesn't scramble
@@ -899,4 +899,4 @@ MM: Add text to SetValueInBuffer to canonical
 
 #### Conclusion / Resolution
 
-- Change SetValueInBuffer to allow set either a bit pattern or a particular canonical value. It can either canonicalize or _not_ canonicalize. 
+- Change SetValueInBuffer to allow set either a bit pattern or a particular canonical value. It can either canonicalize or _not_ canonicalize.

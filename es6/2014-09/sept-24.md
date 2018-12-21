@@ -76,7 +76,7 @@ Slide 7
   - `new super()` is always a [[Construct]] invocation
   - `super()`     is always a [[Call]] invocation
 
-- Didn’t want to further confuse "called as a constructor" and "called as a function". 
+- Didn't want to further confuse "called as a constructor" and "called as a function". 
   – <id>() -- always means "called as function"
   – new <id>() – always means "called as constructor" 
   – Even when <id> is `super` 
@@ -329,10 +329,10 @@ do {
 
 Slide 9
 
-- Builtins do all their work in the allocator.    
-- Constructors are noops.  
-- Impossible to observe uninitialized objects.  
-- Abstractable by WebIDL to avoid spec boilerplate.  
+- Builtins do all their work in the allocator. 
+- Constructors are noops. 
+- Impossible to observe uninitialized objects. 
+- Abstractable by WebIDL to avoid spec boilerplate. 
 - Abstractable by WebIDL implementations to avoid implementation boilerplate.
 
 
@@ -691,7 +691,7 @@ MM: I want to split the argument. In world 1, we are saying we don't want to bur
 
 MM: In that world, let's compare new^ to the proposal on the board. In new^, in world 1, if this is normal code, super() becomes `this = new super()`
 
-YK: Yes but what this was saying is that IF YOU ARE subclasing something exotic, you need to do idiomatic things to get plausible results.
+YK: Yes but what this was saying is that IF YOU AKI subclasing something exotic, you need to do idiomatic things to get plausible results.
 
 MM: But only on the hypothesized small amount of code that needs to subclass builtins.
 
@@ -1102,6 +1102,3 @@ BE: What about a flag?
 #### Conclusion/Resolution
 
 - Stage 0 acceptance
-
-
-

@@ -287,7 +287,7 @@ DH: and it's actually a really nice zero of the promise algebra!
 ## 7. Object.observe status report.
 
 Rafael Weinstein
-[Slides](http://slid.es/rafaelweinstein/object-observe-sept2013) <--- etherpad fucks this up :(
+- [slides](http://slid.es/rafaelweinstein/object-observe-sept2013) <--- etherpad fucks this up :(
 
 
 Discussion related to how nested observers should chain.

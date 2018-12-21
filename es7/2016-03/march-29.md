@@ -108,7 +108,7 @@ MM: is opposed to having bare "global". They should be gathered; having that be 
 
 (JHD)
 
-JHD: will ship in stable behind a flag.  Not currently trying to get to stage 4 today (currently at Stage 3). Just wanted to update because of recent discussion.  there is not enough implementations to move it forward in stage.
+JHD: will ship in stable behind a flag. Not currently trying to get to stage 4 today (currently at Stage 3). Just wanted to update because of recent discussion. there is not enough implementations to move it forward in stage.
 
 MS: It's now in WebKit Nightly
 
@@ -220,11 +220,11 @@ JHD: This is not a people's websites will break thing. If more cross-realm thing
 
 MM: to minimize the window, JHD should collaborate with MM on the getStack API. Hopes to have a proposal in Munich.
 
-##### Conclusion
+##### Conclusion/Resolution
 
 •JHD will work with MM on the stack proposal, and move this proposal into the "withdrawn proposals" section
 
-### ECMA402
+### ECMA-402
 
 DE: Compatibility fix for v1 -> v2 (call with a receiver that is created via Object.create, it would initialize the object). For V2, spec was changed to be normal JS semantics. Tried to fix V2 semantics, but couldn't ship in V8 due to breaking websites. Now have implemented a compromise semantics: if you call the NumberFormat and DateTimeFormat constructor with a receiver that is an instance of the respective constructor and it's not initialized.... (continues to describe) details here: https://github.com/tc39/ecma402/pull/84. There is a symbol that it indirects to and the fix seems to work.
 
@@ -254,7 +254,7 @@ BT: let's not open that.
 
 MM: proposes: put the tecxt and mark it non-normative
 
-DE: if it's relevant to performance tests, etc. then it's normative.  Normative optional is plausible
+DE: if it's relevant to performance tests, etc. then it's normative. Normative optional is plausible
 
 MM: Annex B is irritataingly stronger than normative optional. 
 
@@ -280,7 +280,7 @@ MM: in annex B
 
 DE: The ?? spec doesn't have a specific annex B.
 
-BT: including a note with the history of this issue is reasonable.  
+BT: including a note with the history of this issue is reasonable. 
 
 * discussion about the spec for implementors vs. developers/users.*
 
@@ -294,7 +294,7 @@ DE: Ok let's confirm that when Mark gets back.
 
 CP: Targeting edition 4.
 
-##### Conclusion
+##### Conclusion/Resolution
 
 PR: is ok once the editorial issues are worked out (including a non-normative note describing the back-compat requirement and other relevant information). Said note should not link to GitHub issues.
 
@@ -392,7 +392,7 @@ AK: how does the "get" name spec text work with computed properties?
 
 MF: the expression is included in the name.
 
-##### Conclusion
+##### Conclusion/Resolution
 
 MF: will make changes to use the initial value of the "name" property as the global name of intrinsics
 
@@ -462,7 +462,7 @@ JH: where before we were relying on then to do the flattening, here we are relyi
 
 *discussion
 
-MM: the typical consumer should see the flattened value.  The principle here is that for the producer yields a value, they must not get blocked because they didn't block.
+MM: the typical consumer should see the flattened value. The principle here is that for the producer yields a value, they must not get blocked because they didn't block.
 
 MM: the only alternative approach is if the async iterator did the collapsing.
 
@@ -502,7 +502,7 @@ JFB: I can wait a non-boxed value. is that the reasoning for falling back to Sym
 
 ?? if you have an async iterator of async iterators does it flatten those?
 
-DD: what if Object.prototype.iterator that returns async.iterator [check the proposal].  This was proposed to change the refactoring considerations around the proposal to failover to synchronous iteration for async iteration.
+DD: what if Object.prototype.iterator that returns async.iterator [check the proposal]. This was proposed to change the refactoring considerations around the proposal to failover to synchronous iteration for async iteration.
 
 MM: is there anything in the spec where we case-switch on whetehr something is iterable.
 
@@ -518,7 +518,7 @@ DH: "meh".
 
 BT: Matt the author of ReactiveX wants to work with Matt Podwysocki
 
-##### Conclusion
+##### Conclusion/Resolution
 
 Stage 2 acceptance
 

@@ -10,7 +10,7 @@ Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferra
 
 (Andreas Rossberg, on phone)
 
-[Slides](https://docs.google.com/presentation/d/1nv4UPDgjL7SdXewTPBt_IpcRxkIFzhz1ENrfyvKcY8Q/)
+- [slides](https://docs.google.com/presentation/d/1nv4UPDgjL7SdXewTPBt_IpcRxkIFzhz1ENrfyvKcY8Q/)
 
 ARB: Strictness Scoping
 
@@ -490,7 +490,7 @@ Stage 3: "Will require feedback from implementations and users"
 
 (Dan Gohman, John Mccutchan, Peter Jensen, Daniel Ehrenberg)
 
-[Slides](simd.pdf)
+- [slides](simd.pdf)
 
 DE: (introducing topic)
 
@@ -514,7 +514,7 @@ No separate unsigned type
 
 - Postponed features
 
-Float64x2--we couldn’t find an important use case with improved performance
+Float64x2--we couldn't find an important use case with improved performance
 Int64x2--Not needed due to boolean vectors, and really not needed because Float64x2 is out
 selectBits--minimal utility due to select, and efficiently implementable in terms of other boolean operations
 
@@ -854,15 +854,3 @@ WH: Note that I'm not alone with that argument. I don't want this to become pers
     - Jordan Harband
     - Brendan Eich
     - Mark Miller
-    
-
-
-
-
-
-
-
-
-
-
-

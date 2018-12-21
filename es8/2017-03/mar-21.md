@@ -45,7 +45,7 @@ ZB: I'm not prepared for this discussion. I believe Caridy will be giving this. 
 
 ## 6.ii Vote to accept ECMA-262 2017 final draft and forward it to Ecma GA (approval subject to completion of RF opt-out period with no opt-outs)
 
-AWB: Voting on the standards is one of the few things that needs a vote.  In a minute or two, we will go around and people who actually represent Ecma members should determine who from each organization will vote. Each member will vote yes/no/abstain (where abstain is the equivalent of "no").  We're voting on the 2017 version of ECMA-262 and ECMA-402, based on the final drafts that the editors prepared, subject to the assumption that no one raises an objection during the RF opt-out period (in which case we would not be approving the standard in June, but that has never happened). After we approve it, this will go through the Ecma executive committee, onto the GA in June with the final vote.
+AWB: Voting on the standards is one of the few things that needs a vote. In a minute or two, we will go around and people who actually represent Ecma members should determine who from each organization will vote. Each member will vote yes/no/abstain (where abstain is the equivalent of "no"). We're voting on the 2017 version of ECMA-262 and ECMA-402, based on the final drafts that the editors prepared, subject to the assumption that no one raises an objection during the RF opt-out period (in which case we would not be approving the standard in June, but that has never happened). After we approve it, this will go through the Ecma executive committee, onto the GA in June with the final vote.
 
 WH: No one has ever opted out of an opt-out, but we've had patent shenanigans in the General Assembly before.
 
@@ -89,7 +89,7 @@ KCD: PayPal Yes.
 
 DFV: SalesForce Yes.
 
-AWB: Someone will count them. We got "yesses" and no "no"s.  It will be referred to General Assembly for approval. Our work is done for last year.
+AWB: Someone will count them. We got "yesses" and no "no"s. It will be referred to General Assembly for approval. Our work is done for last year.
 
 All: _clapping_
 
@@ -113,7 +113,7 @@ LBR: There's still a draft.
 
 AWB: People have probably not reviewed it adequately to vote on it yet. Post a link here for TR104.
 
-__[link](https://github.com/tc39/Test262/blob/master/Draft%20TR%20ECMA-104%202nd%20edition.doc)__
+__[link](https://github.com/tc39/test262/blob/master/Draft%20TR%20ECMA-104%202nd%20edition.doc)__
 
 LBR: Yes, I will post a link. We didn't have any updates on it since last year.
 
@@ -169,7 +169,7 @@ WH: Yes, that's controversial!
 
 BT: I think it would be pretty nice. But yeah, that's the only refactoring that's on my radar. I'm totally interested in refactorings. But I've been in this document so much that I'm resistant to do any more significant refactorings.
 
-AWB: I can understand what you say about the IDL for properties. But I'm wondering about the other major place where there are prose descriptions for built-ins are on the arguments.  It's not clear what you could say about arguments other than "we call the first argument X".
+AWB: I can understand what you say about the IDL for properties. But I'm wondering about the other major place where there are prose descriptions for built-ins are on the arguments. It's not clear what you could say about arguments other than "we call the first argument X".
 
 BT: WebIDL has the capability to describe function parameters. It goes further to say that if you define your function as taking in a number that implies that there's a coercion done to number. I'm not going to include this in the MVP. I don't want the syntax to describe the shape of a function. I would leave that to editorial conventions and prose. The automatic coercions... I have two minds of it. There's an issue raised in 402 where it says do all your coercions at the top, and the Ecma standard says do all coercions when you need them.
 
@@ -351,7 +351,7 @@ YK: A use case would be putting JS code into a template string for documentation
 
 There's a presentation linked from the agenda.
 
-DE: Just to recap the purpose for the proposal. This is a zero-width assertion that matches a string without consuming anything.There are both positive and negative look behinds now.  ... At the last meeting I was asking if we could go to stage 3.
+DE: Just to recap the purpose for the proposal. This is a zero-width assertion that matches a string without consuming anything.There are both positive and negative look behinds now. ... At the last meeting I was asking if we could go to stage 3.
 
 (see slides for more details)
 
@@ -367,7 +367,7 @@ AWB: 2 implementations are not required for stage 3 anyway.
 
 LBR: Writing a test for this (Test262) would be the best thing to review the proposed syntax.
 
-DE: We would love your help in writing tests!! There are some tests already on github, but we would love and plan to do work on these tests, but having started porting them to Test262.  .... Okay, I think we had a few reviewers, trying to find the notes from the last meeting to be sure. So the reviewers were: someone from Microsoft, Kevin Gibbons, WH. Did anyone from the Microsoft team look at this?
+DE: We would love your help in writing tests!! There are some tests already on github, but we would love and plan to do work on these tests, but having started porting them to Test262. .... Okay, I think we had a few reviewers, trying to find the notes from the last meeting to be sure. So the reviewers were: someone from Microsoft, Kevin Gibbons, WH. Did anyone from the Microsoft team look at this?
 
 BT: Not thoroughly. I couldn't find any regex experts. I love it, but I suppose it should get a proper review.
 
@@ -408,7 +408,7 @@ MM: I can talk about it.
 
 (Caridy Patiño)
 
-CP: So far no feedback on the 2017 draft that was published in the last month.  We haven't done any major updates, though we did small fixes and editorial work.  We expect to continue with small work in 2018.  Zibi(?) and Daniel will present a few related proposals.  Also ??? will be updated.  We keep waiting for number format, format to parts from Google.
+CP: So far no feedback on the 2017 draft that was published in the last month. We haven't done any major updates, though we did small fixes and editorial work. We expect to continue with small work in 2018. Zibi(?) and Daniel will present a few related proposals. Also ??? will be updated. We keep waiting for number format, format to parts from Google.
 
 DT: Your voice went out....please say that again.
 
@@ -440,7 +440,7 @@ No specific conclusion, let's review the current proposals for ECMA-402.
 
 ZB: There are three formatters that we believe now are ironed out enough to request a stage 3. The first one is called Intl.ListFormat. It closes the gap with localized JavaScript data structures.
 
-ZB: (makes presentation).  I believe it's mature enough to propose stage 2.  Stage 2 requested.
+ZB: (makes presentation). I believe it's mature enough to propose stage 2. Stage 2 requested.
 
 WH: I'm still looking at this.
 
@@ -623,7 +623,7 @@ DH: I'm so sorry Maggie, lunch is here. We can continue after if that makes sens
 
 AWB: Let's continue now that lunch is over.
 
-ZB: I added examples to the slides during lunch to present use cases.  Continuing on UnitFormat.  These formatters (plus one more that's in the ecma402 GitHub repository) are the only ones they are currently planning.  Every use case they have encountered in the last year can be covered by some one or two of the 4 formatters.  It's not that they are trying to port all the ICU formatters to JS, but rather they have the subset that is need for the web.  Stage 2 is that TC39 agrees that the problems need to be solved.  Is there a reason that we do not want a feature like that in ECMAScript?
+ZB: I added examples to the slides during lunch to present use cases. Continuing on UnitFormat. These formatters (plus one more that's in the ECMA-402 GitHub repository) are the only ones they are currently planning. Every use case they have encountered in the last year can be covered by some one or two of the 4 formatters. It's not that they are trying to port all the ICU formatters to JS, but rather they have the subset that is need for the web. Stage 2 is that TC39 agrees that the problems need to be solved. Is there a reason that we do not want a feature like that in ECMAScript?
 
 WH: Those are not the only choices. We could say "come back when you have improved it".
 
@@ -661,9 +661,9 @@ ZB: The last proposal I have is a proposal that I'm seeking stage 1 for. I prese
 
 CP: The data part is the new thing here, to find the default settings for the locale. It should be useful. All other things that you mentioned are not very relevant because this is low level API, and can be achieved in user-land, except the default settings per locale, which is data.
 
-AWB: This sounds plausible, but most of us are not familiar with all the Intl functions.  I would find it useful to see "here's what you have to say today" and "with this proposal, here's what you say instead".
+AWB: This sounds plausible, but most of us are not familiar with all the Intl functions. I would find it useful to see "here's what you have to say today" and "with this proposal, here's what you say instead".
 
-YK: There's something that's been bugging me.  I suspect that if the entire library existed, it would be used to get at some underlying primitives that are not exposed.  I say this as someone who worked on the rails intl library because it's so hard to make the high level story good for all domains.
+YK: There's something that's been bugging me. I suspect that if the entire library existed, it would be used to get at some underlying primitives that are not exposed. I say this as someone who worked on the rails intl library because it's so hard to make the high level story good for all domains.
 
 CP: Maybe an API that gives you access to all the setting for your locale.
 
@@ -671,13 +671,13 @@ AWB: Part of the requirement is that the surface API needs to accomodate differe
 
 BE: This is the extensible web manifesto. We might do OK if we design a high-level library, but we might get it wrong, and putting in low-level primitives.
 
-MPT: We want the CLDR data without having to pack it.  What would save our lives would be CLDR data accessible through the browser.
+MPT: We want the CLDR data without having to pack it. What would save our lives would be CLDR data accessible through the browser.
 
 YK: That might be tricky because Edge doesn't have CLDR data.
 
 BT: If you are just talking about exposing the underlying data, Windows does use CLDR extensively so we could potentially expose underlying data. I'm not ready to commit to standardizing on CLDR, though.
 
-RX: I do Intl and localization at PayPal, in globalize.js.  It's not just a matter of roping a lower-level API into a higher-level one.  For example, when you say Date.short, so let the engine to figure things out in the specifics about the language/locale.  So it's more than grouping things together--it has localization smarts under that.
+RX: I do Intl and localization at PayPal, in globalize.js. It's not just a matter of roping a lower-level API into a higher-level one. For example, when you say Date.short, so let the engine to figure things out in the specifics about the language/locale. So it's more than grouping things together--it has localization smarts under that.
 
 CP: What we're saying is that that information is needed to produce the right date format--it could produce options that would feed back into the Intl constructors.
 
@@ -726,14 +726,14 @@ We will treat the 3 proposals independently.
 
 ## 6. Addendum to Test262 item
 
-LBR: People asked me to mention. We are using an integrated test generation tool. That's why we have so many lines of code.  It has documentation on Test262. I would be very happy to show this test generation tool to anyone who is interested. The automated deployment I mentioned earlier uses this tool to confirm that tests are properly generated.
+LBR: People asked me to mention. We are using an integrated test generation tool. That's why we have so many lines of code. It has documentation on Test262. I would be very happy to show this test generation tool to anyone who is interested. The automated deployment I mentioned earlier uses this tool to confirm that tests are properly generated.
 
 
 ## 10.i.c RegExp Unicode Property Escapes for stage 3
 
 https://github.com/tc39/proposal-regexp-unicode-property-escapes
 
-DE: There's a link from the agenda. These have barely changed. [DE talks through the slides]. The thing that has been narrowed down recently, is that the list of properties that are supported is explicitly enumerated. Previously implementations could expose anything they wanted, which would lead to needless differences between platforms.  It is implemented in V8 behind a flag.  I asked for reviewers last meeting.  The potential reviewers were Waldemar, James Gibbons, and someone from MS.
+DE: There's a link from the agenda. These have barely changed. [DE talks through the slides]. The thing that has been narrowed down recently, is that the list of properties that are supported is explicitly enumerated. Previously implementations could expose anything they wanted, which would lead to needless differences between platforms. It is implemented in V8 behind a flag. I asked for reviewers last meeting. The potential reviewers were Waldemar, James Gibbons, and someone from MS.
 
 YK: Are the new properties...???
 
@@ -765,7 +765,7 @@ DE: I don't really understand the theory of change where we wake up and we want 
 
 YK: I think the bottom line is what Allen said is we should make it part of the process of annual review. If there's no hook like that people will forget to do it.
 
-DE: I don't think propeties get added all the time.  Emoji properties are the hot topic now.
+DE: I don't think propeties get added all the time. Emoji properties are the hot topic now.
 
 YK: Ok I withdraw my concern.
 
@@ -835,7 +835,7 @@ BT: I think we're talking depending on the context. Without `u` we're talking ab
 
 DH: `s` is orthogonal to `u`.
 
-AWB: In the regexp spec in ecma262, the word "character" specifically means "the unit you are matching".
+AWB: In the regexp spec in ECMA-262, the word "character" specifically means "the unit you are matching".
 
 DH: What are the historical things that dot didn't used to match?
 
@@ -959,7 +959,7 @@ WH: Yeah, but if you make a typo... I would rather be consistent with numerics.
 
 MF: It's useful to get a predictable object shape coming out of `exec`.
 
-DE: We would get a predictable object shape if we always created own-properties. That might provide a trivial perf advantage.  Things are more optimizable if the shape is consistent.
+DE: We would get a predictable object shape if we always created own-properties. That might provide a trivial perf advantage. Things are more optimizable if the shape is consistent.
 
 BE: Yep. Sounds good.
 
@@ -1022,7 +1022,7 @@ AWB: ??
 
 MM: This suppresses the spookiness both between realms and subclasses.
 
-DH: From the description, I can believe the changes are web-compatible. They sound like the kind we would take a chance on.  My biggest question that I don't think affects stage 3:  what about Annex B? We need to review the goal and its role and judge what its future is.
+DH: From the description, I can believe the changes are web-compatible. They sound like the kind we would take a chance on. My biggest question that I don't think affects stage 3:  what about Annex B? We need to review the goal and its role and judge what its future is.
 
 MM: I enthusiastically agree.
 
@@ -1046,7 +1046,7 @@ WH: Ok.
 
 BE: Ok, right.
 
-DH: To be clear, I'm not arguing for anything. (We shouldn't do that right now.) I'm just saying that we need to find clarity around this question. There are mismatches in different people’s heads here.
+DH: To be clear, I'm not arguing for anything. (We shouldn't do that right now.) I'm just saying that we need to find clarity around this question. There are mismatches in different people's heads here.
 
 BE: I want to frame this question. Part of this seems to hinge on an empirical question: "How much is required for web-compatibility?"
 
@@ -1084,7 +1084,7 @@ MM: Dynamically scoped is also spooky action-at-a-distance. Any objections to st
 
 BE: I'm so sorry.
 
-DE: There's one point I want to make about it. The subclasses restrictions. There are some regex classes in the wild. XRegExp is an example, which is an old-style subclass instance `of RegExp`, so it doesn't really get touched by the detection in this proposal which doesn't modify `new target`, but it seems a little bit odd... The justification for restricting it from subclasses is that it would give bad answers for specific subclasses for example… it might leak implementation details. XRegExp will get past that because it won't get detected.
+DE: There's one point I want to make about it. The subclasses restrictions. There are some regex classes in the wild. XRegExp is an example, which is an old-style subclass instance `of RegExp`, so it doesn't really get touched by the detection in this proposal which doesn't modify `new target`, but it seems a little bit odd... The justification for restricting it from subclasses is that it would give bad answers for specific subclasses for example... it might leak implementation details. XRegExp will get past that because it won't get detected.
 
 AWB: Well it doesn't not get detected, it just doesn't meet the definition of what we call a subclass.
 
@@ -1125,7 +1125,7 @@ DH: Add it to the agenda for next meeting right now.
 
 (Daniel Ehrenberg)
 
-DE: I'm no longer championing SIMD.js. It was pursued as the best way to provide to users in JS. But at this point, WebAssembly is sufficiently far enough along. It is hard to optimize sufficiently well for the non-asm.js case, so better is to simply specify it for asm.js.  The decision could be reversed, but it's currently on hold.
+DE: I'm no longer championing SIMD.js. It was pursued as the best way to provide to users in JS. But at this point, WebAssembly is sufficiently far enough along. It is hard to optimize sufficiently well for the non-asm.js case, so better is to simply specify it for asm.js. The decision could be reversed, but it's currently on hold.
 
 YK: I'm interested in Brendan and DH's response.
 
@@ -1133,7 +1133,7 @@ BT/AWB: If we have a proposal that's at stage 3, the champions should write up a
 
 YK: Is Mozilla also abandoning it?
 
-PJ: The main reason it's on hold is WebAssembly.  They were involved with the SIMD proposal as well.  It remains to be seen whether WA will fill the gap, since SIMD is not part of WA yet.  Hence maintaining the 'on hold' status.  Also, just like in C++, when people want to do SIMD, they can use asm or intrinsics.  We'd like to see something simliar for JS, but it's a big burden on browser developers.
+PJ: The main reason it's on hold is WebAssembly. They were involved with the SIMD proposal as well. It remains to be seen whether WA will fill the gap, since SIMD is not part of WA yet. Hence maintaining the 'on hold' status. Also, just like in C++, when people want to do SIMD, they can use asm or intrinsics. We'd like to see something simliar for JS, but it's a big burden on browser developers.
 
 BT: Is it appropriate then for V8 to delete their implementation?
 
@@ -1167,7 +1167,7 @@ MS: Apple's point of view is we don't think SIMD.js is appropriate as an additio
 
 BT: I'm personally sympathetic to wasm, though there are some concerns. I have met some people that *did* get really excited about SIMD.js. I can help you find those programmers.
 
-PJ: There are more JS developers than C++ programmers. The places where SIMD improves performance are typically isolated to small hot loops.   Forcing developers to bring in the whole wasm toolchain to extract better performance in those cases is a big ask.
+PJ: There are more JS developers than C++ programmers. The places where SIMD improves performance are typically isolated to small hot loops. Forcing developers to bring in the whole wasm toolchain to extract better performance in those cases is a big ask.
 
 DT: Is there a timeframe for whether wasm solves this problem? And if it doesn't should we bring SIMD proposal back?
 
@@ -1179,7 +1179,7 @@ YK: Yes.
 
 MM: I think it should be withdrawn if it is championless.
 
-AWB: I think it's either withdrawn or it is stage 1.  But before either of those, we need documentation for why we are making the transition.
+AWB: I think it's either withdrawn or it is stage 1. But before either of those, we need documentation for why we are making the transition.
 
 YK: Yes just writing down that we think it should be addressed by wasm will make it easier to address in a year.
 
@@ -1257,7 +1257,7 @@ YK: V8 has made it clear they are betting on wasm.
 
 BT: I think practically speaking, based on what I have heard, it would be extremely difficult to get consensus on this even after wasm has been around for a while.
 
-YK: Imagine a year from now, wasm fails to get traction or adoption.  Then would your answer be different?
+YK: Imagine a year from now, wasm fails to get traction or adoption. Then would your answer be different?
 
 BT: I think that's an interesting question.
 
@@ -1267,7 +1267,7 @@ BT: You will find people like that on the Chakra team as well.
 
 YK: I think V8 took the plunge.
 
-MS: Just to be clear, before this meeting, we made it clear that we are not supporting SIMD.js.  Essentially: "I don't think this is appropriate for the standard, but if it becomes part of the standard we will implement it".
+MS: Just to be clear, before this meeting, we made it clear that we are not supporting SIMD.js. Essentially: "I don't think this is appropriate for the standard, but if it becomes part of the standard we will implement it".
 
 YK: How did we get consensus at stage 3.
 
@@ -1341,7 +1341,7 @@ AWB: It's probably going to stage 1.
 
 #### Conclusion/Resolution
 
-- Stage will remain at stage 3.  DE will write up the reason for deprecation and present it.  At that point, it will transition to a lower stage (possibly withdrawn).
+- Stage will remain at stage 3. DE will write up the reason for deprecation and present it. At that point, it will transition to a lower stage (possibly withdrawn).
 It is proposed that Peter and Yehuda will become caretaker champions of the high-level goal at stage 1.
 
 
@@ -1365,7 +1365,7 @@ DE: Yeah, I hadn't previously asked for reviewers because I was unsure about thi
 
 AWB: Sounds good.
 
-#### Conclusion
+#### Conclusion/Resolution
 - Remains at stage 2. Stage 3 reviewers identified:
     - Caridy
     - TBD from PayPal
@@ -1445,7 +1445,7 @@ MB: When the io.js fork happened, all the headers were removed, and it turns out
 
 AWB: We have to go through a committee of lawyers.
 
-#### Conclusion
+#### Conclusion/Resolution
 
 There was no objection from the committee to removing the headers, and Leo will escalate this with István.
 

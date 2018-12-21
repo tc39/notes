@@ -92,7 +92,7 @@ LH: If introducing would introduce a static error. Do not introduce the var bind
 
 WH: When are the crazy introduced var bindings initialized? At entry to outer function bar (just like ES5 inner functions in the top-level of an outer function), or at the time the inner function function foo definition is executed?
 Various: Set to undefined on entry to outer function. Set when inner function definition foo is executed.
-Various: Executing function definition updates both the let and the var bindings.  Assignment updates only the let binding.
+Various: Executing function definition updates both the let and the var bindings. Assignment updates only the let binding.
 
 WH: [points out (and likes) warning on cases "for which the above steps are performed" in Annex B of the current draft]
 [Long discussion about warnings, SHOULD, and their audience]
@@ -251,5 +251,3 @@ WH: This helps with optimization. Knowing that all instances of a StructType are
 ## Value Objects
 
 http://www.slideshare.net/BrendanEich/value-objects2
-
-

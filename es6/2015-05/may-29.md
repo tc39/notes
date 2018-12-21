@@ -13,18 +13,18 @@ MM: presenting
 Promise.resolve(arb1).then(arb2, arb3);
 ```
 
-MM: The invariant that we are trying to maintain is that in a realm where the primodials are frozen and arb1, arb2, and arb3 are from an untrusted party, then any code associated with those objects will be executed in a later turn.  Since promises are not frozen, the invariant can be broken if "then" is overridden on the instance.  The invariants can be maintained by a subclass of Promise.
+MM: The invariant that we are trying to maintain is that in a realm where the primodials are frozen and arb1, arb2, and arb3 are from an untrusted party, then any code associated with those objects will be executed in a later turn. Since promises are not frozen, the invariant can be broken if "then" is overridden on the instance. The invariants can be maintained by a subclass of Promise.
 
 ```js
 DefensiblePromise.resolve(arb1).then(arb2, arb3);
 ```
 
-The other way that the invariant was broken was with Promise.resolve.  Once we added the newTarget parameter to the Reflect.construct method, that meant that someone could invoke the Promise constructor with an arbitrary newTarget.
+The other way that the invariant was broken was with Promise.resolve. Once we added the newTarget parameter to the Reflect.construct method, that meant that someone could invoke the Promise constructor with an arbitrary newTarget.
 
 
-AWB:  That could be checked in the Promise constructor code.  The constructor could traverse the prototype chain of the constructor.
+AWB:  That could be checked in the Promise constructor code. The constructor could traverse the prototype chain of the constructor.
 
-MM: Because we have the mutability issue we have to protect the invariants in userland anyway, so I like the proposal from C. Scott Ananian.  Just perform a Get on the "constructor" property of the argument supplied to "resolve".
+MM: Because we have the mutability issue we have to protect the invariants in userland anyway, so I like the proposal from C. Scott Ananian. Just perform a Get on the "constructor" property of the argument supplied to "resolve".
 
 MM: Do we have species on Promise
 
@@ -38,7 +38,7 @@ AK: This is a breaking change for shipping browsers.
 
 YK: I would be suprised if there are programs which rely on this edge case.
 
-MM: We should take this into account.  Even if there's code subclassing promises, they would probably not be affected by this change.  I would like AWB's opinion on whether we use @@species or constructor.
+MM: We should take this into account. Even if there's code subclassing promises, they would probably not be affected by this change. I would like AWB's opinion on whether we use @@species or constructor.
 
 AWB: NewPromiseCapability might use @@species anyway.
 
@@ -54,9 +54,9 @@ MM:
 ```js
 FooCancellable.resolve(arb1).then(arb2).then(arb3);
 ```
-@@species of FooCancellable is Cancellable.  Using "constructor", the first then is called on a FooCancellable and the second is called on a Cancellable.  That looks correct.
+@@species of FooCancellable is Cancellable. Using "constructor", the first then is called on a FooCancellable and the second is called on a Cancellable. That looks correct.
 
-AK: We'll have to look and see if this change breaks anything.  (Not asking to postpone.)
+AK: We'll have to look and see if this change breaks anything. (Not asking to postpone.)
 
 SP: Chrome canary is already broken here:
 
@@ -265,6 +265,3 @@ function d ([xs, gen]) {
     gen.next(xs[0]);
 }
 ```
-
-
-

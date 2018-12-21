@@ -93,7 +93,7 @@ RWN: There have been many updates and if there were issues, that was on you to f
 
 AWB: In addition to meeting notes record, file bugs to track progress
 
-YK: In general, if there are concerns, there’s two sides: person A thinks “I should push harder” vs. person B saying “that’s fine” without giving it much thought
+YK: In general, if there are concerns, there's two sides: person A thinks "I should push harder" vs. person B saying "that's fine" without giving it much thought
 
 AWB: Still need to be more active reviewing in the committee.
 
@@ -105,7 +105,7 @@ discussion about filtering in general)
 - RWS withdrawing request for stage 3
 - YK commits to prioritize working through remaining issues prior to next meeting.
 - RW commits to reviewing for spec mechanics
-- AWB: “Don’t approve stuff without reading the spec text, dammit” :)
+- AWB: "Don't approve stuff without reading the spec text, dammit" :)
 
 
 ## Royalty Free Status
@@ -206,7 +206,7 @@ RH: Math.sin
 
 WH: Calculating the sine might be parallelizable, but are the lookup of the name and object used to invoke it parallelizable? My biggest concerns are with the glue stuff such as variable and object accesses, which might hit a proxy, observer, or whatnot.
 
-RH: It’s a QoS issue. Start with everything blacklisted, then let implementations figure out what to optimize/whitelist.
+RH: It's a QoS issue. Start with everything blacklisted, then let implementations figure out what to optimize/whitelist.
 
 WH: If I dont know what the impl does, what am i allowed to do to stay in this efficient realm
 
@@ -309,13 +309,13 @@ NM: For parallelism.
 
 MM, WH: Why? Only associative is needed for parallelism.
 
-TS: eg. if you try to do addition, 100 threads on GPU and doing addition as atomic operation, can’t guarantee commutativity
+TS: eg. if you try to do addition, 100 threads on GPU and doing addition as atomic operation, can't guarantee commutativity
 
 WH: If you're able to compile the reduce operation into an atomic add, just do it. If you know enough to compile it into an atomic add, you also know that atomic add is commutative.
 
 WH: If you have something more complex, assume it's associative but don't assume it's commutative. It significantly limits the applicability of the algorithms.
 
-NM: I’ll do some more measurements and come back with data.
+NM: I'll do some more measurements and come back with data.
 
 MM: When the elemental function is commutative, in that case, use whatever technique you want to preserve associativity
 
@@ -481,7 +481,7 @@ BT: A lot but probably not enough
 - Roll back the ES5 change
 
 
-## Change “EscapeSequence 0 [lookahead ∉ DecimalDigit]” to match reality
+## Change "EscapeSequence 0 [lookahead ∉ DecimalDigit]" to match reality
 https://bugs.ecmascript.org/show_bug.cgi?id=1553
 
 AWB: Strict mode explicitly disallows octal escapes.
@@ -505,7 +505,7 @@ WH: No, it's not that either. The grammar has a lookahead restriction that state
 
 ## Implementation Dependencies in String.prototype.replace
 
-AWB: 21.1.3.14 "Table 40 — Replacement Text Symbol Substitutions": someone should research what implementations do here (any differences or “web reality” to match?)
+AWB: 21.1.3.14 "Table 40 — Replacement Text Symbol Substitutions": someone should research what implementations do here (any differences or "web reality" to match?)
 
 This issue dates back to ES3
 
@@ -877,9 +877,9 @@ DL: V8 team can assist as well
 
 BT: Will need to support a variety of disparate test systems
 
-MB: What about Annex B tests? They’d have to run in a browser; test runner needs to support that somehow.
+MB: What about Annex B tests? They'd have to run in a browser; test runner needs to support that somehow.
 
-MM: Detect Annex B features, then if they’re present, test if they behave as per the spec, if not, fail silently.
+MM: Detect Annex B features, then if they're present, test if they behave as per the spec, if not, fail silently.
 
 BT: Continue to report test coverage gaps.
 
@@ -982,7 +982,3 @@ JH: Confirmed.
 - ~~Generator.prototype.return()~~
 
 (continued to April 10, 2014)
-
-
-
-

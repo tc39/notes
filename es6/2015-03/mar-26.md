@@ -333,4 +333,4 @@ General agreement, suggestion to add Babel transpilation and fill out spec text,
 
 (Brendan Eich presents https://gist.github.com/BrendanEich/4294d5c212a6d2254703)
 
-Moves to stage 
+Moves to stage

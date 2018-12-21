@@ -146,7 +146,7 @@ Option #5: No block scoping in ES6 **Strong Pushback (after discussion)**
 
 WH:  Are the options listed about what we want to spec or what the implementations ought to *do* (leaving aside the question of whether or how the standard specs it)?
 LH: Here we're explicitly discussing what implementations should *do*.
-[general agreement that this is what we're discussing at this point.]
+(general agreement that this is what we're discussing at this point.)
 
 LH: We cannot do FIB with meaningful semantics in the face of let/const
 
@@ -268,7 +268,7 @@ ARB: And not creating a more complicated language
 
 AWB/EA: No.
 
-AWB: [#3] Arguably no more complicated then [#0]
+AWB: (#3) Arguably no more complicated then (#0)
 
 MM: (Uses "duplicate parameters in parameter lists with defaults" as example of adding complexity)
 
@@ -634,7 +634,7 @@ var { p, r }? = q;
 - if q is {r: 7}: p is undefined, r is 7.
 WH: That means that ? is deep.
 
-WH: Given the discussion above [not recorded in these notes?] about doing primitive pattern matching assertions in the future, just curious what the semantics of ? ought to be so that it would interact well with such assertions. Example:
+WH: Given the discussion above (not recorded in these notes?) about doing primitive pattern matching assertions in the future, just curious what the semantics of ? ought to be so that it would interact well with such assertions. Example:
 What should ? do in these cases?
 let {p, q}? = {p:17}
 Here p gets 17 and q gets undefined because ? distributes down.
@@ -665,10 +665,10 @@ YK: yes, as long as "?"
 
 #### Conclusion/Resolution
 
-1. No implicit ToObject(RHS). **consensus**
-2. Exception on missing property selected without a ?-suffix. **consensus**
-3. ?-suffix allowed on any pattern, imputing undefined deeply instead of refuting. **consensus**
-4. The ? is a separate lexeme from the : in long-hand patterns. **consensus**
+- No implicit ToObject(RHS). **consensus**
+- Exception on missing property selected without a ?-suffix. **consensus**
+- ?-suffix allowed on any pattern, imputing undefined deeply instead of refuting. **consensus**
+- The ? is a separate lexeme from the : in long-hand patterns. **consensus**
 
 "?" in combination with default values, syntax error.
 ```js
@@ -834,23 +834,24 @@ LH: UintClampedArray, which used to be CanvasPixelArray
 AWB: 10 Prototype objects, 6 distinct method/get accessor functions per Realm.
 
 # 10, TypedArray.prototype
-+ [ BYTES_PER_ELEMENT: int abstract ]
-+ set() void
-+ subarray() void
-+ byteLength() int get
-+ byteOffset() int get
-+ buffer() Object get
-+ length() long get
 
-Int8Array (BYTES_PER_ELEMENT int=1),
-Int32Array (BYTES_PER_ELEMENT int=4),
-Uint8Array (BYTES_PER_ELEMENT int=8),
-Uint32Array (BYTES_PER_ELEMENT int=4),
-Float32Array (BYTES_PER_ELEMENT int=4),
-Float64Array (BYTES_PER_ELEMENT int=8),
-Int16Array (BYTES_PER_ELEMENT int=1),
-Uint16Array (BYTES_PER_ELEMENT int=1),
-Uint8ClampedArray
++ `[ BYTES_PER_ELEMENT: int abstract ]`
++ `set() void`
++ `subarray() void`
++ `byteLength() int get`
++ `byteOffset() int get`
++ `buffer() Object get`
++ `length() long get`
+
+- `Int8Array (BYTES_PER_ELEMENT int=1)`
+- `Int32Array (BYTES_PER_ELEMENT int=4)`
+- `Uint8Array (BYTES_PER_ELEMENT int=8)`
+- `Uint32Array (BYTES_PER_ELEMENT int=4)`
+- `Float32Array (BYTES_PER_ELEMENT int=4)`
+- `Float64Array (BYTES_PER_ELEMENT int=8)`
+- `Int16Array (BYTES_PER_ELEMENT int=1)`
+- `Uint16Array (BYTES_PER_ELEMENT int=1)`
+- `Uint8ClampedArray`
 
 
 
@@ -891,7 +892,7 @@ WH: [Repeats question]
 
 WH: OK.
 
-[Debate about whether TypedArrays need the suite of Array methods]
+(Debate about whether TypedArrays need the suite of Array methods)
 
 YK: Using TypedArrays would be a pain if they didn't already offer these array operations.
 
@@ -913,8 +914,8 @@ LH: Implementation and performance issue concerns?
 
 WH: This is not a lot of work for implementations, and implementations (as opposed to users) are clearly in the better place to implement these efficiently.
 
-[STH: After the end of the official meeting, there was some discussion as to why Typed Arrays wouldn't just become genuine Arrays.  This would mean
-that they'd have all the Array methods, some of which would throw on use (those that change length). This needs discussion at a future meeting.]
+(STH: After the end of the official meeting, there was some discussion as to why Typed Arrays wouldn't just become genuine Arrays. This would mean
+that they'd have all the Array methods, some of which would throw on use (those that change length). This needs discussion at a future meeting.)
 
 #### Conclusion/Resolution
 

@@ -18,7 +18,7 @@ AWB: Asked for volunteers and no one has done that yet.
 
 Possible new text
 
-ECMAScript is now one of the world’s most widely used programming languages; it has been adopted not just by browsers but also for servers and embedded applications, and has become a compilation target for other languages.
+ECMAScript is now one of the world's most widely used programming languages; it has been adopted not just by browsers but also for servers and embedded applications, and has become a compilation target for other languages.
 The 6th edition provides the most extensive set of enhancements to ECMAScript since the 1st edition.
 
 It is now a comprehensive general purpose programming language.
@@ -231,4 +231,4 @@ AWB: Why can't the records have all the fields but the fields are not filled in 
 
 DH: Some of these fields make no sense for reflective modules.
 
-DH: Reflective/dynamic modules are always leaves. Makes things a 
+DH: Reflective/dynamic modules are always leaves. Makes things a

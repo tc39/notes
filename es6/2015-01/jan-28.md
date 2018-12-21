@@ -9,13 +9,13 @@ Brian Terlson (BT), Jonathan Turner (JT), Allen Wirfs-Brock (AWB), John Neumann 
 ## Report from the Ecma Secretariat
 (István Sebestyén)
 
-IS: Strange JSON development: The government of the Netherlands wants to get an EU recognition on IETF's JSON future standard as part of the European Commission's Multi-Stakeholder Platform. Netherlands submitted 27 IETF standards to the Multi-Stakeholder Platform, and IETF's JSON happens to be among them. Normally only long-standing in the market already proved standards should be recognized. Also no "consortium specification" should be recognized where appropriate International Standard (like of ISO, IEC, ITU) exists. JSON in ECMA-262 is already part of ISO/IEC 16262:2011. In addition TC39 has standardized in 2013 ECMA-404 (JSON). We had originally a TC39 decision to fast-track it to JTC1, but after discussion the GA in December 2013 has approved the possibility of a Postal Balot on the JTC1 fast track upon a new request  from TC39.  The iisue has been reported to the last Ecma GA and was worried about the situation.     
+IS: Strange JSON development: The government of the Netherlands wants to get an EU recognition on IETF's JSON future standard as part of the European Commission's Multi-Stakeholder Platform. Netherlands submitted 27 IETF standards to the Multi-Stakeholder Platform, and IETF's JSON happens to be among them. Normally only long-standing in the market already proved standards should be recognized. Also no "consortium specification" should be recognized where appropriate International Standard (like of ISO, IEC, ITU) exists. JSON in ECMA-262 is already part of ISO/IEC 16262:2011. In addition TC39 has standardized in 2013 ECMA-404 (JSON). We had originally a TC39 decision to fast-track it to JTC1, but after discussion the GA in December 2013 has approved the possibility of a Postal Balot on the JTC1 fast track upon a new request  from TC39. The iisue has been reported to the last Ecma GA and was worried about the situation. 
 
 WH and IS: [Discussion about what the Multi-Stakeholder Platform is and its implication on governmental activities]
 
 IS: Recommend resuming the fast-track of ECMA-404 (JSON).
 
-AWB: We don't currently have an editor for the JSON spec.  Who wants to do it?
+AWB: We don't currently have an editor for the JSON spec. Who wants to do it?
 
 CM: I volunteer!
 

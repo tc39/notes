@@ -1,7 +1,7 @@
 # September 27, 2017 Meeting Notes
 -----
 
-Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (ARE), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), Caio Gondim (CGM), Brittany Storoz (BSZ), Sathya Gunasekaran (SGN), Domenic Denicola (DD), Richard Gibson (RGN)
+Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), Caio Gondim (CGM), Brittany Storoz (BSZ), Sathya Gunasekaran (SGN), Domenic Denicola (DD), Richard Gibson (RGN)
 
 Remote: 
 István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM), Gabriel Isenberg (GI), Zibi Braniecki (ZB)
@@ -155,7 +155,7 @@ MB: There are security issues with the status quo, too. Consider:
 </script>
 ```
 
-The developer relies on the fact that JSON.stringify() returns a single line when used in this way, which is correct. However, what constitutes a single line differs between ECMAScript and JSON. This code is vulnerable to XSS since either U+2028 or U+2029 in the user-controlled string would break out of the single-line comment.  
+The developer relies on the fact that JSON.stringify() returns a single line when used in this way, which is correct. However, what constitutes a single line differs between ECMAScript and JSON. This code is vulnerable to XSS since either U+2028 or U+2029 in the user-controlled string would break out of the single-line comment. 
 
 MB: (Presenting Slides)
 
@@ -187,9 +187,9 @@ MB: No, very much not. We need to be very clear JSON cannot change. This does no
 
 CM: We had the same thing with the BigInt proposal - we could change how JSON gets interpreted by JS without changing JSON. There is wiggle room there.
 
-DE: I don’t think there is wiggle room.
+DE: I don't think there is wiggle room.
 
-DH: That’s fine, this was a quick temperature check to see how flexible we are with JSON.
+DH: That's fine, this was a quick temperature check to see how flexible we are with JSON.
 
 YK: We could standardise something like JSONC, but keep JSON the same.
 
@@ -432,7 +432,7 @@ JHD: If I came up with a different name would you be okay with it?
 
 WH: Yes.
 
-YK: There’s another option which is to provide an option to choose between them.
+YK: There's another option which is to provide an option to choose between them.
 
 JHD: Does anyone have a suggestion to how to make this an option?
 
@@ -450,11 +450,11 @@ MS: you could call it scan instead
 
 JHD: Is everyone happy with scan?
 
-MF: Why don’t we set up a github issue?
+MF: Why don't we set up a github issue?
 
 JHD: Right. I will set up a github issue. Can everyone who is interested please comment on that issue.
 
-MS: It seems you really want a sticky that doesn’t start at lastindex. I'm not sure what sticky means with what your proposing.
+MS: It seems you really want a sticky that doesn't start at lastindex. I'm not sure what sticky means with what your proposing.
 
 JHD: Sticky provides an iterator for one match.
 
@@ -476,7 +476,7 @@ JHD: No, you get all match groups with `g`. It works the same.
 
 MS: So you're changing how exec works?
 
-JHD: No, exec doesn’t change. match and exec work differently. I'll file a few github issues to chat about. I may or may not come back in November for Stage 2. Any other concerns?
+JHD: No, exec doesn't change. match and exec work differently. I'll file a few github issues to chat about. I may or may not come back in November for Stage 2. Any other concerns?
 
 #### Conclusion/Resolution
 
@@ -541,7 +541,7 @@ WH: I see your point but disagree. The mental model is it checks for null/undefi
 
 MF: That reduces the usefulness for this operator then.
 
-WH: It is more useful though because if it is a number and I expect it to be a function, I wouldn't know about it. It’s hard for me to come up for a scenario where:
+WH: It is more useful though because if it is a number and I expect it to be a function, I wouldn't know about it. It's hard for me to come up for a scenario where:
 - if the value f is missing, I don't want to call it;
 - if the value f is a number, I silently don't want to call it;
 - if the value f is a function, I want to call it.
@@ -644,7 +644,7 @@ DH: And when not null?
 
 WH: It would behave as if the `?` were not there:  `a.b.c()`. The current semantics specify exactly this and they are good.
 
-DE: We're over time, let’s summarise.
+DE: We're over time, let's summarise.
 
 DE: Waldemar says that the proposal doesn't work without  `?.(` and `?.[`...
 
@@ -734,7 +734,7 @@ DD: We could go to stage 3 with "it doesnt work now" but is feature detection im
 
 DH: Try/catch?
 
-DD: That’s an early error.
+DD: That's an early error.
 
 DH: Eval is not?
 
@@ -754,21 +754,21 @@ YK: What does it mean in a script?
 
 BT: Same as module.
 
-YK: Why don’t we wait to see if the host environments want this? Domenic says browser does - why don't we wait for node?
+YK: Why don't we wait to see if the host environments want this? Domenic says browser does - why don't we wait for node?
 
 BT: Fair.
 
-JHD: To answer your earlier question it would be nice to expose metadata for scripts. Even though I’m a strong advocate for supporting syntaxes and requiring eval, it doesn’t matter in this case because the overlap of support will leave at worst a tiny window of lack of support.
+JHD: To answer your earlier question it would be nice to expose metadata for scripts. Even though I'm a strong advocate for supporting syntaxes and requiring eval, it doesn't matter in this case because the overlap of support will leave at worst a tiny window of lack of support.
 
 TST: It seems like we wouldnt have this conversation if import wasnt only meant for modules.
 
 DD: The use cases for import.meta are to replace `document.currentScript` and `import.meta.url` to resolve relative to your current module. In the browser we don't want to add more features to scripts - we're trying to move away from them; we try to not add just metadata for scripts. 
 
-KVR:  A web application that’s using a bundler; I would imagine that it should work as per the example but is it the bundlers responsibility to resolve that directly or...
+KVR:  A web application that's using a bundler; I would imagine that it should work as per the example but is it the bundlers responsibility to resolve that directly or...
 
 DD: Yes tricky for a bundler. It could work depending on the file you're concatenating. Scripts vs modules - if you are bundling we want you to bundle to a single module not script - modules are more secure.
 
-KVR: Sure that’s the long term vision, but for today's developers it might not be practical. I understand your argument for not having eval.
+KVR: Sure that's the long term vision, but for today's developers it might not be practical. I understand your argument for not having eval.
 
 DD: Let's push for not working in scripts or eval. Maybe going to stage 3 tomorrow?
 

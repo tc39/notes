@@ -48,9 +48,9 @@ WH: What's happening with es-discuss? I'm getting bounces.
 
 AWB: The list administrators of this are Brendan Eich and myself. If someone else wants to be an administrator on that list, I am sure Brendan and I would be happy about that. There isn't a lot of work but occasionally something does come in.
 
-IS: I think this is an example for another TC39 tool, that was popular for a few years, and maybe now is slowly disappearing. It is a real challange for us, how to archive all this for long-term.  
+IS: I think this is an example for another TC39 tool, that was popular for a few years, and maybe now is slowly disappearing. It is a real challange for us, how to archive all this for long-term. 
 
-## ECMA262 Status Updates--countdown to ES2017
+## ECMA-262 Status Updates--countdown to ES2017
 
 (Brian Terlson)
 
@@ -64,7 +64,7 @@ BT: Any needs-consensus PRs after January 31st becomes a part of ES2018 (if at a
 
 BT: For those new to the committee, we're not a technical committee, we're a royalty free task group (of the technical committee). All that means is that there is a royalty free commitment to the content we create in the specification. If you would like to patent something that is in ECMA or if you think you have a patent that is pertinent to something we are standardizing in this version. You should talk to your lawyers and potentially opt out of the royalty free agreement. you'd be the first person to do this. We've never had an opt out. Talking to István, I'm not sure we even know what happens.
 
-IS: Brian is right. In the current TC39 RFTG everything is expected to be RF. At an "opt out" - which we did not have so far - we have to see how that part of the policy plays out. But it will be difficult because a) who decides and how if the claim for the opt out is valid? b) If valid then either an alternative method has to be found or the RF project cancelled... So, if TC39 wants also "RAND" components in the standard, maybe for some special case, options that must be done in a new, different TG working with a RAND based policy.  
+IS: Brian is right. In the current TC39 RFTG everything is expected to be RF. At an "opt out" - which we did not have so far - we have to see how that part of the policy plays out. But it will be difficult because a) who decides and how if the claim for the opt out is valid? b) If valid then either an alternative method has to be found or the RF project cancelled... So, if TC39 wants also "RAND" components in the standard, maybe for some special case, options that must be done in a new, different TG working with a RAND based policy. 
 
 WH: If someone opts out (or makes an unexpected patent claim), which happened in other TCs, then we have a standard that someone claims a patent on, then chances are we'd end up voting no on the proposal. We approve the proposal pending it not having an opt-out.
 
@@ -139,7 +139,7 @@ BT: I can handle that in some way. If you click a reference to delete, for the a
 
 WHB: It would be nice to get a list of those so you could see them all.
 
-BT: You can do it with search but I don't know the right way to do it yet. I had a proposal pulling out... I won't get into that. So anyway, for spec editors, note there is a new type of note, the editors note. You should use this when you are making notes to the committee when you don't expect the editor to include that in the final spec. Easy way to add some stuff that will be removed by the time the proposal is accepted. You don't need CSS in JS files. Please stop hotlinking the ECMA262 css file. I made changes and external stuff changed.
+BT: You can do it with search but I don't know the right way to do it yet. I had a proposal pulling out... I won't get into that. So anyway, for spec editors, note there is a new type of note, the editors note. You should use this when you are making notes to the committee when you don't expect the editor to include that in the final spec. Easy way to add some stuff that will be removed by the time the proposal is accepted. You don't need CSS in JS files. Please stop hotlinking the ECMA-262 css file. I made changes and external stuff changed.
 
 WH: Can you clarify your last point?
 
@@ -386,7 +386,7 @@ SYG: Independently, we already have some checks scheduled around super calls
 
 AK: We check in the parser for methods whether they contain super property access and need the home object, but we don't do the similar parser analysis for super construct calls
 
-WH: There are worse surprises you can get. For example, if the super call counts how many instances you've made, you'll bump the count by two while creating only one instance.  I'm strongly in favor of doing the check before.
+WH: There are worse surprises you can get. For example, if the super call counts how many instances you've made, you'll bump the count by two while creating only one instance. I'm strongly in favor of doing the check before.
 
 DH: Just to be clear if we do the check before we do it after also.
 
@@ -515,7 +515,7 @@ BT: I won't claim to know! Dave, you have what you need?
 (Shu-Yu Guo)
 
 - [spec PR](https://github.com/tc39/ecma262/pull/769)
-- [Test262 PR](https://github.com/tc39/Test262/pull/839)
+- [Test262 PR](https://github.com/tc39/test262/pull/839)
 
 SYG: Last time, we were missing a mergeable PR and Test262 tests. Now we have both of those. The memory model is now a top-level clause.
 
@@ -883,11 +883,11 @@ WH: I like it, but I don't want short-circuiting and free grouping.
     - Interaction with private state--included or not? See https://github.com/tc39/proposal-private-fields/issues/78
 
 
-## 8. ECMA402 Status Updates
+## 8. ECMA-402 Status Updates
 
 (Caridy Patiño)
 
-[slides]: https://docs.google.com/presentation/d/1w-dhlVfbstl8MO0onMc04julUkk3WtKzTuQLN2Vz6-Y/edit#slide=id.p
+- [slides]: https://docs.google.com/presentation/d/1w-dhlVfbstl8MO0onMc04julUkk3WtKzTuQLN2Vz6-Y/edit#slide=id.p
 
 CP, ZB:
     - Editorial changes
@@ -908,7 +908,7 @@ DE: Yes, that's accurate.
 
 CP: Yes, this spec is only been around for a few months.
 
-ZB: This is what we consider internally on the ecma402 group is done. Userland can follow an implmenet if they want to. It's been reviewed, we think it is a sound and safe API. Once a second implementor steps up we should put it into the spec.
+ZB: This is what we consider internally on the ECMA-402 group is done. Userland can follow an implmenet if they want to. It's been reviewed, we think it is a sound and safe API. Once a second implementor steps up we should put it into the spec.
 
 CP: Three more formatters that we introduced about a year ago that have been through discussions and writing.
   - intl.ListFormat
@@ -919,7 +919,7 @@ I'd like to move these to stage 2. My understanding is that stage two means we'l
 
 AWB: The move between stage 1 to 2 is saying, here is an area we think will be useful, let's explore it. Stage 2 is saying we should start getting something like this into a future version of the spec. I would expect at that stage some sort of review presentation. To move to the next stage would be appropriate to have a review of the stage. Here's the API we arrived at, here's why it's good, we should advance this, etc. My sense is that waiting two months is not going to really hold you up any.
 
-ZB: Happy to delay to the next meeting. Two new proposals to put forward. Deprecate `hour12` option and introduce `hourCycle`.  Proposal: https://github.com/zbraniecki/proposal-ecma402-hourcycle. I don't think we need to seek any stage now, I'd just like to introduce to the community that we are using it.
+ZB: Happy to delay to the next meeting. Two new proposals to put forward. Deprecate `hour12` option and introduce `hourCycle`. Proposal: https://github.com/zbraniecki/proposal-ECMA-402-hourcycle. I don't think we need to seek any stage now, I'd just like to introduce to the community that we are using it.
 
 DE: About this proposal, I'm wondering what the appropriate vehicle for it is. The spec text is written very well, thanks for responding already. It's small and we may add more thinks to this. I'm wondering if each one should go through a 4 stage proposal. We might move through the stages quickly, but getting implementation feedback on these things would be good.
 
@@ -1231,7 +1231,7 @@ SYG: I think the same thing happens. Properties of window are just like "var f" 
 
 (Michael Ficarra)
 
-[proposal](https://github.com/tc39/Function-prototype-toString-revision)
+- [proposal](https://github.com/tc39/Function-prototype-toString-revision)
 
 MF: I don't have materials or anything. I recently made changes to the stage 3 proposal. We discussed last time the line terminator normalization. This is a process that happens at the toString algo to replace all line terminators with a standard one. That was added as a part of this spec. No implementation actually does this. I remind you that the proposal's original intent was just to specify existing behavior. Sort of like an Annex B requirement. I've removed that normalization. I just want to make implementations aware of that. The reason I've done this is because I don't think it's valuable to try to specify something that all implementations have said they would not implement. We're just really trying to spec reality as closely as possible.
 
@@ -1293,8 +1293,8 @@ AWB: Capture groups?
 
 (Daniel Ehrenberg)
 
-[slides](https://docs.google.com/presentation/d/1fx5S4DpuD7z4K6ItFW7BjbvYPiuQNxU2769F5YhGP3o/edit#slide=id.p3)
-[proposal](https://github.com/tc39/proposal-regexp-named-groups)
+- [slides](https://docs.google.com/presentation/d/1fx5S4DpuD7z4K6ItFW7BjbvYPiuQNxU2769F5YhGP3o/edit#slide=id.p3)
+- [proposal](https://github.com/tc39/proposal-regexp-named-groups)
 
 DE: A quick overview of the feature: it allows you to access matched groups by a name in the match object. 
 
@@ -1360,7 +1360,7 @@ AWB: It could be the same value, an internal slot that we keep returning.
 
 DH: We have lots of situations like this! Does it have to not exist? Could we just set it to the value of undefined to allow destructuring?
 
-DE: I don't understand what code would require these. If you use destructuring, you know what groups you're looking for. If you write a regex, you know what groups you're looking for.  Why would you introspect keys for groups of a regex that you don't know? 
+DE: I don't understand what code would require these. If you use destructuring, you know what groups you're looking for. If you write a regex, you know what groups you're looking for. Why would you introspect keys for groups of a regex that you don't know? 
 
 KG: There are two completely separate concerns, making destructuring work, and making object.keys work. It doesn't sound to me like anything in this change, having groups or not, would affect destructuring. Having the match object return undefined vs null would have mattered but that ship has long sailed. Having groups there or not doesn't affect destructuring as far as I can tell.
 

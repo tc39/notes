@@ -193,7 +193,7 @@ JHD: Your correspondence principal half answers my question... do statements, i 
 
 DH: This is the first place in the syntax that makes completion observerable
 
-DH: There is an API, eval, that makes the completion visible. Most people don't realize that is what happening.  There is a question if people now have to undersatnd what completion is.
+DH: There is an API, eval, that makes the completion visible. Most people don't realize that is what happening. There is a question if people now have to undersatnd what completion is.
 
 JHD: Would it make sense to have some sort of keyword in the do statement return/yield/etc.
 
@@ -316,7 +316,7 @@ DH: That is the idea I have too but i fi go there it will expand in to more conv
 
 (Dave Herman, co-championing with Mark Miller and Caridy Patiño)
 
-[proposal](https://github.com/tc39/proposal-realms)
+- [proposal](https://github.com/tc39/proposal-realms)
 [presentation](https://gist.github.com/dherman/66627aac764a9795dc3875e270f55918)
 
 DH: Realms was sitting at Stage 0; I've been looking at it with Dean, and Chip, and others. Previously worked on it through ES2015, just the core JavaScript builtins, nothing else fancy. If you create a new Realm and instantiate an Array, it's a different one. Alternatively considered, this is a reflective reification of the ECMAScript realm concept. (going over presentation linked above)
@@ -335,7 +335,7 @@ DH: When you have a realm object, you have super privileges over the realm: you 
 
 WH: What's on the realm's global object of a realm you created in your example via new Realm()?
 
-DH: By default, what's on it is the standard library of ECMA262--Array, parseInt, Function, not window, document--none of the web-specific stuff.
+DH: By default, what's on it is the standard library of ECMA-262--Array, parseInt, Function, not window, document--none of the web-specific stuff.
 
 WH: What about Annex B libraries? In particular, things like the error stack introspection that we discussed earlier in this meeting?
 
@@ -473,13 +473,13 @@ Minutes are approved.
 
 (Jordan Harband)
 
-JHD: We faced a number of web-compatibility issues for `global`, including flikr and several enterprise JIRA intallations.  So it seems like the name `global` is dead. What should we do? Abandon this? I'd like to find another name, with global in the name
+JHD: We faced a number of web-compatibility issues for `global`, including flikr and several enterprise JIRA intallations. So it seems like the name `global` is dead. What should we do? Abandon this? I'd like to find another name, with global in the name
 
 MF: How about gl0bal?
 
 MPT: globalThisPascal
 
-JHD: `Global`, `$global`, `__global__`, anyway, I'll open a bug and we can come together and make a list of possibilities.  This will take a while, since each time we try a name, we'll have to find a browser willing to try it, if it breaks, we'll have to roll it back, hope that trust hasn't been broken enough to try again. Both Safari and FF are willing to try again but I don't want to just try again every two months.
+JHD: `Global`, `$global`, `__global__`, anyway, I'll open a bug and we can come together and make a list of possibilities. This will take a while, since each time we try a name, we'll have to find a browser willing to try it, if it breaks, we'll have to roll it back, hope that trust hasn't been broken enough to try again. Both Safari and FF are willing to try again but I don't want to just try again every two months.
 
 WH: What was the cause of the flickr breakage?
 
@@ -733,7 +733,7 @@ AWB: So we have been talking about System for more than 5 years, you can't just 
 
 JHD: Speaking as a champion for the stack proposal, I didn't ask for stage two, major semantics are not specified, it's not ready. I want it to be ready. I want Mark to take this up. My goal is to get that done quickly. In some number of years it will be finished and something we agreed upon will ship. it's already compat.
 
-AK: It may not include the stack or getstack trace. We may expose the stack trace in other ways that don't include System.  I'm partially making these arguments for Domenic.
+AK: It may not include the stack or getstack trace. We may expose the stack trace in other ways that don't include System. I'm partially making these arguments for Domenic.
 
 JHD: I hear what you are saying. There is a slim change that getStack and getStack string will not need a priv granting object. The real question is, if we likely will have a privilege-granting object, let's assume its going to happen and some stuff will be on it. At that point will we regret not putting lgobal on it?
 
@@ -801,7 +801,7 @@ JHD: In the meantime, are you comfortable with a reflector issue.
 
 ## Public and Private Class Fields (Daniel Ehrenberg, Jeff Morrison and Kevin Gibbons)
 
-[slides](https://docs.google.com/presentation/d/1yXsRdAJO7OdxF0NmZs2N8ySSrQwKp3D77vZXbQOWbMs/edit)
+- [slides](https://docs.google.com/presentation/d/1yXsRdAJO7OdxF0NmZs2N8ySSrQwKp3D77vZXbQOWbMs/edit)
 
 DE: Kevin is joining the champion group for private state. There are a number of things we are approaching consenus on. I don't want to say we're at consensus but the public and private keyword, Allen you've expressed interest in this. At the last meeting we discussed if we should have this in addition to the sigil we have to have. A few arguments for this were that we don't have it for methods and you really want it when you're learning but after you learn you don't want it. The second one is the stronger argument. For the token we talked about different possibilities, it could be = or :=. It seemed like equals was pretty agreeable.
 

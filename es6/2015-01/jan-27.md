@@ -42,7 +42,7 @@ AWB: Final editorial works needs to be done. Takes a couple of months. Needs to 
 
 AWB: Before that TC39 needs to approve the ES6 spec. March 24-26 meeting...
 
-Content is in slides…
+Content is in slides...
 
 IS: Question about different dates and document versions. His problem was that the documents for opt out are not the final documents that go to the GA for approval.
 
@@ -183,7 +183,7 @@ YK: I recalled that we talked about not changing the name until we announced the
 (still during the break) discussion between MM and YK: about Window/WindowProxy issue, discussing concerns, esp as relates to jQuery.
 MM: preferred to keep invariants, add Test262 tests, wait for browsers to fix
 YK: points out Object.prototype.toString.call(window) results differ (Chrome: 'global', Safari: 'window', eg)
-… more discussion about configurability, differences between Window and a WindowProxy …
+... more discussion about configurability, differences between Window and a WindowProxy ...
 
 
 ## 4.4 Subclass instantiation reformation: status and open issues

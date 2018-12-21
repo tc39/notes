@@ -162,8 +162,8 @@ CP: We've been able to prove that this works quite well.
 
 AWB: New information:
 
-OH: To clarify JSC encountered breakage in the syntax. Only case we’ve seen is (presumably) author changing their mind about type of loop, so we _no-op_ the expression.  No execution at all.
-...Unclear about what we’re saying about the let case. I would be opposed to leaking the redundant initialiser into for (let blah of/in …)
+OH: To clarify JSC encountered breakage in the syntax. Only case we've seen is (presumably) author changing their mind about type of loop, so we _no-op_ the expression. No execution at all.
+...Unclear about what we're saying about the let case. I would be opposed to leaking the redundant initialiser into for (let blah of/in ...)
 ... Would be great to eventually nuke it.
 
 AWB: Likely won't have any new information in May?
@@ -492,7 +492,7 @@ WH: Objects to this problem *not* being solved. Object to the status quo of doin
 ## Decorators for ES7
 (Yehuda Katz)
 
-[Slides](https://github.com/rwaldron/tc39-notes/raw/master/es6/2014-04/Decorators.pdf)
+- [slides](https://github.com/rwaldron/tc39-notes/raw/master/es6/2014-04/Decorators.pdf)
 
 YK: Presenting aspects of common use cases not yet covered by ES6 `class`.
 
@@ -801,7 +801,7 @@ LH: If we cared about being forward compatible with eliding () in arrows, we cou
 
 Several: async(foo, bar) => ... looks too much like a function call.
 
-LH:  If 'async' were 'function', you likely wouldn't say that.  Once editors colorize, this will be less of a concern.
+LH:  If 'async' were 'function', you likely wouldn't say that. Once editors colorize, this will be less of a concern.
 
 WH: you're not proposing to make "async" a keyword?
 
@@ -809,7 +809,7 @@ LH: Contextual keyword
 
 [Discussion of syntax and no-line-terminator-here]
 
-LH: Questions about whether 'await' should be allowed at top level.  We could add to the module top level grammar, not the script grammar
+LH: Questions about whether 'await' should be allowed at top level. We could add to the module top level grammar, not the script grammar
 
 WH: If it's usable in modules outside async functions, would await be a contextual keyword inside modules? It isn't right now.
 
@@ -821,7 +821,7 @@ WH: No. Is x = await(foo) a legacy ES6 function call or an await call?
 
 LH: Good point, we'd need to reserve "await" in modules in ES6.
 
-LH: Original proposal included an optional "await*" syntax that was sugar over "await Promise.all(...)".  It was unrelated to "yield*" which has no meaning in async context.
+LH: Original proposal included an optional "await*" syntax that was sugar over "await Promise.all(...)". It was unrelated to "yield*" which has no meaning in async context.
 
 MM: Using await * that is not analogous to yield * is bad, let's take it off the table.
 
@@ -846,7 +846,3 @@ JN: Want to thank Mozilla for hosting us and appreciation to Ecma for dinner las
 #### Conclusion/Resolution
 
 - Unanimous agreement :)
-
-
-
-

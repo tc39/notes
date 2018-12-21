@@ -31,7 +31,7 @@ YK: It seems like edge cases are always going to happen
 
 DE: if we wait for FF, we will get more implementor related input
 
-YK: we need to figure out this rule, babel “loose” mode clearly doesn’t count. Does babel trying for high fedility count?
+YK: we need to figure out this rule, babel "loose" mode clearly doesn't count. Does babel trying for high fedility count?
 
 DE: browser implementations will likely have different criteria
 
@@ -57,11 +57,11 @@ SP: In summary, tests approved by reviewers must have 2 implementations that pas
 
 BT: should we update the process document, the champion comes with a set of tests for stage 4, the group uses this to +1/-1
 
-YK: source2source should be considered sufficient for “implementations’
+YK: source2source should be considered sufficient for "implementations'
 
 AK: stage 3 is somewhat problematic, implementations must put out there neck early.
 
-SK: sounds like a good filter, if no implementation wants to stick out their neck maybe the feature doesn’t have value
+SK: sounds like a good filter, if no implementation wants to stick out their neck maybe the feature doesn't have value
 
 DE: if there are tests, that we agree are good, any implementation should be sufficient.
 
@@ -83,7 +83,7 @@ DD: can we accept 2 user-land transpilers
 
 YK: browsers could also implement as source2source step.
 
-YK: proxies are a good example, likely input from babel isn’t as valuable. As it must make all . operations slow. Which wouldn’t be acceptable for a runtime. and also why babel doesn’t offer proxies.
+YK: proxies are a good example, likely input from babel isn't as valuable. As it must make all . operations slow. Which wouldn't be acceptable for a runtime. and also why babel doesn't offer proxies.
 
 YK: so only cpp compilers qualify?
 
@@ -104,7 +104,7 @@ None yet.
 ## Object.values/entries
 
 JHD: OK for stage 3? It got signoff
-… [general consensus]
+... [general consensus]
 
 #### Conclusion/Resolution
 
@@ -116,23 +116,23 @@ JHD: OK for stage 3? It got signoff
 
 JHD: Concerns raised on es-discuss: 1) No grapheme handling (response: then other existing things should be changed, and nothing cares about it. Every language follows native string support in its padding.)
 
-… [General consensus that that’s OK]
+... [General consensus that that's OK]
 
 WH: I see the choices as either doing this simple thing (measuring code units) or doing something really, really complicated that works correctly on graphemes. The simple thing is useful in practice, while implementing grapheme measurement would be too complicated and take us a long time. So I support this.
 
-JHD: 2) Naming: we sometimes use left/right, sometimes start/end, this one feels right. The language already equates left/start/index-0 and right/end/last index. In this context, RTL doesn’t apply…
+JHD: 2) Naming: we sometimes use left/right, sometimes start/end, this one feels right. The language already equates left/start/index-0 and right/end/last index. In this context, RTL doesn't apply...
 
 DD: How about padStart, padEnd?
 
-DH: Well, it’s very entrenched
+DH: Well, it's very entrenched
 
 JHD: BiDi is really complicated
 
 DD: Eurocentric
 
-DH: How hard will we get trolled? Being willfuly different…
+DH: How hard will we get trolled? Being willfuly different...
 
-YK: people wouldn’t expect padLeft, if the language has padLeft and it does something different. That is wrong. If we have other methods do the same thing, we are good.
+YK: people wouldn't expect padLeft, if the language has padLeft and it does something different. That is wrong. If we have other methods do the same thing, we are good.
 
 JHD: Only remaining objection remaining is the name
 
@@ -157,7 +157,7 @@ DD: CC + FF in betas
 
 DD: Test262 works
 
-DD: Safari doesn’t have TypeArray.prototype.includes
+DD: Safari doesn't have TypeArray.prototype.includes
 
 DD: Stage 4?
 
@@ -175,29 +175,29 @@ YK: yup
 
 #### Conclusion/Resolution
 
-Move to stage 4 (tomorrow when it’s added to @@unscopables)
+Move to stage 4 (tomorrow when it's added to @@unscopables)
 
 ## function.sent
 
 BT: We have not gotten any feedback at all, not from implementors, no implementations, no Babel
 
-YK: That’s scary; we need some feedback
+YK: That's scary; we need some feedback
 
 DE: Do we have reviewers?
 
-BT: It’s so tiny! It should be OK to add it. It would be almost impossible to design it  wrong.
+BT: It's so tiny! It should be OK to add it. It would be almost impossible to design it  wrong.
 
 JM: But, does anybody need it?
 
 https://github.com/allenwb/ESideas/blob/master/Generator%20metaproperty.md
 
-SP: Let’s defer until we have a strong advocate with use cases
+SP: Let's defer until we have a strong advocate with use cases
 
-BT: There are use cases for it, it’s just that no one’s used it, because it’s not implemented anywhere
+BT: There are use cases for it, it's just that no one's used it, because it's not implemented anywhere
 
-YK: Is stage 2, only about completing the spec language? dave’s tweets say userland experiment
+YK: Is stage 2, only about completing the spec language? dave's tweets say userland experiment
 
-AK: The thing we’re trying to avoid is adding something to the language that won’t be useful for anyone
+AK: The thing we're trying to avoid is adding something to the language that won't be useful for anyone
 
 BT: Implementing something at Stage 2 carries quite a bit of risk
 
@@ -208,11 +208,11 @@ BT: Implementing something at Stage 2 carries quite a bit of risk
 
 ## Object.observe update
 
-AK: Object.observe is going to be deprecated in Chrome. I’d like to formally withdraw it from the stage process.
+AK: Object.observe is going to be deprecated in Chrome. I'd like to formally withdraw it from the stage process.
 
 YK: I already submitted a PR to remove it from tc39/ecma262/README.md!
 
-AK: I haven’t gotten very much negative feedback
+AK: I haven't gotten very much negative feedback
 
 YK: Maybe the framework wars will be settled and we can revisit this question
 
@@ -237,7 +237,7 @@ YK: decomposing (commenting out large chunks of a destructing statement)
 
 BT: code-gen may not be as ergonomic
 
-YK: code-gen supporting this is simple enough, that isn’t a good reason
+YK: code-gen supporting this is simple enough, that isn't a good reason
 
 BT: no binding identifers in any pattern or sub-pattern, should error.
 
@@ -247,7 +247,7 @@ DH: refactoring transformations breaking down, due to this restriction is is unf
 
 DH: without a good argument, I error on the ergonomics wins composition over the error.
 
-WH: This is like trying to delete the number zero from the number line. It’s cognitively simpler to keep it than to avoid it. {} and [] are legitimate objects and shouldn’t be a special case.
+WH: This is like trying to delete the number zero from the number line. It's cognitively simpler to keep it than to avoid it. {} and [] are legitimate objects and shouldn't be a special case.
 
 DH: it is the base-case of a recursive definition.
 
@@ -305,7 +305,7 @@ DE: several work-arounds, but require changing existing code.
 YK: IE 11 has this in prod, how have they not recieved bug reports?
 
 DE: I have a proposal that may work, you may not like it
- 1. TL;DR making sloppy mode function declaration “host’ to a var outside the block
+ 1. TL;DR making sloppy mode function declaration "host' to a var outside the block
  1. would not change strict mode
 WH: If the outer block contains a binding with the same name as the function being defined in the inner block, will this proposal break that code?
 
@@ -315,7 +315,7 @@ YK: Intersection semantics, we will only support use-cases that work cross platf
 
 BT: We did aggregate large amount of data, and did not find this case.
 
-DE: Team working on Google inbox doesn’t know which way to fix inbox breakage because what’s broken by the hoisting semantics is undefined.
+DE: Team working on Google inbox doesn't know which way to fix inbox breakage because what's broken by the hoisting semantics is undefined.
 
 WH: The ES2015 spec is well defined. There is nothing undefined here about how to fix Google inbox to be compatible with it.
 
@@ -323,11 +323,11 @@ YK: we knew this is a composition breaker
 
 DD: 3 browsers support, 1 browser does not. Should we see if people update?
 
-YK: it doesn’t seem like a widespread problem, inbox is an issue but it may not be a bigger issue.
+YK: it doesn't seem like a widespread problem, inbox is an issue but it may not be a bigger issue.
 
 BT: + 2 years of IE11 and edge (tens of millions of users)
 
-DD: the mobile web, isn’t represented here.
+DD: the mobile web, isn't represented here.
 
 PL: We researched the public web, looking for this. We found some issues, solve them, came to consensus
 
@@ -335,17 +335,17 @@ WH: the issue is, this fix breaks other things
 
 DE: what does it break
 
-BE: we don’t know
+BE: we don't know
 
 WH: the future is bigger then the past, lets not sacrifice the future for the now.
 
-WH: The scary part is that under this proposal the resolution of an identifier in the outer scope will change depending on whether the code is strict or not. The same code will work in both strict and non-strict mode but do completely different things. That’s terrifying because it’s easy to unintentionally move a function into strict mode or, conversely, get the use strict declaration wrong and not have it be strict even though you intended it to be.
+WH: The scary part is that under this proposal the resolution of an identifier in the outer scope will change depending on whether the code is strict or not. The same code will work in both strict and non-strict mode but do completely different things. That's terrifying because it's easy to unintentionally move a function into strict mode or, conversely, get the use strict declaration wrong and not have it be strict even though you intended it to be.
 
 WH: this is a foot canon, not a foot gun.
 
 AK: todays practical semantics are undefined, do to current state of implementations
 
-KS: can you get more data, what is the “true’ impact
+KS: can you get more data, what is the "true' impact
 
 YK: FF can do implement it, inbox needs to fix
 
@@ -359,13 +359,13 @@ DE: that is already the case.
 
 WH: This is a completely different order of magnitude. This strict-vs-non-strict scoping incompatibility would be far more common than some existing obscure differences in eval hoisting.
 
-PL: It’s true, different browsers have different audiences. I wish we made some changes in the past.
+PL: It's true, different browsers have different audiences. I wish we made some changes in the past.
 
 YK: we knew we would break stuff here, we agreed we would only support already cross platform sites. IE11/edge shipping two years ago, should be evidence enough.
 
 YK: we intentionally changed semantics, at that time there was strong consensus.
 
-DE: I feel I don’t have strong consensus, it seems like I may need more information.
+DE: I feel I don't have strong consensus, it seems like I may need more information.
 
 DD: lets make sure we converge on two semantics
 
@@ -377,7 +377,7 @@ YK: So a google only optional spec doc?
 
 BT: So far, inbox only broken. Fixing inbox, and implementing the spec will help uncover is the has a larger impact to the chrome specific users.
 
-BT: Chrome should make an effort to ship the standardized semantics; don’t assume the standard is broken.
+BT: Chrome should make an effort to ship the standardized semantics; don't assume the standard is broken.
 
 BT: in the past, IE discovered some issues. We took the approach of fixing all affected sites.
 
@@ -395,13 +395,13 @@ DE: do we have evidence this is common or not
 
 MM: this is just strange
 
-MM: future is strict, which doesn’t have this problem
+MM: future is strict, which doesn't have this problem
 
-WH: That doesn’t follow. Repeats point about script authors often believing they’re in strict mode when they’re not or vice versa, which is an issue if the two modes silently resolve function identifiers to different things.
+WH: That doesn't follow. Repeats point about script authors often believing they're in strict mode when they're not or vice versa, which is an issue if the two modes silently resolve function identifiers to different things.
 
-DE: i don’t want sloppy mode to become overly complicated by adding a 3rd case.
+DE: i don't want sloppy mode to become overly complicated by adding a 3rd case.
 
-BE: once we made our call (assuming we did due deligence) we should risk chasing our tale by endlessly adjusting the spec…
+BE: once we made our call (assuming we did due deligence) we should risk chasing our tale by endlessly adjusting the spec...
 
 BT: we should be prescriptive. GWT should fix its emit. Inbox should fix its app. Chrome should attempt to ship standard semantics.
 
@@ -418,9 +418,9 @@ proposal: fewer extension points.
 
 DE: today, the cost is both for implementators (no one implements correctly), and user extension
 
-…some talk about, why is this costly for the implementation…
+...some talk about, why is this costly for the implementation...
 
-WH: I don’t buy the implementation costs, but I do support this proposal for user ergonomics. It makes it much clearer to users what they should implement if they want to subclass RegExp and reduces the opportunities for getting a performance surprise if they override just one thing.
+WH: I don't buy the implementation costs, but I do support this proposal for user ergonomics. It makes it much clearer to users what they should implement if they want to subclass RegExp and reduces the opportunities for getting a performance surprise if they override just one thing.
 
 BE: it was added late
 
@@ -432,7 +432,7 @@ JHD: i tried to implement on the weekend, and I dont see added value for all the
 
 YK: alan has a motivation, and he is not present
 
-DD: I think I know, (related to promises), out of the box it should be very easy to create a fully functional subclass. There are some inconsistencies, alan said he would tweak these things. His goal was to make this super easy to make subclasses. Dans argument is, a library could handle the “super easy part’ putting less weight on the spec.
+DD: I think I know, (related to promises), out of the box it should be very easy to create a fully functional subclass. There are some inconsistencies, alan said he would tweak these things. His goal was to make this super easy to make subclasses. Dans argument is, a library could handle the "super easy part' putting less weight on the spec.
 
 BE: lets have symbol names for this, alan tried his best. But without implementor feedback, we it may not have been ideal. Since its not implemented, we have the flexibility to change.
 
@@ -454,7 +454,7 @@ defer until we can talk to Allen tomorrow
 ## Remove generator `.return`? (DE)
  - overview of `.return`
  - pros of `.return`
-   - signal to iterators/generators when resource is “dropped on the floor”
+   - signal to iterators/generators when resource is "dropped on the floor"
    - reify abrupt completions, generators as a sink for observables, etc
  - ???
  - `.return` in the iteration protocol
@@ -470,9 +470,9 @@ DE: no, this is imagined direct user code
 
 DE: Generator `return` is idempotent
 
-[Example of speculative auto-disposal syntax: finally let …
+[Example of speculative auto-disposal syntax: finally let ...
 
-WH: That approach (auto-disposal syntax as a replacement for `.return()`) either makes garbage collection visible or fails to work for the iteration use case. If you rely on the finally-let to clean up inside a generator, then either you get to run code when the generator is garbage collected or you don’t get notified when the user breaks out of a for-of loop that invoked the generator.
+WH: That approach (auto-disposal syntax as a replacement for `.return()`) either makes garbage collection visible or fails to work for the iteration use case. If you rely on the finally-let to clean up inside a generator, then either you get to run code when the generator is garbage collected or you don't get notified when the user breaks out of a for-of loop that invoked the generator.
 
 [discussion about how to do this compatibly in the future if we were to take it out.]
 
@@ -480,9 +480,9 @@ DH: Need to beware of implementations attaching other meanings to `.return()`
 
 DH: Could work around the conflicts by using a symbol in the future.
 
-MM: That doesn’t work. The problem is that an implementation could reify an iterator, run a for-of loop on it partway, break out of the loop, and later continue iterating through it. Such usage would incompatibly break if we were to remove and later re-add a return cleanup mechanism. That was (and still is) the argument why we couldn’t postpone this in ES2015.
+MM: That doesn't work. The problem is that an implementation could reify an iterator, run a for-of loop on it partway, break out of the loop, and later continue iterating through it. Such usage would incompatibly break if we were to remove and later re-add a return cleanup mechanism. That was (and still is) the argument why we couldn't postpone this in ES2015.
 
-BE: I don’t think we could remove `.return()`.
+BE: I don't think we could remove `.return()`.
 
 YK: Why is it bad to auto-clean-up?
 
@@ -494,13 +494,13 @@ DH: Want sync and async to be as close to each other as is practical.
 
 YK: Want try-finally to always run finally inside a generator if the generator is used in the common case of using it in a for-of loop. Yes, there are other cases where generators are used in other ways, but this invariant should hold at least for the for-of loop.
 
-DH: Generators won’t be used for async code (in favor of async functions) and generators will be used primarily for for-of loop.
+DH: Generators won't be used for async code (in favor of async functions) and generators will be used primarily for for-of loop.
 
 DE: Make users explicitly clean up after for-of loops.
 
-DH: for-of is the only construct in the language that implicitly creates one of these iterators out of the iterable. That’s why it’s different. There is no way to get a hold of one of these to explicitly dispose it.
+DH: for-of is the only construct in the language that implicitly creates one of these iterators out of the iterable. That's why it's different. There is no way to get a hold of one of these to explicitly dispose it.
 
-DH: We had and resolved those debates before. We shouldn’t be revisiting this and focus on things we didn’t already discuss when debating ES2015.
+DH: We had and resolved those debates before. We shouldn't be revisiting this and focus on things we didn't already discuss when debating ES2015.
 
 
 DD: we can seperate iterator and retainment.
@@ -509,15 +509,15 @@ MM: combining open a file, and iteration causes the conflation. Preventing a han
 
 YK:
 
-DE: if we encourage, generators shouldn’t own the resource instead the resource is passed to the generator.
+DE: if we encourage, generators shouldn't own the resource instead the resource is passed to the generator.
 
 DH: having syntax for disposal is then misleading
 
-BE: I don’t think we can walk back from this
+BE: I don't think we can walk back from this
 
-BE: We didn’t add `.return()` without use cases. Don’t discount those. One initial usecase for implicit `return` is yielding from the try.
+BE: We didn't add `.return()` without use cases. Don't discount those. One initial usecase for implicit `return` is yielding from the try.
 
-DH: Don’t want to relitigate the use of try-finally in the language. Disagree with the claim that it’s ok that finally wouldn’t work in generators.
+DH: Don't want to relitigate the use of try-finally in the language. Disagree with the claim that it's ok that finally wouldn't work in generators.
 
 MM: Allow redundant `.return()` calls, which are ignored. This way a user can manually iterate and wrap the iteration inside a try-finally that unconditionally calls `.return()` on the iterable from the finally.
 
@@ -533,7 +533,7 @@ BT: if we have multiple proposals, I would propose we attempt to advance them to
 - mode modifiers
 - Unicode Categories, Blocks, and Scripts
 
-BT: look behind, is like look ahead but looks behind… `(?<=pattern)` or `(?<!pattern)`
+BT: look behind, is like look ahead but looks behind... `(?<=pattern)` or `(?<!pattern)`
 
 BT: both positive and negative variants
 
@@ -547,21 +547,21 @@ YK: ruby has a pretty big RegExp buffet, and does not support this feature
 
 BT: does ruby support lookahead?
 
-YK: will investigate… yes
+YK: will investigate... yes
 
 YK: lookbehinds run backwards, which makes it somewhat confusing.
 
 BT: my mind is poisoned, as its to comfortable with implementation details
 
-WH: Note that the fixed-length and variable-length lookbehind variants are incompatible with each other. They’ll differ on what gets captured by `(?<=(.){3})`
+WH: Note that the fixed-length and variable-length lookbehind variants are incompatible with each other. They'll differ on what gets captured by `(?<=(.){3})`
 
 BT: this feature has been brought up before, MS is working with Nozomu Katō to make this a reality. Is there general interest?
 
-… [positive thoughts]
+... [positive thoughts]
 
 DE: how do you plan to handle backreferences \w look behinds
 
-WH: What’s the problem? This is no harder than in lookaheads.
+WH: What's the problem? This is no harder than in lookaheads.
 
 BT: Numbering of capture groups is the ordering of the opening parentheses, regardless of whether they are in a lookbehind or not.
 
@@ -573,22 +573,22 @@ BT: any other items on look behinds?
 
 BT: stage  0?
 
-… [yup]
+... [yup]
 
-BT: FYI: twitter poll indicated, people are upset about this…
+BT: FYI: twitter poll indicated, people are upset about this...
 
 
-BT: Next feature, Named Capture groups `(?<name>)…`
+BT: Next feature, Named Capture groups `(?<name>)...`
 
 BT: result.matches { name: value, otherName: value} vs merging with result.
 
 WH: Would prefer that named captures capture only using named properties but not also duplicate them under both numbers and names.
 
-YK: May be easier to refactor because adding a name doesn’t shift numbers of following captures.
+YK: May be easier to refactor because adding a name doesn't shift numbers of following captures.
 
-WH: That’s nothing new. You do this all the time in existig regexps when inserting a new capture into the middle of the regexp.
+WH: That's nothing new. You do this all the time in existig regexps when inserting a new capture into the middle of the regexp.
 
-WH: Easier to refactor with named captures that do not alias to numeric properties and introduce new numbers. Can insert and delete those without affecting numbering of other captures. That’s the same simplicity and advantage that ?: provides.
+WH: Easier to refactor with named captures that do not alias to numeric properties and introduce new numbers. Can insert and delete those without affecting numbering of other captures. That's the same simplicity and advantage that ?: provides.
 
 MM: what can appear in the `<>`
 
@@ -624,7 +624,7 @@ MF: unicode?
 
 DE: unicode regexp might have different performance properties
 
-BT: don’t think thats true for us (MS)
+BT: don't think thats true for us (MS)
 
 M: neither for us (Apple)
 
@@ -651,7 +651,7 @@ BT: The difficulty is how to do this without modifying the /regexp/ literal.
 
 BT: can we do this in a backwards compatible way?
 
-MM: Template string tag is the right approach to handle this. Something we can ship. This avoids the parsing problems because template string literals’ lexing wouldn’t need to change.
+MM: Template string tag is the right approach to handle this. Something we can ship. This avoids the parsing problems because template string literals' lexing wouldn't need to change.
 
 MM: lots of issues with parsing related to RegExp, this may keep it from growing in complexity.
 
@@ -661,11 +661,11 @@ WH: Extensions that overcomplicate lexing, which this would do, are dangerous. I
 
 BT: can someone more familiar with the lexing speak to this complexity?
 
-WH: It’s undecidable in Perl. It guesses what you mean.
+WH: It's undecidable in Perl. It guesses what you mean.
 
 YK: can you explain
 
-…
+...
 
 SP: it seems like we can explore this further as a templateString, if it really feels poor we can explore grammar based variant.
 
@@ -673,7 +673,7 @@ BT: Comments: `/(?# this is a comment)a*/`
 
 BT: Annoying to use
 
-WH: At least it’s not problematic from a lexing point of view, as long as comments can’t contain newlines, slashes, closing parentheses, or such.
+WH: At least it's not problematic from a lexing point of view, as long as comments can't contain newlines, slashes, closing parentheses, or such.
 
 BT: stage 0?
 

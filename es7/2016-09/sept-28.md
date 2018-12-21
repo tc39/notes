@@ -261,7 +261,7 @@ DD: Discussion reiterates the following points a few times:
     - Per spec, the only requirement is that if A imports "x" multiple times, it return the same module. There is no requirement on A importing "x" vs. B importing "x".
     - However, some people believe that the spec should be talking about the "normalized" or "absolute" form, not about the literal string ("x" above) that appears in the `import` statement.
 
-AK: In the specification, the third bullet in [15.2.1.17](https://tc39.github.io/ecma262/#sec-hostresolveimportedmodule) has the idempotency requirement. There is no normalization
+AK: In the specification, the third bullet in [15.2.1.17](https://tc39.github.io/ECMA-262/#sec-hostresolveimportedmodule) has the idempotency requirement. There is no normalization
 
 
 This operation must be idempotent if it completes normally. Each time it is called with a specific referencingModule,specifier pair as arguments it must return the same Module Record instance.
@@ -918,9 +918,3 @@ JSL: ideal to get rid of prefixed.
 #### Conclusion/Resolution
 
 - Stage 1 acceptance
-
-
-
-
-
-

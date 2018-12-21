@@ -25,7 +25,7 @@ AWB: Finalize by June
 
 (Norbert Lindenberg, Mozilla)
 
-[Slides](https://members.ecma-international.org/get.php?group=TC39&file=2012_sub_tc39-2012-065.pdf)
+- [slides](https://members.ecma-international.org/get.php?group=TC39&file=2012_sub_tc39-2012-065.pdf)
 
 ## Review and Approve Final Draft of Internationalization API Specification
 

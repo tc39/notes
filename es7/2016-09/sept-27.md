@@ -37,7 +37,7 @@ AWB: ECMA414 acceptance?
 MM: (clarifying motivation?)
 
 WH: I had the same feedback when this initially came up in TC39. A standard can't be just a bibliography; it needs to state what it's standardizing.
-István SEBESTYEN: Waldemar, it is more than a bibliography. It is a compilation of normative and not-normative ECMAScript components, with normative and informative links. What is important that it is standard that will not change every year, and when fast-tracked is fine under the RAND IPR Regime of ISO/IEC. This solves the problem that Ecma will not have to fast-track its RF ECMASCript standards every year, which would not work...Too fast, for keeping the Ecma and ISO specs in synchronization.  
+István SEBESTYEN: Waldemar, it is more than a bibliography. It is a compilation of normative and not-normative ECMAScript components, with normative and informative links. What is important that it is standard that will not change every year, and when fast-tracked is fine under the RAND IPR Regime of ISO/IEC. This solves the problem that Ecma will not have to fast-track its RF ECMASCript standards every year, which would not work...Too fast, for keeping the Ecma and ISO specs in synchronization. 
 
 AWB: Please look at linked pdf, review and have decision for Thursday
 
@@ -76,7 +76,7 @@ BT: https://github.com/tc39/ecma262/blob/master/CONTRIBUTING.md , please sign th
 - Target 12:30 for lunch
 
 
-## 7 ECMA262 Status
+## 7 ECMA-262 Status
 
 (Brian Terlson)
 
@@ -86,7 +86,7 @@ YK: We are writing the Handlebars spec in Ecmarkup, and it is definitely helpful
 
 RW: We are using it to specify the IO Plugin standard for Nodebots
 
-BT: TypeScript is using it and C# is considering using it as well. The question for me is, what kind of changes does it make sense to add, when there are feature requests that aren't used in ECMA262? E.g., * and + for grammars. My feeling is to add things when they don't compromise 262. I would break out a separate notational conventions document, including * and +, which had all of the features of the tool. This potentially impacts the editorial conventions in 262, though I will work to not require those changes.
+BT: TypeScript is using it and C# is considering using it as well. The question for me is, what kind of changes does it make sense to add, when there are feature requests that aren't used in ECMA-262? E.g., * and + for grammars. My feeling is to add things when they don't compromise 262. I would break out a separate notational conventions document, including * and +, which had all of the features of the tool. This potentially impacts the editorial conventions in 262, though I will work to not require those changes.
 
 WH: I wouldn't want to use * and + in the ECMAScript grammar.
 
@@ -172,7 +172,7 @@ BT: Include PR for Stage 4 approval?
 
 
 
-## 8 ECMA402 Status
+## 8 ECMA-402 Status
 
 
 DE: formatToParts has been removed from draft due to missing implementation. The only implementation was Intl.js
@@ -201,7 +201,7 @@ LBR: Need to work on update for TR104
 DE: Were we going to retract this document?
 
 AWB: This document is informatively referenced by ECMA 414; István was suggesting to retitle as TR414? (since it also includes ECMA-402 tests)
-István Sebestyén (sitting in CH...): No, that was a mistake on my side... Sorry... I wanted to keep the original TR number (but 2nd Edition), which I think it is TR/104? I do not have the Ecma TR list in front of me....  
+István Sebestyén (sitting in CH...): No, that was a mistake on my side... Sorry... I wanted to keep the original TR number (but 2nd Edition), which I think it is TR/104? I do not have the Ecma TR list in front of me.... 
 
 
 LBR: Need to arrange further Test262 work
@@ -270,7 +270,7 @@ SBI: This spec proposal is just to keep Proxies with the same behavior, and bail
 
 Proposal: 
     
-As was mentioned in the original bug (comments 9 & 11), a loop check could be performed through ordinary lookup of each object’s [[Prototype]] without trapping to any handler.  Specifically:
+As was mentioned in the original bug (comments 9 & 11), a loop check could be performed through ordinary lookup of each object's [[Prototype]] without trapping to any handler. Specifically:
 Eliminate step 8.c.1 from 9.1.2.1
 Change 26.2.2 Properties of the Proxy Constructor to state that proxy exotic objects have an immutable [[Prototype]] property of null.
 Remove the comment in section 6 of the possibility of prototype loops.
@@ -602,7 +602,7 @@ KG: (attempting to bring it back together)
 
 BT: Nice to normatively "uplink" to HTML spec
 
-BE: So ECMA262 is going to depend on HTML?
+BE: So ECMA-262 is going to depend on HTML?
 
 BT: Just trying to explain the requirements.
 
@@ -933,7 +933,7 @@ DE:
     
 - \k not available in non-Unicode RegExps (backwards compatibility)
 - Option: Python-style backreference syntax (?P=name)
-- Option: Revisit (with data) whether it’s possible to add this new escape
+- Option: Revisit (with data) whether it's possible to add this new escape
 
 
 DE: group names overlap with of match object
@@ -970,7 +970,7 @@ https://docs.google.com/presentation/d/1o31S9RqDdkoWW2zfPMNIZdPDIp25Rr0-XW0gro_c
 
 DE: Why `\P`
 
-- The Unicode Consortium’s UTS 18 recommends it
+- The Unicode Consortium's UTS 18 recommends it
 - All other programming languages surveyed follow UTS 18 here
 - According to Mark Davis, there are many overlaps between property values and keys, so clever abbreviations are not recommended 
 

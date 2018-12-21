@@ -81,7 +81,7 @@ AR: no, we can fix `<script async>`
 
 WH: we discussed this at previous meetings, what happened to the need for script async?
 
-DH: `<module>` instead.  A nicer path forward for the web. Automatic async semantics. More concise than `<script async>`.
+DH: `<module>` instead. A nicer path forward for the web. Automatic async semantics. More concise than `<script async>`.
 
 - Not part of ECMAScript
 - As concise as `<script>`
@@ -835,5 +835,3 @@ Status Quo. Yehuda commits to work through existing issues for alternate paths.
 
 Next meeting agenda:
     https://github.com/tc39/agendas/blob/master/2014/01.md
-
-

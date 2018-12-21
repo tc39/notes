@@ -150,7 +150,7 @@ Move MF's Function.prototype.toString proposal to stage 1, with a dependency on 
 
 ## Decorators (Yehuda Katz, Jonathan Turner) (Need slides)
 
-YK: Used to be against decorating function decls which hoist. Also, having decorators on exprs and decls was bad.  However, I've come to peace with hoisting the execution of the decorator expression. Seems plausible.
+YK: Used to be against decorating function decls which hoist. Also, having decorators on exprs and decls was bad. However, I've come to peace with hoisting the execution of the decorator expression. Seems plausible.
 
 AWB: Function declarations are created before there's any environment. If you introduce something that can execute at that time it changes all of the semantics.
 
@@ -402,6 +402,4 @@ DH: I think the exploration is great, but I also have concerns about proliferati
 
 ### Resolution
 
-Move to stage 1, keeping in mind DOM events especially 
-
-
+Move to stage 1, keeping in mind DOM events especially

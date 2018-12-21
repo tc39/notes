@@ -1,6 +1,6 @@
 # May 23, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Mattijs Hoitink (MHK), Kyle Verrier (KVR),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (ARE), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW), Tom Dale (TDE), István Sebestyén (IS), Lin Clark (LCK)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Mattijs Hoitink (MHK), Kyle Verrier (KVR),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (AKI), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW), Tom Dale (TDE), István Sebestyén (IS), Lin Clark (LCK)
 
 Remote: 
 Valerie Young (VYG), Maggie Pint (MPT), Ben Newman (BN), Brendan Eich (BE), Dean Tribble (DT), Robert Pamely (RPY), David Turissini (DTI), Felipe Balbontin (FBN), Pedram Emrouznejad (PED), Tim McClure (TME), Bradley Farias (BFS), Jason Williams (JWS), Trevor Bliss (TBS), Robin Ricard (RRD)
@@ -18,13 +18,13 @@ Valerie Young (VYG), Maggie Pint (MPT), Ben Newman (BN), Brendan Eich (BE), Dean
 
 - [Massive privacy violations](https://freedom-to-tinker.com/2018/01/12/website-operators-are-in-the-dark-about-privacy-violations-by-third-party-scripts/)
 - [boundaries](https://freedom-to-tinker.com/2018/01/12/website-operators-are-in-the-dark-about-privacy-violations-by-third-party-scripts/)
--[slides](https://github.com/tc39/agendas/raw/master/2018/stopping-exfiltration.pdf)
+- [slides](https://github.com/tc39/agendas/raw/master/2018/stopping-exfiltration.pdf)
 
 
 
-MM: There's been recent attacks taking advantage of Exfiltration that remind us of this threat. Exfiltration is when Information that should have been private gets leaked to an adversary. Two channels 1) Covert and side channels (normal cache timing attacks, covert and side channels) and 2) over theft (Electron shock, “vetted” libraries are included on websites like Walgreens without understanding the dangers of these libraries). Researchers have found important information leaking out of these libraries, for example.
+MM: There's been recent attacks taking advantage of Exfiltration that remind us of this threat. Exfiltration is when Information that should have been private gets leaked to an adversary. Two channels 1) Covert and side channels (normal cache timing attacks, covert and side channels) and 2) over theft (Electron shock, "vetted" libraries are included on websites like Walgreens without understanding the dangers of these libraries). Researchers have found important information leaking out of these libraries, for example.
 
-MM: The advice of only “origin boundaries are security boundaries” is unworkable. Use only 3rd party libraries you've fully vetted—this is impractical advice. 
+MM: The advice of only "origin boundaries are security boundaries" is unworkable. Use only 3rd party libraries you've fully vetted—this is impractical advice. 
 
 MM: Drive-by key extraction code attacks—previously thought to be constant time algorithms are vulnerable in side-channel attacks. In 2017, the idea was presented that if you cannot sense the duration of time, even though information may be leaking over covert/side channels, computation restricted from measuring time cannot leak. In light of Meltdown/Spectre this 2017 observation surprisingly remains true.
 
@@ -32,7 +32,7 @@ MM: Electron shock—vulnerabilities in Electron are impacting Skype, and Slack,
 
 MM: It's even possible to pwn using Function.prototype.apply overrides. Without principle of least authority (POLA) and sandboxing, this is very hard to fix, and the Win10 app store has even threatened to remove Electron apps from their store (which would be catastrophic to the Electron framework).
 
-MM: In the Princeton “No Boundary” series, research has indicated that website operators are in the dark about privacy violations in 3rd party scripts. Their canonical advice is impractical because web maintainers cannot possible read all the 3rd party libraries they use. They found 8,000 prominent websites vulnerable via session-replay scripts recording user data, including Walgreens effectively violating HIPAA by leaking customer medical information via one of these scripts. In violation of FERPA, student data was leaked via a library from FullStory. (Ironically even the researchers' Princeton itself was subject to this exfiltrating). TC39 should stand up to solve the attack vectors exfiltration uses.
+MM: In the Princeton "No Boundary" series, research has indicated that website operators are in the dark about privacy violations in 3rd party scripts. Their canonical advice is impractical because web maintainers cannot possible read all the 3rd party libraries they use. They found 8,000 prominent websites vulnerable via session-replay scripts recording user data, including Walgreens effectively violating HIPAA by leaking customer medical information via one of these scripts. In violation of FERPA, student data was leaked via a library from FullStory. (Ironically even the researchers' Princeton itself was subject to this exfiltrating). TC39 should stand up to solve the attack vectors exfiltration uses.
 
 MM: Anatomy: leaky secrets plus an internal channel and a spy in the machine that reads the internal channel, typically by sensing durations of time. Any time you make available nondeterminism you potentially enable a side channel. (??). Specific forms in coarse boundaries: leaky secrets (variable timing, cache effects, speculative execution), internal channel (sid/covert channels), spy in the machine (bad page, origin), timers (essential for this form) external channels, lair (origin, elsewhere). 
 
@@ -42,9 +42,9 @@ MM: Fine Mitigations: Leaky secrets can be mitigated using realms/compartment sc
 
 MM: POLA would deny transformational libraries things like XHR, DOM access, Sockets, Math.random(), new WeakRef() etc. Let's clean up our mess! Our civilization rests on this infrastructure, so we need to minimize this risk. We even know how to do it, we just need to know how to proceed.
  
-DH: While I've never felt qualified to weigh in on security aspects of this conversation, when we talk about this model for JS security for the web, it's a difficult question… It's important we don't lose sight of the fact that when we talk about Realms we're not just talking about a security model, it has other purposes. So we need to not miss other reasons on this committee why it makes sense to use Realms. There's a lot of use cases not about malice, (like IDEs, for example) where it may be useful to have the isolation about Realms. 
+DH: While I've never felt qualified to weigh in on security aspects of this conversation, when we talk about this model for JS security for the web, it's a difficult question... It's important we don't lose sight of the fact that when we talk about Realms we're not just talking about a security model, it has other purposes. So we need to not miss other reasons on this committee why it makes sense to use Realms. There's a lot of use cases not about malice, (like IDEs, for example) where it may be useful to have the isolation about Realms. 
 
-MM: I agree for almost everything. There's a danger of the audience confusing “or”s and “and”s, that an additional case can't make the argument any weaker. … What we should care about is building frameworks for that maximize the benefits of composition when things go right, while minimizing the hazards of destructive interference. When the interference is accidental, we label them “bugs” and turn to “software engineering”. When intentional, we label them “attacks” and turn to computer security. But this is largely a false dichotomy; why should we care whether the interference is accidental or intentional? Techniques effective against intentional interference should also be effective against accidental interference. Adding purposes that they [Realms] also serve should just add to the use case. 
+MM: I agree for almost everything. There's a danger of the audience confusing "or"s and "and"s, that an additional case can't make the argument any weaker. ... What we should care about is building frameworks for that maximize the benefits of composition when things go right, while minimizing the hazards of destructive interference. When the interference is accidental, we label them "bugs" and turn to "software engineering". When intentional, we label them "attacks" and turn to computer security. But this is largely a false dichotomy; why should we care whether the interference is accidental or intentional? Techniques effective against intentional interference should also be effective against accidental interference. Adding purposes that they [Realms] also serve should just add to the use case. 
 
 MSL: There are many non-security reasons for Realms. +1 to DH.
 
@@ -64,13 +64,13 @@ MM: You can get information with spectre if and only if you can sense the durati
 
 DD: We're getting into [Google] NDA territory, but I would not claim that that is impossible. 
 
-MM: I'm not within Google's NDA information anymore. But I was until recently and there was no such contrary information then. It's impossible to argue about things that we cannot talk about. It's like the national security stance of “If you knew what I know, then you'd agree with me.”
+MM: I'm not within Google's NDA information anymore. But I was until recently and there was no such contrary information then. It's impossible to argue about things that we cannot talk about. It's like the national security stance of "If you knew what I know, then you'd agree with me."
 
 WH: How important is security to us? Looking around the room, most people here tuned out during the presentation. I find that disappointing. Separately, what is the takeaway from this? Are you proposing something concrete?
 
 MM: The concrete thing is that we create a system where we can link in transformational libraries, where the libraries can be restricted from I/O, corrupting builtins, etc. We've known how to mitigate these for a long time, and one of the benefits of the proposals we'll examine later.
 
-MSL: Spectre is a major concern for confidentiality. Programming languages that attempt to improve integrity or ?? but we shouldn't try to … For mechanisms whose goal is to improve confidentiality, I don't think you can make that argument.
+MSL: Spectre is a major concern for confidentiality. Programming languages that attempt to improve integrity or ?? but we shouldn't try to ... For mechanisms whose goal is to improve confidentiality, I don't think you can make that argument.
 
 DD: The history of sandboxing, the things that sandboxing prevents.
 
@@ -84,7 +84,7 @@ DD: Distinguishing between different types of attacks is obvious security here.
 
 BE: We should be able to distinguish threats. (The remote connection sucks)
 
-#### Conclusion
+#### Conclusion/Resolution
 
 - We'll revisit this later
 
@@ -221,7 +221,7 @@ MM: The precedent is same-origin iframes and vms in node.
 
 (Istvan SEBESTYEN)
 
-IS: TC39 dominates downloads of ECMA standards. Even for PDF downloads. We need a solution for converting the HTML to proper PDF. Need solution to archive Github data into TC39 depository. We're working to improve the TC39 webpages. ISO has been fast-tracked. We would like more TC39 delegates to be part of the ECMA GA and ExeCom bodies. We're standardizing “ECMA Fellows” recognition awards for a select few, pending approval by the GA.
+IS: TC39 dominates downloads of ECMA standards. Even for PDF downloads. We need a solution for converting the HTML to proper PDF. Need solution to archive Github data into TC39 depository. We're working to improve the TC39 webpages. ISO has been fast-tracked. We would like more TC39 delegates to be part of the ECMA GA and ExeCom bodies. We're standardizing "ECMA Fellows" recognition awards for a select few, pending approval by the GA.
 
 TST: Do we know the referrers for these old version downloads? So we can update them?
 
@@ -264,9 +264,9 @@ LCK: Let's walk through the things we've encountered in implementing ESM:
 LCK: The spec has the abstract module record, which encompases the concrete class for a language. The limitation in the spec is that other languages cannot participate in the ESM graph, making non-JS modules second class citizens. For other languages, there is no direct cyclic dependency like you have in JS modules. Why?  Because of the algorithm that's needed to support cycles, we added this limitation. (this is called [Tarjan's Algorithm](https://www.youtube.com/watch?v=TyWtx7q2D7Y)) 
 This algorithm lives in the Source Text Module Record class. Without another subclass to motivate the work, there was no need to extract that into a spec. By introducing the cyclic module record class, we can subclass it to provide a Source Text module and a Lang X module record. The cyclic module record will contain the fields associated with that module. The algorithm for cycle handling are in module instantiation (which means they'll have to be moved up to the parent). That's the spec modification that we knew we would have to make. But there's another that we didn't expect.
 Live bindings are great for JS (most of the time) but not for all languages. In JS, if you have a cycle, (explains slides), you can have a TDZ violation when you try to use the import, because the module isn't yet initialized. There are cases when you can import without being in the TDZ, so the error won't always be thrown. JS allows you to get around this by late throwing the error only. When you do that the use doesn't happen until the entire module graph has been evaluated. Languages that require the type information of imports, this causes errors. These languages run checks on the import, so there's no way to defer the use of the import. Languages with static type checks need to just know the value when the import is made. So live bindings become a problem because we need to know at instantiation time and we only know at evaluation time. Functions are initialized during init, there's no issue using functions in these static languages. While this means imports from other languages will be restricted, we can still allow getters and setters.
-WASM might be able to get around this by adding an “any” type. You may have a cycle with a JS module higher in the tree and another language lower in the tree—this causes problems because the JS module hasn't been finished instantiating and will be undefined in the lower non-JS module. There are other options than a subphase—you can defer the instantiation of the other language module until the evaluation phase, but then we have the reverse problem where non-JS modules cannot be referenced until evaluation time in JS modules. So we advocate using the subphase rather than the deferred external module loading phase.
+WASM might be able to get around this by adding an "any" type. You may have a cycle with a JS module higher in the tree and another language lower in the tree—this causes problems because the JS module hasn't been finished instantiating and will be undefined in the lower non-JS module. There are other options than a subphase—you can defer the instantiation of the other language module until the evaluation phase, but then we have the reverse problem where non-JS modules cannot be referenced until evaluation time in JS modules. So we advocate using the subphase rather than the deferred external module loading phase.
 
-CP: (something…) 
+CP: (something...) 
 
 LCK: You need to be able to know the type of what you're importing. The name alone is not sufficient. 
 
@@ -286,7 +286,7 @@ LCK: We want to think about not making it specific to WASM, but designed with WA
 
 MBS: The instantiate subphase, are you imaging this will help with interop with commonjs too?
 
-LCK: That came up in the discussions, I don't think it will. But we should discuss offline if it could…
+LCK: That came up in the discussions, I don't think it will. But we should discuss offline if it could...
 
 MBS: Named exports for common is something that's on the table, I'm still on the fence about supporting everything in ESM.
 
@@ -330,7 +330,7 @@ LCK: In WASM, we'll be instantiating all the variables during the first phase of
 
 DE: We changed a funny TDZ thing with class field initializers, making `this` binding initialization a little bit earlier. We have Test262 tests for the change.
 
-WH: Can you explain the “Tweak in `this` TDZ” slide again?
+WH: Can you explain the "Tweak in `this` TDZ" slide again?
 
 DE:  We're explicitly enabling access to `this` in the initializer, and for other functions that close over `this` that are called from the initializer.
 
@@ -350,7 +350,7 @@ WH: I'm hearing differently from people here about being ok with no-line-break r
 
 WH: Suppose we didn't have static productions and we wanted to add them later. We would have to have no line-break restrictions for these kinds of extensions.
 
-KG: We've done this for async. No one really tries to break these ‘async' or ‘static' modifiers from their declaration.
+KG: We've done this for async. No one really tries to break these 'async' or 'static' modifiers from their declaration.
 
 WH: There is an important difference between classes and the rest of the language. Inside classes, there are no reserved words. Everything is valid as a name. That makes it much harder to extend classes later.
 
@@ -369,9 +369,9 @@ DE: Let's continue this offline. Do we have consensus with the TDZ tweak?
 - [proposal](http://github.com/tc39/proposal-static-class-features/)
 - [slides](https://docs.google.com/presentation/d/1YzFr7EIGiX2YagfFMjkI-lVR6ouoRfPbTNLY--NGbC4/)
 
-SYG: Last meeting we tried to move forward without static private. Public static fields are properties on the constructor: you declare them as static, and they are writeable, and configurable. The controversial part is private static fields and methods: we are adding back private static fields and methods because there are feelings of filling out the features grid, for better organization of code. The main sticking point has been the subclassing hazard. My conclusion is that it's not that bad. Private combines lexical scoping with a restriction of what the receiver can be—both these things are important. Private is a strict subset of the behavior of public things. It has to be lexically scoped, and there's a provenance restriction on the receiver. We care about where the receiver came from, if it's not from the right place, it throws. For instances, the provenance is “created by the class”. Everyone seems to agree on that. If it's not the right instance, it'll throw. There is no prototype lookup for this. It has to be directly constructed. For static, the provenance is _just_ the class constructor. We feel that private static is well motivated for factory pattern and extracting code. 
+SYG: Last meeting we tried to move forward without static private. Public static fields are properties on the constructor: you declare them as static, and they are writeable, and configurable. The controversial part is private static fields and methods: we are adding back private static fields and methods because there are feelings of filling out the features grid, for better organization of code. The main sticking point has been the subclassing hazard. My conclusion is that it's not that bad. Private combines lexical scoping with a restriction of what the receiver can be—both these things are important. Private is a strict subset of the behavior of public things. It has to be lexically scoped, and there's a provenance restriction on the receiver. We care about where the receiver came from, if it's not from the right place, it throws. For instances, the provenance is "created by the class". Everyone seems to agree on that. If it's not the right instance, it'll throw. There is no prototype lookup for this. It has to be directly constructed. For static, the provenance is _just_ the class constructor. We feel that private static is well motivated for factory pattern and extracting code. 
 
-MM: Clarifying: I find “provenance” confusing. Does this mean WeakMap? Where the registration with the weakmap is separate from the get/set on the weakmap.
+MM: Clarifying: I find "provenance" confusing. Does this mean WeakMap? Where the registration with the weakmap is separate from the get/set on the weakmap.
 
 SYG: Yes.
 
@@ -392,7 +392,7 @@ CM: I concur that the hazard isn't that bad.
 
 KG: We imagine static private methods will be used to hold de-duplicated logic, that should have access to private instance fields. But now all the callers have to use the right receiver, or it throws. Now suddenly `this` stops working for subclass. Example: https://gist.github.com/bakkot/7fa48f8d20382d53fa1582b92dae9692
 
-YK: It's baffling to me what the semantics to be. (some point I don't understand…)
+YK: It's baffling to me what the semantics to be. (some point I don't understand...)
 
 SYG: To me it's not just lexical, it's something else. If you think of it just as lexical, you won't have issues until you use `this`. It's better to think of this as almost lexical and something else.
 
@@ -402,7 +402,7 @@ DH: What would the linting rule be?
 
 JHD: I could be don't use `this` in static.
 
-DE: (discussing linting…)
+DE: (discussing linting...)
 
 SYG: We've rejected statically (pun) disallowing this in static.
 
@@ -436,7 +436,7 @@ BT: I think we should continue pursuing it. I just think 2019 is really soon. We
 - [proposal](https://github.com/tc39/proposal-decorators)
 - [slides](https://docs.google.com/presentation/d/1sQJunzPUqaD-fbyGCRHJI1Sn5w2mo5F8hXFXfJOFTxY/)
 
-DE: Decorators allow metaprogramming in classes. Transforms also support old decorators. Comes up in several cases where you want to have additional behavior on methods and classes. Decorators are invoked with a descriptor that represents the class or a method/property, and it returns a modified decorator. A few tweaks for duplicate keys, disallowing duplicate decorated methods, an ergonomics improvement if the finisher returns undefined it doesn't change the descriptor. Rejected early error for doubly decorated accessors. PrivateName as an ordinary object. We've gone back and forth between a primitive. Implementers are concerned by that. So it's an object. We removed auto-inserting parentheses (like new expressions). So there's no factory function necessary anymore. To overcome the issue that motivated the auto-inserting, we made toStringTag return “Descriptor”. It doesn't have to be secure, it just needs an easy duck-typing. Auto-inserting had some issues. I think it's simpler without it. We also the order of export decorators. Decorators now go before the export keyword.
+DE: Decorators allow metaprogramming in classes. Transforms also support old decorators. Comes up in several cases where you want to have additional behavior on methods and classes. Decorators are invoked with a descriptor that represents the class or a method/property, and it returns a modified decorator. A few tweaks for duplicate keys, disallowing duplicate decorated methods, an ergonomics improvement if the finisher returns undefined it doesn't change the descriptor. Rejected early error for doubly decorated accessors. PrivateName as an ordinary object. We've gone back and forth between a primitive. Implementers are concerned by that. So it's an object. We removed auto-inserting parentheses (like new expressions). So there's no factory function necessary anymore. To overcome the issue that motivated the auto-inserting, we made toStringTag return "Descriptor". It doesn't have to be secure, it just needs an easy duck-typing. Auto-inserting had some issues. I think it's simpler without it. We also the order of export decorators. Decorators now go before the export keyword.
 
 RBN: Typescript has a bunch of keyword modifiers. Splitting where the decorators where in a list of modifiers makes it feel weird. Think of export as a modifier, not a syntax thing.
 
@@ -539,7 +539,7 @@ RBN:
 - Switching `export const class` to `const A = ` it doesn't matter where the export is.
 - By having the decorators in either position, you're restricting what comes next.
 
-Discussion taken offline.  Not seeking stage advancement.
+Discussion taken offline. Not seeking stage advancement.
 
 Yehuda went from JHD to Ron's position, but happy either way.
 
@@ -548,7 +548,7 @@ DE: me too.
 WH: should toString on the class include export on the decorator?
 The export shouldn't be included in the SourceString, while the decorators may or may not. This strongly argues for the bottom alternative on the slide.
 
-??: Waldemar is right.  Export goes first.
+??: Waldemar is right. Export goes first.
 
 DE: It doesn't sound like the end of the world to cut `export` out of the toString output.
 
@@ -557,18 +557,18 @@ the class?  Probably same answer as to Waldemar's question.
 
 WH: ok with non-insertion of parentheses.
 
-PrivateName as ordinary object.  PrivateName stealing may not be a problem in practice.
+PrivateName as ordinary object. PrivateName stealing may not be a problem in practice.
 
 JRL: wasn't this identified as a security risk?
 
-DE: Not a security risk.  Mark, Ron, and Dan discussed and could not
-identify a risk that freezing would addressed.  We don't have any
-defensible classes.  Why freeze this one?  Only introduce defensible
+DE: Not a security risk. Mark, Ron, and Dan discussed and could not
+identify a risk that freezing would addressed. We don't have any
+defensible classes. Why freeze this one?  Only introduce defensible
 classes as part of a larger, separate change.
 
 CP: There's no way to create brand new PrivateNames.
 
-DE: Yes there is.  You could do this in an @observed decorator.
+DE: Yes there is. You could do this in an @observed decorator.
 
 ??: Or memoized decorator.
 
@@ -578,18 +578,18 @@ DE: We should treat them the same way as in `extends` clause.
 
 WH: agree no change needed.
 
-DE: Mark brought up this point.  PrivateName only includes get/set methods not add.
-This is a deliberate omission.  With private fields/methods we want to encourage adding
+DE: Mark brought up this point. PrivateName only includes get/set methods not add.
+This is a deliberate omission. With private fields/methods we want to encourage adding
 private fields via a `private` declaration.
 Not a strong restriction: super return trick.
 Objects should have a stable shape.
 
 MM: I want to understand this before stage 3 but I don't anticipate problems.
 
-CP: We've had issues with proxies in the past.  Does PrivateName have similar problems?
+CP: We've had issues with proxies in the past. Does PrivateName have similar problems?
 Implementors cannot optimize proxies because the handler can change over time.
 
-DE: No similar mutable object.  PrivateObjects not accessed on every use.
+DE: No similar mutable object. PrivateObjects not accessed on every use.
 
 DE: Are there more things to resolve for stage 3?  Besides `export` positioning.
 
@@ -606,7 +606,7 @@ DE: Are there more things to resolve for stage 3?  Besides `export` positioning.
 - [proposal](https://github.com/rbuckton/proposal-class-static-block)
 - [slides](https://docs.google.com/presentation/d/1TLFrhKMW2UHlHIcjKN02cEJsSq4HL7odS6TE6M-OGYg/)
 
-RBN: Part of the previous discussion on this was about the Class fields, but the basic idea here is to provide a declaration allowing you to do multi-step evaluation. Private static state or private instance state—to grant them privileged access, I need to be able to (…) Without some time up static block, you have to rely on first time a static method is run or first time constructed. The concept is just a block prefixed by static keyword. Only one static block allowed per class. Writing a second static block would throw an error. With the fields proposals, this gives you the opportunity to perform multi-step initialization. Should we allow return statement in static block? You can return inside the constructor, but I don't think we should allow return from a static block. It's not a function. Ambiguous: returning from the function or returning from the class? At the top-level of the script or module and state that return is not allowed. Static blocks are a new closure environment. A new block scope. It aligns with how instance constructors operate. This aligns with how an instance constructor would work. Keeping with the discussion with decorators: it would not be allowed in a static block; for that you would need a static class. If you use `this` it would be used in the constructor C itself (referring to example). 
+RBN: Part of the previous discussion on this was about the Class fields, but the basic idea here is to provide a declaration allowing you to do multi-step evaluation. Private static state or private instance state—to grant them privileged access, I need to be able to (...) Without some time up static block, you have to rely on first time a static method is run or first time constructed. The concept is just a block prefixed by static keyword. Only one static block allowed per class. Writing a second static block would throw an error. With the fields proposals, this gives you the opportunity to perform multi-step initialization. Should we allow return statement in static block? You can return inside the constructor, but I don't think we should allow return from a static block. It's not a function. Ambiguous: returning from the function or returning from the class? At the top-level of the script or module and state that return is not allowed. Static blocks are a new closure environment. A new block scope. It aligns with how instance constructors operate. This aligns with how an instance constructor would work. Keeping with the discussion with decorators: it would not be allowed in a static block; for that you would need a static class. If you use `this` it would be used in the constructor C itself (referring to example). 
 
 MM: For `this` and that position, there's no conceivable way to have this not bound to C?
 
@@ -703,14 +703,3 @@ EFT: (...something about super)
 #### Conclusion/Resolution
 
 - Stage 1 acceptance
-
-
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,6 @@
 # September 25, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (ARE), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Jory Burson (JKB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KV), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Jory Burson (JKB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KV), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG)
 
 Remote: 
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG), Thomas Wood (TW), Isaac Durazo (IDO)
@@ -40,14 +40,14 @@ RJE: Any issues with the minutes from last meeting? (Silence.)
 RJE: November meeting at Apple. From 2018-11-27 to 2018-11-29 in Cupertino, CA.
 
 
-## 7.i ECMA262 Status Updates
+## 7.i ECMA-262 Status Updates
 
 JHD: We created [PR 1218](https://github.com/tc39/ecma262/pull/1218) to update to Unicode v11, the latest Unicode spec. There's been other PRs as well, most notably [1298](https://github.com/tc39/ecma262/pull/1298) and [1286](https://github.com/tc39/ecma262/pull/1296). We've been meeting every other week to go through the queue, we can continue to not make decisions there but just go over review questions. For ES2019, we're about to lock down. You should start stating if you are aiming in your proposal to be part of ES2019, but if it is going to be Stage 4 by November, it will automatically be considered for ES2019. If it doesn't hit Stage 4 by November, please make a special point if you want it to be considered for ES2019.
 
 JHD: BT will be stepping down from the Editor Group after ES2019.
 
 
-## 7.iii ECMA404 Status Updates
+## 7.iii ECMA-404 Status Updates
 
 RJE: Anything to state about Ecma 404?
 
@@ -85,7 +85,7 @@ KM: Yeah, like something like "This is an historical archive, click here to see 
 
 IS: Yes, I understand now, I think that's a good idea.
 
-## 7.ii ECMA402 Status Updates 
+## 7.ii ECMA-402 Status Updates 
 
 - [slides](https://docs.google.com/presentation/d/1xmwZPjAAmT2D7PQSH_G9Y62PhPXSNDzsX38qVuv2upo/)
 
@@ -133,13 +133,13 @@ LBR: New lines of code. Thanks for all the contributions. We've made a bunch of 
 
 (Isaac Durazo, Katie Broida, Leo Balter)
 
-[slides](https://docs.google.com/presentation/d/1PReJMVRRlh6sL5R0P2cVITGPAGMSwAol0DIkMQxzQhU/edit#slide=id.g42aeb5f1bf_1_45)
+- [slides](https://docs.google.com/presentation/d/1PReJMVRRlh6sL5R0P2cVITGPAGMSwAol0DIkMQxzQhU/edit#slide=id.g42aeb5f1bf_1_45)
 
 LBR: Next, I'd like to present the Test262 Results. Out of ~60,000 executed tests, how do we measure how compatible the web is? 
 
-LBR: There's test262-harness and eshost project started by BT, which can quickly run test262 tests in multiple JS engines. Also, JSVU has been created by MB against pre-compiled engines, which has been an enormous help. 
+LBR: There's Test262-harness and eshost project started by BT, which can quickly run Test262 tests in multiple JS engines. Also, JSVU has been created by MB against pre-compiled engines, which has been an enormous help. 
 
-IDO: Here's Web Platform Reports that we've been working on at Bocoup. There are other tables like caniuse.com, but they have their own rules. We decided to build WPR to use the test262 suites as the source of truth. Designed for devs, implementers, automation tools, TC39.
+IDO: Here's Web Platform Reports that we've been working on at Bocoup. There are other tables like caniuse.com, but they have their own rules. We decided to build WPR to use the Test262 suites as the source of truth. Designed for devs, implementers, automation tools, TC39.
 
 KNB: Let me demonstrate how the website works. This is a React site on AWS, we use server-side rendering and lazy-loading. Since there are so many test results to show, we want to chunk it up and lazy-load it. We have a preliminary version of this site before it launches next week at http://webplatform.report/. 
 
@@ -196,7 +196,7 @@ JHD: If we make it public later, that's a separate discussion. But there are ple
 
 DE: Sure, I don't really disagree, but it's good to make things as public as possible when we can. If we keep things on Ecma internal, that would lead to a suboptimal outcome.
 
-ARE: Code of conduct archive shouldn't be public.
+AKI: Code of conduct archive shouldn't be public.
 
 YSV: Archiving the role of management, we'll talk about this in our presentation too. Someone dedicated to archiving so the responsibilities are clear would be good.
 
@@ -458,7 +458,7 @@ WH: Are we OK with your PR? We seem to have digressed into a meta discussion abo
 
 BT: As an editor group, we try not to take judgements on whether a PR is good or bad. We would need to get concrete guidance on what is important to fix and what isn't important. This is so simple that I think it is sufficiently motivated. 
 
-YK: If the editor group want to give their opinion, ...something...  We just need a preference.
+YK: If the editor group want to give their opinion, ...something... We just need a preference.
 
 JHD: This doesn't have a strong motivating use case.
 
@@ -523,7 +523,7 @@ WH: I don't understand YK's point about requiring the comparison function to be 
 ## Update on String.prototype.matchAll
 
 (Jordan Harband)
-[slides](https://github.com/tc39/proposal-string-matchall/issues/39)
+- [slides](https://github.com/tc39/proposal-string-matchall/issues/39)
 
 JHD: RegExps are a mess, and we have different fallback behaviors for String methods. For `Symbol.match`, it doubles as both an implementation and as a marker for regex. So, we don't have a choice to do anything but throw in the case of `Symbol.match` in the absence of a matching symbol. The question is some people would prefer not to have the fallback behavior—do just watch match and search do. This would delete two lines of spec text, but it wouldn't make it considerably easier to implement. I have a preference for making things not throw when they can work, but this boils down to this question. Do we mirror what search and match do, to split and unconditionally invoke `Symbol.matchAll`. 
 
@@ -572,7 +572,7 @@ DE: It's a strong concern of mine that we don't make regex subclassing more inco
 
 ## September 2019 Meeting
 
-JRL: We have a confirmed host, but we were debating the location. Bloomberg has confirmed they can host in NY Sept 24-26, 2019.  I propose that without another confirmed host, we should confirm our location to be New York.
+JRL: We have a confirmed host, but we were debating the location. Bloomberg has confirmed they can host in NY Sept 24-26, 2019. I propose that without another confirmed host, we should confirm our location to be New York.
 
 #### Conclusion/Resolution
 
@@ -640,10 +640,10 @@ YK: A clarifying question: in strict mode this throws? (Yes). And you would like
 
 BFS: (Presenting slides). To be clear this is a very big, breaking change and will take a long time, but I don't really see how we cannot do this.
 
-RPR: Even though Bradley doesn't call it a mistake, I think this fixes a mistake in JS. Thank you for doing this, I am in support of it. Most developers do not run into issue because they do not freeze things.  Those that do are surprised by the current behaviour - it is not what they expected or wanted. The demand for fixing this comes from at least two use-cases:
+RPR: Even though Bradley doesn't call it a mistake, I think this fixes a mistake in JS. Thank you for doing this, I am in support of it. Most developers do not run into issue because they do not freeze things. Those that do are surprised by the current behaviour - it is not what they expected or wanted. The demand for fixing this comes from at least two use-cases:
 
 1. Frozen realms, to prevent mutating builtins.
-2. Regular classes in JS with frozen prototypes.  Our userland class system in Bloomberg already achieves this - it would be great for native ES classes to be able to have frozen prototypes too.
+2. Regular classes in JS with frozen prototypes. Our userland class system in Bloomberg already achieves this - it would be great for native ES classes to be able to have frozen prototypes too.
 
 YK: How much time did we spend thinking about this before we designed it this way? Is this a really mistake? In order to be comfortable making this change, I think we need to be in unanimous agreement that the original behavior was a mistake.
 

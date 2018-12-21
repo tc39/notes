@@ -209,7 +209,7 @@ CM: no self
 
 DD: Would prefer `self`
 
-AK: 'global' seems fine.  Most people don't seem to want 'self', Domenic.
+AK: 'global' seems fine. Most people don't seem to want 'self', Domenic.
     
 YK, AK: This doesn't give any new capability 
 
@@ -311,7 +311,7 @@ AK/DE: Some cases need 2 or more browsers, but this is not one.
 #### Conclusion/Resolution
 
 - Stage 4 acceptance
-- https://github.com/tc39/Test262/pull/734/files
+- https://github.com/tc39/test262/pull/734/files
 
 
 ## 9.i.j ECMA-402 Intl.PluralRules
@@ -437,7 +437,7 @@ RW: what software?
 
 AK: CRM Dynamics 2013
 
-BT: It is fixed, but people don't update their on-premises software. They hire a contractor to install it, and then the contractor walks away. We tell them just use IE11 rather than Edge.  You can configure a group policy to open certain pages in IE11
+BT: It is fixed, but people don't update their on-premises software. They hire a contractor to install it, and then the contractor walks away. We tell them just use IE11 rather than Edge. You can configure a group policy to open certain pages in IE11
 
 #### Conclusion/Resolution
 
@@ -700,7 +700,7 @@ AK: This isn't thought of as a statement, but rather as a declaration, so the ev
 
 DH: "identifier : identifier" currently means type annotation 
 
-with respect to this ^^ https://tc39.github.io/ecma262/#sec-forbidden-extensions: 
+with respect to this ^^ https://tc39.github.io/ECMA-262/#sec-forbidden-extensions: 
     
     
 > The Syntactic Grammar must not be extended in any manner that allows the token : to immediate follow source text that matches the BindingIdentifier nonterminal symbol.
@@ -761,7 +761,7 @@ MM: [clarifying that bindings are immutable on the import side]
 
 YK: [clarifying that currently proposal is transpiled to commonJS require]
 
-… discussion about the spec; request to skip the spec discussion at this stage …
+... discussion about the spec; request to skip the spec discussion at this stage ...
 
 AWB: How about we consider these to be ordinary lexically scoped variables?
 
@@ -789,7 +789,7 @@ WH: So then what happens if a module is missing when being loaded? How do Optimi
 
 BN: necessarily an error if it fails to load.
 
-BN: … talking about a use case for cross-env code with conditional imports … if it turns out that the fetching of the module source fails, it is entirely conceivable that the dev knows this was a possibility and that that import is inside a conditional block that prevents it from evaluating - so I think it's less fatal for the fetch to fail.
+BN: ... talking about a use case for cross-env code with conditional imports ... if it turns out that the fetching of the module source fails, it is entirely conceivable that the dev knows this was a possibility and that that import is inside a conditional block that prevents it from evaluating - so I think it's less fatal for the fetch to fail.
 
 YK: an important use case for this is "if I'm in env X, import stuff for env X"
 
@@ -803,7 +803,7 @@ AWB: I mean consistent in that it treats each block as if it's its own module.
 
 YK: ?? conditional importing means the dev knows it's benign if it's missing, and can work around that.
 
-BN: … explaining "isolated scopes" example … ability to reuse identifiers in the same file, but in separate scopes. With top-level, you need slight identifier variations.
+BN: ... explaining "isolated scopes" example ... ability to reuse identifiers in the same file, but in separate scopes. With top-level, you need slight identifier variations.
 
 SP: also refactoring hazard - if the imports are in the describe, it's easier to split up large files without breaking things.
 
@@ -819,15 +819,15 @@ DH: it should be possible via the registry to clear things out and make it possi
 
 BF: in node, if it evaluates, it's put into the cache; if it fails to evaluate, it's not put into the cache.
 
-… discussion about entire dep graph being resolved before any evaluation …
+... discussion about entire dep graph being resolved before any evaluation ...
 
-DT: … general argument that nested imports would have to be VERY compelling to make it worth it …
+DT: ... general argument that nested imports would have to be VERY compelling to make it worth it ...
 
 AWB: what about imperatively using a dynamic import API?
 
 DH: loader API does not let you statically express dependencies, so we talked about a syntax that allows dynamic async importing
 
-… more discussion ?? …
+... more discussion ?? ...
 
 DH: inherent conflict with top-level await
 
@@ -857,7 +857,7 @@ BN: if you treat all module identifiers the same, then you don't have to parse t
 
 EF: i think you grossly underestimate the costs involved.
 
-… discussion about tokenizing vs parsing; costs thereof; etc …
+... discussion about tokenizing vs parsing; costs thereof; etc ...
 
 BN: in my naive understanding of tokenizing and parsing, you could tokenize, iterate, locate `import`, locate the possible path - then optimistically parse that path whether it's a module or not.
 
@@ -865,7 +865,7 @@ AK: unless you're talking about throwing away all module early errors, you need 
 
 BN: if i'm wrong about the tokenizing trick, it still doesn't matter where the import declarations are
 
-YK: i think the point is that if it turns out that conditional import …
+YK: i think the point is that if it turns out that conditional import ...
 
 SM: what matters is "do you do the fetch if there's a syntax error"
 
@@ -907,7 +907,7 @@ BN: Yes, we needed to support browsers. Nested import declarations seem problema
 
 BN: I have a grammar in the proposal. Import is not allowed in non-modules. There is a PR, I invite people to participate there. Nested imports from scripts are prohibited with static semantics. 
 
-BN: We have settled on declarative imports, hoisting them.  But nested imports give you a tool for doing imperative imports, though no deferred fetching and specifiers are literal
+BN: We have settled on declarative imports, hoisting them. But nested imports give you a tool for doing imperative imports, though no deferred fetching and specifiers are literal
 
 BN: Stage 1?
 
@@ -929,12 +929,4 @@ BN: I would prefer synchronous semantics, if possible, but we could live with th
 #### Conclusion/Resolution 
 
 - Stage 0 holds.
-  - A synthesis proposal will be pursued at a future meeting. 
-
-
-
-
-
-
-
-
+  - A synthesis proposal will be pursued at a future meeting.

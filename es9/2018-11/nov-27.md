@@ -1,6 +1,6 @@
 # November 27, 2018 Meeting Notes
 -----
-Mattijs Hoitink (MHK), Michael Saboff (MS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbage (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontin (FAB), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (ARE), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
+Mattijs Hoitink (MHK), Michael Saboff (MS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbage (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontin (FAB), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
 
 Remote: 
 Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), Istvan Sebestyen (IS), Richard Gibson (RG), Guy Bedford (GB), Conrad Watts (CWS)
@@ -38,7 +38,7 @@ BFS: We will be hosting in Scottsdale. Where should we post the information?
 
 ??: I think the public way we've been doing it is a problem
 
-ARE: I'll be thinking a lot about how to do this.
+AKI: I'll be thinking a lot about how to do this.
 
 KG: Most internal things should go on the reflector including Doodle.
 
@@ -194,7 +194,7 @@ IS: Yes. So I'm not really an expert, but I have some feeling what these guys ar
 
 - [slides](https://docs.google.com/presentation/d/1P5DdJBQrr5hj_x-SqQxk8HOTaipJUaxbH0icp1g9iMk/edit#slide=id.g420fef0220_0_25)
 
-YSV: Broke down the management tasks in the last meeting, and how long is needed for each one. Proposed structure is 3 chairs, YSV, ARE, and BT, at about 32 hours per month. TS, MB, LB volunteered to do a smaller amount of work. We can refer to someone being the Chair/Vice chair, but really it's a group effort.
+YSV: Broke down the management tasks in the last meeting, and how long is needed for each one. Proposed structure is 3 chairs, YSV, AKI, and BT, at about 32 hours per month. TS, MB, LB volunteered to do a smaller amount of work. We can refer to someone being the Chair/Vice chair, but really it's a group effort.
 
 DE: IS, can you clarify if we can have 3 co-chairs instead of the Chair/vice-chair structure.
 
@@ -598,7 +598,7 @@ WH: I'm not sure immediacy is the issue. I think the problem is our lack of resp
 
 DE: Prior to proposing the outreach groups, we discussed text-based communication mechanisms and lots of hesitation. I really think there are different groups of people who are receptive in different forms of communications. Changing the environment in github, having an open call... I agree we need to improve this situation in es-discuss but I don't think this will improve the feedback we're getting from frameworks. We wouldn't be engaging the same people. 
 
-ARE: I just wanted to mention, later in this meeting or in January, there will be a breakout session about how you can express your ideas better, and one of the topics will be es-discuss.
+AKI: I just wanted to mention, later in this meeting or in January, there will be a breakout session about how you can express your ideas better, and one of the topics will be es-discuss.
 
 BT: Have we run the legal requirements by anyone? Have any lawyers? I can find one. I am concerned for asking with consensus with a group that doesn't know what to say.
 

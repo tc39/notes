@@ -113,7 +113,7 @@ BE: We can try it and the first sign of trouble, back off.
 
 MM/AWB/BE: (agreement)
 
-WH: The main use I see of ToUint32 is to call it on the existing length.  Indices passed in as arguments are generally processed via ToInteger.  As such, getting rid of the ToUint32 in generic Array methods applied to non-Array objects shouldn't present much difficulty (when they're applied to Array objects the change would be invisible because Array length can't reach 2^32).
+WH: The main use I see of ToUint32 is to call it on the existing length. Indices passed in as arguments are generally processed via ToInteger. As such, getting rid of the ToUint32 in generic Array methods applied to non-Array objects shouldn't present much difficulty (when they're applied to Array objects the change would be invisible because Array length can't reach 2^32).
 
 AWB: But it doesn't have to be an array
 ...We should move on.

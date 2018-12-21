@@ -42,7 +42,7 @@ YK: Concerns about let bindings in function parameters
 
 BT: In IE11, you can't create a let binding whose identifier is the same as a function parameter
 
-AWB/YK: Then this is a spec bug.  (AWB: not clear what this is referring to, the behavior described above for IE11 sounds correct)
+AWB/YK: Then this is a spec bug. (AWB: not clear what this is referring to, the behavior described above for IE11 sounds correct)
 
 BT: Even `var x; let x;` is an error
 
@@ -61,7 +61,7 @@ WH: What are the ContainsExpressions rules in the function declaration instantia
 AWB: Yes, that's invisible. Went back and forth about whether to express such optimizations in the spec.
 
 AWB: (moving on)
-- Lookahead grammar restriction created, to disambiguate `new super()`  (AWB: but they aren't right yet.  Stills needs some more work)
+- Lookahead grammar restriction created, to disambiguate `new super()`  (AWB: but they aren't right yet. Stills needs some more work)
 - Lookahead `let` restrictions added: IterationStatement (see notes)
 - Temporary change return default for missing class constructor: Reverted.
 
@@ -98,7 +98,7 @@ AWB: (continuing) Corrected RegExpExec so it correcly translates the match state
 
 WH: If you have a composed character, is it still considered two characters?
 
-AWB: Yes, it operates at the level of code points or  code units.  Not a higher livel such as composed characters
+AWB: Yes, it operates at the level of code points or  code units. Not a higher livel such as composed characters
 
 YK: (requesting more information about the the ES5 compatibility change item added to Annex D)
 
@@ -413,7 +413,7 @@ MM: Any defensible options other than dropping the invariant?
 
 AWB: No
 
-WH: Yes. To prevent proxy cycles, something in the proxy (perhaps the target's prototype, perhaps something else) would record what the proxy thinks the prototype is.  GetPrototypeOf does not run user code and only returns the current stored value.  SetPrototypeOf runs user code and can change the stored value.  The circularity check occurs at the time of the store.
+WH: Yes. To prevent proxy cycles, something in the proxy (perhaps the target's prototype, perhaps something else) would record what the proxy thinks the prototype is. GetPrototypeOf does not run user code and only returns the current stored value. SetPrototypeOf runs user code and can change the stored value. The circularity check occurs at the time of the store.
 
 AWB: Possible for ordinary objects, if the prototype chain only consists of ordinary objects, there must not be circularities.
 
@@ -871,7 +871,7 @@ MM: Too late to
 
 ## new %TypedArray%(iterable)
 
-- Currently constructor doesn't recognize iterables, but requires an array like.  This is the behavior inherited from the Khronos spec.
+- Currently constructor doesn't recognize iterables, but requires an array like. This is the behavior inherited from the Khronos spec.
 - Need to use:
 - %TypedArray%.from(iterable)
 - Should constructor work like %TypedArray%.from?
@@ -904,13 +904,3 @@ RW: Revisiting:
 #### Conclusion/Resolution
 
 - No error, last property wins, eg. map.get("x") === 2
-
-
-
-
-
-
-
-
-
-

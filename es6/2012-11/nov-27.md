@@ -7,7 +7,7 @@ John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Waldemar Ho
 
 ## Welcome
 
-...Welcome and introductions.JN welcomed members and introductions were made.  DC gave us facility and logistical information.  Dinner for Wednesday is set for 6 PM.
+...Welcome and introductions. JN welcomed members and introductions were made. DC gave us facility and logistical information. Dinner for Wednesday is set for 6 PM.
 
 ## Agenda 
 
@@ -20,7 +20,7 @@ RW: Confirm that l have had opportunity to review prior to submission.
 JN: Minutes from Sept 2012: Approved.
 
 
-Review and approval of agenda.  Labeled as rev42 will be sent to Patrick for publication.
+Review and approval of agenda. Labeled as rev42 will be sent to Patrick for publication.
 
 ## ES6 feedback via TypeScript
 
@@ -90,7 +90,7 @@ Explanation of rationale leading to the restriction and reorganization of intern
 
 ### Meta Object Protocol, aka. MOP
 
-Discussing section on invariants and how to redefine in a reasonable way.  We need people who are interested in these invariants to make contributions to this section.
+Discussing section on invariants and how to redefine in a reasonable way. We need people who are interested in these invariants to make contributions to this section.
 
 
 8.1 Language Types

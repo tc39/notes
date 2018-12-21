@@ -1,6 +1,6 @@
 # September 27, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (ARE), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KV), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZ), Lin Clark (LCK), Matt Johnson (MJN)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KV), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZ), Lin Clark (LCK), Matt Johnson (MJN)
 
 Remote:
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
@@ -13,7 +13,7 @@ Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), 
 
 ## Normative: Add export * as ns from "mod" (cont'd)
 
-BFS: We have this open PR about adding a syntax for exporting from another module its namespace as a local name. Some people wanted to discuss this a bit but we haven't really heard objections. We had a “needs consensus” and DD seemed OK with this on IRC, so I'm asking now to see if we can move forward and merge this PR.
+BFS: We have this open PR about adding a syntax for exporting from another module its namespace as a local name. Some people wanted to discuss this a bit but we haven't really heard objections. We had a "needs consensus" and DD seemed OK with this on IRC, so I'm asking now to see if we can move forward and merge this PR.
 
 KS: Looks like the PR needs to be rebased. Didn't we report consensus a couple of meetings ago on this?
 
@@ -86,7 +86,7 @@ RJE: Objections?
 
 (Bradley Farias) 
 
-[proposal](https://github.com/tc39/ecma262/pull/1306)
+- [proposal](https://github.com/tc39/ecma262/pull/1306)
 
 BFS: We came to a conclusion earlier that maybe we should change the module record such that we could implement it outside the JS spec. This PR is the result of that. We've created a guide, which is this PR, that states that in order for abstract module records to get some data for the host. Why we're doing this change—and what it allows us to do—is it track what the exports are, is so that we can evaluate the module in an abstract module, which is what the dynamic module proposal was seeking to do originally. There's the whole idea that we're going to change when the list of exported names can occur—like A depends upon B depends upon A—where we add extra cycles. We're adding to the spec in this PR that this could be a case to throw. We're planning on going forward with this approach to see if we can go through all the dynamic modules with this approach. Lin has another PR which also has an approach where they are introducing the things WASM is doing for modules, and we're looking on working together with them.
 
@@ -121,7 +121,7 @@ KS: (Laughs) We need to get that validation from engines an implementers.
 
 MPT: This API is quite large, but we won't need to spend all 60 minutes on it. There are a few concerns—and a lot of places where we can go way deep on these APIs—but I am arguing for getting this proposal to Stage 2 and going into a lot more depth when this is up for Stage 3. (Reads slides). One of the major things we discussed at the last meeting was variability and valueOf. We discussed that we want to cut valueOf, so effectively they are not comparable without APIs. Calls to Now were cut from this proposal. Leap Seconds were also discussed in July, after talking to the Windows team—the only thing I can say is to do what they did is not web compatible. The table of leap second data may or may not be available at the OS level; it would require round-tripping. It is our intent to allow parsing, so if you get the 60th second in a string is to allow it to be parseable, and go to 59. There's many non-stage 2 topics which are outlined on the slides, but to keep this small we will discuss those later. I think we make Stage 2 requirements, and I'm happy to take questions.
 
-RGN: How do you feel about leap seconds in instant vs. “civil” processing? 
+RGN: How do you feel about leap seconds in instant vs. "civil" processing? 
 
 MPT: You're talking about leap seconds in the civil types? (Yes). I don't understand what meaningful data you would have . If you have a leap second you almost certainly have a instant type, so I don't think there would be meaningful data there, but let's put it in the issue tracker.
 
@@ -202,7 +202,7 @@ API: If you know your point in the GPS timeline, then you can add in leap second
 
 WH: There's no way to use Date.now to get the current UTC time to millisecond accuracy. It would have to be a new API.
 
-YK: Some people are forced to care about leap seconds, so we should make sure people trying to comply with regulations should be able to use our APIs. Separately, a long time ago MH asked about the way to talk about this in an education, but I think the term “global timeline” was used, and I think that's a very useful term to talk about Temporal.
+YK: Some people are forced to care about leap seconds, so we should make sure people trying to comply with regulations should be able to use our APIs. Separately, a long time ago MH asked about the way to talk about this in an education, but I think the term "global timeline" was used, and I think that's a very useful term to talk about Temporal.
 
 MF: I recall a very early version of this that talked about Durations. I don't see it here. I am concerned that there's high demand for this, and without this in the spec people will create libraries that do use it, and do it incorrectly.
 
@@ -282,7 +282,7 @@ WH: Exactly, much of Temporal is nondeterministic because of time zone changing.
 
 JHD: Lack of System object has come up in a lot of proposals. What if we had some sort of object that gave you a whitelist of nondeterministic APIs. 
 
-MM: A list of global names would be useful, a list of property names would not.  You want to be able to have different compartments in realms.
+MM: A list of global names would be useful, a list of property names would not. You want to be able to have different compartments in realms.
 
 JHD: We can talk about this offline.
 
@@ -296,8 +296,8 @@ JHD: We can talk about this offline.
 
 (Daniel Ehrenberg)
 
--[proposal](https://github.com/littledan/proposal-idl/blob/master/README.md)
--[slides](https://docs.google.com/presentation/d/17JnVfV8claiW1u8rFgvzg7itzNBVC9ahgK0RcyXOc70/edit)
+- [proposal](https://github.com/littledan/proposal-idl/blob/master/README.md)
+- [slides](https://docs.google.com/presentation/d/17JnVfV8claiW1u8rFgvzg7itzNBVC9ahgK0RcyXOc70/edit)
 
 DE: We've been gradually adding to our Standard Library to JS. This would be helped by an IDL. This is basically a header file, which is used to describe coercions of arguments, overloading, class structure, etc. There's a lot of commonality in our ecosystem to languages that use IDLs that JS could benefit from. The current algorithms are currently pretty free form. There are several edge cases that have to be considered not in the problem domain, but with how we're writing this freeform algorithm. It's not currently trivial to follow conventions in new specifications. IDLs also enable auto-generations. In Chrome and V8 these files are effectively copy+pasted into Chrome's source code, where C++ code automatically generates from this IDL. It's my understanding that all major browsers have a concept like this. I think if we could use for JS an IDL, this would help with the native bindings. From manual code-writing to manual code-generation
 
@@ -608,4 +608,3 @@ MBN: Talking about package name map proposal, how it can affect node and web. We
 ## Temporal
 
 RGN: Covered working model of internal state of two of the core classes. ZoneInstance and CivilDateTime. Also some naming.
-

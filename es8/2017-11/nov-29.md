@@ -1,7 +1,7 @@
 # November 29, 2017 Meeting Notes
 -----
 
-Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (ARE), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM), Sebastian Markbåge (SM), Dean Tribble (DT), Jafar Husain (JH)
+Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (AKI), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM), Sebastian Markbåge (SM), Dean Tribble (DT), Jafar Husain (JH)
 
 Remote: 
 István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
@@ -236,7 +236,7 @@ MB: (Presenting)
 
 BFS: Are you talking about doing this all upfront as an Array - or making an iterator? Is there a significant need either way?
 
-MB: I’d be against doing the work up-front. An iterator is useful for stopping early, and doesn’t require keeping *everything* in memory.
+MB: I'd be against doing the work up-front. An iterator is useful for stopping early, and doesn't require keeping *everything* in memory.
 
 JHD: For matchAll I was asked to use iterators. They seem to be the new way forward.
 
@@ -262,9 +262,9 @@ DH: I imagine getting the number of code points in a string is O(n), so not a ca
 
 MB: (confirms)
 
-DH: It’s useful to have an iterator because you can do this count right?
+DH: It's useful to have an iterator because you can do this count right?
 
-JHD: I don’t care about performance here, I care about code clarity
+JHD: I don't care about performance here, I care about code clarity
 
 DH: Yes, I think if getting codepoint count is used enough it might be a useful API but its possible here to just use the iterator.
 
@@ -280,11 +280,11 @@ CM: It's more about what Dan was saying, if we have a sequence of codepoints tha
 
 MF: Having multiple views over a string is just like data views on TypedArrays, we can look at it as code points, graphemes, words. This is not problematic to introduce because of that.
 
-KG: JS strings are not sequences of code points - you can have lone surrogates. I'd be surprised if a code points iterator gave you something that’s not a codepoint.
+KG: JS strings are not sequences of code points - you can have lone surrogates. I'd be surprised if a code points iterator gave you something that's not a codepoint.
 
 MB: Ahh, are you saying you want to blacklist lone surrogates?
 
-KG: If it gives you U+D800 on its own it’s not a codepoint.
+KG: If it gives you U+D800 on its own it's not a codepoint.
 
 MB: It is a codepoint but not a scalar value.
 
@@ -772,4 +772,3 @@ YK: I think its impossible to oppose stage 0
 #### Conclusion/Resolution
 
 - Stage 0
-

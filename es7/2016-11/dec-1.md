@@ -320,7 +320,7 @@ AWB/WH: They're in fact the same questions. Apply to both.
 
 DE: (semantics)
 
-- Only accessible from methods inside class body (“hard-private”)
+- Only accessible from methods inside class body ("hard-private")
 - Internal slots mapping objects to field values
 - Add field after `super()` returns, or at beginning in base class
 - Intersperse initializer evaluation with field addition
@@ -699,5 +699,4 @@ LB: Some companies may have trouble/refuse participating because they see the la
 - Rick Waldron will contact István 
 - Rick to review with Kevin Smith
 - Representatives should work with their member organizations to promote more diverse representatives, via scholarship/sponsorship or diversification of member team
-- Extend our charter to include social commitment to committee representative diversity. 
-
+- Extend our charter to include social commitment to committee representative diversity.

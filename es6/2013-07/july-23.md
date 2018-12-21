@@ -435,7 +435,7 @@ Array.prototype.copySlice = function copySlice(target = 0,start = 0, end = this.
 
    The transfers takes into account the possibility that the source and target ranges overlap. Array elements are
    sequentially transferred in a manner appropriate to avoid overlap conflicts. If target <= start a left to right
-   transfer is performed.  If target>start a right to left transfer is performed.
+   transfer is performed. If target>start a right to left transfer is performed.
 
    If a target element is encountered that cannot be assigned, a type error is thrown and no additional elements are modified.
    Sparse array "holes" are transferred just like for other array functions.
@@ -602,7 +602,7 @@ http://wiki.ecmascript.org/doku.php?id=harmony:function_to_string
 
 MM: The one issue about Function toString, discovered since the strawman was written:
 
-  Since eval()uating a function declaration or function expression defaults to non-strict, a strict function must present the source code of its body as beginning with a “use strict” directive, even if the original function inherited its strictness from its context. This is the one case where the original local source code of the function is inadequate to satisfy this spec.
+  Since eval()uating a function declaration or function expression defaults to non-strict, a strict function must present the source code of its body as beginning with a "use strict" directive, even if the original function inherited its strictness from its context. This is the one case where the original local source code of the function is inadequate to satisfy this spec.
 
 YK: Doesn't account for super, either
 

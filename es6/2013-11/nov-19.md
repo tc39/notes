@@ -706,5 +706,3 @@ More discussion re: IEEE NaN
 #### Consensus/Resolution
 
 - Status Quo
-
-

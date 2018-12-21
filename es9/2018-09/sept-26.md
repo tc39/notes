@@ -1,6 +1,6 @@
 # September 26, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (ARE), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KV), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZ), Matt Johnson (MAJ), Robert Pamely (RPY)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KV), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZ), Matt Johnson (MAJ), Robert Pamely (RPY)
 
 Remote: 
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
@@ -94,13 +94,13 @@ MB: I do think we can work with Unicode to let them know that changing from a pr
 
 DE: I think we don't need anything in writing from Unicode; the simple explanation that changing properties to sequences would be a breaking change for JavaScript would be a sufficient deterrent.
 
-YK: I think this is a great feature. I prefer `\q`, but it's a weak preference. I could easily imagine writing a class for all the flags, for example…
+YK: I think this is a great feature. I prefer `\q`, but it's a weak preference. I could easily imagine writing a class for all the flags, for example...
 
 MB: This proposal lets you do that without a character class.
 
 YK: I mean, a character class, with each flag sequence copy and pasted in to it.
 
-MB: That already doesn't work… Regular expressions operate on a code point level (with the `u` flag). That's not a problem introduced by this proposal.
+MB: That already doesn't work... Regular expressions operate on a code point level (with the `u` flag). That's not a problem introduced by this proposal.
 
 WH: If we go with `\q` in order to solve the problem of Unicode changing a non-sequence property into a sequence property then we'd end up in a situation where `\p` and `\q` do different things with the same property name. In addition, if we worry about such Unicode evolution then we should make a `\q` alias of every `\p` property to make one-character-long sequences.
 
@@ -116,7 +116,7 @@ WH: We should decide between the three choices then: `\p`, `\q` where a one-char
 
 MS: Unicode is very clear about properties and sequences being disjoint. We should not conflate them, and follow the very specific rules the Unicode consortium makes.
 
-MB: They can both be thought of as “properties” though.
+MB: They can both be thought of as "properties" though.
 
 WH: [points to bullet point on the presenter's slide] Not all of us are convinced that Unicode won't conflate these.
 
@@ -132,7 +132,7 @@ DE: This appears to be ready for Stage 2, we can solve these kinds of design iss
 
 WH: Concur on stage 2.
 
-MB: I'll reach out to the Unicode consortium for clarification w.r.t. our use of the term “sequence properties”, as the decision to use `\p{Seq}` vs. something else seems to hinge on that. I have been in touch with them about the proposal, and at the very least they didn't object to my use of this term.
+MB: I'll reach out to the Unicode consortium for clarification w.r.t. our use of the term "sequence properties", as the decision to use `\p{Seq}` vs. something else seems to hinge on that. I have been in touch with them about the proposal, and at the very least they didn't object to my use of this term.
 
 #### Conclusion/Resolution
 
@@ -148,7 +148,7 @@ MB: I'll reach out to the Unicode consortium for clarification w.r.t. our use of
 - [proposal](https://tc39.github.io/proposal-hashbang/out.html)
 (Bradley Farias, BFS)
 
-BFS: This already was approved for Stage 2, but we have made many changes so we're doing this again. Due to feedback from WH, I introduce this now as a lexical grammar. The main change text is this: “Hashbang Comments are location sensitive and like other types of comments are discarded from the stream of input elements for the syntactic grammar.” That's about it. I'm asking for Stage 2.
+BFS: This already was approved for Stage 2, but we have made many changes so we're doing this again. Due to feedback from WH, I introduce this now as a lexical grammar. The main change text is this: "Hashbang Comments are location sensitive and like other types of comments are discarded from the stream of input elements for the syntactic grammar." That's about it. I'm asking for Stage 2.
 
 WH: The revised grammar is good now.
 
@@ -213,7 +213,7 @@ BFS: `smoosh` will probably have webcompat issues too. There's been a lot of com
 
 (Dan Ehrenberg)
 
--[slides](https://docs.google.com/presentation/d/1s4NMqKIqzpnASvWkNVD_ql_TPnZLohSsC6WrqSHnp78/edit#slide=id.p)
+- [slides](https://docs.google.com/presentation/d/1s4NMqKIqzpnASvWkNVD_ql_TPnZLohSsC6WrqSHnp78/edit#slide=id.p)
 
 DE: There's been discussion in the past for groups like Babel, who happen to have contributors that work at Ecma members. We have thought about adding a new membership category for this kind of member. Before bringing this to the ExeCom, I was wondering if people had specific thoughts on this proposal.
 
@@ -225,7 +225,7 @@ WH: It's fine for individuals, but I would want to make sure that invited expert
 
 DE: I would suggest we think about this on a case-by-case status, so that individuals do not abuse this.
 
-DE: The next question is how do we think about these Groups? We cannot technically establish task groups that are royalty free because TC39 technically.  Actually, TC39 has, and in fact this meeting today is part of, a task group which is royalty-free because TC39 is not royalty-free itself. I propose we upgrade TC39 itself to be royalty-free so we can more appropriately have temporary ad hoc groups to attack specific tasks. Consensus?
+DE: The next question is how do we think about these Groups? We cannot technically establish task groups that are royalty free because TC39 technically. Actually, TC39 has, and in fact this meeting today is part of, a task group which is royalty-free because TC39 is not royalty-free itself. I propose we upgrade TC39 itself to be royalty-free so we can more appropriately have temporary ad hoc groups to attack specific tasks. Consensus?
 
 WH: It's unclear what kind of consensus you are asking for?
 
@@ -336,11 +336,11 @@ YSV: If you have any concerns or thoughts, please reach out to me.
 
 - [slides](https://docs.google.com/presentation/d/1P5DdJBQrr5hj_x-SqQxk8HOTaipJUaxbH0icp1g9iMk/edit?usp=drivesdk)
 
-YSV: (Presents slides). YSV, ARE, and BT have volunteered for high-time investment roles, MBN, TST, and LBR for low-time investment roles. LBR is specifically interested in being a notes facilitator. (Presents slides). That concludes this presentation. Any there questions?
+YSV: (Presents slides). YSV, AKI, and BT have volunteered for high-time investment roles, MBN, TST, and LBR for low-time investment roles. LBR is specifically interested in being a notes facilitator. (Presents slides). That concludes this presentation. Any there questions?
 
 WH: This seems like a fairly radical change and I'm not sure how it fits into the ECMA rules. ECMA requires each committee to have a chair and one or more vice-chairs. A chair is a person; it's not a committee. How does this proposal fit in with ECMA's rules?
 
-IS: I agree. In ECMA, one person is the chair. I fully understand that we're in a transition period, but when this becomes normal… It would be a good idea to get Patrick (Something) to help. We would be glad to assist to take over anything that is a routine job. As soon as something becomes routine, Patrick can take over it.
+IS: I agree. In ECMA, one person is the chair. I fully understand that we're in a transition period, but when this becomes normal... It would be a good idea to get Patrick (Something) to help. We would be glad to assist to take over anything that is a routine job. As soon as something becomes routine, Patrick can take over it.
 
 DE: Is it acceptable to have a 3 co-chairs instead of a single chair?
 
@@ -358,7 +358,7 @@ YK: ECMA says we need a chair and a vice, but doesn't really say what the respon
 
 DE: We have just heard from the Secretary General of Ecma that it's acceptable. I don't think we need more formal approval than that. I'm really happy with this chair group.
 
-ARE: Does anyone want to volunteer to do more work?
+AKI: Does anyone want to volunteer to do more work?
 
 YSV: We would love to have more contributions.
 
@@ -432,7 +432,7 @@ YK: We hope that we can keep the decorators conversation separate from this. If 
 - [proposal](https://github.com/tc39/proposal-decorators/)
 - [slides](https://docs.google.com/presentation/d/1s9bu_Z0vWR9eR4TL_8LEOmIFZvPth9Z8BLcHVqYWf_0/edit#slide=id.p)
 
-DE: We can't go to Stage 3 because of one unresolved issue, but we have resolutions on two issues. The two issues we discussed previously about the use of private in decorators, the “Integrity Investigation”. We get strong encapsulation boundaries with frozen realms, so the goal is to make PrivateName (in example slide) a defensible class. (Demonstrates examples in slides). As we've discussed previously, it's important to decorate private fields in methods. There's plenty of APIs that use this, in JS there's a get function to access a private variable, and it's good to have this as terse as possible. It's pretty syntactically clear that the getter is getting access to the variable. You're passing the private field to the decorator directly. If you do want a convenient way to get that access, you could imagine decorating the entire class. What we concluded was, though ugly and unfortunate, we would remove the private fields from decorators. If there's a mismatch, it's better to go more conservatively, partly because we have this workaround. We cannot think of a use case where this doesn't work out. There's a PR out for this restriction. Before we get to export/toString, I want to at least get consensus on these two PRs—not for stage advancement.
+DE: We can't go to Stage 3 because of one unresolved issue, but we have resolutions on two issues. The two issues we discussed previously about the use of private in decorators, the "Integrity Investigation". We get strong encapsulation boundaries with frozen realms, so the goal is to make PrivateName (in example slide) a defensible class. (Demonstrates examples in slides). As we've discussed previously, it's important to decorate private fields in methods. There's plenty of APIs that use this, in JS there's a get function to access a private variable, and it's good to have this as terse as possible. It's pretty syntactically clear that the getter is getting access to the variable. You're passing the private field to the decorator directly. If you do want a convenient way to get that access, you could imagine decorating the entire class. What we concluded was, though ugly and unfortunate, we would remove the private fields from decorators. If there's a mismatch, it's better to go more conservatively, partly because we have this workaround. We cannot think of a use case where this doesn't work out. There's a PR out for this restriction. Before we get to export/toString, I want to at least get consensus on these two PRs—not for stage advancement.
 
 (Cheering at progress)
 
@@ -458,11 +458,11 @@ BM: They have a different export mechanism, so it's hard to compare.
 
 RBN: To my knowledge, there's been no negative comments on the ordering in C#. In typescript, we've had this for 3 years without issues. We've gotten no feedback that it should have been any other ordering.
 
-BM: We're modifying the binding with export, not the value. You can export a class with `export {F}` followed later by `class F …`. If you decorate the class and allow treat `export` as a modifier, then that would imply `@deco export {F}` decorates F. This doesn't make sense, especially since someone could assign something else to F.
+BM: We're modifying the binding with export, not the value. You can export a class with `export {F}` followed later by `class F ...`. If you decorate the class and allow treat `export` as a modifier, then that would imply `@deco export {F}` decorates F. This doesn't make sense, especially since someone could assign something else to F.
 
 RBN: If we add `abstract`, it's specific to the value that is being exported, you wouldn't necessarily be able to change the abstractness in the decorator.
 
-WH: I second BM's point. Export is a directive. It's a statement, it's not a modifier of the class. If you export an abstract class, the `abstract` should go before the class, not before the export. If we were to put decorators before `export class …`, they should go before `return class …`, etc. They're both statements that work on a variety of things that can be defined locally or obtained from variables.
+WH: I second BM's point. Export is a directive. It's a statement, it's not a modifier of the class. If you export an abstract class, the `abstract` should go before the class, not before the export. If we were to put decorators before `export class ...`, they should go before `return class ...`, etc. They're both statements that work on a variety of things that can be defined locally or obtained from variables.
 
 RBN: I disagree. `export` and `return` are different.
 
@@ -480,13 +480,13 @@ DW: The never gotten any request to change the export ordering. In some sense th
 
 TOD: There doesn't seem to be any semantic ambiguity. What is the problematic aspect then?
 
-BM: I don't have a strong opinion on the ordering, but I do have a problem with the reasoning for “export is a modifier”. It's not.
+BM: I don't have a strong opinion on the ordering, but I do have a problem with the reasoning for "export is a modifier". It's not.
 
 DE: It's really common to have coalitions but with different mental models.
 
 JRL: You export a class, and decorate it later. Let's separate the two statements, forbid decorating an exported class.
 
-MM: A decorator on the static in a decorated, nested class, would be on the field not the class. In the code “@foo static @bar class C …” the @foo is decorating the static placement, and would be activated as a member decorator of the enclosing class. The @bar is decorating the class C and would be activated as a class decorator.
+MM: A decorator on the static in a decorated, nested class, would be on the field not the class. In the code "@foo static @bar class C ..." the @foo is decorating the static placement, and would be activated as a member decorator of the enclosing class. The @bar is decorating the class C and would be activated as a class decorator.
 
 JRL: This is the same as decorated-static-decorated-function expression; it follows the same logic.
 
@@ -499,7 +499,7 @@ YK: I would like to find a decision, some decision. Or we'll go back into a cycl
 
 DE: We have an implementation of the new decorators proposal in Babel 7.1. Thanks to the Babel core team for implementing this.
 
-LB: We wouldn't need babel for test262.
+LBR: We wouldn't need babel for Test262.
 
 DE: It would just be helpful as our first implementation.
 
@@ -537,13 +537,13 @@ HZ: Nicolo (on Babel) has published [a codemod to upgrade from old decorators to
 - [proposal](https://github.com/zenparsing/proposal-private-symbols)
 - [slides](https://docs.google.com/presentation/d/1kkRnIurCtQEJhGyeDS0f_s7-gaS3iWHKh-N_YoWKpKY/edit?usp=sharing)
 
-KS: I've got a bad feeling about #private. The issue is it's sugar over weakmaps, which is good for privacy. But it's acting like property? A private access seems more like a property descriptor. Then the methods are usually shared, but private methods are owned? Maybe they're owned. It bugs me, why is it different? Then there's the private static subclass “hazard”. Then destructuring has to be solved for #privates. Then decorators have to invent this PrivateName  map-like instance, and I have to deal with this novel object type in the key placement. And why should this only be on classes? None of these are fatal, but it's a lot of little complications. So private symbols are ajust symbols that have a private field on them. They're not returned by OwnPropertyKeys. They're not exposed to Proxies. The current private fields proposal solves both encapsulation and branding. Private symbols only solves encapsulation. With Private symbols, it's all just properties. It's all the same as the syntax we've already carved out for methods and fields. There's no subclassing hazard. They can walk up the prototype chain. And destructuring is already solved. And it's just a private symbol given to decorators, kinda like a normal symbol. And it makes it so that classes aren't really special, you can still use objects with private symbols. They syntax is a bit ugly, but we'll get used to it, or we can investigate sugar syntax later to handle symbol property access. And as for brand checking, isn't that really a separate concern? The bigger concern is membranes. Membranes can't directly trap the private symbol, and that breaks a core design in membranes. Let's open it up to questions. Are we OK with these tradeoffs?   
+KS: I've got a bad feeling about #private. The issue is it's sugar over weakmaps, which is good for privacy. But it's acting like property? A private access seems more like a property descriptor. Then the methods are usually shared, but private methods are owned? Maybe they're owned. It bugs me, why is it different? Then there's the private static subclass "hazard". Then destructuring has to be solved for #privates. Then decorators have to invent this PrivateName  map-like instance, and I have to deal with this novel object type in the key placement. And why should this only be on classes? None of these are fatal, but it's a lot of little complications. So private symbols are ajust symbols that have a private field on them. They're not returned by OwnPropertyKeys. They're not exposed to Proxies. The current private fields proposal solves both encapsulation and branding. Private symbols only solves encapsulation. With Private symbols, it's all just properties. It's all the same as the syntax we've already carved out for methods and fields. There's no subclassing hazard. They can walk up the prototype chain. And destructuring is already solved. And it's just a private symbol given to decorators, kinda like a normal symbol. And it makes it so that classes aren't really special, you can still use objects with private symbols. They syntax is a bit ugly, but we'll get used to it, or we can investigate sugar syntax later to handle symbol property access. And as for brand checking, isn't that really a separate concern? The bigger concern is membranes. Membranes can't directly trap the private symbol, and that breaks a core design in membranes. Let's open it up to questions. Are we OK with these tradeoffs?   
 
 WH: My concern is is about encapsulation/privacy, and you claim that you can separate it from branding. That kinda works if you only ever have one private field per class, but this is what happens if you have multiple private fields in a class that you want to keep consistent:
 
 (Presents a screenshot of Minesweeper)
 
-The problems arise when you have more than one private field in a class and, as is typical, the class's logic expects them to stay consistent. You get a multitude of “confused deputy” problems. Suppose your class C has a method M that writes some value to a private field. How might I attack it? I could pass in C's prototype to M and get it to write a default value that then shows through to other instances of C that don't have that private field set. With multiple prototypes I could play all sorts of games like that to get C's private fields out of sync with each other by either mutating prototypes, mutating the prototype chain, or stitching together new instances with unexpected prototype chains.
+The problems arise when you have more than one private field in a class and, as is typical, the class's logic expects them to stay consistent. You get a multitude of "confused deputy" problems. Suppose your class C has a method M that writes some value to a private field. How might I attack it? I could pass in C's prototype to M and get it to write a default value that then shows through to other instances of C that don't have that private field set. With multiple prototypes I could play all sorts of games like that to get C's private fields out of sync with each other by either mutating prototypes, mutating the prototype chain, or stitching together new instances with unexpected prototype chains.
 
 While a sufficiently diligent programmer might defend against such confused deputy attacks, it is error-prone enough to do so that it's not going to work well in practice. This model of encapsulation is just too brittle.
 
@@ -557,7 +557,7 @@ YK: This is about the mental model issue. How should people who want to understa
 
 MF: I just wanted to make a quick point that I think this will solve one of the issues I've been trying to solve on the first-class protocols proposal. DD raised an issue with Protocols earlier wanting support for privates, and this should provide a way to addresses that problem. To that aspect, I'm very much in support of this. 
 
-MM: If I take a regular visibly frozen object, where all of its property's values are primitive values, or simple data that cannot hide state (e.g., not functions), then I know I can share it between two object graphs that are otherwise isolated without enabling them to communicate. Likewise, I know I can share primitive values. But private symbols would be primitive values, and so considered “obviously” stateless. Now, sharing the pair of apparently stateless objects between two otherwise isolated subgraphs would enable them to communicate. Where's the mutable state?
+MM: If I take a regular visibly frozen object, where all of its property's values are primitive values, or simple data that cannot hide state (e.g., not functions), then I know I can share it between two object graphs that are otherwise isolated without enabling them to communicate. Likewise, I know I can share primitive values. But private symbols would be primitive values, and so considered "obviously" stateless. Now, sharing the pair of apparently stateless objects between two otherwise isolated subgraphs would enable them to communicate. Where's the mutable state?
 
 KS: That's true.
 
@@ -565,7 +565,7 @@ JRL: That's also true for private fields. If there's a method that has access to
 
 MM: I disagree on several grounds: 
 An instance of a class inherits from its class.prototype, and so is not obviously stateless. Freezing it can serve the normal purpose of freezing --- making its API surface tamper-proof, but not making anything immutable. Only for simple objects from which only other simple objects are reachable, i.e., not functions, does transitive isFrozen imply immutability.
-In the private symbol proposal, the private symbol serves as the reification of the “name”. As a primitive value, it would pass through membranes unmodified. In the existing private state proposal combined with the existing decorator's proposal, the “name” is reified as an instance of a PrivateName class, which is a WeakMap-like non-enumerable mapping from identities to values. As an instance, it would get wrapped and unwrapped when passed through a membrane. For a wet instance foo of a wet class Foo defining private state #bar, the reification of the private name #bar would be a wet instance of a wet PrivateName class, with wet PrivateName get and set methods. A dry attempt to use the reification of the #bar name on the foo instance, to access it's #bar field, would look like: “dryBarNameProxy.get(dryFooProxy)”. Crucially, this faults on the proxy for the name, not the proxy for the instance. The invocation passes through the membrane and the access works, without the membrane ever being aware that anything special was going on.
+In the private symbol proposal, the private symbol serves as the reification of the "name". As a primitive value, it would pass through membranes unmodified. In the existing private state proposal combined with the existing decorator's proposal, the "name" is reified as an instance of a PrivateName class, which is a WeakMap-like non-enumerable mapping from identities to values. As an instance, it would get wrapped and unwrapped when passed through a membrane. For a wet instance foo of a wet class Foo defining private state #bar, the reification of the private name #bar would be a wet instance of a wet PrivateName class, with wet PrivateName get and set methods. A dry attempt to use the reification of the #bar name on the foo instance, to access it's #bar field, would look like: "dryBarNameProxy.get(dryFooProxy)". Crucially, this faults on the proxy for the name, not the proxy for the instance. The invocation passes through the membrane and the access works, without the membrane ever being aware that anything special was going on.
 
 [MM Notes: The original notes did not capture my point. My revision above is likely more articulate than what I likely said in real time.]
 
@@ -581,13 +581,13 @@ DE: I see this contrasting
 
 CM: I think the interesting thing is how complicated this has become. 
 
-KS: I was thinking this morning, “do I really want to get up here and try to turn the battleship around…” But I think it's good to talk about the complexities of this and consider a different approach.
+KS: I was thinking this morning, "do I really want to get up here and try to turn the battleship around..." But I think it's good to talk about the complexities of this and consider a different approach.
 
 YK: I agree with CM. I don't think we'll change the proposal, but I like that you're thinking about it.
 
 RPY: I interact with people that are new to JS, and it'll be difficult for them to learn.
 
-Joyee: During code review, we tend chose symbols when we need to add private things. We used to use “_private”, but they were impossible to deprecate. New contributors still use _private even years after symbols became available. We need linters to fix some of these, but we still need humans to catch it. But we still can't tell people to just use symbols because they're not used to them. If symbols are available now, and people still don't use it, then private symbols aren't going to improve this situation.
+Joyee: During code review, we tend chose symbols when we need to add private things. We used to use "_private", but they were impossible to deprecate. New contributors still use _private even years after symbols became available. We need linters to fix some of these, but we still need humans to catch it. But we still can't tell people to just use symbols because they're not used to them. If symbols are available now, and people still don't use it, then private symbols aren't going to improve this situation.
 
 JRL: To summarize, The proposal tackles 4 different things: encapsulation, branding, private symbols, private fields. These are also the same issues as with private fields, private fields decided to tackle all 4 problems at the same time, but we don't have to deal with all four of these issues at the same time. 
 
@@ -655,12 +655,12 @@ DE: There was a big thread on the issue thread about not forwarding to Proxy tar
 
 (Richard Gibson)
 
--[proposal](https://github.com/gibson042/ecma262-proposal-uniform-interchange-date-parsing)
--[slides](https://docs.google.com/presentation/d/1E4f7hMmJLj09FWq8YEIaATAzIShHpFY37OyWZMf3I5c/edit)
+- [proposal](https://github.com/gibson042/ECMA-262-proposal-uniform-interchange-date-parsing)
+- [slides](https://docs.google.com/presentation/d/1E4f7hMmJLj09FWq8YEIaATAzIShHpFY37OyWZMf3I5c/edit)
 
 RG: This covers relative dates, local time, offset, time intervals, recurring time intervals, approximate time, etc. (Presents slides). A point about unrecognizable strings—we don't know how to define whether a string is unrecognizable. We're not very precise on things like how many non-millisecond fractional seconds we allow, lowercase designators, etc. 
 
-API: I like this proposal, I ask to spec to allow parsing of “:60” seconds for interoperability with other systems generating strings that are consumed by JS. The cases of invalid extended years will already be resolved by the recent PR and test262 for it that adopt the FF behavior.
+API: I like this proposal, I ask to spec to allow parsing of ":60" seconds for interoperability with other systems generating strings that are consumed by JS. The cases of invalid extended years will already be resolved by the recent PR and Test262 for it that adopt the FF behavior.
 
 WH: Please allow leap seconds for interoperability with other systems that generate time strings.
 
@@ -668,7 +668,7 @@ KG: Will we update if one engine finds an input they must accept?
 
 RG: I'm open to that. We can still improve our position even if we don't achieve this level of consistency.
 
-MAJ: Please do not allow implementations to reject ‘Z' in ISO Format. I think that would create a lot of confusion in that space. It's needed because the lack of a `Z` indicates local time format in ISO, so the `Z` is needed to force the date to start at the beginning of the UTC day. Another thing, the Z comes from the historical military codes, but they've never been part of ISO.
+MAJ: Please do not allow implementations to reject 'Z' in ISO Format. I think that would create a lot of confusion in that space. It's needed because the lack of a `Z` indicates local time format in ISO, so the `Z` is needed to force the date to start at the beginning of the UTC day. Another thing, the Z comes from the historical military codes, but they've never been part of ISO.
 
 MPT: A quick thought on one other format. The timezone bracket format—does that have an offset in it? 
 
@@ -686,9 +686,9 @@ RG: I'm not convinced that standardizing parsing is the same thing as adding new
 
 DE: Well, the data model for Date doesn't have a concept of time zone.
 
-MAJ: It's extraneous information. In my experience, Date.parse is often used for Locale specific parsing. And sometimes because the weirdness that's occurred over the years, people will hack: attempting to put in things like “UTC” to attempt to resemble standards.
+MAJ: It's extraneous information. In my experience, Date.parse is often used for Locale specific parsing. And sometimes because the weirdness that's occurred over the years, people will hack: attempting to put in things like "UTC" to attempt to resemble standards.
 
-MPT: I don‘t think we can reasonably increase the number of formats that we're rejecting for the most part. For users of Node, for example, people in Node will not be very happy when they get more rejections because V8 was upgraded for cross-browser compatibility. 
+MPT: I don't think we can reasonably increase the number of formats that we're rejecting for the most part. For users of Node, for example, people in Node will not be very happy when they get more rejections because V8 was upgraded for cross-browser compatibility. 
 
 YK: I wouldn't be surprised if people use February 30th in their apps, and that disallowing that wouldn't break sites.
 

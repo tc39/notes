@@ -96,7 +96,7 @@ LBR: Please reach out to me by this weekend if you're interested in being involv
 
 ### 8.ii Using Frontmatter tags that matter
 
-LBR: https://github.com/tc39/Test262/blob/master/features.txt defines features that can be used to filter or group tests.
+LBR: https://github.com/tc39/test262/blob/master/features.txt defines features that can be used to filter or group tests.
 
 MM: Is this for semantic purposes, or just organization?
 
@@ -168,7 +168,7 @@ DE: Even for a 0->1 transition, if you're in a larger organization, you'll be ab
 
 TODO: link to slides
 
-CM: We (TC39) have a love / hate relationship with JS..  Our Prime Directive is "Don't break the web".  Fixes can break crappy software, which breaks the web.  Opinion is that this crappy software is an obstacle to innovation.  Our current tool is Compartmentalization.  Limit the scope of changes to avoid interference.  Examples from past / current work.  Lexical scoping, modules, realms and frozen realms.  These are "Islands of Sanity".  Many are asking for JavaScript to morph into language XXX.  "JavaScript should be more like JavaScript"   Quote from Tony Hoare - "Inside every large program is a small program struggling to get out."  
+CM: We (TC39) have a love / hate relationship with JS.. Our Prime Directive is "Don't break the web". Fixes can break crappy software, which breaks the web. Opinion is that this crappy software is an obstacle to innovation. Our current tool is Compartmentalization. Limit the scope of changes to avoid interference. Examples from past / current work. Lexical scoping, modules, realms and frozen realms. These are "Islands of Sanity". Many are asking for JavaScript to morph into language XXX. "JavaScript should be more like JavaScript"   Quote from Tony Hoare - "Inside every large program is a small program struggling to get out."  
 
 WH: It's easier to compartmentalize syntax features, like "use strict" or modules do. What about semantic quirks, e.g. if you want to forbid `__proto__`?
 
@@ -187,7 +187,7 @@ DH: Maybe people would like to treat certain features as if they didn't exist.
 
 CM: Individual companies do self-censor themselves with linters and compan, etc.
 
-CM: Programmers think about taking out certain features and that makes things better.  While taking out other things make things worse.
+CM: Programmers think about taking out certain features and that makes things better. While taking out other things make things worse.
 
 DH: (BN: Not sure I caught this accurately) Want to avoid mandating fragmentation at the engine level.
 
@@ -195,7 +195,7 @@ CM: It may be the case that users can try out things that are actually "dangerou
 
 AWB: I take it by compartmentalization you mean true isolation, a la browser tabs/workers. Totally isolated except for some communications channel? Isn't that essentially what an operating system gives you? Do we still have to think of the isolated things as using the same language, then?
 
-CM: I think there is something there to what your are saying.  There are some things that JS does that is different to the way other software works,  e.g. loaded immediately before use, or different set of services.
+CM: I think there is something there to what your are saying. There are some things that JS does that is different to the way other software works,  e.g. loaded immediately before use, or different set of services.
 
 BN: Need to get the communications channel right between the compartments. WASM already has an import mechanism of its own, not exactly the same as ES modules. Should we standardize this?
 
@@ -205,7 +205,7 @@ MS: Browsers are already basically OSes in that there is JS, WASM, Workers, memo
 
 MS: Multiple standards bodies and engine implementors are all standardizing JS and the browser environment. Experiments become de facto standards. But everyone's hoping for eventual convergence/standardization.
 
-MM: It goes back to the notion of the good parts vs the bad parts and being conscious about each.  They takes judgement.
+MM: It goes back to the notion of the good parts vs the bad parts and being conscious about each. They takes judgement.
 
 CM: There are lots of little sharp edges and corners inadvertently added that would be good to take out.
 
@@ -265,7 +265,7 @@ BT: That's what the discussion of a "normative reference" to ICU was about in th
 
 DE: That's unfriendly to alternate implementations.
 
-DD: If the ICU folks wrote an ECMA262-style specification, would we be more willing to reference it normatively?
+DD: If the ICU folks wrote an ECMA-262-style specification, would we be more willing to reference it normatively?
 
 BT: How much leeway do we want to give these implementations? Alternate implementations are good, but the web reality will probably select one implementation.
 
@@ -416,7 +416,7 @@ LBR: (Presents vision talk)
 LBR: (closes the vision talk with suggestions)
 
 - Establish a public meta repo on GitHub for open and general discussions.
-- Recognize ECMAScript as a living standard, refer to the [latest draft](https://tc39.github.io/ecma262) and skip the year or edition numbers.
+- Recognize ECMAScript as a living standard, refer to the [latest draft](https://tc39.github.io/ECMA-262) and skip the year or edition numbers.
 
 (the suggestions are not necessarily being applied to TC39, this is an async work that still requires further discussion)
 
@@ -542,4 +542,3 @@ AWB: Seem that those are things that we can flush out  in Stage 2
 
 - Stage 2 acceptance
 - Short/medium/long/narrow terminology can be discussed in an issue thread during Stage 2
-

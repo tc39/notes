@@ -608,7 +608,7 @@ BT: Do you have an example of how Promise.all and Promise.race should be updated
 
 DD: Oh, yeah, this could be where we establish our precedent of how to take a cancel token as an argument! This would parallel fetch's options bag.
 
-MM: As combinators over promises, Promise.all and Promise.race also have to figure out how to deal with their array Promises canceling.  I think they should be separate.
+MM: As combinators over promises, Promise.all and Promise.race also have to figure out how to deal with their array Promises canceling. I think they should be separate.
 
 BT: Agreed, cancel should just drop out of the race.
 
@@ -633,7 +633,7 @@ WH: I like this a lot but am concerned about the ergonomics of practical use pat
 - Stage 1 acceptance
 
 
-## [Definitive decision for Test262 python runner](https://github.com/tc39/Test262/issues/647) (Mike Pennisi)
+## [Definitive decision for Test262 python runner](https://github.com/tc39/test262/issues/647) (Mike Pennisi)
 
 LBR: TC39 agreed to deprecate the python runner in 2014, we want to remove it from Test262 as it demands extra energy on a deprecated tool while implementing new features.
 

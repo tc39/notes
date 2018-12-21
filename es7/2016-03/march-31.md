@@ -39,7 +39,7 @@ AWB: doesn't mind saying it's implementation dependent
 
 BT: it would be preferable if the spec test calls out that if it's possible ot have the membrane crossing be a tail call, it should be.
 
-AWB: given that there's an issue inke dhere to realms, are there other non-=specified things that might be tied to calls for which the same argument shoudl be made.  "The spec says this should be a tail call, but if we do then e.g., debugging information will be lost so...."
+AWB: given that there's an issue inke dhere to realms, are there other non-=specified things that might be tied to calls for which the same argument shoudl be made. "The spec says this should be a tail call, but if we do then e.g., debugging information will be lost so...."
 
 AK: How did we arrive at consensus that this is normatively required?
 
@@ -353,7 +353,7 @@ WH: OK; just checking that the private and public field proposals are harmonious
 
 AWB: you can think about it as an anonymous function that is invoked at the time of...
 
-JM: you can think of it that way.  there are edge cases that don't quite match that intuition
+JM: you can think of it that way. there are edge cases that don't quite match that intuition
 
 JM: there are conflicting opinions about what it means to put a this or a super in the expression
 
@@ -365,9 +365,9 @@ AWB: what about constructor parameters
 
 AWB: whatever the answer here, it needs to apply to both this and privates
 
-JS: we could go with lexical this and instance this. we don't know yet which one is right.  there's more utility in "this" representing instance and "super" making sense.
+JS: we could go with lexical this and instance this. we don't know yet which one is right. there's more utility in "this" representing instance and "super" making sense.
 
-DH: argues that we should start from the intuition at the programming model not the implementation of the feature.  so the "this means instance" is that intuition. they may lead to different conclusions for this vs. fields/properties.  this praticular feature is lexically scoped to the class body. 
+DH: argues that we should start from the intuition at the programming model not the implementation of the feature. so the "this means instance" is that intuition. they may lead to different conclusions for this vs. fields/properties. this praticular feature is lexically scoped to the class body. 
 
 AK: describing it in terms of a function call led to the confusion, but thinking in terms of instantiation avoided the confusion.
 
@@ -377,7 +377,7 @@ MM: classes are strict, so you cannot bind "arguments" as a variable.
 
 AWB: showed a way that you could shadow it
 
-MM: ok don't make it a dynamic poison, make it a static error.  It's a weird edge case, so just make it illegal so we don't have to figure it out.
+MM: ok don't make it a dynamic poison, make it a static error. It's a weird edge case, so just make it illegal so we don't have to figure it out.
 
 AK: that seems weirder than just making it lexical
 
@@ -385,17 +385,17 @@ WH: What about `this`?
 
 MM: "this" inside an initializer evals ot the instance being initialized.
 
-DD: shows and example such that there's two different definitions of this at different places in the class definition.  that's super confusing.
+DD: shows and example such that there's two different definitions of this at different places in the class definition. that's super confusing.
 
-DH: this issue comes up repeatedly because an intuition about class bodies is wrong. People assume tha thtey are executed once. But in JS they are not.  You will always see things described in orde that will execute in a different order
+DH: this issue comes up repeatedly because an intuition about class bodies is wrong. People assume tha thtey are executed once. But in JS they are not. You will always see things described in orde that will execute in a different order
 
 DD: but this would be the first time that we have introduced such a drastic difference in timing.
 
-MM: DD is bringing up two points. 1) wrt scoping 2) wrt execution time.  Jeff and I had previously talked abotu execution time.  If you accept the declaration being in teh class body, but you don't allow an initializer, then we avoid the multilayer issue. This is how it has been in Babel and people have not reported an issue.
+MM: DD is bringing up two points. 1) wrt scoping 2) wrt execution time. Jeff and I had previously talked abotu execution time. If you accept the declaration being in teh class body, but you don't allow an initializer, then we avoid the multilayer issue. This is how it has been in Babel and people have not reported an issue.
 
 DH: the intuition of top to bottom does not survive contact with reality. 
 
-BT: TypeScript also does not impose top to bottom ordering.  And noone has been confused about it.  Including with decorators.
+BT: TypeScript also does not impose top to bottom ordering. And noone has been confused about it. Including with decorators.
 
 DH: puts up another code sample to show that class elements are not really ordered.
 
@@ -426,7 +426,7 @@ AWB:
 
 WH: We already have staged execution that doesn't follow textual order. Functions get lifted to the top of their scopes.
 
-MM: JS made the point about a bunch of data from existing users not being confuse. BT also reports users are not confused.  So that corroborates JS position that execution order is not a problem. (that's separate from scoping).  also combined with decorators that affect execution order, I retract my objection to changing execution order.
+MM: JS made the point about a bunch of data from existing users not being confuse. BT also reports users are not confused. So that corroborates JS position that execution order is not a problem. (that's separate from scoping). also combined with decorators that affect execution order, I retract my objection to changing execution order.
 
 DH: some options: abandoned phased execution, [... I missed the rest]
 
@@ -692,7 +692,7 @@ DH: when you're designing that tag, you're making a library
 
 AWB: only on tagged literals?
 
-… discussion about it being a static error on untagged literals …
+... discussion about it being a static error on untagged literals ...
 
 DH: untagged could be thought of as sugar for builtin tag that throws on undefined cooked value
 
@@ -704,7 +704,7 @@ DH: clearly stage 1 appropriate, will need lots of stage 2 spec analysis rigor
 
 WH: similar to regexes, which have a cover grammar
 
-… discussion about compat issue …
+... discussion about compat issue ...
 
 #### Conclusion/Resolution
 
@@ -732,5 +732,3 @@ The committee did not want to bless the `toJSON` approach by adding what would b
 - decision left to Test262 maintainers
 - Test262 are not conformance tests
 - having additional repositories that are part of the Test262 project but not part of Test262 is OK
-
-

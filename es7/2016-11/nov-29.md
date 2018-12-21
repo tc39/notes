@@ -62,7 +62,7 @@ __should we write this in the notes? maybe better not to publicly shame people h
 
 IS: In my opinion there is no problem for discussion this openly. Hosting of TC39 meetings are not easy. And it is always appreciated if someone can take such a burden. But also understood if someone can not take it. Whatever help from Ecma is required we try to fulfill. For Ecma it is a great help if one of the TC39 members can host the meetings. An alternative would be to go into a hotel, but that would be quite expensive since especially in Silicon Valley many Tc39 members would not stay in the hotel, but come from home. If we had the meeting e.g. in Switzerland, then everybody would need a hotel room, and we could go for a "conference package" solution, which of course for TC39 participants also not inexpensive as such meeting would include travel and hotel costs.
 
-## 7 ECMA262 Status Updates
+## 7 ECMA-262 Status Updates
 
 ### Spec Changes
 
@@ -81,7 +81,7 @@ IS: In my opinion there is no problem for discussion this openly. Hosting of TC3
 - Responsiveness++
 - Better search. Key to efficient usage: / toggle, make use of casing.
 - Pinned clauses - replaces a thumb in the spec.
-- Keep in mind that CSS and JS changed. If you are hotlinking ECMA262's stylesheets your spec is broken. Don't do this.
+- Keep in mind that CSS and JS changed. If you are hotlinking ECMA-262's stylesheets your spec is broken. Don't do this.
 
 ### End Game
 
@@ -110,7 +110,7 @@ SG: How about the HTML integration?
 DD: This is in progress, but it is also out of scope for this committee
 
 
-## 8 ECMA402 Status Updates
+## 8 ECMA-402 Status Updates
 
 DE: not much has changed since the last meeting; one small bug fix. There are a few editorial open issues, for which patches are welcome. We have two stage 3 features, plural rules and number format format-to-parts, where implementation work is ongoing.
 
@@ -136,7 +136,7 @@ Possible proposals at Stage 3 which may reach Stage 4 by January and be integrat
 - https://github.com/tc39/ecma402/issues/30
 - https://github.com/tc39/proposal-intl-plural-rules
 
-## 9 ECMA404 and ECMA414 Updates
+## 9 ECMA-404 and ECMA414 Updates
 
 _no update_
 
@@ -160,7 +160,7 @@ YK: I see. In Ruby m is basically s.
 
 BT: Also this will make . match astral characters even for non-Unicode regexps
 
-MB: correction: no, it won’t
+MB: correction: no, it won't
 
 DE: and by "matches" you mean matches a single code unit, not the code point like the Unicode mode does
 
@@ -170,7 +170,7 @@ WH: . has always matched all non-line-terminator characters. In non-Unicode mode
 
 (debate on whether the current spec actually does match astral code units or not)
 
-MB: To clarify: the proposal states that with `u`, `.` already matches astral characters but not line terminators (i.e. `u` already solves one issue with `.`). By adding `s` it matches line terminators as well. `s` doesn’t have any special effect related to astral symbols.
+MB: To clarify: the proposal states that with `u`, `.` already matches astral characters but not line terminators (i.e. `u` already solves one issue with `.`). By adding `s` it matches line terminators as well. `s` doesn't have any special effect related to astral symbols.
 
 BT: regardless, not important for stage 1. The majority use case is making dot match line breaks.
 
@@ -779,19 +779,3 @@ JHD: Bradley Farias can call in tomorrow.
     - Interoperability with Node if modules execute synchronously
     - Spec mechanics for ensuring that we are preserving run-to-completion if we allow synchronous execution in Node, asynchronous execution in the browser.
 - To resume with a call from Bradley Farias.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

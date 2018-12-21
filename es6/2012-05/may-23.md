@@ -329,6 +329,3 @@ Brendan demos, explanation of the implementation and operator overloading
 #### Conclusion/Resolution
 
 - none
-
-
-

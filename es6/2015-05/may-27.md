@@ -158,11 +158,11 @@ MM:  What does xmmintrin.h mean?
 
 WH: XMM (a register type in the x86 architecture) intrinsics
 
-R?: It's a header file that defines an interface that's widely used for 128 operations.  In emscripten we have an emulation of it in terms of SIMD.js.
+R?: It's a header file that defines an interface that's widely used for 128 operations. In emscripten we have an emulation of it in terms of SIMD.js.
 
-DE: Intention is to represent with value types with wrappers.  Typeof returns a string representing the type for the value object.
+DE: Intention is to represent with value types with wrappers. Typeof returns a string representing the type for the value object.
 
-MM: This is a proposed system defined value types.  How does this work with user-defined value types?
+MM: This is a proposed system defined value types. How does this work with user-defined value types?
 
 BE:  If we're going to integrate with main spec, we might want to roll into user-defined value types.
 
@@ -188,15 +188,15 @@ DE:  I've added a note asking if this is the direction we want to go. The polyfi
 
 JHD: Are properties of SIMD supposed to be nonwritable, nonconfigurable?
 
-MM: The general style we've agreed upon is that primordial properties are either configurable or writable.  This is important for initialization of realms, to make it seem like a different kind of realm.
+MM: The general style we've agreed upon is that primordial properties are either configurable or writable. This is important for initialization of realms, to make it seem like a different kind of realm.
 
 DGN: I believe that Firefox JIT can handle that.
 
 JM:  Should we think about standard modules?
 
-DH:  While the module imports are not writable, the module table is.  Realm initialization is just as possible with modules as with configurable/writable properties.  You just have to update the table.
+DH:  While the module imports are not writable, the module table is. Realm initialization is just as possible with modules as with configurable/writable properties. You just have to update the table.
 
-DH:  It's fine to not have a blocking dependency on modules.  We don't have convensions for standard modules yet.  I think it's fine to put SIMD on the global object.
+DH:  It's fine to not have a blocking dependency on modules. We don't have convensions for standard modules yet. I think it's fine to put SIMD on the global object.
 
 JM:  It seems like someone needs to be the first to add a standard module.
 
@@ -216,7 +216,7 @@ MM: I'm convinced, I was just taken by surprise by the implication (that we coul
 
 AWB:  With globals, each realm now has to have all of these duplications, depending on optimizations.
 
-MM: SES has to make sure that none of the primordials expose mutable state.  They have to freeze them, and the only way to do that is to walk eagerly.
+MM: SES has to make sure that none of the primordials expose mutable state. They have to freeze them, and the only way to do that is to walk eagerly.
 
 DGN: What about the large number of SVG bindings?
 
@@ -232,13 +232,13 @@ MM: Clarifies the cost in question:  traversing the objects and freezing everyth
 
 STH:  So generally, adding "n" functions will present this problem for you.
 
-MM:  Yes, when "n" is large enough.  The way to avoid this overhead is to have a platform-provided way of creating a new realm that looks like this realm but is frozen.
+MM:  Yes, when "n" is large enough. The way to avoid this overhead is to have a platform-provided way of creating a new realm that looks like this realm but is frozen.
 
 DH:  (Notes that such a capability would have benefits beyond just security.)
 
 CM: (To MM) Are you interested in creating a realm with specific constraints, or general realm initialization? 
 
-MM:  The realm API is for creating a new realm according to the wishes of the creator of the realm.  What I'm interested in is not the Realm API itself, but have a way to ask the platform for an SES realm.
+MM:  The realm API is for creating a new realm according to the wishes of the creator of the realm. What I'm interested in is not the Realm API itself, but have a way to ask the platform for an SES realm.
 
 MM: "SESsiness"
 
@@ -247,9 +247,9 @@ BE: "Sessility" (real word)
 ### Resolution:  move to stage 2
 
 
-R?: If you put a NaN into a TypedArray, the spec requries it to be a non-signaling NaN.  Why?
+R?: If you put a NaN into a TypedArray, the spec requries it to be a non-signaling NaN. Why?
 
-AWB:  It was copied out of the WebIDL spec.  There are only two references, we could remove those.
+AWB:  It was copied out of the WebIDL spec. There are only two references, we could remove those.
 
 BE: spec link: http://people.mozilla.org/~jorendorff/es6-draft.html#sec-setvalueinbuffer
 
@@ -285,9 +285,9 @@ DH:  But you could do the subsequent capturings with a local variable.
 
 AWB: It allows you to not special-case the first one.
 
-DH: This feels like has a little of the ".current" api from C# iterators.  Not sure if it matters.  Does this create any GC pressure?
+DH: This feels like has a little of the ".current" api from C# iterators. Not sure if it matters. Does this create any GC pressure?
 
-AWB:  Don't think so.  It's specced so that it's cleared out when the next value comes in.
+AWB:  Don't think so. It's specced so that it's cleared out when the next value comes in.
 
 DH: Think you might just need "function.first" or something, but your (AWB) argument for not special casing is good.
 
@@ -323,9 +323,9 @@ AWB:  Just "next".
 
 DH:  That's why you like "next", because it's only the value passed in with "next".
 
-MM: We're agreed that this returns 17.  If you resume with "return" then "function.next" retains the value of the previous resumuption.
+MM: We're agreed that this returns 17. If you resume with "return" then "function.next" retains the value of the previous resumuption.
 
-AWB:  Yes.  I entertained this.
+AWB:  Yes. I entertained this.
 
 WH: Any weird interactions with yield*?
 
@@ -381,7 +381,7 @@ BE: What about "yield.something"
 
 AWB, MM: (agree that it would work)
 
-DH:  There's human ambiguity.  Adding parens around "yield" should not change the meaning.
+DH:  There's human ambiguity. Adding parens around "yield" should not change the meaning.
 
 JHD: what do we call the value passed into Generator#next? we should name that and call this the same thing
 

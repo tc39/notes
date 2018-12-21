@@ -79,7 +79,7 @@ LBR:
 - New coverage for object spread (rest properties)
 - Documenting new feature tests via front matter flags
     - this allows consumers to filter tests as needed
-    - https://github.com/tc39/Test262/blob/master/FEATURES.md
+    - https://github.com/tc39/test262/blob/master/FEATURES.md
     - Aiming to grow the contributor base.
     
 LBR: (explaining clean up of erroneous tests that interact with implied global, re: "length" and "name")
@@ -209,7 +209,7 @@ WH: If we're going to do this, the way it's specified now is the right way to do
 
 (request slides)
 
-DE: proposals…
+DE: proposals...
 
 - named groups https://github.com/tc39/proposal-regexp-named-groups
 - dotAll https://github.com/tc39/proposal-regexp-dotall-flag
@@ -257,7 +257,7 @@ DE: (from slides)
   - Line breaks (UAX 14)
 - Why?
   - Complex in-browser rich text editors, design tools, rendering
-  - Want to deprecate Chrome’s Intl.v8BreakIterator
+  - Want to deprecate Chrome's Intl.v8BreakIterator
 - Out of scope
   - Hyphenation
 

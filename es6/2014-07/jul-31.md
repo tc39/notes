@@ -8,7 +8,7 @@ Brian Terlson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (
 
 ## Notes from secretariat  
 
-IS: ES6 delay accepted, but please don't delay this again.    
+IS: ES6 delay accepted, but please don't delay this again. 
 
 - TC52 working in a similar way and process to TC39's ES7 approach: Frequent releases of incremental versions of standards. They also use the same kind of RF policy.
 - TC52 is looking at how TC39 is proceeding
@@ -255,4 +255,3 @@ DL: V8 is planning to fix this and make the results more accurate.
 #### Conclusion/Resolution
 
 - Need to bring in experts.
-

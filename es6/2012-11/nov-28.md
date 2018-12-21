@@ -570,7 +570,7 @@ However, this has two major problems:
 Inheriting scope across references to external files is potentially confusing, and disliked by a number of people
 Once we decided to share instances of the same module, the "parent scope" of a module is no longer well-defined
 
-Therefore, we abandoned the idea of inheriting scope across external references.  However, this had two consequences that we did not immediately appreciate.  First, we no longer had a method for managing this configuration between module names and source code.  Second, scoped module names no longer had nearly as much use as originally.
+Therefore, we abandoned the idea of inheriting scope across external references. However, this had two consequences that we did not immediately appreciate. First, we no longer had a method for managing this configuration between module names and source code. Second, scoped module names no longer had nearly as much use as originally.
 
 Thus, Dave and I revisited the design, abandoning the use of lexical scope for managing module names, and introducing module names that could be configured on a per-Loader basis.
 

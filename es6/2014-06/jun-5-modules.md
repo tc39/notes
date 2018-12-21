@@ -13,7 +13,7 @@ Jeff Morrison (JM), Caridy Patiño (CP), Yehuda Katz (YK), Guy Bedford (GB), Dav
 
 ## Discussion
 
-The following is a summary of the discussion that took place in the Modules Breakout Session. The agenda was to have a high-fidelity discussion around some key issues currently faced by practitioners who are trying to build tools and use ES6 modules in ES5 environments.  
+The following is a summary of the discussion that took place in the Modules Breakout Session. The agenda was to have a high-fidelity discussion around some key issues currently faced by practitioners who are trying to build tools and use ES6 modules in ES5 environments. 
 
 ### Is `bar` hoisted in `export default function bar() {...}`?
 
@@ -51,7 +51,7 @@ EF: Sure, but if you look at the compiled Node.js module, it's wrapped in a func
 
 DH: But conceptually when writing a Node.js module you assume these bindings will be there, effectively by magic.
 
-*…Discussion continued into the next question…*
+*...Discussion continued into the next question...*
 
 ### How do you dynamically load another module relative to the current module using the same loader as the current module?
 
@@ -59,7 +59,7 @@ CP, GB, and EF want to be able to dynamically load modules from within a module,
 
 EF: A concrete example is a SPA with an `app.js` module that does client-side routing and dynamically imports the `settings.js` module when the user navigates to `/settings/`. We want to make sure the `app` module can load the `settings` module via the same loader — which might not be the `System` loader.
 
-*…Discussion continued into the next question…*
+*...Discussion continued into the next question...*
 
 ### How do you gain access to a module's metadata from within the module itself? e.g.; normalized `name`, `address`, etc.
 

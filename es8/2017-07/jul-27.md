@@ -381,7 +381,7 @@ YK: As a user, cache keys don't have semantics
 
 DE: We don't want to force caching all the time, the point of this proposal shrink the live time and don't keep them there forever. The proposal is to allow caching but not force the caching to stay alive forever. This should work effectively like template literals. Its implemented in V8, and the exact caching semantics were looked at very closely, and became natural to cache it all together, rather than to cache it somewhere else.
 
-YK: We might care about the identity for other reason than implementation.  You can use it as a key in a Map. I don't care about whether caching is observable, but I care about ...???
+YK: We might care about the identity for other reason than implementation. You can use it as a key in a Map. I don't care about whether caching is observable, but I care about ...???
 Im concern about the observable effect
 
 DE: In this proposal we want implementation to make their own decision about caching. Its all about enabling template tag object to be cached so its cheaper.
@@ -598,7 +598,7 @@ DE: there should be a slides like the private fields slide but with everything b
 
 DE: Adding field declarations and private fields are small changes. With decorators, it provides another incremental cleanup
 
-DE: the framework is orthogonal over a few different dimensions (using Mark/Allen's terminology).  See Dimension slide
+DE: the framework is orthogonal over a few different dimensions (using Mark/Allen's terminology). See Dimension slide
 
 DE: fields go on instance, properties go on prototype. a keyword may be added to change those defaults.
 
@@ -633,17 +633,17 @@ JM: the updated proposal only shrinks the proposal
 
 BT: is the the proposal that would motivate the use of the private keyword now?
 
-YK: Waldemar's reason was what caused me to move it.  The original definition was for the shorthand `#foo` to always mean `this.#foo`, but Waldemar pointed out that's the inappropriate thing to do inside an instance method that references a static field `#foo`. The alternative definition is to always get at the wanted variable in the obvious place.
+YK: Waldemar's reason was what caused me to move it. The original definition was for the shorthand `#foo` to always mean `this.#foo`, but Waldemar pointed out that's the inappropriate thing to do inside an instance method that references a static field `#foo`. The alternative definition is to always get at the wanted variable in the obvious place.
 
 JM: Shows "shorthand this" example. the concern is that if you look quickly here, the `this` received is not syntactically clear.
 
-YK: Sad to defend his position about things being withdrawn.  The conflict is confusing. People would need to be able to keep "this" clear in the same way they need to keep it straight within normal vs. arrow functions.  So we want more experience and hash it out.
+YK: Sad to defend his position about things being withdrawn. The conflict is confusing. People would need to be able to keep "this" clear in the same way they need to keep it straight within normal vs. arrow functions. So we want more experience and hash it out.
 
-JM: 2) second simplification.  We had comma separation for fields (mostly for decorators).  That's moved into a separate proposal.
+JM: 2) second simplification. We had comma separation for fields (mostly for decorators). That's moved into a separate proposal.
 
 DE: confirms that 1 & 2 are broken to completely separate proposals.
 
-YK: when declarations are combined into a list, people couldn't tell whether a decorator applied to multiple values in the same single declaration statement.  The hypothesis of why it's still a proposal even though there are toy examples that show either side si that we don't have real examples of e.g., long declaration lists for interesting use cases.
+YK: when declarations are combined into a list, people couldn't tell whether a decorator applied to multiple values in the same single declaration statement. The hypothesis of why it's still a proposal even though there are toy examples that show either side si that we don't have real examples of e.g., long declaration lists for interesting use cases.
 
 WH: I'm disappointed comma-separation was withdrawn but I understand.
 
@@ -668,7 +668,7 @@ WH: I reviewed this and all the other class-related proposals for this meeting. 
 
 LBR: (shows agenda to discuss what we are doing the rest of the day)
 
-LBR: we have time constraints, e.g., Ron won't be able to join us at the next meeting.  similarly, Gabriel Isenberg also won't be available. 
+LBR: we have time constraints, e.g., Ron won't be able to join us at the next meeting. similarly, Gabriel Isenberg also won't be available. 
 
 WH: Is there a particular technical reason to defer, or are you just doing it to yield time?
 
@@ -742,7 +742,7 @@ DE: the private name is not visible in the subclass body
 
 BE: I'm going ot channel MarkM, does the transposed implementation of weakmaps still work for this?
 
-MM: yes. For each name you are declaring, whether it's a field or a method, you are creating a weak map. Then you are looking up the instance in the weak map.  All instance of the same class would look up the same method
+MM: yes. For each name you are declaring, whether it's a field or a method, you are creating a weak map. Then you are looking up the instance in the weak map. All instance of the same class would look up the same method
 
 BE: I didn't understand the option of funny function declaration since we didn't choose that one, let's move on.
 
@@ -778,7 +778,7 @@ DE a class decorator gets a list of all the methods in the class and can issue a
 
 DE: (presents private names)
 
-YK: I wan to confirm that people understand that.  If I make a private name called "x", can people mention "#x" in the class.  The answer is "no".  The use occurrence needs to be lexically apparent.
+YK: I wan to confirm that people understand that. If I make a private name called "x", can people mention "#x" in the class. The answer is "no". The use occurrence needs to be lexically apparent.
 
 AWB: How does the decorator access the private name?
 
@@ -788,7 +788,7 @@ MM: you are actually reifying the WeakMap model of private state.
 
 DE: it's not actually a WeakMap because the GC collection semantics are slightly different. E.g., the WeakMap model would cause the table to be retained ...
 
-MM: I don't need to discuss the GC details. I want to understand the meaning of `PrivateName.prototype.set`.  You can only update things, you cannot add new keys.
+MM: I don't need to discuss the GC details. I want to understand the meaning of `PrivateName.prototype.set`. You can only update things, you cannot add new keys.
 
 DE: correct. If you want to add new private fields, there's a hack to do it but it's not desirable
 
@@ -816,17 +816,17 @@ WH: So if you access static private variable, will you get it?
 
 YK: it won't have been initialized yet.
 
-DE: this proposal follows the order of initialization at the Munich mtg.  The class is in TDZ and you will get a reference error (because you tried to access the class)
+DE: this proposal follows the order of initialization at the Munich mtg. The class is in TDZ and you will get a reference error (because you tried to access the class)
 
 DE: Omitted features: instance finishers. Yehuda?
 
-YK: an instance finisher is a function that is executed at the end of instantiation of the class at any subclass level and passes at the instance. this is at the end of Reflect.construct.  the use case is a decorator to confirm that all instances are frozen or sealed.  Another:  you want to register created instance into a map. The subclass provides the key, the superclass expresses that the instance should be registered. 
+YK: an instance finisher is a function that is executed at the end of instantiation of the class at any subclass level and passes at the instance. this is at the end of Reflect.construct. the use case is a decorator to confirm that all instances are frozen or sealed. Another:  you want to register created instance into a map. The subclass provides the key, the superclass expresses that the instance should be registered. 
 
 DE: instance finishers change how instances are created. <describes an implementation> It's complicated and so wants to separate it out.
 
 MM: I'm very interested in instance finishers but I can understand having it a separate proposals.
 
-JHD: another use case: always put them on a superclass to validate that the subclass didn't do something bad like install fields.  e.g., React could make sure that the right properties were set.
+JHD: another use case: always put them on a superclass to validate that the subclass didn't do something bad like install fields. e.g., React could make sure that the right properties were set.
 
 MM: Dean and I are also working on a subclassing hook
 
@@ -887,7 +887,7 @@ GIG: questions:
 - Should we return undefined, null, or null and undefined?
 - Returns `undefined` if property absent, `null` if property is defined with a null value 
 
-MM: (null)?.b gives undefined.  That seems wrong.
+MM: (null)?.b gives undefined. That seems wrong.
 
 JHD: "b" is not a property on null, so it's undefined.
 
@@ -1172,5 +1172,3 @@ WH: I'm OK with stage 1 but am concerned that we should explore the space more f
 
 - Stage 1 acceptance
 - Explore the space of turning statements into expressions.
-
-

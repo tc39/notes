@@ -203,7 +203,7 @@ MM: Okay.
 
 YK: I agree that you could make these be trees, but I think it's bad that you can't handle multiple sources.
 
-DD: Disagree as apps aren't trying to track this.  We can take this offline to discuss more though.
+DD: Disagree as apps aren't trying to track this. We can take this offline to discuss more though.
 
 YK: the concern that i have, is that causality and execution branching are intermixed. Frameworks will be the same place we are today, enumerating all the potential entry points.
 
@@ -215,7 +215,7 @@ MH: no
 
 MH: I want to make sure angular knows about everything, a second problem is to track user behavior flow. I would argue this requires hand tuning.
 
-MH: Usually, zones trigger on router changes.  App changes route and a new zone handles tracking from there.
+MH: Usually, zones trigger on router changes. App changes route and a new zone handles tracking from there.
 
 WH: How do zones interact with iterators and generators? What happens if you start one from zone A and then call next from zone B?
 
@@ -233,7 +233,7 @@ MH this is missing error handling, but that is handled by zone spec. Zone spec d
 
 DD: having the fully customized wrap may not make it, as it makes some of us nervous.
 
-MH: You get to wrap the callback into the wrap, but at the end of the day you don't get to override the Zone.  Fundamentally, the result will be on the zone that was wrapped.
+MH: You get to wrap the callback into the wrap, but at the end of the day you don't get to override the Zone. Fundamentally, the result will be on the zone that was wrapped.
 
 DD: Browser engineers are very unhappy about having to call code whenever setTimeout is called
 
@@ -277,21 +277,21 @@ DD: i think this is solvable, but the cross realm point is a good catch. We will
 
 MM: it is the registration of the callback not the instantiation of the promise nor the function.
 
-DH: I have questions about intra-thread uses of the API.  Two questions:
+DH: I have questions about intra-thread uses of the API. Two questions:
     
-    1. You have .get but not .set you can put immutable things in the .get so I'm not sure what it buys you to make it immutable.  
+    1. You have .get but not .set you can put immutable things in the .get so I'm not sure what it buys you to make it immutable. 
     
-MH: One property I'd like to have is that for apps that expect zone behavior, when you fork a child zone, application should behave the same way as without the fork.  
+MH: One property I'd like to have is that for apps that expect zone behavior, when you fork a child zone, application should behave the same way as without the fork. 
 
-DH: Only true if users don't mutate things.  Is it vital for the language to enforce this guarantee?
+DH: Only true if users don't mutate things. Is it vital for the language to enforce this guarantee?
 
-MH: You can certainly override a property and that COULD break behavior.  If code running in a child zone could mutate the parent then you couldn't see it in the parent.
+MH: You can certainly override a property and that COULD break behavior. If code running in a child zone could mutate the parent then you couldn't see it in the parent.
 
 DH: I didn't understand
 
-DD: I'll rephrase -- if you allow children to set new properties, then they don't share the idea across the boundary.  This is more of a path we want to guide you down rather than a path that must be enforced.
+DD: I'll rephrase -- if you allow children to set new properties, then they don't share the idea across the boundary. This is more of a path we want to guide you down rather than a path that must be enforced.
 
-DH: I have a question that may clarify around lack of .set.  There's history for other languages with TLS with use cases for what has historically been achieved through dynamic scope.  A concrete example program would be a recursive descent JS parser.  You have certain context being passed around like the labeles currently in scope.  Only used a few places in the parser.  It's a total pain to keep track.  Other option is to use an OO pattern to carry context in a class/object so it's still explicit, but it's shrunk to one place.  Another mechanism is to use a TLS (thread local storage) like mechansim or dynamic scoping so this becomes implicit.  Only operations that need to access the state go through this.  One answer could be we disavow this and say the OO way is the right way to do this.  Another answer is to say this (zone) is right for doing this.  Creating new zones is a heavy-weight api.  Is there a lightweight user-land abstraction?  Is there no place for .set there?
+DH: I have a question that may clarify around lack of .set. There's history for other languages with TLS with use cases for what has historically been achieved through dynamic scope. A concrete example program would be a recursive descent JS parser. You have certain context being passed around like the labeles currently in scope. Only used a few places in the parser. It's a total pain to keep track. Other option is to use an OO pattern to carry context in a class/object so it's still explicit, but it's shrunk to one place. Another mechanism is to use a TLS (thread local storage) like mechansim or dynamic scoping so this becomes implicit. Only operations that need to access the state go through this. One answer could be we disavow this and say the OO way is the right way to do this. Another answer is to say this (zone) is right for doing this. Creating new zones is a heavy-weight api. Is there a lightweight user-land abstraction?  Is there no place for .set there?
 
 YK: why not just provide set
 
@@ -326,17 +326,17 @@ YK: a symmetrical problem is users may not realize the deep mutability.
 
 SP: think prototype.value = {}  vs prototype.value = 1;, the former shares state the later cannot.
 
-MH: I feel zones are more like an observer like a logging service.  They get to watch over how an app runs and notify you to do something about it.  Whether it's there or not, the app should function the same way.
+MH: I feel zones are more like an observer like a logging service. They get to watch over how an app runs and notify you to do something about it. Whether it's there or not, the app should function the same way.
 
 DH: maybe the answer if you are using thread local dynamic scoping, it should not be built on top of zones.
 
 YK: Arriving at "you should not put mutable objects there" is good. (referring to values passed into the zone)
 
-MM: The proposal as it stand, there are some good goals that we should seek a way to address.  Kudos on the good goals.  The mechanisms as proposed combine several nightmares -- mutable global state, dynamic scoping, and before/after hooks. Before/after hooks reminds me of the nightmare of aspect oriented programming. They introduce an attack vector of invoking someone else's code during a turn while invariants are supended. Classically a thread is a sequential program, TLS (thread local storage) is a global variable for that sequential program.  In TC39, we have successfully avoided global state -- if you lock down all the primordials, everything still works so far. We must keep that property.  LISP has dynamic scoping.  Scheme has fluid scoping. In Fluid scoping, thing that changes depending on the context you're in is the value of a lexical variable.  You cannot see the values or rebind that var if you're not in the lexical scope.  The strings are worse than classical dynamic scoping because the program can calculate the strings.  Making them something first class or record based -- we should look how to restrict how you name those things.  Otherwise you have a truly global variable.
+MM: The proposal as it stand, there are some good goals that we should seek a way to address. Kudos on the good goals. The mechanisms as proposed combine several nightmares -- mutable global state, dynamic scoping, and before/after hooks. Before/after hooks reminds me of the nightmare of aspect oriented programming. They introduce an attack vector of invoking someone else's code during a turn while invariants are supended. Classically a thread is a sequential program, TLS (thread local storage) is a global variable for that sequential program. In TC39, we have successfully avoided global state -- if you lock down all the primordials, everything still works so far. We must keep that property. LISP has dynamic scoping. Scheme has fluid scoping. In Fluid scoping, thing that changes depending on the context you're in is the value of a lexical variable. You cannot see the values or rebind that var if you're not in the lexical scope. The strings are worse than classical dynamic scoping because the program can calculate the strings. Making them something first class or record based -- we should look how to restrict how you name those things. Otherwise you have a truly global variable.
 
 YK: if you are too restrictive, people will end up virtualizing again.
 
-MM: If you have fluid variables, you don't need to reinvent dynamic variables.  They're still bad, but less bad.  I'm firmly on the lexical scoping side of the debate.
+MM: If you have fluid variables, you don't need to reinvent dynamic variables. They're still bad, but less bad. I'm firmly on the lexical scoping side of the debate.
 
 YK: i think everyone agrees with that. Lexical scoping is the 99.9% case, some things don't quite fit in that. You can use globals or OO, all of them have issues. If you end up restricting, users will end up approximating the same thing.
 
@@ -356,7 +356,7 @@ YK: well motivated problem
 
 MM: if I endorse some of the goals but not the mechanisms, can I approve stage 0?
 
-DD: Yes, and we encourage collaboration with the champions.  Just want to move to stage zero if we can.
+DD: Yes, and we encourage collaboration with the champions. Just want to move to stage zero if we can.
 
 YK: Stage zero seems fine.
 
@@ -1159,11 +1159,5 @@ MM: has someone reached out to the samsung folks
 DH: I believe they implemented something that may support it all: https://github.com/Samsung/jerryscript
 
 
-#### Conclusion
+#### Conclusion/Resolution
  - successfully delivered the update to the committee
-
-
-
-
-
-

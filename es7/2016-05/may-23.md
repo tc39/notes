@@ -107,7 +107,7 @@ BT: Correct.
 
 EF: What happens when decorators are not in the picture? Seems like it just means that statics happen at the end. Let's tweeze these two things apart.
 
-YK: It will be clarifying to think through the complete picture with decorators, but you are right.  A lot of this is spec factoring, but this is very important to expose to decorators.
+YK: It will be clarifying to think through the complete picture with decorators, but you are right. A lot of this is spec factoring, but this is very important to expose to decorators.
 
 BT: Slide edit to insert step 11 where decorator transformations are run after static elements are installed onto the class in order by evaluating initializers
 

@@ -409,7 +409,7 @@ BT: You could start spending your time allotment on open issues.
 
 ZB: two intl will be presented tomorrow, when we have more time, two willl be presented now, less controversial
 
-ZB: Intl.Segmenter: already stage 3, got approval from ecma402? during last call.
+ZB: Intl.Segmenter: already stage 3, got approval from ECMA-402? during last call.
 
 DE: in the call we discusesd adding another option
 
@@ -548,7 +548,7 @@ MBS: resource initialization: `const connection = await dbConnector();` Lets mod
 
 MBS: dependency fallbacks: `try { jquery = await import (cdnB); ... import(cdnB) }`
 
-MBS: constraint: halting progress: A would halt in the graph until resolved, B doesn't block sibling execution, as long as there are no cycles, everything else gets executed.  I like the idea of being able to statically analyze the graph and identify which nodes are dirty.
+MBS: constraint: halting progress: A would halt in the graph until resolved, B doesn't block sibling execution, as long as there are no cycles, everything else gets executed. I like the idea of being able to statically analyze the graph and identify which nodes are dirty.
 
 DD: this is way better than SyncXHR
 
@@ -867,7 +867,7 @@ YK: it literally says "semicolons are recommended", it's a style recommendation
 
 BE: let's do the thing that would help programmers catch errors, which is based on something that actually parses a dialect of the language
 
-MB: The consensus at the last meeting was that while we’ll try to continue supporting ASI where feasible, we won’t let it prevent us from extending the language in the future. The goal of this PR was to communicate that resolution.
+MB: The consensus at the last meeting was that while we'll try to continue supporting ASI where feasible, we won't let it prevent us from extending the language in the future. The goal of this PR was to communicate that resolution.
 
 ?: e.g. make sure e.g. class syntax doesn't require or prevent ASI
 

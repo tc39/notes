@@ -260,7 +260,7 @@ AR: `<script type="module">` means the browser won't even try to parse it as JS,
 
 DH: `<script type="worker">` might also need to have the `<script type="module">` semantics, and type= attribute syntax makes it hard to mix and match those attributes; maybe `<script worker module>` would be better? (i.e. the type attribute values become optional value-less attribute names)
 
-DH: The difference between `<script type="module">` and <module> is that as long as there's … you always have the option of writing `<script>System.import("main.js")</script>`
+DH: The difference between `<script type="module">` and <module> is that as long as there's ... you always have the option of writing `<script>System.import("main.js")</script>`
 TODO: Get DH to clarify this point when we edit the notes.
 
 MM: The `<module>` tag still has HTML misparsing consequences that `<script>` wouldn't have.

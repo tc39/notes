@@ -392,7 +392,7 @@ v.length; // 0
 
 * The object that new Vector creates and passes to the Vector constructor is an ordinary object, not an exotic Array object.
 
-* Even with the super call, the Array constructor doesn’t transform its this object into an exotic Array
+* Even with the super call, the Array constructor doesn't transform its this object into an exotic Array
 
 
 **First Solution**
@@ -418,8 +418,8 @@ WH: Jason's Objections:
 let d = new Date();
 Map.call(d);
 console.log(d.getYear()); // 2013
-Map.prototype.set.call(d,”month”, “January”);
-console.log(Map.prototype.get.call(d,”Month”)) // January
+Map.prototype.set.call(d,"month", "January");
+console.log(Map.prototype.get.call(d,"Month")) // January
 ```
 
 **What do other dynamic OO languages do?**
@@ -430,21 +430,21 @@ console.log(Map.prototype.get.call(d,”Month”)) // January
 * The allocation phase is defined as a separate  class method
   –  Can be inherited, or over-ridden, or super-invoked by  subclasses.
 
-**Sounds Good, Let’s see if it works for JavaScript**
+**Sounds Good, Let's see if it works for JavaScript**
 
 * @@create is a well known symbol that when used as a property of  a constructor provides the alloca1on method for that constructor.
 * New definition of the ordinary [[Construct]] :
   1. Let creator be [[Get]] of this constructors @@create property
-  2.  If creator is not undefined, then
+  2. If creator is not undefined, then
   a. Let obj be the result of calling creator with this constructor as its this value.
-  3.  Else, fallback implementation
-  a. Let obj be a new ordinary object with its [[Prototype]] initialized from this constructor's “prototype” property.
+  3. Else, fallback implementation
+  a. Let obj be a new ordinary object with its [[Prototype]] initialized from this constructor's "prototype" property.
   4. Call this constructor with obj as the this value and the original argument list.
-  5.  Return obj.
+  5. Return obj.
 
 BE, EA, YK, WH, others: Get rid of the fallback implementation and just throw if there is no @@create. It's unnecessary complexity.
 
-* Most constructors just inherit Function.prototype[@@create]  which allocates a new ordinary object with its [[Prototype]]  initialized from this.prototype (the constructor’s “prototype”  property).
+* Most constructors just inherit Function.prototype[@@create]  which allocates a new ordinary object with its [[Prototype]]  initialized from this.prototype (the constructor's "prototype"  property).
 * `new Foo() <=> Foo.call(Foo[@@create]())`
 
 

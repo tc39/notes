@@ -1033,7 +1033,240 @@ MF: Apparently idea behind get originals has changed. Can't explain it very well
 – NHD to get in touch with J Chung
 – Resync with get originals and Luke Wagner
 
+## WeakRef Session
 
+TST: I talked with the other co-champions and even we have some catching up to do.
+
+TST: Briefly on the state of discussions, there are uncertanities around what exactly is a turn of GC, when exactly cleanup could happen, what does strong reference within a turn means. Is it after a script job has finished? After a Promise queue has been emptied? To my surprise, the spec pretends this doesn't have any ordering reqs.
+
+MM: Let me be precise but I agree with the sense. The spec is writte nin such a way the ordering policy decisions are left to the host. There is some arbitrary set of named job queues, each queue is FIFO. All promises use one of those job queues. All promise operations within an agent are fully detemrinistic ordered within that queue. However, the mechanism the spec uses to leave a lot of policy choices to the host is to say: at the end of a job, it's up to the host to take a look at the existing job queues. And of the ones that are non-empty and has a job that's ready, the host is completely free to determine which queue to service next. As far as the spec is concerned, the async things caused by async loading, script execution, etc, all could be interleaved between any queue operations between diff queues. I *believe* it's the case on all hosts as long as anything is ready on promise queue, the other queues are only serviced when the promise queue is drained.
+
+SGN: What are the other queues.
+
+TST: The HTML spec specs some other queues. The JS spec specs 2 queues: the promise queue and script queue, equiv to microtasks and tasks. The JS spec gives freedom to drain these in arbitrary order. The HTML spec is explicit about the microtasks being drained before the task. In practice, any JS env that wants to be able to run normal JS without being reworked for an env, and wants to support async/await, needs to keep the HTML guarantees. The freedom doesn't matter except for weak refs since weak refs spec say something about in-turn stability. We just need to define what it means.
+
+MM: Original definition of turn (which committee unfortunately renamed job) is that computation that is bracketed by empty user stack.
+
+KM: So doing a promise is a turn.
+
+MM: Right, between two promises there are no user stack frames. That's the defining bracket.
+
+KM: How would you even know... when do you know when the weakref finalizer runs anyways? I mean at the end of which turn?
+
+MM: There're 2 issues that depend on turns. 1 is when finalizer runs, and 2 is nature of stability guarantee. The alternate proposal is that we recognize in the spec that the promise job queue is treated -- we make it normative -- as strictly higher priority, so that a seq of promise job is an atomic thing we can talk about. I don't want to call it a "turn" or past terminology that's browser-specific. We need a term nevertheless. That would give us less non-determinism that all platforms have anyways. It gives us something we can count on for all platforms. I'll just call it a macro-turn for the moment. For the first part, the proposal that the scheduling of finalization schedules jobs on some job queue is necessarily of lower priority than promise job queue, so no finalizer will ever get called while there are ready promise jobs.
+
+SGN: Why does this need to be in the ES spec?
+
+MM: You *could* do that, that's a viable alternative and nothing would break. However, it means that a correct JS program (vs a correct web program), in that a correct JS program is trying to be correct in a host-independent way can only depend on the JS spec. Even thogh there's regularity that all hosts admit the promise queue priority, a JS program cannot depend on those.
+
+SYG: What do you get out of not having it in the JS spec?
+
+SGN: The web spec has a proper place, it seems like.
+
+MM: The HTML spec would not change in the place where this needs to be specified if we make this change. But this means JS programs can depend on this behavior for their correctness.
+
+TST: One reason to do this in the JS spec that envs like node don't follow the HTML spec, but still have the implement the same behavior.
+
+TST: This is relevant for this discussion because of stability and finalization time. We can introduce the same fictional freedom about job queue but I don't think that we should...
+
+MM: ...because it makes writing correct portable programs harder.
+
+TST: In practice I don't think it wouldn't...
+
+MM: A correct JS program can only depend on the JS spec.
+
+TST: What I'm saying is the spec should be all you need.
+
+KM: So is there any concern that because we're only doing this at the microtask checkpoint boundary that you can write a program that was entirely async, thinking that, like, everytime I am effectively yielding to the run loop by promise chaining forever, that the finalizers will never run.
+
+MM: So I have a questoin about node. I've seen a discussion about a possible scheduling policy for node but don't know what was decided. The other event on scheduling is external IO events -- IO events generating callbacks. The policy change we're talking about only makes sense if servicing IO events is *also* strictly lower priority than promise events. If those IO events can be interleaved with promise queue work then this policy doesn't make sense.
+
+MM: If the IO event enqueues a callback, which queue does it enqueue the callback on. The reason I ask is because *if* it remains the promise queue is strictly higher prio...
+
+KM: I agree with you. You're going to have a bad time if you're going to keep chaining promises, you'll still get the spinner.
+
+MM: But even if the larger unit is finite, it won't be a lot longer.
+
+TST: I want to briefly explain why this is even relevant.
+
+```
+if (wr.deref()) {
+  await immediatelyResolvedPromise;
+  wr.deref().foo();
+}
+```
+
+This is the classical double deref issue that Dean presented on, and that's why we have in-turn stabliity. Engines will optimize the immediately resolved promise out. It'll be as if it's a block.
+
+MM, SGN: No, there has to be a turn.
+
+TST: *If* it's observable yes, but if not it gets optimized out.
+
+MM: So, I agree this can be optimized out. But I don't see the point of the example.
+
+TST: The point is at that point it's back to double-deref and it leads to a situation where you're very likely to have completely stable behavior in engines, but in the future GC changes will perturb and lose stability.
+
+MM: I'm worried about await patterns people using. They're making bad assumptions about the await points that're making their programs bad.
+
+TST: I think the immediate assumption for the example I gave is a very common occurrence. Await's often used in a way that there *might* be not necessarily is async behavior here.
+
+KM: For file and cache, immediately resolved is common.
+
+MM: But to help the programmer reason and to give predictibility? Programmers need to learn double-deref over an await is bad.
+
+SYG: Isn't this like GC hazard analysis?
+
+TST: This is probably something devtools can do as a best-effort.
+
+MM: We're trying to reduce the non-determinism as much as we can. People *will* write programs that *happen* to work and will continue to happen to work under intense testing, that an innocent change wil cause those programs to stop working.
+
+TST: One thing that might help is if you have a debugger open, the debugger could switch at random between 2 different behaviors. 1 is very aggressively GC and clear weakrefs, and the other is do as little finalization behavior as possible. If you switch between these randomly you're likely to get bugs from both of these behaviors. We should recommend engines do this but we cannot spec this.
+
+KM: And also it's only so useful to diagnose. When a dev is just writing the app you think they'll actually do this?
+
+TST: Given the chances that this code runs in the course of debugging...
+
+KM: Maybe headless mode.
+
+TST: Go ahead.
+
+KM: Uhh we don't have a headless mode.
+
+MM: One can imagine devtools has a GC fuzzer.
+
+TST: More like a quality of impl thing. We should make specific recommendations about this. Impls should do this from the get-go.
+
+SGN: I think the biggest thing is the API. Right now we nede to create a WeakFactory does makeWeakCell. Puts the Java in JavaScript. We should use the constructors with new WeakRef, new WeakCell.
+
+KM: I agree.
+
+MM: We were scared of the constructor and put a correctness condition: we're willing to use the constructor if we're willing to make a change to the normal class pattern, because normal class pattern has a .constructor property. So anyone has an instance has the power to create new instances. For weak refs, that would be a gross violation of least authority. I should be able to give you the ability to observe that a particular weak ref becomes null, or to deref it until it becomes null, without giving you ability to create new weak refs.
+
+SGN, KM: Just delete the .constructor prop?
+
+MM: If we can agree that WeakRef.prototype.constructor does not point. If we the spec writers delete it then it's okay.
+
+KM: Why in the spec instead of let the user do it?
+
+MM: We want the safe way to be the easy way. That's also why the weak factory is also on the system object. System object gives you special powers and can be censored.
+
+SGN: Why does it matter the initial state is spec compliant?
+
+MM: This is why we put Error.p.stack in Annex B so that a framework that removes it is still spec compliant even if a framework removes it from the initial state.
+
+SGN: Do we want to make that ergonomic tradeoff?
+
+MM: Yes, if we're going to introduce these magic powers so that when we introduce the new powers...
+
+KM: Are you okay with putting the WeakRef constructor on Annex B then?
+
+MM: Yes, actually.
+
+All: Okay, haha.
+
+MM: To be clear what this means it that a test262 test, that property has to be in Annex B...
+
+All: Acceptable tradeoff for me.
+
+TST: Excellent, this allows us to do something more ergonomic while keeping the invariants. There are still other things about the API. Dean and I talked extensively. One thing is the name WeakFactory is in there in part because it's hard to name as it services multiple purposes. It's a mechanism for grouping lifetimes for finalization purpoess *and* something to hang the ability to create weak refs off of. I want to disentangle these two. If you want to have a weak ref, say new WeakRef, and WeakRefs have nothing to do with finalization. If you want to do finalization, register your object with something called e.g. FinalizationGroup. You create FinalizationGroup same way as you create a WeakFactory, passing it a cleanup method. Then you pass it object and holdings pairs with a registration API.
+
+MM: The reason for adding the registration API so we can remove the weak cell.
+
+TST: Exactly. If you need both finalization and weak refs, you'd use FinalizationGroup.
+
+MM: How do individual weak refs become associated with a weak ref group?
+
+TST: They don't, you separate concerns.
+
+MM: I see.
+
+SGN: The problem is you need to have the target and holdings to do the unregistration. Seems limiting but I can't think of a problem right now.
+
+MM: Let me understand, the weak ref no longer has holdings at all.
+
+TST: Exactly, only when you register the weak ref for finalization.
+
+MM: I see. This is clean, I like this.
+
+KM: To unregister you need the strong ref also? When you want to unregister, provide it with just the holdings. If it hasn't been finalized yet...
+
+TST: I hadn't considered unregistering with just the holdings.
+
+SGN: But you can register the same obj with multiple holdings. Common use case.
+
+KM: Why is that common?
+
+SGN: Shared state.
+
+KM: But your holdings can just be a collections of a bunch of things that distinguish.
+
+SGN: Okay, but that seems arbitrary to have that restriction.
+
+KM: It's not that you can't have separate ones, just if you want to be able to unregister with just the holdings. Otherwise you have to have the object to unregister, which is very difficult if I don't care about it anymore.
+
+SGN: Or you get a handle, that's the weak cell. That seems better.
+
+KM: Or an optional 3rd argument like a key to unregister, then you get to choose it.
+
+TST: Could provide an overload of WeakRef ctor that passes in holdings and a group that does both. WeakRef would just WeakRef, WeakRef(t, holdings, group) combines the registration, passing the holdings to group. One way could be unregister just based on the holdings.
+
+KM: Could have on the group a way to register with the holdings.
+
+TST: I think we can discuss the alternatives.
+
+MM: I like that the registratoin might take an optional key, and it's if you provide the key, it's the key you use to unregister.
+
+TST: Assume you're using an object as your key. Nothing prevents you from creating a weak ref using that object as your target. Then when you call unregister it's ambiguous.
+
+KM: But th eonly thing you can pass is the key.
+
+TST: Oh so if you want to unregister *at all* you have to pass the key.
+
+KM: Yes. If you want to use holdings, pass holdings. If you want to use the same group you could do that.
+
+MM: Makes it orthogonal, yes.
+
+All: We like that, yes.
+
+SGN: I have another concern. The register has a strong ref to holdings, which means we can't GC the holdings, which means weak refs have stronger GC guarantees than anything else in the language.
+
+MM: It's the group that has the ref to the holdings. If the group as a whole is garbage...
+
+KM: Does the finaliezr for a group run if the group isn't reachable.
+
+TST: If the whole subsystem goes away in one go then no finalizer will run.
+
+SGN: But if the group does a lot of registrations and we want to do some cleanup we can't, because holdings are strong.
+
+TST: The entire point is that you want to be able to pass something to the finalizer that is guaranteed to not be collected.
+
+SGN: If the target is not GCed. If the target is GCed, we have to call the finalizers.
+
+MM, TST: *After* the finalizer's run the holdings aren't held anymore.
+
+SGN: You could not run the finalizer...
+
+All: That's not desirable, so they have to be held onto strongly.
+
+KM: What's the seantics if the group itself is dead?
+
+TST: Then nothing gets run anymore.
+
+KM: If you have a socket that socket won't be closed...
+
+TST: Yes, you should strongly associate the group with the socket. Consider a wasm module where you have JS reflectors for some state in linear memory. You want to pass those out weak refs so you can clean up memory state, but if the whole memory goes away, then the group goes away, and you don't want to waste time doing the finalization work.
+
+KM: I see.
+
+SGN: The next one is the finalizer gets an iterator and can iterate all the weak cells. What if you don't finish iterating?
+
+TST: Arbitrary future time and the rest will be yielded.
+
+KM: Previously you get the weak refs/weak cells, and if you want the holdings you call the getter. Those things are gone now so you just iterate through holdings.
+
+#### Conclusion/Resolution
+
+See summary session.
 
 ## Summary Session 3:30pm
 

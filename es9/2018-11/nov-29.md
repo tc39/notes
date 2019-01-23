@@ -1214,7 +1214,7 @@ KM: Could have on the group a way to register with the holdings.
 
 TST: I think we can discuss the alternatives.
 
-MM: I like that the registratoin might take an optional key, and it's if you provide the key, it's the key you use to unregister.
+MM: I like that the registration might take an optional key, and it's if you provide the key, it's the key you use to unregister.
 
 TST: Assume you're using an object as your key. Nothing prevents you from creating a weak ref using that object as your target. Then when you call unregister it's ambiguous.
 

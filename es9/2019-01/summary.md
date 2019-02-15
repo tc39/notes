@@ -82,8 +82,8 @@ Topics related to ECMAScript specification activities that were presented at the
 - TC39 welcomed 2019 Chair Group (Yulia Startsev, Aki Rose, Brian Terlson)
 - [TC39 to transition from RFTG to RFTC](jan-29.md#tc39-to-transition-from-rftg-to-rftc)
 - [Report from the Ecma Secretariat](jan-29.md#report-from-the-ecma-secretariat)
-- [ECMA-402 Status Update](jan-29.md#ecma402-status-update)
-- [ECMA-404 Status Update](jan-29.md#ecma404-status-update)
+- [ECMA-402 Status Update](jan-29.md#ecma-402-status-update)
+- [ECMA-404 Status Update](jan-29.md#ecma-404-status-update)
 - [Test262 Status Update](jan-29.md#test262-status-update)
 - [Updates from the CoC Committee](jan-29.md#updates-from-the-coc-committee)
 

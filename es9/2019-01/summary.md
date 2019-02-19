@@ -27,7 +27,8 @@ TC39 discussed 8 proposals for stage advancement and had updates presentation on
 Following proposals did not reach consensus for stage advancement.
 
 - [Decorators for Stage 3](jan-30.md#decorators-for-stage-3)
-- [Extended numeric literals status update, and consider restoring numeric separators to stage 3] (jan-30.md#extended-numeric-literals-status-update-and-consider-restoring-numeric-separators-to-stage-3)
+- [Extended numeric literals status update, and consider restoring numeric separators to stage 3](jan-30.md#extended-numeric-literals-status-update-and-consider-restoring-numeric-separators-to-stage-3)
+
 ### Updates
 Updates on proposals that are not seeking stage advancement
 - [Update on Set methods](jan-29.md#update-on-set-methods)

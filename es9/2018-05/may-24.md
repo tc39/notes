@@ -34,7 +34,7 @@ SGO: The thing that follows a number is an identifier, so it literally transpile
 
 RW: A couple of alternatives: note that these are listed in order of simplicity/preference. 
 
-SGO: Caveat: if you don't like this one, you probably won't like the ones that follow. Alternative 1: to pick a different sigil compatible with the resolution mechanism. (i.e. two underscores for extensions). Problem is it's not very ergonomic, but it is the most sound and simplest solution. Alternative 2: different sigil, but incompatible with current resolution. For example: `\``, e.g. `0x12_34_ab\`bytes`, which is slightly more ergonomic but it's incompatible with current options. Alternative 3: restrict extension to decimals. Because separators don't allow underscores at the end of the number, we can guarantee that the extension is unambiguous, but doing so means we can't use decimals. 
+SGO: Caveat: if you don't like this one, you probably won't like the ones that follow. Alternative 1: to pick a different sigil compatible with the resolution mechanism. (i.e. two underscores for extensions). Problem is it's not very ergonomic, but it is the most sound and simplest solution. Alternative 2: different sigil, but incompatible with current resolution. For example: `` ` ``, e.g. `` 0x12_34_ab`bytes ``, which is slightly more ergonomic but it's incompatible with current options. Alternative 3: restrict extension to decimals. Because separators don't allow underscores at the end of the number, we can guarantee that the extension is unambiguous, but doing so means we can't use decimals. 
 
 YK: What is the set of things in decimal literal. 
 

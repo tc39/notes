@@ -366,7 +366,7 @@ DE: Let's continue this offline. Do we have consensus with the TDZ tweak?
 
 (Shu-yu Guo)
 
-- [proposal](http://github.com/tc39/proposal-static-class-features/)
+- [proposal](https://github.com/tc39/proposal-static-class-features/)
 - [slides](https://docs.google.com/presentation/d/1YzFr7EIGiX2YagfFMjkI-lVR6ouoRfPbTNLY--NGbC4/)
 
 SYG: Last meeting we tried to move forward without static private. Public static fields are properties on the constructor: you declare them as static, and they are writeable, and configurable. The controversial part is private static fields and methods: we are adding back private static fields and methods because there are feelings of filling out the features grid, for better organization of code. The main sticking point has been the subclassing hazard. My conclusion is that it's not that bad. Private combines lexical scoping with a restriction of what the receiver can be—both these things are important. Private is a strict subset of the behavior of public things. It has to be lexically scoped, and there's a provenance restriction on the receiver. We care about where the receiver came from, if it's not from the right place, it throws. For instances, the provenance is "created by the class". Everyone seems to agree on that. If it's not the right instance, it'll throw. There is no prototype lookup for this. It has to be directly constructed. For static, the provenance is _just_ the class constructor. We feel that private static is well motivated for factory pattern and extracting code. 

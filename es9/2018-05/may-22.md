@@ -688,7 +688,7 @@ KG: There are lots of APIs that take a list of key-value tuples _from_ an Object
 
 (Myles Borins)
 
-- [proposal](http://github.com/mylesborins/proposal-top-level-await/)
+- [proposal](https://github.com/mylesborins/proposal-top-level-await/)
 - [slides](https://docs.google.com/presentation/d/1lTTiNosXlqk78FO7Ze_CdMbF3PhO36kCk-mT783wpi8/)
 
 MBS: The main use case for this is immediately-invoked async functions, especially in the context of module graphs. People are exporting a main or then module methods, then awaiting for the import. Top level await alleviates the need for this pattern.

@@ -702,7 +702,7 @@ MB: Agreed
  - [proposal](https://github.com/devsnek/proposal-symbol-thenable)
  - [slides]()
 
-JHD: Exporting a named `then` function from a module makes the module a thenable. This logically follows the promise protocol, but means there is now no way to dynamically import a module with a then function. Refactoring hazards exist. Someone could write a module that blocks itself from dynamic import. It's super weird conceptually, but it logically follows from the way Promises work, but it is a problem. This came up with members trying to implement custom module loader in node. There is no way to get a dynamically imported module record. V8 can provide hooks, there are workaround but it surfaced the issue. DD said it would be bad if module namespace objects were magick where they weren't thennable. Namespace objects are thennable now, they shouldn't be through dynamic import - it should be a static picture of the module. Its weird if we make them magick. `import('bar')` would give different output to `import foo from 'bar'`. Generic solution is to make a thennable object not be thennable. 
+JHD: Exporting a named `then` function from a module makes the module a thenable. This logically follows the promise protocol, but means there is now no way to dynamically import a module with a then function. Refactoring hazards exist. Someone could write a module that blocks itself from dynamic import. It's super weird conceptually, but it logically follows from the way Promises work, but it is a problem. This came up with members trying to implement custom module loader in node. There is no way to get a dynamically imported module record. V8 can provide hooks, there are workaround but it surfaced the issue. DD said it would be bad if module namespace objects were magick where they weren't thenable. Namespace objects are thenable now, they shouldn't be through dynamic import - it should be a static picture of the module. Its weird if we make them magick. `import('bar')` would give different output to `import foo from 'bar'`. Generic solution is to make a thenable object not be thenable. 
 
 DD: I was saying this is a generic problem, not that we should solve it.
 
@@ -710,7 +710,7 @@ JHD: Fair, it's a generic problem. The premise here is that we're faced with *.i
 
 DD: 4/4 browsers ship this I think
 
-JHD: This will be rarely used Im sure except when someone wants to exploit it. Another solution is to block `export then`. This is weird though - only current forbidden is `export default` which is not really forbidden, just default export. I think this proposal with `Symbol.thennable = false` to block the object being a coerced to Promises is a good one. Hoping for stage 1 today - we have spec text for stage 2. Do we want to pursue this or not? If we do, we want to go rapidly. 
+JHD: This will be rarely used Im sure except when someone wants to exploit it. Another solution is to block `export then`. This is weird though - only current forbidden is `export default` which is not really forbidden, just default export. I think this proposal with `Symbol.thenable = false` to block the object being a coerced to Promises is a good one. Hoping for stage 1 today - we have spec text for stage 2. Do we want to pursue this or not? If we do, we want to go rapidly. 
 
 BN: Module authors can't choose to export a Symbol.thenable-named export (because it's not an identifier), so this would have to be a blanket policy. Should module authors have control over this?
 
@@ -762,7 +762,7 @@ MM: People are exporting `then`?
 
 DD: People are doing it in lieu of top-level `await`.
 
-MM: Oh my god. In that case I withdraw my suggestion. Status quo is sufficient - we should simply explain the issue. It is just something JS devs will have to understand. Asynchronous constructs --- promise, async iterators, etc --- only promise non-thenables. Thennables are plumbing through which they rech the non-thenables. JavaScript programmers already have to understand that. 
+MM: Oh my god. In that case I withdraw my suggestion. Status quo is sufficient - we should simply explain the issue. It is just something JS devs will have to understand. Asynchronous constructs --- promise, async iterators, etc --- only promise non-thenables. Thenables are plumbing through which they rech the non-thenables. JavaScript programmers already have to understand that. 
 
 JHD: What happens if top-level await lands? How do we feel about that? People are then immediately provided a migration path.
 
@@ -778,7 +778,7 @@ JHD: But there is a way around the coercion.
 
 DD: There is no way. If you want to add something with `valueOf` it'll invoke `valueOf`
 
-JHD: We dont have to dig into it here and now — I think there is a subtle difference of thennable than `valueOf`. I agree a generic anti protocol approach is bad though.
+JHD: We dont have to dig into it here and now — I think there is a subtle difference of thenable than `valueOf`. I agree a generic anti protocol approach is bad though.
 
 BFS: We're talking about webcompat concerns. Is dynamic import shipped?
 

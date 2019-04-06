@@ -1,6 +1,6 @@
 # Summary for the 64th meeting of Ecma TC39
 
-Ecma Technical Committee 39 held three day meeting at Bloomberg in NYC on May 22nd - May 24th, 2018. [Agenda can be found here](https://github.com/tc39/agendas/blob/master/2018/05.md) (note: committee has adopted new agenda formart based on the stage of proposals)
+Ecma Technical Committee 39 held three day meeting at Bloomberg in NYC on May 22nd - May 24th, 2018. [Agenda can be found here](https://github.com/tc39/agendas/blob/master/2018/05.md) (note: committee has adopted new agenda format based on the stage of proposals)
 
 ## New Proposals
 TC39 discussed 10 new proposals. 7 entered staging process to discuss towards specification, and 3 remains at Stage 0 for further investigation before consensus.  

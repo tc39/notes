@@ -700,7 +700,6 @@ MB: Agreed
 ## Symbol.thenable for stage 1 (or 2?)
 
  - [proposal](https://github.com/devsnek/proposal-symbol-thenable)
- - [slides]()
 
 JHD: Exporting a named `then` function from a module makes the module a thenable. This logically follows the promise protocol, but means there is now no way to dynamically import a module with a then function. Refactoring hazards exist. Someone could write a module that blocks itself from dynamic import. It's super weird conceptually, but it logically follows from the way Promises work, but it is a problem. This came up with members trying to implement custom module loader in node. There is no way to get a dynamically imported module record. V8 can provide hooks, there are workaround but it surfaced the issue. DD said it would be bad if module namespace objects were magick where they weren't thenable. Namespace objects are thenable now, they shouldn't be through dynamic import - it should be a static picture of the module. Its weird if we make them magick. `import('bar')` would give different output to `import foo from 'bar'`. Generic solution is to make a thenable object not be thenable. 
 

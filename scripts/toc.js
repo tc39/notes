@@ -21,7 +21,7 @@ const yargv = yargs
 const argv = yargv.argv;
 
 if (argv.all) {
-  glob("./es+([0-9])/20[1-2][0-9]-[0-3][0-9]", (error, results) => {
+  glob("./meetings/20[1-2][0-9]-[0-3][0-9]", (error, results) => {
     if (error) {
       throw error;
     }

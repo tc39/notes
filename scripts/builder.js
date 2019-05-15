@@ -92,7 +92,7 @@ function indentation(filename) {
   }, 0);
 }
 
-glob("./es*/**/*.md", (error, results) => {
+glob("./meetings/**/*.md", (error, results) => {
   const links = [];
   let meeting = "";
 
@@ -102,7 +102,7 @@ glob("./es*/**/*.md", (error, results) => {
     const indent = indentWidth ? " ".repeat(indentWidth) : "";
     const title = original.split('\n')[0].replace("# ", "").trim();
     const fileName = file
-      .replace(/\.\/es.\//, "")
+      .replace(/\.\/meetings\//, "")
       .replace(/(\d{4}-\d{2})\//, "$1_")
       .replace(".md", ".html");
 

@@ -157,7 +157,7 @@ BT: I would also guess GitHub TOS restrict multi accounts.
 
 TCN: I can confirm that from the Node perspective, GitHub is helpful to deal with multi accounts.
 
-AKI: Do we need consensus on whether to name the individual? The CoC Committee focusses on privacy and confidentiality. We would like to privately share within TC39 the usernames, but not publicly. The current policy is to not disclose that information with TC39.
+AKI: Do we need consensus on whether to name the individual? The CoC Committee focuses on privacy and confidentiality. We would like to privately share within TC39 the usernames, but not publicly. The current policy is to not disclose that information with TC39.
 
 MS: What is the motivation to disclose that information?
 

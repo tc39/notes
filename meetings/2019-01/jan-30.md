@@ -456,7 +456,7 @@ YK: I agree that I'm jumping to conclusion, but the community is waiting for us 
 
 MS: If decorators are standardized in a different venue, implementers might never implement it.
 
-YK: you are speculating that impremeenters got together....
+YK: you are speculating that implementers got together....
 
 MS: No, I'm saying that if we take it to another venue, implementers don't have a voice. And if we keep it here and keep a proposal that implementers are happy with, that's a better end result.
 

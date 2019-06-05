@@ -1,6 +1,6 @@
 # Summary for the 69th meeting of Ecma TC39
 
-Ecma Technical Committee 39 held three day meeting hosted by Google in New York, NY on March 26th to Math 28th, 2019. [Agenda can be found here](https://github.com/tc39/agendas/blob/master/2019/03.md).
+Ecma Technical Committee 39 held three day meeting hosted by Google in New York, NY on March 26th to March 28th, 2019. [Agenda can be found here](https://github.com/tc39/agendas/blob/master/2019/03.md).
 
 - [March 26, 2019 Meeting Notes](mar-26.md#march-26-2019-meeting-notes)
 - [March 27, 2019 Meeting Notes](mar-27.md#march-27-2019-meeting-notes)

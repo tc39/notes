@@ -54,7 +54,9 @@ AKI: sounds like consensus, no objection.
 
 #### Conclusion/Resolution
 
-Consensus for stage 3.
+- Stage 3 acceptance
+
+
 ## Empirical Evidence for Programming Language Design
 (Dr. Felienne Hermans)
 
@@ -211,7 +213,7 @@ FHS: No, if study goes beyond syntax, needs to run a lot longer. On syntax runs 
 
 NTE: Also making someone programming in Lisp for 20 years would be immoral.
 
-## Break
+
 ## JavaScript and Syntax Research Methods
 
 Yulia Startsev (YSK)
@@ -554,7 +556,7 @@ LBR: Thanks for the clarification.
 
 #### Conclusion/Resolution
 
-Stage 3 pending one editor (KS).
+- Stage 3 acceptance (pending one editor (KS).)
 
 ## Continuation of Layering Job Queue
 
@@ -573,6 +575,8 @@ DE: From here, we can work with the editors and MM and land this without further
 
 Concluded that the multiple host hook approach (e.g., HostEnqueuePromiseJob) preserves the current semantics, and that we agree to make this change.
 DE to work with the editors and MM and land this; no additional review from the committee as MM had the only concerns
+
+
 ## Note taking
 
 VYG: talking about to make notes taking easier. We have a few questions for the committee. Think that it's going to be ongoing convo. We're going to open an issue on reflector to talk about that.
@@ -650,6 +654,7 @@ YSV: Doing reading notes for 2 reasons: annotations for Rationale project, and d
 TCN: Would love to chat with you to address your comments
 
 ## How we work
+
 - github.com/tc39/how-we-work
 Yulia Startsev (YSV)
 

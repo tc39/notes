@@ -1,8 +1,6 @@
 # June 5, 2019 Meeting Notes
 -----
-Istvan Sebestyen (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Till Schneidereit (TST), Logan Smyth (LSH), Yulia Startsev (YSV), Ben Coe (BCE), Guy Bedford (GBD), Myles Borins (MBS), Domenic Denicola (DD), Jack Steinberg (JBS), Sven Sauleau (SSU), Clark Sampson (CSN), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Henry Zhu (HZU), Alan Schmitt (AS), Justin Ridgewell (JRL), Patrick Soquet (PST), Peter Hoddie (PHE), Caio Lima (CLA), Daniel Ehrenberg (DE), Anne van Kesteren (AVK), Shu-yu Guo (SYG), Ross Kirsling (RKG), Keith Miller (KM), Mattijs Hoitink (MHK), Michael Saboff (MS), Guilherme Hermeto (GHO), Rob Palmer (RPR), Philipp Dunkel (PDL), Szabolcs Szabolcsi-Toth (SZT), Nicolò Ribaudo (NRO), Joyee Cheung (JCG), Kevin Gibbons (KG), Aki Rose (AKI), Tierney Cyren (TCN), Amal Hussein (AHN), Julien Gilli (JGI), Sean Larkin (SLN), Sathya Gunasekaran (SGN), Daniel Rosenwasser (DRR), Randy Luecke (RCL), Kat Marchan (KMN), Andrew Paproki (API)
-
-Mark Miller (MM), Joe Sepi (JSI)
+Istvan Sebestyen (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Till Schneidereit (TST), Logan Smyth (LSH), Yulia Startsev (YSV), Ben Coe (BCE), Guy Bedford (GBD), Myles Borins (MBS), Domenic Denicola (DD), Jack Steinberg (JBS), Sven Sauleau (SSU), Clark Sampson (CSN), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Henry Zhu (HZU), Alan Schmitt (AS), Justin Ridgewell (JRL), Patrick Soquet (PST), Peter Hoddie (PHE), Caio Lima (CLA), Daniel Ehrenberg (DE), Anne van Kesteren (AVK), Shu-yu Guo (SYG), Ross Kirsling (RKG), Keith Miller (KM), Mattijs Hoitink (MHK), Michael Saboff (MS), Guilherme Hermeto (GHO), Rob Palmer (RPR), Philipp Dunkel (PDL), Szabolcs Szabolcsi-Toth (SZT), Nicolò Ribaudo (NRO), Joyee Cheung (JCG), Kevin Gibbons (KG), Aki Rose (AKI), Tierney Cyren (TCN), Amal Hussein (AHN), Julien Gilli (JGI), Sean Larkin (SLN), Sathya Gunasekaran (SGN), Daniel Rosenwasser (DRR), Randy Luecke (RCL), Kat Marchan (KMN), Andrew Paproki (API), Mark Miller (MM), Joe Sepi (JSI)
 
 Remote:
 Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LBR), Frank Yung-Fong Tang (FTG), Mike Samuel (MSL), Shane Carr (SFC), Jordan Gensler (JGR), Robert Pamely (RPY)
@@ -51,8 +49,8 @@ FTG: In V8 it's already implemented behind a flag, and I do plan to submit tests
 
 #### Conclusion/Resolution
 
-Consensus: it needs to meet stage 4 similar requirements
-Test262 tests should be merged first
+- needs to meet stage 4 similar requirements Test262 tests should be merged first
+
 
 ## ECMA-402: add dayPeriod option
 
@@ -72,10 +70,10 @@ FTG: Any question?
 MBS: Doesn't appear we have any question and there is nothing in the queue.
 
 FTG: We'll go through the same process as for the previous proposal
+
 #### Conclusion/Resolution
 
-Consensus: it needs to meet stage 4 similar requirements
-Test262 tests should be merged first
+- needs to meet stage 4 similar requirements Test262 tests should be merged first
 
 
 ## ECMA-402: add millisecondsDigits option
@@ -111,8 +109,8 @@ MBS: We can move to the next item as long as anyone else has nothing to bring up
 
 #### Conclusion/Resolution
 
-Consensus: it needs to meet stage 4 similar requirements
-Test262 tests should be merged first
+- needs to meet stage 4 similar requirements Test262 tests should be merged first
+
 
 ## ECMA-402: Intl.DisplayNames
 
@@ -204,10 +202,11 @@ LBR: We can get it async.
 
 #### Conclusion/Resolution
 
-Proposal has been accepted for stage 2.
-Reviewers:
-Daniel Ehrenberg
-More to be found async.
+- Stage 2 acceptance
+- Stage 3 reviewers: 
+  - Daniel Ehrenberg
+  - More to be found async.
+  -
 
 ## Emitter for Stage 1
 
@@ -486,7 +485,8 @@ PED: To know what goals and non goals would be helpful for us.
 
 #### Conclusion/Resolution
 
-Moving to stage 1
+- Stage 1 acceptance
+
 
 ## Array.isTemplateObject for Stage 1 or 2
 
@@ -558,8 +558,11 @@ MSL: I would like to yes.
 
 #### Conclusion/Resolution
 
-We have consensus for Stage 2.
-Reviewers: MM, JRL
+- Stage 2 acceptance 
+- Stage 3 reviewers: 
+  - Mark Miller
+  - Justin Ridgewell
+
 
 ## evalable for Stage 1 or 2
 
@@ -644,9 +647,9 @@ MBS: any objection moving to stage 1? See thumbs up from MM, don't hear any obje
 
 #### Conclusion/Resolution
 
-Move to stage 1
-discuss with Mark Miller and Kevin Gibbons about concerns.
-MM and KG both have objections, both need to be resolved before stage 2.
+- Stage 1 acceptance
+- discuss with Mark Miller and Kevin Gibbons about concerns.
+- MM and KG both have objections, both need to be resolved before stage 2.
 
 ## Host compile value adjustment for Stage 1 or 2
 
@@ -759,9 +762,9 @@ MSL: So seems no on stage 2 for this. Combined into the other since the other on
 
 #### Conclusion/Resolution
 
-No consensus for Stage 2 yet.
-Combine with prior stage 1 proposal.
-Will be revisited at future meeting
+- No consensus for Stage 2 yet.
+- Combine with prior stage 1 proposal.
+- Will be revisited at future meeting
 
 
 
@@ -1031,6 +1034,7 @@ DE: happy to hear more with more time.
 
 The committee does not have consensus on this particular model, and will continue to think about single vs multiple namespaces, and governance models for the namespace(s).
 
+
 ## Optional Chaining for Stage 2
 
 Justin Ridgewell (JRL)
@@ -1092,9 +1096,10 @@ JRL: Waldemar actually reviewed grammar and spec's semantics.
 
 #### Conclusions/Resolution
 
-Proceeding to Stage 2.
-
-Reviewers: DE mentoring RK, BCE. Find another one before the day
+- Stage 2 acceptance
+- Reviewers: 
+  - DE mentoring RKG, BCE. 
+  - Find another one before the day
 
 
 ## Nullish Coalescing for Stage 2
@@ -1155,10 +1160,13 @@ DE: Question on whether reviewers should be in common with previous proposal.
 
 #### Conclusion/Resolution
 
-We have stage 2
-Reviewers: RK, YSK.
+- Stage 2 acceptance
+- Reviewers: 
+  - RKG
+  - YSK
 
 ## Status update on non-JS module types (e.g., JSON, CSS, WebIDL) 
+
 (DE)
 
 - [proposal](https://github.com/tc39/???)
@@ -1274,7 +1282,8 @@ Nothing we're looking for.
 
 
 ## Promise.any
-Kevin Gibbons
+
+(Kevin Gibbons)
 
 - [proposal](https://github.com/tc39/proposal-promise-any/)
 - [slides](???)
@@ -1302,4 +1311,4 @@ NTE: Huge thanks to JGI for hero-ing the notes today! (Applause)
 
 #### Conclusion/Resolution
 
-Reviewers: POK, LBR
+- Reviewers: POK, LBR

@@ -179,8 +179,8 @@ DE: Does anybody else have concerns or would be interested in contributing?
 
 #### Conclusion/Resolution
 
-Consensus for Stage 4, pending editor signoff on PR (update: now approved)
-Designed champion for import.meta is Myles Borins.
+- Stage 4 acceptance
+
 
 ## Let all early errors be Syntax Errors
 
@@ -360,7 +360,7 @@ MM: you listed a bunch of implementations but you didn't list XS. I assume it is
 
 #### Conclusion/Resolution
 
-Consensus for Stage 4, pending editor signoff on PR
+- Stage 4 acceptance (pending editor signoff on PR)
 
 
 
@@ -911,7 +911,7 @@ Linters and static type analysis will be helpful to support devs to migrate appl
 
 #### Conclusion/Resolution
 
-No conclusion, this presentation is just for TC39's information. MSL will be submitting Stage 0 soon.
+- No conclusion, this presentation is just for TC39's information. MSL will be submitting Stage 0 soon.
 
 
 

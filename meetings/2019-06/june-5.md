@@ -487,7 +487,7 @@ PED: To know what goals and non goals would be helpful for us.
 (Mike Samuel)
 
 - [proposal](https://github.com/mikesamuel/proposal-array-is-template-object)
-- [slides](https://docs.google.com/presentation/d/e/2PACX-1vT3dGkd1KFrS-9iLOtI3kqyicOP6v-vMOh__KyI7k6Q-nO9o_qAcb9hmfakhCVftoyBXVhgN6sNBBrj/) [link is broken]
+- [slides](https://docs.google.com/presentation/d/e/2PACX-1vT3dGkd1KFrS-9iLOtI3kqyicOP6v-vMOh__KyI7k6Q-nO9o_qAcb9hmfakhCVftoyBXVhgN6sNBBrj/pub?start=false&loop=false&delayms=60000)
 
 MSL: Talked yesterday about trusted types. Draft of very small proposals meant to enable trusted types. To follow along, useful URLs. Explainer, spec draft and tests. Asking for stage 1 or stage 2 if everybody likes the draft.
 

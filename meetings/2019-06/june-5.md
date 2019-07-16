@@ -6,7 +6,6 @@ Remote:
 Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LBR), Frank Yung-Fong Tang (FTG), Mike Samuel (MSL), Shane Carr (SFC), Jordan Gensler (JGR), Robert Pamely (RPY)
 -----
 
-
 # Agenda
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2019/06.md)
@@ -27,11 +26,11 @@ FTG: New type for quarter returned by formatToParts.
 
 MBS: Can we have a consensus with the PR process?
 
-DE: when we're adding features like this that require implementation work, I encourage us to go through something analogous to our [missed] process. Something Frank and I talked about offline. At least one implementation and buy in from another one, ideal 2 implementations and tests before landing. If we came to consensus today there would still be things I'd like to see from a PR. Also want to mention that Jordan asked it to be a stage proposal. As long as we hold real requirements similar, I don't think requiring a formal stage process is not necessarily required.
+DE: when we're adding features like this that require implementation work, I encourage us to go through something analogous to our (missed) process. Something Frank and I talked about offline. At least one implementation and buy in from another one, ideal 2 implementations and tests before landing. If we came to consensus today there would still be things I'd like to see from a PR. Also want to mention that Jordan asked it to be a stage proposal. As long as we hold real requirements similar, I don't think requiring a formal stage process is not necessarily required.
 
-SFC: Wanted to discuss where do we draw the line between what requires a proposal and what requires a PR. The current change proposed is completely consistent with the way Intl.DateTimeFormat currently works. No new design is being added, so there is no really serious design question. These PRs don't really set any precedent. 
+SFC: Wanted to discuss where do we draw the line between what requires a proposal and what requires a PR. The current change proposed is completely consistent with the way Intl.DateTimeFormat currently works. No new design is being added, so there is no really serious design question. These PRs don't really set any precedent.
 
-SGN: what's the binary size increase? 
+SGN: what's the binary size increase?
 
 FTG: This is already included in the data for use with the datetimeformat
 
@@ -50,7 +49,6 @@ FTG: In V8 it's already implemented behind a flag, and I do plan to submit tests
 #### Conclusion/Resolution
 
 - needs to meet stage 4 similar requirements Test262 tests should be merged first
-
 
 ## ECMA-402: add dayPeriod option
 
@@ -75,7 +73,6 @@ FTG: We'll go through the same process as for the previous proposal
 
 - needs to meet stage 4 similar requirements Test262 tests should be merged first
 
-
 ## ECMA-402: add millisecondsDigits option
 
 Frank Yung-Fong Tang
@@ -97,7 +94,7 @@ FTG: Interesting point, any suggestion about what that would be called.
 
 PDL: I'd call it `subsecondDigits`, but open to different name.
 
-MBS: I think that's a great suggestion. 
+MBS: I think that's a great suggestion.
 
 FTG: I can get this discussed on the PR
 
@@ -111,24 +108,24 @@ MBS: We can move to the next item as long as anyone else has nothing to bring up
 
 - needs to meet stage 4 similar requirements Test262 tests should be merged first
 
-
 ## ECMA-402: Intl.DisplayNames
 
-Frank Yung-Fong Tang
+(Frank Yung-Fong Tang)
+
 - [proposal](https://github.com/tc39/proposal-intl-displaynames)
 - [slides](https://goo.gl/ZAaVds)
 
 FTG: Proposal not a PR. currently in stage 1 already. Would like to advance it to stage 2. New api we propose to adding tointl library. [referring to slide].
 
-FTG: We do not want it to be a general purpose thing but rather something that browser [missed]
+FTG: We do not want it to be a general purpose thing but rather something that browser (missed)
 
 (referring to slides for benefits)
 
 FTG: Current status is stage 1 in January tc39. Spec has been drafted. Propose to advance to Stage 2, and show what changed since then
 
-FTG: Locale, region and [missed]
+FTG: Locale, region and (missed)
 
-FTG: Hard to extend, lot of time when the caller try to construct this object to pass this one Try to simplify and try to have one method of . Recently having people suggest adding a [control?] fallback.
+FTG: Hard to extend, lot of time when the caller try to construct this object to pass this one Try to simplify and try to have one method of . Recently having people suggest adding a (control?) fallback.
 
 FTG: Yellow one in slides are the new ones after stage 1. (referring to slide "Proposal")
 
@@ -136,13 +133,13 @@ FTG: Other methods that support locales of, options of Intl API are still there.
 
 FTG: (showing examples slide with title "Examples: Get Region Names in English")
 
-FTG: We expect the key to pass in to be either ISO region or UN M.49 numeric code in the type of string. For example '419' for Latin America. 
+FTG: We expect the key to pass in to be either ISO region or UN M.49 numeric code in the type of string. For example '419' for Latin America.
 
-(showing slide for traditional chinese example) 
+(showing slide for traditional chinese example)
 
 FTG: We can call this API to get a string without sending the translation across the web. All browsers have it built-in, because their own UI need to display those.
 
-FTG: Script referring to writing system. If it's not syntactically correct code it will throw an exception. All data is from CLDR unicode consortium Can also use type 'language'. Can be language code, language with region, language with [missed] and region.
+FTG: Script referring to writing system. If it's not syntactically correct code it will throw an exception. All data is from CLDR unicode consortium Can also use type 'language'. Can be language code, language with region, language with (missed) and region.
 
 FTG: Any question so far about what I presented?
 
@@ -150,7 +147,7 @@ FTG: New concept, new option I added after stage 1 which is currency. We already
 
 (showing examples slide)
 
-FTG: Another new one we considered is datefield. Datefield is the name of a date field. Don't have a particular iso standard to define a key. We define a [missed] in the spec to define what can be accessed.
+FTG: Another new one we considered is datefield. Datefield is the name of a date field. Don't have a particular iso standard to define a key. We define a (missed) in the spec to define what can be accessed.
 
 (Showing date field names examples slide)
 
@@ -164,7 +161,7 @@ FTG: Another example for using that with a locale example.
 
 FTG: Another option is fallback. Lots of discussion in the committee when we have. We have two kinds of level: language code, two letters, if it's not right we throw an exception.What should we do when we don't have the resources for a given code. Some argue we should throw exception, some argue we should return undefined, some that we should return the code.
 
-FTG: We should have default: if don't have the resource for the code we should just return the code passed in. If none, in that case we return undefined. One case is for caller to use for the UI. Maybe library will [missed] from somewhere else.
+FTG: We should have default: if don't have the resource for the code we should just return the code passed in. If none, in that case we return undefined. One case is for caller to use for the UI. Maybe library will (missed) from somewhere else.
 
 FTG: Secondary functions which is already defined. Trying to support those. Following the same semantics. Prototype is in the CL by me. Depends on ICU to provide data. Depending on three different libraries to implement several types.
 
@@ -190,7 +187,7 @@ MBS: Any reviewers for stage 3?
 
 LBR: Really excited with this one, I think I'm already in.
 
-FTG: Good enough to have just 2, do we need from other companies? 
+FTG: Good enough to have just 2, do we need from other companies?
 
 MBS: 2 editors and reviewers sign off. Seems like need one more reviewer than what you have today.
 
@@ -203,10 +200,9 @@ LBR: We can get it async.
 #### Conclusion/Resolution
 
 - Stage 2 acceptance
-- Stage 3 reviewers: 
+- Stage 3 reviewers:
   - Daniel Ehrenberg
   - More to be found async.
-  -
 
 ## Emitter for Stage 1
 
@@ -224,7 +220,7 @@ SYG: The problems are 1) you have to move data from one place to another, and yo
 SYG: 2) The other one is you're removing data but want to do some computation with the data. It's often together with moving data. Simplest map generics (map, reduce, filter), set generics.
 
 SYG: Community thought a lot about this space. Will provide sample of libraries that deal with both issues. Some more recent libs that try to tackle both problems at once.
-Prior Art: Lodash. Provides higher order of them. Not only map over concrete thing, you can also 
+Prior Art: Lodash. Provides higher order of them. Not only map over concrete thing, you can also
 Prior Art: Transducers. Generalize something like that into transducers. Is there a library that does transducers?
 
 PED: Yes, there's basically different things but we'd like to go through different use cases. Lodash is a bit older, but it provides the transducer paradigm. You can write these all using standard function composition using reducers.
@@ -235,7 +231,7 @@ SYG: This is kind of the functional programming, more academic heritage, if you 
 
 SYG: This is a generalization if we talk about data transformations if we want to make those first class things, that's an example of where the community has gone with data transformations.
 
-Prior Art: Concurrency. Also stuff try to purely solve some data concurrency issues, If you want to limit number of operations happening at once. It's hard to do n things at a time. It's very hard to figure out how to do n things at a time. p-limit/p-map are single functions that are almost as popular as the whole of Lodash . These basic concurrency things are 
+Prior Art: Concurrency. Also stuff try to purely solve some data concurrency issues, If you want to limit number of operations happening at once. It's hard to do n things at a time. It's very hard to figure out how to do n things at a time. p-limit/p-map are single functions that are almost as popular as the whole of Lodash . These basic concurrency things are
 
 Prior Art: RxJS. Tries to solve both conveyance and transformation at once. Set sink, source, and compose your pipeline. I'm told that the bidirectional nature has been a source of confusion. Single consumer. A push based primitive with single consumer is limiting.
 
@@ -255,7 +251,6 @@ Prior Art: Iterator Helpers. Instead of standalone generics, we can put these on
 
 Prior Art: Observables. We've talked about these previously if we want to do this push-based thing. Don't want to delve in here. We aim to overcome the issues that held up Observables in the past. It has the bidirectional push/pull problems that RxJS had. There were ergonomics issues with observables that didn't integrate nicely with the rest of the language. Part of the proposal we're working on is to integrate nicely and make it feel javascript-y.
 
-
 New Proposal: A unifying primitive for conveyance and transformation.
 Ergonomic, performant, integrates with the language. Ambitious high level goals.
 Push-based. Multi-consumer. Unidirectional - easy to reason about.
@@ -263,7 +258,7 @@ Combines conveyance and transform into a single first class value you can pass a
 
 SYG: What we hope the proposal enables is that it is expressive and easy to reason about. It's ergonomic and can be integrated into the language. Can be made highly performant.
 
-SYG: What is an Emitter? [see slide 19]  next() sends in data, custom code runs in the emitter, decides what to emit using send().
+SYG: What is an Emitter? (see slide 19)  next() sends in data, custom code runs in the emitter, decides what to emit using send().
 Everything flows one way.
 
 SYG: Promises are resolved in a unidirectional way too.
@@ -272,7 +267,7 @@ SYG: The way you'd do async processing with the emitter proposal. You always wai
 
 SYG: With this unidirectional thing, as with Async, it becomes very natural to wait on the last emitter—when it has the result of the pipeline that precedes it. This highlights one of the properties (points to the slides about properties) where each point on the left becomes very easy to understand. We want these semantics to be composable. We want you to always be able to work out the data regardless of what direction data is going.
 
-SYG: Actual API now. [see slide 21] `.each()` is what connects one emitter to another. Up for discussion on the API. this is the current state of API. Connect it with another emitter with each call. Ultimately not connecting functions, you're connecting emitters with other emitters.
+SYG: Actual API now. (see slide 21) `.each()` is what connects one emitter to another. Up for discussion on the API. this is the current state of API. Connect it with another emitter with each call. Ultimately not connecting functions, you're connecting emitters with other emitters.
 
 SYG: The emitter is in full control of when it sends stuff out of the emitter.
 
@@ -282,7 +277,7 @@ SYG: You can delay sending stuff out with a timeout.
 
 PED: EventTarget/EvertEmitter is confused because anyone who grabs it can send stuff into it.
 
-PED: [see slide 22] One Emitter connects to another Emitter. Creates/returns a new Emitter.
+PED: (see slide 22) One Emitter connects to another Emitter. Creates/returns a new Emitter.
 
 SYG: In contrast with some earlier libraries, You can create these declarative pipelines only with functions. Each thing is now just a function.
 
@@ -309,9 +304,9 @@ AKI: This is going beyond the scope of a clarifying question.
 
 SYG: For the event use case, not only have it be a nice computation primitive, but also perhaps unify how we think about events. Currently you pass callbacks into events and an event gets generated. Can layer event emitter concept on top in backward compat way.
 
-PED: Don't have to change existing eventemitter APIs. 
+PED: Don't have to change existing eventemitter APIs.
 
-SYG: [see slide 25] More complicated example, main idea: we have standardized many things that helped linearize and refactor logic to be more understandable. Still some use cases that currently necessitate use of shared mutable state with something that looks like callback.
+SYG: (see slide 25) More complicated example, main idea: we have standardized many things that helped linearize and refactor logic to be more understandable. Still some use cases that currently necessitate use of shared mutable state with something that looks like callback.
 
 PED: Example of emitter primitive would allow us to do. Example of cluster stabilisation
 
@@ -323,11 +318,11 @@ DD: Are you proposing to change eventTarget, because it is bidirectional.
 
 PED: The value is going through synchronously (unless you deliberately delay it), so that is possible to do.
 
-PED: Some aspects of it will be up for discussion. 
+PED: Some aspects of it will be up for discussion.
 
 AVK: That means that it's not unidirectional, right?
 
-PED: It is unidirectional. 
+PED: It is unidirectional.
 
 PED: What is going backwards in this case?
 
@@ -345,7 +340,7 @@ PED: Main thing is piece in green was spread out in different places, now in one
 
 SYG: The difference with debounce is shared mutable state. Way I think about it: because not monotonic, all events have to participate every time you receive an event. Becomes easier to read.
 
-MM: The methods you're showing after the doc in the left-hand column inside of the code... After the "flatten", "filter", "tap", "filter", etc. what is there? 
+MM: The methods you're showing after the doc in the left-hand column inside of the code... After the "flatten", "filter", "tap", "filter", etc. what is there?
 
 SYG: it's a comma for separating arguments to the compose function..
 
@@ -355,7 +350,7 @@ PED: Next example: concurrency, setting up servers. Expressing this kind of logi
 
 SYG: If interested in why it's hard to express currently. Happy to answer that offline if interested. We believe this primitive enables new expression that was difficult before.
 
-SYG: Quick summary of API surface: [see slide titled "Summary"] some methods on prototype. Connecting emitters, sending stuff into emitters. Resolving emitter, rejecting it. There are some static helpers that help you compose pipelines or adapt existing collections as sources to feed into emitter. Set of operators out of the box to compose pipelines. Free to write your own emitters to do arbitrary code.
+SYG: Quick summary of API surface: (see slide titled "Summary") some methods on prototype. Connecting emitters, sending stuff into emitters. Resolving emitter, rejecting it. There are some static helpers that help you compose pipelines or adapt existing collections as sources to feed into emitter. Set of operators out of the box to compose pipelines. Free to write your own emitters to do arbitrary code.
 
 SYG: Why do we want to do this as a language/standard library feature? Why not do it completely in userland?
 
@@ -408,9 +403,9 @@ PED: It does have mechanism for back pressure, documented in repo. Previous work
 
 MM: Now I understand about waiting for promise at the end.
 
-PED: Can externally send values, resolved or rejected. 
+PED: Can externally send values, resolved or rejected.
 
-MM: Promise that's part of this protocol is basically a promise for the stream being done? If promise is rejected means stream is terminated, not because 
+MM: Promise that's part of this protocol is basically a promise for the stream being done? If promise is rejected means stream is terminated, not because
 
 PED: Promise represents the final state of the emitter which can be resolved/rejected.
 
@@ -418,7 +413,7 @@ MM: I want to encourage proposals to look at the debugging burden. Errors can ha
 
 DE: Would like to suggest 15 minutes extension.
 
-PED: [re: debugging] If you await a pipeline and it throws, you can use a try-catch.
+PED: (re: debugging) If you await a pipeline and it throws, you can use a try-catch.
 
 SYG: EventEmitters are first class values. Can give each Emitter an intermediate name and you can inspect that
 
@@ -427,12 +422,12 @@ MM: Thanks, I'm excited about this.
 DD: On backpressure: in my experience backpressure for push primitives doesn't work very well.
 
 PED: Absolutely, yes.
- 
+
 LBR: Second DE and DD's comments. I'd like more experimentation as a library. It's a swiss army knife - too many things. Repo is complicated. Would like to see more examples and more widespread usage. Not convinced of why it's important as a native feature rather than a library. The points here are not convincing me, still miss some pain points. Stated advantages seem to be about convincing the community to use the same thing. If this goes to stage 1 I'd like to have better illustration how everything works. I like better documentation of this. To clarify better the points of having this as native rather than as a library.
 
 PED: The repo is not like a readme. It documents research that we've done. Not finalized. Shows ideas we could consider. All libs are converging on similar API. If you agree with motivation this is problem space that we should look into.
 
-SYG: I would push back on the native vs lib argument. 
+SYG: I would push back on the native vs lib argument.
 
 LBR: I'm not yet convinced why we really need this for it to be native and why couldn't be done as library. I'd like to see better illustration of this. Why being a native feature. What does it enable that we cannot have as a library?
 
@@ -445,11 +440,11 @@ LBR: Don't want to block anything, just saying I might be missing some point her
 SGN: Why should this be a language feature? Point a./ b./ and f./ all seem like the same thing to me. Get motivation for core operators. Trying to understand if this is better for Collection methods.
 You would have to create an Emitter to operate on something.
 
-SGN: Not really convinced this is so much better. Not a fan of my proposal to be honest. Doesn't pipeline proposal subsume most of this? How does this work with the pipeline proposal? 
+SGN: Not really convinced this is so much better. Not a fan of my proposal to be honest. Doesn't pipeline proposal subsume most of this? How does this work with the pipeline proposal?
 
-SGN: Your point here about potential syntax, how does this work with Pipeline operator? 
+SGN: Your point here about potential syntax, how does this work with Pipeline operator?
 
-SYG: It was my understanding that pipeline was about functions, right? 
+SYG: It was my understanding that pipeline was about functions, right?
 
 SGN: Sure, but there's a lot of overlapping with this, right?
 
@@ -457,9 +452,9 @@ PED: If we add new collection, this would kind of work with that. Haven't seen t
 
 SGN: I'm not asking for an answer right now just saying something to think about for Stage 2—how this works with the pipeline operator. Not gonna block this for stage 1, I think this is fine.
 
-SYG: Not sure there's a better way to express collection transformation. Sounds to me we need to work together. 
+SYG: Not sure there's a better way to express collection transformation. Sounds to me we need to work together.
 
-SYG: And we should be more agnostic of the forms that feed into it. 
+SYG: And we should be more agnostic of the forms that feed into it.
 
 SYG:It would be interesting to see the performance characteristics.
 
@@ -487,31 +482,30 @@ PED: To know what goals and non goals would be helpful for us.
 
 - Stage 1 acceptance
 
-
 ## Array.isTemplateObject for Stage 1 or 2
 
-Mike Samuel
+(Mike Samuel)
 
 - [proposal](https://github.com/mikesamuel/proposal-array-is-template-object)
 - [slides](https://docs.google.com/presentation/d/e/2PACX-1vT3dGkd1KFrS-9iLOtI3kqyicOP6v-vMOh__KyI7k6Q-nO9o_qAcb9hmfakhCVftoyBXVhgN6sNBBrj/) [link is broken]
 
 MSL: Talked yesterday about trusted types. Draft of very small proposals meant to enable trusted types. To follow along, useful URLs. Explainer, spec draft and tests. Asking for stage 1 or stage 2 if everybody likes the draft.
 
-MSL: What is template object? When tag template string evaluated, string portions packed into object, passed to function identified by tag. Values are additional parameters. TemplateObject is abstraction that enables that. 
+MSL: What is template object? When tag template string evaluated, string portions packed into object, passed to function identified by tag. Values are additional parameters. TemplateObject is abstraction that enables that.
 
-MSL: Goals: see slide. In context of browser, relates to same origin policy. If put strings in template object, can use that as a signal that those strings need higher privilege. I work in security and these are things that come up a lot: where strings came from. 
+MSL: Goals: see slide. In context of browser, relates to same origin policy. If put strings in template object, can use that as a signal that those strings need higher privilege. I work in security and these are things that come up a lot: where strings came from.
 
-MSL: Proposal deals with this with small change. What it doesn't do, know whether thing was called as tag function. 
+MSL: Proposal deals with this with small change. What it doesn't do, know whether thing was called as tag function.
 
 MSL: Add new property to array constructor: isTemplateObject. Takes one value and calls out to spec abstraction. See runtime semantics slide. Spec text reminiscent of getTemplateObject abstraction. Return boolean instead of template object.
 
 MSL: In Test262 tests, plenty more examples. (See examples slide.)
 
-MSL: Working on internal list of template objects. Not a goal to determine a particular function was called as template object. 
+MSL: Working on internal list of template objects. Not a goal to determine a particular function was called as template object.
 
 MSL: That's about all I have. Can I answer questions?
 
-KG: Understand your use case for trusted types. Little concerned of adding to language if people use it for something other than that. The thing that tag functions are just functions is nice because don't need to reason about it as special things, and that continues to be the case. Is there a reason to want that for things other than trusted types? Is this a thing that we expected people use to implement overloads for arbitrary functions, or just for security properties? 
+KG: Understand your use case for trusted types. Little concerned of adding to language if people use it for something other than that. The thing that tag functions are just functions is nice because don't need to reason about it as special things, and that continues to be the case. Is there a reason to want that for things other than trusted types? Is this a thing that we expected people use to implement overloads for arbitrary functions, or just for security properties?
 
 MSL: Don't know of other use cases. Might be useful for say I have function, node mysql module, whether argument is a template object for mysql query if it's used as tag function then you do something to avoid SQL injection, otherwise use pre-tag api. For that don't need definite signal that this is from the realm internal signal. Short answer I don't know of other use cases.
 
@@ -533,11 +527,11 @@ MM: If object graph shares frozen primordials is the important case, sharing obj
 
 MSL: Based on spec analysis of where template obj specified. Template object cannot leak user's code. Nothing that user code can do to affect whether preexisting object is template object, can't observe template object when becomes template object.
 
-MM: 
+MM: ...
 
-MSL: It is equivalent to that and it is ecmascript parser that brands the template object when you parsing a template tag call site. 
+MSL: It is equivalent to that and it is ecmascript parser that brands the template object when you parsing a template tag call site.
 
-MM: SES context when mutually suspicious things coexisting under same root realm. Naively one could think, proposal doesn't do anything useful in that context. One could create 
+MM: SES context when mutually suspicious things coexisting under same root realm. Naively one could think, proposal doesn't do anything useful in that context. One could create
 Root realm is brand new set of primordials, compartment is within root realm, share primordials of the root realm.
 
 Mostly not inheritance relationship. Mostly just hold all primordials of root realm, create separate global scope.
@@ -558,11 +552,10 @@ MSL: I would like to yes.
 
 #### Conclusion/Resolution
 
-- Stage 2 acceptance 
-- Stage 3 reviewers: 
+- Stage 2 acceptance
+- Stage 3 reviewers:
   - Mark Miller
   - Justin Ridgewell
-
 
 ## evalable for Stage 1 or 2
 
@@ -575,11 +568,11 @@ MSL: Welcome everybody, you might remember me... [laughs]
 
 MSL: Similar to the last. Useful URls. Proposal also stage 0 going to 1 or 2. Do not have tests262 tests yet. May be simpler to test with web-platform-tests, depending on which way we go.
 
-MSL: So, for background, [in this slide] I'm printing an object that stringifies to "1". Then I try to eval it. Turns out that result of x is going to be same as o. Eval is identity function, except for strings. For trusted types we'd want to treat eval as a sink. Trusted types define sinks. They are abusable APIs. 
+MSL: So, for background, (in this slide) I'm printing an object that stringifies to "1". Then I try to eval it. Turns out that result of x is going to be same as o. Eval is identity function, except for strings. For trusted types we'd want to treat eval as a sink. Trusted types define sinks. They are abusable APIs.
 
 MSL: Got ways of controlling that with content security policies. Node can globally turn that off. When 1000s of modules, very likely one of them is going to use eval.
 
-MSL: Trusted Types tries to make that more fine-grained. You're allowed to eval trusted script values, but not strings. 
+MSL: Trusted Types tries to make that more fine-grained. You're allowed to eval trusted script values, but not strings.
 
 MSL: Need a way for values to proceed past step 2 here. There's backward compat constraints, don't want to break the web. Adopting this as constraint of proposal. Existing apps shouldn't be creating values of x that take different path when we change this step.
 
@@ -589,7 +582,7 @@ MSL: Couple diff ways we can spec this. 1) internal slot for this option we'd sp
 
 MSL: Option 2) is well known symbol, just add entry to well known symbol table. For lack of better name: @@evalable. (See option 2 slide.)
 
-MSL: Whether or not it's benefit for user code to be able to find evalable values is up in the air. Would ask committee's rec on that. 
+MSL: Whether or not it's benefit for user code to be able to find evalable values is up in the air. Would ask committee's rec on that.
 
 MSL: Useful links in next slide. Like to ask for stage 1 or 2 and your thoughts.
 
@@ -599,12 +592,11 @@ MSL: Goal is to allow the string to get through to the content security policy c
 
 MM: Purpose is workaround for code that is in environment on which eval is suppressed to overcome that?
 
-
 MM: Let me propose a different mechanism that has different security properties what I assume you're intending with this proposal that the marker is a brand rather than either a symbol or internal slot, then control over what can carry brand is the control over whether one can feed something into evaluation suppressing context. As a brand, vs internal (well known?) symbol, it'd be realm specific.
 
 MSL: The way involved in all of this there are multiple overlapping standards. Standards committees have tried to minimize overlap and toe-stepping. Right now, the decision about whether or not a piece of code is evaluated is up to the embedder of the EcmaScript engine. Moving the policy aspects of what code goes out to the host and then proceeds to get evaluated would be pulling the function that are part of the embedder into the engine itself.
 
-MSL: If you think about a brand as a particular data structure but as semantics. A brand is not a set, a brand is a predicate right? So [interrupted]
+MSL: If you think about a brand as a particular data structure but as semantics. A brand is not a set, a brand is a predicate right? So (interrupted)
 
 MM: brand has 2 separate capabilities: capability to brand something, capability to check the brand.
 
@@ -638,7 +630,7 @@ KG: Makes sense. I don't want that. I don't want more ways to eval things. Eval 
 
 MSL: Entitled to take that position and to block this proposal. But the idea is eval is bad, but it happens. When it happens, it is better that we can bound the amount of code that could cause eval to e.g. that code which defines a trusted type policy that has createscript handler and focus security attention on that. I'm a security engineer and care very much about security and what effect eval has. Blanket effect that CSP has, we need measures to guard eval. All or nothing doesn't scale as JS systems become larger.
 
-KG: Not planning to object on Stage 1 because you cannot object to Stage 1 on almost any grounds, but I would need a lot more for me to be convinced for Stage 2. This doesn't help with any existing code that has eval. If you convert existing code, should convert so that it's not using eval. 
+KG: Not planning to object on Stage 1 because you cannot object to Stage 1 on almost any grounds, but I would need a lot more for me to be convinced for Stage 2. This doesn't help with any existing code that has eval. If you convert existing code, should convert so that it's not using eval.
 
 MSL: It does provide teams a means to manage legacy code, I understand you are skeptical of stage 2.
 Would love to talk offline to you and Mark and discuss how to address concerns.
@@ -660,10 +652,9 @@ MBS: any objection moving to stage 1? See thumbs up from MM, don't hear any obje
 
 MSL: stage 0 going stage 1 or 2. Other feature for trusted types. Links slide. Issue 174 has a lot of background on this whole thing.
 
-MSL: Came up, eval is evil. Eval most misused feat of JS. Avoid it. I know KG is not convinced. 
+MSL: Came up, eval is evil. Eval most misused feat of JS. Avoid it. I know KG is not convinced.
 
-MSL: Some patterns [see slide] which do use eval which appears deep in Lodash. PRobably should be updated to use globalThis but version hell being what it is it's good to have a story.
-
+MSL: Some patterns (see slide) which do use eval which appears deep in Lodash. PRobably should be updated to use globalThis but version hell being what it is it's good to have a story.
 
 MSL: Things like this prevent usage of content security policy and disable code generation from strings. Want way to lock down. Possible to get these things by reflection.
 
@@ -675,15 +666,15 @@ MSL: This is the kind of things that gives security engs loss of sleep. Very har
 
 MSL: Trusted type does: working with csp 3 maintainers to adjust semantincs of host callout that csp is based off.
 
-MSL: Throwing exception or return normally, takes 2 realms. For csp if either realms has csp policy that doesn't have unsafe eval, going to block that. 
+MSL: Throwing exception or return normally, takes 2 realms. For csp if either realms has csp policy that doesn't have unsafe eval, going to block that.
 
 MSL: What we want to do is guard sinks. Allow function eval to be used but with a restricted set of values, then use organizational measures and security hints in headers to restrict policy creation, to restrict the set of values that CAN be created, so that function eval no longer be abusable implicitly.
 
-MSL: Been using for server side for 6 years now. Let's us lock down. Can deploy organizational measures to get a handle on things. What's a critical input? [slide] 
+MSL: Been using for server side for 6 years now. Let's us lock down. Can deploy organizational measures to get a handle on things. What's a critical input? (slide)
 
-MSL: Last arg is critical input. First n-1 args to new Function. 
+MSL: Last arg is critical input. First n-1 args to new Function.
 
-MSL: If you have a default value, can be arbitrary expression, means you can execute code. 
+MSL: If you have a default value, can be arbitrary expression, means you can execute code.
 
 MSL: Pretty much all of the arguments to eval and new function are sensitive. We would like to require that those be trusted when trusted types is enabled. script values when trusted types is enabled — when a document has opted in.
 
@@ -691,15 +682,15 @@ MSL: A trusted script value is an uncompiled script body.
 
 MSL: Goal for proposal is to provide host callout with enough context to distinguish between values that have been branded as safe vs not safe. Changed the name from hostensurecancompilestrings to hostbeforecompilevalue. See slide.
 
-MSL: Allows adjusting the code that gets executed. New arguments passed in: goal and args list. For eval you'd pass list of 1 item. The `x` to be evaluated. The goal would be ScriptBody. 
+MSL: Allows adjusting the code that gets executed. New arguments passed in: goal and args list. For eval you'd pass list of 1 item. The `x` to be evaluated. The goal would be ScriptBody.
 
-MSL: Little bit of web reality issue here. Existing hosts and engines already pass values out to host. Which is not strictly allowed. 
+MSL: Little bit of web reality issue here. Existing hosts and engines already pass values out to host. Which is not strictly allowed.
 
 MSL: CSP implementations all receive the value so that they can send violation reports that contain some of the text of the evaluator. They send a little bit of the string so that people can diagnose what was going on and how the app is being attacked.
 
 MSL: Trusted type default policy called implicitly for strings when doc defines policy with name default if you do return this. The default policy's createscript method is going to be passed return this, can throw exception, return same value or return different value.
 
-[slide with example code of creating a default policy]
+(slide with example code of creating a default policy)
 
 MSL: Spec text adds some notes about what new args are. See slide of added args.
 
@@ -707,7 +698,7 @@ MSL: See next slide for meaning of goal.
 
 MSL: Potential for observable side effects if we don't place constraints on what can happen. If CreateDynamicFunction stringifies args left to right. We want constraint if host call out does stringify args. When it produces results, uses that stringification to prevent multiple stringifications.
 
-MSL: And the actual change to the spec is fairly small: "CreateDynamicFunction" changes so that the host callout moves from step 5 to after a big, kinda-switch statement based on the kind of function being created. [See slides] 
+MSL: And the actual change to the spec is fairly small: "CreateDynamicFunction" changes so that the host callout moves from step 5 to after a big, kinda-switch statement based on the kind of function being created. (See slides)
 
 MSL: Eval changes because you guys were nice enough to prove need consensus spec yesterday. So that only effects PerformEval. Put x in list, pass that list to host callout, then unpack the list we receive back.
 
@@ -719,30 +710,31 @@ MM: This is a great example of why I'm confused by the purpose of prior proposal
 
 MSL: that was not an arg against previous proposal, would be arg against the invariant. Reflective access to that symbol and creating objects within would be a risk. And would be hard to reason about for large program that doesn't happen somewhere else.
 
-MM: I want you to go back to your final slide where you're showing the change to the spec for, including the change to HostBeforeCompileValue. 
+MM: I want you to go back to your final slide where you're showing the change to the spec for, including the change to HostBeforeCompileValue.
 
-MSL: let me take CreateDynamicFunction., As said, it goes into PerformEval instead. 
+MSL: let me take CreateDynamicFunction., As said, it goes into PerformEval instead.
 
 MM: You are allowing host to change arguments being evaluated.
 
 MSL: Yes, required for policies to be able to adjust the compiled code.
 
-MM: It is a requirement that the host can [missed]
+MM: It is a requirement that the host can (missed)
 
-MSL: Trusted types can't require anything of tc39. CSP can't require anything of tc39. 
+MSL: Trusted types can't require anything of tc39. CSP can't require anything of tc39.
 
 MM: Not asking process question. Is it desirable?
 
 MSL: Desired that this is the case to allowing migration of legacy applications.
 
-MM: Okal, noted. The sub comment is, take your ex. "Return this"; In context, program is "this". If evaled indirect, returns global. Policy that allowed that string would _also_ allow as a direct eval. 
+MM: Okal, noted. The sub comment is, take your ex. "Return this"; In context, program is "this". If evaled indirect, returns global. Policy that allowed that string would _also_ allow as a direct eval.
+
 This is according to the lexical scope it's evaluated in. So either  give directEval a distinct name or give it a parameter here. You should certainly allow it to distinguish between direct or indirect.
 
-MSL: "isDirect" came from PerformEval. Understood. Yeah I think that would be a fair adjustment.Might be useful. Not quite sure how to communicate that bit. Can draft some options. 
+MSL: "isDirect" came from PerformEval. Understood. Yeah I think that would be a fair adjustment.Might be useful. Not quite sure how to communicate that bit. Can draft some options.
 
 MM: There's two obvious ways: add a boolean argument or a case to the goal string, which is exactly that.
 
-MSL: Yeah. It seems that isDirect is not meaningful bit for CreateDynamicFunction case. 
+MSL: Yeah. It seems that isDirect is not meaningful bit for CreateDynamicFunction case.
 
 MM: Completely non-orthogonal, so might fold it into it.
 
@@ -750,9 +742,9 @@ MSL: Yeah. Does that address the rest of your concerns mark?
 
 MM: That was it.
 
-AVK: My comment is would like to see this merged with prior proposal. Not clear how they interact and need both to do anything useful. Doesn't seem you can have one or the other. 
+AVK: My comment is would like to see this merged with prior proposal. Not clear how they interact and need both to do anything useful. Doesn't seem you can have one or the other.
 
-MSL: Should they go back or forward together? 
+MSL: Should they go back or forward together?
 
 AVK: I would actually like to see them as a single thing.
 
@@ -766,14 +758,12 @@ MSL: So seems no on stage 2 for this. Combined into the other since the other on
 - Combine with prior stage 1 proposal.
 - Will be revisited at future meeting
 
+## JavaScript Standard Library for Stage 2 ( part 2? )
 
-
-## JavaScript Standard Library for Stage 2 [ part 2? ]
 (Michael Saboff)
 
 - [proposal](https://github.com/tc39/proposal-javascript-standard-library)
 - [slides](https://github.com/tc39/proposal-javascript-standard-library/blob/master/slides/JSL-TC39-June-2019.pdf)
-
 
 MHK: Where I left off is polyfill. There was something in the queue. Maybe we can go over that?
 
@@ -785,7 +775,7 @@ MHK: Fine to add such language to the spec.
 
 DD: Ties into Keith's thing. There are already hosts that prevent polyfilling. SES being one, sort of. Little strange to have this requirement.
 
-YSK: [Repeating Dan's question] Would high-level text explaining the hooks be sufficient.
+YSK: (Repeating Dan's question) Would high-level text explaining the hooks be sufficient.
 
 DE: Comment to explain why import maps is a good layering. High level text sort of fits together with that.
 
@@ -799,13 +789,13 @@ YSK: I believe it was related to security issue where script could ???
 
 MS: May want to be able to inject it, but have to be able to inject before first import.
 
-YSK: [Repeating Kevin's queued question] 
+YSK: (Repeating Kevin's queued question)
 
 KG: ok gated on import-maps shipping? Don't care about requirement on spec text. As process matter, need to be able to patch and polyfill,. As process matter, would we be ok browsers not ship this until they have first shipped import maps? Don't have that authority as committee, but can ask that of the champions.
 
 MS: Don't know how we do that. WICG? Chicken and egg. Talking about mechanism without libraries. Should get to stage 4 but useless for now.
 
-YSK: [Repeating Mark's queued question] secure way to do operational hooks?
+YSK: (Repeating Mark's queued question) secure way to do operational hooks?
 
 MM: You showed model on how to do this. Pipeline that's in the host is operational. There's code in the host that's written in something. Operational hooks advantage and not disadvantage for security. The realm api is all about enabling some js code to act as code to other js code. Patrick from Moddable in TC53 presented operational loading proposal as part of compartments system for realms. Looks very good to me. Implemented in XS. Prototyping in realm shim. I'd recommend that loading and control of ??? between modules, that all concerns be folded into realm.
 
@@ -813,15 +803,15 @@ MS: You and I talked about this after yesterday. May be a way
 
 MM: We should fold these efforts together. Realms can't move forward without loading. Loading issues exactly same as issues you're facing here.
 
-YSK: [Checking queue] 
+YSK: (Checking queue)
 
-MS:  Added stage 2 criteria slide: what are they? Entrance criteria. See slide "stage 2 cirteria". We have 3 todos: 1) talk about namespaces. Single namespace? Multiple? Follow-up on what governance for namespace. 2) polyfilling. Understand that needs to be dealt with. 3) JHD would like us that Scripts can do imports of stdlib. Don't know if necessary, but we need to handle it. Separate proposal or part of same proposal is unclear. We think we need stage 2 criteria. Willing to discuss whether committee agrees. 
+MS: Added stage 2 criteria slide: what are they? Entrance criteria. See slide "stage 2 cirteria". We have 3 todos: 1) talk about namespaces. Single namespace? Multiple? Follow-up on what governance for namespace. 2) polyfilling. Understand that needs to be dealt with. 3) JHD would like us that Scripts can do imports of stdlib. Don't know if necessary, but we need to handle it. Separate proposal or part of same proposal is unclear. We think we need stage 2 criteria. Willing to discuss whether committee agrees.
 
 DE: great proposal. Support this for stage 2. Makes sense to leave things are placeholders. We can't just decide on gov model right now. We had good discussion about prefixes we can build on. Stage 2 makes a lot of sense, Stage 2 is where committee decides we're doing this, we have basic semantics. We have the loader change, which will integrate well with import maps, as well as JSON modules.. Really in favor of that moving forward.
 
 MS: So what's your question?
 
-DE: More of a comment than a question. For async scripts you presented earlier this general statement which sounds good. For sync scripts I'm skeptical we'll find an answer. 
+DE: More of a comment than a question. For async scripts you presented earlier this general statement which sounds good. For sync scripts I'm skeptical we'll find an answer.
 
 MS: I'm not eager to take that on—
 
@@ -831,7 +821,7 @@ DD: The process document says that "all major semantics" should be figured out a
 
 DD: The namespace issue, TODO #1, is of course one that's very important to Chrome. And we've been taken totally by surprise by TODO #3; we don't want to agree to include something in the language that would enable synchronous module execution. With this many unknowns, it appears by moving this to stage 2 we'd be agreeing to adding "something to do with modules". It's really important to be able to say more than that before moving to stage 2.
 
-MS: Todo 1) and 2) prefix which is namespace, Draft text does not talk about that. We can bikeshed over that. Don't think it changes things too much. Don't think it's a big issue single vs multiple namespace. Same with being able to polyfill. Because we have a loading mechanism, clearly able to handle import maps with that process. 
+MS: Todo 1) and 2) prefix which is namespace, Draft text does not talk about that. We can bikeshed over that. Don't think it changes things too much. Don't think it's a big issue single vs multiple namespace. Same with being able to polyfill. Because we have a loading mechanism, clearly able to handle import maps with that process.
 
 MS: Your contention with #3, that was something that was raised. I'm willing to discuss that in Stage 2, but frankly I assumed it would be a different proposal altogether. There's bigger issues than simply something like an implementation. I don't think it should be a blocker for stage 2. I understand and disagree.
 
@@ -843,13 +833,13 @@ MS: "Purpose" in slide: For Stage 2 precisely describe the syntax and semantics.
 
 DD: It's an _entry_ requirement for stage 2 to establish major semantics that we are agreeing to. The purpose of stage 2 is not to figure things out and reach agreement; it's to write detailed spec text for what we've already figured out and agreed on.
 
-LBR:. These can be solved at stage 2. We have problem that we identified, we have to find a solution to this. This could be done in stage 2. If concerns not addressed in stage 2, will never advance to stage 3. We are aware of those problems. 
+LBR:. These can be solved at stage 2. We have problem that we identified, we have to find a solution to this. This could be done in stage 2. If concerns not addressed in stage 2, will never advance to stage 3. We are aware of those problems.
 
 DD: Reminder: Stage 1 identify problem, Stage 2 propose solution. You've identified the problem; to get to stage 2 you need to propose the solution.
 
 LBR: yes exactly.
 
-PDL: these points well raised, by simply declaring 3) as out of scope leaves you with 2). Just because a question has been raised, doesn't mean we need an answer. 
+PDL: these points well raised, by simply declaring 3) as out of scope leaves you with 2). Just because a question has been raised, doesn't mean we need an answer.
 
 PDL: If you strike through 1) and 3), you remove those blockers. Is that valid assessment?
 
@@ -889,18 +879,14 @@ YSK: Do we have consensus?
 
 #### Conclusion/Resolution
 
-Blocked, on todos #1 (namespace) and #3 (access in classic scripts). Tentative agreement on how to solve todo #2 (add normative language requiring hosts to allow polyfilling, but do not specify the mechanism.)
-
-
-Renaming to built-in modules.
-
+- Blocked, on todos #1 (namespace) and #3 (access in classic scripts). Tentative agreement on how to solve todo #2 (add normative language requiring hosts to allow polyfilling, but do not specify the mechanism.)
+- Renaming to built-in modules.
 
 ## A JavaScript Commons
+
 (DE, DD, PDL, AVK)
 
-
 - [slides](https://docs.google.com/presentation/d/17M6bwZmgBH4iJbpV7Q126at24q58llSyhxN_oC2Nfa0/edit?usp=sharing)
-
 
 AVK: Why a commons. Proposal for shared namespace. Building on work apple presented. See "why a commons" slide.
 
@@ -908,27 +894,27 @@ AVK: Slide "historical success". Things move around between specs. Still ongoing
 
 AVK: Dangers of putting commons in global object. See slide "dangers of the global commons". Most clashes between user code and standards.
 
-AVK: slide "who is interested in a commons?" Lots of people. We're presenting to see if there's interest from TC39. 
+AVK: slide "who is interested in a commons?" Lots of people. We're presenting to see if there's interest from TC39.
 
 AVK: Does not preclude domains could still have their independent ns. Commons is to collaborate across.
 
-DE: how can we work together on governance? 
+DE: how can we work together on governance?
 
 DE: IANA has lots of these. A modern version would be a GH repo. Could make a PR that you're looking into using a name. That way people looking for same name could get in touch. Heads-up to ecosystem that there is discussion, Eventually consider names allocated (they have tests, etc.). Registry would help us collaborate on what names are used. Don't just mean web browsers, includes other envs, like server envs, IoT, etc.
 
-DE: Example: "lib:" prefix. (see slide). Ben looking into uuid proposal. All sharing ns for different purposes. Often things migrate from one env to another. Important for folks to run things in server envs. 
+DE: Example: "lib:" prefix. (see slide). Ben looking into uuid proposal. All sharing ns for different purposes. Often things migrate from one env to another. Important for folks to run things in server envs.
 
-DE: Slide: neutral home. Important for collaborative governance. Not part of one particular committee. Some early discussions with OpenJS Foundation, W3C TAG, etc. From Apple, we've heard a lot about the importance of communicating to JS developers about those things. Discussing with MDN documenting similarities between envs. They started to include things like node for JS features. 
+DE: Slide: neutral home. Important for collaborative governance. Not part of one particular committee. Some early discussions with OpenJS Foundation, W3C TAG, etc. From Apple, we've heard a lot about the importance of communicating to JS developers about those things. Discussing with MDN documenting similarities between envs. They started to include things like node for JS features.
 
-DE: Repository organization slide. Starting point for this possibly. Open to go another way. Scope of this repo (https://github.com/littledan/js-shared-interfaces) was initially broader. 
+DE: Repository organization slide. Starting point for this possibly. Open to go another way. Scope of this repo (https://github.com/littledan/js-shared-interfaces) was initially broader.
 
-DE: Example of modules: just a markdown file. Can list ideas for modules. If some implemented and shipped. Kv-storage actually is implemented, but we need multiple impls before it'd be marked as allocated. 
+DE: Example of modules: just a markdown file. Can list ideas for modules. If some implemented and shipped. Kv-storage actually is implemented, but we need multiple impls before it'd be marked as allocated.
 
 DE: let's work together on this.
 
-DD: Really excited about working together in a commons. 
+DD: Really excited about working together in a commons.
 
-MM: lot of use of word commons as positive notion. Encourage people to read Elinor Ostrom's work, Governing the Commons, to understand what she meant by that word. Polycentrism as overall framework. Commons need to be governed. Need governing mechanism. High overhead. Commons only scale up until overhead gets too strong. Primary means of gov: admission control? What we're talking about directly impact admission control. All reasons why you want to the unify namespace here, apply in another case for which problems are clearer. 
+MM: lot of use of word commons as positive notion. Encourage people to read Elinor Ostrom's work, Governing the Commons, to understand what she meant by that word. Polycentrism as overall framework. Commons need to be governed. Need governing mechanism. High overhead. Commons only scale up until overhead gets too strong. Primary means of gov: admission control? What we're talking about directly impact admission control. All reasons why you want to the unify namespace here, apply in another case for which problems are clearer.
 
 MM: Take moment as an example: hypothetical history if project had started after we created ns. Started as group of implementers doing work outside of these committees. What namespace would they label themselves with? Presumably not one of the namespaces that was in the commons coordinated between these two committees. But the moment that moment wanted to propose themselves as part of the standard language, there's the same coordination-migration issue that you're trying to mitigate here.
 
@@ -944,11 +930,11 @@ AVK: Momentjs not a full standard with multiple independent impls.
 
 MM: It is just a JS library, we are considering it for advancement, it's already reached—
 
-PDL: No, that is exactly wrong, we are not considering moment.js for anything. We're considering temporal. Based on experience we got from moment.js. Working towards getting multiple diff implementations. 
+PDL: No, that is exactly wrong, we are not considering moment.js for anything. We're considering temporal. Based on experience we got from moment.js. Working towards getting multiple diff implementations.
 
 MM: Good, thank you, good clarification. Then, one of the devs out there, implement something from which there are good lessons, brought the lessons & proposal to the committee which is then advancing, and the thing that would get standardized is distinct from the thing that originally grew up under another name. I propose that hosts—
 
-DE: Don't think we should apply that pattern when something is in host and we want to expose in language. ArrayBuffer and typedarrays big benefit to have across envs. Making a bunch of changes to that spec wasn't a benefit. Spec in tc39 still not implemented. Browsers don't throw exception on detached typed arrays. For web compat if we changed names we'd have to maintain both. Instead we should work with other standard bodies. 
+DE: Don't think we should apply that pattern when something is in host and we want to expose in language. ArrayBuffer and typedarrays big benefit to have across envs. Making a bunch of changes to that spec wasn't a benefit. Spec in tc39 still not implemented. Browsers don't throw exception on detached typed arrays. For web compat if we changed names we'd have to maintain both. Instead we should work with other standard bodies.
 
 MM: I'm all in favor of working _with_, having us all get along, is a great ideal. We should all cooperate and get along. The things that are de facto part of JavaScript, host independent, and should be codified as part of universal javascript is definitely something we should consider codifying as part of javascript. That is why this committee exists.
 
@@ -956,11 +942,11 @@ DE: That's the idea of this, but instead more gradual. Gradually document more a
 
 MM: So do we agree that if there's a shared namespace, the fundamental governance rule of admission to this shared namespace is unanimity over all organizations sharing the namespace?
 
-DE: We'll have to work out gov. 
+DE: We'll have to work out gov.
 
 DD: But, no, we don't agree on unanimity. That is the opposite of what is presented in the slides.
 
-PDL: control of admission is not an option. The moment import maps ship, no control over namespace. No more admission process. Better off to collaborate proactively. 
+PDL: control of admission is not an option. The moment import maps ship, no control over namespace. No more admission process. Better off to collaborate proactively.
 
 DD: And to be clear, there is a lot of interest in this lack of admission control. And we're asking if TC39 wants to participate in that commons.
 
@@ -970,7 +956,7 @@ DD: true, I was using "admission control" to mean Mark's "unanimity" requirement
 
 PDL: The difference is that, it's not a group of people saying "you can come in or not", it's admissions based on some criteria.
 
-DE: We have all been more towards open standards world, instead of standards based on what orgs pay money too, e.g., we have invited experts in TC39. 
+DE: We have all been more towards open standards world, instead of standards based on what orgs pay money too, e.g., we have invited experts in TC39.
 
 KM: Just a discussion topic?
 
@@ -978,7 +964,7 @@ DD: Hoping it may help unblock other proposals.
 
 KM: Seems should be part of builtin modules? Wonder why this is meant as a separate discussion.
 
-DD: Not independent, came directly from builtin modules discussion. Instead of making points in queue. Put together some slides. 
+DD: Not independent, came directly from builtin modules discussion. Instead of making points in queue. Put together some slides.
 
 DE: Not meant to be competing proposal. Working together.
 
@@ -994,7 +980,7 @@ DE: Been discussing this with builtin modules champions [at lunch today]
 
 MS: Not discussed with builtin modules champions [discussed but did not see slides].
 
-DD: These are not dueling slide decks. We saw builtin modules proposal, thought we need to talk about this. 
+DD: These are not dueling slide decks. We saw builtin modules proposal, thought we need to talk about this.
 
 LBR: like to see 2 diff proposals, so we can extract better max/min on both. More constructive discussion in last presentation if I knew about this. Coordination here has failed.
 
@@ -1008,7 +994,7 @@ DE: Next steps: would be great to having you all participating. Seems interestin
 
 DD: PDL is here and would all like to hear from folks.
 
-SYG: asking if tc39 wants participation in these commons. Did other bodies move forward? Purely hypothetical: if we say no, do you think it's going to happen? 
+SYG: asking if tc39 wants participation in these commons. Did other bodies move forward? Purely hypothetical: if we say no, do you think it's going to happen?
 
 DD: yeah then shared between browsers and node, etc..
 
@@ -1032,12 +1018,11 @@ DE: happy to hear more with more time.
 
 #### Conclusion/Resolution
 
-The committee does not have consensus on this particular model, and will continue to think about single vs multiple namespaces, and governance models for the namespace(s).
-
+- The committee does not have consensus on this particular model, and will continue to think about single vs multiple namespaces, and governance models for the namespace(s).
 
 ## Optional Chaining for Stage 2
 
-Justin Ridgewell (JRL)
+(Justin Ridgewell)
 
 - [proposal](https://github.com/tc39/proposal-optional-chaining/)
 - [slides](https://docs.google.com/presentation/d/12Xtuffo57XSP6lJ4zQ30aHh5LKBYzZxg6cA84gbDLm8/)
@@ -1048,12 +1033,11 @@ JRL: (In nutshell slide) Desugaring of optional chaining. Including _b hidden sp
 
 JRL: Short circuiting: kind of a core feature. Nice feature too. (Short circuiting slide) If a is undefined, don't do a.b.c. etc. Just stop evaluating chain, return undefined. Not error suppression mechanism. (Points to examples on slides).
 
-
 Same with the "d" example. E.f is going to throw. Didn't specify optionalness on e ref, so e.f is going to throw.
 
 (Optional computed access slide)
 
-JRL: Why current syntax? Everything else sucks. No other good alternative. Going to stick to ?., ?.[] and ?.(). Best we can do now.
+JRL: Why current syntax? Everything else sucks. No other good alternative. Going to stick to ?., ?.() and ?.(). Best we can do now.
 
 JRL: (Optional call slide). Diff than short circuiting and diff from computed access. (Optional call slide). If a is nullish don't invoke a, if not do it. Using a bit of pseudo code in slide because can't do it in actual JS. It's not using Funciton.prototype.call, going to call the `[[Call]]` method we have in spec.
 
@@ -1063,8 +1047,7 @@ JRL: To explain the difference in the short-circuiting in the optional call, it 
 
 If `b` ref is nullish, don't want to invoke it. Not continue the chain (dot c off the return val of b method).
 
-
-The same way that if the `b` property were to be nullish, we would not get the `c` property off of its get value. In optional access, we're testing to see if the object is nullish, but in an optional call, we're checking where the method can be called. 
+The same way that if the `b` property were to be nullish, we would not get the `c` property off of its get value. In optional access, we're testing to see if the object is nullish, but in an optional call, we're checking where the method can be called.
 
 JRL: This is a little different then optional access, though. Optional access checks the object for nullish, Optional call is testing the function.
 
@@ -1084,7 +1067,7 @@ JRL: Would like to see rationale that Waldemar had provided later.
 
 DE: discussed optional call before. Waldemar mentioned this rationale 3 times. Rather have this proposal continue rather than have argue about optional call. Proposal gives lots of benefits to JS programmers, if you're confused about optional call, you can look it up. People can learn about it if people are confused.
 
-LBR:  If language is getting harder to learn, I think that's a bad point. We should have separate proposal. Don't think I have energy to engage.
+LBR:  If language is getting harder to learn, I think that's a bad point. We should have a separate proposal. Don't think I have energy to engage.
 
 DE: that's what some of us to in that case, giving up.
 
@@ -1097,10 +1080,9 @@ JRL: Waldemar actually reviewed grammar and spec's semantics.
 #### Conclusions/Resolution
 
 - Stage 2 acceptance
-- Reviewers: 
-  - DE mentoring RKG, BCE. 
+- Reviewers:
+  - DE mentoring RKG, BCE.
   - Find another one before the day
-
 
 ## Nullish Coalescing for Stage 2
 
@@ -1108,7 +1090,6 @@ Justin Ridgewell (JRL)
 
 - [proposal](https://github.com/tc39/proposal-nullish-coalescing/)
 - [slides](https://docs.google.com/presentation/d/1Jyu-IZc2bVtdrHrK-pvvzwx0C7y2aUwoP57i1E_6QJY/edit#slide=id.gc6f73a04f_0_0)
-
 
 JRL: Strict equality check for null and undefined on lhs if evaluates null or undefined, returns rhs, otherwise return lhs. (see first slide).
 
@@ -1120,7 +1101,7 @@ JRL: Or we can punt on issue entirely and require () when you mix ?? with condit
 
 KG: requiring () helps, but wouldn't solve problem. You can have binary expression on lhs `a && b ?? c`. Going to be hard to forbid with rules, still not clear if you don't know precedence what that is.
 
-JRL: Same than any other binary operator. 
+JRL: Same than any other binary operator.
 
 KG: Yeah, you have to know precedence rules.
 
@@ -1134,7 +1115,7 @@ JRL: suggestion here is if mix cond and ?? on either side of ?? you'd require ()
 
 KG: No matter what we choose here, prettier will choose to rewrite that
 
-JRL: Kind of OK with that. I work on amp. Requires () when you mix those. 
+JRL: Kind of OK with that. I work on amp. Requires () when you mix those.
 
 MM: Also want to put in favor of requiring (). No motivation for middle option here. Mild form of requiring () I'd find acceptable if either side is an ||, then you require (), that way ?? still conceptually same precedence as ||. Can't mix operators without parentheses.
 
@@ -1144,11 +1125,11 @@ YSV: Any other questions or comments?
 
 DE: This is good for Stage 2. Suggest leaving same prec as ||. Expect lots of people to update their code from one to other. Would rather not go with exponentiation decision. Should just make a call on precedence. Shouldn't hang ourselves up and speculate too far in the future. Can leave this as open question for stage 2. Stage 2 is where we decide. We can flip flop on this.
 
-JRL: Ok 
+JRL: Ok
 
 MM: reply to DE. When ambiguity on how code get read, going to surprise people. Worst kind of surprise is when code and runtime silently other than you'd expect. Next is when code at runtime throws an error. Most pleasant is when code during dev gives early error. Normal programmer response: didn't compile, don't know why, let's try something else. The something else is when what they understand of the code is what happens at runtime.
 
-RBN: C# precedence in C#  '&&' and  '||' both bind to the null coalescence operator. Became confusing because ** doesn't work the way it looks. 
+RBN: C# precedence in C#  '&&' and  '||' both bind to the null coalescence operator. Became confusing because ** doesn't work the way it looks.
 
 Justin: Can I go for stage 2?
 
@@ -1161,21 +1142,20 @@ DE: Question on whether reviewers should be in common with previous proposal.
 #### Conclusion/Resolution
 
 - Stage 2 acceptance
-- Reviewers: 
+- Reviewers:
   - RKG
   - YSK
 
-## Status update on non-JS module types (e.g., JSON, CSS, WebIDL) 
+## Status update on non-JS module types (e.g., JSON, CSS, WebIDL)
 
 (DE)
 
 - [proposal](https://github.com/tc39/???)
 - [slides](https://docs.google.com/presentation/d/1w8jWjD41htD7VxOejFqiHi6uGgHVWtZ_XmgFxgKkS7Q/)
 
-
 DE: builtin modules who knows if we'll have them? (Goals slide) How you can get involved. If you are JSConf EU you heard how to get involved in tc39. Want to talk about how to get involved in other venues.
 
-DE: types under dev. See slide. 
+DE: types under dev. See slide.
 
 DE: JSON modules: issue 770 w3c/webcomponents repo. Submitted by AVK
 
@@ -1205,11 +1185,11 @@ DE: HTML modules: don't know much about it and people familiar with it left the 
 
 DE: WebIDL modules, a language to help to define objects, coercions and methods. Like to talk about this in more detail.
 
-DE: Draft of how this would apply to kv-storage. Furthest along draft for builtin modules. Collab between moz and igalia. Currently in PR. To land need multiple impl buyin on the downstream spec. WebIDL all about establishing notation, and notation expresses conventions for structure of objects. 
+DE: Draft of how this would apply to kv-storage. Furthest along draft for builtin modules. Collab between moz and igalia. Currently in PR. To land need multiple impl buyin on the downstream spec. WebIDL all about establishing notation, and notation expresses conventions for structure of objects.
 
 DE: I'm wondering, can we use this as a basis for a new common set of conventions in builtin modules? Bonus, this wasn't in the outline! Right now we're in this kinda uncomfortable state: some conventions used by us in TC39, some used by certain web specs, some others might be used in the external ecosystem.
 
-DE: Wondering if we could unify shared conventions. 
+DE: Wondering if we could unify shared conventions.
 
 DE: So I want to suggest that going forward this be a place we start with having an idea. Maybe we use non-enumerable methods? Special time, opening new space and can establish this convention. Same realm vs x realm brand checks. Right now internal slots, kind of universal across all diff realms. If implement library via classes with private fields/methods. Those going to be for individual evaluations of that class. Maybe should transition to same realm brand checks.
 
@@ -1241,7 +1221,7 @@ DE: Wasm is not synth mods they are cyclic mods. That's why we defined them. May
 
 ?? Anybody thought enable JS code to define new mod types?
 
-DE: Not heard prop for that. 
+DE: Not heard prop for that.
 
 KM: Sounds a bit scary.
 
@@ -1249,7 +1229,7 @@ DE: WASM modules needed to run some stuff async. On some WASM impls some compila
 
 MM: Thank you.
 
-DE: The instantiate value hooks are pretty broad. I'd be scared about [exposing?] those.
+DE: The instantiate value hooks are pretty broad. I'd be scared about (exposing?) those.
 
 JRL: How do you decide if parse module with JSON or JS?
 
@@ -1265,7 +1245,6 @@ JRL: Is this covered by this proposal? Or is this an out-of-band thing we should
 
 DE: This whole deck was stuff going on outside of TC39 is covered by html PR. Strictly defines what mime type is. Discussion on what should be in mime spec or html spec.
 
-
 JRL: So, i definitely misconfigured a server and not sent the mime-type down. What happens if I don't have a mime-type? I really hope it will assume it's javascript
 
 DE: it's going to call window.onError. Can't do anything. Haven't tested that, just what I think it does.
@@ -1276,10 +1255,7 @@ DE: No, thanks for the discussion.
 
 #### Conclusion/Resolution
 
-Nothing we're looking for.
-
-
-
+- Nothing we're looking for.
 
 ## Promise.any
 
@@ -1287,7 +1263,6 @@ Nothing we're looking for.
 
 - [proposal](https://github.com/tc39/proposal-promise-any/)
 - [slides](???)
-
 
 KG: Ready for stage 2. Like Promise.all except short-circuits when any input value is fulfilled. If none of them fulfilled, you get new type of error, AggregateError, also added as part of this prop. Property with array with all errors.
 
@@ -1306,8 +1281,6 @@ AKI: Was added to agenda 3 hours ago, so won't allow it.
 KG: Presenting on behalf of MB, by the way.
 
 NTE: Huge thanks to JGI for hero-ing the notes today! (Applause)
-
-
 
 #### Conclusion/Resolution
 

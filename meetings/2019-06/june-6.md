@@ -1,13 +1,10 @@
 # June 6, 2019 Meeting Notes
 -----
-Istvan Sebestyen (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Till Schneidereit (TST), Logan Smyth (LSH), Yulia Startsev (YSV), Ben Coe (BCE), Guy Bedford (GBD), Myles Borins (MBS), Domenic Denicola (DD), Jack Steinberg (JBS), Sven Sauleau (SSU), Clark Sampson (CSN), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Henry Zhu (HZU), Alan Schmitt (AS), Justin Ridgewell (JRL), Patrick Soquet (PST), Peter Hoddie (PHE), Caio Lima (CLA), Daniel Ehrenberg (DE), Anne van Kesteren (AVK), Shu-yu Guo (SYG), Ross Kirsling (RKG), Keith Miller (KM), Mattijs Hoitink (MHK), Michael Saboff (MS), Guilherme Hermeto (GHO), Rob Palmer (RPR), Philipp Dunkel (PDL), Szabolcs Szabolcsi-Toth (SZT), Nicolò Ribaudo (NRO), Joyee Cheung (JCG), Kevin Gibbons (KG), Aki Rose (AKI), Tierney Cyren (TCN), Amal Hussein (AHN), Julien Gilli (JGI), Sean Larkin (SLN), Sathya Gunasekaran (SGN), Daniel Rosenwasser (DRR), Randy Luecke (RCL), Kat Marchan (KMN), Andrew Paproki (API), Dr. Felienne Hermans (FHS),
-
-Mark Miller (MM), Joe Sepi (JSI)
+Istvan Sebestyen (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Till Schneidereit (TST), Logan Smyth (LSH), Yulia Startsev (YSV), Ben Coe (BCE), Guy Bedford (GBD), Myles Borins (MBS), Domenic Denicola (DD), Jack Steinberg (JBS), Sven Sauleau (SSU), Clark Sampson (CSN), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Henry Zhu (HZU), Alan Schmitt (AS), Justin Ridgewell (JRL), Patrick Soquet (PST), Peter Hoddie (PHE), Caio Lima (CLA), Daniel Ehrenberg (DE), Anne van Kesteren (AVK), Shu-yu Guo (SYG), Ross Kirsling (RKG), Keith Miller (KM), Mattijs Hoitink (MHK), Michael Saboff (MS), Guilherme Hermeto (GHO), Rob Palmer (RPR), Philipp Dunkel (PDL), Szabolcs Szabolcsi-Toth (SZT), Nicolò Ribaudo (NRO), Joyee Cheung (JCG), Kevin Gibbons (KG), Aki Rose (AKI), Tierney Cyren (TCN), Amal Hussein (AHN), Julien Gilli (JGI), Sean Larkin (SLN), Sathya Gunasekaran (SGN), Daniel Rosenwasser (DRR), Randy Luecke (RCL), Kat Marchan (KMN), Andrew Paproki (API), Dr. Felienne Hermans (FHS), Mark Miller (MM), Joe Sepi (JSI)
 
 Remote:
 Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LBR), Frank Yung-Fong Tang (FTG), Mike Samuel (MSL), Shane Carr (SFC), Jordan Gensler (JGR), Robert Pamely (RPY)
 -----
-
 
 # Agenda
 
@@ -22,7 +19,7 @@ Myles Borins (MBS)
 
 MBS: (outline slide) Alternative proposal discussed during the last meeting in March. Spent more time talking to people, will spend more time discussing. Implementor interest: we'll get community feedback.
 
-MBS: (Current status slide) Current status is Stage 2. 
+MBS: (Current status slide) Current status is Stage 2.
 
 MBS: Reviews from TC39'ers and one from outside. Detailed review from Rob Palmer & Ms2ger (non-TC39), Editor Review from Jordan Harband & Kevin Smith, Grammar Review from Waldemar Horwat, In-progress review from Georg Neis and W3C TAG review.
 
@@ -38,7 +35,7 @@ MBS: (Slide #15 - Current Spec) Important that this came up. What I really want 
 
 MBS: (Slide #16 - Concerns with import await) Import await may have some interesting use cases outside this, don't think it solves. Import Await removes ability for engine to optimize async execution. import await would force graph up to root to execute asynchronously. Running import async modules synchronously would break developer contract
 
-MBS: (Slide #17 - Summary) Not personally pursuing import await, but not saying other folks shouldn't do that. After convos with webpack, babel, etc. PR changed to include top-level-await. Webpack team don't love top-level-await as solution, but believe it can be implemented. 
+MBS: (Slide #17 - Summary) Not personally pursuing import await, but not saying other folks shouldn't do that. After convos with webpack, babel, etc. PR changed to include top-level-await. Webpack team don't love top-level-await as solution, but believe it can be implemented.
 
 MBS: Took advantage of having implementers in room this week. (Slide #20 - Implementor Interest). Got interests from all browsers and XS. Chose word interest carefully. Don't want to lean on how quickly it'll happen. Learn from yes it's important, did not hear not something they would implement. Pretty positive about this outcome.
 
@@ -56,7 +53,6 @@ AKI: sounds like consensus, no objection.
 
 - Stage 3 acceptance
 
-
 ## Empirical Evidence for Programming Language Design
 (Dr. Felienne Hermans)
 
@@ -73,7 +69,7 @@ FHS: How does this work for PLs? People who do research on PLs without messing w
 
 FHS: Lutz Prechett theory: do people influence how they solve problems? Implement a mapping from numbers to strings (remember old flip phones). Input: string of numbers and words list, output: what words could that person have written?
 
-FHS: Programming puzzle he gave to group of students. Ask to solve in their preferred PL. How to store this mapping? 
+FHS: Programming puzzle he gave to group of students. Ask to solve in their preferred PL. How to store this mapping?
 
 Asking audience: What possible solutions to store map of numbers to strings?
 
@@ -81,7 +77,7 @@ Audience: array of list.
 
 FHS: Any solution that doesn't contain an array? One thing you can use is a tree. Nodes contain letters, numbers are edges. 50% of Java students picked the tree solution. 0% of Python students picked it.
 
-FHS: No reason for not using tree structure with Python. Has to do with culture that those PLs project. 
+FHS: No reason for not using tree structure with Python. Has to do with culture that those PLs project.
 
 FHS: No one picked map-like structure from Java programmers, all Python programmers used that. Illustrates how PLs are bigger than syntax, shape how people program.
 
@@ -98,19 +94,19 @@ FHS: Programming languages are not natural! We design/create them.
 
 FHS: We might need a "new" kind of science.
 
-FHS: Wilhelm von Hoven, 1835. Contemporary doctors said: for any illness, drink salty water and you'd feel better. Von Hoven sent letter that salt is not medicine. 
+FHS: Wilhelm von Hoven, 1835. Contemporary doctors said: for any illness, drink salty water and you'd feel better. Von Hoven sent letter that salt is not medicine.
 
-FHS: Johann Jacob Reuter said that yes, salted water is medicine. Von Hoven replied he tried it, didn't feel any better. Sounds a lot like programmers today! 
+FHS: Johann Jacob Reuter said that yes, salted water is medicine. Von Hoven replied he tried it, didn't feel any better. Sounds a lot like programmers today!
 
 FHS: Von Hoven's insight was that we need more people, so he put up a classified ad to get people to show up at a pub to try it out. This is know as the Nürnberg salt test of 1835. 50 participants. 8/50 had experienced anything unusual.
 
-FHS: They had a protocol. Reported everything. Large enough sample size. Randomized vials. Control group and placebo. This was the invention of the double blind test. Had statistics. 
+FHS: They had a protocol. Reported everything. Large enough sample size. Randomized vials. Control group and placebo. This was the invention of the double blind test. Had statistics.
 
-FHS: Set the bar for how we do studies in medicine today. There intuitions lead to what is now mandatory for medicine studies. 
+FHS: Set the bar for how we do studies in medicine today. There intuitions lead to what is now mandatory for medicine studies.
 
 FHS: Many doctors were against randomized controls, seemed immoral to give sick people placebo. Back to comp-sci. Controlled experiments in CS.
 
-FHS: We could apply those methods to CS? Create artificial conditions with placebo, etc. Type systems: Stefan Hanenberg. First person to do randomized control for PL design. Held the opposite opinion of what he'd later would find. 
+FHS: We could apply those methods to CS? Create artificial conditions with placebo, etc. Type systems: Stefan Hanenberg. First person to do randomized control for PL design. Held the opposite opinion of what he'd later would find.
 
 FHS: Is dynamically typed language better than statically typed language in terms of dev productivity? Published paper: "Doubts about the positive effects of static typing" (2010).
 
@@ -122,7 +118,7 @@ FHS: Strong effect in groovy first group. Strong effect for type errors, not for
 
 FHS: Other study in 2012. TS then JS, other group JS then TS. Results similar. Students using TS solve problems more quickly than with JS. Other thing: not just randomized on TS or JS. With and without code completion.. For TS code completion helps a lot, for JS doesn't really matter. Helps just a little bit. Don't know if because type system strengthen code completion. Seems code completion helps more in PL that has static type system.
 
-FHS:  A study about Syntax: Andreas Stefik. Programming exercises in 3 PLs: Perl, Quorum (designed by author of study, similar to Pascal), Randomo (structurally equiv to C-ish languages, but syntax characters are randomly chosen from ASCII set). 
+FHS:  A study about Syntax: Andreas Stefik. Programming exercises in 3 PLs: Perl, Quorum (designed by author of study, similar to Pascal), Randomo (structurally equiv to C-ish languages, but syntax characters are randomly chosen from ASCII set).
 
 FHS: Sees Randomo as a placebo language. Would expect no effect. Would not expect students to get "healthier" in using PLs by using that language. Quorum did way better in most of those studies, designed for readability, so no surprise.
 
@@ -132,14 +128,14 @@ FHS: We think of syntax as meaning. Andreas Stefik 2011. Interested how novices 
 
 FHS: Research that we are doing. Around syntax and if you agreed on how your PL looks like, how do you understand your PL and how to work with it? Reading aloud: lots of studies shows that how you read something helps how you understand it.
 
-FHS: Experiment with audience. Read silently in your brain and when done raise your hand. Two parts sentence. Read first past, then after a while the second part (on new lines). 
+FHS: Experiment with audience. Read silently in your brain and when done raise your hand. Two parts sentence. Read first past, then after a while the second part (on new lines).
 
   Sentence 1: The turtle swims ... in the lake.
   Sentence 2: I have a tear ... in my pants.
 
 FHS: Didn't time it. Reading the second sentence should have taken longer.
 
-FHS: Process called subvocalization, reading silently in your brain, really hard to suppress. Can conclude when words sound ambiguous comprehension suffers. 
+FHS: Process called subvocalization, reading silently in your brain, really hard to suppress. Can conclude when words sound ambiguous comprehension suffers.
 
 FHS: What about keywords? If code sounds ambiguous in your head, does it impact understanding?
 
@@ -151,7 +147,7 @@ FHS: Need experiment: one group forced to read aloud code in a specific way (eng
 
 FHS: Group made to read code aloud memorized and understood syntax a lot better than the other. People said the paper should be rejected because "programming is not about syntax". Agree it's not about syntax, but you also need to understand syntax.
 
-FHS: Elementary school teachers think it's so obvious. 
+FHS: Elementary school teachers think it's so obvious.
 
 FHS: Math, maybe a bit like programming, totally ok to say multiplication tables out loud. Empirical evidence could help shape how PLs look like. How we tell learners about it.
 
@@ -189,7 +185,7 @@ FHS: No, really hard because hard to find students who don't know any English at
 
 VYG: Study on Perl and Randomo, where was it?
 
-FHS: Was in the US. 
+FHS: Was in the US.
 
 FHS: Until I went to university didn't know what "array" meant.
 
@@ -213,16 +209,15 @@ FHS: No, if study goes beyond syntax, needs to run a lot longer. On syntax runs 
 
 NTE: Also making someone programming in Lisp for 20 years would be immoral.
 
-
 ## JavaScript and Syntax Research Methods
 
 Yulia Startsev (YSK)
 
-- [slides](???)
+- [slides (missing)]()
 
 YSV: Been interested in Q: can we use empirical methods in committee in our process. How long does it take? How would I do? What kind of mistakes am I making?
 
-YSV: Can we do language experimentation? 
+YSV: Can we do language experimentation?
 
 YSV: Started in Feb. It's been 4 mo. Do we get useful/interesting results? Does it help with our process?
 
@@ -243,9 +238,9 @@ YSV: Part of hypothesis: Readability is orthogonal to cyclomatic complexity. Com
 
 YSV: How bugs related to readability? JUnit: amount of bugs introduced went up as readability metric went down according to their model. Really interesting.
 
-MM: You are overestimating the readability of the graph. Can you talk through the graph? 
+MM: You are overestimating the readability of the graph. Can you talk through the graph?
 
-YSV: Releases as they rank for their model for readability. Interesting feature of this graph: JUnit going down in terms of readability, interesting correlation with more bugs being introduced. Thought that this was an interesting result. 
+YSV: Releases as they rank for their model for readability. Interesting feature of this graph: JUnit going down in terms of readability, interesting correlation with more bugs being introduced. Thought that this was an interesting result.
 
 YSV: Ew could use this as a framework to design new PLs features. (reading Conclusions slide).
 
@@ -255,7 +250,7 @@ YSV: University of Israel: did a gamified version. Timer to solve problem. 10 li
 
 YSV: Talked about determining how hard something was.Determining how snippets/participants performed. Broke down the math they used to do this. "i" is subject, "j" is problem. Theta of "i" is the ability of a participant. Beta of "j" represents the difficulty of problem. Found interesting you could do that. Equation on right is comparison between difficulties.
 
-??: What are Phi and Beta? 
+??: What are Phi and Beta?
 
 YSV: Theta and Beta. Theta is the ability of participant, Beta is the difficulty of the problem. Interesting these things exist as stats tools.
 
@@ -341,7 +336,7 @@ YSV: Overwhelming response: pipeline with hash is preferable for people.
 
 YSV: Problems with design: became aware of them as experiment ran. (showing "Problems with the design" slide).
 
-YSV: Found that snippets actually privileged abstract pipeline operator. Could tell because people solved bugs significantly faster. 
+YSV: Found that snippets actually privileged abstract pipeline operator. Could tell because people solved bugs significantly faster.
 
 YSV: But the example for the smart pipeline was a bit contrived as I was trying to get it to match the F# example.
 
@@ -369,16 +364,15 @@ MM: What do the numbers (experts versus beginners) on the last line mean?
 
 YSV: The probability that they got the question right.
 
-YSV: Shouldn't be a requirement for any proposal at this time. Should continue to build expertise on how to do this. Going to take some time, there is a lot to learn. Could develop template that we could use. Experiments should be added information, should not be criteria. 
+YSV: Shouldn't be a requirement for any proposal at this time. Should continue to build expertise on how to do this. Going to take some time, there is a lot to learn. Could develop template that we could use. Experiments should be added information, should not be criteria.
 
 (Showing future experiments slide).
 
-YSV: If useful, might continue to work on it. If not, we don't have to. 
+YSV: If useful, might continue to work on it. If not, we don't have to.
 
 YSV: One thing that was really interesting to me was designing the experiment.
 
-YSV: Is it useful? 
-
+YSV: Is it useful?
 
 NTE: THis is really cool. One thing that I noticed is something that MM said is that programmers don't learn by reading the manual, they discover how through empirically.
 
@@ -390,7 +384,7 @@ JRL: 2 questions: 1) do we want to use this data for pipeline operator?
 
 YSV: No.
 
-DE: What do you recommend as the next step? Is there meaningful data? 
+DE: What do you recommend as the next step? Is there meaningful data?
 
 There is interesting info there, don't want us to draw conclusions, but e.g. Long form answers are really useful, but there are 800 of them. We could rework survey to have corrected examples and do thing with timing again. Not sure about validity of it.
 
@@ -407,7 +401,6 @@ AKI: It is flawed solely because we don't have the space and time to make someth
 YSV: Yep, okay. I think that is a very valid point.
 
 Appreciate that you listed out caveats and had conservative stance. We have done similar things where we talk to users where we try to get evidence based results., Sometimes they're inconclusive. Sometimes we have a gut feeling that something is not right. Will echo that we should look into results, even if you think there were problems: a) still some good results in there and b) good foundation that we can continue to refine. Basically my vote of support for this to continue.
-
 
 YSV: So is there generally an interest in trying this again?
 
@@ -441,9 +434,10 @@ KG: So one kind of data that I think is useful is asking what fraction of people
 
 YSV: Excellent comment. Something we can try.
 
-TST: I agree with KG. Only makes sense...Should only answer in pair with what does using the feature compared to control impacts what errors people make. 
+TST: I agree with KG. Only makes sense...Should only answer in pair with what does using the feature compared to control impacts what errors people make.
 
 YSV: Did have interesting evidence about that in survey. When error was in smart popeline,m people more likely to not see the error. Also about how I did it, which is why I was worried about showing it. Needs to get better insights. Know a lot more now about what that should look like, I think we can do better next time.
+
 ## Lookup constructor.resolve only once in PerformPromise{All, Race}
 
 Sathya Gunasekaran (SGN)
@@ -465,11 +459,12 @@ SGN: Do we have consensus? Sounds like we do.
 
 #### Conclusion/Resolution
 
-Consensus achieved; merging #1506.
+- Consensus achieved;
+- Merging #1506.
 
 ## WeakRefs
 
-Sathya Gunasekaran (SGN)
+(Sathya Gunasekaran)
 
 - [proposal](https://github.com/tc39/proposal-weakrefs)
 - [slides](https://docs.google.com/presentation/d/13I2S0B4noZpkNqUKOmMS4fEqEwXoANYjju8feWL8kcs/edit)
@@ -486,7 +481,7 @@ SGN: Spec clearly states that this shouldn't be called during a synchronous turn
 
 DE: We're following these invariants in HTML when logically the JS execution stack is empty after running through all promises tasks. Can iterate on wording in spec.
 
-SGN: We do have the same goal. 
+SGN: We do have the same goal.
 
 MM: as long it's the es spec that says it cannot happen during sync execution.
 
@@ -508,7 +503,7 @@ SGN: Something along the lines of side effect. "Liveness of an object" slide. Ne
 
 SGN: Summary: (showing invariants and memory model for garbage collection slide). Should not block us, this is why we have stage 3.
 
-(Current status slide)Thanks for the help on the readme. Implementation work in progress in V8.
+(Current status slide) Thanks for the help on the readme. Implementation work in progress in V8.
 
 MM: First, I'm in favor for stage 3, really like we arrived on example. Want to state explicitly requirements that we need to satisfy for stage 3. For the motivating use case like JS WASM, basic collections abstractions, enumerable weak key maps, etc. guarantees about where I'm not collected must be so that we can write correct code. Might be adequate to add that as investigation. Have to find the sweet spot between allowing optims and still allowing us to write programs we can reason about.
 
@@ -546,7 +541,7 @@ DE: Fortunately we see a really strong attention to detail. In the web platform 
 
 SGN: quick point: when you talk about jobs, don't want to get into the weeds of what jobs queue is right now. Can we go for stage 3?
 
-LBR: Quick point of order. What does pending one editor mean? Would like some clarification. 
+LBR: Quick point of order. What does pending one editor mean? Would like some clarification.
 
 TST: if that reviewer doesn't provide feedback that requires more than editorial changes, then stage 3. If more than editorial, then not stage 3.
 
@@ -560,7 +555,7 @@ LBR: Thanks for the clarification.
 
 ## Continuation of Layering Job Queue
 
-Daniel Ehrenberg
+(Daniel Ehrenberg)
 
 Same as previous presentation re: Layering Job Queue
 No slides
@@ -573,9 +568,8 @@ DE: From here, we can work with the editors and MM and land this without further
 
 #### Conclusion/Resolution
 
-Concluded that the multiple host hook approach (e.g., HostEnqueuePromiseJob) preserves the current semantics, and that we agree to make this change.
-DE to work with the editors and MM and land this; no additional review from the committee as MM had the only concerns
-
+- Concluded that the multiple host hook approach (e.g., HostEnqueuePromiseJob) preserves the current semantics, and that we agree to make this change.
+- DE to work with the editors and MM and land this; no additional review from the committee as MM had the only concerns
 
 ## Note taking
 
@@ -593,10 +587,10 @@ Specifically transcribing vs recording presentation.
 
 On topic whether take notes during preso, most time there's an element of when I present it'll be more obvious. Without any context you're lost in trying to regain context. I think transcribing would be helpful.
 
-GHO: Why not always record presentations? 
+GHO: Why not always record presentations?
 
 TCN: Been looking at TC queue, thinking I can build automatic transcription. Mostly want to get feedback if folks willing to have automatic transcription. Would like to provide toggle to stop transcription. Transcription not perfect, especially for technical terms. Would like to have ability for people to edit, for accuracy and representing intent.
-The intent there is to make sure that every word that is being said is transcribed. We expect this to be relatively simple to line by line say who said this. 
+The intent there is to make sure that every word that is being said is transcribed. We expect this to be relatively simple to line by line say who said this.
 
 TT: I support this. I think it's important to not store the recording itself, but the transcript only. Same as now, only publish things after review. In case you are interested, talk to Yulia who has been looking into this.
 
@@ -624,7 +618,7 @@ LBR: People working hard to note everything, people shouldn't do all that work. 
 
 TCN: I took notes my first two meetings and it was a lot. The purpose of automated transcription is to reduce the burden, not increase.
 
-Lots of people reading notes. Way for us to reach out to the community. 3 days of people talking, too much. 
+Lots of people reading notes. Way for us to reach out to the community. 3 days of people talking, too much.
 We've discussed this before, we've had several discussions of this. I understand people couldn't participate in the previous discussions, but, it's bad. We can't bring the burden to whomever is consuming it. Lots of maintenance being done.
 
 TST:  Could make things easier to navigate. Could move conclusion up. Disagree this would shift work on readers. Huge issue that only taking summary version of what was discussed: what you get is not what was discussed, but what note taker understood. It turns out there are often very subtle things where the note-taker might misunderstand subtle things. Very verbose note-taking attempts to mitigate this problem.
@@ -655,8 +649,9 @@ TCN: Would love to chat with you to address your comments
 
 ## How we work
 
-- github.com/tc39/how-we-work
-Yulia Startsev (YSV)
+(Yulia Startsev)
+
+- https://github.com/tc39/how-we-work
 
 YSV: We're considering making How We Work repo public. I think we have a lot to be gained by making it public.
 
@@ -668,9 +663,9 @@ AKI: Can we make it a wiki?
 
 DE: No, I really like having reviews and PRs. You can see other big wikis like MDN moving to a PR-based model.
 
-AKI: don't know if you know this, but GH wikis are Git repos. 
+AKI: don't know if you know this, but GH wikis are Git repos.
 
-DE: I'd rather keep it a GitHub repo. 
+DE: I'd rather keep it a GitHub repo.
 
 YSV: Getting back to topic of publishing this. Don't have anything secret in that repo. Have people gone in content of that repo?
 
@@ -678,7 +673,7 @@ YSV: Had a few yes. How do people feel?
 
 (lots of yes)
 
-YSV: Anything from remote? 
+YSV: Anything from remote?
 
 YSV: Let's move forward on making how-we-work public.
 

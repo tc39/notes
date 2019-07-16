@@ -35,7 +35,7 @@
   * [Parallel JS Spec Report](apr-9.md#parallel-js-spec-report)
   * [Signature of Array.from map callback](apr-9.md#signature-of-arrayfrom-map-callback)
   * [Bug 1571 RegExp Syntax](apr-9.md#bug-1571-regexp-syntax)
-  * [Change “EscapeSequence 0 [lookahead ∉ DecimalDigit]” to match reality](apr-9.md#change-escapesequence-0-lookahead-%E2%88%89-decimaldigit-to-match-reality)
+  * [Change "EscapeSequence 0 [lookahead ∉ DecimalDigit]" to match reality](apr-9.md#change-escapesequence-0-lookahead-%E2%88%89-decimaldigit-to-match-reality)
   * [Implementation Dependencies in String.prototype.replace](apr-9.md#implementation-dependencies-in-stringprototypereplace)
   * [RegExp toString escaping not fully specified](apr-9.md#regexp-tostring-escaping-not-fully-specified)
   * [Allen's TODO Summary](apr-9.md#allens-todo-summary)

@@ -2,7 +2,7 @@
 
 - [November 28, 2017 Meeting Notes](nov-28.md#november-28-2017-meeting-notes)
   * [Opening, welcome and roll call](nov-28.md#opening-welcome-and-roll-call)
-  * [7.i ECMA262 Status Updates (15m)](nov-28.md#7i-ecma262-status-updates-15m)
+  * [7.i ECMA-262 Status Updates (15m)](nov-28.md#7i-ecma-262-status-updates-15m)
   * [7.ii ECMA-402 Status Updates (15m)](nov-28.md#7ii-ecma-402-status-updates-15m)
   * [7.iii ECMA-404 Status Updates (15m)](nov-28.md#7iii-ecma-404-status-updates-15m)
   * [7.iv Test262 Status Updates (15m)](nov-28.md#7iv-test262-status-updates-15m)

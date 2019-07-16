@@ -33,7 +33,7 @@
   * [7. Approval of the minutes from last meeting](may-25.md#7-approval-of-the-minutes-from-last-meeting)
   * [8. Report from the Ecma Secretariat](may-25.md#8-report-from-the-ecma-secretariat)
   * [18i. Code of Conduct follow-up.](may-25.md#18i-code-of-conduct-follow-up)
-  * [11. ECMA404 (JSON) ISO fast-track. Review/approve disposition of comments responses and 404 2nd edition draft.](may-25.md#11-ecma404-json-iso-fast-track-reviewapprove-disposition-of-comments-responses-and-404-2nd-edition-draft)
+  * [11. ECMA-404 (JSON) ISO fast-track. Review/approve disposition of comments responses and 404 2nd edition draft.](may-25.md#11-ecma-404-json-iso-fast-track-reviewapprove-disposition-of-comments-responses-and-404-2nd-edition-draft)
   * [17.ii Web compatibility issues / Needs-consensus PRs](may-25.md#17ii-web-compatibility-issues--needs-consensus-prs)
   * [Prohibit async methods named 'function' #884](may-25.md#prohibit-async-methods-named-function-%23884)
   * [Normative: Specify RegExp malformed character class behavior #864](may-25.md#normative-specify-regexp-malformed-character-class-behavior-%23864)

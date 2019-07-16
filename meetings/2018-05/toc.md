@@ -11,7 +11,7 @@
   * [Updates from the CoC Committee](may-22.md#updates-from-the-coc-committee)
   * [Normative: Cleanup Time Values and Time Range Needs Consensus PR](may-22.md#normative-cleanup-time-values-and-time-range-needs-consensus-pr)
   * [Array.prototype.values web compat update](may-22.md#arrayprototypevalues-web-compat-update)
-  * [9.i.b. Normative: Add export * as ns from "mod” to Export production and Module Semantics](may-22.md#9ib-normative-add-export--as-ns-from-mod-to-export-production-and-module-semantics)
+  * [9.i.b. Normative: Add export * as ns from "mod" to Export production and Module Semantics](may-22.md#9ib-normative-add-export--as-ns-from-mod-to-export-production-and-module-semantics)
   * [11.i.c 2019/2020 meeting scheduling update](may-22.md#11ic-20192020-meeting-scheduling-update)
   * [11.i.d. Optional catch binding for stage 4](may-22.md#11id-optional-catch-binding-for-stage-4)
   * [`catch ({})`](may-22.md#catch-)

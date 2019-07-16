@@ -6,7 +6,7 @@
   * [Function Name Issue](mar-24.md#function-name-issue)
   * [Let's Ship This Thing](mar-24.md#lets-ship-this-thing)
   * [What to do with compact profile (ECMA-327) and E4X (ECMA-357)](mar-24.md#what-to-do-with-compact-profile-ecma-327-and-e4x-ecma-357)
-  * [ECMA404 RF?](mar-24.md#ecma404-rf)
+  * [ECMA-404 RF?](mar-24.md#ecma-404-rf)
   * [Fast track ECMA-404](mar-24.md#fast-track-ecma-404)
   * [6.1 ES6 Class Properties](mar-24.md#61-es6-class-properties)
   * [6.2 Decorators](mar-24.md#62-decorators)

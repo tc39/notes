@@ -20,7 +20,7 @@ TC39 discussed 8 proposals for stage advancement and had updates presentation on
 ### Advanced to Stage 4 from Stage 3
 - [Object.fromEntries for stage 4](jan-29.md#objectfromentries-for-stage-4)
 - [Well-formed JSON.stringify for stage 4](jan-29.md#well-formed-jsonstringify-for-stage-4)
-- [String.prototype.{trimStart,trimEnd} for stage 4](jan-29,md#stringprototypetrimstarttrimend-for-stage-4)
+- [String.prototype.{trimStart,trimEnd} for stage 4](jan-29.md#stringprototypetrimstarttrimend-for-stage-4)
 - [Array.prototype.{flat,flatMap} for stage 4](jan-29.md#arrayprototypeflatflatmap-for-stage-4)
 
 ### Needs more discussion/information

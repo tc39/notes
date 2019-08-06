@@ -33,14 +33,23 @@ IS: True. In 2019 and also in 2018 we took the “silence” on the “IPR break
 
 - Istvan Sebestyen, IS
 - [Slides](https://github.com/tc39/Reflector/files/3373473/tc39-2019-034.pdf)
+
 IS: (Presents slides)
+
 IS: Looking for someone to produce a better-quality PDF of the ECMAScript standard. Issues are poor formatting, page numbers, etc. This is more important for Ecma as a whole, than for TC39, who uses the html version anyway.
+
 IS: Would like PR activity about the “cool new stuff” in ES-2019 (also links to new TC39 PR activities would be useful).
+
 IS: JBR has received Ecma Recognition Award for her activities in Ecma, including TC39. DE have been given recognition awards for his work in the 2018 Management of this committee.
+
 MM: Within TC39, what’s the process to nominate someone for these recognition awards?
+
 IS: Nominations to the Ecma Recognition Awards can come from the TCs, but also from the ExeCom and finally from the Ecma GA. From any of these 3 places can a nomination come for a TC39 expert. Ecma Recognition awards (also Ecma Fellows) can be granted at any GA meetings. The next one is on December 11, 2019. So for a TC39 nomination we have two more meetings to decide for December, in the October NYC meeting and in November in CA. Any TC39 participant can just nominate someone. For Ecma Recognition Award for something “definitive”, like Editor of ECMA-xxx, or Chair / Convener of yyyy, or an outstanding piece of work on something. The point is that TC39 has to come to a consensus who should be nominated for such an award. That namelist should then be communicated to the GA (e.g. via the Ecma Secretariat).
+
 IS: (Continues presenting slides). Regarding Technical Secretary of TC39 IS is going to continue even after his retirement from the SG position of Ecma.
+
 From the topics he outlines in his slides most relevant for TC39 is to think about how the 2020 TC39 Management should look like. According to the rules that should be reelected every year. So best to it in the November meeting. In practice, however, much is left to the freedom of the individual TCs. There are TCs, who defacto are working with the same TC Management for many-many years. TC39 is a very big TC demanding lot of work from the Management, so TC39 should discuss what is the best way for providing an excellent Management for the next years, or more precisely for 2020.
+
 For the rest of the slides, no summary is provided here, but please read and consult the slides themselves.
 
 #### Conclusion/Resolution
@@ -49,9 +58,13 @@ For the rest of the slides, no summary is provided here, but please read and con
 ## ?
 
 JHB: There’s been 7 normative PRs merged. (Lists changes, asked for the list for the notes). There were 24 editorial changes. A big change was merged to explicitly list mathematical values, which supports BigInt. Next there will be a new notation for intrinsics merged soon.
+
 AK: How did you come up with the list of the changes?
+
 JHB: I actually looked at the Git log and recorded the changes in a Notepad document.
+
 AK: That’s great, maybe we could put those in the notes?
+
 JHB: Absolutely.
 <details>
   <summary>Summary of changes</summary>
@@ -76,8 +89,11 @@ Editorial: 24
 ## Ecma 402 (Intl) status update
 (Leo Balter, LBR)
 - [slides](https://docs.google.com/presentation/d/1xzf-s3Rm4sJKVQBqcxQCBxVCFIIc2mOF93Pk2wOaJDQ/edit#slide=id.p)
+
 LBR: (Presents slides)
+
 LBR: Any questions?
+
 LBR: No questions, let’s move on to Test262!
 
 ## Test262 Updates
@@ -87,44 +103,82 @@ LBR: No questions, let’s move on to Test262!
 (https://www.youtube.com/watch?v=mzCyJK9NYGI&feature=youtu.be)
 
 LBR: Test262 is probably the most challenging project I’ve ever worked on in my life. (Presents slides) Here’s a [visualization](https://www.youtube.com/watch?v=mzCyJK9NYGI) emphasizing the number of people actively working on various tests at the same time.
+
 MM: Even with the engines providing a special hook, Test262 should not expect even with a special hook that the engine is providing deterministic garbage collection. To the degree that the engine actually collects something when the hook is called, it gives test262 the opportunity to detect and report bugs. If the engine doesn’t collect anything there’s no bug there and we cannot report any violation. I think that’s a modest statement of what the hook does.
+
 KM: Your request is part of the solution that someone else proposed and would work. We can go into this separately.
+
 MM: At the end of the WeakRefs section, there was an issue: How do you detect quiescence. Are they all in place?
+
 LBR: There are two things here, one of these involves synchronous execution. There can only be call to `$done`. If multiple calls happen, that’s an error. It’s been working pretty consistently with the current engines.
+
 MM: If something has a finalizer and WeakRef has gone null, if it’s not finalized before quiescence, should test262 report a normative violation?
+
 LBR: With synchronous WeakRefs tests, there is a timeout. If we don’t have any error, it will be treated by Test262 with no error code. We do our best to create assertions with no false positives. A test with no error at the end is considered as passing, but that’s not sufficient here, especially with synchronous execution.
+
 TST: You said earlier, without such a hook, you’d have to remove all the tests. MM said that a hook should not be required to do GC. I mostly disagree with that. There’s nothing to be made normative about this.
+
 DT: I think you can do better than that. Two ways. There’s expected behavior, if my hook says I am participating, it should fail or succeed reliably. It’s very plausible to write the simple test in that case.
+
 TST: That would only work if we were talking specifically about a Test262 hook. I think for the most part Test262 use methods that shells expose that aren’t part of the language specification. If we expose a specific hook such as do the specific GC that the test asks for, would that work?=
 MM: in order to do that and for it to remain correct, we’d have to be very clear about the boundary for what collections are mandatory once the test is called. That would preclude a conservative sweep of memory. You could do a conservative sweep and still be performant.
+
 DT: But if 9/10 say that
+
 KM: That would be very misleading then. If the tests say it works, but then it only works 9/10 times. This doesn’t mean it reliably works.
+
 MM: Do any engines treat pointers conservatively?
+
 KM: Yes, absolutely. I also think the proposed thing we’re discussing—you call GC it returns a promise which goes back to the run loop, performs the full GC, and then uses basically WeakRefs to test WeakRefs.
+
 DT: Are you conservative only on the stack, or also on the heap?
+
 KM: Both, but within objects we’re not conservative.
+
 DT: You’re actually in the bucket of implementations that could be reliable?
+
 KM: Not necessarily. We’re deep into the C stack, so it could be unreliable. 99.99999% going to work but it’s not deterministic.
+
 TST: Regardless of the way were going to treat these tests, I don’t know that we should ever use an implementation where we say an engine should or should not collect WeakRefs. We probably shouldn’t ever have tests that fail here.
+
 MM: Test262 can very well still observe collections that violate the spec.
+
 TST: We should have the observability guarantee.
+
 MM: If a WeakRef to it goes to null, than the finalizer should run.
+
 TST: That’s less clear to me.
+
 LBR: My goal for Test262 is not to create competition, but to create cross-compatibility with JavaScript. Test262 would be not rich enough to not have tests for WeakRefs, so I appreciate this discussion. I want to make sure that all the engines can use this test suite.
+
 YK: What I find confusing in following this, there seems to be some conflict to use the existing test suite for compliance testing. It seems very important to make sure references don’t disappear. On the other hand, I’m not sure that in practice, there’s a lot of ways to satisfy the GC requirements.
+
 MM: What’s the point?
+
 YK: The test would not work as well as we wanted, but that doesn’t mean they fail the tests.
+
 MM: But it’s consistent with the spec, which says that GC is not a requirement but encouraged. If the platform provides a GC hook, we hope that the platform cleans up much of the garbage by the time the hook is called.
+
 YK: OK, I will just talk about this more afterwards.
+
 SYG: I have feelings about this compliance thing. I was confused by your comment that if you add tests than this reference must be collected. In practice, that may carve out a new sense of compliance.
+
 DT: That may be. In specification, specifying an exact thing that are only aspirational is very hard. In the case of WeakRefs, I was proposing if in an implementation, if there’s a mode that says I have done everything that could be collected. It’s useful for the test suite to know that, so it must be the case that if we do this, we make it simple to be testable.
+
 SYG: That seems like valuable tests for each engine to keep and maintain for themselves.
+
 DT: Sure, but in Test262, this does document and keep as aspirational what GC _should_ do.
+
 SYG: That statement seems controversial.
+
 DT: Sure, it may be. But it does provide guidelines with what that GC behavior might be. I think there is a way to do this, but it may not be something we want to do.
+
 WH: I’m curious what security implications there are if you can use conservative GC to figure out what’s contained in a closure. If a function captures some state which due to conservative GC prevents some collection, can you use WeakRefs to figure out what’s in there?
+
 MM: We’ve generally been taking the perspective that anyone who can create a WeakRef has the ability to read a side-channel, so they should be used with caution. However, even with the Side-channel through the GC that we knew about, we still didn’t know about actual memory addresses and we know various forms of attack even in memory-safe languages, if you know where things are located. So, there is an additional side-channel, that we didn’t know about before.
+
 MHN: I don’t think this is an additional side-channel, because you can already get these memory locations by observing different timings of GC.
+
 MM: Ah, the timing side-channel already gives you the conservative collection side-channel.
 
 CLA: I'm wondering if this change in BigInt literals blocks current PR somehow
@@ -132,19 +186,30 @@ CLA: I'm wondering if this change in BigInt literals blocks current PR somehow
 LBR: I think it’s a timely question and important to be addressed.
 
 ## Ecma404 Update
+
 CM: No updates to the “JSON” standard. The spec is timeless and eternal. (Laughs)
+
 ## Code of Conduct Committee Updates
+
 AKI: Some quick updates. We had a minor incident at the last meeting. The discussion is ongoing there’s nothing more to report. There has been a user [not to be listed in the notes] who has been antagonizing and derailing conversations, and upon receiving multiple reports we have chosen to ban them for 6 months. We have also updated all of the reporters to note that this user has been banned.
+
 AKI: At the Ecma GA, we’ve requested to keep track of honorifics for the Ecma memento because individuals have been mislabeled as “Mr.” or “Mrs.” when those are not necessarily the honorifics they wish to have. Please let us know if you have a preferred honorific by emailing. [tc39chairs@ecma-international.org](mailto:tc39chairs@ecma-international.org).
 
 ## Making function.sent inactive
 (Jordan Harband, JHD)
+
 MM: I am one of the people that asked for it. There are some patterns using generators using either a source or a sink or both. Using a sink suffers from this asymmetry. I do not care about this enough to champion. But, we should beware of arguments from the absence of patterns that would use it. Because of its absence, we’ve not seen the patterns that would have used it.
+
 YK: Because it’s an active proposal, it serves as a good honeypot for people to request it.
+
 JHD: This is a Markdown file in a larger file that Allen maintains called `es-ideas`. The only comments I’ve seen are bike-shed-y comments like “it should be `yield.send`” rather than what it currently is.
+
 From IRC: Haxjs is willing to champion this proposal, given mentorship.
+
 JHD: I am willing to help mentor Haxjs on this.
+
 JHD: My interpretation is that Allen does not want this withdrawn. He wants to see it eventually land in the language.
+
 YK: I think it is acceptable for us to withdraw it in that case, but it seems we’re not.
 
 #### Conclusion/Resolution
@@ -159,7 +224,9 @@ Peter Hoddie
 - [slides](???)
 
 PHE: (Presents slides)
+
 PHE: New name for TC53: EcmaScript Modules for Embedded Systems
+
 WH: Is everything you do using EcmaScript modules?
 
 PHE: Yes. We had originally called it something else, but it does now use EcmaScript modules. Is there a concern with that?
@@ -266,6 +333,7 @@ YK: I am trying to suggest as weak-as-possible of a requirement, so yeah, an exp
 
 - Glossing over this PR due to unresolved feedback on a web-compat issue
 - Encouraging folks to participate in PR discussion
+
 ## Disallow internal methods returning `continue`|`break`|`return`
 
 Jordan Harband (JHD)
@@ -334,6 +402,7 @@ JHD: Why do disposal before `catch`/`finally`? Would you perhaps want to examine
 RBN: You can do that by defining the variable prior to the `try` and then referencing it in the `try`:
 
 ```js
+
 const x = <something>;
 try (x) {
   // do stuff with x
@@ -347,6 +416,7 @@ RBN: (Continues presenting slides)
 DT: Concerns about errors when doing multiple exprs in the resources list:
 
 ```js
+
 try (const { x, y } = z, x = x, y = y) { … }
 // Are we going to break here? The slides suggest that this would trigger @@dispose call on y, then on x, then on z
 ```
@@ -549,6 +619,7 @@ DRR: Yes, agreed.
 JGR: The logical operators in a statically-typed language like Kotlin aren’t super relevant because they can only be used on booleans.
 
 YK: I can’t figure out quickly if this is true or not. There are statically typed variants of JavaScript that have already set a precedent. Perhaps looking at what they do is a good step to take.
+
 BT: Thank you for using the queue, DRR.
 
 DRR: C# is a language that also uses this feature, it’s also statically-typed. I think the looser precedence is fine as well, so I’m not sure if this is really relevant anymore.

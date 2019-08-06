@@ -153,7 +153,9 @@ DRR: Ok!
 LBR: One thing we've been talking about is, we've been looking at desirable examples.  I would like to make sure.  I want people to make sure what we're making with optional chaining.  You can start from any expression, including chaining from a regex literal, which is weird.  I wonder if there's a possibility to start optional chaining from actual names.  Because a reasonable developer would never use it, but you could start optional chaining from false, regex.  It's a nice feature to create very confusing code, just for fun.  But I wonder if it's possible that we could do a better tailoring of the syntax to start in more reasonable places.
 
 DRR: You can write a lot of nonsense code, ben actually has been writing tests and asking these questions as we've gone along. One of the examples was a class that extends from the optional chain. Should you disallow this from the grammar? Well you can but we have historically not allowed this
+
 I don't understand why you would do an optional ??
+
 Disambiguation is one thing, we weren't totally sold on doing that 2 days ago, but im open to the idea but I don't really feel like i'm strongly convinced. I think it would add complexity to the grammar as well.
 
 LBR: I understand this feature is highly desired by a lot of people. But at the same time, there's a high cost to complexity to the final code.  And in the end, this is just sugar.  I consider, as a developer, I am very skeptical if the tradeoffs we are offering here really compensate for the complexity we are adding to the language.  It seems that we are getting so many different syntaxes, and we are just celebrating everything.  I'm afraid in the future that we get problems with languages that added so much sugar, like Perl.  It's the value but also the doom at the same time. I think we should be more, and i feel at the same time, because of the complexity I am aggressively challenged from my objections. I think this is an important flag for one, I am not going to be able to object this log? Once this goes to Stage 3, I don't think there will be web compatibility issues with this, and this will ship as soon as this gets to Step 3.
@@ -230,6 +232,7 @@ Presenter: Mike Samuel (MSL)
 I would like to ask for Stage 1 or 2. I've got draft spec text, there's some tests in the explainer but a lot of the extensive testing would be done via web platform tests.
 
 DD: Are you saying this would be possible if the host delays stringifying or is this necessary for the proposal?
+
 Claiming that there’s an observable semantics switch is just not correct.
 
 MSL: The promise capability does not escape until step 8 (referring to slides). We could put a requirement to stringify first.
@@ -444,6 +447,7 @@ MM: The module import graph has to be within the package dependency graph.
 AK: salesforce in interesting as they’re using the DOM, previous version of ses had to wrap the whole thing
 
 MM: The issue of securing the dom is interesting. Before proxies, Caja did a full ad-hoc dom membrane built of objects that specific to the semantics of specific DOM APIs individually.
+
 Salesforce was doing the same thing - but with proxies you can have an easier job with it. (explains iframe technique using SES via CSP trick to expose dom nodes directly)
 
 AK: Given that DOM APIs can provide access to things like timers fairly trivially, and not only by appendings scripts it worries me as a browser vendor about the practicality of this.
@@ -539,6 +543,7 @@ BFS: Will that remain true if we add normalization or custom equality? Normaliza
 KM: we’d probably inline the normalization op. If it’s inlinable and not too crazy, you’d get the same thing, although that would only apply to the highest tier. Without normalization there’s probably a simple optimization. (describes simple optimization)
 
 BFS: A code search on GitHub wouldn’t work. A variety of people are doing it in series and then doing the get statements afterwards
+
 I did an AST search on npm for this code pattern which resulted in only about 600 occurrences for this exact pattern. People were doing a lot of extra junk.
 
 JHD: You said people were writing extra junk in the `if`. Do you know how much of that stuff wouldn’t be able to move into a function?

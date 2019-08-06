@@ -11,6 +11,7 @@ Bradley Farias (BFS), Gus Caplan (GCL), Kevin Gibbons (KG), Pedram Emrouznejad (
 # Agenda
 
 - [Agenda](https://github.com/tc39/agendas/blob/master/2019/07.md)
+
 ## Promise.allSettled
 
 Presenter: Mathias Bynens, MB
@@ -41,6 +42,7 @@ MB: Thanks to Jase Williams & Robert Pamely for their work on writing the spec t
 #### Conclusion/Resolution
 
 - Stage 4 reached
+
 ## Promise.any
 
 Presenter: Mathias Bynens, MB
@@ -225,6 +227,7 @@ YK: I agree option 2 could be fine from an intuition perspective.  But, I still 
 MPT: If there's code running in the wild relying on `matchAll` not actually matching all right now, it ain't great code.
 
 MB: Is that the committee's decision? We need to do a web compatibility investigation before we proceed here?
+
 If you say "ok these are good options, but we only want to do them if we know we want to change `matchAll` without breaking the web.”
 
 WH: I’d be interested in pursuing this to see if it’s feasible. For web-compat, the two are semi-equivalent, the only difference being you run `matchAll` and don’t care what it returns.
@@ -281,6 +284,7 @@ Mathias Bynens (MB)
 MB: (Presents slides).
 
 MB: Currently, the `Array.prototype.sort` leaves a lot of behaviour of implementation-defined.
+
 We want to give engines the freedom to use whatever they want so long as it aligns with the specification.
 
 MB: (continues presenting slides)
@@ -318,6 +322,7 @@ MB: If you write code that depends on unspecified implementation details, that c
 #### Conclusion/Resolution
 
 - Continue discussions offline on GitHub.
+
 ## RegExp Match Offsets Update
 
 Ron Buckton (RBN)
@@ -375,6 +380,7 @@ RBN: Stage 3?
 
 - The simpler API reaches consensus
 - Proceeds to Stage 3
+
 ## Iterator Methods Update / Stage 2
 
 Domenic Denicola (DD)
@@ -454,6 +460,7 @@ DD: Stage 2?
 
 - Proceeding to Stage 2
 - Stage 3 reviewers: Michael Ficarra (MF) and Dean Tribble (DT)
+
 ## Built-In Modules aka JavaScript Standard Library
 
 Presenter: Michael Saboff (MS)
@@ -764,6 +771,7 @@ RBN: I definitely see the use-case for this. Eventually having both equality cus
 
 - Not seeking stage advancement
 - BF: There’s an indefinite blocker, so I'm preparing to withdraw this proposal
+
 ## Update on function implementation hiding
 
 Presenter: Michael Ficarra (MF)

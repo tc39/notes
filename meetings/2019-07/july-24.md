@@ -14,7 +14,7 @@ Bradley Farias (BFS), Gus Caplan (GCL), Kevin Gibbons (KG), Pedram Emrouznejad (
 
 ## Promise.allSettled
 
-Presenter: Mathias Bynens, MB
+Mathias Bynens, MB
 
 - [proposal](https://github.com/tc39/proposal-promise-allSettled)
 - [slides](https://docs.google.com/presentation/d/1qhYDRlsvyVUtveT2tS0mJtzG-xe9islO6-t2wMQUJso/edit)
@@ -45,7 +45,7 @@ MB: Thanks to Jase Williams & Robert Pamely for their work on writing the spec t
 
 ## Promise.any
 
-Presenter: Mathias Bynens, MB
+Mathias Bynens, MB
 
 - [proposal](https://github.com/tc39/proposal-promise-any/)
 - [slides](https://docs.google.com/presentation/d/1WbE3squBN76_4SIHRmOQKrzglaQAVizMQZ8MqipoM4U/edit)
@@ -125,7 +125,7 @@ MB: Not everyone has done their full review.  There have been recent changes lan
 
 ## `String.prototype.replaceAll`
 
-Presenter: Mathias Bynens (MB)
+Mathias Bynens (MB)
 
 - [proposal](https://github.com/tc39/proposal-string-replace-all)
 - [slides](https://docs.google.com/presentation/d/194gQ-GRfb9r17Vva9nevePkFUfPck1o_pXHM25LlVKs/edit)
@@ -463,7 +463,7 @@ DD: Stage 2?
 
 ## Built-In Modules aka JavaScript Standard Library
 
-Presenter: Michael Saboff (MS)
+Michael Saboff (MS)
 
 - [proposal](https://github.com/tc39/proposal-javascript-standard-library)
 - [slides](https://github.com/tc39/proposal-javascript-standard-library/blob/master/slides/JSL-TC39-July-2019.pdf)
@@ -774,7 +774,7 @@ RBN: I definitely see the use-case for this. Eventually having both equality cus
 
 ## Update on function implementation hiding
 
-Presenter: Michael Ficarra (MF)
+Michael Ficarra (MF)
 
 - [proposal](https://github.com/tc39/proposal-function-implementation-hiding)
 - [slides](https://docs.google.com/presentation/d/1lWH97DxTLU3_1EJA-F19uIzagZQx7PZmys7WyNXw3cY/edit)
@@ -853,7 +853,7 @@ PST: We (XS) always remove the source text.
 
 ## Casing Conventions
 
-Presenter: Shane Carr (SFC)
+Shane Carr (SFC)
 
 - [slides](https://docs.google.com/presentation/d/1PK01F6mkHLycz9jN8jQZrrg0Rvne4d2Sv-R-uGApYqA/edit)
 
@@ -983,7 +983,7 @@ LBR: If you have any concerns, please let me know.
 
 ## Web built-in module convention guidance from TC39
 
-(Domenic Denicola, DD)
+Domenic Denicola, DD
 
 - [issue](https://github.com/heycam/webidl/issues/755)
 

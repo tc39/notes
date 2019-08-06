@@ -86,20 +86,25 @@ Editorial: 24
  - [explicitly noting math values](https://github.com/tc39/ecma262/pull/1135) (prereq for bigint)
  - plus: [intrinsic notation](https://github.com/tc39/ecma262/pull/1376) coming soon, please review ASAP if you have thoughts
 </details>
+
 ## Ecma 402 (Intl) status update
-(Leo Balter, LBR)
+
+Leo Balter (LBR)
+
 - [slides](https://docs.google.com/presentation/d/1xzf-s3Rm4sJKVQBqcxQCBxVCFIIc2mOF93Pk2wOaJDQ/edit#slide=id.p)
 
 LBR: (Presents slides)
 
 LBR: Any questions?
 
+*silence*
+
 LBR: No questions, let’s move on to Test262!
 
 ## Test262 Updates
 
-[slides](https://docs.google.com/presentation/d/1xzf-s3Rm4sJKVQBqcxQCBxVCFIIc2mOF93Pk2wOaJDQ/)
-[video]
+- [slides](https://docs.google.com/presentation/d/1xzf-s3Rm4sJKVQBqcxQCBxVCFIIc2mOF93Pk2wOaJDQ/)
+- [video]
 (https://www.youtube.com/watch?v=mzCyJK9NYGI&feature=youtu.be)
 
 LBR: Test262 is probably the most challenging project I’ve ever worked on in my life. (Presents slides) Here’s a [visualization](https://www.youtube.com/watch?v=mzCyJK9NYGI) emphasizing the number of people actively working on various tests at the same time.
@@ -187,16 +192,21 @@ LBR: I think it’s a timely question and important to be addressed.
 
 ## Ecma404 Update
 
+Chip Morningstar (CM)
+
 CM: No updates to the “JSON” standard. The spec is timeless and eternal. (Laughs)
 
 ## Code of Conduct Committee Updates
+
+Aki Braun (AKI)
 
 AKI: Some quick updates. We had a minor incident at the last meeting. The discussion is ongoing there’s nothing more to report. There has been a user [not to be listed in the notes] who has been antagonizing and derailing conversations, and upon receiving multiple reports we have chosen to ban them for 6 months. We have also updated all of the reporters to note that this user has been banned.
 
 AKI: At the Ecma GA, we’ve requested to keep track of honorifics for the Ecma memento because individuals have been mislabeled as “Mr.” or “Mrs.” when those are not necessarily the honorifics they wish to have. Please let us know if you have a preferred honorific by emailing. [tc39chairs@ecma-international.org](mailto:tc39chairs@ecma-international.org).
 
 ## Making function.sent inactive
-(Jordan Harband, JHD)
+
+Jordan Harband (JHD)
 
 MM: I am one of the people that asked for it. There are some patterns using generators using either a source or a sink or both. Using a sink suffers from this asymmetry. I do not care about this enough to champion. But, we should beware of arguments from the absence of patterns that would use it. Because of its absence, we’ve not seen the patterns that would have used it.
 
@@ -219,9 +229,9 @@ YK: I think it is acceptable for us to withdraw it in that case, but it seems we
 
 ## TC53 Liaison Report
 
-Peter Hoddie
+Peter Hoddie (PHE)
 
-- [slides](???)
+- [slides (missing link)](???)
 
 PHE: (Presents slides)
 
@@ -255,13 +265,13 @@ Jordan Harband (JHD)
 
 - [PR](https://github.com/tc39/ecma262/pull/1517)
 
-JHD: <presents argument for resolving the issue>
+JHD: (presents argument for resolving the issue)
 
 JHD: Absent all web compat concerns, what would we like to do? Taking into consideration web compat concerns, what *can* we do?
 
 JHD: Of those options, are there any implementibility concerns for any of them? To me, `undefined` is absent, we treat it that way everywhere, so it seems to be the ideologically correct way to use it. It seems to me to be good to change the RegEx behavior to start throwing. There have been a couple comments on the thread with pushback, whenever  some discussion comes up about consistency, there are those who react by saying “this is weird, and I don’t want to add complexity,” so to me, the response should be “let’s make it consistent” and not “let’s leave things as they are.” Considering that it will currently throw an error, it seems that it is unlikely to pose web-compat problems.
 
-JHD: <Reads out [comment](https://github.com/tc39/ecma262/pull/1517#issuecomment-514162733) from V8 team>
+JHD: (Reads out [comment](https://github.com/tc39/ecma262/pull/1517#issuecomment-514162733) from V8 team)
 
 CM: Do current implementations match the spec?
 
@@ -388,12 +398,12 @@ MM, WH: (Thumbs up)
 
 ## Explicit Resource Management
 
-> Seeking stage 2
-
 Ron Buckton (RBN)
 
 - [proposal](https://github.com/tc39/proposal-using-statement)
 - [slides](https://1drv.ms/p/s!AjgWTO11Fk-TkdZAmxoB7HKzm78gCw)
+
+> Seeking stage 2
 
 RBN: (Presents slides)
 
@@ -402,7 +412,6 @@ JHD: Why do disposal before `catch`/`finally`? Would you perhaps want to examine
 RBN: You can do that by defining the variable prior to the `try` and then referencing it in the `try`:
 
 ```js
-
 const x = <something>;
 try (x) {
   // do stuff with x
@@ -416,9 +425,9 @@ RBN: (Continues presenting slides)
 DT: Concerns about errors when doing multiple exprs in the resources list:
 
 ```js
-
 try (const { x, y } = z, x = x, y = y) { … }
-// Are we going to break here? The slides suggest that this would trigger @@dispose call on y, then on x, then on z
+// Are we going to break here? The slides suggest that this would trigger
+// @@dispose call on y, then on x, then on z
 ```
 
 RBN: (Continues presenting slides)
@@ -457,7 +466,7 @@ WH: To set the context of my question: async dispose and regular dispose are dif
 
 RBN: Currently yes
 
-WH: In the async situation, you first look for @asyncDispose. If it’s there, you run and await it, else you run @dispose, otherwise error. This creates a refactoring hazard: If you add an @asyncDispose method as a default to something like the Object prototype, you may change the meaning of a lot of things in your program since the async disposes which would have defaulted to the sync disposes now refer to the new async dispose.
+WH: In the async situation, you first look for @asyncDispose. If it’s there, you run and await it, else you run `@@dispose`, otherwise error. This creates a refactoring hazard: If you add an @asyncDispose method as a default to something like the Object prototype, you may change the meaning of a lot of things in your program since the async disposes which would have defaulted to the sync disposes now refer to the new async dispose.
 
 RBN: This would also be a problem for async iterator for things that were also previously normal iterators. We don’t do anything special to handle that.
 
@@ -566,7 +575,7 @@ Daniel Rosenwasser (DRR)
 - [proposal](https://github.com/tc39/proposal-nullish-coalescing/)
 - [slides](https://1drv.ms/p/s!AltPy8G9ZDJdqSUtMZeOKLg1RcRD)
 
-> Seeking stage 3
+DRR: Seeking stage 3
 
 DRR: (Presenting slides)
 
@@ -636,7 +645,6 @@ MM: Sounds like we’re agreed that the thing you’re asking for stage 3 is wit
 
 - Consensus reached, proceeding to Stage 3
 
-
 ## Symbol.reverse
 
 Leo Balter (LBR), Jordan Harband (JHD)
@@ -704,7 +712,7 @@ JHD: Please bring up any use cases as GitHub issues, if you have them!
 
 ## Inconsistency between Array.from and %TypedArray%.from
 
-(Jordan Harband, JHB)
+Jordan Harband (JHB)
 
 -[sample code](https://gist.github.com/ljharb/896ad592accdbd783d5ec1d44e978b76)
 

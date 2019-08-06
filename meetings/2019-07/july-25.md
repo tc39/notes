@@ -16,7 +16,7 @@ This is a template for all topic discussions.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Optional Chaining for Stage 3
 
-(Daniel Rosenwasser, DRR)
+Daniel Rosenwasser, DRR
 
 - [proposal](https://github.com/tc39/proposal-optional-chaining/)
 - [slides](https://onedrive.live.com/view.aspx?resid=5D3264BDC1CB4F5B!5281&ithint=file%2cpptx&authkey=!AH-MOCJRlVtK_QE)
@@ -222,7 +222,7 @@ BT: Congratulations Daniel!
 
 ## Dynamic Import Host Adjustment for Stage 1 or 2
 
-Presenter: Mike Samuel (MSL)
+Mike Samuel (MSL)
 
 - [proposal](https://github.com/mikesamuel/dynamic-import-host-adjustment)
 - [slides](https://docs.google.com/presentation/d/e/2PACX-1vT42wrii3gX0dZ3ordT5QgVes0Y2WLEhsvFl4Q7svdSyve4kl3bMtqvkEauQd1uPC2JNOm3anw-1IGn/pub?start=false&loop=false&delayms=60000)
@@ -357,7 +357,7 @@ KG: I had been talking to you about this proposal on GitHub. Sorry for not follo
 
 ## Loosening idempotency requirements for HostImportModuleDynamically to enable retrying failed fetches
 
-Presenter: Domenic Denicola, DD
+Domenic Denicola, DD
 
 - [issue](https://github.com/tc39/proposal-dynamic-import/issues/80)
 
@@ -384,7 +384,7 @@ MM: It's good that you brought this to committee.
 
 ## MetaMask, safe modules, and Sesify
 
-Presenter: Aaron Davis (ADS), invited presenter
+Aaron Davis (ADS), invited presenter
 
 - [slides](no link)
 

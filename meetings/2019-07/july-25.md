@@ -76,7 +76,7 @@ WH: Plenty of arguments have been expressed that these features can't be separat
 
 YK: I think I have now emotionally gotten to the place that LBR was at when I walked in. A lot of the meta of this is the desire to see it in.
 
-DRR: I think there is a general desire to break the two features into their own proposals, because we could more piecewise evaluate their utility and semantics.  I think that is a thing that has been expressed a couple of times.  I don't know if there's a way we can get consensus on that point.  WH has said earlier that it's him why the proposals are combined, but that’s not the only reason.  I've heard from other parties that it's important to keep the features together for other reasons.  The feeling I have right now is that we cannot think about them separately.  My intent is to deliver this feature is because it is a highly demanded feature by both TypeScript and JavaScript developers.  To the one specific item you brought up: I believe we are picking the correct semantics, and I’m willing to work with you on them. 
+DRR: I think there is a general desire to break the two features into their own proposals, because we could more piecewise evaluate their utility and semantics.  I think that is a thing that has been expressed a couple of times.  I don't know if there's a way we can get consensus on that point.  WH has said earlier that it's him why the proposals are combined, but that’s not the only reason.  I've heard from other parties that it's important to keep the features together for other reasons.  The feeling I have right now is that we cannot think about them separately.  My intent is to deliver this feature is because it is a highly demanded feature by both TypeScript and JavaScript developers.  To the one specific item you brought up: I believe we are picking the correct semantics, and I’m willing to work with you on them.
 
 GHO: You said you’ve heard from other parties about other reasons – I’d like to know what other reasons.
 
@@ -144,7 +144,7 @@ DRR: Our intent is to, if we can.
 
 YK: It is too confusing. The user would have trouble predicting. So we should not add the feature.
 
-DRR: Yes, but we can also be prescriptive in how the feature should be used as well. 
+DRR: Yes, but we can also be prescriptive in how the feature should be used as well.
 
 YK: I feel persuadable on that topic.
 
@@ -251,7 +251,7 @@ MM: There are some issues we should examine for any proposal that would add or m
 
 MSL: It should be easy for someone who is reading the spec to figure out what all of the host connection points are, and it should be possible for a user code that is using the realms API to implement what's effectively a host hook when 1 realm creates another realm
 
-MM: The word “trusted” stands in the way of reasoning about this well. “Trusted” seems binary and from an objective stance. It is always better to talk about reliance and vulnerability. The controlling code which creates a realm is “trusted” by the controlled code within the realm, i.e., the controlled code is necessary vulnerable to its controlling code. This is the case whether the controlling code is a genuine host or JavaScript code using the Realm API. But other code outside of that realm must not be vulnerable to that controlling code, i.e., that code is not “trusted” by the outside code. The semantics of new host hooks must not introduce any such vulnerability of outside code. 
+MM: The word “trusted” stands in the way of reasoning about this well. “Trusted” seems binary and from an objective stance. It is always better to talk about reliance and vulnerability. The controlling code which creates a realm is “trusted” by the controlled code within the realm, i.e., the controlled code is necessary vulnerable to its controlling code. This is the case whether the controlling code is a genuine host or JavaScript code using the Realm API. But other code outside of that realm must not be vulnerable to that controlling code, i.e., that code is not “trusted” by the outside code. The semantics of new host hooks must not introduce any such vulnerability of outside code.
 
 MSL: Trusted means if X trusts Y then a failure in X could be due to a failure in Y, does that align with your interpretation?
 
@@ -271,7 +271,7 @@ WH: Would they all use the same mechanism like a hidden property to do this? Or 
 
 MSL: When trusted types specifies how one of the hosts calls out into the browser? What mechanism they use?
 
-WH: I’m trying to understand the greater context of this proposal. 
+WH: I’m trying to understand the greater context of this proposal.
 
 MSL: So I can point you to that proposal and I’d be happy to talk about it with you. I think the short answer is yes they all use similar mechanism for vetting values.
 
@@ -283,7 +283,7 @@ JHD: Can you go back to the slide with the data-uri module?
 
 JHD: Is the purpose to ensure a specific variable `x` is trusted or is it to ensure that that specific example is trusted. If that data-uri is good, it shouldn’t matter whether it’s good, this is an enclosed thing.
 
-MSL: Yeah this is probably a bit silly because it requires that an application does bad things to nice people. I was just using this data uri as a placeholder for that stuff.  
+MSL: Yeah this is probably a bit silly because it requires that an application does bad things to nice people. I was just using this data uri as a placeholder for that stuff.
 
 JHD: Sure, but I’m asking if the bad stuff it does is not so bad and you can trust it and you mark it then why do you care if anyone uses that string in dynamic import after? And if the bad stuff is bad then why can you mark it trusted? What is the reason why dynamic import needs to differentiate between two identical strings?
 
@@ -320,7 +320,7 @@ WH: I was answering the question about prerequisites to Stage 2.
 - Approved for stage 1
 - Needs more discussion before stage 2
 
-## Dynamic Code Brand Checks for Stage 2 
+## Dynamic Code Brand Checks for Stage 2
 (Mike Samuels, MSL)
 - [proposal](https://github.com/tc39/proposal-dynamic-code-brand-checks)
 - [slides](https://docs.google.com/presentation/d/e/2PACX-1vS9iXY1nSKu2UkpqNIVmzgs5oPdgPYz8aShH4y07m7JUTR51IyOfz8KcFZ0Pf_NUnlcaf4qpgLnNOwi/pub?start=false&loop=false&delayms=60000&slide=id.p)
@@ -452,7 +452,7 @@ MM: Caja, the original SES, did not attempt to suppress source of timing. We are
 
 (discussion between AK and MM about 2 sets of objects that can only talk to each other through Proxies [membranes])
 
-AK: I want to loop back to the beginning, where we were discussing denying the ability to get keys from something in your system. 
+AK: I want to loop back to the beginning, where we were discussing denying the ability to get keys from something in your system.
 
 MM: The ability to get info via timing channels is something that SES only help with in the restrictive case of transformational modules, which do not need anything that would let them sense duration. This is a narrow special case, but actually covers a significant amount of code.
 
@@ -467,10 +467,11 @@ MM: The event-stream incident did not use any side-channels, it was just a direc
 #### Conclusion/Resolution
 
 - Status update.
+
 ## Infix Bang
 - [proposal](https://github.com/Agoric/proposal-infix-bang)
 
-MM: <presents slides>
+MM: (presents slides)
 
 Gus: I opened an issue on the repo. My question was if you replace the `!` with `.` and put an await in front of it, you can build up synchronously a chain of things and by awaiting it, it calls `then` and you can commit the entire thing and… (further explanation) why is the whole new promise api needed if we can already do it that way?
 
@@ -502,15 +503,13 @@ YK: Yes
 
 MM: trying again harder with proxies is definitely worth doing.
 
-
 #### Conclusion/Resolution
 
 - Revisit during overflow
 
-
 ## `Map#updateOrInsert`
 
-(Bradley Farias (BFS))
+Bradley Farias (BFS)
 
 - [proposal](https://github.com/tc39/???)
 - [slides](https://docs.google.com/presentation/d/1_xtrGSoN1-l2Q74eCXPHBbbrBHsVyqArWN0ebnW-pVQ/edit#slide=id.p)
@@ -574,7 +573,7 @@ YK: Im agreeing with everything that people said about doing this for the develo
 
 #### Conclusion/Resolution
 
-- Advance to stage 1 
+- Advance to stage 1
 
 ## Explicit Resource Management for Stage 2 (continuation from Tuesday)
 
@@ -591,7 +590,7 @@ RBN: yes, I am
 
 DT: I would propose it shouldn’t catch the exception you mentioned there.
 
-RBN: If you have a second declaration that would be caught if you throw an exception I am thinking in that case the initialization should be part of what gets caught. 
+RBN: If you have a second declaration that would be caught if you throw an exception I am thinking in that case the initialization should be part of what gets caught.
 
 RBN: (continues presenting slides)
 
@@ -603,7 +602,7 @@ RBN: But it can have todos
 
 BFS: PoO stage 2 requires syntax.
 
-PDL: I agree that we shoulndt spend time on syntax, is this blocked from stage 2 LBR and others, are your concerns addressed? 
+PDL: I agree that we shoulndt spend time on syntax, is this blocked from stage 2 LBR and others, are your concerns addressed?
 
 LBR: What was presented right now is not blocked for stage 2.
 
@@ -672,11 +671,6 @@ RBN: Yes, I had more of that in the motivations section
 LBR: My only request is that next time we discuss this feature we emphasize the part where disposal is happening.
 
 RBN: alright, that’s fine.
-
-
-
-
-
 
 #### Conclusion/Resolution
 

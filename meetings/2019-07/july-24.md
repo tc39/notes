@@ -20,9 +20,9 @@ Presenter: Mathias Bynens, MB
 
 > Seeking stage 4
 
-MB: (Presents slides) Are we ready for Stage 4? 
+MB: (Presents slides) Are we ready for Stage 4?
 
-LBR: I have a meta question—what happens if an editor finds something (i.e. has feedback) and it’s in Stage 4? 
+LBR: I have a meta question—what happens if an editor finds something (i.e. has feedback) and it’s in Stage 4?
 
 MB: Then we change the PR and address the feedback. If the feedback is significant, in that rare case, we could bring back to Stage 3, but I think that should be rare because normally Stage 3 already has a rigorous review.
 
@@ -50,7 +50,7 @@ Presenter: Mathias Bynens, MB
 
 > Seeking stage 2 or 3
 
-MB: (Presents slides). 
+MB: (Presents slides).
 
 MB: I'd like to resolve if the `errors` property on the `Error` object is enumerable or not.  The `message` errors property is not enumerable, so I feel like we should follow that.
 
@@ -60,7 +60,7 @@ MM: Consistency gives you what answer?
 
 MB: The message property is not enumerable, so we would make the `errors` property not-enumerable as well.
 
-YK: Not a blocking concern, but I don’t think consistency is necessarily the overriding concern. I suppose things that generally are enumerable are iterable, which could be useful? 
+YK: Not a blocking concern, but I don’t think consistency is necessarily the overriding concern. I suppose things that generally are enumerable are iterable, which could be useful?
 
 MB: No, if you to `Object.keys`, for example.
 
@@ -70,7 +70,7 @@ MB: I’d like to resolve this today.
 
 MM: I didn't know about `Error.message` not being enumerable.  But in addition to that, built-in properties across the ECMAScript standard are not enumerable.  If there are enumerable properties, that's an inconsistency to that pattern.
 
-BFS: There's a difference here I feel. When we’re talking about the enumerability of properties, most of the non-enumerable things are defined (except for symbols) in their own way. 
+BFS: There's a difference here I feel. When we’re talking about the enumerability of properties, most of the non-enumerable things are defined (except for symbols) in their own way.
 
 JHD: Symbols are enumerable too, by the way, just not in the same way.
 
@@ -106,7 +106,7 @@ YK: I think what JHD just said is persuasive to me. I think it’s probably not 
 
 MB: Any objections to Stage 2?
 
-BT: Let’s take this one proposal at a time? Any objections to Stage 2 for `Promise.any`? 
+BT: Let’s take this one proposal at a time? Any objections to Stage 2 for `Promise.any`?
 
 (no objections to Stage 2)
 
@@ -168,7 +168,7 @@ MB: We would have to do an investigation.
 
 SLN: Is there any performance impact on any of these options? If an implementer tries to implement this, which is the least costly?
 
-MB: Not much difference between any of them. 
+MB: Not much difference between any of them.
 
 SLN: if we went option 1 it would be the fastest path or the most performant path?
 
@@ -214,13 +214,13 @@ MPT: Would using a very explicit error message help get around the 'weirdness' o
 
 WH: What happens if you run `matchAll` with a non-`g` regex?
 
-JHD: Currently you get 1 match. 
+JHD: Currently you get 1 match.
 
 WH: So currently you get silent bad behavior...
- 
+
 MPT: loud bad behaviour in my opinion being preferable
 
-YK: I agree option 2 could be fine from an intuition perspective.  But, I still don't think option 2 is forwards compatible. 
+YK: I agree option 2 could be fine from an intuition perspective.  But, I still don't think option 2 is forwards compatible.
 
 MPT: If there's code running in the wild relying on `matchAll` not actually matching all right now, it ain't great code.
 
@@ -261,7 +261,7 @@ YK: It feels like this is ready to implement, like, you could implement this wit
 
 WH: It’s not the situation I want to end up in, but I’m not going to block things. I’d like `matchAll` and `replaceAll` to match or consider renaming if they’re not.
 
-MS:  I’m not sure it’s ready for Stage 3 if we haven’t decided between Option 2 and 3. 
+MS:  I’m not sure it’s ready for Stage 3 if we haven’t decided between Option 2 and 3.
 
 JHD: It would be nice to start the clock on this, if that’s an option.
 
@@ -301,11 +301,11 @@ MB: That special case is not currently in the proposal.
 
 WH: More generally, I second KG’s point.  There may be various other special cases where implementations don’t do what you're trying to spec, and we should be aware of those are before making decisions.
 
-SFR: Shortly after stable sort was introduced, we got a lot of end-user reports of inconsistencies. Let me register my concern. 
+SFR: Shortly after stable sort was introduced, we got a lot of end-user reports of inconsistencies. Let me register my concern.
 
 YK: The thesis of the change is that because browsers are already incompatible and that stability is hard to rely on in such an environment it sounds like making the browsers stable caused problems, so I’m curious how that played out.
 
-SFR: I’ve heard direct customer issues that it works in Node 8 but not 10, and we’ve had API/SDK compatibility issues which require us to special case around that. Certainly we shouldn’t be using sort in ways it shouldn’t be used, but we have to deal with legacy code. 
+SFR: I’ve heard direct customer issues that it works in Node 8 but not 10, and we’ve had API/SDK compatibility issues which require us to special case around that. Certainly we shouldn’t be using sort in ways it shouldn’t be used, but we have to deal with legacy code.
 
 YK: The cases where that happens are when people are trying to tailor to a certain browser engine.
 
@@ -509,7 +509,7 @@ BFS: Is it a problem?
 
 SLN: There would be concerns with sync access, but essentially, not.
 
-MS: Is this a Stage 1 concern, or Stage 2? 
+MS: Is this a Stage 1 concern, or Stage 2?
 
 JHD: It’s a major semantic. That would make it a Stage 1.
 
@@ -517,9 +517,9 @@ MS: I’m essentially asking, does that make it a blocking concern for proceedin
 
 JHD: I’m saying, yes, this needs to be resolved before Stage 2.
 
-MM: Top-level await only exists in modules, not scripts.  Would top-level await in scripts address enough of the pain that it goes away? 
+MM: Top-level await only exists in modules, not scripts.  Would top-level await in scripts address enough of the pain that it goes away?
 
-AK: Browsers are really unlikely to implement a top-level await in scripts that would block other script loading. 
+AK: Browsers are really unlikely to implement a top-level await in scripts that would block other script loading.
 
 MM: The only thing I would advocate would be equivalent to the syntactic sugar.
 
@@ -533,9 +533,9 @@ SME: Yes, but one of the nice things about this proposal is that you no longer n
 
 JHD: With this proposal, and with built-in modules, it will be impossible to polyfill things outside of the browser unless the engine implements something similar to import maps.
 
-MS: Import maps is one way to use the chain-loading process.  We could add something to the spec to allow load … 
+MS: Import maps is one way to use the chain-loading process.  We could add something to the spec to allow load …
 
-JHD: And then you've changed the requirement that … 
+JHD: And then you've changed the requirement that …
 
 (MS and JHD exchange a bit more… not recorded)
 
@@ -559,7 +559,7 @@ BF: Problems caused by environment-specific situations can be solved by environm
 
 JHD: If I want to polyfill a missing module like `js:temporal` there should be a universal solution rather than having different workflows in different environments.
 
-… Continued disagreement on scope of environment responsibility vs language … 
+… Continued disagreement on scope of environment responsibility vs language …
 
 POINT OF ORDER, no longer on topic.
 
@@ -829,9 +829,9 @@ MF: Let's talk offline
 
 DD: The README mentions using a symbol.
 
-API: Is there anything precluding an engine from eliminating source code entirely? 
+API: Is there anything precluding an engine from eliminating source code entirely?
 
-DD: There’s nothing precluding it other than engineering will. 
+DD: There’s nothing precluding it other than engineering will.
 
 API: That implies then that would hold in the future.
 
@@ -866,7 +866,7 @@ DD: I  am generally in  favor  of consistency across ecosystems,but I want more 
 
 SFC: (referring to slide titled “Kebab Case Problem 1”) this is an example of a date, timezone is PST, this would be passed into intl display
 
-DD: Would you take return value.type and feed that into the key? 
+DD: Would you take return value.type and feed that into the key?
 
 SFC: That’s a place where a reasonable person could do that. An argument could be made that this case is not convincing enough and we should still use kebab.
 
@@ -880,13 +880,13 @@ SFC: In general, locale identifiers are widely used across all languages, howeve
 
 YK: I agree with DD. I agree with option two. If the string is referring to something in another part of the API, you let the ergonomics of the other API dominate. Other than that, it should follow the ecosystem style.
 
-SFC: I want to raise one more con for opt 2. If we introduce kebab now but in the future want to use them as fields of an object literal. If we use kebab we restrict ourselves 
+SFC: I want to raise one more con for opt 2. If we introduce kebab now but in the future want to use them as fields of an object literal. If we use kebab we restrict ourselves
 
 YK: You do  expect DateTime field (??) to use a different API?
 
 LBR: There’s one point missing here. We’ve got an extensive offline discussion in the display names proposal repo (issues 29/32) that is very valuable. My first sentiment was to follow option 2. Shane and Daniel also +1’d. At the end, though, we couldn’t recommend kebab case.
 
-SFC: 3 concrete outcomes possible for today: 1. recommend option 3 officially, 2. Say we’re not ready to recommend across the standard. 3. Roll back and use kebab case more frequently. 
+SFC: 3 concrete outcomes possible for today: 1. recommend option 3 officially, 2. Say we’re not ready to recommend across the standard. 3. Roll back and use kebab case more frequently.
 
 SFC: We could say camelCase is our official recommendation, but [not captured] We could say that This is not what we want to recommend but the intl people ??? (can retain the decision they made?).
 
@@ -900,11 +900,11 @@ DD: I think to WH’s point, we should ideally as committee not go as option thr
 
 This is not something that is very common. There are a handful of examples that are multiple words long. That’s a very small handful right now. In ECMA 402, we want to recommend this going forward, but we’re not in the business of retroactively changing what we’ve done and are not in the business of advising other specs we rely on.
 
-KM: I could be missing some context – correct me if I’m wrong – but is it possible to have both cases with a canonicalization of the two? 
+KM: I could be missing some context – correct me if I’m wrong – but is it possible to have both cases with a canonicalization of the two?
 
 SFC: That was an option but I did not include it in these slides. It introduces multiple ways to do the same thing and that was not necessarily a good thing when it was brought up.
 
-SFC: Based on what I’ve heard, it doesn’t seem like TC39 is ready to make a strong stance (like Option 2) on a particular casing. 
+SFC: Based on what I’ve heard, it doesn’t seem like TC39 is ready to make a strong stance (like Option 2) on a particular casing.
 
 AKI: When talking about consistency, it’s what TAG recommends and what users expect. When it’s a string it’s kebab case and when it’s an identifier it’s camel case.
 
@@ -950,7 +950,7 @@ YK: It sounds like there’s no possibility 402 would change their mind.
 
 LBR: There is a possibility. We want to follow through on TC39’s recommendation. I believe 402 is asking for acceptance to follow through on this proposal.
 
-AKI: Can we get consensus that 402 can do what they think is right and if affects anything outside of that scope, it must require consensus from this committee? 
+AKI: Can we get consensus that 402 can do what they think is right and if affects anything outside of that scope, it must require consensus from this committee?
 
 LBR: In the scope of casing [yes].
 
@@ -975,7 +975,7 @@ LBR: If you have any concerns, please let me know.
 
 ## Web built-in module convention guidance from TC39
 
-(Domenic Denicola, DD) 
+(Domenic Denicola, DD)
 
 - [issue](https://github.com/heycam/webidl/issues/755)
 
@@ -1015,7 +1015,7 @@ WH: I don’t understand MS’s comment, what is disrespectful here?
 
 MS: As one of the champions of the built-in module proposal, I think it would have been good to discuss rules about how to build a module. I think that is a good thing to discuss. The point I’m trying to make is that it’s a little premature. Very similar to what happened in Berlin when several delegates made a proposal. I look at our CoC and I find the first point is to be respectful.
 
-JHD: I’m terrified that DD or anyone else walks away discouraged about getting TC39 feedback. 
+JHD: I’m terrified that DD or anyone else walks away discouraged about getting TC39 feedback.
 
 TST: I think the elephant in the room is disagreement on DD's representation of built-in modules (missed…) I agree with the Apple position that they are not independent and that there is a need to coordinate. It is _not_ ok to pretend they are entirely separate. I do believe that you understand this position, to make it sound like this just doesn’t exist, is maybe what MS is reacting to.
 

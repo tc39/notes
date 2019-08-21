@@ -580,7 +580,7 @@ YK: Im agreeing with everything that people said about doing this for the develo
 
 - Advance to stage 1
 
-## Explicit Resource Management for Stage 2 (continuation from Tuesday)
+## Explicit Resource Management for Stage 2 (continuation from [Tuesday](https://github.com/tc39/tc39-notes/blob/master/meetings/2019-07/july-23.md#explicit-resource-management))
 
 Ron Buckton (RBN)
 

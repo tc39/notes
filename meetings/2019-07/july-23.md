@@ -231,7 +231,7 @@ YK: I think it is acceptable for us to withdraw it in that case, but it seems we
 
 Peter Hoddie (PHE)
 
-- [slides (missing link)](???)
+- [slides](https://www.icloud.com/keynote/0KVOIMUziDvEHgXdwjcyGg03g#tc53_liaison_tc39_-_july_2019)
 
 PHE: (Presents slides)
 

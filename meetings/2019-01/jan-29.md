@@ -4,7 +4,7 @@ Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA),
 
 
 Remote:
-István Sebestyén (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBR)
+István Sebestyén (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBN)
 -----
 
 
@@ -199,13 +199,13 @@ LBR: We've been receiving lots of Ecma 402 updates, largely from Frank Tang from
 
 ## Updates from the CoC Committee
 
-(Jory Burson (JBR))
+(Jory Burson (JBN))
 
 - [slides](https://docs.google.com/presentation/d/1nXCC4HQOvEgvFHQ9unmKjqh9wCHFi7jST14EO7PUKfM/edit#slide=id.gc6fa3c898_0_65)
 
-JBR: We've been meeting bi-weekly, discussing interactions with the community on Twitter and GitHub, etc. We continue to add to our playbook, as we go. The playbook is the repo with guidelines and strategies that any member of the community (delegate, etc.) can consult or implement.
+JBN: We've been meeting bi-weekly, discussing interactions with the community on Twitter and GitHub, etc. We continue to add to our playbook, as we go. The playbook is the repo with guidelines and strategies that any member of the community (delegate, etc.) can consult or implement.
 
-JBR: Other changes: we started with 8 people, and now YSV has joined, and DE has left; we appreciate DE's work getting bootstrapped. We created a process for joining. We are going to continue working on the playbook, and we are thinking about facilitating workshops useful to the TC.
+JBN: Other changes: we started with 8 people, and now YSV has joined, and DE has left; we appreciate DE's work getting bootstrapped. We created a process for joining. We are going to continue working on the playbook, and we are thinking about facilitating workshops useful to the TC.
 
 ## Normative: Treat IterationStatements uniformly in Annex B.3.5
 

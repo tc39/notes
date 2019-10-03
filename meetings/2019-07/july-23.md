@@ -40,7 +40,7 @@ IS: Looking for someone to produce a better-quality PDF of the ECMAScript standa
 
 IS: Would like PR activity about the “cool new stuff” in ES-2019 (also links to new TC39 PR activities would be useful).
 
-IS: JBR has received Ecma Recognition Award for her activities in Ecma, including TC39. DE have been given recognition awards for his work in the 2018 Management of this committee.
+IS: JBN has received Ecma Recognition Award for her activities in Ecma, including TC39. DE have been given recognition awards for his work in the 2018 Management of this committee.
 
 MM: Within TC39, what’s the process to nominate someone for these recognition awards?
 

@@ -1,6 +1,6 @@
 # March 26, 2019 Meeting Notes
 -----
-István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Daniel Ehrenberg (DE), Mike Samuel (MSL), Qiuyi Zhang (QZG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KV), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBR), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro (DF), Domenic Denicola (DD)
+István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Daniel Ehrenberg (DE), Mike Samuel (MSL), Qiuyi Zhang (QZG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KV), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro (DF), Domenic Denicola (DD)
 
 Remote:
 Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCL), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS)
@@ -137,21 +137,21 @@ CM: ECMA-404 continues in its timeless perfection. Nothing new to report. Its mi
 
 ### Updates from the CoC Committee
 
-(Jory Burson (JBR))
+(Jory Burson (JBN))
 
 - [slides](https://docs.google.com/presentation/d/1FAGAtZFXUO8CPNnYKKwLXIynjqO_6v7SMQh1KxDnHPY/)
 
-JBR: (Presents slides)
+JBN: (Presents slides)
 
 MF: How does the GitHub block work?
 
-JBR: We block on the whole tc39 org. They can see the content, but cannot comment.
+JBN: We block on the whole tc39 org. They can see the content, but cannot comment.
 
 AKI: And also on the tc39 freenode channel on IRC.
 
 KM: Do we have a plan if the individual creates a new account?
 
-JBR: Not in this case; the separation was somewhat mutual.
+JBN: Not in this case; the separation was somewhat mutual.
 
 BT: I would also guess GitHub TOS restrict multi accounts.
 
@@ -161,7 +161,7 @@ AKI: Do we need consensus on whether to name the individual? The CoC Committee f
 
 MS: What is the motivation to disclose that information?
 
-JBR: The concern would be to respect the committee's right to transparency.
+JBN: The concern would be to respect the committee's right to transparency.
 
 JHD: It's important to be able to know if someone who does show up on IRC, etc., that you know whether to engage with that person. It can serve as a "warning" that someone might need more energy.
 
@@ -173,7 +173,7 @@ MS: I feel it makes sense to discuss with CoC Committee, like an escalation proc
 
 YK: My concern is that these things happen fast—in real time.
 
-JBR: Accountability is very important here—so you want to be able to tell someone that an individual has been blocked and then to show them.
+JBN: Accountability is very important here—so you want to be able to tell someone that an individual has been blocked and then to show them.
 
 AKI: Following up, do we have consensus? MS, do you have concerns?
 

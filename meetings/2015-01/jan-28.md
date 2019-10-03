@@ -1,15 +1,15 @@
-# January 28, 2015 Meeting Notes    
+# January 28, 2015 Meeting Notes
 -----
 
 
-Brian Terlson (BT), Jonathan Turner (JT), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Jeff Morrison (JM), Erik Arvidsson (EA), Peter Jensen (PJ), Yehuda Katz (YK), Dave Herman (DH), Waldemar Horwat (WH), Dmitry Lomov (DL), Domenic Denicola (DD), Kevin Smith (KS), Andreas Rossberg (ARB), István Sebestyén (IS), Sam Tobin-Hochstadt (STH), Michael Ficarra (MF), Jordan Harband (JHD), Chip Morningstar (CM), Mark S. Miller (MM), Ben Newman (BN), Brendan Eich (BE), Adam Klein (AK), Igor Minar (IM), Miško Hevery (MHY)
+Brian Terlson (BT), Jonathan Turner (JT), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Jeff Morrison (JM), Erik Arvidsson (EA), Peter Jensen (PJ), Yehuda Katz (YK), Dave Herman (DH), Waldemar Horwat (WH), Dmitry Lomov (DL), Domenic Denicola (DD), Kevin Smith (KS), Andreas Rossberg (ARB), István Sebestyén (IS), Sam Tobin-Hochstadt (STH), Michael Ficarra (MF), Jordan Harband (JHD), Chip Morningstar (CM), Mark S. Miller (MM), Ben Newman (BN), Brendan Eich (BE), Adam Klein (AK), Igor Minar (IMR), Miško Hevery (MHY)
 
 -----
 
 ## Report from the Ecma Secretariat
 (István Sebestyén)
 
-IS: Strange JSON development: The government of the Netherlands wants to get an EU recognition on IETF's JSON future standard as part of the European Commission's Multi-Stakeholder Platform. Netherlands submitted 27 IETF standards to the Multi-Stakeholder Platform, and IETF's JSON happens to be among them. Normally only long-standing in the market already proved standards should be recognized. Also no "consortium specification" should be recognized where appropriate International Standard (like of ISO, IEC, ITU) exists. JSON in ECMA-262 is already part of ISO/IEC 16262:2011. In addition TC39 has standardized in 2013 ECMA-404 (JSON). We had originally a TC39 decision to fast-track it to JTC1, but after discussion the GA in December 2013 has approved the possibility of a Postal Balot on the JTC1 fast track upon a new request  from TC39. The iisue has been reported to the last Ecma GA and was worried about the situation. 
+IS: Strange JSON development: The government of the Netherlands wants to get an EU recognition on IETF's JSON future standard as part of the European Commission's Multi-Stakeholder Platform. Netherlands submitted 27 IETF standards to the Multi-Stakeholder Platform, and IETF's JSON happens to be among them. Normally only long-standing in the market already proved standards should be recognized. Also no "consortium specification" should be recognized where appropriate International Standard (like of ISO, IEC, ITU) exists. JSON in ECMA-262 is already part of ISO/IEC 16262:2011. In addition TC39 has standardized in 2013 ECMA-404 (JSON). We had originally a TC39 decision to fast-track it to JTC1, but after discussion the GA in December 2013 has approved the possibility of a Postal Balot on the JTC1 fast track upon a new request  from TC39. The iisue has been reported to the last Ecma GA and was worried about the situation.
 
 WH and IS: [Discussion about what the Multi-Stakeholder Platform is and its implication on governmental activities]
 
@@ -29,7 +29,7 @@ IS: Will discuss it with ECMA management. Might do it earlier via a letter ballo
 
 WH, DH: Ask for presentation.
 
-AWB: 
+AWB:
 
 DH: Earlier presentation was careful to allow try/finally to abort the return. The point was to allow infinite iterators that refuses to return.
 
@@ -39,21 +39,21 @@ DH: You can have wrappers that are specific for for-of loops.
 
 AWB: THe original proposal required a falsy done value. If it wasn't falsy an error was thrown.
 
-DH: You could change the for-of loop by wrapping the iterable to not continue the iteration of the underlying 
+DH: You could change the for-of loop by wrapping the iterable to not continue the iteration of the underlying
 
 ```js
 var nats = getNats();
 for(x of nobreak(nats)) {
   if(cond) break;
   ...
-  
+
   for(x of nobreak(nats)) {
-    if(cond) break;    
+    if(cond) break;
   }
 }
 
-function nobreak(it) {   
-  return {     
+function nobreak(it) {
+  return {
     next(x) { return it.next(x); },
     throw(x) { return it.throw(x); },
     return(x) { return {done: true}; }
@@ -84,14 +84,14 @@ nats.return = () => ({done: true});
 for(x of nobreak(nats)) {
   if(cond) break;
   ...
-  
+
   for(x of nobreak(nats)) {
-    if(cond) break;    
+    if(cond) break;
   }
 }
 
-function nobreak(it) {   
-  return {     
+function nobreak(it) {
+  return {
     next(x) { return it.next(x); },
     throw(x) { return it.throw(x); },
     return(x) { return {done: true}; }
@@ -104,7 +104,7 @@ AWB: Why can't we make that an iterator that says that it is done, that it can n
 DH: Are you sayng that the default behavior should be `{done: false}`?
 
 AWB: Or that there is no default.
-    
+
 DH: There has to be a default behavior.
 
 AWB: If there is not return method then nothing is called.
@@ -437,16 +437,16 @@ YK: Noted that there are quirks.
 
 YK: @readonly is a simple example of decorators.
 
-IM: Annotations doc http://goo.gl/42o100 (requires permissions)
+IMR: Annotations doc http://goo.gl/42o100 (requires permissions)
 Decorators vs. Annotations: https://docs.google.com/document/d/1QchMCOhxsNVQz2zNvmzy8ibDMPT46MLf79X1QiDc_fU/edit# (requires permissions)
 
-IM: What do we want annotations for? Collected use cases in document. For example for documentation, ORM, DI, tooling aspects
+IMR: What do we want annotations for? Collected use cases in document. For example for documentation, ORM, DI, tooling aspects
 
 WH: What is the syntax for annotations?
 
 YK: At this point it is the same as decorators.
 
-IM: Biggest difference between deocrators and annotations is that annotations support static/ahead of time tooling because it has guarantees you can build on top of.
+IMR: Biggest difference between deocrators and annotations is that annotations support static/ahead of time tooling because it has guarantees you can build on top of.
 
 WH: Big issue is whether you use a separate sublanguage for static annotations or try to use the same language. Separate language using separate name scopes results in solutions and problems such as C's preprocessor. Using the same language causes severe time-of-evaluation issues, as seen in Lisp's eval-when or C++'s template and class-vs-constexpr gotchas [example: a C++11 class constexpr reference can't use static constexpr functions defined earlier in the same class]. The problem arises in doing compile-time scope lookup and variable resolution in scopes as dynamic as ECMAScripts's.
 
@@ -458,11 +458,11 @@ MH: Using JSON only seems like it might not be suitable enough.
 
 AWB: There is a middle ground here. Classes could expose an extensible meta-object protocol. Essentially dynamic extension points that you can hook in to. So as part of defining a new type of class definition you might add meta properties and other things. Might be quite dynamic but have a static representation in the source code.
 
-MM: If JSON is almost expressible enough, with the exception of the scope issue, and if you add IdentifierExpression 
+MM: If JSON is almost expressible enough, with the exception of the scope issue, and if you add IdentifierExpression
 
-IM: We might be happy with that.
+IMR: We might be happy with that.
 
-IM: One other reason for having these side effect free annotations is the VM perspective. Decorators needs to be dynamically invoked.
+IMR: One other reason for having these side effect free annotations is the VM perspective. Decorators needs to be dynamically invoked.
 
 DD: The performance impact would not be worse than calling the functions yourself.
 
@@ -480,13 +480,13 @@ MH: Looks like decorators can do anything but in practice they cannot do much wi
 
 YK: Disagree. They can use the object as the coordination point.
 
-MH: Lets assume I'm creating a component. 
+MH: Lets assume I'm creating a component.
 
 YK: You can use a weak map.
 
 MM: Can you clarify.
 
-MH: I think it is a good property that you can bootstrap the same framework multiple times. The problem is that a decorator needs to register itself with some context. 
+MH: I think it is a good property that you can bootstrap the same framework multiple times. The problem is that a decorator needs to register itself with some context.
 
 YK: The decorator can add meta data. Then you call the register with the relevant context.
 
@@ -495,12 +495,12 @@ MH: Yes. But the extra power is problematic.
 MH: Depends on when you are running the code. Would like to wait until the framework has enough context.
 
 AWB: Maybe have two different proposals, both at stage 0. Then try to unify them before they can progress to stage 1.
-    
+
 MM: Having one mechanism that satisifes both needs is preferable to having two different mechanism.
 
 MM: Maybe you can have a statically verified subset of decorators and if that restriction is fulfilled your tooling can treat it as an annotation. If not it falls back to a dynamic decorator.
 
-IM: Sounds promising.
+IMR: Sounds promising.
 
 #### Conclusion/resolution
 

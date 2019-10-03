@@ -1,8 +1,8 @@
-# January 29, 2015 Meeting Notes    
+# January 29, 2015 Meeting Notes
 -----
 
 
-Brian Terlson (BT), Jonathan Turner (JT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Erik Arvidsson (EA), Dave Herman (DH), Waldemar Horwat (WH), Domenic Denicola (DD), Kevin Smith (KS), Michael Ficarra (MF), Jordan Harband (JHD), Chip Morningstar (CM), Adam Klein (AK), Igor Minar (IM), Miško Hevery (MHY), István Sebestyén (IS), Rick Waldron (RW), Ben Newman (BN), Yehuda Katz (YK)
+Brian Terlson (BT), Jonathan Turner (JT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Erik Arvidsson (EA), Dave Herman (DH), Waldemar Horwat (WH), Domenic Denicola (DD), Kevin Smith (KS), Michael Ficarra (MF), Jordan Harband (JHD), Chip Morningstar (CM), Adam Klein (AK), Igor Minar (IMR), Miško Hevery (MHY), István Sebestyén (IS), Rick Waldron (RW), Ben Newman (BN), Yehuda Katz (YK)
 
 -----
 
@@ -10,11 +10,11 @@ Brian Terlson (BT), Jonathan Turner (JT), Allen Wirfs-Brock (AWB), John Neumann 
 
 (Allen Wirfs-Brock)
 
-[Ask for slides] 
+[Ask for slides]
 
 AWB: The spec has an introduction text. We need to write what ES6 is adding to the picture. Right now it is empty.
 
-AWB: Asked for volunteers and no one has done that yet. 
+AWB: Asked for volunteers and no one has done that yet.
 
 Possible new text
 
@@ -84,7 +84,7 @@ YK: One site?
 
 BT: It is also a demo site.
 
-BT: While it is true that a site might serve different code to IE and Chrome. 
+BT: While it is true that a site might serve different code to IE and Chrome.
 
 DH: Let me talk to Jason Orendorff (SpiderMonkey engineer) and see what he thinks.
 

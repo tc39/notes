@@ -3,8 +3,8 @@
 Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDL), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Can (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM), Lin Clark (LCK)
 
 
-Remote: 
-Istvan Sebestyen (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBR), Conrad Watt (CWT), Guy Bedford (GBD), Justin Fagnani (JFI), Robert Pamely (RPY), efaust (EF), Caridy Patiño (CP)
+Remote:
+Istvan Sebestyen (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBR), Conrad Watt (CWT), Guy Bedford (GBD), Justin Fagnani (JFI), Robert Pamely (RPY), Eric Faust (EFT), Caridy Patiño (CP)
 -----
 
 ## Freezing prototypes for stage 1
@@ -19,11 +19,11 @@ KG: I'd like to propose a mechanism for freezing internal prototype slot of an o
 
 JDD: Is this related to https://github.com/tc39/ecma262/pull/1320 ?
 
-KG: No, this proposal would not resolve PR #1320. I'm not proposing freezing the actual object, just making the slot itself immutable. 
+KG: No, this proposal would not resolve PR #1320. I'm not proposing freezing the actual object, just making the slot itself immutable.
 
 MF: Is there precedent for objects like this? Is it possible that somebody has built a program assuming certain invariants about objects, and could this proposal break those invariants?
 
-KG: Yes, there are at least two what are called "immutable prototype objects". 1) Object.prototype and 2) window proxy object. It's not currently possible to check whether the object's prototype slot is immutable. 
+KG: Yes, there are at least two what are called "immutable prototype objects". 1) Object.prototype and 2) window proxy object. It's not currently possible to check whether the object's prototype slot is immutable.
 
 MF: If objects of this kind already exist, that nullifies the second part of my question.
 
@@ -54,7 +54,7 @@ SGN: We already have implemented it in V8.
 
 DE: How about use cases?
 
-LBR: As someone who worked a lot in translation for Firefox, this seems great, but I think it's just a kick start. 
+LBR: As someone who worked a lot in translation for Firefox, this seems great, but I think it's just a kick start.
 
 SGN: Can you be more specific about what functionality you want to see?
 
@@ -86,7 +86,7 @@ JHD: Not a Stage 1 blocker; just wanted to make note of it.
 - [proposal](https://github.com/littledan/proposal-new-initialize)
 
 
-DE: (Presents slides). I want to credit DD for re-raising this issue and Allen Wirfs-Brock for raising it in the first place some years ago. 
+DE: (Presents slides). I want to credit DD for re-raising this issue and Allen Wirfs-Brock for raising it in the first place some years ago.
 
 WH: This seems to be tied in very nicely with the first proposal from today (Freezing Prototypes). Given the hierarchy in the (corrected) examples (refers to example on Slide 9) — class `D` inherits from `C` — you can use this approach to prevent an adversary from messing with `D`'s prototype link to `C`. However, an adversary could play the same game to make `C` inherit from some strange class, and this approach wouldn't prevent that.
 
@@ -110,7 +110,7 @@ DE: So maybe we could make a more specific approach, like using decorators?
 
 WH: I agree that the problem identified in this proposal is one we need to address, but freezing the `__proto__` slot is a simpler way of addressing it.
 
-KG: WH are you OK with this going to Stage 1? 
+KG: WH are you OK with this going to Stage 1?
 
 WH: I'm OK with Stage 1 to explore the solution space.
 
@@ -118,7 +118,7 @@ MS: Do we expect people will create class hierarchy, modify prototype, etc? Do y
 
 DE: I don't expect that this is a common pattern, no. The way the concern was phrased, this was the way to solve it. I don't know how common this need will be, but I think this is the best way to do it.
 
-MS: But we're introducing something you can use in a bunch of different contexts. It seems like the fix is worse than the problem. 
+MS: But we're introducing something you can use in a bunch of different contexts. It seems like the fix is worse than the problem.
 
 DE: How do you want to avoid the problem?
 
@@ -152,7 +152,7 @@ DE: This proposal is really about the interaction of field initializers (which a
 
 JRL: new.initialize is a required step to prevent abusing the constructor override return. If we don't have this, and I have code that I want to attach private state to some foreign object, then I have to make a base class that returns something so that child classes can use it as it's `this` and attach it's private state to. The whole point of private state is that it is better than weak map. Without this, we having devs use this clunky solution to get the same affect.
 
-EF: So there is no way to do return override in a subclass constructor?
+EFT: So there is no way to do return override in a subclass constructor?
 
 (out of time; EF and DE continue discussing)
 
@@ -175,7 +175,7 @@ WH: This feels like symbols; these problems will be well-addressed by symbols. T
 
 BFS: I'm sure if I understand "the name" of something.
 
-WH: In the brackets, `#bar` refers to a symbol... 
+WH: In the brackets, `#bar` refers to a symbol...
 
 JRL: He's talking about the reified key thing.
 
@@ -205,7 +205,7 @@ DRR: I think we'll get to this when Caridy speaks, but about how #bar gets resol
 
 JRL: Please don't think of this syntax as being useful only in the private symbols proposal. This syntax is also useful with the weak map proposal. We keep talking about this in terms of private symbols, and that takes away from the overall proposal.
 
-BFS: Yes, I would still be talking about... 
+BFS: Yes, I would still be talking about...
 
 YK: I agree with what JRL said. Thinking about the mechanism is obscure in why anyone cares. The reason I care about it is that when you write classes before private state, if you write it in a hybrid style where you use functions as helper, it's pretty easy; you use private variables and methods in local state. We got to a point where we got static private to work. But if you write classes in the old (hybrid) style, you can't get to the static private methods. I like this proposal because it closes the gap between the two paradigms.
 
@@ -230,7 +230,7 @@ Presenter: Domenic Denicola (on behalf of Gus Caplan)
 
 - [proposal](https://github.com/devsnek/proposal-iterator-helpers)
 
-DD: (presents proposal from Readme file). Open question here is which combinators to implement first. 
+DD: (presents proposal from Readme file). Open question here is which combinators to implement first.
 
 MF: I have a lot of comments in issues, but for the discussion here, what's the motivation for Iterator.prototype/asyncPrototype vs AsyncIterator.prototype?
 
@@ -242,7 +242,7 @@ DD: A real iterator inherits from Iterator.prototype?
 
 BFS: Yes.
 
-DD: We could delete .of or look at .from. 
+DD: We could delete .of or look at .from.
 
 JDD: I'm excited about this proposal. In lodash, we have support for lazy iteration, but it's our own weird solution. Having it be in the language is exciting. I like the amount of methods you have; I'm glad you're starting small.
 
@@ -256,7 +256,7 @@ TST: JDD mentioned this too, but how much of a focus is there on making this opt
 
 DD: I don't know very well what would make them optimizable. My opinion is fewer hooks, more optimizable. From a long time ago, should we be using a common prototype or separate prototypes?  V8 team said it's okay either way. If you can get in touch with us about what makes these more or less optimizable, that would be great feedback to have.
 
-WH: I like this. I ask for a little more insight into what made itself into the table and why. Perhaps more interestingly what existing practice _didn't_ make it into the table and categorize those into things we'd like to do in the future vs things that there are good reasons not to do. 
+WH: I like this. I ask for a little more insight into what made itself into the table and why. Perhaps more interestingly what existing practice _didn't_ make it into the table and categorize those into things we'd like to do in the future vs things that there are good reasons not to do.
 
 DD: We have an issue for help wanted with this table. We could add more columns, add a column for this proposal, etc. We should work a little more on the rationale.
 
@@ -352,7 +352,7 @@ DE: The stage 3 private methods proposal.
 
 SGN: For the fast path, you pay per superclass per Map and if you do transition, you pay per superclass per instance.
 
-DD: So that's not the same as this proposal, because there could be a prototype referring to each one, but otherwise there could be a prototype... 
+DD: So that's not the same as this proposal, because there could be a prototype referring to each one, but otherwise there could be a prototype...
 
 SGN: This proposal has better memory than the other one.
 
@@ -508,7 +508,7 @@ DE: That seems a little bit abstract.
 
 MB: If you're adding two numbers, even if you don't mix operands, you may still want to support both types of input because you don't know in which range the user needs to operate.
 
-YK: We chose not to support this across the `+` operator; that library still seems abstract. 
+YK: We chose not to support this across the `+` operator; that library still seems abstract.
 
 MB: Adding numbers was just an example. Pick any numeric operation that cannot be completed using only operators.
 
@@ -528,7 +528,7 @@ WH: My answer to DE's question on the last slide is "No". I think this is too ab
 
 DE: We decided not to in the min and max case. What about `NumberFormat`?
 
-WH: That's an interesting one. I'm not sure how I feel about `NumberFormat`. I'm not ready to discuss it now because the item on the meeting agenda was the blanket rule rather than `NumberFormat` specifically. Also, it would take more time than we have to discuss the nuances and implications of what we do about `NumberFormat` here. 
+WH: That's an interesting one. I'm not sure how I feel about `NumberFormat`. I'm not ready to discuss it now because the item on the meeting agenda was the blanket rule rather than `NumberFormat` specifically. Also, it would take more time than we have to discuss the nuances and implications of what we do about `NumberFormat` here.
 
 DE: I'll bring up `NumberFormat` on a separate agenda item in the future.
 
@@ -669,9 +669,9 @@ AKI: Nothing would happen if we do that. There's already a Discourse set up.
 
 YK: I think interpreting how to use Discourse, like the Hello World tutorial that MM described, are not really accurate descriptions of what normal usage of the product is like. I'm active on multiple Discourses and I don't consider it too "gamified."
 
-TST: There are concerns here that we need to carefully consider. Ultimately this will contain some amount of a tradeoff between requirements and candidates, and I think some concerns are valid. 
+TST: There are concerns here that we need to carefully consider. Ultimately this will contain some amount of a tradeoff between requirements and candidates, and I think some concerns are valid.
 
-EF: I'm in favor of finding something besides es-discuss. It is just not moderable. I appreciate what TST has done, but it's a lost cause.
+EFT: I'm in favor of finding something besides es-discuss. It is just not moderable. I appreciate what TST has done, but it's a lost cause.
 
 SYG: Delegates feel actively disincentivized for engaging with es-discuss. A lot of delegates raised their hand that they would engage with Discourse. Why?
 

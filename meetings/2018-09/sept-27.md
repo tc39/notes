@@ -1,6 +1,6 @@
 # September 27, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZU), Lin Clark (LCK), Matt Johnson (MJN)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZU), Lin Clark (LCK), Matt Johnson (MAJ)
 
 Remote:
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
@@ -149,11 +149,11 @@ MPT: That's really just the naming convention of that case.
 
 TST: Yes, I'm really not an expert.
 
-MJN: I'm working with MPT on this proposal, and studied Python, Java, C#, Elixir, etc.'s implementations. I absolutely agree with you that there should be guidance—JS is one of those languages that developers who primarily use other languages also use, so I think it's very important.
+MAJ: I'm working with MPT on this proposal, and studied Python, Java, C#, Elixir, etc.'s implementations. I absolutely agree with you that there should be guidance—JS is one of those languages that developers who primarily use other languages also use, so I think it's very important.
 
 TST: That's great, I'd love to see that and also the comparisons to other languages and why you made these decisions.
 
-MJN: Absolutely, and we definitely don't want to pander to other language design just because that's what has already be done.
+MAJ: Absolutely, and we definitely don't want to pander to other language design just because that's what has already be done.
 
 WH: For leap seconds, I agree that the POSIX behavior should be the default, but can we provide advanced users the option to upgrade to full leap second support if the OS supports it? Yes, they're unpredictable until they happen and nondeterminism is annoying, but we already have to deal with such nondeterminism when supporting time zones, for which rules change all the time. I actually cannot tell you what the time zone of Los Angeles will be 2 years from now.
 
@@ -163,15 +163,15 @@ WH: It's a solved problem. I know how GPS does it. A simple alternative is to us
 
 RGN: I want to emphasize that there are two global timelines—there's TAI/GPS/UTC/etc., which count seconds since an epoch (UTC having discontinuities in the form of leap seconds), and then there's POSIX, which counts 86400-second days. To talk about leap second support means either using e.g. TAI instead of POSIX, or defining new API surface area.
 
-MJN: First is is possible to have an API that works with leap seconds? Yes. Where does the information about leap seconds come from?
+MAJ: First is is possible to have an API that works with leap seconds? Yes. Where does the information about leap seconds come from?
 
 WH: The same place where time zone change information comes from.
 
-MJN: Right, but IANA creates a table but it's not authoritative about leap seconds. It would be possible for a leap second library author to build on top of Temporal, using IANA, but it is not possible.
+MAJ: Right, but IANA creates a table but it's not authoritative about leap seconds. It would be possible for a leap second library author to build on top of Temporal, using IANA, but it is not possible.
 
 WH: The windows API does that, according to Microsoft's blog.
 
-MJN: It does not. I work with those people and it does not. I believe the one thing we should be able to do is to round-trip the leap second. If someone gives us a leap second, we should give it back to them.
+MAJ: It does not. I work with those people and it does not. I believe the one thing we should be able to do is to round-trip the leap second. If someone gives us a leap second, we should give it back to them.
 
 MPT: This round-trip solution is the right way, I believe. Developers should get it back if they give it to Temporal.
 
@@ -196,7 +196,7 @@ KG: Just because it doesn't exist on the OS doesn't mean it doesn't exist.
 
 MPT: Fair point, anyone want to make a proposal?
 
-MJN: I also support this, and I have an issue on the Temporal proposal to do this work when the OS supports it, but it's not in scope for Temporal now.
+MAJ: I also support this, and I have an issue on the Temporal proposal to do this work when the OS supports it, but it's not in scope for Temporal now.
 
 API: If you know your point in the GPS timeline, then you can add in leap seconds after the fact to compute your exact UTC time. I have a question for WH about what you were looking for.
 
@@ -220,7 +220,7 @@ YK: I think the nondeterminism response was too glib. DD's request was to fully 
 
 MM: There are ways of dealing with the nondeterminism issue.
 
-MJN: There's two points of nondeterminism in this space. One is in dealing with the Date.now, the other is the current system timezone is one of them. It cannot be returned as a string, so we cannot avoid this.
+MAJ: There's two points of nondeterminism in this space. One is in dealing with the Date.now, the other is the current system timezone is one of them. It cannot be returned as a string, so we cannot avoid this.
 
 MM: If you carry your computer from one timezone to another, and are running a process, are there any runtimes that get the new timezone?
 
@@ -252,7 +252,7 @@ MPT: I'm not either, it needs to be done.
 
 DE: We discussed this in the Intl meeting. There's some spec editing, but I'm pretty confident that this will work out.
 
-MJN: While it's great that we're talking about leap seconds and nondeterminism, I think it's more important to focus on the serious errors developers are making all the time for example, HTML Input Type=Date alignment.
+MAJ: While it's great that we're talking about leap seconds and nondeterminism, I think it's more important to focus on the serious errors developers are making all the time for example, HTML Input Type=Date alignment.
 
 JHD: Plus 1. We had the same bug when I was at Twitter and now Airbnb because on one day of the year midnight doesn't exist. In Brazil, they use midnight instead of 2am for time-zone cutovers (for daylight savings time, for example).
 

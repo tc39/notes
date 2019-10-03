@@ -1,7 +1,7 @@
 # March 23, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LSH), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), István Sebestyén (IS), Matt Johnson (MJ)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LSH), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), István Sebestyén (IS), Matt Johnson (MAJ)
 
 -----
 
@@ -980,7 +980,7 @@ MF: ??
 
 MPT: ??
 
-MJ: The cron job example is a good example of not wanting to throw, because then you'd get no cron jobs at all for that day.
+MAJ: The cron job example is a good example of not wanting to throw, because then you'd get no cron jobs at all for that day.
 
 BT: My feeling is to not get into the business of fixing the existing date object and keep things as similar to the existing implementations as possible and create a new one that's better.
 
@@ -1016,7 +1016,7 @@ WH: The proposal does not satisfy the property you (YK) requested.
 
 MPT: If you take fall forward on the global timeline then things will trigger an hour later.
 
-MJ: So one thing I'll add is Java8 and its standard and pretty much all the platforms that have this bug have been trying to solidify around the best way to handle this and *this* is the same set of expectations that they have standardized around.
+MAJ: So one thing I'll add is Java8 and its standard and pretty much all the platforms that have this bug have been trying to solidify around the best way to handle this and *this* is the same set of expectations that they have standardized around.
 
 BT: But to answer Yehuda's question, I'm not sure that this would come up because when you get a date that's in the context of a timezone in JavaScript... So once you have the date for where you are on that timezone, your time is disambiguated.
 
@@ -1032,7 +1032,7 @@ MPT: If you want to take that, go for it.
 
 DE: Sure, the definition of the shift for localtime is based on a daylight savings shift. Moscow times shifted historically by an hour. This patch also makes that local timezone offset a function of the time you're passing in, just like the daylight savings offset.
 
-MJ: I thought that was correct in ES6.
+MAJ: I thought that was correct in ES6.
 
 DE: Some things were corrected in ES6, but this part wasn't.
 
@@ -1040,25 +1040,25 @@ AWB: I believe the reason this wasn't changed then was to do what you're describ
 
 MPT: Matt, I think what you're thinking of is the soft language that says you should prefer the IANA database when possible.
 
-MJ: Correct, I thought it was already formalized in the spec.
+MAJ: Correct, I thought it was already formalized in the spec.
 
 DE: I think this pull request adds it. I'm happy for it to be added. I looked for how JS engines implement local date-time transforms and they seem to all do it by calling out to these system calls to get the local time based on unix UTC time and then for engines that implement the spec you get the localTime of now and find its .... time based on that.
 
 MPT: If I remember correctly, what happened is that it used to say you should follow the current daylight savings rules but it never codified that you should follow the IANA database when possible.
 
-MJ: The other thing I was recalling was that ECMA-402 ??? So this has already been implemented based on 402.
+MAJ: The other thing I was recalling was that ECMA-402 ??? So this has already been implemented based on 402.
 
 DE: Really? Wait? Which article?
 
-MJ: 12.3.2 in [ECMA-402](https://www.ecma-international.org/ecma-402/1.0/)
+MAJ: 12.3.2 in [ECMA-402](https://www.ecma-international.org/ecma-402/1.0/)
 
 WH: So which way does 402 resolve this?
 
-MJ: To take history into account, and modern operating systems can do that.
+MAJ: To take history into account, and modern operating systems can do that.
 
 MPT: That would only cover formatting, that would not cover date.
 
-MJ: Correct, it needs to be merged back into 262.
+MAJ: Correct, it needs to be merged back into 262.
 
 BFS: Is this timeboxed?
 
@@ -1080,7 +1080,7 @@ BE: But for the whole world it's really large.
 
 DE: But the date functions only let you use your current timezone.
 
-MJ: It only says use the best thing available to the system.
+MAJ: It only says use the best thing available to the system.
 
 MPT: The offset of the local timezone in UTC measure in ms. To me ??
 
@@ -1126,7 +1126,7 @@ BT: We can't use "should".
 
 AWB: Sometimes we do, it's ok.
 
-MJ: (reading from ECMA-262). The PR removes some of that wording and replacing it with some examples and solidifies the ambiguity. It doesn't say you must use the full implementation.
+MAJ: (reading from ECMA-262). The PR removes some of that wording and replacing it with some examples and solidifies the ambiguity. It doesn't say you must use the full implementation.
 
 MPT: Nobody is arguing for the ambguity, but what we're at is.
 
@@ -1138,7 +1138,7 @@ AK: How much do they care about conforming exactly to the ECMAScript standard?
 
 BE: It's big enough. They can't use npm, they don't want to. But they do have a standard library. We'll hear from them in May. I think it'll be interesting to talk with them about this topic then.
 
-MJ: All I'm saying is the PR in question does not state that you must carry the entire timezone database. It tells you to use the best available, which can be different.
+MAJ: All I'm saying is the PR in question does not state that you must carry the entire timezone database. It tells you to use the best available, which can be different.
 
 AWB: And that can vary among implementations.
 
@@ -1154,7 +1154,7 @@ BE: You mean allowed but not required.
 
 AWB: Is there something that does not allow historically?
 
-MJ: In 6 it is not allowed.
+MAJ: In 6 it is not allowed.
 
 DE: In 6 it is allowed for ??? and disallowed for ???. This is why ?? started working on it and it's now disambiguated.???
 
@@ -1178,7 +1178,7 @@ AWB: That language of "best available" is...
 
 BT: It's handwavy....
 
-MJ: We should say the best available on the operating system.
+MAJ: We should say the best available on the operating system.
 
 BT: But what's an operating system? ;-) Some systems don't have one.
 
@@ -1186,7 +1186,7 @@ MPT: The more restrictive the phrasing gets the worse it gets given the situatio
 
 BT: Why don't we just use "may" instead.
 
-MJ: I think it's a "should".
+MAJ: I think it's a "should".
 
 BT: I really don't want "should".
 
@@ -1243,7 +1243,7 @@ MPT: Like how accurate should the API be? I'm hoping for nano-second precision, 
 
 WH: Super accurate time keeping runs into issues with relativity, etc. It becomes very tricky to keep track of "absolute" time beyond millisecond precision.
 
-MJ: There are plenty of scientific applications that care about nanoseconds in the data itself.
+MAJ: There are plenty of scientific applications that care about nanoseconds in the data itself.
 
 ### Slide: Local Time: Saturday, April 9, 2016, 9:11 AM
 
@@ -1259,7 +1259,7 @@ MPT: _Referring to a graph of all time zones_
 
 BE: I work with someone who thinks we should all just use UTC.
 
-MJ: No.
+MAJ: No.
 
 MPT: When is the sun out? That's a timezone.
 
@@ -1288,7 +1288,7 @@ MPT: So, most datetime APIs ignore leap-seconds which is what I think you're get
 
 AWB/MPT: Are there any minor programming languages that have a leap-second API?
 
-MJ: The biggest problem you get into is internationalization. You have to consult a table to know whether that is valid. Usually if someone passes a leap-second timestamp, it just gets absorbed and rounded down to 59.
+MAJ: The biggest problem you get into is internationalization. You have to consult a table to know whether that is valid. Usually if someone passes a leap-second timestamp, it just gets absorbed and rounded down to 59.
 
 ### Slide: JodaTime/NodaTime Types
 
@@ -1306,7 +1306,7 @@ BT: You're talking about the zone datetime?
 
 WH: When you convert an instant to in zone, does the result include the current offset from UTC?
 
-MJ: There's a little bit of variation between some of the implementations that have come about. JodaTime variates due to this. ZonedDatetime based on the instant means there's no ambiguity. It's an implementation detail. If you're starting with local values... ??? We have an open thread on one of these issues. This doesn't have to be resolved right now.
+MAJ: There's a little bit of variation between some of the implementations that have come about. JodaTime variates due to this. ZonedDatetime based on the instant means there's no ambiguity. It's an implementation detail. If you're starting with local values... ??? We have an open thread on one of these issues. This doesn't have to be resolved right now.
 
 MPT: So... ?? It's pretty common to have LocalDateTime. Another really common is LocalDate, like "July 25th, 1926" there's no time or timezone information with that. The tendency is to zero-fill the time which creates a lot of ambiguity. You don't know whether it was midnight or zero-filled. In that same vein, you can have time only, where you have a day, but you don't know whether it was really January 1st, or they were year-start filling?? So these types should remove that ambiguity. If you have a LocalDate and a LocalTime, the only place you can land is a LocalDateTime, so it forces developer safety. It models the set of concerns.
 
@@ -1320,7 +1320,7 @@ WH: Are dates in Gregorian calendar only?
 
 MPT: That's a debate that's going on in the proposal right now.
 
-MJ: On that, Noda and Joda both said yes, and then Steven corrected it in Java 8 and said no. We want something that works well for ECMA-402 and ECMAScript.
+MAJ: On that, Noda and Joda both said yes, and then Steven corrected it in Java 8 and said no. We want something that works well for ECMA-402 and ECMAScript.
 
 MPT: So Steven's argument is when you make non-Gregorian ....?
 
@@ -1330,19 +1330,19 @@ MPT: It assumes no timezone because of that the API will force you to do certain
 
 RX: It's confusing for me to understand if it's not going to have a timezone attached to it, otherwise it should be contiguous.
 
-MJ: `LocalDateTime` as a type, is contiguous without a timezone reference at all. If I add an hour, I add an hour, if a day, it's one contiguous day. There's no relation to a timezone.
+MAJ: `LocalDateTime` as a type, is contiguous without a timezone reference at all. If I add an hour, I add an hour, if a day, it's one contiguous day. There's no relation to a timezone.
 
 RX: Just like UTC?
 
-MJ: Correct, except UTC is relatable back to a date in time, whereas here I just have an amount of time, no way to relate it back to a specific point in time.
+MAJ: Correct, except UTC is relatable back to a date in time, whereas here I just have an amount of time, no way to relate it back to a specific point in time.
 
 MPT: Matt, Is it the case... I feel like John makes it you have to do conversion....??
 
-MJ: That's the difference between period and duration in the Noda API.
+MAJ: That's the difference between period and duration in the Noda API.
 
 MPT: So what we're saying to breaking things down... If you have a LocalDateTime type, the author made the decision that you could only do calendar computation, day or bigger. This means you circumvent this ambiguous time problem. If you want to move to hours or minutes, you'd have to convert into a ZonedDateTime.
 
-MJ: The real distinction to keep in mind is that `LocalDateTime` doesn't have a time zone reference.
+MAJ: The real distinction to keep in mind is that `LocalDateTime` doesn't have a time zone reference.
 
 RX: Ok, thank you, I understand.
 
@@ -1401,7 +1401,7 @@ BFS: Pretty early on we talked about how it didn't make sense to combine types. 
 
 MPT: You can combine LocalDate and LocalTime, but you can't put it on the timeline because you don't have timezone information.
 
-MJ: So you can't do something like LocalDate and then say at 3:00, what is that exact value in UTC. You can't say that because then you involve a timezone.
+MAJ: So you can't do something like LocalDate and then say at 3:00, what is that exact value in UTC. You can't say that because then you involve a timezone.
 
 BFS: So we couldn't for example compare with an instant.
 
@@ -1409,7 +1409,7 @@ MPT: Correct, you can't compare `LocalDateTime` with an instant, because you can
 
 BFS: This is what is concerning to me, having people do ambiguous things like what we talked about in the previous discussion (about time zone problems with the current `Date` API)
 
-MJ: Another clear example of why this is neccessary. One of the biggest things that comes up on S.O. is why do I have a disconect between HTML5 dateTime types and the ES6 Date types. Someone will take something from an `<input type='date'>` and throw it into a `Date` constructor.
+MAJ: Another clear example of why this is neccessary. One of the biggest things that comes up on S.O. is why do I have a disconect between HTML5 dateTime types and the ES6 Date types. Someone will take something from an `<input type='date'>` and throw it into a `Date` constructor.
 
 WH: Is the month number for December 11 or 12?
 
@@ -1455,7 +1455,7 @@ MPT: Not much. Stephen made a few simplifications in Java8, but the APIs have be
 
 BT: The base types have not changed.
 
-MJ: We have some quotes from Brendan about copying dates from Java :)
+MAJ: We have some quotes from Brendan about copying dates from Java :)
 
 Everyone: laughing
 
@@ -1467,7 +1467,7 @@ MPT: We cannot rev-versions. We cannot just get rid of it. Once it's in Ecma spe
 
 BE: The web is so big, you cannot control or deprecate things. I'd love to deprecate the Date object. It can be deprecated by the community and linting tools. There's no "flag day" for the web.
 
-MJ: If you go the module route, can you rev modules?
+MAJ: If you go the module route, can you rev modules?
 
 BE: Modules you load from the server, so of course. But in the browser environment, no.
 

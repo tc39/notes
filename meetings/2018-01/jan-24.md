@@ -1,9 +1,9 @@
 # January 24, 2018 Meeting Notes
 -----
 
-Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark S. Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), JF Bastien (JFB), Mattijs Hoitink (MHK) , Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagniani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
+Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark S. Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), JF Bastien (JFB), Mattijs Hoitink (MHK) , Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagnani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
 
-Remote: 
+Remote:
 Bradley Farias (BFS), Thomas Wood (TW), Ben Newman (BN), Rick Waldron (RW), Valerie Young (VYG), David Turissini (DTI)
 
 -----
@@ -42,7 +42,7 @@ WH: I'm now happy with it.
 #### Conclusion/Resolution
 
 - Stage4 acceptance
- 
+
 
 ## 13.iii.a Promise.prototype.finally for stage 4
 
@@ -74,7 +74,7 @@ desugared output is the standard output.
 
 `a??.b.c.d` equivalent to `(a == null ? undefined : a.b.c.d)`
 
-short circuiting: 
+short circuiting:
 
 `a??.b.c(++x)` equivalent to `(a == null ? undefined : a.b.c(++x))`
 
@@ -138,7 +138,7 @@ DE: when you look at the coffeescript analysis, these three features are the one
 
 YK: I don't buy the analysis because coffeescript because they have also changed the falsiness semantics.
 
-The more clever you get with this feature, the harder it is to read. 
+The more clever you get with this feature, the harder it is to read.
 
 DE: to maybe draw a conclusion, does anyone want to recommend that this be split into a separate proposal?
 
@@ -214,7 +214,7 @@ DD: you can't avoid this issue
 JRL: a getter avoids the hazard that you accidentally tear off the last item (?)
 
 KM: The one downside of using a getter/setter is that I imagine that frameworks that set 'last' on the prototype do so as an assignment and you would then end up assigning a function to the the last item in the array. As a property there's no way that's going to be web compatible.
-    
+
 KCL: I share that intuition
 
 DD: we could hack around that, if the receiver is Array.prototype ..
@@ -477,14 +477,14 @@ RBN: Dave and I don't think either one must obviate the other
 
  - no promotion
  - will have a related discussion tomorrow, then re-raise stage 3 question
- 
+
 
  ## 13.iii.l Top-level await for stage 0
- 
+
  (Myles Borins)
- 
+
 - [slides](https://docs.google.com/presentation/d/1B0csbsot4HTrk30ueYMDqd1S-nRkCiIcVXaWgtSU_0Q/edit?usp=sharing)
- 
+
 MBS: I wantd to get a pulse from the committee if this feature has a future at all, and get a feel for the different implementations we could explore, which are more interesting to the committee
 
 MBS: history: async/await was brought to TC39 in jan-2014, in april-2014 the 'await' keyword was reserved. july-2015 async/await was advanced to stage 2 and top-level await was deferred to avoid blocking async/await. From the notes of that time, nobody seemed to object in general, but it was tied into the loader, so separating them seemed best. Since then, top-level await has come up a couple of times, mostly to make sure new feature proposals wouldn't block it.
@@ -498,9 +498,9 @@ MBS: this is a drag, if this pattern becomes common, makes the execution graph n
 MBS: another pattern: completely dynamic modules: `const import1 = await (await import(..)).default()`
 
 MBS: potential solution A: top-level await blocks tree execution, this is what most people think about: module execution is blocked until the await finishes. Doesn't block entire thread (things could continue to run in background)
- 
+
 MBS: B: top-level await does not block sibling execution: if module A requires B/C/D, and B calls top-level await, then C and D execute in the expected order. Do not traverse child imports of B until the await resolves.
- 
+
 MBS: C: top-level await can only be used in modules without exports.. Talks to concerns about deadlocks in the graph. One edge case: modules imported with intention of only side effects. But addresses most use cases. Could be an interesting incremental approach
 
 DD: fetching the slow thing is never blocked
@@ -527,7 +527,7 @@ DD: there's no way in browser environments to say a module is the top-level of t
 
 YK: I want to propose variant D. Before that, one thing that bothers me about all the compromises, in Node there's a sync-vs-async distinction, people just use the sync because ot blocks. One thing I like about A is that it lets you move from .. to ..async . A has problems but unifies the initialization step
 
-YK: "D" is like no exports can appear after the top-level await. I don't like it any better than B or C, but it allows you to use more use cases (where await happens to be the last thing). Also more use cases... 
+YK: "D" is like no exports can appear after the top-level await. I don't like it any better than B or C, but it allows you to use more use cases (where await happens to be the last thing). Also more use cases...
 TODO(yehuda): please fill in
 
 MBS: great, let's talk more offline
@@ -672,7 +672,7 @@ KCL: right, both opt-in to the operator overloading
 
 KCL: Symbol.operator() is like Symbol.for(), throws for unknown operators, lets us start small, introduce more operators later
 
-KCL: another sketch, with types. `class Vector() { ..., +Point(point) { return addPointOrVector(this, point) }, +Vector(point) ...` . This is a very rough sketch. 
+KCL: another sketch, with types. `class Vector() { ..., +Point(point) { return addPointOrVector(this, point) }, +Vector(point) ...` . This is a very rough sketch.
 
 KCL: `[operator][constructor]()`
 
@@ -852,7 +852,7 @@ KCL: yeah, I don't think we'll get answers to those questions today
 
 (Brendan Eich)
 
-BE: I wasn't here in November when we talked about semicolons. 
+BE: I wasn't here in November when we talked about semicolons.
 
 - recommending a style over parsing linter (or better) substance seems like a disservice to the community
 - what I'd rather see happen is: not recommend styles, let's recommend substantial tool adoption, not necessarily a single tool, but a set of tools which parses the grammar and makes judgements based on newlines that have as safe or safer semicolon style on outcomes
@@ -887,7 +887,7 @@ WH: The latter are trivial to find. Just search for no-line-break productions in
 
 DE: I'm not sure we'll come to consensus now, at the last meeting I thought we had consensus on recommending semicolons, but now I think we don't. Maybe the reflector thread isn't sufficiently visible. Maybe develop the statement in the reflector, then work on it at the next meeting.
 
-YK: I didn't think I could jump into the conversation. I agree we should come back to the next meeting with the 
+YK: I didn't think I could jump into the conversation. I agree we should come back to the next meeting with the
 
 BE: should we do a fast PR to remove the recommendation
 
@@ -917,7 +917,7 @@ DE: we can iterate on the wording on github
 - continue to discuss the recommendation later
 
 
-## 13.iii.j Decorators use cases 
+## 13.iii.j Decorators use cases
 
 (Diego Ferreiro Val, Yehuda Katz and Carido Patino)
 
@@ -929,7 +929,7 @@ DFV: want to provide concrete examples of how people are using decorators today
 
 DFV: salesforce is a platform, devlopers get components, range of developers (no code, lots of code), want to help experts be proficient, but beginners too.
 
-YK: ember-decorators repo, had an ES5 object model for a long time, would like to migrate to ES classes, this repo allows devs to migrate their code to ES classes, decorators are necessary. 
+YK: ember-decorators repo, had an ES5 object model for a long time, would like to migrate to ES classes, this repo allows devs to migrate their code to ES classes, decorators are necessary.
 
 YK: Polymer also has a separate repo for decorators because they're in flux
 
@@ -967,7 +967,7 @@ YK: people complain that decorators make classes harder to statically analyze, b
 
 SLN: how do you plan to leverage decorators for bundling.
 
-YK: not sure if we'll do this, but there's no actual import of clock, but "@service clock" .. dependency injection, whole point is that you don't know what you're importing, someone else decides that for you, 
+YK: not sure if we'll do this, but there's no actual import of clock, but "@service clock" .. dependency injection, whole point is that you don't know what you're importing, someone else decides that for you,
 
 DE: could you explain the cost of the current transpiler solution?
 

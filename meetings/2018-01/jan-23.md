@@ -1,7 +1,7 @@
 # January 23, 2018 Meeting Notes
 -----
 
-Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark S. Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), JF Bastien (JFB), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagniani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
+Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark S. Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), JF Bastien (JFB), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagnani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
 
 Remote: Bradley Farias (BFS), Thomas Wood (TW), Ben Newman (BN), Rick Waldron (RW), Valerie Young (VYG), David Turissini (DTI)
 
@@ -9,7 +9,7 @@ Remote: Bradley Farias (BFS), Thomas Wood (TW), Ben Newman (BN), Rick Waldron (R
 
 ## Welcome
 
-RJE: Welcome 
+RJE: Welcome
 
 SGN: New member get-together at 5 PM on Tuesday, dinner Wednesday at 6:30 PM
 
@@ -29,7 +29,7 @@ RJE: (agenda construction?)
 - Adopted
 
 
-## 5. Report from the Ecma Secretariat 
+## 5. Report from the Ecma Secretariat
 
 RJE: Report of the Secretariat - István has the flu, won't attend.
 
@@ -135,7 +135,7 @@ RJE: Seems like we don't need this for future updates
 #### Conclusion/Resolution
 
 - No updates
- 
+
 
 ## 11. Test262 status updates
 
@@ -149,17 +149,17 @@ RW: (added post meeting)
 - Some stats...
   - 29765 test files
   - Contributors
-    - 2014: 16 
+    - 2014: 16
     - 2015: 22
     - 2016: 35
-    - 2017: 47 
+    - 2017: 47
   - Contributors with more than 1 commit...
-    - 2014: 8 
+    - 2014: 8
     - 2015: 13
     - 2016: 19
     - 2017: 31
   - Commits
-    - 2014: 78 
+    - 2014: 78
     - 2015: 415
     - 2016: 439
     - 2017: 726
@@ -185,8 +185,8 @@ RW: (added post meeting)
   - new Intl feature
   - Object Rest & Spread
 
-- Improvements for parsers: 
-  - support negative tests that are more explicit about where and when they occur: 
+- Improvements for parsers:
+  - support negative tests that are more explicit about where and when they occur:
     - parse: occurs while parsing the source text.
     - early: occurs prior to evaluation.
     - resolution: occurs during module resolution.
@@ -194,7 +194,7 @@ RW: (added post meeting)
   - previously this was just "early" and "runtime"
 - test-harness code is now also tested
 
-- Community users, non-browser JS engines and tools: 
+- Community users, non-browser JS engines and tools:
   - Acorn
   - Babel
   - Babylon
@@ -223,22 +223,22 @@ RW: (added post meeting)
   - zeparser
   (are testing against Test262 or some part of Test262)
 
-- New tools to make test consumption easier: 
+- New tools to make test consumption easier:
   - Test262-stream
-    - Produces a stream of "compiled" test sources, with both strict and non-strict 
+    - Produces a stream of "compiled" test sources, with both strict and non-strict
       versions (as needed) of each test; ready to be executed in a given runtime or engine
       - bootstrapped with harness, assert and helper code (as needed)
   - Test262-features
     - In progress!
     - Detect and validate features tag
-    - autofix features tag lists 
+    - autofix features tag lists
     - automate upkeep of features tag
 
-- In 2018 
+- In 2018
   - Continue growing coverage for old and new features
-  - Experiment with "upstream sync" and "2-way sync" of 
+  - Experiment with "upstream sync" and "2-way sync" of
     engine implementor's feature tests
-    - implementor contributed... 
+    - implementor contributed...
       - feature implementation tests
       - stress tests
       - regression tests
@@ -341,7 +341,7 @@ MB: Ok, maybe part of the problem is that I'm lazy, kinda. ^_^ Best solution wou
 
 #### Conclusion/Resolution
 
-- Issue already opened 
+- Issue already opened
 
 
 ## 13.ii.b. Make ECMAScript a syntactic superset of JSON for Stage 3
@@ -373,11 +373,11 @@ MB: BigInt used to have .parseInt(), but it was removed because parseInt behavio
 
 ... discussion about the pronunciation of "radix"; loosely settled on "radd-ix" ...
 
-MB: Suggestion is {BigInt, Number}.fromString(). Symmetric with toString. We want something to BigInt that fulfills this functionality and we can add the same thing to Number. Main problem that motivates this is there's no way to do the inverse — go from string back to number — but Number can through parseInt, although in a surprising way. 
+MB: Suggestion is {BigInt, Number}.fromString(). Symmetric with toString. We want something to BigInt that fulfills this functionality and we can add the same thing to Number. Main problem that motivates this is there's no way to do the inverse — go from string back to number — but Number can through parseInt, although in a surprising way.
 
-MB: Reasons parseInt is weird: gives NaN when string is bad, gives NaN when radix is bad, accepts radix 0 and pretends it's 10, accepts hex literal prefixes but not the octal and binary prefixes. Can't go back and add support, might be backwards-incompatible. It also ignores leading whitespace and trailing non-digits. And having some support for integer literal prefixes means it's not the inverse of toString - it accepts some things that toString can't produce. 
+MB: Reasons parseInt is weird: gives NaN when string is bad, gives NaN when radix is bad, accepts radix 0 and pretends it's 10, accepts hex literal prefixes but not the octal and binary prefixes. Can't go back and add support, might be backwards-incompatible. It also ignores leading whitespace and trailing non-digits. And having some support for integer literal prefixes means it's not the inverse of toString - it accepts some things that toString can't produce.
 
-MM: one more way - case sensitive. 
+MM: one more way - case sensitive.
 
 MB: Ah yes, we'll talk about this as we move along.
 
@@ -407,7 +407,7 @@ TAB: that would imply that anything which can't be expressed as a dyadic fractio
 
 WH: Another problem: Number toString will never produce the output "9999999999999999999999" because there is no such exact IEEE double, but rejecting it would be weird.
 
-MB: Depends on what we want to limit ourselves to. 
+MB: Depends on what we want to limit ourselves to.
 
 MM: I think we absolutely want to accept this. Narrowly perceived as "what toString accepts, exactly" is too narrow. The useful use-case is that we have a string we want to produce a number from. If you don't accept everything that's valid as floating point and produce a number close to that, you've thrown away too much.
 
@@ -490,7 +490,7 @@ MB: Stage 3 *thumbs up*
 - Stage 3 acceptance
 
 
-## 13.ii.e Code of Conduct Committee update (PRs, call for participants) 
+## 13.ii.e Code of Conduct Committee update (PRs, call for participants)
 
 (Jordan Harband, Jory Burson)
 
@@ -499,7 +499,7 @@ MB: Stage 3 *thumbs up*
 
 JHD: status update, thanks to Jory and Dan for helping with slides. 3 meetings so far, every two weeks, lots of good discussions, what our role and obligations are, reporting mechanisms. learning from Node's approach to online discussions, they have a good model.
 
-JHD: there were three open PRs: member list, confidentiality guarantees, clarification role of chair group. created a separate moderation repo, exploring how to use it, e.g. in the node community, when anything that is published in a public venue needs attention ,t it is called out in the moderation repo, all delegates (and maybe invited experts) have access, if any 
+JHD: there were three open PRs: member list, confidentiality guarantees, clarification role of chair group. created a separate moderation repo, exploring how to use it, e.g. in the node community, when anything that is published in a public venue needs attention ,t it is called out in the moderation repo, all delegates (and maybe invited experts) have access, if any
 
 JHD: proposed list of membership of CoC committee. Anyone on this list can leave the room so everyone else can discuss them privately. If anyone wants to be added to this list, let Jordan/John/Dan know. They'll leave the room after the slides.
 
@@ -544,7 +544,7 @@ KCL: I would like to join the list
 RJE: We will revisit this later in the meeting then.
 
 Proposed members:
-    
+
 - Brian Terlson (brian.terlson@microsoft.com)
 - Jory Burson (jory@bocoup.com)
 - Aki Rose (hi@akibraun.com) (on leave)
@@ -561,7 +561,7 @@ Proposed members:
 - Keith Cirkel added to the committee member list
 
 
-## 13.ii.f Math.seededRandoms() for Stage 1 
+## 13.ii.f Math.seededRandoms() for Stage 1
 
 (Tab Atkins)
 
@@ -603,11 +603,11 @@ MM: there's an inherent tradeoff between speed and good randomness, the right wa
 JFB: don't need to answer this question, but: is it in scope to deal with distributions or not (uniform vs normal, etc)
 
 TAB: can't just modulo to safely get the right range:
-    
+
 WH: what is the C++ problem you mentioned exactly?
 
-JFB: C++ has a ton of detail, but then just shrugs about how to get particular distributions out of the generator, and so impls aren't interoperable. 
-    
+JFB: C++ has a ton of detail, but then just shrugs about how to get particular distributions out of the generator, and so impls aren't interoperable.
+
 TAB: that's probably related to MM's third point, good separable discussion
 
 DD: Michael was talking about use cases, Mark about algorithms, I think we should be clear in the spec that like Math.random, this is not a cryptographically-secure RNG, so that should not constrain our choice of algorithm
@@ -640,7 +640,7 @@ KG: maybe the options bag just contains all of the state
 
 KG: the current design is a generator, rather than a function you call repeatedly, for my use cases I want a function to call repeatedly. For test cases, I'd just swap out Math.random with this deterministic thing. Harder to do with a generator
 
-TAB: the non-determinancy of the call is exactly what I'm worried about, which is why I want instance-based 
+TAB: the non-determinancy of the call is exactly what I'm worried about, which is why I want instance-based
 
 KG: I wouldn't want this on a web page
 
@@ -659,7 +659,7 @@ SM: one use case, one source of non-determinism in their ? is to hard-code a see
 - Stage 1 acceptance
 
 
-## 13.ii.g. Invited expert/specification contributor forms 
+## 13.ii.g. Invited expert/specification contributor forms
 
 (Daniel Ehrenberg)
 
@@ -675,7 +675,7 @@ DE: This plan has been developed with Allen Wirfs-Brock and István Sebastyen. S
 
 DE: if there are no objections, I'll move the new form to tc39, will start enforcing it for patches/PRs
 
-DE: i hear no objections. Is there anything I should do beyond the reflector thread and updating the contributor.md? 
+DE: i hear no objections. Is there anything I should do beyond the reflector thread and updating the contributor.md?
 
 (No Objections)
 
@@ -869,7 +869,7 @@ JHD: any objections to moving this to stage 3?
 
 #### Conclusion/Resolution
 
-- Stage 3 acceptance 
+- Stage 3 acceptance
 - with semantics: coerce to regexp, add global flag
 
 
@@ -954,13 +954,13 @@ KCL: me too
 #### Conclusion/Resolution
 
 - Stage 2 acceptance
-- Reviewers: 
+- Reviewers:
   - Mark Miller
   - Jordan Harband
   - Keith Cirkel
 
 
-## 13.iii.e Maximally minimal mixins proposal 
+## 13.iii.e Maximally minimal mixins proposal
 
 (Justin Fagnani)
 
@@ -1004,7 +1004,7 @@ JFI: Member namespacing: declare and use a symbol in a single place. Gets you cl
 
 YK: could use private
 
-JFI: most trait implementations can require that your mixin requires a member. Not critical to proposal, but nice to have. 
+JFI: most trait implementations can require that your mixin requires a member. Not critical to proposal, but nice to have.
 
 JFI: (Presenting)
 
@@ -1062,7 +1062,7 @@ YK: there's definitely a problem space to explore
 
 MM: does YK object to this proposal going to stage 1 (separate from Protocols) with the understanding that they'll talk it out
 
-KG: object, we should not have two proposals in the same space 
+KG: object, we should not have two proposals in the same space
 
 MM: I object to restricting ourselves to multiple stage-1 proposals for a single area. But limiting to a single stage-3 proposal per area is good.
 
@@ -1107,13 +1107,13 @@ WH: in favor of this being stage 1
 MM: Protocols-vs-Mixins have a lot of overlap, but the problem statement looks very different depending upon which one you start from. We say that stage 1 is about a problem statement. But there are good reasons why the artifact we examine in stage 1 is a rough proposal for how to solve the problem. Often, such a sketch of an approach to a solution is the clearest initial expression of what the problem is that is being solved. The proposal expresses a philosophical approach for solving a problem which it understands from the perspective of that philosophical approach. Different approaches will have different ways of categorizing the world. To make progress, we need to come to better understanding of these problems, arriving at common terms so we can see how they overlap. But this takes discussion and discovery --- precisely the kind of effort that often only starts once a proposal is at stage 1.
 
 (Note: AWB apparently was not here for this topic, but it worth noting the following text from his paper on standards participation:
-    
+
 > A majority of the delegates may approach a problem in a manner that you believe won't work but you cannot convince them that they are going down the wrong path. Instead of wasting additional time trying to convince them, work on developing an alternative solution. If you are right, the majority will eventually recognize their mistake and your solution will be available to take its place.
 )
 
 
 RJE: let's talk about this offline and revisit it later
- 
+
 #### Conclusion/Resolution
 
 - talk to Protocols people

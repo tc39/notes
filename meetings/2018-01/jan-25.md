@@ -1,9 +1,9 @@
 # January 25, 2018 Meeting Notes
 -----
 
-Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark S. Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), JF Bastien (JFB), Mattijs Hoitink (MHK) , Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagniani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), Dave Herman (DH), Jakob Kummerow (JKW), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
+Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark S. Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), JF Bastien (JFB), Mattijs Hoitink (MHK) , Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagnani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), Dave Herman (DH), Jakob Kummerow (JKW), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
 
-Remote: 
+Remote:
 Bradley Farias (BFS), Thomas Wood (TW), Ben Newman (BN), Rick Waldron (RW), Valerie Young (VYG), David Turissini (DTI), Allen Wirfs-Brock (AWB)
 
 -----
@@ -58,7 +58,7 @@ AK: that works nicely for this use case
 
 ZB: any objections?
 
-(none) 
+(none)
 
 ZB: second feature is Intl.RelativeTimeFormat, currently in stage 2, for communicating date and time in short periods, used a lot in e.g. gmail, calendar: "two minutes ago", "last month", etc
 
@@ -99,7 +99,7 @@ DE: not proposing stage 3 at this meeting. want to review recent spec issues, ge
 
 DE: when you have multiple decorators that expose the same field or method, overlapping, what should the semantic be? resolution: if they create the same field or method, they throw a TypeError. It detects more errors when implemeitng decorators.
 
-DE: but decorators might 
+DE: but decorators might
 
 YK: this is for decorators that add extra.. extras, right?
 
@@ -199,7 +199,7 @@ AK: why are these restrictions here?
 
 YK: I basically agree, but I think there are two good reasons for restrictions: either it makes no sense, or the answer to what it does isn't trivial and we don't want to block the proposal on that. But a lot of the rationale is that figuring out what it actually does is hard, it's ok to stage this
 
-DE: yeah, in class-reltaed proposals, we see a corner of the language that's not ergonmic, we need more discussion. Cutting off corners, not to close off discussion, 
+DE: yeah, in class-reltaed proposals, we see a corner of the language that's not ergonmic, we need more discussion. Cutting off corners, not to close off discussion,
 
 AK: Yk's description sounds reasonable. If it's not useful and hard to do, then we should not do it
 
@@ -378,7 +378,7 @@ DE: one question, should we allow let/const/class declarations in class bodies? 
 
 DE: private methods. currently at stage 3. Given lexically-scoped functions in class bodies, why do you even need private methods?
 
-DE: pretty natural to factor stuff into separate functions, but not expose that internal function as a method. Using a lexically-scoped function requires changes to call syntax, ugly. Easy to change between public/private methods. 
+DE: pretty natural to factor stuff into separate functions, but not expose that internal function as a method. Using a lexically-scoped function requires changes to call syntax, ugly. Easy to change between public/private methods.
 
 MM: clarifying, in the WeakMap theory of private state, this is checking that the 'this' object is a key in the weakmap, right?
 
@@ -453,7 +453,7 @@ DE: what about the advantage of avoiding needing to add a new token
 MM: I'd rather introduce the new token
 
 YK: ron's proposal, I may agree with mark, but I'd like to explore before we add more things to the class body
-    
+
 MM: I'm in favor of exploration
 
 AWB: I'm not a big fan of the private instance method proposal in particular, but one implementation thing I wanted to bring up, they're currently defined to behave as if they were private fields of the instances that are read only, that's how the spec would describe them
@@ -492,19 +492,19 @@ MM: what was the frequency of use of those mechanisms?
 
 AWB: it evolved over time, originally class variables were most frequently. As people discovered that class instance variables existed, they began to be used in more complex abstractions. This is somewhat different in smalltalk because none of these have the privacy aspects of "private" and how visibility is shared via inheritance. [Update, Smalltalk class instance variables are essentially "protected", while class variables are public.
 
-AWB: in terms of public, 
+AWB: in terms of public,
 
 YK: ruby has the same two mechanisms
 
 WH: sounds like there is demand for both mechanisms
 
-AWB: lexical provides one, 
+AWB: lexical provides one,
 
 WH: lexical doesn't provide a public one
 
 WH: I thought AWB was suggesting having a scope that includes the class definition
 
-DE: two ways do to it, 
+DE: two ways do to it,
 
 WH: a lexical declaration outside a class is not connected to the class at all
 
@@ -577,7 +577,7 @@ DE: about the visibility questions, at tuesday's newcomer's dinner, people expre
 
 ## 13.v.a BigInt status update (significant recent change)
 
-(Daniel Ehrenberg) 
+(Daniel Ehrenberg)
 
 - [proposal](https://github.com/tc39/proposal-bigint )
 - [significant recent changes](https://github.com/tc39/proposal-bigint/pull/106 )
@@ -615,7 +615,7 @@ WH: my main issue is with new coercions being added, we had many debates about t
 
 WH: I'd either like to see no coercions, or if we want genericity we should add BigInt arrays of all widths. It would let folks standardize on using just those and not have to wonder whether they're getting a Number or a BigInt each time
 
-Jakob?: originally proposal there was a distinction between existing TypedArray behavior (throw any number into a 8-array and it just takes the last 8 bits), and the new ones that care what the value is, 
+Jakob?: originally proposal there was a distinction between existing TypedArray behavior (throw any number into a 8-array and it just takes the last 8 bits), and the new ones that care what the value is,
 
 DE: how does this differ from the rest of JS
 
@@ -667,7 +667,7 @@ YK: as a user of wasm (rust), the 32-bit limitation just means you can do as man
 
 DE: there's a bug, I can add a link to the notes
 
-DE: how should be conclude? 
+DE: how should be conclude?
 
 AWB: if you only do casting, you already have it, with `from`, rather than future changes
 
@@ -766,7 +766,7 @@ CM: I like that phrasing
 
 RBN: two things I'd like to see come out of this discussion. Is there a priority list the committee wants from this list of statements? Some that are too big to be worth the effort? Also, revisit the stage 3 advancement for throw-expressions by the end of this discussion
 
-MM: scope of lexical declaration expressions? Nested let declaration. 
+MM: scope of lexical declaration expressions? Nested let declaration.
 
 RBN: In the example, the `let y` scope is the surrounding block. To match C#.
 
@@ -908,13 +908,13 @@ DE: a classic way for standards groups to address these things is with liasons. 
 
 YK: agree strongly about "nefarious", no mustache-twirling villans here. But also, people aren't always behaving solely on rational technical reasons.. about venue, which standards body is responsible, people react strongly to questions of venue, used to accomplish certain goals. It was hard to figure out what happened with that. As a person without a lot of leverage, I'm not at a browser company, tc39 is special, it gives leverage to people who aren't at big companies, attempts to move things to other venues that are mostly populated by large-company, serves to reduce influence of smaller parties, might contribute to more heated conversations
 
-DE: different standards orgs have different ways to get involved, whatwg is pretty open, but easier in some ways, harder in other ways. When there are cultural differences, 
+DE: different standards orgs have different ways to get involved, whatwg is pretty open, but easier in some ways, harder in other ways. When there are cultural differences,
 
-YK: as a practical matter, there are venues that see their job as mostly documenting the will of implementers, but those make it more difficult to 
+YK: as a practical matter, there are venues that see their job as mostly documenting the will of implementers, but those make it more difficult to
 
 AK: I encourage you to use language that's less divisive..
 
-YK: I don't think it's malice, it just makes it hard to include the non-implementers .. I meant it in an uncontroversial way, whatwg is historically meant to serve implementers .. 
+YK: I don't think it's malice, it just makes it hard to include the non-implementers .. I meant it in an uncontroversial way, whatwg is historically meant to serve implementers ..
 
 DD, remotely, after the fact: I contest that characterization and believe it's based on a misperception. The priority of constituencies puts users over web developers over implementers.
 

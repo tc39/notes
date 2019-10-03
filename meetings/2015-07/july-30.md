@@ -1,11 +1,11 @@
-# July 30, 2015 Meeting Notes    
+# July 30, 2015 Meeting Notes
 -----
 
 Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Waldemar Horwat (WH), István Sebestyén (IS), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Jonathan Turner (JT), Paul Leathers (PL), Chip Morningstar (CM), Vladimir Matveev (VM), Ron Buckton (RBN), Brian Terlson (BT), Alan Schmitt (AS), Ben Newman (BN), Mohamed Hegazy (MH), Abhijith Chatra (AC), Tom Care (TC), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Daniel Ehrenberg (DE), Dan Gohman (DGN), Andreas Rossberg (ARB), Rick Waldron (RW), Mike Pennisi (MP), Akrosh Gandhi (AGI), Jonathan Sampson (JSN)
 
 -----
 
-## 7 Test262 Updates 
+## 7 Test262 Updates
 
 (Brian Terlson, Mike Pennisi)
 
@@ -62,7 +62,7 @@ BT: Requirement of new site: use web workers
 
 Moving on to http://jugglinmike.github.io/presentations/2015/tc39-Test262-update/#15
 
-MP: (first example) TypedArray, 9 sets of the same tests. The tests might start in sync, but it's hard to maintain over time. 
+MP: (first example) TypedArray, 9 sets of the same tests. The tests might start in sync, but it's hard to maintain over time.
 
 - Typed Arrays (9)
 - Destructuring Assignment (3)
@@ -70,15 +70,15 @@ MP: (first example) TypedArray, 9 sets of the same tests. The tests might start 
   - ForIn/OfBodyEvaluation
     - for..in statement
     - for..of statement
-- Spread Operator (4)  
-  - ArrayLiteral: [...x]  
-  - ArgumentList    
-    - SuperCall: super(...x)    
-    - CallExpression: f(...x)    
+- Spread Operator (4)
+  - ArrayLiteral: [...x]
+  - ArgumentList
+    - SuperCall: super(...x)
+    - CallExpression: f(...x)
     - MemberExpression: new f(...x)
-- Expressions & Declarations  
-  - Function  
-  - Generator  
+- Expressions & Declarations
+  - Function
+  - Generator
   - Class
 
 
@@ -117,12 +117,12 @@ BT: Don't want to check in the actual generated tests
 
 DE: For tests users, this can be automated?
 
-BT: Yes. 
+BT: Yes.
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
-- Continue exploring test generation 
+- Continue exploring test generation
 
 
 ## Meeting Schedule
@@ -148,20 +148,20 @@ YK: Straight forward, whatever is Stage 4 goes in the spec
 
 AWB: (enumerating general spec process timelines)
 - submission
-- review 
+- review
 - 60 day opt-out
 
 YK: That's after January?
 
 AWB: Approximately end of January
 
-YK: January is submission, work backward to find deadline. 
+YK: January is submission, work backward to find deadline.
 
-Discussion re: time needed for Brian to integrate the stage 4 features. 
+Discussion re: time needed for Brian to integrate the stage 4 features.
 
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Get proposals wrapped up if you want to get these features into the spec
 
@@ -173,14 +173,14 @@ Discussion re: time needed for Brian to integrate the stage 4 features.
 
 - [slides](async-function-updates.pdf)
 
-BT: 
-    
+BT:
+
 Updates from Last Time
 
 - Complete spec available ( http://tc39.github.io/ecmascript-asyncawait/ / https://github.com/tc39/ecmascript-asyncawait )
 - Removed `await *`
 - Implemented in Babel
-- Losts of positive feedback from the web 
+- Losts of positive feedback from the web
 
 DH: Future proof for potential future syntax extensions
 
@@ -195,7 +195,7 @@ Questions
   - (a, b) @=> await a + await b;
 
 
-DE: What's the issue with the first? 
+DE: What's the issue with the first?
 
 BT: `async` not a keyword and that could be a call: `async(a, b)`
 
@@ -216,9 +216,9 @@ BT: Opposed with the top grammar? (assuming the grammar works)
 
 DH: Would like to see more code illustrating actual use cases
 
-DD: There's a lot of code in the wild that's been using the top form 
+DD: There's a lot of code in the wild that's been using the top form
 
-DH: Any higher order combinator is where this will have the most use. 
+DH: Any higher order combinator is where this will have the most use.
 
 MM: No consensus on the second. Consensus on the first contingient on grammar validation
 
@@ -233,10 +233,10 @@ DD: should look into the ecosystem of Babel users and see where it's come up
 
 Design Questions (continued)
 
-- Newing an async function: 
+- Newing an async function:
   - Error
   - Promise-for-instance
- 
+
 
 BT: Suggest "no"
 (no disagreement)
@@ -244,18 +244,18 @@ BT: Suggest "no"
 
 Design Questions (continued)
 
-- Errors in Parameter Initialization 
+- Errors in Parameter Initialization
 
 
 
 ```js
 function* foo(a = (function() { throw 1; }())) {
-    
+
 }
 let iter = foo(); // throws 1
 ```
 
-BT: the equivalent in async functions: 
+BT: the equivalent in async functions:
 
 ```js
 async function bar(a = (function() { throw 1; }())) {
@@ -287,14 +287,14 @@ BT: Yes, found that error throwing default parameters don't happen (rare case?)
 
 CM: setup preparation part, consumption part. The generator setup might have error in setup, reported immediately
 
-DD: Code will expect to receive the error via the catch path, not an immediate throw path. 
+DD: Code will expect to receive the error via the catch path, not an immediate throw path.
 - Most promise ops go through the API
 - Devs can muck with the built-ins and produce errors
 
 
 AWB: What if you put a proxy on an async function and the call trap throws?
 
-MM: There's not a problem with the [[Call]] trap. If the [[Call]] trap in the Proxy throws, then you have a "throw". 
+MM: There's not a problem with the [[Call]] trap. If the [[Call]] trap in the Proxy throws, then you have a "throw".
 
 AWB: Say the async function is actually a proxy wrapped around an async function?
 
@@ -307,7 +307,7 @@ DH: Mark, I agree. There are errors we consider normal to happen in programs tha
 
 BT: want to be very clear about rationalization, so that same can be applied to `async` generator.
 
-AWB: The generator function returns its value before evaluating its body. 
+AWB: The generator function returns its value before evaluating its body.
 - A generator is a function
 
 MM: An async generator... I missed the rest of this
@@ -320,7 +320,7 @@ BT: We need to establish the rationale for the behavior of error handling in non
 
 YK: Might've been a mistake?
 
-AWB: Generators do what generator functions previously did in Firefox. We weren't sure if it should be changed. Different results: 
+AWB: Generators do what generator functions previously did in Firefox. We weren't sure if it should be changed. Different results:
 - timing evaluation changes: happen on the first `next`, the values aren't the same values at the time of the call.
 
 DD: Generators suspend immediately, `async` suspend on the first `await`
@@ -333,7 +333,7 @@ Discussion about complications of the implicit `yield` in generators
 
 DH: Don't need symmetry between generator and async
 
-YK: Async function is just a function, but the generator is a different thing. 
+YK: Async function is just a function, but the generator is a different thing.
 - When calling a generator, you're not calling a function as shown
 
 DD: When calling a generator function, the first line of the function does not execute
@@ -350,9 +350,9 @@ Design Questions Continued
   - `await 1` does it trigger a turn of the event loop as in the desugaring?
   - allow synchronous await but ensure promise resoltion is async?
   - do neither and allow returning an already-resolved promise?
-  
 
-MM: describing the hazard of sometimes "sync" and sometimes "async" 
+
+MM: describing the hazard of sometimes "sync" and sometimes "async"
 
 
 ????????????????Z??????????A???????????L????????????G????????????????????????? !????????????
@@ -360,15 +360,15 @@ MM: describing the hazard of sometimes "sync" and sometimes "async"
 
 :applause:
 
-YK: The same hazard doesn't exist with await, because the callback model is changing which scope the function is called in, but doesn't exist in await. 
+YK: The same hazard doesn't exist with await, because the callback model is changing which scope the function is called in, but doesn't exist in await.
 
 MM: Agreed that the hazard to aync functions is smaller than that to Promises. The bugs will be both fewer and more subtle and harder to figure out.
 
 
 DD: no cost to go back to the event loop
-    
-    
-YK: not true. 
+
+
+YK: not true.
 - hot code is always awaiting some promise, could be optimized to consider inline-able. Never true if you always have to go back to the queue
 
 MM: If an implementation can optimize, which is very hard and hazardous
@@ -377,7 +377,7 @@ YK: I'm making a different point. If you say. "you are not allowed to go back to
 
 JH: The relative harm: cost not zero, need to weigh
 
-MM: Experience with `asap`, cost is worth it to reduce the hazard. 
+MM: Experience with `asap`, cost is worth it to reduce the hazard.
 - When bugs do occur, very subtle and hard for programmer to figure out
 
 
@@ -390,19 +390,19 @@ YK: cannot rely on what interleavings are possible
 
 BT: hazard here: order of your next turns change. not that callback could be async, but that your callbacks mayb run out of order. What Yehuda is saying is that people don't write programs with multiple Promises where they expect the promises to resolve at specific turns of the event loop.
 
-MM: Two different hazards: 
+MM: Two different hazards:
 - The order of events on the event loop is one hazard
 - the isolation of side effects is job that was executed up to the await point, completes before any code of the `await`
-  - All invariants storing during the job 
-  
+  - All invariants storing during the job
+
 Mark, I need you to fill this in, we're moving too fast.
 
 
-YK: Transaction committed before any await is called. This exists in Ember. 
+YK: Transaction committed before any await is called. This exists in Ember.
 - Need to see an example of the invariant Mark is describing
 
-MM: After the await point, the callee is starting with a fresh stack. 
-- Event loop programming paradigm that suspends an invariant must restore the invariant before the job ends. 
+MM: After the await point, the callee is starting with a fresh stack.
+- Event loop programming paradigm that suspends an invariant must restore the invariant before the job ends.
 - Illustrates with example of doubly linked list operation
 
 
@@ -417,20 +417,20 @@ YK: Discussing already-resolved-promises
 DD: `await 1` is not the same as `await Promise.resolve(1)`
 - If you have a promise, you've said that the value is async and breaking that is crazy
 
-MM: Found with the Q.asap bug: I wrote my code, tested my code, then my code had bugs. Result of code running out of turn with test code. 
+MM: Found with the Q.asap bug: I wrote my code, tested my code, then my code had bugs. Result of code running out of turn with test code.
 
 YK: consistency is absorbed by syntax
 
 MM: disagree
-- The bug was directly the result of assuming the invariant will be resolved. 
+- The bug was directly the result of assuming the invariant will be resolved.
 
 Discussion re: invariant restoration on event turn completion
-    
-    
+
+
 ```js
 // BT:
 foo().then( function() {
-   /* 1 */ 
+   /* 1 */
 });
 /* 2 */
 // Which is first
@@ -439,7 +439,7 @@ async funcion foo() {
   /* 1 */
   await x;
   /* 2 */
-    
+
   // are these the same turn?
 }
 foo();
@@ -447,29 +447,29 @@ foo();
 ```
 
 
-Currently, `await` is always async. 
+Currently, `await` is always async.
 
 
-JH: Concern that the notion of asynchrony bound to...? 
+JH: Concern that the notion of asynchrony bound to...?
 
-MM: 
-    
-    
-JH: predicts that await means async to developers. await is composition. 
+MM:
+
+
+JH: predicts that await means async to developers. await is composition.
 
 DD: yield is composition
 
 MM: asynchrony is mandated by the async keyword
 
-JH: is that adequate? `async` means asynchrony, `await` does not mean asynchrony, just pause the execution. 
+JH: is that adequate? `async` means asynchrony, `await` does not mean asynchrony, just pause the execution.
 
 YK: Come back to this?
 
-Agreed. Next turn of the event loop. 
+Agreed. Next turn of the event loop.
 
 JHD: Agree that `await x` always means `await Promise.resolve(x)`?
 
-Some agreement. 
+Some agreement.
 
 YK: Doesn't fully describe the trade off
 
@@ -480,7 +480,7 @@ JH: can we put together a program that illustrates the hazard?
 ```js
 // BT:
 foo().then( function() {
-   /* 1 */ 
+   /* 1 */
 });
 /* 2 */
 // Which is first
@@ -489,14 +489,14 @@ async funcion foo() {
   /* 1 */
   await x;
   /* 2 */
-    
+
   // are these the same turn?
 }
 foo();
 // HAZARD: setup state required by /* 2 */
 ```
 
-YK: 
+YK:
 
 
 ```js
@@ -522,7 +522,7 @@ y = 2;
 
 MM/DD/YK: discussing the hazards above.
 
-AK: Different conditions, different behavior. 
+AK: Different conditions, different behavior.
 
 
 Discussion about race conditions in JS
@@ -537,43 +537,43 @@ YK: When type `await`, I expect unpredictability
 MM: unpredictable interleaving of job
 
 
-DD: 
-    
+DD:
+
 ```js
 function dStuff() {
   if (window.state === 1) { doA(); }
-  else { doB(); }   
+  else { doB(); }
 }
 
 async function foo() {
   doStuff(); await x; doStuff();
-}       
+}
 
 window.state = 1;
 foo();
 window.state = 2;
 ```
 
-MM: impossible to reason about a program without knowing something about what is going on. 
+MM: impossible to reason about a program without knowing something about what is going on.
 - testing in sync case, and it works
 - execute in async case, and it fails
 
-DD: Always have a consistent state on the next turn 
+DD: Always have a consistent state on the next turn
 
 
-Discussion, restating positions back and forth. 
+Discussion, restating positions back and forth.
 
 
 
 
 
-- Promise cancellation: 
+- Promise cancellation:
   - Depends on cancellation at the promise level
   - Urge promise champions to consider ergonomics with async functions
 
 
-BT: not going to specify cancellation in this proposal 
-    
+BT: not going to specify cancellation in this proposal
+
 MM: Not sure that base Promise is going to change?
 
 DD: Talk offline.
@@ -581,13 +581,13 @@ DD: Talk offline.
 - Await at top-level
   - Can you await at the top level of a module?
   - Useful, especially in Node
-  
-  
+
+
 DH: Issues.
 
 YK: Previously, could assume that top level ran start to finish, if many pieces have setup await
 
-AWB: this changes the entire model of module execution 
+AWB: this changes the entire model of module execution
 
 BT: modules are wrapped in async function which called immediately
 
@@ -599,8 +599,8 @@ MM: only "when" the execution happens
 
 AWB: This could be misunderstood
 
-DH: 
-    
+DH:
+
 ```js
 import ... from ...;
 
@@ -615,9 +615,9 @@ if (dev) {
 export let x = 17;
 ```
 
-DH: Requires module be async. 
+DH: Requires module be async.
 
-Unresolvable if node remains sync at the top level. 
+Unresolvable if node remains sync at the top level.
 
 
 (break)
@@ -645,7 +645,7 @@ async(a=await/
 - Is await a keyword or identifier here?
 
 
-BT: parsed like a keyword, but there is a static semantics that says any occurence of await expression is an error. 
+BT: parsed like a keyword, but there is a static semantics that says any occurence of await expression is an error.
 
 
 ```js
@@ -657,9 +657,9 @@ async(a=await/x, b=c/i) => b;
 
 MF: The reparse says it has to match this additional grammar, same set of tokens
 
-WH: It's not clear in the spec. 
+WH: It's not clear in the spec.
 
-BT: Yes, the await would appear as an identifier until you apply the cover grammar. 
+BT: Yes, the await would appear as an identifier until you apply the cover grammar.
 
 MF: (reads from [ECMAScript 2015 specification, section 12.2.1.1](http://www.ecma-international.org/ecma-262/6.0/#sec-static-semantics-coveredparenthesizedexpression )
 
@@ -667,12 +667,12 @@ MF: if await is always an await expression, this would fail to reparse, resultin
 
 BT: Correct, expected.
 
-BT/WH to have offline discussion re: grammar. 
+BT/WH to have offline discussion re: grammar.
 
-BT: Those that know execution model should review this. 
+BT: Those that know execution model should review this.
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Stage 2 acceptance
 - Reviewers
@@ -686,7 +686,7 @@ BT: Those that know execution model should review this.
 
 
 
-## 6.5 Proposed Changes to Observable API 
+## 6.5 Proposed Changes to Observable API
 
 (Jafar Husain)
 
@@ -694,8 +694,8 @@ https://github.com/zenparsing/es-observable/tree/zenlike
 
 - [slides](https://docs.google.com/file/d/1uEVcOgJIMsHjN1vypKKyfmDRg_bz5cKXpo0v4Nc0q8NfqKolBeSDHIj8z9GS8A4EiMpZ8QQ3l87Q_wF3/edit?usp=docslist_api)
 
-JH: 
-    
+JH:
+
 Conclusions after 45 Issues and Impl Work
 
 - Generator should not be used Sink
@@ -712,10 +712,10 @@ Issues:
   - considered a decorator, but likely a footgun
 - Return invoked on unsubscribe
   - mistake because it conflates two concepts: the need to free scarce resources and the need to signal iteration has completed
-  - the equivalent to breaking out of a for loop,   
+  - the equivalent to breaking out of a for loop,
 
 
-YK: Why does it end up not being important to generators? (dispose being separated from return) 
+YK: Why does it end up not being important to generators? (dispose being separated from return)
 
 YK: Straight forward to add a `dispose()` method to Generator instance objects  http://www.ecma-international.org/ecma-262/6.0/#sec-properties-of-generator-prototype
 
@@ -758,7 +758,7 @@ DD: Strange to hide a method by using well-known symbol
 
 WH: What does Symbol.observer return? (Not referring to the symbol, but to the method to which this is the well-known symbol-as-computed property name)
 
-JH: Nothing 
+JH: Nothing
 
 DD: What happened to the flush that we discussed?
 
@@ -784,7 +784,7 @@ Sync Subscription Affirmed Necessary
 (get rest of bullets from slide)
 
 
-Jafar moves through slides too fast. 
+Jafar moves through slides too fast.
 
 
 DD: Would prefer something simpler than Symbol.observer, instead just call it something obvious
@@ -792,28 +792,28 @@ DD: Would prefer something simpler than Symbol.observer, instead just call it so
 MM: Name it such a way that the name is clear to the user (no suggestion)
 
 
-Discussion, re: await observable. 
+Discussion, re: await observable.
 
 
 
 All scalar combinators produce promises or observables
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Stage 1 holds
 - Offline discussion, re: sync subscription
 
 
 
-## 6.13 Advance Rest/Spread Properties to Stage 2 
+## 6.13 Advance Rest/Spread Properties to Stage 2
 
-(Sebastian Markbage)
+(Sebastian Markbåge)
 
 https://github.com/sebmarkbage/ecmascript-rest-spread
 
-SM: 
-    
+SM:
+
 Static Properties vs. Computed Properties
 
 SM (slide): question on evaluating computed property keys multiple times on the LHS of a destructuring assignment?
@@ -823,14 +823,14 @@ SM (slide): question when a "rest" destructured object param throws (via getter,
 ```js
 try {
   var throwingObj = {
-    x: 1, 
-    y: 2, 
+    x: 1,
+    y: 2,
     get z() { throw myError; },
     w: 4
   };
 
   var {x, ...rest} = throwingObj;
-  
+
 } catch (err) {
   x; // 1
   rest; // undefined (could be { y:2, w: 4 })
@@ -841,7 +841,7 @@ MM: possibilities?
 
 
 
-SM: 
+SM:
 - undefined
 - { y: 2, w: 4 }
 
@@ -850,7 +850,7 @@ MF: also `{}` and `{ y: 2 }`
 MM: further semantics need to be explored
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Stage 2 acceptance
 - Reviewers

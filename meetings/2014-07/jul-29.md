@@ -1,8 +1,8 @@
-# July 29, 2014 Meeting Notes    
+# July 29, 2014 Meeting Notes
 -----
 
 
-Brian Terlson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Sebastian Markbåge (SM), István Sebestyén (IS), Erik Arvidsson (EA), Brendan Eich (BE), Mark S. Miller (MM), Sam Tobin-Hochstadt (STH), Domenic Denicola (DD), Peter Jensen (PJ), John McCutchan (JMC), Paul Leathers (PL), Eric Toth (ET), Abhijith Chatra (AC), Jaswanth Sreeram (JS), Yehuda Katz (YK), Dave Herman (DH), Brendan Eich (BE), John-David Dalton (JDD) 
+Brian Terlson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Sebastian Markbåge (SM), István Sebestyén (IS), Erik Arvidsson (EA), Brendan Eich (BE), Mark S. Miller (MM), Sam Tobin-Hochstadt (STH), Domenic Denicola (DD), Peter Jensen (PJ), John McCutchan (JMC), Paul Leathers (PL), Eric Toth (ET), Abhijith Chatra (AC), Jaswanth Sreeram (JS), Yehuda Katz (YK), Dave Herman (DH), Brendan Eich (BE), John-David Dalton (JDD)
 
 -----
 
@@ -10,7 +10,7 @@ Brian Terlson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (
 
 JN: (Welcome and host details)
 
-Introductions. 
+Introductions.
 
 Agenda: https://github.com/tc39/agendas/blob/master/2014/07.md
 
@@ -29,10 +29,10 @@ Approved.
 https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-07/rev26-summary.pdf
 
 
-AWB: 
+AWB:
 
 Slide 1
-    
+
 - "Task" => "Job"
 - Generator oject return method/for-of/in loops use return method on generatorsGetMethod, now treats null and indefined equiv as meaning no method available
 - Eliminated the ability of Proxy handlers to extend the set of property descriptor attributes thet expose vis [[GetOwnProperty]]
@@ -45,9 +45,9 @@ Slide 1
 
 RW: Clarification about #3
 
-MM: Prevent the ability to lie about decriptor values; prevent leak 
+MM: Prevent the ability to lie about decriptor values; prevent leak
     "time of check to time of use" (ToCToU) vulnerability
-    
+
 
 (re: #5)
 WH: Informative implementation may cause readers to incorrectly assume that anything that doesn't conform to to that informative implementation is wrong. In particular, worried about users assuming that implementation behaviors that the informative implementation doesn't do can't happen.
@@ -78,13 +78,13 @@ Turns out that the sloppy mode behavior is implemented in all current engines as
 - Changed handling of NaN from a sort comparefn to match web reality (http://bugs.ecmascript.org/show_bug.cgi?id=2978)
 
 
-MM: (re: #6) What is the bound name? 
+MM: (re: #6) What is the bound name?
 
 AWB: "bound ..."
 
 (per previous resolution—find and link)
 
-AWB: (re: #8, sort behavior when comparison function returns NaN) the change adds: 
+AWB: (re: #8, sort behavior when comparison function returns NaN) the change adds:
 "If v is NaN, then return +0. "
 
 WH: Note that that bug contains other examples where sort would still be inconsistent.
@@ -106,11 +106,11 @@ https://bugs.ecmascript.org/show_bug.cgi?id=3089
 
 Slide 3
 
-- Updated Symbol conversions: 
-  - `aSym == "not a symbol"` produces false. 
-  - `var s = Symbol(); s == Object(s)` produces true. 
-  - `"foo" + aSymbol` or `aSymbol + "foo"` throws TypeError. 
-  - Symbol `@@toPrimitive` returns the wrapped symbol value. 
+- Updated Symbol conversions:
+  - `aSym == "not a symbol"` produces false.
+  - `var s = Symbol(); s == Object(s)` produces true.
+  - `"foo" + aSymbol` or `aSymbol + "foo"` throws TypeError.
+  - Symbol `@@toPrimitive` returns the wrapped symbol value.
   - `ToNumber(aSymbol)` throws.
 - Spread now works on strings `var codeUnits = [..."this is a string"]`
 - `yield *` now works with strings: `function * getchars(str) {yield * str}`
@@ -130,8 +130,8 @@ BE: Agreed, we should revisit.
 
 Re: #4, the resolution: https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-06/jun-6.md#block-scoping-issues
 
-BE: 
-    
+BE:
+
 ```js
 (function f() {
   console.log(g);
@@ -147,7 +147,7 @@ DH: Suggest: we can deal with this post-ES6. It's a useless thing that happens t
 
 AWB: We need to decide if this is a function declaration, does it hoist?
 
-DH: But won't affect the web, existing can't be relied on. The existing work has been done, but no additional work 
+DH: But won't affect the web, existing can't be relied on. The existing work has been done, but no additional work
 
 WH: Treat this the same as function declarations inside of statements: ie. `if (true) function f() {}`. Do we allow `while (true) function f() {}` ?
 
@@ -157,8 +157,8 @@ WH: Let's keep it as it is in ES5
 
 AWB: Whoever maintains web specs...?
 
-BE: Not all browsers do the same: 
-    
+BE: Not all browsers do the same:
+
 (results of above code)
 
 - SpiderMonkey: ReferenceError
@@ -176,7 +176,7 @@ AWB: Spec is up to date, without the modules work.
 
 
 
-## 4.6 Unscopables 
+## 4.6 Unscopables
 
 (Erik Arvidsson)
 
@@ -189,7 +189,7 @@ https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-07/es6-unscopables.p
 
 ```js
 Array.prototype[Symbol.unscopables] = {
-  ... 
+  ...
 };
 ```
 (with null prototype)
@@ -201,7 +201,7 @@ For
 - HasBinding
 - GetBindingValue
 
-But nor for: 
+But nor for:
 - SetMutableBinding
 
 AWB: essentially replicating the prototype lookup algorithm in two additional places. Realized a third.
@@ -210,8 +210,8 @@ EA: ...
 
 **Setter Issue**
 
-SetMutableBinding ignores @@unscopables so we can get a mismatch: 
-    
+SetMutableBinding ignores @@unscopables so we can get a mismatch:
+
 ```js
 with (object) {
   x = 1;
@@ -220,7 +220,7 @@ with (object) {
 ```
 
 YK: Needs to be written?
-    
+
 AWB: More that wasn't considered. Proxy issues in bug (above)
 
 EA: The problems arise when your prototype has getter or setter or proxy. The result of HasBinding can return true for a property further down the prototype chain, but then Set got invoked using a setter that was black listed in HasBinding.
@@ -229,8 +229,8 @@ AWB: Proposal is, do what we've done and leave setting as is.
 
 Only apply unscopable at the local level, don't walk the prototype chain
 
-Any binding resolution operation, on a `with` env record: 
-    
+Any binding resolution operation, on a `with` env record:
+
 1. looks up unscopables, doesn't matter where in the prototype
 2. checks the `name` against unscopables (has, not hasOwn)
 3. if found continue up to the next level
@@ -290,21 +290,21 @@ AWB: Is this a function of `with` or the environment?
 
 #### Conclusion/Resolution
 
-- @@unscopables only works inside of `with` object environment records, not global object environment records. 
-- Revert to the previous algorithm: 
+- @@unscopables only works inside of `with` object environment records, not global object environment records.
+- Revert to the previous algorithm:
   1. looks up unscopables, doesn't matter where in the prototype
   2. checks the `name` against unscopables (HasProperty, not HasOwnProperty)
   3. if found continue up to the next scope level
 
 
 
-## 4.8 Consider if Object.assign should silently ignore null/undefined sources 
+## 4.8 Consider if Object.assign should silently ignore null/undefined sources
 
-(Sebastian Markbage)
+(Sebastian Markbåge)
 
 (Request slides)
 
-SM: 
+SM:
 
 ```js
 Object.assign({}, undefined);
@@ -321,17 +321,17 @@ Object.assign(undefined, {});
 This should still throw
 
 
-DH: undefined and null are probably treated the same by == 
+DH: undefined and null are probably treated the same by ==
 
 Do we want to treat null and undefined the same? Probably not.
 
 DD: The mental model should be for-of + default arguments, not for-in
 
-MM: use case for tolerating the null is in JSON data. JSON has no way to represent undefined, except for null 
+MM: use case for tolerating the null is in JSON data. JSON has no way to represent undefined, except for null
 
 JH: or omission
 
-SM: Covered existing libraries to use `Object.assign`, feedback almost always included the undefined case. 
+SM: Covered existing libraries to use `Object.assign`, feedback almost always included the undefined case.
 
 JM: Did you distinguish null and undefined?
 
@@ -360,9 +360,9 @@ General opposition.
 
 
 
-## 
+##
 
-AWB: In the process of for-of, if a throw occurred, does that turn into a throw to the iterator? 
+AWB: In the process of for-of, if a throw occurred, does that turn into a throw to the iterator?
 
 NO.
 
@@ -376,7 +376,7 @@ When a `generator.throw()` is called and the generator has a yield* the spec cur
 
 DH: Call return() on the outer generator, delegates calling return() to the delegated `yield *`
 
-BE: 
+BE:
 ```js
 
 function* g() {
@@ -398,7 +398,7 @@ function* h(bound) {
 let it = g();
 
 it.next();  // returns {value: 0, done: false}
-it.throw(); // 
+it.throw(); //
 
 ```
 
@@ -410,10 +410,10 @@ AWB: if `it.throw()` do we send a return to the `h` instance?
 
 MM: we would do a `throw`?
 
-AWB: we wouldn't. Think of the `yield*` as a for-of. h() doesn't know what its client is. 
+AWB: we wouldn't. Think of the `yield*` as a for-of. h() doesn't know what its client is.
 
-The problem: 
-    
+The problem:
+
 the resumption from the yield is throw, back in the `yield*`, what to call on `h()`
 
 DH: Propagate, that's the point of `yield*`, it should behave as if the inner generator is inline and anything it does propagates.
@@ -440,11 +440,11 @@ DH: the important refactoring property to have is that you can extract out some 
 
 MM: What is the model that the user has: who is the `throw` complaining to?
 
-AWB: And who has control? Is the generator calling out and getting something back or into another generator. 
+AWB: And who has control? Is the generator calling out and getting something back or into another generator.
 
-DH: for-of and `yield*` diff roles: for-of is a consumer and generator stops there. `yield*` is consuming and producing by composition. 
+DH: for-of and `yield*` diff roles: for-of is a consumer and generator stops there. `yield*` is consuming and producing by composition.
 
-JH: Two models: consuming and emitting. `yield*` is a stream fusion, 
+JH: Two models: consuming and emitting. `yield*` is a stream fusion,
 
 STH: `yield*` compensates for the shallowness of yield
 
@@ -466,7 +466,7 @@ MM: Would it be plausible to have the `throw` propagate to the inner generator a
 
 DH: check out [PEP-380](http://legacy.python.org/dev/peps/pep-0380/#formal-semantics). The desugaring is mind-bogglingly complex, but the refactoring principle is very straightforward. Refactoring should not introduce corner cases where it behaves differently.
 
-    
+
 
 MM: consensus that yield* delegates throw?
 
@@ -495,7 +495,7 @@ AWB: In one sense, a dropped exception
 BE: Let's have a smaller group with the champions look at the final specific details.
 
 
-## 4.11 Consider adding "attribute event handlers" to ANNEX B 
+## 4.11 Consider adding "attribute event handlers" to ANNEX B
 
 (Allen Wirfs-Brock)
 
@@ -531,7 +531,7 @@ RW: Last meeting pushed back 6 months, this isn't that valuable.
 - Scheduled for ES7 Annex B
 
 
-## 4.9 Arguments/caller poisoning on new syntactic forms - Arrows, Generators 
+## 4.9 Arguments/caller poisoning on new syntactic forms - Arrows, Generators
 
 (Brian Terlson)
 
@@ -551,7 +551,7 @@ AWB: Do we even need poison pills?
 
 BT: Can we get rid of it?
 
-AWB: Can't add properties called "caller" and "arguments" to strict mode functions 
+AWB: Can't add properties called "caller" and "arguments" to strict mode functions
 
 MM: New forms, the properties are absent.
 
@@ -567,17 +567,17 @@ MM: And we agreed that `Function.prototype` remains a function
 - All functions born of non-legacy function syntactic forms do not have caller and arguments properties
 
 
-## 4.10 Signaling stability of existing features 
+## 4.10 Signaling stability of existing features
 
 (Domenic Denicola and Yehuda Katz)
 
-YK: Problem: ES6 signaling is too fuzzy. ES6 is a monolithic thing. Three stages: 
+YK: Problem: ES6 signaling is too fuzzy. ES6 is a monolithic thing. Three stages:
 
 1. Seeking the happy-path semantics
 2. Find the happy-path semantics
 3. Finalize edge cases, done.
 
-Need to 
+Need to
 
 AWB: What are we doing that sends the wrong message?
 
@@ -585,8 +585,8 @@ YK: eg. when we said were pushing for a 6 month extension, people assume this me
 
 RW: (relaying additional experience re: above)
 
-DD: Proposed stages: 
-    
+DD: Proposed stages:
+
 1. Locked
 
 2. Stable
@@ -595,13 +595,13 @@ DD: Proposed stages:
 
 4. Stabilizing
 
-5. 
+5.
 
 
 
 (need to fill in descriptions from proposal document)
 
-AWB: The problem is that some things that are "locked" become "unstable" 
+AWB: The problem is that some things that are "locked" become "unstable"
 
 JM: It's possible to be "unstable" until spec is published
 
@@ -633,23 +633,23 @@ YK: Yes
 
 DH: Priorities: getting feedback for ES6 is low, because it's too late in the game. Focus feedback priority on ES7. Despite the inclusion of more practitioners in the TC, there are still broad misunderstandings about TC39 and ES6.
 
-DD: The perception is that ES6 is the new ES4, except that we all know this isn't true. 
+DD: The perception is that ES6 is the new ES4, except that we all know this isn't true.
 
 AWB: Two things... concerns about how you're defining these stages. Who is going to do this work? I don't want to say 5 months from now that the spec is "unstable" in its entirety.
 
 Mixed discussion about implementor opinion of feature.
 
-AWB: We don't want uninformed feedback that we have to filter 
+AWB: We don't want uninformed feedback that we have to filter
 
 DH: It's really bad to not talk to the community, because people think the worst.
 
 YK: A vast majority of ES6 is stable
 
-MM: How we should be messaging as individuals. TC39 should not be spending time  
+MM: How we should be messaging as individuals. TC39 should not be spending time
 
 PL: This is all too hard to quantify and assess because change _will_ happen.
 
-DH: Stability chart is 
+DH: Stability chart is
 
 #### Conclusion/Resolution
 
@@ -661,17 +661,17 @@ DH: Stability chart is
 
 MM: Can we?
 
-DH: I'm ok with this, but don't want to be in a situation where we're permanently postponed while waiting for a security review. Let's reach out to other security reviewers. 
+DH: I'm ok with this, but don't want to be in a situation where we're permanently postponed while waiting for a security review. Let's reach out to other security reviewers.
 
 DD: I can implement a draft implementation in node for the purpose of review.
 
 AWB: The modules spec depends on realms
 
-DH: Only the ability specify the Realm in user code needs to be removed. 
+DH: Only the ability specify the Realm in user code needs to be removed.
 
 MM: let's pull Realm from ES6, if there are issues we can address them.
 
-AWB: The Realm API cleaned up how you go about eval'ing things. 
+AWB: The Realm API cleaned up how you go about eval'ing things.
 
 DH: This clean ups can stay as-is, now ready for the reflection to come in ES7
 
@@ -679,7 +679,7 @@ AWB: Not going to have anyway for user code to eval in Loader.
 
 DH: w/o Realm no ability to virtualize eval. Doesn't effect utility of Loader. The specification is detailed and complete, should continue moving forward.
 
-MM: And any issues that are encountered can be addressed. 
+MM: And any issues that are encountered can be addressed.
 
 DH/YK: Agreement that test implementation in node is ideal (vs. browser)
 
@@ -699,12 +699,12 @@ DH: Agree.
 ## Revisit Object.assign()
 
 
-JDD: The issue currently: if we allow `undefined` then `null` is the only value not allowed. I don't see anything distinguishing. 
-It's strange that `null` is singled out like this. When `null` is used correctly, it makes sense here. 
+JDD: The issue currently: if we allow `undefined` then `null` is the only value not allowed. I don't see anything distinguishing.
+It's strange that `null` is singled out like this. When `null` is used correctly, it makes sense here.
 
 DD: Then the argument is that it should also throw
 
-JDD: No, it shouldn't throw. 
+JDD: No, it shouldn't throw.
 
 YK: Should throw on numbers, booleans, etc.
 
@@ -714,7 +714,7 @@ YK: Doesn't have to
 
 JDD: There shouldn't be special casing for null and undefined
 
-DD: `undefined` triggers the default parameter, `null` doesn't. 
+DD: `undefined` triggers the default parameter, `null` doesn't.
 
 YK: The mental model is: `undefined` is missing, `null` is not
 
@@ -726,9 +726,9 @@ SB: (details about a study in FB code re: how `null` and `undefined` are being u
 
 DH: We need to decide whether there is a useful programming model for these cases: `null` and `undefined`
 
-JDD: I think the boolean, number, string values are a side effect because they are just treated as empty. Propose to treat _both_ `null` and `undefined` the same way. 
+JDD: I think the boolean, number, string values are a side effect because they are just treated as empty. Propose to treat _both_ `null` and `undefined` the same way.
 
-JM: Sounds like a better argument against boolean, number, string. 
+JM: Sounds like a better argument against boolean, number, string.
 
 AWB: (example of a number object to be extended)
 
@@ -737,15 +737,15 @@ SB: The differnce is target vs. source, `null` and `undefined` throw for target.
 Mixed Discussion
 
 
-DH: To avoid rehashing, guiding principle: 
-    
+DH: To avoid rehashing, guiding principle:
+
 - `null` represents the no-object object, just like NaN represents the no-number number
 - `undefined` represents the no-value value
 
 
 #### Conclusion/Resolution
 
-- Overriding previous resolution: 
+- Overriding previous resolution:
   - `Object.assign` does not throw on `null` or `undefined`
 - Adhere to the guiding principle stated above
 
@@ -765,7 +765,7 @@ BT: CLA is now online, fully electronic. Lots of contributions, specifically awe
 
 Discussion about Promise testing
 
-JN: Work with István to write a press release for this? 
+JN: Work with István to write a press release for this?
 
 BT: Yes.
 

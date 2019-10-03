@@ -21,7 +21,7 @@ ARB: The implicit `this` in `@name` is not something we have done before in JS.
 
 BE: CoffeeScript set the precedence. Are you suggesting that you always have to write `this.@name`?
 
-AWB: The semantics does not change. 
+AWB: The semantics does not change.
 
 DD: The name is in a lexical scope
 
@@ -42,7 +42,7 @@ KS: so you're talking about this kind of setup
 ```js
 class C {
   @x() {
-    C.@x(); 
+    C.@x();
   }
   static @x() {
 
@@ -106,7 +106,7 @@ MM: The home object for a `@m() {}` method needs to be the prototype (`C.prototy
 
 JM: Would it make more sense to think of these as functions that are set as instance properties during the instance property initialization.
 
-MM: We want class private 
+MM: We want class private
 
 ARB/MM: The --weak-- map explanation vs the private symbol is that the map case the function is associated with the object ....???
 
@@ -121,10 +121,10 @@ class C {
   m() {
     let somethingElse = C;  // <--
     somethingElse.@x();
-    
+
   }
   @x() {
-    C.@x(); 
+    C.@x();
   }
   static @x() {
 
@@ -154,7 +154,7 @@ class C {
   function xHelper(obj) {
     obj.@a;
   }
-  
+
   m() {
     xHelper(this);
   }
@@ -181,7 +181,7 @@ ARB: fear that most programmers will want to use method syntax and will make hel
 
 
 ## Immutable Records, Tuples, Maps and Sets
-(Sebastian Markbage and Lee Byron)
+(Sebastian Markbåge and Lee Byron)
 
 https://github.com/sebmarkbage/ecmascript-immutable-data-structures
 
@@ -302,7 +302,7 @@ MM: The number has to be large because collision is fatal
 LB: Another issue is that we are creating a new value type for every record.
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Identify the requirements.
 - Progress report at a future meeting.

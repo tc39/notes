@@ -375,7 +375,7 @@ BT: Still a risk of a breaking change
 
 ## 10.ii.c trimStart/trimEnd
 
-Sebastian Markbage
+Sebastian Markbåge
 
 SM: change from "trimLeft" and "trimRight" to "trimStart" and "trimEnd". Put an "alias" in Annex B?
 

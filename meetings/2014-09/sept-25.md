@@ -1,17 +1,17 @@
-# September 25, 2014 Meeting Notes       
+# September 25, 2014 Meeting Notes
 -----
 
 Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jeff Morrison (JM), Jonathan Turner (JT), Sebastian Markbåge (SM), Erik Arvidsson (EA), Brendan Eich (BE), Domenic Denicola (DD), Peter Jensen (PJ), Eric Toth (ET), Yehuda Katz (YK), Dave Herman (DH), Brendan Eich (BE), Simon Kaegi (SK), Boris Zbarsky (BZ), Andreas Rossberg (ARB), Caridy Patiño (CP), Niko Matsakis (NM), Mark S. Miller (MM), Matt Miller (MMR), Jaswanth Sreeram (JS)
 
 
-Remote: 
+Remote:
 István Sebestyén (IS)
 
 -----
 
-## 5.8 Object Rest Destructuring and Spread Properties 
+## 5.8 Object Rest Destructuring and Spread Properties
 
-(Sebastian Markbage)
+(Sebastian Markbåge)
 
 Spec https://github.com/sebmarkbage/ecmascript-rest-spread
 
@@ -19,7 +19,7 @@ Request Slides
 
 
 SM: Update: own properties?
-- Need to be own properties 
+- Need to be own properties
 
 ```js
 Object.prototype.hostile = 1;
@@ -41,28 +41,28 @@ RW: Never. That was designed for Object.define/mixin
 
 AWB: Confirm
 
-SM: Mental model: 
-    
+SM: Mental model:
+
 ```js
 ...o
 
-expands keys = Object.keys(o) to 
+expands keys = Object.keys(o) to
 o[keys[0]], o[keys[1]], o[keys[2]]
 ```
 
 
 Security Consideration?
 
-Syntax introduces a new way to determine "ownness" without going through (patchable) library functions: 
-    
+Syntax introduces a new way to determine "ownness" without going through (patchable) library functions:
+
 - Object.prototype.hasOwnProperty
 - Object.keys
 
-MM: Explains that SES is capable of patching the above by replacing these APIs. Rewriting syntax is undesirable. 
+MM: Explains that SES is capable of patching the above by replacing these APIs. Rewriting syntax is undesirable.
 
 Discussion about ownness and enumerability
 
-YK: 
+YK:
 
 MM: If we proceed assuming weak maps are not slow, then they won't be (i.e., browsers will finally switch to the transposed representation)
 
@@ -274,9 +274,9 @@ JT: Goals
 - Short term
 - Reserve syntax used by TypeScript, Flow, etc. for some form of annotation
 - Venue for collaboration among interested committee members
-- Long term 
+- Long term
 - Consensus on a shared syntax fr many varied type annotation implementations
-- Consensus on 
+- Consensus on
 
 - Additionally, a shared syntax for interface definition for documening API boundaries (.d.ts files)
 
@@ -310,7 +310,7 @@ Rationale: Why Standardize?
 copy from slides
 
 
-JT: Looking for Stage 0 blessing to pursue type annotations a la TypeScript and .d.ts file definitions. 
+JT: Looking for Stage 0 blessing to pursue type annotations a la TypeScript and .d.ts file definitions.
 
 MM: You've presented annotation, what about checking?
 
@@ -327,7 +327,7 @@ ARB: the result is rather terrible
 
 MM: The fact that `.then` came together was a miracle and shouldn't be a practice.
 
-DH: If we want to agree on reserved syntax that currently has no legal JavaScript overlap, that is it fails, not ignored. If such a thing can be agreed on, then different groups can develop around the syntax divergently. Cannot expect to reserve _behavior_. The rationale slide is far too vague. 
+DH: If we want to agree on reserved syntax that currently has no legal JavaScript overlap, that is it fails, not ignored. If such a thing can be agreed on, then different groups can develop around the syntax divergently. Cannot expect to reserve _behavior_. The rationale slide is far too vague.
 - Goal: TS and Flow are taking a risk where TC39 could easily standardize on a syntax that invalidates those project's uses
 
 JM: no attempt to standardize the entire syntax
@@ -373,9 +373,9 @@ BE: codify annotation grammar, build object that you can reflect on. Not ready t
 
 MM: It's just a 16.1 restriction on extensions.
 
-BE: ECMAScript allows and always has allowed implementers to make syntax extensions. 
+BE: ECMAScript allows and always has allowed implementers to make syntax extensions.
 
-YK: Nashorn adds "#" comment 
+YK: Nashorn adds "#" comment
 
 DH: Difference between TS, Flow and Nashorn
 
@@ -411,9 +411,9 @@ JM: Seems like "type systems of some kind" have interest. Start conservatively, 
 
 JT: Stage -1: reserved grammar
 
-DH: Stage 0 for this: 
+DH: Stage 0 for this:
 
-- Reserve syntax via Future Reserved Grammar/Syntax 
+- Reserve syntax via Future Reserved Grammar/Syntax
 - Does not compute
 - Is an error
 - cannot ever create an incompatible change
@@ -423,7 +423,7 @@ AWB: Make a motion that TC39 is creating an area of research in types and type a
 
 DH: As long as we maintain balance and prioritize.
 
-BE: Concern about opening the door too wide. 
+BE: Concern about opening the door too wide.
 
 SK: What about work on extensions that _require_ semantics?
 
@@ -451,17 +451,17 @@ RW: there's more to it!
 
 
 
-## 5.10 global.asap for enqueuing a microtask 
+## 5.10 global.asap for enqueuing a microtask
 
 (Domenic Denicola and Brian Terlson)
 
 DD: Want enqueue microtask, which is capable of starving the eventloop
 
-AWB: As spec writer, I don't know what this is 
+AWB: As spec writer, I don't know what this is
 
 YK: In JS there is a frame, it loops
 
-MM: Is the queue, the same queue that promises queue into? 
+MM: Is the queue, the same queue that promises queue into?
 
 DD: Yes
 
@@ -483,7 +483,7 @@ AWB: present job and job queue mechanism intended to describe the two things we 
 
 YK: Concerned that explanation problems lie in using browser terminology
 - Micro task is part of run to completion
-- Task queue is not 
+- Task queue is not
 
 AWB: jobs run to completion
 
@@ -497,10 +497,10 @@ MM; multiple queues in a priorty mode
 - We may even specify priority queues
 
 DD: Want to specify `global.asap`
-- Accepts a function 
+- Accepts a function
 - Enqueues in a high priority queue
 
-DH: Think this is awesome 
+DH: Think this is awesome
 - We need a generic model for job scheduling.
 
 #### Conclusion/Resolution

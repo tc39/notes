@@ -1,4 +1,4 @@
-# July 29, 2015 Meeting Notes    
+# July 29, 2015 Meeting Notes
 -----
 
 Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Waldemar Horwat (WH), István Sebestyén (IS), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Jonathan Turner (JT), Paul Leathers (PL), Chip Morningstar (CM), Vladimir Matveev (VM), Ron Buckton (RBN), Brian Terlson (BT), Alan Schmitt (AS), Ben Newman (BN), Mohamed Hegazy (MH), Abhijith Chatra (AC), Tom Care (TC), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Daniel Ehrenberg (DE), Dan Gohman (DGN), Andreas Rossberg (ARB), Rick Waldron (RW), Mike Pennisi (MP), Akrosh Gandhi (AGI), Jonathan Sampson (JSN)
@@ -6,7 +6,7 @@ Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferra
 
 -----
 
-## 6.11 The scope of "use strict" with respect to destructuring in parameter lists 
+## 6.11 The scope of "use strict" with respect to destructuring in parameter lists
 
 (Andreas Rossberg, on phone)
 
@@ -14,7 +14,7 @@ Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferra
 
 ARB: Strictness Scoping
 
-Issues: 
+Issues:
 
 - VMs need to do parsing & static checks in single pass
 - w/o building an AST (lazy compilation)
@@ -22,7 +22,7 @@ Issues:
 
 
 DH: clarify backtracking (2 possibilities?)
-    
+
 ARB: rewinding token stream
 
 ARB: easy in ES5 because only additional check is duplicate parameter names
@@ -34,7 +34,7 @@ function f(x, x) { "use strict"; }
 
 Difficult in ES6, b/c default parameters
 
-    
+
 ```js
 "use sloppy";
 function f(g = (o) => {with (o) {}}) { "use strict"; }
@@ -53,11 +53,11 @@ function f(g = function(h) {
 
 WH: The issue in this example is hoisting and variable binding, which is more than just error checking. Function h here is nested inside a local block, which means that the 'h' in the return statement refers to different bindings in strict vs. non-strict mode. But you don't know that strict mode is in effect until encountering the 'use strict' later!
 
-DH: Don't know yet whether this is an error until later. Previous examples: Store a "dirty bit". This example: have to have a data structure that will hoist in 1 of 2 ways if it turns out to be strict mode. Implementable without backtracking. 
+DH: Don't know yet whether this is an error until later. Previous examples: Store a "dirty bit". This example: have to have a data structure that will hoist in 1 of 2 ways if it turns out to be strict mode. Implementable without backtracking.
 
 WH: Note that a single state bit is insufficient. You can have these things nested arbitrarily deep, leading to a potential exponential explosion of states.
 
-ARB: 
+ARB:
 
 Much More Difficult in ES6
 
@@ -71,13 +71,13 @@ Much More Difficult in ES6
 let f = (g = () => { /* Are we a parameter? Do we have to defer? */ with (o) {} }) => { "use strict"; }
 ```
 
-ARB: 
-    
+ARB:
+
 BE: The arrows are parsed with a cover grammar
 - When initially implementing strict mode, SpiderMonkey had to implement token stream backtracking to account for the function body "use strict" prologue affecting to the left
 
-ARB: 
-    
+ARB:
+
 Categories of mode specific logic
 
 1. Mode-specifc errors: (eg. with, delete, for-in, octals, let, variable name validity, parameter conflicts)
@@ -150,7 +150,7 @@ BE: implementors are considered second to developers
 
 AWB: previously, sloppy mode was restricted to simple parameter lists.
 
-BE: No micro modes: no runtime semantic differences due to 
+BE: No micro modes: no runtime semantic differences due to
 
 AC: Chakra implements with rewinding
 
@@ -158,13 +158,13 @@ YK: objection: semantically this is the wrong thing
 
 DD: but we're moving to all-strict world, so making the mixed mode cases more painful might be ok
 
-DH: This is such an edge case that I don't tihnk there is an adoption risk. 
+DH: This is such an edge case that I don't tihnk there is an adoption risk.
 - "use strict" retroactively providing subtle differences in the parameter list is a gotcha
 - preventing diversions in the semantics to close window of confusion
 
 BE: Suggestion fixes the right-to-left violation
 
-DH: Could enumerate all those cases and make errors, but much harder. 
+DH: Could enumerate all those cases and make errors, but much harder.
 - Fixes, but means new rule
 
 YK: Poisoning `function () { "use strict" }`
@@ -207,15 +207,15 @@ Discussing implemention strategies
 
 BE/AWB: existing semantics imply some right-to-left checking
 
-BE: Non-simple is: 
-    
+BE: Non-simple is:
+
 - default
 - destructuring
 - rest
 
 (Anything that is _not_ a list of identifiers)
 
-YK: Need to acknowledge that we'll need to tell people to _not_ "use strict" in functions, if they use non-simple parameters. 
+YK: Need to acknowledge that we'll need to tell people to _not_ "use strict" in functions, if they use non-simple parameters.
 
 Acknowledged.
 
@@ -225,7 +225,7 @@ DH: We'll fail to explain this at the level of enumerating ES6 features they can
 - Would like to revisit
 
 
-YK: Not just this edge case: ES6 and strict mode has created this weird window. 
+YK: Not just this edge case: ES6 and strict mode has created this weird window.
 
 AK: Functions in the parameter list might become strict if the function is "use strict"
 
@@ -239,24 +239,24 @@ Discussion about ES6 feature adoption.
 
 RW: disagreed with error when "use strict" occurs locally, but outer mode is already strict (ie. no mode change)
 
-Discussion about developer expectation. 
+Discussion about developer expectation.
 
 AWB: there is another alternative spec function that is more restrictive: ContainsExpression
 
 RW demures ("You might say I am not willing to die on this hill.")
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Make it an error to have a "use strict" directive in a function with a non-simple parameter list.
 - Early error
 - No matter what mode you were already in
-- When people want to use local "use strict", doing it b/c they want to know that this is always strict, no matter where it ends up. 
+- When people want to use local "use strict", doing it b/c they want to know that this is always strict, no matter where it ends up.
      - Applies to all kinds of function/generator syntax
 - IsSimpleParameterList http://www.ecma-international.org/ecma-262/6.0/#sec-function-definitions-static-semantics-issimpleparameterlist
 
 
 
-## 6.9 Reconsidering the Number.prototype-as-an-ordinary-object change 
+## 6.9 Reconsidering the Number.prototype-as-an-ordinary-object change
 
 (Daniel Ehrenberg)
 
@@ -267,13 +267,13 @@ https://github.com/mootools/mootools-core/issues/2711
 
 Solution: roll back the change.
 
-BE: Number, String, Boolean should be 
+BE: Number, String, Boolean should be
 
 MM: To be clear: Date.prototype will be an object, not Date; RegExp.protototype will be an object, not RegExp. Every built-in constructor introduced after ES5 will have a plain object prototype.
 
-MM: Prefer we do Number, Boolean, String together 
+MM: Prefer we do Number, Boolean, String together
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Boolean.prototype, Number.prototype, String.prototype rolled back
 - File a spec bug?
@@ -282,7 +282,7 @@ MM: Prefer we do Number, Boolean, String together
 
 ## 6.12 Spec defacto String.prototype.trimLeft/trimRight
 
-(Sebastian Markbage)
+(Sebastian Markbåge)
 
 https://github.com/sebmarkbage/ecmascript-string-left-right-trim
 
@@ -290,19 +290,19 @@ SM: Already shipping in all major engines. Controversy: what to call it?
 
 JHD: in JavaScript, left-to-rightness of strings is a rendering artifact. The conceptual "first" character of any string, whether LTR or RTL, is index 0, and the "last" is index length minus 1. Thus, in JS, left/start/index zero are the same, and right/end/index length minus one are the same.
 
-DH: These are extremely common in programming languages 
+DH: These are extremely common in programming languages
 
 Discussing semantics of "left", "right" and "start", "end"
 
-DH: There is precedence for JavaScript interpreting the word "right" to mean "the end of a sequence", from ES5: `Array.prototype.reduceRight` 
+DH: There is precedence for JavaScript interpreting the word "right" to mean "the end of a sequence", from ES5: `Array.prototype.reduceRight`
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Stage 1 acceptance
 
 
 
-## REVISIT: 6.11 The scope of "use strict" with respect to destructuring in parameter lists 
+## REVISIT: 6.11 The scope of "use strict" with respect to destructuring in parameter lists
 
 
 DH: The only thing that "use strict" can cause (in ES5) is an error (to the left)
@@ -333,7 +333,7 @@ STH: Expressions in parameter list are not in strict mode.
 
 YK: Bigger picture: ES5 introduced the concept of a strict function.
 - The proposal before is honest about admitting that's not a thing
-- Sam's proposal ignores that and introduce's a new thing 
+- Sam's proposal ignores that and introduce's a new thing
 
 
 Discussion, re: expectations of strict mode in functions
@@ -350,13 +350,13 @@ function f(foo = this) {
   "use strict";
   return foo;
 }
-f(); 
+f();
 // what is the value of this expression? the global object? or `undefined`?
 // w/r to Sam's proposal (eliminating right-to-left strict-ness effect)
 ```
 
 
-YK: 
+YK:
 
 With Sam's proposa, this would return `[undefined, Global]`, despite expecting `[undefined, undefined]`
 
@@ -377,27 +377,27 @@ MM: We should be explicit w/r to "top level strict mode", in that we actually me
 
 Advice: "Just use modules".
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - The previous consensus remains
 
 
 
 
-## REVISIT: 6.7 new & GeneratorFunction 
+## REVISIT: 6.7 new & GeneratorFunction
 
 AWB: (answers to questions from yesterday)
 
 - Generator functions are new-able
 - Generator methods are new-able
-- Implicit body 
+- Implicit body
 
 
 ```js
 function * g() { this.foo }
 
 x = {
-  *f() { this.foo }    
+  *f() { this.foo }
 };
 
 new f(); // ok
@@ -411,8 +411,8 @@ DH: Bare generator function call behaviour is correct?
 AWB: Confirm
 
 
-Updated: 
-    
+Updated:
+
 | S | I | Code |
 |---|---|-----------------------------------------------|
 | X | X | `{ *foo() {} }` (no [[construct]]) |
@@ -420,7 +420,7 @@ Updated:
 | ? | ? | `function * () { this }` is exactly like `function() { this }`  |
 
 
-AWB: Concern about removing new: 
+AWB: Concern about removing new:
 - Implemented to allow it without throwing
 - No TDZ on `this`
 
@@ -429,7 +429,7 @@ Acceptable risk?
 BT: Implementors on both V8 and SpiderMonkey have shown interest in making generator not newable
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Spec change: generator functions and methods do not have a [[construct]] trap, so `new` throws
 
@@ -442,8 +442,8 @@ BT: Implementors on both V8 and SpiderMonkey have shown interest in making gener
 
 DD: (Showing https://tc39.github.io/process-document/)
 
-Reviewed: 
-    
+Reviewed:
+
 - https://github.com/tc39/process-document/pull/1/
 - https://github.com/tc39/process-document/pull/2/
 
@@ -461,7 +461,7 @@ RW: Propose: At Stage 0, reviewers get "attached", but non-binding. (basically, 
 ## What is an "implementation"?
 
 
-Discussion re: Stage 4 
+Discussion re: Stage 4
 
 - Important to get feedback from engaged implementors
 
@@ -481,7 +481,7 @@ Stage 3: "Will require feedback from implementations and users"
 
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - need links to Domenic's commits
 
@@ -541,7 +541,7 @@ AWB: w/r toString. The approach shown is a new precedent
 
 DD: Similar to Symbol
 
-AWB: Will this be the new way 
+AWB: Will this be the new way
 
 BE: value types with literal form should convert, but this isn't value types. I like it.
 
@@ -560,7 +560,7 @@ AWB: for WebIDL, we advised to use normal ES coercions
 
 DE: Considered specified getX, getY, etc.
 
-DH: I don't know if it's that important to coerce or check. 
+DH: I don't know if it's that important to coerce or check.
 
 BE: Doesn't want this to be an enumerated type. Symbols?
 
@@ -576,9 +576,9 @@ AWB: ToNumber, because that's what ES does
 
 WH: Note that the proposal is a bit inconsistent in validating numeric inputs. For example, shifts use ToUint32 for the shift count, which turns -1 into a huge shift amount. ECMAScript's built-in shifts treat the shift amount mod 32, while the proposed ones treat it mod 2^32.
 
-DE: 
-    
-    
+DE:
+
+
 - load and store operating on any TypedArrays
 
 load and store take TypedArrays as arguments and permit array element type mismatch with SIMD type
@@ -586,7 +586,7 @@ load and store take TypedArrays as arguments and permit array element type misma
 
 WH: Reading spec, cannot load and store booleans. Looks intentional.
 
-DE: Fails on booleans, intentionally. 
+DE: Fails on booleans, intentionally.
 - Intentionally abstract data type
 - Want concrete data type, call select
 
@@ -596,7 +596,7 @@ AWB: (requests justification for extracting values of a different type than the 
 
 DE: DataView doesn't really work, in an asm context. Operations on DataView accept endianness where this has to use native endianness to be efficient
 
-AWB: if int8 array, extracting floar 64, does it 
+AWB: if int8 array, extracting floar 64, does it
 
 DE: No, it is element-aligned. The hardware supports this.
 
@@ -609,7 +609,7 @@ DE: Better?
 DH: Go back and change array buffer, can't do that
 - ArrayBuffer was defined as opaque
 - Everyone wants to change rthat now
-- No real world constraint 
+- No real world constraint
 
 DE: how is opacity enforced?
 
@@ -634,14 +634,14 @@ Questions for Committee
 
 BE: have to call with new to get the object
 
-AWB: Symbol is just odd because concern that `new Symbol()` would be used to get a generative object. 
+AWB: Symbol is just odd because concern that `new Symbol()` would be used to get a generative object.
 
-DD: Necessary to impose a rule for creating a Symbol 
+DD: Necessary to impose a rule for creating a Symbol
 - No literal form? No wrapper
 
 DE: if you call construct, if NewTarget undefined, construct wrapper
 
-AWB: Minimize new patterns. Overloading constructor is not new. 
+AWB: Minimize new patterns. Overloading constructor is not new.
 
 AK: Why this route instead of Symbol route?
 
@@ -717,26 +717,26 @@ Specification Status
 Requesting reviewers
 
 
-WH: purpose of spec, disagreement whether to support only use cases experienced or useful with a more ecmascripty orthogonal feel. For example, the spec currently can load int8, uint8, int16, uint16, int32, uint32, but it can only extract the first five of them (can't extract uint32 even though can extract int32 or uint16). Min and max work on floats but not on integers, even though there is no hardware obstacle to do so and even though there are much more complex intrinsics defined such as 
+WH: purpose of spec, disagreement whether to support only use cases experienced or useful with a more ecmascripty orthogonal feel. For example, the spec currently can load int8, uint8, int16, uint16, int32, uint32, but it can only extract the first five of them (can't extract uint32 even though can extract int32 or uint16). Min and max work on floats but not on integers, even though there is no hardware obstacle to do so and even though there are much more complex intrinsics defined such as
 unsignedAbsoluteDifference.
 
 DE: support unsigned operations on int16 and int8
 
-BE: waldemar wants max on integers that can 
+BE: waldemar wants max on integers that can
 
 DH: SIMD building clear layer to hardware
 
 WH: want consistency:
-    
+
 - integer max
 - uint32
 - for usability, uint8 SIMD pixel values printing liked TypedArrays as 255,255,0 instead of -1,-1,0.
 
-WH: Diverged from TypedArray, 
+WH: Diverged from TypedArray,
 
-AWB: TypedArray both have int32 and uint32, JS programmer expects that 
+AWB: TypedArray both have int32 and uint32, JS programmer expects that
 
-BE: argument to be consistent 
+BE: argument to be consistent
 
 DE: TypedArray is the model going forward, with the exception of Uint8ClampedArray
 
@@ -744,7 +744,7 @@ AWB/BE: Yes
 
 WH: treatment of denorms non-deterministic
 
-DE: 
+DE:
 - operation and flush to 0
 - operation only
 
@@ -779,7 +779,7 @@ DE: create a data property and set value to one bit pattern, non-writable, non-c
 
 DH: No mutation, but incorrectly states that change was successful
 
-DE: spec says a platform will have one endianess or the other; this can be applied to denorms. Spec dependent. 
+DE: spec says a platform will have one endianess or the other; this can be applied to denorms. Spec dependent.
 
 
 WH: What do relational operations (.equal, .lessThan, etc.) do when they see a denorm? treat as zero?
@@ -812,7 +812,7 @@ Consistency with TypedArray
 DH: I want to know more about what SIMD use cases are, operations should map to need
 
 
-WH: want unsigned types: 
+WH: want unsigned types:
 - consistency with typed array
 - printing (want 255, not -1)
 
@@ -826,7 +826,7 @@ AWB: lot's of domains with similar conventions
 
 DE: it's a large thing, mostly irreducible
 
-JHD: non-specialists are going to write this stuff by hand. 
+JHD: non-specialists are going to write this stuff by hand.
 
 (Argument to make the API more like JS)
 
@@ -836,7 +836,7 @@ YK: So a specialist doesn't need the unsigned types?
 - then don't worry about use by non-specialists
 
 
-DH: Either accept Waldemar's argument, or state case based on historical precedence. If no consistency, then don't care. 
+DH: Either accept Waldemar's argument, or state case based on historical precedence. If no consistency, then don't care.
 
 WH: Note that I'm not alone with that argument. I don't want this to become personal.
 
@@ -844,7 +844,7 @@ WH: Note that I'm not alone with that argument. I don't want this to become pers
 
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - `new` throws
 - not separate spec

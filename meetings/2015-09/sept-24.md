@@ -463,7 +463,7 @@ JN:
 
 ## 5.13 Updates on rest properties proposal
 
-(Sebastian Markbage)
+(Sebastian Markbåge)
 
 https://github.com/sebmarkbage/ecmascript-rest-spread
 

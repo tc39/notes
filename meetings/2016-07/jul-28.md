@@ -231,7 +231,7 @@ MM: That does not only address the web compatibility issue, but does a clean-up 
 
 ## 10.iii.d Object.shallowEqual
 
-(Sebastian Markbage)
+(Sebastian Markbåge)
 
 - [proposal](https://github.com/sebmarkbage/ecmascript-shallow-equal)
 

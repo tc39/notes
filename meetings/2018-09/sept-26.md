@@ -1,6 +1,6 @@
 # September 26, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBS), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZU), Matt Johnson (MAJ), Robert Pamely (RPY)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBS), Tom Dale (TDE), Daniel Rosenwasser (DW), Henry Zhu (HZU), Matt Johnson (MAJ), Robert Pamely (RPY)
 
 Remote:
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
@@ -408,7 +408,7 @@ WH: The mental model is that if `static` is part of the class and not the method
 
 JHD: Yes, if we decide that `static` modifies the class as opposed to the method. If we decide that static modifies the value, then I would expect it to be serialized with it. We should come up with simple rules that explain what goes in to string.
 
-TOD: Given the preponderance of tools that cause the code that you use different from the code in your editor (transpilers, etc.), what are the use cases that we care about for including or not including the static keyword?
+TDE: Given the preponderance of tools that cause the code that you use different from the code in your editor (transpilers, etc.), what are the use cases that we care about for including or not including the static keyword?
 
 MM: The use case that has a hard requirement, isn't affected by this choice for methods, since their source string would not be a usefully evaluable expression anyway. But for normal functions and classes (including exported functions and classes, and the hypothetical nested class) they must generate a string that evaluates to produce a similar function or class. (Specifically, for functions, one with a similar [[Call]] behavior.)
 
@@ -452,7 +452,7 @@ MM: I completely overlooked that. You're right. If it replaces the constructor, 
 
 MM: For completeness, I'll mention a third option: include decorators, exclude export, and the toString would not be a strict substring of the source text. But I hate that.
 
-TOD: Prior art makes a strong argument. Are there problems with this particular ordering that have come up in Java or C#.
+TDE: Prior art makes a strong argument. Are there problems with this particular ordering that have come up in Java or C#.
 
 BM: They have a different export mechanism, so it's hard to compare.
 
@@ -478,7 +478,7 @@ BM: Modifiers could have different placements if they modify different things. T
 
 DW: The never gotten any request to change the export ordering. In some sense the ordering could be immaterial, but the be some clarifying semantics between the two options.
 
-TOD: There doesn't seem to be any semantic ambiguity. What is the problematic aspect then?
+TDE: There doesn't seem to be any semantic ambiguity. What is the problematic aspect then?
 
 BM: I don't have a strong opinion on the ordering, but I do have a problem with the reasoning for "export is a modifier". It's not.
 
@@ -571,7 +571,7 @@ In the private symbol proposal, the private symbol serves as the reification of 
 
 KG: Private symbols are different than symbols though. It's like introducing the reified PrivateName in a field.
 
-TOD: I like the syntax scope in current proposal. The private symbol doesn't have to be so close to the lexical use area. It's important for me to have private state near the use.
+TDE: I like the syntax scope in current proposal. The private symbol doesn't have to be so close to the lexical use area. It's important for me to have private state near the use.
 
 YK: The `#private` symbol has to mean private, which makes it easier.
 

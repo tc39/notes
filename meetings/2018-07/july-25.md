@@ -1,6 +1,6 @@
 # July 25, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbåge (SM), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent(AVT), John-David Dalton (JDD)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DRR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbåge (SM), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent(AVT), John-David Dalton (JDD)
 
 Remote:
 Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell (JRL), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG), Ben Newman (BN), Edd Yerburgh (EYH)
@@ -492,7 +492,7 @@ JH: One of my objections with pipeline operator is that it might kill the bind o
 
 RBN:
 
-DR: Question about the template example...that's not a tagged template, right? Does that require double-parsing?
+DRR: Question about the template example...that's not a tagged template, right? Does that require double-parsing?
 
 RBN: No, but it would work the same with a tagged template too. The idea is that it returns a function, not another template.
 
@@ -530,7 +530,7 @@ RBN: I'll eventually be able to have some more compelling examples. I'm working 
 
 BE: I agree, separating from pipeline is a good approach, but we should be careful about "horse before the cart". We should be super careful about adding new syntax. It doesn't say we shouldn't do pipelines; it seems to me that we should just make this a dependency on pipelines.
 
-DR: I've enjoyed using this feature in other languages. It may be helpful to come up with more examples where this feature is useful; we can take that offline.
+DRR: I've enjoyed using this feature in other languages. It may be helpful to come up with more examples where this feature is useful; we can take that offline.
 
 WH: I'm kinda on the fence about this. When the other arguments were delayed, the garden path problem was overwhelming. With eager evaluation, this is better than what the proposal used to be. However, I haven't convinced myself that the syntax is workable due to unwelcome interactions with the async arrow function cover grammar.
 
@@ -593,7 +593,7 @@ JHD: Since this was a recap, and since you mentioned a simple thing, it seems li
 
 MF: That's right.
 
-DR: You were using an `implements` operator, why does this need its own operator, could you use `Symbol.hasInstance` to configure the use of `instanceof` instead?
+DRR: You were using an `implements` operator, why does this need its own operator, could you use `Symbol.hasInstance` to configure the use of `instanceof` instead?
 
 MF: That's definitely a possibility, though it might be confusing.
 
@@ -613,11 +613,11 @@ MF: More committee feedback: relationship to the Mixins proposal. Mixins, in my 
 
 MF: Relationship to decorators (slide). Questions?
 
-DR: If you're familiar with protocols in Haskell, there's a problem where you can have two implementations of a protocol for the same type. Example: applicative. Sometimes you want them to zip, and sometimes you want the cartesian product. It seems in this proposal, the protocols are inherited.
+DRR: If you're familiar with protocols in Haskell, there's a problem where you can have two implementations of a protocol for the same type. Example: applicative. Sometimes you want them to zip, and sometimes you want the cartesian product. It seems in this proposal, the protocols are inherited.
 
 MF: Protocols here have the same problems. To work around this, newtype it.
 
-DR: Haskell newtypes have zero overhead.
+DRR: Haskell newtypes have zero overhead.
 
 MF: Yes, in JS they would have to be lightweight wrappers. You'd have to wrap in something like Product or Sum. I'll look into what can be done about that.
 
@@ -649,19 +649,19 @@ YK: That doesn't mean they don't compose, just that there are restrictions about
 
 MF: Agreed.
 
-DR: Other languages that have features like this (traits, type classes) usually have some static type information.
+DRR: Other languages that have features like this (traits, type classes) usually have some static type information.
 
 MF: The static information is usually used for resolution. So you'll see examples like [referred to slide]. In languages without type systems, either you have to manually carry records around or disambiguate at call sites.
 
-DR: I think what I'm saying is that in other languages that resolution is carried around implicitly. But here you need to name the protocol everywhere. That's one of the concerns.
+DRR: I think what I'm saying is that in other languages that resolution is carried around implicitly. But here you need to name the protocol everywhere. That's one of the concerns.
 
 MF: If you look at my previous presentation, I did lay out that this is a downside of this proposal. I also suggested some remedies, such as making a scoped symbol to refer to things, like creating a local "map" function that passes its arguments to the "ProtocolName.map" method.
 
-DR: So is that like destructuring the protocol or something like that.
+DRR: So is that like destructuring the protocol or something like that.
 
 MF: Yeah that is another one of the examples listed.
 
-DR: This proposal seems to address that some of the things that enums could do, that is, unique values on a single record that are known and that you can access. A set of well-known unique variables in a single place (I think Ron Buckton is working on it). This is just some feedback, we can chat afterwards.
+DRR: This proposal seems to address that some of the things that enums could do, that is, unique values on a single record that are known and that you can access. A set of well-known unique variables in a single place (I think Ron Buckton is working on it). This is just some feedback, we can chat afterwards.
 
 DH: This is related to what you guys were talking about. This is a good exploration so far. One piece of feedback is on the heaviness of the references. Along the lines of your trick of using a local scope, I played with this years ago during the earliest work on Symbols. I looked at whether there was some way to scope a symbol so that there was a short way to refer to it locally, e.g., saying `symbol foo` then if you said `x.foo` you were referring to the symbol. It didn't really fly due to spooky action at a distance, but it was an interesting thought experiment. What I liked about it is that it didn't feel like you were adding to the syntax budget; it deals with a thing everyone already understands ("scope") and then changes the behavior of a certain name within a scope.
 

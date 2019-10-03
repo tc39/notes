@@ -1,6 +1,6 @@
 # September 26, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBS), Tom Dale (TDE), Daniel Rosenwasser (DW), Henry Zhu (HZU), Matt Johnson (MAJ), Robert Pamely (RPY)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBS), Tom Dale (TDE), Daniel Rosenwasser (DRR), Henry Zhu (HZU), Matt Johnson (MAJ), Robert Pamely (RPY)
 
 Remote:
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
@@ -442,7 +442,7 @@ JHD: The mental model I have is that export modifies the module, not the value t
 
 RBN: Our position that `@dec export` ordering is because other languages also do follow this ordering. This is valuable for people coming from other languages to JS that those will have a better understanding of where these things take place. If we choose to go with decorators including the export keyword, there are definitely symantic changes between Stage 1 and Stage 2 today—TypeScript and Babel have had three years of experience of this. ~2800 classes in public repositories use export in this way. If we choose to put decorators before export, it becomes very confusing as to where a modifier will go for a class. By keeping these modifiers logically grouped within the same space, it will align better with other languages. One of the other points is that it keeps export close to the thing it exports. While that makes sense, aside from simplistic ordering rules, it doesn't have any specific meaning other than what we give it and it wouldn't necessarily affect the behavior. If you look at the examples of Angular decorators, they have a significant number of options, so the export keyword can be very far from the thing you're exporting. (Talking about slides). There are problems with having the export keyword arbitrarily far from the things that it exports—it becomes very hard to determine at a glance what is actually exported. Our preferred approach is to align with other languages like Java and C#, be consistent with TypeScript and Babel, and keep `export` close to the name of the declaration it exports.
 
-DW: In the example you show, the decorator output may not be captured in the toString output. You can return whatever you want as the value, which won't include the decorators.
+DRR: In the example you show, the decorator output may not be captured in the toString output. You can return whatever you want as the value, which won't include the decorators.
 
 MM: To answer DW, the two alternatives that RBN listed—to omit the decorators or to include the export keyword---would both break the web. This pattern of evaling the string of a class or function is out there already. Taking the decorators out of the toString breaks that use??? It would be a bizarre consequence if the decorations don't make it into the toString.
 
@@ -476,7 +476,7 @@ RBN: But the decorator can't change the class heritage, etc. It seems nonsensica
 
 BM: Modifiers could have different placements if they modify different things. Treating this as modifying the operand to export is problematic.
 
-DW: The never gotten any request to change the export ordering. In some sense the ordering could be immaterial, but the be some clarifying semantics between the two options.
+DRR: The never gotten any request to change the export ordering. In some sense the ordering could be immaterial, but the be some clarifying semantics between the two options.
 
 TDE: There doesn't seem to be any semantic ambiguity. What is the problematic aspect then?
 
@@ -505,7 +505,7 @@ DE: It would just be helpful as our first implementation.
 
 YK: I think the consensus process is breaking down for this issue.
 
-DW: Can we get away with decorated classes that are not exported?
+DRR: Can we get away with decorated classes that are not exported?
 
 JHD: If we make a decision that doesn't match what's already in use, it would require two codemods to fix.
 

@@ -14,7 +14,7 @@ After 11:00 the Hangouts was on:
 - Louis Lafreniere (LL) from Microsoft Redmond.
 - Dean Tribble [tribble@e-dean.com] also joined part-time
 
-From Google local experts as observers: Hannes Payer, Jakob Kummerow, Ross McIlroy, Michael Hablich, Yang Guo, Taon Ver Naest, Daniel Clifford, Nikolaos Papaspyrou, Jaroslav Sevcik, Deepti Sharma (all part-time)
+From Google local experts as observers: Hannes Payer, Jakob Kummerow, Ross McIlroy, Michael Hablich, Yang Guo, Toon Verwaest, Daniel Clifford, Nikolaos Papaspyrou, Jaroslav Sevcik, Deepti Sharma (all part-time)
 
 ## [Always update object properties if property descriptor is applicable (NaN issue)](https://github.com/tc39/ecma262/pull/353) (DE)
 

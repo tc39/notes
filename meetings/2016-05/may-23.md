@@ -4,7 +4,7 @@
 Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark S. Miller (MM), Kevin Smith (KS), Michael Saboff (MLS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD)
 
 Remote:
-Michael Hablich (MHH), Yang Guo (YGO), Toon Verwaest (TVT), Daniel Clifford DCD), Nikolaus Papaspyrou (NPU), Ben Titzer (BTR)
+Michael Hablich (MHH), Yang Guo (YGO), Toon Verwaest (TVT), Daniel Clifford (DCD), Nikolaus Papaspyrou (NPU), Ben Titzer (BTR)
 
 -----
 

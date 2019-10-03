@@ -1,6 +1,6 @@
 # September 27, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KV), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZ), Lin Clark (LCK), Matt Johnson (MJN)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KV), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZU), Lin Clark (LCK), Matt Johnson (MJN)
 
 Remote:
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
@@ -35,9 +35,9 @@ MB: Proposal by Jason Williams (BBC).
 
 MB: (Presents examples in slides). Without allSettled, if you have a series of promises, if any of the promises reject, you can't easily guarantee that all (in this case) the REST requests have completed by the time you remove the loading indicator. Every userland promise API has this built in, and this is a common enough use case to warrant making it part of ECMAScript.
 
-YK: I don't have an objection, but I think there is an analogy with a map function throwing an exception, so that could make the example better. 
+YK: I don't have an objection, but I think there is an analogy with a map function throwing an exception, so that could make the example better.
 
-TST: A question on your last example slide—how would that fail? 
+TST: A question on your last example slide—how would that fail?
 
 MB: There's no catch block here.
 
@@ -55,7 +55,7 @@ LBR: Does sending an already rejected promise would potentially cause a rejectio
 
 YK: I think at Stage 2 we could consider that an input rejection should also return an output rejection.
 
-MB: No. The only goal is to get a notification when all promises are settled. 
+MB: No. The only goal is to get a notification when all promises are settled.
 
 WH: I'd also prefer to keep this simple. Don't want to get into situations where a rejected input promise sometimes causes allSettled to fulfill and sometimes to reject.
 
@@ -73,7 +73,7 @@ YK: There's not a huge amount of other language precedent, but Rust just impleme
 
 MB: It sounds like we're good to go for Stage 1.
 
-RJE: Objections? 
+RJE: Objections?
 
 *crickets*
 
@@ -84,13 +84,13 @@ RJE: Objections?
 
 ## Normative: GetExportedNames adjustments for Dynamic Modules
 
-(Bradley Farias) 
+(Bradley Farias)
 
 - [proposal](https://github.com/tc39/ecma262/pull/1306)
 
 BFS: We came to a conclusion earlier that maybe we should change the module record such that we could implement it outside the JS spec. This PR is the result of that. We've created a guide, which is this PR, that states that in order for abstract module records to get some data for the host. Why we're doing this change—and what it allows us to do—is it track what the exports are, is so that we can evaluate the module in an abstract module, which is what the dynamic module proposal was seeking to do originally. There's the whole idea that we're going to change when the list of exported names can occur—like A depends upon B depends upon A—where we add extra cycles. We're adding to the spec in this PR that this could be a case to throw. We're planning on going forward with this approach to see if we can go through all the dynamic modules with this approach. Lin has another PR which also has an approach where they are introducing the things WASM is doing for modules, and we're looking on working together with them.
 
-DD: I'm generally very happy with the way this has gone. I also support minimal features like this to support advanced subtypes. When you export a module you may not have considered all the things you want to export, so going back seems like a normal use case. 
+DD: I'm generally very happy with the way this has gone. I also support minimal features like this to support advanced subtypes. When you export a module you may not have considered all the things you want to export, so going back seems like a normal use case.
 
 BFS: Yes, and we will need a fair bit of feedback to make sure that we are going about this the right way.
 
@@ -121,13 +121,13 @@ KS: (Laughs) We need to get that validation from engines an implementers.
 
 MPT: This API is quite large, but we won't need to spend all 60 minutes on it. There are a few concerns—and a lot of places where we can go way deep on these APIs—but I am arguing for getting this proposal to Stage 2 and going into a lot more depth when this is up for Stage 3. (Reads slides). One of the major things we discussed at the last meeting was variability and valueOf. We discussed that we want to cut valueOf, so effectively they are not comparable without APIs. Calls to Now were cut from this proposal. Leap Seconds were also discussed in July, after talking to the Windows team—the only thing I can say is to do what they did is not web compatible. The table of leap second data may or may not be available at the OS level; it would require round-tripping. It is our intent to allow parsing, so if you get the 60th second in a string is to allow it to be parseable, and go to 59. There's many non-stage 2 topics which are outlined on the slides, but to keep this small we will discuss those later. I think we make Stage 2 requirements, and I'm happy to take questions.
 
-RGN: How do you feel about leap seconds in instant vs. "civil" processing? 
+RGN: How do you feel about leap seconds in instant vs. "civil" processing?
 
 MPT: You're talking about leap seconds in the civil types? (Yes). I don't understand what meaningful data you would have . If you have a leap second you almost certainly have a instant type, so I don't think there would be meaningful data there, but let's put it in the issue tracker.
 
 MF: I'm not an expert in date-time stuff, and I expect most users of this API also will not be experts. How do we think these concepts will be teachable? Are there canonical examples of each construct that can be used for comparison?
 
-MPT: CivilDate are canonically used for birthdates. CivilTimes are for TC39 meetings are at 10am. CivilDateTime are more for historical times—like the moment when the Declaration of Independence was signed. 
+MPT: CivilDate are canonically used for birthdates. CivilTimes are for TC39 meetings are at 10am. CivilDateTime are more for historical times—like the moment when the Declaration of Independence was signed.
 
 MF: Then we do expect that the users of the library will be able to choose the appropriate construct for their use case?
 
@@ -143,11 +143,11 @@ DD: Ability to get current time seems important to add during stage 2. I'd like 
 
 MF: It would be hard to convince me to allow another source of nondeterminism into the language.
 
-TST: I also want to see this go to stage 2, though I would like to see a solid comparison to other languages. Python, for example has two versions for Date, Time, and DateTime which are time-zone aware and not. 
+TST: I also want to see this go to stage 2, though I would like to see a solid comparison to other languages. Python, for example has two versions for Date, Time, and DateTime which are time-zone aware and not.
 
 MPT: That's really just the naming convention of that case.
 
-TST: Yes, I'm really not an expert. 
+TST: Yes, I'm really not an expert.
 
 MJN: I'm working with MPT on this proposal, and studied Python, Java, C#, Elixir, etc.'s implementations. I absolutely agree with you that there should be guidance—JS is one of those languages that developers who primarily use other languages also use, so I think it's very important.
 
@@ -167,7 +167,7 @@ MJN: First is is possible to have an API that works with leap seconds? Yes. Wher
 
 WH: The same place where time zone change information comes from.
 
-MJN: Right, but IANA creates a table but it's not authoritative about leap seconds. It would be possible for a leap second library author to build on top of Temporal, using IANA, but it is not possible. 
+MJN: Right, but IANA creates a table but it's not authoritative about leap seconds. It would be possible for a leap second library author to build on top of Temporal, using IANA, but it is not possible.
 
 WH: The windows API does that, according to Microsoft's blog.
 
@@ -218,11 +218,11 @@ MPT: I want to point out that it was a life journey for me to use 5 types. I wan
 
 YK: I think the nondeterminism response was too glib. DD's request was to fully replace the Date API. That's a very broad spectrum of spaces. I think we should not use the nondeterminism issue to cut off exploration.
 
-MM: There are ways of dealing with the nondeterminism issue. 
+MM: There are ways of dealing with the nondeterminism issue.
 
 MJN: There's two points of nondeterminism in this space. One is in dealing with the Date.now, the other is the current system timezone is one of them. It cannot be returned as a string, so we cannot avoid this.
 
-MM: If you carry your computer from one timezone to another, and are running a process, are there any runtimes that get the new timezone? 
+MM: If you carry your computer from one timezone to another, and are running a process, are there any runtimes that get the new timezone?
 
 KM: Yes. I use it.
 
@@ -234,7 +234,7 @@ API: I agree with CM on that. It may not be avoidable to add a system clock.
 
 DE: I generally like the architectural concept of separation of concerns, but it can be in contrast with typical mental models/ergonomics. We could have a separate clock class for Now, but that has a mental association with Instant. I think it's sensible to group them.
 
-MPT: Clock classes are very useful for testing purposes. In that sense, I don't have any problems with that. 
+MPT: Clock classes are very useful for testing purposes. In that sense, I don't have any problems with that.
 
 DE: My next point was, I'm wondering about does nondeterminism in TC39 APIs relate to nondeterminism in embedder APIs? This is a great place to get concerns from different stakeholders from different environments who don't want nondeterminism. I wonder if there's a way to define it in TC39 but make it optional—knowingly introduce nondeterminism but only if you want to expose certain features. We could do something similar for the realm API, for example.
 
@@ -246,15 +246,15 @@ WH: It doesn't make sense from users' point of view for us to punt `Now` to some
 
 DD: (applauds)
 
-TST: At the last time, we talked about Intl date format. I was concerned with that and the lack of integration. There's been no update on that. While I'm fine with this going to Stage 2 without this. 
+TST: At the last time, we talked about Intl date format. I was concerned with that and the lack of integration. There's been no update on that. While I'm fine with this going to Stage 2 without this.
 
 MPT: I'm not either, it needs to be done.
 
 DE: We discussed this in the Intl meeting. There's some spec editing, but I'm pretty confident that this will work out.
 
-MJN: While it's great that we're talking about leap seconds and nondeterminism, I think it's more important to focus on the serious errors developers are making all the time for example, HTML Input Type=Date alignment. 
+MJN: While it's great that we're talking about leap seconds and nondeterminism, I think it's more important to focus on the serious errors developers are making all the time for example, HTML Input Type=Date alignment.
 
-JHD: Plus 1. We had the same bug when I was at Twitter and now Airbnb because on one day of the year midnight doesn't exist. In Brazil, they use midnight instead of 2am for time-zone cutovers (for daylight savings time, for example). 
+JHD: Plus 1. We had the same bug when I was at Twitter and now Airbnb because on one day of the year midnight doesn't exist. In Brazil, they use midnight instead of 2am for time-zone cutovers (for daylight savings time, for example).
 
 MPT: A PSA: always, always pick `noon`.
 
@@ -264,7 +264,7 @@ DE: Temporal's proposal is a built-in module. How do you imagine that would work
 
 MM: The issue with standard built-in modules is a big issue unto itself, and maybe too broad for this discussion.
 
-DE: Maybe we can talk about it offline then. 
+DE: Maybe we can talk about it offline then.
 
 MM: We don't yet have a concrete design for how builtin modules would be introduced into JavaScript. In the absence of builtin modules, the System object is the answer.
 
@@ -280,7 +280,7 @@ DD: Don't forget clause 15. JavaScript implementers will also do what they want.
 
 WH: Exactly, much of Temporal is nondeterministic because of time zone changing. I don't want that to be a reason to have to stick it onto System.
 
-JHD: Lack of System object has come up in a lot of proposals. What if we had some sort of object that gave you a whitelist of nondeterministic APIs. 
+JHD: Lack of System object has come up in a lot of proposals. What if we had some sort of object that gave you a whitelist of nondeterministic APIs.
 
 MM: A list of global names would be useful, a list of property names would not. You want to be able to have different compartments in realms.
 
@@ -301,9 +301,9 @@ JHD: We can talk about this offline.
 
 DE: We've been gradually adding to our Standard Library to JS. This would be helped by an IDL. This is basically a header file, which is used to describe coercions of arguments, overloading, class structure, etc. There's a lot of commonality in our ecosystem to languages that use IDLs that JS could benefit from. The current algorithms are currently pretty free form. There are several edge cases that have to be considered not in the problem domain, but with how we're writing this freeform algorithm. It's not currently trivial to follow conventions in new specifications. IDLs also enable auto-generations. In Chrome and V8 these files are effectively copy+pasted into Chrome's source code, where C++ code automatically generates from this IDL. It's my understanding that all major browsers have a concept like this. I think if we could use for JS an IDL, this would help with the native bindings. From manual code-writing to manual code-generation
 
-DD: Beyond generation of bindings, there's an added benefit of auto-generated code from Spec text. There's a lot of places that an IDL concretizes that in an algorithmic way. 
+DD: Beyond generation of bindings, there's an added benefit of auto-generated code from Spec text. There's a lot of places that an IDL concretizes that in an algorithmic way.
 
-DE: There's a third thing, also auto-generation of tests. That's a very helpful point, DD. So JS is still dynamically typed, and this doesn't aim to change that obviously. In the WASM project, they had two ways of binding WebIDL things to Rust. The JS one was the long tail, however, because it was so difficult to implement. 
+DE: There's a third thing, also auto-generation of tests. That's a very helpful point, DD. So JS is still dynamically typed, and this doesn't aim to change that obviously. In the WASM project, they had two ways of binding WebIDL things to Rust. The JS one was the long tail, however, because it was so difficult to implement.
 
 TST: Yesterday we published something (??) that would have been much easier if we had these IDLs we could even better generate these.
 
@@ -331,11 +331,11 @@ DE: That's part of the benefit of having a single ecosystem-unifying language.
 
 WH: I'm not sure that my questions have been heard, but let's continue.
 
-TST: I think this is obviously not a Stage 0 concern. 
+TST: I think this is obviously not a Stage 0 concern.
 
-SYG: We have different, multiple embedded engines, it's harder to keep our platform more consistent with JS as it evolves. I think for newcomers who want to embed JS, we need to keep this barrier to entry low. 
+SYG: We have different, multiple embedded engines, it's harder to keep our platform more consistent with JS as it evolves. I think for newcomers who want to embed JS, we need to keep this barrier to entry low.
 
-YK: I'm a big fan of this. I think this is a big driving concern. I think developers actually do use Specs, so I think we probably want our IDL to generate something that is predictable or consistent with JS. WebIDL as a historical evolution came out of the spec. I think WASM changes some of the calculus, but we should still treat JS as the driving concern. We should try to figure out a subset that is good for our means. 
+YK: I'm a big fan of this. I think this is a big driving concern. I think developers actually do use Specs, so I think we probably want our IDL to generate something that is predictable or consistent with JS. WebIDL as a historical evolution came out of the spec. I think WASM changes some of the calculus, but we should still treat JS as the driving concern. We should try to figure out a subset that is good for our means.
 
 DE: This is somewhat complicated.
 
@@ -347,11 +347,11 @@ YK: I agree that most of my original critiques have been addressed since.
 
 DH: Along the lines of what SYG was saying—about the long tail use cases of WebIDL. I work on something called Neon which allows you to bind Node.js to Rust. I think this kind of gives us a long-tail list of applications to create bindings, and I bet a lot of good projects would come out of the woodwork.
 
-DE: That's great and that reminds me about a scope limitation I want to emphasize. This is completely intended to bind to JavaScript. 
+DE: That's great and that reminds me about a scope limitation I want to emphasize. This is completely intended to bind to JavaScript.
 
 DH: Yes, I understand, I'm just saying this would help bring out some of the projects like Neon.
 
-JHD: People may see snippets from the spec as their first introduction to the language. I have not spent a lot of time looking at WebIDL, but the times I have spent, I have found very unintuitive. Separately, I definitely am concerned with making many normative changes to the spec just to match IDL. These changes can be enormously difficult to review and accidentally change the meaning of the spec text. 
+JHD: People may see snippets from the spec as their first introduction to the language. I have not spent a lot of time looking at WebIDL, but the times I have spent, I have found very unintuitive. Separately, I definitely am concerned with making many normative changes to the spec just to match IDL. These changes can be enormously difficult to review and accidentally change the meaning of the spec text.
 
 DE: Are you saying there's no room for normative changes because of this spec?
 
@@ -371,7 +371,7 @@ JHD: Yes, definitely, we need to just do this gradually. My concern is 30,000 li
 
 DE: That sounds good. I would be amenable to that. In Stage 2, we could talk more about that process to take upstream changes discovered.
 
-YK: Maybe there's a middle ground? I don't think we should take the 
+YK: Maybe there's a middle ground? I don't think we should take the
 
 JHD: I've seen this happen where people use types on your untyped code, and this seems very similar to that. These little changes shouldn't be made just to satisfy the syntax of IDL.
 
@@ -419,13 +419,13 @@ DE: Examples?
 
 WH: Host objects doing strange things, using IDLs to specify abstractions implemented as proxies, ....
 
-DE: I think this proposal has been clear that the goal is for this to be used for broader uses. 
+DE: I think this proposal has been clear that the goal is for this to be used for broader uses.
 
 DE: There's spec internal ways of describing things like proxies, that don't need to be upgraded to IDL.
 
 WH: If we expose the IDL as an API that hosts are supposed to use, then we might need to have good support in that IDL for abstractions defined via proxies, host objects, etc. If we just use the IDL for specification of ECMAScript, then we wouldn't need to do that work since built-ins don't do that much.
 
-DE: I don't think hosts should be expected to rely on IDL entirely. 
+DE: I don't think hosts should be expected to rely on IDL entirely.
 
 WH: This is an interesting question to research. I would like more info on this.
 
@@ -447,13 +447,13 @@ RGN: JSON parse is lossy. If you feed in a large sequence of digits, you will ge
 
 CM: What is actually in the source parameter? You give two examples, one was parsing a number which you want to yield a `BigInt`—that's straightforward. The second example, which was a Date, you had a more complicated structure—what is that source parameter? What substring did the JSON parser receive?
 
-RGN: On any invocation, it's the JSON value which does not include ignored whitespace, but does include everything else. It would include the literal quote chars, too. 
- 
+RGN: On any invocation, it's the JSON value which does not include ignored whitespace, but does include everything else. It would include the literal quote chars, too.
+
 CM: In the case of an object, it would be the whole bracket.
 
 RGN: Correct, object would be opening curly to closing curly, array would be opening bracket to closing.
 
-CM: That in itself could be passed in another call to JSON.parse? 
+CM: That in itself could be passed in another call to JSON.parse?
 
 RGN: Yes.
 
@@ -465,7 +465,7 @@ MB: You can use `Date.parse` with extra quotes around the string, so the code ex
 
 GCN: It's actually using val and not src, so it should be ok.
 
-MB: I'm saying it would be fine with `src` too. 
+MB: I'm saying it would be fine with `src` too.
 
 GCN: I don't think that's true, I don't think it will accept a leading quote...
 
@@ -477,7 +477,7 @@ GCN: Keys actually is an array, not a string. I'm using implicit string conversi
 
 WH: On the performance point, the problem is the running time is exponential based on the input size. This happens if you use re-parsing in your callback, for example.
 
-GCN: I don't want re-parsing. 
+GCN: I don't want re-parsing.
 
 WH: If you have a reviver for a compound object which ignores the default value and instead calls JSON.parse on the source string, we've made it exponential.
 

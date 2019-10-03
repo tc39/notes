@@ -1,8 +1,8 @@
 # September 26, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KV), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZ), Matt Johnson (MAJ), Robert Pamely (RPY)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KV), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZU), Matt Johnson (MAJ), Robert Pamely (RPY)
 
-Remote: 
+Remote:
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
 -----
 
@@ -54,7 +54,7 @@ MB: For property forms that we already support, the negated form `\P` is clear, 
 
 MB: MS suggested `\q` for se*q*uence, but my personal preference is to stick to `\p` to not introduce new syntax. I don't think it's a good idea for our syntax to depend on an upstream spec. What does the committee think we should use?
 
-MS: There's a couple issues with using `\p`. What if Unicode changes that property to map that property to a sequence anyway. (i.e. property `foo` becomes changed by Unicode to a sequence). If a user uses this in a character class, then all of a sudden this throws a syntax error. Secondly, let's suppose Unicode changes something from a property to a sequence, the programmer should have to know that to use it. Unicode will often prefix these with underscores anyway, so a programmer wouldn't probably even be able to use it without 
+MS: There's a couple issues with using `\p`. What if Unicode changes that property to map that property to a sequence anyway. (i.e. property `foo` becomes changed by Unicode to a sequence). If a user uses this in a character class, then all of a sudden this throws a syntax error. Secondly, let's suppose Unicode changes something from a property to a sequence, the programmer should have to know that to use it. Unicode will often prefix these with underscores anyway, so a programmer wouldn't probably even be able to use it without
 
 MB: Perhaps Unicode would have to introduce a new property and then there's no collision?
 
@@ -76,7 +76,7 @@ YK: The most expressive version of a sequence, like ECMAScript keywords, or emoj
 
 MB: But there are multiple characters, so how do you negate that?
 
-BFS: Are you stating that it would match one character? 
+BFS: Are you stating that it would match one character?
 
 MB: Emoji sequence component characters often have meaning on their own.
 
@@ -108,11 +108,11 @@ DE: I think this feature is very valuable, because a lot of sites want to check 
 
 MB: There was data on usage of existing emoji-regex packages in the Stage 1 presentation.
 
-YK: I agree and I think this feature is important enough that I wouldn't object at the risk of preventing this spec from advancing. 
+YK: I agree and I think this feature is important enough that I wouldn't object at the risk of preventing this spec from advancing.
 
 DE: It seems like the feelings on both sides of this argument are moderated and want to move this forward. I would suggest that in the next 2 months, we arrive at a conclusion.
 
-WH: We should decide between the three choices then: `\p`, `\q` where a one-character property is not a one-character sequence, or `\q` where every one-character property can also be used as a one-character-long sequence property. 
+WH: We should decide between the three choices then: `\p`, `\q` where a one-character property is not a one-character sequence, or `\q` where every one-character property can also be used as a one-character-long sequence property.
 
 MS: Unicode is very clear about properties and sequences being disjoint. We should not conflate them, and follow the very specific rules the Unicode consortium makes.
 
@@ -120,7 +120,7 @@ MB: They can both be thought of as "properties" though.
 
 WH: [points to bullet point on the presenter's slide] Not all of us are convinced that Unicode won't conflate these.
 
-MS: They never have. 
+MS: They never have.
 
 MB: Yeah, this is a hypothetical issue.
 
@@ -138,7 +138,7 @@ MB: I'll reach out to the Unicode consortium for clarification w.r.t. our use of
 
 - Stage 2 acceptance
 - MB to work with the Unicode Consortium
-- Stage 3 reviewers: 
+- Stage 3 reviewers:
   - Waldemar Horwat
   - Michael Saboff
 
@@ -152,7 +152,7 @@ BFS: This already was approved for Stage 2, but we have made many changes so we'
 
 WH: The revised grammar is good now.
 
-TST: Why can't we move this to Stage 3? 
+TST: Why can't we move this to Stage 3?
 
 WH: 24 hours ago the document was completely different. BFS rewrote it based on my comments.
 
@@ -265,13 +265,13 @@ WH: I see that the educators group is working on deciding features of proposals.
 
 DE: This is the decision-making body.
 
-WH: How does the IP work? If some random person in the audience requests to implement a feature and one of the TC39 folks forwards it to here, who has to sign the IP form? 
+WH: How does the IP work? If some random person in the audience requests to implement a feature and one of the TC39 folks forwards it to here, who has to sign the IP form?
 
 DE: This discussion was informal.
 
 WH: So what you're saying is that the educators group is not a TC39 function.
 
-DE: Correct. When we discussed, AWB asked what the purpose of the groups was. For now, they're individual initiatives. 
+DE: Correct. When we discussed, AWB asked what the purpose of the groups was. For now, they're individual initiatives.
 
 WH: That's fine.
 
@@ -281,7 +281,7 @@ IS: They would produce educational materials for the outside world.
 
 DE: That's one purpose, but the other it to give feedback on proposals. Like github, they're expected to sign the IP form. I thought WH was objecting to them signing? If not, I can have everyone sign.
 
-YK: There seems to be some third-rail here about the exact formalism of this structure. I think treating this as a completely informal thing, is also probably not correct. Obviously GitHub is one formal channel, but that's probably not enough. 
+YK: There seems to be some third-rail here about the exact formalism of this structure. I think treating this as a completely informal thing, is also probably not correct. Obviously GitHub is one formal channel, but that's probably not enough.
 
 DE: I agree. We're in the trial period. I'll agree to whatever IP policy we decide.
 
@@ -297,11 +297,11 @@ DH: I like how you are incorporating more voices into the conversation. I like t
 
 DE: To wrap up, I think the only thing we need to decide is whether they sign the IP form.
 
-WH: I feel misled. I thought the edu group was actually educational, but it's not. 
+WH: I feel misled. I thought the edu group was actually educational, but it's not.
 
 DE: Do you think that we should not be discussing things that go on in TC39 with individuals who are not in the committee?
 
-WH: Yes, it's fine to discuss. But it looks like you're also making decisions. 
+WH: Yes, it's fine to discuss. But it looks like you're also making decisions.
 
 DE: We don't have any capacity in these informal discussions to make decisions.
 
@@ -392,7 +392,7 @@ JRL: We've already made a distinction that method is different from function, it
 
 MM: If we didn't include the static modifier on a static nested class, I don't think we should include it on static methods.
 
-MM: We want the toString to be a substring of the source. Either way, for methods, the string is not an expression that parses to the original. 
+MM: We want the toString to be a substring of the source. Either way, for methods, the string is not an expression that parses to the original.
 
 WH: I find the purposes of `toString` kind of confounded. If we look at it as something for documentation, that's one thing. If we expect it to work with `eval`, there are various known troublesome cases that don't work well. For documentation purposes, I have a weak preference for treating `static` the same way as `async`.
 
@@ -406,7 +406,7 @@ JHD: Maybe it would help to clarify something first. We have two competing menta
 
 WH: The mental model is that if `static` is part of the class and not the method, then decorators would go after `static`.
 
-JHD: Yes, if we decide that `static` modifies the class as opposed to the method. If we decide that static modifies the value, then I would expect it to be serialized with it. We should come up with simple rules that explain what goes in to string. 
+JHD: Yes, if we decide that `static` modifies the class as opposed to the method. If we decide that static modifies the value, then I would expect it to be serialized with it. We should come up with simple rules that explain what goes in to string.
 
 TOD: Given the preponderance of tools that cause the code that you use different from the code in your editor (transpilers, etc.), what are the use cases that we care about for including or not including the static keyword?
 
@@ -448,7 +448,7 @@ MM: To answer DW, the two alternatives that RBN listed—to omit the decorators 
 
 RBN: If we do include decorators in toString, then an `@log` decorator would have to replace the constructor, which would break the toString anyways because it replaces the return value. Decorators can replace values at runtime, they're already depending on a complicated mechanism. The only way the toString of decorators would work is if decorators were annotations only, not able to replace the value.
 
-MM: I completely overlooked that. You're right. If it replaces the constructor, it will hit this edge case. 
+MM: I completely overlooked that. You're right. If it replaces the constructor, it will hit this edge case.
 
 MM: For completeness, I'll mention a third option: include decorators, exclude export, and the toString would not be a strict substring of the source text. But I hate that.
 
@@ -521,7 +521,7 @@ RBN: I agree with that. Keywords must have an ordering, but where the decorators
 
 KS: ???
 
-HZ: Nicolo (on Babel) has published [a codemod to upgrade from old decorators to Stage 2](https://github.com/nicolo-ribaudo/legacy-decorators-migration-utility), would be simple to add before/after
+HZU: Nicolo (on Babel) has published [a codemod to upgrade from old decorators to Stage 2](https://github.com/nicolo-ribaudo/legacy-decorators-migration-utility), would be simple to add before/after
 
 #### Conclusion/Resolution
 
@@ -537,7 +537,7 @@ HZ: Nicolo (on Babel) has published [a codemod to upgrade from old decorators to
 - [proposal](https://github.com/zenparsing/proposal-private-symbols)
 - [slides](https://docs.google.com/presentation/d/1kkRnIurCtQEJhGyeDS0f_s7-gaS3iWHKh-N_YoWKpKY/edit?usp=sharing)
 
-KS: I've got a bad feeling about #private. The issue is it's sugar over weakmaps, which is good for privacy. But it's acting like property? A private access seems more like a property descriptor. Then the methods are usually shared, but private methods are owned? Maybe they're owned. It bugs me, why is it different? Then there's the private static subclass "hazard". Then destructuring has to be solved for #privates. Then decorators have to invent this PrivateName  map-like instance, and I have to deal with this novel object type in the key placement. And why should this only be on classes? None of these are fatal, but it's a lot of little complications. So private symbols are ajust symbols that have a private field on them. They're not returned by OwnPropertyKeys. They're not exposed to Proxies. The current private fields proposal solves both encapsulation and branding. Private symbols only solves encapsulation. With Private symbols, it's all just properties. It's all the same as the syntax we've already carved out for methods and fields. There's no subclassing hazard. They can walk up the prototype chain. And destructuring is already solved. And it's just a private symbol given to decorators, kinda like a normal symbol. And it makes it so that classes aren't really special, you can still use objects with private symbols. They syntax is a bit ugly, but we'll get used to it, or we can investigate sugar syntax later to handle symbol property access. And as for brand checking, isn't that really a separate concern? The bigger concern is membranes. Membranes can't directly trap the private symbol, and that breaks a core design in membranes. Let's open it up to questions. Are we OK with these tradeoffs?   
+KS: I've got a bad feeling about #private. The issue is it's sugar over weakmaps, which is good for privacy. But it's acting like property? A private access seems more like a property descriptor. Then the methods are usually shared, but private methods are owned? Maybe they're owned. It bugs me, why is it different? Then there's the private static subclass "hazard". Then destructuring has to be solved for #privates. Then decorators have to invent this PrivateName  map-like instance, and I have to deal with this novel object type in the key placement. And why should this only be on classes? None of these are fatal, but it's a lot of little complications. So private symbols are ajust symbols that have a private field on them. They're not returned by OwnPropertyKeys. They're not exposed to Proxies. The current private fields proposal solves both encapsulation and branding. Private symbols only solves encapsulation. With Private symbols, it's all just properties. It's all the same as the syntax we've already carved out for methods and fields. There's no subclassing hazard. They can walk up the prototype chain. And destructuring is already solved. And it's just a private symbol given to decorators, kinda like a normal symbol. And it makes it so that classes aren't really special, you can still use objects with private symbols. They syntax is a bit ugly, but we'll get used to it, or we can investigate sugar syntax later to handle symbol property access. And as for brand checking, isn't that really a separate concern? The bigger concern is membranes. Membranes can't directly trap the private symbol, and that breaks a core design in membranes. Let's open it up to questions. Are we OK with these tradeoffs?
 
 WH: My concern is is about encapsulation/privacy, and you claim that you can separate it from branding. That kinda works if you only ever have one private field per class, but this is what happens if you have multiple private fields in a class that you want to keep consistent:
 
@@ -549,13 +549,13 @@ While a sufficiently diligent programmer might defend against such confused depu
 
 On the other hand, if you really do want to have single private fields you can attach to arbitrary objects, we already have a good language mechanism to do so — weak maps. We don't need a second mechanism.
 
-KS: 
+KS:
 
 JRL: Can we just use WeakMaps? Even if you trick me to install the private symbol onto a foreign object, it would still be encapsulated to my code. You're foreign object still can't directly modify the property where I put my private symbol.
 
 YK: This is about the mental model issue. How should people who want to understand the core model understand things? I think using the WeakMap mental model is pretty nice for that.
 
-MF: I just wanted to make a quick point that I think this will solve one of the issues I've been trying to solve on the first-class protocols proposal. DD raised an issue with Protocols earlier wanting support for privates, and this should provide a way to addresses that problem. To that aspect, I'm very much in support of this. 
+MF: I just wanted to make a quick point that I think this will solve one of the issues I've been trying to solve on the first-class protocols proposal. DD raised an issue with Protocols earlier wanting support for privates, and this should provide a way to addresses that problem. To that aspect, I'm very much in support of this.
 
 MM: If I take a regular visibly frozen object, where all of its property's values are primitive values, or simple data that cannot hide state (e.g., not functions), then I know I can share it between two object graphs that are otherwise isolated without enabling them to communicate. Likewise, I know I can share primitive values. But private symbols would be primitive values, and so considered "obviously" stateless. Now, sharing the pair of apparently stateless objects between two otherwise isolated subgraphs would enable them to communicate. Where's the mutable state?
 
@@ -563,7 +563,7 @@ KS: That's true.
 
 JRL: That's also true for private fields. If there's a method that has access to the private field, it can modify the field in two different object graphs even if the object is frozen.
 
-MM: I disagree on several grounds: 
+MM: I disagree on several grounds:
 An instance of a class inherits from its class.prototype, and so is not obviously stateless. Freezing it can serve the normal purpose of freezing --- making its API surface tamper-proof, but not making anything immutable. Only for simple objects from which only other simple objects are reachable, i.e., not functions, does transitive isFrozen imply immutability.
 In the private symbol proposal, the private symbol serves as the reification of the "name". As a primitive value, it would pass through membranes unmodified. In the existing private state proposal combined with the existing decorator's proposal, the "name" is reified as an instance of a PrivateName class, which is a WeakMap-like non-enumerable mapping from identities to values. As an instance, it would get wrapped and unwrapped when passed through a membrane. For a wet instance foo of a wet class Foo defining private state #bar, the reification of the private name #bar would be a wet instance of a wet PrivateName class, with wet PrivateName get and set methods. A dry attempt to use the reification of the #bar name on the foo instance, to access it's #bar field, would look like: "dryBarNameProxy.get(dryFooProxy)". Crucially, this faults on the proxy for the name, not the proxy for the instance. The invocation passes through the membrane and the access works, without the membrane ever being aware that anything special was going on.
 
@@ -573,13 +573,13 @@ KG: Private symbols are different than symbols though. It's like introducing the
 
 TOD: I like the syntax scope in current proposal. The private symbol doesn't have to be so close to the lexical use area. It's important for me to have private state near the use.
 
-YK: The `#private` symbol has to mean private, which makes it easier. 
+YK: The `#private` symbol has to mean private, which makes it easier.
 
 KS: That's a good point—there's a larger collection of proxy use-cases that may be affected by this.
 
 DE: I see this contrasting
 
-CM: I think the interesting thing is how complicated this has become. 
+CM: I think the interesting thing is how complicated this has become.
 
 KS: I was thinking this morning, "do I really want to get up here and try to turn the battleship around..." But I think it's good to talk about the complexities of this and consider a different approach.
 
@@ -589,7 +589,7 @@ RPY: I interact with people that are new to JS, and it'll be difficult for them 
 
 Joyee: During code review, we tend chose symbols when we need to add private things. We used to use "_private", but they were impossible to deprecate. New contributors still use _private even years after symbols became available. We need linters to fix some of these, but we still need humans to catch it. But we still can't tell people to just use symbols because they're not used to them. If symbols are available now, and people still don't use it, then private symbols aren't going to improve this situation.
 
-JRL: To summarize, The proposal tackles 4 different things: encapsulation, branding, private symbols, private fields. These are also the same issues as with private fields, private fields decided to tackle all 4 problems at the same time, but we don't have to deal with all four of these issues at the same time. 
+JRL: To summarize, The proposal tackles 4 different things: encapsulation, branding, private symbols, private fields. These are also the same issues as with private fields, private fields decided to tackle all 4 problems at the same time, but we don't have to deal with all four of these issues at the same time.
 
 WH: This doesn't achieve encapsulation, which is kind of the whole point of this feature.
 
@@ -630,7 +630,7 @@ SYG: The syntax is really private. Allowing an escape hatch makes thing much har
 
 - [slides](https://docs.google.com/presentation/d/1Q9upYkWnPjJaVc8k9q3U6NekDch8tsz7CgV-Xm55-5Y/edit#slide=id.p)
 
-DE: My goal is to combine these documents into a single list. We have full test coverage (thanks to Bocoup, Bloomberg, Igalia and Google). We have implementations in V8 (thanks to SGN), and in JSC (thanks to Igalia and Bloomberg). For Babel, you have been able to use public fields since Babel 6, instance private fields from Babel 7, static private fields since Babel 7.1. TypeScript private 
+DE: My goal is to combine these documents into a single list. We have full test coverage (thanks to Bocoup, Bloomberg, Igalia and Google). We have implementations in V8 (thanks to SGN), and in JSC (thanks to Igalia and Bloomberg). For Babel, you have been able to use public fields since Babel 6, instance private fields from Babel 7, static private fields since Babel 7.1. TypeScript private
 
 KG: You said these PRs were out for review, do you have links anywhere?
 
@@ -642,7 +642,7 @@ DE: My plan was to ask for Stage 4 when we have two implementations.
 
 WH: I was jesting, but I wouldn't mind Stage 4 soon. It's been a long journey.
 
-TST: We're about to start in SpiderMonkey. 
+TST: We're about to start in SpiderMonkey.
 
 DE: There was a big thread on the issue thread about not forwarding to Proxy targets. We decided it wasn't a big issue after discussing with several proxy using-frameworks.
 
@@ -658,7 +658,7 @@ DE: There was a big thread on the issue thread about not forwarding to Proxy tar
 - [proposal](https://github.com/gibson042/ECMA-262-proposal-uniform-interchange-date-parsing)
 - [slides](https://docs.google.com/presentation/d/1E4f7hMmJLj09FWq8YEIaATAzIShHpFY37OyWZMf3I5c/edit)
 
-RG: This covers relative dates, local time, offset, time intervals, recurring time intervals, approximate time, etc. (Presents slides). A point about unrecognizable strings—we don't know how to define whether a string is unrecognizable. We're not very precise on things like how many non-millisecond fractional seconds we allow, lowercase designators, etc. 
+RG: This covers relative dates, local time, offset, time intervals, recurring time intervals, approximate time, etc. (Presents slides). A point about unrecognizable strings—we don't know how to define whether a string is unrecognizable. We're not very precise on things like how many non-millisecond fractional seconds we allow, lowercase designators, etc.
 
 API: I like this proposal, I ask to spec to allow parsing of ":60" seconds for interoperability with other systems generating strings that are consumed by JS. The cases of invalid extended years will already be resolved by the recent PR and Test262 for it that adopt the FF behavior.
 
@@ -670,11 +670,11 @@ RG: I'm open to that. We can still improve our position even if we don't achieve
 
 MAJ: Please do not allow implementations to reject 'Z' in ISO Format. I think that would create a lot of confusion in that space. It's needed because the lack of a `Z` indicates local time format in ISO, so the `Z` is needed to force the date to start at the beginning of the UTC day. Another thing, the Z comes from the historical military codes, but they've never been part of ISO.
 
-MPT: A quick thought on one other format. The timezone bracket format—does that have an offset in it? 
+MPT: A quick thought on one other format. The timezone bracket format—does that have an offset in it?
 
 MAJ: What MPT's  referring to—something we're proposing in Temporal also—is the extension of the timezone offset followed by the timezone name in square brackets. (`-04:00 [America/New York]`)
 
-RG: It seems a bit too far to implement now. 
+RG: It seems a bit too far to implement now.
 
 MPT: The crux of it is that we should implement it so it exists. So I think we should add it into the spec.
 
@@ -688,7 +688,7 @@ DE: Well, the data model for Date doesn't have a concept of time zone.
 
 MAJ: It's extraneous information. In my experience, Date.parse is often used for Locale specific parsing. And sometimes because the weirdness that's occurred over the years, people will hack: attempting to put in things like "UTC" to attempt to resemble standards.
 
-MPT: I don't think we can reasonably increase the number of formats that we're rejecting for the most part. For users of Node, for example, people in Node will not be very happy when they get more rejections because V8 was upgraded for cross-browser compatibility. 
+MPT: I don't think we can reasonably increase the number of formats that we're rejecting for the most part. For users of Node, for example, people in Node will not be very happy when they get more rejections because V8 was upgraded for cross-browser compatibility.
 
 YK: I wouldn't be surprised if people use February 30th in their apps, and that disallowing that wouldn't break sites.
 

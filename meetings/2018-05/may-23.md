@@ -2,8 +2,8 @@
 -----
 Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Mattijs Hoitink (MHK), Kyle Verrier (KVR),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (AKI), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW), Tom Dale (TDE), István Sebestyén (IS), Lin Clark (LCK)
 
-Remote: 
-Valerie Young (VYG), Maggie Pint (MPT), Ben Newman (BN), Brendan Eich (BE), Dean Tribble (DT), Robert Pamely (RPY), David Turissini (DTI), Felipe Balbontin (FBN), Pedram Emrouznejad (PED), Tim McClure (TME), Bradley Farias (BFS), Jason Williams (JWS), Trevor Bliss (TBS), Robin Ricard (RRD)
+Remote:
+Valerie Young (VYG), Maggie Pint (MPT), Ben Newman (BN), Brendan Eich (BE), Dean Tribble (DT), Robert Pamely (RPY), David Turissini (DTI), Felipe Balbontín (FBN), Pedram Emrouznejad (PED), Tim McClure (TME), Bradley Farias (BFS), Jason Williams (JWS), Trevor Bliss (TBS), Robin Ricard (RRD)
 -----
 
 
@@ -24,7 +24,7 @@ Valerie Young (VYG), Maggie Pint (MPT), Ben Newman (BN), Brendan Eich (BE), Dean
 
 MM: There's been recent attacks taking advantage of Exfiltration that remind us of this threat. Exfiltration is when Information that should have been private gets leaked to an adversary. Two channels 1) Covert and side channels (normal cache timing attacks, covert and side channels) and 2) over theft (Electron shock, "vetted" libraries are included on websites like Walgreens without understanding the dangers of these libraries). Researchers have found important information leaking out of these libraries, for example.
 
-MM: The advice of only "origin boundaries are security boundaries" is unworkable. Use only 3rd party libraries you've fully vetted—this is impractical advice. 
+MM: The advice of only "origin boundaries are security boundaries" is unworkable. Use only 3rd party libraries you've fully vetted—this is impractical advice.
 
 MM: Drive-by key extraction code attacks—previously thought to be constant time algorithms are vulnerable in side-channel attacks. In 2017, the idea was presented that if you cannot sense the duration of time, even though information may be leaking over covert/side channels, computation restricted from measuring time cannot leak. In light of Meltdown/Spectre this 2017 observation surprisingly remains true.
 
@@ -34,17 +34,17 @@ MM: It's even possible to pwn using Function.prototype.apply overrides. Without 
 
 MM: In the Princeton "No Boundary" series, research has indicated that website operators are in the dark about privacy violations in 3rd party scripts. Their canonical advice is impractical because web maintainers cannot possible read all the 3rd party libraries they use. They found 8,000 prominent websites vulnerable via session-replay scripts recording user data, including Walgreens effectively violating HIPAA by leaking customer medical information via one of these scripts. In violation of FERPA, student data was leaked via a library from FullStory. (Ironically even the researchers' Princeton itself was subject to this exfiltrating). TC39 should stand up to solve the attack vectors exfiltration uses.
 
-MM: Anatomy: leaky secrets plus an internal channel and a spy in the machine that reads the internal channel, typically by sensing durations of time. Any time you make available nondeterminism you potentially enable a side channel. (??). Specific forms in coarse boundaries: leaky secrets (variable timing, cache effects, speculative execution), internal channel (sid/covert channels), spy in the machine (bad page, origin), timers (essential for this form) external channels, lair (origin, elsewhere). 
+MM: Anatomy: leaky secrets plus an internal channel and a spy in the machine that reads the internal channel, typically by sensing durations of time. Any time you make available nondeterminism you potentially enable a side channel. (??). Specific forms in coarse boundaries: leaky secrets (variable timing, cache effects, speculative execution), internal channel (sid/covert channels), spy in the machine (bad page, origin), timers (essential for this form) external channels, lair (origin, elsewhere).
 
 MM: Coarse Mitigations: the obvious leaky secrets mitigation is to review libraries you use, but this is impractical—instead use constant time algorithms (but these don't work). Internal channels can be mitigated via anti-speculation techniques (but has high cost vs relatively low benefit). For spy in the machine: site isolation (but we'll see if this reliably works). For timers: after Meltdown/Spectre we withdrew our timing buffers (No SABs, JS Zero) but this is a temporary/ineffective solution. For external channels: always provided (but only limited response) and Lair can sometimes be foiled (but we can't reliably know when the attacker was foiled)—We can make things safer but we're never really sure _when_ we're safe.
 
-MM: Fine Mitigations: Leaky secrets can be mitigated using realms/compartment scope. For internal channels: we can mitigate attacks using frozen realms and protecting primordials like replacing Function.prototype.find and proving restrictions on what modules can import (limiting dangerous access). For mitigating spies in the machine: we can use module keys and POLA linkage. For timers, external channels and lair we can deny, but once again, we don't know for sure that we're safe. 
+MM: Fine Mitigations: Leaky secrets can be mitigated using realms/compartment scope. For internal channels: we can mitigate attacks using frozen realms and protecting primordials like replacing Function.prototype.find and proving restrictions on what modules can import (limiting dangerous access). For mitigating spies in the machine: we can use module keys and POLA linkage. For timers, external channels and lair we can deny, but once again, we don't know for sure that we're safe.
 
 MM: POLA would deny transformational libraries things like XHR, DOM access, Sockets, Math.random(), new WeakRef() etc. Let's clean up our mess! Our civilization rests on this infrastructure, so we need to minimize this risk. We even know how to do it, we just need to know how to proceed.
- 
-DH: While I've never felt qualified to weigh in on security aspects of this conversation, when we talk about this model for JS security for the web, it's a difficult question... It's important we don't lose sight of the fact that when we talk about Realms we're not just talking about a security model, it has other purposes. So we need to not miss other reasons on this committee why it makes sense to use Realms. There's a lot of use cases not about malice, (like IDEs, for example) where it may be useful to have the isolation about Realms. 
 
-MM: I agree for almost everything. There's a danger of the audience confusing "or"s and "and"s, that an additional case can't make the argument any weaker. ... What we should care about is building frameworks for that maximize the benefits of composition when things go right, while minimizing the hazards of destructive interference. When the interference is accidental, we label them "bugs" and turn to "software engineering". When intentional, we label them "attacks" and turn to computer security. But this is largely a false dichotomy; why should we care whether the interference is accidental or intentional? Techniques effective against intentional interference should also be effective against accidental interference. Adding purposes that they [Realms] also serve should just add to the use case. 
+DH: While I've never felt qualified to weigh in on security aspects of this conversation, when we talk about this model for JS security for the web, it's a difficult question... It's important we don't lose sight of the fact that when we talk about Realms we're not just talking about a security model, it has other purposes. So we need to not miss other reasons on this committee why it makes sense to use Realms. There's a lot of use cases not about malice, (like IDEs, for example) where it may be useful to have the isolation about Realms.
+
+MM: I agree for almost everything. There's a danger of the audience confusing "or"s and "and"s, that an additional case can't make the argument any weaker. ... What we should care about is building frameworks for that maximize the benefits of composition when things go right, while minimizing the hazards of destructive interference. When the interference is accidental, we label them "bugs" and turn to "software engineering". When intentional, we label them "attacks" and turn to computer security. But this is largely a false dichotomy; why should we care whether the interference is accidental or intentional? Techniques effective against intentional interference should also be effective against accidental interference. Adding purposes that they [Realms] also serve should just add to the use case.
 
 MSL: There are many non-security reasons for Realms. +1 to DH.
 
@@ -62,7 +62,7 @@ DD: It's not hard—I can get all your private state with Spectre.
 
 MM: You can get information with spectre if and only if you can sense the duration of time.
 
-DD: We're getting into [Google] NDA territory, but I would not claim that that is impossible. 
+DD: We're getting into [Google] NDA territory, but I would not claim that that is impossible.
 
 MM: I'm not within Google's NDA information anymore. But I was until recently and there was no such contrary information then. It's impossible to argue about things that we cannot talk about. It's like the national security stance of "If you knew what I know, then you'd agree with me."
 
@@ -74,7 +74,7 @@ MSL: Spectre is a major concern for confidentiality. Programming languages that 
 
 DD: The history of sandboxing, the things that sandboxing prevents.
 
-MSL: Can you give an example where a process boundary intends to solve? 
+MSL: Can you give an example where a process boundary intends to solve?
 
 DD: There are plenty of write vulnerabilities that are mitigated by sandboxing.
 
@@ -95,11 +95,11 @@ BE: We should be able to distinguish threats. (The remote connection sucks)
 
 - [proposal](https://github.com/mikesamuel/tc39-module-keys)
 
-MSL: Users have a lot of modules, from many sources, we suspect that they're written in good faith, but there's dissymmetry of information between module authors and module users (in terms of the security context). Modules written in good faith should be able to communicate. We want to be able to make global statements about the security of our systems based on the tools we use and global properties like inputs/outputs. No security team can do a line-by-line security review of even a relatively small project (Guy Fieri joke). 
+MSL: Users have a lot of modules, from many sources, we suspect that they're written in good faith, but there's dissymmetry of information between module authors and module users (in terms of the security context). Modules written in good faith should be able to communicate. We want to be able to make global statements about the security of our systems based on the tools we use and global properties like inputs/outputs. No security team can do a line-by-line security review of even a relatively small project (Guy Fieri joke).
 
 MSL: Google has put in a lot of work into static languages on top of JS, but that doesn't help JS at large. We cannot rely on unsound linters to check code that was written without static analyzability in mind.
 
-MSL: (showing frenemies example): this evaluates in such a context that it will only be called on a private key, and allows that a public key can attest to the fact that the module is from who it says its from. Effectively, this works by putting a value into a box, specifying who may open it, and then allowing one to retrieve a value from this box if the retriever's public key passes this predicate. Public/Private keys give you better identification. If you wanted to create a value to prevent accidental leakage. For example you don't want to log a new user's password or a user's Geolocation. You could create a box and say only a specific module can unbox it. This is confidentiality within bounds. On the flip side, you can also write code that says I only want a value if it comes from a trusted box. 
+MSL: (showing frenemies example): this evaluates in such a context that it will only be called on a private key, and allows that a public key can attest to the fact that the module is from who it says its from. Effectively, this works by putting a value into a box, specifying who may open it, and then allowing one to retrieve a value from this box if the retriever's public key passes this predicate. Public/Private keys give you better identification. If you wanted to create a value to prevent accidental leakage. For example you don't want to log a new user's password or a user's Geolocation. You could create a box and say only a specific module can unbox it. This is confidentiality within bounds. On the flip side, you can also write code that says I only want a value if it comes from a trusted box.
 
 
 
@@ -111,7 +111,7 @@ YK: Why are not WeakMaps and private state sufficient for implementing this? It 
 
 MSL: Boxes are implemented using WeakMaps, but I don't think that answers your question.
 
-YK: How big is this library on top of the existing implementation? 
+YK: How big is this library on top of the existing implementation?
 
 DD: I have questions in the Stage 1 timeframe. Why was this tied to modules? Can this be a library (rather than put it in the language)?
 
@@ -142,29 +142,29 @@ MSL: The keypair prevents masquerading.
 DH: The Realms spec has been long in the making, it's a reflection API for letting you parameterize over the evaluation. This allows you to create an isolation boundary, like in Node's VM module. You can think of it as a DOM-free or a pure JS IFrame.
 
 
-CP: Today we're asking for Stage 2. We've simplified since Stage 1 was presented. There are 3 foundational parts: 1) the Realm Object, 2) Parametrized Evaluator, 3) Module Reflection API. The parametrized evaluator allows us to control all the evaluation within the Realm. The Realm object hasn't really changed since Stage 1 proposal (except the name eval => evaluate). This is, at the moment, equivalent to an HTML Script tag. Builtins are defined just like the spec inside the Realm, the VM has everything you need to execute code. When you create a new Realm object, you get access to the standard lib. Subclassing the Realm allows you to define what builtins the evaluation gets access to on the global object. The biggest simplification we've made since Stage 1 was in the Global object. Every time you create a new Realm, you create a new Global object. `this` value by default is the global object, but you can pass the `this` when creating the realm. Globally written variables (ie, var variables) can be read from the outside the Realm through the Contour. 
+CP: Today we're asking for Stage 2. We've simplified since Stage 1 was presented. There are 3 foundational parts: 1) the Realm Object, 2) Parametrized Evaluator, 3) Module Reflection API. The parametrized evaluator allows us to control all the evaluation within the Realm. The Realm object hasn't really changed since Stage 1 proposal (except the name eval => evaluate). This is, at the moment, equivalent to an HTML Script tag. Builtins are defined just like the spec inside the Realm, the VM has everything you need to execute code. When you create a new Realm object, you get access to the standard lib. Subclassing the Realm allows you to define what builtins the evaluation gets access to on the global object. The biggest simplification we've made since Stage 1 was in the Global object. Every time you create a new Realm, you create a new Global object. `this` value by default is the global object, but you can pass the `this` when creating the realm. Globally written variables (ie, var variables) can be read from the outside the Realm through the Contour.
 
 WH: You showed simple access to globals defined by `var`, but how do you get access to globals defined by `let`, `const`, or `class`?
 
-CP: You do not get access to them. We do not provide reflection ?? at the moment. 
+CP: You do not get access to them. We do not provide reflection ?? at the moment.
 
-DH: We can add it later, there's nothing preventing us. 
+DH: We can add it later, there's nothing preventing us.
 
-CP: Intrinsics are also available from the outside of the realm. 
+CP: Intrinsics are also available from the outside of the realm.
 
 WH: I don't understand—are compartments the same as Realms in regards to identities?
 
 CP: I'm explaining terminology and what people are using today in the absence of Realms. If you try to check the identity using `instanceof` you have identity issues, which we aim to solve via this concept of Components. We can inherit intrinsics between Realms. This is new in this version of the Spec, but it's OK because we believe it's safe to do. We provide 4 hooks (like Proxies) that allow controlling of execution of eval, dynamic import, etc.
 
-CP: Direct Eval vs. Indirect Eval: when you define a new Realm, you will get a new global state (or inherit one), as you know. [?? hard to follow.] Ultimately, you can control indirect eval, but not direct eval. 
+CP: Direct Eval vs. Indirect Eval: when you define a new Realm, you will get a new global state (or inherit one), as you know. [?? hard to follow.] Ultimately, you can control indirect eval, but not direct eval.
 
 CP: We settled on the idea that we only care about the top-level dependency graph. You are responsible for resolving the dependency graph, and therefore the evaluator does not trap import statements.
 
-CP: We don't force strict mode. You can do a transform to add a strict mode to any code you want to use in strict mode, however. 
+CP: We don't force strict mode. You can do a transform to add a strict mode to any code you want to use in strict mode, however.
 
-DD: This is great, but I am not OK with changing module like import.meta and dynamic import semantics, without further discussion. 
+DD: This is great, but I am not OK with changing module like import.meta and dynamic import semantics, without further discussion.
 
-DH: I think it's critical that we have something there. When you write code in a dynamic context, you need to make sure that it satisfies all the constraints of the module system design. 
+DH: I think it's critical that we have something there. When you write code in a dynamic context, you need to make sure that it satisfies all the constraints of the module system design.
 
 DD: There's a default behavior defined by the user agent.
 
@@ -172,7 +172,7 @@ DH: The goal here is to have something isolated by default. Inheriting the outer
 
 DD: I can understand wanting to create an iframe. And forcing authors to learn the APIs of both of these specs. Turning off user agent features, that's uncomfortable.
 
-CP: Today, by default, if you don't provide the trap it throws. It's an opt-in option to let the host do it's work. 
+CP: Today, by default, if you don't provide the trap it throws. It's an opt-in option to let the host do it's work.
 
 DH: I want to run this code that thinks of itself as running in the browser, but it emulates the behavior of being in Node.
 
@@ -180,13 +180,13 @@ DD: You'd also need to change static imports in this case.
 
 DH: Static imports are handled by the transform. We may be able to cut that piece of it out and move forward.
 
-DH: There are some issues to work out before going to stage 2. 
+DH: There are some issues to work out before going to stage 2.
 
 DE: We could discuss this for another hour, but we don't really have time. Let's continue to discuss this over lunch.
 
 DH: Can we snapshot the data in the queue?
 
-Queue: 
+Queue:
 1. New Topic: Lack of control over global proxy / global makes this unsuitable for jsdom compared to vm - Domenic Denicola (Google)
 2. New Topic: Controlling the global object, allows sharing object instances across realm? - Justin Ridgewell (Google)
 3. New Topic: Is the intention to keep the Realm contour 1-1 semantically with the global lexical scope - Shu-yu Guo (Bloomberg LP)
@@ -249,7 +249,7 @@ DE: This Editor Group will continue meeting through 2019? (Yes). Should we get a
 - New editor organization (as of 2 months ago) is confirmed
 
 
-## Supporting other languages in ES module graphs updates 
+## Supporting other languages in ES module graphs updates
 
 (Lin Clark)
 
@@ -261,18 +261,18 @@ LCK: This is a followup to the presentation at the last meeting. The ESM system 
 
 LCK: Let's walk through the things we've encountered in implementing ESM:
 
-LCK: The spec has the abstract module record, which encompases the concrete class for a language. The limitation in the spec is that other languages cannot participate in the ESM graph, making non-JS modules second class citizens. For other languages, there is no direct cyclic dependency like you have in JS modules. Why?  Because of the algorithm that's needed to support cycles, we added this limitation. (this is called [Tarjan's Algorithm](https://www.youtube.com/watch?v=TyWtx7q2D7Y)) 
+LCK: The spec has the abstract module record, which encompases the concrete class for a language. The limitation in the spec is that other languages cannot participate in the ESM graph, making non-JS modules second class citizens. For other languages, there is no direct cyclic dependency like you have in JS modules. Why?  Because of the algorithm that's needed to support cycles, we added this limitation. (this is called [Tarjan's Algorithm](https://www.youtube.com/watch?v=TyWtx7q2D7Y))
 This algorithm lives in the Source Text Module Record class. Without another subclass to motivate the work, there was no need to extract that into a spec. By introducing the cyclic module record class, we can subclass it to provide a Source Text module and a Lang X module record. The cyclic module record will contain the fields associated with that module. The algorithm for cycle handling are in module instantiation (which means they'll have to be moved up to the parent). That's the spec modification that we knew we would have to make. But there's another that we didn't expect.
 Live bindings are great for JS (most of the time) but not for all languages. In JS, if you have a cycle, (explains slides), you can have a TDZ violation when you try to use the import, because the module isn't yet initialized. There are cases when you can import without being in the TDZ, so the error won't always be thrown. JS allows you to get around this by late throwing the error only. When you do that the use doesn't happen until the entire module graph has been evaluated. Languages that require the type information of imports, this causes errors. These languages run checks on the import, so there's no way to defer the use of the import. Languages with static type checks need to just know the value when the import is made. So live bindings become a problem because we need to know at instantiation time and we only know at evaluation time. Functions are initialized during init, there's no issue using functions in these static languages. While this means imports from other languages will be restricted, we can still allow getters and setters.
 WASM might be able to get around this by adding an "any" type. You may have a cycle with a JS module higher in the tree and another language lower in the tree—this causes problems because the JS module hasn't been finished instantiating and will be undefined in the lower non-JS module. There are other options than a subphase—you can defer the instantiation of the other language module until the evaluation phase, but then we have the reverse problem where non-JS modules cannot be referenced until evaluation time in JS modules. So we advocate using the subphase rather than the deferred external module loading phase.
 
-CP: (something...) 
+CP: (something...)
 
-LCK: You need to be able to know the type of what you're importing. The name alone is not sufficient. 
+LCK: You need to be able to know the type of what you're importing. The name alone is not sufficient.
 
 TST: The binding exists because you know the name, but it's not bound to anything yet because it's not initialized. There aren't any scenarios where you can have enough information before the first phase is done.
 
-CP: If you know upfront the things that you're importing, we still don't know the exact execution of the JS module—you'd have to wait to a later stage. 
+CP: If you know upfront the things that you're importing, we still don't know the exact execution of the JS module—you'd have to wait to a later stage.
 
 LCK: This would delay when we could instantiate within WASM, so JS couldn't take advantage of those modules, which would be an issue.
 
@@ -296,7 +296,7 @@ YK: We already have hoisted functions which helps with cyclic module dependencie
 
 LCK: Not a separate phase—that hoisting happens at the end of instantiation. It doesn't work for WASM because when you're importing, you need to know the type. In JS, that happens as you're going up the tree—you may be pointing to a module that hasn't been imported yet. When you have a cyclic module tree that are both importing functions from each other, the function binding may not be bound yet. Maybe we should take this offline?
 
-MM: For other languages, you talk about snapshotting functions. For JS, you're not actually exporting the fn, but the cell/slot/location holding the export. We ended up there because it was easy, not because it added value. Would it be more uniform if JS exported the function as a non-mutable binding? And can we collapse the subclass hierarchy? Can we just have the cyclic module record be the base class without it extending something else? 
+MM: For other languages, you talk about snapshotting functions. For JS, you're not actually exporting the fn, but the cell/slot/location holding the export. We ended up there because it was easy, not because it added value. Would it be more uniform if JS exported the function as a non-mutable binding? And can we collapse the subclass hierarchy? Can we just have the cyclic module record be the base class without it extending something else?
 
 LCK: You could potentially still have modules written in languages that don't support cycles. I think we should keep that open, but that's open to discussion. For a non-mutable function binding, I don't think that gets around this problem.
 
@@ -369,13 +369,13 @@ DE: Let's continue this offline. Do we have consensus with the TDZ tweak?
 - [proposal](https://github.com/tc39/proposal-static-class-features/)
 - [slides](https://docs.google.com/presentation/d/1YzFr7EIGiX2YagfFMjkI-lVR6ouoRfPbTNLY--NGbC4/)
 
-SYG: Last meeting we tried to move forward without static private. Public static fields are properties on the constructor: you declare them as static, and they are writeable, and configurable. The controversial part is private static fields and methods: we are adding back private static fields and methods because there are feelings of filling out the features grid, for better organization of code. The main sticking point has been the subclassing hazard. My conclusion is that it's not that bad. Private combines lexical scoping with a restriction of what the receiver can be—both these things are important. Private is a strict subset of the behavior of public things. It has to be lexically scoped, and there's a provenance restriction on the receiver. We care about where the receiver came from, if it's not from the right place, it throws. For instances, the provenance is "created by the class". Everyone seems to agree on that. If it's not the right instance, it'll throw. There is no prototype lookup for this. It has to be directly constructed. For static, the provenance is _just_ the class constructor. We feel that private static is well motivated for factory pattern and extracting code. 
+SYG: Last meeting we tried to move forward without static private. Public static fields are properties on the constructor: you declare them as static, and they are writeable, and configurable. The controversial part is private static fields and methods: we are adding back private static fields and methods because there are feelings of filling out the features grid, for better organization of code. The main sticking point has been the subclassing hazard. My conclusion is that it's not that bad. Private combines lexical scoping with a restriction of what the receiver can be—both these things are important. Private is a strict subset of the behavior of public things. It has to be lexically scoped, and there's a provenance restriction on the receiver. We care about where the receiver came from, if it's not from the right place, it throws. For instances, the provenance is "created by the class". Everyone seems to agree on that. If it's not the right instance, it'll throw. There is no prototype lookup for this. It has to be directly constructed. For static, the provenance is _just_ the class constructor. We feel that private static is well motivated for factory pattern and extracting code.
 
 MM: Clarifying: I find "provenance" confusing. Does this mean WeakMap? Where the registration with the weakmap is separate from the get/set on the weakmap.
 
 SYG: Yes.
 
-SYG: It all comes down to: In static private, you can access private instance. It's the most natural way to me, even if it can be done other ways. (Explains subclass hazard). 
+SYG: It all comes down to: In static private, you can access private instance. It's the most natural way to me, even if it can be done other ways. (Explains subclass hazard).
 
 YK: Is this the only variant on static you plan on presenting?
 
@@ -443,13 +443,13 @@ RBN: Typescript has a bunch of keyword modifiers. Splitting where the decorators
 DE: I like the change. We allow decorating class expressions now. At stage 2. We have babel implementation in progress. Not going for stage advancement. I love that we got review already of the spec text.
 
 JHD: I hear the precedent from typescript. The issue is that the decorator before the export keyword feels like it's decorating the export. With the decorators after, it makes it obvious that the decorators decorate the class literal.
-For example, I'd expect to replace class A with `const foo = <object literal>`—I get that that wouldn't work because it doesn't match the spec. But if I delete the object literal, ??. 
+For example, I'd expect to replace class A with `const foo = <object literal>`—I get that that wouldn't work because it doesn't match the spec. But if I delete the object literal, ??.
 
 DE: For me, export modifies the export the binding of the class, but not the class. The decorators flow through the export modifier.
 
 JHD: When I'm scanning a file, the thing I'm looking for is the exports—that's the heavy lifting thing. The return result of those decorators is what's exported. The issue to me is the export keyword (just like the import keyword) everywhere—that's far more critical to me. Decorators are part of the implementation detail and thus far less significant when scanning a file. The thing that is changing is the _value_, so the decorators should correspond to that value.
 
-RBN: If you had decorators of class a and you wanted to switch that to const a, it doesn't really matter where that decorator is because ?? you're changing the declaration. Yes you are decorating class, but by having decorators in either position, you're restricting the production of that class. From a semantics perspective, you're left with the same thing, Where I always look at is, if for any reason, any thing adds a keyword before class, it makes it obvious where it goes. Whether that becomes async constructor or async class—it doesn't really matter, but from a refactoring perspective, it becomes more complex. If I determine that I need to add a decorator to a class (for friendship, etc.) I have to now remember that it comes before export and that class decoration—but people will just copy the example from the website and they're done. That's far easier to do than the alternative. 
+RBN: If you had decorators of class a and you wanted to switch that to const a, it doesn't really matter where that decorator is because ?? you're changing the declaration. Yes you are decorating class, but by having decorators in either position, you're restricting the production of that class. From a semantics perspective, you're left with the same thing, Where I always look at is, if for any reason, any thing adds a keyword before class, it makes it obvious where it goes. Whether that becomes async constructor or async class—it doesn't really matter, but from a refactoring perspective, it becomes more complex. If I determine that I need to add a decorator to a class (for friendship, etc.) I have to now remember that it comes before export and that class decoration—but people will just copy the example from the website and they're done. That's far easier to do than the alternative.
 
 JHD: You're focusing on the adding or removeing modifiers. What happens in react is that you usually remove the export itself.
 
@@ -471,7 +471,7 @@ DE: I'll have to get in contact with Michael about that.
 
 WH: Right now, it includes a class's decorators if it's not exported. If the class is exported, it doesn't include the decorators.
 
-DE: That sounds like an error, I think it should include the decorators. 
+DE: That sounds like an error, I think it should include the decorators.
 
 WH: I think it should not include `export`. We can quibble whether it should include the decorators or not. If it does, that strongly argues for putting the decorators after `export`.
 
@@ -489,9 +489,9 @@ SGO: Do you have comment on auto-insertion of parens?
 
 WH: I'm OK with a non-insertion of parentheses.
 
-DE: Possible attacks with monkey patching that. This is why we made an ordinary object that's mutable. 
+DE: Possible attacks with monkey patching that. This is why we made an ordinary object that's mutable.
 
-JRL: Isn't there a security risk with overriding the built-ins? 
+JRL: Isn't there a security risk with overriding the built-ins?
 
 DE: We discussed this and determined that there is no security risk. On one hand, freezing that in a one-off way will not defend against certain attacks. I am against making a single class defensible in a one-off way. There was some thought that ES classes would be like that by default. I'd rather do this in a more general way (in the standard library) and not just here.
 
@@ -501,12 +501,12 @@ DE: Private name is not a global. You can `new` the private name constructor to 
 
 WH: I'm amused that you allow `yield` and `await` expressions in decorators, but this is analogous to how these work in any other expressions. I couldn't find a way to break things with those in decorators, so let's keep things as they are.
 
-DE: André Bargull found many ways to use `yield` to break implementations by putting it into the `extends` clause of a class. 
+DE: André Bargull found many ways to use `yield` to break implementations by putting it into the `extends` clause of a class.
 
 DE: Private name includes only get/set methods, no add or remove methods. It's a deliberate omission. We're encoring the good path only. Only through declarations. You have to create a private field declaration to get it.
 Using the super return field you can add private methods to an existing object. The purpose is to give objects a stable shape/class, which encourages better programming practices.
 
-MM: I do want to understand this before we go to Stage 3. 
+MM: I do want to understand this before we go to Stage 3.
 
 DE: Happy to follow up with you.
 
@@ -606,7 +606,7 @@ DE: Are there more things to resolve for stage 3?  Besides `export` positioning.
 - [proposal](https://github.com/rbuckton/proposal-class-static-block)
 - [slides](https://docs.google.com/presentation/d/1TLFrhKMW2UHlHIcjKN02cEJsSq4HL7odS6TE6M-OGYg/)
 
-RBN: Part of the previous discussion on this was about the Class fields, but the basic idea here is to provide a declaration allowing you to do multi-step evaluation. Private static state or private instance state—to grant them privileged access, I need to be able to (...) Without some time up static block, you have to rely on first time a static method is run or first time constructed. The concept is just a block prefixed by static keyword. Only one static block allowed per class. Writing a second static block would throw an error. With the fields proposals, this gives you the opportunity to perform multi-step initialization. Should we allow return statement in static block? You can return inside the constructor, but I don't think we should allow return from a static block. It's not a function. Ambiguous: returning from the function or returning from the class? At the top-level of the script or module and state that return is not allowed. Static blocks are a new closure environment. A new block scope. It aligns with how instance constructors operate. This aligns with how an instance constructor would work. Keeping with the discussion with decorators: it would not be allowed in a static block; for that you would need a static class. If you use `this` it would be used in the constructor C itself (referring to example). 
+RBN: Part of the previous discussion on this was about the Class fields, but the basic idea here is to provide a declaration allowing you to do multi-step evaluation. Private static state or private instance state—to grant them privileged access, I need to be able to (...) Without some time up static block, you have to rely on first time a static method is run or first time constructed. The concept is just a block prefixed by static keyword. Only one static block allowed per class. Writing a second static block would throw an error. With the fields proposals, this gives you the opportunity to perform multi-step initialization. Should we allow return statement in static block? You can return inside the constructor, but I don't think we should allow return from a static block. It's not a function. Ambiguous: returning from the function or returning from the class? At the top-level of the script or module and state that return is not allowed. Static blocks are a new closure environment. A new block scope. It aligns with how instance constructors operate. This aligns with how an instance constructor would work. Keeping with the discussion with decorators: it would not be allowed in a static block; for that you would need a static class. If you use `this` it would be used in the constructor C itself (referring to example).
 
 MM: For `this` and that position, there's no conceivable way to have this not bound to C?
 
@@ -652,7 +652,7 @@ RBN: Two motivations for this proposal. One is extracting private helpers. I sti
 - [proposal](https://github.com/rbuckton/proposal-class-access-expressions)
 - [slides](https://docs.google.com/presentation/d/1VXqGgxq_a0byLuc9yl4jSLR6GlopjvhU_Z0OpZnk6l0/)
 
-RBN: This has also been brought up a few times. Originally talked about with the private static subclass hazard. There are other motivating factors for this. ClassProperty expression meta thing that allows object-resolution on the class itself. It's a replacement for using the ClassName everywhere. Like how SuperProperty threads a `this` through. This allows you to use a shorthand name eliminates the issues with `this` in subclasses. It's always the class. This is being looked up on the lexical class declaration. The receiver doesn't change in subclasses. Similar to super, you can't access the outer class when inside a nested class declaration. The solution to that is an arrow function, so you can capture the lexical scope. 
+RBN: This has also been brought up a few times. Originally talked about with the private static subclass hazard. There are other motivating factors for this. ClassProperty expression meta thing that allows object-resolution on the class itself. It's a replacement for using the ClassName everywhere. Like how SuperProperty threads a `this` through. This allows you to use a shorthand name eliminates the issues with `this` in subclasses. It's always the class. This is being looked up on the lexical class declaration. The receiver doesn't change in subclasses. Similar to super, you can't access the outer class when inside a nested class declaration. The solution to that is an arrow function, so you can capture the lexical scope.
 
 WH: Isn't a simpler solution just to use the name of the outer class that you can reference?
 

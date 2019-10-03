@@ -1,8 +1,8 @@
 # July 26, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB), Maxim Aleksa (MAA), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontin (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage (SME), Dustin Savery (DSY), Mike Murry (MMY), John David Dalton (JDD), Alex Vincent (AVT)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB), Maxim Aleksa (MAA), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage (SME), Dustin Savery (DSY), Mike Murry (MMY), John David Dalton (JDD), Alex Vincent (AVT)
 
-Remote: 
+Remote:
 Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell (JRL), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG), Ben Newman (BN), Edd Yerburgh (EYH), Nathan Hammond (NHD)
 -----
 
@@ -29,18 +29,18 @@ MPT: I have to check, but I think there's a workaround if you do carry it, but I
 JHD: If that's true, I would lean towards the option that allows you to achieve both behaviors (even if it requires multiple operations).
 
 MPT: To achieve comparisons, for CivilDate/Time/DateTime/Instant we can convert to integer value that unit since Unix epoch, just as we do for Dates today. How should we compare ZonedInstant `valueOf`s? Do we also convert these to? Should two ZonedInstants with different timezones equivalent (`===`)?
- 
+
 JKN: Why nanoseconds instead of milliseconds as we do for Date?
 
 MPT: There's a lot of demand for increased precision. Since BigInt is now available, it's not difficult for us to achieve this precision.
 
-If we were to depart from InstantTypes and 
+If we were to depart from InstantTypes and
 
 MM: Clarity and avoiding misunderstanding is the best way to go. And I think ZonedInstant is the best one.
 
-MPT: Thanks, and I would love more feedback on this. And there's more controversies, like the strong camp to call these types `local`, to match Java, to mean zoneless. 
+MPT: Thanks, and I would love more feedback on this. And there's more controversies, like the strong camp to call these types `local`, to match Java, to mean zoneless.
 
-MM: I agree that local is a disaster. 
+MM: I agree that local is a disaster.
 
 AW: Maybe "Simple"?
 
@@ -56,13 +56,13 @@ MPT: Unfortunately, leap seconds are not included in Unix time and never will be
 
 WH: I understand that you can't really predict them until they happen. But unfortunately, upcoming regulations require leap second support and forbid smearing to achieve it, so we should be compliant. I've read Microsoft's paper on why and how they will implement them in Windows.
 
-MPT: If we go with the ValueOf implementation, this will break with leapseconds. 
+MPT: If we go with the ValueOf implementation, this will break with leapseconds.
 
 MPT: Leap seconds are my least-favorite part of working with time.
 
 WH: Mine too. I'm curious how everyone else will deal with them. Microsoft's paper on leap second support doesn't include the API they'll provide.
 
-API: Someone brought up this issue in the tracker. Unfortunately, there is no way in ECMA-262 to distribute data about dates. 
+API: Someone brought up this issue in the tracker. Unfortunately, there is no way in ECMA-262 to distribute data about dates.
 
 MPT: Has anyone at CLDR looked at it?
 
@@ -124,11 +124,11 @@ MPT: We did add some current time support. It's definitely something I'm willing
 
 MM: Okay, so that's a non-starter for me. It's really important that you keep arithmetic separate from access to anything in the outside world. It's the difference between system-mode and user-mode. It's very important to keep any hidden mutable state outside the primordials, with the grandfathered exceptions of Math.random, Date.now, and access to *current* timezone.
 
-WH: It's kind of inevitable that you will get access to the current time at a very coarse granularity within any library that allows you to convert between UTC and local time; the rules of conversion change over time, so you can determine that just from the conversions themselves. 
+WH: It's kind of inevitable that you will get access to the current time at a very coarse granularity within any library that allows you to convert between UTC and local time; the rules of conversion change over time, so you can determine that just from the conversions themselves.
 
 MPT: I mean, it's possible to move this off to a separate proposal, but I would like a more concrete suggestion on what to do.
 
-MM: I think you need to separate those, though. If we want to consider that as a separate proposal, that's fine. 
+MM: I think you need to separate those, though. If we want to consider that as a separate proposal, that's fine.
 
 MPT: I would say, raise a GitHub issue, and we can start to hash it out. I would like to you propose what is the "ergonomic way" to handle this.
 
@@ -142,14 +142,14 @@ MPT: My instinct is no, simply because if we really want a year-month type or si
 
 NHD: Thank you for your thoughts.
 
-MAA: The point of we shouldn't add dates together (separate from the plus method), but have we considered the TimeSpan/TimeInterval type? 
+MAA: The point of we shouldn't add dates together (separate from the plus method), but have we considered the TimeSpan/TimeInterval type?
 
 MPT: Isn't it YK who really likes the idea of a datetime span type?  A lot of libraries have an interval types. I'm trying to keep this reasonable in scope. A lot of these questions come down to, "can we have another type?"  and the answer is yes, but I'm just trying to get these current ones done.
 
 TST: Coming from the experience of having these types in other languages, those types are super expressive. Two dates separated from each other give you an interval type, which is expressive and ergonomic for the user.
 
 YK: The rust time library is very small. The thing I want to say here—people aren't asking for more things, but a smaller set of things may work better plus this extra thing. Can we find a smaller kernel we can use here, instead of a 1000 types. It would both be very useful and I would like it.
- 
+
 RGN: I wanted to ask about valueOf, going back a little bit. Is there a reason we're returning numeric as opposed to string?
 
 MPT: It could return a string!
@@ -162,17 +162,17 @@ RGN: I think greaterThan and lessThan use valueOf, and those work better on numb
 
 AWB: You need to look carefully at those operators.
 
-MPT: There's merit in having an internal number representing the date since the computations become linear, when otherwise they would not be. (Though the leap seconds point, throws a wrench in this). The valueOf result doesn't need to be that number, however, it could be some other representation. 
+MPT: There's merit in having an internal number representing the date since the computations become linear, when otherwise they would not be. (Though the leap seconds point, throws a wrench in this). The valueOf result doesn't need to be that number, however, it could be some other representation.
 
 SCR:Could you return a Date from valueOf?
 
-MPT: A lot of the reason for this API is that there is no mapping between a CivilDate and a Date; it's lossy. 
+MPT: A lot of the reason for this API is that there is no mapping between a CivilDate and a Date; it's lossy.
 
 WH: For the question of valueOf being numeric, I don't think leap seconds will preclude that since you could have two variants of valueOf with a default less accurate one representing the Unix computation and a more accurate one supporting leap seconds.
 
 SCR:If we do separate these concerns into multiple proposals (including the concerns regarding Intl compatibility), I would like to at least see the two proposals land at the same time.
 
-MPT: Unfortunately, there's not a lot structure into this process to guarantee for these proposals to land at the same time. 
+MPT: Unfortunately, there's not a lot structure into this process to guarantee for these proposals to land at the same time.
 
 LBR: I think what Maggie is doing is to follow the philosophy of this committee. It would be nice to have someone working at the same time on 402, but I think what Maggie's doing is excellent and we have a huge group of people that could volunteer to work on the 402 component Shane is talking about.
 
@@ -182,17 +182,17 @@ SYG: Are daylight saving times automatically not in this proposal? When you make
 
 MPT: Don't understand the question. If you pass the word "local" to a ZoneInstant, it will take the browser's timezone.
 
-WH: [Clarifying SYG's question] Do you have a notion of a `US/Los_Angeles` time zone whose UTC offset changes over the course of a year? 
+WH: [Clarifying SYG's question] Do you have a notion of a `US/Los_Angeles` time zone whose UTC offset changes over the course of a year?
 
 MPT: Yes it supports that.
 
-DE: I think JS should support a better built-in date library as other languages do. I think a standards venue to design the good Date library makes sense. But 16kb isn't absolutely nothing. We've seen a lot of proposals over the years, and some of them have gotten a lot of pushback. I think TC39 is a great place to develop different standard library features, because we have a lot of different viewpoints here (industry, academia, etc.). I would like to see this proposal continue because I think it's a great precedent for other standard libraries. For the 402 point, I think we should work with ECMA-402 so that the proposals can leverage eachother, but I don't think Maggie needs to be the person doing it. BigInt has 402 integration as well, and in V8 BigInt shipped without 402 together, but Mozilla did. We can encourage them to be viewed as a single proposal if we think that's important. We also should think about TST's approach of just shipping the data without the built-in library. 
+DE: I think JS should support a better built-in date library as other languages do. I think a standards venue to design the good Date library makes sense. But 16kb isn't absolutely nothing. We've seen a lot of proposals over the years, and some of them have gotten a lot of pushback. I think TC39 is a great place to develop different standard library features, because we have a lot of different viewpoints here (industry, academia, etc.). I would like to see this proposal continue because I think it's a great precedent for other standard libraries. For the 402 point, I think we should work with ECMA-402 so that the proposals can leverage eachother, but I don't think Maggie needs to be the person doing it. BigInt has 402 integration as well, and in V8 BigInt shipped without 402 together, but Mozilla did. We can encourage them to be viewed as a single proposal if we think that's important. We also should think about TST's approach of just shipping the data without the built-in library.
 
 MPT: I think we will not advance at this time, partly because some of the spec text fell after the deadline.
 
 AK: Can you clarify what you mean by not ready before the deadline for the proposal?
 
-MPT: Some of the spec text landed about two days ago. 
+MPT: Some of the spec text landed about two days ago.
 
 WH: As an aside, if anyone is hoping to advance proposal levels at a meeting, I'd appreciate marking the proposal as going for advancement 10 days before the meeting. I look at those much more carefully than ones marked as status updates.
 
@@ -207,7 +207,7 @@ WH: As an aside, if anyone is hoping to advance proposal levels at a meeting, I'
 - [repo](https://github.com/ajvincent/es-membrane)
 
 
-MM: The purpose of this is a lot of useful lessons for what Alex did here for the committee. First of all, a membrane is a boundary in the object graph between two subgraphs. Proxy and WeakMap in ES6 were introduced to enable these membranes. You can think of these as "wet" and "dry" components separating each side of the membrane. As needed, the membrane grows dynamically to encompass more wet components. Some of the goals for membranes are to create these defensive security boundaries for impenetrability. 
+MM: The purpose of this is a lot of useful lessons for what Alex did here for the committee. First of all, a membrane is a boundary in the object graph between two subgraphs. Proxy and WeakMap in ES6 were introduced to enable these membranes. You can think of these as "wet" and "dry" components separating each side of the membrane. As needed, the membrane grows dynamically to encompass more wet components. Some of the goals for membranes are to create these defensive security boundaries for impenetrability.
 
 WH: Do you mean unidirectionally or bidirectionally impenetrable?
 
@@ -217,7 +217,7 @@ MM: (Reads slides). For the TC39 committee, this is a very great way to express 
 
 AVT: (Reads slides).
 
-DH: May I suggest a slightly different metaphor? Perhaps Inside/Outside. 
+DH: May I suggest a slightly different metaphor? Perhaps Inside/Outside.
 
 AVT: Inside/Outside may make a ton of sense in this context, but you're about to see that this happens in a three-dimensional context as well.
 
@@ -234,7 +234,7 @@ MM: A membrane boundary acts a lot like a realm boundary, but you don't get magi
 
 BFS: I had a question with your coordinator with your proxy-mapping. It seems like there's no desire to get Membranes into a proposal before TC39. Are there any data-types needed though?
 
-AVT: There's nothing special about Proxy mapping that we would need a new data-type for. 
+AVT: There's nothing special about Proxy mapping that we would need a new data-type for.
 
 MM: None of the membrane work have identified anything that's wrong or lacking in the foundations. Even just to build the higher levels, it's just that the higher-levels need to be packaged together and better explained to users. But nothing in the immediate future needs to be brought forward to this committee.
 
@@ -250,7 +250,7 @@ AVT: No debug means, by default, I want to blackbox.
 
 TST: Minified code is blackboxed by default. This is usually about tooling, not about language.
 
-MM: I also see this as a tooling issue, but we need some conventional signal from the developer to tell the debugger/tooling what should/should not be blackboxed. 
+MM: I also see this as a tooling issue, but we need some conventional signal from the developer to tell the debugger/tooling what should/should not be blackboxed.
 
 
 ## Reviewing the future JS syntax throughout the current proposals (overflow)
@@ -258,11 +258,11 @@ MM: I also see this as a tooling issue, but we need some conventional signal fro
 
 - [slides](https://docs.google.com/presentation/d/179v41LMaEXDxaD-piSgYVi6btFJoNoeYVncXe0172GM/edit)
 
-LBR: We had a PR proposing to redefined the Catch parameter to a formal parameter. Doing this in Test262 was deceptively difficult: while the spec change was extremely small, but expanding the grammar is actually quite long. So sometimes it's easy to talk about proposals, but very difficult to implement them. Why? Yearly releases are great for long-term goals, but hard to plan for specific releases. People have very specific areas of expertise, and topics are very complex that it's hard for all delegates to comprehend everything. These aren't all bad things, but we do need to improve how we collaborate with each other. How do we talk to each other more, combine efforts, promote guided decision-making? To summarize proposals involving syntax, we already have (before the start of this meeting) a very long list of Stage 3 proposals involving syntax, a pretty long list for Stage 2, but few syntax proposals for Stage 1. There's a lot of syntax changes. (Shows examples of many new syntax features in a single program). So there are several potential actions for our committee, we can identify fields of interest and form groups to create collective recommendations—reaching out beyond your local teams. I do this with RW a lot to bounce ideas off of. My recommendation is to help delegates to identify more fields of interest from other delegates, and perhaps we should experiment with drafting syntax proposals within other proposals to see how they work together. If they will be connected together in an eventual future, we should design them together as well. Finally, we should experiment using Babel more and more. 
+LBR: We had a PR proposing to redefined the Catch parameter to a formal parameter. Doing this in Test262 was deceptively difficult: while the spec change was extremely small, but expanding the grammar is actually quite long. So sometimes it's easy to talk about proposals, but very difficult to implement them. Why? Yearly releases are great for long-term goals, but hard to plan for specific releases. People have very specific areas of expertise, and topics are very complex that it's hard for all delegates to comprehend everything. These aren't all bad things, but we do need to improve how we collaborate with each other. How do we talk to each other more, combine efforts, promote guided decision-making? To summarize proposals involving syntax, we already have (before the start of this meeting) a very long list of Stage 3 proposals involving syntax, a pretty long list for Stage 2, but few syntax proposals for Stage 1. There's a lot of syntax changes. (Shows examples of many new syntax features in a single program). So there are several potential actions for our committee, we can identify fields of interest and form groups to create collective recommendations—reaching out beyond your local teams. I do this with RW a lot to bounce ideas off of. My recommendation is to help delegates to identify more fields of interest from other delegates, and perhaps we should experiment with drafting syntax proposals within other proposals to see how they work together. If they will be connected together in an eventual future, we should design them together as well. Finally, we should experiment using Babel more and more.
 
 YK: I appreciate the slide that shows all the features together, but it matters a lot in a language that combines a lot of different syntaxes, and we should think about whether realistically you will use these syntaxes together. For example, you don't have to worry as much about the syntax for defining a method to collide with syntax that defines grouping. (Pointing to [slide](https://docs.google.com/presentation/d/179v41LMaEXDxaD-piSgYVi6btFJoNoeYVncXe0172GM/edit#slide=id.g3e4f3b9278_9_6)). This can be hard to lex for humans, and this slide with the class does a better job at illustrating than the [previous one](https://docs.google.com/presentation/d/179v41LMaEXDxaD-piSgYVi6btFJoNoeYVncXe0172GM/edit#slide=id.g3e4f3b9278_0_3) which is unrealistic. Maybe a good heuristic is how many covergrammars are needed?
 
-MM: So, I very much like what you're getting at. I think the complexity budget needs more emphasis and needs more teeth. We talk about complexity budget, and it's a useful metaphor. In real life, there are many things that I want that are genuinely good, that I don't buy because they are too expensive. I can know this because I have a budget. 
+MM: So, I very much like what you're getting at. I think the complexity budget needs more emphasis and needs more teeth. We talk about complexity budget, and it's a useful metaphor. In real life, there are many things that I want that are genuinely good, that I don't buy because they are too expensive. I can know this because I have a budget.
 
 MM: Allen reminded me that when we were building up to ES6. We put up all the features on the whiteboard, and we spent all 3 days on triage. When we put them all up on the board together, we crossed off many things that were wonderful because they fell below threshold, a threshold we could only see when we saw the overall cost of everything. That was before the proposal process. The proposal process is a good thing, but it creates a situation where it seems like advancing a proposal is tangible progress, and it doesn't seem like rejecting proposals is tangible progress. But it doesn't show us how removing features is progress. We did once use a subtractive process, "use strict". We should be more sensitive to when we have subtractive opportunities and take those seriously. Like not having automatic semicolon insertion inside classes or modules. We squandered those opportunities to simplify.
 
@@ -272,13 +272,13 @@ BT: The proposal process gives us an opportunity to think about costs and tradeo
 
 SCR:These are new features when you're writing JavaScript natively, but I've noticed there's increasingly a movement of languages that compile to JavaScript. With CoffeeScript and TypeScript now, these languages clearly offer something that the industry wants. JavaScript needs to be extremely efficient, since that's what these languages ultimately compile to. JavaScript should have almost a bigger emphasis on performance than expressiveness for this reason. There's no single one-size-fits-all solution for this, people may want different syntax features, however one thing that everyone wants is performance.
 
-LBR: That's a great point and kind of what I'm trying to talk about when I use the term "sandboxes". 
+LBR: That's a great point and kind of what I'm trying to talk about when I use the term "sandboxes".
 
 WH: A few things are going on here. Focusing on just syntax, I've been keeper of the syntax for a while and made sure that syntaxes of various proposals don't conflict; that hasn't been a major issue with conflicting syntax that I have noticed. The opportunity cost of syntaxes precluding desirable future evolution of the language, I would say is a bigger issue. I would be more-or-less opposed to creating a standing syntax group; instead, if issues arise, we should deal with them ad hoc.
 
 WH: Another issue more general than the syntax is multiple proposals with overlapping use-cases. I would consider this a big problem as well, leading to jockeying for one of them to get priority by advancing through the stages first. I'd like to see more discussions on this.
 
-LBR: I am not suggesting a group for syntaxes, but rather collaboration to create guided decisions. For example, as an individual, a group of champions could recommend something and present it to the greater committee. 
+LBR: I am not suggesting a group for syntaxes, but rather collaboration to create guided decisions. For example, as an individual, a group of champions could recommend something and present it to the greater committee.
 
 WH: To be clear, ad hoc groups are great. I just don't want a standing syntax group with periodic meetings.
 
@@ -288,7 +288,7 @@ YK: I don't understand what the objection is to that group interest?
 
 WH: With a standing group, everyone who has an interest will be forced to attend a lot of unproductive meetings. The alternative is to create an ad hoc meeting, where you send an announcement and then you know what the agenda is. Standing groups tend to acquire a life of their own, and if there are overlapping groups, it can create a huge waste of effort and time.
 
-BT: It's worth knowing as a deliberative body, we can create sub-committees. Some groups have been excellent at creating minutes and being accessible to people, especially to this room. Groups in general are things that standards bodies do often and work well. 
+BT: It's worth knowing as a deliberative body, we can create sub-committees. Some groups have been excellent at creating minutes and being accessible to people, especially to this room. Groups in general are things that standards bodies do often and work well.
 
 LBR: I think there is something with groups. If we can fetch the best highlights. It's already being done with some groups. But like we have the Intl work that comes into TC39 and gives a summary presentation. The same thing happened with the numerics/literal separator that was a conflicting proposal, and we sat together, then came to TC39. We had the champions of both proposal to match your thoughts.
 
@@ -296,7 +296,7 @@ AKI: To respond to something WH said, the rigidity against any sort of collabora
 
 WH: That's not what I'm saying.
 
-RJE: He does not want a *syntax* group that meets regularly. But rather only when needed. 
+RJE: He does not want a *syntax* group that meets regularly. But rather only when needed.
 
 DE: I wanted to support the idea that LBR brought up. Asking for an early prototype before stage 2. I don't think we need to ask for a full implementation, and I don't think we need Babel, but in the Temporal proposal, which has nothing to do with Babel because it's not a syntax proposal, the polyfill helped a lot because it helped flesh out some of the details. Some things are hard to prototype, like BigInt and symbol, but I think we should encourage champions to make these prototypes whenever possible. I'd like it to become a more regular thing. I agree with a lot of you about groups: I think it will be useful to have an open structure to discuss things. It only helps to openly discuss proposals outside of meetings. Group meetings should have agendas, and in fact some of the groups I am in have agendas. When we didn't have things on an agenda, we cancelled the meeting.
 
@@ -310,7 +310,7 @@ LBR: Among users of babel, creating a sandbox for ourselves could be a possibili
 
 DE: Just about babel, the messaging about not using early-stage proposals is getting stronger. Babel 7 makes stage presets removed. I'm glad that the Babel team is communicating and now being especially forceful on the stage process. Babel does implement early features; they won't stop getting PRs, and there is a lot of community interest.
 
-JRL: I want to be clear, we're talking about Babel implementations or syntax? 
+JRL: I want to be clear, we're talking about Babel implementations or syntax?
 
 BFS: I'm not talking about semantics, I'm talking about the ecosystem about something occurring in TC39—widespread adoption, or a grammar that we effectively must work around.
 
@@ -337,13 +337,13 @@ DD: The proposal, which is not a TC39 proposal, but if it were would be in like 
 
 DD: Another interesting feature about Package Name Maps: like people who are familiar with Node.js would know, in different places in your app, you want different versions of the same package. We have that built in. You can scope versions to different part of your app.
 
-DD: Progress-wise, we're not close to a spec. We've started writing some tests, and they're passing. 
+DD: Progress-wise, we're not close to a spec. We've started writing some tests, and they're passing.
 
 DD: One FAQ: why not an imperative API for module resolution? It turns out, jumping back and forth from JS for every module specifier is not very efficient at all. It's not completely ruled out, but I like package name maps better.
 
 DD: Okay, so that is Package Name Maps. 5 minutes. I think we will not have questions because we do not have time. I'm just here to make the committee aware of these issues.
 
-AK: I don't think it's a good use of time if you're not willing to discuss these questions. 
+AK: I don't think it's a good use of time if you're not willing to discuss these questions.
 
 DE: I think it's good to discuss because of the cross-cutting concerns, and since it relates to other proposals involving layering, etc.
 
@@ -358,11 +358,11 @@ DD: These all have issue trackers. Given time constraints, and the audience for 
 
 - [proposal](https://github.com/drufball/layered-apis)
 
-DD: Layered APIs are an effort to work on high-level features. We talked in the extensive web manifesto, we wanted to start working on low-level features, but now that we've done that we should work on high-level features. We want these to be loaded lazily since not everyone will use these features. 
+DD: Layered APIs are an effort to work on high-level features. We talked in the extensive web manifesto, we wanted to start working on low-level features, but now that we've done that we should work on high-level features. We want these to be loaded lazily since not everyone will use these features.
 
 DD: The other constraint is on the standards process. The layered API, as a feature, is a high-level feature and we have to accept the high-level web manifesto. This is a good in a lot of ways. There is a high-level HTML widget called details. We went through inventing shadow DOM to allow for details, but that still didn't completely work. So future features will not suffer from the problems of details. But there are still some things that are fundamental.
 
-DD: One of the features I brought up previously is the ability to censor source code, which would be very useful to web developers. 
+DD: One of the features I brought up previously is the ability to censor source code, which would be very useful to web developers.
 
 ## Get Originals
 (Domenic Denicola, DD)
@@ -372,11 +372,11 @@ DD: Another feature that builtins have that web developer created APIs do not is
 
 DD: It turns out that we can do this on the web. But it only works if you're loaded first, not loaded in a module. To solve this for things not loaded first, I have a proposal called get-originals. Note that the API is undergoing a lot of churn; don't take the shape as very essential. The basic example is that you have this function that calls a lot of built-ins. It calls a getter, calls a method, etc. How can we do that in a way that is not susceptible to tampering? In this version of the API, it's broken into a bunch of global functions—so that's how you would get access to it.
 
-DD: An FAQ. If you're approaching this from the TC39 perspective, one approach i: Why don't we just give unique identifiers to all the built-ins?  Instead of my version up here, where you just call the original object?  It turns out this is really brittle, because we move things across the prototype chain quite often. That wouldn't be great. 
+DD: An FAQ. If you're approaching this from the TC39 perspective, one approach i: Why don't we just give unique identifiers to all the built-ins?  Instead of my version up here, where you just call the original object?  It turns out this is really brittle, because we move things across the prototype chain quite often. That wouldn't be great.
 
 DD: Another interesting thing is the idea of not reify-ing the properties of built-in objects. But now if you can call the original method directly, you don't have to reify the accessor or method. That's good for efficiency.
 
-DD: We think tooling is a key part of this. In my version, it's not realistically usable by itself. It needs tooling. We have other ideas in the tooling space, like if we get 100% test coverage, then we can create a super-poisoned environment where we fail the test if you somehow access the poisoned elements. 
+DD: We think tooling is a key part of this. In my version, it's not realistically usable by itself. It needs tooling. We have other ideas in the tooling space, like if we get 100% test coverage, then we can create a super-poisoned environment where we fail the test if you somehow access the poisoned elements.
 
 
 ## September 2019 Meeting Location
@@ -407,9 +407,9 @@ SGO: Google is happy to host multiple times if necessary, and we can host in the
 
 YK: Two in the Bay Area means three on the West Coast?
 
-DE: Three if you include Arizona. 
- 
-TST: Flying here isn't too much the issue, even dialing in is quite difficult for people on other continents. 
+DE: Three if you include Arizona.
+
+TST: Flying here isn't too much the issue, even dialing in is quite difficult for people on other continents.
 
 #### Conclusion/Resolution
 
@@ -423,7 +423,7 @@ TST: Flying here isn't too much the issue, even dialing in is quite difficult fo
 - [proposal](https://github.com/sffc/proposal-unified-intl-numberformat)
 - [slides](https://docs.google.com/presentation/d/1_1D15PWniTlbLu1BOU9aDf5H87Ecq85i0CuLl5KA4DE/edit#slide=id.g3db4b37152_0_0)
 
-SCR:This proposal essentially adds new features within the options object to add features that have been requested by many users. First, spec updates: we add the option narrowSymbol to the currencyDisplay property (i.e. $ instead of $US). Next, Units. The Intl API has a concept called Style, and we add this style entry called `unit`, which has narrow, short or long options: (i.e. Narrow `"º"`, Short `"º F"`, Long `"º Fahrenheit`"). Next, Scientific and Compact Notation will now be represented using the new option `notation`, with options "compact", "compactDisplay", "scientific". Another feature that's been requested is Sign display, and this is a good things for Intl to govern best practices for locales. Sign Display uses various options like `auto`, `always`, `never`, `except-zero`. 
+SCR:This proposal essentially adds new features within the options object to add features that have been requested by many users. First, spec updates: we add the option narrowSymbol to the currencyDisplay property (i.e. $ instead of $US). Next, Units. The Intl API has a concept called Style, and we add this style entry called `unit`, which has narrow, short or long options: (i.e. Narrow `"º"`, Short `"º F"`, Long `"º Fahrenheit`"). Next, Scientific and Compact Notation will now be represented using the new option `notation`, with options "compact", "compactDisplay", "scientific". Another feature that's been requested is Sign display, and this is a good things for Intl to govern best practices for locales. Sign Display uses various options like `auto`, `always`, `never`, `except-zero`.
 
 WH: If you provide -0 and always show sign, does it return "-0" or "+0"?
 
@@ -433,7 +433,7 @@ SCR:There's also the option of `currencySign` which enables an accounting format
 
 JHD: WHat happens if I pass in an invalid option?
 
-SCR:If your option is not in that set, the spec says throw a RangeError. The one exception is `unit`, not all browsers will support all units, but we will list a minimum set of units. Browsers can 
+SCR:If your option is not in that set, the spec says throw a RangeError. The one exception is `unit`, not all browsers will support all units, but we will list a minimum set of units. Browsers can
 
 JHD: If I pass a non-option name, what happens? i.e. `uni` (missing the `t`)
 
@@ -449,13 +449,13 @@ SCR:That's out of scope.
 
 WH: What do you mean out-of-scope?
 
-SCR:Designing a good rounding API is not an easy thing to do. 
+SCR:Designing a good rounding API is not an easy thing to do.
 
 WH: It's kind of inherent for the compact notation you're proposing here. How can it not be in scope? In your rounding behavior issue you mention that 1230 in compact notation would be "1.2K". Multiply it by 10, you get "12K". Multiply it by 10 again, you get three significant digits: "123K". Multiplying by 10 again gets back to two significant digits: "1.2M".
 
 SCR:It's a very good question and if you have ideas for how we should implement this in the spec, please let us know.
 
-DE: This is great work in the proposal, although the spec text isn't complete on insertions, it's definitely sufficient for Stage 2. 
+DE: This is great work in the proposal, although the spec text isn't complete on insertions, it's definitely sufficient for Stage 2.
 
 SCR:Thank you, and I really appreciate all the great discussions in GitHub. So to WH, if you add more questions like that on GitHub, please do.
 
@@ -483,13 +483,13 @@ MS: Can't that module/polyfill do something on the global object?
 
 JHD: Yes, and I appreciate the danger that that code can change the world, but I'd like to create a function that nails down the implementations of the functions I care about then issues a callback when it's safe to use.
 
-MS: That's a bigger problem than what this spec is trying to solve. 
+MS: That's a bigger problem than what this spec is trying to solve.
 
-JHD: Most people don't bother to lock down, so I propose we do something that makes that more ergonomic. 
+JHD: Most people don't bother to lock down, so I propose we do something that makes that more ergonomic.
 
 DE: I think we can get this kind of polyfilling and tweaking with something based on Domenic's proposal. For fallbacks, use mixins. You could have a fallback listed in the Package Name Map. If you want to have a polyfill that fixes a bug in another implementation, rather than redirecting std:something to something else, and that something else is per-directory, it would open the original one and wrap the original one, or something like that. I'm glossing over a bunch of details, but I think we can work through that.
 
-DD: Just to clarify, I know michael referenced the fallback syntax. The proposal as it's written right now lets you give a URL as a fallback. But if browsers don't implement the fallback syntax, then the fallback won't work, so it's on the chopping block. The most backwards-compatible way is different: https://github.com/domenic/package-name-maps/#referencing-host-supplied-packages-by-their-fallback-url . 
+DD: Just to clarify, I know michael referenced the fallback syntax. The proposal as it's written right now lets you give a URL as a fallback. But if browsers don't implement the fallback syntax, then the fallback won't work, so it's on the chopping block. The most backwards-compatible way is different: https://github.com/domenic/package-name-maps/#referencing-host-supplied-packages-by-their-fallback-url .
 
 YK: I see how that works, but you need a way to point back to the original one.
 
@@ -515,7 +515,7 @@ WH: "Mechanism" is still very vague. It sounds like you're proposing modules. I'
 
 MS: It's different from modules, since these are part of the standard itself.
 
-BT: The module specifier in MS is something we need to decide on, as well as the capability to polyfill. 
+BT: The module specifier in MS is something we need to decide on, as well as the capability to polyfill.
 
 AK: I wanted to first address the procedural question for what this is. I wanted to point out that for stage 1, you don't have to have a lot of concrete stuff.
 
@@ -531,13 +531,13 @@ YK: The polyfill problem comes up a lot, and fundamentally the problem seems to 
 
 MS: I agree with what you're saying. I can see how the app wants to lock things down, but so do libraries and dependencies, and you run into the problem of orders and priorities and things like that. It's a difficult problem to solve, and I don't want to lock it to this.
 
-YK: All I'm saying is the only person in the position to say that is the whole app. 
+YK: All I'm saying is the only person in the position to say that is the whole app.
 
 KS: I think the reality is that (1) JS has an underdeveloped standard library. (2) People want to ship less code. (3) The fact we have the underdeveloped standard library is an opportunity. We can build on the experience of other standard libraries that are out there. It can be like Intl, where we come in and there's an awesome standard library feature being presented.
 
 MS: I think adding functionality without incurring a syntax cost is a great other feature of this proposal.
 
-DT: In response to YK, one of the things we did in response to the realms shim was that we need to provide direct support for shimming since this is a thing part of the JavaScript paradigm. Some direct mechanism to support shims and let them run first, and provide a realm. 
+DT: In response to YK, one of the things we did in response to the realms shim was that we need to provide direct support for shimming since this is a thing part of the JavaScript paradigm. Some direct mechanism to support shims and let them run first, and provide a realm.
 
 BT: What does Stage 1 mean if the layered APIs proposal doesn't go through the stage process.
 
@@ -549,7 +549,7 @@ MS: We need to work with the web bodies to make sure we are in alignment.
 
 BT: My concern is just that we're voting on Stage 1 for this thing but a lot of this is part of another proposal that doesn't intend to go through the stage process. We can help of course.
 
-MS: I suspect that we should work in lockstep with Layered APIs. 
+MS: I suspect that we should work in lockstep with Layered APIs.
 
 DD: Concretely, I would view this as TC39 has no process for suggesting to Node.js things for standard libraries. But we are interested in putting things into standard libraries, and this proposal enables us to do this.
 
@@ -559,7 +559,7 @@ DE: I'm a big fan of having this discussion and collaborating with the web and N
 
 DD: Yeah. I generally agree. I think we've seen a lot of good convergence between Node and the browser, like in the global space: setTimeout, new URL, TextEncoder/TextDecoder. If TC39 wants to try to be a broker in those discussions, that makes sense. I think it would be a shame if we divide the namespace by standards body. If you make it "tc39:encodeURIComponent" but "whatwg:URL", that would be bad.
 
-DH: I agree, but to add some nuance. There are APIs that are universal in value, but may be driven by people who are more accustomed to working in one body or another. There are certainly APIs that make some context on the web and not on Node.js, and the namespace may not make sense for all contexts. 
+DH: I agree, but to add some nuance. There are APIs that are universal in value, but may be driven by people who are more accustomed to working in one body or another. There are certainly APIs that make some context on the web and not on Node.js, and the namespace may not make sense for all contexts.
 
 DD: Well, C++ will put `web_view` in `std::`. (Laughs)
 
@@ -571,7 +571,7 @@ AK: This seems like a good segue to the TAG meetup.
 
 WH: I object because we only have a slideshow at this point. I very much want a standard library, but it's not yet clear to me what we're signing up for for stage 1 here. If you can clarify what is and what isn't in scope, I will support it. Is the goal just to specify the mechanics of how people implement modules and how people use them? Is the goal to specify the modules themselves? Is the goal to set up liaisons with other organizations to define the modules?
 
-MS: It's clear we're talking about the mechanics, right? Of how people use them and define them? 
+MS: It's clear we're talking about the mechanics, right? Of how people use them and define them?
 
 WH: Correct. Are we also trying to define the actual standard library modules?
 

@@ -2,8 +2,8 @@
 -----
 Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (AKI), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW), Tom Dale (TDE), István Sebestyén (IS), Lin Clark (LCK), Vladan Djeric (VDC)
 
-Remote: 
-Valerie Young (VYG), Maggie Pint (MPT), Ben Newman (BN), Brendan Eich (BE), Dean Tribble (DT), Robert Pamely (RPY), David Turissini (DTI), Felipe Balbontin (FBN), Pedram Emrouznejad (PED), Tim McClure (TME), Bradley Farias (BFS), Jason Williams (JWS), Trevor Bliss (TBS), Robin Ricard (RRD)
+Remote:
+Valerie Young (VYG), Maggie Pint (MPT), Ben Newman (BN), Brendan Eich (BE), Dean Tribble (DT), Robert Pamely (RPY), David Turissini (DTI), Felipe Balbontín (FBN), Pedram Emrouznejad (PED), Tim McClure (TME), Bradley Farias (BFS), Jason Williams (JWS), Trevor Bliss (TBS), Robin Ricard (RRD)
 -----
 
 
@@ -16,9 +16,9 @@ Valerie Young (VYG), Maggie Pint (MPT), Ben Newman (BN), Brendan Eich (BE), Dean
 
 (István Sebestyén)
 
-IS: The ECMA opt-out is ending tomorrow. So far we haven't received anything, and I don't expect any opt-outs. We're going to the General Assembly in June. 
+IS: The ECMA opt-out is ending tomorrow. So far we haven't received anything, and I don't expect any opt-outs. We're going to the General Assembly in June.
 
-IS: TC53 deals with variables. One of the work items is related to variables which are based on ECMAScript. Management and participating companies (including Bocoup and Moddable) which are already doing the management. Trying to have our first meeting at the end of September/October. We're trying to explain our goals (and differences between TC39) and advertise this group to prospective group members. 
+IS: TC53 deals with variables. One of the work items is related to variables which are based on ECMAScript. Management and participating companies (including Bocoup and Moddable) which are already doing the management. Trying to have our first meeting at the end of September/October. We're trying to explain our goals (and differences between TC39) and advertise this group to prospective group members.
 
 ## Numeric separators update
 
@@ -28,15 +28,15 @@ IS: TC53 deals with variables. One of the work items is related to variables whi
 
 SGO: This represents work from Rick, Dan, Leo, and myself. We've converged on a proposal to move forward, but also looking for recommendations. Numeric Separators were Stage 3 when we uncovered a conflict with a Stage 1 Proposal (Extension of Numeric Literals). We blocked that proposal and tried to resolve conflict.
 
-SGO: The first feature allows underscores exclusively for readability. These Numeric Separators are Ignored at runtime, and must be between two numbers to improve reading large numbers. The second feature is numeric literals extensions, which offered to write a number, followed by an underscore and an identifier, which translates to be transformed into that number with units. This was designed to make it easier for userland numbers to be more expressive. The problem was that this conflicted with Numeric Separators—we both use the same delimiter. 
+SGO: The first feature allows underscores exclusively for readability. These Numeric Separators are Ignored at runtime, and must be between two numbers to improve reading large numbers. The second feature is numeric literals extensions, which offered to write a number, followed by an underscore and an identifier, which translates to be transformed into that number with units. This was designed to make it easier for userland numbers to be more expressive. The problem was that this conflicted with Numeric Separators—we both use the same delimiter.
 
 SGO: The thing that follows a number is an identifier, so it literally transpiles `1234_i` to `_i(Object.freeze(string: "1234"))`, which assumes the function `_i` is defined somewhere.
 
-RW: A couple of alternatives: note that these are listed in order of simplicity/preference. 
+RW: A couple of alternatives: note that these are listed in order of simplicity/preference.
 
-SGO: Caveat: if you don't like this one, you probably won't like the ones that follow. Alternative 1: to pick a different sigil compatible with the resolution mechanism. (i.e. two underscores for extensions). Problem is it's not very ergonomic, but it is the most sound and simplest solution. Alternative 2: different sigil, but incompatible with current resolution. For example: `` ` ``, e.g. `` 0x12_34_ab`bytes ``, which is slightly more ergonomic but it's incompatible with current options. Alternative 3: restrict extension to decimals. Because separators don't allow underscores at the end of the number, we can guarantee that the extension is unambiguous, but doing so means we can't use decimals. 
+SGO: Caveat: if you don't like this one, you probably won't like the ones that follow. Alternative 1: to pick a different sigil compatible with the resolution mechanism. (i.e. two underscores for extensions). Problem is it's not very ergonomic, but it is the most sound and simplest solution. Alternative 2: different sigil, but incompatible with current resolution. For example: `` ` ``, e.g. `` 0x12_34_ab`bytes ``, which is slightly more ergonomic but it's incompatible with current options. Alternative 3: restrict extension to decimals. Because separators don't allow underscores at the end of the number, we can guarantee that the extension is unambiguous, but doing so means we can't use decimals.
 
-YK: What is the set of things in decimal literal. 
+YK: What is the set of things in decimal literal.
 
 WH: You can get integer literals, fractions, and exponents.
 
@@ -44,7 +44,7 @@ SGO: Alternative 4: a pair of separators (_ for extensions, 1 for separators), b
 
 JH: Between 1 and 2, (Alt 1 is basically the same as the original, with a different sigil). 2 seems much more ergonomic.
 
-RW: I can speak to that. When you have all these names floating around in a program, there's a belief that forcing this convention, we reduce the likelihood of variable name collision. Whether or not you agree with that, 
+RW: I can speak to that. When you have all these names floating around in a program, there's a belief that forcing this convention, we reduce the likelihood of variable name collision. Whether or not you agree with that,
 
 DD: Not being able to use imaginary numbers in a for loop seems pretty terrible... With `for (let i = 0; ...) { 123i }` the `i` would now refer to the wrong thing.
 
@@ -62,9 +62,9 @@ WH: I like any of these except for #3, which doesn't work. You get ambiguities r
 
 TST: I like Alternative 4. There are two features that could get quite wide adoption, so this is an area where every day users could get affected. These features are clearly tightly connected, and since they are potentially so big it may make sense to go to the whiteboard and carefully consider the best solution here.
 
-YK: I am pretty viscerally opposed to 1. We shouldn't underestimate the language precedent issue. In a clean slate, I'd prefer #4. 
+YK: I am pretty viscerally opposed to 1. We shouldn't underestimate the language precedent issue. In a clean slate, I'd prefer #4.
 
-RW: A person named Rick worked on C++ standardization, and helped us with this proposal. He pointed out to us that some users added an underscore extension for literals in C++, and then you couldn't use underscore for separators anymore so they had to roll back the feature proposal. (Ultimately, they used an apostrophe for a separator). 
+RW: A person named Rick worked on C++ standardization, and helped us with this proposal. He pointed out to us that some users added an underscore extension for literals in C++, and then you couldn't use underscore for separators anymore so they had to roll back the feature proposal. (Ultimately, they used an apostrophe for a separator).
 
 DH: We could be consistent with another language, which seems like a very strong argument to mimic the style C++ chose.
 
@@ -78,7 +78,7 @@ DE: A minor point about C++, the user defining numeric literals was from a user 
 
 DH: Anything that requires multiple underscores is aesthetically gross, it's a non-starter for me. The second one, the single apostrophe also bothers me a lot. I love the let's call them "GDPR" separators—if you squint really hard they seem like a natural compromise between US and European separators. It's unclear how extensive the precedence is, and how far the divergence from precedence is—like the first time you see 1_000_000 might be surprising, but it's an easy thing to figure out in context.
 
-RW: To clarify: row 4 means this _might_ happen when we go back to the drawing board to redo this Spec. Since you said you really like the way that this works, I want to mention this as a caveat; we may not end up choosing the _, so you liking that may not ultimately 
+RW: To clarify: row 4 means this _might_ happen when we go back to the drawing board to redo this Spec. Since you said you really like the way that this works, I want to mention this as a caveat; we may not end up choosing the _, so you liking that may not ultimately
 
 SGO: Moving to 2 means going back to the drawing board. Staying at 3 means we're confident enough that we've resolved these conflicts.
 
@@ -96,19 +96,19 @@ DD: For C++ user-defined literal extensions are heavily used for sane strings
 
 AP: Bloomberg uses numeric extensions internally for decimal literals.
 
-DH: This is a very valuable way to collect feedback. I would caution, however to attempt to declare any particular consensus. 
+DH: This is a very valuable way to collect feedback. I would caution, however to attempt to declare any particular consensus.
 
 RW: It sounds like we are going to #4, in that case.
 
-YK: This is a weakly held position, but a lot of people have used underscores in Ruby, and that would be very natural for users 
+YK: This is a weakly held position, but a lot of people have used underscores in Ruby, and that would be very natural for users
 
 MHK: I don't want to get into a situation, where we have to update parseInt.
 
-RW: If you use parseInt, nothing changes—you're feeding parseInt a string, so the behavior never changes. 
+RW: If you use parseInt, nothing changes—you're feeding parseInt a string, so the behavior never changes.
 
 RJE: Sounds like we're going with Alternative 4.
 
-RW: Rather than run through pop-quizzes about "what happens when," I suggest you look through the Spec which fully defines the semantics of Numeric Separator Literals, including behavior in the terms of Number, parseInt, parseFloat, etc. 
+RW: Rather than run through pop-quizzes about "what happens when," I suggest you look through the Spec which fully defines the semantics of Numeric Separator Literals, including behavior in the terms of Number, parseInt, parseFloat, etc.
 
 #### Conclusion/Resolution
 
@@ -125,18 +125,18 @@ RW: Rather than run through pop-quizzes about "what happens when," I suggest you
 
 KMN: Rust, Elixir etc. all have this pattern matching feature. You can think of this as an advanced `switch`. Pattern matching is one of these core features that new users of a language are introduced to and use them all the time from then on. How would this look for JS? (Shows example slide). Another motivating example, in React, you're often matching with deep values within your state (in Redux, for example, and you have a message with a complex structure).
 
-KMN: There are 3 separate proposals here: the core proposal uses existing patterns to make basic pattern matching work, As-patterns allow you to bind to the expected value to a variable more ergonomically, and Collection Literals allow you to map matches to custom data structures. 
+KMN: There are 3 separate proposals here: the core proposal uses existing patterns to make basic pattern matching work, As-patterns allow you to bind to the expected value to a variable more ergonomically, and Collection Literals allow you to map matches to custom data structures.
 
-KMN: Core Proposal: the semantics are based on the structuring assignment. Using `when` to say when the property matches this literal, do this. 
+KMN: Core Proposal: the semantics are based on the structuring assignment. Using `when` to say when the property matches this literal, do this.
 
 
-WH: What does `when 1` mean? (Object Equality) Does `when 0` match -0? 
+WH: What does `when 1` mean? (Object Equality) Does `when 0` match -0?
 
 KMN: This applies to numeric literals, and I believe -0 is not a numeric literal. Continuing... `when x` is an irrefutable pattern. You can also have guards using something like `when x if ()`
 
 DD: What is the match doing here? If you do this on an object that doesn't have a match method, will that throw an exception?
 
-KMN: Yes. 
+KMN: Yes.
 
 WH: (Question about the scope of a variable `v` on the slide)
 
@@ -170,15 +170,15 @@ DD: Personally, I'd really like to make these things work, it may be special cas
 
 KMN: I think this is a nitty gritty question that we can talk about later.
 
-KMN: It is specced to use NLTH (No line terminator here), I don't want to. I hate NLTH. This is not pretty or great. There's a number of languages that use `case`, so I prefer that. Or we could use `super switch` which would _not_ be syntactically ambiguous (jokingly). I would rather use proper grammar here (as opposed to NLTH) but this is the core proposal, and for simplicity let's start with that. There's a massive thread on the issue tracker. Please jump into that if you have opinions. There's issues for working with iterators and how many times they get called. 
+KMN: It is specced to use NLTH (No line terminator here), I don't want to. I hate NLTH. This is not pretty or great. There's a number of languages that use `case`, so I prefer that. Or we could use `super switch` which would _not_ be syntactically ambiguous (jokingly). I would rather use proper grammar here (as opposed to NLTH) but this is the core proposal, and for simplicity let's start with that. There's a massive thread on the issue tracker. Please jump into that if you have opinions. There's issues for working with iterators and how many times they get called.
 
 KMN: I want the other proposals to land (especially collection literals), since they would correspond to pattern matching in other languages (any languages with record constructors). The concept behind pattern matching is to use the left-hand side as a simulation or mirror for the match to succeed. It's very important to have that correspondence so that you're not learning a special syntax just for this.
 
-WH: Is a the only thing allowed within `match` block a `when` clause? 
+WH: Is a the only thing allowed within `match` block a `when` clause?
 
 KMN: Correct. We could add default, but it's not necessary. You don't actually need it.
 
-MSL: If the parser sees an `match (` (match plus open parens), does the parser have to parse as a potential function? 
+MSL: If the parser sees an `match (` (match plus open parens), does the parser have to parse as a potential function?
 
 KMN: Yes, there's NLTH and a lookahead to handle this case.
 
@@ -202,16 +202,16 @@ TST: The behavior you just described, does that also apply to `property.get`s? (
 
 KMN: We can make this normative but it was assumed that would be the case.
 
-MF: We can solve some of the problems you mentioned by allowing arbitrary arithmetic expressions. This exists with your true and false and nulls, but we can also add a parenthesized identifier. 
+MF: We can solve some of the problems you mentioned by allowing arbitrary arithmetic expressions. This exists with your true and false and nulls, but we can also add a parenthesized identifier.
 
 KMN: I think that was already mentioned.
 
-MF: It's worth exploring arithmetic expressions though. 
+MF: It's worth exploring arithmetic expressions though.
 
 KMN: I don't think we need arithmetic expressions. Basically, the negative numbers we can address and we could special case unary literals though - like Infinity/NaN.
 MF: Do you allow spread destructuring?
 
-KMN: It's not in this example, but if you put a splat here it matches on any length. 
+KMN: It's not in this example, but if you put a splat here it matches on any length.
 
 MF: that's exactly what I'd expect, and frankly the most common usage for me for this feature.
 
@@ -243,15 +243,15 @@ KMN: It's been brought up and there's reasons...
 
 DH: If we have `do` expressions, having to wrap this in the `do` expression just to get a result out. This is way too verbose and there's no ambiguity for the precedence there. You may want to couple the challenges of `do` expressions, but that's very difficult, so if you need collaboration from other team members, we can make progress on that. Of course we shouldn't block landing this on `do` expressions. We should try to make statement right hand sides to work, and we can discuss do.
 
-KMN: Expressions are useful for `if`, `switch` etc, not just `do`. 
+KMN: Expressions are useful for `if`, `switch` etc, not just `do`.
 
 DH: In a perfect world we would maintain that symmetry, but unfortunately JavaScript is not that perfect world, and we don't have symmetry already. I'd rather get the new, desirable conditional form without that perfect symmetry, then incrementally advanced to reach that symmetry eventually.
 
-KMN: I would like to keep this as a statement until later stages and when we've looked into more of these questions and answers. I'm even comfortable blocking this on answers for `do`, eventually. 
+KMN: I would like to keep this as a statement until later stages and when we've looked into more of these questions and answers. I'm even comfortable blocking this on answers for `do`, eventually.
 
-DH: As this goes through the stages, I will become more and more uncomfortable with (not having them be) expressions. 
+DH: As this goes through the stages, I will become more and more uncomfortable with (not having them be) expressions.
 
-YK: People really want `match`, plus there's some desire of `match` not being an outlier (among other programming languages). Because of eval, we have a global explanation to what completions mean. I think it does make sense for this form to work with expressions. 
+YK: People really want `match`, plus there's some desire of `match` not being an outlier (among other programming languages). Because of eval, we have a global explanation to what completions mean. I think it does make sense for this form to work with expressions.
 
 Eric: Are we strict (as in, exhaustive property matches) on objects in the when clauses or just arrays?
 
@@ -265,7 +265,7 @@ WH: This proposal conflates assignments with values. A lot of people use named c
 
 KMN: This is covered by the collection literals proposals. I want to keep the variable-based semantics.
 
-WH: Collection literals doesn't apply to named constants. I would be uncomfortable with this because it conflicts with named constants. 
+WH: Collection literals doesn't apply to named constants. I would be uncomfortable with this because it conflicts with named constants.
 
 KMN: There's a number of named discussion points in that proposal, so you should consult that. What elixir does, which has similar semantics to JS, it puts a hat before a variable, and that adds a pin to that variable. e.g. `when ^x` that would match against a higher-scope x. This is called the pinning operator.
 
@@ -293,7 +293,7 @@ WH: Not objecting to Stage 1, but I want to reiterate that I'm uncomfortable bec
 
 (Kat Marchán)
 
-KMN: It would be great to construct a map with an object literal, or a Set with an iterator/array. This gets very cool with destructuring. 
+KMN: It would be great to construct a map with an object literal, or a Set with an iterator/array. This gets very cool with destructuring.
 
 MM: Not a Stage 1 blocker, but we'll be fighting over infix bang.
 
@@ -303,11 +303,11 @@ KMN: This would make it useful for pattern matching. (Shows example of pattern-m
 
 WH: Does this use the current value of x or assign the value to x? If you have x:y inside the tagged collection literal, does it assign to x and y or use the current values of x and y?
 
-KMN: These are fully numeric keys in this case. 
+KMN: These are fully numeric keys in this case.
 
-DH: In your first presentation, you talked about `new Map`, and the structuring/destructuring Map. Does this proposal supplant that? Would this new syntax completely replace `new`? 
+DH: In your first presentation, you talked about `new Map`, and the structuring/destructuring Map. Does this proposal supplant that? Would this new syntax completely replace `new`?
 
-KMN: It would not use the same protocol. For destructuring Maps, it uses this thing called `valueOf` which returns an iterator. It's possible you could use the valueOf in both cases, but it would have to use three arguments. It could work off the same protocol. 
+KMN: It would not use the same protocol. For destructuring Maps, it uses this thing called `valueOf` which returns an iterator. It's possible you could use the valueOf in both cases, but it would have to use three arguments. It could work off the same protocol.
 
 WH: What comes before `!`?
 
@@ -319,7 +319,7 @@ KMN: Only left of a bang.
 
 MF: I don't see the value in the kind of destructuring you're doing. (Gives example)
 
-KMN: Checking against the type is a thing I want in pattern matching (doing an instanceof check and the value). 
+KMN: Checking against the type is a thing I want in pattern matching (doing an instanceof check and the value).
 
 TST: Why would it be so valuable for pattern matching?
 
@@ -331,7 +331,7 @@ KG: Syntax is expensive and I don't see how this pays for itself without pattern
 
 DD: This proposal is all about syntax, and I have a lot of issues with the syntax. You are using object literal syntax to put something that isn't a string key, for example. Maybe this pays for itself in pattern matching, but you get the same benefits from things like guards, etc. I'd rather see a specialized case for pattern matching as opposed to adding this syntax generally.
 
-EFT: I'm concerned with how this works with pattern matching, in particular this RegEx thing scares the shit out of me. We want this to all be static and literally, and this has upward bindings and erodes some of the goodness of the pattern matching that you had in the previous proposal. 
+EFT: I'm concerned with how this works with pattern matching, in particular this RegEx thing scares the shit out of me. We want this to all be static and literally, and this has upward bindings and erodes some of the goodness of the pattern matching that you had in the previous proposal.
 
 WH: This is much more complicated than I thought reading the original document. I now don't have a good understanding of what is being proposed after the presentation and don't think this is appropriate for Stage 1.
 
@@ -357,7 +357,7 @@ SYG: Update on Binary AST. Currently at Stage 1, will remain at Stage 1, likely.
 
 SYG: To enable per-function laziness, we need to enable scope annotations. We can also do a single-pass and streaming code generation (a sort of magic, go fast button). These are not orthogonal, it _is_ possible to do both.
 
-SYG: On the Spec front, we want to incorporate these semantic changes and a new over-the-wire format. We explicitly don't want to "handcuff" people on the spec side or implementation side. The binary AST spec will not limit the possibilities of JS as source code. We're speccing a basic tree grammar. It's a shift off an AST, with some differences (written in a WebIDL-like thing). It works backwards from an implementation—you take a source text and transform it into an AST, the spec takes the AST and transform it into an ?? to "Ecmaify" it and to avoid bifurcating the language. The new semantic stuff like scope annotations (which we call "asserted scopes") are checked during the Ecmaify stage. 
+SYG: On the Spec front, we want to incorporate these semantic changes and a new over-the-wire format. We explicitly don't want to "handcuff" people on the spec side or implementation side. The binary AST spec will not limit the possibilities of JS as source code. We're speccing a basic tree grammar. It's a shift off an AST, with some differences (written in a WebIDL-like thing). It works backwards from an implementation—you take a source text and transform it into an AST, the spec takes the AST and transform it into an ?? to "Ecmaify" it and to avoid bifurcating the language. The new semantic stuff like scope annotations (which we call "asserted scopes") are checked during the Ecmaify stage.
 
 MM: The variables that appear to be free within `with`, may actually be looked-up in a with block?
 
@@ -383,7 +383,7 @@ YK: If there's just occasional sloppy code that you need to get around bugs, tha
 
 MF: It's worth pursuing a Strict mode variant or something. You get to drop the variable names from the binary encoding in Strict mode, and size is obviously very important. I do think it's worth going the full route of requiring Strict mode, we should at least take advantage of this in Strict mode.
 
-MS: What was a performance benefit you got from JS to binary AST? 
+MS: What was a performance benefit you got from JS to binary AST?
 
 EFT: The parser gets 30-50% faster.
 
@@ -399,7 +399,7 @@ MS: How many Alexa Top 100 sites will use this? Facebook would have different we
 
 VDC: we ship one, es5 to everyone. And there are additional features we ship (including feature testing) that we conditionally ship to other users.
 
-MS: The kind of Portable device vs. desktop device. 
+MS: The kind of Portable device vs. desktop device.
 
 EFT: We gave this encoder to Instagram and they had this up and running in 3 days.
 
@@ -417,7 +417,7 @@ SYG: We need to answer this before stage advancement.
 
 MS: You said it was 30-50% of parsing, and parsing is 25%. All this work for 12% improvement?
 
-SYG: It seems like a big ask for implementers to add this feature. But for websites, this is a small ask. 
+SYG: It seems like a big ask for implementers to add this feature. But for websites, this is a small ask.
 
 TDE: We go to way further lengths for smaller gains. We do multiple builds for each browsers, done brotli, etc. From the LinkedIn perspective, this would be a trivial integration for performance gains that we would be happy to see.
 
@@ -425,19 +425,19 @@ MS: Would you be willing to ship all six flavors to get this performance gain?
 
 TDE: Yah.
 
-MS: This doubles those. 
+MS: This doubles those.
 
 TDE: We would be comfortable with that.
 
 MS: You talked about once the spec is frozen, those nodes will always work. We then have the issue of tracking the implementation state for other browsers—if some implement but not other browsers do, this becomes a mess to track for backwards compatibility.
 
-MS: I'm concerned with introducing new nodes that are not available in all browsers. We add 5 new AST nodes, some of them do only some. Having to deal with this will bite us. What happens when someone adds a node that doesn't work in all browsers? 
+MS: I'm concerned with introducing new nodes that are not available in all browsers. We add 5 new AST nodes, some of them do only some. Having to deal with this will bite us. What happens when someone adds a node that doesn't work in all browsers?
 
 DH: We'll just do what we today with JavaScript.
 
 MS: We can't do that—it's a binary node!
 
-EFT: This is up to the host. 
+EFT: This is up to the host.
 
 DH: This is just like new syntax. If the browser doesn't understand the syntax, it blows up. It's the same thing for a binary format. People use transpilation to ship towards the least common denominator of browsers they want to support. This is an existing problem.
 
@@ -451,7 +451,7 @@ YK: So I have 6 builds, if Chrome adds a binary AST, we'd just replace the build
 
 MS: What do you do with a Chrome version that doesn't support binary AST?
 
-YK: If I want to support new syntax, I would choose what is supported by 
+YK: If I want to support new syntax, I would choose what is supported by
 
 MS: Normally you do this with polyfilling, but that doesn't work for syntax.
 
@@ -461,7 +461,7 @@ DFV: Linkedin and Salesforce are in the same boat. Particularly we ship enormous
 
 SG: Just to reiterate what's been said: my personal one not Googles, count users not domains,not devs. I have an intuition, no data, if you count 5-6 devs that constitute a good proportion of web traffic - gmail, linkedin, facebook . these are well funded 500 engineering teams that are, google.com you'd be surprised how much effort goes into that last bit of perf. My intuition is to prioritize for number of users. Even if adoption is small, we can pay the cost.
 
-MS: I work on JS core, so I agree with you. If we do this we're not doing something else. I also don't think the numbers that Eric is quoting will be the same on all browsers. So, maybe 3% performance gains out of Safari, instead of something else. 
+MS: I work on JS core, so I agree with you. If we do this we're not doing something else. I also don't think the numbers that Eric is quoting will be the same on all browsers. So, maybe 3% performance gains out of Safari, instead of something else.
 
 SG: Agree. Not advocating for this solution. Problems are valid. If it's less accessible to some devs but more accessible to users, that's fine.
 
@@ -536,7 +536,7 @@ MF: I'm not sure that's true. I think this _could_ have a pluggable encoding for
 
 MM: Having it pluggable gives flexibility we could consider - the utility of having an agreed concrete format for the concrete representation that corresponds to language semantics. There's no need to tie to hosting environment.
 
-BFS: I somewhat agree that this should be in the specification. It should be controlled to some extent by TC39. 
+BFS: I somewhat agree that this should be in the specification. It should be controlled to some extent by TC39.
 
 TST: I don't think there's one particular group that stands out as being an expert on this subject. IETF, the WASM community group does great things here, but I don't think there's a clear group here for us to spec this out.
 
@@ -597,7 +597,7 @@ SYG: In case we progress, Sathya mentioned it will incur spec author cost. The i
 #### Conclusion / Resolution
 
 - Stage 2 entrance criteria:
-  - A complete spec with the well understood caveat that the binary encoding may change drastically. 
+  - A complete spec with the well understood caveat that the binary encoding may change drastically.
   - Sufficient evidence that we get the perf wins we are aiming for across websites.
   - Some like "across implementations" We hope to work with implementers to find less than 1 engineer year ways to show promise. We can't do 5 years engineering and hope something happens.
 
@@ -630,9 +630,9 @@ TST: There does seem to be enough of a consensus that this is worth pursuing. WH
 
 WH: I do not. For this proposal, I would say a pragma is the best solution. The issues I raised are generic to all pragmas (and we should explore them). I support this proposal for stage 2.
 
-TST: Would there be anybody in Stage 3 who would object to this? 
+TST: Would there be anybody in Stage 3 who would object to this?
 
-DD: If you want to block of it because it's a pragma, we should talk about it now. 
+DD: If you want to block of it because it's a pragma, we should talk about it now.
 
 MS: I'm worried this opens the door for more pragmas (with misspelling). I do share Brian's concern where if I do this, I should use this everywhere.
 
@@ -644,15 +644,15 @@ DE: It seems exceeding clear that we don't have a consensus.
 
 MS: I really don't want the pragma.
 
-BT: This is our chance to say no. 
+BT: This is our chance to say no.
 
-MM: The history—when we first introduced "use strict". Doug Crockford suggested both a 
-"use strict"; 
+MM: The history—when we first introduced "use strict". Doug Crockford suggested both a
+"use strict";
 with the quotes and a
 use strict;
 without the quotes. The first is ignored on earlier versions of the platform that don't recognize it, falling back to sloppy mode. The second causes a static rejection on platforms that don't recognize it. The first pragma form is the only syntactic marker we've got that is ignored, rather than causing failure, on earlier versions of the platform.
 
-DD: The thing that would be most helpful is if we decide to not go to Stage 2, to give reasons why not. I don't 
+DD: The thing that would be most helpful is if we decide to not go to Stage 2, to give reasons why not. I don't
 
 Kevin: The takeaway here, the pragma is a very bitter pill to swallow—even if it is the best solution. When we introduced modules, it was a great win that we got rid of boilerplate. Looking at this proposal, the fear is that it is boilerplate.
 
@@ -668,7 +668,7 @@ SGO: If you take that it needs to be in the source code itself, than pragmas see
 
 JH: How does this interact with error stacks?
 
-DD: Line numbers are tricky. 
+DD: Line numbers are tricky.
 
 JH: An error stack trace with some functions that are censored seem impossible to reconcile. But this may be better for a later discussion.
 
@@ -685,7 +685,7 @@ DD: I appreciate the Stage 3 concerns, do we have Stage 2 approval?
 
 (Justin Ridgewell)
 
-JRL: (Presenting slides) 
+JRL: (Presenting slides)
 
 WH: Sounds great
 MM: Yeah
@@ -701,7 +701,7 @@ MB: Agreed
 
  - [proposal](https://github.com/devsnek/proposal-symbol-thenable)
 
-JHD: Exporting a named `then` function from a module makes the module a thenable. This logically follows the promise protocol, but means there is now no way to dynamically import a module with a then function. Refactoring hazards exist. Someone could write a module that blocks itself from dynamic import. It's super weird conceptually, but it logically follows from the way Promises work, but it is a problem. This came up with members trying to implement custom module loader in node. There is no way to get a dynamically imported module record. V8 can provide hooks, there are workaround but it surfaced the issue. DD said it would be bad if module namespace objects were magick where they weren't thenable. Namespace objects are thenable now, they shouldn't be through dynamic import - it should be a static picture of the module. Its weird if we make them magick. `import('bar')` would give different output to `import foo from 'bar'`. Generic solution is to make a thenable object not be thenable. 
+JHD: Exporting a named `then` function from a module makes the module a thenable. This logically follows the promise protocol, but means there is now no way to dynamically import a module with a then function. Refactoring hazards exist. Someone could write a module that blocks itself from dynamic import. It's super weird conceptually, but it logically follows from the way Promises work, but it is a problem. This came up with members trying to implement custom module loader in node. There is no way to get a dynamically imported module record. V8 can provide hooks, there are workaround but it surfaced the issue. DD said it would be bad if module namespace objects were magick where they weren't thenable. Namespace objects are thenable now, they shouldn't be through dynamic import - it should be a static picture of the module. Its weird if we make them magick. `import('bar')` would give different output to `import foo from 'bar'`. Generic solution is to make a thenable object not be thenable.
 
 DD: I was saying this is a generic problem, not that we should solve it.
 
@@ -709,7 +709,7 @@ JHD: Fair, it's a generic problem. The premise here is that we're faced with *.i
 
 DD: 4/4 browsers ship this I think
 
-JHD: This will be rarely used Im sure except when someone wants to exploit it. Another solution is to block `export then`. This is weird though - only current forbidden is `export default` which is not really forbidden, just default export. I think this proposal with `Symbol.thenable = false` to block the object being a coerced to Promises is a good one. Hoping for stage 1 today - we have spec text for stage 2. Do we want to pursue this or not? If we do, we want to go rapidly. 
+JHD: This will be rarely used Im sure except when someone wants to exploit it. Another solution is to block `export then`. This is weird though - only current forbidden is `export default` which is not really forbidden, just default export. I think this proposal with `Symbol.thenable = false` to block the object being a coerced to Promises is a good one. Hoping for stage 1 today - we have spec text for stage 2. Do we want to pursue this or not? If we do, we want to go rapidly.
 
 BN: Module authors can't choose to export a Symbol.thenable-named export (because it's not an identifier), so this would have to be a blanket policy. Should module authors have control over this?
 
@@ -761,13 +761,13 @@ MM: People are exporting `then`?
 
 DD: People are doing it in lieu of top-level `await`.
 
-MM: Oh my god. In that case I withdraw my suggestion. Status quo is sufficient - we should simply explain the issue. It is just something JS devs will have to understand. Asynchronous constructs --- promise, async iterators, etc --- only promise non-thenables. Thenables are plumbing through which they rech the non-thenables. JavaScript programmers already have to understand that. 
+MM: Oh my god. In that case I withdraw my suggestion. Status quo is sufficient - we should simply explain the issue. It is just something JS devs will have to understand. Asynchronous constructs --- promise, async iterators, etc --- only promise non-thenables. Thenables are plumbing through which they rech the non-thenables. JavaScript programmers already have to understand that.
 
 JHD: What happens if top-level await lands? How do we feel about that? People are then immediately provided a migration path.
 
 MM: People leave companies, things stop getting maintained. If there is a hard line to switch, we can't let this happen for webcompat reasons.
 
-DD: This is a generic issue in JS. Same thing for String concat will do toString, Number concat valueOf, its all just protocol hooks. Does this pay for itself? Should we had `Symbol.unvalueOfable` or `Symbol.untoStringable`? 
+DD: This is a generic issue in JS. Same thing for String concat will do toString, Number concat valueOf, its all just protocol hooks. Does this pay for itself? Should we had `Symbol.unvalueOfable` or `Symbol.untoStringable`?
 
 JHD: I agree but module namespaces are super special. The others do not follow this as much.
 
@@ -834,7 +834,7 @@ RBN: (Presenting)
 
 MM: There is no precedent within ECMAScript for extending existing APIs with new arguments.
 
-MM: For a capture group, within an expression, you don't get all the captures, just the first one. 
+MM: For a capture group, within an expression, you don't get all the captures, just the first one.
 
 MB: Regarding MM's comment extending APIs, there _is_ precedent for this on the Web platform _outside of ECMAScript_. There's even a case where a previously existing boolean argument eventually converted to an options bag (`addEventListener` with passive event listeners) in a web-compatible way. This is certainly possible.
 
@@ -848,7 +848,7 @@ WH: OK.
 
 CP: One of the hoops you have to jump through is when to turn this on/off due to performance issues.
 
-RBN: The cost is that in a world with GC, by the time JS gets the match from the exec, any garbage has already been collected or memory has been released to the heap for reuse. 
+RBN: The cost is that in a world with GC, by the time JS gets the match from the exec, any garbage has already been collected or memory has been released to the heap for reuse.
 
 CP: Is the scale issue due to the complexity of the expression, or the volume of the matches?
 
@@ -859,6 +859,6 @@ RBN: Any regular expressions have to take on that cost, even if they're not usin
 - Stage 1 acceptance
 
 
-## Meeting Planning Update 
+## Meeting Planning Update
 
 DE: Some concerns about the 2019 meeting at JS Interactive, please don't consider that to be final.

@@ -1,8 +1,8 @@
 # November 28, 2018 Meeting Notes
 -----
-Mattijs Hoitink (MHK), Michael Saboff (MS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbage (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontin (FAB), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
+Mattijs Hoitink (MHK), Michael Saboff (MS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbage (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontín (FAB), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
 
-Remote: 
+Remote:
 Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), Istvan Sebestyen (IS), Richard Gibson (RG), Guy Bedford (GB), Conrad Watts (CWS)
 -----
 
@@ -18,7 +18,7 @@ Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), 
 - [issue](https://github.com/tc39/ecma262/issues/1354)
 
 
-SYG: Want to recap that there is a memory model bug. The good news is the spec is wrong. Evaluation results in candidate executions: set of events. CAndidate executions are constrained by the memory model. If your program doesn't have any data races, it should be sequentially be consistent. Data race free programs are sequentially consistent (DRF-SC). The relations in the memory model are listed 
+SYG: Want to recap that there is a memory model bug. The good news is the spec is wrong. Evaluation results in candidate executions: set of events. CAndidate executions are constrained by the memory model. If your program doesn't have any data races, it should be sequentially be consistent. Data race free programs are sequentially consistent (DRF-SC). The relations in the memory model are listed
 Agent order
 Synchronizes with
 Happens before
@@ -43,7 +43,7 @@ Agent 2
 
 2,1 is allowed Program DRF but not SC.
 
-SYG: There is no way to interleave the statements to produce 2 and 1. In this example it is clear we should print 2,2 or 1,1. This is loading an atomic store that is fenced by the atomic loading. Does anyone have differing intution? 
+SYG: There is no way to interleave the statements to produce 2 and 1. In this example it is clear we should print 2,2 or 1,1. This is loading an atomic store that is fenced by the atomic loading. Does anyone have differing intution?
 
 SYG: Now to fix this, conrad has suggested the minimalistic fix which I want to point a counter example variant. If I were to replace atomics store with atomics.load, should 2,1 be allowed?
 
@@ -84,9 +84,9 @@ Agent 2:
 
 WH: Thus it would be problematic to disallow 2,1 in the racy example. We should allow it.
 
-SYG: To be fair disallowing this would disallow optimizations. 
+SYG: To be fair disallowing this would disallow optimizations.
 
-CM: If it introduces incorrectness is that an optimization? 
+CM: If it introduces incorrectness is that an optimization?
 
 SYG: Currently in the memory model we allow this and we need to debate if this is actually allowed.
 
@@ -102,7 +102,7 @@ SYG: So the other con to disallowing this is the.. The fix to disallowing this w
 
 CWS: The strong fix is stronger than that -- it introduces a not complete a notion of total ordering. It does change the semantics... abstracting the str
 
-SYG: I also don't know the strength of changing non-atomics changes for compiler writers. There is a lot of cons 
+SYG: I also don't know the strength of changing non-atomics changes for compiler writers. There is a lot of cons
 
 CM: If these optimizations... if X was not shared, there would be no interference.
 
@@ -164,7 +164,7 @@ SYG: That seems totally fine -- adding APIs to atomics that give you stronger gu
 
 #### Conclusion/Resolution
 
-- Weak fix 
+- Weak fix
 
 
 ## Hash Bang grammar
@@ -181,7 +181,7 @@ WH: Unless you changed the proposal since I gave you the thumbs-up, you can coun
 
 AK: Generally I would encourage champions to check off the process document boxes before coming to the committee asking for stage advancement.
 
-BT: We can get it reviewed in 30 minutes? 
+BT: We can get it reviewed in 30 minutes?
 
 RJE: Can we defer to later today?
 
@@ -207,7 +207,7 @@ DE: New feature: Some people were mentioning a debate matches what we had at the
 
 DE: You might not want to use this when you are using a backing store i.e. in MobX.
 
-DE: previous solution in decorators which didn't come up before in TC39 which is use a throwaway field, run the side-effect... I don't want to encourage this idiom. Unclear how JITs should reliably detect dead fields. This would encourage anti-patterns. This wasn't an issue in stage 0 because they were not about thinking the initializer. 
+DE: previous solution in decorators which didn't come up before in TC39 which is use a throwaway field, run the side-effect... I don't want to encourage this idiom. Unclear how JITs should reliably detect dead fields. This would encourage anti-patterns. This wasn't an issue in stage 0 because they were not about thinking the initializer.
 
 DE: Instead, we could run a side effect outside of the decorator. Semantics decorators output can refrain from defining a field. We heard from the discussion of set and mobx that once the stage 2 was in babel, many people ran into this issue and proposed the mitigation and realized the flaws.
 
@@ -253,7 +253,7 @@ RBN: In most discussions and the community and comment threads, it's a 50/50 spl
 
 DE: How long do we need?
 
-RBN: One more meeting? 
+RBN: One more meeting?
 
 DE: Let's agree to try and conclude that in the January meeting.
 
@@ -283,7 +283,7 @@ MF: When does the committee not want a feature?
 
 AK: It's stage 2. Committee expects this to become part of the language.
 
-MF: There could be a case where more people than not the feature should be included in the language but nobody is passionate about blocking consensus. 
+MF: There could be a case where more people than not the feature should be included in the language but nobody is passionate about blocking consensus.
 
 DE: I don't think that's the feeling about decorators right now. This is a strong feature and my feeling is that the committee has been persuaded for decorators but want to hear more.
 
@@ -301,7 +301,7 @@ DE: In transpiled decorated classes, we don't have any static analysis. Do you c
 
 SGN: The baseline should be non decorated classes.
 
-AK: I have these concerns especially since we're talking about frameworks... I am not sure this is more of a footgun compared to using a framework. 
+AK: I have these concerns especially since we're talking about frameworks... I am not sure this is more of a footgun compared to using a framework.
 
 MS: We have similar concerns in that static analysis will be difficult. We have to change the object model to account for decorators. I personally don't like it, users want it... startup cost i have concerns but not super huge.
 
@@ -319,7 +319,7 @@ JRL: One option we have is to leave it for babel and typescript. This can just b
 
 DE: I originally proposed that and we wanted to promote the unification so that we had interoperable code.
 
-Diego: Yeah we talked about everyone would implement their own thing and we would have lots of interoperability. 
+Diego: Yeah we talked about everyone would implement their own thing and we would have lots of interoperability.
 
 TST:  I don't see the value of startup costs if the feature is valuable enough that it will lead to dynamic code that will lead to performance benefit.
 
@@ -383,21 +383,21 @@ CM: I think explanations are farther ahead than where we are at.
 
 JH: Execution point?
 
-DE: We are not proving that template object was literally in source code? 
+DE: We are not proving that template object was literally in source code?
 
 JH: It sounds like you are trying to verify if a tag is from source code. Since it is frozen, we can guarantee that.
 
 DE: There are further properties that would be nice but this matches the original request and isn't that bad.
 
-KG: You mentioned JavaScript API which I think would be nice. API only useful if it's unforgeable... there are 3 things are not virtualizable -- Nan, undefined, infinity. Would the idea be introduce an unforgeable function? 
+KG: You mentioned JavaScript API which I think would be nice. API only useful if it's unforgeable... there are 3 things are not virtualizable -- Nan, undefined, infinity. Would the idea be introduce an unforgeable function?
 
-DE: I like the import module. Regardless if we go with the Apple proposal to freeze modules, at least if we go... import map give you a place to virtualize built in modules. 
+DE: I like the import module. Regardless if we go with the Apple proposal to freeze modules, at least if we go... import map give you a place to virtualize built in modules.
 
 KG: That seems reasonable. I thought this would end up a global.
 
 DE: Yeah we discussed and we have raised concerns with virtualization. Import maps can give us a nice middle point.
 
-BFS: I want to bring up a different design idea... concerns with global api when I think of something to be forged I think of typeof. Adding a new typeof is concerning... but it's the only thing proxies can't intercept. Has there been thought on the actual state of templates? Like how can we hang it off the object itself? 
+BFS: I want to bring up a different design idea... concerns with global api when I think of something to be forged I think of typeof. Adding a new typeof is concerning... but it's the only thing proxies can't intercept. Has there been thought on the actual state of templates? Like how can we hang it off the object itself?
 
 DE: I don't have any particular ideas what we can do in that area. We should chat if you have more ideas.
 
@@ -419,7 +419,7 @@ MM: I haven't looked into that proposal and I believe it does address they had s
 
 DE: I am just trying to sift through.
 
-MM: With trusted types, I'm not familiar with their requirements. Mike Samuel proposal about the threat model is something we should be concerned about. 
+MM: With trusted types, I'm not familiar with their requirements. Mike Samuel proposal about the threat model is something we should be concerned about.
 
 DE: Perhaps we can talk offline because I don't understand the literalness of strings vs templates doesn't seem to be linked.
 
@@ -465,7 +465,7 @@ NHD: In Handlebars we had a vulnerability which could in part be addressed by th
 
 AK: I wanted to respond to Mark and Kevin... first off back up layering changes... we want to define well defined interactions rather than have a browser defining it on their own. If people are concerned about those changes, we shouldn't be doing that here because a layering change is a very small thing. One more thing, timelines... on average things take longer in tc39 than W3C, WICG, etc. It makes sense people get tired of waiting.
 
-DE: We could provide useful input and I want to encourage two way interaction between other groups and TC39—want more input from web/node people in TC39 & visa versa. That's why I mentioned W3C tag review. I want people to be able to bring problems to TC39 and not avoid it. 
+DE: We could provide useful input and I want to encourage two way interaction between other groups and TC39—want more input from web/node people in TC39 & visa versa. That's why I mentioned W3C tag review. I want people to be able to bring problems to TC39 and not avoid it.
 
 KG: If we in this room don't think a feature someone else is trying to implement.. It's true they might go around us, I still don't want to make changes.
 
@@ -485,7 +485,7 @@ DE: Do the headers help?
 
 NSH: only if people use them.
 
-MM: There is good work on formalizing JavaScript and you show things are equivalent by reasoning about semantic state. By adding an internal slot, you break transparency through proxies. Membrane transparency is a requirement. 
+MM: There is good work on formalizing JavaScript and you show things are equivalent by reasoning about semantic state. By adding an internal slot, you break transparency through proxies. Membrane transparency is a requirement.
 
 BFS: I think we are skipping over how these template object arrays are a little string? The host could technically do things like source code manipulation... Do people really feel strongly of having these really strange object arrays and somehow preserving where they are in sourcetext.
 
@@ -523,7 +523,7 @@ DE: Using data present in CLDR exposed through ICU
 
 DE: Updates since previous version -- data schema made well-defined, paralleling CLDR. When completely implementation defined we would take in OS preferences but it's actually based on the locale so removed that. Concluded to not read/check other options if dateStyle/timestyle set. Finally the `hourCycle`... it doesn't make sense to do timeStyle and then add for hourCycle... doesn't make sense to combine those so we are considering to honor that feature. (Slides have links to proposals)
 
-DE: The Proposal status originally by Zibi is in stage 1. It is in Firefox internal only. Stage 2? Stage 3 reviewers? By the way this has been discussed and reviewed by ECMA 402 sub group and we are recommending to move to stage 2. Thoughts? 
+DE: The Proposal status originally by Zibi is in stage 1. It is in Firefox internal only. Stage 2? Stage 3 reviewers? By the way this has been discussed and reviewed by ECMA 402 sub group and we are recommending to move to stage 2. Thoughts?
 
 MF: General question if I am a website and I want to format things i.e. this... i would want to use a user preferred format. Is that available?
 
@@ -577,7 +577,7 @@ MF: Satisfies me.
 
 DSY: I am now championing the optional chaining proposal after working through for the last 5 years. 2500 visitors and lots of traction on this proposal. Lot's of community involvement. A brief refresher for those who are not familiar -- syntactic sugar for finding a value in a tree-like structure. We want to simplify how we get a value out of a tree. We also want to deliver predictable results.
 
-DSY: 
+DSY:
 
 ```
 //with
@@ -586,7 +586,7 @@ a?.b?.c
 a == null ? undefined: a.b == null ? undefined : a.b.c
 ```
 
-DSY: Lots of cleanliness with optional chaining and predictability. I want to be clear though there is we are not doing error prevention or logic alteration or augmentation. There is no sugar coating -- it's just an easier way to access a value in a tree. As far as what we are trying to support, we are proposing for property access including static and dynamic property access. 
+DSY: Lots of cleanliness with optional chaining and predictability. I want to be clear though there is we are not doing error prevention or logic alteration or augmentation. There is no sugar coating -- it's just an easier way to access a value in a tree. As far as what we are trying to support, we are proposing for property access including static and dynamic property access.
 
 ```
 //static
@@ -607,7 +607,7 @@ WH: You just said optional chaining doesn't support function calls, but I just c
 
 DSY: That's fair, there is a PR open to remove them which will be merged shortly, but I want to get feedback beforehand.
 
-WH: Are you removing function calls anywhere in a optional chain (example: `a?.b()`), or only if directly following a `?.` (example: `a?.()`)? 
+WH: Are you removing function calls anywhere in a optional chain (example: `a?.b()`), or only if directly following a `?.` (example: `a?.()`)?
 
 DSY: The first example would be allowed, so the thing that is being removed is the optional function so if you `a?.()` It's confusing because of ternary operators—an edge case. But `a?.b()` is still valid.
 
@@ -623,7 +623,7 @@ JHD: This leads to something -- there is a lot of importance and value in having
 
 DSY: No, I think that's a good statement.
 
-JHD: I have commented on the proposal repo I think it makes sense to me that we have a token and dot for member access and a token and a bracket... they should have the same token. 
+JHD: I have commented on the proposal repo I think it makes sense to me that we have a token and dot for member access and a token and a bracket... they should have the same token.
 
 MM: Is there another concrete suggestion that would work in that situation?
 
@@ -645,11 +645,11 @@ BFS: I want to voice concerns about timing—we need consistency. We have a new 
 
 JHD: Someone stop me if someone has more knowledge about private class fields. As I have heard it explained, hash is part of the identifier, and `.#` is not an operator, so it's sufficiently different from public property access that the same expectations of similarity need not apply.
 
-MA: BFS is pointing out that you don't have access to private fields 
+MA: BFS is pointing out that you don't have access to private fields
 
 DE: Does that make it OK to not have this?
 
-JHD: So yeah I think private fields are a different beast and the hash is part of the identifier... the lack of dynamic access for private fields... you can argue for that feature but the lack of it doesn't justify the lack of consistency. 
+JHD: So yeah I think private fields are a different beast and the hash is part of the identifier... the lack of dynamic access for private fields... you can argue for that feature but the lack of it doesn't justify the lack of consistency.
 
 WH: I agree with that.
 
@@ -683,7 +683,7 @@ DS: Thanks for the discussion. Anyone have additional concerns, please discuss.
 RJE: Aki will tell us how the voting process will work but if there is anything we need to discuss together please do.
 
 
-*Discussion ensues regarding editor in chief... Notes not taken during this section...* 
+*Discussion ensues regarding editor in chief... Notes not taken during this section...*
 
 #### Conclusion/Resolution
 
@@ -704,7 +704,7 @@ SM: To refresh our memory on dynamic imports. The current stage 3 proposal which
 
 SM: There's some problems with this. (1) if you extract to another file, you have to put a path relative to that other file, not your original file. This is the crux of the problem: libraries can't build this logic into separate files. (2) If you pass a dynamic path like a URL, packagers have this pseudo-syntax requirement where you provide a static string next to an import.
 
-SM: Alternative for this is to wrap in it an arrow function and pass that arrow function into import. 
+SM: Alternative for this is to wrap in it an arrow function and pass that arrow function into import.
 
 MM: Where will this code appear?
 
@@ -769,7 +769,7 @@ SM: Imagine this is two different files.
 
 MM: The import line and the ___?
 
-SM: In this proposal, the referencing module, the one with the import asset line, since it's attached to this first-class object, and the specifier is also part of this rarefied object... 
+SM: In this proposal, the referencing module, the one with the import asset line, since it's attached to this first-class object, and the specifier is also part of this rarefied object...
 
 MM: This would change the semantics of the dynamic import special form correct?
 
@@ -779,7 +779,7 @@ SM: So the problem with this mechanism is that it allows you to use this mechani
 
 SM: Another alternative to having the syntax is to use the import.meta mechanism which is pretty much host environment can have whatever they want. I propose we had a resolveURL so that people can specify what loader they want. The problem is this only works on the web so we need to unify people on this extension and the particular usage of assets in the static form. But also the return value here in the request is very specific to the web. Maybe there will be a specific form that works for node as well. But it's a very heavy-weight object that it is hard to unify. But you could imagine that mechanism having opaque semantics. We could also leave this as-is and let bundlers modify using some pseudo-syntax and we keep cross-compiling between platforms. Or we could add a higher-level structure into the language.
 
-MM: I think that this is adding a lot of mechanisms to both syntax and semantics around one of the worst thought out and newest features of the language which is dynamic import and import.meta. Both of these were allowed to proceed with the assumption that the Realm API would provide hooks to repair the unsafety. That hasn't converged yet and we don't fully understand how those hooks will work. You are trying to serve both bundlers and direct execution semantics in the absence of a bundler. You are trying to preserve the semantics with the absence of bundler. I like that. I sympathize with the goals here. I think dynamic imports and import.meta are some of the biggest mistakes we made and I don't want to consider adding more complexity to those mechanism until we figure those out. 
+MM: I think that this is adding a lot of mechanisms to both syntax and semantics around one of the worst thought out and newest features of the language which is dynamic import and import.meta. Both of these were allowed to proceed with the assumption that the Realm API would provide hooks to repair the unsafety. That hasn't converged yet and we don't fully understand how those hooks will work. You are trying to serve both bundlers and direct execution semantics in the absence of a bundler. You are trying to preserve the semantics with the absence of bundler. I like that. I sympathize with the goals here. I think dynamic imports and import.meta are some of the biggest mistakes we made and I don't want to consider adding more complexity to those mechanism until we figure those out.
 
 SM: To your point, or to counter that point, the alternative is that there is going to be a process to add more things to import.meta if we don't do it in the web spec today, or bundlers will take advantage of import.meta because we open the door for host environments to add whatever they want. If we don't give a direction here, then clients will define their direction elsewhere.
 
@@ -791,7 +791,7 @@ MM: In this special form, the logo variable comes down as...
 
 SM: An asset preference object. What's added here is URL.createObjectURL, which creates this temporary URL reference to this opaque blob, which could be a URL or an in-memory representatoin.
 
-MM: I  think I was just confused by the import.meta on your last slide. I misunderstood it to be part of the proposal. so it would have ..., a new data type, extend the dynamic import data type, anything else? 
+MM: I  think I was just confused by the import.meta on your last slide. I misunderstood it to be part of the proposal. so it would have ..., a new data type, extend the dynamic import data type, anything else?
 
 SM: No.
 
@@ -867,7 +867,7 @@ DE: That makes sense -- do you see this PR making regex less economically subcla
 
 MM: I don't know. I can see how Allen's intuition would lead to this but I can't simulate Allen well enough to predict whether he would object to this change.
 
-DE: He did object to it. 
+DE: He did object to it.
 
 MA: When we were implementing regex subclassing. There is the exec level... we tripped over this originally. I have a concern that this fix may affect the optimizations we have done based on how ES6 made regexes.
 
@@ -895,7 +895,7 @@ SGN: I have concerns about the use counter due to performance.
 
 MB: We've taken the temporary perf hit in the past just to get the data.
 
-JHD: I want to proceed with the `matchAll` proposal. 
+JHD: I want to proceed with the `matchAll` proposal.
 
 JRL: The only place this would have a performance hit is where you pass a regexp without the `@@match` property to the regexp constructor. The other cases all raise an error, so it wouldn't impact performance.
 

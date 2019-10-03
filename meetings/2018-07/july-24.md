@@ -1,8 +1,8 @@
 # July 24, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontin (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson(RGN), Lin Clark (LCK), Allen Wirfs-Brock(AW), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage(SME), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent (AVT) John-David Dalton (JDD)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson(RGN), Lin Clark (LCK), Allen Wirfs-Brock(AW), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage(SME), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent (AVT) John-David Dalton (JDD)
 
-Remote: 
+Remote:
 Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell (JRL), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
 -----
 
@@ -15,9 +15,9 @@ Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell 
 
 RJE: (housekeeping)
 
-RJE: Firstly, we have four new voting members. Agoric Systems (SPC), npm (SME), Stripe (OM), and Igalia (SME). Today we'll break at 5pm, and open it up to new members until we're kicked out of the room. We have a CoC, which we follow for our operations in addition to the general TC39/ECMA rules. 
+RJE: Firstly, we have four new voting members. Agoric Systems (SPC), npm (SME), Stripe (OM), and Igalia (SME). Today we'll break at 5pm, and open it up to new members until we're kicked out of the room. We have a CoC, which we follow for our operations in addition to the general TC39/ECMA rules.
 
-BT: (Talking about logistics) We have a queue app. To talk about a certain agenda item, hit the new tab in the queue app and add a new topic. Rex will prompt you when it's your turn to speak. Join the IRC channels (`#tc39` for public discussions and `#tc39-delegates` for backchannel discussions, message BT for access to this). 
+BT: (Talking about logistics) We have a queue app. To talk about a certain agenda item, hit the new tab in the queue app and add a new topic. Rex will prompt you when it's your turn to speak. Join the IRC channels (`#tc39` for public discussions and `#tc39-delegates` for backchannel discussions, message BT for access to this).
 
 DE: A reminder: to contribute to TC39, you must be a member of a delegate company or sign our IP agreement. If you are a non-member and didn't sign this form, you must attend as an observer (and not contribute).
 
@@ -36,7 +36,7 @@ RJE: Peter Hoddie—you're flexible? (Yes.) DE, does anytime Wednesday work for 
 
 MM: Where did the report on the security review end up (Item 9)?
 
-RJE: This was slightly de-prioritized in favor of proposals. 
+RJE: This was slightly de-prioritized in favor of proposals.
 
 MM: The reason why I proposed to present for an hour was because there's flexibility in the schedule. I'd much rather present for 30 minutes than not at all, however.
 
@@ -60,7 +60,7 @@ RJE: September 25-27, 2018 at PayPal in New York
 
 AKI: Next meeting will be hosted at PayPal in Lower Manhattan. Logistics will be posted as soon as I have them. While I'm talking, I also have a quick CoC update: everyone is expected to uphold the code of conduct, which is [on GitHub](https://tc39.github.io/code-of-conduct/). This explains our expectations as well as how to handle things when they go wrong. Separately, I have stickers for TC39, please let me know if you want one (and didn't already take one at JSConf EU).
 
-## Report from the Ecma Secretariat 
+## Report from the Ecma Secretariat
 
 (Istvan Sebestyen)
 
@@ -69,11 +69,11 @@ AKI: Next meeting will be hosted at PayPal in Lower Manhattan. Logistics will be
 
 IS: (Presenting slides)
 
-IS: Still need to improve that quality of the PDF conversion of the ECMAScript spec. It's not good right now. 
+IS: Still need to improve that quality of the PDF conversion of the ECMAScript spec. It's not good right now.
 
 IS: OSC didn't properly respond to clarification requests for the General Assembly.
 
-IS: Update on ECMA Fellows: this is a category suggested by this committee, and it was approved by the General Assembly. A couple of rules: must be proposed by the Technical Committee and will get this status for life, once approved by the GA. 
+IS: Update on ECMA Fellows: this is a category suggested by this committee, and it was approved by the General Assembly. A couple of rules: must be proposed by the Technical Committee and will get this status for life, once approved by the GA.
 
 RJE: We should add to the agenda some time to discuss the status of TC39's chairmanship.
 
@@ -97,14 +97,14 @@ BT: A couple of new additions in ES2019: 1) ECMAScript is now a superset of JSON
 
 (Dan Ehrenberg)
 
-DE: I was elected the Interim Editor, and worked in partnership with Mozilla (thanks for the support!). This is JS' built-in internationalization library. Intl has a separate specification also developed by TC39, we meet monthly in a 2-hour phone call to discuss details, but we'd love to hear more from application developers. Please contact me for an invitation to the call. 
+DE: I was elected the Interim Editor, and worked in partnership with Mozilla (thanks for the support!). This is JS' built-in internationalization library. Intl has a separate specification also developed by TC39, we meet monthly in a 2-hour phone call to discuss details, but we'd love to hear more from application developers. Please contact me for an invitation to the call.
 
 DE: In terms of PRs, we have:
 
 1. a request to permit unknown fields, which is useful in the Chinese calendar. When locale data suggests something else should be presented that's unexpected, the PR suggests that we return a type "unknown".
 2. `Intl.RelativeTimeFormat`: given a number and a unit, it will format the number and wrap it in something that indicates the unit. If the number ends up breaking into multiple parts, we have `formatToParts` to break apart the number. Please take a look at these, and if you have any concerns, we'll be happy to revisit them.
-3. `Intl.Locale`: if you give an empty string for the calendar, we now throw a RangeError. We also now use the modern form of canonicalization. 
-4. `Intl.ListFormat` implementation is now in V8. Given a list of items, we can automatically insert "and" or "or". 
+3. `Intl.Locale`: if you give an empty string for the calendar, we now throw a RangeError. We also now use the modern form of canonicalization.
+4. `Intl.ListFormat` implementation is now in V8. Given a list of items, we can automatically insert "and" or "or".
 5. `Intl.Segmenter` (Stage 3): Segmenter can segment a sentence into its constituent words. Being developed in conjunction with W3C's internationalization WG. Implementation almost complete in V8.
 
 RJE: Questions for DE? (None). Thank you DE!
@@ -117,7 +117,7 @@ RJE: Questions for DE? (None). Thank you DE!
 
 (Leo Balter)
 
-LBR: Some updates since the last meeting. (Reads slide about Git diff; quite a few changes to Test262). We refactored several tests for Atomics and reviewed repeatedly these changes. Thanks to Rick Waldron and André Bargull for their efforts on this. We're ready to rename Atomics.wake to Atomics.notify (we will discuss this more). We have coverage for Symbol.prototype.description. We also updated RegExp Unicode property escape tests for Unicode 11. We now have tests for `export *` as namespace from `foo` syntaxDynamic Imports. We've had our first implementation-contributed where bots will check for updates and verify Test262 coverage, starting with JavaScriptCore; initial curation is in progress here, though it requires a lot of manual work. Lastly, we have a new Test262 harness in C++! 
+LBR: Some updates since the last meeting. (Reads slide about Git diff; quite a few changes to Test262). We refactored several tests for Atomics and reviewed repeatedly these changes. Thanks to Rick Waldron and André Bargull for their efforts on this. We're ready to rename Atomics.wake to Atomics.notify (we will discuss this more). We have coverage for Symbol.prototype.description. We also updated RegExp Unicode property escape tests for Unicode 11. We now have tests for `export *` as namespace from `foo` syntaxDynamic Imports. We've had our first implementation-contributed where bots will check for updates and verify Test262 coverage, starting with JavaScriptCore; initial curation is in progress here, though it requires a lot of manual work. Lastly, we have a new Test262 harness in C++!
 
 
 
@@ -127,21 +127,21 @@ LBR: Some updates since the last meeting. (Reads slide about Git diff; quite a f
 
 - [slides](https://docs.google.com/presentation/d/1iiGJyVwy6YM3p8T0hfaDuj4fQ4tT0b4Oz24OzzCetAg/)
 
-LBR: Some engines have already renamed Atomics.wake to Atomics.notify. ChakraCore, V8, Moddable XS among others. Node.js has introduced an experimental worker API that has cautious aliasing. Unfortunately, UnrealEngine repository requires a developer account, which we don't have. 
+LBR: Some engines have already renamed Atomics.wake to Atomics.notify. ChakraCore, V8, Moddable XS among others. Node.js has introduced an experimental worker API that has cautious aliasing. Unfortunately, UnrealEngine repository requires a developer account, which we don't have.
 
-LBR: So, can we have consensus for this to land? 
+LBR: So, can we have consensus for this to land?
 
 AK: Didn't this already have consensus?
 
-DE: I support this landing. 
+DE: I support this landing.
 
 AK: It's weird that we have to reaffirm consensus. V8 was under the impression this already had consensus.
 
-RW: (follow up) This was not to "reaffirm". We did not have consensus at first presentation. We were told to complete a set of tasks and then we'd have consensus. This was supposed to be a status report. 
+RW: (follow up) This was not to "reaffirm". We did not have consensus at first presentation. We were told to complete a set of tasks and then we'd have consensus. This was supposed to be a status report.
 
 #### Conclusion/Resolution
 
-- Consensus 
+- Consensus
 
 
 
@@ -151,17 +151,17 @@ RW: (follow up) This was not to "reaffirm". We did not have consensus at first p
 
 - [proposal](https://github.com/domenic/proposal-arraybuffer-transfer)
 
-DD: Long history of sitting at Stage 0. Reintroducing. Binary data has potential for race conditions. (See example in proposal.) Not obvious for debugging. Node.js in particular directly reads the buffer from another thread w/o locking. The defensive way to write this code is to write a copy, and this is what many APIs do on the web. The idiomatic way to do this in JS is to slice it. However, this adds time and space consumption to every time you use an array buffer, and that's very sad. Detaching and transferring ("neutering") is a built-in solution. Already used widely in the web platform. Detaching means it is no longer a usable handle for that memory. So no one who had original access to the array buffer can use it. Concretely, if we added this to JS, we would add a new method `transfer()` you would get a new ArrayBuffer object where the backing memory is the same as the old one, but the old one is now detached, so any attempts to access the memory at the old one will throw an exception (or return undefined, in implementations). The transferred one (lexically scoped and private to the current function) has a reference to the memory area but is fully functional. (Points to example using transfer()). This doesn't have to copy or detach, and makes the operation fast. You can transfer without having to save the result anywhere. Any thoughts? 
+DD: Long history of sitting at Stage 0. Reintroducing. Binary data has potential for race conditions. (See example in proposal.) Not obvious for debugging. Node.js in particular directly reads the buffer from another thread w/o locking. The defensive way to write this code is to write a copy, and this is what many APIs do on the web. The idiomatic way to do this in JS is to slice it. However, this adds time and space consumption to every time you use an array buffer, and that's very sad. Detaching and transferring ("neutering") is a built-in solution. Already used widely in the web platform. Detaching means it is no longer a usable handle for that memory. So no one who had original access to the array buffer can use it. Concretely, if we added this to JS, we would add a new method `transfer()` you would get a new ArrayBuffer object where the backing memory is the same as the old one, but the old one is now detached, so any attempts to access the memory at the old one will throw an exception (or return undefined, in implementations). The transferred one (lexically scoped and private to the current function) has a reference to the memory area but is fully functional. (Points to example using transfer()). This doesn't have to copy or detach, and makes the operation fast. You can transfer without having to save the result anywhere. Any thoughts?
 
 BFS: There's a visible cost in Node.js with copying all the time, so this is great for us with module loaders!
 
 JKN: Similar to move semantics. Syntax that the data is taken from them? Non-obvious to the caller.
 
-DD: Not sure if we can have those guarantees for callers in JavaScript. Since they're mutable, there's no idiomatic way I can conceive of. 
+DD: Not sure if we can have those guarantees for callers in JavaScript. Since they're mutable, there's no idiomatic way I can conceive of.
 
 WH: What did you mean by "protecting data from other threads"? `transfer` is (rightfully) not done for SharedArrayBuffer, so what does "threads" refer to here?
 
-DD: Basically, this is a particular bad pattern where people compromise safety for performance. `fs.writeFile()` in Node will write concurrently from memory. But this isn't thread safe, because they don't want to take that cost. 
+DD: Basically, this is a particular bad pattern where people compromise safety for performance. `fs.writeFile()` in Node will write concurrently from memory. But this isn't thread safe, because they don't want to take that cost.
 
 WH: Isn't such lack of thread safety an issue anyway?
 
@@ -197,7 +197,7 @@ DD: People might. This is exposing a primitive that all engines already have. Le
 
 DH: This talks about concurrency. This method alone doesn't give capability to do concurrency, right?
 
-DD: No. 
+DD: No.
 
 DH: What you're doing here is exposing the pure primitive of transfer itself. This is not going to solve concurrency problems.
 
@@ -209,7 +209,7 @@ DD: Already possible in the web platform (structured cloning). Only indirectly, 
 
 BFS: In Node.js, we don't have these APIs, and I would like them.
 
-DD: I've wrote a Spec for this and I would like to go for Stage 2. 
+DD: I've wrote a Spec for this and I would like to go for Stage 2.
 
 DE: I want to point out a related proposal in HTML that exposes structured serialization/deserialization for the Web, that has the capability to transfer ArrayBuffer. You can just call this structuredClone method and it can do most of the same things (and more). If we advance this to Stage 2, we just should know that there's multiple ways to do this, and that we're proceeding with this because it's a simpler/more memorable way.
 
@@ -248,7 +248,7 @@ DD: Secondary proposal, trimming while avoiding copies. If we introduce a new fu
 
 TST: Can you speak more about how the internal feedback made you split this out from the transfer proposal?
 
-DD: For transfer, it's meant to be a guarantee—we'll definitely reuse this memory. For `realloc`, it's not as clear. Do we want to transfer ownership or are we concerned with saving memory? 
+DD: For transfer, it's meant to be a guarantee—we'll definitely reuse this memory. For `realloc`, it's not as clear. Do we want to transfer ownership or are we concerned with saving memory?
 
 TST: If you know about transfer, the discovery of that method is much easier, than realloc. This is much harder to reason about needing/use cases.
 
@@ -260,11 +260,11 @@ DD: I believe so? But it contradicts a lot of my arguments for it...
 
 ??: In Moddable XS, For the memory allocation in ArrayBuffers, we can create larger allocations pretty trivially.
 
-GCL: Wondering how this parallels with TypedArray's subarray(). 
+GCL: Wondering how this parallels with TypedArray's subarray().
 
 DD: subarray is different. Will add to FAQ.
 
-MM: WASM has a concept similar to ArrayBuffer, but it is growable while maintaining the same identity. If realloc is "change in place" and maintains identity, then this would fix the mismatch between JavaScript and WASM. 
+MM: WASM has a concept similar to ArrayBuffer, but it is growable while maintaining the same identity. If realloc is "change in place" and maintains identity, then this would fix the mismatch between JavaScript and WASM.
 
 DD: Will look into that, and split realloc into a separate proposal.
 
@@ -280,17 +280,17 @@ slides in pdf, slides in keynote with light animations
 
 (The following notes omit almost everything said in the actual presentation)
 
-MM: First some terminology: the mandated objects that must exist before code starts running are called primordials. Of those primordials, most are replaceable with initialization code. Some object are reachable by syntax. We call everything that's reachable by syntax "undeniables." Today, platforms already support multiple realms (in the browser, iframes; in Node, vm.createContext). (Points to examples in slides). 
+MM: First some terminology: the mandated objects that must exist before code starts running are called primordials. Of those primordials, most are replaceable with initialization code. Some object are reachable by syntax. We call everything that's reachable by syntax "undeniables." Today, platforms already support multiple realms (in the browser, iframes; in Node, vm.createContext). (Points to examples in slides).
 
 BE: Does Carol's compartment (example in slides) get frozen?
 
-MM: Carol's compartment does not get frozen in deepFreeze. 
+MM: Carol's compartment does not get frozen in deepFreeze.
 
-MM: How do we implement this in browsers today? The shim must intercept all attempts to access a free variable (generally looked up in the global lexical scope or on the global object), and we want without parsing or rewriting, to evaluate the code as is. 
+MM: How do we implement this in browsers today? The shim must intercept all attempts to access a free variable (generally looked up in the global lexical scope or on the global object), and we want without parsing or rewriting, to evaluate the code as is.
 
 WH: Early on in the talk you said you wanted to avoid parsing. How does this avoid parsing when you use `eval`?
 
-MM: We wanted to avoid a parser written in JavaScript (parsing at the user level). 
+MM: We wanted to avoid a parser written in JavaScript (parsing at the user level).
 
 #### Conclusion/Resolution
 
@@ -303,7 +303,7 @@ MM: We wanted to avoid a parser written in JavaScript (parsing at the user level
 
 - [slides](https://docs.google.com/presentation/d/e/2PACX-1vQXuKpkf-kHF4Ue-35PAez79EL2bTU-s3dGbQvj0zwOzbqnF1zJJif_RT8wV9v8VkI4agEzvBPbKOoi/pub)
 
-FBN: It's common for websites to show date ranges or intervals—for example for travel dates or a graph range. How do we display this in a friendly way? We can format the two date strings and concatenate them. But we can do this more concisely, if for example the two dates have repeated aspects, like months and years. Another issue is that different locales have different rules for the way they write date ranges. We propose two additional methods: `formatRange` and `formatRangeToParts`. `formatRange` returns a string, and `formatRangeToParts` returns an array of objects, where each object is a different part of the date interval. To give you an example of how to use this API, we instantiate the range with a locale and several options. Why add this to the platform as opposed to loading a library? Formatting date ranges requires a non-trivial amount of raw compiled data. 
+FBN: It's common for websites to show date ranges or intervals—for example for travel dates or a graph range. How do we display this in a friendly way? We can format the two date strings and concatenate them. But we can do this more concisely, if for example the two dates have repeated aspects, like months and years. Another issue is that different locales have different rules for the way they write date ranges. We propose two additional methods: `formatRange` and `formatRangeToParts`. `formatRange` returns a string, and `formatRangeToParts` returns an array of objects, where each object is a different part of the date interval. To give you an example of how to use this API, we instantiate the range with a locale and several options. Why add this to the platform as opposed to loading a library? Formatting date ranges requires a non-trivial amount of raw compiled data.
 
 WH: How much flexibility do you have in deciding where the dash goes? Do you always share the parts of the dates that don't change, or can you duplicate them? Seeing a date range such as `1/2-3/4/2014` would be confusing, whereas `1/2/2014-3/4/2014` would be clearer.
 
@@ -322,18 +322,18 @@ FBN: Everything is based on that locale, and how that locale formats ranges by d
 - [slides](https://docs.google.com/presentation/d/1OmkXFMizf5iYME9ClERZ3C1dwUAhh7-r2YMD-rTzY-Y/)
 
 
-RBN: (Reading slides). The proposal that we are presenting today is this `using` keyword, which requires a cover grammar to work correctly. There are two basic mechanisms to manage these resources. The first example has an expression that is guaranteed to be cleaned up at the end of the block. The second example lets you use variables declared in `using` head within the block. The resources in the head of the block are disposed at the end of the block. If the declaration in the head of the using block is null or undefined, we just ignore it for simplicity. Some challenges with `using`, we must use a cover grammar to disambiguate with CallExpression, though we could use `try () {}` (without a catch or finally). 
-. We'll need to have some follow-up implementations here. We have an initial implementation for testing 
+RBN: (Reading slides). The proposal that we are presenting today is this `using` keyword, which requires a cover grammar to work correctly. There are two basic mechanisms to manage these resources. The first example has an expression that is guaranteed to be cleaned up at the end of the block. The second example lets you use variables declared in `using` head within the block. The resources in the head of the block are disposed at the end of the block. If the declaration in the head of the using block is null or undefined, we just ignore it for simplicity. Some challenges with `using`, we must use a cover grammar to disambiguate with CallExpression, though we could use `try () {}` (without a catch or finally).
+. We'll need to have some follow-up implementations here. We have an initial implementation for testing
 
 MM: When you're reading code, including code inside generators, async functions, and async generator functions, it's easy to find by visual inspection the possible interleaving points. So you could reason about what happens before the executing code vs. after the code resumes from an interleaving point. Wouldn't the end of the dispose block would be a hidden interleaving point?
 
-RBN: It's possible, but the transparency of the interleaving point is effectively the same as an async generator. 
+RBN: It's possible, but the transparency of the interleaving point is effectively the same as an async generator.
 
 MM: The issue you're raising with regard to "yield" in an async generator, was controversial. The resolution recognized that "yield" in a generator was already an interleaving point, in that control could resume after the yield point at an arbitrary later time. It remains the case in JavaScript that *all* interleaving points are marked with either the keywords "await" or "yield" in all contexts. It must remain the case that a trivial visual inspection is able to reliably find all interleaving points in control flow.
 
 TST: This is consistent with Python, and I think it makes sense to support this. On slide 5, you say this solves the footgun of releaseLock. How?
 
-RBN: It doesn't especially avoid the footgun, but if somewhere within the code to getReader and releaseLock, you have an exception, if there's a common syntax/pattern here, it's easier to drum into users these good habits. 
+RBN: It doesn't especially avoid the footgun, but if somewhere within the code to getReader and releaseLock, you have an exception, if there's a common syntax/pattern here, it's easier to drum into users these good habits.
 
 TST: If releaseLock throws, how do you get an exception from that? Do you swallow the exception and then throw it?
 
@@ -353,7 +353,7 @@ RBN: We should use the regular `try` block semantics to be consistent with `try`
 
 WH: There are no existing expectations for this feature. On the other hand, using identical syntax to Java's but with reversed semantics would be very confusing to anyone who knows both languages, making it hard to remember which one is which.
 
-BFS: I'm not super comfortable with the cover grammar. I'd like to see a contextual grammar. 
+BFS: I'm not super comfortable with the cover grammar. I'd like to see a contextual grammar.
 
 SYG: Given that we already have an iterator protocol, I'm concerned we'll have multiple protocols that are all in play.
 
@@ -383,15 +383,15 @@ DE: Each PR should be from someone who is either part of a member organization o
 
 DH: For archival things, this is a tricky topic. I've tried and failed to do this before. David Scott's mission in life is to archive things, maybe we could contract him?
 
-DE: Currently, we're relying on internet archive. The servers that hosted this information have gone missing. It would be very useful to get in touch with whomever ran these servers, because the Internet Archive wiki is incomplete. 
+DE: Currently, we're relying on internet archive. The servers that hosted this information have gone missing. It would be very useful to get in touch with whomever ran these servers, because the Internet Archive wiki is incomplete.
 
 DE: Management: Rex is the interim chair. Neither Leo nor I wants to be chair. We need candidates by September so we can vote in November. I would encourage you all to think about management. If you'd be interested in participating in the facilitation group, that would be great. One of the other roles in management is the Editor group.
 
-JHD: We meet once a week, we go over open PRs and issues and decide whether something is ready to merge or not, and comment our decision publically. Anyone in this room should also feel totally welcome to comment and review. 
+JHD: We meet once a week, we go over open PRs and issues and decide whether something is ready to merge or not, and comment our decision publically. Anyone in this room should also feel totally welcome to comment and review.
 
 BT: If anyone wants to attend our meetings, please let us know and we will forward the invite.
 
-DE: Then there's the code of conduct committee. 
+DE: Then there's the code of conduct committee.
 
 AKI: CoC committee gets together every other week on Thursdays at 1:30 EST. We review any comments or complaints we receive and decide how to respond as a group. There hasn't been a lot; we're pretty good as a group. When something does come up though, we're very thoughtful about how to proceed. If you want to help in any way, please let us know.
 
@@ -410,7 +410,7 @@ PHE: This is a brief intro to TC53, which was just formed this year. The charter
 
 DH: Why wearables as opposed to small IoT devices?
 
-PHE: I suspect that maybe eventually TC53 will extend to all small devices. One of the more important things that this committee is concerned about is energy, about which wearables have particular concerns. 
+PHE: I suspect that maybe eventually TC53 will extend to all small devices. One of the more important things that this committee is concerned about is energy, about which wearables have particular concerns.
 
 LBR: Bocoup is excited to host. It will not be at the cave, but our nice office. (Laughs)
 
@@ -435,19 +435,19 @@ WH: What does `do {continue}` do in the first expression of a for-loop header, f
 lab: for (let x = do {continue lab;}, y = 17; x; ++x} ...
 ```
 
-BFS: What do you mean when you say disallow? ARe you disallowing do-expressions in this context or the grammar constructs within the do-expression? 
+BFS: What do you mean when you say disallow? ARe you disallowing do-expressions in this context or the grammar constructs within the do-expression?
 
 DH: We're changing the scoping. Break to a label that's not in scope is disallowed. Returning could be disallowed.
 
-MM: You didn't mention sloppy/strict. I beg you to allow do-expressions only in strict mode. In sloppy mode, you would have to support all sorts of difficult semantics of nested function declarations, which seems difficult and pointless. 
+MM: You didn't mention sloppy/strict. I beg you to allow do-expressions only in strict mode. In sloppy mode, you would have to support all sorts of difficult semantics of nested function declarations, which seems difficult and pointless.
 
 DH: I wouldn't feel that it would be necessary to only do this in strict mode.
 
-MS: If we're talking footguns, this has a lot of bullets in it. These questionable constructs must be early errors not dynamic errors. 
+MS: If we're talking footguns, this has a lot of bullets in it. These questionable constructs must be early errors not dynamic errors.
 
-DH: I knew if I went through these difficult edge cases, I would get trolled, but if we over-focus on these ridiculous edge cases, the feature seems more complicated than it is, but I think a lot of these cases are ambiguous enough that people tend to shy away from them. I think this is a lot of very strong indication that people want this, so I wouldn't want some hard cases prevent us from seeing those powerful use cases. 
+DH: I knew if I went through these difficult edge cases, I would get trolled, but if we over-focus on these ridiculous edge cases, the feature seems more complicated than it is, but I think a lot of these cases are ambiguous enough that people tend to shy away from them. I think this is a lot of very strong indication that people want this, so I wouldn't want some hard cases prevent us from seeing those powerful use cases.
 
-YK: I want to agree with Mark for a couple of reasons. In general, this feature isn't as scary as other features; you're writing code in your own scope, so I don't think syntax errors make this worse. They would help users avoid footguns. 
+YK: I want to agree with Mark for a couple of reasons. In general, this feature isn't as scary as other features; you're writing code in your own scope, so I don't think syntax errors make this worse. They would help users avoid footguns.
 
 WH: I agree that option 1 is off the table for default values in function headers. Initially I was leaning towards option 2, but because of how we treat variable references in function headers — they do not see the braced scope of the function — I'm now much more persuaded to go with option 3 (disallow). I would not want to allow `var` there either.
 
@@ -466,7 +466,7 @@ MM: One further point in favor of the disallow option: Of these choices, disallo
 
 - [slides](https://github.com/tc39/proposal-global/issues/20)
 
-JHD: A new name for global, since `global` is not web-compatible. Instead of burning bridges, I reached out to a couple of browser vendors to get a list of what names would be possible. I got some data back from Edge, global itself is used quite a lot. `globals` is also quite used, **redacted** is used pretty infrequently, so it's also my next favorite option. 
+JHD: A new name for global, since `global` is not web-compatible. Instead of burning bridges, I reached out to a couple of browser vendors to get a list of what names would be possible. I got some data back from Edge, global itself is used quite a lot. `globals` is also quite used, **redacted** is used pretty infrequently, so it's also my next favorite option.
 
 ?? How did you determine what names to search?
 
@@ -494,9 +494,9 @@ BE: Or `yagni`(\*) to indicate people shouldn't use it.
 
 JHD: I think **redacted** is good for it being pretty obvious, but obscure enough that you won't accidentally using it without knowing what you're doing.
 
-MM: I will be objecting. 
+MM: I will be objecting.
 
-JHD: To the choice of the name or the concept of a global identifier? 
+JHD: To the choice of the name or the concept of a global identifier?
 
 MM: Both.
 
@@ -530,10 +530,10 @@ JHD: Very small changes here, I am hoping I can still achieve stage 3 today. Are
 
 (Shu-yu Guo, SYG)
 
-SYG: We've talked in the past about doing some user-testing for language ergonomics. I can offer resources at Bloomberg London and New York for user testing. What we don't have is people qualified to design user tests (especially programming tasks) and would need very specific studies. 
+SYG: We've talked in the past about doing some user-testing for language ergonomics. I can offer resources at Bloomberg London and New York for user testing. What we don't have is people qualified to design user tests (especially programming tasks) and would need very specific studies.
 BT: I think what you're saying, that usability studies would be great. But I'd also encourage us to challenge what rigorous scientific approaches we can take without having to go into a lab. We can develop a bunch of hypotheses about how users will appreciate a particular feature. We don't need to necessarily go into a lab to test those. Any of us in this room could choose to be very data-driven, but you may not need to do that.
 
-SYG: I'm saying let's not do anecdotal studies, and pushing for more scientific approaches. Though I'm not equipped to do that, necessarily. 
+SYG: I'm saying let's not do anecdotal studies, and pushing for more scientific approaches. Though I'm not equipped to do that, necessarily.
 
 BT: There's a wide spectrum between no data collection, throwing up a poll on Twitter, and doing a usability lab. I think there's plenty of opportunity for our committee to do informal interviews with users. With a light discussion guide, we could get some very valuable data from users.
 

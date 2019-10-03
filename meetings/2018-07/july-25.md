@@ -1,8 +1,8 @@
 # July 25, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontin (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson(RGN), Lin Clark (LCK), Allen Wirfs-Brock(AW), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage(SME), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent(AVT), John David Dalton (JDD)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson(RGN), Lin Clark (LCK), Allen Wirfs-Brock(AW), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage(SME), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent(AVT), John David Dalton (JDD)
 
-Remote: 
+Remote:
 Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell (JRL), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG), Ben Newman (BN), Edd Yerburgh (EYH)
 -----
 
@@ -55,7 +55,7 @@ MM: How shimmable is this? We don't need to trust the transformer, we can just p
 
 BFS: I don't think in an isolated sense, you can properly shim it (we're talking about timing differences with the parent model). I suggest you take a look at @std/esm by John-David Dalton (JDD), which implements some of the things you're discussing.
 
-YK: I want to say to MM, there's a lot of different levels of semantic preserving. If you're willing to compile your module to things that are synchronously available—if you only have static imports, then all the existing tools (there may be bugs) are intending to be spec compliant. This of course, doesn't apply to WASM. 
+YK: I want to say to MM, there's a lot of different levels of semantic preserving. If you're willing to compile your module to things that are synchronously available—if you only have static imports, then all the existing tools (there may be bugs) are intending to be spec compliant. This of course, doesn't apply to WASM.
 
 YK: Specifically about CJS, the reason CJS transpilers today are not semantics-preserving is that there's no semantics to preserve. I think transpiler maintainers will be excited to implement anything we specify, as long as there's a specification to speak of.
 
@@ -63,7 +63,7 @@ SL: Webpack is using getters, Object.defineProperty, etc. Some dirty tricks invo
 
 JDD: (Responding to earlier questions) My ESM loader is compatible with Webpack, Rollup, all the tools. Preserves semantics for the needs of the ecosystem today.
 
-WH: I'm curious how this relates to the other dynamic module efforts (WASM, etc) that support cycles. 
+WH: I'm curious how this relates to the other dynamic module efforts (WASM, etc) that support cycles.
 
 BFS: This only aims to be a leaf node. Part of DD's concern is that if this only applies to leaf nodes, it may make more sense for this to be its own record type. For CommonJS, the leaf node requirement is not a problem, though it may be more of a problem for WASM, if cycles are involved.
 
@@ -87,15 +87,15 @@ MM: When I look at the world of JS today, there's a tremendous number of modules
 
 BFS: To clarify, should there be a separate integration spec, or should it be in ECMA-262?
 
-MM: I'm fine with it either in ECMA-262 or in the way that `Intl` is separate, for example. As issues relating to modules going forward (like writing loaders in JavaScript), I suspect there's a tight-enough coupling that we should synchronize specs. 
+MM: I'm fine with it either in ECMA-262 or in the way that `Intl` is separate, for example. As issues relating to modules going forward (like writing loaders in JavaScript), I suspect there's a tight-enough coupling that we should synchronize specs.
 
 TST: Everything runs as a Source Text Module Record? Sounds like you're (MM) suggesting we standardize CommonJS in this committee?
 
 MM: I am making the stronger assertion. To JS programmers in the wild, they think about writing code using CommonJS modules as one of the standard ways, and publish code to npm using these assumptions. I'm starting with the common assumptions of JS programmers about how to write host-independent JS, often by writing CommonJS, that are supported pervasively on all the platforms, even if they're not supported directly _by_ the platforms.
 
-DE: I think it would be great if we come to a conclusion about what we want to tell the Node.js community about this. It sounds like we're layering. Are we OK with letting Node.js do what they want without us spec'ing it out? 
+DE: I think it would be great if we come to a conclusion about what we want to tell the Node.js community about this. It sounds like we're layering. Are we OK with letting Node.js do what they want without us spec'ing it out?
 
-BFS: I have a suggestion here, we're trying for stage 1 right now and layering is important. 
+BFS: I have a suggestion here, we're trying for stage 1 right now and layering is important.
 We have this proposal we can alter it in a variety of ways, I don't think we're proposing for any JS APIs to be added to the spec here. We can move forward on this, go back to Node.js and propose this without adding a new module record type, and come back at some point to discuss cycles. I'm not confident that cycles are well-suited in this design space, and also not confident that in the designs we're proposing, that cycles will work as they do in Source Text Module Record. There's an issue on the issue tracker about order of evaluation and partial namespace objects, so there's a lot to work on here.
 
 DH: One thought about cycles: it may be the case that you don't need to express cycles in an explicit way. If you use the dynamic module record as the point of reflection, (imagine a user-land self hosting of ESMs, the evaluation is something you can control when that happens, and the module graph cycles are really about a relationship between source code, not a relationship between module records. Cycles are about who's closed over what. This cycleless model actually may be sufficient to express cycles. I think you guys are doing work that _can_ end up serving as the foundation for the dynamic reflection API. This work will be leverageable for future module work.
@@ -126,7 +126,7 @@ That brings us to today. What is a successful website for us? Came from a survey
 - Better line of communication to the public. E.g., CSSWG, and W3C in general.
 - Website as a cornerstone for the documentation for TC39, which was one of the things that spurred the creation for the website.
 
-So far the website only does one of these things: TC39 has a better communication channel to the public. We now list our GitHub discussions, which some people didn't even know about, so people can participate more easily. 
+So far the website only does one of these things: TC39 has a better communication channel to the public. We now list our GitHub discussions, which some people didn't even know about, so people can participate more easily.
 
 ### Next steps
 
@@ -134,7 +134,7 @@ So far the website only does one of these things: TC39 has a better communicatio
 - Getting documentation online.
 - Final user interviews (Nov. – Dec.) and revisions.
 
-**Crawler**: The crawler project is in two parts, to add missing information where possible—it will run through GitHub issues to find this info. 
+**Crawler**: The crawler project is in two parts, to add missing information where possible—it will run through GitHub issues to find this info.
 
 **Documentation**: in progress (e.g., stage 3 review document, etc.) as well as planned (e.g., how to be a host, how to be an editor). No priority but if you are knowledgeable in this area a skeleton or partial document would be helpful. No need for complete documents! We can use any help we can get. Is there privileged information that we should not publish, both privileged documents or information in other documents that we need to redact? We should discuss.
 
@@ -142,19 +142,19 @@ So far the website only does one of these things: TC39 has a better communicatio
 
 ### Questions
 
-AWB: I've been working on a project chronicling the history of ECMAScript. My general question is, what are you thinking about archivability for this content. I've discovered that it's very useful to see the history of proposals, discussions, etc. 
+AWB: I've been working on a project chronicling the history of ECMAScript. My general question is, what are you thinking about archivability for this content. I've discovered that it's very useful to see the history of proposals, discussions, etc.
 
 YSV: This is a great question. We've thought about this concept of a timeline, so people can see how proposals move and shift. One way we could archive it is using the Internet Archive and request they archive it on a two-month basis when we hold our meetings.
 
-AWB: I've found the Internet Archive to be invaluable but incomplete. There's definitely a lot of intermediate things that are lost forever. My second point is that you should make archivability one of your requirements. My third point is that a timeline is very important. When there are different but related proposals, seeing them together on a timeline would be very valuable, as a way to capture and document that parallelism. 
+AWB: I've found the Internet Archive to be invaluable but incomplete. There's definitely a lot of intermediate things that are lost forever. My second point is that you should make archivability one of your requirements. My third point is that a timeline is very important. When there are different but related proposals, seeing them together on a timeline would be very valuable, as a way to capture and document that parallelism.
 
 DE: About archiving, I present yesterday some infrastructure tasks that we need to do. All of the branches in all of the GitHub repositories need to be archived. We used to do this, but it's broken now. KC has propose some ways to address this, but that's currently not actively being done. If someone is interested in making sure these archives are preserved, I encourage them to volunteer to do this work.
 
-AWB: From a historian's perspective, it's not reasonable to expect someone to restore 20 years from now the exact state of the website from a moment in time. 
+AWB: From a historian's perspective, it's not reasonable to expect someone to restore 20 years from now the exact state of the website from a moment in time.
 
 DE: Sure, I'm not saying that though. If the HTML stays around, that will be sufficient. I'm saying our archiving hasn't been perfect and we may not want to rely on the Internet Archive when this can be simple for us to do ourselves.
 
-WH: Most ECMA committees use a document repository. Years ago we did that too, and those documents are well-preserved. More recently we switched to a wiki and that has vanished, other than scattered Internet Archive snapshots. GitHub will not be around forever either; we do need to archive things _in a readable form_. 
+WH: Most ECMA committees use a document repository. Years ago we did that too, and those documents are well-preserved. More recently we switched to a wiki and that has vanished, other than scattered Internet Archive snapshots. GitHub will not be around forever either; we do need to archive things _in a readable form_.
 
 YK: I agree with the sentiment of needing archives. It's easy to look at the past and say we need to record this information, but as its created it's a much harder task. There are certain kinds of information that we collect because we have an open setup, but the potential problem with this is that since it is so open, people may think it may not be important to archive just because it's freely available today.
 
@@ -187,7 +187,7 @@ WH: Some Groups, such as Intl, have well-defined separation and work well. Howev
 
 AK: (To WH) Groups should only give _recommendations_, just like champions (who are like Groups of one).
 
-WH: I'm concerned about lock-ins. There's a lot of scientific research that shows that splitting into Groups before doing a plenary leads to decision lock-ins that are hard to dislodge by other stakeholders. 
+WH: I'm concerned about lock-ins. There's a lot of scientific research that shows that splitting into Groups before doing a plenary leads to decision lock-ins that are hard to dislodge by other stakeholders.
 
 YSV: Everything is very much up to discussion.
 
@@ -247,7 +247,7 @@ JHD: Would some implementation guard for monkey-patching `Promise.prototype.then
 
 MM: The spec only deals with observable differences. If you're talking about an optimization that doesn't deal with observable differences, you're still following the spec.
 
-JHD: If we're talking about a get or not, that is an observable difference. 
+JHD: If we're talking about a get or not, that is an observable difference.
 
 MM: The issue of calling the `then` in order to continue, then it's not an observable difference.
 
@@ -275,7 +275,7 @@ DE: Why decorators? The idea is to make classes more expressive. It encourages t
 
 AWB: If we have do expressions, how do they affect thunking of initializer expressions? Assuming you have do expressions, in the initializer in the class, and you have a return in the do expression, what does it do?
 
-DH: Things that implicitly "thunk", we should not allow the indefinite suspension of those control. 
+DH: Things that implicitly "thunk", we should not allow the indefinite suspension of those control.
 
 WH: Why are we discussing this? What do initialization expressions have to do with decorators?
 
@@ -283,7 +283,7 @@ DE: Let's table this discussion.
 
 YK: For people who were on the fence about decorators with private, you really do want to mutate a private name, without exposing it to the public. This is why it's good for decorators to be allowed to wrap private stuff, so I'm enthusiastic about the @reader situation.
 
-AWB: I'm uncomfortable with allowing private names that allows them to escape from a decorator. 
+AWB: I'm uncomfortable with allowing private names that allows them to escape from a decorator.
 
 DE: This is actually a design goal, so I want to allow it. Also, it doesn't give any more power than WeakMaps for escaping.
 
@@ -291,7 +291,7 @@ RB: There was a comment that we should avoid those use cases of private names, I
 
 MM: Where have you operationally found the need to test a private name?
 
-DE: This is a very concrete use case. I actually originally worked around this with duck typing, but I've changed my mind. We often need to overload something from those objects and other things. You could want a function to be overloaded between a descriptor and a function. The other important case is in the transition from legacy decorators. 
+DE: This is a very concrete use case. I actually originally worked around this with duck typing, but I've changed my mind. We often need to overload something from those objects and other things. You could want a function to be overloaded between a descriptor and a function. The other important case is in the transition from legacy decorators.
 
 MM: We have a spec technique that we use to indicate invariants we want in the standard: spec assertions. This way if an assertion fails, we know the spec has a bug rather than undesired behavior. We should use those to ensure that decorators don't leak private.
 
@@ -313,11 +313,11 @@ MM: Every declaration we have for functions, syntactically, can be evaluated as 
 
 DE: Thank you for bringing up this consideration. JRL has also been talking about this, and it's nice to have confirmation from others about these particular cases that you care about. If there are others, please let me know.
 
-MM: If you want to toString a class with decorators, That text surrounded with parens must be evaluable as an expression statement producing an equivalently decorated class. However, if "export" in included with the source text of the class, it would not be evaluable as an expression. 
+MM: If you want to toString a class with decorators, That text surrounded with parens must be evaluable as an expression statement producing an equivalently decorated class. However, if "export" in included with the source text of the class, it would not be evaluable as an expression.
 
 RB: I would never think it's safe to serialize a class with decorators to a string, with the sole exception of the entire class definition being inside a function, and the function itself is serialized.
 
-DE: For the toString tagging branding, are we OK with this or would we like to revisit it? 
+DE: For the toString tagging branding, are we OK with this or would we like to revisit it?
 
 (No concerns)
 
@@ -325,21 +325,21 @@ AK: I think this is one of those places where the group thing isn't working.
 
 YK: For things where we can't reach an agreement as a group and get stuck, using the broader committee is helpful.
 
-DD: I really want the committee to weigh-in on private name integrity. 
+DD: I really want the committee to weigh-in on private name integrity.
 
-DE: Does anyone have any concerns with the group review process, where we propose the only remaining concerns or discussion points here? (None). We have a standard weekly meeting to discuss the private name integrity details. 
+DE: Does anyone have any concerns with the group review process, where we propose the only remaining concerns or discussion points here? (None). We have a standard weekly meeting to discuss the private name integrity details.
 
-YK: I would like to see this proposal advance in the next meeting. If people have objections, can the mention them in our weekly meetings. 
+YK: I would like to see this proposal advance in the next meeting. If people have objections, can the mention them in our weekly meetings.
 
 DD: I think this is a big ask if people object to your proposal to have to spend an hour a week.
 
-YK: That's not what I'm proposing. 
+YK: That's not what I'm proposing.
 
 DD: I think it's ok to not advance a feature because not all the things are worked out.
 
 YK: But I think this feature is being held up by a non-issue.
 
-DE: We seem to have a high level understanding of the basic features. There are a lot of lightweight ways to give feedback that don't require going to an hour long meeting. 
+DE: We seem to have a high level understanding of the basic features. There are a lot of lightweight ways to give feedback that don't require going to an hour long meeting.
 
 #### Conclusion/Resolution
 
@@ -374,7 +374,7 @@ WH: Discouraging that pattern would be a nice side effect.
 #### Conclusion/Resolution
 
 - Stage 2 acceptance
-- Reviewers: 
+- Reviewers:
   - WH
   - JHD
   - MS
@@ -442,7 +442,7 @@ DD: ??
 
 YK: ??
 
-RBN: I'm not asking for stage advancement. I can 
+RBN: I'm not asking for stage advancement. I can
 
 MM: Is this already stage 1?
 
@@ -486,11 +486,11 @@ RBN: No; that would require a new reference type, which I'm hesitant to introduc
 
 JH: That means that this proposal does not support method extraction.
 
-RBN: 
+RBN:
 
 JH: One of my objections with pipeline operator is that it might kill the bind operator. I hope we have some plan for method extraction.
 
-RBN: 
+RBN:
 
 DR: Question about the template example...that's not a tagged template, right? Does that require double-parsing?
 
@@ -552,7 +552,7 @@ RBN: If there are strong objections I can reconsider.
 
 MM:  We need to remember that JavaScript is pretty unique as languages go. In that the wide variety of experience that people approach the language. It's a lot of people's first language. The more code looks like "punctuation soup", the less likely people are going to be able to learn the language by reading code. This exceeds proposal exceeds complexity budget of the language. This blows the learnability of the language... I can't imagine seeing this proposal go to stage 2, so I recommend that we drop it.
 
-KS: I'm in agreement with what BE, WH and MM have said. Maybe this is an issue with pieplines. We need to talk about that in conjunction with pipelines. 
+KS: I'm in agreement with what BE, WH and MM have said. Maybe this is an issue with pieplines. We need to talk about that in conjunction with pipelines.
 
 YK: I guess I'm repeating a lot of what other people have said. So I think, GCN made this point before, the second-to-last example is just an object literal (??)  So what I want to say is, these disallowed syntax don't need to be disallowed (outside of?) pipelines, so we probably want to restrict this disallowment to pipelines if we do it at all.
 
@@ -689,15 +689,15 @@ YK: That was basically the context of my question earlier. I don't really want t
 
 MF: I don't know if they are actually mutually exclusive.
 
-YK: I'm asking this question, but we keep on shutting it down. I believe that we have to. 
+YK: I'm asking this question, but we keep on shutting it down. I believe that we have to.
 
 BFS: I want to make a stronger claim, that this and mixins can interoperate in a good way. So the idea of mixins is a factory for abstract classes of sorts. I don't think protocols are built for inheritance. So I don't think these overlap. I think mixins could in theory support symbol-based fields. I would rather see this and mixins cross-pollinate rather than hit each other head-to-head.
 
 DD: One take on this proposal is that it is proposing three separate things:
 
-1. It is a partial class feature. 
-2. Symbol based properties in a simple way. 
-3. It has a shallow type checking feature. 
+1. It is a partial class feature.
+2. Symbol based properties in a simple way.
+3. It has a shallow type checking feature.
 
 
 I think that this should be split into 3 separate proposals and maybe add some of these components into the Mixins proposal.

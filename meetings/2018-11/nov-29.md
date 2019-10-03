@@ -1,8 +1,8 @@
 # November 29, 2018 Meeting Notes
 -----
-Mattijs Hoitink (MHK), Michael Saboff (MS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbage (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontin (FAB), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
+Mattijs Hoitink (MHK), Michael Saboff (MS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbage (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontín (FBN), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
 
-Remote: 
+Remote:
 Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), Istvan Sebestyen (IS), Richard Gibson (RG), Guy Bedford (GB), Conrad Watts (CWS)
 -----
 
@@ -220,7 +220,7 @@ YK: In import{}, we defer the check.
 
 AK: Right
 
-YK: So then there's no problem. So when you say inport{}, and you see that module the first time and you're ready to link it, 
+YK: So then there's no problem. So when you say inport{}, and you see that module the first time and you're ready to link it,
 
 AK: The whole point of the dynamic modules patch is to let the curlies behave in a way that's relatively nice.
 
@@ -244,7 +244,7 @@ YK: On the first issue, we are changing an invariant. ((( The invariant is that 
 
 DE: So let's talk about the philosophical issue?
 
-YK: Let's finish discussing issue 2. But my opinion is that I think that issue 
+YK: Let's finish discussing issue 2. But my opinion is that I think that issue
 
 DH: My opinion is that I think this issue is fine. i think conceptually we're deferring the checks until we have complete information about the graph.
 
@@ -276,7 +276,7 @@ AK: The problem we've found is, in the presence of cycles, what happens to the t
 
 YK: And what is the difference there between import{} and import*?
 
-AK: And there is a whole other question and there are fewer problems there, the other thing being that you have these namespace objects where ... 
+AK: And there is a whole other question and there are fewer problems there, the other thing being that you have these namespace objects where ...
 
 DE: I'm having trouble following. I'm looking up what the semantics are of the cyclic case.
 
@@ -295,14 +295,14 @@ import { bar } from "c3.js"
 
 // c1
 require("e2.mjs")
-exports.foo = ... 
+exports.foo = ...
 
 // e2
 import { bar } from "c3.js"
 
 // c3
 require("e0.mjs")
-exports.bar = ... 
+exports.bar = ...
 ```
 
 DH: I'm trying to demonstrate a cyclic graph in which there are deferred checks imposed across multiple crossings. So we have a type crossing between all four files. I'm trying to demonstrate that you can't partition the graph and run all the cjs first. Because if you could partition the graph, that would be nice, but that's impossible. So therefore, the only options I can see is that either you do some of those deferred checks before you finish execution of cjs, in which case you could get errors for things that could have been there if you waited longer, or you do the checks after everyone has executed.
@@ -887,7 +887,7 @@ DE: Yes
 
 MF: I think that's problematic—I don't think we should sit on a scheme space. Any builtin modules where the module specifies is a valid URL is bad. In the future it could be useful specifier.
 
-DE: Aside from the URL space, we want to consider npm namespace i.e. @key. 
+DE: Aside from the URL space, we want to consider npm namespace i.e. @key.
 
 MHK: If we use `:` it looks like a URN and might break current usage, such as in WebPack.
 
@@ -996,7 +996,7 @@ DE: Let's talk about import-maps story.
 
 MHK: We could have a chaining mechanism for loaders. When a module is imported, first resolver in chain gets called to see if they could resolve, this goes on recursively. If by the end no one resolves it throws. We could create a loader at end of chain to see if they can resolve the std library. That's how you could layer host specific resolving on engine.
 
-DE: Import maps module specifier to URL. If you use this to map `js::` to <myURL> it let's you polyfil & gives you something that shimmable in a control way cause it's centralized in the import map. Would benefit by bringing node into the conversation. Needs to work across platforms or at least that there is one on each platform. Want to make sure that things are in sync between web & node. 
+DE: Import maps module specifier to URL. If you use this to map `js::` to <myURL> it let's you polyfil & gives you something that shimmable in a control way cause it's centralized in the import map. Would benefit by bringing node into the conversation. Needs to work across platforms or at least that there is one on each platform. Want to make sure that things are in sync between web & node.
 
 MHK: That's part of the other proposal.
 
@@ -1016,7 +1016,7 @@ DE: J Chung is leading open standards effort—will introduce.
 
 NHD: Does this answer shimability MF?
 
-MF: There are many ideas what people want, shadowing is sufficient for some, others may be interested as mutating builtins. 
+MF: There are many ideas what people want, shadowing is sufficient for some, others may be interested as mutating builtins.
 
 DE: As the controller of the import map tells that to have the import map of the polyfil...
 

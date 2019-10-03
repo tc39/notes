@@ -292,7 +292,7 @@ KG: I made a web-based Test262 runner, which we hadn't had for a while. It loads
 
 ## 12.ii.a. Proposal to reform the spec to solve Node.js ecosystem compatibility breaks w/ ES Modules
 
-(Caridy Patino)
+(Caridy Patiño)
 
 - [Slides](https://docs.google.com/presentation/d/1EYOysPhgjXtgmuNoZ_wUCMElZ8GKLxJmCLeF0EvUXkc/edit#slide=id.p)
 - [Proposal](https://github.com/caridy/proposal-dynamic-modules)
@@ -423,7 +423,7 @@ AK: Yes
 
 #### Conclusion/Resolution
 
-- Stage 1, champion Caridy Patino
+- Stage 1, champion Caridy Patiño
 
 ## 12.iv.b LineTerminator normalization: implementation feedback for F.p.toString
 

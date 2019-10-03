@@ -3,7 +3,7 @@
 
 Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Jeff Morrison (JM), James Snell (JSL), Keith Miller (KM), Myles Borins (MBS), Rick Waldron (RW), Mariko Kosaka (MKA), Stephen Murphy (SMY), Rob Palmer (RPR), Andrew Paprocki (API), Philippa Gardner (PGR), Sam Goto (SGO), Mark S. Miller (MM), Nathan Hammond (NHD), Masud Rahman (MRN), Henry Zhu (HZU), Sebastian Markbåge (SM), Joe Mordetsky (JMY), Franziska Hinkelmann (FHN), Caridy Patiño (CP), Myles Borins (MBS), Ron Buckton (RBN), Ashley Williams (AWS), Domenic Denicola (DD), Patrick Soquet (PST), Peter Hoddie (PHE), Leo Balter (LBR), Ben Newman (BN), Jafar Husain (JH), Yehuda Katz (YK), Sarah D'Onofrio (SDO), Kirill Cherkoshin (KCN), Andres Suarez (ASZ), Diego Ferreiro Val (DFV), Tzvetan Mikov (TMV)
 
-Remote: 
+Remote:
 Jamund Ferguson (JXF), Bradley Farias (BFS)
 
 -----
@@ -30,11 +30,11 @@ https://github.com/tc39/agendas/blob/master/2017/05.md
 
 (Brian Terlson)
 
-BT: (Final draft of ES2017 coming soon) 
+BT: (Final draft of ES2017 coming soon)
 
 - Ongoing effort in Ecma and ISO to accept non-paged formats
 - Convince to move away from paper documents
-- Many editorial commits from Andre Bargul 
+- Many editorial commits from Andre Bargul
 - The opt-out period has ended, can move forward with publishing
 - Executive committee approved draft last month
 - The draft is now "ES2018" (which means we are working on ES2018)
@@ -47,14 +47,14 @@ BT: (Final draft of ES2017 coming soon)
 
 ## 10. Ecma 402 Status Update
 
-(Caridy Patino)
+(Caridy Patiño)
 
 
-CP: Draft is complete, producing a PDF with "print to pdf". 
+CP: Draft is complete, producing a PDF with "print to pdf".
 
 BT: If the new tool from Dean Tribble doesn't work out, we'll just do the same for Ecma 262
 
-CP: Minor editorial and version updates. 
+CP: Minor editorial and version updates.
 
 
 
@@ -72,8 +72,8 @@ AWB: We'll get to this on Thursday, please read the documents in reflector
 
 (Leo Balter)
 
-LBR: 
-    
+LBR:
+
 - over 200k new lines of test code written thanks to test generator
 - a lot of coverage for async iteration
 - New coverage for object spread (rest properties)
@@ -81,7 +81,7 @@ LBR:
     - this allows consumers to filter tests as needed
     - https://github.com/tc39/test262/blob/master/FEATURES.md
     - Aiming to grow the contributor base.
-    
+
 LBR: (explaining clean up of erroneous tests that interact with implied global, re: "length" and "name")
 
 AWB:
@@ -104,33 +104,33 @@ DD:
 
 
 
-## 16.i.a RegExp Legacy Features for Stage 3 
+## 16.i.a RegExp Legacy Features for Stage 3
 
 (Mark S. Miller, by Claude Pache)
 
 https://github.com/tc39/proposal-regexp-legacy-features
 
-MM: The meeting notes did not capture the reviewer names, so didn't reach out. 
+MM: The meeting notes did not capture the reviewer names, so didn't reach out.
 
-DE: subclassing restriction is neither necessary or sufficient. 
+DE: subclassing restriction is neither necessary or sufficient.
 
-- There are use cases where subclassing is relevant. 
+- There are use cases where subclassing is relevant.
 - The steps using new.target don't prevent leakage
 
-MM: Need to revisit. 
+MM: Need to revisit.
 
 WH: Have same concern; in fact the very motivation argument contains an example that demonstrates why it's not motivated.
 
 - Don't think subclassing should be gated.
 
-DE: Can discuss further and return 
+DE: Can discuss further and return
 
 MM: revisit on Thursday
 
 AWB: Don't need to rush
 
 
-MM: Goals: minimal semantic pollution, while matching web reality as closely 
+MM: Goals: minimal semantic pollution, while matching web reality as closely
 
 
 #### Conclusion/Resolution
@@ -139,7 +139,7 @@ MM: Goals: minimal semantic pollution, while matching web reality as closely
 
 
 
-## 16.i.b. Math.signbit proposal 
+## 16.i.b. Math.signbit proposal
 
 (JF Bastien, presented by Keith Miller)
 
@@ -150,8 +150,8 @@ KM: propose a signbit function that will behave as a signbit function should
 
 WH: I disagree with how it's presented, but don't disagree with the feature
 
-KM: 
-    
+KM:
+
 https://tc39.github.io/proposal-Math.signbit/Math.signbit.html#sign
 
 - Should we coerce the number?
@@ -164,8 +164,8 @@ WH/MM: Why is Math.sign inadequate? Why would you like to get this information?
 
 KM: want to do low level operations that require the signbit
 
-RW: I spend a lot of time writing bit shifting operations to determine sign of values assembled from 8 bit, looking for signs. 
-(After revisiting real driver code, and further discussion re: this is about the IEEE754 double precision sign bit, I retract this use case evidence. Determining signbit for these cases would require knowing the number of bits the value should be clamped to). 
+RW: I spend a lot of time writing bit shifting operations to determine sign of values assembled from 8 bit, looking for signs.
+(After revisiting real driver code, and further discussion re: this is about the IEEE754 double precision sign bit, I retract this use case evidence. Determining signbit for these cases would require knowing the number of bits the value should be clamped to).
 
 MM: Is there a situation where you want just the sign bit but not the full 64-bit serialization of the number? If you usually/always want the full serialization too, you can just serialize to a TypedArray.
 
@@ -183,7 +183,7 @@ KM: There are many results for signbit in Apple codebase
 
 WH: How many of them are bugs?
 
-KM: Need to answer these questions: 
+KM: Need to answer these questions:
 
 https://tc39.github.io/proposal-Math.signbit/Math.signbit.html#alts
 
@@ -195,7 +195,7 @@ WH: If we're going to do this, the way it's specified now is the right way to do
 #### Conclusion/Resolution
 
 - Coercison ToNumber?
-- Unless otherwise necessary, follow existing 
+- Unless otherwise necessary, follow existing
 - The return type is Boolean?
 - Yes
 - NaN is equivalent to a positive number?
@@ -203,7 +203,7 @@ WH: If we're going to do this, the way it's specified now is the right way to do
 
 
 
-## 16.i.c Status update on RegExp proposals: lookbehind, Unicode properties, dotall flag and named groups status update 
+## 16.i.c Status update on RegExp proposals: lookbehind, Unicode properties, dotall flag and named groups status update
 
 (Daniel Ehrenberg)
 
@@ -216,7 +216,7 @@ DE: proposals...
 - Unicode properties https://github.com/tc39/proposal-regexp-unicode-property-escapes
 - lookbehind https://github.com/tc39/proposal-regexp-lookbehind
 
-Status: 
+Status:
 
 - All implemented in V8
 - Tests in Test262
@@ -267,7 +267,7 @@ BT: Any new features to Intl are impossible without ICU
 
 WH: Is the issue that ICU is the only viable library or that there are several libraries that do things differently?
 
-BT: ICU does a lot that the windows intl libraries don't do and vice versa. It's not that non-ICU are not viable, but that this is very ICU. 
+BT: ICU does a lot that the windows intl libraries don't do and vice versa. It's not that non-ICU are not viable, but that this is very ICU.
 
 AWB: Are we adding because it's in ICU, ir because it's fundamentally useful?
 
@@ -278,13 +278,13 @@ DE: have to decide between shipping massive amount of data or being slightly ina
 - Can be used for HTML line breaking accuracy
 
 BT: concerns...
-    
-- First time with Intl, we went in circles to implement "implementation defined" 
-- Now have a bug, because only non-ICU Intl. Our results are not interoperable. 
+
+- First time with Intl, we went in circles to implement "implementation defined"
+- Now have a bug, because only non-ICU Intl. Our results are not interoperable.
 - The community sees this as "chakra does the wrong thing"
 - Expect to use the date time formatter to get a parseable date
 - When there are invalid characters in result, they file bugs
-- Want to format a full time, ie. minutes as mm:00, because spec said so. 
+- Want to format a full time, ie. minutes as mm:00, because spec said so.
 
 
 DE, BT: discussing Intl implementation databases...
@@ -295,7 +295,7 @@ DE: CLDR is Unicode (http://cldr.unicode.org/)
 
 DE: New ICU APIs go through a standards process.
 
-AWB: edition 1 of Ecma 402: "don't like things left under specified". The outcome is interoperability issues on the web. 
+AWB: edition 1 of Ecma 402: "don't like things left under specified". The outcome is interoperability issues on the web.
 
 BT: It would be better if the implementations were all diverse instead of a consensus-of-3 vs. 1. The latter case makes the 1 look like a bug.
 
@@ -309,13 +309,13 @@ AWB: Do we want to specify a behavior, ie. ICU or not?
 
 BT/AWB: Do nothing until we get consensus on normative references to, eg ICU.
 
-BT: The windows database has everything that CLDR has (regularly updated), this doesn't help. 
+BT: The windows database has everything that CLDR has (regularly updated), this doesn't help.
 
 AWB: Do we introduce new features that are not fully specified?
 
 DE: Likely need to work offline
 
-BT: Ok with stage 3 because it gives me enough time to take this to the Windows team 
+BT: Ok with stage 3 because it gives me enough time to take this to the Windows team
 
 DE: Stage 3 might be a good "forcing function" to drive the research to solve the above questions and concerns
 
@@ -332,14 +332,14 @@ AK: Not a stage 3 issue.
 
 (Further discussion re: unspecified or underspecified features)
 
-LBR: Would like to ensure that someone from Microsoft is formally reviewing. 
+LBR: Would like to ensure that someone from Microsoft is formally reviewing.
 
 
 #### Conclusion/Resolution
 
 - Stage 2 acceptance
 - Reviews still needed
-- Caridy Patino
+- Caridy Patiño
 - Kent C. Dodds will find someone at PayPal
 - Brian Terlson
 
@@ -352,19 +352,19 @@ LBR: Would like to ensure that someone from Microsoft is formally reviewing.
 
 BT: Should we advance a proposal for normative ICU reference?
 
-DE: want to include Steven Loomis and Anne van Kesteren in this discussion 
+DE: want to include Steven Loomis and Anne van Kesteren in this discussion
 
 JSL: Volunteer to help
 
 #### Conclusion/Resolution
 
-- Stage 0 
+- Stage 0
 - Domenic Denicola to act as committee liaison
 
 
 
 
-## 16.i.e Standardizing Date.prototype.toString 
+## 16.i.e Standardizing Date.prototype.toString
 
 (Daniel Ehrenberg)
 
@@ -378,7 +378,7 @@ AK: Can this be addressed when we discuss "Needs Consensus PRs"?
 JXF: Are there libraries that will break with this change?
 
 
-DE: TZ is optional 
+DE: TZ is optional
 
 API: Not guaranteed to have a TZ string on systems with no TZ
 
@@ -401,7 +401,7 @@ AWB: (explains how 262 defers to 402 in toLocaleString cases)
 
 
 
-## 16.i.g Float16 on TypedArrays, DataView, Math.hfround for stage 1 
+## 16.i.g Float16 on TypedArrays, DataView, Math.hfround for stage 1
 
 (Leo Balter, original request from esdiscuss)
 
@@ -411,9 +411,9 @@ LBR: (presenting direct from slides above)
 
 AWB: Who's blocked by not having this feature? What's the use-case? Pain point or "nice-to-have"?
 
-LBR: Main usecase: webgl, graphics, 
+LBR: Main usecase: webgl, graphics,
 
-DD: Support stage 1 to explore. 
+DD: Support stage 1 to explore.
 - For stage 2, need to determine how widespread the need is, from webgl/graphics/etc folks.
 
 WH: What are you going for here? Space compactness, speed, compatibility with external APIs? What's the speed benefit if there are no Float16-specific operations currently? Are the expectations that implementations will optimize a double operation followed by hfround into a 16-bit float operation?
@@ -429,9 +429,9 @@ AWB: If the concern is memory compactness, not performance, and there are no ope
 
 KM: is it a matter of costing X times as much in software?
 
-DE/SM: Already supported in webgl... serving hardware that can only use half-floats in a render target... passing data through, computational format use cases. Best way to get the most amount of bits through the process. 
+DE/SM: Already supported in webgl... serving hardware that can only use half-floats in a render target... passing data through, computational format use cases. Best way to get the most amount of bits through the process.
 
-DD: Can already pack the bits into 16-bit elements and use an array buffer 
+DD: Can already pack the bits into 16-bit elements and use an array buffer
 
 SM: Have use case, but much more narrow
 
@@ -439,7 +439,7 @@ YK: Seems like setFloat16, getFloat16 might be useful without Float16Array?
 
 _Agreement_
 
-DH: The dataview is a way to do marshalling/unmarshalling of opaque data 
+DH: The dataview is a way to do marshalling/unmarshalling of opaque data
 
 DD: @ Dave... ASM/WebGL/Unity, etc?
 
@@ -449,11 +449,11 @@ DH: Can pass along to them to find need.
 #### Conclusion/Resolution
 
 - Stage 1 acceptance
-- need to explore and answer questions discussed above. 
+- need to explore and answer questions discussed above.
 - Ask browser-based game developers if this is of broad value
 
 
-## 16.i.h Why allow BindingPattern for BindingRestParameter for object rest. Maybe we should just allow identifiers. 
+## 16.i.h Why allow BindingPattern for BindingRestParameter for object rest. Maybe we should just allow identifiers.
 
 (Keith Miller on behalf of Saam Barati)
 
@@ -461,8 +461,8 @@ https://github.com/tc39/ecma262/issues/915
 
 KM: (walking through the issue linked above)
 
-The simplest example: 
-    
+The simplest example:
+
 ```js
 let { ...[] } = {};
 ```
@@ -473,8 +473,8 @@ What does `...[]` mean?
 AK: (explains that `...[]` is nonsense)
 
 
-Doesn't exist: 
-    
+Doesn't exist:
+
 ```js
 Object.prototype[Symbol.iterator]
 ```
@@ -510,8 +510,8 @@ KG: Not currently useful?
 SM: No, there are use cases for `{ a, ...{ b, c }}`, because `b` and `c` must be own properties, whereas `{ a, b, c } = obj` allows `b` and `c` to be inherited.
 
 
-Important distinctions: 
-    
+Important distinctions:
+
 ```js
 // find A and B anywhere in the prototype chain of the result of evaluating expr, ie. [[Get]]
 let { A, B } = expr;
@@ -530,7 +530,7 @@ let { A, ...[ B ] } = expr;
 
 
 
-## 16.ii.a Atomics.waitNonblocking for Stage 1 
+## 16.ii.a Atomics.waitNonblocking for Stage 1
 
 (Shu-yu Guo, Lars Hansen in absentia)
 
@@ -572,12 +572,12 @@ SYG: The risk of breaking code is low, but we have shipped so sooner is better.
 #### Conclusion/Resolution
 
 - Stage 1 for semantics, naming TBD.
-- WH to review semantics. 
+- WH to review semantics.
 
 
 
 
-## 16.ii.b Module import options discussion, potentially for stage 1 
+## 16.ii.b Module import options discussion, potentially for stage 1
 
 (Domenic Denicola)
 
@@ -619,7 +619,7 @@ AWB: Circular dependencies make in-module integrity hashing impossible, right?
 
 MBS: Peer-to-peer networks would be eager to come up with a spec for low-level hooks for out-of-band configuration.
 
-BF: I will weigh in for in-band, don't want people to include in work flow. 
+BF: I will weigh in for in-band, don't want people to include in work flow.
 
 DD: Sounds like out of band?
 
@@ -635,7 +635,7 @@ BF: can offer use cases... not always about integrity... might want async loadin
 
 MM: (asks about package.json)
 
-AWS: People put all kinds of custom things in there, but the format isn't going to change. 
+AWS: People put all kinds of custom things in there, but the format isn't going to change.
 
 DH: Big distinction (in terms of standardization) between a machine-generated format vs. something humans are supposed to write.
 
@@ -662,7 +662,7 @@ DD: A lot of responders want "In Band"
 
 
 
-## 16.ii.c Importing modules which failed evaluation 
+## 16.ii.c Importing modules which failed evaluation
 
 (Domenic Denicola)
 
@@ -802,7 +802,7 @@ DH: Yes
 
 DE: To build a platform where this is a security primitive requires consulting with a lot of stakeholders who care about capabilities/security.
 
-DD: I want it stated on record that we do care about security. 
+DD: I want it stated on record that we do care about security.
 
 MM: (concedes this is true, having an argument)
 

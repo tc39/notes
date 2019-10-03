@@ -1,7 +1,7 @@
 # January 26, 2016 Meeting Notes
 -----
 
-Eric Ferraiuolo (EF), Caridy Patiño (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Leland Richardson (LM), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), Mark S. Miller (MM), Paul Leathers (PL), Sebastian Markbåge (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Miško Hevery (MHY), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BNN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
+Eric Ferraiuolo (EF), Caridy Patiño (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Leland Richardson (LM), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MLS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), Mark S. Miller (MM), Paul Leathers (PL), Sebastian Markbåge (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Miško Hevery (MHY), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BNN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
 
 -----
 
@@ -94,7 +94,7 @@ YK: it is possible to create this API self hosted
 
 DD: only if all async was hooked, and a transpiler for async/await
 
-YK: I meant, if a user wrote this manually it would work    
+YK: I meant, if a user wrote this manually it would work
 
 MH: Correct.
 
@@ -104,8 +104,8 @@ YK: and its common
 
 MH: if they don't properly capture the zone, the value diminishes.
 
-MH: 
-    
+MH:
+
 YK: ember has a mechanism, but without a standard interopt is hard.
 
 MH: yes
@@ -123,7 +123,7 @@ MH: Now how to make new zones "slide: more realistic Example"
 MH: Zones also offer local storage, and it is valuable
 
 DD: The "node cloud team at google" wants TLS.
-    
+
 MH: ... describes other details, and suggests to look at the repository...
 
 MM: What prevents you from calling a zone transition sync
@@ -161,7 +161,7 @@ of the promise. All is a higher level pattern in which an outcome has more than 
 
 What I finally understood from the discussion is that Zone's always follows only the registration, not the triggering, and
 this does always pick a tree out of the causality graph. However, it is often not the tree that most intuitively corresponds
-to the programmer's understanding of causality in their programs. 
+to the programmer's understanding of causality in their programs.
 See http://www.hpl.hp.com/techreports/2009/HPL-2009-78.html)
 
 MM: let me share when this would come in force, a Promise.all where the promise inputs were sourced from multiple zones.
@@ -172,17 +172,17 @@ YK: i think we are making the graph vs tree mistake here
 
 MH: the registration captures the zone
 
-YK: I think MM is saying multiple consumer may want to be part of the causality  
+YK: I think MM is saying multiple consumer may want to be part of the causality
 
 MM: Whoever invoked the then sets the zone
- 
+
 YK: that may not be correct
 
 YK: let me try to say what the two use-cases are:
-    
-    1. somethingly ike TLS, sounds good. 
+
+    1. somethingly ike TLS, sounds good.
     2. life-cycles hooks around stack pushing and popping, and that is extremely importent for flushing and rendering.
-    
+
 DD: i don't want to get into the hooks discussion yet
 
 MM:  We need a standard API for the "wrap", the implementation isn't that important.
@@ -278,10 +278,10 @@ DD: i think this is solvable, but the cross realm point is a good catch. We will
 MM: it is the registration of the callback not the instantiation of the promise nor the function.
 
 DH: I have questions about intra-thread uses of the API. Two questions:
-    
-    1. You have .get but not .set you can put immutable things in the .get so I'm not sure what it buys you to make it immutable. 
-    
-MH: One property I'd like to have is that for apps that expect zone behavior, when you fork a child zone, application should behave the same way as without the fork. 
+
+    1. You have .get but not .set you can put immutable things in the .get so I'm not sure what it buys you to make it immutable.
+
+MH: One property I'd like to have is that for apps that expect zone behavior, when you fork a child zone, application should behave the same way as without the fork.
 
 DH: Only true if users don't mutate things. Is it vital for the language to enforce this guarantee?
 
@@ -303,7 +303,7 @@ WH: what you are after is dynamic scoping, and this is not dynamic scoping.
 
 MM: two ways to implement dynamic scoping, shallow binding or deep binding. This is deep binding
 
-DH: set is not a distraction here, the temp modify and revert is orthogonal, but in particulate in the dynamic set you actually want to use mutation. 
+DH: set is not a distraction here, the temp modify and revert is orthogonal, but in particulate in the dynamic set you actually want to use mutation.
 
 MM: this sounds ok
 
@@ -379,7 +379,7 @@ An email has been sent to István, and Salesforce will be contacted.
 Its completely not binding, if it was not obvious.
 
 
-## 5.iii Shared memory and Atomics (proposal) 
+## 5.iii Shared memory and Atomics (proposal)
 
 Presented by Lars Hansen
 
@@ -466,7 +466,7 @@ DH: I was thrown off, because it is much more general.
 
 DH: imagine that we had 1 big typed array, but where you could checkout sections of the array with different permissions (rw r) the sharing would be controller based on the permissions one had. This would allow improved concurrency, and safety. It can be data-race free, but would require some clunkyness. Alll this could be done via the message passing system, this could be spec'd and implemented.
 
-LHN:  the point is, this kind of sharing DH is talking about has some issues and likely requires a better type system than JS has. Multidimensional arrays make this more complicated, (what killed it, i missed it..) 
+LHN:  the point is, this kind of sharing DH is talking about has some issues and likely requires a better type system than JS has. Multidimensional arrays make this more complicated, (what killed it, i missed it..)
 
 LHN: for ecmascript, we likely require a better system. But we have this system today.
 
@@ -476,14 +476,14 @@ DH: A bigger KO, is that this can't come anywhere near the performance of the pu
 
 ... Would a more constrained compile target not just solve this.
 
-LHN: unity compiled some benchmarks, using shared buffer they benifited from 4x speed-up. 
+LHN: unity compiled some benchmarks, using shared buffer they benifited from 4x speed-up.
 
 LHN: this API is a good basis to build a system on
 
 WH: what is the API
 
-LHN: 
-    
+LHN:
+
 DH: We have done multiple years exploring this. With intel + Mozilla, we looked at race free high level API's and we really couldn't come to something that would work. It's not to say we are the only people to solve this problem, but their is limit to how much we can explore.
 
 BE: WH you were ill and were not present to attend when this was presented the last time.
@@ -501,7 +501,7 @@ LHN: slide (API: Atomic Operations)
 LHN: regular access to not guarentee tearing
 
 WH: so everything is sequentially consistent, which is far slower than acquire/release on, say, x86
-    
+
 LHN: atomic access are sequentially consistent
 
 What is the safe guarentee?
@@ -524,7 +524,7 @@ DD: are agents continents?
 
 MM: worker goes through a sequence of jobs, there is a full ordering of jobs in any one worker. Each worker is a sequential program. Concurrency is between workers. I would be surprised if the division into jobs becomes relevant
 
-LHN: i likely misspoke, my agents are most likely similar to what you call a vat. 
+LHN: i likely misspoke, my agents are most likely similar to what you call a vat.
 
 MM: ok, so each agent executes a fully order sequences of jobs, where each job is executed to completion before starting the next job.
 
@@ -619,7 +619,7 @@ can we get some numbers and see the difference
 WH: Providing a low-level library that implements sequential consistency only instead of also supporting acquire-release-relaxed seems like defeating the purpose of the effort. Requiring sequential consistency on reads/writes is several times slower than just doing acquire-release semantics on reads/writes on x86. Sequential consistency only seems like the wrong starting point because it throws away so much performance compared to acquire/release, which almost always suffices. The point of this effort is to go for high performance.
 
 LHN: any questions:
-    
+
 MM: you mentioned we avoid blocking the main thread, can we also make it so high-speed access is ???.
 
 LHN: in principle yes, TypedArray constructers made illegal on the main thread would enable this. This may strike some people as strange, but in principle yes
@@ -676,7 +676,7 @@ JFB: I believe it was partly that, and partly because that precision was not req
 
 JFB: when the performance.now thing happened, it seems low cost to change (likely no-one depended on it) so given that something could be observed it was adjusted.
 
-JFB: given this is going to happen, there will be high resolution timer. The course of action is to fix the route causes. 
+JFB: given this is going to happen, there will be high resolution timer. The course of action is to fix the route causes.
 
 LHN: the current resolution is already sufficient for these issues.
 
@@ -896,7 +896,7 @@ WH: I go on the record as objecting to advancing to stage 2 on the basis of fail
 
 
 
-## Weak References 
+## Weak References
 
 (Brendan Eich)
 
@@ -967,7 +967,7 @@ BE: the only practical issue is deans partnership/activity in the meeting.
 
 DD: i believe JHD should present
 
-## 5.xiv Object.values Object.entries 
+## 5.xiv Object.values Object.entries
 
 (Jordan Harband)
 
@@ -1090,19 +1090,19 @@ DD: I am fine with the prototype being object.prototype
 #### Conclusion/Resolution
 
  - prototype stays as object, DD + SP will be reviewers.
-    
-    
+
+
 ## 5.xi Daniel, presenting SIMD changes since December
 
 link: https://docs.google.com/presentation/d/1tREM-eLjadnXZogdKXlTWY8XzicXgylI_GlIxxsMNzc/edit
-    
+
 DE: (walks through slides)
 
 DD: how do you feel about the test coverage
 
 DE: test coverage feels pretty good, the tests for the value semantics will need some more work, but largely the test suite is good.
 
-DE: we will need to do some work on the test harness, Test262 would like to generate the tests precedurally 
+DE: we will need to do some work on the test harness, Test262 would like to generate the tests precedurally
 
 DE: test harness may want sameValue sameValue0
 
@@ -1140,7 +1140,7 @@ BE: if there is a device that really cant run this, I question if it will have o
 
 DH: This is the same issue, we want to maybe only provide specific instructions, feature detection may be needed anyways.
 
-DH: If it turns out a significant amount of the market can't implement we can reinvestigate. 
+DH: If it turns out a significant amount of the market can't implement we can reinvestigate.
 
 JFB: just to be clear on SIMD. it is the bare minimum, and happens to be on most devices, and devectorizing is also not hard. It becomes really hard on much wider SIMD, that will be much more effort.
 

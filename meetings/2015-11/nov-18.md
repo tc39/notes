@@ -1,11 +1,11 @@
 # November 18, 2015 Meeting Notes
 -----
 
-Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Stefan Penner (SP), Waldemar Horwat (WH), Mark S. Miller (MM), Paul Leathers (PL), Georg Neis (GN), Sebastian Markbåge (SM)
+Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MLS), John Buchanan (JB), Stefan Penner (SP), Waldemar Horwat (WH), Mark S. Miller (MM), Paul Leathers (PL), Georg Neis (GN), Sebastian Markbåge (SM)
 
 -----
 
-## RegExp Buffet 
+## RegExp Buffet
 
 (Brian Terlson)
 
@@ -584,7 +584,7 @@ KS:
 - %TypedArray% constructor is directly called rather than having a super constructor and a proto chain walk
 
 
-## Improving consistency of @@species 
+## Improving consistency of @@species
 
 (Kevin Smith)
 
@@ -784,7 +784,7 @@ BT: bi-weekly changelog, with highlights called out. Grouped sections, to draw a
 
 - promise rejection hooks are in
 - editor may apply own discretion on further "implementation hook" proposals
-- 
+-
 
 ## Proposal Repos, and where they live + editor update
 

@@ -1,9 +1,9 @@
 # March 20, 2018 Meeting Notes
 -----
 
-István Sebestyén (IS), Waldemar Horwat (WH), Dean Tribble (DT), Brian Warner (BWR), Mark Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), Robin Morisset (RMT), Keith Miller (KM), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Adam Klein (AK), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Bradley Farias (BFS), Thomas Wood (TW), Mathias Bynens (MB), Alan Schmitt (AS), Sven Sauleau (SSA), Chris Needham (CNM), Edd Yerburgh (EYH), Jason Williams (JWS), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Conrad Watt (CWT), Philippa Gardner (PGR), Godfrey Chan (GCN), Chris Hyle (CHE), Lin Clark (LCK), Ben Newman (BN), Jake Archibald (JAD)
+István Sebestyén (IS), Waldemar Horwat (WH), Dean Tribble (DT), Brian Warner (BWR), Mark Miller (MM), Till Schneidereit (TST), Michael Saboff (MLS), Robin Morisset (RMT), Keith Miller (KM), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Adam Klein (AK), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Bradley Farias (BFS), Thomas Wood (TW), Mathias Bynens (MB), Alan Schmitt (AS), Sven Sauleau (SSA), Chris Needham (CNM), Edd Yerburgh (EYH), Jason Williams (JWS), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Conrad Watt (CWT), Philippa Gardner (PGR), Godfrey Chan (GCN), Chris Hyle (CHE), Lin Clark (LCK), Ben Newman (BN), Jake Archibald (JAD)
 
-Remote: 
+Remote:
 Ron Buckton (RBN), Leo Balter (LBR), Rick Waldron (RW)
 
 -----
@@ -64,7 +64,7 @@ BT: There isn't much to report from last time. Editorial changes only. Where we 
 
 IS: Two things about this. The opt out period is for two month. Final opt-out limit is June 27, which is the date of the formal approval of the standard by the Ecma GA. The latest that the opt-out period can start is April 27. I have to notify the Ecma GA about the start of the opt-out, because last year some members complained that we only announced it in TC39.
 
-BT: We already have it. 
+BT: We already have it.
 
 IS: Is this published on Ecma? Because this is what we have to do formally. GitHub unfortunately is not enough for that.
 
@@ -90,7 +90,7 @@ IS: That would be good. My second question is, do we have two standards: ECMA-26
 
 RJE: Okay, let's do the vote on Thursday afternoon.
 
-IS: It should be a simple majority vote. You don't have to go member by member, just asking how many vote for it, how many against it. Abstains are counted as abstain. As you like.... 
+IS: It should be a simple majority vote. You don't have to go member by member, just asking how many vote for it, how many against it. Abstains are counted as abstain. As you like....
 
 RJE: At the last meeting, there was a proposal for the transition of editors.
 
@@ -103,7 +103,7 @@ IS: (I DID NOT SAY IT IN THE MEETING, NOT TO WASTE TIME, BUT IMPORTANT): The ECM
 DE: I'll do ECMA-402 updates, the main features are PluralRules and hourCycle, we had no complaints so far. There are four Stage 3 proposals for ECMA-402, and we are having monthly meetings to discuss ECMA-402. Please let me know if you are interested in attending.
 (https://www.ECMA-international.org/publications/standards/ECMA-402.htm)
 
-RJE: ECMA-404? 
+RJE: ECMA-404?
 
 IS: ECMA-404 as far as I understood is completed. We have finished the fast track approval and this is now a stable standard so it will now last "forever". So at the moment, the next one - 414 - can I say something about that? It will make the Ecma fast track proposals not necessary, as in the past. As you know, we have had problems in the past with fast track approvals. Yearly cycles are simply too fast for the process. Once 414 is approved, it will never change. Once it is approved, it will contain non-dated references to 262 and 402 that mean that it will still be working with 414 - as always the last version of ECMA-262 and ECMA-402 will count. From Japan, we had a negative vote in the DIS vote which we took into account for the final FDIS vote, which is finally already out. It is a 2 months vote. Maybe at the end of (the 28th of) April, will be the termination date (I do not remember out of my head the exact date). Since everyone else approved, the DIS already this will probably go forward as ISO/IEC Standard. So this is the status. It is now in ISO in the final balloting process and will be done in a month.
 
@@ -124,8 +124,8 @@ DE: (presenting Needs consensus PR: Disallow lookbehind in QuantifiedAssertion (
 DE: This PR came from a new contributor to the JS specification who noticed in the lookbehind specification that we forgot to contain the Annex B specification containing a ?? (for example you could have a lookahead without a qualifier, which makes no sense at all). ... Based on code review, the initial version was to disallow even in ... ? The PR is very simple  ... the design principle is that we're only adding the bare minimum to add the ... but we're not adding support for legacy features when the new feature doesn't make any sense. This is what we want to backport to ES2016.
 
 MM: Can you explain why this is in Annex B?
-  
-DE: The main spec was already modified. It has an ambiguous grammar. Regular expressions normal context-free grammars first one is tried, and so on... Personally I wouldn't be opposed to taking it out of Annex-B. 
+
+DE: The main spec was already modified. It has an ambiguous grammar. Regular expressions normal context-free grammars first one is tried, and so on... Personally I wouldn't be opposed to taking it out of Annex-B.
 
 DE: I guess it's in Annex B because it's too messy for the main spec.
 
@@ -150,15 +150,15 @@ DE: Do we have consensus? We already have Test262 tests and it has already shipp
 
 DE: DataView constructor view was noted as 3 even though ... ( ? ).. to give it a more comprehensive memory model. There are two different proposals. A minimal one and another more complex unification. It seems like given implementation and Test262 converged on 3 as ? .... any other thoughts on this proposal?
 
-MS: Can you show Leo Balter's table?
+MLS: Can you show Leo Balter's table?
 
-??: So you want to change DataView? 
+??: So you want to change DataView?
 
-JHD: The original post from andre here is that the implementation is 3, but the spec says 1. Because conceptually one of the arguments is required, and two are optional. So my preference is, even if all four browsers agree, that the length is 3, then ..? 
+JHD: The original post from andre here is that the implementation is 3, but the spec says 1. Because conceptually one of the arguments is required, and two are optional. So my preference is, even if all four browsers agree, that the length is 3, then ..?
 
 JHD: Function lengths are one of the things that we found to be web compatible to change. Is there any reason why we shouldn't consider changing the length to 1?
 
-AK: I think its a waste of time to change length. Let's take the simplest path. 
+AK: I think its a waste of time to change length. Let's take the simplest path.
 
 BT: I'm fine with changing the spec. It's a bug that will get fixed when it gets fixed, when it's time.
 
@@ -166,7 +166,7 @@ JHD: Can we make it so that the Test262 is changed to 1 to match the spec? Shoul
 
 ??: The browsers will fail the tests. The browsers do their thing but the spec should be ..?
 
-DE: Three options: leave the spec as is and update the Test262 to have the length of 1 instead of 3. Option 1: Total alignment with Chakra core and the spec draft being one. The other option is to create a new consensus concept that Leo had. Proposal two is to make a rough consensus between implementer. 
+DE: Three options: leave the spec as is and update the Test262 to have the length of 1 instead of 3. Option 1: Total alignment with Chakra core and the spec draft being one. The other option is to create a new consensus concept that Leo had. Proposal two is to make a rough consensus between implementer.
 
 YK: I want to hear if vendors agree that 1 is the correct solution.
 
@@ -176,13 +176,13 @@ BT: Would anyone object to any of the options here? Raise your hands if you have
 
 WH: Let's split the difference and make it 2 (everyone laughs).
 
-MS: Since there's not much controversy. Let's just keep it 1, since that's the right answer.
+MLS: Since there's not much controversy. Let's just keep it 1, since that's the right answer.
 
 DE: My understanding from this thread, it was typo accidentally?
 
 BT: Your implementations have said that no one really notices this. If we leave it as is that's less spec work.
 
-DE: Tie breaker here could be "does anything have web compatibility risk". If we have a strong compatibility(?) of browsers ... 
+DE: Tie breaker here could be "does anything have web compatibility risk". If we have a strong compatibility(?) of browsers ...
 
 JHD: The only two situations, non construct-able functions for callback and the other is polyfill.
 
@@ -192,7 +192,7 @@ JHD: There are two places where code tends to rely on the length. Polyfills and 
 
 KCL: People might use this for compatibility checks. Just in this specific use case, the length is already inconsistent.
 
-AK: The reason why I prefer the minimal change is to minimize the time spent on this. That's my whole goal on this thing. 
+AK: The reason why I prefer the minimal change is to minimize the time spent on this. That's my whole goal on this thing.
 
 BT: I share that goal.
 
@@ -214,7 +214,7 @@ DE: Sounds like we will not make a change, but leave the length as it is.
 - Leave the spec as is, with DataView.length === 1
 
 
-## 8.i.d Strengthen Atomics.wait/wake synchronization 
+## 8.i.d Strengthen Atomics.wait/wake synchronization
 
 (Conrad Watt)
 
@@ -236,7 +236,7 @@ CWT: So that sounds like it would be a very good idea to land this proposal.
 
 WH: I remember the synchronization being in the proposals when I was reviewing them. I didn't notice it getting deleted from updated proposals.
 
-KM: We do a full extensive fence, so that is already fixed on our side. 
+KM: We do a full extensive fence, so that is already fixed on our side.
 
 CWT: Ok, so that would be conformant even after this change.
 
@@ -258,13 +258,13 @@ DE: Does this PR have consensus?
 
 DE: Let me share the screen. Let's keep the timebox for 15min.
 
-DE: So, when you detach an ArrayBuffer, there's certain embedding specifications that own ?? and prevent you from detaching it. WebAssembly exposes a memory object which has a underlying memory buffer, and you can't not postMessage the memory buffer, but the WebAssembly memory object as a whole. This PR gives a concept of an ArrayBuffer detach key which can optionally be constructed that can be checked later in a properly layered way. 
+DE: So, when you detach an ArrayBuffer, there's certain embedding specifications that own ?? and prevent you from detaching it. WebAssembly exposes a memory object which has a underlying memory buffer, and you can't not postMessage the memory buffer, but the WebAssembly memory object as a whole. This PR gives a concept of an ArrayBuffer detach key which can optionally be constructed that can be checked later in a properly layered way.
 
 BT: But it's not exposed...
 
 DH: Before you go any further, this is new to me. Can you explain?
 
-DE: There's a thing in HTML, that's called postMessage (Everyone laughs...) 
+DE: There's a thing in HTML, that's called postMessage (Everyone laughs...)
 
 DH: I know about postMessage.
 
@@ -272,7 +272,7 @@ DE: Maybe someone in the room doesn't. postMessage allows you communicate with t
 
 BT: Can you talk about Allen's concerns?
 
-DE: Allen's concern is that if we expose this to other specifications but not to JS it is a design smell. If other specifications can do this why can we not polyfill it. We can definitely consider adding it. This patch is a bit different, is showing the state of the world today. This isn't a standard that is reflecting a legacy consideration. This had the participation of many stakeholders. Programmers and implementers should have a clear specification that shows how this works. 
+DE: Allen's concern is that if we expose this to other specifications but not to JS it is a design smell. If other specifications can do this why can we not polyfill it. We can definitely consider adding it. This patch is a bit different, is showing the state of the world today. This isn't a standard that is reflecting a legacy consideration. This had the participation of many stakeholders. Programmers and implementers should have a clear specification that shows how this works.
 
 BT: So, I think Allen's feedback wants to be a public API, it's more about in the 262 spec, we should have a layering API. WebAssembly wants this conceptual (?) key thing. Allen's concern is that we haven't already considered what this is. We should have a systems-level conversation about this. I'm doing my best to proxy his viewpoints.
 
@@ -288,7 +288,7 @@ DE: Not really. This wasn't my idea, this was an idea from Andreas Rossberg. Unt
 
 DE: Any more suggestion about it?
 
-AK: I think Allen is asking us for more system design but a lot of it it's out of ECMA. ECMAScript had a pretty well thought spec on modules. But I don't think it should be a requirement that every system design discussion has to be exposed to JS to integrate with JS. JS is used in a lot of different env. And in a lot of different ways, it seems there's no use case for exposing this. 
+AK: I think Allen is asking us for more system design but a lot of it it's out of ECMA. ECMAScript had a pretty well thought spec on modules. But I don't think it should be a requirement that every system design discussion has to be exposed to JS to integrate with JS. JS is used in a lot of different env. And in a lot of different ways, it seems there's no use case for exposing this.
 
 BT: That's my preferred response as well, but nobody has came up with what system design would look like. Let's do this thing.
 
@@ -321,17 +321,17 @@ BT: Yeah, we're done with that.
 - Approved
 
 
-## 9.i.v Open-ended discussion: How should we evolve the JavaScript standard library over time? 
+## 9.i.v Open-ended discussion: How should we evolve the JavaScript standard library over time?
 
-(Bradley Farias) 
+(Bradley Farias)
 
 - [slides](https://docs.google.com/presentation/d/1QSwQYJz4c1VESEKTWPqrAPbDn_y9lTBBjaWRjej1c-w/view#slide=id.p )
 
-BFS: I think it will flow into a later topic as well. 
+BFS: I think it will flow into a later topic as well.
 
 RJE: How should we evolve the JS standard library.
 
-BFS: I basically stole this discussion from DE. 
+BFS: I basically stole this discussion from DE.
 
 DE: Thanks for taking this on.
 
@@ -353,7 +353,7 @@ BT: I spoke about a JSIDL subset of WebIDL a couple years back. I strongly suppo
 
 KM: It turns out, it's a lot more sane to do this out of bound. No spec change, but we should discuss about if we have modules. How should we do it? If we are thinking about something like Node, how ... ? The other question is: If we did go to a identifier based thing, we probably need to come up with some resolution there since it avoids some ambiguity. If the JS spec picked some kind of naming convention for our modules, we can map this in the Node world.
 
-BFS: We should still talk about collision with same namespace, which is relevant with name map that Domenic proposed? 
+BFS: We should still talk about collision with same namespace, which is relevant with name map that Domenic proposed?
 
 DE: I'm a big support of discussing things which relates to our specification closely, even if they aren't technically inside the ECMAScript specification. I wanted to bring in the status of JSIDL and WebIDL. So I started the discussion with the web IDL and the response from them was great. They're all for using IDL for javascript needs, and making changes needed. There's a lot of open issues in the IDL repository. These are all technical things that we could work through. If we wanna have a working group for builtin modules, have a regular call (once in month), would somebody will interested in such a call?
 
@@ -367,7 +367,7 @@ BFS: Web doesn't allow bare specifiers, and follows URL semantics. Everything in
 
 KM: It doesn't seem to have too many collisions right now. But a consistent naming... do we want to discuss at least some of the beginnings of this in this meeting? Or do we want to put this off until later. I still have my 30 minutes, I can put it back for discussion. Any thoughts, opinions?
 
-AK: There's a lot of value with moving this into a separate meeting, but there is a lot of concrete stuff to discuss. 
+AK: There's a lot of value with moving this into a separate meeting, but there is a lot of concrete stuff to discuss.
 
 #### Conclusion/Resolution
 
@@ -388,7 +388,7 @@ And we are doing it with the mangagment and only to bring this to the management
 
 ??: Ecma Fellows?
 
-IS: This is something that really that would be defined by the Executive committee. The only thing that they cannot do is voting and they should follow the Ecma rules. This is something we must discuss in the executive committee. How should we handle those who are not part of this organization? Babel community doesn't have any legal status, so they can't sign up as members. For an organization that doesn't have any legal status. they must follow some ... this is a dilemma - Ecma has the royalty free on one side, on the other hand, the strengths of TC39 that we are trying to reach out the the open source community like Nodes and Babel. It's a little bit of a contradiction, and I call this an issue -- how do we solve this? 
+IS: This is something that really that would be defined by the Executive committee. The only thing that they cannot do is voting and they should follow the Ecma rules. This is something we must discuss in the executive committee. How should we handle those who are not part of this organization? Babel community doesn't have any legal status, so they can't sign up as members. For an organization that doesn't have any legal status. they must follow some ... this is a dilemma - Ecma has the royalty free on one side, on the other hand, the strengths of TC39 that we are trying to reach out the the open source community like Nodes and Babel. It's a little bit of a contradiction, and I call this an issue -- how do we solve this?
 
 BT: I would like to make a comment about the PDF. For those who aren't aware of the history, we used to use a word document. But we're now doing development on GitHub with a HTML spec format. If anyone else is on the CSS working group, there's a print media spec that could help with this! (Laughs...)
 
@@ -400,7 +400,7 @@ BT: I mean we could make our own Tags with semantics for printing, that could he
 
 BT: That would be a lot of work I think, I would rather stick to a toolchain that renders in webkit and does something cool with it. The reason why the PDF doesn't look good anymore is that the PDF doesn't work well for implementation work.
 
-WH: It's nice to be able to download. 
+WH: It's nice to be able to download.
 
 BT: You can download an HTML page too, it's one document.
 
@@ -422,7 +422,7 @@ BT: The only thing that I will try this cycle will be to try dean's tool.
 
 IS: It's closer.
 
-BT: If you are hearing complaints, I am guessing that Dean's tool will fix this. I guess the best way to address those concerns would be by hiring a company. Who's doing it? 
+BT: If you are hearing complaints, I am guessing that Dean's tool will fix this. I guess the best way to address those concerns would be by hiring a company. Who's doing it?
 
 IS: Best effort...
 
@@ -449,13 +449,13 @@ DE: Thanks for your work over the years with communicating and handling the Ecma
 
 - [proposal](https://github.com/tc39/proposal-frozen-realms)
 
-MM: Title; like the end of "language security". For many things in security, you can apply this three ways ??? to break down issues. Only authorized actions or effect happens; only authorized actors can provide invariants. You can write programs that continue to do this, to ??? issues within the same address space. There's liveness and correctness; correct clients do not get good? service, they get correct service. Finally, there is the issue of most concern with regards to the issue of Spectre and Meltdown. That secret information -- it is not feasible to infer it; information that you have access to should not be inferable from information that you do not have access too. Confidentiality needs to be broken down into overt vs. covert channels. Overt means that the communication is guaranteed to happen according to the language semantics. When an object A passes information to object B, it means that is overt. If information is leaked, this is covert. The issue here is intentionality. The dependency between these things is important: in a good architecture, integrity should not rely on availability. Local integrity should not depend on confidentiality. Distributed integrity uses cryptographic protocols, which depend on cryptographic secrets. Side channels--as in Meltdown and Spectre, ... and a computation can infer information which it should not have access to. Granularity is important. When we talk about language-based security we are usually talking about an object within an address space in Javascript and sharing an event loop. So safety, integrity, and consistency apply down to object integrity and security. Confidentiality you can make the important distinction between language security mechanisms. You have to assume that if a computation has access to exact timing, it's trivial, even without Spectre and Meltdown, for the process to signal (it can take up various amounts of time, and just use that to infer the information that one was attempting to communicate). The big surprise with Meltdown and Spectre: data at rest is subject to side channels. This is what broke everyone's assumptions. The high level of certification, the orange book never required a proof; it merely required an argument that there was an upper bound on the data bandwidth that could be read. This is a text from the frozen-realms' proposal. "Even without pinning down the precise meaning of implementation defined, a  computation that is limited to a particular type of determinism cannot read covert channels and side channels that it was not explicitly enabled to read. Nothing can practically prevent signaling on covert channels and side channels, but approximations to determinism can practically prevent confined computations from perceiving these signals." This is a reflection of the fact that I never assume that there no side-channel ??? In the Meltdown and Spectre worst case. if there are deeper problems in the CPU that have not been identified yet. Within the process, you have complete transparency, and integrity is not diminished at all with regard to local integrity. Frozen realms is a local proposal, in relation to Spectre or Meltdown nothing changes. 
+MM: Title; like the end of "language security". For many things in security, you can apply this three ways ??? to break down issues. Only authorized actions or effect happens; only authorized actors can provide invariants. You can write programs that continue to do this, to ??? issues within the same address space. There's liveness and correctness; correct clients do not get good? service, they get correct service. Finally, there is the issue of most concern with regards to the issue of Spectre and Meltdown. That secret information -- it is not feasible to infer it; information that you have access to should not be inferable from information that you do not have access too. Confidentiality needs to be broken down into overt vs. covert channels. Overt means that the communication is guaranteed to happen according to the language semantics. When an object A passes information to object B, it means that is overt. If information is leaked, this is covert. The issue here is intentionality. The dependency between these things is important: in a good architecture, integrity should not rely on availability. Local integrity should not depend on confidentiality. Distributed integrity uses cryptographic protocols, which depend on cryptographic secrets. Side channels--as in Meltdown and Spectre, ... and a computation can infer information which it should not have access to. Granularity is important. When we talk about language-based security we are usually talking about an object within an address space in Javascript and sharing an event loop. So safety, integrity, and consistency apply down to object integrity and security. Confidentiality you can make the important distinction between language security mechanisms. You have to assume that if a computation has access to exact timing, it's trivial, even without Spectre and Meltdown, for the process to signal (it can take up various amounts of time, and just use that to infer the information that one was attempting to communicate). The big surprise with Meltdown and Spectre: data at rest is subject to side channels. This is what broke everyone's assumptions. The high level of certification, the orange book never required a proof; it merely required an argument that there was an upper bound on the data bandwidth that could be read. This is a text from the frozen-realms' proposal. "Even without pinning down the precise meaning of implementation defined, a  computation that is limited to a particular type of determinism cannot read covert channels and side channels that it was not explicitly enabled to read. Nothing can practically prevent signaling on covert channels and side channels, but approximations to determinism can practically prevent confined computations from perceiving these signals." This is a reflection of the fact that I never assume that there no side-channel ??? In the Meltdown and Spectre worst case. if there are deeper problems in the CPU that have not been identified yet. Within the process, you have complete transparency, and integrity is not diminished at all with regard to local integrity. Frozen realms is a local proposal, in relation to Spectre or Meltdown nothing changes.
 
 For confidentiality, the frozen realms provides a key enabler. Many libraries that we link into our programs are purely computational. The things that they need do not have to measure time. Frozen realms gives them what they need, but denying them access to measuring time. Many libraries—think parser libraries—that we link into our programs are purely computational; they don't need to measure time. Programs as a whole generally interact with the user or with the network and need to access the time.
 
 Ethereum demonstrates the utility of this kind of... Meltdown and Spectre (beyond my worst fears) demonstrate that if you can't keep a secret, is it useful to talk about security? Etherrum is a demonstration of the integrate of ???
 
-YK: What is the takeaway for the proposal? 
+YK: What is the takeaway for the proposal?
 
 MM: Encapsulation boundary should be taken as only to be reliable as an integrity boundary. And to warn people not to read into that encapsulation of information, i.e., confidentiality.
 
@@ -519,13 +519,13 @@ API: It might be a requirement to specify a system, and have a system brought in
 
 KM: On the mic thing, it's good to not shuffling the mic around, it's a bit slow to pass it around.
 
-DE: We have been talking about audio requirements for a year now, but that hasn't lead to anything yet. 
+DE: We have been talking about audio requirements for a year now, but that hasn't lead to anything yet.
 
 KM: Have we specified the requirements?
 
 DE: When planning 2018 meetings, we tried to be clear.
 
-AK: You can say it stronger and stronger, but a lot of people seem to focus on the space. 
+AK: You can say it stronger and stronger, but a lot of people seem to focus on the space.
 
 YK: I just want to raise that, while it may seem like not a big deal for companies to increase the cost of travel, people talk about where the meetings are in mostly inclusive/positive terms. I just want to raise that as an issue for small companies, which have small travel budgets. I also understand that European companies have the issue in reverse.
 
@@ -537,7 +537,7 @@ DE: Hotel costs sometimes exceed the flight costs, and we don't take any costs i
 
 WH: Flight time is a big factor for far away meetings.
 
-KM: If you have issues with travelling, you shouldn't feel terribly pressured to attend all meetings. 
+KM: If you have issues with travelling, you shouldn't feel terribly pressured to attend all meetings.
 
 DE: Since we're over the timebox, I propose to extend the timebox.
 
@@ -545,7 +545,7 @@ WH: I object because we have this kind of meta debate every few months and we're
 
 DE: How do you propose to get in touch with committee members to get feedback?
 
-WH: If we talk about the schedule, that is fine, but we have digressed. 
+WH: If we talk about the schedule, that is fine, but we have digressed.
 
 JHD: My queue topic is related to that. Narrowing down which coast each meeting is going to be in. Dates are fine, but locations may be limiting.
 
@@ -561,7 +561,7 @@ WH: I don't like this trend, the center of mass is still on the West Coast.
 
 DE: One thing we can do is to take a more formal poll with the delegates living in this places.
 
-TST: Center of mass is partially this way because people don't want to travel. 
+TST: Center of mass is partially this way because people don't want to travel.
 
 KCL: Well, I think we don't have a bigger Asian or European contingent because we don't spend enough time in Asia or Europe. If we want to be more inclusive of our members in Asia and Europe, we need to have meetings they can attend.
 
@@ -595,7 +595,7 @@ DE: Not really, in the end, we had 10 potential hosts from whom we had to choose
 
 BT: Ok, well then never mind. I don't know where everyone is getting their catering budgets, though...
 
-DE: Only thing was that there seemed to be a shortage of East Coast hosts, but in the end it was fine. 
+DE: Only thing was that there seemed to be a shortage of East Coast hosts, but in the end it was fine.
 
 BT: Ok never mind.
 
@@ -603,17 +603,17 @@ DT: I was just curious if we could have remote meetings or multi-site meetings? 
 
 DE: We need to have good video call setups.
 
-API: Its kind of short timing for us, we are hosting in May, but we have a big office here. 
+API: Its kind of short timing for us, we are hosting in May, but we have a big office here.
 
 BFS: I know that GoDaddy has offered, but we're not on a coast...
 
 DE: Some people want direct flights from the big cities. (out of time) Do we want to adopt this template?
 
-MS: I don't want to adopt an exact template, but I want one European, two East Coast (perhaps Atlanta) and three West Coast. Places like Atlanta have good connections which could make it less expensive, the problem is finding a host for such a location.
+MLS: I don't want to adopt an exact template, but I want one European, two East Coast (perhaps Atlanta) and three West Coast. Places like Atlanta have good connections which could make it less expensive, the problem is finding a host for such a location.
 
 DE: Why would you not adopt this template?
 
-MS: Don't want to preclude a perspective host for a particular meeting date whose company doesn't fit the template.
+MLS: Don't want to preclude a perspective host for a particular meeting date whose company doesn't fit the template.
 
 DE: This can be a first draft and it's subject to change, can we have a two minutes extensions?
 
@@ -656,15 +656,15 @@ KCL: It's not an accessor, sorry.
 
 YK: It sounds like you, (MM), are making a broad claim.
 
-MM: The broad claim is that with regards to existing prototypes we should not add accessors to existing prototypes. 
+MM: The broad claim is that with regards to existing prototypes we should not add accessors to existing prototypes.
 
 YK: Does that include web prototypes?
 
-MM: I'm talking about stuff in TC39's jurisdiction, ie Array.prototype. 
+MM: I'm talking about stuff in TC39's jurisdiction, ie Array.prototype.
 
 YK: The reason I had this question is for IDL
 
-MM: if its creating accessors for anything where the audience is used to there being a flood of accessors then thats a different precedent. 
+MM: if its creating accessors for anything where the audience is used to there being a flood of accessors then thats a different precedent.
 
 ??: But this a precedent.
 
@@ -728,7 +728,7 @@ YK: I think that's pretty normal.
 
 SYG: Second question, since setter doesn't seem that needed I would prefer that we have a method.
 
-KCL: The issue when we had it as a method, it could involve passing arguments that could be used as a setter or getting last n items. Lots of bike-shedding happened with this. I don't care about getting the last n items. that seems like a recipe for bugs. 
+KCL: The issue when we had it as a method, it could involve passing arguments that could be used as a setter or getting last n items. Lots of bike-shedding happened with this. I don't care about getting the last n items. that seems like a recipe for bugs.
 
 SYG: Then it comes down to how strong is this argument. If we have an method that takes the last n items, I would be more interested in that.
 
@@ -736,7 +736,7 @@ KCL: I think it was Dominic who raised the issue, that it should be a getter/set
 
 KCL: Any hard objections to advancing to stage two?
 
-WH: I don't have a hard objection, but I'm not sensing any consensus from the discussion we've just had. I would prefer this stays at stage 1 until we reach an agreement on what form this feature should take. 
+WH: I don't have a hard objection, but I'm not sensing any consensus from the discussion we've just had. I would prefer this stays at stage 1 until we reach an agreement on what form this feature should take.
 
 RJE: Is there any objections to extend the time?
 
@@ -765,9 +765,9 @@ KCL: Ok
 - Maybe just a method to get last?
 
 
-## 10.i.d Debugger operands for stage 1 
+## 10.i.d Debugger operands for stage 1
 
-(Bradley Farias) 
+(Bradley Farias)
 
 - [proposal](https://github.com/bmeck/proposal-debugger-operands)
 
@@ -775,7 +775,7 @@ BFS: We have a `debugger` statement in JS, but we don't have a operand for this.
 
 WH: I don't understand your previous statement. What are you proposing in the labeled `debugger` statement example?
 
-BFS: This is not part of the proposal, but an alternate solution.... (Opens up Developer Tools). I'd like to introduce something where a user could serialize in their own stack. 
+BFS: This is not part of the proposal, but an alternate solution.... (Opens up Developer Tools). I'd like to introduce something where a user could serialize in their own stack.
 
 WH: This is an extralingual feature. ECMAScript does not spec what IDEs do. There are already well-defined semantics for nesting a breakpoint statement inside a label statement.
 
@@ -787,7 +787,7 @@ BFS: That's fine, except we do ... Another idea for things we can do, right now 
 
 WH: A set of use cases is not a proposal. What is the actual proposal here?
 
-BHS: I'm proposing adding an operand to the debugger statement and the use cases. I am not tied to the solution, but do people object to any of the use cases? 
+BHS: I'm proposing adding an operand to the debugger statement and the use cases. I am not tied to the solution, but do people object to any of the use cases?
 
 DE: What are you passing in the debugger statement? Is this left to the implementer, or is there some sort of external standard for what they accept?
 
@@ -801,7 +801,7 @@ YK: What I'm not sure about is diverging the capabilities of debugger between ID
 
 BFS: Couldn't the debugger just inject the breakpoint statement?
 
-YK: I would be interested in getting some browser devtools people discussion this. 
+YK: I would be interested in getting some browser devtools people discussion this.
 
 RJE: Keith?
 
@@ -844,9 +844,9 @@ DE: I don't think TC39 should just make a standard and send it to the devtools i
   - Get more devtools/debugger stakeholders involved
   - Draft out a protocol for what the objects should mean (even if it's not within TC39)
 
-## 10.i.e Logical Assignment Operators for Stage 1 
+## 10.i.e Logical Assignment Operators for Stage 1
 
-(Justin Ridgewell) 
+(Justin Ridgewell)
 
 - [proposal](https://github.com/jridgewell/proposal-logical-assignment)
 - [slides](https://docs.google.com/presentation/d/1OVIUGQZK03vKa2vRqkgmqolDQ3zH3GILMrfsDIe3PnY)
@@ -899,7 +899,7 @@ DT: In Ruby, I can use ||= and it works because the value is initially undefined
 
 YK: And it's common to initialize something to 0 or empty string.
 
-DT: So other than a consistency argument, is there an argument for why ||= it seems like it's a trap for them to use this in the obvious way. 
+DT: So other than a consistency argument, is there an argument for why ||= it seems like it's a trap for them to use this in the obvious way.
 
 JRL: My main use case is to use it as the assignment operator, and for not repeating myself when doing deep assignments.
 
@@ -941,9 +941,9 @@ DH: It's just confusing because ??? I just want to understand.
 (audio issues are not fixed yet, delaying till later)
 
 
-## 10.i.f Object.fromEntries for Stage 1 
+## 10.i.f Object.fromEntries for Stage 1
 
-(Jordan Harband & Kevin Gibbons) 
+(Jordan Harband & Kevin Gibbons)
 
 - [proposal](https://github.com/bathos/object-from-entries )
 - [slides](https://docs.google.com/presentation/d/1o0XpxQmERelo0u-tyibSeHLhy-YyCNCBwHGIDwuXUww/ )
@@ -965,9 +965,9 @@ KG: It's a static method on Object prototype.
 MM: I'm not talking about Object prototype, but about Object constructor.
 
 
-## 10.i.g Update on Array.prototype.flatten web incompatibility 
+## 10.i.g Update on Array.prototype.flatten web incompatibility
 
-(Kevin Gibbons) 
+(Kevin Gibbons)
 
 - [proposal](https://github.com/tc39/proposal-flatMap/pull/56 )
 
@@ -1001,13 +1001,13 @@ YK: I really like what Mariko said, and I think there are at least two subtletie
 
 KG: Not totally clear that Michael was joking.
 
-YK: I think the Pull was problematic because we should have had a strawman that indicated that we don't think the name "flatten" would work, but because so much of the dialogue focused on the term "Smoosh" the issue got lost almost immediately. 
+YK: I think the Pull was problematic because we should have had a strawman that indicated that we don't think the name "flatten" would work, but because so much of the dialogue focused on the term "Smoosh" the issue got lost almost immediately.
 
 JHD: Maybe we need better messaging. The way this was announced to the world was through Twitter. It would have been easy for me to tweet about Flickr breaking global. I think that web compat issue like this are best address softly, like raise an issue to discuss this at the next meeting. The fact that's a PR from the champion has more weight. None of us had written a comment or had a chance to prepare. A week or two later, making a joke PR would have been fine but the most important message was lost—let's be more careful in the future. Unfortunately, that message was drowned in the noise of the joke PR.
 
-KCL: I'll backup your point a bit, because sometimes this reaction is healthy. Almost everyone in the community has an opinion about this. Kind of a bike-shedding problem, which triggered a dramatic response in the developer community. 
+KCL: I'll backup your point a bit, because sometimes this reaction is healthy. Almost everyone in the community has an opinion about this. Kind of a bike-shedding problem, which triggered a dramatic response in the developer community.
 
-JAD: It feels like we should have been much quicker to get an explainer out there so that all of the angry developers didn't have to search through all of the issues to find what the issue was. 
+JAD: It feels like we should have been much quicker to get an explainer out there so that all of the angry developers didn't have to search through all of the issues to find what the issue was.
 
 BT: It made sense at the time to piggy-back on Keith's point. I want to point out that there are things all over the tweets and over the PR Githubs stuff, thousands of new developers now know that TC39 exists. New developers know better how the committee works—we don't decide things based on the PR but rather based on the meetings we're doing, from that perspective, I see that as a positive thing. I did get the opportunity to tell developers how TC39 works, and found those conversations productive. I'm not convinced that we need to avoid jokes, or do things that avoid noise in the community or get people mad. We shouldn't try to troll people, we can use those moments as teaching moments, and be successful.
 
@@ -1025,9 +1025,9 @@ RJE: Still three to go in the queue.
 
 DE: What should be champion responsibilities?  We could focus on moderating our responses? Deferring to a champion, when a champion is also not interested in responding is a mix that doesn't exactly work.
 
-KG: I don't want to speak for anyone else. I think managing social media is a very different work compared to doing good language design. 
+KG: I don't want to speak for anyone else. I think managing social media is a very different work compared to doing good language design.
 
-DE: What about writing explainers? 
+DE: What about writing explainers?
 
 KG: The focus of the committee is about language design, and community moderation is a different skill than doing language design.I don't think that writing explainers for people outside the committee is a required part of what we do.
 
@@ -1039,7 +1039,7 @@ API: It could have been a lot clearer that the the issue was a WebCompat issue.
 
 KG: I promised to represent a community member's voice here.
 
-KG: For people who weren't following the twitters, Brian submitted a poll in how we respond to this, one of which was "break the web". I want to ask the committee that we're still behind not breaking the web? 70% of respondents said they would choose to break the web, with multiple thousands of votes, no vendors would ship this. Breaking the web is, of course, a sliding scale. We do make some decisions that break specific things (like German weather sites). 
+KG: For people who weren't following the twitters, Brian submitted a poll in how we respond to this, one of which was "break the web". I want to ask the committee that we're still behind not breaking the web? 70% of respondents said they would choose to break the web, with multiple thousands of votes, no vendors would ship this. Breaking the web is, of course, a sliding scale. We do make some decisions that break specific things (like German weather sites).
 
 TST: (and all other implementers) No implementer will ship this.
 
@@ -1052,9 +1052,9 @@ BT: To be clear I don't think anyone disagrees with that statement.
 - We will continue to discuss this topic on Thursday
 
 
-## 10.i.h Update on WASM ES modules 
+## 10.i.h Update on WASM ES modules
 
-(Lin Clark) 
+(Lin Clark)
 
 - [slides](https://linclark.github.io/wasm-es-modules/slides/2018-03-06/#/0)
 
@@ -1069,7 +1069,7 @@ Those are examples of what we need to work on for ntive module support but ???. 
 
 Why do we want to start on this now? Bundlers are already adding support, as is Node, so we need to be in a position to give guidance on how modules should work, otherwise it will be done outside the scope of TC39.
 
-Steps forward: 
+Steps forward:
   - Created a repo
   - Potential early implementers lined up
 
@@ -1091,7 +1091,7 @@ LCK: Domenic and George raised this in PR #916, it's definitely going to need mo
 
 - Nothing Recorded
 
-## 10.i.i Update on improved TC39 documentation efforts 
+## 10.i.i Update on improved TC39 documentation efforts
 
 (Sam Goto, Yulia Startsev)
 
@@ -1139,7 +1139,7 @@ SGO: That would certainly be the intention. These are more like design patterns 
 
 DE: Just wanted to precise about the documentation project, if you want to join the call, just let me know and I'll add you to the conversation.
 
-WH: Where are the other documents? 
+WH: Where are the other documents?
 
 SGO: The document is not in a really good state, and we could probably polish it a bit more so it's more appropriate to be circulated with a wider audience.
 
@@ -1159,7 +1159,7 @@ DE: My colleagues noticed that `await` is not permitted in a default param, you 
 
 MM: What's the reason for not allowing them in async arrow functions?
 
-DE: Async arrow functions don't have. You don't know whether to parse the `async(await / 3)` as a function or an regular expression when going left to right). 
+DE: Async arrow functions don't have. You don't know whether to parse the `async(await / 3)` as a function or an regular expression when going left to right).
 
 BT: You could have it figure it out, but it would require more speculative parsing, I guess.
 
@@ -1169,7 +1169,7 @@ MM: I have a clarification question, as you're going through text here, I saw an
 
 DE: No, that's not part of this proposal. Any use of await in binding context, it doesn't extend that at all, you really ??? have await in this case.
 
-BN: Is this proposal compatible with the standard transpiler strategy of desugaring default parameters to undefined parameter initialization in the body of the function, and then treating the initializers as ordinary `await` expressions? 
+BN: Is this proposal compatible with the standard transpiler strategy of desugaring default parameters to undefined parameter initialization in the body of the function, and then treating the initializers as ordinary `await` expressions?
 
 DE: async operations also have to be desugared. I'm not a transpiler author, for those who do, what are your thoughts? the question was would having await in ? cause issues for transpiler authors?
 
@@ -1185,11 +1185,11 @@ DE: First you desuggars await and then you dessugars the default param.
 
 JRL: Two different transforms. One is using the Regenerator transformation (which transpiles generator functions down to an ~ES3 switch statement) and the other transpiles await expressions to wrapped yield expressions.
 
-YK: I'm a little skeptical of awaits in the function case but not in the arrow case. 
+YK: I'm a little skeptical of awaits in the function case but not in the arrow case.
 
 DE: Why?
 
-YK: I guess the refactoring hazard is the TC39 case against it. With arrow functions I have to know that it captures `this`, and this introduces another thing that I have to know. I've read a lot of async/await, and I don't really get this problem. 
+YK: I guess the refactoring hazard is the TC39 case against it. With arrow functions I have to know that it captures `this`, and this introduces another thing that I have to know. I've read a lot of async/await, and I don't really get this problem.
 
 DE: We don't have arrow generators, there are some differences between arrows and non-arrows.
 
@@ -1216,7 +1216,7 @@ MM: I'm fine with that as well—it's a minor increase in utility but a major in
 DE: Maybe we can allow this in arrow functions?
 
 WH: I'm sure we cannot allow this in arrow function because we could have something which lexes the wrong way in the cover grammar. Things like `(a = await/x) => 3/g`. It could even have a quote after the /, in which case you don't know whether to look for a closing quote. We must not go there.
- 
+
 DE: I see.
 
 DE: Ok, so does the committee does have any next step, or last closing thoughts? There's some fairly compelling examples here that would explain why you would need this.

@@ -1,14 +1,14 @@
 # September 29, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Dean Tribble (DT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Jacob Groundwater (JGR), Adam Klein (AK), István Sebestyén (IS), Tom Van-Cutsem (TVC), Claude Pache (CPE), James Kyle (JK)
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MLS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Dean Tribble (DT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Jacob Groundwater (JGR), Adam Klein (AK), István Sebestyén (IS), Tom Van-Cutsem (TVC), Claude Pache (CPE), James Kyle (JK)
 
 Remote:
 István Sebestyén (IS)
 
 -----
 
-## Secretariat's Report 
+## Secretariat's Report
 
 István Sebestyén: The audio is very bad, unfortunately. ... Maybe I better write....
 Regarding the 2017 European meeting tell me when should it be. In March it would probably be cheaper. Also still skiing would be possible after or before the meeting if someone cares for that.
@@ -42,14 +42,14 @@ AWB: Background: There was a missing Proxy check, and in response, Tom and Claud
 - Propose delegating Tom, Mark and Claude to work on this
 - Present summary
 
-MM: I am confident that 
+MM: I am confident that
 
 
 YK: Q...
 
 - An example of the bug?
 - What is the fix?
-- Any incompatible changes? 
+- Any incompatible changes?
 
 
 TVC: https://github.com/tc39/ecma262/pull/666 . Proxies are designed to not circumvent invariants of objects, namely non-configurability and non-extensibility. The Proxy will check that the handler returns a value consistent with the target.
@@ -64,15 +64,15 @@ Claude went through and found a few missing invariant checks based on writing th
 
 - A proxy is allowed to say a prop is non config, non write, even if only marked non config
 
-Bug shown: 
+Bug shown:
 https://github.com/tc39/ecma262/pull/666#issuecomment-239512646
 
 A client of the object can assume x always 2 (non-writable, non-configurable), call defineProp on value, set to 3. The proxy was allowed to change the meta property settings:
-    
+
 ```js
 var target = Object.seal({x: 2})
 var proxy = new Proxy(target, {
-  getOwnPropertyDescriptor(o, p) { 
+  getOwnPropertyDescriptor(o, p) {
     var desc = Reflect.getOwnPropertyDescriptor(o, p)
     if (desc && 'writable' in desc)
       desc.writable = false
@@ -93,8 +93,8 @@ TVC: The second is the same (the DefineProperty case). The third is a little dif
 
 ```js
 var target = Object.preventExtensions({ x: 1 })
-var proxy = new Proxy(target, { 
-  deleteProperty() { return true } 
+var proxy = new Proxy(target, {
+  deleteProperty() { return true }
 })
 
 Object.isExtensible(proxy) // false
@@ -119,7 +119,7 @@ YK: Should this break any users?
 
 MM: I don't know, but it shouldn't break my patterns--all of my code which uses Proxies is for security and is insecure due to these violated invariants, and would benefit from these changes.
 
-YK: Only way this affects a proxy is author is concerned with extensibility, specifically configurability and writability. If you're trying to virtualize the invariants, then broken. 
+YK: Only way this affects a proxy is author is concerned with extensibility, specifically configurability and writability. If you're trying to virtualize the invariants, then broken.
 
 Agree that's probably "malware"
 
@@ -131,7 +131,7 @@ TVC: Yes.
 
 RW: Confirm? PR for implementation or spec?
 
-AWB: Spec. 
+AWB: Spec.
 
 Yes
 
@@ -140,13 +140,13 @@ DE: Tests for Test262?
 
 AWB: Claude's methodology for describing invariants is something we could incorporate into the spec, but this is more than the bug fix.
 
-MM: likely a separate effort, but completely agree. 
+MM: likely a separate effort, but completely agree.
 
 DD: Sounds like a good non-normative change that could be done in collaboration with the editor in a PR, appendix, etc.
 
 #### Conclusion/Resolution
 
-- Two parts for TVC/CP as next steps: 
+- Two parts for TVC/CP as next steps:
 - Treat PR 666 as spec bug fix, which needs Test262 tests to land
 - Treat Claude's new formalism as new content via PR to incorporate into spec
 
@@ -163,8 +163,8 @@ SM: Related new proposal: getters and setters are expected to work more like fie
 // getters are non-own
 
 class Foo {
-  bar = 123;    
-}    
+  bar = 123;
+}
 
 let data = {
   ...new Foo()
@@ -199,7 +199,7 @@ JHD: If it's not restricted to own properties, wouldn't it get the getters all t
 
 YK: This sort of issue comes up if you evolve code between bare objects and classes. Getters don't interact well with adding new things in a backwards-compatible way as they don't have enumerability.
 
-DD: Some getters are fields, treat as such; some aren't and shouldn't be treated as such. (Examples: vector.length; person.fullName) don't think we should have generic mechanism to apply to all getters/setters 
+DD: Some getters are fields, treat as such; some aren't and shouldn't be treated as such. (Examples: vector.length; person.fullName) don't think we should have generic mechanism to apply to all getters/setters
 - The idea "what are fields of an object"?
 - What are the iterated values of an object?
 - Should there be a protocol to determine keys and values for spread?
@@ -230,7 +230,7 @@ AWB: I don't think there's an easy fix here. Objects have two roles:
 
 Normal usage is one of those two worlds. Proposal: Remove the own restriction
 
-EFT: Some getters you want to be shared, some not. 
+EFT: Some getters you want to be shared, some not.
 - Augment definition syntax?
 
 DD: Decorators will address this
@@ -240,7 +240,7 @@ YK: Enumerable own is important because
 - in ES3, common to override prototype properties
 - ES3 ad-hoc mixin object chains were note commonly used as record abstractions; for-in was used in these patterns, hence enumerability
 
-...That has changed. 
+...That has changed.
 
 -  Now, class patterns increasingly used to express record abstractions
 - important that the cowpath does not break
@@ -313,13 +313,13 @@ SM: We could also do that for Arrays.
 
 https://github.com/tc39/ecma262/pull/642
 
-BT: Date.UTC with one argument 
+BT: Date.UTC with one argument
 
-Last meeting: 
-    
+Last meeting:
+
 - Date.UTC() => nan
 - Date.UTC(_) => Implementation-defined; Chakra had different behavior
-    
+
 AWB: The only two reasonable results would be to give the first instant of the year (Chakra behavior) or NaN (other implementations)
 
 Proposing: defaulting all subsequent arguments to 0 when called with only one argument
@@ -336,7 +336,7 @@ BT: Let's go for the functionality and make it work with just a year
 
 
 
-## 12.i.a Remove arguments.caller 
+## 12.i.a Remove arguments.caller
 
 https://github.com/tc39/ecma262/pull/689
 
@@ -398,13 +398,13 @@ YES
 (Domenic Denicola)
 
 https://github.com/tc39/proposal-cancelable-promises
-    
-Status: issues. 
+
+Status: issues.
 
 
 DD: I don't like mics
 
-MS: What's wrong with Mikes?
+MLS: What's wrong with Mikes?
 
 DD: The feedback made it in the new spec:
 
@@ -418,8 +418,8 @@ DD: The feedback made it in the new spec:
 
 WH: explain issues with catch guard?
 
-DD: 
-    
+DD:
+
 ```js
 try {
   f();
@@ -483,7 +483,7 @@ BBR: So the cancelation is more an "intent"?
 
 MM: the requirement that the notification be async isn't fatal to your design goals?
 
-No. 
+No.
 
 DT: motivation for the token specified by promise underneath?
 
@@ -548,7 +548,7 @@ DD: Let's follow up on GitHub with details
 
 
 
-## 11.iii.c Observables 
+## 11.iii.c Observables
 
 (Jafar Husain)
 
@@ -560,10 +560,10 @@ Having the consumer pass in the CancelToken is better because the consumer doesn
 
 DT/MM: Ability to observe the cancelation
 
-JH: 
+JH:
 - not designed to be dist system safe, just a primitive to design other useful classes on (EventTarget, EventEmitter)
 - Schedules some things synchronously when it makes sense, just like EventTarget, though other times things are asynchronous ("releasing zalgo"). There's no real benefit to waiting asynchronously for a map, etc.
-- observable 
+- observable
 
 
 
@@ -572,7 +572,7 @@ JH:
 // Calling
 function zalgo(callback) {
   if (someConditionIsSatifiedNow) {
-    callback();    
+    callback();
   } else {
     doTheTask();
     process.nextTick(_ => callback());
@@ -592,7 +592,7 @@ JH: The performance benefits implicitly come up in this code
 DE: Well, if it were OK, then Promises could also be made faster by "releasing Zalgo" and not delegating everything to the microtask queue
 
 JH: Observables encourage a more functional programming style, and Promises encourage a more imperative programming style, so it's OK to be synchronous to observables.
-    
+
 DD: if Observables are going to cover EventTarget, then must be sync
 
 MM: Do you need anything else from cancel tokens for Observables?
@@ -621,7 +621,7 @@ MM: Would this paint us into a corner, if we want to add unThen later?
 
 JHD: More sense to...
 
-Propose: 
+Propose:
 
 - @ for private
 - # for decorator
@@ -632,7 +632,7 @@ BBR: Node.js looks for `#` on first line. A decorator could be at top level, but
 (Should key on `#!` anyway)
 
 ```js
-# IdentifierName 
+# IdentifierName
 ```
 
 EFT: All other languages use @ for annotation/decorator?
@@ -641,8 +641,8 @@ Generally, this is not the only cultural motivation for design decisions.
 
 DE: As private field champion, I am neutral.
 
-Kevin is strongly in favor of the sigil swap. 
-- `@` is a very intuitive way to signify private state. 
+Kevin is strongly in favor of the sigil swap.
+- `@` is a very intuitive way to signify private state.
 
 
 DRR: Unclear why `@` for private is more preferrable to `#`?
@@ -656,7 +656,7 @@ RW: Allen's `@names` effectively reserved this years ago, because we always want
 
 JHD: There will be code that requires no modification and code that requires _some_.
 
-AWB: There is no code that doesn't go through _SOME_ kind of transpiler. Its not like web code that cannot be broken. Transpilers can handle the code generation. 
+AWB: There is no code that doesn't go through _SOME_ kind of transpiler. Its not like web code that cannot be broken. Transpilers can handle the code generation.
 
 RW: (example where we changed exponentiation operator syntax and it was just a version bump)
 
@@ -672,9 +672,9 @@ BT: Angular and TypeScript add that option? It's not a solution.
 
 JK/YK: (discussion re: paths forward)
 
-Updrade as they write, without change. 
+Updrade as they write, without change.
 
-DRR: Code that wont go through transition phase. Concerns about docs and blogs with old syntax. 
+DRR: Code that wont go through transition phase. Concerns about docs and blogs with old syntax.
 
 RW: We have lived through many things changing in the ES6 process, for example generator expressions being removed
 
@@ -682,7 +682,7 @@ JHD: And don't you have compat issues between TypeScript and CommonJS and Babel?
 
 DRR: Yes, but that's really painful and you want to avoid it
 
-JHD: If you're using a non-standard syntax, you shouldn't have expectations that it shouldn't change. 
+JHD: If you're using a non-standard syntax, you shouldn't have expectations that it shouldn't change.
 
 YK: Generally, we should be able to make changes, but we should also be able to weigh existing users vs rational arguments
 
@@ -698,16 +698,16 @@ DT: It'd actually be great to have a different syntax separating the comment and
 
 EFT: Confusion about what appears in comments vs what appears in code?
 
-No. But some think it matters what exists in the ecosystem. 
+No. But some think it matters what exists in the ecosystem.
 
 
 AWB: As a sigil for identifying special kinds of variables, like private state, @ is much more common in terms of number of languages. # as hashtag is a cultural reference, but it's completely separate from @--each of these sigils have context where they evoke something in people.
 
-JHD: This will be there for a long time; appeal to the long tail of future programmers, where "hash tag" is something of a "categorization", decorators deal with a "category" of things. 
+JHD: This will be there for a long time; appeal to the long tail of future programmers, where "hash tag" is something of a "categorization", decorators deal with a "category" of things.
 
 DH: Early adopters through transpilers give us very strong feedback and are great allies in our committee who it is important to value. This raises the bar for backwards-incompatible changes.
 
-JHD: Next versions of Babel, TypeScript could easily produce a code-mod to upgrade. 
+JHD: Next versions of Babel, TypeScript could easily produce a code-mod to upgrade.
 
 DE: decorators will have to be updated between stage 1 and stage 2, but to represent the Angular team, their interest is that users of decorators don't have to change, with the expectation that most programs will not implement their own decorators but rather use decorators from the framework, which will be the only one who has to do the transition. It's not hard to imagine that it will be difficult for some build environments to update themselves.
 
@@ -728,7 +728,7 @@ KG: Compared to tens of millions later?
 
 DH: Fails to account for the trust relationship
 
-BT: On the one hand: real cost for developers today. 
+BT: On the one hand: real cost for developers today.
 
 AWB/JHD: Real cost for teaching for the next 50 years
 
@@ -738,13 +738,13 @@ JHD: multiple networks have adopted the syntax, so i think it will mean "hashtag
 
 RW: We're setting a bad precedent in allowing Babel and TypeScript code to determine the course of ES evolution
 
-DRR: This is not the intention of TypeScript, 
+DRR: This is not the intention of TypeScript,
 
 
 #### Conclusion/Resolution
 
-- No sigil swap at this time; seems difficult to achieve consensus on such a swap in the future. 
-- Could revisit later, but it would require a strong argument beyond this. 
+- No sigil swap at this time; seems difficult to achieve consensus on such a swap in the future.
+- Could revisit later, but it would require a strong argument beyond this.
 - Features that are not stabilized are subject to change in general and should not be expected to be stable at all, especially if they are at Stage 1.
 
 
@@ -795,7 +795,7 @@ YK: The more you clean up after people who get manually written iterators wrong,
 
 MM: Good point.
 
-DE: small changes after my review, havent looked at them yet. 
+DE: small changes after my review, havent looked at them yet.
 
 BT: Nothing missing, no major concerns
 
@@ -852,7 +852,7 @@ AWB: Subclassing or .call'ing this on other constructors would encounter this is
 - Inconsistencies between which collection classes have this API and which do not
 
 
-MM: A clean API surface is not necessarily a larger API surface. 
+MM: A clean API surface is not necessarily a larger API surface.
 
 EFT: Without these, I would think that this would result in user "wat"
 
@@ -878,7 +878,7 @@ MM: Don't want this in the language, but don't object to stage 1.
 
 (Domenic Denicola for Brendan Eich)
 
-? 
+?
 ```js
 let f = () => * {}
 ```
@@ -892,7 +892,7 @@ WH: What would `class *` even mean?
 
 widest class of strong idioms to support?
 
-DD: Need to go back and get more evidence. 
+DD: Need to go back and get more evidence.
 
 
 
@@ -913,16 +913,16 @@ DD: Need to go back and get more evidence.
 import DateTime from "_?_DateTime";
 ```
 
-BT: There has been desire for inclusion of built-in modules since dawn of modules. Safe place to introduce new things. 
+BT: There has been desire for inclusion of built-in modules since dawn of modules. Safe place to introduce new things.
 
-- Working with moment.js to fix date things. ~10 new types. 
-- Things like DateTime 
+- Working with moment.js to fix date things. ~10 new types.
+- Things like DateTime
 
 BT: Asking... do we want built-in modules?
 
-DD: We should not move to world where features added after 2018 are in modules. Leave modules to user space. 
+DD: We should not move to world where features added after 2018 are in modules. Leave modules to user space.
 
-DH: Strong point, not specifically in agreement. 
+DH: Strong point, not specifically in agreement.
 
 EFT: We could make duplicate modules for existing built-in things, and maybe eventually we'll take things out of the global namespace in 10 years
 - Long term cleanup? (Probably not)
@@ -933,13 +933,13 @@ AWB: explicitly in the charter to explore standard libraries
 
 DH: Limit to how fast and how much
 
-MM: Very strongly in favor of built-in modules. Issues to be aware of and address: 
-    
+MM: Very strongly in favor of built-in modules. Issues to be aware of and address:
+
 - global namespaces pollution way past breaking point
 - any built-in module needs:
 - Polyfilling must be "what becomes" the standard set of modules
-- Primordials all have the property that you can freeze and make immutable 
-- Need polyfills for built-in modules to be able to do this 
+- Primordials all have the property that you can freeze and make immutable
+- Need polyfills for built-in modules to be able to do this
 
 BT: Polyfills are just the start--testing hooks, etc
 
@@ -963,7 +963,7 @@ CP: Some Node users like to have things in modules, even when just wrapping exis
 
 DD: What is the motivation?
 
-BBR: This is a matter of consistency. It's fine if TC39 adds some things to the global object, so will it get "full"? It would be nice to have a system way of loading libraries. 
+BBR: This is a matter of consistency. It's fine if TC39 adds some things to the global object, so will it get "full"? It would be nice to have a system way of loading libraries.
 
 JHD: Polyfillability is important, and it leads to the same collision issue with the same bad global namespace.
 
@@ -973,7 +973,7 @@ DD:
 - Anyway, will we do a bad job organizing the new namespace (of things like whether Foo goes into module A or module B), and regret it, so no point in changing anything.
 - modules can be loaded asynchronously
 - good example: SIMD
-- globals cannot 
+- globals cannot
 
 AK: As to breaking users by adding things to the global object: I didn't remember Set breaking anything, anyway. And modules for user code make this nicer, with the lexical tier making it even nicer and less risk of an overlap. So this does not seem to be a very strong piece of motivation for built-in modules.
 
@@ -1018,5 +1018,5 @@ DE: Seems a little confusing with the analog to `import "DateTime"` doing someth
 - Stage 1 acceptance
 - Need to craft a plan in accordance with committee concerns
 - Polyfillability, including Mark's concern about ensuring you can disallow access to the original
-- Domenic's concerns about bifurcating the world between pre-2019 APIs and post-2019 APIs 
+- Domenic's concerns about bifurcating the world between pre-2019 APIs and post-2019 APIs
 - Eric Faust's concerns about polyfills leading to a tension with the possibility of namespace collision

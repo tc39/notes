@@ -1,8 +1,8 @@
 # May 22, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Mattijs Hoitink (MHK), Kyle Verrier (KVR),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (AKI), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Mattijs Hoitink (MHK), Kyle Verrier (KVR),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (AKI), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW)
 
-Remote: 
+Remote:
 Valerie Young (VYG), Maggie Pint (MPT)
 -----
 
@@ -123,14 +123,14 @@ Date.parse:
     - 2 news tests (André Bargull)
 
 
-$262 Host Agent Improvements: 
-  - $262.agent.monotonicNow() 
+$262 Host Agent Improvements:
+  - $262.agent.monotonicNow()
     - implementation patches added for JSC (accepted), V8 (accepted) and spidermonkey (pending) (Rick Waldron)
     - implementation for ChakraCore is in progress (Rick Waldron)
 
 routine maintenance:
   - ~100 of tests edited for formatting, code consistency, renames (Leo Balter, Valerie Young, André Bargull, Rick Waldron)
-  - 12 old tests modified for early error syntax (Mike Pennisi and Rick Waldron) 
+  - 12 old tests modified for early error syntax (Mike Pennisi and Rick Waldron)
   - feature tagging (destructuring-binding) (Rick Waldron)
   - implementation depend NAN bug (André Bargull)
   - 44 tests added for various test cases for cross-browser compliance bugs (André Bargull)
@@ -146,7 +146,7 @@ JBN: A brief update on the CoC committee: introduce committee members, Daniel, A
 
 WH: I have some questions about what you just presented. You are working on "moderations", what does that mean?
 
-JBN: Right now we just have a draft in the committee. Giving people a better sense of what they can expect if something is reported. 
+JBN: Right now we just have a draft in the committee. Giving people a better sense of what they can expect if something is reported.
 
 WH: Are these additional rules we have to follow?
 
@@ -156,7 +156,7 @@ WH: I don't understand what "Guiding Principles" are? If they are rules, you sho
 
 JBN: I'm happy to get your feedback, I would just hate to share my typo filled document already.
 
-RJE: Not quite ready for public consumption, but soon. 
+RJE: Not quite ready for public consumption, but soon.
 
 WH: You mentioned the repository earlier, what's the link?
 
@@ -170,7 +170,7 @@ JBN: If it's not in our repo already, I may have misspoke. You can follow along 
 
 DE: When we have a document for the committee, we will publicise it. Right now, we're in the early stages. People were uncertain what the code of conduct mean in practice, so we want to write up some guidelines, get some feedback and then discuss it. Hopefully this should lessen concerns.
 
-RJE: To summarize, internally you have something you're working on. It's not ready yet, but when it is you'll share it with the group. 
+RJE: To summarize, internally you have something you're working on. It's not ready yet, but when it is you'll share it with the group.
 
 AR: To clarify, this isn't changing anything, just clarifying
 
@@ -184,7 +184,7 @@ AR: To clarify, this isn't changing anything, just clarifying
 
 - [Normative: Cleanup Time Values and Time Range #1144](https://github.com/tc39/ecma262/pull/1144)
 
-API: Dan suggested making a presentation for this PR. There are a lot of issues in the backlog for Date APIs. After reading the spec, Date.parse returns a time value. The spec speaks about what a time value is, its 8640000000000 milliseconds. 
+API: Dan suggested making a presentation for this PR. There are a lot of issues in the backlog for Date APIs. After reading the spec, Date.parse returns a time value. The spec speaks about what a time value is, its 8640000000000 milliseconds.
 
 API: Specified in 6 digit years, which is great if both sides understand it, but ECMAScript has not yet standardized it.
 
@@ -198,13 +198,13 @@ DE: I think API did great work here. I hope we can have more changes like this. 
 
 (Jokes about Date APIs being difficult)
 
-DE: Any feedback from any of the implementers or editors? 
+DE: Any feedback from any of the implementers or editors?
 
-BT: Have you seen any specific issues? 
+BT: Have you seen any specific issues?
 
 API: Practically no issues because no one uses dates this big.
 
-DE: I want to make sure we either have consensus from implementers (since we only have SpiderMonkey) or next steps. 
+DE: I want to make sure we either have consensus from implementers (since we only have SpiderMonkey) or next steps.
 
 SGN: That sounds like a good plan from V8's perspective
 
@@ -223,7 +223,7 @@ BT: Chakra has similar behavior to V8
 - Consensus
 
 
-## Array.prototype.values web compat update 
+## Array.prototype.values web compat update
 (Sathya Gunasekaran)
 
 SGN: The update is Chrome tried to ship this twice, finally did recently. Now Firefox has shipped it as well, so it has been implemented in all major browsers. [Thunderous cheers in the room].
@@ -240,7 +240,7 @@ SGN: The update is Chrome tried to ship this twice, finally did recently. Now Fi
 - [Normative: Add export * as ns from "mod" to Export production and Module Semantics](https://github.com/tc39/ecma262/pull/1174)
 
 
-VYG: Seems like a natural addition to the language, because it can be done in two steps easily. Semantics seem clear. We thought it would just be a grammatical change. Just needs consensus. We have incomplete tests in March 2018. 
+VYG: Seems like a natural addition to the language, because it can be done in two steps easily. Semantics seem clear. We thought it would just be a grammatical change. Just needs consensus. We have incomplete tests in March 2018.
 
 YK: This happens to me often. I like the change.
 
@@ -248,7 +248,7 @@ DE: What are the next steps? Are we looking for a merge now? Or feedback?
 
 VYG: Is Jordan or John Dalton on the call? The question is is this PR ready to be merged? I think it is.
 
-JHD: The impression I got from 2017 is that we didn't move forward because there was no PR or tests. If this PR is uncontroversial, it still would need editor review, but if there are no objections it would seem we have consensus. 
+JHD: The impression I got from 2017 is that we didn't move forward because there was no PR or tests. If this PR is uncontroversial, it still would need editor review, but if there are no objections it would seem we have consensus.
 
 DD: I'm unclear at what point we decided to treat this as a PR without implementations. We need implementers to do this before it merges. Like a Stage-3 proposal, even though we're doing it as a PR.
 
@@ -268,7 +268,7 @@ DE: I suggest for next steps we land the tests, and land the normative change on
 
 #### Conclusion/Resolution
 
-- The needs-consensus PR has consensus and awaiting 
+- The needs-consensus PR has consensus and awaiting
 - Land tests
 - Continue to pursue with implementers with feedback as needed.
 
@@ -289,7 +289,7 @@ Most recent suggestions:
 - November/December: Salesforce in SF (NY?) (pending coordination to not overlap with Dreamforce)
 
 
-DE: If people could communicate their scheduling needs on the reflector issue, that would make this scheduling easier. 
+DE: If people could communicate their scheduling needs on the reflector issue, that would make this scheduling easier.
 
 GCN: Are there any conflicts with other meetings? Node board meetings, etc.
 
@@ -329,7 +329,7 @@ DE: Seems like this is good overall, with various people wanting small changes. 
 
 MF: Alternative syntax for catches. The PR is here (https://github.com/tc39/ecma262/pull/1185), and it has been approved by editors. We have Safari, Chrome and Firefox implementations already. I am requesting Stage 4.
 
-RW: Voicing another's objection, Mike P? from Bocoup strongly objects, calling it unnecessary and over-complicating try/catch syntax. 
+RW: Voicing another's objection, Mike P? from Bocoup strongly objects, calling it unnecessary and over-complicating try/catch syntax.
 
 MF: I think it's valuable for language ergonomics.
 
@@ -378,7 +378,7 @@ wants to promote patterns like `throw null`.
 - Stage 4 acceptance
 
 
-## 11.i.e ECMAScript as a superset of JSON 
+## 11.i.e ECMAScript as a superset of JSON
 
 (Mathias Bynens)
 
@@ -472,7 +472,7 @@ BT: There's no need to rush.
 - [slides](https://docs.google.com/presentation/d/1DZ0Q7hX-4ST08n4PUHD3NjRC6_2iAn7ukTa_QAPMgAg/edit?usp=sharing)
 
 
-YSV: We have two tracks, a user story and a documentation track. Iterating on how proposals are recorded for the website. We have a current design for the new site, it's a little more refined. Testing two different forms for below the fold info, either for larger screens or smaller screens. Below the info, we have state of Proposals at stage 3 and above, so that people don't get overwhelmed with newer proposals. 
+YSV: We have two tracks, a user story and a documentation track. Iterating on how proposals are recorded for the website. We have a current design for the new site, it's a little more refined. Testing two different forms for below the fold info, either for larger screens or smaller screens. Below the info, we have state of Proposals at stage 3 and above, so that people don't get overwhelmed with newer proposals.
 
 
 ## Rename Atomics.wake
@@ -481,7 +481,7 @@ YSV: We have two tracks, a user story and a documentation track. Iterating on ho
 
 - [slides](https://docs.google.com/presentation/d/1awJqO2WcBs4UlBaLZn0mfwV3xOYOlo0hHNbB6mtctnQ/)
 
-RW: Atomics.wake sounds too much like Atomics.wait. Because we unpublished the feature, we have the unique opportunity to change the name, as you cannot presently write new programs with the existing API. Let's call it Atomics.notify instead. It basically means the same thing. 
+RW: Atomics.wake sounds too much like Atomics.wait. Because we unpublished the feature, we have the unique opportunity to change the name, as you cannot presently write new programs with the existing API. Let's call it Atomics.notify instead. It basically means the same thing.
 
 KZM: Why change it altogether instead of deprecating and adding the new API?
 
@@ -489,7 +489,7 @@ YK: We don't deprecate it. Browsers could just remove it though, and they can te
 
 RW: Spectre security mitigation disabling created an artificial "deprecation period" for us.
 
-RW: We have an opportunity to rename it. Let's rename it. 
+RW: We have an opportunity to rename it. Let's rename it.
 
 RW: So, 1. Do we want to do this? 2. What stage should it be?
 
@@ -507,7 +507,7 @@ RW: Editors: If this were needs-consensus, is it too late for ES 2018?
 
 JHD: It seems good to get the renaming into 2018 but it may be too late.
 
-BT: We are technically not allowed to make this change at this point. 
+BT: We are technically not allowed to make this change at this point.
 
 RW: Are we in an opt-out period?
 
@@ -517,7 +517,7 @@ Would prefer not to do this work until we're sure it will work.
 #### Conclusion/Resolution
 
 - Create a needs consensus PR
-- Outreach with "in the wild" occurrences 
+- Outreach with "in the wild" occurrences
 - Pursue implementations
 
 
@@ -573,7 +573,7 @@ DE: We should address polarity. Will follow up offline.
 
 DE: BigInt is at stage 3. Based on operator overloading. ONe change: a number casted explicitly using BigInt constructor and is an integer out of safe range 2^53, it's now permitted. We allow the conversion. Robin Templeton implemented tc262 tests for this. Comparison greater than or double equals, number is cast to a bigint. Implemented tests and implementation in SpiderMonkey. I have a PR against main spec that changes how math values work. This will make it more explicit - more feasible to add BigInts. The other change is BigInt.p.toLocaleString support is an alias of toString(). It takes an argument that is a locale. The PR for review in ECMA-402 is based on Intl format. This has consensus. Will be in Node when it goes to V8 6.7. Thanks to Bocoup and Igalia colleagues.
 
-MM: In the 2**60 case, it has to be an integer value, but it changes to BigInt and therefore doesn't need to throw? Is that correct? 
+MM: In the 2**60 case, it has to be an integer value, but it changes to BigInt and therefore doesn't need to throw? Is that correct?
 
 DE: Yes. Integers don't throw. NaNs, infinities, and fractions do.
 
@@ -592,7 +592,7 @@ WH: I reviewed and am happy with the new updates. They addressed my concerns fro
 
 (Michael Ficarra)
 
-MF: Added support for Async functions and Async generators. Added HasSourceTextAvailable host-defined abstraction. Committee reviewed. Agreed by Dominic how it affects Function.censorship. Allow for anonymous, well-known intrinsics (the spec supports omitting the name now). Biggest change is to allow PropertyName. 
+MF: Added support for Async functions and Async generators. Added HasSourceTextAvailable host-defined abstraction. Committee reviewed. Agreed by Dominic how it affects Function.censorship. Allow for anonymous, well-known intrinsics (the spec supports omitting the name now). Biggest change is to allow PropertyName.
 Going in more detail: HasSourceTextAvailable should always complete normally (return true/false) and the source text is preserved.
 
 MM: "must return a consistent result" so everytime you ask a question it always gives the same answer?
@@ -606,7 +606,7 @@ KG: This is only something allowed for implementers. So even though it allows ar
 
 MM: Does the propertyname ever show up in the function name in a code block?
 
-MF: Yes, from the first token to the last token. This is actually why I think the second form is not acceptable. 
+MF: Yes, from the first token to the last token. This is actually why I think the second form is not acceptable.
 I have reviews from Jordan and Bradley in the editors group. And Brian. Only objection: Firefox has not updated. Proposal has caused engines to make changes of similar sort.
 
 WH: I reviewed. A concern is how this interacts with decorators. We can discuss that in the decorators topic.
@@ -631,7 +631,7 @@ YK: What's the area of decorator concern? [deferred]
 
 ## Array.prototype.flatten rename
 
-(Michael Ficarra) 
+(Michael Ficarra)
 
 MF: Flatten name conflicted with MooTools. Flatten is still in Safari TP.
 
@@ -658,7 +658,7 @@ DE: There are already different parts of speech in `Array.prototype` with `some`
 
 - [proposal](https://github.com/tc39/proposal-Symbol-description)
 
-MF: Stage 3 proposal, hasn't changed since last meeting. Has received reviews from everyone assigned and Brian. 
+MF: Stage 3 proposal, hasn't changed since last meeting. Has received reviews from everyone assigned and Brian.
 
 #### Conclusion/Resolution
 
@@ -672,19 +672,19 @@ MF: Stage 3 proposal, hasn't changed since last meeting. Has received reviews fr
 - [proposal](https://github.com/tc39/proposal-object-from-entries)
 - [slides](https://docs.google.com/presentation/d/1o0XpxQmERelo0u-tyibSeHLhy-YyCNCBwHGIDwuXUww/edit)
 
-KG: It's the same as last meeting. Inverse of Object.entries, constructs an object from an iterator of key-value tuple pairs. The polyfill is basically exactly what you expect. What if anything should a second argument do? One choice is a prototype for the resulting object a la Object.create, another is a mapping function a la Array.from. Currently we propose not taking a second argument. Please look at the GitHub proposal for discussion of this and other details (https://github.com/tc39/proposal-object-from-entries/). 
+KG: It's the same as last meeting. Inverse of Object.entries, constructs an object from an iterator of key-value tuple pairs. The polyfill is basically exactly what you expect. What if anything should a second argument do? One choice is a prototype for the resulting object a la Object.create, another is a mapping function a la Array.from. Currently we propose not taking a second argument. Please look at the GitHub proposal for discussion of this and other details (https://github.com/tc39/proposal-object-from-entries/).
 
 JRL: Why isn't this taking an object for key-value pairs instead of a list?
 
-KG: There are lots of APIs that take a list of key-value tuples _from_ an Object, but there's no good way to produce such a thing if you already have a list of key-value pairs such as that produced from Object.entries. Also, you can't really transform an Object very well, as with Array.prototype.filter, but you can transform an array very easily. 
+KG: There are lots of APIs that take a list of key-value tuples _from_ an Object, but there's no good way to produce such a thing if you already have a list of key-value pairs such as that produced from Object.entries. Also, you can't really transform an Object very well, as with Array.prototype.filter, but you can transform an array very easily.
 
 #### Conclusion/Resolution
 
 - Stage 2 acceptance
-- Reviewers: Michael Ficarra, 
+- Reviewers: Michael Ficarra,
 
 
-## Top Level Await 
+## Top Level Await
 
 (Myles Borins)
 
@@ -697,7 +697,7 @@ MBS: Potential solutions: top-level await blocks tree execution: if top-level aw
 
 MBS: The other variant is that TLA wouldn't block sibling evaluation for other modules in the tree.
 
-MBS: A constraint that could be introduced is allowing TLA for only modules without exports, enabling modules without deadlock. 
+MBS: A constraint that could be introduced is allowing TLA for only modules without exports, enabling modules without deadlock.
 
 One way to think about it is either sequential evaluations in A, or parallel evaluations in B (as though resolved via a Promise.all). import('a') will still evaluate first, but if it contains an await inside it, it will start evaluating the import('b') module.
 
@@ -709,13 +709,13 @@ MBS: New things are all in the GitHub repo. As recently started in the spec, Asy
 
 (Discussing spec grammars and what gives what capabilities to the syntax using that grammar for Variant A)
 
-MBS: We're allowing in these spec changes for these functions to defer. Also, there have been updates to normative/non-normative to awaits for use at the Job level. Variant B needs to be refactored to allow all children to execute in parallel. This could be done in a spec-level Promise.all (and worth discussing here, in addition to the issue, whether that is a good way to go). 
+MBS: We're allowing in these spec changes for these functions to defer. Also, there have been updates to normative/non-normative to awaits for use at the Job level. Variant B needs to be refactored to allow all children to execute in parallel. This could be done in a spec-level Promise.all (and worth discussing here, in addition to the issue, whether that is a good way to go).
 
 DD: all we really need for this case is a spec level await? That definition is not precisely like a normal await. It's probably not well founded, it's tricky.
 
-MBS: Building on that also, whether a spec-version of Promise.all, or whether that's even something we could implement: for Variant A or Variant B. 
+MBS: Building on that also, whether a spec-version of Promise.all, or whether that's even something we could implement: for Variant A or Variant B.
 
-MBS: What about deadlock? This change can help detect and prevent deadlock when cyclical dependencies exist in a module graph. There's potential to introduce deadlock using dynamic import. Rather than attempt to solve particular issues with deadlock, we should be doing this on a broader scope than TLA. As for polyfills, there's not a way to dynamically import and ensure polyfills. If you are not dynamically importing, you can guarantee the order of the graph execution. In Variant B, however you cannot guarantee execution order of imports. 
+MBS: What about deadlock? This change can help detect and prevent deadlock when cyclical dependencies exist in a module graph. There's potential to introduce deadlock using dynamic import. Rather than attempt to solve particular issues with deadlock, we should be doing this on a broader scope than TLA. As for polyfills, there's not a way to dynamically import and ensure polyfills. If you are not dynamically importing, you can guarantee the order of the graph execution. In Variant B, however you cannot guarantee execution order of imports.
 
 MBS: We're exploring this as an option for the module loader in Node. Currently, we're looking at pluggable-loaders, and generally exploring what options could exist. We're imagining TLA won't be available to script goal code, only module code. Our current plan is to not implement the specification text about deadlock, or handling cycles.
 
@@ -759,12 +759,12 @@ YK: WASM already enabled this. In Chrome, for example, you cannot transpile to a
 
 DD: Yes, the plan for now is just to behave like async functions.
 
-DH: Of course this is impossible statically (halting problem is real), but dynamically, I think you could track which modules are blocked on which. 
+DH: Of course this is impossible statically (halting problem is real), but dynamically, I think you could track which modules are blocked on which.
 
 API: It would be nice to defer to the Host. If you're not in a browser context, it might be nice to take action on deadlocks.
 
 
-JRL: It's not clear to the importer, that the module may wait on something. 
+JRL: It's not clear to the importer, that the module may wait on something.
 
 MBS: I'd argue that that's the case for dependencies already. It could be fast or slow! You trust that the module author has done this properly.
 
@@ -786,9 +786,9 @@ YK: The whole point of this proposal is to prevent that from happening. Normal i
 DE: This is a spec about built-in internationalization in ECMAScript. Some changes since last time: improved handling of non-Gregorian calendars. The proposal here is to relax that DateTimeFormat for other calendars. For Intl.RelativeTimeFormat, it's already implemented in Firefox. For Intl.Locale, implemented in V8 and SpiderMonkey. We've added baseName and minimize/maximize features, which let you manipulate the script (i.e. set to Latin script).
 There's also the Intl.ListFormat API. Not much has changed in that. The Intl.Segmeter proposal, we added a LineBreak option.
 
-New Proposals: Intl.NumberFormat options by Shane Carr. 
+New Proposals: Intl.NumberFormat options by Shane Carr.
 
-SCR: Over a dozen requests for various new number format features. The spirit is to most of the features to make the API more thorough. It already supports many of the features, and we add four "measuring" features (i.e. things like gallons, the forms them into a localized string. 
+SCR: Over a dozen requests for various new number format features. The spirit is to most of the features to make the API more thorough. It already supports many of the features, and we add four "measuring" features (i.e. things like gallons, the forms them into a localized string.
 
 SCR: Also number formatting (with commas or decimal precision), and scientific notation have become very popular methods for people to implement, so we're proposing adding them to ECMAScript. Showing the sign on numbers. To show a change in something, like an increase of 43¢. I'm working on a proposal for July to spec these new features. I propose this for Stage 0 today.
 
@@ -812,7 +812,7 @@ MM: Want to check: you can put the directive at the top of a function or at the 
 
 DD: It's also added to Class, so I had to add a bit of spec text for that.
 
-CM: What promise is this making to developers? Code-hygiene?  This might get cargo-culted, and everyone starts using it for no reason. Some clarity for the purpose would be good. Jab at concealing intellectual property. 
+CM: What promise is this making to developers? Code-hygiene?  This might get cargo-culted, and everyone starts using it for no reason. Some clarity for the purpose would be good. Jab at concealing intellectual property.
 
 DD: Maybe being explicit in the pragma text is useful.
 
@@ -852,7 +852,7 @@ DD: That would be unfortunate for this directive.
 
 KG: This isn't as much of an issue here. There's no need to reparse, etc. you just have to wait longer to see if you can drop the source text.
 
-YK: It makes sense to think about censoring using a method, since there's no memory benefits. 
+YK: It makes sense to think about censoring using a method, since there's no memory benefits.
 
 DD: My main problem is it's not ergonomic for the main library use case. It'd have to be a follow up proposal.
 
@@ -876,7 +876,7 @@ DD: Happy to remove that sentence if that is what's preventing us from Stage 2.
 
 SYG: What you got back from the implementers is there's no immediate win because of lazy parsing. Is the worry beyond that? Once you de-lazify, you can drop it. Why would you re-lazify it.
 
-SGN: When you call a function that's undefined (i.e. "undefined is not a function"), we need to reparse that source file to throw an error with the name. 
+SGN: When you call a function that's undefined (i.e. "undefined is not a function"), we need to reparse that source file to throw an error with the name.
 
 YK: Can we reparse from disk?
 
@@ -890,7 +890,7 @@ DD: I'd leave it up to the tool authors. You could invoke an IIFE with the censo
 
 Eric Faust: Are we worried about "use language feature" pragmas?
 
-DD: this isn't about function code, it's about source code text. You want to put this at the top of the file/class/block, and have it apply. In terms of precedent, I think it's ok to add esoteric pragmas. 
+DD: this isn't about function code, it's about source code text. You want to put this at the top of the file/class/block, and have it apply. In terms of precedent, I think it's ok to add esoteric pragmas.
 
 BT: Using directive prologues makes me uncomfortable because I imagine a future where every file starts with this  incantation of multiple pragmas. I have a hard time supporting Stage 2 without memory improvements. If it's purely about encapsulation, I don't object.
 
@@ -941,7 +941,7 @@ DD: The other concern is getting access to built ins.
 
 SGN: Previously, we proposed adding 4 methods to Set. It was suggested we split the proposal, one for set specific, and one for collection methods. This is the Set specific proposal. Other languages seem to use isSubSet, isSuperSet, etc. Feedback, someone said to use isSubsetOf (of suffix for all). Other feedback that semantic difference is tooooooooo long of a method name. 2 Themes: set theory methods and bitfield methods. Let's pick one theme.
 Other mainstream languages use set theory names: union, intersection, etc. so we would be breaking convention. They're pretty well understood, and union/intersection are the most common cases, so we should optimize for that.
-Symmetric difference isn't very common, so it might not be really worth it to optimize for. Union and intersection are common and easy enough. And is ambiguous—could mean union OR intersection. My solution is to use set theoretic methods. 
+Symmetric difference isn't very common, so it might not be really worth it to optimize for. Union and intersection are common and easy enough. And is ambiguous—could mean union OR intersection. My solution is to use set theoretic methods.
 
 SGN: I added 3 helper methods: subset, superset, after the deadline, so that may not go to stage 2.
 
@@ -957,7 +957,7 @@ WH: Sets have well-defined key behavior. Arrays do not.
 
 LZU: If you're able to take any iterable and use a set method on it? (super hard to hear without mic)
 
-JHD: We should consider doing operations on sets that are iterable. 
+JHD: We should consider doing operations on sets that are iterable.
 
 SGN: If it can work with iterable, why not let it?
 
@@ -966,7 +966,7 @@ JHD: That would also be consistent with array methods that can take generic {len
 KG: I think these methods (the set specific methods) are also useful on WeakSets. That's not true of the helper methods isSubSet, isSuperSet; I am planning on getting those into the Spec as well.
 I don't think the iterable stuff affects the helpers methods.
 
-TAB: symmetricDifference is too complicated. I would formally object to this if it were proposed in a CSS spec, "diff and symDiff" would be better. They are long, terrible names. 
+TAB: symmetricDifference is too complicated. I would formally object to this if it were proposed in a CSS spec, "diff and symDiff" would be better. They are long, terrible names.
 
 MB: All other programing languages uses these already.
 
@@ -984,7 +984,7 @@ KVR: Due to the math nature of the API. I like algebraic laws in the spec text. 
 
 SGN: let's talk offline.
 
-YK: I also agree with TAS. Telling them to learn set math vocab sucks. Ruby uses operators. 
+YK: I also agree with TAS. Telling them to learn set math vocab sucks. Ruby uses operators.
 
 MF: Stage 2 has specific requirements. I would like a more concrete API in the future.
 
@@ -1068,11 +1068,11 @@ MB: It doesn't feel right to me to advance a proposal without everyone on board.
 
 MB: Proposal by Richard Gibson.
 
-MB: 
+MB:
 
 > RFC 8259: "JSON text exchanged between systems that are not part of a closed ecosystem MUST be encoded using UTF-8"
 
-MB: Using UTF-8 is best practice. But `JSON.stringify` can return symbols that are technically not valid, and that cannot be represented in UTF-8. Many problems. 
+MB: Using UTF-8 is best practice. But `JSON.stringify` can return symbols that are technically not valid, and that cannot be represented in UTF-8. Many problems.
 
 MB: Even the description of `JSON.stringify` in the spec is incorrect. It says it returns a string in UTF-16-encoded JSON format, but UTF-16 does not support lone surrogates either!
 
@@ -1138,7 +1138,7 @@ API: I think I found one JSON parser with this issue — it parses `\uXXXX` esca
 
 MB: That sounds like a different issue, which may not even be an issue. That parser seems to support escape sequences. There are valid use cases for not accepting inputs containing lone surrogates, which is totally fine. It depends on the use case.
 
-JRL: Does it also throw if it contains an unencoded lone surrogate? As in, does it behave differently if than the encoded case? 
+JRL: Does it also throw if it contains an unencoded lone surrogate? As in, does it behave differently if than the encoded case?
 
 API: Not sure; I only just found this code.
 
@@ -1152,7 +1152,7 @@ API: (after the meeting) https://github.com/gibson042/ECMA-262-proposal-well-for
 - Reviewers: YK, MF, DE, MSL
 
 
-## Revisiting `String.prototype.matchAll` 
+## Revisiting `String.prototype.matchAll`
 
 (Jordan Harband)
 

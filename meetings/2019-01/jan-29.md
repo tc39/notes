@@ -1,6 +1,6 @@
 # January 29, 2019 Meeting Notes
 -----
-Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser(DRR), Mark Miller (MM)
+Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MLS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser(DRR), Mark Miller (MM)
 
 
 Remote:
@@ -38,7 +38,7 @@ AKI: Close to the Paypal-hosted TC39.
 
 MBS: Reservation is for an Indian restaurant. Is everyone OK with Indian food? If anyone wants to help host/organize a community event, please let me know.
 
-MS: And please create the agenda in the repo.
+MLS: And please create the agenda in the repo.
 
 YSV: Any questions about the logistics for the next meeting?
 
@@ -331,7 +331,7 @@ TST: I don't think it should impact Stage 4 requirements. Our requirements are s
 
 YK: I have two things. First, We could say that Chromium is basically web reality, or we can keep looking at multiple engines. I hope we don't just look at Chromium. Second, it is the case that Chrome is more likely to implement breaking changes that other engines would be hesitant to implement out of fear for breaking web reality. If we get to the point where there's a lot of consolidation around the JavaScript engines but with JSDom we can revisit this conversation.
 
-MS: An observation is that Edge is not usually one of the two engines on a Stage 4 proposal. However, we really lose that ability now. I don't think we should just use one engine. I think we should look at Moddable or other engines that can satisfy that requirement.
+MLS: An observation is that Edge is not usually one of the two engines on a Stage 4 proposal. However, we really lose that ability now. I don't think we should just use one engine. I think we should look at Moddable or other engines that can satisfy that requirement.
 
 SLA: There are some features that can be disabled in Chromium, so a browser that uses V8 can choose not to use a given feature has implications in the context of web-reality.
 
@@ -351,7 +351,7 @@ YK: I think there's something difference about the browser use case. A big diffe
 
 TST: I agree with MM that we shouldn't have "second-class" implementations. We have different implementation realities, including implementation complexity. (Gives an anecdote.)  For some features, we can't rely on just having one implementation and realizing that it's impossible for other engines to implement.
 
-MS: Let's suppose hypothetically that Safari and Firefox adopted Chromium. I think what TST is important. But I can see that the committee would change dramatically in how it does things. It would give one entity veto power. I think we should consider what the future would look like if such a thing were to happen. We need to consider the viability of an open standard for JavaScript going forward.
+MLS: Let's suppose hypothetically that Safari and Firefox adopted Chromium. I think what TST is important. But I can see that the committee would change dramatically in how it does things. It would give one entity veto power. I think we should consider what the future would look like if such a thing were to happen. We need to consider the viability of an open standard for JavaScript going forward.
 
 JHD: The intention of the PR I have open against the process document is to clarify the Stage 4 requirements. I'm planning on updating that PR later today,
 
@@ -623,7 +623,7 @@ AK: V8 is not interested in spending time on acquiring web compat data. We would
 
 TST: We also would not be interested acquiring web compat data. It sounds like it's up to JSC.
 
-MS: I'd love to do some of this stuff, but we can't due to the project policies.
+MLS: I'd love to do some of this stuff, but we can't due to the project policies.
 
 BFS: Would people be okay shipping both identifiers?
 
@@ -663,11 +663,11 @@ MBS: We can go and talk on this for hours.
 
 DE: There's a time-sensitive option; the longer we wait, the longer Chrome and Firefox will have this shipped. We can't defer this to next meeting and decide to remove the name.
 
-MS: Safari tech preview is shipping it as well.
+MLS: Safari tech preview is shipping it as well.
 
 LBR: This is a thread that has been going for a very long time, and I don't want to keep advocating for this renaming if we can't solve it during this meeting as the problem is time sensitive considering globalThis is already shipping in browsers. I am only proposing that we switch to Global. If we don't recommend anything else, the ship has sailed with globalThis.
 
-MS: I don't think people want this to be the resolution, but procedurally this is the default state.
+MLS: I don't think people want this to be the resolution, but procedurally this is the default state.
 
 #### Conclusion/Resolution
 

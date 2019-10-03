@@ -1,6 +1,6 @@
 # September 26, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZU), Matt Johnson (MAJ), Robert Pamely (RPY)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBN), Tom Dale (TOD), Daniel Rosenwasser (DW), Henry Zhu (HZU), Matt Johnson (MAJ), Robert Pamely (RPY)
 
 Remote:
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
@@ -54,11 +54,11 @@ MB: For property forms that we already support, the negated form `\P` is clear, 
 
 MB: MS suggested `\q` for se*q*uence, but my personal preference is to stick to `\p` to not introduce new syntax. I don't think it's a good idea for our syntax to depend on an upstream spec. What does the committee think we should use?
 
-MS: There's a couple issues with using `\p`. What if Unicode changes that property to map that property to a sequence anyway. (i.e. property `foo` becomes changed by Unicode to a sequence). If a user uses this in a character class, then all of a sudden this throws a syntax error. Secondly, let's suppose Unicode changes something from a property to a sequence, the programmer should have to know that to use it. Unicode will often prefix these with underscores anyway, so a programmer wouldn't probably even be able to use it without
+MLS: There's a couple issues with using `\p`. What if Unicode changes that property to map that property to a sequence anyway. (i.e. property `foo` becomes changed by Unicode to a sequence). If a user uses this in a character class, then all of a sudden this throws a syntax error. Secondly, let's suppose Unicode changes something from a property to a sequence, the programmer should have to know that to use it. Unicode will often prefix these with underscores anyway, so a programmer wouldn't probably even be able to use it without
 
 MB: Perhaps Unicode would have to introduce a new property and then there's no collision?
 
-MS: That would help, but you would still have to make changes to your regular expression.
+MLS: That would help, but you would still have to make changes to your regular expression.
 
 BFS: Do we have a plan if Unicode is not consistent with how they identify Sequences?
 
@@ -88,7 +88,7 @@ YK: Because emoji sequences are composed of units that sometimes also have meani
 
 DE: I think some of this discussion is a bit besides the point. Both the options `p` and `q` are OK. If there's a mismatch, I'm not sure what it is. I think we should decide this based on what mental model we want to go with.
 
-MS: The concern I have is the mental model with the programmer. A programmer needs to understand the difference between `p` and `q`—that you can't use one in a character class. The other things is that as the Unicode consortium makes changes (though they haven't moved from a property to a sequence in the past)
+MLS: The concern I have is the mental model with the programmer. A programmer needs to understand the difference between `p` and `q`—that you can't use one in a character class. The other things is that as the Unicode consortium makes changes (though they haven't moved from a property to a sequence in the past)
 
 MB: I do think we can work with Unicode to let them know that changing from a property to a sequence would be a breaking change for us.
 
@@ -114,13 +114,13 @@ DE: It seems like the feelings on both sides of this argument are moderated and 
 
 WH: We should decide between the three choices then: `\p`, `\q` where a one-character property is not a one-character sequence, or `\q` where every one-character property can also be used as a one-character-long sequence property.
 
-MS: Unicode is very clear about properties and sequences being disjoint. We should not conflate them, and follow the very specific rules the Unicode consortium makes.
+MLS: Unicode is very clear about properties and sequences being disjoint. We should not conflate them, and follow the very specific rules the Unicode consortium makes.
 
 MB: They can both be thought of as "properties" though.
 
 WH: [points to bullet point on the presenter's slide] Not all of us are convinced that Unicode won't conflate these.
 
-MS: They never have.
+MLS: They never have.
 
 MB: Yeah, this is a hypothetical issue.
 

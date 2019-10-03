@@ -1,7 +1,7 @@
 # March 21, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LSH), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), Mathias Bynens (MB)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MLS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LSH), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), Mathias Bynens (MB)
 
 -----
 
@@ -73,7 +73,7 @@ DT: Shape security Yes.
 
 SM: FB Yes.
 
-MS: Apple Yes.
+MLS: Apple Yes.
 
 BFS: GoDaddy Yes.
 
@@ -967,11 +967,11 @@ DE: Brian and I have been talking about this issue for a while. I could go eithe
 
 WH: I like it the way you have it now.
 
-MS: It isn't created right now?
+MLS: It isn't created right now?
 
 DE: It is created now.
 
-MS: Created, but `undefined`? Just like the numbered ones are. Ok, that's the way I like it too.
+MLS: Created, but `undefined`? Just like the numbered ones are. Ok, that's the way I like it too.
 
 DE: The only change in the spec I'll be making is moving back the `replace` parameter to the last position. Given that, is this proposal ready for stage 3?
 
@@ -1004,7 +1004,7 @@ BE: I am so sorry...
 
 MM: The goal here is to strike the best balance between acknowledging reality and keeping things codified and nailed down in Annex B (and all that means). It's already at stage 2, as part of this general attention to moving RegExp stuff forward, I would like to bump this today.
 
-MS: Was it research that all browsers do it or just some browsers?
+MLS: Was it research that all browsers do it or just some browsers?
 
 DE: These semantics are different from what each browser ships. In terms of configurability and what happens between realms.
 
@@ -1163,7 +1163,7 @@ AK: The V8 team's perspective on asm.js has changed over the last 3 years. The t
 
 YK: I guess what makes me worried here is that we're prematurely rejecting potential future use cases.
 
-MS: Apple's point of view is we don't think SIMD.js is appropriate as an addition to JavaScript because of the perf, but also the use cases and how much work it was. We think that wasm is a better way to bring this to the web. I think in the past I made it clear that we didn't want to implement SIMD.js.
+MLS: Apple's point of view is we don't think SIMD.js is appropriate as an addition to JavaScript because of the perf, but also the use cases and how much work it was. We think that wasm is a better way to bring this to the web. I think in the past I made it clear that we didn't want to implement SIMD.js.
 
 BT: I'm personally sympathetic to wasm, though there are some concerns. I have met some people that *did* get really excited about SIMD.js. I can help you find those programmers.
 
@@ -1267,11 +1267,11 @@ BT: You will find people like that on the Chakra team as well.
 
 YK: I think V8 took the plunge.
 
-MS: Just to be clear, before this meeting, we made it clear that we are not supporting SIMD.js. Essentially: "I don't think this is appropriate for the standard, but if it becomes part of the standard we will implement it".
+MLS: Just to be clear, before this meeting, we made it clear that we are not supporting SIMD.js. Essentially: "I don't think this is appropriate for the standard, but if it becomes part of the standard we will implement it".
 
 YK: How did we get consensus at stage 3.
 
-MS: ?
+MLS: ?
 
 YK: You're basically saying that we've never had consensus for stage 3.
 
@@ -1279,7 +1279,7 @@ DE: Michael was very consistent on this the whole time.
 
 MPT: Regardless of the past, I'm looking at two implementers who say they wont do this. We need to decide from here.
 
-MS: If this does become part of the standard, we will implement it.
+MLS: If this does become part of the standard, we will implement it.
 
 BT: Withdrawal is more reflective of the likelihood that we'll get consensus on this feature.
 
@@ -1425,7 +1425,7 @@ MF: Did your lawyer distinguish them?
 
 AK: We didn't ask the lawyer to change the policy on source files.
 
-MS: Our tests do not have the headers and the source files do.
+MLS: Our tests do not have the headers and the source files do.
 
 BT: No one here has objections to removing the copyright header: is that the case?
 

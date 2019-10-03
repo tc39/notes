@@ -1,7 +1,7 @@
 # January 27, 2016 Meeting Notes
 -----
 
-Eric Ferraiuolo (EF), Caridy Patiño (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), Mark S. Miller (MM), Paul Leathers (PL), Sebastian Markbåge (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Miško Hevery (MHY), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BNN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
+Eric Ferraiuolo (EF), Caridy Patiño (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MLS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), Mark S. Miller (MM), Paul Leathers (PL), Sebastian Markbåge (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Miško Hevery (MHY), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BNN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
 
 -----
 
@@ -30,7 +30,7 @@ BT: some of the issues have been editorial some are bugs or implementing concens
 
 WH: What are the natures of GitHub submissions from random entities to ES? For bug reports I'm not worried, but for more significant contributions there may be IPR issues.
 
-BT: it is a heuristic, significant contributions is what matters. Some bug fixes could be considered contribution, if the contribution is 
+BT: it is a heuristic, significant contributions is what matters. Some bug fixes could be considered contribution, if the contribution is
 significant they have to be a registered contributor.
 
 AWB: it mostly comes into play for pull requests, but it is up to the editor
@@ -89,7 +89,7 @@ YK: presumably those are one-shot things.
 
 SP: everyone seems "in spirit"  to be on-board, we just need to deal with some of the details.
 
-BT: for this body we don't have to care, because we just do our thing. No more ISO fast tracking. 
+BT: for this body we don't have to care, because we just do our thing. No more ISO fast tracking.
 
 John: how does this impact 2016 release
 
@@ -196,7 +196,7 @@ BT: it isn't required, it merely improves the experience
 - next meeting we will vote to make it ES2016
 - start the out-patent review process, you may need to alert your organizations
 
-##  Ecma archiving and web hosting issues: Github, wiki.ecmascript.org, etc. 
+##  Ecma archiving and web hosting issues: Github, wiki.ecmascript.org, etc.
 
 (Allen Wirfs-Brock)
 
@@ -221,7 +221,7 @@ AWB: tc39 reflector -> github private repo
 #### Conclusion/resolution
 
 - BT will set up reflector
-- AWB will work on archival. 
+- AWB will work on archival.
 - AWB wil own the wiki archival process
 
 
@@ -368,7 +368,7 @@ DH: an exampe would be, replacin an IF with a decorator, would reduce the abilit
 
 YK: i accept that
 
-AWB: is it any different then a normal predicate 
+AWB: is it any different then a normal predicate
 
 DH: Abstractions cost
 
@@ -457,7 +457,7 @@ YK: Static fields are more like fields then they are like properties. People rea
 
 E: Why doesn't it work
 
-YK: Abunch of issues, TL;DR you want to be able to say, class C, saying static singleton is class C. 
+YK: Abunch of issues, TL;DR you want to be able to say, class C, saying static singleton is class C.
 
 DE: is their any case other then the self reference case?
 
@@ -581,9 +581,9 @@ JM provides some diagraming.
 
 ```js
 class Foo {
-    
+
       static someFieldA = A; <--- 1. record this; <-- 4. intiatiate
-      
+
       bar() { <-- 2. assign this
       }
 } <-- 3. end
@@ -675,12 +675,12 @@ AWB: something is bothering me, in ECMAScript, other then modules. Have two sort
 
 1. object literals (sorta complex)
 2. class definitions (very complex)
- 
+
 It seems like fundamentally as we talk about decorators, we want to formalize those.
 
 MM: I feel like I have learned something
 
-AWB: i the piece I am missing, although you may have it in your head, but I would really like to 1 and 2 formalized. 
+AWB: i the piece I am missing, although you may have it in your head, but I would really like to 1 and 2 formalized.
 
 YK: everything you said rings true to me, my current.. To go through the runtime semantics, I should submit this. It is reasonably clear where things go.
 
@@ -734,7 +734,7 @@ DE: I have not seen a sufficiently detailed proposal. Can you share a link
 
 YK: i can send links, but their may be not something sufficiently speced out
 
-MM: What is bothing me, is that as a designer you seem to be straddling multiple perspectives. 
+MM: What is bothing me, is that as a designer you seem to be straddling multiple perspectives.
 
 WH: the problem is, togglilng perspectives makes discussions compleciated
 
@@ -835,7 +835,7 @@ B. add a MOP operation
 
 MM: i've wanted option B
 
-BT: are you ok with A. now? 
+BT: are you ok with A. now?
 
 MM: yes, we should explore B later.
 

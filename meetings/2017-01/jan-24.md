@@ -1,7 +1,7 @@
 # January 24, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Gabriel Isenberg (GI), Bert Belder (BB), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Mathias Bynens (MB), Leo Balter (LBR), István Sebestyén (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MLS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Gabriel Isenberg (GI), Bert Belder (BB), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Mathias Bynens (MB), Leo Balter (LBR), István Sebestyén (IS)
 
 -----
 
@@ -370,11 +370,11 @@ JHD: You can call it twice. You just can't call it successfully twice and bind t
 
 SYG: I don't think the performance cost here is too bad.
 
-MS: I haven't looked at the implementation.
+MLS: I haven't looked at the implementation.
 
 BT: Do you think there is a problem here?
 
-MS: For me it's a cost benefit analysis. There is performance implications to make the check earlier, I don't care that it got called twice. You did something wrong, we're not likely to see this in real life. I disagree with Allen, at least three of those errors seem reasonable.
+MLS: For me it's a cost benefit analysis. There is performance implications to make the check earlier, I don't care that it got called twice. You did something wrong, we're not likely to see this in real life. I disagree with Allen, at least three of those errors seem reasonable.
 
 AK: I fixed this. I can't remember what ours says. It used to use the same error as let in a TDZ . It was bad. I agree this shouldn't be timeboxed. We've put a lot of time here, can we push this somehwere?
 
@@ -396,7 +396,7 @@ BT: I think we should do due diligence though. If you can check in advance of th
 
 AK: I can set aside 15 minutes to look into this
 
-MS: This needs to be resolved by March
+MLS: This needs to be resolved by March
 
 AK/BT: It's been there for a long time
 
@@ -418,7 +418,7 @@ BT: It's important what goes into that document. Everyone in this room only care
 
 BT: Skipping PR 641 for ES2017, are we okay with this?
 
-MS: Yes, I'm fine with that
+MLS: Yes, I'm fine with that
 
 BT: I have some talking to on 673 so that wrap this.
 
@@ -1434,7 +1434,7 @@ WH: That would work.
 
 AWB: What if we just kick the regular expression to the non-Annex B if named capture groups are present?
 
-MS: It makes implementation very difficult. I have existing regexps, Unicode ones, named I'm going to go partially into, but if I'm not in Unicode mode, then this other behavior is invoked
+MLS: It makes implementation very difficult. I have existing regexps, Unicode ones, named I'm going to go partially into, but if I'm not in Unicode mode, then this other behavior is invoked
 
 AWB: The biggest issue could be that you may be way at the end of a parse before you realize you need to change.
 

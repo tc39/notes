@@ -1,7 +1,7 @@
 # November 30, 2016 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TW), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LBR), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS), Mark S. Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TW), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LBR), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MLS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS), Mark S. Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
 
 
 -----
@@ -15,7 +15,7 @@ IS: ...
 (István was speaking remotely, over a broken audio connection, so I have no idea what he was saying. Please fill in)
 (Link to slides please)
 
-IS: The slides shown have been distributed via Github and the Ecma Tc39 reflector 1 hour before the meeting. He said that 1 TC39 Standard and 1 TC39 TR will be approved (hopefully) by the Ecma General Assembly next week. He said that the JSON fast-track in JTC1 DIS ballot will end soon in December. WE have received comments from the Japanese NB, and Allen Wirfs-Brock looked at them and we took up contacts with the JApanse NB in order to eliminate the problems. According to Allen not really a big problem. Then he talked about the necessity to have a new TC39 Chair / Vice Chair selected. Until a solution is found, for a few meeting Allen Wirfs-Brock on behalf of the Secretariat will jump in. Unfortuantely, he is only willing to that that short-term. 
+IS: The slides shown have been distributed via Github and the Ecma Tc39 reflector 1 hour before the meeting. He said that 1 TC39 Standard and 1 TC39 TR will be approved (hopefully) by the Ecma General Assembly next week. He said that the JSON fast-track in JTC1 DIS ballot will end soon in December. WE have received comments from the Japanese NB, and Allen Wirfs-Brock looked at them and we took up contacts with the JApanse NB in order to eliminate the problems. According to Allen not really a big problem. Then he talked about the necessity to have a new TC39 Chair / Vice Chair selected. Until a solution is found, for a few meeting Allen Wirfs-Brock on behalf of the Secretariat will jump in. Unfortuantely, he is only willing to that that short-term.
 
 (Discussion about new chair person)
 
@@ -50,7 +50,7 @@ DFV: Salesforce willing to host Jan, but NDA issue needs to be sorted.
 
 IS: This is the first time in my Ecma history that I am faced with an NDA issue. here Generally our meetings are Ecma meetings (hosted by somebody, but not somebody's meeting) that needs no NDA.
 Usually if such issues emerge, meeting participants can be requested e.g. not to walk around in the meeting bulding, but just to stay in the meeting room or the next lavatory.
-He offered to discuss the matter with Salesforce when he is back from the GA in December. 
+He offered to discuss the matter with Salesforce when he is back from the GA in December.
 
 JM: Checklist of organisational points for meetings should be drafted.
 
@@ -146,9 +146,9 @@ if (x)
   print(x);
 ```
 
-To: 
-    
-```js  
+To:
+
+```js
 if (U[0])
   print(U[0]);
 ```
@@ -244,7 +244,7 @@ DH: Memory models are hard, so it's OK for us to refine this in the future. But 
 
 SYG: There will be bugs, and academics will write papers on our bugs for the next 10 years
 
-DD: We will be able to write Test262 tests  
+DD: We will be able to write Test262 tests
 
 WH: In prior iterations of the memory model over the last several months, I had discovered fatal counterexamples exhibiting both too much synchronization and too little. Those had required several complete rewrites of the spec to fix. I am happy with the model now.
 
@@ -321,8 +321,8 @@ DH: But do you snapshot the current bindings? Or read through?
 
 AWB: Node export is values
 
-DH: two decisions: 
-    
+DH: two decisions:
+
 1. does lookup read from own slot
 2. does lookup read through continuously?
 
@@ -332,14 +332,14 @@ AWB: what happens with commonjs modules? Evaluated only once?
 
 JHD: If they succeed, then evaluated only once.
 
-CP: 
-    
+CP:
+
 ![](https://i.gyazo.com/28cca673850ec186ec721e09a4e4d824.png)
 
 - Does access `b` go through process of determining is NCJS is still in TDZ?
 
 
-AWB: How does that work? 
+AWB: How does that work?
 
 CP: walk through https://rawgit.com/caridy/proposal-dynamic-modules/master/index.html#sec-module-namespace-exotic-objects-get-p-receiver
 
@@ -532,7 +532,7 @@ DD: I am wrong; Chip was right
 
 BT: We use source text for all sorts of things, e.g., debugging. Maintaining the mapping between the normalized and non-normalized string would be a nightmare.
 
-AWB: Or, you could normalize way at the beginning, so you don't need the 
+AWB: Or, you could normalize way at the beginning, so you don't need the
 
 MS: Our parser is really performance-sensitive
 
@@ -601,7 +601,7 @@ BE: ToBoolean must not throw, so this proposal hard-codes zero values instead of
 
 DE: Why do we need Int64/Uint64 0 to be falsy?
 
-YK: there are languages with zeroes as truthy but it does not work for JS where we have one zero that's falsy. 
+YK: there are languages with zeroes as truthy but it does not work for JS where we have one zero that's falsy.
 
 BE: There are some handwaves, as decimal may have many zeroes. But, generally, numeric types ("value types") would give a canonical zero value.
 
@@ -701,7 +701,7 @@ WH: Historically, this is the right move; we have over the past 16 years created
 - Stage 1
 
 
-## 12.iv.c RegExp lookbehind 
+## 12.iv.c RegExp lookbehind
 
 (Daniel Ehrenberg)
 
@@ -780,16 +780,16 @@ DE: Motivation: https://github.com/tc39/proposal-intl-segmenter#motivation
 - line breaking
 - sentence breaking
  (etc.)
- 
- - V8 had a prefixed api 
- 
+
+ - V8 had a prefixed api
+
 DE: Would like to standardize an Intl API that standardizes. Similar API: https://github.com/tc39/proposal-intl-segmenter#example
 
-- possible additional functionality: jump to point? Could be unit, could be point. Start with minimal API, if users need it, address it. 
+- possible additional functionality: jump to point? Could be unit, could be point. Start with minimal API, if users need it, address it.
 
 
-DE: 
-    
+DE:
+
 Q: Should this be a built-in module?
 A: Decouple from built-in modules, if this lands after built-in modules
 
@@ -816,7 +816,7 @@ AWB: looking for the implementation feedback, multiple implementations
 
 EF: Should we put this in Intl.js?
 
-SM: A couple node modules can ship without the dictionaries. Shim on top of those—see if use case is still satisfied. 
+SM: A couple node modules can ship without the dictionaries. Shim on top of those—see if use case is still satisfied.
 
 CM: Q about widespread need.
 
@@ -824,7 +824,7 @@ DE: in the C and C++ world, code always using ICU, in JS using node modules
 
 CM: How much is exploratory design vs capturing practice?
 
-DE: not much to it, this proposal captures the need, makes more idiomatic. 
+DE: not much to it, this proposal captures the need, makes more idiomatic.
 
 SM: Why was it added in V8 originally? That's a use case
 
@@ -842,31 +842,31 @@ DE: Don't know the entire history?
 
 - [slides](https://docs.google.com/presentation/d/1eqimbmVpMZET_5H9NacVkXGP2WNATg8bXWi3Ky2bsGo/edit#slide=id.p)
 
-Terminology: 
-    
+Terminology:
+
 - scramble: replace a nan with another arbitrary nan
-- canonicalize: replace a nan with a _particular_ nan value. 
+- canonicalize: replace a nan with a _particular_ nan value.
 
 DE: V8 may violate the ES standard for NaN observable behavior, but I want to argue that it's OK
 
 From ES2015:
-    
+
 > SetValueInBuffer ( arrayBuffer, byteIndex, type, value [ , isLittleEndian ] )
-> "An implementation must always choose the same encoding for each implementation distinguishable NaN value." 
+> "An implementation must always choose the same encoding for each implementation distinguishable NaN value."
 
 
 Every time you get a new number, it can be scrambled at _that_ point. Wen you put it into an ArrayBuffer, it doesn't scramble
 
 MM: satisfies: "All operations that just move a value opaquely, without interacting with that value, none of them will enable another scramble."
-    
+
 DE: That was my reading
 
 
-MM: This is what I was looking for, distinguishing "canonicalize" and "scramble". Dealth with information leakage, dealt with performance issues. Thank you. 
+MM: This is what I was looking for, distinguishing "canonicalize" and "scramble". Dealth with information leakage, dealt with performance issues. Thank you.
 
-- Issue: SetValueInBuffer must always provide the same scrambling 
+- Issue: SetValueInBuffer must always provide the same scrambling
 
-DE: No 
+DE: No
 
 MM: All opaque conveyence of a first class value may not rescramble
 

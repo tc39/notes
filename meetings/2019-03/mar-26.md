@@ -1,6 +1,6 @@
 # March 26, 2019 Meeting Notes
 -----
-István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Daniel Ehrenberg (DE), Mike Samuel (MSL), Qiuyi Zhang (QZG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KVR), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro (DF), Domenic Denicola (DD)
+István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Daniel Ehrenberg (DE), Mike Samuel (MSL), Qiuyi Zhang (QZG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KVR), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MLS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro (DF), Domenic Denicola (DD)
 
 Remote:
 Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCL), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS)
@@ -159,7 +159,7 @@ TCN: I can confirm that from the Node perspective, GitHub is helpful to deal wit
 
 AKI: Do we need consensus on whether to name the individual? The CoC Committee focuses on privacy and confidentiality. We would like to privately share within TC39 the usernames, but not publicly. The current policy is to not disclose that information with TC39.
 
-MS: What is the motivation to disclose that information?
+MLS: What is the motivation to disclose that information?
 
 JBN: The concern would be to respect the committee's right to transparency.
 
@@ -169,7 +169,7 @@ AKI: It's also a concern over safety.
 
 YK: Another reason you may want this to be public is because sometimes you get caught off-guard in a public forum by someone who's been blocked. It seems to reduce our legitimacy if committee members don't know anything about it and cannot respond.
 
-MS: I feel it makes sense to discuss with CoC Committee, like an escalation process, if there is an issue, but I fear we are jumping the gun by exposing that information sooner.
+MLS: I feel it makes sense to discuss with CoC Committee, like an escalation process, if there is an issue, but I fear we are jumping the gun by exposing that information sooner.
 
 YK: My concern is that these things happen fast—in real time.
 
@@ -177,7 +177,7 @@ JBN: Accountability is very important here—so you want to be able to tell some
 
 AKI: Following up, do we have consensus? MS, do you have concerns?
 
-MS: I guess I'm fine with it. I understand the real-time concerns of being able to verify.
+MLS: I guess I'm fine with it. I understand the real-time concerns of being able to verify.
 
 AKI: It looks like we have consensus. This information will be published to the moderation forum.
 
@@ -399,15 +399,15 @@ WH: What is the difference between short and medium format in the example?
 
 DE: There is a difference, but this example may be wrong. You should consult CLDR if you're more interested. For stage 3, Leo has signed off as has Frank. Is this ready for Stage 3?
 
-MS: So these patterns are not standardized?
+MLS: So these patterns are not standardized?
 
 DE: They are specified in CLDR. This is like most of the rest of ECMA-402. We cannot nail it down completely.
 
-MS: So what you're really saying is that we are deferring to another standard.
+MLS: So what you're really saying is that we are deferring to another standard.
 
 DE: We really *want* to give implementations the ability to do these tailorings while remaining spec-compliant.
 
-MS: Seems like a developer wants standardized behavior across all implementations.
+MLS: Seems like a developer wants standardized behavior across all implementations.
 
 DE: It's just not possible for anything in ECMA-402 to work like that.
 
@@ -655,7 +655,7 @@ MB: That's an open issue (which you filed!). The current spec text gives us a wa
 
 YK: ...
 
-MS: What semantic do you prefer for a RegExp searchValue?
+MLS: What semantic do you prefer for a RegExp searchValue?
 
 MB: If I had it my way, replaceAll wouldn't support RegExp at all, it would only support the new use case of global string replacement, and not do GetSubstitution etc. But I can see how this is more internally consistent within the language. We should probably match `matchAll` w.r.t. non-global RegExps.
 

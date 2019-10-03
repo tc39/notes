@@ -1,18 +1,18 @@
 # July 26, 2017 Meeting Notes
 -----
 
-Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE), Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK), 
+Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE), Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MLS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK),
 
 -----
 
-## 13.iii.c Binary AST 
+## 13.iii.c Binary AST
 
 (Shu-yu Guo, SYG)
 
 - [proposal](https://github.com/syg/ecmascript-binary-ast/)
 - [slides](https://docs.google.com/presentation/d/10mEfgEUmazFJks_NwXSTBK9-g-W7vljvRB0JA2spU38/edit#slide=id.p)
 
-SYG: Parsing JavaScript is slow, for one, because we have to calculate where variable declarations are, and declarations may come after usages, which requires parsing up to the whole file. The semantics of JavaScript require reading the whole file for triggering syntax errors as well. 
+SYG: Parsing JavaScript is slow, for one, because we have to calculate where variable declarations are, and declarations may come after usages, which requires parsing up to the whole file. The semantics of JavaScript require reading the whole file for triggering syntax errors as well.
 
 SYG: One workaround optimization in JS engines is preparsing/lazy parsing. Parse all JS code but only allocate ASTs for some of it. This is a bet--preparsing can make things slower because it parses twice, if the code does end up being called.
 
@@ -46,9 +46,9 @@ DT: The result was 5% smaller gzipped
 
 SYG: Parsing+AST construction was 3x faster on the entire file, and 8x faster skipping inner functions
 
-MS: So the binary AST isn't saving much network time.
+MLS: So the binary AST isn't saving much network time.
 
-MS: Why generate AST nodes for unused code?
+MLS: Why generate AST nodes for unused code?
 
 BE: Can't solve halting problem, but binary AST might enable some slightly better dead code elimination.
 
@@ -58,7 +58,7 @@ SYG: This is just a baseline benchmark, showing a significant (3x) improvement i
 
 AWB: The performance slide is unconvincing; it's unknown what fraction of the running time was sped up by 3x.
 
-MS: Trust me.
+MLS: Trust me.
 
 AK: 3x is exciting enough to warrant our attention. A 10% improvement would not.
 
@@ -99,8 +99,8 @@ BFS: We're just talking about the structure, right?
 
 SYG: Right
 
-WH: 
-    
+WH:
+
 - How would you deal with cover grammars?
 - There is a lot of churn in the grammar, with lots of proposals that change the language syntax; how do you deal with that?
 
@@ -135,7 +135,7 @@ CM: OK, but it would be nice if there wasn't a huge impedance mismatch between t
 WH: (Asking about "Encoding AST is insufficient to speed up frontends" slide): Why is it insufficient? What performance gain do you get if you just do encoding ASTs?
 
 SYG: 3x, but we'd like to do better by going beyond encoding ASTs.
-    
+
 YK: Is it possible to encode a syntax error in the binary AST?
 
 SYG: I'll get into errors later.
@@ -199,7 +199,7 @@ SYG: The dream vision is to generate code in a single forward pass, though this 
 
 DT: You could go even further with the binary AST representation so that it's very easy to generate or execute code efficiently (at the expense of human readability).
 
-SYG: So, the annotations are just assertions about what will come later. They just be verified, and they are inherently redundant, rather than either hints or, on the other hand, sources of truth. Deferred just like well-formedness checks. 
+SYG: So, the annotations are just assertions about what will come later. They just be verified, and they are inherently redundant, rather than either hints or, on the other hand, sources of truth. Deferred just like well-formedness checks.
 
 WH: Does the grammar represent the components of regular expression literals as parsed AST nodes, or just preserve them as strings?
 
@@ -219,7 +219,7 @@ BFS: There are out-of-band ways to do that (YK: such as HTTP headers).
 
 YK: There may be benefits to thinking about the source map format at the same time as the AST format. Traditional source maps are text-to-text mappings (and the binary AST isn't text with lines and columns).
 
-MS: Concerned about effort to validate the AST, to protect the engine against malformed AST data. How much work is needed to validate the AST?
+MLS: Concerned about effort to validate the AST, to protect the engine against malformed AST data. How much work is needed to validate the AST?
 
 SYG: I'm going to work with all the engines to design the binary AST format. Details have not been designed yet.
 
@@ -287,7 +287,7 @@ SYG: This calls for some semantic changes to handling of early errors in ECMA-26
 
 DD: The fact that new proposals need to provice integration into the binary grammar is a big reason for pursuing in this committee.
 
-MS: The speed comparison was in Firefox, right? I'd like to see performance on other browsers. In terms of, where we are at today in parsing performance--we can see in one browser that there's a 3-8x improvement on one browser. This is a short-term solution--it'll give us 3 years in Moore's law, but what do you do next? This is just a short-term solution. I imagine it will take significant implementation effort
+MLS: The speed comparison was in Firefox, right? I'd like to see performance on other browsers. In terms of, where we are at today in parsing performance--we can see in one browser that there's a 3-8x improvement on one browser. This is a short-term solution--it'll give us 3 years in Moore's law, but what do you do next? This is just a short-term solution. I imagine it will take significant implementation effort
 
 YK: Developers are sincerely trying to save time, not waste resources opened up by new optimizations.
 
@@ -297,7 +297,7 @@ SM: The reason we're moving to shipping more code is because we want to make run
 
 SYG: There are these programmable cache APIs. These can help with warm load times. This proposal is oriented to cold load time.
 
-MS: How much of the top 100 websites need this? Will they go through the work to set up the tooling?
+MLS: How much of the top 100 websites need this? Will they go through the work to set up the tooling?
 
 VD: I looked at a top sampling from Alexa. Web developers are building less rich applications on the web because of the performance comparison with native.
 
@@ -311,11 +311,11 @@ DFV: We should have a strategic plan for where this lands us in ~3 years. Is the
 
 DT: Whenever something like this becomes available, we gain time that would otherwise have had to wait for Moore's Law.
 
-MS: This proposal is not "compartmentalized" in the sense of CM's vision talk. Web servers will need to support both source and AST versions of everything, so it increases complexity. In the slide about compatibility: we don't do features in lockstep. There will be a difficult time for web applications because they will not have a common platform, and will have to use a lowest common denominator, taking into account older browsers for a while. You can ship polyfills, but shipping an AST presupposes features on certain browsers. So, we're creating a world which will be difficult for web applications and browsers to support on the web.
+MLS: This proposal is not "compartmentalized" in the sense of CM's vision talk. Web servers will need to support both source and AST versions of everything, so it increases complexity. In the slide about compatibility: we don't do features in lockstep. There will be a difficult time for web applications because they will not have a common platform, and will have to use a lowest common denominator, taking into account older browsers for a while. You can ship polyfills, but shipping an AST presupposes features on certain browsers. So, we're creating a world which will be difficult for web applications and browsers to support on the web.
 
 DTL: Lots of websites have things like Facebook like buttons; even if just large applications like that upgraded, that would benefit all users. The part of this proposal that's about standardizing the AST will definitely benefit developers. About browsers working in lockstep, this is a problem we already have: if a browser doesn't support generators, it doesn't support generators. AST vs text file doesn't change anything to this problem.
 
-MS: You can provide a polyfill for source; you can't do that in AST. By contrast, you could send transpiled source code normally.
+MLS: You can provide a polyfill for source; you can't do that in AST. By contrast, you could send transpiled source code normally.
 
 DTL: It's not clear what you mean; are you talking about shipping Babel output? Why would this not be possible for ASTs?
 
@@ -348,7 +348,7 @@ YK: Many people have raised feature detection; it seems like this actually makes
 - Stage 1: keep exploring the design space.
 
 
-## 10.iv JavaScript - Composition and Compliance 
+## 10.iv JavaScript - Composition and Compliance
 
 (Dean Tribble)
 
@@ -357,7 +357,7 @@ TODO: insert slides
 
 ## 5. Report from the Ecma Secretariat
 
-(István Sebestyén) 
+(István Sebestyén)
 
 The report has been uploaded to the GitHub under Reflector as 2017 July Ecma Secretariat Report
 It will be published also as a Ecma TC39 document.
@@ -520,7 +520,7 @@ YK: Note that package.json cannot be specified by TC39.
 - If this proposal is to advance, someone should collect data on how often on the web modules are loaded as scripts and vice-versa, and report back.
 
 
-## 10.i Extremely Modular Distributed JavaScript 
+## 10.i Extremely Modular Distributed JavaScript
 
 (Mark Miller)
 
@@ -528,7 +528,7 @@ TODO: insert slides
 
 
 
-## 11.iii.a. BigInt for Stage 3 
+## 11.iii.a. BigInt for Stage 3
 
 (Daniel Ehrenberg)
 
@@ -589,7 +589,7 @@ DE: A complete API explainer description is linked from the agenda item: https:/
 
 WH: I have reviewed the spec. I can't guarantee that there aren't small bugs in there, but it looked good to me. All of my concerns have been addressed.
 
-MS: It does look good, and I submitted a lot of feedback. WH and I reviewed it before the previous New York meeting.
+MLS: It does look good, and I submitted a lot of feedback. WH and I reviewed it before the previous New York meeting.
 
 WH, LBR: Can we advance this to Stage 3?
 
@@ -601,7 +601,7 @@ WH, LBR: Can we advance this to Stage 3?
 
 
 
-## 13.ii.b. Consider changing Number.parseInt and Number.parseFloat 
+## 13.ii.b. Consider changing Number.parseInt and Number.parseFloat
 
 (Brendan Eich)
 

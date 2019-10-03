@@ -1,9 +1,9 @@
 # September 26, 2017 Meeting Notes
 -----
 
-Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), 
+Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MLS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD),
 
-Remote: 
+Remote:
 István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM), Gabriel Isenberg (GI), Zibi Braniecki (ZB)
 
 -----
@@ -37,7 +37,7 @@ Status of reporting to Japanese comments on fast track?
 
 - Adopt all but one Japanese comments; provide rationale for not being able to adopt the one comment
 
-There were no objections to Ecma/TC39/2017/040, 1st draft ECMA-414 3rd edition (with JISC comments) (Rev. 1), or to 
+There were no objections to Ecma/TC39/2017/040, 1st draft ECMA-414 3rd edition (with JISC comments) (Rev. 1), or to
 Ecma/TC39/2017/041,  Disposition of comments regarding ISO/IEC DIS 22275 completed by Ecma (Rev. 1).
 
 #### Conclusion/Resolution
@@ -82,7 +82,7 @@ BT: If anyone has any questions I'm happy to answer them around the state of 262
 
 ## 8. ECMA-402 Status Updates
 
-(Daniel Ehrenberg) 
+(Daniel Ehrenberg)
 
 DE: Lots of editorial/non-normative updates
 
@@ -119,12 +119,12 @@ BT: Related projects are [eshost-cli](https://github.com/bterlson/eshost-cli) an
 
 ## 11.ii.a Pipeline Operator
 
-(Daniel Ehrenberg) 
+(Daniel Ehrenberg)
 
 - [Explainer](https://github.com/tc39/proposal-pipeline-operator)
 - [Presentation](https://docs.google.com/presentation/d/1qiWFzi5dkjuUVGcFXwypuQbEbZk-BV7unX0bYurcQsA/edit#slide=id.p)
 
-DE: Evolution of bind operator. Frequently requested feature from community; I wanted to give it a chance at TC39. 
+DE: Evolution of bind operator. Frequently requested feature from community; I wanted to give it a chance at TC39.
 
 (Presenting slides)
 
@@ -160,7 +160,7 @@ WH: My fear is we end up with too many independent features and lose sight of ov
 
 TST: How does this work for async functions? Async function calls will become more and more common and this may cause friction.
 
-DE: Only supported in as much as async functions return Promises. We've discussed implicit awaits for Async Generators; coupled with yield. We've been careful about adding points where the function pauses without having explicit syntax — this is problematic. Should we add explicit await support? 
+DE: Only supported in as much as async functions return Promises. We've discussed implicit awaits for Async Generators; coupled with yield. We've been careful about adding points where the function pauses without having explicit syntax — this is problematic. Should we add explicit await support?
 
 TST: My preference would be a combinating operator for async function calls.
 
@@ -197,7 +197,7 @@ DE: Can we work on a general story for Stage 2?
 JHD: That follows the process document
 
 MF: Same concerns, want to see alternative or exploration around bound method extraction
-    
+
 BT: Strawman would be keep `::` as prefix operator.
 
 DE: We can explore syntactic versions of that. Should we be Stage 1 or 0 then? Any objections to Stage 1?
@@ -223,7 +223,7 @@ LBR: Since last meeting we have Code of Conduct approved. We expect everyone to 
 
 - Leo is finding more volunteers for the enforcement committee
 - The chair group should add a formal summary of the Code of Conduct for the next agenda templates.
-- We already have an email for reporting. It currently goes to the chair group (Rex, Dan, Leo) and the Editor (Brian Terlson). 
+- We already have an email for reporting. It currently goes to the chair group (Rex, Dan, Leo) and the Editor (Brian Terlson).
 - tc39-conduct-reports@googlegroups.com
 
 ## 11.ii.b How should ECMA-402 proceed in light of "ICU standardization" concerns
@@ -235,7 +235,7 @@ DE: 3 browsers use ICU, 1 uses its own. ECMA-402 tries to be as specific as poss
 
 - https://github.com/tc39/ecma402/pull/172
 
-Proposing to add text to ECMA-402 to specify goals as we evolve. Not complete solution but attempts to address concerns before, involving Intl standards. 
+Proposing to add text to ECMA-402 to specify goals as we evolve. Not complete solution but attempts to address concerns before, involving Intl standards.
 
 BT: ChakraCore is most likely to be using ICU, we'll be closing all of our Intl bugs per compatibility with other browsers. The added paragraph is good. We won't be hearing differences in spec though; as we'll be using the same API.
 
@@ -282,7 +282,7 @@ MB: When working on implementations, Unicode property escapes proposal depends o
 
 DE: In particular, ICU ships a subset of these properties, and sometimes lags in the Unicode data version.
 
-MB: The main Unicode standard is ratified every summer. 
+MB: The main Unicode standard is ratified every summer.
 
 DE: All converging to same thing though.
 
@@ -292,7 +292,7 @@ DE: Looking for consensus for interoperability. Any objections?
 
 #### Conclusion/Resolution
 
-- Consensus: we've addressed the concerns as best as we can, but accept that it's not perfect. 
+- Consensus: we've addressed the concerns as best as we can, but accept that it's not perfect.
 
 
 ## 11.ii.c Extensible literals
@@ -316,21 +316,21 @@ DE: Good point. Template literals have facility for caching but might be too hea
 
 DH: Hard for any solution to meet reasonable requirements.
 
-MS: Concerns this is creating a bigger problem that this is solving. Automagic calling of some constructor to get some object - with a literal what works and what doesn't? It's a pandoras box of overloading operators. If this was a reservation of syntax for future extensions I'd be comfortable with this. Makes sense to reserve syntax for integers, decimal. As Dave says some of this is unsolvable arbitrarily.
+MLS: Concerns this is creating a bigger problem that this is solving. Automagic calling of some constructor to get some object - with a literal what works and what doesn't? It's a pandoras box of overloading operators. If this was a reservation of syntax for future extensions I'd be comfortable with this. Makes sense to reserve syntax for integers, decimal. As Dave says some of this is unsolvable arbitrarily.
 
 WH: The syntax is already reserved. You don't need the proposal for that.
 
 DE: Currently the syntax is invalid.
 
-MS: Sure, but we could reserve the syntax space as a forbidden extension. I could go with that. The automagic calling of functions is my concern.
+MLS: Sure, but we could reserve the syntax space as a forbidden extension. I could go with that. The automagic calling of functions is my concern.
 
 DE: This was a specific request from Brendan, that if we add specific literals such as BigInt then the mechanism should be open for user-defined literals as well. As far as Operator Overloading it is much more complicated at runtime. May or may not be something we ever want to add. On extensibility, I don't think we would ever want JS to have a pixel value type; but web platform would, so I'm not sure if you would want to support only built-in things.
 
-MS: So what even happens when you return +?
+MLS: So what even happens when you return +?
 
 DE: In this proposal, return an object. However, seems like for some people extensible literals only make sense in conjunction with operator overloading, is that right?
 
-MS: Which is a much harder problem to solve. So maybe we should just reserve the syntax?
+MLS: Which is a much harder problem to solve. So maybe we should just reserve the syntax?
 
 DE: Interesting proposal. Should this be a needs-consensus PR to reserve syntax ahead of time?
 
@@ -344,7 +344,7 @@ DE: We can achieve consensus now.
 
 WH: First comment was the same as Dave Hermans. Order of evaluation, having to parse string every time.
 
-WH: Second comment: not all identifiers are allowed here. 
+WH: Second comment: not all identifiers are allowed here.
 
 DE: Yes we couldn't allow `x0` for example.
 
@@ -358,7 +358,7 @@ DE: No, but we thought about customising object literals.
 
 WH: Yes we shouldn't do that, objects aren't literals they are expressions. This could explode the grammar as well, causing problems for contextual keywords. Doing just for numbers doesn't have same impact.
 
-MPT: if we go down road of literals, date literals would be major usecase. 
+MPT: if we go down road of literals, date literals would be major usecase.
 
 WH: If we had extensible string literals we could use them for dates.
 
@@ -389,7 +389,7 @@ DE: No, we'll leave things as they are.
 
 ## 12.i.a Intl.NumberFormat.prototype.formatToParts for Stage 4
 
-(Daniel Ehrenberg) 
+(Daniel Ehrenberg)
 
 - [Explainer](https://github.com/tc39/proposal-intl-formatToParts)
 - [slides](https://docs.google.com/presentation/d/1--PmAca3qyQQfQz4OXj7l8QxpzfUF1GS4ET3ampvg_M/edit#slide=id.g255358455f_0_63)
@@ -407,7 +407,7 @@ Everyone: Applause
 - Stage 4 acceptance
 
 
-## 12.i.b Intl.Segmenter for Stage 3 
+## 12.i.b Intl.Segmenter for Stage 3
 
 DE: (presenting slides)
 
@@ -461,7 +461,7 @@ MF: No, it is an object who's prototype is null.
 
 MF: Any more questions? I'm looking for stage 1.
 
-BT: Is the `implements` operator the right verb? 
+BT: Is the `implements` operator the right verb?
 
 MF: I'm open to change. It was designed to be close to `instanceof`
 
@@ -475,7 +475,7 @@ MF: Depends on your definition of, for example `Foldable`, there are different s
 
 YK: What restrictions are we putting in place for this?
 
-MF: Key part of the proposal is for ad-hoc extension. I dont see this as a problem. 
+MF: Key part of the proposal is for ad-hoc extension. I dont see this as a problem.
 
 YK: Doesn't it have the same problem as monkey-patching in general?
 
@@ -531,7 +531,7 @@ CM: This is too many layers of abstraction. It's a smart idea but I'm having tro
 
 MF: I would point to you the iteration protocol which is something we do with this. We don't expect people to define iteration protocols, but they reap the benefits of iterators.
 
-CM: Right, so these is generalising protocols for userland? 
+CM: Right, so these is generalising protocols for userland?
 
 MF: Yes.
 
@@ -547,7 +547,7 @@ MF: Do you have recommendations for changes? How can we change this?
 
 SGO: I would appreciate more examples; how does this reflect web development?
 
-DH: A few reactions. I'm not sure I share aversion to inheritance - this is about fitting in with object mechanisms we have. The cowpath of existing mixin pattern is an important signal. Primary concerns though: the convenience of `thing.map` over `thing[SomeProtocol.map]`. 
+DH: A few reactions. I'm not sure I share aversion to inheritance - this is about fitting in with object mechanisms we have. The cowpath of existing mixin pattern is an important signal. Primary concerns though: the convenience of `thing.map` over `thing[SomeProtocol.map]`.
 
 MF: Were the examples in slides not convenient enough?
 
@@ -627,7 +627,7 @@ DH: As long as we note that this does not stop us seeking other proposals.
 - Stage 1 acceptance
 
 
-## 12.i.b Class fields status update 
+## 12.i.b Class fields status update
 
 (Daniel Ehrenberg)
 
@@ -666,7 +666,7 @@ DE: It does not seem we're at consensus on this topic. As a default, I think we 
 
 #### Conclusion/Resolution
 
-- Proposal holds status quo 
+- Proposal holds status quo
 
 Update: Will revisit at the November meeting, due to further concerns raised afterwards by committee members. This remains an unsettled topic.
 
@@ -684,7 +684,7 @@ YK: Expected semantics for this that blocking waits would execute first due to t
 SYG: I dont think it is currently specced this way.
 
 WH: I've reviewed the proposal. Happy with it except for one detail: I'm worried about the proposed line cutting semantics — you can get starvation from this behavior. (Provides exemplar details):
-    
+
 - Agent 1 does async wait
 - Agent 2 does async wait
 - Agent 1 does sync wait; gets inserted first in waiting queue (right before Agent 1's async wait)
@@ -731,7 +731,7 @@ MB: Yes - but that doesn't mean they are the same. I'm not looking to block this
 
 DE: We could unship this from Chrome to resolve this, but is this just a superficial change?
 
-ZB: Looking through CLDR data I see Filipino, Welsh and Irish language the sentence structure changes for ordinal changes. 
+ZB: Looking through CLDR data I see Filipino, Welsh and Irish language the sentence structure changes for ordinal changes.
 
 DE: Yes we need to differentiate ordinal and cardinal
 
@@ -764,12 +764,12 @@ ZB: Correct.
 
 ## 12.i.c Intl.RelativeTimeFormat for Stage 3
 
-(Daniel Ehrenberg) 
+(Daniel Ehrenberg)
 
 - [Explainer/Spec](https://github.com/tc39/proposal-intl-relative-time)
 - [Slides](https://docs.google.com/presentation/d/1--PmAca3qyQQfQz4OXj7l8QxpzfUF1GS4ET3ampvg_M/edit#slide=id.g255358455f_0_73)
 
-DE: Some pushback to making changes for singular vs plural. Temporal proposal uses plural, RelativeTimeFormat uses singular. ECMA working group says stick with singular. Other contention is style name; short medium & long? These CLDR names are well founded as well as in other formatting libraries - we would want to stick with these conventions. 
+DE: Some pushback to making changes for singular vs plural. Temporal proposal uses plural, RelativeTimeFormat uses singular. ECMA working group says stick with singular. Other contention is style name; short medium & long? These CLDR names are well founded as well as in other formatting libraries - we would want to stick with these conventions.
 
 MPT: The values differ depending on the use case. Are we talking duration of time or unit of time?
 
@@ -781,11 +781,11 @@ DE: Oh, I see your point.
 
 DE: For style, we are sticking with the CLDR convention, following feedback from the ECMA-402 working group.
 
-MS: Medium seems to be used in Date formatters for macOS and Windows APIs.
+MLS: Medium seems to be used in Date formatters for macOS and Windows APIs.
 
 DE: What about for duration formatters?
 
-MS: Not sure...
+MLS: Not sure...
 
 DE: Can anyone sign up to review this for stage 3?
 
@@ -797,13 +797,13 @@ MB: Me too
 
 - Singular or Plural? Plural
 - Medium size? Do more research
-- Stage 3 Reviewers: 
+- Stage 3 Reviewers:
     - Maggie Pint
     - Mathias Bynens
 
 
 
-## 12.i.f flatMap for stage 2 
+## 12.i.f flatMap for stage 2
 
 (Michael Ficarra)
 
@@ -853,7 +853,7 @@ DE: (Presenting Explainer)
 - Consensus Achieved
 
 
-## 12.i.j Timezone tweak 
+## 12.i.j Timezone tweak
 
 (Daniel Ehrenberg for Jungshik Shin)
 
@@ -908,13 +908,13 @@ BT: Lets keep them separate.
 
 - [Explainer](https://github.com/tc39/ecma262/pull/988)
 
-MS: (Presenting Explainer)
+MLS: (Presenting Explainer)
 
 SYG: I'm onboard but this is shipped. What is the issue with webcompat?
 
 BT: Was this considered before?
 
-MS: We had no answer as to why it was originally done this way.
+MLS: We had no answer as to why it was originally done this way.
 
 YK: I feel confident we did not discuss this before.
 
@@ -924,7 +924,7 @@ DE: (Quotes Reference) from Allen Wirfs-Brock "So I did the obvious optimization
 
 TS: A similar thing came up in WHATWG Streams, where an options object is passed in. It would be good to establish a precedent that configuration arguments for iteration are evaluated eagerly.
 
-MS: Consensus, and also that we will continue to do this kind of optimisation within the spec?
+MLS: Consensus, and also that we will continue to do this kind of optimisation within the spec?
 
 YK: It's not an optimisation in as much as it is semantic change that allows for optimisation.
 
@@ -937,7 +937,7 @@ DE: We have agreement on this particular case, right?
 
 
 
-## 12.ii.a Introducing Intl.Locale for Stage 2 
+## 12.ii.a Introducing Intl.Locale for Stage 2
 
 (Daniel Ehrenberg)
 
@@ -970,7 +970,7 @@ DE: If you pass a locale into Intl.DateTimeFormat, for example, and read it back
 
 DE: So are we ready for Stage 2?
 
-MS: Is it stage 0 right now? Should it go to stage 1 first? There's no rush right?
+MLS: Is it stage 0 right now? Should it go to stage 1 first? There's no rush right?
 
 DE: Stage 2 doesn't need all of the details right
 
@@ -982,7 +982,7 @@ DE: I can go back to experts to get more reviews and clarify things
 
 YK: This seems like a process for stage 2. Stage 2 is draft level of quality.
 
-MS: This wont make it for ES2018 so why rush through stages?
+MLS: This wont make it for ES2018 so why rush through stages?
 
 DE: Stage 1 or Stage 2 doesn't change anything.
 

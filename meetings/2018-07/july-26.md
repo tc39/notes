@@ -1,6 +1,6 @@
 # July 26, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB), Maxim Aleksa (MAA), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage (SME), Dustin Savery (DSY), Mike Murry (MMY), John-David Dalton (JDD), Alex Vincent (AVT)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), James Burke (JRB), Maxim Aleksa (MAA), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage (SME), Dustin Savery (DSY), Mike Murry (MMY), John-David Dalton (JDD), Alex Vincent (AVT)
 
 Remote:
 Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell (JRL), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG), Ben Newman (BN), Edd Yerburgh (EYH), Nathan Hammond (NHD)
@@ -471,19 +471,19 @@ SCR:Thank you, and I really appreciate all the great discussions in GitHub. So t
 - [proposal](https://github.com/msaboff/JavaScript-Standard-Library)
 - [slides](https://github.com/msaboff/JavaScript-Standard-Library/blob/master/slides-JS-std-lib-July-2018.pdf)
 
-MS: The amount of functionality part of the JavaScript standard library would likely grow over time and less module code would need to be downloaded. The standard library wouldn't be enabled by default—a programmer would just import this functionality and be able to use it. Hypothetically, suppose someone comes to TC39 asking for a new method to be added to the JS Core. Everything looks useful and we decide to move forward. They propose `Array.smooshed`. Because we've polluted the namespace, we've made it very difficult to determine whether it's going to be a problem. Is there a way we can add extensibility safely? Imported objects are frozen and users extend via inheritance and wrapping. This is what I propose so we don't get "smooshed" again. (Reads slide about extending Statistics library). This raises a bunch of questions that are out of scope for this proposal, like what features go into standard library vs. core library, how do we stage new features, and how do we collaborate with Node.js and web standards bodies? Next steps are to describe polyfill fallback support.
+MLS: The amount of functionality part of the JavaScript standard library would likely grow over time and less module code would need to be downloaded. The standard library wouldn't be enabled by default—a programmer would just import this functionality and be able to use it. Hypothetically, suppose someone comes to TC39 asking for a new method to be added to the JS Core. Everything looks useful and we decide to move forward. They propose `Array.smooshed`. Because we've polluted the namespace, we've made it very difficult to determine whether it's going to be a problem. Is there a way we can add extensibility safely? Imported objects are frozen and users extend via inheritance and wrapping. This is what I propose so we don't get "smooshed" again. (Reads slide about extending Statistics library). This raises a bunch of questions that are out of scope for this proposal, like what features go into standard library vs. core library, how do we stage new features, and how do we collaborate with Node.js and web standards bodies? Next steps are to describe polyfill fallback support.
 
 JHD: I specifically want on my website to say this polyfill replaces any browser implementation of the Standard Library. This is useful to fix bugs in browsers. There's plenty of examples where code that's doing some built-in thing and the fact that the browser's supplying it, but doesn't work, and I should be able to deny access to the original versions.
 
-MS: So how you do this today with some other module wanting to do some functionality is...
+MLS: So how you do this today with some other module wanting to do some functionality is...
 
 JHD: Yeah
 
-MS: Can't that module/polyfill do something on the global object?
+MLS: Can't that module/polyfill do something on the global object?
 
 JHD: Yes, and I appreciate the danger that that code can change the world, but I'd like to create a function that nails down the implementations of the functions I care about then issues a callback when it's safe to use.
 
-MS: That's a bigger problem than what this spec is trying to solve.
+MLS: That's a bigger problem than what this spec is trying to solve.
 
 JHD: Most people don't bother to lock down, so I propose we do something that makes that more ergonomic.
 
@@ -503,57 +503,57 @@ JHD: My next topic was synchronous usage in scripts. I think it's a very differe
 
 WH: You're looking to advance but I don't know what the proposal is. You gave a slideshow, but there was no proposal.
 
-MS: The proposal is that we add a standard library capability to JS.
+MLS: The proposal is that we add a standard library capability to JS.
 
 WH: So what would the desired outcome be?  Because it's very vague right now. The idea is vague, like saying we should add standard syntax. Is the goal when it reaches Stage 4 that you have specific libraries available in the standard library? Are you proposing a process to add such things? Are you proposing some specific language machinery here? It's just very vague; I see this as a good match for an effort to launch a group, but I don't know what the proposal here is.
 
-MS: The proposal is to provide the mechanism for a standard library to be available. It's that simple. There are some examples of components that could be included, like Temporal, but that's not this particular proposal. I'm proposing the mechanism for putting standard functionality that is not available in your standard object to get the object into your namespace.
+MLS: The proposal is to provide the mechanism for a standard library to be available. It's that simple. There are some examples of components that could be included, like Temporal, but that's not this particular proposal. I'm proposing the mechanism for putting standard functionality that is not available in your standard object to get the object into your namespace.
 
-MS: Mechanism meaning standard functionality. When you import that functionality, you get it in your namespace and it's frozen.
+MLS: Mechanism meaning standard functionality. When you import that functionality, you get it in your namespace and it's frozen.
 
 WH: "Mechanism" is still very vague. It sounds like you're proposing modules. I'm confused because modules are already in the language.
 
-MS: It's different from modules, since these are part of the standard itself.
+MLS: It's different from modules, since these are part of the standard itself.
 
 BT: The module specifier in MS is something we need to decide on, as well as the capability to polyfill.
 
 AK: I wanted to first address the procedural question for what this is. I wanted to point out that for stage 1, you don't have to have a lot of concrete stuff.
 
-MS: And I purposely don't.
+MLS: And I purposely don't.
 
 AK: Now, the freezing thing. It seems like if there's a version of Statistics, and they wanted to add another method to Statistics, that's tricky; they can't monkeypatch it, etc.
 
-MS: They can import it under a different name.
+MLS: They can import it under a different name.
 
 AK: So if I'm writing a polyfill... there are some reasons the language has benefited... some of the experiences I've had working with Dart and working with a language that's very locked down is hard. It's hard to make all the implementations look the same. I'm not a fan of the freezing and I don't think it fixes the problem you're trying to solve.
 
 YK: The polyfill problem comes up a lot, and fundamentally the problem seems to have a privileged way of running (i.e. first). We don't actually really have a privileged position to do that, however. But we'd like to allow that. Realms tries to allow that, with an initialization callback, but if we keep trying to solve this problem in an ad hoc fashion, we're not going to be satisfied. Any lockdown feature will come into conflict with that other problem. We need to decide what the mechanism for that is.
 
-MS: I agree with what you're saying. I can see how the app wants to lock things down, but so do libraries and dependencies, and you run into the problem of orders and priorities and things like that. It's a difficult problem to solve, and I don't want to lock it to this.
+MLS: I agree with what you're saying. I can see how the app wants to lock things down, but so do libraries and dependencies, and you run into the problem of orders and priorities and things like that. It's a difficult problem to solve, and I don't want to lock it to this.
 
 YK: All I'm saying is the only person in the position to say that is the whole app.
 
 KS: I think the reality is that (1) JS has an underdeveloped standard library. (2) People want to ship less code. (3) The fact we have the underdeveloped standard library is an opportunity. We can build on the experience of other standard libraries that are out there. It can be like Intl, where we come in and there's an awesome standard library feature being presented.
 
-MS: I think adding functionality without incurring a syntax cost is a great other feature of this proposal.
+MLS: I think adding functionality without incurring a syntax cost is a great other feature of this proposal.
 
 DT: In response to YK, one of the things we did in response to the realms shim was that we need to provide direct support for shimming since this is a thing part of the JavaScript paradigm. Some direct mechanism to support shims and let them run first, and provide a realm.
 
 BT: What does Stage 1 mean if the layered APIs proposal doesn't go through the stage process.
 
-MS: They're not wedded together, but they're closely related.
+MLS: They're not wedded together, but they're closely related.
 
 DD: There's years of history with Node.js to support standard libraries, and now with Layered APIs, we very much support this work and intend to work together on this.
 
-MS: We need to work with the web bodies to make sure we are in alignment.
+MLS: We need to work with the web bodies to make sure we are in alignment.
 
 BT: My concern is just that we're voting on Stage 1 for this thing but a lot of this is part of another proposal that doesn't intend to go through the stage process. We can help of course.
 
-MS: I suspect that we should work in lockstep with Layered APIs.
+MLS: I suspect that we should work in lockstep with Layered APIs.
 
 DD: Concretely, I would view this as TC39 has no process for suggesting to Node.js things for standard libraries. But we are interested in putting things into standard libraries, and this proposal enables us to do this.
 
-MS: So to be clear, I'm not saying that we conclude what's in the standard library. I'm not saying we can't do that, but it needs to happen and it needs to be in cooperation with Node.js.
+MLS: So to be clear, I'm not saying that we conclude what's in the standard library. I'm not saying we can't do that, but it needs to happen and it needs to be in cooperation with Node.js.
 
 DE: I'm a big fan of having this discussion and collaborating with the web and Node.js. But some open questions like, will TC39 export anonymous module records that hosting environments map to?
 
@@ -563,7 +563,7 @@ DH: I agree, but to add some nuance. There are APIs that are universal in value,
 
 DD: Well, C++ will put `web_view` in `std::`. (Laughs)
 
-MS: I agree, you want some functionality, not some broad capability. We want something that's easy for people to remember.
+MLS: I agree, you want some functionality, not some broad capability. We want something that's easy for people to remember.
 
 SCR:In Android, for example the standard library will get implemented but then it will take years to make it into the actual platform and widespread enough to use. You end up with messy ways that you implement fallbacks and polyfills; for example, you need to pull in polyfill code for everyone, even browsers that support said feature, unless you have sophisticated fallback mechanisms. I think that a really important part of this discussion is how do we deal with this and make a transparent and standard way for dealing with these fallbacks/polyfills rather than dumping the fallback/polyfill problem into user land.
 
@@ -571,17 +571,17 @@ AK: This seems like a good segue to the TAG meetup.
 
 WH: I object because we only have a slideshow at this point. I very much want a standard library, but it's not yet clear to me what we're signing up for for stage 1 here. If you can clarify what is and what isn't in scope, I will support it. Is the goal just to specify the mechanics of how people implement modules and how people use them? Is the goal to specify the modules themselves? Is the goal to set up liaisons with other organizations to define the modules?
 
-MS: It's clear we're talking about the mechanics, right? Of how people use them and define them?
+MLS: It's clear we're talking about the mechanics, right? Of how people use them and define them?
 
 WH: Correct. Are we also trying to define the actual standard library modules?
 
-MS: No, I am not saying definitively whether future proposals for standard library require the staging process. But to be clear the `Temporal` module of the Standard Library is not part of this proposal. This is just concerned with the mechanics.
+MLS: No, I am not saying definitively whether future proposals for standard library require the staging process. But to be clear the `Temporal` module of the Standard Library is not part of this proposal. This is just concerned with the mechanics.
 
 TST: Is it fair to say that you don't want to include any functionality here, but you also don't want to develop this in a vacuum, so it should go in tandem.
 
 WH: Yes, it's fine to collaborate. Thank you for the clarifications. I withdraw my objection.
 
-MS: It's something that we've needed for a long time; we need a way to offer a way to introduce a standard library.
+MLS: It's something that we've needed for a long time; we need a way to offer a way to introduce a standard library.
 
 TB: MPT said that we would need guidance. Temporal is a global feature, but if std were available, it would help that proposal.
 

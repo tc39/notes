@@ -1,9 +1,9 @@
-# September 24, 2015 Meeting Notes    
+# September 24, 2015 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Rick Waldron (RW), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Ben Smith (BS), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Gorkem Yakin (GY), Stefan Penner (SP)
+Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Rick Waldron (RW), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Ben Smith (BS), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MLS), John Buchanan (JB), Gorkem Yakin (GY), Stefan Penner (SP)
 
-Remote: 
+Remote:
 Mark S. Miller (MM), István Sebestyén (IS)
 
 -----
@@ -20,7 +20,7 @@ let z = K - x ** y;
 // No Ok
 let z = -x ** y; // Syntax Error
 
-// Must be: 
+// Must be:
 -(x ** y)
 
 // Enforced by grammar change, just a SyntaxError
@@ -86,7 +86,7 @@ AWB: maybe Matlab...
 
 RW: concerns enough to block consensus?
 
-MS: i agree with AK; i don't like option 4. we'll implement the spec but I think it's unnecessary complications given other languages.
+MLS: i agree with AK; i don't like option 4. we'll implement the spec but I think it's unnecessary complications given other languages.
 
 BT: I think it is unnecessary, but I don't care
 
@@ -99,7 +99,7 @@ YK: there are different kinds of confusion, mixing operator classes is an especi
 AK: use strict in parameter list is different -- had implementor concern as well
 (discussion of "use strict" w/ parameter list, comparison with this case)
 
-YK: BT, your point about general operator precedence is valid. I wondre why the difference from the normal precedence... why is changing the precedence in a precedence class not a red flag? 
+YK: BT, your point about general operator precedence is valid. I wondre why the difference from the normal precedence... why is changing the precedence in a precedence class not a red flag?
 
 BT: I'm not sure people talk about operators in terms of precedence classes
 
@@ -190,7 +190,7 @@ DE: problem with stage 2 is that the API is not stable, so it doesn't provide va
 
 DH: having tests are similar to having spec, helpful to make it clear to people how the feature works
 
-AK: we have automated process pulling Test262, we don't want to have to triage unstable changes 
+AK: we have automated process pulling Test262, we don't want to have to triage unstable changes
 
 YK: feature flags should solve this problem
 
@@ -226,7 +226,7 @@ BT: money problem right now. accomplished webdev, about a month of effort
 - Test262 is "living"
 
 
-## 5.6 Proposal: call constructor 
+## 5.6 Proposal: call constructor
 
 (Yehuda Katz)
 
@@ -239,7 +239,7 @@ This made it possible to use a single constructor for both purposes, but require
 
 Motivating Example
 
-The "callable constructor" pattern is very common in JavaScript itself, so I will use `Date` to illustrate how you can use an ES5 function to 
+The "callable constructor" pattern is very common in JavaScript itself, so I will use `Date` to illustrate how you can use an ES5 function to
 implement a reliable callable constructor in ES6.
 
 ```js
@@ -257,7 +257,7 @@ export function Date(...args) {
 }
 ```
 
-This works fine, but it has two problems:
+This works fine, but it has two problemLs:
 
 1. It requires the use of ES5 function as constructors. In an ideal world, new classes would be written using class syntax.
 2. It uses a meta-property, `new.target` to disambiguate the two paths, but its meaning is not apparent to those not familiar with the meta-property.
@@ -287,7 +287,7 @@ class Date {
 AWB: This is an exceptional example, most cases just defer to `new`, where this goes off on some other operation.
 
 
-RW: 
+RW:
 
 ```js
 class A {
@@ -322,7 +322,7 @@ AWB: Think about it, not as a property added to the prototype, but as an alterna
 
 MM: interaction with Proxy call trap?
 
-AWB: class with a call constructor get a distinct `[[Call]]` that knows how to dispatch to the user defined behavior. 
+AWB: class with a call constructor get a distinct `[[Call]]` that knows how to dispatch to the user defined behavior.
 ...no proposal yet for reflection
 ...no toString yet.
 
@@ -330,12 +330,12 @@ MM: toString the constructor, you get the entire class
 
 JHD: currently unspecified in ES6; some engines give the "class", some give the constructor, some give a function that has no indication it was a "class"
 
-YK: Then it would be included. 
+YK: Then it would be included.
 
 YK: _shows `call constructor() {}` vs `() {}` inside a "class"_
 
-Mark's Alternative: 
-    
+Mark's Alternative:
+
 ```js
 import { initializeDate, ToDateString } from './date-implementation';
 class Date {
@@ -361,7 +361,7 @@ MF: May want a decorator augmenting a call constructor (Michael, I missed the ta
 
 YK:
 
-MS: would this allow you to omit the `constructor`? 
+MLS: would this allow you to omit the `constructor`?
 
 YK: class would create a default `constructor`, but otherwise behave like a function
 
@@ -388,18 +388,18 @@ JHD: in a sloppy mode function, if i do `this.foo = "bar";`, and `this` isn't `u
 
 AK: Not going to add reflection here?
 
-YK: No, but reflection is needed. 
+YK: No, but reflection is needed.
 
 AK: Will it "grow" reflection?
 
 AWB: We hope to advance this to ES2016
 
-YK: Reflection is needed along side decorators and this proposal, but don't want to block this on decorators. 
+YK: Reflection is needed along side decorators and this proposal, but don't want to block this on decorators.
 
 AWB: No reflective way to change a function with toString, but can see it's whole body.
 ...tweak toString, for class with a call constructor, include it in the toString representation
 
-MM: Should be the entire class definition 
+MM: Should be the entire class definition
 
 DH: ??
 
@@ -411,12 +411,12 @@ YK: Bigger toString issue.
 
 AWB: For 2016, toString should at least include call constructor body
 
-MF: Want added restrictions before 2016, we can limit the reform proposal to buy time. 
+MF: Want added restrictions before 2016, we can limit the reform proposal to buy time.
 
 _This can be implemented in terms of `new.target`._
 
-AWB: Nec. in support of decorators: 
-    
+AWB: Nec. in support of decorators:
+
 - If you want decorators to be able to create call constructors, there needs to be some reflective way to install them.
 
 AK/BT: _discussion potential implementation details_
@@ -425,27 +425,27 @@ AK/BT: _discussion potential implementation details_
 
 - Stage 1 acceptance
 - toString includes call constructor body in output
-- Goal for Stage 3 next meeting. 
+- Goal for Stage 3 next meeting.
 
 
 ## Secretariat
 
-IS: 
-    
+IS:
+
 - Only Ecma-404 will be fast tracked.
 - Bugs in Ecma-402 need to be addressed.
 - ES2016, 17, 18, etc. might cause issues?
 
 
-I can't really understand most of what's being said over the polycom. 
+I can't really understand most of what's being said over the polycom.
 
 Sounds like ES6 has a lot of downloads
 
 
 ## Meeting Schedule
 
-JN: 
-    
+JN:
+
 - November 17 - 19, 2015 (San Jose - Paypal)
 - January 26 - 28, 2016 (San Francisco - Salesforce)
 - March 29-31, 2016 (San Francisco - Google)
@@ -461,16 +461,16 @@ JN:
 - Rick, Dave will figure out March
 
 
-## 5.13 Updates on rest properties proposal 
+## 5.13 Updates on rest properties proposal
 
 (Sebastian Markbage)
 
 https://github.com/sebmarkbage/ecmascript-rest-spread
 
-SM: 
+SM:
 
 https://github.com/sebmarkbage/ecmascript-rest-spread/commit/f4cb9c0ff9f4509854d5d30f4517a23b1a7d7e98
-    
+
 ```js
 var o = Object.create({ x: 1, y: 2 });
 o.z = 3;
@@ -502,7 +502,7 @@ SM: I will write a proposal to fix BindingRestElement to allow nested BindingPat
 - No stage change
 
 
-## 6. Updates on Loader 
+## 6. Updates on Loader
 
 (Dave Herman)
 
@@ -521,7 +521,7 @@ DH: it's done *enough* that you could be hacking on this now. not written in the
 
 BT: Concerns that if spec is not written and we implement, it might be useless. Stuck in holding pattern.
 
-DH: Should start hacking on this. 
+DH: Should start hacking on this.
 
 DH: we will get you stage 0 stuff written as soon as we can.
 
@@ -535,13 +535,13 @@ DH: "referrer" used for relative, "/"?
 
 DH: _explains how "module src" will respect base url, but imports inside the module will not_
 
-MM: Loader constructor has no concept of URLs, just name resolution. 
+MM: Loader constructor has no concept of URLs, just name resolution.
 
-DH: Loader class is generic. Specific default Loader has to be host specific, there is a spec. 
+DH: Loader class is generic. Specific default Loader has to be host specific, there is a spec.
 
 AK: Who are the experts working on the Loader spec? Anne? Dimitri (Glazkov)?
 
-DH: Both have reached out. Let's have a meeting with those people. 
+DH: Both have reached out. Let's have a meeting with those people.
 
 AK: Dimitri is quite busy, so...
 
@@ -561,7 +561,7 @@ AK: this is all about what script tags do right now
 
 YK: you need to have one block. this block is for configuring my loader, I don't want any scripts to load before this is done. Not good to block loading modules before all scripts are loaded
 
-DH: if semantics of type=module is only that one has to precede the compilation of the other, forces you to use legacy script. 
+DH: if semantics of type=module is only that one has to precede the compilation of the other, forces you to use legacy script.
 
 YK: there's a worse problem, path for legacy script => legacy blocking script, or use legacy defer script, and now you have to decide order between them. Another option is loader config, that has to run before, but not other scripts
 
@@ -573,7 +573,7 @@ DH: Another Q: Allow completed subgraphs to execute early? Hold the line on dete
 
 Issue: module system forces sequentiality
 
-Ie. 
+Ie.
 - download
 - get deps
 - download
@@ -597,11 +597,11 @@ AWB: in terms of modules, there is only one syntactially type of module. two typ
 
 DH: no interest in inline-named modules
 
-AWB: not relevant to this discussion. 
+AWB: not relevant to this discussion.
 
 AWB: script-like module: used like a script, doesn't have exports, does have imports, written for effect
 
-DH: either are there, b/c in a script tag, or not. 
+DH: either are there, b/c in a script tag, or not.
 
 AWB: so you write a script tag, name a script-like module, that needs to execute as soon as the deps are available.
 
@@ -629,7 +629,7 @@ YK: module imports are declarative, so gives clear dependency order, effectively
 
 ...modules want to initialize state, using set of promises. dependency ordering that is opaque to module execution order, benefit of that is we can have synchronous 1-shot path through module execution...
 
-YK: problem with 2.a... 
+YK: problem with 2.a...
 
 JM: we've used 2.a. for a long time and it has worked well
 
@@ -637,7 +637,7 @@ YK: ... other things in the dependency graph is opaque, to repair that, we need 
 
 AWB: my concern with 2a. only comes up with circular module deps, a set of dependent modules isn't fully initialized until you circle around, each module has been given a chance to initialize and execute through entire body. If you start doing other jobs, somewhere along that path, are there going to be potential observable....
 
-DH: difference between observable and likely. We shouldn't care about reflectively being able to observe that things are complete. Ignoring the reflective stuff, just declarative, initializing these in dep order, outside of cycles you can't have a problem. Even within a cycle, early reference to something that hasn't executed yet, but that can happen synchronously too. 
+DH: difference between observable and likely. We shouldn't care about reflectively being able to observe that things are complete. Ignoring the reflective stuff, just declarative, initializing these in dep order, outside of cycles you can't have a problem. Even within a cycle, early reference to something that hasn't executed yet, but that can happen synchronously too.
 
 YK: there is a toplevel cycle problem already
 
@@ -654,7 +654,7 @@ DH: _describing the problem with toplevel await and node.js_
 ... people want to use synchronous functions in module initialization, but this forks functionality between async/sync variants...
 ... toplevel await gives you a way to prevent module use before initialization. in node.js currently people often just race between initialization and use.
 
-MM: question: node modules is loaded via require? If someone calls require in a later turn, the module is loaded later. [ everyone confirms ] so toplevel modules can already be run over multiple turns? [ confirms ] 
+MM: question: node modules is loaded via require? If someone calls require in a later turn, the module is loaded later. [ everyone confirms ] so toplevel modules can already be run over multiple turns? [ confirms ]
 
 YK: their concern is that introducing await for require will change the behavior of require in a confusing way
 
@@ -703,7 +703,7 @@ DH: maybe inferred rather than opt-in
 
 MM: i don't see how this forces you to require as suspension point for caller
 
-YK: browser does not want require that sometimes returns value, sometimes promise. legacy purposes, require returns value. 
+YK: browser does not want require that sometimes returns value, sometimes promise. legacy purposes, require returns value.
 
 MM: require has to return what the required module exports
 
@@ -713,7 +713,7 @@ DH: could say: all ES6 modules provide a promise
 
 2A: Modules execute in the order that they appear textually (same order as ES6 semantics), but may run across multiple turns.
 
-Moving on. 
+Moving on.
 
 DH: Need stage 0 for  module metadata
 
@@ -728,7 +728,7 @@ EF: why import and not export?
 DH: import.context.lineno, callno?
 
 MM: my point is: if template strings actually created a sourcemap on the template object, as part of the extended definition, you'd have all the information by that mechanism, including where the individual thing in the source
-... 
+...
 
 DH: the competition here is __filename, __dirname, etc. import.context ergonomics is pretty close, are you talking about something worse?
 
@@ -748,8 +748,8 @@ _extended discussion about what information would be stored on import.context --
 Dynamic Relative Loading
 
 - Dynamically load a relative module when it's only needed rarely:
-    
-    
+
+
 ```js
 // lib/index.js
 configButton.onclick = async function() {
@@ -776,7 +776,7 @@ _discussion about ambiguity of syntax_
 
 DH: syntax needs work, not complete/final
 
-MS: because dynamic, needs a new API. Don't like the properties on keywords. 
+MLS: because dynamic, needs a new API. Don't like the properties on keywords.
 
 DH: _re-explains everything that lead to current design_
 
@@ -786,7 +786,7 @@ DH: "out of band" in a subexpression and need additional data
 
 AK: Assumed import dynamically, methods on a loader instance?
 
-DH: Missing ability to do relative dynamic loading, needs context otherwise need to write information in your code about where the file lives. 
+DH: Missing ability to do relative dynamic loading, needs context otherwise need to write information in your code about where the file lives.
 
 AK: need some syntax that says "where am i?"
 
@@ -794,7 +794,7 @@ DH: we want the smallest number of constructs, there is benefit to users for thi
 
 DH: Moving on. Need global APIs here, reflective API for dynamically creating a module instance. I want Reflect.Module (or something living under Reflect), DD wants...
 
-tl;dr: Spec defines a module namespace exotic object, need a way to create these. Custom loaders need to make these. 
+tl;dr: Spec defines a module namespace exotic object, need a way to create these. Custom loaders need to make these.
 
 AWB: can other modules import those? [ others say yes]
 
@@ -821,7 +821,7 @@ DH: milestone 0 doesn't depend on this syntax, but milestone 1 does, and we don'
 
 #### Conclusion/Resolution
 
-- Stage 0 acceptance 
+- Stage 0 acceptance
   - granted for dynamic relative loading
 - Module Record thing goes in Reflect, full-stop. ("Reflect.Module", perhaps)
 - `Reflect.Loader`, `Reflect.Module`

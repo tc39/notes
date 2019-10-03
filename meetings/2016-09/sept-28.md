@@ -1,13 +1,13 @@
 # September 28, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Mikeal Rogers (MRS), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), James Snell (JSL), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Brendan Eich (BE), Jacob Groundwater (JGR), Adam Klein (AK)
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MLS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Domenic Denicola (DD), Rick Waldron (RW), John Buchanan (JB), Kevin Gibbons (KG), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Daniel Rosenwasser (DRR), Mikeal Rogers (MRS), Jean-Francis Paradis (JFP), Sathya Gunasekasan (SGN), Juan Dopazo (JDO), Bert Belder (BBR), James Snell (JSL), Shu-yu Guo (SYG), Eric Ferraiuolo (EF), Caridy Patiño (CP), Allen Wirfs-Brock (AWB), Brendan Eich (BE), Jacob Groundwater (JGR), Adam Klein (AK)
 
 
 
 -----
 
-## ES Modules Lifecycle 
+## ES Modules Lifecycle
 
 (Bradley Farias)
 
@@ -31,10 +31,10 @@ BFS: We will be talking about host-dependent behavior: The Node module loading h
     1. Place dependency in Local Cache using Import Specifier*
     1. Link dependency to module
     1. Errors prevent any evaluation
-1. Evaluate in post order traversal 
+1. Evaluate in post order traversal
     1. Errors prevent further evaluation
 
-    
+
 CP/YK/AWB: (There are items here that are strictly host-specific)
 
 BFS: Necessary for Node
@@ -47,7 +47,7 @@ DH: Inherently, dynamic module systems that would want to interact with ESM need
 
 YK: And modules haven't shipped anyway
 
-AWB: Appears to be an "interpretation" of the requirements, but we need to understand _why_ 
+AWB: Appears to be an "interpretation" of the requirements, but we need to understand _why_
 - e.g. local caching? Why required?
 
 
@@ -111,11 +111,11 @@ DH: The slides discuss the idempotency requirements?
 (confirmed)
 
 BFS: (remove FIXME)
-    
+
 ![](https://i.gyazo.com/db559bf71469f069698fb765d08b4844.png)
 
 
-AWB: The top level was aborted before reaching the end, and result was...? 
+AWB: The top level was aborted before reaching the end, and result was...?
 
 BFS: One function of the cache is to make sure the module evaluation only occurs for the first time the module was imported, and not again on subsequent imports
 
@@ -154,13 +154,13 @@ BE: How observable?
 
 BFS: In pure ESM, you never run code before it's completely linked, but when interacting with commonjs, we have to be able to execute some code earlier.
 
-DH: ES2015 does not cope with dynamic modules. 
+DH: ES2015 does not cope with dynamic modules.
 
-BFS: If we have any interop, the distinctions between 
+BFS: If we have any interop, the distinctions between
 
 BFS: let's go back instead of skipping ahead a bunch of slides
 
-AWB: Need to understand differences between static and dynamic per spec. 
+AWB: Need to understand differences between static and dynamic per spec.
 
 BE/DH: need to address interop, dynamic code that can execute before link
 
@@ -208,7 +208,7 @@ AWB: depends. linkage errors you could
 
 BFS: expect to completely recreate your dep graph
 
-AWB: once mod is instantiated and linked into the system, it's in. If not past the point of linking, then no one has seen it. 
+AWB: once mod is instantiated and linked into the system, it's in. If not past the point of linking, then no one has seen it.
 
 YK: the discussion on es-discuss could've gotten it wrong?
 
@@ -226,7 +226,7 @@ DD: the semantics say: once you get an error, you must cache that error forever
 
 DH: Sounds like we should add more features for control here
 
-YK: Is an issue that node needs to be things to go away 
+YK: Is an issue that node needs to be things to go away
 
 (fell behind)
 
@@ -236,10 +236,10 @@ JSL: The default behavior in Node is to get the same behavior back once it's ini
 
 BBR: We want to avoid many cases of getting two copies of modules, though it's not always possible, e.g., case-insensitive file system and different case names.
 
-AWB: if you have file path: import a from path, you retrieve, link that in; subsequent import of the same string returns the same thing. 
+AWB: if you have file path: import a from path, you retrieve, link that in; subsequent import of the same string returns the same thing.
 
 DH: clarify: a post resolve name?
-- Can't specify anything about strings that appear in the 
+- Can't specify anything about strings that appear in the
 
 (I didn't hear the end)
 
@@ -274,7 +274,7 @@ DH: Idempotency constraint not about source text, about result
 WH: So where is the result used in the 15.2.1.17 HostResolveImportedModule •3 idempotency constraint? That line uses the string, not the result.
 
 DD: Layering-wise, there's no way that we could enforce the idempotency requirement about any sort of normalized form, as this is done within the spec based on the name used to address the module in the source text.
-    
+
 DH: Thank you, good to know that the idempotency requirement is about the operation of HostResolveImportedModule, utterly impossible for node?
 
 DD: the idempotency requirement is: if you have two `import "x"` in the same file, they must produce the same thing
@@ -310,7 +310,7 @@ AK: The example would be identical if it said import "f"; import "f"; in semanti
 BFS: The idempotency is prior to any evaluation. ESM import declaration links prior to evaluation, so idempotent prior to evaluation
 - CJS declares its exports occur during or at the end
 
-AWB: Doesnt matter what you did for exports, nothing to link. 
+AWB: Doesnt matter what you did for exports, nothing to link.
 
 BFS: let's say I have `import "foo"`
 
@@ -338,7 +338,7 @@ BFS: You still need to perform eval at some point
 
 YK: b/c cjs modules need to be evaluated to know what the exports are, and have to evaluate esm, the cjs modules have to be run first (declarative vs. non)
 
-DD: All agreed, evaluation has to happen first. 
+DD: All agreed, evaluation has to happen first.
 
 YK: CJS always treated as a single export
 
@@ -351,7 +351,7 @@ WH: What is `import *`?
 
 - `import *` doesn't import everything...
 
-DH: Doesn't exist anymore. 
+DH: Doesn't exist anymore.
 
 CP: If you happen to have a module that is not esm, can create binding that is default
 
@@ -401,7 +401,7 @@ DD: Can get an evaulation circularity
 
 AWB: Can get a loop or an error
 
-YK: banning cycles between cjs and esm seems more palatable 
+YK: banning cycles between cjs and esm seems more palatable
 
 BFS: An alternate solution: Making loading esm from cjs an async op. This makes it so that you can't do eval circularly. This is a pretty drastic change, as some of your loading is async, so your whole dep graph is async
 
@@ -415,7 +415,7 @@ JSL: Circular dependencies are actually very common with require. We cannot get 
 
 DH: This is not as drastic as getting rid of cycles altogether.
 
-MRS: at scale? 
+MRS: at scale?
 
 BBR: Packages can actually be circular
 
@@ -444,7 +444,7 @@ JSL: We could implement the spec as is. But this would make some compromises for
 
 DH: Design constraints:
     - It needs to be possible to import named exports from CJS
-    - require(ESM) needs to synchronously 
+    - require(ESM) needs to synchronously
 
 JM: Are these technical needs or ecosystem needs?
 
@@ -497,7 +497,7 @@ AWB: Not just syntax, fundamentally different semantics
 
 BFS: But community things about modules as CJS
 
-DH: concrete level: live bindings, aliasing 
+DH: concrete level: live bindings, aliasing
 
 ?
 
@@ -537,7 +537,7 @@ MRS: This would be a Python3-style incompatibility
 
 BFS: skeptical that we can put in loader?
 
-MRS: vast majority of modules will not be upgraded, more worried about these and users having expectations that they are 
+MRS: vast majority of modules will not be upgraded, more worried about these and users having expectations that they are
 
 BBR: allow two different entry points, if package maintainer wants to do that?
 - Or a tool that requires it, looks at the exports and creates a wrapper?
@@ -548,7 +548,7 @@ BBR: We accept that there is no automatic transition
 
 MRS: We want to avoid module authors doing any explicit work
 
-BFS: If default is 
+BFS: If default is
 
 DRR: (fill in point)
 
@@ -556,7 +556,7 @@ DH: important to look at named imports and exports that don't change, vs. do
 
 MRS: (spoke to fast for me to follow, but basically something about `module.exports = function() {}`?)
 
-BFS: If we had a way to observe mutations, we may be able to track them, but it's not clear how we would do that 
+BFS: If we had a way to observe mutations, we may be able to track them, but it's not clear how we would do that
 
 YK: Empirically, most modules don't do mutation.
 
@@ -577,19 +577,19 @@ BFS: you currently have access to calling the functions defined in a module even
 
 AWB: introducing new hypothetical API, need to define its semantics
 
-DH: The observable difference is about whether you encounter 
+DH: The observable difference is about whether you encounter
 
 AWB: This only happens from circularities
 
 AK: This is all about the interaction between circular dependencies between CJS and ESM
 
 
-YK: Why care if esm can or cannot see cjs 
+YK: Why care if esm can or cannot see cjs
 
 BFS: We want a single module system that can be used for ES
 
 
-I'm unable to type fast enough to keep up with this. Its hard to tease out the point when people start and stop statements mid-statement. 
+I'm unable to type fast enough to keep up with this. Its hard to tease out the point when people start and stop statements mid-statement.
 
 I want to explain, I'm going to, Here's how I think we can explain, let me unpack (interrupted)
 
@@ -640,7 +640,7 @@ ESM Doable needs
     - Early errors from non-existent context variables
 
 - Hooks:
-    - Need to ensure hookup prior to 
+    - Need to ensure hookup prior to
 
 - Some kind of loader spec, maintaining invariants of es262. May be related to the loader spec.
 
@@ -684,7 +684,7 @@ BFS: e.g., used in Promisify.all. Changing the values is much more common than c
 WH: Trying to pin things down. What is the specific evaluation order of an ESM module A importing from an ESM module B, and what exactly changes if B were a CJS module instead?
 
 AK: [described DH's previous proposal involving delaying resolving bindings imported from CJS into an ESM until after CJS evaluates during evaluation]. Example:
-    
+
 // a
 import {foo} from "b";
 import {bar} from "c";
@@ -811,9 +811,9 @@ DE: Isn't this like adding something to [[RequestedModules]] dynamically?
 
 ## Revisit System.global => global
 
-JHD: Reviewers and editor have signed off on the spec text. 
+JHD: Reviewers and editor have signed off on the spec text.
 
-- Willing to make it `enumerable: true` pending implementor feedback  
+- Willing to make it `enumerable: true` pending implementor feedback
 
 JHD: Hope to have as many browser implementations before Stage 4
 
@@ -828,7 +828,7 @@ JHD: Hope to have as many browser implementations before Stage 4
 (Daniel Ehrenberg)
 
 
-DE: Unicode defines breaking properties: grapheme, word, line, sentence breaks. 
+DE: Unicode defines breaking properties: grapheme, word, line, sentence breaks.
 
 ![](https://i.gyazo.com/57e77bf6676eba9de26ff52fcf6bde5f.png)
 
@@ -881,7 +881,7 @@ DE: It omits them.
 
 
 WH:
-    
+
 ```
 Hello, "world"! \n\n
 ```
@@ -899,7 +899,7 @@ BT: grapheme doesn't require a lot of data
 
 DE: The advice is: callout to ICU or you'll do it wrong
 
-BT: is Segmenter based on UAX29? 
+BT: is Segmenter based on UAX29?
 
 DE: Both UAX29 and UAX14
 

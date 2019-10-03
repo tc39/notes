@@ -1,6 +1,6 @@
 # March 28, 2019 Meeting Notes
 -----
-István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Daniel Ehrenberg (DE), Mike Samuel (MSL), Qiuyi Zhang (QZG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KVR), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro (DF), Domenic Denicola (DD)
+István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Daniel Ehrenberg (DE), Mike Samuel (MSL), Qiuyi Zhang (QZG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KVR), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MLS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro (DF), Domenic Denicola (DD)
 
 Remote:
 Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCL), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Igor Minar (IMR), Misko Hevery (MHY), Brendan Eich (BE), Rick Waldron (RW)
@@ -221,11 +221,11 @@ TST: We can help with that.
 
 JHD: I'm not willing to invest my time and money just to find MM and DD's constraints in a deadlock. I'd like to have confirmation from people willing to hash this out so it's not as risky to waste my time, or the committee's time in the future.
 
-MS: How do the stacks wildly diverge? Can you describe your study?
+MLS: How do the stacks wildly diverge? Can you describe your study?
 
 MM: I'm not sure what counts as a study, but I wrote code to probe it and ran code on various browsers. It's clear that there is very different information being given.
 
-MS: Is that available publicly?
+MLS: Is that available publicly?
 
 MM: It's not available public now, but I'll make what I have available public.
 
@@ -309,7 +309,7 @@ MF: Then I share TST's opinion, that a sharing a textual representation of the f
 
 JHD: My idea would be that we would give a choice of several formats, based on web reality. That's the only way I could invision hardcoding in the spec something that allows for these several formats.
 
-MS: Wouldn't you want a standard format for the stack frame?
+MLS: Wouldn't you want a standard format for the stack frame?
 
 JHD: We could make an ideal format, and hope browsers would migrate to that, or we could put the alternative formats in Annex B.
 
@@ -373,13 +373,13 @@ I'm looking for anyone who wants to co-champion. I think we can come up with a g
 
 DE: (presents slides). I'd like to hear if there are any concerns for approaching Stage 4 in June.
 
-MS: What Stage 4 criteria does Dynamic Import not meet yet?
+MLS: What Stage 4 criteria does Dynamic Import not meet yet?
 
 DE: MM raised the concerns, so maybe it's best to ask him?
 
 MM: Stage 3 is the time to give feedback of implementation conflicts. The thing was originally allowed to advance to Stage 3 with the understanding that the virtualization issue would eventually be solved through hooks in the realm API. DE and I talked and the realms group was planning of having a discussion before June to determine whether there was a conflict. I did read the proposal carefully. I think there's an 80% chance that the proposal as written will go to Stage 4. But I want the realm committee to look more carefully.
 
-MS: It seems to me that this could still advance to Stage 4 and if there are any changes we need to make, we can make them later. Everyone has implemented this already.
+MLS: It seems to me that this could still advance to Stage 4 and if there are any changes we need to make, we can make them later. Everyone has implemented this already.
 
 MM: There have been many things in the past where everybody's implemented it but there were still things that needed to be changed. Because everything was implemented we knew that we still had an opportunity to fix the edge cases.
 

@@ -1,7 +1,7 @@
 # July 25, 2017 Meeting Notes
 -----
 
-Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE),Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK), 
+Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE),Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MLS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK),
 
 -----
 
@@ -22,17 +22,17 @@ RJE: Presented his background, has worked on C# spec, PHP spec, involved with la
 
 LBR: Any objections to adopting the agenda?
 
-MS: Question about three related 60-minute slots for class fields-related proposals. Why don't the proposers coordinate a consistent story in advance?
+MLS: Question about three related 60-minute slots for class fields-related proposals. Why don't the proposers coordinate a consistent story in advance?
 
 YK: We did.
 
 (Debate about length of time slot)
 
-MS: High-order concern was divergence among the proposals
+MLS: High-order concern was divergence among the proposals
 
 YK: Tomorrow will present a 15-minute overview
 
-MS: My concern has been addressed.
+MLS: My concern has been addressed.
 
 KG/LBR: Can we adopt the agenda anyway?
 
@@ -68,9 +68,9 @@ DE, CP: Implementations close to shipping in two engines, which could be include
 DE: There are two other features which may reach 2018, which have presentations today, Intl.RelativeTimeFormat and Intl.Segmenter, which are less far along
 
 
-## 8. Test262 Status Updates 
+## 8. Test262 Status Updates
 
-### 8.i Follow up: Use the default license file for tests files 
+### 8.i Follow up: Use the default license file for tests files
 
 LBR: Now using a default license so test files don't have to contain copyright notice. Ecma is fine with using a root license file.
 
@@ -168,7 +168,7 @@ DE: Even for a 0->1 transition, if you're in a larger organization, you'll be ab
 
 TODO: link to slides
 
-CM: We (TC39) have a love / hate relationship with JS.. Our Prime Directive is "Don't break the web". Fixes can break crappy software, which breaks the web. Opinion is that this crappy software is an obstacle to innovation. Our current tool is Compartmentalization. Limit the scope of changes to avoid interference. Examples from past / current work. Lexical scoping, modules, realms and frozen realms. These are "Islands of Sanity". Many are asking for JavaScript to morph into language XXX. "JavaScript should be more like JavaScript"   Quote from Tony Hoare - "Inside every large program is a small program struggling to get out."  
+CM: We (TC39) have a love / hate relationship with JS.. Our Prime Directive is "Don't break the web". Fixes can break crappy software, which breaks the web. Opinion is that this crappy software is an obstacle to innovation. Our current tool is Compartmentalization. Limit the scope of changes to avoid interference. Examples from past / current work. Lexical scoping, modules, realms and frozen realms. These are "Islands of Sanity". Many are asking for JavaScript to morph into language XXX. "JavaScript should be more like JavaScript"   Quote from Tony Hoare - "Inside every large program is a small program struggling to get out."
 
 WH: It's easier to compartmentalize syntax features, like "use strict" or modules do. What about semantic quirks, e.g. if you want to forbid `__proto__`?
 
@@ -201,9 +201,9 @@ BN: Need to get the communications channel right between the compartments. WASM 
 
 BFS: That may not be within our scope as TC39.
 
-MS: Browsers are already basically OSes in that there is JS, WASM, Workers, memory protection, scheduling, thread, ...
+MLS: Browsers are already basically OSes in that there is JS, WASM, Workers, memory protection, scheduling, thread, ...
 
-MS: Multiple standards bodies and engine implementors are all standardizing JS and the browser environment. Experiments become de facto standards. But everyone's hoping for eventual convergence/standardization.
+MLS: Multiple standards bodies and engine implementors are all standardizing JS and the browser environment. Experiments become de facto standards. But everyone's hoping for eventual convergence/standardization.
 
 MM: It goes back to the notion of the good parts vs the bad parts and being conscious about each. They takes judgement.
 
@@ -223,12 +223,12 @@ SYG: It seems that to avoid ecosystem problems is that there needs to be tighter
 
 CM: We do have members that are involved in other efforts, e.g. WASM.
 
-SYG: TC39 is good to get diverse stack holders to come to the table. 
+SYG: TC39 is good to get diverse stack holders to come to the table.
 
 
 
 
-## 11.i.a. Intl.Segmenter for Stage 3 
+## 11.i.a. Intl.Segmenter for Stage 3
 
 (Daniel Ehrenberg)
 
@@ -282,7 +282,7 @@ BT: We may just not learn about what things need to be specified if we have only
 - No resolution; or, in other words, leave the proposal at stage 2.
 
 
-## 9.iv.a. Cancellation 
+## 9.iv.a. Cancellation
 
 (Ron Buckton)
 
@@ -328,7 +328,7 @@ DD: Whatever cancellation/abort API TC39 produces, it must be compatible with ht
 - We must be extensible with other controls, for other controls we plan to add to fetch (e.g. changing priority)
 - We should reuse the exception type used by other aborts on the web platform, i.e. `DOMException` "`AbortError`". This could potentially be changed if it proves to be web-compatible (e.g., perhaps another exception with `.name === "AbortError"`) by the time TC39 gets to stage 3.
 
-YK: Ember has a cancelation framework, and the conclusion we drew is that we can't use async as is, we need to use generators. Its concerning that we couldn figure out how to make people understand async. 
+YK: Ember has a cancelation framework, and the conclusion we drew is that we can't use async as is, we need to use generators. Its concerning that we couldn figure out how to make people understand async.
 
 AWB: The criteria for stage 1 are just that people think JavaScript needs some sort of cancellation mechanism, not that it be strictly compatible with a certain set of requirements.
 
@@ -389,16 +389,16 @@ AWB: It feels that we need a champions group to explore the cancellation proposa
 
 MM: When we introduced promises, we had the same problems with interoperability and existing libraries, but we were able to standardize the "Promises A+" subset, and allowed any object with a .then method to act as a Promise, and it worked beautifully (I think we called this "assimilation"). I think it's worth investigating whether we could achieve interop by taking a lesson from Promise assimilation, rather than requiring things like `instanceof EventTarget`. I'm being deliberately vague because I'm not sure this will work out.
 
-RBN: What I can summarize with: 
+RBN: What I can summarize with:
 
-- Proposal to investigate cancellations API that is compatible across platforms. 
+- Proposal to investigate cancellations API that is compatible across platforms.
 - Investigate syntactic additions to the language that can help achieve this (such as Promises and async).
 
 
 #### Conclusion/Resolution
 
 - Stage 1 effort to investigate cancellation among the champions may proceed.
-- Champions: 
+- Champions:
 - Yehuda Katz (YK)
 - Brian Terlson (BT)
 - Ron Buckton (RBN)
@@ -407,7 +407,7 @@ RBN: What I can summarize with:
 - Dean Tribble (DT)
 
 
-## 10.iii Expanding Vision for TC39 
+## 10.iii Expanding Vision for TC39
 
 (Leo Balter)
 
@@ -466,7 +466,7 @@ PHE: I would have no problem moving the sentence that requires F.p.toString to i
 
 
 
-## 11.ii.b. Symbol.prototype.description 
+## 11.ii.b. Symbol.prototype.description
 
 (Michael Ficarra)
 
@@ -491,7 +491,7 @@ BN: It feels legitimate to support cases like this.
 
 AWB: Feels like a footgun.
 
-MS: Isn't this only a stage 0->1 proposal? Sounds like the committee is interested in discussing it!
+MLS: Isn't this only a stage 0->1 proposal? Sounds like the committee is interested in discussing it!
 
 
 #### Conclusion/Resolution
@@ -499,7 +499,7 @@ MS: Isn't this only a stage 0->1 proposal? Sounds like the committee is interest
 - Stage 1, committee will continue entertaining Symbol.prototype.description, or some means of getting the Symbol description more easily.
 
 
-## 11.ii.c. Promise.prototype.finally seeking stage 3   
+## 11.ii.c. Promise.prototype.finally seeking stage 3
 
 (Jordan Harband)
 

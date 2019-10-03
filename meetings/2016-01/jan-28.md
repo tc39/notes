@@ -1,7 +1,7 @@
 # January 28, 2016 Meeting Notes
 -----
 
-Eric Ferraiuolo (EF), Caridy Patiño (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), Mark S. Miller (MM), Sebastian Markbåge (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Miško Hevery (MHY), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BNN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
+Eric Ferraiuolo (EF), Caridy Patiño (CP), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MLS), John Buchanan (JB), Stefan Penner (SP), Sebastian McKenzie (SMK), Waldemar Horwat (WH), Mark S. Miller (MM), Sebastian Markbåge (SM), Zibi Braniecki (ZB), Andreas Rossberg (ARB), Ian Halliday (IH), Keith Miller (KM), Tim Disney (TD), Miško Hevery (MHY), Brad Green (BG), Kevin Smith (KS), Brad Nelson (BNN), JF Bastien (JFB), Shu-yu Guo (SYG), Rick Waldron (RW), Staś Małolepszy (STM), Dean Tribble (DT)
 
 -----
 
@@ -136,7 +136,7 @@ AWB: I would be happy to discuss
 * DD DE AWB will be reviewers
 
 Rundown of reviewers (from LH's notes):
-    
+
 - littledan will represent v8
 - brian for chakra (but he will look for a delegate)
 - unclear for jsc (LH will ask filip pizlo)
@@ -146,7 +146,7 @@ Rundown of reviewers (from LH's notes):
 
 LHN: Also desirable for everyone to read the spec and pitch in, the more eyeballs the better.
 
-## 5.xix Proxy Enumerate - revisit decision to exhaust iterator 
+## 5.xix Proxy Enumerate - revisit decision to exhaust iterator
 
 (Brian Terlson)
 https://github.com/tc39/ecma262/issues/160
@@ -164,7 +164,7 @@ BT: We could say, for-in (or proxy enumerate trap) will exhaust the iterator and
 
 ARB: that is what v8 does
 
-BT: I dont want an observable difference for for-in 
+BT: I dont want an observable difference for for-in
 
 YK: the has check on a proxy is non-observable anyways, and often it can be skipped anyways.
 
@@ -184,7 +184,7 @@ MM: v8 on normal objects does snapshot + has check, but not post-snapshot enumer
 
 YK: So far, we have spec'd this as vague, to allow divergence
 
-MM: we should specify this, 
+MM: we should specify this,
 
 BT: i will need to do some exploration
 
@@ -270,7 +270,7 @@ AWB: the only way to doit, is to set some requirements, vague or not
 
  - provisional consensus to kill enumerate trap, contingent on running it by tom
  - for-in does [[HasProperty]]
- 
+
 ----------------------------
 Response from Tom:
 
@@ -288,7 +288,7 @@ Feel free to forward this mail to TC39. I'm happy to engage in follow-up discuss
 
 
 ----------------------------
- 
+
 
 ## 5.xviii Exponentiation Operator (RW)
 
@@ -318,7 +318,7 @@ RW: any objections
 #### Conclusion/Resolution
 
 - Meet in Munich Monday May 23-Wednesday May 25
-- 
+-
 
 ## 402 needs reviewers (20min)
 
@@ -340,7 +340,7 @@ EF: we have one potential problem to discuss,
 
 EF: slide edition 1 [[CALL]] Behavior (Considered a Spec bug)
 
-AWB: thats basically, at the time the spec was drafted that was how the current thinking of internal slots to happen. This allowed internal state to be dynamically added to instances, that was decided inappropriate, and ultiamtely abondoned. 
+AWB: thats basically, at the time the spec was drafted that was how the current thinking of internal slots to happen. This allowed internal state to be dynamically added to instances, that was decided inappropriate, and ultiamtely abondoned.
 
 EF: the problem was, a library intl, format cache. using memoizing used this pattern. This pattern was introduced in sept 2014. The issues rolled in nov 2015.
 
@@ -392,7 +392,7 @@ EF: presents comments on GH issue 57
 
 ...MM explores the code...
 
-MM: what you do, is the call behavior of Intl.Collator if its sees an object that inherits from Collator.prototype that is not a collator, it creates a new Collator and uses a unique Symbol to hang that newCollator off of that object. All the builtin Collator methods then checks whether their alleged Collator argument is a non-Collator with a property named by that Symbol. If so, it looks up the Collator state on the value of that property, i.e., it forwards all state lookup to the value of that property. A hack to deal with an emergency. No security issue here, so no problem that the Symbol can be read and used for other purposes. No accidental collisions, all the primitives must then detect the collator. 
+MM: what you do, is the call behavior of Intl.Collator if its sees an object that inherits from Collator.prototype that is not a collator, it creates a new Collator and uses a unique Symbol to hang that newCollator off of that object. All the builtin Collator methods then checks whether their alleged Collator argument is a non-Collator with a property named by that Symbol. If so, it looks up the Collator state on the value of that property, i.e., it forwards all state lookup to the value of that property. A hack to deal with an emergency. No security issue here, so no problem that the Symbol can be read and used for other purposes. No accidental collisions, all the primitives must then detect the collator.
 
 SP: this isolates the fallout
 
@@ -402,7 +402,7 @@ RW: (Agree)
 
 YK: We may want to leave a note
 
-AWB: Annex in 3rd Edition that explains the compatibility issue and how to address it. 
+AWB: Annex in 3rd Edition that explains the compatibility issue and how to address it.
 
 YK: as long as its in the actual spec we are good
 
@@ -417,7 +417,7 @@ DE: yes, it seems reasonable
 - add note to 402 annex (third edition, references second and first)
 
 
-## 5.xix (Revisit) Proxy Enumerate - revisit decision to exhaust iterator 
+## 5.xix (Revisit) Proxy Enumerate - revisit decision to exhaust iterator
 
 BT: Proxy.enumerate is removed, should Reflect.enumerate be removed?
 
@@ -476,7 +476,7 @@ RW: I will review
 #### Conclusion/Resolution
 
 - Stage 2 acceptance
-- Reviewers: 
+- Reviewers:
     - Rick Waldron
     - Daniel Ehrenberg
 
@@ -532,7 +532,7 @@ DE: me
 #### Conclusion/Resolution
 
 - Stage 2 acceptance
-- Reviewers: 
+- Reviewers:
     - Daniel Ehrenberg
     - Stefan Penner
 
@@ -552,7 +552,7 @@ ZB: slide (Intl.getCanoncialLocales(locales)
 
 ZB: Intl.getParentLocales(locales)
 
-ZB: many exceptions here, 
+ZB: many exceptions here,
 
 ZB: we have all these operations, somewhat inconsistently used internally. Now we will expose them, and also use them in-consistency
 
@@ -632,7 +632,7 @@ ZB: stage 0?
 ## Async generator functions
 presenter: Kevin Smith
 link to presentation:  https://docs.google.com/presentation/d/1OwDb4WH9pkdEFVhsY5kjaJ6MF1KrxBNQWpWc9SymweQ/edit#slide=id.p
-    
+
 KS: slide (overview)
 
 KS: Async generator functions return AsyncGenerator objects, with a for-await loop
@@ -690,7 +690,7 @@ async function* agf() {
 WH: Are you proposing that the above do the same thing as replacing the yield line above by 'yield 1`?
 
 KS: Yes
-    
+
 WH: We've had the discussion before about whether promises stack or they are idempotent. We decided that one after a long debate to prevent promises stacking.
 
 DH: yield and await merging.
@@ -887,13 +887,13 @@ DH: their are several work areas, that have been structured as independent. JH h
 
 - work on observables + syntax
 - work on API for async sequences + syntax
-- it sounds like KS + JH are in aligment, observables aren't the base for syntax. And it is orthogonal 
-  
+- it sounds like KS + JH are in aligment, observables aren't the base for syntax. And it is orthogonal
+
 - observables championed by JH
 - we want some syntax (which obviously needs a protocol)
 - API for async sequences, but without full consensus. But we need to continue exploring.
 
-YK: I totally agree, I am concerned that I must present an adequate argument but do not feel able to at this time. 
+YK: I totally agree, I am concerned that I must present an adequate argument but do not feel able to at this time.
 
 DE: we should explore this explicitly
 
@@ -948,7 +948,7 @@ Big advantages of not collapsing at the generation side:
 ## Strong Mode Discussion
 
 (Andreas Rossberg)
-    
+
 ARB: slide (recap)
 
 ARB: slide (progress)
@@ -969,7 +969,7 @@ AWB: what about toSelector, number -> string for property
 
 ARB: ya, it comes down to some things. This one is still allowed.
 
-ARB: slide (what not worked well) Mutually recursive classes, 
+ARB: slide (what not worked well) Mutually recursive classes,
 
 MM: what was the motivation for unbound variable ban
 
@@ -1042,8 +1042,8 @@ AWB: todays proposal (slide An alternative approach)
 ```js
 class RegExp {
    factory constructor(pattern, flags) {
-    
-    } 
+
+    }
  }
 ```
 
@@ -1080,7 +1080,7 @@ AWB: slide (an alternative approach)
 ```js
 class RegExp {
    factory constructor(pattern, flags) {
-       
+
    }
  }
 ```
@@ -1141,7 +1141,7 @@ DD: we should likely not provide constructs that will allow those to shoot thems
 
 YK: decorators could enable this ergonomically
 
-MM: we should drop this completely, and solve it with decorators. 
+MM: we should drop this completely, and solve it with decorators.
 
 #### Conclusion/Resolution
 
@@ -1150,7 +1150,7 @@ MM: we should drop this completely, and solve it with decorators.
 
 # Object.getOwnPropertyDescriptors to stage 3? (Jordan Harband, low priority, but super quick!)
 presenter JDH:
-    
+
 JDH: reviewers and editors +1'd, can we move to stage 3
 
 all: yes
@@ -1168,7 +1168,7 @@ all: yes
 9. Introduce the continents concept to the spec? (Domenic Denicola; low priority)
 
 Pending Topics: (un-ordered)
-    
+
 1. Class fields updates -- Semicolons: Required or optional? What to do with initializer-less declarations? (Jeff Morrison)
 1. Async generators Proposal (Kevin Smith)
 1. Private State Update (Kevin Smith, Allen Wirfs-Brock)

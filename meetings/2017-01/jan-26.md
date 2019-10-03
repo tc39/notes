@@ -1,7 +1,7 @@
 # January 26, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), István Sebestyén (IS), Keith Miller (KM), Myles Borins (MBS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MLS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), István Sebestyén (IS), Keith Miller (KM), Myles Borins (MBS)
 
 -----
 
@@ -967,17 +967,17 @@ DE: I wasn't talking about security
 
 MM: That's actually the point I want to make. The coupling is the problem I want to point out. As an engineering concern, the fact that you get coupling through a proxy, i'm not concerned about that.
 
-MS: Just to follow up on the irreducible cost side of things. If its only an own field that we concern ourselves with, the object you get back from the super should have a fixed shape and you should be able to bypass.
+MLS: Just to follow up on the irreducible cost side of things. If its only an own field that we concern ourselves with, the object you get back from the super should have a fixed shape and you should be able to bypass.
 
 DE: Sometimes... its an improvement over the status quo
 
-MS: not syaing you can always avoid them, but in the common case you can bypass the costs
+MLS: not syaing you can always avoid them, but in the common case you can bypass the costs
 
 AWB: how do you know that?
 
 DE: We don't know that but we could have an inline cache that does a combination of verify that has this in class which doesn't include the property from before and then add the propertty. We could say in spec language if hasOwnProperty throw a type error, next define. That allows define but avoids the bad expectations about set being called.
 
-MS: if you can get additional safety from having the define behavior it seems worthwhile
+MLS: if you can get additional safety from having the define behavior it seems worthwhile
 
 DE: I don't know if that will make people who want set happy. Some web standard had in the explainer or example, it had an onMessage thing which was just using the method and expecting it would call the setter and work.
 
@@ -1053,7 +1053,7 @@ WH: This is the `with` problem once again. Users may not know the difference bet
 
 AK: If you're tyring to get Set behavior you'll have to go learn about it
 
-MS: A lot of the confusion goes away if there is an error.
+MLS: A lot of the confusion goes away if there is an error.
 
 DE: We actually had those semantics in a previous version of this proposal, where it was an error to add a field if it was there in the object. We ended up removing it as it seemed redundant, and creating an implementation burden (you need a different set of ICs, for one) but we could revisit adding it.
 

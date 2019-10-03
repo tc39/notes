@@ -1,7 +1,7 @@
-# July 28, 2016 Meeting Notes 
+# July 28, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff(phone) (MS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Rick Waldron (RW), Stefan Penner (SP), Jonathan Sampson (JSN), Caridy Patiño (CP), Sam Tobin-Hochstadt (STH), John Buchanan (JB), Kevin Gibbons (KG), Lars Hansen (LHN), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Kris Gray (KGY), Adam Klein (AK), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Ben Newman (BN), Morgan Phillips (MPS), Shu-yu Guo (SYG), Paul Leathers (PL), Ben Smith (BS), Zibi Braniecki (ZB)
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (phone) (MLS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Rick Waldron (RW), Stefan Penner (SP), Jonathan Sampson (JSN), Caridy Patiño (CP), Sam Tobin-Hochstadt (STH), John Buchanan (JB), Kevin Gibbons (KG), Lars Hansen (LHN), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Kris Gray (KGY), Adam Klein (AK), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Ben Newman (BN), Morgan Phillips (MPS), Shu-yu Guo (SYG), Paul Leathers (PL), Ben Smith (BS), Zibi Braniecki (ZB)
 
 -----
 
@@ -12,11 +12,11 @@ Lars Hansen
 https://github.com/tc39/ecmascript_sharedmem
 
 
-LHN: 
-    
+LHN:
+
 ### Agent Semantics
 
-Blocking: an agent can block waiting to be woken without returning to its event loop 
+Blocking: an agent can block waiting to be woken without returning to its event loop
 
 Web awareness: an embedding can deny some agents the ability to block (eg. browsers main thread)
 
@@ -29,10 +29,10 @@ All agents die at the same time
 - New Data Type
   - Like ArrayBuffer
     - map TypedArray and DataView onto it
-  
+
   - Unlike (see slide)
-  
-  
+
+
 Sharing Memory
 
 
@@ -41,7 +41,7 @@ Sharing Memory
 
 The global `Atomics` namespace has static methods that operate on TypedArrays
 
-Atomic access: 
+Atomic access:
 - `load`
 - `store`
 - `add`
@@ -61,7 +61,7 @@ BFS: Is it possible to have another worker store between wake?
 
 EFT: Yes
 
-DT: A spin instruction that doesn't spin, on x86? 
+DT: A spin instruction that doesn't spin, on x86?
 
 LHN: Yes
 
@@ -141,7 +141,7 @@ WH: The memory model will need to be rewritten.
 
 LHN: What I just presented is the new memory model I'm developing to fix the bugs, not the one currently in the spec.
 
-- Avoid a circular 
+- Avoid a circular
 
 WH: What was in the spec had fundamental incorrect assumptions such as defining viability as a separate phase before synchronization, or the ability to put all memory accesses (including non-atomic ones) into a global total order, which just isn't true.
 
@@ -154,13 +154,13 @@ SYG: How to test?
 - Is that possible?
 
 
-BS: without particular axiom, here is X that breaks. 
+BS: without particular axiom, here is X that breaks.
 
 
 SYG:
-    
-    
-STH: Write the memory model, rep. all the legal executions. Run X times, ensure that all 
+
+
+STH: Write the memory model, rep. all the legal executions. Run X times, ensure that all
 
 
 SYG: How to test the actual implementation
@@ -231,7 +231,7 @@ MM: That does not only address the web compatibility issue, but does a clean-up 
 
 ## 10.iii.d Object.shallowEqual
 
-(Sebastian Markbage) 
+(Sebastian Markbage)
 
 - [proposal](https://github.com/sebmarkbage/ecmascript-shallow-equal)
 
@@ -283,14 +283,14 @@ MM: That's one of the issues I had raised.
 
 YK: ?
 
-SM: Most of the time, returns false. 
+SM: Most of the time, returns false.
 
 YK: (equating semantics to memcmp)
 
 AK: No, memcmp is just implementation suggestion
 
-MM: The semantics: 
-    
+MM: The semantics:
+
 - If the answer is true, guarantees follow
 - If returns false, no guarantees follow
 
@@ -356,7 +356,7 @@ WH: Can discover if implementations do lazy string interning
 
 MM: Do meet S1 criteria, but not worth trying to move this forward because this doesn't have a chance of advancing further. Identified real issues, that we can find a way to address. Sam's suggestion might be the only viable
 
-STH: Actual shallow comparison, implement that in VM and work on optimizing. 
+STH: Actual shallow comparison, implement that in VM and work on optimizing.
 
 AWB: Essentially same as my suggestion
 
@@ -364,8 +364,8 @@ Agreement, but comments from implementors that I didn't quite catch
 
 SM: Object.assign could be done much faster in VM, WeakRefs... Plausible to find other ways to accomplish same thing. Difficult to reach non-leaking solution.
 
-MM: 
-    
+MM:
+
 Something about exploring alternative solutions
 
 
@@ -446,13 +446,13 @@ AWB: Why wasn't finally included in ES6?
 
 YK/MM: The ES6 Promise feature was "maximally minimal", so finally, along with others, eg. queue, were postponed
 
-JHD: Stage 1? Note that this meets the Stage 2 requirements. 
+JHD: Stage 1? Note that this meets the Stage 2 requirements.
 
 JHD: Stage 2?
 
 DD/DE: There are issues that need to be addressed in this spec text
 
-JHD: changes needed in this spec, to reach Stage 3 
+JHD: changes needed in this spec, to reach Stage 3
 
 - PromiseReactionJob needs attention
 
@@ -466,9 +466,9 @@ JHD: If I get Stage 2 now, I can work towards Stage 3 in September
 
 (General discussion about process)
 
-YK: We frequently have disagreements about the process. 
+YK: We frequently have disagreements about the process.
 
-DD: Disagreements on process aren't helpful 
+DD: Disagreements on process aren't helpful
 
 AWB: Don't want to jump feature two stages in one meeting
 
@@ -481,7 +481,7 @@ JHD: Since this was on the agenda for May, then everyone diligently reviewed, ri
 
 AK: There is no review requirement on Stage 2 spec text. Achieving Stage 3 requires review and revision, etc.
 
-JHD: So, AWB objects to Stage 2 on the grounds that it's two stages in one meeting. 
+JHD: So, AWB objects to Stage 2 on the grounds that it's two stages in one meeting.
 
 AWB: Won't block if the rest of the room wants to advance
 
@@ -505,7 +505,7 @@ Slides: https://docs.google.com/presentation/d/1kSY7X1ymw5f2oatDrZaMJh4Z_wpd0ynZ
 DD: Major change: third state
 
 - A new completion type is unable to achieve consensus
-- Concern: 
+- Concern:
 ```js
 try {
   f();
@@ -544,7 +544,7 @@ try {
 ```
 
 Proposal:
-    
+
 ```js
 try {
   await fetch(...);
@@ -558,7 +558,7 @@ try {
 ```
 
 
-Addresses the new code, old code issue, because no old code will have this form, 
+Addresses the new code, old code issue, because no old code will have this form,
 
 
 JHD: (question about brand checks)
@@ -610,27 +610,27 @@ DD: No
 
 DE: Sounds like this is analogous to then/else, letting cancels propagate, where 'then' handles the next try and 'else' captures the non-cancel reject; I think this is consistent with the two-argument form
 
-DT: A wants to suppress errors if A is being canceled, regardless of what B does. If B errors, it goes up to A and A can decide what to do. 
+DT: A wants to suppress errors if A is being canceled, regardless of what B does. If B errors, it goes up to A and A can decide what to do.
 
 DD: I recall this concern, I disagree that this matches all reality
 
 DT: Back to try/else. Q: try this thing and my local token is canceling, suppress error, otherwise...
-- Need 
+- Need
 
 MM: The test: is it a cancelation?
 
 DT: A cancelation is a fine way to implement shut down
-- Need to allow the shutdown, avoid thrashing 
+- Need to allow the shutdown, avoid thrashing
 
 DD: Experience shows that it's important to suppress the...
 
 DE: Sounds like the disagreement between Dean and Domenic is whether to just suppress the one cancelation, right?
 
-MM: Asking for: source of information is a distinct thing, expanding the syntax taking into account the token as a source of information. 
+MM: Asking for: source of information is a distinct thing, expanding the syntax taking into account the token as a source of information.
 
 DT: I'm saying we can get a syntactic form that can do both
 
-DD: I'm only trying to address this problem, 
+DD: I'm only trying to address this problem,
 
 DT: (describing example of cancelation where a download was stopped, but results in a parse error of the incompletely downloaded contents)
 
@@ -660,7 +660,7 @@ More Ideas...
 
 - Inserting cancelation opportunities into async functions
 
-Simplest case, pass the token: 
+Simplest case, pass the token:
 
 ```js
 async function cancelMe(cancelToken) {
@@ -681,7 +681,7 @@ async function cancelMe(cancelToken) {
   cancelToken.throwIfRequested();
   await anotherOne();
 }
-```    
+```
 
 
 Probably want...
@@ -704,7 +704,7 @@ async function cancelMe(cancelToken) {
 
 
 This is better:
-    
+
 ```js
 async function cancelMe(cancelToken) {
   await.cancelToken = cancelToken;
@@ -714,8 +714,8 @@ async function cancelMe(cancelToken) {
 }
 ```
 
-Defines a new meta property: 
-    
+Defines a new meta property:
+
 ```
 await.cancelToken
 ```
@@ -755,15 +755,15 @@ async function cancelMe(cancelToken) {
 
 DT: Moves final behavior from the end, to middle
 
-DD: 
-    
+DD:
+
 DT: The conse. not obvious, not possible to test, is the "re-ordering"
 
 DD: Not reordering
 
 DT: it's fundamental reordering. You're moving something that is syntactically ordered, to execute out of order
 
-YK: When async thing, await means "some promise". await.cancelToken is a new promise. 
+YK: When async thing, await means "some promise". await.cancelToken is a new promise.
 
 EFT: (confirm)
 
@@ -828,8 +828,8 @@ function xhrAdapted(url, { cancelToken } = {}) {
 
 DD: Note using `new Promise` which really only used when your doing async that doesn't use promises
 
-New API: 
-    
+New API:
+
 ```js
 function delay(ms, cancelToken) {
   return Promise.cancelable(cancelToken, resolve => {
@@ -847,7 +847,7 @@ DD: Still use promise constr with legacy code that doesn't use promises
 
 DT: question about [token].promise.then...?
 
-DD: Come back to it. 
+DD: Come back to it.
 
 
 
@@ -880,9 +880,9 @@ Still unsure what the exact use cases are, but it seems plausible.
 DD: Call it "some" or "any"
 
 
-SP: The leak: scenario where cancel token is much longer lived than the code being canceled. 
+SP: The leak: scenario where cancel token is much longer lived than the code being canceled.
 
-DD: You have one cancel token with long lifetime and components with shorter lifetime 
+DD: You have one cancel token with long lifetime and components with shorter lifetime
 
 YK: In Ember's cases, you rapidly get into situations where the cancelation is complicated to thread, e.g., async methods.
 
@@ -918,7 +918,7 @@ YK: Seems difficult to have a universal convention
 
 DD: In .NET you have static types and overloads so it's easier.
 
-DD: YK's idea was to introduce syntax for allowing cancelTokens and awaits to work better together: 
+DD: YK's idea was to introduce syntax for allowing cancelTokens and awaits to work better together:
 
 
 ```js
@@ -944,8 +944,8 @@ async function cancelMe() {
 YK: This would continue with our tradition of implicit parameters, e.g. implicitly passing 'this'. You don't want to have to add it explicitly
 
 
-YK: 
-    
+YK:
+
 ```js
 async function cancelMe() {
   doSyncThing();
@@ -973,12 +973,12 @@ YK: `[some ambiguous token]` is the machinery that represents the longhand that 
 ```js
 
 let token = new CancelToken(function(c) {
-  
+
 });
 
 function fetch(
 
-@Yehuda, can you fill in this example with some code that illustrates whatever you were going to write, 
+@Yehuda, can you fill in this example with some code that illustrates whatever you were going to write,
 
 ```
 
@@ -1067,7 +1067,7 @@ Yehuda Katz and Brian Terlson
 http://tc39.github.io/proposal-decorators/
 
 
-YK: Has been working closely with Dan since the last meeting to come up with how to move forward. I want to address the technical issues. The spec is now in a Stage 2 complete state. Many have asked, why can't this be a transpiler feature. I think it's possible in principle for that to be true, but it's not as cut and dry. One problem is that it absorbs a bunch of syntax from the class body; it's important to coordinate that somewhere. You'd imagine that private state could use the @ sign, and you would want to understand that this is reserved for decorators. Also, it would be difficult to have a conversation in this committee about the class evaluation order (as last time) and interaction with features like private state. We have a lot of cross-cutting concerns to think through. The concerns from implementors is that adding more syntax features slows down the parser, which affects startup time. 
+YK: Has been working closely with Dan since the last meeting to come up with how to move forward. I want to address the technical issues. The spec is now in a Stage 2 complete state. Many have asked, why can't this be a transpiler feature. I think it's possible in principle for that to be true, but it's not as cut and dry. One problem is that it absorbs a bunch of syntax from the class body; it's important to coordinate that somewhere. You'd imagine that private state could use the @ sign, and you would want to understand that this is reserved for decorators. Also, it would be difficult to have a conversation in this committee about the class evaluation order (as last time) and interaction with features like private state. We have a lot of cross-cutting concerns to think through. The concerns from implementors is that adding more syntax features slows down the parser, which affects startup time.
 
 MM: I was surprised by the idea of just doing this in the transpiler world.
 
@@ -1109,7 +1109,7 @@ BE: Not here to future proof against all possible proposals by champions not in 
 
 YK: There is a spec here, this has years of development.
 
-BE: too far to block 
+BE: too far to block
 
 YK: Are you saying these use cases are insufficient
 
@@ -1123,20 +1123,20 @@ JHD: This is no different than the inelegant solution of O.dP after the class is
 
 BE: The question is: are we saying that we _never_ want to do this?
 
-EFT: Surprised that this feature is being shied from when it's beloved and widely used in other languages. 
+EFT: Surprised that this feature is being shied from when it's beloved and widely used in other languages.
 
 WH: I like decorators! I just want to make sure that we create a consistent design of decorators for various kinds of entities and needs rather than falling into a max-min tarpit that supports some but then precludes others due to poor design choices.
 
-YK: Willing to champion additions to this proposal to satisfy outstanding needs. 
+YK: Willing to champion additions to this proposal to satisfy outstanding needs.
 - The interop issue (with "annotations") has existed for some time, we can keep coming back with new features
-- The work can be done in Stage 2 
+- The work can be done in Stage 2
   - Babel is skeptical now
   - Stage 2 signals to community
 
 
-AWB: My understanding is that Stage 2 is "not locked down", the language wants to solve this problem and will eventually include the feature. 
+AWB: My understanding is that Stage 2 is "not locked down", the language wants to solve this problem and will eventually include the feature.
 
-Massive agreement. 
+Massive agreement.
 
 BE: Are we in favor of adding a decorators thing?
 
@@ -1150,7 +1150,7 @@ BE: (@Dan) Worry about dynamic meta programming in class declarations?
 
 DE: (some kind of agreement)
 
-BE: Would love static decorators, but it's a hard problem and 
+BE: Would love static decorators, but it's a hard problem and
 
 YK: The Annotations feature requires evaluation of expressions, is not itself static
 
@@ -1158,8 +1158,8 @@ YK: The Annotations feature requires evaluation of expressions, is not itself st
 
 YK: Is the concern that adding this encourages too much dynamism in class declaration code?
 
-SM: Will existence slow it down? 
-- Believes optimizations can be made to mitigate 
+SM: Will existence slow it down?
+- Believes optimizations can be made to mitigate
 
 YK: The decorator returns a descriptor that can be used, but cannot have effects on the object itself.
 
@@ -1169,7 +1169,7 @@ WH: If we approve this, are you committing to explore property and parameter ann
 
 YK: Yes, I will do that before stage 3.
 
-BT: Fair to make that separate? 
+BT: Fair to make that separate?
 
 NO.
 
@@ -1200,7 +1200,7 @@ WH: Don't want proposal formalized in terms of weak maps either because of GC co
 See slides
 
 
-DE: Should this be "actually private"? 
+DE: Should this be "actually private"?
 
 WH: Yes
 
@@ -1234,7 +1234,7 @@ YK: proposal would be a private object that looks a lot like a WeakMap
 
 DE: one option is as YK said; another option would be trying private symbols, and we could work through the issue with them.
 
-MM: if you reify private symbols, you break membranes. 
+MM: if you reify private symbols, you break membranes.
 
 MM: We're rehashing arguments we had years ago like "should private be soft or hard". There are notes.
 
@@ -1242,7 +1242,7 @@ YK: I object to the precedent "we had a binding conversation 5 years ago"
 
 
 
-Call for Stage 2? 
+Call for Stage 2?
 
 
 #### Conclusion/Resolution

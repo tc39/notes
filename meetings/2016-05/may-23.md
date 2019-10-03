@@ -1,9 +1,9 @@
 # May 23, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark S. Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD)
+Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark S. Miller (MM), Kevin Smith (KS), Michael Saboff (MLS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD)
 
-Remote: 
+Remote:
 Michael Hablich (MHH), Yang Guo (YGO), Toon Verwaest (TVT), Daniel Clifford DCD), Nikolaus Papaspyrou (NPU), Ben Titzer (BTR)
 
 -----
@@ -14,11 +14,11 @@ PTC/STC on Tuesday morning/afternoon for MS employees to call in
 9 hours differences between CET and US Pacific time. Only afternoon works...
 First YK/BT class evaluation order, then PRs, then features for advancement, then other features
 
-## Class Evaluation Order 
+## Class Evaluation Order
 
 (Yehuda Katz, Brian Terlson)
 
-[_Presentation (with slides)_] https://github.com/tc39/tc39-notes/blob/master/es7/2016-05/classevalorder.pdf 
+[_Presentation (with slides)_] https://github.com/tc39/tc39-notes/blob/master/es7/2016-05/classevalorder.pdf
 
 BT: We need consensus, as this comes up with decorators and other new language features.
 
@@ -317,9 +317,9 @@ __NOTE__: The ECMAScript standards currently contribute to about 2/3 of all Ecma
 
 Another point only mentioned here but not in the verbal report: He gets a great external interest for ECMAScript Security Projects and how to speed up ECMAScript performance (e.g. by parallel processing) for Media Codecs running in ECMAScript.
 
-## [Standardize a RangeError for call stack overflow](https://github.com/tc39/ecma262/pull/319) 
+## [Standardize a RangeError for call stack overflow](https://github.com/tc39/ecma262/pull/319)
 
-(Mike Pennisi) https://github.com/tc39/ecma262/pull/319 
+(Mike Pennisi) https://github.com/tc39/ecma262/pull/319
 
 BT: Leading discussion on this proposal. This would help write tests to see if resources are exhausted for stacks.
 
@@ -351,7 +351,7 @@ DH: Recommendation to Test262: write a routine to experimentally determine the m
 
 BT: Isn't it possible for this to come to a variable outcome?
 
-MS: I wrote this routine, and it's very hard to do it correctly determine the exact outcome. It required growing exponentially, then backing off, etc
+MLS: I wrote this routine, and it's very hard to do it correctly determine the exact outcome. It required growing exponentially, then backing off, etc
 
 LBR: After a lot of research, this was the best we found. It is not the happiest solution, but we couldn't find anything better. We just wanted to offer some form of tests on Test262 for each feature of the spec, and that's what we did for tail call optimization. You already have to have a $PRINT function that implementations support, and this is similarly parameterized.
 
@@ -366,15 +366,15 @@ BT: But it is very useful and works on all implementations
 - Consensus to not standardize RangeError (impossible to implement reliably)
 - Continue discussion on a GitHub bug about possible reorganization of Test262 to take into account that the PTC tests are implementation-specific/not technically correct
 
-## [\w and \W semantics in case-insensitive Unicode RegExps](https://github.com/tc39/ecma262/pull/525) 
+## [\w and \W semantics in case-insensitive Unicode RegExps](https://github.com/tc39/ecma262/pull/525)
 
 (Michael Saboff)
 
 WH: This is the exact same problem that I solved in ES3 by adding the prohibition to case-canonicalization of non-ASCII Unicode characters into ASCII characters. Without that, the same \W weirdness would have appeared in ES3.
 
-MS: Recap of very strange semantics caused by Unicode case folding (MS please insert link to slides). \W includes K because the kevin symbol case-folds to something in \w, so K is case-insensitive in the set of things that aren't a letter.
+MLS: Recap of very strange semantics caused by Unicode case folding (MS please insert link to slides). \W includes K because the kevin symbol case-folds to something in \w, so K is case-insensitive in the set of things that aren't a letter.
 
-MS: Proposal: make \W be the inverse of \w, and change \b and \B to be consistent. An alternate proposal would be to stick to ASCII-only as Waldemar did for ES3.
+MLS: Proposal: make \W be the inverse of \w, and change \b and \B to be consistent. An alternate proposal would be to stick to ASCII-only as Waldemar did for ES3.
 
 WH: [_explaining the rationale for how ES3 regexps were specified_]. Character classes evaluate into sets of allowed characters and an invert flag. Used an invert flag to make [^...] be an exact negative of [...]. It would have been tempting to use an invert flag to make \W into an exact negative of \w, but that wouldn't work when combining \W or \w with other things in a character set: [abc\w], etc. That's why \W inverts the set manually instead of using the invert flag.
 
@@ -388,7 +388,7 @@ DE: It should still be web-compatible, though, as it is very recently shipped. T
 
 BT: Edge actually ships MS's proposal, so we don't need to worry about web compat.
 
-MS: Should we change \b as well?
+MLS: Should we change \b as well?
 
 YG: Yes, they should change together?
 
@@ -396,19 +396,19 @@ WH: Isn't it strange that what's contained in the class is dependent on the i fl
 
 YG: But they should change together and be consistent.
 
-MS: There is currently an inconsistency between \b and \w due to this issue as well. Proposal flips this, and makes \w\W or \W\w be \b. It's necessary for
+MLS: There is currently an inconsistency between \b and \w due to this issue as well. Proposal flips this, and makes \w\W or \W\w be \b. It's necessary for
 
 YG: I was suggesting bringing in Unicode because it seems ad-hoc to bring in just small long S and kelvin symbol
 
-MS: Or, we could make it not cross the ASCII boundary, and not do Unicode case folding with respect to the evaluation of this character class.
+MLS: Or, we could make it not cross the ASCII boundary, and not do Unicode case folding with respect to the evaluation of this character class.
 
 JHD: But seems like we should be aligned with Unicode.
 
-MS: My proposal just uses UnicodeCaseFolding.txt and will be future-compatible
+MLS: My proposal just uses UnicodeCaseFolding.txt and will be future-compatible
 
 YG: It seems rather ad-hoc to not follow UnicodeCaseFolding.txt, so let's keep it if possible. This all applies only with /ui, right?
 
-MS: Yes
+MLS: Yes
 
 DH: What Unicode changes affect this?
 
@@ -420,21 +420,21 @@ _discussion: Good to follow Unicode going forward, as it has changed over time, 
 
 Consensus on MS's pull request, and working out \b and \B as he indicated.
 
-## [Function names](https://github.com/tc39/ecma262/pull/575) 
+## [Function names](https://github.com/tc39/ecma262/pull/575)
 
 (Michael Saboff)
 
-MS: Proposal: When the inferred name is a reserved word, use "" rather than the current name. The problem is that the .name property won't eval.
+MLS: Proposal: When the inferred name is a reserved word, use "" rather than the current name. The problem is that the .name property won't eval.
 
 MM: What is the problem with the .name property being not an identifier?
 
-MS: The problem is that math.js puts type decorations in the name when they put the property of the function into the object.
+MLS: The problem is that math.js puts type decorations in the name when they put the property of the function into the object.
 
 DD: Later, they eval it, concatenating the .name onto it
 
 MM: That's what broke in Chrome 50 on SES, which was wrong due to bound functions and getters/setters.
 
-MS: but you can't call getters and setters
+MLS: but you can't call getters and setters
 
 EF: Yes you can; get the property descriptor, find the getter, and call it
 
@@ -446,22 +446,22 @@ JHD: Function name property is not something that you can eval in general
 
 DE: There are a lot of ways that we could handle compatibility issues. Collect qualitative or quantitive information, contact large users, etc. Where does this sit when comparing to TypedArray methods (Microsoft contacted Turbulenz; it was fixed and we all managed to ship the methods) and RegExp feature testing (too widespread; made a spec workaround)?
 
-MS: Seems like this is probably not as bad as the RegExp issue.
+MLS: Seems like this is probably not as bad as the RegExp issue.
 
-MS: Proposal: "" name only in object literals, when the name is not an identifier
+MLS: Proposal: "" name only in object literals, when the name is not an identifier
 
 YK: Compatibility is important
 
 BT: good to have an evidence-based overturning of previous decisions
 
-MS: Hard to do telemetry for this
+MLS: Hard to do telemetry for this
 
 #### Conclusion/Resolution
 
 No change in the spec for now; MS says Safari will likely ship their compat workaround for now, and see if it can get more information for the next meeting or the one after that to consider the decision
 
 
-## [TypedArray/ArrayBuffer/DataView constructor changes](https://github.com/tc39/ecma262/pull/410) 
+## [TypedArray/ArrayBuffer/DataView constructor changes](https://github.com/tc39/ecma262/pull/410)
 
 (Leo Balter)
 
@@ -471,7 +471,7 @@ MM: What does n/a mean?
 
 LBR: not providing that argument
 
-MS: JSC gives somewhat changed and more standards-compliant behavior for some cases listed here, more in line with all other implementations
+MLS: JSC gives somewhat changed and more standards-compliant behavior for some cases listed here, more in line with all other implementations
 
 JHD: Seems like some of these have multiple browsers throwing, but your PR makes it not throw, in alignment with only V8. Why?
 
@@ -547,7 +547,7 @@ LBR: You will be able to create empty ArrayBuffers. TypedArrays may have additio
 
 MM: any objections?
 
-MS: Were you concerned about compat, DE?
+MLS: Were you concerned about compat, DE?
 
 DE: No, I was concerned about compat for other proposals. I think this will probably work.
 
@@ -569,7 +569,7 @@ YK, MM: Seems like it'd be more intuitive that each function declaration does th
 
 Consensus on DE's PR to do an assignment for each function
 
-## [Throwing an error for returning primitives from base class constructors](https://github.com/tc39/ecma262/pull/469) 
+## [Throwing an error for returning primitives from base class constructors](https://github.com/tc39/ecma262/pull/469)
 
 (Claude Pache)
 
@@ -586,7 +586,7 @@ Realizations:
 
 Yes on the PR, though we will have to take web compatibility feedback into account as implementations attempt this
 
-## [Always update object properties if property descriptor is applicable (NaN issue)](https://github.com/tc39/ecma262/pull/353) 
+## [Always update object properties if property descriptor is applicable (NaN issue)](https://github.com/tc39/ecma262/pull/353)
 
 (Daniel Ehrenberg)
 

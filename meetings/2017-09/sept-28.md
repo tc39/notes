@@ -1,9 +1,9 @@
 # September 28, 2017 Meeting Notes
 -----
 
-Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), Caio Gondim (CGM), Brittany Storoz (BSZ), Sathya Gunasekaran (SGN), Domenic Denicola (DD), Richard Gibson (RGN), Michael Z Goddard (MZG)
+Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MLS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), Caio Gondim (CGM), Brittany Storoz (BSZ), Sathya Gunasekaran (SGN), Domenic Denicola (DD), Richard Gibson (RGN), Michael Z Goddard (MZG)
 
-Remote: 
+Remote:
 István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM), Gabriel Isenberg (GI), Zibi Braniecki (ZB), James M Snell (JSL)
 
 -----
@@ -46,11 +46,11 @@ MF: Updates:
 - Stays in Stage 2
 
 
-## 15.iii String.prototype.matchAll for Stage 2 
+## 15.iii String.prototype.matchAll for Stage 2
 
 (Jordan Harband)
 
-JHD: (reporting follow up items from discussion: questions and change requests are resolved). Waldemar withdrew his concerns over dinner — addressing the problem wasn't worth the extra complexity here. Can explore a flag that finds all matches (including overlapping ones) in an independent proposal if we like. 
+JHD: (reporting follow up items from discussion: questions and change requests are resolved). Waldemar withdrew his concerns over dinner — addressing the problem wasn't worth the extra complexity here. Can explore a flag that finds all matches (including overlapping ones) in an independent proposal if we like.
 
 #### Conclusion/Resolution
 
@@ -77,7 +77,7 @@ JRL: What dos the getter and setter do to public name
 
 DE: Throw an exception
 
-JHD: (echoing Bradley's concerns) 
+JHD: (echoing Bradley's concerns)
 
 DE: What does the committee want for decorators to be brought to stage 3?
 
@@ -89,14 +89,14 @@ YK: Concerned about decorators falling behind private state, because private sta
 
 #### Conclusion/Resolution
 
-- Reviewers 
+- Reviewers
 - Waldemar Horwat (for January meeting)
 - Dave Herman
 - Sathya Gunasekaran
 - Bradley Farias
 
 
-## 13.i Object Shorthand Improvements 
+## 13.i Object Shorthand Improvements
 
 (Ron Buckton)
 
@@ -194,7 +194,7 @@ DE: Stage 2 was the concern about syntax, which is about relationship with the o
 
 JHD: Operators in optional chaining proposal should be considered at the same time as this. Both should be considered in stage 2.
 
-MS: "?|" makes sense to me
+MLS: "?|" makes sense to me
 
 WH: We keep bikeshedding the optional chaining proposal. But none of that affects the use of `??` here.
 
@@ -268,7 +268,7 @@ RBN: I look at this as an alternative to expressing this through arrow functions
 
 TST: I agree with Dave that this question shouldn't exist. Anything other than eager evaluation would bely all intuition. I do like this syntax though.
 
-RBN: Call-by-value and eager evaluation is what everyone preferred during the break. If you need deferred, use arrow function. 
+RBN: Call-by-value and eager evaluation is what everyone preferred during the break. If you need deferred, use arrow function.
 
 DE: When does C# evaluate default arguments? Is it per-function-call, as in JS, or once like Python?
 
@@ -302,7 +302,7 @@ DD: I don't think we should block stage 1 - but I do think this is a worrying tr
 
 RBN: The syntax and semantics are flexible but without syntax and semantics there is nothing to present.
 
-MS: This proposal meets stage 1, given the policy document.
+MLS: This proposal meets stage 1, given the policy document.
 
 WH: I'm happy to advance to stage 1 — I think the general closure capture this does is useful but have strong concerns about the garden path syntax.
 
@@ -406,9 +406,9 @@ DE: Earlier in this meeting, we moved other features to Stage 4 which are even l
 
 JHD: Promise.prototype.finally went back to having a fast-path for when a built-in Promise is given as an argument, based on implementation feedback. Hoping to come back in November with more rigorous experience from implementations.
 
-## Another RegExp Annex B 3.3 sloppy mode function hoisting edge case https://github.com/tc39/ecma262/issues/480 
+## Another RegExp Annex B 3.3 sloppy mode function hoisting edge case https://github.com/tc39/ecma262/issues/480
 
-(Shu-yu Guo) 
+(Shu-yu Guo)
 
 SYG: Implementors should take a look at https://github.com/tc39/ecma262/issues/480 . Seems the spec disagrees with implementations. Need more data.
 
@@ -452,7 +452,7 @@ MF: I don't see why it is problematic to allow property keys.
 
 WH: The reason for banning it for `+` was because there are no reasonable definitions of adding a BigInt and a Number. Which ever way we come up with to define it would be wrong a significant fraction of the time. That problem doesn't arise here. I don't see any good arguments to diverge from what `toString` does.
 
-DD: My intuition - not my understanding - is that `x[1] = 5` is desugared to `x['1'] = 5` - so I would also apply the same intuition that `x[1n] = 5` would desugar to `x['1n'] = 5`. But to counterpoint my own point this is not true of `x[0x1] = 5`. 
+DD: My intuition - not my understanding - is that `x[1] = 5` is desugared to `x['1'] = 5` - so I would also apply the same intuition that `x[1n] = 5` would desugar to `x['1n'] = 5`. But to counterpoint my own point this is not true of `x[0x1] = 5`.
 
 MB: It's also not true for exponents, e.g. `x[1e3] = 5`. The same thing applies for the example in the slide: `x = { 3n: 'a' }` should work the way `x = { 1e3: 'a' }` does.
 
@@ -460,13 +460,13 @@ DE: But your intuition won't follow for variables, e.g. `x[foo] = 5` isn't `x['f
 
 DD: I suppose the issue could be that developers may see an array index as an integer and using bitint as it is an integer type
 
-MS: We just spoke about adding underscores as numeric separators - we're not tostringing those, so this point doesn't follow.
+MLS: We just spoke about adding underscores as numeric separators - we're not tostringing those, so this point doesn't follow.
 
 YK: I share Domenic's intuition that it is a foot gun. On the other hand, we're happy with toString, we're happy with string keys - we're just maybe banning the combination of those two, which seems more in the province of linting. Unlike binary `+`, there are well-defined semantics for what this operation does.
 
 #### Conclusion / Resolution
  - Allow BigInt as a property key
- 
+
 ## Process for adding agenda items
 
 LBR: I want to codify the deadline for adding agenda items - the deadline should be Friday, UTC-12, 7 days before the date of a meeting. This gives everyone a week to read the specifications and prepare for the meeting.
@@ -532,19 +532,19 @@ MZG: I haven't discussed this with them no.
 
 DE: It could be worthwhile to do this, I can introduce you to some people for this.
 
-MS: X86 and ARMv8 don't have native 16 bit float - so there'd have to be manual conversion. 
+MLS: X86 and ARMv8 don't have native 16 bit float - so there'd have to be manual conversion.
 
 RW: I suspect that might be why they weren't in the original Chronos TypedArray spec.
 
-MS: To me without instruction support it'd be slower or just as slow to do this as it is currently.
+MLS: To me without instruction support it'd be slower or just as slow to do this as it is currently.
 
 DH: If its just Arrays and not value typed theres not much you're doing much with instructions. If you're just passing to GPU thats fine right?
 
-MS: Correct, GPUs bread and butter is 8 and 16 bit floats.
+MLS: Correct, GPUs bread and butter is 8 and 16 bit floats.
 
 DH: So float 16 arrays allow you to store which you can ship through GLSL. We're essentially talking about loads and stores in the JS side, and instructions done on GLSL.
 
-MS: Loads and stores would be groups of integer 16 bit values in CPUs for passing throughs, just buckets of bits for passing through. If one of the use cases of this is loading an Array with data - what does that look like?
+MLS: Loads and stores would be groups of integer 16 bit values in CPUs for passing throughs, just buckets of bits for passing through. If one of the use cases of this is loading an Array with data - what does that look like?
 
 DH: Yes, is this even useful for JS if you cant compute without GLSL? The question is can you write the programs you want to write? Float16 array would satisfy use cases without going all the way to value types?
 

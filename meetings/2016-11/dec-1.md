@@ -1,7 +1,7 @@
 # December 1, 2016 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TW), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LBR), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS), Mark S. Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TW), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LBR), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MLS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS), Mark S. Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
 
 
 
@@ -672,7 +672,7 @@ DE: Mark makes a good point about geographic diversity; globally, many of our co
 
 BT: Sounds like we are all in agreement that diversity is an important issue that we want to work on
 
-MS: It is important for us to work on making this a less intimidating place which is more welcoming to new members.
+MLS: It is important for us to work on making this a less intimidating place which is more welcoming to new members.
 
 MM: re: Kevin Smith hostile environment issues:we missed the opportunity to improve ourselves as a group after the incident in Germany
 
@@ -686,7 +686,7 @@ DE: Maybe we should be fixing our culture to be more respectful and inclusive as
 
 SYG: Can we really expect people to follow this?
 
-MS: We are getting better at enforcing timeboxes, but we should consider being even more strict in enforcement--if members don't grant an extension, it should be done.
+MLS: We are getting better at enforcing timeboxes, but we should consider being even more strict in enforcement--if members don't grant an extension, it should be done.
 
 LBR: Some companies may have trouble/refuse participating because they see the lack of diversity and a code of conduct on a company. I have had discouragement from colleagues personally as English is my second language--this made me feel like running away. Fortunately, my employer, Bocoup, on hearing this, put me on the Test262 project and eventually sent me to the committee. I have many people from my country (Brazil) who contact me and want to get in touch about reading the spec, etc. I am just a normal person--I needed to find that, regardless of where I come from, I was able to attend. It would be very useful to have an official document from ECMA saying that ECMA and TC39 commit to social responsibility, where people can feel respected in any sort of background. Everyone should feel encouraged. I am here, I am the proof of it. I feel responsible to bring that forward to the new people.
 

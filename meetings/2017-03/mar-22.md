@@ -1,7 +1,7 @@
 # March 22, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LSH), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), István Sebestyén (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MLS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LSH), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), István Sebestyén (IS)
 
 -----
 
@@ -43,7 +43,7 @@ LBR: We can only move to Ecma if we have consensus.
 
 DH: I would certainly move to accept the document with the consensus that TC39 thinks it's the right document ... we'd prefer feedback than having them reject it outright.
 
-MS: Do we want to include just the Code of Conduct or all related documents?
+MLS: Do we want to include just the Code of Conduct or all related documents?
 
 BT: Are you sure we want to remove the 4th paragraph about how to report problems?
 
@@ -65,7 +65,7 @@ DH: Have you worked with HR departments?
 
 DT: Obviously you can escalate to István, but formally that's the primary thing for chair: moderating discussion.
 
-MS: It doesn't sound like we're going to be able to reach consensus on the "remedial" part of this document, but not the enforcement.
+MLS: It doesn't sound like we're going to be able to reach consensus on the "remedial" part of this document, but not the enforcement.
 
 BT: Document is useless without enforcement.
 
@@ -77,7 +77,7 @@ AWB: I'm really uncomfortable with the whole "enforcement" idea vs. the aspirati
 
 LBR: If I rename it to Code of Conduct supporters, would that help?
 
-MS: Can we add the chair and the Ecma Representative for the time being?
+MLS: Can we add the chair and the Ecma Representative for the time being?
 
 LBR: We've had a discussion around an individual person, I'm not really...I don't think an individual person would be able to solve, for example, sexual harassment. If I'm chair, and someone brings an issue like this to me... I need support to help and/or talk to this person.
 
@@ -107,7 +107,7 @@ AK: There's no magic bullet here. There's 9 members on the Supreme Court, e.g. T
 
 MPT: There's almost no way to pre-select the Code of Conduct committee. I have many personal friends with people like Brian or ??? and because of that I couldn't participate on a committee in that situation.
 
-MS: But recusal, if you had a committee of four, that's easier than trying to form a committee when the violation is reported.
+MLS: But recusal, if you had a committee of four, that's easier than trying to form a committee when the violation is reported.
 
 AWB: I don't know what the Ecma executive committee and the GA is likely to say, but I suspect that at the point where you talk about enforcement, they may step up and say "that's not our job".
 
@@ -149,7 +149,7 @@ SDO: I just wanted to make a quick closing comment too. We have managed to get t
 
 AWB: What do we need to do so we have lunch?
 
-MS: Are we comfortable presenting this for Ecma [executive committee] review in their meeting in April?
+MLS: Are we comfortable presenting this for Ecma [executive committee] review in their meeting in April?
 
 AWB: The Ecma executive committee.
 
@@ -210,7 +210,7 @@ MM: Particulars: The placement indicator is leading keyword.
 
 MM: The presence of a leading static keyword means "put it on the constructor object." The presence of an initial "own" keyword means "put it on the instance object." I've gotten push-back on the "own" keyword, but it needs to not be "private" or "public" since that's the kind of sematics we are trying to break up into these combinations.
 
-MS: Is "static own" a syntax error?
+MLS: Is "static own" a syntax error?
 
 MM: Yes.
 
@@ -389,7 +389,7 @@ MM: I agree that's what stage 1 means. We could propose this as an amendment to 
 
 BT: Right, I brought this up to suggest that stage 1 is not a high bar.
 
-MS: This would subsume private state?
+MLS: This would subsume private state?
 
 AWB: This would probably combine with private state and public field proposals.
 
@@ -679,7 +679,7 @@ MPT: This seems like a great up-for-grabs.
 
 LBR: No tests for this. This is the most frustrating function I have for Test262, everything is implementation-defined. I'm really positive to anything that allows me to write a test on this.
 
-MS: The first row there [in table]: shouldn't that also throw an error...OK, so it's callable but you're not going to call it because only one element.
+MLS: The first row there [in table]: shouldn't that also throw an error...OK, so it's callable but you're not going to call it because only one element.
 
 BT: That change was fairly recent too, not calling the compareFn if only one element.
 

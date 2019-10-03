@@ -1,7 +1,7 @@
 # March 31, 2016 Meeting Notes
 -----
 
-Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark S. Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson (BNN), JF Bastien (JFB), Joe Lencioni (JLI), Sebastian Markbåge (SM), Jeff Morrison (JM), Kevin Smith (KS), Lars Hansen (LHN), Saam Barati (SBI), Keith Miller (KM), Michael Saboff (MS), Eric Ferraiuolo (EF), Eric Faust (EFT), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SYG), Tim Disney (TD), Waldemar Horwat (WH), Bert Belder (BBR), Peter Jensen (PJ), Daniel Ehrenberg (DE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Jean-Francis Paradis (JFP), Shelby Hubick (SHK), Leo Balter (LBR), Miško Hevery (MHY), Allen Wirfs-Brock (AWB), Kevin Gibbons (KG), Steven Loomis (SLS), Zibi Braniecki (ZB)
+Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark S. Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson (BNN), JF Bastien (JFB), Joe Lencioni (JLI), Sebastian Markbåge (SM), Jeff Morrison (JM), Kevin Smith (KS), Lars Hansen (LHN), Saam Barati (SBI), Keith Miller (KM), Michael Saboff (MLS), Eric Ferraiuolo (EF), Eric Faust (EFT), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SYG), Tim Disney (TD), Waldemar Horwat (WH), Bert Belder (BBR), Peter Jensen (PJ), Daniel Ehrenberg (DE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Jean-Francis Paradis (JFP), Shelby Hubick (SHK), Leo Balter (LBR), Miško Hevery (MHY), Allen Wirfs-Brock (AWB), Kevin Gibbons (KG), Steven Loomis (SLS), Zibi Braniecki (ZB)
 
 -----
 
@@ -21,7 +21,7 @@ AWB: objected that the current standard language is sufficient
 
 SYG: *objected to AWB's objection and clarified the issue*
 
-    
+
 
 BT: The sec says the implementation must release any transient resource associated with the current context
 
@@ -33,7 +33,7 @@ AWB: No
 
 MM: articulated the perspective that the *calls* can be tail calls, but the membrane in the middle may not be able to then make a tail call. Therefore the membrane is accumulating the intermediate state.
 
-AWB: doesn't mind saying it's implementation dependent 
+AWB: doesn't mind saying it's implementation dependent
 
 ...
 
@@ -51,7 +51,7 @@ EF: Yes, we want to pass Test262
 
 BT: We all fail the reference types
 
-MS: We'd rather it say that it's preferred to use proper tail calls in the cross-realm case, and it's OK to do an ordinary call as Mozilla will do
+MLS: We'd rather it say that it's preferred to use proper tail calls in the cross-realm case, and it's OK to do an ordinary call as Mozilla will do
 
 EF: But that's the same, it's logically equivalent
 
@@ -80,7 +80,7 @@ WH: Suppose they call a user-provided function and use the explicit tail call sy
 
 EF: No, we would probably do a warning, not an error
 
-MS: So you're saying it's a tail-call hint? Otherwise, you'd expect an error for a cross-realm call.
+MLS: So you're saying it's a tail-call hint? Otherwise, you'd expect an error for a cross-realm call.
 
 MM: We should think about the cross-realm case as that the callee owns the stack space.
 
@@ -110,7 +110,7 @@ WH: Is this a good knob to ask on each call site? It's too much to ask all scrip
 
 DE: Yes, this corresponds to how users work
 
-MS: Shouldn't this knob be default-tail-call?
+MLS: Shouldn't this knob be default-tail-call?
 
 EF: For web compatibility, programmers can already debug
 
@@ -118,15 +118,15 @@ MM: JS is unique in the span of programmers it tries to accommodate. In the abse
 
 (fill in DE's point)
 
-MS: To me, it seems more intuitive to opt out of tail calls than to opt in.
+MLS: To me, it seems more intuitive to opt out of tail calls than to opt in.
 
-SYG: I agree with Mark's intuition that this is not what programmers expect. TCO is not a time optimization. Because of various parts of implementation complexity, at best it could be a time savings, but it is not an 
+SYG: I agree with Mark's intuition that this is not what programmers expect. TCO is not a time optimization. Because of various parts of implementation complexity, at best it could be a time savings, but it is not an
 
-MS: TCO lets us omit popping the stack and running epilogue code. And if I use less stack space, we touch less memory and are more cache friendly
+MLS: TCO lets us omit popping the stack and running epilogue code. And if I use less stack space, we touch less memory and are more cache friendly
 
 SYG: I think most cases of accidental opt-in are not loops, and are simply function calls.
 
-MS: Performance benefits of tail calls: If you reuse a frame, you'll likely do less writes to a frame. Likely some things will already be valid there, and you're writing to the same cache lines.
+MLS: Performance benefits of tail calls: If you reuse a frame, you'll likely do less writes to a frame. Likely some things will already be valid there, and you're writing to the same cache lines.
 
 WH: That is speculative. If your new frame is bigger than the fhan the caller frame, it could be slower.
 
@@ -158,7 +158,7 @@ KM: Yes, every browser does this
 
 (a side thing, everyone says)
 
-MS: Wouldn't you argue, based on your stack analysis, that this means that we shouldn't make a decision based on any kind of cross-browser support of stack scraping?
+MLS: Wouldn't you argue, based on your stack analysis, that this means that we shouldn't make a decision based on any kind of cross-browser support of stack scraping?
 
 MM: With regard to the text that shows up in the stack. But with regard to whether a particular stack frame is represented or not, I actually don't know; I haven't investigated that as a separate question. My intuition is that there is generally pretty broad agreement that, per level of call, there is a line representing the stack frame. Certainly going forward, one of the things I'm concerned about is that I want to confirm is how to specify a stack trace. Many parts will have to be implementation-defined, but the basic issue of giving a general, predictable model about when you do and do not accumulate stack frames, I would like to have agreement is, on whether they accumulate. Could be opt-in or opt-out, a global switch or not, but I want to have agreement.
 
@@ -170,11 +170,11 @@ AWB: So is the first, performance issue important enough?
 
 SYG: I see these (perf, debugging) as the same issue, in that an explicit opt-in solves more issues than an explicit opt-out.
 
-MS: The issue about what Mark said earlier, in an eloquent way, about the quality of JavaScript programmers, is relevant because it's a compiler trick to give better performance
+MLS: The issue about what Mark said earlier, in an eloquent way, about the quality of JavaScript programmers, is relevant because it's a compiler trick to give better performance
 
 AWB: proper tail calls proponents would say that it's not an optimization, it's about linear space
 
-MS: Second, it's a way to enable more programming styles
+MLS: Second, it's a way to enable more programming styles
 
 AWB: Yes, it was to make this possible. A transparent optimization would've already been possible, but the point is to enable proper tail call-based programming patterns, is the reason it was included in the spec.
 
@@ -182,7 +182,7 @@ WH: If we were to use an explicit mark, it would have to be an opt in. An opt ou
 
 BT: Opt-out wouldn't solve the web compat, debugging and telemetry problems
 
-MS: For RegExps, Google graciously collected information on what sites would break. Do we know what sites would break with tail calls?
+MLS: For RegExps, Google graciously collected information on what sites would break. Do we know what sites would break with tail calls?
 
 DE: We know that tail calls occur on the web, but it's not so possible to tell whether it causes breakage.
 
@@ -202,7 +202,7 @@ DH: Didn't we settle this in 2015? How many things do we want to revisit?
 
 DE: We've revised other things in ES2015 based on other browser experience. And browsers are almost done with almost all ES2015 features, so there's not much risk.
 
-AWB: What's crucial to me is that there would be negative performance impact. Essentially it's a web compatibility thing. I've been trying to set aside the ergonomics (since we already discussed it), but 
+AWB: What's crucial to me is that there would be negative performance impact. Essentially it's a web compatibility thing. I've been trying to set aside the ergonomics (since we already discussed it), but
 
 DH: Proper tail calls are a space feature, not a performance optimization. This involves doing more work, so it may be slower than doing less work. There also may be well-known optimizations
 
@@ -224,15 +224,15 @@ EF: Say we make the syntax in the return position, and it feeds down into subexp
 
 DH: Yeah, that sounds good, we should make that clear. I don't think anyone has done the work of thinking through completely. For example, let's put it on return statements. Oops, now there's no tail call in an arrow function with an expression body. There's work to do here--we are going pretty close to square one.
 
-MS: I want to reinforce your first point: there were no implementation. We implemented tail calls July/August last year, available in our nightly since then; we've had a few bugs. The last bugs were in October. We have an issue about debugging, and we have an answer for that--we're going to ship a side stack
+MLS: I want to reinforce your first point: there were no implementation. We implemented tail calls July/August last year, available in our nightly since then; we've had a few bugs. The last bugs were in October. We have an issue about debugging, and we have an answer for that--we're going to ship a side stack
 
 JM: This doesn't address the telemetry issues. I'm just curious because we use it internally--we (Facebook) use production telemetry to debug issues. It will make it much harder for us to examine these stacks.
 
-MS: To reinforce Dave's point, one vendor, in good faith has implemented it. And now another vendor is pushing back on it without data.
+MLS: To reinforce Dave's point, one vendor, in good faith has implemented it. And now another vendor is pushing back on it without data.
 
 EF: It's many orders of magnitude more work to implement it, at least six months. How long did it take you?
 
-MS: Three man-months
+MLS: Three man-months
 
 EF: When could we talk about it? In six months?
 
@@ -244,7 +244,7 @@ DH: Yes, it's a reflection of consensus
 
 AWB: All we could do at this point is revert it; there's no well-thought-out replacement.
 
-MS: It was unfortunate for us because we are throwing away our work; we did all of this work to implement tail calls, as the first implementor when ES6 came out of this feature
+MLS: It was unfortunate for us because we are throwing away our work; we did all of this work to implement tail calls, as the first implementor when ES6 came out of this feature
 
 BT: We had a lot of features shifting underneath us too
 
@@ -264,7 +264,7 @@ DH: I knew that there were some concerns about tail calls. Probably implementati
 
 DE: I don't think we could ship Apple's strategy for debugging.
 
-AK: There are developer experience tools, and 
+AK: There are developer experience tools, and
 
 [various discussion]
 
@@ -333,7 +333,7 @@ AWB: TC39 is not supposed to be telling parties how to implement the standards, 
 
 JM: talking (no presentation)
 
-JM: An update on two major concerns. From Mark, public class fields in the constructor, Mark and Jeff talked with Kevin, and everyone is OK with it being in the class body. 
+JM: An update on two major concerns. From Mark, public class fields in the constructor, Mark and Jeff talked with Kevin, and everyone is OK with it being in the class body.
 
 MM: Even though there's no scoping mechanism, there is a scoping intuition. The use of the property name is in the body of the class, and therefore the property is intuitively scoped to the class body, and should be declared in the class body rather than the constructor.
 
@@ -367,13 +367,13 @@ AWB: whatever the answer here, it needs to apply to both this and privates
 
 JS: we could go with lexical this and instance this. we don't know yet which one is right. there's more utility in "this" representing instance and "super" making sense.
 
-DH: argues that we should start from the intuition at the programming model not the implementation of the feature. so the "this means instance" is that intuition. they may lead to different conclusions for this vs. fields/properties. this praticular feature is lexically scoped to the class body. 
+DH: argues that we should start from the intuition at the programming model not the implementation of the feature. so the "this means instance" is that intuition. they may lead to different conclusions for this vs. fields/properties. this praticular feature is lexically scoped to the class body.
 
 AK: describing it in terms of a function call led to the confusion, but thinking in terms of instantiation avoided the confusion.
 
 * discussion of `arguments`*
 
-MM: classes are strict, so you cannot bind "arguments" as a variable. 
+MM: classes are strict, so you cannot bind "arguments" as a variable.
 
 AWB: showed a way that you could shadow it
 
@@ -393,7 +393,7 @@ DD: but this would be the first time that we have introduced such a drastic diff
 
 MM: DD is bringing up two points. 1) wrt scoping 2) wrt execution time. Jeff and I had previously talked abotu execution time. If you accept the declaration being in teh class body, but you don't allow an initializer, then we avoid the multilayer issue. This is how it has been in Babel and people have not reported an issue.
 
-DH: the intuition of top to bottom does not survive contact with reality. 
+DH: the intuition of top to bottom does not survive contact with reality.
 
 BT: TypeScript also does not impose top to bottom ordering. And noone has been confused about it. Including with decorators.
 
@@ -418,11 +418,11 @@ WH: in this example, statics would get executed only once or more than once?
 
 DH: only once
 
-DH: if don't allow for the idea that there can be multiple rounds of execution within a class, we will stall out class development. 
+DH: if don't allow for the idea that there can be multiple rounds of execution within a class, we will stall out class development.
 
 JS: I need to know what concerns need to be addressed to make progress.
 
-AWB: 
+AWB:
 
 WH: We already have staged execution that doesn't follow textual order. Functions get lifted to the top of their scopes.
 
@@ -579,7 +579,7 @@ MM: But not in the sense that the web platform has multiple implementations
 
 DT: It was in that there were multiple optimization models, multiple architectures (with very different optimizations available), etc.
 
-AWB: My experience has been that people rely on the idiosyncrasies of the timing of how implementations collect references. What it comes down to is: will people write mission-critical systems that depend on weak refs behaving in a certain way? 
+AWB: My experience has been that people rely on the idiosyncrasies of the timing of how implementations collect references. What it comes down to is: will people write mission-critical systems that depend on weak refs behaving in a certain way?
 
 EF: I think that the stage process is exactly set up to handle something like this. We could create experimental implementations and ask people to write code against them.
 
@@ -649,7 +649,7 @@ Open issue: .get() -> strong as a side channel
 
 Open issue:  address this turn-based behavior in a non-turn-based execution environment.
 
-## Template Literals Are Broken 
+## Template Literals Are Broken
 (TD)
 
 (see slides)
@@ -710,7 +710,7 @@ WH: similar to regexes, which have a cover grammar
 
 - Stage 1 acceptance
 
-## Map.prototype.toJSON/Set.prototype.toJSON 
+## Map.prototype.toJSON/Set.prototype.toJSON
 (JHD)
 
 Continued discussion from yesterday.
@@ -723,7 +723,7 @@ Continued discussion from yesterday.
 
 The committee did not want to bless the `toJSON` approach by adding what would be an incomplete representation - one that would not obviate the need for developers to define their own serialization format and revivification logic.
 
-## Aggregated FOSS parser pass-fail and equivalence tests 
+## Aggregated FOSS parser pass-fail and equivalence tests
 (KG)
 
 #### Conclusion/Resolution

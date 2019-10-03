@@ -1,6 +1,6 @@
 # May 24, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (AKI), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW), Tom Dale (TDE), István Sebestyén (IS), Lin Clark (LCK), Vladan Djeric (VDC)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (AKI), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SCR), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), J.F. Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW), Tom Dale (TDE), István Sebestyén (IS), Lin Clark (LCK), Vladan Djeric (VDC)
 
 Remote:
 Valerie Young (VYG), Maggie Pint (MPT), Ben Newman (BN), Brendan Eich (BE), Dean Tribble (DT), Robert Pamely (RPY), David Turissini (DTI), Felipe Balbontín (FBN), Pedram Emrouznejad (PED), Tim McClure (TME), Bradley Farias (BFS), Jason Williams (JWS), Trevor Bliss (TBS), Robin Ricard (RRD)
@@ -56,7 +56,7 @@ JH: Using a different sigil seems like the best thing with Alternative 2.
 
 SGO: That works for us.
 
-MS: In Alternative 3, Colors are often described in Hex, so that seems like a potential collision. If someone wants to do a manipulation of colors with the Extension proposal, this would be impossible.
+MLS: In Alternative 3, Colors are often described in Hex, so that seems like a potential collision. If someone wants to do a manipulation of colors with the Extension proposal, this would be impossible.
 
 WH: I like any of these except for #3, which doesn't work. You get ambiguities related to decimals: if you define a unit called `_0`, that would be ambiguous. `_0_px` is also a good one — even with units not containing exclusively decimal digits you get ambiguity.
 
@@ -160,7 +160,7 @@ MM: Does the syntax use parens to wrap expressions?
 
 KZM: I don't think you should be able to do that. I'd rather avoid it.
 
-MS: (something...)
+MLS: (something...)
 
 MM: There's too much ambiguity
 
@@ -383,31 +383,31 @@ YK: If there's just occasional sloppy code that you need to get around bugs, tha
 
 MF: It's worth pursuing a Strict mode variant or something. You get to drop the variable names from the binary encoding in Strict mode, and size is obviously very important. I do think it's worth going the full route of requiring Strict mode, we should at least take advantage of this in Strict mode.
 
-MS: What was a performance benefit you got from JS to binary AST?
+MLS: What was a performance benefit you got from JS to binary AST?
 
 EFT: The parser gets 30-50% faster.
 
-MS: You have to go end to end, because part of this is load time.
+MLS: You have to go end to end, because part of this is load time.
 
 EFT: 30% of parse time, and parse time is 25% of load time.
 
-MS: You say you get this improvement of the front-end time, which is like 25% of the load time
+MLS: You say you get this improvement of the front-end time, which is like 25% of the load time
 
 VDC: The benefit to us at Facebook is not the load time. You want the cost of additional code is asymptotic as length increases. We vastly improve that cost equation using binary ASTs.
 
-MS: How many Alexa Top 100 sites will use this? Facebook would have different websites that you send to different browsers.
+MLS: How many Alexa Top 100 sites will use this? Facebook would have different websites that you send to different browsers.
 
 VDC: we ship one, es5 to everyone. And there are additional features we ship (including feature testing) that we conditionally ship to other users.
 
-MS: The kind of Portable device vs. desktop device.
+MLS: The kind of Portable device vs. desktop device.
 
 EFT: We gave this encoder to Instagram and they had this up and running in 3 days.
 
-MS: Would a very popular website do this for all browsers? But we're talking 6-7 various browsers, this would effectively double the number of bits in a testing matrix for websites to ship this. We're crafting a feature that's not going to be widely used.
+MLS: Would a very popular website do this for all browsers? But we're talking 6-7 various browsers, this would effectively double the number of bits in a testing matrix for websites to ship this. We're crafting a feature that's not going to be widely used.
 
 VDC: Additional encoding is not a testing exercise. We can trust that the encoding is sound.
 
-MS: More testing bots.
+MLS: More testing bots.
 
 VDC: If you believe there's an issue with the encoding, then yes, you need more testing. But we don't expect this to be the case.
 
@@ -415,27 +415,27 @@ EFT: Maybe we can hear from other people?
 
 SYG: We need to answer this before stage advancement.
 
-MS: You said it was 30-50% of parsing, and parsing is 25%. All this work for 12% improvement?
+MLS: You said it was 30-50% of parsing, and parsing is 25%. All this work for 12% improvement?
 
 SYG: It seems like a big ask for implementers to add this feature. But for websites, this is a small ask.
 
 TDE: We go to way further lengths for smaller gains. We do multiple builds for each browsers, done brotli, etc. From the LinkedIn perspective, this would be a trivial integration for performance gains that we would be happy to see.
 
-MS: Would you be willing to ship all six flavors to get this performance gain?
+MLS: Would you be willing to ship all six flavors to get this performance gain?
 
 TDE: Yah.
 
-MS: This doubles those.
+MLS: This doubles those.
 
 TDE: We would be comfortable with that.
 
-MS: You talked about once the spec is frozen, those nodes will always work. We then have the issue of tracking the implementation state for other browsers—if some implement but not other browsers do, this becomes a mess to track for backwards compatibility.
+MLS: You talked about once the spec is frozen, those nodes will always work. We then have the issue of tracking the implementation state for other browsers—if some implement but not other browsers do, this becomes a mess to track for backwards compatibility.
 
-MS: I'm concerned with introducing new nodes that are not available in all browsers. We add 5 new AST nodes, some of them do only some. Having to deal with this will bite us. What happens when someone adds a node that doesn't work in all browsers?
+MLS: I'm concerned with introducing new nodes that are not available in all browsers. We add 5 new AST nodes, some of them do only some. Having to deal with this will bite us. What happens when someone adds a node that doesn't work in all browsers?
 
 DH: We'll just do what we today with JavaScript.
 
-MS: We can't do that—it's a binary node!
+MLS: We can't do that—it's a binary node!
 
 EFT: This is up to the host.
 
@@ -445,15 +445,15 @@ EFT: It's easier, in fact.
 
 YK: I'm confused about some of the points being made by people. Where are the multi-build concerns coming from?
 
-MS: For websites that have a different set of bits for different browsers, now you have a binary AST, that's 4. You also have to support the older browsers that don't support the feature.
+MLS: For websites that have a different set of bits for different browsers, now you have a binary AST, that's 4. You also have to support the older browsers that don't support the feature.
 
 YK: So I have 6 builds, if Chrome adds a binary AST, we'd just replace the build for Chrome with that one (dropping support for old Chromes).
 
-MS: What do you do with a Chrome version that doesn't support binary AST?
+MLS: What do you do with a Chrome version that doesn't support binary AST?
 
 YK: If I want to support new syntax, I would choose what is supported by
 
-MS: Normally you do this with polyfilling, but that doesn't work for syntax.
+MLS: Normally you do this with polyfilling, but that doesn't work for syntax.
 
 YK: I work at a tiny company—7 engineers. We use Ember. We would _also_ find it trivial to adopt this feature. We would add this feature to our build pipeline, so all Ember users would get this feature. We'd definitely allow you to ask for a binary AST. There's a question that it would be hard to build an binary AST, but frankly this is the same step conceptually as using a minifier. People go to extraordinary lengths that take more time and produce less benefit. For people that only target evergreen, as soon as they all support Binary AST people will only target Binary AST. Same as transpiling to old JS.
 
@@ -461,28 +461,28 @@ DFV: Linkedin and Salesforce are in the same boat. Particularly we ship enormous
 
 SG: Just to reiterate what's been said: my personal one not Googles, count users not domains,not devs. I have an intuition, no data, if you count 5-6 devs that constitute a good proportion of web traffic - gmail, linkedin, facebook . these are well funded 500 engineering teams that are, google.com you'd be surprised how much effort goes into that last bit of perf. My intuition is to prioritize for number of users. Even if adoption is small, we can pay the cost.
 
-MS: I work on JS core, so I agree with you. If we do this we're not doing something else. I also don't think the numbers that Eric is quoting will be the same on all browsers. So, maybe 3% performance gains out of Safari, instead of something else.
+MLS: I work on JS core, so I agree with you. If we do this we're not doing something else. I also don't think the numbers that Eric is quoting will be the same on all browsers. So, maybe 3% performance gains out of Safari, instead of something else.
 
 SG: Agree. Not advocating for this solution. Problems are valid. If it's less accessible to some devs but more accessible to users, that's fine.
 
-MS: I don't think this is solving a long-term problem for the web.
+MLS: I don't think this is solving a long-term problem for the web.
 
 TST: Curious why it won't solve for lots of content producers. If it solves what ... wants to get it, content producers should treat it like GZIP. Accept-header should switch it to CDN. You do not have the explosion in test surface. If you don't believe it will pan out I want to know what the concerns are.
 
 
-MS: Experience tells me the test explosion will happen.
+MLS: Experience tells me the test explosion will happen.
 
 TST: You think the cloudflare thing just will not work out.
 
-MS: At past companies, it's not as simple as putting a tool out. You're putting a piece of software that you don't have control over.
+MLS: At past companies, it's not as simple as putting a tool out. You're putting a piece of software that you don't have control over.
 
-MS: I'm concerned that the devil is in the details.
+MLS: I'm concerned that the devil is in the details.
 
 EFT: You can just not pass the accept header if you don't think it will go faster.
 
 SYG: We'd like actionable feedback. Would you like numbers on JSC?
 
-MS: We ask for the different implementations, how much time would it take to parse this code on this page. I think it would be pretty easy to ask these implementers for metrics so we can use this data to decide if it's worth it.
+MLS: We ask for the different implementations, how much time would it take to parse this code on this page. I think it would be pretty easy to ask these implementers for metrics so we can use this data to decide if it's worth it.
 
 YK: A relevant factor. One trouble is writing tools to target lazy-sniffing browsers. It would be good to look at how often people are hitting eager parsing inappropriately. What would the saving be if you didn't hit this.
 
@@ -490,7 +490,7 @@ EFT: You don't have to lex the whole thing.
 
 VDC: WRT to the actual wins, at Facebook we get 10-15% wins out of squeezing efficiency from the parser. The problem is you're still trying to get efficiency from ALL the code that gets sent. Then we want to support more code and more paths, but you need to do the optimization again to get back to the previous level. That's the fundamental appeal of binary ASTs - it's not just a % it really changes the cost structure of the page.
 
-MS: I talked about signed modules in the cache.
+MLS: I talked about signed modules in the cache.
 
 WH: First, if you do this, is the intent to change the APIs for things like Modules, Realms to allow ASTs instead of strings for inputs?
 
@@ -634,7 +634,7 @@ TST: Would there be anybody in Stage 3 who would object to this?
 
 DD: If you want to block of it because it's a pragma, we should talk about it now.
 
-MS: I'm worried this opens the door for more pragmas (with misspelling). I do share Brian's concern where if I do this, I should use this everywhere.
+MLS: I'm worried this opens the door for more pragmas (with misspelling). I do share Brian's concern where if I do this, I should use this everywhere.
 
 LBR: I'm concerned for a precedent of adding new pragmas. Following Brian's concerns, if we are going to use these pragmas everywhere, we should first collect data from the host implementation.
 
@@ -642,7 +642,7 @@ DD: I can just repeat my presentation yesterday...
 
 DE: It seems exceeding clear that we don't have a consensus.
 
-MS: I really don't want the pragma.
+MLS: I really don't want the pragma.
 
 BT: This is our chance to say no.
 

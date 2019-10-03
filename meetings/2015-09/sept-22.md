@@ -1,10 +1,10 @@
-# September 22, 2015 Meeting Notes    
+# September 22, 2015 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Ben Smith (BS), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Gorkem Yakin (GY), Stefan Penner (SP)
+Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Ben Smith (BS), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MLS), John Buchanan (JB), Gorkem Yakin (GY), Stefan Penner (SP)
 
 
-Remote: 
+Remote:
 Mark S. Miller (MM), Dan Gohman (DGN), John McCutchan (JMC)
 
 -----
@@ -21,19 +21,19 @@ AWB: An agenda item?
 
 BE/YK: Add to agenda
 
-Suggest: 
-    
+Suggest:
+
 - morning plenary groups
-- afternoon discussion 
+- afternoon discussion
 
 LS: (facilities)
 
 
 ## Adoption of Agenda
 
-AWB: Future agendas should avoid being specific about the version 
+AWB: Future agendas should avoid being specific about the version
 
-BE: Helpful for me to know which features are on track 
+BE: Helpful for me to know which features are on track
 
 #### Conclusion/Resolution
 
@@ -46,7 +46,7 @@ BE: Helpful for me to know which features are on track
 JN: 1 o'clock on Thursday
 
 
-## 5.1 Shared memory and atomics 
+## 5.1 Shared memory and atomics
 
 (Lars T Hansen)
 
@@ -54,7 +54,7 @@ JN: 1 o'clock on Thursday
 
 Need slides
 
-LHN: Work in progress at Mozilla, Google, etc. 
+LHN: Work in progress at Mozilla, Google, etc.
 
 Use Cases
 
@@ -67,8 +67,8 @@ asm.js
 - Shareed state and multicore computation
 - Fast communcation through shared memory
 
-Use cases conflict: 
-    
+Use cases conflict:
+
 - asm.js has flat memory, no gc, string types
 - plain ES is object based GC'd weak types
 
@@ -93,8 +93,8 @@ Build Higher Level facilities
 
 API: Shared Memory
 
-A new data type: 
-    
+A new data type:
+
 ```js
 var sab = new SharedArrayBuffer(size);
 ```
@@ -140,16 +140,16 @@ Lock.
 ```
 
 
-Discussion re: scheduling and execution. 
+Discussion re: scheduling and execution.
 
-DH: tasks can be scheduled, but not executed 
+DH: tasks can be scheduled, but not executed
 
 CM: Understanding there would never be shared state threads in JS. This appears to be that.
 
 (Discuss after presentation, Moving on)
 
-LHN: 
-    
+LHN:
+
 Agent Model
 
 - Need a model for concurrency in ES
@@ -162,19 +162,19 @@ Agent Model
 Agent Mapping
 
 - In a browser, an agent could be a web worker
-- SAB sharing is by postMessage, 
-- WebWorker semantics need work, nearly useless today. 
+- SAB sharing is by postMessage,
+- WebWorker semantics need work, nearly useless today.
 
 - In a non-browser setting (SpiderMonkey shell)
 - concurrent thread, separate global environment
 - mailbox mechanism for sharing memory
 
 
-AWB: Can imagine request for generalized model 
+AWB: Can imagine request for generalized model
 
-DD: A different group could approach to define generic 
+DD: A different group could approach to define generic
 
-AWB: Dont want a mechanism that will only work in a browser. 
+AWB: Dont want a mechanism that will only work in a browser.
 
 LHN: (Confirms)
 
@@ -191,7 +191,7 @@ DD: An early version of this proposal said that these APIs were not on the main 
 
 YK: Scary to have locks on the main thread
 
-LHN: Not that scary, it's no different than a loop 
+LHN: Not that scary, it's no different than a loop
 
 YK: Async functions are the solution that has evolved
 
@@ -199,14 +199,14 @@ AWB: Are the workers multiplexed?
 
 LHN: If JS on main thread creates a worker and waits on the location, it will hang because the worker doesnt get started.
 
-AWB: Semantically observable? 
+AWB: Semantically observable?
 
 LHN: Can observe remotely (a corner case)
 
 Memory Model (1)
 
 - Atomics in the program are totally oridered
-- Conventional "happens-before" relation on events: 
+- Conventional "happens-before" relation on events:
 - Program order (intra-agent)
 - Atomic-write, atomic-read (intra-agent)
 - futexWake called -> futexWait returns (intra-agent)
@@ -238,7 +238,7 @@ LHN: Currently will get the garbage
 
 Memory Model (4)
 
-Complications: 
+Complications:
 
 - Aliased arrays and cells thar are not exclusively atomic
 - Weakly ordered memory (ARM, MIPS, Power)
@@ -250,17 +250,17 @@ Java Better? But complex and subtle
 
 DH: if mem model says data structure, behavior localized to data structure. integration with rest of language impacts jit compilers, spec semantics (how deep). Not sure what the biggest risk is... limited to array buffer and only in specific case? Invariants in loads and stores
 
-LHN: optimization to load value from typed array, use it for something, eg. function call. If not affected, can reload. 
+LHN: optimization to load value from typed array, use it for something, eg. function call. If not affected, can reload.
 
 DH: Already know typed array, can assume not shared array buffer. Cases where I _don't_ know the backing store, nervous
 
 AWB: Typed array accesses with brackets
 
-Limit concerns to optimizations re: Typed Array cases. 
+Limit concerns to optimizations re: Typed Array cases.
 
-DH: Concerns: How much does this leap into the current spec. How much does it affect the lower level operations? 
+DH: Concerns: How much does this leap into the current spec. How much does it affect the lower level operations?
 
-AWB: Typed Array access get turned into operations on their bufffer. Buffer operations become polymorphic (unshared, shared). A common operation that occurs, with slightly different behavior. 
+AWB: Typed Array access get turned into operations on their bufffer. Buffer operations become polymorphic (unshared, shared). A common operation that occurs, with slightly different behavior.
 
 
 
@@ -290,7 +290,7 @@ CM: This is terrifying. Can see cases for use in libraries for communicating int
 
 YK: What about other high level languages, Ruby? It exposes pthreads. Then developers write better higher level abstractions
 
-CM: Nothing to protect from authors of page and script running in it. 
+CM: Nothing to protect from authors of page and script running in it.
 
 YK: Concerns is third party scripts?
 
@@ -304,9 +304,9 @@ CM: Could design the things you might make with this, then codify into language.
 
 YK: Verification?
 
-CM: No, if the facilities don't exist, then safe. 
+CM: No, if the facilities don't exist, then safe.
 
-BE: Agree, most web developers should not be tempted, even able to write shared memory programs. We need to talk about what goes wrong. Cannot have shared memory without races? We have demand for this. 
+BE: Agree, most web developers should not be tempted, even able to write shared memory programs. We need to talk about what goes wrong. Cannot have shared memory without races? We have demand for this.
 
 
 Why Not Just for asm.js?
@@ -316,7 +316,7 @@ Why Not Just for asm.js?
 - Thread Management
 - Runtime tasks in general
 
-- JS has data structures, easier to program 
+- JS has data structures, easier to program
 - The callout needs at least some shmem access
 
 
@@ -324,18 +324,18 @@ LHN: need to satisfy both use cases
 
 DE: Any program can already get into an infinite loop, unresponsive.
 
-CM: 
-    
-BE: If we don't do something like this, there will be a bigger gap for webassembly stuff. 
+CM:
 
-YK: Shared memory is not inherently unsafe, only in raw form. We can provide safe access. 
+BE: If we don't do something like this, there will be a bigger gap for webassembly stuff.
+
+YK: Shared memory is not inherently unsafe, only in raw form. We can provide safe access.
 
 (Mark joins on phone)
 
-YK: Need to more concretely address the constraints 
+YK: Need to more concretely address the constraints
 
-MM: Will read emails from waldemar: 
-    
+MM: Will read emails from waldemar:
+
 - Introducing a high bandwidth side-channel
 - Even if only computation with coarse granularity, the ability to access shared memory seems fatal.
 
@@ -343,7 +343,7 @@ LHN: Only fatal if you can prove it's not already possible
 
 MM: No way to do high-bandwidth side channels, such as cache attacks
 
-MM: Timing attack is: shared array buffer with self. 
+MM: Timing attack is: shared array buffer with self.
 
 BS: Issue is using the shared array buffer as a timer, you just read it and allows cache attacks
 
@@ -357,7 +357,7 @@ BE: http://www.theregister.co.uk/2013/08/05/html5_timing_attacks/
 
 DE: Any further conserns?
 
-MM: Delayed weak refs because of 
+MM: Delayed weak refs because of
 
 - JS has become mostly deterministic
 - Plat
@@ -366,19 +366,19 @@ MM: Delayed weak refs because of
 - for-in iteration order is platform dependency, not generatl non-determinism
 
 
-MM: On whatwg, proposed System object. System is not distinct from the ES built-ins. Grants 
+MM: On whatwg, proposed System object. System is not distinct from the ES built-ins. Grants
 
 MM: perhaps the non-determinism comes from creating the Worker in the first place? Thinking out loud
 
 Where does one get access to the SharedArrayBuffer constructor
 
-Either from global or imported from module. 
+Either from global or imported from module.
 
 AWB: How do you gain access to an already existing SAB created in another Worker?
 
-MM: Creating an SAB alone is safe. 
+MM: Creating an SAB alone is safe.
 
-BE: The 
+BE: The
 
 (http://www.theregister.co.uk/2015/04/21/cache_creeps_can_spy_on_web_histories_for_80_of_net_users/) / http://arxiv.org/pdf/1502.07373v2.pdf
 
@@ -406,16 +406,16 @@ MM: Q: motivation for SAB proposal: conventional c/c++ pthreads code can be comp
 
 LHN: That's one of the case
 
-YK: Shared Memory is a useful primitive. 
+YK: Shared Memory is a useful primitive.
 
-MM: Want to separate: 
-    
+MM: Want to separate:
+
 1. Compile old legacy pthread code
 2. Make good use of hardware parallelism
 
 BE: legacy?
 
-DH: Tried to build higher level primitives to give deterministic parallelusm to JS. Challenging. Meanwhile the extensible web strategy proves every time. Expose better, high performance, multi-core parallelism primitives. 
+DH: Tried to build higher level primitives to give deterministic parallelusm to JS. Challenging. Meanwhile the extensible web strategy proves every time. Expose better, high performance, multi-core parallelism primitives.
 
 YK: Should give 0.01% more credit (like authors of gzip, etc)
 
@@ -425,7 +425,7 @@ MM: fan of the Rust/Pony approach, low-level, universal. Arrived independently a
 
 YK: Easily imagine a Rust-like model, b/w dynamic checks
 
-DH: Rust has Shared Memory concurrency, static type system and library design that statically guarantees 
+DH: Rust has Shared Memory concurrency, static type system and library design that statically guarantees
 ...best of performance and programming model. Can't be added directly to JS, maybe with APIs and DSLs that have some speed tradeoffs, don't know what will win in the end
 
 BE: MM mentioned Pony, which has similar design
@@ -438,10 +438,10 @@ DE: how do we solve the compile from C++ problem?
 
 BE: circles back to earlier point: don't have time to find SAB alternatives, without exposing shared memory needs of C++. If we do nothing, then other "bad stuff" will happen. If we do this, then other people can experiment to find a better solution
 
-MM: The potential show stopper: the side channel. I want to see some real analysis of this danger and why we should be confident that the danger is minimal, before we proceed. 
+MM: The potential show stopper: the side channel. I want to see some real analysis of this danger and why we should be confident that the danger is minimal, before we proceed.
 
 LHN: we have security people working on that, we can try to expedite.
-- danger is that page load, you think its safe. Allows to fork off a worker with shared memory, and there's the attack. 
+- danger is that page load, you think its safe. Allows to fork off a worker with shared memory, and there's the attack.
 
 YK: Might want restrictions on the main thread, so ads can't own your site
 
@@ -453,11 +453,11 @@ YK: Thing is (oksoclap disconnected on me, notes lost)
 
 LHN: fundamental constraints with blocking on the main thread? Or can the browser implementations work around this.
 
-YK: is this a fundamental C++ problem? 
-- fetch in browser: fork off a thread, do the work, wait for response. 
+YK: is this a fundamental C++ problem?
+- fetch in browser: fork off a thread, do the work, wait for response.
 
 LHN: depends on which web APIs are avai
-- want to update webgl 
+- want to update webgl
 
 "shared" or "transferrable" canvas
 
@@ -467,7 +467,7 @@ AK: More clarification on urgency?
 
 BE: if we do nothing, it is a bigger jump to WebAssembly, or somebody else will do it anway to compete. Can't polyfill Unreal engine 4.
 
-DH: Jeopardize adoption of web assembly. 
+DH: Jeopardize adoption of web assembly.
 
 AK: Is this going to be a problem with wasm features for time to come?
 
@@ -481,7 +481,7 @@ MM: Memory model discussion?
 
 LHN: we talked about that.
 
-BE: If we say out of bounds "no and forever", something else will happen (see: flash, java). We need to work towards something. 
+BE: If we say out of bounds "no and forever", something else will happen (see: flash, java). We need to work towards something.
 
 YK: concrete example: VLC in the browser, don't want to write C, write JS, chunk up the screen
 
@@ -513,7 +513,7 @@ YK: actually, yeah.
 (Lunch)
 
 
-BT: True that impl. shared array buffers in wasm is easier than normal JS? 
+BT: True that impl. shared array buffers in wasm is easier than normal JS?
 
 LHN: Different, not easy
 ...Optimizing generics atomics, backend implementation
@@ -524,15 +524,15 @@ LHN: Yes.
 
 BT: Need a sense, wasm is a ways out.
 
-BE: something will happen if we don't act    
+BE: something will happen if we don't act
 
 LHN: thought about having it only in asm.js, not sufficient. runtime and IO services need accesses to shared memory and atomics. some of it could be moved into asm.js, but not all of it. to do so asm.js would need access to DOM APIs.
 
-DH: Value? Same potential security concerns. Same access from JS. Also brought in requirement to standard another thing. If done in asm, then need to standardize all of asm. 
+DH: Value? Same potential security concerns. Same access from JS. Also brought in requirement to standard another thing. If done in asm, then need to standardize all of asm.
 
 BT: what about WebAsm only? I don't think polyfills are critical. asm.js is great because it is a subset, sound great as a marketing story, but haven't seen a real example
 
-DH: Important that it was a subset, was adopted. 
+DH: Important that it was a subset, was adopted.
 
 BT: asm.js compiled stuff doesn't work when asm.js is turned off. Games will not run in wasm
 
@@ -540,11 +540,11 @@ YK: gzip.js?
 
 BE: you're saying that things don't work well outside of optimized asm.js?
 
-BT: wasm polyfill has no value to game developers. Unreal Engine running against this polyfill will not work. 
+BT: wasm polyfill has no value to game developers. Unreal Engine running against this polyfill will not work.
 
 DH: asm.js exists today! Polyfill WebAssembly to asm.js, it will run well.
 
-BT: asm.js apps running without asm, don't run. 
+BT: asm.js apps running without asm, don't run.
 
 DH: two different stories: asm.js as a subset of JS is to break out of a deadlock. Disagreement between browsers about how to port C++ apps to the web. Competitive pressure created excitement. Kickstarting the process.
 
@@ -555,7 +555,7 @@ DH: WebAssembly is in a different place -- not about disagreement between browse
 
 BT: wasm polyfilled ontop of asm will be a useable experience?
 
-BE: Yes, I'm playing right now. 
+BE: Yes, I'm playing right now.
 
 BT: the polyfill burden for asm.js is too much, you can probably get better performance without asm.js. Kind of a side tangent
 
@@ -575,7 +575,7 @@ BT: Browsers that don't support asm or wasm will be gone soon?
 
 BE: That support asm, but don't support wasm.
 
-YK: 
+YK:
 
 BT: I think I can understand the value of the polyfill
 
@@ -598,7 +598,7 @@ DH: I see this as a building block for the long term
 BE: we need to reach consensus, but we don't have to say this is going to be in JS forever just yet
 
 
-LHN: Request Stage 1, with a list of things to investigate. 
+LHN: Request Stage 1, with a list of things to investigate.
 
 MM: w/r to SAB, discussed extensively that burden of proof to show cache sniffing vulnerability is on the champion
 
@@ -610,9 +610,9 @@ AWB: Object to Stage 1?
 
 MM: no problem moving to stage 1
 
-YK/SM: What restrictions do we want, who do they work? Difference between global and local. 
+YK/SM: What restrictions do we want, who do they work? Difference between global and local.
 
-CM: All concerns are stated. 
+CM: All concerns are stated.
 
 #### Conclusion/Resolution
 
@@ -632,15 +632,15 @@ Cite: https://github.com/lars-t-hansen/ecmascript_sharedmem/issues/1
 https://eprint.iacr.org/2015/898.pdf ]
 
 2. To what degree can normal JavaScript code be insulated from the complexity of modern memory models?
-- For code that does not itself touch a shared array buffer, but for example, merely calls something that does, it is not reasonable to disrupt the programmer's understanding of the JavaScript program in terms of naive sequential consistency. 
+- For code that does not itself touch a shared array buffer, but for example, merely calls something that does, it is not reasonable to disrupt the programmer's understanding of the JavaScript program in terms of naive sequential consistency.
 - Of course, one can do that at the price of fine-grain synchronization and/or avoiding all interesting compiler reordering like common subexpression elimination. But such approaches are likely to kill the performance that motivates this proposal in the first place.
 
 
 
 
-## 5.2 SIMD.js Stage 3 proposal 
+## 5.2 SIMD.js Stage 3 proposal
 
-(Daniel Ehrenberg, John McCutchan, Peter Jensen, Dan Gohman) 
+(Daniel Ehrenberg, John McCutchan, Peter Jensen, Dan Gohman)
 
 DE: (update)
 
@@ -657,19 +657,19 @@ DE: consensus among implementors was to specify.
 
 AWB: I don't think this is observable. It is no more observable than normal number arithmetic, you can tell with two values but not necessarily that a third is the same
 
-DE: change makes spec more strict. 
+DE: change makes spec more strict.
 
-DH: observable. 
+DH: observable.
 
 AWB: TypedArray, have a signaling NaN. SIMD signals on signalling NaN, if the SIMD unit processes, you must get exception thrown.
 
 DE: Yes, I think that's what should happen, but we also removed the feature in another case. It's not really in use
 
-AWB: Read from TypedArray a f64, allow that to continue being a signalling NaN. 
+AWB: Read from TypedArray a f64, allow that to continue being a signalling NaN.
 
 DE: We were trying to make the change on the writing side, but we changed to not care about that
 
-AWB: concern that implementation will have to change to allow for signalling NaN. Saying that the implementation cannot change that to a non-signalling NaN. 
+AWB: concern that implementation will have to change to allow for signalling NaN. Saying that the implementation cannot change that to a non-signalling NaN.
 
 AWB: Do any known implementations treat signaling as non-signaling?
 
@@ -715,21 +715,21 @@ AWB: Didn't have to.
 
 DE: targeting asm style compilers and normal JS JITs
 
-AWB: One possibility: build hierarchy. eg. All the integer types can share an add method. You need to check the arguments anyway. 
+AWB: One possibility: build hierarchy. eg. All the integer types can share an add method. You need to check the arguments anyway.
 
 BE: this is class-side inheritance
 
-AWB: confirmed. 
-...Type check -> type dispatch. 
+AWB: confirmed.
+...Type check -> type dispatch.
 ...add method can check type of value
 
 BE: you're saying that implementations need to optimize down to functions with typed arguments
 
-Discussion re: overall design. 
+Discussion re: overall design.
 
 AWB: remaining concern: huge API surface area
 
-DE: Still don't think it's a major concern. 
+DE: Still don't think it's a major concern.
 
 whiteboard...
 
@@ -737,7 +737,7 @@ whiteboard...
 SIMD.Int32x4.fromInt16x8Bits();
 ```
 
-Could be: 
+Could be:
 
 ```js
 SIMD.Int32x4.fromBits();
@@ -747,7 +747,7 @@ Because type check must be done _anyway_.
 
 JMC: Doing that loses the static knowability
 
-DE: Big difference between optimizing for a completely unknown case and just deoptimizing for disallowed types. 
+DE: Big difference between optimizing for a completely unknown case and just deoptimizing for disallowed types.
 
 JMC: in terms of RTTI you don't lose anything, but in static case you do
 
@@ -783,11 +783,11 @@ DH: (explains how optimizer can determine that builtin is aliased)
 
 BE: seems like the remaining complaint is too many methods
 
-AWB: is there some fundamental API design that can reduce the number of methods? 
+AWB: is there some fundamental API design that can reduce the number of methods?
 
 DH: I don't think counting the number of methods will lead to better design.
 
-... The overall problem domain is affected by the combinatorics. It's a large domain. 
+... The overall problem domain is affected by the combinatorics. It's a large domain.
 
 JMC: you're asking is there some alternate API design we could have? We have as a group collectively tried to accomplish this, and we don't think there is.
 
@@ -812,13 +812,13 @@ DE: we don't think this will be useful for devs at all, it just needs to be defi
 
 AWB: `===` gets applied to each of the elements?
 
-DE: Correct. 
+DE: Correct.
 
 AWB: Same issues that come up with scalar numbers in JS
 
 positive and negative zero are equal, but NaNs aren't necessarily
 
-DE: Could be that `===` is considered a "legacy" 
+DE: Could be that `===` is considered a "legacy"
 
 AWB: I don't have the solution...
 
@@ -847,7 +847,7 @@ DE: you already have to do that with floats.
 
 MM: not if we say that === is non-reflixive with the values
 
-DE: Implemented in some browsers, seem convenient to us. 
+DE: Implemented in some browsers, seem convenient to us.
 
 MM: strong preference. when it is applied to anything other than direct application to a scalar, mathematical equivalence class must be reflexive
 
@@ -855,7 +855,7 @@ Discussion of `===` and `==` semantics.
 
 DE: I wouldn't want to make different behavior for ==
 
-AK: This is more appropriate for Brian to deal with; DE said it's not important to SIMD. 
+AK: This is more appropriate for Brian to deal with; DE said it's not important to SIMD.
 
 DH: Is problematic for me that `NaN !== NaN`, except for when it's in a SIMD value, eg. `Float32(NaN, 0, 0, 0) === Float32(NaN, 0, 0, 0)`
 ... Only reasonable semantics: component-wise `===`, respect NaN
@@ -889,21 +889,21 @@ DH: we want SameValueZero and === to be recursively defined
 
 DH: nobody expects 0 and -0 to be different in a set, nor do they expect NaN to be different
 
-RW: And has, get will behave accordingly: 
-    
+RW: And has, get will behave accordingly:
+
 ```js
 let m = new Map();
 m.set(NaN, 1);
 m.has(NaN); // true
 m.get(NaN); // 1
-// even though NaNs are not `===` equal. 
-```    
+// even though NaNs are not `===` equal.
+```
 
 DE: we assume that SIMD users are more clever and will not be confused by this?
 
 MM: we all agree that SameValue recursively does SameValue. My preference is that all of them recur with SameValue. Next... (missed the specifics here, sorry)
 
- 
+
 
 ... in order to implement SameValue, if x != x && y != y then return true; else ... it knows that NaN is a bizarre case, and it tests for it explicitly. It knows that 0 and -0 are weird and test for it explicitly. That coding pattern is copied a lot
 
@@ -930,17 +930,17 @@ Discussion of min/max vs minnum maxnum. Defined by IEEE754, related to NaN behav
 
 JMC: confirms that IEEE754 defines min num, max num
 
-AWB: 
+AWB:
 
 discussion about including length in SIMD operations
 
-MS: Resolution on built-in module?
+MLS: Resolution on built-in module?
 
 DH: Need module loading completed
 
 AWB: Don't need this
 
-YK: Signed up for this previously, can restart work on it. 
+YK: Signed up for this previously, can restart work on it.
 
 DH: Browser vendors are blocked on loader api
 
@@ -950,13 +950,13 @@ DD: I don't agree, the global object is where you put these things
 
 DH: aspirational, but not there yet
 
-AWB: Stage 3 means API is frozen. 
+AWB: Stage 3 means API is frozen.
 
-DE: There is an outstanding API question re: `{load|store}[123]` (`load1(...)`, `load2(...)`), that needs to be investigated. Potential performance cliff. 
+DE: There is an outstanding API question re: `{load|store}[123]` (`load1(...)`, `load2(...)`), that needs to be investigated. Potential performance cliff.
 
 YK: TLDR here is if you still want to make this change, you need to signal to the implementors that this is what stage 3 means
 
-DE: Can decide now that we're not going to do this change. 
+DE: Can decide now that we're not going to do this change.
 
 PJ: problem is that we want people to use constants for accessing the lane, but they don't have to, and that needs to work
 
@@ -974,7 +974,7 @@ DE: behavior is strange to have operation throw if it would be slow
 
 AWB: Still alot to work on in the spec. Is it at API freeze state or not?
 
-BT: to the best of our knowledge, no changes. 
+BT: to the best of our knowledge, no changes.
 
 AWB: enough thorough review of this large and complex addition to the language?
 
@@ -1006,20 +1006,20 @@ BT: All proposals are now using ecmarkup
 - 402 Complete
 - 262 In progress
 
-CM: Need improved workflow documentation. 
+CM: Need improved workflow documentation.
 
 AWB: Concerns about general public review; diffs not ideal
 
-YK/DD: will review visual, structural diffing tools to add to workflow 
+YK/DD: will review visual, structural diffing tools to add to workflow
 
 
 #### Conclusion/Resolution
 
-- Write up workflow documentation. 
-- Review and recommend visual, structural diffing tools to add to workflow 
+- Write up workflow documentation.
+- Review and recommend visual, structural diffing tools to add to workflow
 - Move 262 to Ecmarkup
 
-## 5.4 Updates on class-properties proposal 
+## 5.4 Updates on class-properties proposal
 
 (Jeff Morrison)
 
@@ -1037,7 +1037,7 @@ MM: How do class instance properties interop with decorators?
 
 ... Revisiting the proposal semantics.
 
-    
+
 MM: Expression itself is evaluated once per instantiation?
 
 YK/JM: Yes
@@ -1048,11 +1048,11 @@ JM: Each property and expression is evaluated in top down order as a result of `
 
 YK: Mark suggests that these go in the constructor
 
-BE: Problematic: 
-    
+BE: Problematic:
+
 ```js
 class C {
-  ha = eval(args)    
+  ha = eval(args)
 }
 
 var args = "arguments";
@@ -1061,24 +1061,24 @@ console.log(huh.ha); // ?
 ```
 http://gul.ly/4du5
 
-JM: as written, the `this` binding is the object that's been instantiated. 
+JM: as written, the `this` binding is the object that's been instantiated.
 
-DD: This is an issue, the lexical scope is unclear 
+DD: This is an issue, the lexical scope is unclear
 
 BE: But there is a "secret" thunk scope
 
-JM: Users have been using this in Babel without any confusion about the expression being delayed or defered. 
+JM: Users have been using this in Babel without any confusion about the expression being delayed or defered.
 
 Discussion about `arguments` and `this`
 
 MM: How is this an improvement over https://github.com/jeffmo/es-class-properties/issues/2 ?
 
-DH: (responding to alt proposal) the syntax isn't good. 
+DH: (responding to alt proposal) the syntax isn't good.
 
-- The class body is for declarative parts of the object template 
-- The constructor body is for imperative initialization parts 
+- The class body is for declarative parts of the object template
+- The constructor body is for imperative initialization parts
 
-Easy to get caught up in semantics and lose sight of syntax. 
+Easy to get caught up in semantics and lose sight of syntax.
 
 MM: Disagree. Convention to follow: always begin a class by putting the constructor first and in the constructor, properties declared, then blacnk line (for organization).
 
@@ -1086,8 +1086,8 @@ RW/AWB: Where does super go?
 
 MM: This is an open question. Depends on what you need to do with instance properties and when
 
-Discussion comparing: 
-    
+Discussion comparing:
+
 ```js
 class Point {
   constructor(x, y) {
@@ -1097,36 +1097,36 @@ class Point {
 }
 ```
 
-vs. 
+vs.
 
 ```js
 class Point {
   public this.x = x;
   public this.y = y;
-    
+
   constructor(x, y) {
     // ...
   }
 }
 ```
 
-`x` and `y` not in scope. 
+`x` and `y` not in scope.
 
-JM: 
-    
+JM:
+
 ```js
 class Stuff {
   autoBound = () => {
     console.log(this);
   };
-  
+
   id = getId();
 }
 ```
 
 DD: This SHOULD be written in the constructor.
 
-RW: Completely agree, and also concerned with: 
+RW: Completely agree, and also concerned with:
 
 ```js
 class Stuff {
@@ -1134,14 +1134,14 @@ class Stuff {
     console.log(this);
   };
   b() {
-      
+
   }
 }
 ```
 
 AWB: And what is `arguments` in that arrow?
 JM: Same as arguments immediately before the class declaration:
-    
+
 ```js
 function foo() {
     arguments; // same
@@ -1155,12 +1155,12 @@ function foo() {
 
 ...
 
-Discussion comparing the merits of Mark's proposal vs. Jeff's proposal. 
+Discussion comparing the merits of Mark's proposal vs. Jeff's proposal.
 
 
-MM: These declarations should result in non-configurable properties. 
+MM: These declarations should result in non-configurable properties.
 
-YK: Disagree. 
+YK: Disagree.
 
 #### Conclusion/Resolution
 - Move to stage 1

@@ -1,7 +1,7 @@
-# July 26, 2016 Meeting Notes 
+# July 26, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Rick Waldron (RW), Stefan Penner (SP), Jonathan Sampson (JSN), Caridy Patiño (CP), Sam Tobin-Hochstadt (STH), John Buchanan (JB), Kevin Gibbons (KG), Lars Hansen (LHN), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Kris Gray (KGY), Adam Klein (AK), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Ben Newman (BN)
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MLS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Rick Waldron (RW), Stefan Penner (SP), Jonathan Sampson (JSN), Caridy Patiño (CP), Sam Tobin-Hochstadt (STH), John Buchanan (JB), Kevin Gibbons (KG), Lars Hansen (LHN), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Kris Gray (KGY), Adam Klein (AK), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Ben Newman (BN)
 
 -----
 
@@ -38,7 +38,7 @@ BT: Let's go with Rick taking notes for now, since he volunteered, but long-term
 
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Moving on, further discussion to be on github as before this meeting. Interested members are encouraged to participate there directly.
 
@@ -58,28 +58,28 @@ WH: I'm fine with occasional items not having backing materials — there are si
 
 WH: ECMA has a global policy (we all agreed to) that documents up for significant decisions shall be provided 2-3 weeks in advance. I'd interpret this as applying to proposals looking to advance in TC39.
 
-IS: It's 3 weeks. This is e.g. to formally move forward or approve a TC39 draft specification. But for things for information, to start a discussion on new items, not to strive for a formal decision anything until the meeting is allowed. But of course it is encouraged to submit and post on Github as soon as possible. 
+IS: It's 3 weeks. This is e.g. to formally move forward or approve a TC39 draft specification. But for things for information, to start a discussion on new items, not to strive for a formal decision anything until the meeting is allowed. But of course it is encouraged to submit and post on Github as soon as possible.
 
 JN: Approval of minutes?
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Agenda Adopted
 - May Minutes approved
-- Add item to discuss the agenda item locking. 
+- Add item to discuss the agenda item locking.
 
 
 
 ## 5. Report from the Ecma Secretariat
 
-IS: Submitted the ECMAScript Suite Standard (approved by the GA as Ecma 414) to ISO/IEC JTC1 for fast-track. This should enable not to submit anymore ECMA-262 and ECMA-402, etc. to JTC1 separately anymore. This would allow to solve the speed difference problem and the RF patent policy problem. However, JTC1 editors wanted to have more text in the standard and not only the list of normative and informative references. IS said that he will work with Allen Wirfs-Brock on that. If possible we try to beed up ECMA-414 until the September 2016 meeting that isót can be approved as new Edition in the Decemmber 2016 GA. If the plan is delayed we finish it by June 2017. 
+IS: Submitted the ECMAScript Suite Standard (approved by the GA as Ecma 414) to ISO/IEC JTC1 for fast-track. This should enable not to submit anymore ECMA-262 and ECMA-402, etc. to JTC1 separately anymore. This would allow to solve the speed difference problem and the RF patent policy problem. However, JTC1 editors wanted to have more text in the standard and not only the list of normative and informative references. IS said that he will work with Allen Wirfs-Brock on that. If possible we try to beed up ECMA-414 until the September 2016 meeting that isót can be approved as new Edition in the Decemmber 2016 GA. If the plan is delayed we finish it by June 2017.
 
-- Link IETF spec to Ecma 404 (that was already fast tracked to ISO actually before the May 2016 TC39 meeting). On that one JTC1 has not given any feedback yet. So we guess that is on track. 
+- Link IETF spec to Ecma 404 (that was already fast tracked to ISO actually before the May 2016 TC39 meeting). On that one JTC1 has not given any feedback yet. So we guess that is on track.
 - On the issue we are in close contacts with the IETF. When we get the IETF spec number (when available) we will make a 2nd Edition of ECMA-404 and fast track that edition to JTC1. With that we want to link the Ecma Standrad with the IETF specification that they should be in full harmony.
 - Awards: BT and RW received ECMA awards for ECMA-262 7 th Edition and ECMA-402 (plus the many notetaking). Congratulations!
 - New Executive Committee, made from a combination of ECMA management and the former Coordinating Committee.
-  - A change from the past is that up to two ECMA members from categories other than ordinary members may now be elected into the the Executive Committee. Nominations for that can come from anybody, but in the end the December GA will vote on the nominations. The membership in the Executive Committee is always one year, but with the possibility of reelection. 
+  - A change from the past is that up to two ECMA members from categories other than ordinary members may now be elected into the the Executive Committee. Nominations for that can come from anybody, but in the end the December GA will vote on the nominations. The membership in the Executive Committee is always one year, but with the possibility of reelection.
   - All members can now participate in the General Assembly and take actively part in the discussions, not just ordinary members. However, only ordinary members can vote (that is unchanged).
   - IS also noted that TC39 is now by far the largest Ecma Group and it has grown to a size where he feels that we have to organize our structure and work better, otherwise at the face-to-face meetings there might be disappointment by some who prepare for a topic for discussion and presentation but in the shortness of time the subject is not discussed properly. Discussion on that to be continued by those who are interested on GitHub.
   - What IS forgot to tell, that actually with the publication of ECMAScript 2016 and ECMA-402 new Edition etc. it would be a good idea to make more PR, e.g. Press Release.
@@ -87,7 +87,7 @@ IS: Submitted the ECMAScript Suite Standard (approved by the GA as Ecma 414) to 
 
 ## 8. Test262 Status Update
 
-IS: Technical Report 104 needs to be updated. He added that all specs related to TC39 work are being downloaded very heavily (actually at  least 2/3 of all Ecma downloads are TC39 related). The HTML version of ECMA-262 and ECMA-402 is in addition to it, and compared to full downloads that is even significantly higher.This is actually more than e.g. what is being downloaded from the ISO Shop (of course that is not free of charge...). So automatically also TR-104 gets downloaded rather heavily. But e.g. in TR/104 the URL to the tests does not work. Also the text needs to be updated. It reflects a situation when only ES5 was covered, but  e.g. not ECMA-402. 
+IS: Technical Report 104 needs to be updated. He added that all specs related to TC39 work are being downloaded very heavily (actually at  least 2/3 of all Ecma downloads are TC39 related). The HTML version of ECMA-262 and ECMA-402 is in addition to it, and compared to full downloads that is even significantly higher.This is actually more than e.g. what is being downloaded from the ISO Shop (of course that is not free of charge...). So automatically also TR-104 gets downloaded rather heavily. But e.g. in TR/104 the URL to the tests does not work. Also the text needs to be updated. It reflects a situation when only ES5 was covered, but  e.g. not ECMA-402.
 
 AWB: Propose updating TR 104 to be descriptive only?
 
@@ -112,7 +112,7 @@ Note IS: I did not say that in the meeting, but In case of TC39 actually we give
 - Linking standard and draft?
 - It's there, but some want it to be more prominent
 
-Note IS: The TC39 website pages at Ecma have always room for improvement. If anything you want to include just contact Patrick from the Secretariat who maintains the webpages. 
+Note IS: The TC39 website pages at Ecma have always room for improvement. If anything you want to include just contact Patrick from the Secretariat who maintains the webpages.
 
 
 ## 6. Ecma 262 Status Update
@@ -202,7 +202,7 @@ TC: Need help with reviewing contributions
 - Promises
 - Yield
 
-TC: Barrier to entry quite lower based on the work that's been done in the last year. 
+TC: Barrier to entry quite lower based on the work that's been done in the last year.
 
 SP: (asking about test submission with new features)
 
@@ -221,14 +221,14 @@ SP: Block merge?
 - Block on normative changes until they have tests
 - Due diligence on both the tests and normative spec changes
 - Authors, champions, leads must be satisfied with changes on both repositories
-- Include mention of available mentorship for test writing. 
+- Include mention of available mentorship for test writing.
 
 
-## 9.i.a Reintroduce for-in-initializer 
+## 9.i.a Reintroduce for-in-initializer
 
 (Kevin Gibbons)
 
-Slides: https://docs.google.com/presentation/d/19LVVdCHfokJWQnNvkyu8M2vdpMAz8yIE1wB8yK7hLBR4/edit#slide=id.gc6f980f91_0_0Slides: 
+Slides: https://docs.google.com/presentation/d/19LVVdCHfokJWQnNvkyu8M2vdpMAz8yIE1wB8yK7hLBR4/edit#slide=id.gc6f980f91_0_0Slides:
 
 KG: V8, SM, JSC implemented and later reverted. Chakra did not implement
 
@@ -236,7 +236,7 @@ KG: V8, SM, JSC implemented and later reverted. Chakra did not implement
 
 Proposing changes to Annex B
 
-AWB: Annex B are generally items not allowed in strict mode 
+AWB: Annex B are generally items not allowed in strict mode
 
 KG: Not consistent
 
@@ -276,7 +276,7 @@ DD: Kevin Smith has left the committee; I am taking over as champion. I did not 
 AWB: Going back to the previous topic, Kevin, could you please share a PDF on the notes page, since links rot?
 
 
-## 9.i.e Trailing commas in functions 
+## 9.i.e Trailing commas in functions
 
 (Jeff Morrison)
 
@@ -304,11 +304,11 @@ WH: I don't object to advancing this to stage 4, but I'm sad to see this in the 
 
 (Michael Saboff)
 
-MS: Unify the length of strings and arrays. Strings are 2^53-1, Arrays are 2^32-1 indexed elements. A few APIs cross over. Really, browsers are all 2^31 or less. I don't care which way we go, but I'd like Strings and Arrays to be unified. Maybe we should delay this a little until we figure out how to make Arrays bigger; I originally proposed reducing everything to 2^32-1
+MLS: Unify the length of strings and arrays. Strings are 2^53-1, Arrays are 2^32-1 indexed elements. A few APIs cross over. Really, browsers are all 2^31 or less. I don't care which way we go, but I'd like Strings and Arrays to be unified. Maybe we should delay this a little until we figure out how to make Arrays bigger; I originally proposed reducing everything to 2^32-1
 
 MF: What's the motivation?
 
-MS: Consistency, so they all use the same type of index.
+MLS: Consistency, so they all use the same type of index.
 
 AWB: There was a lot of thought that went into it. We increased the size of everything that we could — strings, typed arrays — and held off on Arrays for compatibility reasons.
 
@@ -330,11 +330,11 @@ BE: The motivation [of increasing it] was weak, and no one wanted to jump on the
 
 AWB: Well, we have a motivated implementer here. Maybe Michael should try it out.
 
-MS: I don't think any browser believes we need more than 2^32 for browsers. However, for servers, it could be an important limit to hit. I don't think this is important for JSC as we are just a browser implementation.
+MLS: I don't think any browser believes we need more than 2^32 for browsers. However, for servers, it could be an important limit to hit. I don't think this is important for JSC as we are just a browser implementation.
 
 AWB: There's a chicken and egg problem. Someone has to prove the feasibility of it, and you're the only major implementation who has brought it up as a possibility.
 
-MS: My proposal was to make string lengths smaller.
+MLS: My proposal was to make string lengths smaller.
 
 AWB: We don't want to make string lengths smaller
 
@@ -354,17 +354,17 @@ EF: If we don't shrink TypedArrays, we wouldn't get a level paying field.
 
 AK: What is the motivation for this change, given that JSC already limits strings to 2^31?
 
-MS: It's consistency. In regular expressions, for split, we have to do these 53-bit calculations, but really strings are smaller
+MLS: It's consistency. In regular expressions, for split, we have to do these 53-bit calculations, but really strings are smaller
 
 AWB: For split, we made a change to use ToUint32 rather than ToLength, but we should've made it throw
 
 AK: that's a separate proposal
 
-AWB: It's gotten worse with recent changes 
+AWB: It's gotten worse with recent changes
 
 DE: We've hit the timebox limit; Add this to the end of the agenda?
 
-MS: This isn't a hill for me to die on; i think it's something we should address, but not my #1 priority
+MLS: This isn't a hill for me to die on; i think it's something we should address, but not my #1 priority
 
 #### Conclusion/Resolution
 
@@ -438,7 +438,7 @@ AK: This is adding to the incompatibility for the future and churn.
 
 BE: It is what it was. I support the status quo, copying Java, returning NaN
 
-MS: I support returning NaN for less than two arguments, just because of the confusion that Date has 0 arguments, 1 arguments, and then 2 or more is just like Date.UTC
+MLS: I support returning NaN for less than two arguments, just because of the confusion that Date has 0 arguments, 1 arguments, and then 2 or more is just like Date.UTC
 
 AWB: The Date constructor has an overload for one argument, so it can't treat that as the year and be analogous to Date.UTC for the one-argument case.
 
@@ -485,7 +485,7 @@ SetValueInBuffer ( arrayBuffer, byteIndex, type, value [ , isLittleEndian ] )
 let x = new Array(6)
 for (let i = 0; i < x.length; i++) x[i] = 0.5
 ```
-- Initially "filled with holes" (missing properties), then entries are added 
+- Initially "filled with holes" (missing properties), then entries are added
 V8 canonicalizes NaNs when setting elements into such an array so it can have a distinct "hole" NaN value
 
 WH: This is an instance of the general problem that implementations will sometimes do NaN-boxing and sometimes not within the same program, depending on code and data structure optimizations.
@@ -493,7 +493,7 @@ WH: This is an instance of the general problem that implementations will sometim
 DH: Easiest solution: maximally non-deterministic: allowed to non-deterministically change bit pattern
 Problem: many places possible to predict the bit pattern. Can convey information, want to preserve that preciseness.
 
-MM: Uncontrolled non-determinism of NaN bit pattern, depends on unspecified nullable 
+MM: Uncontrolled non-determinism of NaN bit pattern, depends on unspecified nullable
 
 (discussion re: intentionally evil implementations)
 
@@ -502,14 +502,14 @@ WH: My view is that what NaN bit pattern you get should be unspecified. I unders
 * timebox ran out, discussion continued *
 
 DH: expectations:
-    
+
 - want implementation flexibility, use cases for changing bit patterns
 - frozen properties, should not be able to reliably observe changes
 
 
-DH: 
-    
-- NaNs carry around bit pattern, 
+DH:
+
+- NaNs carry around bit pattern,
 - specific places can scramble
 - specific places preserve
 
@@ -522,11 +522,11 @@ AK: I think this needs to be discuss offline?
 
 DH: (taking issue with time box)
 
-DH: Some predictable behavior that has changed over the years and some implementations are doing different things, new use cases. 
+DH: Some predictable behavior that has changed over the years and some implementations are doing different things, new use cases.
 
 #### Conclusion/Resolution
 
-- Allen, Mark, Dave, Waldemar, Dan to have discussion and come back for another time box discussion. 
+- Allen, Mark, Dave, Waldemar, Dan to have discussion and come back for another time box discussion.
 
 
 (More discussion re: time box)
@@ -538,14 +538,14 @@ DH: Some predictable behavior that has changed over the years and some implement
 
 JHD: Any non-proxy, call built-in op claims foo in object, call Object.getOwnPropertyDescriptor(foo, "prop"), you get that property descriptor. Proxy can lie, which is problematic when passing the returned value from `Object.getOwnPropertyDescriptors(...)`
 
-BT: Side-effecting proxies. If a proxy says "no descriptor for this property", then there is none. Object.getOwnPropertyDescriptors(...) shouldn't be seen as the authority. 
+BT: Side-effecting proxies. If a proxy says "no descriptor for this property", then there is none. Object.getOwnPropertyDescriptors(...) shouldn't be seen as the authority.
 
 - Property should be skipped on the grounds that "it doesn't exist"
 
 
 MM: once an obj is not observable, ownkeys cannot give an answer that was not previously true
 
-DE: Cait Potter implemented both semantics and there are no noticeable differences. 
+DE: Cait Potter implemented both semantics and there are no noticeable differences.
 
 AWB: No guarantee once you get a descriptor that it remains valid to do something with it in the future - operations are unknown
 
@@ -562,21 +562,21 @@ JHD: Implementors are aware and following progress
 
 
 
-## 9.ii.b Object.enumerable{Keys,Values,Entries} 
+## 9.ii.b Object.enumerable{Keys,Values,Entries}
 
 (Leo Balter & John-David Dalton)
 
 LBR: Discussing https://github.com/leobalter/object-enumerables
-    
+
 JDD: No built-in API that allows getting own and inherited properties
-    
+
 EFT/DD: for loop?
 
 JDD: Want built-in functionality, not syntax
 
 DH: Something more?
 
-JDD: Allows a shim path. 
+JDD: Allows a shim path.
 
 DH: An example?
 
@@ -592,7 +592,7 @@ DH: Not impossible to write in library code?
 
 JDD: no, but not the point
 
-STH: Offers shim authors something to coordinate on to fix bugs in older browsers, but not sure we should be in the business of doing so. 
+STH: Offers shim authors something to coordinate on to fix bugs in older browsers, but not sure we should be in the business of doing so.
 
 YK: It's rare to encounter an enumerable property on the prototype, it happens
 
@@ -606,7 +606,7 @@ DD: Do we want to further encourage the programming model that these encourage?
 
 MM: (concurring, discussing value of such a feature)
 
-DH: A number of libraries want to use this functionality and it would be nice expose as built-in, but why not define in one library and that's that. 
+DH: A number of libraries want to use this functionality and it would be nice expose as built-in, but why not define in one library and that's that.
 
 AWB: Back to "inherited, enumerable things". The only definition we have is via for-in
 
@@ -618,7 +618,7 @@ BE: for-in is bad legacy
 
 "Never invest in the trailing edge"
 
-DD: Adding new features, in new browsers, to fix features in old browsers, is not what we should be doing. 
+DD: Adding new features, in new browsers, to fix features in old browsers, is not what we should be doing.
 
 MM: I don't think this is going to get consensus
 
@@ -646,8 +646,8 @@ DE: Expose more unicode data to RegExps
 - Inverse:
 `\P`
 
-Example: 
-    
+Example:
+
 https://i.gyazo.com/0dcfc195d891a36c4b0c04d460cb5d72.png
 In text form: https://github.com/mathiasbynens/es-regexp-unicode-property-escapes#illustrative-examples
 
@@ -675,13 +675,13 @@ AWB: Need to specify the syntax
 WH: If we choose to use `\u{}`, then we must make unknown classes (or typos) into early errors because we need typos in hex numbers to be early errors. With `\p{}` we'd have a choice of standardizing on early or runtime errors.
 
 
-Revisiting String.prototype.normalize specification. 
+Revisiting String.prototype.normalize specification.
 
 This may need to be "normative optional"? Inclusion of new data tables may be problematic?
 
-Discussion re: ICU data, Unicode data on constrained devices. 
+Discussion re: ICU data, Unicode data on constrained devices.
 
-RW: When Tessel 2 moves to Node 6, we'll be shipping Node.js compiled with the disable flags, which means normalize is useless, but the additional data isn't included. 
+RW: When Tessel 2 moves to Node 6, we'll be shipping Node.js compiled with the disable flags, which means normalize is useless, but the additional data isn't included.
 
 AWB: Can define it such that, if the data is not available, the character set is empty
 
@@ -694,7 +694,7 @@ DE: Stage 1?
 
 
 ## 9.ii.d Async Functions for Stage 4
-    
+
 (Brian Terlson)
 
 
@@ -707,7 +707,7 @@ YK: Worried about cancellation?
 
 DD: Cancel token integrate well with async functions
 
-YK: Not at stage 2 with cancellation, hard to be sure that it's compatible 
+YK: Not at stage 2 with cancellation, hard to be sure that it's compatible
 
 KG: not sure it could change, given widepsread use in transpilation
 
@@ -738,11 +738,11 @@ SP: Can we revisit this after cancellation?
 
 (Discussion, re: some people that object, that are apparently in the room, but aren't speaking)
 
-MM: concerns: === should never throw, typeof should never throw. I don't recall where cancellation would make await throw, where it previously would not throw. 
+MM: concerns: === should never throw, typeof should never throw. I don't recall where cancellation would make await throw, where it previously would not throw.
 
-Was 
+Was
 
-DD: 
+DD:
 
 ```js
 async function foo() {
@@ -757,7 +757,7 @@ async function foo() {
 
 might call neither g nor h. But then there are other situations where neither g nor h is called. Use `finally` if you want cleanup code.
 
-DD: Objecting to the third 
+DD: Objecting to the third
 
 JHD: If `f` is changed to return `new Promise(() => {})`, then both `g` and `h` will never run now, without cancellation existing - therefore if you expect `g` or `h` to always run, you are simply wrong, and your expectation is invalid.
 
@@ -778,14 +778,14 @@ DD: however, currently you can guarantee that either `g` or `h` will always run 
 MM: the example here has nothing to do with something that was not abrupt, becoming abrupt
 - A new way to be abrupt, in addition to the old way to be abrupt
 
-DH: If from scratch, no issue. The issue is that catch expectations no longer valid. 
+DH: If from scratch, no issue. The issue is that catch expectations no longer valid.
 
 DD: There is past precedent for moving ahead. We introduced proxies, which created objects that behaved outside the past invariants that code might have relied on. We introduced new typeof types with similar effect.
 
 
 JHD/EFT: No call site can be defensive against code it didn't write
 
-JHD: In the case of Promises, if you're returning a promise that you didn't create, in a `then`, you can't defend against it, because you can't know if the other promise will ever settle. 
+JHD: In the case of Promises, if you're returning a promise that you didn't create, in a `then`, you can't defend against it, because you can't know if the other promise will ever settle.
 
 
 (Questions about "Third State")
@@ -804,7 +804,7 @@ RW: There are some nasty npm modules for these sorts of math functions. This com
 
 YK: leftPad went well
 
-RW: This falls into the leftPad box. This is putting down pavement where a cowpath once was. 
+RW: This falls into the leftPad box. This is putting down pavement where a cowpath once was.
 
 RW: Math.constrain: Could be called Math.clamp. Like Uint8ClampedArray. Very straightforward.
 
@@ -822,7 +822,7 @@ DD: Why not just use fround composed with it? Is there a hardware operation for 
 
 RW: No; we can take this or leave it
 
-AWB: Since we're doing multiplies, the fround won't end up commuting with the operations, so this won't get those efficiency advantages. This is specified to do double precision scaling. This is just a nice-to-have. 
+AWB: Since we're doing multiplies, the fround won't end up commuting with the operations, so this won't get those efficiency advantages. This is specified to do double precision scaling. This is just a nice-to-have.
 
 DH: is every one on the list something that you found in other languages?
 

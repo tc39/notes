@@ -1,7 +1,7 @@
 # July 27, 2017 Meeting Notes
 -----
 
-Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE), Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK), 
+Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE), Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JLZ), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MLS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK),
 
 -----
 
@@ -45,7 +45,7 @@ WH: We don't. We had to decouple the grammars to avoid changing behavior of exis
 
 
 
-## 11.ii.e. export-ns-from and export-default-from for Stage 2 
+## 11.ii.e. export-ns-from and export-default-from for Stage 2
 
 (Ben Newman, John-David Dalton)
 
@@ -56,7 +56,7 @@ BN: Follow up on a stale proposal from Lee to have symmetry between import and e
 
 ### Export-ns-from
 
-BN: Not only about symmetry, but also preventing the creation of the unnecessary namespace object via import to just export it. 
+BN: Not only about symmetry, but also preventing the creation of the unnecessary namespace object via import to just export it.
 
 BN: Shorthand for
 
@@ -106,7 +106,7 @@ AK: For this one (`export v from "mod"`), I think the existing syntax is pretty 
 
 LBR: Maybe a real use-case/example will help.
 
-BFS: This a real compiler use, it's sort of a microbenchmark. 
+BFS: This a real compiler use, it's sort of a microbenchmark.
 
 BN: The reason we have special handling of default exports is because we want people to be able to operate in the mental model of the old CommonJS-style exports. If we require people to say `export { default as v }` then, better or worse, people have to know that default is another named export. Then, they have to depart from the illusion that default exports are sort of special.
 
@@ -124,7 +124,7 @@ BN: you can imagine someone who uses the rule of thumbs of avoid curly braces, f
 
 SYG: Im sympathetic that this reads very confusing, specially to teach. I favor the current form that is very explicit.
 
-AWB: I see that there are various variants of export, with `export {` and `export default`. You could also imagine `export default from...`. You can follow it with a declaration, or 
+AWB: I see that there are various variants of export, with `export {` and `export default`. You could also imagine `export default from...`. You can follow it with a declaration, or
 
 WH: There is a grammar problem. `export default` can be followed by an expression. `export default from(x)` has existing behavior of exporting the result of calling the function `from` with parameter `x`.
 
@@ -297,7 +297,7 @@ BFS: Are you freezing those properties?
 MPT: Yes, the polyfill right now is a getter
 
 DD: That makes sense; I'd think of these as calculated from internal slots
-    
+
 MPT: ISO-1 parsing, are we ok with this and defer everything else to ICU? We could otherwise overload the constructors.
 
 DD: It would be great we don't override the constructor
@@ -328,7 +328,7 @@ DH: Why we are talking about BIgInt here, since the range seems enough?
 
 MJN: You'd get less accurate in nanoseconds as you get to very old years and years which are very far in the future. We wouldn't want "midnight, many years ago" to be represented inaccurately.
 
-MS: Document the use case for benchmark
+MLS: Document the use case for benchmark
 
 YK: Benchmark
 
@@ -356,12 +356,12 @@ AWB: When you say "parse node", you mean the code that's evaluated in the script
 BT: Yes, and that opens the question of what do you do if an implementation decides to cache the parse tree. Currently, it's implementation-defined whether multiple parsings of the same script or module will give you the same Parse Nodes or different ones.
 
 YH: Is this true for regex?
- 
+
 AWB: What if you eval the same string repeatedly? The intent of the spec is that is a fresh operation. Just because the text is identically doesn't mean is the same.
 
 BT: Let's figure out what we want first.
 
-YK: It seems like we are doing something different what we did with template literals. 
+YK: It seems like we are doing something different what we did with template literals.
 
 AWB: Yes, you're right! We intentionally make them different, there are caching scenarios that we apply to template literals that we don't want to apply to regexp.
 
@@ -393,7 +393,7 @@ DE: You are describing the observable effects, we maybe can come up with a case 
 YK: I want to understand why this is not scary to people (the identity problem)
 
 BT: The other two options are:
-    
+
 - Identical template literals in the same code retains the same identity.
 - Every template literal is a fresh copy?
 
@@ -446,9 +446,9 @@ DE: We should keep the discussion in github given that there still some disagree
 
 ### [#945 Normative: Evaluate all computed names before any values in object literals](https://github.com/tc39/ecma262/pull/945)
 
-BT: Two problems with this: 
-    
-- it doesn't align with classes. 
+BT: Two problems with this:
+
+- it doesn't align with classes.
 - the biggest issue if that it we ever want decorators... ???
 
 JM:  Do we know if this is web compatible?
@@ -459,7 +459,7 @@ YK: observation: the kind of problems that I can expect, someone is using a comp
 
 WH: If there is not way to get a hold of the object from within the expressions, then it seems that this will be ok. I was concerned about a case where the name of a latter field could use the value of a prior field.
 
-SM: What about nested destructuring? 
+SM: What about nested destructuring?
 
 BT: Assignment target?
 
@@ -547,13 +547,13 @@ DH: Chair needs to be a steward of the consensus-based process.
 
 AWB: We miss having the long-term planning that we used to have.
 
-MS: YK wants to nominate DE. Does he want to be nominated? He'd need to recuse himself from the technical discussions in which he's participating.
+MLS: YK wants to nominate DE. Does he want to be nominated? He'd need to recuse himself from the technical discussions in which he's participating.
 
 IS: Has to be an ECMA member. Ordinary member is preferable, but some kind of member is mandatory.
 
 DE: I am not interested in being a candidate for chair.
 
-MS: Being chair is about being good at management.
+MLS: Being chair is about being good at management.
 
 YK: I was never notified that there was a search for a chair.
 
@@ -563,13 +563,13 @@ AWB: Oh, come on. I've been raising the chair search at meetings for the last ye
 
 YK: Concerned about process
 
-MS: Like the proposal of Rex chairing two meetings and then having an election in January. DE and LBR are interested in being vice chairs. We should jump at the opportunity!
+MLS: Like the proposal of Rex chairing two meetings and then having an election in January. DE and LBR are interested in being vice chairs. We should jump at the opportunity!
 
 BT: I don't see a reason to attach an "interim" title to the chair.
 
 ?: Need to be welcoming to Rex.
 
-MS: I think Rex would be a great candidate. I'd like to see him in action.
+MLS: I think Rex would be a great candidate. I'd like to see him in action.
 
 YK: ?
 
@@ -579,7 +579,7 @@ DE: I wouldn't have to stop doing technical work if I were vice chair?
 
 BT: Yes, except if you were stepping in for the chair.
 
-IS: Just a remark to this, not told in the meeting. The "Chair" in his "member capacity" can also do technical work and be behind his own proposal, but he always must make it sure that it is clear when he is speaking as "Chair" and as contributing "Members". The best to "step down" from the Chair when his proposal (as member) is discussed. The same is also true for the "Vice-Chairs". They need to make it clear when they speak as "Vice-Chair" and when as "Member". 
+IS: Just a remark to this, not told in the meeting. The "Chair" in his "member capacity" can also do technical work and be behind his own proposal, but he always must make it sure that it is clear when he is speaking as "Chair" and as contributing "Members". The best to "step down" from the Chair when his proposal (as member) is discussed. The same is also true for the "Vice-Chairs". They need to make it clear when they speak as "Vice-Chair" and when as "Member".
 
 #### Conclusion/Resolution
 
@@ -617,9 +617,9 @@ DE: main result of orthogonality is avoiding surprises to programmers, e.g., you
 
 Goal: going for stage 3
 
-JM: Last meeting: merged public and private fields in a single proposal. 
+JM: Last meeting: merged public and private fields in a single proposal.
 
-JM: made 3 simplifications to the proposal. 
+JM: made 3 simplifications to the proposal.
 
 JM: 1) moved private field shorthand to separate proposal
 
@@ -668,7 +668,7 @@ WH: I reviewed this and all the other class-related proposals for this meeting. 
 
 LBR: (shows agenda to discuss what we are doing the rest of the day)
 
-LBR: we have time constraints, e.g., Ron won't be able to join us at the next meeting. similarly, Gabriel Isenberg also won't be available. 
+LBR: we have time constraints, e.g., Ron won't be able to join us at the next meeting. similarly, Gabriel Isenberg also won't be available.
 
 WH: Is there a particular technical reason to defer, or are you just doing it to yield time?
 
@@ -698,7 +698,7 @@ DE: yes
 
 JHD: why was the decision made that private methods should be "own"?
 
-??: then are not actually own private fields, 
+??: then are not actually own private fields,
 
 JHD: if I had a method that took another instance, and I applied my function to that other instance, would it work?
 
@@ -724,7 +724,7 @@ C.prototype.bar.call();
 
 In other words, this example appropriately throws a `TypeError` because there is no `C.prototype.#foo` visible to `C.prototype.bar`.
 
-DE: 
+DE:
 
 AWB: what does the receiver check?
 
@@ -820,7 +820,7 @@ DE: this proposal follows the order of initialization at the Munich mtg. The cla
 
 DE: Omitted features: instance finishers. Yehuda?
 
-YK: an instance finisher is a function that is executed at the end of instantiation of the class at any subclass level and passes at the instance. this is at the end of Reflect.construct. the use case is a decorator to confirm that all instances are frozen or sealed. Another:  you want to register created instance into a map. The subclass provides the key, the superclass expresses that the instance should be registered. 
+YK: an instance finisher is a function that is executed at the end of instantiation of the class at any subclass level and passes at the instance. this is at the end of Reflect.construct. the use case is a decorator to confirm that all instances are frozen or sealed. Another:  you want to register created instance into a map. The subclass provides the key, the superclass expresses that the instance should be registered.
 
 DE: instance finishers change how instances are created. <describes an implementation> It's complicated and so wants to separate it out.
 
@@ -832,9 +832,9 @@ MM: Dean and I are also working on a subclassing hook
 
 BT,YK,others: Yay!
 
-DE: Parameter decorators. 
+DE: Parameter decorators.
 
-YK: I'm still not interested in it. 
+YK: I'm still not interested in it.
 
 BT: Ron is.
 
@@ -848,13 +848,13 @@ AK: Initializer performance concern is real =
 
 YK: These are real things and people should be careful, but in many cases where people use decorators, they would have had to do something else.
 
-YK: Babel is making progress on getting to the new semantics. 
+YK: Babel is making progress on getting to the new semantics.
 
 RBN: we have held off on updating until it gets to stage 3.
 
 YK: If you already implement the legacy semantics, you will increase the number of users on the legacy. If you do it sooner there are fewer people impacted.
 
-DE: I do agree that the proposal will likely change again before stage 3. 
+DE: I do agree that the proposal will likely change again before stage 3.
 
 YK: It seems very reasonable for implementation to wait for stage 3 before implementing anything. But existing implementation should move forward to not build a larger legacy.
 
@@ -875,7 +875,7 @@ WH: I will review all the class proposals. <huzzahs>
 - Reviewers:  WH, BFS, AK
 
 
-## 13.ii.a Optional Chaining Operator 
+## 13.ii.a Optional Chaining Operator
 
 (Gabriel Isenberg)
 
@@ -885,7 +885,7 @@ WH: I will review all the class proposals. <huzzahs>
 GIG: questions:
 
 - Should we return undefined, null, or null and undefined?
-- Returns `undefined` if property absent, `null` if property is defined with a null value 
+- Returns `undefined` if property absent, `null` if property is defined with a null value
 
 MM: (null)?.b gives undefined. That seems wrong.
 

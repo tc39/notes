@@ -1,6 +1,6 @@
 # July 24, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson(RGN), Lin Clark (LCK), Allen Wirfs-Brock(AW), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage(SME), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent (AVT) John-David Dalton (JDD)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SCR), Kevin Smith (KS), Ron Buckton (RBN), J.F. Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson(RGN), Lin Clark (LCK), Allen Wirfs-Brock(AW), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbage(SME), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent (AVT) John-David Dalton (JDD)
 
 Remote:
 Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell (JRL), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
@@ -443,7 +443,7 @@ MM: You didn't mention sloppy/strict. I beg you to allow do-expressions only in 
 
 DH: I wouldn't feel that it would be necessary to only do this in strict mode.
 
-MS: If we're talking footguns, this has a lot of bullets in it. These questionable constructs must be early errors not dynamic errors.
+MLS: If we're talking footguns, this has a lot of bullets in it. These questionable constructs must be early errors not dynamic errors.
 
 DH: I knew if I went through these difficult edge cases, I would get trolled, but if we over-focus on these ridiculous edge cases, the feature seems more complicated than it is, but I think a lot of these cases are ambiguous enough that people tend to shy away from them. I think this is a lot of very strong indication that people want this, so I wouldn't want some hard cases prevent us from seeing those powerful use cases.
 

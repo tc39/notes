@@ -1,7 +1,7 @@
 # January 25, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Brendan Eich (BE), István Sebestyén (IS), Keith Miller (KM), Brendan Eich (BE), Myles Borins (MBS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MLS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Brendan Eich (BE), István Sebestyén (IS), Keith Miller (KM), Brendan Eich (BE), Myles Borins (MBS)
 
 -----
 
@@ -138,7 +138,7 @@ IS: Then well at least for a specific meeting I can send him out. There are no b
 AWB: Presumably the next step would be to talk to the member org and say you're sending here a member that is violating the code of conduct can you deal with this
 
 WH: That works for large member organizations, but we also have some small organizations that are members.
- 
+
 TK: Typically, with a Code of Conduct, the committee sets up a group of people, elected by the committee, to investigate complaints and recommend actions.
 
 IS: That's what I'd recommend--better if we start with someone in the meeting. Please go ahead if you think that's a better solution.
@@ -189,7 +189,7 @@ AWB: Yeah, that's my position. You don't ever want to get to enforcement, hopefu
 
 CM: Yes, hopefully you can set ground rules to set behavior
 
-MS:I agree with chip that some policy should have disciplinary measures. Just like we have the stages document, if we see someone stepping outside the policy and say okay, stop, what's the criteria here? The policy for participation, we would bring it up and say you're out of line. I think it makes sense to have more formal sub-committee that would be responsible for that. Like Chip says I hope we never have to use it.
+MLS: I agree with chip that some policy should have disciplinary measures. Just like we have the stages document, if we see someone stepping outside the policy and say okay, stop, what's the criteria here? The policy for participation, we would bring it up and say you're out of line. I think it makes sense to have more formal sub-committee that would be responsible for that. Like Chip says I hope we never have to use it.
 
 BT: I would be very surprised if we use it in the committee. I would not be surprised if we use it on Github, that's the primary venue I think it'll effect.
 
@@ -205,7 +205,7 @@ KG: Just because we can doesn't mean it's a good idea to do it. Having the CoC i
 
 JHD: constraining ourselves to rules grants folks with no rights some rights,
 
-MS: We warn people once if they've done something egregious
+MLS: We warn people once if they've done something egregious
 
 MPT: For what it's worth I work on MSFT in this area and we had one CoC violation reported in 6 months and we have a lot of OSS projects. It's not something that is happening 500 times a day. I wouldn't get too much worked up about how much effort it takes to enforce. If we have a CoC violation we will create a committee that will address this including some people in the room and some minorities as interested. You wouldn't have to have it pre-set, it hardly ever comes up.
 
@@ -241,11 +241,11 @@ DH: That instance had many factors and poor behavior from many participants; I d
 
 MPT: Not having been there, right now you have a member who seems to be on the verge of tears. Maybe right now this conversation is a violation
 
-MS: What started this discussion is that he isn't sure this would have been effective in Munich.
+MLS: What started this discussion is that he isn't sure this would have been effective in Munich.
 
 BT: I think it would have been
 
-MS: To raise that a little higher, any CoC we draft should be useful in situations we actually encounter.
+MLS: To raise that a little higher, any CoC we draft should be useful in situations we actually encounter.
 
 JM: What will make it most effective is our enforcement policy
 
@@ -271,7 +271,7 @@ AWB: We have a proposal here. Normally the process in the ideal world, the propo
 
 TK: I would agree
 
-MS: So everyone is charged with looking at and reviewing this document for march.
+MLS: So everyone is charged with looking at and reviewing this document for march.
 
 AWB: Yes, for consideration in March. Don't wait until March.
 
@@ -598,7 +598,7 @@ WH: IEEE Decimal has a *lot* of different zeros.
 
 BE: I think we all agree they should be ==, ===, etc. We already have IEEE double, so we're talking about going to the next island of safety which is bigint, or should we do both?
 
-MS: If we add these other types we're talking about. I could see 8, 16, 32, 64, 128, signed, unsigned and none of them compare to each other.
+MLS: If we add these other types we're talking about. I could see 8, 16, 32, 64, 128, signed, unsigned and none of them compare to each other.
 
 BE: I'm glad they don't. That is something Dan and I worked out.
 
@@ -611,7 +611,7 @@ BE: No implicit conversion.
 AK: The hope that would be this island of BigInts that are compatible with each other at least
 
 DE: There are two parts to no implicit conversion; + would throw but === would return false
- 
+
 BE: There are fine points here, whether or we have explicit or implicit conversions, the BigInt vs Int64 step is still a question.
 
 AK: Bigints would allow you have some semblance of understandability between these different types
@@ -622,7 +622,7 @@ AK: Yes, while absorbing those you'd be in a better state than having 8 types
 
 BE: After going through SIMD which is stalled at stage 3.... nobody is here to impose all the ISO C++ types, today. But, we have a problem. The twitpocalpse three, there are latent bugs
 
-MS: Besides file offset, getting values back from stat.. why can't a BigInt handle that? You know you're going to get back a value you can do logical operations on to see which bits are set.
+MLS: Besides file offset, getting values back from stat.. why can't a BigInt handle that? You know you're going to get back a value you can do logical operations on to see which bits are set.
 
 ??: I don't think anyone is saying BigInts won't work for node. I think BE is saying we have a use case for smaller integers.
 
@@ -642,8 +642,8 @@ BE: Who wants Bigint?
 
 - both: 2 votes
 - bigint: 9 votes
-- int64: 
-- either: 
+- int64:
+- either:
 
 BB: The cases where we need 64-bit ints are not in the hotpath. stat is expensive enough that boxing it is not in the hotpath.
 
@@ -775,7 +775,7 @@ AK: From the V8 side, we got momentum internally on BigInt because the effrot re
 
 AWB: What do other engines think?
 
-MS: Same for JSC
+MLS: Same for JSC
 
 BE: Just to be clear, do you mean expectations for users on int32...
 
@@ -797,7 +797,7 @@ BE: Let's talk about this constant rumor that WASM will replace JS. It may happe
 
 MM: I've been doing this now for 8 years, which I know is nothing compared to you. Leaving the door open for something to be done cleanly at such a time in the future that someone has the energy to do it. To me, that is a big deal. The difference between decimal without value types in the old days vs your proposal now: You've done the work to understand how value types could grow in such a way that what you are proposing now will be retroactively rationalized into the value type proposal. We don't know if it'll turn out that way but you've paved the way. The idea of holding the door open for something often works. If you're going to stay on the standards committee you have to play the long game.
 
-BE: Good point. There is some pressure with game developers with mutable vectors and matrices for operators. That's a separate proposal. The committee could do operators, literals, and value types. 
+BE: Good point. There is some pressure with game developers with mutable vectors and matrices for operators. That's a separate proposal. The committee could do operators, literals, and value types.
 
 DE: Literals could be done totally separately. CSSOM could actually use suffixes to construct objects
 
@@ -845,7 +845,7 @@ BE: Until someone says I'm doing it, it won't happen
 
 WH: I'd be happy to review it.
 
-AWB: And the stage one item we have transforms into a bigint approach. 
+AWB: And the stage one item we have transforms into a bigint approach.
 
 BE: You did an earlier version that I wasn't aware of.
 
@@ -855,7 +855,7 @@ BE: I don't think we have marks glitch with overflows.
 
 DE: That's a legit design point we can consider. I'm not going to rule that out
 
-MM: I would be amazed if what happened was we got int64 first, with overflow throw. 
+MM: I would be amazed if what happened was we got int64 first, with overflow throw.
 
 BE: Fair enough
 
@@ -959,7 +959,7 @@ JFB: Let me make another argument, when you're doing something math based things
 
 JHD: In that problem domain it makes sense, sure
 
-JFB: It's totally a niche thing, but it's trivial 
+JFB: It's totally a niche thing, but it's trivial
 
 AWB: We have a complexity budget. Yes it would be slightly better for a small number of users but it is an addition to the spec, our workload, an implementation, etc. Anyone can trivially define a one-line function to do this. What is the overriding... we don't have an infinite amount of complexity we can add. Someday we need to stop
 
@@ -1020,7 +1020,7 @@ JHD: I'm suggesting that putting these both in stage one is the right place to d
   - Stage one, but discuss with Rick to consider merging / relationship between math proposals
   - Concern about the motivation for users (is this too trivial, and any interested users can implement it themselves?)
 
-## 13.ii.f Promise.prototype.finally to stage 3? 
+## 13.ii.f Promise.prototype.finally to stage 3?
 
 (Jordan Harband)
 
@@ -1090,7 +1090,7 @@ JDH: Last question, can I have some volunteers to be reviewers? Mark, Dan
 
 https://github.com/ljharb/proposal-error-stacks
 
-JHD: I'm looking for stage 1. Spec details don't need to be bikeshedded here. The goal is to lay a foundation for error stacks, such that future proposals can resolve outstanding wishlists. The general gist is that error.prototype.stack is going to be an Annex B accessor on Error.prototype. The goal is to have a union of behaviors across browsers in a way that allows for extension which I'll get to in a moment. The reason the accessor is annex b is to allow 
+JHD: I'm looking for stage 1. Spec details don't need to be bikeshedded here. The goal is to lay a foundation for error stacks, such that future proposals can resolve outstanding wishlists. The general gist is that error.prototype.stack is going to be an Annex B accessor on Error.prototype. The goal is to have a union of behaviors across browsers in a way that allows for extension which I'll get to in a moment. The reason the accessor is annex b is to allow
 
 BT: Why is that a value?
 
@@ -1104,7 +1104,7 @@ MM: In all four browsers, if you create an error object and you say error.stack 
 
 WH: Am I the only one bothered by this exposing hidden data from closures? MM describes a workaround to hide this data in sandboxes, with a lot of effort, but the basic information leak problem remains for non-virtualized scripts.
 
-MM: No, the reason you make it removable, and Annex B, and deletable is because we're worried about that. 
+MM: No, the reason you make it removable, and Annex B, and deletable is because we're worried about that.
 
 WH: Fine you address this for virtualized environments, what about regular ones? Modules trying to protect themselves from each other?
 
@@ -1112,7 +1112,7 @@ JHD: Those libraries can't hide that information at this moment. Not specifying 
 
 WH: We had the same issue with browsers showing the arguments to functions as a property of functions.
 
-AWB: I know, for strict mode functions in particular we tried to prevent stack walking to observe the callers. 
+AWB: I know, for strict mode functions in particular we tried to prevent stack walking to observe the callers.
 
 MM: And we were able to get rid of it due to the (strict-mode) opt-in. If I thought we could simply remove the stack trace information, not codify it, but get all browsers to remove it. If I thought that was possible this proposal would be very different. Since all browsers currently implement it, I'm not going to try to argue for that. I'm looking for the least dangerous thing that is compatible with what the web currently does.
 
@@ -1134,7 +1134,7 @@ BT: Annex B is only required for browsers
 
 MM: Yes but it's normative optional elsewhere, it allows non-browsers delete it
 
-JHD: Some implementations do it as an accessor, some do it as an own property. 
+JHD: Some implementations do it as an accessor, some do it as an own property.
 
 BT: This is beside the point. I'm trying to understand what you're trying to require of whom so I can understand. I'm extremely skeptical. I don't like adding things to Annex B.
 
@@ -1148,7 +1148,7 @@ MM: I hadn't either
 
 BT: I would object to that completely. I don't see why you couldn't put this in the main text of the spec along with the presumably the spec for System.getStack
 
-JHD: I guess that's true. Either way you could... either way the accessor has to return a string if you want to deny access to the stack trace information, you'd have to return a string or object representing it. 
+JHD: I guess that's true. Either way you could... either way the accessor has to return a string if you want to deny access to the stack trace information, you'd have to return a string or object representing it.
 
 BT: That's going to be true regardless.
 
@@ -1242,13 +1242,13 @@ WH: Sure but that would break those billions of dollars of scripts....
 
 JHD: maybe it could be opt in?
 
-MM: That's precisely the difference between what WH is proposing and we have here. Things which have not opted are able to now 
+MM: That's precisely the difference between what WH is proposing and we have here. Things which have not opted are able to now
 
 JHD: That is the reality of the web, unfortunately. That ship has long since sailed.
 
 AK: it might be cross origin iframes issue
 
-MM: The issue about cross-origins stacks and what information we reveal there is important, fortunately because ecmascript doesn't understand the concept of origin, because of the freedom this proposal allows, this proposal specifically is able to sidestep that. We as responsible creators of the web infrastructure can't sidestep that. it's a hard problem. i don't know what to do about cross-origin stacks. 
+MM: The issue about cross-origins stacks and what information we reveal there is important, fortunately because ecmascript doesn't understand the concept of origin, because of the freedom this proposal allows, this proposal specifically is able to sidestep that. We as responsible creators of the web infrastructure can't sidestep that. it's a hard problem. i don't know what to do about cross-origin stacks.
 
 JHD: You can postMessage an error object
 
@@ -1256,7 +1256,7 @@ AK: We've had security bugs with stacks
 
 MM: I want to signal with everyone that is an issue we need to wrestle with
 
-JHD: Error.prototype.stack is an an accessor that is somehow normative optional. There are two functions that are stored on a privileged granted namespace, currently called System. Mark has a number of opinions on why it must be a separate namespace. WE can also address concerns of compat about the name system. I'm sure that anyone using that is just using it for a namespace to hold .import. 
+JHD: Error.prototype.stack is an an accessor that is somehow normative optional. There are two functions that are stored on a privileged granted namespace, currently called System. Mark has a number of opinions on why it must be a separate namespace. WE can also address concerns of compat about the name system. I'm sure that anyone using that is just using it for a namespace to hold .import.
 
 AWB: Why not use an import to access it?
 
@@ -1273,7 +1273,7 @@ JHD: Okay, if anyone lands built-in modules, a number of existing proposals woul
 BT: WE need some proposal to be a motivating use case to drive built-in modules
 
 BM: We have initial bikeshedding from browser side that we could expose the current url of your module via an import of some kind. The assumption is we'd have our own URL scheme, either the about scheme which seems kind of weird, or maybe js:
-    
+
 BT: What?
 
 BM: Clearly we can't use JavaScript:, we could try to present that in two months if this matters to you at all
@@ -1340,13 +1340,13 @@ JHD: They break once in a while.
 
 JLZ: You should remember the problems with stack frame elision from the tail call discussions.
 
-JHD: again, during these discussions, stacks came up. Mark or I, one of us said we are not intending to normatively require or prevent omissions 
+JHD: again, during these discussions, stacks came up. Mark or I, one of us said we are not intending to normatively require or prevent omissions
 
-MS: I think I asked specifically that not all frames would have to appear. Thank you for doing that in this proposal.
+MLS: I think I asked specifically that not all frames would have to appear. Thank you for doing that in this proposal.
 
 JHD: Thank you, I intend to do that.
 
-MF: I like this proposal, I'm very much in favor of it. Early in the discussion we discussed a convenience API where a function is given and all appearances of that function in the stack trace are censored. 
+MF: I like this proposal, I'm very much in favor of it. Early in the discussion we discussed a convenience API where a function is given and all appearances of that function in the stack trace are censored.
 
 JHD: I went back and forth if i would include that in this proposal. This is hard enough that I think it should be a follow-on as options to the System.getStack call. I'd like to be able to black box react or jquery, etc.
 
@@ -1370,7 +1370,7 @@ JHD: I wasn't sure how important it was
 
 BB: I am still a little uncomfortable that we're not specifying what is captured when and we know that elision isn't going to happen in the future. I'm concerned we'll find other things, and we'll progress on this spec and find issue where this is not very practical, too much information, hard to obtain or whatever. A glimpse of what it might look like would be helpful. The structured stack format, can you show it in a JSON-like format?
 
-MM: Yes! It's in the original README 
+MM: Yes! It's in the original README
 
 JLZ: I would really like to see this as the maximally minimal. I would object to adding the additional capabilities.
 
@@ -1386,7 +1386,7 @@ MF: Presence in a WeakMap, perhaps?
 
 BB: It would be great if the data were JSON-like
 
-Schema https://github.com/google/caja/blob/master/src/com/google/caja/ses/debug.js#L47 
+Schema https://github.com/google/caja/blob/master/src/com/google/caja/ses/debug.js#L47
 
 (MM: Since it might move, I provide a copy here with the one correction we talked about)
 
@@ -1404,19 +1404,19 @@ source ::= STRING | frame;
 
 MM: It's all expressible in JSON
 
-MM: I'd like to imply that we'd continue to leave this to the implementation and pin it down in further specs. 
+MM: I'd like to imply that we'd continue to leave this to the implementation and pin it down in further specs.
 
-MS: With this specification of what the object contains, what do you do for anonymous functions, etc?
+MLS: With this specification of what the object contains, what do you do for anonymous functions, etc?
 
 JHD: Whatever you do now
 
 MM: For anonymous functions, what the shim does is use a question mark. I'm not suggesting we do that, I think we should decide.
 
-MS: &lt;anonymous>? 
+MLS: &lt;anonymous>?
 
 MM: That would be fine with me
 
-MS: What do you do when someone just wrote in the code using document.write?
+MLS: What do you do when someone just wrote in the code using document.write?
 
 MM: Once again, open to suggestions. Browsers do very bizarre things that differ from each other here.
 
@@ -1456,7 +1456,7 @@ AK: Why do you assume it would be better to have them always cached? That has it
 
 JHD: You're not required to cache them
 
-AWB: They are either the same or they aren't. 
+AWB: They are either the same or they aren't.
 
 JHD: Yeah, if you want it to be consistent.
 
@@ -1466,13 +1466,13 @@ AWB: Different from template objects, which are statically generated.
 
 MM: yeah, I suppose, I can't find a killer reason off the top of my head. Maybe I don't have one. This one we can revisit.
 
-MS: Is your concern that someone would use property names you'd want in future versions?
+MLS: Is your concern that someone would use property names you'd want in future versions?
 
 JHD: If it created a fresh object every time, it would just be shadowed. If the concern is implementations... they can currently add a property like they can anywhere else. We might say you can't add new properties that aren't in the spec but leave it unfrozen.
 
 MM: We will need to leave it as an open question whether the produced object is frozen or not.
 
-MS: I can imagine implementation extensions causing compatibility issues. Say an implementation adds an arguments property, but later TC39 standardizes it differently. But this is all about implementations, not about whether the object is frozen at runtime.
+MLS: I can imagine implementation extensions causing compatibility issues. Say an implementation adds an arguments property, but later TC39 standardizes it differently. But this is all about implementations, not about whether the object is frozen at runtime.
 
 AWB: Well, if you're asking for enhanced information, why not use an implementation-specific API for everything?
 
@@ -1522,13 +1522,13 @@ AWB: I think it would if we could focus and have like, a vision day, and not hav
 
 BT: To answer MF's question, in an ideal world we would have a shared vision of where we are heading. I think some kind of vision day... something that would come from upper management. It felt horrible to say that. Someone give me some other name.
 
-MS: Long term direction day?
+MLS: Long term direction day?
 
 BE: Everyone read the harmony email from 08? Long term direction happened, ES6, etc. It's time for a new one. link: https://mail.mozilla.org/pipermail/es-discuss/2008-August/006837.html
 
 BT: I hope that by everyone sharing what their vision is, that we can appreciate the different aspects of experience and interest that people bring to the table and have another rev of that document. We should keep the top 5 long term goals of the committee available. I'm not sure what it looks like, but a reasonable starting point is us sharing what we think?
 
-MS: Brendan can you share that?
+MLS: Brendan can you share that?
 
 BE: You can search "ecmascript harmony mail" it's the 2nd hit
 
@@ -1540,7 +1540,7 @@ BT: We don't wan tot just dump a bunch of text on people.
 
 AWB: Ultimately we want to get something unified, but the first step is probably "Decks"
 
-MS: Part of our diversity issue, we don't actually have a lot of users here. We talked about it making sense for those in the committee to go to user group meetings small or large and represent the workings of TC39 including what's currently going on. We didn't create any actions but we did talk about doing that.
+MLS: Part of our diversity issue, we don't actually have a lot of users here. We talked about it making sense for those in the committee to go to user group meetings small or large and represent the workings of TC39 including what's currently going on. We didn't create any actions but we did talk about doing that.
 
 BB: I think what is confusing for a lot of people is that TC39 itself does not have or state anything that we produce the spec. The spec is pretty unreadable and uninteresting.
 

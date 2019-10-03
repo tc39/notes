@@ -1,9 +1,9 @@
 # November 29, 2017 Meeting Notes
 -----
 
-Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (AKI), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM), Sebastian Markbåge (SM), Dean Tribble (DT), Jafar Husain (JH)
+Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MLS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (AKI), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM), Sebastian Markbåge (SM), Dean Tribble (DT), Jafar Husain (JH)
 
-Remote: 
+Remote:
 István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
 
 -----
@@ -24,7 +24,7 @@ YK: I thought it was interesting that you talked about the spec is not intereste
 
 PST: Yes, I completely agree. In fact we utilise part of the specs that allow us to strip out parts. Exotic behaviours use a dispatching mechanism and so we can detect if objects are there or not, and we can remove the features both user-facing and internal. This is what is incredible. We use bytecode and so the linker can know which bytecode is used or not. We have some similar behaviour to strip the language if such bytecodes are not used. It doesn't impact the runtime. We will continue to investigate this more and more. Anything in the spec that has the ideas of isolation or dispatching - these are very important to us. The worst is features that are spread a little bit everywhere - these are more difficult to get rid of.
 
-YK: I think it's great that we have a group working on a high fidelity implementation with a serious offline compile step. 
+YK: I think it's great that we have a group working on a high fidelity implementation with a serious offline compile step.
 
 PHE: Yes you mentioned Babel briefly, the minifcation work going on for babel is fascinating - but its terrible for us! It does what it needs to do very well but its focused on minfying bytes used, not bytecodes used.
 
@@ -87,7 +87,7 @@ KM: Would you not allow arbitrary expressions?
 
 DE: No, we would not prevent arbitrary expressions; we don't have other situations where we permit some expressions and not others.
 
-BFS: Which grammar is being used here? Are you using await with the |> prefix or is it `|> NoLineTerminator` await? 
+BFS: Which grammar is being used here? Are you using await with the |> prefix or is it `|> NoLineTerminator` await?
 
 DE: I think await in general doesn't have NoLineTerminator
 
@@ -135,7 +135,7 @@ KM: Its the same problem as await
 
 DE: Its hard for me to understand the code evolution idea. When would you actually put a yield here?
 
-MF: It might be possible to just _also allow_ yield. 
+MF: It might be possible to just _also allow_ yield.
 
 DE: I'm sort of fine with not allowing yield. I'm hesitant to do what you suggest because people on the bug threads have anticipated yield having different semantics, where yield is treated more like a pseudo-function, yielding the previous thing that came from the pipeline. Here, though, we'd be using yield to get the argument that someone passes into .next(). I'm kind of happy about yield being banned by the grammar because of the ambiguous interpretation. Let's keep discussing this offline.
 
@@ -143,13 +143,13 @@ DE: (Continues Presenting)
 
 ### Inserting an argument in the list vs calling the whole expression
 
-DH: I don't think you can answer questions like this by putting contrived examples on screen. We have to reconcile with real code. I'm not comfortable with this level of question resulting in a conclusion. 
+DH: I don't think you can answer questions like this by putting contrived examples on screen. We have to reconcile with real code. I'm not comfortable with this level of question resulting in a conclusion.
 
 DE: You're right, this on its own is insufficient evidence. Justin has implemented this in Babel so we can collect more real feedback.
 
-SYG: Who prefers option A over B on the partial application? 
+SYG: Who prefers option A over B on the partial application?
 
-DH: I don't think B is the right thing but there's a strong association of member calls in JavaScript with passing in a `this` binding. 
+DH: I don't think B is the right thing but there's a strong association of member calls in JavaScript with passing in a `this` binding.
 
 DE: I'm not sure what you mean about "no this". The existing semantics pass the receiver.
 
@@ -449,7 +449,7 @@ MM: Let's not get confused about the words here. Its never a string itself thats
 
 CM: If I have 2 trusted strings, concatting gets me back a trusted string - this doesnt need to be true at all.
 
-SM: Im basing this on the example on GitHub. One example is two declared literals which are added together. Treating that has having literalness. 
+SM: Im basing this on the example on GitHub. One example is two declared literals which are added together. Treating that has having literalness.
 
 YK: Security proposals need to enumerate their exact threat models; it seems like we are talking over a number of different threat models.
 
@@ -622,11 +622,11 @@ KG: It wouldn't be worth it as it doesn't fix private static.
 
 DE: We could ban just static private fields and methods while permitting static public fields with current semantics.
 
-MS: I'm channeling chip with the term "piecemeal".
+MLS: I'm channeling chip with the term "piecemeal".
 
 CM: Yes, but the ship has already sailed. In my opinion everything within classes is a clusterfuck. Thats just how it is. We keep tying ourselves in nots trying to get these twisted paths. Taking a step back and looking at a whole might be worthwhile but I feel we're no longer in a position to do that.
 
-MS: So my feeling here is we can incrementally make it worse to make it better later on.
+MLS: So my feeling here is we can incrementally make it worse to make it better later on.
 
 KM: I'd like to avoid entering to a place where things don't interact well together.
 
@@ -656,23 +656,23 @@ YK: Multiple people in the room are deeply concerned about private static now. I
 
 DE: I want to bring back the idea of leaving out static fields and private static. We could split this into two proposals. Work out the remaining issues and ship the working parts. I understand its critical for users to have these features - but for now this can be done with transpilers.
 
-MS: Didn't we bring them together to solve this?
+MLS: Didn't we bring them together to solve this?
 
 KG: The issues for why we brought them together have been resolved. They had cross cutting concerns, those are now solved. Are we are all comfortable with instance fields, private and public?
 
 JHD: One of the main arguments for merging proposals was they all had similar semantics. Splitting them up is fine if we can keep them all looking similar.
 
-MS: Do we solve new problems by splitting them?
+MLS: Do we solve new problems by splitting them?
 
 DE: No but we signal that instance fields are stable and ready to strip.
 
 MM: Also the previous split was public/private, the new suggestion is static/instance.
 
-MS: I just have an inkling we'll end up with something worse if we split them now.
+MLS: I just have an inkling we'll end up with something worse if we split them now.
 
 YK: Are people happy with keeping it together will slow down the whole feature? We cant keep moving with it as a whole.
 
-MS: Do you think it'd delay _past_ ES2019? A delay of 3 or 4 meetings wont matter for the spec.
+MLS: Do you think it'd delay _past_ ES2019? A delay of 3 or 4 meetings wont matter for the spec.
 
 DE: I don't think the annual cutoffs are as important as the actual time when we reach Stage 4; 3 or 4 meetings is that many months of delay. Anyway, it seems we've lost consensus for stage 3, it seems appropriate to demote to stage 2.
 
@@ -712,7 +712,7 @@ API: There's nothing precluding JS right now - except for the syntatic sugar.
 
 MM: The syntatic sugar is a huge deal.
 
-DE: Well JS userland exist and have made these decisions, we could use that data. 
+DE: Well JS userland exist and have made these decisions, we could use that data.
 
 MM: True. But the audience that will use it once we give it syntatic flavor will be much much larger and it'll have a different character. I dont want to introduce yet another special cased number, without introducing a reasonable abstraction mechanism. As you've shown there's a lot of choices - we shouldn't be maing those choices.
 

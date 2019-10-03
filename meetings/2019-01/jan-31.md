@@ -1,6 +1,6 @@
 # January 31, 2019 Meeting Notes
 -----
-Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDL), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM), Lin Clark (LCK)
+Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MLS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDL), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM), Lin Clark (LCK)
 
 
 Remote:
@@ -114,31 +114,31 @@ KG: WH are you OK with this going to Stage 1?
 
 WH: I'm OK with Stage 1 to explore the solution space.
 
-MS: Do we expect people will create class hierarchy, modify prototype, etc? Do you think this will be a common pattern?
+MLS: Do we expect people will create class hierarchy, modify prototype, etc? Do you think this will be a common pattern?
 
 DE: I don't expect that this is a common pattern, no. The way the concern was phrased, this was the way to solve it. I don't know how common this need will be, but I think this is the best way to do it.
 
-MS: But we're introducing something you can use in a bunch of different contexts. It seems like the fix is worse than the problem.
+MLS: But we're introducing something you can use in a bunch of different contexts. It seems like the fix is worse than the problem.
 
 DE: How do you want to avoid the problem?
 
-MS: Don't change the prototype?  if you're using class hierarchy, it seems weird that you'd want to change the prototype.
+MLS: Don't change the prototype?  if you're using class hierarchy, it seems weird that you'd want to change the prototype.
 
 DE: I agree with WH, where this may not be the best proposal to address this problem.
 
 KS: One of the use cases for private fields is to allow programmers to express internal slots in JS, and be able to do polyfilling and traditionally CSS-authored things like DOM. But JS is so wide open with prototypes; to serve the case with JSDOM's specific use case, it's unable to address that use case because it's overly restrictive. new.initialize seems like a patch over that after the fact.
 
-MS: I agree with that, this is a patch.
+MLS: I agree with that, this is a patch.
 
 DE: I see this as a fundamental primitive, where it makes the common case ergonomic but the extra case something you opt-in to.
 
 YK: I agree with MS; I am a proponent of return override because of base classes. How do you create a base class that allocates?  Having constructors that return is important. The problem is that you use return override in a non-base class. I want to learn more about the DOM use cases, but I think this may add too much power.
 
-MS: This is basically a C++ placement new. So even though it seems like a simple addition, it would have to be replaced everywhere where this is called.
+MLS: This is basically a C++ placement new. So even though it seems like a simple addition, it would have to be replaced everywhere where this is called.
 
 KG: In reply to MS; I think the reason this is relevant for a library who has classes that are consumed by someone else's code. They want to behave in an expected way, regardless of what the user does.
 
-MS: If the library changes its prototype, it's in control of all its code and can easily work. If the user changes the prototype, the library can simply disallow that. So I'm not entirely sure what the use case is for that.
+MLS: If the library changes its prototype, it's in control of all its code and can easily work. If the user changes the prototype, the library can simply disallow that. So I'm not entirely sure what the use case is for that.
 
 DE: Yeah, we could say that. That's a design choice.
 

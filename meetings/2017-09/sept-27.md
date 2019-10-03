@@ -1,9 +1,9 @@
 # September 27, 2017 Meeting Notes
 -----
 
-Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), Caio Gondim (CGM), Brittany Storoz (BSZ), Sathya Gunasekaran (SGN), Domenic Denicola (DD), Richard Gibson (RGN)
+Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MLS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), Caio Gondim (CGM), Brittany Storoz (BSZ), Sathya Gunasekaran (SGN), Domenic Denicola (DD), Richard Gibson (RGN)
 
-Remote: 
+Remote:
 István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM), Gabriel Isenberg (GI), Zibi Braniecki (ZB)
 
 -----
@@ -30,7 +30,7 @@ SYG: Why do we want only 64 bit operations?
 
 WH: What important architectures do not support atomic 64-bit operations? Even 32-bit architectures often support 64-bit atomic operations.
 
-MS: 32 bit operations are being deprecated but they're still around. MIPS is still being used.
+MLS: 32 bit operations are being deprecated but they're still around. MIPS is still being used.
 
 DE: Yeah, set top boxes use MIPS
 
@@ -66,7 +66,7 @@ DE: Should we proceed?
 
 WH: There should be a way for users to find out if 64-bit operations are tear-free or not. I was hoping there would be no important platforms left that don't offer 64-bit reads and writes, but it seems there are some still.
 
-MS: ARMv7 has load-store of pairs operations. ARMv6 does not have a load-store of pairs so it is another platform that does needs support.
+MLS: ARMv7 has load-store of pairs operations. ARMv6 does not have a load-store of pairs so it is another platform that does needs support.
 
 DE: ARMv6 is not just a theoretical platform, e.g., Igalia is porting JSC to ARMv6. This is a longer conversation. I'll merge this PR as it seems we're in accordance - we will investigate around Atomics and non-64-bit.
 
@@ -82,7 +82,7 @@ WH: If it has toString in one place it should in the other; so property keys are
 
 BT: So we want equivalency in all cases?
 
-MS: if you allow bigints as indexes then how do we handle the case of passing a bigint > 32-1 bits as the index?
+MLS: if you allow bigints as indexes then how do we handle the case of passing a bigint > 32-1 bits as the index?
 
 DE: The 2^32 - 1 number only comes up in the specification is for the Array length. Implementations can optimize in a shorter or longer range already. I believe some implementations only bother optimizing for a shorter length.
 
@@ -90,7 +90,7 @@ WH: Don't you have the same problem with doubles or strings?
 
 DE: If users expect this to be usable heavily optimized and ship code using it, then implementations may decide to optimize it. Eventually either everyone will learn its slow to use bigints for arrays or we'll end up supporting it in an optimized way. A fair summary?
 
-MS: Yeah. Important to be cognizant of what we're doing.
+MLS: Yeah. Important to be cognizant of what we're doing.
 
 YK: Are we dismissing the idea of banning it in these cases? We rejected a lot of use cases for example [Double] == [BigInt].
 
@@ -125,7 +125,7 @@ DE: (Presenting slides)
 - Accept PR around 64 bit and Atomics
 - Do not merge PRs around bigint property access; revisit this question in the future
 
-## 12.i.e Make EcmaScript a syntactic superset of JSON for stage 1 
+## 12.i.e Make EcmaScript a syntactic superset of JSON for stage 1
 
 (Richard Gibson, Championed by Mark S. Miller & Mathias Bynens)
 
@@ -147,7 +147,7 @@ DH: Does it cause security issues?
 WH: There are security issues with changing our mind. We could have made the original decision either way and things would have been fine, but changing our mind leads to problems. Consider what happens when an ECMAScript sanitizer treats these characters differently from eval: I can then write programs which look good to the sanitizer but do different, evil things when eval'd.
 
 MB: There are security issues with the status quo, too. Consider:
-    
+
 ```html
 <script>
   // Debug info:
@@ -155,7 +155,7 @@ MB: There are security issues with the status quo, too. Consider:
 </script>
 ```
 
-The developer relies on the fact that JSON.stringify() returns a single line when used in this way, which is correct. However, what constitutes a single line differs between ECMAScript and JSON. This code is vulnerable to XSS since either U+2028 or U+2029 in the user-controlled string would break out of the single-line comment. 
+The developer relies on the fact that JSON.stringify() returns a single line when used in this way, which is correct. However, what constitutes a single line differs between ECMAScript and JSON. This code is vulnerable to XSS since either U+2028 or U+2029 in the user-controlled string would break out of the single-line comment.
 
 MB: (Presenting Slides)
 
@@ -260,7 +260,7 @@ DE: With this PR I was trying to be conservative. Does this PR have consensus - 
 
 - Consensus Achieved.
 
-## 12.ii.d Throw Expressions for Stage 2 
+## 12.ii.d Throw Expressions for Stage 2
 
 (Ron Buckton)
 
@@ -282,7 +282,7 @@ DH: Its important to count costs. We're looking at fined grained syntax for fine
 
 WH: I disagree. Just because do expressions _can_ be used for bindings doesn't mean that's their only usecase. I'm uncomfortable doing these proposals one at a time; I want to see a coherent vision for all of these expressions so we don't introduce unnecessary new bells and whistles. It is possible `do` expressions are sufficient, we might not need this at all. I have no technical concerns with this proposal — it's fine — I just do not know if it is necessary and would like to see what we're going to do with other abrupt completion statements such as `return`, `break`, `continue`. I want to see the cross-cutting concerns addressed. That's what makes me uncomfortable here.
 
-RBN: I did look at where throw expressions would be used in another expression, such as `return` or `do`. The expression result here does not return a result - it is an AbruptCompletion. I don't think we need to do this wholesale, whether or not throw expressions succeed or fail could be an indicator of whether we continue with `return` or `continue`. 
+RBN: I did look at where throw expressions would be used in another expression, such as `return` or `do`. The expression result here does not return a result - it is an AbruptCompletion. I don't think we need to do this wholesale, whether or not throw expressions succeed or fail could be an indicator of whether we continue with `return` or `continue`.
 
 JHD: Concerned of the cognitive overhead; the fact functions can be expressions is confusing for new JS developers. Having the duality is confusing; `do` expressions is a way to set it apart to say "this thing cant go here, but `do` is allowing it". I'm concerned throw expressions will further blur the line of expression-vs-statement.
 
@@ -300,7 +300,7 @@ DD: I feel there is space for both
 
 WH: It's weird to do for just `throw` and `do`. One plausible ending point is having just `do`. Another plausible ending point is having `do`, `throw`, `break`, `continue`, `return`. Just `do` and `throw` feels too ad-hoc.
 
-RBN: It makes sense to have `throw` without `do`. 
+RBN: It makes sense to have `throw` without `do`.
 
 WH: No I did not say `throw` without `do` as one of the ending points. One possible scenario is `do` without `throw`.
 
@@ -314,7 +314,7 @@ RBN: Cases of `||` or null coalescing make more sense because you do want to rai
 
 KVR: I'm curious to see it go further with different examples.
 
-YK: People have said `do` expressions conflict. This is weird because we have a separation of statements and expressions. There'll always be one statement in JS. The line between expressions and statements seem arbitrary. You could imagine that assignment was a statement already, but it's an expression. 
+YK: People have said `do` expressions conflict. This is weird because we have a separation of statements and expressions. There'll always be one statement in JS. The line between expressions and statements seem arbitrary. You could imagine that assignment was a statement already, but it's an expression.
 
 CM: Dave's comments resonate with me. Some things are intrinsically statement-like or expression-like. Throw seems intrinsically expression like. You could imagine a `throw` builtin function, it'd be the same as the expression - just adding parenthesis. So concern about things like return or break as expressions  is just noise.
 
@@ -440,13 +440,13 @@ DD: Boolean options are bad.
 
 JHD: I agree, let's come up with something then.
 
-MS: Calling it `matchIterator` would solve the problem.
+MLS: Calling it `matchIterator` would solve the problem.
 
 JHD: Does the room think this would be preferable?
 
 DE: Do we really want to set up a convention where methods that return iterators end in "iterator" ?
 
-MS: you could call it scan instead
+MLS: you could call it scan instead
 
 JHD: Is everyone happy with scan?
 
@@ -454,27 +454,27 @@ MF: Why don't we set up a github issue?
 
 JHD: Right. I will set up a github issue. Can everyone who is interested please comment on that issue.
 
-MS: It seems you really want a sticky that doesn't start at lastindex. I'm not sure what sticky means with what your proposing.
+MLS: It seems you really want a sticky that doesn't start at lastindex. I'm not sure what sticky means with what your proposing.
 
 JHD: Sticky provides an iterator for one match.
 
-MS: You want an iterator that gives you all the captures - a "sticky plus" could do that.
+MLS: You want an iterator that gives you all the captures - a "sticky plus" could do that.
 
 JHD: Like an alternative flag?
 
-MS: Yes. I share Waldemar's concern. What flag should I give the regexp? What do I get back? And so forth. Having something like this with all captures for every single match is good.
+MLS: Yes. I share Waldemar's concern. What flag should I give the regexp? What do I get back? And so forth. Having something like this with all captures for every single match is good.
 
 JHD: I feel more hesistant about adding a flag over naming this `scan`.
 
-MS: It gives you more power though - adding a flag allows you to use that semantic with all regexp operations. This is probably the main usecase but would a flag be more valuable?
+MLS: It gives you more power though - adding a flag allows you to use that semantic with all regexp operations. This is probably the main usecase but would a flag be more valuable?
 
 JHD: By having matchAll we have a consistent interface; while a flag requires introspection in userland code.
 
-MS: With matchAll do I have to change my regular expression to remove `g`?
+MLS: With matchAll do I have to change my regular expression to remove `g`?
 
 JHD: No, you get all match groups with `g`. It works the same.
 
-MS: So you're changing how exec works?
+MLS: So you're changing how exec works?
 
 JHD: No, exec doesn't change. match and exec work differently. I'll file a few github issues to chat about. I may or may not come back in November for Stage 2. Any other concerns?
 
@@ -485,7 +485,7 @@ JHD: No, exec doesn't change. match and exec work differently. I'll file a few g
 - Note: Conclusion revised on the following day. See the notes from the third day of this meeting below.
 
 
-## 12.iii.b Optional chaining operator for Stage 2 
+## 12.iii.b Optional chaining operator for Stage 2
 
 (Gabriel Isenberg)
 
@@ -698,7 +698,7 @@ WH: If that's not understood, I should explain it a third time.
 
 DH: You don't have time.
 
-YK: We should discuss this fully in writing - the incoherence will become more obvious. 
+YK: We should discuss this fully in writing - the incoherence will become more obvious.
 
 #### Conclusion/Resolution
 
@@ -726,7 +726,7 @@ DD: Yes.
 
 CM: What is this even about?
 
-DD: The question is should `eval('import.meta')` work? 
+DD: The question is should `eval('import.meta')` work?
 
 DH: You could express this dynamically - like making a function to get import.meta and evaling that - but you're using direct eval. Is this kicking the can down the road?
 
@@ -762,7 +762,7 @@ JHD: To answer your earlier question it would be nice to expose metadata for scr
 
 TST: It seems like we wouldnt have this conversation if import wasnt only meant for modules.
 
-DD: The use cases for import.meta are to replace `document.currentScript` and `import.meta.url` to resolve relative to your current module. In the browser we don't want to add more features to scripts - we're trying to move away from them; we try to not add just metadata for scripts. 
+DD: The use cases for import.meta are to replace `document.currentScript` and `import.meta.url` to resolve relative to your current module. In the browser we don't want to add more features to scripts - we're trying to move away from them; we try to not add just metadata for scripts.
 
 KVR:  A web application that's using a bundler; I would imagine that it should work as per the example but is it the bundlers responsibility to resolve that directly or...
 
@@ -805,13 +805,13 @@ JRL: We could change this later?
 
 DE: Yes we could. Though I'd rather make a decision rather than back and forth. So shall we stay with non-writables for now? So babel plugin is progress for this thank you jrdigewell.
 
-JHD: On the .call slide, can we clarify the incorrect example. Does call without receive has special behaviour? 
+JHD: On the .call slide, can we clarify the incorrect example. Does call without receive has special behaviour?
 
 DE: No, when you look up a method on the object. `this.#foo` is a lookup, there is no extra type checking outside of that.
 
 JHD: So bar property doesn't do typechecking?
 
-DE: No the examples are wrong. 
+DE: No the examples are wrong.
 
 JHD: The bottom example _would_ throw then?
 
@@ -833,7 +833,7 @@ DE: Yes. Thanks for raising. In summary...
 
 JRL: We have the issue link: https://github.com/tc39/proposal-class-fields/issues/43
 
-DE: If you have an inheritance hierarchy - if the subclass does not have the private field, it would throw a type-error. 
+DE: If you have an inheritance hierarchy - if the subclass does not have the private field, it would throw a type-error.
 
 YK: Isn't the check instanceof?
 
@@ -857,7 +857,7 @@ JHD: If the subclass implemented a static get that returned super.get does this 
 
 DE: No. If the subclass had a private static get method that returns super.get it'd lead to the same issue. Super methods are about passing this as the receiver.
 
-YK: I don't think this is okay. Even though the field and method are in the super class the way it succeeds is the sub class has that field. 
+YK: I don't think this is okay. Even though the field and method are in the super class the way it succeeds is the sub class has that field.
 
 DE: How often do you feel this use case will come up?
 
@@ -943,7 +943,7 @@ DE: How would it have them?
 
 JRL: It would already have fields because it would have its own private fields list.
 
-DE: We're discussing a few alternatives. One option is to have its own list. 
+DE: We're discussing a few alternatives. One option is to have its own list.
 
 JRL: So I'm saying sub would have its own fields.
 
@@ -959,7 +959,7 @@ JHD: If `static` were to refer to the superclass from an instance then we can re
 
 DD: Its not a replacement, `this.constructor` is polymorhpic.
 
-YK: Do we even need static fields right now? 
+YK: Do we even need static fields right now?
 
 DE: We could say instances have copies of static private fields?
 
@@ -969,7 +969,7 @@ JRL: Can we make writing to methods a syntax error?
 
 DE: Maybe for now. With decorators we probably cant enforce that. Whats the advantage?
 
-JRL: It would prevent people from writing code to write to it now. 
+JRL: It would prevent people from writing code to write to it now.
 
 DE: TC39 operates on the assumption that if it throws an error now, we can make it not later.
 

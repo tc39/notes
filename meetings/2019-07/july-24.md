@@ -1,7 +1,7 @@
 # July 24, 2019 Meeting Notes
 -----
 
-Daniel Rosenwasser (DRR), Andrew Paprocki (API), Adam Klein (AK), Shu-yu Guo (SYG), Michael Ficarra (MF), Jordan Harband (JHD), Alex Rattray (ARY), Pieter Ouwerkerk (POK), Michael Saboff (MS), Keith Miller (KM), Aki Braun (AKI), Brian Terlson (BT), Ron Buckton (RBN), Till Schneidereit (TST), Yehuda Katz (YK), Aaron Davis (ADS), Sebastian Markbåge (SME), Andrew Burgess (ABS), Jonathan Keslin (JKN), Ashley Hauck (AEH), Peter Hoddie (PHE), Patrick Soquet (PST), Ben Coe (BCE), Waldemar Horwat (WH), Mark Miller (MM), Chip Morningstar (CM), Erica Pramer (EPR), Kevin Smith (KS), Adrian Hall (AHL), Caio Lima (CLA), Ben Lichtman (BLN), Tierney Cyren (TCN), Shelley Vohr (SVR), Michal Hollman (MHN), Bill Ticehurst (BTT), Dean Tribble (DT), Godfrey Chan (GCN), Guilherme Hermeto (GHO), Jordan Gensler (JGR), Leo Balter (LBR), Dale Bustad (DBD), Joffrey Richten (JRN), Shane Carr (SFC)
+Daniel Rosenwasser (DRR), Andrew Paprocki (API), Adam Klein (AK), Shu-yu Guo (SYG), Michael Ficarra (MF), Jordan Harband (JHD), Alex Rattray (ARY), Pieter Ouwerkerk (POK), Michael Saboff (MLS), Keith Miller (KM), Aki Braun (AKI), Brian Terlson (BT), Ron Buckton (RBN), Till Schneidereit (TST), Yehuda Katz (YK), Aaron Davis (ADS), Sebastian Markbåge (SME), Andrew Burgess (ABS), Jonathan Keslin (JKN), Ashley Hauck (AEH), Peter Hoddie (PHE), Patrick Soquet (PST), Ben Coe (BCE), Waldemar Horwat (WH), Mark Miller (MM), Chip Morningstar (CM), Erica Pramer (EPR), Kevin Smith (KS), Adrian Hall (AHL), Caio Lima (CLA), Ben Lichtman (BLN), Tierney Cyren (TCN), Shelley Vohr (SVR), Michal Hollman (MHN), Bill Ticehurst (BTT), Dean Tribble (DT), Godfrey Chan (GCN), Guilherme Hermeto (GHO), Jordan Gensler (JGR), Leo Balter (LBR), Dale Bustad (DBD), Joffrey Richten (JRN), Shane Carr (SFC)
 
 Remote:
 Bradley Farias (BFS), Gus Caplan (GCL), Kevin Gibbons (KG), Pedram Emrouznejad (PED), Yulia Startsev (YSV), Mattijs Hoitink (MHK), Ross Kirsling (RKG), Justin Ridgewell (JRL), Caridy Patino (CP), John-David Dalton (JDD), Paolo Severini (PSI), Benjamin Georges (BGS), Paul Leather (PLR), Mathias Bynens (MB), Aliaksander Palpko (APO), John Hax (JHX), Ravi Jayaramappan (RJN), Sanket Joshi (SJI), Jose David Rodrigues Veloso (JVO), Mike Samuel (MSL), Frank Yung-Fong Tang (FTG), Rob Palmer (RPR), Diego Ferreiro Val (DFV), István Sebestyén (IS), Jason Williams (JWS), Richard Gibson (RGN), Seth Brenith (SBH), Suraj Sharma (SSA), Steve Faulkner (SFR), Chris Anderson (CAN), Michael Fig (MFG), Valerie Young (VYG)
@@ -156,7 +156,7 @@ MB: Yeah, the vast majority of people seem to agree on the part (it's weird for 
 
 JRL: (queue topic: "all" in method name has higher precedence than `g` flag (`str.replaceAll(r)`))
 
-MS: Are you suggesting that we throw or auto-`g`?
+MLS: Are you suggesting that we throw or auto-`g`?
 
 JRL: I prefer we auto-`g`.  But if we throw, that's fine as well.  But accepting a non-global regex and replacing only one match is the worst option here.
 
@@ -176,7 +176,7 @@ SLN: if we went option 1 it would be the fastest path or the most performant pat
 
 MB: I didn't say that but yeah sure.
 
-MS: From a JavaScriptCore perspective, I don't think there's a performance difference.  Even auto-`g`.  (We already have a utility in JavaScript for changing global?)
+MLS: From a JavaScriptCore perspective, I don't think there's a performance difference.  Even auto-`g`.  (We already have a utility in JavaScript for changing global?)
 
 MB: Yeah, same for V8. Performance is not a concern when making this decision.
 
@@ -196,7 +196,7 @@ WH: We already have `matchAll` weirdness.  If only one of `matchAll` and `replac
 
 MB: Unless we can change both, but we won't be able to do that until we do a web-compat investigation. Unless the committee decides that Option 6 is the way to go, which would be case closed.  Also, the battle of keeping replaceAll simple was lost when we decided that we accept regex.
 
-MS: About this being the reflecting point that we change matchAll, I reluctantly agree that they should have the same semantics here.
+MLS: About this being the reflecting point that we change matchAll, I reluctantly agree that they should have the same semantics here.
 
 GHO: If replaceAll accepts regular expressions, and it doesn't auto-`g`, then do we really need to add it to the `String` prototype?
 
@@ -264,7 +264,7 @@ YK: It feels like this is ready to implement, like, you could implement this wit
 
 WH: It’s not the situation I want to end up in, but I’m not going to block things. I’d like `matchAll` and `replaceAll` to match or consider renaming if they’re not.
 
-MS:  I’m not sure it’s ready for Stage 3 if we haven’t decided between Option 2 and 3.
+MLS:  I’m not sure it’s ready for Stage 3 if we haven’t decided between Option 2 and 3.
 
 JHD: It would be nice to start the clock on this, if that’s an option.
 
@@ -463,12 +463,12 @@ DD: Stage 2?
 
 ## Built-In Modules aka JavaScript Standard Library
 
-Michael Saboff (MS)
+Michael Saboff (MLS)
 
 - [proposal](https://github.com/tc39/proposal-javascript-standard-library)
 - [slides](https://github.com/tc39/proposal-javascript-standard-library/blob/master/slides/JSL-TC39-July-2019.pdf)
 
-MS: (presents slides) Focusing on the two objections to advancement from June meeting, will pause after each for responses
+MLS: (presents slides) Focusing on the two objections to advancement from June meeting, will pause after each for responses
 
 JHD: During the last meeting, I was remote and it was a hard time difference. I want to clarify my concerns. Script is not “legacy”, Module is not the only future. I certainly hope people write Modules, but that is my code review position only, not my language designer position. Everything new that we've added has been equally usable in Modules and Scripts, except for the specific module-related differences like `import`/`export`. So the precedent in the language is clear: new language features should be added to both. This proposal itself is not a problem, but consider Temporal: it would not be available in current Scripts in the current proposal if Built-in Modules progresses. Users could use dynamic import, but then they have to wait until the promise is resolved.  If we decided that Temporal were available both via global and modules, that would be fine - but it seems that the point of built-in modules is to stop adding globals for new API. This is existential and it is troubling and we really have to decide on it in this proposal. I don't want to look back in 5 years and think we made a mistake. The best way imo to make people migrate from one thing to another is to make the transition as easy as possible. Removing features from Scripts does not make the transition easier, it makes it harder.
 
@@ -492,11 +492,11 @@ JHD: We were thinking about an initial loading phase.  In Node, you would pass a
 
 SLN: Exclusion from scripts would hurt tooling/bundlers across the ecosystem.  You exclude WebPack, for example; we use script until we are able to move to WASM.  From our standpoint, we don't care what the semantics are to get a built-in module from a script tag, but the point here is, it's a hard blocker from our standpoint as a bundler.
 
-MS: If you don't need to polyfill the module, you could just use an async import.
+MLS: If you don't need to polyfill the module, you could just use an async import.
 
 SLN: We could in theory add what we think is necessary.
 
-MS: Even if you do some polyfilling, you still need to do some async function generation.
+MLS: Even if you do some polyfilling, you still need to do some async function generation.
 
 SLN: Exactly, and then we’re in a code-generation state…
 
@@ -504,7 +504,7 @@ AK: Are you saying that accessing modules via dynamic import works for your bund
 
 SLN: Whatever the syntax is, we need to generate the code.  This isn't about async.  The concern is about having access inside of a script.
 
-MS: What you have to do right now is dynamic import.
+MLS: What you have to do right now is dynamic import.
 
 JHD: Yeah, you can do it today with dynamic import, I’m asking for not requiring that asynchronous step.
 
@@ -516,11 +516,11 @@ BFS: Is it a problem?
 
 SLN: There would be concerns with sync access, but essentially, not.
 
-MS: Is this a Stage 1 concern, or Stage 2?
+MLS: Is this a Stage 1 concern, or Stage 2?
 
 JHD: It’s a major semantic. That would make it a Stage 1.
 
-MS: I’m essentially asking, does that make it a blocking concern for proceeding to Stage 2.
+MLS: I’m essentially asking, does that make it a blocking concern for proceeding to Stage 2.
 
 JHD: I’m saying, yes, this needs to be resolved before Stage 2.
 
@@ -540,7 +540,7 @@ SME: Yes, but one of the nice things about this proposal is that you no longer n
 
 JHD: With this proposal, and with built-in modules, it will be impossible to polyfill things outside of the browser unless the engine implements something similar to import maps.
 
-MS: Import maps is one way to use the chain-loading process.  We could add something to the spec to allow load …
+MLS: Import maps is one way to use the chain-loading process.  We could add something to the spec to allow load …
 
 JHD: And then you've changed the requirement that …
 
@@ -548,7 +548,7 @@ JHD: And then you've changed the requirement that …
 
 BF: We're talking about, if polyfill code runs sync at the top of the page, and if it tries to access async-only code, it could install the very first reaction handler, it could do whatever it wants before any user code runs.  I don't know how user code could act on a built-in module before the first thing to act on it.  If a polyfill can always act before user code, what's preventing it from using its job?
 
-MS: Assuming the built-in module is async loaded.
+MLS: Assuming the built-in module is async loaded.
 
 BF: A polyfill can be guaranteed to be the first to access the built-in module if it is at the top of the page. Therefore it can be assured that it can modify the module prior to user code.
 
@@ -570,19 +570,19 @@ JHD: If I want to polyfill a missing module like `js:temporal` there should be a
 
 POINT OF ORDER, no longer on topic.
 
-MS: I would like to move on to the second part of the presentation.  (continues presentation)
+MLS: I would like to move on to the second part of the presentation.  (continues presentation)
 
 YK: What exactly are the requirements that TC39 would put on namespaces, formally?
 
-MS: The modules in the `js` namespace would be formally standardized by TC39.
+MLS: The modules in the `js` namespace would be formally standardized by TC39.
 
 YK: If we added modules in the `js` namespace, it's not clear how we could stop a third-party from adding modules.  It seems like we'd need to put in the spec to forbid that.
 
-MS: It seems like other implementers wouldn't want to use the `js` namespace.  We can't stop people from adding things to the syntax language now.
+MLS: It seems like other implementers wouldn't want to use the `js` namespace.  We can't stop people from adding things to the syntax language now.
 
 YK: If we can't disallow it, what do we do?
 
-MS: If we could disallow it, great, but …
+MLS: If we could disallow it, great, but …
 
 MM: It's important to remember what power standards body does and doesn't have.  We're writing a spec that makes normative requirements.  Being in the `js` namespace is a claim about what process it went through.  They can put things there but then they won't be compliant with our spec.
 
@@ -612,11 +612,11 @@ YK: It makes sense that `js:` means pass-through, but … I don't think it helps
 
 DD: I tried to give clear feedback last time that a single namespace is required from our perspective.  It could be accomplished by deferring this to other proposals, but as of now, separate namespaces is something that we object to, requiring everything in the ecosystem to go through the staging process.
 
-MS: I understand you want one namespace for the browser, and that is a blocking concern.  This committee supports platforms besides just the browser.  We don't talk to W3C about what we put into that.
+MLS: I understand you want one namespace for the browser, and that is a blocking concern.  This committee supports platforms besides just the browser.  We don't talk to W3C about what we put into that.
 
 DD: We share the global object, which benefits web developers, etc.  I want to see that model for built-in modules, like we have for built-in globals.  If we can alias everything in `js:` to a shared namespace like lib:, and prevent js: from resolving in browsers, that would be OK.
 
-MS: Chrome is allowed to have a `chrome:` namespace that aliases everything from all the other namespaces.
+MLS: Chrome is allowed to have a `chrome:` namespace that aliases everything from all the other namespaces.
 
 DD: We should not proceed with this proposal as it is if the intention is to have a separate `js:` namespace.
 
@@ -626,7 +626,7 @@ DD: Developers shouldn't have to think about where this is standardized.
 
 YK: In Deno (?), they are already doing this.
 
-MS: My high-order bit for different namespaces is about functionality.  Just like every other language that has a shared library, the functionality is delivered in a broad functional grouping.  Core language, web-based, JSON-based, and so forth.  That is the same model that JS programmers would like to have.  There may be overlap.  But my high-order bit is that if the user has `js:`, they can use that anywhere, web, node, embedded, blockchain.  But if you have `dom:`, they can't use that in the other environments.
+MLS: My high-order bit for different namespaces is about functionality.  Just like every other language that has a shared library, the functionality is delivered in a broad functional grouping.  Core language, web-based, JSON-based, and so forth.  That is the same model that JS programmers would like to have.  There may be overlap.  But my high-order bit is that if the user has `js:`, they can use that anywhere, web, node, embedded, blockchain.  But if you have `dom:`, they can't use that in the other environments.
 
 DD: Not having a unified namespace is a blocking concern for Stage 2 for us.
 
@@ -989,19 +989,19 @@ Domenic Denicola, DD
 
 DD: On  the web, as in TC39, we’re working on adding built-in modules. We thought it would  be an interesting  opportunity to work on aligning some of the conventions that are currently different and those that we wished were better. A few things that have been brought up
 
-MS:  I respectfully submit that this is an out of order discussion. I don’t believe this is a Stage 1 concern, or relevant for TC39.
+MLS:  I respectfully submit that this is an out of order discussion. I don’t believe this is a Stage 1 concern, or relevant for TC39.
 
 DD: On the web we’re also working on built-in modules.
 
-MS: We typically don’t want to shop between multiple standards bodies. I don’t think that you brought this to the built-in module committee.
+MLS: We typically don’t want to shop between multiple standards bodies. I don’t think that you brought this to the built-in module committee.
 
 DD: [too fast, not captured]
 
-MS: Like I said, I think it’s out of order and it’s not a Stage 1 issue.
+MLS: Like I said, I think it’s out of order and it’s not a Stage 1 issue.
 
 DD: This isn’t about the built-in module proposal that’s in this committee.
 
-MS: Then what’s it about?
+MLS: Then what’s it about?
 
 DD: TC39 typically gives good API design advice, so we want to get that advice. The web has built in globals and TC39 has built in globals. As we move into the web having built-in modules, as with JavaScript having built-in modules, we want alignment.
 
@@ -1015,13 +1015,13 @@ JHD: I made a presentation a year or two ago about this. The dangers of TC39 ign
 
 DD: To be clear, this is contextualized by the presentation that DE gave in Berlin presenting all the work on modules, such as those in Wasm modules, JSON modules, HTML modules, WebIDL modules, etc. We think it would be good to collaborate.
 
-MS: I think this is disrespectful, I think this is out of bounds
+MLS: I think this is disrespectful, I think this is out of bounds
 
 DD:  I really don’t want to be disrespectful, so maybe it would be best for delegates to have such  conversations with the other standards bodies, if them coming here is not OK.
 
 WH: I don’t understand MS’s comment, what is disrespectful here?
 
-MS: As one of the champions of the built-in module proposal, I think it would have been good to discuss rules about how to build a module. I think that is a good thing to discuss. The point I’m trying to make is that it’s a little premature. Very similar to what happened in Berlin when several delegates made a proposal. I look at our CoC and I find the first point is to be respectful.
+MLS: As one of the champions of the built-in module proposal, I think it would have been good to discuss rules about how to build a module. I think that is a good thing to discuss. The point I’m trying to make is that it’s a little premature. Very similar to what happened in Berlin when several delegates made a proposal. I look at our CoC and I find the first point is to be respectful.
 
 JHD: I’m terrified that DD or anyone else walks away discouraged about getting TC39 feedback.
 
@@ -1033,11 +1033,11 @@ YK: I’ll just say, though I have no idea what is going on here, (for once I’
 
 WH: I agree with YK. I’m very confused about what just happened here. I have no idea what the backstory is and now I’m afraid to ask.
 
-MS: I think I’m being pretty clear about what my concern is. This was not shared ahead of time with the champions of the built-in modules proposal
+MLS: I think I’m being pretty clear about what my concern is. This was not shared ahead of time with the champions of the built-in modules proposal
 
 YK: It sounds like you think that the existence of this presentation is dangerous?
 
-MS: It seems like a shadow proposal—clearly we need to have guidelines about how built-in modules are written.
+MLS: It seems like a shadow proposal—clearly we need to have guidelines about how built-in modules are written.
 
 DD: I would rather discuss this one-on-one offline with you. We do not have a foundation of mutual trust needed for this to be a productive discussion.
 

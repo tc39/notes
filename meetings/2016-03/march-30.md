@@ -1,7 +1,7 @@
 # March 30, 2016 Meeting Notes
 -----
 
-Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark S. Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson (BNN), JF Bastien (JFB), Joe Lencioni (JLI), Sebastian Markbåge (SM), Jeff Morrison (JM), Kevin Smith (KS), Jafar Husain (JH), Lars Hansen (LHN), Saam Barati (SBI), Keith Miller (KM), Michael Saboff (MS), Eric Ferraiuolo (EF), Eric Faust (EFT), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SYG), Tim Disney (TD), Waldemar Horwat (WH), Bert Belder (BBR), Peter Jensen (PJ), Daniel Ehrenberg (DE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Jean-Francis Paradis (JFP), Shelby Hubick (SHK), Leo Balter (LBR), Miško Hevery (MHY), Allen Wirfs-Brock (AWB), Kevin Gibbons (KG)
+Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Adam Klein (AK), Mark S. Miller (MM), Brian Terlson (BT), Domenic Denicola (DD), Brad Nelson (BNN), JF Bastien (JFB), Joe Lencioni (JLI), Sebastian Markbåge (SM), Jeff Morrison (JM), Kevin Smith (KS), Jafar Husain (JH), Lars Hansen (LHN), Saam Barati (SBI), Keith Miller (KM), Michael Saboff (MLS), Eric Ferraiuolo (EF), Eric Faust (EFT), Chip Morningstar (CM), Dean Tribble (DT), Shu-yu Guo (SYG), Tim Disney (TD), Waldemar Horwat (WH), Bert Belder (BBR), Peter Jensen (PJ), Daniel Ehrenberg (DE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Jean-Francis Paradis (JFP), Shelby Hubick (SHK), Leo Balter (LBR), Miško Hevery (MHY), Allen Wirfs-Brock (AWB), Kevin Gibbons (KG)
 
 -----
 
@@ -386,7 +386,7 @@ KS: given that custom elements use this pattern, we'll just have to tell people 
 
 KS: (moves on to edge case 3)
 
-DH: this doesn't seem legit either. The relationship you're looking for is not the prototype chain, but the actual thing you extended from. 
+DH: this doesn't seem legit either. The relationship you're looking for is not the prototype chain, but the actual thing you extended from.
 
 EFT: static shape is something you wish to guarantee for code that wishes to be well-behaved, and wishes to run fast. This is not an example of model behavior.
 
@@ -746,7 +746,7 @@ CM: We need to communicate about how to make this possible
 
 SG: What is the security guarantee that this frozen stuff gives you?
 
-MM: The guarantee at this point in (example in the slides) only effect Bill's program can have on the universe, outside of the internal state that Bill creates, is the ability to increment the counter and see the result. The only effect Joan can have is decrementing the counter. These are real guarantees, a result of the underlying formal model. You start with memory-safe object programming, plus real encapsulation, plus isolating objects from the ability to cause effects. Because Bill hasn't been given any objects other than the change object, that's all he can do, as long as he's in the context of frozen primoridals. Otherwise, Bill can go and mutate all kinds of stuff in Alice's world and destroy her. 
+MM: The guarantee at this point in (example in the slides) only effect Bill's program can have on the universe, outside of the internal state that Bill creates, is the ability to increment the counter and see the result. The only effect Joan can have is decrementing the counter. These are real guarantees, a result of the underlying formal model. You start with memory-safe object programming, plus real encapsulation, plus isolating objects from the ability to cause effects. Because Bill hasn't been given any objects other than the change object, that's all he can do, as long as he's in the context of frozen primoridals. Otherwise, Bill can go and mutate all kinds of stuff in Alice's world and destroy her.
 
 SG: Given that there are other security models in web browsers, and we want to run this in web browsers...
 
@@ -870,7 +870,7 @@ WH: We should discuss Realms before bringing them to Stage 1, but it's OK for th
 
 DH: We could back off Realms to Stage 0
 
-WH: I want a presentation 
+WH: I want a presentation
 
 #### Conclusion/resolution
 

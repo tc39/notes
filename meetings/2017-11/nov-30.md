@@ -1,9 +1,9 @@
 # November 30, 2017 Meeting Notes
 -----
 
-Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CP), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (AKI), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM), Sebastian Markbåge (SM), Dean Tribble (DT), Jafar Husain (JH)
+Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MLS), Caridy Patiño (CP), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (AKI), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM), Sebastian Markbåge (SM), Dean Tribble (DT), Jafar Husain (JH)
 
-Remote: 
+Remote:
 István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
 
 -----
@@ -38,7 +38,7 @@ CM: The syntax applies in a definitional mode, for literals or where you're decl
 
 KCL: Right, we already have the functional form. This is addressing the ergonomics for object creation.
 
-CM: Have you thought about inheriting the constness of an object when creating another one? 
+CM: Have you thought about inheriting the constness of an object when creating another one?
 
 KCL: Programmers tend to understand that freeze works at just one level.
 
@@ -86,11 +86,11 @@ KCL: I feel this isn't making it a slightly more convenient API. There are plent
 
 YK: A lot of times an API would work, and other times tools would work. I'm uneasy about using syntax for this when it could be handled otherwise.
 
-MS: I'd like to separate object literals and arguments as two separate things because of the runtime overhead of the arguments checks. I'm not sure we need to solve that argument when linters could take care of it.
+MLS: I'd like to separate object literals and arguments as two separate things because of the runtime overhead of the arguments checks. I'm not sure we need to solve that argument when linters could take care of it.
 
 KCL: You need a type checker for many of these things, and programmers I work with hate dealing with type system errors.
 
-MS: I'm not sure freezing argument bindings is worth it, with how they become const bindings; it seems odd.
+MLS: I'm not sure freezing argument bindings is worth it, with how they become const bindings; it seems odd.
 
 DE: I like this proposal a lot; it matches other programming language concepts and decomposes to existing JavaScript concepts. Just like with classes, new syntax does not need to be used for new semantics.
 
@@ -128,7 +128,7 @@ KCL: Stage 0? Stage 1?
 
 DE: I like this a lot, and it expresses a programmer area of interest. I'd support Stage 1
 
-YK: I'm up for Stage 1, though 
+YK: I'm up for Stage 1, though
 
 #### Conclusion/Resolution
 
@@ -164,7 +164,7 @@ YK: Ruby has one Tenants Correspondance Principle exception in blocks to make va
 
 MM: I believe for JS the design principle for TCP is that you allow it, or statically disallow it. Is this correct?
 
-SGO: Its an aspriation, not an explicit design choice 
+SGO: Its an aspriation, not an explicit design choice
 
 YK: Ruby doesn't have the same zooology of variable bindings. It basically has let. The equivalent thing to do here is to disallow var.
 
@@ -262,11 +262,11 @@ AK: This meets my criteria - we seem to be happy with instance fields but static
 
 YK: Likewise.
 
-MS: Are these already split?
+MLS: Are these already split?
 
 DE: Yes but along different lines.
 
-MS: Are you happy if static fields are unable to progress and an end state is that we only have instance fields?
+MLS: Are you happy if static fields are unable to progress and an end state is that we only have instance fields?
 
 DE: I would be okay with that, happy is the wrong word.
 
@@ -288,9 +288,9 @@ DE: I want to split them so we can use this as an opportunity to clarify and pro
 MB: would enabling ASI here make the spec more complex?
 
 DE: There's no algorithmic complexity, adding ASI here doesn't complicate the spec nor implementations. Actually, there is no spec text needed at all--the existing description of ASI is sufficient.
- 
+
 BFS: I'm not a fan of ASI in general, but I don't want to disallow ASI *only* inside class bodies.
- 
+
 YK: I do want to disallow ASI in class bodies.
 
 JHD: As far as I'm aware, there were no ASI linters available until the last few years; many developers who rely on ASI use a blog post that hasn't been updated since 2011, or the documentation from a specific linting tool (standardjs). Even when a new ASI hazard came into existence, i.e. tagged templates, the 2011 article was not updated, and as of the last time I checked, standardjs was still incorrect about the finite list of ASI hazards. ASI hazards that cause errors are fine, but I want the committee to consider that ASI hazards that cause silent incorrect runtime behavior *will not be caught* by the majority of ASI users, because they are not approaching it with sufficient rigor to understand the hazards. I am weakly (but not strongly) in favor of disallowing ASI in class bodies.
@@ -433,7 +433,7 @@ MM: I wasn't expecting to but Jordan's case on how it can affect future evolutio
 
 DE: Are there other things that aren't on the slides? Or is it just these 2 cases?
 
-MM: No its introducing new features like keywords, get, set, async. 
+MM: No its introducing new features like keywords, get, set, async.
 
 DE: In particular async _is_ consistent because of NLT.
 
@@ -500,7 +500,7 @@ ZB: We had a very similar issue on our bug tracking. We had developers who were 
 
 KCL: GitHub does this for you!
 
-AKI: I've fallen down this trap before. Especially for ESLs, it makes a massive difference. Additionally I think the GitHub canned replies feature can be useful here - for starting an issue 
+AKI: I've fallen down this trap before. Especially for ESLs, it makes a massive difference. Additionally I think the GitHub canned replies feature can be useful here - for starting an issue
 
 KCL: (Presenting canned replies and GitHub contributor labels)
 
@@ -560,7 +560,7 @@ MB: For context on this logo - its based on the open source JS community logo. I
 
 SYG: I made a logo for the committee hats; what do you think? It uses the font of the JS community logo and is black on orange.
 
-DE: One final point - Brian announced he will no longer be editor after 2018. We're currently looking for a new editor for ES2019. He says it takes around 20 hours a week every week. 
+DE: One final point - Brian announced he will no longer be editor after 2018. We're currently looking for a new editor for ES2019. He says it takes around 20 hours a week every week.
 
 AKI: I had a question on Tuesday night: how much unpaid time do you put into this and how much do you expect to? Fingers crossed this was 0.
 

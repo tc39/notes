@@ -1,7 +1,7 @@
-# September 23, 2015 Meeting Notes    
+# September 23, 2015 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Ben Smith (BS), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MS), John Buchanan (JB), Gorkem Yakin (GY), Stefan Penner (SP)
+Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Chip Morningstar (CM), Brian Terlson (BT), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Yehuda Katz (YK), Jeff Morrison (JM), Lee Byron (LB), Daniel Ehrenberg (DE), Ben Smith (BS), Lars Hansen (LHN), Nagy Hostafa (NH), Michael Saboff (MLS), John Buchanan (JB), Gorkem Yakin (GY), Stefan Penner (SP)
 
 -----
 
@@ -11,7 +11,7 @@ Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferra
 
 https://github.com/wycats/javascript-decorators/tree/big-picture
 
-YK: Consider this an exploration in several cross cutting features that are in development. 
+YK: Consider this an exploration in several cross cutting features that are in development.
 
 Starting at https://github.com/wycats/javascript-decorators/blob/big-picture/interop/reusability.md#usage-with-property-declarations-in-javascript
 
@@ -45,8 +45,8 @@ class Person {
 }
 ```
 
-Assume `@reader` is defined as: 
-    
+Assume `@reader` is defined as:
+
 ```js
 function reader(target, descriptor) {
   let { enumerable, configurable, property: { name, get }, hint } = descriptor;
@@ -72,9 +72,9 @@ function extractPublicName(name) {
 ```
 
 
-AWB: How is `super` treated, when encountered? 
+AWB: How is `super` treated, when encountered?
 
-YK: Not yet considered, avoiding entanglement with yet to exist features, trying to stay future proof to account for them. 
+YK: Not yet considered, avoiding entanglement with yet to exist features, trying to stay future proof to account for them.
 
 
 Moving on to: https://github.com/wycats/javascript-decorators/blob/big-picture/interop/reusability.md#basic-rules-of-decorators
@@ -83,7 +83,7 @@ DH: Decorators vs. macros: staging. Decorators good next step
 
 YK: Consider decorators a meta programming facilities.
 
-Basic Rules of Decorators: 
+Basic Rules of Decorators:
 
 - Decorators always operate on a particular syntactic element, providing a hook into the runtime semantics for that syntax.
 - If the runtime semantics for the syntax include `let x be the result of evaluating SomeExpression`, that expression is passed into the decorator as a function that, when called, evaluates the expression (a "thunk").
@@ -94,9 +94,9 @@ Looking at: https://github.com/wycats/javascript-decorators/blob/big-picture/int
 
 AWB: Why not capture the property key, could be computed property
 
-YK: Don't want to make that policy decision, but can revisit. 
+YK: Don't want to make that policy decision, but can revisit.
 
-AWB: 
+AWB:
 
 
 
@@ -239,26 +239,26 @@ DD: cannot be allowed to run synchronous operations arbitrarily in all construct
 
 YK: Agree, lock down reflection APIs
 
-AWB: Any new reflection APIs should be reviewed by Mark for security 
+AWB: Any new reflection APIs should be reviewed by Mark for security
 
 (lunch)
 
 
 YK: Summary...
-    
+
 - Decorators on methods
 - Decorators on object literal properties
 
-Neither rely on some other proposal 
+Neither rely on some other proposal
 
 DE: previous proposal mentioned function decorators
 
 YK: Issues
 
 - Staging
-- Where does decorator go? It's clear with class and object literal, not with function decl. 
+- Where does decorator go? It's clear with class and object literal, not with function decl.
 
-AWB: TDZ? 
+AWB: TDZ?
 
 ```js
 // TDZ on access vs invocation
@@ -267,23 +267,23 @@ addEventListener("error", onerror);
 
 @metadata("foo");
 function onerror(...args) {
-    
+
 }
 ```
 
-Unclear what this does. 
+Unclear what this does.
 
-DH: The decorator is not wrapping, is mutating existing object. 
+DH: The decorator is not wrapping, is mutating existing object.
 
-- not calling the decorator later. 
+- not calling the decorator later.
 - An identity decorator should be equivalent to not having a decorator at all
 - Becomes the one place a decorator is not wrapping.
 
-Angular use case: want to decorate function declarations for unit testing. 
+Angular use case: want to decorate function declarations for unit testing.
 
-DH: factor out function declaration decorators. Rather have an imperfect decorator than none at all. 
+DH: factor out function declaration decorators. Rather have an imperfect decorator than none at all.
 
-YK: Not actually proposing this. 
+YK: Not actually proposing this.
 
 MM: Happy with this at stage 1, no controversy.
 
@@ -305,17 +305,17 @@ JM: VM authors lose the ability to understand the shape?
 
 YK: No
 
-AWB: requires analysis at runtime, rather than compilation. 
+AWB: requires analysis at runtime, rather than compilation.
 
 AK: might lose runtime fast path
 
-DH: can't be any worse than existing policy of looking at the shape after the constructor is done. 
+DH: can't be any worse than existing policy of looking at the shape after the constructor is done.
 
-AK: Once you see decorator in literal, the VM gives up until sometime later. 
+AK: Once you see decorator in literal, the VM gives up until sometime later.
 
 YK: Doesn't mean it's slow
 
-AK: In the short term, maybe. 
+AK: In the short term, maybe.
 
 DH: need to understand challenges:
 
@@ -331,9 +331,9 @@ AWB: This is just part of feature design details.
 
 AK: Don't understand the "bundle".
 
-YK: Form a champion group to work forward these features as a group. 
+YK: Form a champion group to work forward these features as a group.
 
-JM: Do something outside of committee. 
+JM: Do something outside of committee.
 
 - Private state
 - Decorators
@@ -345,13 +345,13 @@ JM: Do something outside of committee.
 - Remains at Stage 1 with all changes presented
 
 
-## 5.3 Async Functions 
+## 5.3 Async Functions
 
 (Brian Terlson)
 
 BT: Stage 3 proposal?
 
-- Waldemar has reviewed, changes in place. 
+- Waldemar has reviewed, changes in place.
 - Yehuda and I agree on cancelation
 - Believe that cancelation can be done later
 
@@ -361,11 +361,11 @@ BT: Can write async that assumes some finalization, that might not happen.
 
 YK: In the absence of cancelation, if there are no upstream promises to reject...
 
-DD: 
-    
+DD:
+
 ```js
 async function foo() {
-  setup();    
+  setup();
   await delay(5000);
   cleanup();
 }
@@ -376,8 +376,8 @@ p.cancel();
 
 // Would need to be...
 async function foo() {
-  setup();    
-  
+  setup();
+
   try {
     await delay(5000);
   } finally {
@@ -390,9 +390,9 @@ const p = foo();
 p.cancel();
 ```
 
-If async functions forever stay non-cancelable, no issue. If all async functions become cancelable, the hazard is introduced. 
+If async functions forever stay non-cancelable, no issue. If all async functions become cancelable, the hazard is introduced.
 
-BT: async functions _must_ be cancelable. We won't add them unless they are. 
+BT: async functions _must_ be cancelable. We won't add them unless they are.
 
 - fulfilled: normal completion
 - rejected: throw abrupt completion
@@ -403,11 +403,11 @@ JHD: q. about synchronous "return abrupt completion"
 
 YK: Generator, call `return()`
 
-"Return Abrupt Completion" is for any kind of return from current execution 
+"Return Abrupt Completion" is for any kind of return from current execution
 
-BT: case where promise returned by async function, awaiting 5 promises? A promise is canceled, reasonable to handle that promise and move onto the next thing—otherwise have to nest 5 try/finally deep. 
+BT: case where promise returned by async function, awaiting 5 promises? A promise is canceled, reasonable to handle that promise and move onto the next thing—otherwise have to nest 5 try/finally deep.
 
-Discussion of return, cancelation and recovery. 
+Discussion of return, cancelation and recovery.
 
 AWB: A new type of completion?
 
@@ -415,59 +415,59 @@ YK/BT: Yes
 
 JHD: Clarify need for cancelation?
 
-BT: Cancelation important, widely wanted, they will come to Promises, and will not be able to use async functions for that. So needed for async. 
+BT: Cancelation important, widely wanted, they will come to Promises, and will not be able to use async functions for that. So needed for async.
 
-Discussion re: promise cancelation, how to introduce it. 
+Discussion re: promise cancelation, how to introduce it.
 
 CM: clarification between the two main uses of a cancelation.
 
 YK: Promises should be allowed to represent themselves as cancelable
 
-CM: No disagreement. 
+CM: No disagreement.
 
 JHD: maybe cancel is just the wrong name?
 
-YK: cancel impacted design, want to make sure that adding cancel to async function in the future wont pown them. 
+YK: cancel impacted design, want to make sure that adding cancel to async function in the future wont pown them.
 
 BT: haven't found significant issues with cancelation for async functions
 
 - Subtle to add to Promises, but work needed
-- No obvious issue to add to async function 
+- No obvious issue to add to async function
 
-Hazard: 
-    
+Hazard:
+
 ```js
 async function foo() {
-  setup();    
+  setup();
   await delay(5000);
-  cleanup(); // <-- not called if canceled. 
-}  
+  cleanup(); // <-- not called if canceled.
+}
 ```
 
 ...
 
 DE: Changes since last update?
 
-BT: No relevant. 
+BT: No relevant.
 
 AK: Async arrows?
 
 BT: Waldemar reported no issues.
 
-DD: Should use try/finally to guarantee cleanup. Strictly a hazard if someone starts calling `cancel()` on your promises. 
+DD: Should use try/finally to guarantee cleanup. Strictly a hazard if someone starts calling `cancel()` on your promises.
 
 BE: Does this push up need for finally method?
 
-BT: Need more work there. 
+BT: Need more work there.
 
-YK: `finally` is a handler, doesn't correspond to a completion record change, but a cluster of completion records 
+YK: `finally` is a handler, doesn't correspond to a completion record change, but a cluster of completion records
 
-DD: 
-    
+DD:
+
 ```js
 async function foo() {
-  setup();    
-  
+  setup();
+
   try {
     await promise;
   } catch cancel {
@@ -480,37 +480,37 @@ async function foo() {
 promise.cancel();
 ```
 
-BE: Add cancel to Promises, then ok for async/await 
+BE: Add cancel to Promises, then ok for async/await
 
 BT: finally is being conflated with cancelation
 
 This is stage 0.
 
-SP: A future where finally is important, if code written to expect, then ok. 
+SP: A future where finally is important, if code written to expect, then ok.
 
 BE: Should use try/finally, regardless of await
 
 ...
 
-BT: Chakra has implemented async/await on Edge. SpiderMonkey may have implementation? In Babel, TypeScript, Flow. 
+BT: Chakra has implemented async/await on Edge. SpiderMonkey may have implementation? In Babel, TypeScript, Flow.
 
 DH: Confirmed active development in SpiderMonkey
 
-JHD: (some q about try/finally) 
+JHD: (some q about try/finally)
 
-SP: assume code written indefensively might fail. 
+SP: assume code written indefensively might fail.
 
-More totally useful, important, completely clear and not repetitive discussion about how bad code might fuck up if promises are canceled. 
+More totally useful, important, completely clear and not repetitive discussion about how bad code might fuck up if promises are canceled.
 
 #### Conclusion/Resolution
 
-- Stage 3 acceptance 
+- Stage 3 acceptance
 
 
 
 ## ECMA-402 Update
 
-RW: blah blah blah 
+RW: blah blah blah
 
 AWB: A lot of proposals, what is the criteria for new additions
 
@@ -529,7 +529,7 @@ EF: Getting the locale data (e.g. CLDR data) into/accessible-by the runtimes is 
 
 
 
-## 5.10 Proposal: String#padLeft / String#padRight 
+## 5.10 Proposal: String#padLeft / String#padRight
 
 (Jordan Harband, Rick Waldron)
 
@@ -537,19 +537,19 @@ https://github.com/ljharb/proposal-string-pad-left-right
 
 JHD: (run through history of proposal)
 
-- min length vs. max length semantics? min length semantics with repeat. max length is the desired functionality. 
+- min length vs. max length semantics? min length semantics with repeat. max length is the desired functionality.
 
-AWB: re: min length and max length, concerning unicode characters, code points. 
+AWB: re: min length and max length, concerning unicode characters, code points.
 
-JHD: Issues will exist in _any_ string apis. This API doesn't use code points, can be changed to do so. Length property wouldn't be useful. If filler is a surrogate pair, I can use a multiple of it's length... 
+JHD: Issues will exist in _any_ string apis. This API doesn't use code points, can be changed to do so. Length property wouldn't be useful. If filler is a surrogate pair, I can use a multiple of it's length...
 
 - Max length is in code points?
 
 DH: re: terminal output, do control characters count against length?
 
-JHD: Yes, always. 
+JHD: Yes, always.
 
-Discussion, re: code points vs. latin centric characters 
+Discussion, re: code points vs. latin centric characters
 
 BT: This API is no different than existing APIs
 
@@ -565,7 +565,7 @@ BT: Trying to do things beyond the simplest use case is just untenable.
 
 RW: Intl could adopt responsibility for a non-latin character set handling?
 
-BT: Agree. 
+BT: Agree.
 
 Derailed into discussion about what gets to go in the standard library and what gets defined in a standard module.
 
@@ -575,13 +575,13 @@ Note: I made a comment that if two string methods are "too much", then we should
 
 Back to padLeft, padRight...
 
-DH: Clearly important if implementers are agreeing to implement before other features. 
+DH: Clearly important if implementers are agreeing to implement before other features.
 
 Discussion re: stage 1 or 2?
 
-AWB: For stage 2, controversy resolved. 
+AWB: For stage 2, controversy resolved.
 
-JHD: Then stage 1. 
+JHD: Then stage 1.
 
 #### Conclusion/Resolution
 
@@ -589,13 +589,13 @@ JHD: Then stage 1.
 - Reviewers to be assigned.
 
 
-## 5.11 Proposal: Object.values / Object.entries 
+## 5.11 Proposal: Object.values / Object.entries
 
 (Jordan Harband)
 
 https://github.com/ljharb/proposal-object-values-entries
 
-JHD: Need is obvious. 
+JHD: Need is obvious.
 
 Question about return: iterable or array? Spec wants to be an array.
 
@@ -606,29 +606,29 @@ DH: Confirm, when array you get a snapshot. If an iterator, then updates would b
 - Stage 2 acceptance
 
 
-## 5.12 Proposal: String#matchAll 
+## 5.12 Proposal: String#matchAll
 
 (Jordan Harband)
 
 https://github.com/ljharb/String.prototype.matchAll
 
-JHD: pass a regex, returns an iterator, each yield returns what exec would. 
+JHD: pass a regex, returns an iterator, each yield returns what exec would.
 
-Notable: 
-    
+Notable:
+
 - doesn't accept a string, not coercion
 - always adds the "g" flag
-- makes a "copy" of regexp to avoid mutating 
+- makes a "copy" of regexp to avoid mutating
 
 BE: reason for not including string?
 
 JHD: Enforces a better practice
 
-AWB/BE: valid, but creates an inconsistency, should be updated to include string. 
+AWB/BE: valid, but creates an inconsistency, should be updated to include string.
 
 JHD: Will update then.
 
-AWB: Needs to work with RegExp subclass as well. 
+AWB: Needs to work with RegExp subclass as well.
 
 DE: Will call RegExp.prototype.exec, can leak the RegExp.
 
@@ -636,35 +636,35 @@ Confirmed.
 
 Specify as `@@matchAll`
 
-AWB: Default impl of `@@matchAll`, see default `@@match` 
+AWB: Default impl of `@@matchAll`, see default `@@match`
 
 DD: Not a lot of "library" code
 
-BE: Won't find it there, it's generally in "open code". Steve Levithan wrote about this. 
+BE: Won't find it there, it's generally in "open code". Steve Levithan wrote about this.
 
-YK: Ruby has a scan method, which I use frequently. 
+YK: Ruby has a scan method, which I use frequently.
 
 DD: an alternate: add another flag that avoid global state
 
 nah.
 
-DE: Still leaks. 
+DE: Still leaks.
 
 Can we avoid the observable "cloning"?
 
 BE: Take back to work through this
 
-Discussion of algorithm approaches. 
+Discussion of algorithm approaches.
 
 YK: Missing? A thing that's like exec, but gives you back the lastIndex?
 
-AWB: `exec()` could grow an additional argument for start position. 
+AWB: `exec()` could grow an additional argument for start position.
 
-The name stinks, but nothing really better. 
+The name stinks, but nothing really better.
 
 - `matchEach`? It produces an iterator... (some agreement)
 
-nah. 
+nah.
 
 
 #### Conclusion/Resolution
@@ -672,10 +672,10 @@ nah.
 - Stage 1 acceptance
 - Accept strings
 - Allow RegExp subclass
-- Default impl of `@@matchAll`, see default `@@match` 
+- Default impl of `@@matchAll`, see default `@@match`
 
 
-## 5.9 Trailing commas in function parameter lists 
+## 5.9 Trailing commas in function parameter lists
 
 (Jeff Morrison)
 
@@ -687,12 +687,12 @@ RW: No, ignored.
 
 YK: Symmetry with arrays? Holes on the call side?
 
-nah. 
+nah.
 
 BE: (revisit C issues with trailing commas)
 
-AWB: 
-    
+AWB:
+
 Missing:
 
 - evaluation rules
@@ -708,7 +708,7 @@ nah.
 
 - Stage 2 acceptance
 - Reviewers
-  - Michael Ficarra 
+  - Michael Ficarra
   - Brian Terlson
 
 
@@ -720,7 +720,7 @@ nah.
 
 ### Exponentiation Operator
 
-RW: Precedence issues: 
+RW: Precedence issues:
 
 BE (On whiteboard): -x^y in math and every other language means -(x^y)
 

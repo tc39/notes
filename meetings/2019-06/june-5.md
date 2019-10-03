@@ -1,6 +1,6 @@
 # June 5, 2019 Meeting Notes
 -----
-István Sebestyén (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Till Schneidereit (TST), Logan Smyth (LSH), Yulia Startsev (YSV), Ben Coe (BCE), Guy Bedford (GB), Myles Borins (MBS), Domenic Denicola (DD), Jack Steinberg (JBS), Sven Sauleau (SSU), Clark Sampson (CSN), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Henry Zhu (HZU), Alan Schmitt (AS), Justin Ridgewell (JRL), Patrick Soquet (PST), Peter Hoddie (PHE), Caio Lima (CLA), Daniel Ehrenberg (DE), Anne van Kesteren (AVK), Shu-yu Guo (SYG), Ross Kirsling (RKG), Keith Miller (KM), Mattijs Hoitink (MHK), Michael Saboff (MS), Guilherme Hermeto (GHO), Rob Palmer (RPR), Philipp Dunkel (PDL), Szabolcs Szabolcsi-Toth (SZT), Nicolò Ribaudo (NRO), Joyee Cheung (JCG), Kevin Gibbons (KG), Aki Rose (AKI), Tierney Cyren (TCN), Amal Hussein (AHN), Julien Gilli (JGI), Sean Larkin (SLN), Sathya Gunasekaran (SGN), Daniel Rosenwasser (DRR), Randy Luecke (RCL), Kat Marchán (KZM), Andrew Paproki (API), Mark Miller (MM), Joe Sepi (JSI)
+István Sebestyén (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Till Schneidereit (TST), Logan Smyth (LSH), Yulia Startsev (YSV), Ben Coe (BCE), Guy Bedford (GB), Myles Borins (MBS), Domenic Denicola (DD), Jack Steinberg (JBS), Sven Sauleau (SSU), Clark Sampson (CSN), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Henry Zhu (HZU), Alan Schmitt (AS), Justin Ridgewell (JRL), Patrick Soquet (PST), Peter Hoddie (PHE), Caio Lima (CLA), Daniel Ehrenberg (DE), Anne van Kesteren (AVK), Shu-yu Guo (SYG), Ross Kirsling (RKG), Keith Miller (KM), Mattijs Hoitink (MHK), Michael Saboff (MLS), Guilherme Hermeto (GHO), Rob Palmer (RPR), Philipp Dunkel (PDL), Szabolcs Szabolcsi-Toth (SZT), Nicolò Ribaudo (NRO), Joyee Cheung (JCG), Kevin Gibbons (KG), Aki Rose (AKI), Tierney Cyren (TCN), Amal Hussein (AHN), Julien Gilli (JGI), Sean Larkin (SLN), Sathya Gunasekaran (SGN), Daniel Rosenwasser (DRR), Randy Luecke (RCL), Kat Marchán (KZM), Andrew Paproki (API), Mark Miller (MM), Joe Sepi (JSI)
 
 Remote:
 Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LBR), Frank Yung-Fong Tang (FTG), Mike Samuel (MSL), Shane Carr (SFC), Jordan Gensler (JGR), Robert Pamely (RPY)
@@ -787,33 +787,33 @@ KG: no idea what my question was about.
 
 YSK: I believe it was related to security issue where script could ???
 
-MS: May want to be able to inject it, but have to be able to inject before first import.
+MLS: May want to be able to inject it, but have to be able to inject before first import.
 
 YSK: (Repeating Kevin's queued question)
 
 KG: ok gated on import-maps shipping? Don't care about requirement on spec text. As process matter, need to be able to patch and polyfill,. As process matter, would we be ok browsers not ship this until they have first shipped import maps? Don't have that authority as committee, but can ask that of the champions.
 
-MS: Don't know how we do that. WICG? Chicken and egg. Talking about mechanism without libraries. Should get to stage 4 but useless for now.
+MLS: Don't know how we do that. WICG? Chicken and egg. Talking about mechanism without libraries. Should get to stage 4 but useless for now.
 
 YSK: (Repeating Mark's queued question) secure way to do operational hooks?
 
 MM: You showed model on how to do this. Pipeline that's in the host is operational. There's code in the host that's written in something. Operational hooks advantage and not disadvantage for security. The realm api is all about enabling some js code to act as code to other js code. Patrick from Moddable in TC53 presented operational loading proposal as part of compartments system for realms. Looks very good to me. Implemented in XS. Prototyping in realm shim. I'd recommend that loading and control of ??? between modules, that all concerns be folded into realm.
 
-MS: You and I talked about this after yesterday. May be a way
+MLS: You and I talked about this after yesterday. May be a way
 
 MM: We should fold these efforts together. Realms can't move forward without loading. Loading issues exactly same as issues you're facing here.
 
 YSK: (Checking queue)
 
-MS: Added stage 2 criteria slide: what are they? Entrance criteria. See slide "stage 2 cirteria". We have 3 todos: 1) talk about namespaces. Single namespace? Multiple? Follow-up on what governance for namespace. 2) polyfilling. Understand that needs to be dealt with. 3) JHD would like us that Scripts can do imports of stdlib. Don't know if necessary, but we need to handle it. Separate proposal or part of same proposal is unclear. We think we need stage 2 criteria. Willing to discuss whether committee agrees.
+MLS: Added stage 2 criteria slide: what are they? Entrance criteria. See slide "stage 2 cirteria". We have 3 todos: 1) talk about namespaces. Single namespace? Multiple? Follow-up on what governance for namespace. 2) polyfilling. Understand that needs to be dealt with. 3) JHD would like us that Scripts can do imports of stdlib. Don't know if necessary, but we need to handle it. Separate proposal or part of same proposal is unclear. We think we need stage 2 criteria. Willing to discuss whether committee agrees.
 
 DE: great proposal. Support this for stage 2. Makes sense to leave things are placeholders. We can't just decide on gov model right now. We had good discussion about prefixes we can build on. Stage 2 makes a lot of sense, Stage 2 is where committee decides we're doing this, we have basic semantics. We have the loader change, which will integrate well with import maps, as well as JSON modules.. Really in favor of that moving forward.
 
-MS: So what's your question?
+MLS: So what's your question?
 
 DE: More of a comment than a question. For async scripts you presented earlier this general statement which sounds good. For sync scripts I'm skeptical we'll find an answer.
 
-MS: I'm not eager to take that on—
+MLS: I'm not eager to take that on—
 
 DE: I think we can draw a conclusion to that during Stage 2.
 
@@ -821,15 +821,15 @@ DD: The process document says that "all major semantics" should be figured out a
 
 DD: The namespace issue, TODO #1, is of course one that's very important to Chrome. And we've been taken totally by surprise by TODO #3; we don't want to agree to include something in the language that would enable synchronous module execution. With this many unknowns, it appears by moving this to stage 2 we'd be agreeing to adding "something to do with modules". It's really important to be able to say more than that before moving to stage 2.
 
-MS: Todo 1) and 2) prefix which is namespace, Draft text does not talk about that. We can bikeshed over that. Don't think it changes things too much. Don't think it's a big issue single vs multiple namespace. Same with being able to polyfill. Because we have a loading mechanism, clearly able to handle import maps with that process.
+MLS: Todo 1) and 2) prefix which is namespace, Draft text does not talk about that. We can bikeshed over that. Don't think it changes things too much. Don't think it's a big issue single vs multiple namespace. Same with being able to polyfill. Because we have a loading mechanism, clearly able to handle import maps with that process.
 
-MS: Your contention with #3, that was something that was raised. I'm willing to discuss that in Stage 2, but frankly I assumed it would be a different proposal altogether. There's bigger issues than simply something like an implementation. I don't think it should be a blocker for stage 2. I understand and disagree.
+MLS: Your contention with #3, that was something that was raised. I'm willing to discuss that in Stage 2, but frankly I assumed it would be a different proposal altogether. There's bigger issues than simply something like an implementation. I don't think it should be a blocker for stage 2. I understand and disagree.
 
 DD: Understand spec text is agnostic and could allow sync imports. But saying whether we're going to do sync imports or not is important for stage 2.
 
-MS: Right but that's in stage 2.
+MLS: Right but that's in stage 2.
 
-MS: "Purpose" in slide: For Stage 2 precisely describe the syntax and semantics. That's what we want to do, including these three things.
+MLS: "Purpose" in slide: For Stage 2 precisely describe the syntax and semantics. That's what we want to do, including these three things.
 
 DD: It's an _entry_ requirement for stage 2 to establish major semantics that we are agreeing to. The purpose of stage 2 is not to figure things out and reach agreement; it's to write detailed spec text for what we've already figured out and agreed on.
 
@@ -845,11 +845,11 @@ PDL: If you strike through 1) and 3), you remove those blockers. Is that valid a
 
 DD: If proposal does not cover deciding on a namespace, and declares we will not make imports executable synchronously, then that would make sense and allow moving to stage 2.
 
-MS: We do need to determine namespace issues, so unwilling to strike out #1 from this [See stage 2 criteria slide]
+MLS: We do need to determine namespace issues, so unwilling to strike out #1 from this [See stage 2 criteria slide]
 
 PDL: Not disagreeing, but does it need to be part of this proposal, or part of a namespace proposal that is independent. Not saying that we should say  tc39 has no business in namespaces. Just this proposal is not where we define it.
 
-MS: I could _almost_ go along. Mark said TC39 needs to be involved if namespace is TC39-central, so may be a blocker for Mark on the the proposal.
+MLS: I could _almost_ go along. Mark said TC39 needs to be involved if namespace is TC39-central, so may be a blocker for Mark on the the proposal.
 
 MM: Yes. Not objecting to stage 2 on those grounds.
 
@@ -978,7 +978,7 @@ YSK: did discuss before two proposals which order to do them in. Decided to chan
 
 DE: Been discussing this with builtin modules champions [at lunch today]
 
-MS: Not discussed with builtin modules champions [discussed but did not see slides].
+MLS: Not discussed with builtin modules champions [discussed but did not see slides].
 
 DD: These are not dueling slide decks. We saw builtin modules proposal, thought we need to talk about this.
 
@@ -1012,7 +1012,7 @@ DD: Yes, if we could move to a single namespace, I would love to move Builtin Mo
 
 PDL: Question comes back to champions/proponents of that proposal. Is than an option to do?
 
-MS: This is our todo 1), believe at stage 2 we need to deal with it. Think it's premature at stage 1. First time we hear about your proposal.
+MLS: This is our todo 1), believe at stage 2 we need to deal with it. Think it's premature at stage 1. First time we hear about your proposal.
 
 DE: happy to hear more with more time.
 

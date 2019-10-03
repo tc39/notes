@@ -1,6 +1,6 @@
 # January 30, 2019 Meeting Notes
 -----
-Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM), Lin Clark (LCK)
+Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MLS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM), Lin Clark (LCK)
 
 
 Remote:
@@ -304,29 +304,29 @@ DE: I regret it if people feel their viewpoints are not being considered. We've 
 
 DRR: I'm fine moving on to other topics.
 
-MS: I'm not in favor of moving this to Stage 3. We had an internal discussion among programmers who use decorators in their work. The consensus was that this proposal is too complex. That complexity hurts the proposal in several different ways. First, it makes the proposal too hard to use. Decorators are like a swiss army knife. I think this complexity may make this lack adoption, except among hardcore framework authors. The complexity could also make it harder to implement efficiently. I think we need to make sure the proposal is friendly to tooling, but that is not part of this proposal. The complexity goes beyond where the common use cases are for this proposal. To restate, I am in favor of decorators, but I am not in favor of this proposal because the complexity makes it hard for both programmers and implementers.
+MLS: I'm not in favor of moving this to Stage 3. We had an internal discussion among programmers who use decorators in their work. The consensus was that this proposal is too complex. That complexity hurts the proposal in several different ways. First, it makes the proposal too hard to use. Decorators are like a swiss army knife. I think this complexity may make this lack adoption, except among hardcore framework authors. The complexity could also make it harder to implement efficiently. I think we need to make sure the proposal is friendly to tooling, but that is not part of this proposal. The complexity goes beyond where the common use cases are for this proposal. To restate, I am in favor of decorators, but I am not in favor of this proposal because the complexity makes it hard for both programmers and implementers.
 
 DE: Can you elaborate what people thought was too complex?
 
-MS: There have been features that have been added, like the whole initializer thing, that go beyond the general use cases of the people I talk to who are using decorators regularly.
+MLS: There have been features that have been added, like the whole initializer thing, that go beyond the general use cases of the people I talk to who are using decorators regularly.
 
 DE: Initializers were important for frameworks to be able to upgrade from what they were doing before. (Gives an example about Set.)  Now that we have Define semantics, we need a way to insert an extra callback that gets run right after super returns. YK was pushing back against this for awhile, because it doesn't involve a syntactic element, but framework authors, like Polymer, MobX (?), etc., were coming back saying they needed it.
 
 JFI: I found in practice that decorators tend to do one thing. I found using it was straightforward with this change. The decorator returning a static description is actually tooling friendly.
 
-MS: One more thing about complexity. You can completely replace a class and have decorators on methods and classes. When does the class get replaced or not?  Do you see the decorated or undecorated class?  Those semantic on timing seem very confusing, much more than originally.
+MLS: One more thing about complexity. You can completely replace a class and have decorators on methods and classes. When does the class get replaced or not?  Do you see the decorated or undecorated class?  Those semantic on timing seem very confusing, much more than originally.
 
 DE: That's interesting. There are some things that run before initialization. It's been that way for a while.
 
 TDE: You said you talked to people about decorators; who were they?
 
-MS: Developers within Apple who use decorators. One surprising comment was someone who uses decorators but doesn't like this proposal.
+MLS: Developers within Apple who use decorators. One surprising comment was someone who uses decorators but doesn't like this proposal.
 
 DE: I'd like to talk with that person offline.
 
 WH: I agree this is complex. I'm just trying to understand MS's position of wanting decorators but not with the current complexity. Is there something concrete or actionable you'd like to see changed?
 
-MS: We'll discuss this within Apple.
+MLS: We'll discuss this within Apple.
 
 KS: I am also sympathetic with the concern on complexity. I think some people who are more closely involved with the proposal are cognisant that the complexity of the feature has continued to grow over time, even very recent history. Complexity by itself is not a problem, but it begs the question, why does this feature need so much complexity and increase in scope?  What this proposal is trying to do is trying to chase macros and a general purpose syntactic utility. That seems like a noble goal; being able to abstract over syntax is good. Many language have done it. But I wonder whether, if this is a general-purpose syntactic abstraction feature for JS, is that the macro feature that we want, and the macro feature that we want to be stuck with?  Does it work for the rest of the language, or is it just limited to classes?  We have talked about how it extends to functions or object literals, and there are potential problems with that. I fear that by the time we reach the end of the road, we won't like this macro feature we created.
 
@@ -386,7 +386,7 @@ SYG: I see, so a completely different approach than the current decorators.
 
 YK: I agree with that as a possible approach.
 
-MS: Personally, I am in favor of decorators. The complexity is the sum of the whole part. About optimization, I think it's okay if tooling optimizes decorators more than the engine can, as long as the same code runs either place. Developers will know that if they really care about performance, tooling can fix it.
+MLS: Personally, I am in favor of decorators. The complexity is the sum of the whole part. About optimization, I think it's okay if tooling optimizes decorators more than the engine can, as long as the same code runs either place. Developers will know that if they really care about performance, tooling can fix it.
 
 RB: ...
 
@@ -400,7 +400,7 @@ DE: There have been some changes. We tried to get in the substantial ones in adv
 
 SGN: I'm not convinced I should implement and ship the currently specified proposal in Chrome. What do other implementers think?
 
-MS: Probably not.
+MLS: Probably not.
 
 SGN: This will signal the community that this is concrete and stable. Is this why you want to go to Stage 3?
 
@@ -454,15 +454,15 @@ DE: I think YK is jumping to a lot of conclusions. We should discuss in the next
 
 YK: I agree that I'm jumping to conclusion, but the community is waiting for us to decide what the implementation is look like.
 
-MS: If decorators are standardized in a different venue, implementers might never implement it.
+MLS: If decorators are standardized in a different venue, implementers might never implement it.
 
 YK: you are speculating that implementers got together....
 
-MS: No, I'm saying that if we take it to another venue, implementers don't have a voice. And if we keep it here and keep a proposal that implementers are happy with, that's a better end result.
+MLS: No, I'm saying that if we take it to another venue, implementers don't have a voice. And if we keep it here and keep a proposal that implementers are happy with, that's a better end result.
 
 YK: I just don't know what the actionable thing is there.
 
-MS: I think that one of the action items I'm taking away from here is that we need to get users and implementers involved with the champions group.
+MLS: I think that one of the action items I'm taking away from here is that we need to get users and implementers involved with the champions group.
 
 BT: Time box is up again.
 

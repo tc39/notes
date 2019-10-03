@@ -1,6 +1,6 @@
 # November 28, 2018 Meeting Notes
 -----
-Mattijs Hoitink (MHK), Michael Saboff (MS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean-Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbage (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontín (FBN), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
+Mattijs Hoitink (MHK), Michael Saboff (MLS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean-Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbage (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontín (FBN), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
 
 Remote:
 Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), István Sebestyén (IS), Richard Gibson (RG), Guy Bedford (GB), Conrad Watts (CWS)
@@ -303,7 +303,7 @@ SGN: The baseline should be non decorated classes.
 
 AK: I have these concerns especially since we're talking about frameworks... I am not sure this is more of a footgun compared to using a framework.
 
-MS: We have similar concerns in that static analysis will be difficult. We have to change the object model to account for decorators. I personally don't like it, users want it... startup cost i have concerns but not super huge.
+MLS: We have similar concerns in that static analysis will be difficult. We have to change the object model to account for decorators. I personally don't like it, users want it... startup cost i have concerns but not super huge.
 
 EFT: My intuition is that when you codify this a first class language thing
 

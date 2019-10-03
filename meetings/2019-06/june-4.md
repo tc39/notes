@@ -1,6 +1,6 @@
 # June 4, 2019 Meeting Notes
 -----
-István Sebestyén (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Philipp Dunkel (PDL), Aki Rose (AKI), Myles Borins (MBS), Mathias Bynens (MB), , Randy Luecke (RCL), Daniel Ehrenberg (DE), Till Schneidereit (TST), Patrick Soquet (PST), Peter Hoddie (PHE), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MS), Mark Miller (MM), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Justin Ridgewell (JRL), Rob Palmer (RPR), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Nicolò Ribaudo (NR), Caio Lima (CLA), Valerie Young (VYG), Logan Smyth (LSH), Alan Schmitt (AS), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Nicolo Ribaudo (NRO), Guy Bedford (GB), Ben Coe (BCE), Amal Hussein (AHN), Julien Gilli (JGI), , Sven Sauleau (SSU), Jack Steinberg (JBS), Ross Kirsling (RKG)
+István Sebestyén (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Philipp Dunkel (PDL), Aki Rose (AKI), Myles Borins (MBS), Mathias Bynens (MB), , Randy Luecke (RCL), Daniel Ehrenberg (DE), Till Schneidereit (TST), Patrick Soquet (PST), Peter Hoddie (PHE), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MLS), Mark Miller (MM), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Justin Ridgewell (JRL), Rob Palmer (RPR), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Nicolò Ribaudo (NR), Caio Lima (CLA), Valerie Young (VYG), Logan Smyth (LSH), Alan Schmitt (AS), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Nicolo Ribaudo (NRO), Guy Bedford (GB), Ben Coe (BCE), Amal Hussein (AHN), Julien Gilli (JGI), , Sven Sauleau (SSU), Jack Steinberg (JBS), Ross Kirsling (RKG)
 
 Remote:
 Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LBR), Frank Yung-Fong Tang (FTG), Mike Samuel (MSL), Shane Carr (SFC)
@@ -218,7 +218,7 @@ RKG: It's wonderful how actually non-controversial this has been.
 
 YS: Any comment from the Apple team?
 
-MS: We're good with this change!
+MLS: We're good with this change!
 
 #### Conclusion/Resolution
 
@@ -363,25 +363,25 @@ MM: you listed a bunch of implementations but you didn't list XS. I assume it is
 - [PR](https://github.com/tc39/ecma262/pull/1504)
 - [slides (missing link)](???)
 
-MS: PR that modifies the spec to bring it to consistency with what most browsers should do.
+MLS: PR that modifies the spec to bring it to consistency with what most browsers should do.
 
-MS: the issue is 1495 notes that there is inconsistency. PR 1504 brings it in.
+MLS: the issue is 1495 notes that there is inconsistency. PR 1504 brings it in.
 
-MS: Web platform tests currently behind experimental flag which would pass once this gets cleared up.
+MLS: Web platform tests currently behind experimental flag which would pass once this gets cleared up.
 
-MS: Problem in a nutshell: relates to how the hosts call out to (missed)
+MLS: Problem in a nutshell: relates to how the hosts call out to (missed)
 
-MS: At the top you can see that there's content-security header.
+MLS: At the top you can see that there's content-security header.
 
-MS: The way the spec is written an eval of a non-string value does not actually trigger the host callout. Evan of string takes different path than eval of non-string. Probably a specification bug.
+MLS: The way the spec is written an eval of a non-string value does not actually trigger the host callout. Evan of string takes different path than eval of non-string. Probably a specification bug.
 
-MS: Browsers differs on how this happens. Chrome and Safari allow it, FF is actually currently spec compliant and rejects it.
+MLS: Browsers differs on how this happens. Chrome and Safari allow it, FF is actually currently spec compliant and rejects it.
 
-MS: Went over a couple of possible ways to fix this. The one on the PR: simplify things. Two places in the spec text where eval called. (missed) and then there's indirect eval which only has access to global scope.
+MLS: Went over a couple of possible ways to fix this. The one on the PR: simplify things. Two places in the spec text where eval called. (missed) and then there's indirect eval which only has access to global scope.
 
-MS: Changes the performeval callout to take (missed) so that it can call the post-environment. Today we fix both uses of PerformEval. We figured out a way to make it slightly cleaner. The PR is the authoritative one, but this is the gist of it.
+MLS: Changes the performeval callout to take (missed) so that it can call the post-environment. Today we fix both uses of PerformEval. We figured out a way to make it slightly cleaner. The PR is the authoritative one, but this is the gist of it.
 
-MS: If everybody agrees we can go and fix this, but I would love feedback.
+MLS: If everybody agrees we can go and fix this, but I would love feedback.
 
 MM: very suspicious about both realms as being listed as parameters of both functions. Seems to come from a misguided attempt by spec to reuse same internal mechanism (PerformEval) for both direct and indirect eval.
 
@@ -391,19 +391,19 @@ MM: Indirect eval is just a function call, and the realm from which it's called 
 
 MM: Wanted thoughts on splitting those cases and each case having only the relevant realm as parameter.
 
-MS: Compatibility concern here. Spec that says: we reject if there's any CSP policy. Would be backward compatibility break.
+MLS: Compatibility concern here. Spec that says: we reject if there's any CSP policy. Would be backward compatibility break.
 
-MS: (missed details)
+MLS: (missed details)
 
 MM: I have a very concrete suggestion, that will not create operational difference. Simply include the direct flag as another argument to HostEnsureCanCompileStrings.
 
-MS: my mistake that I put the slides this way. My apologies for confusion. I believe the GitHub diff, let me go ahead and see if GH diff could resolve any confusion I created.
+MLS: my mistake that I put the slides this way. My apologies for confusion. I believe the GitHub diff, let me go ahead and see if GH diff could resolve any confusion I created.
 
-MS: (showing GH diff).
+MLS: (showing GH diff).
 
-MS: you can see the change to PerformEval. Does PerformEval with the appropriate realm. I see a comment. And yes that (missed) should be there.
+MLS: you can see the change to PerformEval. Does PerformEval with the appropriate realm. I see a comment. And yes that (missed) should be there.
 
-MS: changing the name from evalRealm to consistently be called callerRealm.
+MLS: changing the name from evalRealm to consistently be called callerRealm.
 
 MM: HostEnsureCanCompileStrings still has only two parameters. Suggesting that the host cannot do a (missed) job (missed). Suggesting we add a third parameter to pass through the direct flag.
 
@@ -411,9 +411,9 @@ DD: realm is a completely different issue. (missed). That should be pursued as a
 
 MM: Not suggesting that CSP should be changed, suggesting that a flag be added. Then at least the host has enough information that it could make a sensible decision, even though the browser is already committed to not doing so.
 
-MS: later in this session I will be floating a proposal that provides more context to the host callout. Domenic is right that this is a need-consensus so the scope is very narrow for this specific topic.
+MLS: later in this session I will be floating a proposal that provides more context to the host callout. Domenic is right that this is a need-consensus so the scope is very narrow for this specific topic.
 
-MS: do we have consensus?
+MLS: do we have consensus?
 
 YS: do we have consensus from the room? (thumbs up) Anything from anyone remote? )
 
@@ -907,9 +907,9 @@ Linters and static type analysis will be helpful to support devs to migrate appl
 - [proposal](https://github.com/tc39/proposal-javascript-standard-library)
 - [slides](https://github.com/tc39/proposal-javascript-standard-library/blob/master/slides/JSL-TC39-June-2019.pdf)
 
-MS: We have a lot of topics to discuss. Including some contentious ones. [Agenda from slides].
+MLS: We have a lot of topics to discuss. Including some contentious ones. [Agenda from slides].
 
-MS: Proposing built-in modules shipped with the engine. This proposal is about the mechanism to do that, not about the content of the built-in modules themselves. Some confusion about this in previous rev of this proposal.
+MLS: Proposing built-in modules shipped with the engine. This proposal is about the mechanism to do that, not about the content of the built-in modules themselves. Some confusion about this in previous rev of this proposal.
 
 T Namespaces: talking about how to identify what we import as it pertains to domains of the technology that is in a particular library.
 
@@ -947,7 +947,7 @@ NTE: Yes.
 
 AHN: How does this retroactively affect what's in the global namespace?
 
-MS: Short answer, It wont,
+MLS: Short answer, It wont,
 
 AHN: Shouldn't?
 
@@ -955,15 +955,15 @@ AHN: Shouldn't?
 
 AHN: How is namespacing preserved as well, things like import * as, etc. Curious what the namespacing story and collision semantics are.
 
-MS: Same as for modules. Want to give a clean environment for developers.
+MLS: Same as for modules. Want to give a clean environment for developers.
 
-MS: We're trying to avoid this big global object while not breaking the web.
+MLS: We're trying to avoid this big global object while not breaking the web.
 
 AKI: now that we're done with clarifications let's move on to strong opinions.
 
 TCN: Lots of IoT stuff for node. Fetch example of something in the web but not in/for node. These things are not necessarily mutually exclusive. What is the path forward to making sure these things are shared instead of separated. E.g. node could potentially implement IoT.
 
-MS: We're creating a world that requires more or different coordination than we have now. If creating array like object I own anything that is on that prototype. Here we have to have coordination. Makes sense you bring up IoT and node. Makes sense you wouldn't have IoT or other domains specific to just one type of host. You can think that some of the browser's tech will be shared with node. But calling it javascript is not the right thing. Still need some coordination that exists. Those groups interested in IoT would need to coordinate. We're not offering mechanism for that coordination. High order in my mind for having separate domains if for the programmer. Programmer understands I want to use x, it's part of JS, I should be able to find it in the js: namespace.
+MLS: We're creating a world that requires more or different coordination than we have now. If creating array like object I own anything that is on that prototype. Here we have to have coordination. Makes sense you bring up IoT and node. Makes sense you wouldn't have IoT or other domains specific to just one type of host. You can think that some of the browser's tech will be shared with node. But calling it javascript is not the right thing. Still need some coordination that exists. Those groups interested in IoT would need to coordinate. We're not offering mechanism for that coordination. High order in my mind for having separate domains if for the programmer. Programmer understands I want to use x, it's part of JS, I should be able to find it in the js: namespace.
 
 ??: There is something distinct about tc53 is doing, it is a very different runtime model. The APIs we're designing you may not want to use them in node. I don't think the goal of the work of tc53 is to be universally useful.
 
@@ -971,17 +971,17 @@ MM: would you agree that it'd be useful for you to have a specific domain?
 
 ??: Absolutely.
 
-MS: I can see that tc39 js:, but also intl: as a separate domain because it's distinct functionality that is clear.
+MLS: I can see that tc39 js:, but also intl: as a separate domain because it's distinct functionality that is clear.
 
 MBS: looking at is and i'm conflicted, as I would not take node `fs` to put in js: or web:, on the other hand today the web: is URL, urlencode/decode, would be weird to attach these to js: namespace. Question becomes how do we define that? It just seems confusing to me.
 
-MS: Biggest JS module providers need to come up with what coordination is needed. Point I'm trying to make is I believe programmer has better mental model if we do have separate domains than if we have a single on. Example of using "map" as a name that can mean different things in different namespaces. E.g. js' map and css' map. I don't know what coordination looks like.
+MLS: Biggest JS module providers need to come up with what coordination is needed. Point I'm trying to make is I believe programmer has better mental model if we do have separate domains than if we have a single on. Example of using "map" as a name that can mean different things in different namespaces. E.g. js' map and css' map. I don't know what coordination looks like.
 
 MBS: absolutely make sense for the namespace mechanism. Would be good to clarify from the get go is that the intention is not for TC39 to be owner of the js: namespace.
 
-MS: we have to allow for that, it can't be this is my playground you can't come in. [missed details on MDN example].
+MLS: we have to allow for that, it can't be this is my playground you can't come in. [missed details on MDN example].
 
-MS: agree that MDN good place to start documenting this.
+MLS: agree that MDN good place to start documenting this.
 
 GB: not sure about ambiguity on web apis and Node.js. In case of examples we mentioned like fetch, Node.js implementation is not compatible with web one. Could fallback from one to the other.
 
@@ -989,71 +989,71 @@ MS. Yes and if you have web:worker and js:worker importer needs to know the diff
 
 BCE: Forcing sharing can be good. Some exciting stuff in node is that we've been integrating Inspector from chrome, as an example. Other thing is worst case scenario is you have a nodejs URL and a web URL.
 
-MS: or tools namespace
+MLS: or tools namespace
 
 DE: I think I actually wanted to say the opposite. True some APIs are analogous like web workers, other APIs are trying to be compatible, including with tests.
 
-MS:: we don't want to bifurcate or a flea market of different implementations of the same thing, it's going to require coordination.
+MLS:: we don't want to bifurcate or a flea market of different implementations of the same thing, it's going to require coordination.
 
 DD: Reasonable, but concerned about moving into common modules, for example storage?
 
-MS: only thing is underlying tech of indexdb. Workers and indexdb are not part of JavaScript. Think of tc53 like watch does it make sense to convey to a developer that they can use a js:kv-storage in an environment where they can't.
+MLS: only thing is underlying tech of indexdb. Workers and indexdb are not part of JavaScript. Think of tc53 like watch does it make sense to convey to a developer that they can use a js:kv-storage in an environment where they can't.
 
 DD: Don't think web developers have a mental model of what is JS. Some people think setTimeout is in the JS spec. Some JS impls don't implement portions of the spec like Intl.
 
-MS: this goes back to the thing we handwave right now: how do you coordinate those domains.
+MLS: this goes back to the thing we handwave right now: how do you coordinate those domains.
 
 DD: Google's perspective is that js and the web share one namespace.
 
-MS: why is it fine to have node have separate namespace and not other?
+MLS: why is it fine to have node have separate namespace and not other?
 
 DD: It's up to the hosts to express that. Node.js should express that if that's what they want.
 
-MS: As part of an implementer of a web team I disagree with that.
+MLS: As part of an implementer of a web team I disagree with that.
 
 DD: It can be more convenient for us to make developers choose whether the web team or the JS team wrote the functionality. But they should not need to; they just use the available APIs.
 
-MS: It's not who put it in there, it's what it does.
+MLS: It's not who put it in there, it's what it does.
 
-MS: namespace should convey to the user what technology is in a module and where they can use it. I'm talking from a core language perspective, not TC39 perspective.
+MLS: namespace should convey to the user what technology is in a module and where they can use it. I'm talking from a core language perspective, not TC39 perspective.
 
 DD: Expressing that need of coordination is required
 
 DE: really like the idea of coordinating. One thing we could start with is a GH repository where we can cross reference to different proposals about shared namespace. We could put the different things we're thinking about for the shared namespace. It's easy to point out some of the issues but things are improving over time. Other standards are becoming more open and more collaborative.
 
-MS: we have to have an online repo of what's in what namespace.
+MLS: we have to have an online repo of what's in what namespace.
 
 DE: started a list like that a while a go but (missed). Believe it's going to be more subtle than "other environments" or "it's not core JS". Non-tc39 things that are in other envs. Sometimes JS environment that it's really hard to deny it's a JS env. E.g cloud flare workers, yes it's not compliant but it can run a lot of programs. We can use this shared namespace extensively.
 
-MS: trying to understand the point you're trying to make.
+MLS: trying to understand the point you're trying to make.
 
 DE: just an example how complicated (missed). Overall it seems that we're sort of in agreement that we'd have a namespace like not everything is specified only by TC39 and we need coordination.
 
-MS: Need to figure out what goes in what namespace. We have no idea how JS will be used, so no clues what those domains or namespaces will be. Need to be able to evolve, add more prefix.
+MLS: Need to figure out what goes in what namespace. We have no idea how JS will be used, so no clues what those domains or namespaces will be. Need to be able to evolve, add more prefix.
 
-MS: we have no idea of JS is going to be used in the future. Don't want to preclude that we have a list of what those domains are going to be. We have to be able to evolve and add more prefixes and domains.
+MLS: we have no idea of JS is going to be used in the future. Don't want to preclude that we have a list of what those domains are going to be. We have to be able to evolve and add more prefixes and domains.
 
 DE: would be pretty skeptical of intl as a separate namespace. Not that big, it seems a bit weird. If we put intl in separate namespace then we get to 6 different namespaces.
 
 DD: when trying to evaluate this proposal it seems we need to figure this out before this can move to stage 2.
 
-MS: I do believe its required to have discussions with other stakeholders.
+MLS: I do believe its required to have discussions with other stakeholders.
 
 AHN: It seems like it's going to be a (missed) model. Who's really responsible ? Is this the browser, the engine, etc.? Also curious why these specific namespaces? That mental model is not immediately obvious to everyone why there are certain things that can only be e.g. in node runtime.
 
-MS: totally agree with the first thing you talked about. Is our current spec structure the right place to document where things belong. Yes we need new governance model for that and disseminate information. As far as examples, those are just examples. Only thing is that I think we should have a "js" namespace. It's the only one that from my point of view I can feel confident about. Does that answer your question?
+MLS: totally agree with the first thing you talked about. Is our current spec structure the right place to document where things belong. Yes we need new governance model for that and disseminate information. As far as examples, those are just examples. Only thing is that I think we should have a "js" namespace. It's the only one that from my point of view I can feel confident about. Does that answer your question?
 
 AHN: Yes.
 
 MM: Concerned about what you meant, for example "the js: shared across web standards bodies". We must be guardians of what is the language. If we create new namespaces that other people have governance over, then we abdicate governance over our language.
 
-MS: I generally agree with you, I think we can delegate some of that process but ultimately for core language we need to be involved and say yes. I think that other standard bodies could propose some new library that would be part of the core language and follow our process.
+MLS: I generally agree with you, I think we can delegate some of that process but ultimately for core language we need to be involved and say yes. I think that other standard bodies could propose some new library that would be part of the core language and follow our process.
 
-MS: It could be another technical subcommittee.
+MLS: It could be another technical subcommittee.
 
 MM: That's fine.
 
-MS: That's explicitly why I want multiple namespaces, so we don't just have Global Object all over again. Do agree with governance model, it could be very different from what it is right now. Is the process the same? It could be a sub-committee or a (missed).
+MLS: That's explicitly why I want multiple namespaces, so we don't just have Global Object all over again. Do agree with governance model, it could be very different from what it is right now. Is the process the same? It could be a sub-committee or a (missed).
 
 AKI: Do we agree that this needs a governance approach?
 
@@ -1069,7 +1069,7 @@ We add a polyfill where we think incompatibilities are problematic—missing mod
 
 MHK: Some alternatives that were suggested that we should be aware of. [moving to "alternatives" slide].
 
-MS: Import maps answers all those different scenarios
+MLS: Import maps answers all those different scenarios
 
 MHK: Pipe symbol alternative proposal. [referring to ModuleSpecifier fallbacks slide].
 
@@ -1083,7 +1083,7 @@ MHK: Polyfilling means something different for every host.
 
 JHD: When I think of polyfilling I think of adding/removing/changing functionality, but [missed rest of question]
 
-MS: (referring to loading chain slide) Two steps process here. Blue is resolve, red is load. Process continues until you run out of loaders. Implementations can decide how and if they want to resolve a module.
+MLS: (referring to loading chain slide) Two steps process here. Blue is resolve, red is load. Process continues until you run out of loaders. Implementations can decide how and if they want to resolve a module.
 
 KM: What about host environments? If the desire to replace things as a host-delegated action, I believe that should be at the host level, not at every lower-level of the web page.
 

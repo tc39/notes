@@ -1,9 +1,9 @@
 # May 25, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark S. Miller (MM), Kevin Smith (KS), Michael Saboff (MS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Jeff Morrison (JM), Domenic Denicola (DD)
+Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark S. Miller (MM), Kevin Smith (KS), Michael Saboff (MLS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TW), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Jeff Morrison (JM), Domenic Denicola (DD)
 
-Remote: 
+Remote:
 Dean Tribble (DT), Nikolaus Papaspyrou (NPU)
 
 -----
@@ -186,7 +186,7 @@ DD: I think KS and I disagree on how core the things that you've elided are
 
 MF: I agree with DD, previous stage 2 proposals have often had full spec text.
 
-MS: Seems like spelling them out would help, and giving
+MLS: Seems like spelling them out would help, and giving
 
 #### Conclusion/Resolution
 

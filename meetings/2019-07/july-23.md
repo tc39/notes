@@ -1,7 +1,7 @@
 # July 23, 2019 Meeting Notes
 -----
 
-Daniel Rosenwasser (DRR), Andrew Paprocki (API), Adam Klein (AK), Shu-yu Guo (SYG), Michael Ficarra (MF), Jordan Harband (JHD), Alex Rattray (ARY), Pieter Ouwerkerk (POK), Michael Saboff (MS), Keith Miller (KM), Aki Braun (AKI), Brian Terlson (BT), Ron Buckton (RBN), Till Schneidereit (TST), Yehuda Katz (YK), Aaron Davis (ADS), Sebastian Markbåge (SME), Andrew Burgess (ABS), Jonathan Keslin (JKN), Ashley Hauck (AEH), Peter Hoddie (PHE), Patrick Soquet (PST), Ben Coe (BCE), Waldemar Horwat (WH), Mark Miller (MM), Chip Morningstar (CM), Erica Pramer (EPR), Kevin Smith (KS), Adrian Hall (AHL), Caio Lima (CLA), Ben Lichtman (BLN), Tierney Cyren (TCN), Shelley Vohr (SVR), Michal Hollman (MHN), Bill Ticehurst (BTT), Dean Tribble (DT), Godfrey Chan (GCN), Guilherme Hermeto (GHO), Jordan Gensler (JGR), Leo Balter (LBR), Dale Bustad (DBD), Joffrey Richten (JRN), Shane Carr (SFC)
+Daniel Rosenwasser (DRR), Andrew Paprocki (API), Adam Klein (AK), Shu-yu Guo (SYG), Michael Ficarra (MF), Jordan Harband (JHD), Alex Rattray (ARY), Pieter Ouwerkerk (POK), Michael Saboff (MLS), Keith Miller (KM), Aki Braun (AKI), Brian Terlson (BT), Ron Buckton (RBN), Till Schneidereit (TST), Yehuda Katz (YK), Aaron Davis (ADS), Sebastian Markbåge (SME), Andrew Burgess (ABS), Jonathan Keslin (JKN), Ashley Hauck (AEH), Peter Hoddie (PHE), Patrick Soquet (PST), Ben Coe (BCE), Waldemar Horwat (WH), Mark Miller (MM), Chip Morningstar (CM), Erica Pramer (EPR), Kevin Smith (KS), Adrian Hall (AHL), Caio Lima (CLA), Ben Lichtman (BLN), Tierney Cyren (TCN), Shelley Vohr (SVR), Michal Hollman (MHN), Bill Ticehurst (BTT), Dean Tribble (DT), Godfrey Chan (GCN), Guilherme Hermeto (GHO), Jordan Gensler (JGR), Leo Balter (LBR), Dale Bustad (DBD), Joffrey Richten (JRN), Shane Carr (SFC)
 
 Remote:
 Bradley Farias (BFS), Gus Caplan (GCL), Kevin Gibbons (KG), Pedram Emrouznejad (PED), Yulia Startsev (YSV), Mattijs Hoitink (MHK), Ross Kirsling (RKG), Justin Ridgewell (JRL), Caridy Patino (CP), John-David Dalton (JDD), Paolo Severini (PSI), Benjamin Georges (BGS), Paul Leather (PLR), Mathias Bynens (MB), Aliaksander Palpko (APO), John Hax (JHX), Ravi Jayaramappan (RJN), Sanket Joshi (SJI), Jose David Rodrigues Veloso (JVO), Mike Samuel (MSL), Frank Yung-Fong Tang (FTG), Rob Palmer (RPR), Diego Ferreiro Val (DFV), István Sebestyén (IS), Jason Williams (JWS), Richard Gibson (RGN), Seth Brenith (SBH), Suraj Sharma (SSA), Steve Faulkner (SFR), Chris Anderson (CAN), Michael Fig (MFG), Valerie Young (VYG)
@@ -21,7 +21,7 @@ BT: It appears there are no objections to the agenda.
 
 BT: Meeting notes from last meeting are approved.
 
-MS: We didn’t actually vote on ES2019, but I spoke with AKR that it was an implicit ratification.
+MLS: We didn’t actually vote on ES2019, but I spoke with AKR that it was an implicit ratification.
 
 IS: True. In 2019 and also in 2018 we took the “silence” on the “IPR break-out” as TC39 as agreement. But from the “optics” point of you it would be better for next year, if we had a more explicit TC39 vote to ratify the annual ES release. Next year we will do it in the old way. The only question remains if we should do it in the March meeting (“conditional approval” depending on the outcome of the “opt-out”) or in the May/June meeting (after the “opt-out” is over).
 
@@ -690,7 +690,7 @@ JHD: Sorry, I’m talking about not for dynamic for Arrays.
 
 YK: A very common use case is tails in shells. I think this is a useful use case. There’s a longtail for use cases. Two things: 1) it’s well motivated 2) a big collection of the use cases aren’t dynamic.
 
-MS: I agree with AK. What about adding `reversed` instead? All the use cases I’m hearing are static, not dynamic.
+MLS: I agree with AK. What about adding `reversed` instead? All the use cases I’m hearing are static, not dynamic.
 
 MM: That can in some sense be construed with forward iteration.
 

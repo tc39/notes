@@ -1,9 +1,9 @@
 # November 28, 2017 Meeting Notes
 -----
 
-Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (AKI), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM)
+Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MLS), Caridy Patiño (CPO), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (AKI), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM)
 
-Remote: 
+Remote:
 István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
 
 -----
@@ -34,7 +34,7 @@ CP: There are a couple of features that we might reach stage 4 before January, a
 
 ## 7.iii ECMA-404 Status Updates (15m)
 
-CM: We're on the fast track to have 404 as an ISO standard early/mid December. 
+CM: We're on the fast track to have 404 as an ISO standard early/mid December.
 
 ## 7.iv Test262 Status Updates (15m)
 
@@ -42,7 +42,7 @@ LBR: Looking for volunteers all the time. Good coverage coming in: class fields 
 
 ## 10 Timeboxed agenda items (15 Minute Items)
 
-## 10.i.a Array.prototype.flatten & Array.prototype.flatMap for Stage 3 
+## 10.i.a Array.prototype.flatten & Array.prototype.flatMap for Stage 3
 
 (Michael Ficarra)
 
@@ -70,13 +70,13 @@ MF: Well to make arrays of arrays of things into arrays of things. We have depth
 
 JHD: Are you asking for common usecases?
 
-MM: Yes. Many patterns exist, some good some bad. 
+MM: Yes. Many patterns exist, some good some bad.
 
 JHD: It's tough to come up with a concrete example; I could go through the AirBnB codebase to provide examples
 
 MF: You can imagine someone building an array that contains arrays through an iterative or evented process. Once they've built this up they can flatten this value.
 
-DH: So let's you have an online streaming service and you have an array of titles grouped by genre, so an array of arrays. 
+DH: So let's you have an online streaming service and you have an array of titles grouped by genre, so an array of arrays.
 
 GCN: Let's say you're getting a resource over JSON, it's paginated, you want to go through all pages and collate them; each page has 10 results, you make 10 requests, you have a 10x10 array you want to flatten.
 
@@ -104,14 +104,14 @@ MF: Can I suggest we don't hold stage 3 for this then?
 
 YK: People might pull this out, but its not a hazard. This is what we have with mutable prototypes.
 
-MF: Does anyone have _significant_ concerns that need addressing for stage 3? No? So we can make this stage 3? 
+MF: Does anyone have _significant_ concerns that need addressing for stage 3? No? So we can make this stage 3?
 
 Everyone: signs of agreement.
 
 MF: Thank you.
 
 JRL: Examples (from Babel):
-    
+
     - https://github.com/babel/babel/blob/18c8d97c3d872735097d9610bc2c8a02155a40a1/packages/babel-generator/test/index.js#L40-L43
     - https://github.com/babel/babel/blob/18c8d97c3d872735097d9610bc2c8a02155a40a1/packages/babel-types/src/index.js#L476
     - https://github.com/babel/babel/blob/18c8d97c3d872735097d9610bc2c8a02155a40a1/packages/babel-types/src/retrievers.js#L12
@@ -158,7 +158,7 @@ RW: So, stage 3?
 
 AK: Prohibiting underscores in ToString - can you explain what the spec does. Does it disallow underscores when things are being implicitly converted to number?
 
-RW: It had an STR decimal literal. Decimal digits, space, decimal digits. The solution is to mirror the spec of today and prefix those with STR. 
+RW: It had an STR decimal literal. Decimal digits, space, decimal digits. The solution is to mirror the spec of today and prefix those with STR.
 
 AK: I'm more interested in behavior than spec text. 1_0 as a string, does that fail to convert to string?
 
@@ -201,7 +201,7 @@ MF: What does DirectivePrologue have to do with HashBang?
 
 BFS: No objections? Stage 1?
 
-MS: Is it a syntax error for private fields?
+MLS: Is it a syntax error for private fields?
 
 BFS: Yes currently.
 
@@ -226,7 +226,7 @@ MM: Can you use a function for replaceAll in replaceValue?
 
 MB: This is part of the complexity of replace, but we don;t need to make replaceAll as complex as replace. If we want more compatibility we could do the same thing, but it could be more efficient to not.
 
-MM: For me cognitive load is the opposite of what your preference is. It violates principle of least surprise. replaceAll should only be a generalised replace, with the same semantics on the arguments. 
+MM: For me cognitive load is the opposite of what your preference is. It violates principle of least surprise. replaceAll should only be a generalised replace, with the same semantics on the arguments.
 
 BE: I was going to approach it differently, if you want a flat string replacer function don't use "replace" in the name. The function has room to diverge semantics then. Also we have the same problem with matchAll right?
 
@@ -234,7 +234,7 @@ JHD: It's notable that the original plan for matchAll was your option 3: cloning
 
 MB: So if we change the method we can get away with just using simple strings?
 
-MS: I agree with that. If we can simplify the method then that's preferred. We should change the name.
+MLS: I agree with that. If we can simplify the method then that's preferred. We should change the name.
 
 MB: So substituteAll or something? We can bikeshed the name.
 
@@ -244,7 +244,7 @@ MM: Well replaceAll should match semantics for replace in terms of the supported
 
 DE: I disagree with the cognitive load point. replace is really complex, I'd wager no one in this room can describe the specs of replace, for example all of the $ patterns you can put in the replacement string.
 
-MS: But someone schooled in replace knows what they expect and so it does carry over.
+MLS: But someone schooled in replace knows what they expect and so it does carry over.
 
 DE: It would not be more cognitive load if we left out obscure features of replace in replaceAll; it would only be less load.
 
@@ -252,7 +252,7 @@ BE: No one uses Perl these days!
 
 ZB: We can optimise for fast passes if the arguments are strings so performance isn't a concern. Im not concerned of cognitive load but I am around principle of least surprise which should prevent us from reusing `replace*` if we change the signature. On the other hand bringing `replace` and `substiute` into JS feels an inconsistent large-scale language API.
 
-MS: Yeah the issue with replaceAll is that if it has the same semantics, whats the use? Just tack on a `g` to the RegExp flags.
+MLS: Yeah the issue with replaceAll is that if it has the same semantics, whats the use? Just tack on a `g` to the RegExp flags.
 
 BE: Having simple methods that just work on strings is useful, but replace/replaceAll is something to think about.
 
@@ -282,7 +282,7 @@ MM: It certainly qualifies, and I won't object. But my preference is we drop it.
 
 MB: My opinion is different. Whether it's worth it depends on the exact shape of the solution.
 
-MS: To counter Mark, there is no good way to do a global string search of another string without regular expressions.
+MLS: To counter Mark, there is no good way to do a global string search of another string without regular expressions.
 
 MM: Hmm, this is a significant point I hadn't considered.
 
@@ -337,7 +337,7 @@ DE: Any other questions? No? Thank you!
 (Daniel Ehrenberg)
 
 - [slides](https://docs.google.com/presentation/d/1u2xXRokUBPMjBsTL_ZCDghA16cH5FI0m1kLOczm1oMw/edit#slide=id.p)
- 
+
 DE: (Presenting)
 
 DE: Should we have BigInt << Number rather than BigInt << BigInt?
@@ -348,7 +348,7 @@ BE: There was a decision to make shift operators unary but we went away from tha
 
 DE: The concern was that programs may depend on idioms like `x >>> 0` to always return a 32-bit unsigned integer *Number*, which would no longer be the case if we allowed overloading just one side. However, this is not an invariant used by asm.js.
 
-YK: Its common to end up doing operations like this, where you will have a BigInt or a Number, and the thing you put after the shift operator might be a constant; in this case, 
+YK: Its common to end up doing operations like this, where you will have a BigInt or a Number, and the thing you put after the shift operator might be a constant; in this case,
 
 DE: The idea of the proposal is you have casts.
 
@@ -388,7 +388,7 @@ DE: Number.parseInt is still bad after the cleanup. We could change the method n
 
 BE: Yes we can call it fromString and cleanup. The global imprint becomes bigger - we now have a fromString convention. But if parseInt stinks up the place lets just diverge and call it fromString.
 
-YK: 
+YK:
 
 AK: This is a good argument for leaving it out and adding it later I guess.
 
@@ -449,11 +449,11 @@ DE: (Presenting)
 
 KM: A lot of proposals make it to stage 3, get implemented by 1 or 2 engines, and for whatever reason they die. For example SIMD. If it had shipped, they'd be locked into it - but it would never make it into the standard. The problem is shipping features that - beyond a reasonable doubt - wont make it into the spec locks us into shipping non-spec features.
 
-MS: Keith and I are in alignment. SIMD sat at stage 3 for a long time. 
+MLS: Keith and I are in alignment. SIMD sat at stage 3 for a long time.
 
 DE: It's not at Stage 3 anymore.
 
-MS: No, but it did stay there. Also sometimes things change in stage 3 that are significant changes, if we ship prior to these changes, we end up with web compat issues. The intent here is to kick the tires. Historically, Apple can't help in this process though; historically we ship one stable version of Safari per year, this year we shipped two. I don't know if we'll dramatically change that. It doesn't make sense for the committee to wait for us to ship. Its unlikely we'll ever have a stage 3 feature sitting in Safari stable.
+MLS: No, but it did stay there. Also sometimes things change in stage 3 that are significant changes, if we ship prior to these changes, we end up with web compat issues. The intent here is to kick the tires. Historically, Apple can't help in this process though; historically we ship one stable version of Safari per year, this year we shipped two. I don't know if we'll dramatically change that. It doesn't make sense for the committee to wait for us to ship. Its unlikely we'll ever have a stage 3 feature sitting in Safari stable.
 
 YK: Is the goal that users are happy with the feature or is it a case of finding out web compatibility issues. I also want to strongly disagree with what the criteria for an implementation is. I understand that people think asm/JIT is a privileged implementation, personally I think we'd be better served amount making requirements on testing - for example C++ committee doesn't require a running version over tests. It should be a case that we can run an implementation against tests.
 
@@ -481,19 +481,19 @@ JHD: If a proposal is determined to have no web-compat concerns, could we just a
 
 TST: The two most prominent examples of things being unshipped: Array.prototype.values and Array.prototype.contains which turned out to not be web compatible. We shipped them in Firefox up to beta, but not stable. I can't think of an example with the new staging process where things like this _weren't caught_ so maybe this is just discussing theoretical things which will be caught anyway.
 
-MS: Its the duty of this committee to tell the world what the 1 JS is that people use. For an implementation to say its compliant, we want to make sure it implements what this comittee produces. So they need to count towards saying what is in the standard. Any engine - in my mind - that says it is ECMAScript compliant needs to have a say as to what gets standardised. Predominantly this is browsers but we shouldn't leave out other engines. Yehuda brought up a JS to JS implementation. People use this for their daily work - we'd get more feedback from these because websites wait for critical mass support from browsers. If a browser implementor says: "I implemented it and its good" and we ship it - but its not ergonomically compliant or maybe some tweaks would improve it - we won't get this feedback at the browser, we get this from Babel though. We can't discount that feedback.
+MLS: Its the duty of this committee to tell the world what the 1 JS is that people use. For an implementation to say its compliant, we want to make sure it implements what this comittee produces. So they need to count towards saying what is in the standard. Any engine - in my mind - that says it is ECMAScript compliant needs to have a say as to what gets standardised. Predominantly this is browsers but we shouldn't leave out other engines. Yehuda brought up a JS to JS implementation. People use this for their daily work - we'd get more feedback from these because websites wait for critical mass support from browsers. If a browser implementor says: "I implemented it and its good" and we ship it - but its not ergonomically compliant or maybe some tweaks would improve it - we won't get this feedback at the browser, we get this from Babel though. We can't discount that feedback.
 
 DE: Sure - I wasn't discounting that feedback, I'm saying that we can have early babel feedback but stage 4 should require actual implementations. In this PR it doesn't say the feature has to be shipped unflagged.
 
-MS: I'm just saying we should say non browser implementations
+MLS: I'm just saying we should say non browser implementations
 
 DE: It doesn't say browser here, it says native.
 
-MS: I'm not sure we want all implementations from stage 3 to 4 have to have implementations be native.
+MLS: I'm not sure we want all implementations from stage 3 to 4 have to have implementations be native.
 
 ZB: Depending on the feature we worried about different things, as Jordan was saying. We don't want to end up at a stage where edge and chrome have it and safari doesn't or something. We try to cover this with the stage process but we're not looking at each case. An example of global vs something else... we should have the proposal include concerns for stage 4 - in some cases we're concerned around web compat, in others we'll get more feedback from a polyfill where people can use it and give us feedback. We shipped PluralRules in firefox - we proved its implementable but no one uses it, we dont know if its useful or not. global though - we know its useful, but we want to make sure implementors can implement and there are no web compat issues. We need to ensure we're writing proposals that are useful for people. I don't think we can hardcode this in a document, I think the comittee and champions should work through this in their proposals.
 
-DE: It seems good to allow champions to identify problems in their proposals. But the browser implementation thing also records buy in from the browsers. Not just web compat or implementability. Sometimes standards bodies get into modes where they end up producing specs and features that never get shipped. The two implementations thing gives us a barrier to ensure we're shipping things that people want and engines want and can do. 
+DE: It seems good to allow champions to identify problems in their proposals. But the browser implementation thing also records buy in from the browsers. Not just web compat or implementability. Sometimes standards bodies get into modes where they end up producing specs and features that never get shipped. The two implementations thing gives us a barrier to ensure we're shipping things that people want and engines want and can do.
 
 ZB: I'm not saying we drop the two engines thing, just we identify issues per proposal.
 
@@ -513,11 +513,11 @@ AK: I don't think not going to stage 4 is a concrete problem. What Godfrey said 
 
 BT: From the ChakraCore perspective we're in the similar boat to JSC - around what we can implement. We don't have a rapid shipping channel to the public, I definitely don't like the idea of waiting for implementations in stable browsers. I also agree that we shouldn't nail down a hard process here. I like the idea of champions identifying risk areas. That info will be different per proposal.
 
-AK: As Domenic is not here I'm going to try and express his feelings. He doesn't want things to end up in the spec that are not supported by JavaScript implementations; e.g., SIMD.js could have ended up getting to stage 4 given the relaxed requirements (read in isolation). Domenic is worried that the way to block something is to hold up the consensus. 
+AK: As Domenic is not here I'm going to try and express his feelings. He doesn't want things to end up in the spec that are not supported by JavaScript implementations; e.g., SIMD.js could have ended up getting to stage 4 given the relaxed requirements (read in isolation). Domenic is worried that the way to block something is to hold up the consensus.
 
 DE: Maybe we could have signoff from implementations?
 
-AK: Well getting to any stage at all is effective signoff. I'm worried that this takes power from the committee to say that if you're stage 3 two implementations means you're stage 4 - without committee involvement. 
+AK: Well getting to any stage at all is effective signoff. I'm worried that this takes power from the committee to say that if you're stage 3 two implementations means you're stage 4 - without committee involvement.
 
 SYG: What was the original motivation for this PR? To reduce the deadlock situation? That we can be blocked waiting for another implementor?
 
@@ -531,7 +531,7 @@ YK: This happens informally which I like. We often say "I agree to stage 1 but f
 
 DE: Do you think the current process document specifies implicitly that 2 vendors are shipping?
 
-MS: I don't think the current criteria is clear. We're arguing over Domenic's vs other interpretations of this. I'm going to read this spec verbatim. The term "significant" - I don't know how to qualify that. "such as" - is that really "such as"?
+MLS: I don't think the current criteria is clear. We're arguing over Domenic's vs other interpretations of this. I'm going to read this spec verbatim. The term "significant" - I don't know how to qualify that. "such as" - is that really "such as"?
 
 YK: Point of order - I wanted "such as" added because Domenic wanted concrete browser list and I wanted to keep things open
 
@@ -545,7 +545,7 @@ DE: Oh sorry!
 
 JHD: Shall I make a PR proposing my idea of categorising concerns?
 
-DE: Maybe we don't need to formalise this right now. 
+DE: Maybe we don't need to formalise this right now.
 
 MB: Jordan if you do that you're going to need to address "significant" and "such as".
 
@@ -582,7 +582,7 @@ FRA: Me too
 
 DE: (presenting)
 
-ZB: During implementation we realised there are subtle cultural consequences thinking about relative time. "Tomorrow" is not 24 hours from now for example, it could just be 2 hours from now. In December "next year" is only a month away, while in January "next year" is 12 months way. Other libraries implementations we're basing this off of have the two "numerical" and "textual" forms which toggle between this loose format. 
+ZB: During implementation we realised there are subtle cultural consequences thinking about relative time. "Tomorrow" is not 24 hours from now for example, it could just be 2 hours from now. In December "next year" is only a month away, while in January "next year" is 12 months way. Other libraries implementations we're basing this off of have the two "numerical" and "textual" forms which toggle between this loose format.
 
 DE: Do we have feedback about the two values for single/plural thing?
 
@@ -603,7 +603,7 @@ RJE: Okay, removed.
 
 ## 9.ii.c Make ECMAScript a syntactic superset of JSON for Stage 2
 
-(Mathias Bynens) 
+(Mathias Bynens)
 
 - [proposal](https://github.com/tc39/proposal-json-superset)
 - [slides](https://docs.google.com/presentation/d/12z_3OqQOA2a6hioWZWDa9cj8kEJw4FlhR4_pZhhKA-U/edit?usp=sharing)
@@ -630,7 +630,7 @@ MB: Any objection to stage 2? Stage 2 it is then
 #### Conclusion/Resolution
 
 - Stage2 acceptance
- - Reviewers for Stage 3: 
+ - Reviewers for Stage 3:
      - Michael Ficarra
      - Jordan Harband
 
@@ -640,7 +640,7 @@ MB: Any objection to stage 2? Stage 2 it is then
 
 - [proposal](https://github.com/tc39/proposal-regexp-dotall-flag)
 - [slides](https://docs.google.com/presentation/d/10yrU2Jw4-mOIHU7-rL8sugEHgWMNIJVjPRRQ4DvrA2A/edit?usp=sharing)
- 
+
 MB: (Presenting)
 
 MB: Stage 4?
@@ -655,8 +655,8 @@ MB: Stage 4?
 
 - [proposal](https://github.com/tc39/proposal-regexp-named-groups)
 - [slides](https://docs.google.com/presentation/d/10yrU2Jw4-mOIHU7-rL8sugEHgWMNIJVjPRRQ4DvrA2A/edit?usp=sharing)
- 
- 
+
+
 MB: (Presenting)
 
 MB: Stage 4?
@@ -672,7 +672,7 @@ MB: Stage 4?
 - [proposal](https://github.com/tc39/proposal-regexp-lookbehind)
 - [slides](https://docs.google.com/presentation/d/10yrU2Jw4-mOIHU7-rL8sugEHgWMNIJVjPRRQ4DvrA2A/edit?usp=sharing)
 
- 
+
 MB: (Presenting)
 
 MB: Not yet ready for stage 4 as there aren't enough implementations yet
@@ -688,7 +688,7 @@ MB: Not yet ready for stage 4 as there aren't enough implementations yet
 - [proposal](https://github.com/tc39/proposal-regexp-unicode-property-escapes)
 - [slides](https://docs.google.com/presentation/d/10yrU2Jw4-mOIHU7-rL8sugEHgWMNIJVjPRRQ4DvrA2A/edit?usp=sharing)
 
- 
+
 MB: (Presenting)
 
 MB: Ready for stage 4 soon, spec needs some final non-normative tweaks to the spec text
@@ -723,13 +723,13 @@ AK: I'm glad this has landed I dont think we should do a TopLevelModuleEvaluatio
 
 BFS: Node does the same
 
-AK: I don't think its reasonable to add normative text to the spec 
+AK: I don't think its reasonable to add normative text to the spec
 
 DH: Bradley's  instinct here is good, we have to know what we can reasonably say. How do we specify this invariant? We can add English language invariants, they are in the spec already for example Array.prototype.sort. I want to point out we have discussed this exact topic at some length. In Portland a few years ago we did this. We landed on semantics where async execution of subgraphs are possible but only if they follow the ordering. The goal is to allow browsers to fetch modules and evaluate them as they come available while still respect ordering. In reality its a meek optimisation. Serious webapps will use offline transformations, not modules. The optimisations are useful for small to medium apps but don't scale to big apps. Maintaining ordering invariance is worthwhile.
 
 YK: For a given graph you're allowed to execute from the leaf backwards as long the children of your module are present and executed - in source order. You are also allowed to spread these evaluations across turns. I think Dave is correct - we want to have a description of what we're trying to accomplish. Executing in source order is important. I agree with David about the meek optimisation. Offline tools work better here.
 
-BFS: Yes Google came to the same conclusion around ASAP evaluation. 
+BFS: Yes Google came to the same conclusion around ASAP evaluation.
 
 YK: The guarantee isn't complete though; `import a; import b; import c;` looks like a, b then c, but if a imports c you actually get c a b.
 
@@ -757,7 +757,7 @@ This goes against the sort of spirit of the specification, though we have no par
 
 NSH: (Presenting)
 
-DH: Firstly the work you're doing is super important. Thank you for your awesome work. The usage though - I wouldn't expect high usage, its a power feature. Low level meta object protocol hooks take longer for developers to figure out how to make use of them. The thing missing from the analysis is how these features were designed. Deprecating a new feature because its had little usage and some vulnerabilities is premature because of this. Again the work is super important, but my conclusion is not "lets get rid of this feature" but instead "lets work on hardening this". Developer education is not an issue here, weird things can happen in javascript. 
+DH: Firstly the work you're doing is super important. Thank you for your awesome work. The usage though - I wouldn't expect high usage, its a power feature. Low level meta object protocol hooks take longer for developers to figure out how to make use of them. The thing missing from the analysis is how these features were designed. Deprecating a new feature because its had little usage and some vulnerabilities is premature because of this. Again the work is super important, but my conclusion is not "lets get rid of this feature" but instead "lets work on hardening this". Developer education is not an issue here, weird things can happen in javascript.
 
 NSH: Sure - perhaps we could say "is it worth relooking at deprecating in 5 years if usage is still low"
 
@@ -777,7 +777,7 @@ DE: I really like the idea of guidance notes like that. Empathy with JS engine d
 
 NSH: I think specs should offer more of this kind of guidance. Array detatched buffer is a good example of this. For sort for example it says to be aware that your sort function could detatch a buffer.
 
-SYG: Its all about optimisations right? This is the place where things can get screwed up. 
+SYG: Its all about optimisations right? This is the place where things can get screwed up.
 
 CM: This is brilliant stuff but its a specific case of a more general issue. We have entangled semantics where you can rewrite the rules of reality underneath your feet. That we feel its essential this is the case I wonder if we should prune back the philosohpy of redifining everything.
 
@@ -791,7 +791,7 @@ NSH: Promise implementations are extremely complex in every engine. I haven't fo
 
 TST: Did SpiderMonkey just get lucky or did you not test it?
 
-NHS: Yes its funny a few Firefox developers come up to me with this. I haven't found any bugs. Something I have observed is that in more complex situations it behaves differently, for example pushing into an array - does it trigger the accessor? It didnt in Spidermonkey but does in the other 3 engines. 
+NHS: Yes its funny a few Firefox developers come up to me with this. I haven't found any bugs. Something I have observed is that in more complex situations it behaves differently, for example pushing into an array - does it trigger the accessor? It didnt in Spidermonkey but does in the other 3 engines.
 
 YK: If you discover a thing that is security sensitive and not all browsers are implemented - that _is_ something we can consider removing.
 

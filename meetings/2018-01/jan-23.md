@@ -1,7 +1,7 @@
 # January 23, 2018 Meeting Notes
 -----
 
-Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark S. Miller (MM), Till Schneidereit (TST), Michael Saboff (MS), JF Bastien (JFB), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagnani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
+Sebastian Markbåge (SM), Lin Clark (LCK), Waldemar Horwat (WH), Dean Tribble (DT), Chip Morningstar (CM), Brian Warner (BWR), Mark S. Miller (MM), Till Schneidereit (TST), Michael Saboff (MLS), JF Bastien (JFB), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Brian Terlson (BT), Shu-yu Guo (SYG), Ron Buckton (RBN), Michael Ficarra (MF), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Tab Atkins-Bittner (TAB), Kevin Gibbons (KG), Domenic Denicola (DD), Mariko Kosaka (MKA), Myles Borins (MBS), Peter Hoddie (PHE), Jordan Harband (JHD), Justin Fagnani (JFI), Caridy Patiño (CP), Zibi Braniecki (ZB), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Mathias Bynens (MB), Patrick Soquet (PST), Nathan Hammond (NHD), Stephen Murphy (SMY), Adam Klein (AK), Sathya Gunasekaran (SGN), Gabriel Isenberg (GI), John Lenz (JLZ), Diego Ferreiro Val (DFV), Maggie Pint (MPT), Thomas Nattestad (TND), Isabelle Valet-Harper (IVH), Peter Jensen (PJ), Brad Nelson (BNN), Godfrey Chan (GCN), Sri Pillalamarri (SPI), Eric Holk (EHK), Reefath Rajali (RRI), Rebecca Turner (RTR), Natalie Silvanovich (NSH), Sam Mussell (SML), Sebastian McKenzie (SMK), Daniel Rosenwasser (DRR), Qiuyi Zhang (QZG), Rob Palmer (RPR), Sean Larkin (SLN)
 
 Remote: Bradley Farias (BFS), Thomas Wood (TW), Ben Newman (BN), Rick Waldron (RW), Valerie Young (VYG), David Turissini (DTI)
 
@@ -393,7 +393,7 @@ DD: We'll get there.
 
 MB: The idea is that anything that can be produced by toString with some radix is accepted by fromString with that radix. Easy to say, hard to spec, but here are some examples.
 
-MS: Do you expect BigInt.fromString to accept the trailing `n`?
+MLS: Do you expect BigInt.fromString to accept the trailing `n`?
 
 MB: I have a slide on that later, and the answer is no.
 
@@ -733,7 +733,7 @@ AK: I'd like this better if it was non-normative, sounds like good advice for ch
 
 JHD: not expected to be an exhaustive list at stage 2 time, committee at any time can add/remove risk areas
 
-MS: if there are risk areas that can be identified, they should be tracked. Stage 2 and stage 4 are very far apart. These should be implementation risk areas, not other kinds of risk. Maybe during stage 3 more risks are added.
+MLS: if there are risk areas that can be identified, they should be tracked. Stage 2 and stage 4 are very far apart. These should be implementation risk areas, not other kinds of risk. Maybe during stage 3 more risks are added.
 
 JHD: making it a stage-2 entrance criteria means to me that it's being tracked. Making it clear that these are implementation risks sounds good to me.
 
@@ -853,7 +853,7 @@ WH: it's unfortunate, but match and matchAll should probably match. It'd be very
 
 JHD: if we say that consistency with match() is most important, so coerce into regexp, with no global flag, then you get an iterator which can only fire once
 
-MS: implicitly adding the global flag seems like a reasonable way to handle this
+MLS: implicitly adding the global flag seems like a reasonable way to handle this
 
 JHD: if we agree to coerce to regexp and add global flag, then I *am* comfortable asking for stage-3 now, since the rest of the spec text has been reviewed.
 

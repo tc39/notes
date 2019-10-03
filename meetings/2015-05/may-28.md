@@ -1,7 +1,7 @@
-# May 28, 2015 Meeting Notes    
+# May 28, 2015 Meeting Notes
 -----
 
-Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Kevin Smith (KS), Daniel Ehrenberg (DE), Adam Klein (AK), Jordan Harband (JHD), Jafar Husain (JH), Mark S. Miller (MM), Michael Ficarra (MF), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Ferraiuolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Brendan Eich (BE), Dan Gohman (DGN), Miško Hevery (MHY), Matt Sweeney (MSY)
+Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Kevin Smith (KS), Daniel Ehrenberg (DE), Adam Klein (AK), Jordan Harband (JHD), Jafar Husain (JH), Mark S. Miller (MM), Michael Ficarra (MF), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Ferraiuolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Brendan Eich (BE), Dan Gohman (DGN), Miško Hevery (MHY), Matt Sweeney (MS)
 
 -----
 
@@ -168,7 +168,7 @@ AWB: Clarifying module initialization: when a module is instantiated, one of the
 
 DH: You could observe that a binding isn't initialized yet. Could introduce TDZ?
 
-[Problem: If you make a let binding and refer to that in a decorator parameter, you will hit a TDZ] 
+[Problem: If you make a let binding and refer to that in a decorator parameter, you will hit a TDZ]
 
 AWB: Creates opportunity for fatal circularities that weren't a problem before.
 
@@ -220,7 +220,7 @@ YK: I think that's a sticky question..
 
 AWB: It looks like it's inside the function.
 
-YK: It's outside. 
+YK: It's outside.
 
 AWB: What's the scope of param decorators? Are params in scope like they are with defaults.
 

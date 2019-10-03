@@ -1,7 +1,7 @@
-# May 29, 2015 Meeting Notes    
+# May 29, 2015 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Kevin Smith (KS), Daniel Ehrenberg (DE), Adam Klein (AK), Jordan Harband (JHD), Jafar Husain (JH), Mark S. Miller (MM), Michael Ficarra (MF), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Ferraiuolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Brendan Eich (BE), Dan Gohman (DGN), Miško Hevery (MHY), Matt Sweeney (MSY)
+Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Kevin Smith (KS), Daniel Ehrenberg (DE), Adam Klein (AK), Jordan Harband (JHD), Jafar Husain (JH), Mark S. Miller (MM), Michael Ficarra (MF), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Ferraiuolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Brendan Eich (BE), Dan Gohman (DGN), Miško Hevery (MHY), Matt Sweeney (MS)
 
 -----
 
@@ -105,7 +105,7 @@ SM concerned about prototype sharing among several value types (immutable array 
 DE would rather stick with NM's proposal and leave out prototype-sharing and other such features
 
 DE raises intermediate value representation problem.
-    
+
 ```js
 let Point = ValueType(Symbol('Point'), {x: Float32, y: Float32});
 let p = Point(1, 2);
@@ -192,7 +192,7 @@ Christian's language? http://h14s.p5r.org/2006/05/neptune.html
 
 YK: For operator overloading, instanceof won't work in Node because Node agressively duplicates prototypes. instanceof is an antipattern.
 
-DH: npm will give you multiple instantiations of the same module. 
+DH: npm will give you multiple instantiations of the same module.
 
 
 ## async await extensibility
@@ -234,12 +234,12 @@ function*>() {
 }
 ```
 
-vs. (new for* syntax with sugar -- e.g. on 
+vs. (new for* syntax with sugar -- e.g. on
 
 ```js
 push(function*() {
     var stream = await someObservable;
-    for* (let price on stream) { 
+    for* (let price on stream) {
         yield CAN(price);
     };
     console.log("done");
@@ -251,7 +251,7 @@ vs. (new for* syntax - desugared)
 ```js
 push(function*() {
     var stream = await someObservable;
-    await on(for* (let price of stream) { 
+    await on(for* (let price of stream) {
         yield CAN(price);
     });
     console.log("done");

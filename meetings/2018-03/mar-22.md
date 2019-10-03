@@ -3,7 +3,7 @@
 
 Waldemar Horwat (WH), Dean Tribble (DT), Mark Miller (MM), Till Schneidereit (TST), Michael Saboff (MLS), Robin Morisset (RMT), Keith Miller (KM), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Adam Klein (AK), Sathya Gunasekaran (SGN),Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Bradley Farias (BFS), Thomas Wood (TW), Alan Schmitt (AS), Sven Sauleau (SSA), Chris Needham (CNM), Edd Yerburgh (EYH), Jason Williams (JWS), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Conrad Watt (CWT), Philippa Gardner (PGR), Godfrey Chan (GCN), Chris Hyle (CHE), Lin Clark (LCK), Ben Newman (BN), Jake Archibald (JAD), István Sebestyén (IS), Brian Warner (BWR), Mathias Bynens (MB), Surma (SSA), Alex Russell (AR), Peter van der Zee (PZE), Maël Nison (MNN), Dan Abramov (DAV), Christoph Nakazawa (CNA)
 
-Remote: 
+Remote:
 Ron Buckton (RBN), Leo Balter (LBR), Valerie Young (VYG), Mike Pennisi (MP)
 -----
 
@@ -29,9 +29,9 @@ YK: We've done it before and it didn't work. We should try to do more Asian frie
 
 - The rough template for meeting locations from 2018 will be used in 2019, modulo host availability
 
-## 10.i.g Update on Array.prototype.flatten web incompatibility 
+## 10.i.g Update on Array.prototype.flatten web incompatibility
 
-(Kevin Gibbons) 
+(Kevin Gibbons)
 
 - [proposal](https://github.com/tc39/proposal-flatMap/pull/56)
 
@@ -116,7 +116,7 @@ KG: OK, thank you for your time, If you have something else GitHub is a good pla
 ## Slice notation for Stage 1
 
 (Sathya Gunasekaran)
- 
+
 - [proposal](https://github.com/gsathya/proposal-slice-notation/)
 
 SGN: this is a stage 1 proposal for the slice notation. It's just a strawman. So what's the motivation for doing this?
@@ -256,7 +256,7 @@ WH: I agree with that consensus.
 
 DE: does anyone else have any feelings on this? he alternative is to do the switch from string to bigint, we have to write spec tests. The other issue that was brought up was the strictness of bigInt number conversions.
 the current status of the spec, when I mean conversions I mean conversions that were requested explicitly by the number or by ?? being called.
-conversion are always explict, otherwise it will throw an expection .It's core to the design. The current spec says that the number constructor will round to whatever is closest 
+conversion are always explict, otherwise it will throw an expection .It's core to the design. The current spec says that the number constructor will round to whatever is closest
 according to the existing, you know, the ??? of the spec text that you have in JavaScript for ever.
 
 BigInt throws range error whenever you pass in a number value that cannot be safely representing as an integer
@@ -280,7 +280,7 @@ convert a number into a bigint, they had do a series of shits, I think this addr
 WH: The slide presents the question "should we change both to round, or both to throw". That's not the right set of choices. There's the 3rd option (which I prefer) which is converting a Number to Bigint throws on non-integer inputs but accepts all integers.
 
 DE: let's keep discussing these questions when we come at the end of the presentation. Denoting numeric values in the spec. (discussion of slides typeface). the specification currently had this thing, where mathemitcal values, some of the things flowing through the spec are mathematical values, some are numbers, this is confusing implicit conversion between them. Now we have bigints, a third numeric value. After a bunch of procrastinating I created a PR, this is bigger that we just JavaScript, spec like the web platform are running in the same kind of issue, if we find a solution if would profit to both sides. Both implementers and programmers have to look at the document. What I want to do is minimize use of mathematical values. I have a fear that maths values will leak out into observable behavoir. What I want to do in the PR is change the mathematical way of interpreting values. It might be more comfortable if we are using that thing that actually fit in the computer. (Mathematical values, like an arbitrary real number here.) if you want to join the discussion, go to the PR and we could really do with your help. Since the last meeting we worked on several implementation, first it behind a flag in Chrome is HTML serialization. Postmessage, this calls out to the spec that decides how to serialize the value. The actual spec says "serialize the bigint", but needs some plumbing. Wrapper works too, if you do an object from a bigint you can also Postmessage that and that just follows the specifications in the PR. because interested was expressed from both Chrome and Mozilla, now the requirement is that you need to ship BigInt, interestingly. There's some Webplatform specifications that landed for BigInt and 64-bit integers and we should coordinate there. WebAssembly BigInt integration, WebAssembly has a 64-bit integer type. in the JavaScript WebAssembly api, currently when you call a function that has an i64 argument, it throw a type error, there's just no way to.they ma
-ke sure to lead this, anyway, I wrote a specification PR and some tests and I presented this at the WebAssembly group, and it's stage-2 in their process, meaning ready for implementation. They have sort of a difference between stage 2 and stage 3. You know that will be interesting to see how it will go forward. Now there's a question of webIDL, which is a little bit trickier WebIDL is the interface description language, used by many web specifications. Most of the specs that come out of WhatWG and W3C expose a JS API, they spec it in WebIDL except it has runtime semantics on how to ??? conversation. These days in modern browsers, there's actually an automated generator to C++ and ?? bindings. web platform implementators don't have to worry about ??? in JavaScript, if we want web platforms to take bigints, there needs to be some integration. so I proposed one thing we're sort of iterating now to handle when ??? When you see a string should you cast it into ??? or a number. Lastly BigInt has IndexedDB key, IndexedDB it's a system for storing information locally, it's key-value stored that is order, now the key can support bigint due to the serialization. For the keys, we could make them BigInts, not sure if this is useful. I did an (likely unrepresentative) Twitter poll. I did the same thing for bigint typed array, and I got some response: "Yes, I would use this," for BigInt typed arrays, and for IndexedDB keys, "yes, useful for someone else". 
+ke sure to lead this, anyway, I wrote a specification PR and some tests and I presented this at the WebAssembly group, and it's stage-2 in their process, meaning ready for implementation. They have sort of a difference between stage 2 and stage 3. You know that will be interesting to see how it will go forward. Now there's a question of webIDL, which is a little bit trickier WebIDL is the interface description language, used by many web specifications. Most of the specs that come out of WhatWG and W3C expose a JS API, they spec it in WebIDL except it has runtime semantics on how to ??? conversation. These days in modern browsers, there's actually an automated generator to C++ and ?? bindings. web platform implementators don't have to worry about ??? in JavaScript, if we want web platforms to take bigints, there needs to be some integration. so I proposed one thing we're sort of iterating now to handle when ??? When you see a string should you cast it into ??? or a number. Lastly BigInt has IndexedDB key, IndexedDB it's a system for storing information locally, it's key-value stored that is order, now the key can support bigint due to the serialization. For the keys, we could make them BigInts, not sure if this is useful. I did an (likely unrepresentative) Twitter poll. I did the same thing for bigint typed array, and I got some response: "Yes, I would use this," for BigInt typed arrays, and for IndexedDB keys, "yes, useful for someone else".
 
 (Slide: Implementation and tests status)
 
@@ -364,15 +364,15 @@ WH: (Nods.)
 - Use StringToBigInt for Abstract Relational Comparison between BigInt and String
 - Throw on non-integral values in BigInt(Number), but permit non-safe integer range
 
-## Weak References for stage 2 
+## Weak References for stage 2
 
-(Dean Tribble) 
+(Dean Tribble)
 
 - [explainer](https://github.com/tc39/proposal-weakrefs/blob/master/specs/weakrefs.md )
 - [slides](https://github.com/tc39/proposal-weakrefs/blob/master/specs/Weak%20References%20for%20EcmaScript.pdf )
 
 
-DT: this was done as a hour talk, we are going to the first part. Last meeting there was a bunch of conversation that broken the ??? I want to ask for stage 2, since then we got a lot of feedback, especially from the discussion in wasm. For some of the follow up as well, and whether we can approve as well the partial API is something I will bring up at the end. we only have half an hour, everything that is bike-sheding we are going to discuss it later. So this is the weak references proposal has always been targeted to framework developers. Since 2016, this ??? this is a refinement of that, it's not intended as a general API for developers to use. 
+DT: this was done as a hour talk, we are going to the first part. Last meeting there was a bunch of conversation that broken the ??? I want to ask for stage 2, since then we got a lot of feedback, especially from the discussion in wasm. For some of the follow up as well, and whether we can approve as well the partial API is something I will bring up at the end. we only have half an hour, everything that is bike-sheding we are going to discuss it later. So this is the weak references proposal has always been targeted to framework developers. Since 2016, this ??? this is a refinement of that, it's not intended as a general API for developers to use.
 BHS did an initial implementation that we've been playing with in the last API,  we are going to either adapt it or shim it. TST has done an implementation on SpiderMonkey shell. We're going to start to experimint and build code on top of it. Ok. so, most people are aware of the background of the language which have GC, in order to be able to do remote reference for ???? in order to be able to do backpointers for observer patterns etc we have all of those and recently we added WASm to add meaningful support, and that's why we're starting to move faster on other things. The background requirements we've always had are you have multiple sources of finalisation of finding the object I might have a object that I want to get out that might need some internal finalization. And it has external finalization; I stick it in a reserver table, and it keeps a reference of it's own internal state. the second is finlaization there's two bugs: one is resurection, where I have an object that I think im done with, then that ??
 I will talk a little bit more about that. for layered finalization, I have a DOM tree or I have a graph of a network w/e it is. that makes now the second layer available for GC, then work our way down to the first layer, layer collection, turns out to be a ??? issue, so the resurection case you end up with a graph, the entire graph is unreachable ive taken a dom tree and ive dropped it on the floor. Work on the DOM Tree and traverse our way down, but the finialisation of each of the nodes ???? in this particular case Z and A have been dropped.If I'm holding on to a file because I've got a file open, then the file manage better have a directory or a directory leading up to the route. so here I would like to let go this reference of the file, both files could be GC'ed. But someone's directly holding on to Y. If in theprocess of cleaning up after them we were to resurrect one of them, Then like if I drop file A, both of these are garbage, I do finalisatiion. If I then try to do something to cause it to be referencable, but it was cleaned up, now suddely this subtree is reachable, I already have cleanup, I closed this fd. Instead of producing a fully ?? graph it has produce a zombie tree. This happens in DOM trees with event listeners, and some of the elements are removed, you may have some dangling listeners, which give rise to resurrection bugs. Now you have something that looks like something you tried to recorverd, but failing to recover. It's really hard to prevent if not impossible at all, that's the only way to address these bugs via resurrection. Layered collection is the same kind of thing ill jyst use the same kind of graph, ill have to first have to ?? that level Then the next round of garbage collection collects this level. If its 20 deep you don't clean it up until you've done 30 garbage collections, and thats pretty bad. I'll skip the terminolgy to move forward—I'll just talk about the Core API So this is the API that we evolved 2 month agho, its actually b
 een stable even thoygh it appears the presentation and spec languages have changed. I'm going to focus on the stable part of ??? So a weak reference is the core and new thing which we have, and thats the same as the proposal from 2016 all the enhancements are on the edges that reveal less determinism and more adapted to ?? and you can invoke the weak ref, and that will return a strong ref ... The target will be hold too tstrongly, so if you hold it on the turn ???
@@ -388,7 +388,7 @@ WH: So if the holdings refer to the object, it never gets collected?
 
 DT: Yes. We actually specify checking for that so we can't specify the target as holdings
 Weak reference and the factory that makes them. This is the new API in the WeakFactory class.
-What actually happens in systems is you do finalization across many objects in the same way. If I have many objects, I have hundreds of thousands of references, so I'm going to clean them all up the same way, similarly, if I have WASM handles, similarly the WASM handles are in multiple memory blocks, and 
+What actually happens in systems is you do finalization across many objects in the same way. If I have many objects, I have hundreds of thousands of references, so I'm going to clean them all up the same way, similarly, if I have WASM handles, similarly the WASM handles are in multiple memory blocks, and
 Those are all going to be handled the same way when my wasm handle is dropped those are going to handle the same address.
 that's what I mean when I mean finalization is all about finalization system. The intent for this is to make it straightforward, to reliably say here's my subsystem for all of my handles in here I want to handle them the same way
 It has a constructor that takes an optional cleanup function (I'll show an example later)
@@ -404,11 +404,11 @@ so I can turn it off,  and if we had cancellation this could be replaced by a ca
 WH: What happens when the weak reference factory itself gets garbage collected?
 
 DT: i'll come back at this point later. both for subsystem is turns out to be more efficient. If instead we provide an iterator to the cleanup function, and that's an example of something we'll deal with in Stage 2. doing the cleanup has some setup to it ??? doing the remote reference case you drop a bunch of proxies, you might want to drop...and that's it, this is the core API from these two APIs. What are some examples? the state of a weak reference, is it may be available so the target is available, it can be dirty, which means GC has blown it away, and we need to do finalization, or it can be clean, in which case nothing is necessary.the examples are really simple. I create a weak factory, thats a new thing over the previous API ai can create an observer here I don't weak factory doing a observed. that's how i'm going to notify all my observed, and when it's going to be GC'ed it's going to notify all my obversed. Now this means that i'm going to accumulate cruft in my observer table but we can have the automatic finalisation to pull this out. If we drop the whole subtree, suddenly a part of the tree goes away. Yes it's nice that some % of this stuff gets cleanup carefully. And you shouldn't count on any particular item being cleaned up. so back to what happends, I don't need to cleanup particular observed. Ive moved on to another pane, the entire view subsystem is now unreachable, that can all be garbage collected. I don't need to do finalization in that case. One of the thing about the weak factory, going back to if the weak factory is no longer refereced. -- if everything is dropped I dont need to do finalization. As long as I holding one in the weak references I don't have to do the finalization. I will drop the entire subsystem and not have to do finalization. What if the GC happened right there (points to slide)? You'll end up with an error, that would be bad. That's not good code, but it's code that people will write. Once you start to separate it, -- if its
- in my cache, leave it in my cache otherwise add it in my cache, and so the goal is a program cannot observe a target being reclaimed without a turn in the event loopwhen we deference a reference we check the cache. Additionally, when you first create the weak reference, so we treat construction of the reference -- the object you provide in, we refer to strongly. Because of this scenario (if it's in the cache, no? add it in the cache and so on). creating new weak reference on the new object ??? and if somewhere in there you dereference you would suddenly return undefined, and this is one of those not great coding pattern that people are doing ??? let's reduce the determissm in our system ??? and so, this trivially eliminates the multiple use hazard I mentioned. Let me get my slightly more complicated example; so on cleanup I'm going to do a drop ref and so this is essentially the same pattern than the obvservers what I don't show here in the real code, is that. Instead of sending each individual dropref I wil accumulate a list of IDs  and once I get to one hundreds, I going to send them all together. that finalization iterater will ???. 
+ in my cache, leave it in my cache otherwise add it in my cache, and so the goal is a program cannot observe a target being reclaimed without a turn in the event loopwhen we deference a reference we check the cache. Additionally, when you first create the weak reference, so we treat construction of the reference -- the object you provide in, we refer to strongly. Because of this scenario (if it's in the cache, no? add it in the cache and so on). creating new weak reference on the new object ??? and if somewhere in there you dereference you would suddenly return undefined, and this is one of those not great coding pattern that people are doing ??? let's reduce the determissm in our system ??? and so, this trivially eliminates the multiple use hazard I mentioned. Let me get my slightly more complicated example; so on cleanup I'm going to do a drop ref and so this is essentially the same pattern than the obvservers what I don't show here in the real code, is that. Instead of sending each individual dropref I wil accumulate a list of IDs  and once I get to one hundreds, I going to send them all together. that finalization iterater will ???.
 
 DE: you're 20 mins in
 
-DT: we can do multiple weak refs on the same target, they wil be finalised independently in their own group. and we can unregister from ??? by doing ??? Ok so let me pause for a moment thats the stage 2 api, it is what we originally planned to propose, and that hasn't change in months What we've been doing since then we're doing specification, there is a question for the committee, which is from the point of view of stage 2. we do have spec tests for this stuff. The thing I would like you to think about is everything after this a believe is approximately stage 2 requirements the question is, are we ok with saying that's stage 2? Or do we have significate ??? to address in order to go to stage 2? 
+DT: we can do multiple weak refs on the same target, they wil be finalised independently in their own group. and we can unregister from ??? by doing ??? Ok so let me pause for a moment thats the stage 2 api, it is what we originally planned to propose, and that hasn't change in months What we've been doing since then we're doing specification, there is a question for the committee, which is from the point of view of stage 2. we do have spec tests for this stuff. The thing I would like you to think about is everything after this a believe is approximately stage 2 requirements the question is, are we ok with saying that's stage 2? Or do we have significate ??? to address in order to go to stage 2?
 
 DT: Can I take a moment to ask that question?? Does people want to go to stage 2
 
@@ -429,7 +429,7 @@ I will expect that engine will ??? basically I just want to keep my memory.
 
 DT: ??? is in some csense changing the language terminology. We're not proposing that you can rely on things getting cleaned up properly
 
-YK: the other question which people are now answering on irc, 
+YK: the other question which people are now answering on irc,
 the second question, is finalization couple to weak-ref? or can you have a finalizer without a weakRef?
 is there a reason for that?
 
@@ -458,7 +458,7 @@ implementers who were present on the phone call expressed that this was somethin
 AK: I just wanted to agress with MM overview, the WebAssembly case became more and more obvious that's become a problem. THere's a lot of issue that's going into, both when you are using wasm in js with the current memory model and the dangers of using a lot of memory which we at least are looking at -- reducing memory usage overall
 this seems like a good fit for improvement
 
-DT: there have also been some changes in the api to more strongly stay away 
+DT: there have also been some changes in the api to more strongly stay away
 
 TST: WH, I don't think that should be on the queue
 
@@ -466,7 +466,7 @@ WH: You presented WebAssembly being a motivation for this feature, but doesn't i
 
 MM: yes I can answer that. yes it suffers from cycles. this came up in the internal v8 discussion. This solution can not cleanup  cross zone  cycles, and we did examine what would be a solution to clean up cross zone cycles and it was ugly and everyone backed away from it the current agreement in order to go forward is too ??? There will be leakage, but it will be conservative anyway. There is the question how much the cycle problem ends up ??? even if some additional mechanism needed for cross zone cycles there is still use case for this.
 
-YK: I can only speak for myself for the webassembly use-case, the cycle problem is really apparent to me, where im at right now, I cannot reference into the wasm heap from js at all. 
+YK: I can only speak for myself for the webassembly use-case, the cycle problem is really apparent to me, where im at right now, I cannot reference into the wasm heap from js at all.
 I want to have wasm object in js that are GC'able the only thing I can do right now is ??? this allows me to reference into wasm directly from js in a gc'able way I want to reference js from wasm from a gc(able referancle way.
 
 MM: Just one more clarification, part of the reason why people were ok living with the cycle problem for now is  we do expect that there will be a wasm gc in the future; it uses heap allocated and uses the garbage collector of the embedder. thats one graph that it sees in both the js and wasm gc objects.
@@ -475,7 +475,7 @@ MM: Just one more clarification, part of the reason why people were ok living wi
 
 SYG: my question is ??: it seems like the answer to ??? it seems the be yes. With respect to finalization, what is the standard what can we tell users that they can rely on
 
-DT: I don't want to answer that. This is a stage 2 discussion. 
+DT: I don't want to answer that. This is a stage 2 discussion.
 
 MM: I have a very short answer. an implementation taht never garbage collects in the absense of weak reference and that never pops a stack, it sill conforms to, the spec doesn't ever talk about finite memory or memory exhaustion.
 
@@ -513,9 +513,9 @@ DT: I don't like the name either
 -- Stage 2, change naming
 
 
-## Optional chaining for stage 2 
+## Optional chaining for stage 2
 
-(Gabriel Isenberg) 
+(Gabriel Isenberg)
 
 - [explainer](https://github.com/tc39/proposal-optional-chaining)
 - [slides](https://docs.google.com/presentation/d/1XDUB1gGRmD6cIUu2-bVXEA-ZrWUIfQfhWxFKALCAXOQ/edit#slide=id.p)
@@ -530,11 +530,11 @@ YK: two comments. The first one is I appreciate we have the coffeescript corpus 
 
 BFS: I guess this is partially a general question. We've had inconsistnecies with syntax brought up a couple of times in this meeting, im trying to gauge. This is a generally objections to add more inconsistency in the language syntax.
 
-YK: its definately a case by case basis 
-but I think especially in expressions and when there's a lot of ?? next to each other I think its important to... the syntax really needs to pay for iteslf. 
-i guess I dont  want to go so far but 
+YK: its definately a case by case basis
+but I think especially in expressions and when there's a lot of ?? next to each other I think its important to... the syntax really needs to pay for iteslf.
+i guess I dont  want to go so far but
 but I do want to say that, syntax is expensive and putting a bunch of tokens next to each other really should have some evocative meaning
-i object on putting tokenst oether that mean something different than what they used to mean. 
+i object on putting tokenst oether that mean something different than what they used to mean.
 
 BHS: I'm question is still what's the ??? in the feature. You just mentioned having multiple tokens, this looks like a single token with multiple code points.
 
@@ -544,7 +544,7 @@ BHS: That answer my question
 
 JHD:  I think that the teachability depends strongly there being some token in front of a . or in front of a parent based on the current options I prefere the ??. ??( ??{ for the consistency reasons.
 
-DE: I might not be the most exposed to lots of javascript developers, but from conferences ive been to it seems like a lot of people are interested in this proposal. It feels really common use case, where you have some nested structure that's you're going into. This proposal doesn't really present any implementation burder. Learnability in both direction is ??? And its legitimate to talk about whether its unneccesary, but it looks like the explainer document goes through a load of common scenarios where this happens. The explainer document goes through a lot of versions. To the quetion that YK raised, this is considred together with null colleasin??? This is like class fields private and public again, where we went back and forth between proposals. 
+DE: I might not be the most exposed to lots of javascript developers, but from conferences ive been to it seems like a lot of people are interested in this proposal. It feels really common use case, where you have some nested structure that's you're going into. This proposal doesn't really present any implementation burder. Learnability in both direction is ??? And its legitimate to talk about whether its unneccesary, but it looks like the explainer document goes through a load of common scenarios where this happens. The explainer document goes through a lot of versions. To the quetion that YK raised, this is considred together with null colleasin??? This is like class fields private and public again, where we went back and forth between proposals.
 
 YK: I want to make it clear I did not suggest a specific process point, I don't mean to imply people did not do the work to consider cross-cutting concerns. I was nervus about advancing both proposal at the same time
 
@@ -554,7 +554,7 @@ DE: Thank you for your work on championing this
 
 GI: I am challenging the consistency arguments, I have a PR and fallback for the secondary syntax if that will happen. regarding combining these two proposal I intentially kept them seperated. There are cases where null coalescing will be more controversial in other cases so that's the rationnal.
 
-DE: The poll was pretty well done by GI, I was afraid less people would respond but instead we seem to get more people engaged, and the setup of the poll really seemed to have included ... I think we are talking about question of estetic. There are multiple angles to the consistency argument, but these things are not infintely composable. There are a fixed sum of operators we are adding. I think in this case it could be good to seek more community feed back. and I think gab has done a great time getting that feedback, that's the relevant data to look for. 
+DE: The poll was pretty well done by GI, I was afraid less people would respond but instead we seem to get more people engaged, and the setup of the poll really seemed to have included ... I think we are talking about question of estetic. There are multiple angles to the consistency argument, but these things are not infintely composable. There are a fixed sum of operators we are adding. I think in this case it could be good to seek more community feed back. and I think gab has done a great time getting that feedback, that's the relevant data to look for.
 
 GI: I was looking at the github repo before presenting today, and as far as stars go in the proposals, this seemed to be the most starred proposals and it would be a disservice to our ursers to not have any advancement on this today
 
@@ -568,7 +568,7 @@ YK: what about having ?. and then not having anything for () and []?
 
 WH: We disussed this before and it's not an option.
 
-DE: SO to clarify how ?? doesn't work with nullish coalescing, this wasn't actually the main one that's being serious considered. This wasn't actually the main one being seriously considered. The only options are `??:` for nullish coalissng 
+DE: SO to clarify how ?? doesn't work with nullish coalescing, this wasn't actually the main one that's being serious considered. This wasn't actually the main one being seriously considered. The only options are `??:` for nullish coalissng
 
 WH: I don't believe that `??:` will fly for nullish coalescing.
 
@@ -602,7 +602,7 @@ GI: ??? cant remember the justification of the top of my head.
 
 Yk: so WH did point out last meeting that `?.foo()`, im just asking anything that requires us to accept ?.[] right now, seems like we can pick the first point there with out the other? I feel like we should pick ???
 
-WH: The specific point YK was referencing was the syntax issue I brought up several meetings ago, which terminated the optional chain as soon as it encountered a [] or (). That wouldn't apply here if we just didn't have the `?.[` and `?.(` operators. On the other hand, I don't think it's a good idea to omit those because those are still useful use cases. 
+WH: The specific point YK was referencing was the syntax issue I brought up several meetings ago, which terminated the optional chain as soon as it encountered a [] or (). That wouldn't apply here if we just didn't have the `?.[` and `?.(` operators. On the other hand, I don't think it's a good idea to omit those because those are still useful use cases.
 
 YK: Do you think its very important that we do all 3 of them at the same time? what is fatal on moving forward with ?. and hanging back on bracket access and method invocation.
 
@@ -624,9 +624,9 @@ WH: I did and I already stated my objections.
 
 BT: What does the note say?
 
-JHD: I know but I didn't hear that ,so the consistnace with the and and the or operator is the objection. 
+JHD: I know but I didn't hear that ,so the consistnace with the and and the or operator is the objection.
 
-GI: so as I understand that 
+GI: so as I understand that
 
 BFS: I just want to clarify, are you objecting on the alternative syntax? Are you objecting to `??`?
 
@@ -648,7 +648,7 @@ GI: so there's a very strong objection to stage-2 with the current syntax?
 
 JHD: Yes
 
-YK: there was a proposal that godfrey told me a couple of days ago and I found it interesting. hold your initial reaction. the first part of the proposal. nullish coalescing is ||| 
+YK: there was a proposal that godfrey told me a couple of days ago and I found it interesting. hold your initial reaction. the first part of the proposal. nullish coalescing is |||
 
 that's the dangerous version of ??? and then we have ??? which the better version ???. I think it's certanly not ???
 
@@ -662,7 +662,7 @@ JRL: we drop optional invocation syntax which makes it so that  ..
 
 WH: What problem does that address?
 
-JRL: it takes away the expression, and it gives us ?? being null coalescing. 
+JRL: it takes away the expression, and it gives us ?? being null coalescing.
 
 WH: No, it doesn't.
 
@@ -679,7 +679,7 @@ WH: Let's discuss nullish coalesing first and revisit this item based on our dec
 GI: ok
 
 
-## 7.iv Test262 Status Updates (15m) 
+## 7.iv Test262 Status Updates (15m)
 (Leo Balter and Valerie Young)
 
 LBR: I like to have Valerie Young presenting the latest updates, as she did very nice summary for it.
@@ -715,7 +715,7 @@ Atomics.wake and Atomics.wait
   * More serious concrete method bug, to be reported today
 * ~30 tests updated or added
 
-Numeric Seperater Literal 
+Numeric Seperater Literal
 * Full coverage
 * Including recent specification change for to string conversion and unicode escape sequences
   * Tests covering spec change added by Valerie Young
@@ -751,8 +751,8 @@ LBR: Correct
 
 JRL: it's just kind of a nicety to avoid object[key] || (object[key] = 1). Especially when we have nullish colleasing operating to set properties on an object.
 
-LBR: There is something that we discussed last year, errm, how javascript is a good language for all levels of expertise, and when you talk about nicety, its not a fix. its a nice to have. the problems we have wen we add a whole spectrum of nice to have, the problem is that when you add a lot of nice to have things we end up with like... 3 amazing things but they just cause confusion. I like the way js communicates to developers. and I like this diversity of expertise of developers. 
-Soo.... Im totally aware you'd probably use it like this, this operator is common in perl for example, and those developers love it. but its not uncommon to see them needing to expalin it again and again. I think that adding all this new extra things will allow to do the same thing in multiple ways, and creating multiple ways of doing things in the language rather than fixing pain points is a problem. I dont think this is fixing a pain point. I dont think this is good for the complexity of the language. 
+LBR: There is something that we discussed last year, errm, how javascript is a good language for all levels of expertise, and when you talk about nicety, its not a fix. its a nice to have. the problems we have wen we add a whole spectrum of nice to have, the problem is that when you add a lot of nice to have things we end up with like... 3 amazing things but they just cause confusion. I like the way js communicates to developers. and I like this diversity of expertise of developers.
+Soo.... Im totally aware you'd probably use it like this, this operator is common in perl for example, and those developers love it. but its not uncommon to see them needing to expalin it again and again. I think that adding all this new extra things will allow to do the same thing in multiple ways, and creating multiple ways of doing things in the language rather than fixing pain points is a problem. I dont think this is fixing a pain point. I dont think this is good for the complexity of the language.
 
 WH: If no one else objects, you won't object either?
 
@@ -782,7 +782,7 @@ DH: I don't actually buy that's not a complexity budget because it does introduc
 
 ## 8.i.c Expand text included in "function code"
 
-(Mike Pennisi) 
+(Mike Pennisi)
 
 - [PR](https://github.com/tc39/ecma262/pull/1091)
 - [Prior discussion](https://bugs.ecmascript.org/show_bug.cgi?id=4243)
@@ -819,7 +819,7 @@ MM: Does anybody object to the middle column?
 
 ??: This pr he wants to get in 2018, can we get it into it?
 
-BT: I don't think so, is it a bug fix? 
+BT: I don't think so, is it a bug fix?
 
 MM: can we call it a bug fix
 
@@ -861,20 +861,20 @@ Mike: Yes. I'm biased for my proposal, but like KG, I'm more interested in conse
 
 KG: So consensus on middle column?
 
-BT: And we'll interate on the text spec in the PR 
+BT: And we'll interate on the text spec in the PR
 
 ?? Thanks folks
 
 BT: are we going to get to pipeline?
 
 #### Conclusion/Resolution
- 
+
 - consensus for the middle column: SyntaxError for both cases
 - Mike will follow up with a change for his patch
 
 
 ## 10.ii.f Nullish coalescing for stage 2
-(Gabriel Isenberg) 
+(Gabriel Isenberg)
 
 - [explainer](https://github.com/tc39/proposal-nullish-coalescing)
 - [proposal](https://tc39.github.io/proposal-nullish-coalescing/)
@@ -892,7 +892,7 @@ WH: I raised the issue about the precedence order. if you have `A || B || C || D
 
 WH: I gave a few options of how to proceed in the issue. One is to have `??` have lower precedence than `||`. Another is to keep them at the same precedence but make them right-associative.
 
-GI: there is precedence for this in other languages. 
+GI: there is precedence for this in other languages.
 
 BFS: So WH answered my question about right associativity and any visible effects. So, I feel if we don't allow mixing that's a bit surprising to me, that feels very similar to a logical operator and I feel it should live in precedence. DE read the spec text for that one and he felt ??
 
@@ -918,7 +918,7 @@ GI: Is there strong consensus that nullish colleasing should include ??? falsy v
 
 JHD: So YK just to make sure are you suggesting it should be including undefined null and false. The use case I have is being able to default things on an options object
 
-YK: but that same problem exists  with null. with various reasons we are not going for undefined. 
+YK: but that same problem exists  with null. with various reasons we are not going for undefined.
 
 JHD: undefined and null are the same to me, from an initialization pov
 
@@ -949,7 +949,7 @@ It seems like theres some desire to do triple pipe
 
 WH: What's the use case for treating just null, undefined, and false as falsy values?
 
-YK: basically a better falsy. 
+YK: basically a better falsy.
 
 WH: I cringe at treating just undefined, null, and false as falsy values here. It's such an oddball collection of falsy things.
 
@@ -996,9 +996,9 @@ DE: I want to just mention that static public fields is also in scope as somethi
 DT: only two or three things. First off a big chunk of the presentation I did not go into was around the wasm stuff, we've been working 3 or 4 people there. TST eseptcially has been helping drive the ?? on this. so he is joining as a co champion. And there are 2 and hopefully 3 implementations Bradley Meck has an implementation last API and working to bring it to the new API. TST has a version in the SpiderMonkey shell. to be able to prototype and implement on top of that. my goal for stage 3 is to have a fully working interface that will talk to wasm and that will be some of what we work through so that we nail down all the issues that we care about but if you have a use case that is interesting and diffreent
 I am interested in other usecases, Dominic has one for many of those what I would like is some real code and we can put them in the proposal. If you want an example please put into proposal repository.
 
-AK: not to you and bradly,  BFS I want to make clear that you should coordinate within the v8 team. 
+AK: not to you and bradly,  BFS I want to make clear that you should coordinate within the v8 team.
 
-BHS: we should coordinate 
+BHS: we should coordinate
 
 AK: We still won't want ot have that in mainline before ??
 
@@ -1013,7 +1013,7 @@ JHD: so I asked AWB on GitHub issues for the proposal of `function.sent` somewhe
 
 ## 10.iv.e Pipeline operator
 
-(JS Choi, James DiGioia, Daniel Ehrenberg) 
+(JS Choi, James DiGioia, Daniel Ehrenberg)
 
 - [proposal](https://github.com/tc39/proposal-pipeline-operator/)
 - [slides](https://docs.google.com/presentation/d/1eFFRK1wLIazIuK0F6fY974OIDvvWXS890XAMB59PUBA/edit#slide=id.p)
@@ -1024,8 +1024,8 @@ YK: I have a clarification question. What do you mean by "fixed" context in the 
 
 DE: For `x |> y.z`, the semantics are, evaluate `x`, then evaluate `y`, then get the `z` property of `y`, then call `y.z` with the argument `x` and receiver `y`.
 
-The two problem that the two problem the proposal is trying to solve, it's some bigger problem, the pipeline operator always passes the left operand as the sole argument to the right 
-In previous meetings we discussed this idea but it's sort of confusing. 
+The two problem that the two problem the proposal is trying to solve, it's some bigger problem, the pipeline operator always passes the left operand as the sole argument to the right
+In previous meetings we discussed this idea but it's sort of confusing.
 and the other one is the await integration. Let's talk about the F# pipeline, the two elements are this arrow function syntax and the await integration. The way that the arrow function is specced out, they have this narrower scoping, in general => binds narrowly until the next |>
 
 WH: What's precedence of the operator relative to the other code in the slide?
@@ -1046,7 +1046,7 @@ function mutate() {
 
 DE: I was trying to clarify the evaluation order. There a few things that are in common between proposals. (Explaining code sample)
 
-YK: There are two explanations of "fixed". Does this evaluate all of the references at the start of the pipeline, or as it executes? 
+YK: There are two explanations of "fixed". Does this evaluate all of the references at the start of the pipeline, or as it executes?
 
 DE: It evaluates references as it executes, with some interleaving.
 

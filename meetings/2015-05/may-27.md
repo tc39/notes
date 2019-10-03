@@ -1,7 +1,7 @@
-# May 27, 2015 Meeting Notes    
+# May 27, 2015 Meeting Notes
 -----
 
-Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Lee Byron (LB), Kevin Smith (KS), Daniel Ehrenberg (DE), John McCutchan (JMC), Dan Gohman (DGN), Brendan Eich (BE), Adam Klein (AK), Jordan Harband (JHD), Mark S. Miller (MM), Michael Ficarra (MF), Waldemar Horwat (WH), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Ferraiuolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Matt Sweeney (MSY)
+Brian Terlson (BT), Allen Wirfs-Brock (AWB), John Neumann (JN), Jeff Morrison (JM), Sebastian Markbåge (SM), Yehuda Katz (YK), Dave Herman (DH), Sam Tobin-Hochstadt (STH), Lee Byron (LB), Kevin Smith (KS), Daniel Ehrenberg (DE), John McCutchan (JMC), Dan Gohman (DGN), Brendan Eich (BE), Adam Klein (AK), Jordan Harband (JHD), Mark S. Miller (MM), Michael Ficarra (MF), Waldemar Horwat (WH), Chip Morningstar (CM), Simon Kaegi (SK), Peter Jensen (PJ), Eric Ferraiuolo (EF), Stefan Penner (SP), Paul Leathers (PL), Jonathan Turner (JT), Matt Sweeney (MS)
 
 -----
 
@@ -236,7 +236,7 @@ MM:  Yes, when "n" is large enough. The way to avoid this overhead is to have a 
 
 DH:  (Notes that such a capability would have benefits beyond just security.)
 
-CM: (To MM) Are you interested in creating a realm with specific constraints, or general realm initialization? 
+CM: (To MM) Are you interested in creating a realm with specific constraints, or general realm initialization?
 
 MM:  The realm API is for creating a new realm according to the wishes of the creator of the realm. What I'm interested in is not the Realm API itself, but have a way to ask the platform for an SES realm.
 
@@ -299,7 +299,7 @@ DH: No...
 
 DH: Could be "function.yield"
 
-MM: Writes:  
+MM: Writes:
 
 ```js
 function* addr() {
@@ -336,7 +336,7 @@ DH: Could "yield *" prime the generator with "function.next"?
 
 DH:  The code using yield * is probably pretty low, so we could probably do an errata.
 
-DH:  The question is whether the community transpiling and using function* can 
+DH:  The question is whether the community transpiling and using function* can
 
 MM: There is a capability leak concern here, where it's passing to the subgenerator something that's not implied by the yield * itself.
 
@@ -414,7 +414,7 @@ DGN: In the context that math libraries have the power in ECMAScript to deliver 
 - Stay with the status quo. Math functions in the spec are entirely ungoverened. This has been the reality for a long time and it's not necessarily problematic.
 - Specify particular implementations for each function, possibly including algorithms from fdlibm, crlibm, or other places. The main advantage of this would be that floating point in the spec bit-for-bit reproducible, which is an interesting property.
 - Empirically discover maximum error bounds for existing ECMAScript implementations and specify something around that.
-    
+
 What do you prefer?
 
 WH: Efficient and precise standard math libraries do a large amount of bit-banging. They can't be implemented efficiently in userland ECMAScript code using just +, -, /, etc. They need additional primitives.

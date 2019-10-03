@@ -1,6 +1,6 @@
 # January 30, 2019 Meeting Notes
 -----
-Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MLS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM), Lin Clark (LCK)
+Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MLS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLN), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM), Lin Clark (LCK)
 
 
 Remote:
@@ -714,7 +714,7 @@ BFS: It sounds like we should collect more data on other languages.
 
 RBN: I agree; we should discuss offline whether to make the change.
 
-SLA: According to the spec, Set() is a collection of ECMAScript Values.
+SLN: According to the spec, Set() is a collection of ECMAScript Values.
 
 MF: I think we should split the proposal. I have a hard time seeing the use case for toValue.
 
@@ -784,7 +784,7 @@ KS: DE, I think you undersold it a bit by `__`. C# has something similar for att
 
 YS: I agree we should put this question to the educators group.
 
-SLA: I'm concerned about optimizations that are concerned with JavaScript size. Name mangling requires minifiers to avoid mangling names theirselves.
+SLN: I'm concerned about optimizations that are concerned with JavaScript size. Name mangling requires minifiers to avoid mangling names theirselves.
 
 LBR: I really want to see numeric separators for Stage 3. I hope this means we can finally unblock it.
 

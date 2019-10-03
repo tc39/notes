@@ -1,6 +1,6 @@
 # January 29, 2019 Meeting Notes
 -----
-Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MLS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser(DRR), Mark Miller (MM)
+Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MLS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLN), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser(DRR), Mark Miller (MM)
 
 
 Remote:
@@ -333,7 +333,7 @@ YK: I have two things. First, We could say that Chromium is basically web realit
 
 MLS: An observation is that Edge is not usually one of the two engines on a Stage 4 proposal. However, we really lose that ability now. I don't think we should just use one engine. I think we should look at Moddable or other engines that can satisfy that requirement.
 
-SLA: There are some features that can be disabled in Chromium, so a browser that uses V8 can choose not to use a given feature has implications in the context of web-reality.
+SLN: There are some features that can be disabled in Chromium, so a browser that uses V8 can choose not to use a given feature has implications in the context of web-reality.
 
 TST: There are reasons for wanting different implementations. One issue is that multiple implementations help figure out is this universally implementable in a high-performance way. And it seems to me that in the cases where multiple implementations are relevant, it doesn't matter if those are web engines.
 

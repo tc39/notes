@@ -1,7 +1,7 @@
-# June 4 2014 Meeting Notes  
+# June 4 2014 Meeting Notes
 -----
 
-Brian Terleson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbåge (SM), Rafeal Weinstein (RWN), Jaswanth Sreeram (JS), Alex Russell (AR), István Sebestyén (IS), Simon Kaegi (SK), Arnaud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark S. Miller (MM), Peter Jensen (PJ)
+Brian Terlson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbåge (SM), Rafeal Weinstein (RWN), Jaswanth Sreeram (JS), Alex Russell (AR), István Sebestyén (IS), Simon Kaegi (SK), Arnaud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark S. Miller (MM), Peter Jensen (PJ)
 
 -----
 
@@ -26,7 +26,7 @@ AWB: add "ArrayBuffer neutering" to ES6 agenda items
 ## Scheduling of TC39 meeting
 
 
-JN: Meeting schedule changes are problematic 
+JN: Meeting schedule changes are problematic
 
 - In november, we'll select for next year.
 - The current meeting dates need to be approved now and committed to
@@ -35,10 +35,10 @@ YK: Didn't weigh scheduling concerns of champions vs. non-champions well
 
 AWB: Hard to weigh those concerns until we know what will be talked about
 
-Next: 
+Next:
 
-- 29-31 July 2014 at Microsoft in Redmond, WA (USA) 
-- 23-25 September 2014 at Bocoup in Boston, MA (USA) 
+- 29-31 July 2014 at Microsoft in Redmond, WA (USA)
+- 23-25 September 2014 at Bocoup in Boston, MA (USA)
 - 18-20 November 2014 at PayPal in San Jose, CA (USA)
 
 (posted: http://www.ecma-international.org/memento/TC39-M.htm )
@@ -129,7 +129,7 @@ MM: In for(;;) {} loop, can say for(let x = expr;...) -- that expression iterate
 
 DH: Yes
 
-## Conclusion/Resolution 
+## Conclusion/Resolution
 - Leave as is currently spec'd
 
 
@@ -266,7 +266,7 @@ AWB: Where do contributors send the CLA?
 
 BT: That could be clearer.
 
-BT: Now have support for Promises in the test harness, but it's not clear how to keep promises 
+BT: Now have support for Promises in the test harness, but it's not clear how to keep promises
 
 BN: Couldn't the test harness call promise.done(...)?
 
@@ -297,7 +297,7 @@ AWB: I did a lot of it when I was at Microsoft.
 MM: Want to do commit-then-review for tests.
 
 BT: Yes, because then it's easier to weed out tests because (correct) implementations fail them.
- 
+
 MM: Who would sign up to write tests for a chapter of the spec?
 
 AWB: Brian should create twitter.com/testecmascript to evangelize the testing message.
@@ -434,7 +434,7 @@ Expanded Conclusion/Resolution for the ArrayBuffer neutering discussion:
 - Don't add isNeutered yet, and expect clients use try-catch when accessing properties to determine status.
 - Also remember to change the name. "Released"? "Vacated"?
 - Any attempt to access (read or write) binary data elements of an ArrayBuffer that has been "neutered" will throw a TypeError exception.
-- Accessing the byteLength property of an ArrayBuffer that has been "neutered" will throw TypeError exception. 
+- Accessing the byteLength property of an ArrayBuffer that has been "neutered" will throw TypeError exception.
 - Have not yet decided what happens to the the "length", "byteOffset", and "byteLength"  properties of a TypedArray whose underlying ArrayBuffer gets neutered.
 - Keep the behavior that out of bounds reads of a TypedArray (whose buffer has not been neutered) returns undefined (MM: or throws, in strict mode) and that out of bounds write are no-ops (MM: throws in strict mode).
 

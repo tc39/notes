@@ -1,7 +1,7 @@
-# June 5, 2014 Meeting Notes  
+# June 5, 2014 Meeting Notes
 -----
 
-Brian Terleson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbåge (SM), Rafeal Weinstein (RWN), Jaswanth Sreeram (JS), Alex Russell (AR), István Sebestyén (IS), Simon Kaegi (SK), Arnaud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark S. Miller (MM), Peter Jensen (PJ)
+Brian Terlson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbåge (SM), Rafeal Weinstein (RWN), Jaswanth Sreeram (JS), Alex Russell (AR), István Sebestyén (IS), Simon Kaegi (SK), Arnaud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark S. Miller (MM), Peter Jensen (PJ)
 
 -----
 
@@ -114,8 +114,8 @@ WH: What if that yield then gets killed by a break in the caller?
 
 BN: Show example.
 
-WH: 
-    
+WH:
+
 ```javascript
 function * a() {
   for (let x of y) {
@@ -158,7 +158,7 @@ DH: No.
 
 Brendan's Example
 ```js
-function* gen() { 
+function* gen() {
   try {
     yield 1;
   } finally {
@@ -190,7 +190,7 @@ AWB: [strawman idea?] What about forbidding yield in try blocks?
 
 RW: (silently, because I'm muted) Disagree with restricting use of `yield`
 
-RW: Since we have an additional six months of "quality control" time with the spec, should we consider dealing with this directly as part of the "quality control" effort? Opposed to limitations on yield in try/catch/finally. 
+RW: Since we have an additional six months of "quality control" time with the spec, should we consider dealing with this directly as part of the "quality control" effort? Opposed to limitations on yield in try/catch/finally.
 
 AWB: that could be applied to any subject that comes up.
 

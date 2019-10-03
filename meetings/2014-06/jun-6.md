@@ -1,7 +1,7 @@
-# June 6, 2014 Meeting Notes  
+# June 6, 2014 Meeting Notes
 -----
 
-Brian Terleson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbåge (SM), Rafeal Weinstein (RWN), Jaswanth Sreeram (JS), Alex Russell (AR), István Sebestyén (IS), Simon Kaegi (SK), Arnaud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark S. Miller (MM)
+Brian Terlson (BT), Dmitry Lomov (DL), Waldemar Horwat (WH), Allen Wirfs-Brock (AWB), John Neumann (JN), Rick Waldron (RW), Eric Ferraiuolo (EF), Jafar Husain (JH), Jeff Morrison (JM), Mark Honenberg (MH), Caridy Patiño (CP), Yehuda Katz (YK), Niko Matsakis (NM), Ben Newman (BN), Filip Pizlo (FP), Sebastian Markbåge (SM), Rafeal Weinstein (RWN), Jaswanth Sreeram (JS), Alex Russell (AR), István Sebestyén (IS), Simon Kaegi (SK), Arnaud Le Hors (ALH), Reid Burke (RB), Erik Arvidsson (EA), Brendan Eich (BE), Mark S. Miller (MM)
 
 -----
 
@@ -26,7 +26,7 @@ DH: There is no rush to get it out of the spec.
 ## Block scoping issues
 
 BT: In sloppy mode
-    
+
 ```js
 foo();  // maybe?
 if (test) function foo() {};
@@ -72,7 +72,7 @@ WAB: https://bugzilla.mozilla.org/show_bug.cgi?id=748550
 Presentation notes: https://gist.github.com/sebmarkbage/aa849c7973cb4452c547
 
 SM: Rest properties
-    
+
 ```js
 let {x, y, ...z} = {x: 1, y: 2, a: 3, b: 4};
 x;  // 1
@@ -154,7 +154,7 @@ MM: Very confortable with Yehuda's rational that we use own properties to find t
 YK: Destructuring is sugar for Get.
 
 WH: Wants destructuring to be sugar for HasOwn+Get as in:
-    
+
 ```js
 var {x} = obj;
 =>
@@ -197,7 +197,7 @@ DH, YK: Consider the cost of having two semi-compatible but different APIs, Stre
 DH Might be worth having a layered API in order to let people drop to low level for perf reasons.
 YK: We should get more clarity on this.
 :: Jafar explains slides ::
- 
+
 ** Discussing .observe() / Object.observe() **
 
 YK: Object.observe() takes a callback now, but it doesn't return anything. Could return an observable in the future.

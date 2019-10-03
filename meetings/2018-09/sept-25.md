@@ -2,7 +2,7 @@
 -----
 Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Jory Burson (JKB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KV), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG)
 
-Remote: 
+Remote:
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG), Thomas Wood (TW), Isaac Durazo (IDO)
 -----
 
@@ -18,7 +18,7 @@ RJE: (housekeeping)
 
 ## 3. Agenda Scheduling
 
-RJE: 
+RJE:
 
 
 #### Conclusion/Resolution
@@ -56,20 +56,20 @@ CM: Nothing to say.
 
 ## 8. Updates from the CoC Committee (15m)
 
-(Jory Burson) 
+(Jory Burson)
 
 - [slides](https://docs.google.com/presentation/d/16cO1w3PZqCew0LLtYmAw344C3TmKlWr0sDkbe9txBmI/edit?usp=sharing)
 
 JKB: It's good to take time each meeting to introduce new people and review our CoC guidelines. The goal is to ensure that our culture is aligned with the values that the CoC encourages. The TC39 can be seen at [https://tc39.github.io/code-of-conduct/](https://tc39.github.io/code-of-conduct/).
 
-JKB: We meet every other Thursday at 1:30pm EST. If interested in joining, please contact us. 
+JKB: We meet every other Thursday at 1:30pm EST. If interested in joining, please contact us.
 
 JKB: We're building out our "playbook", so there are guidelines to respond quickly if there are CoC issues. We currently have two plays, and we're always taking recommendations. We have a lot of discussions to make sure that our processes are aligned with the CoC. We've only had 4 moderation requests so far (2 blank emails (spam), and two unrelated to TC39).
 
 
 ## 9. Report from the Ecma Secretariat
 
-(Istvan Sebestyen)
+(István Sebestyén)
 
 IS: (Presents slides from TC39/2018/044)
 
@@ -81,20 +81,20 @@ KM: Can we put something at the top of the specification to make it quite clear 
 
 IS: It should be quite clear, if you're not completely stupid that it's an old version. Actually if you come in via the Ecma Website it is very clear what is the current version of the ECMAScript standard and what is "historic". But it is true also if someone has just an URL to an old edition of the standard then just that edition of the standard will be shown or downloaded but there is no information that e.g. "you have reached an older edition of the standard, for the current one look it here". I will ask our webmaster how to solve this simply.
 
-KM: Yeah, like something like "This is an historical archive, click here to see the latest version." 
+KM: Yeah, like something like "This is an historical archive, click here to see the latest version."
 
 IS: Yes, I understand now, I think that's a good idea.
 
-## 7.ii ECMA-402 Status Updates 
+## 7.ii ECMA-402 Status Updates
 
 - [slides](https://docs.google.com/presentation/d/1xmwZPjAAmT2D7PQSH_G9Y62PhPXSNDzsX38qVuv2upo/)
 
 
-DE: We have a monthly phone call about Intl, please contact me if you want to be involved. We have a couple of proposals we want to talk about today. First, Intl.RelativeTimeFormat, mostly implemented in Firefox and V8. There's Test262 tests, but no real updates since last meeting. Some big news on Intl.Locale, ChakraCore has an implementation out right now; there's one semantic change since last time: it now lets you parse and modify Locale text; we've cleaned up the function to let you use a boolean. Intl.ListFormat supports conjunctions, and now we have Test262 support upstream, and V8 implementation. 
+DE: We have a monthly phone call about Intl, please contact me if you want to be involved. We have a couple of proposals we want to talk about today. First, Intl.RelativeTimeFormat, mostly implemented in Firefox and V8. There's Test262 tests, but no real updates since last meeting. Some big news on Intl.Locale, ChakraCore has an implementation out right now; there's one semantic change since last time: it now lets you parse and modify Locale text; we've cleaned up the function to let you use a boolean. Intl.ListFormat supports conjunctions, and now we have Test262 support upstream, and V8 implementation.
 
-DE: At the previous TC39 meeting, we discussed some proposals that progressed to Stage 2. Intl.NumberFormat, for example. 
+DE: At the previous TC39 meeting, we discussed some proposals that progressed to Stage 2. Intl.NumberFormat, for example.
 
-DE: Does anyone on the committee want to do a Stage 3 review? Sathya 
+DE: Does anyone on the committee want to do a Stage 3 review? Sathya
 
 AK: Wait, don't we need more than 1 reviewer? We could post something on the reflector to ask for review.
 
@@ -135,13 +135,13 @@ LBR: New lines of code. Thanks for all the contributions. We've made a bunch of 
 
 - [slides](https://docs.google.com/presentation/d/1PReJMVRRlh6sL5R0P2cVITGPAGMSwAol0DIkMQxzQhU/edit#slide=id.g42aeb5f1bf_1_45)
 
-LBR: Next, I'd like to present the Test262 Results. Out of ~60,000 executed tests, how do we measure how compatible the web is? 
+LBR: Next, I'd like to present the Test262 Results. Out of ~60,000 executed tests, how do we measure how compatible the web is?
 
-LBR: There's Test262-harness and eshost project started by BT, which can quickly run Test262 tests in multiple JS engines. Also, JSVU has been created by MB against pre-compiled engines, which has been an enormous help. 
+LBR: There's Test262-harness and eshost project started by BT, which can quickly run Test262 tests in multiple JS engines. Also, JSVU has been created by MB against pre-compiled engines, which has been an enormous help.
 
 IDO: Here's Web Platform Reports that we've been working on at Bocoup. There are other tables like caniuse.com, but they have their own rules. We decided to build WPR to use the Test262 suites as the source of truth. Designed for devs, implementers, automation tools, TC39.
 
-KNB: Let me demonstrate how the website works. This is a React site on AWS, we use server-side rendering and lazy-loading. Since there are so many test results to show, we want to chunk it up and lazy-load it. We have a preliminary version of this site before it launches next week at http://webplatform.report/. 
+KNB: Let me demonstrate how the website works. This is a React site on AWS, we use server-side rendering and lazy-loading. Since there are so many test results to show, we want to chunk it up and lazy-load it. We have a preliminary version of this site before it launches next week at http://webplatform.report/.
 
 DE: How do you execute the tests? There's Test262-runner, but for V8 there's a runner that uses Python to turn on flags for some features... How do you do that?
 
@@ -160,13 +160,13 @@ LBR: We don't have it yet, but this is a good idea.
 
 ## Introducing: Ad-hoc TC39 History Group - Archival data and you!
 
-JKB: One of the concerns of the secretariat is collecting all the documents that we are generating and archiving them. AWB is working on a very thorough paper on the history of JS over the last 20 years. We need this because we're required by the WTO standards requirement (which is a Swiss law). It mitigates patent claims. Records the rationale behind decisions. 
+JKB: One of the concerns of the secretariat is collecting all the documents that we are generating and archiving them. AWB is working on a very thorough paper on the history of JS over the last 20 years. We need this because we're required by the WTO standards requirement (which is a Swiss law). It mitigates patent claims. Records the rationale behind decisions.
 
 JKB: Why are we doing this? The current state of affairs is not great. We have archives on members.ecma-international.org, but it's kind of decentralized, and not super accessible. There are individuals still on the committee that have information in their brains that we should record while they're still active on TC39. We have a lot of varying kinds of documents, from PDF to git repositories to slide decks. We need archival documents of our work output. We'd love any of the proposals you're working on. Working on document indexing, right now they're just sequentially numbered filenames, which isn't great. We want to self-host them outside of just ECMA International's website.
 
-JKB: Please share your presentations with us. Export it, send it to the archival group. Gather any missing documentation if you know about it. We'd love for you to join our next ad hoc chat, if you're interested in this work. We'd also like to ask the committee about adding an archivist. 
+JKB: Please share your presentations with us. Export it, send it to the archival group. Gather any missing documentation if you know about it. We'd love for you to join our next ad hoc chat, if you're interested in this work. We'd also like to ask the committee about adding an archivist.
 
-KG: How do we go about joining the chat? 
+KG: How do we go about joining the chat?
 
 JKB: On the reflector!
 
@@ -180,7 +180,7 @@ DE: As you're formalizing roles, you may also want to make sure that we have som
 
 WH: What should the conclusions of this presentation be? Are you asking us to have an archivist? Or are you saying you're going to ask that?
 
-JKB: We are going to, but not today. The three of us continue to look around and explore how that role would be defined. I would like you to be a part of that group, given your history with this committee. 
+JKB: We are going to, but not today. The three of us continue to look around and explore how that role would be defined. I would like you to be a part of that group, given your history with this committee.
 
 WH: I am interested.
 
@@ -252,11 +252,11 @@ TST: I think it's a good idea, and I'm curious what the outcome would be.
 
 SGN: I agree with TST, from V8's point of view, this isn't worth the perf cost, I think this is a such a niche case. But I also agree with YK's point, that we should decide on why we're doing this.
 
-DE: Agree with them, we should consider not further expanding subclassable builtins. This is very connected to subclassable built-ins—it was never really clear to me what the motivation was, so I recommend that for the next steps. 
+DE: Agree with them, we should consider not further expanding subclassable builtins. This is very connected to subclassable built-ins—it was never really clear to me what the motivation was, so I recommend that for the next steps.
 
 TST: I don't think that's true. We spend more time on optimizing species then subclassable builtins.
 
-KG: Perhaps we can have an issue on GitHub to get implementers involved? How do we feel about this is only OK for subclasses? 
+KG: Perhaps we can have an issue on GitHub to get implementers involved? How do we feel about this is only OK for subclasses?
 
 YK: I don't think we should try to come to consensus at this particular time for set methods. As much as no one wants to own this species discussion, we should really have it now.
 
@@ -264,11 +264,11 @@ LBR: If we work together to get the tests...
 
 YK: I don't think we want to make this change—the next steps are to identify a rationalization for what species are for in JavaScript.
 
-AK: In abstract, this seems like something the editors should take on, since this appears to fall in the domain of the editors. 
+AK: In abstract, this seems like something the editors should take on, since this appears to fall in the domain of the editors.
 
-BFS: I would say the role of the editorial board is not to make decisions on behalf of the committee, but to help organize and prioritize the proposals brought forth to the committee. 
+BFS: I would say the role of the editorial board is not to make decisions on behalf of the committee, but to help organize and prioritize the proposals brought forth to the committee.
 
-BFS: Knowing what the spec should say is not something we can do. 
+BFS: Knowing what the spec should say is not something we can do.
 
 #### Conclusion/Resolution
 
@@ -298,7 +298,7 @@ DE: I'm confused, I think you're talking about two different things. Does this p
 
 MM: The change in behavior does not make my bug worse.
 
-DE: ARe you saying that although there already is this issue, we should use this opportunity to fix the bug? 
+DE: ARe you saying that although there already is this issue, we should use this opportunity to fix the bug?
 
 MM: It would remove the pressure to consult the `then` method. Replacing the `then` method doesn't fix the return value.
 
@@ -326,11 +326,11 @@ DE: No, they're zone tracking isn't possible. V8 did an async hooks api to suppo
 
 DE: I am a little surprised because I thought this was a goal of Mark's. (Zalgo) The fact that we did so much work previously, why we would go back to a middle point.
 
-YK: You're saying you're surprised that this proposal takes a middle ground. 
+YK: You're saying you're surprised that this proposal takes a middle ground.
 
 DE: I agree with WH and AK here.
 
-JRL: What do you think about just checking if the `value.then` is the `Promise.prototype.then`? 
+JRL: What do you think about just checking if the `value.then` is the `Promise.prototype.then`?
 
 KS: We could do it. We don't really know what we're doing. You already can't hook into awaiting a non-promise.
 
@@ -456,7 +456,7 @@ DE: I'll suggest that we document the kinds of things we require for a needs-con
 
 WH: Are we OK with your PR? We seem to have digressed into a meta discussion about PRs. If that's the case, I'd note that the timeboxes have consistently been too small for the more controversial PRs earlier this afternoon. 15 minutes is fine for something noncontroversial but not appropriate for something that will generate much discussion.
 
-BT: As an editor group, we try not to take judgements on whether a PR is good or bad. We would need to get concrete guidance on what is important to fix and what isn't important. This is so simple that I think it is sufficiently motivated. 
+BT: As an editor group, we try not to take judgements on whether a PR is good or bad. We would need to get concrete guidance on what is important to fix and what isn't important. This is so simple that I think it is sufficiently motivated.
 
 YK: If the editor group want to give their opinion, ...something... We just need a preference.
 
@@ -525,7 +525,7 @@ WH: I don't understand YK's point about requiring the comparison function to be 
 (Jordan Harband)
 - [slides](https://github.com/tc39/proposal-string-matchall/issues/39)
 
-JHD: RegExps are a mess, and we have different fallback behaviors for String methods. For `Symbol.match`, it doubles as both an implementation and as a marker for regex. So, we don't have a choice to do anything but throw in the case of `Symbol.match` in the absence of a matching symbol. The question is some people would prefer not to have the fallback behavior—do just watch match and search do. This would delete two lines of spec text, but it wouldn't make it considerably easier to implement. I have a preference for making things not throw when they can work, but this boils down to this question. Do we mirror what search and match do, to split and unconditionally invoke `Symbol.matchAll`. 
+JHD: RegExps are a mess, and we have different fallback behaviors for String methods. For `Symbol.match`, it doubles as both an implementation and as a marker for regex. So, we don't have a choice to do anything but throw in the case of `Symbol.match` in the absence of a matching symbol. The question is some people would prefer not to have the fallback behavior—do just watch match and search do. This would delete two lines of spec text, but it wouldn't make it considerably easier to implement. I have a preference for making things not throw when they can work, but this boils down to this question. Do we mirror what search and match do, to split and unconditionally invoke `Symbol.matchAll`.
 
 JHD: So there are two choices: Either throw when there's not `Symbol.matchAll`, or be robust.
 
@@ -533,9 +533,9 @@ TST: Nobody saw this particular change, but as the champion of the proposal you 
 
 JHD: I am pretty sure I did mention it, but it's possible I didn't and I apologize for the fact that we didn't have this discussion earlier.
 
-TST: That's totally fair. I don't feel that strongly, one way or the other. 
+TST: That's totally fair. I don't feel that strongly, one way or the other.
 
-DE: A lot of us just missed this detail. I like this second alternative, matching search. Regex sublassing is really complicated, I'm concerned about making more distinct paths. My personal preference is to do what replace does. But if we match search, that's good too. 
+DE: A lot of us just missed this detail. I like this second alternative, matching search. Regex sublassing is really complicated, I'm concerned about making more distinct paths. My personal preference is to do what replace does. But if we match search, that's good too.
 
 JHD: We could also change search to have a robust fallback behavior.
 
@@ -547,21 +547,21 @@ JHD: Three ways—subclassing, well-known symbols, custom method
 
 YK: We shouldn't laugh at AWB's proposal, even if it wasn't clear that it was a serious defense for this behavior.
 
-DE: I'm proposing that we do something consistent with Allen's proposal. 
+DE: I'm proposing that we do something consistent with Allen's proposal.
 
 JHD: There are several folks on GitHub that mildly prefer the throwing behavior.
 
 MB: I'm just happy we're addressing it in committee.
 
-JRL: Everyone seems to prefer the other behavior, so we should probably change it. 
+JRL: Everyone seems to prefer the other behavior, so we should probably change it.
 
 TLS: You just voiced that as a strong opinion. If the champion has a strong opinion, and no one else does, we should probably go with the champion's opinion. If you disagree with that opinion, then you should phrase it as a strongly held opinion.
 
 YK: I think I agree with JHD. No one's really tried to persuade anyone.
 
-DE: But I did just that. My concern is that if we fall into a pattern of different communication styles—where some people have strong convictions versus some people come off as more polite, and we interpret those to be more strongly-held opinions. 
+DE: But I did just that. My concern is that if we fall into a pattern of different communication styles—where some people have strong convictions versus some people come off as more polite, and we interpret those to be more strongly-held opinions.
 
-TST: I think fair to ask that, if you have strong concerns, then they should be stated as such. 
+TST: I think fair to ask that, if you have strong concerns, then they should be stated as such.
 
 DE: It's a strong concern of mine that we don't make regex subclassing more inconsistent.
 
@@ -669,7 +669,7 @@ MM: When we talk about not breaking the web. We actually broke Facebook when we 
 
 YK: I don't think people think of strict mode like we do. I don't agree that this is the first time we'll make strict mode make a strong difference from sloppy mode.
 
-SYG: I don't want more divergence between sloppy/strict. 
+SYG: I don't want more divergence between sloppy/strict.
 
 TST: Getting telemetry from V8 makes the question of getting it from Spidermonkey moot.
 

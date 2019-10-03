@@ -62,7 +62,7 @@ AKI: Next meeting will be hosted at PayPal in Lower Manhattan. Logistics will be
 
 ## Report from the Ecma Secretariat
 
-(Istvan Sebestyen)
+(István Sebestyén)
 
 
 - [slides](https://github.com/tc39/Reflector/files/2215322/tc39-2018-037_R1.pdf)

@@ -4,7 +4,7 @@ Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA),
 
 
 Remote:
-Istvan Sebestyen (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBR)
+István Sebestyén (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBR)
 -----
 
 
@@ -45,7 +45,7 @@ YSV: Any questions about the logistics for the next meeting?
 
 ## TC39 to transition from RFTG to RFTC
 
-(Istvan Sebestyen)
+(István Sebestyén)
 
 - [proposal](https://github.com/tc39/Reflector/issues/203)
 
@@ -94,7 +94,7 @@ IS: Sorry, you're right. I forgot about that. First I have to ask the Ecma Manag
 
 ## Report from the Ecma Secretariat
 
-(Istvan Sebestyen)
+(István Sebestyén)
 
 - [slides](https://docs.google.com/presentation/d/1AcoF3yIr3QpzdD4O1pw8XtWlxFxiRo1coEnzQT9YM6Q/)
 

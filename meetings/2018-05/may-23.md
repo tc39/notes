@@ -219,7 +219,7 @@ MM: The precedent is same-origin iframes and vms in node.
 
 ## ECMA Secretariat Update
 
-(Istvan SEBESTYEN)
+(István Sebestyén)
 
 IS: TC39 dominates downloads of ECMA standards. Even for PDF downloads. We need a solution for converting the HTML to proper PDF. Need solution to archive Github data into TC39 depository. We're working to improve the TC39 webpages. ISO has been fast-tracked. We would like more TC39 delegates to be part of the ECMA GA and ExeCom bodies. We're standardizing "ECMA Fellows" recognition awards for a select few, pending approval by the GA.
 

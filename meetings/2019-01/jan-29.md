@@ -1,9 +1,9 @@
 # January 29, 2019 Meeting Notes
 -----
-Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Can (GCN), Rick Markins(RMS), Daniel Rosenwasser(DRR), Mark Miller(MM)
+Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Chan (GCN), Rick Markins(RMS), Daniel Rosenwasser(DRR), Mark Miller(MM)
 
 
-Remote: 
+Remote:
 Istvan Sebestyen (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBR)
 -----
 
@@ -22,7 +22,7 @@ YSV: I propose we go through the agenda item-by-item, any objections to that?
 
 (Various people in the room calling out minor scheduling constraints, mostly inaudible)
 
-YSV: OK, so Unicode Sequence properties on Thursday and decorators tomorrow. 
+YSV: OK, so Unicode Sequence properties on Thursday and decorators tomorrow.
 
 ### 4. Approval of the minutes from last meeting
 
@@ -40,7 +40,7 @@ MBS: Reservation is for an Indian restaurant. Is everyone OK with Indian food? I
 
 MS: And please create the agenda in the repo.
 
-YSV: Any questions about the logistics for the next meeting? 
+YSV: Any questions about the logistics for the next meeting?
 
 
 ## TC39 to transition from RFTG to RFTC
@@ -75,7 +75,7 @@ YSV: Are there any voters abstaining?
 
 (no voters abstaining)
 
-IS: Thank you very much. So the TC39 formal request for a RFTC is clear. 
+IS: Thank you very much. So the TC39 formal request for a RFTC is clear.
 
 WH: Are you sending out a GA postal ballot as we did for TC53?
 
@@ -83,7 +83,7 @@ IS: For TC53, I have not received feedback yet.
 
 WH: The TC53 postal ballot already went out. I voted on it a week ago.
 
-IS: Sorry, you're right. I forgot about that. First I have to ask the Ecma Management if we can go with this to a postal ballot or we have to wait until the next face-to-face GA meeting in June. In the GA we made the mistake, not asking in the GA for a postal ballot assuming we get a "green light" for this from TC39. But I hope that the management will allow it. (This was said, but it is wrong. See my comments above) 
+IS: Sorry, you're right. I forgot about that. First I have to ask the Ecma Management if we can go with this to a postal ballot or we have to wait until the next face-to-face GA meeting in June. In the GA we made the mistake, not asking in the GA for a postal ballot assuming we get a "green light" for this from TC39. But I hope that the management will allow it. (This was said, but it is wrong. See my comments above)
 
 
 
@@ -102,7 +102,7 @@ IS: On the first slide quite interesting US, China, India, and Russia are top fo
 
 WH: Are these human visitors?
 
-IS: Actually good question. This are just raw data from Google Analytics. So I do not know. 
+IS: Actually good question. This are just raw data from Google Analytics. So I do not know.
 
 IS: Regarding download of Ecma standards the 24,877 downloads of ECMA-262 PDF in 2018 are significantly more than any Ecma standards. And the PDF version of ECMA-262 is not the main ECMA-262 document which is the html and access to that is counted separately. Anyway, but the PDF of ECMA-262 is also important because that version goes e.g. into the national archives, larger libraries etc.
 
@@ -112,7 +112,7 @@ IS: The old problem is still not solved yet: Older versions of the specification
 
 IS: Regarding TC39 Ecma webpages: We should make TC39 web presence more integrated across GitHub, Ecma, etc.
 
-IS: (discusses trademark). We (TC39 and Ecma) have trademarked "ECMAScript" 10 years ago. Actually in the following countries / regions: Switzerland, EU, USA, Japan and Korea. Every 10 years we have to review and extend that (if we wish...). The US Trademark office has requested to prove how the trademark has been used. We have used it on the Ecma standards (i.e. in publications), but they also like to see the trademark on products or packages of products. This of course for "ECMAScript" is an old expectations, they are not really regarding that the Web is a global Network...Regarding "ECMAScript ®" on hardware Moddable has a nice example (thanks Peter....) that the IPR lawyer has presented to the trademark office. Generally, my request would be to use "ECMAScript ®" as much as possible, also in parallel to "JavaScript", that proves that we are using the mark, plus it is a good add for Ecma.   
+IS: (discusses trademark). We (TC39 and Ecma) have trademarked "ECMAScript" 10 years ago. Actually in the following countries / regions: Switzerland, EU, USA, Japan and Korea. Every 10 years we have to review and extend that (if we wish...). The US Trademark office has requested to prove how the trademark has been used. We have used it on the Ecma standards (i.e. in publications), but they also like to see the trademark on products or packages of products. This of course for "ECMAScript" is an old expectations, they are not really regarding that the Web is a global Network...Regarding "ECMAScript ®" on hardware Moddable has a nice example (thanks Peter....) that the IPR lawyer has presented to the trademark office. Generally, my request would be to use "ECMAScript ®" as much as possible, also in parallel to "JavaScript", that proves that we are using the mark, plus it is a good add for Ecma.
 
 AKI: Should we use ® or ™ when referring to ECMAScript?
 
@@ -128,9 +128,9 @@ IS: Next topic: Rex Jaeschke has departed from his role as the chair of TC39. At
 
 IS: Last topic: Just to repeat if if there is long-term interest in a meeting in China (e.g. for 2020): Wuzhen (close to Shanghai) would be a good host if TC39 ever meets in China. I can help to set that up with the local authorities.
 
-YS: Any questions? 
+YS: Any questions?
 
-(None) 
+(None)
 
 ## Status Updates
 ### ECMA-262 Status Update
@@ -157,7 +157,7 @@ BT: You need things like page numbers, though.
 
 MB: It gives you page numbers! Not sure if they can be styled though.
 
-BT: 
+BT:
 
 ## ECMA-402 Status Update
 
@@ -189,7 +189,7 @@ DE: Yeah, thanks for your help landing Test262 tests, too. Very helpful.
 
 (Chip Morningstar (CM))
 
-CM: ECMA-404 is the JSON standard. We have big priority on stability, so part of my job is to limit the number of changes to it. If anyone has some ideas on the future of JSON, I'm the person to talk to. 
+CM: ECMA-404 is the JSON standard. We have big priority on stability, so part of my job is to limit the number of changes to it. If anyone has some ideas on the future of JSON, I'm the person to talk to.
 
 ## Test262 Status Update
 
@@ -219,7 +219,7 @@ RKG: This special subcase is difficult to remember and also nontrivial to implem
 
 RKG: There is a separate case for direct-eval, which checks the names bound by the direct-eval call instead of VarDeclaredNames. The current spec text there appears to differentiate FunctionDeclarations from async/generator declarations, but the reality is that none of the five engines in ESHost make such a distinction.
 
-WH: It's a minor issue and a matter of philosophy. We wanted to disallow this kind of `var` altogether, but that would break web compatibility, so we allow it in only the places needed for web compatibility. My concern is waffling on this, though. We already made a decision and put it into the spec. Since browsers have implemented this, there would need to be a good reason to back out. We've made a conscious decision to try to minimize these warts, like allowing var in this situation for the purposes of webcompat. 
+WH: It's a minor issue and a matter of philosophy. We wanted to disallow this kind of `var` altogether, but that would break web compatibility, so we allow it in only the places needed for web compatibility. My concern is waffling on this, though. We already made a decision and put it into the spec. Since browsers have implemented this, there would need to be a good reason to back out. We've made a conscious decision to try to minimize these warts, like allowing var in this situation for the purposes of webcompat.
 
 RKG: My motivation is that I'm not sure who is benefitting from this. I was looking at putting this into JSC, but the special code path in implementation seems unnecessary to me.
 
@@ -233,7 +233,7 @@ AK: The webcompat concerns were to allow it in for-in.
 
 SYG: I want to reply to WH about the wart issue. In this case, since var declarations had to be allowed. This seems like a weird special case, and it is an implementation wart. Going forward, as we'll need to have more complex stuff carved out, this space will be extremely difficult to implement in the future. In this case I'd like us to roll back the decision to further restrict for-of vars. I don't think they're going to get anything of the restriction in this case. If we want to keep the webcompat easy to understand, we should accept this proposal.
 
-YK: I agree with WH. We shouldn't focus on whether someone can read the spec language. However, I basically agree with SYG that there's no intuition that you should be able to use var. The main consequence of this is you'll have to be very aware of the various contexts where var is allowed, and I'm suspicious that there are probably bugs where it's not allowed in this special case. 
+YK: I agree with WH. We shouldn't focus on whether someone can read the spec language. However, I basically agree with SYG that there's no intuition that you should be able to use var. The main consequence of this is you'll have to be very aware of the various contexts where var is allowed, and I'm suspicious that there are probably bugs where it's not allowed in this special case.
 
 TST: What is the special case now, and what can we expect the special case to become? If we expect in the foreseeable future for similar constructs, it's probably better to simplify.
 
@@ -329,7 +329,7 @@ BT: No, it's not going away. Current version on Edge and several other partners 
 
 TST: I don't think it should impact Stage 4 requirements. Our requirements are still different engines, and clearly that will still be needed. Certainly this will not lead to tightening the web-reality requirements, at the very least.
 
-YK: I have two things. First, We could say that Chromium is basically web reality, or we can keep looking at multiple engines. I hope we don't just look at Chromium. Second, it is the case that Chrome is more likely to implement breaking changes that other engines would be hesitant to implement out of fear for breaking web reality. If we get to the point where there's a lot of consolidation around the JavaScript engines but with JSDom we can revisit this conversation. 
+YK: I have two things. First, We could say that Chromium is basically web reality, or we can keep looking at multiple engines. I hope we don't just look at Chromium. Second, it is the case that Chrome is more likely to implement breaking changes that other engines would be hesitant to implement out of fear for breaking web reality. If we get to the point where there's a lot of consolidation around the JavaScript engines but with JSDom we can revisit this conversation.
 
 MS: An observation is that Edge is not usually one of the two engines on a Stage 4 proposal. However, we really lose that ability now. I don't think we should just use one engine. I think we should look at Moddable or other engines that can satisfy that requirement.
 
@@ -353,7 +353,7 @@ TST: I agree with MM that we shouldn't have "second-class" implementations. We h
 
 MS: Let's suppose hypothetically that Safari and Firefox adopted Chromium. I think what TST is important. But I can see that the committee would change dramatically in how it does things. It would give one entity veto power. I think we should consider what the future would look like if such a thing were to happen. We need to consider the viability of an open standard for JavaScript going forward.
 
-JHD: The intention of the PR I have open against the process document is to clarify the Stage 4 requirements. I'm planning on updating that PR later today,   
+JHD: The intention of the PR I have open against the process document is to clarify the Stage 4 requirements. I'm planning on updating that PR later today,
 
 BFS: Earlier, we were saying that running code in Node and browser are different. But often you don't actually control your Node version. So there is a similarity there.
 
@@ -369,7 +369,7 @@ MM: Another hosting environment is blockchain running either JS or wasm. They ne
 
 - [Slides](https://docs.google.com/presentation/d/15IWa2HM4sYUWmN_orRGFZ4H1D0AsZO4IcNliY68FwBE/edit)
 
-MF: There is a web reality problem with information leak due to Error.prototype.stack. (Presents the example shown in the slides.) Unfortunately, even though this function is very defensively written, you can still infer the secret if an exception is thrown. 
+MF: There is a web reality problem with information leak due to Error.prototype.stack. (Presents the example shown in the slides.) Unfortunately, even though this function is very defensively written, you can still infer the secret if an exception is thrown.
 
 JHD: I'm intending to present the [stack proposal](https://github.com/tc39/proposal-error-stacks) as Stage 2 soon.
 
@@ -415,7 +415,7 @@ There is likely overlap between stack frame censorship and function source text 
 
 - [slides](https://docs.google.com/presentation/d/1ZppfP3Y_LJ_7LiQn3g-btqjpD8gNVkTXI-sbF-EolGY/edit)
 
-YSV: This should be quick, so in terms of the website not a lot has changed. Ecma requested their logo to be added, and it's now there. We added a "last presented" category but it hasn't been added to the website. I've also started writing a crawler for our proposals, however our proposals don't quite follow the same shape/format. There are two proposals to adopt a standard format: 1) independent files, but this is a lot of work for champions. 2) use a template. 
+YSV: This should be quick, so in terms of the website not a lot has changed. Ecma requested their logo to be added, and it's now there. We added a "last presented" category but it hasn't been added to the website. I've also started writing a crawler for our proposals, however our proposals don't quite follow the same shape/format. There are two proposals to adopt a standard format: 1) independent files, but this is a lot of work for champions. 2) use a template.
 
 YSV: Are we happy with our new website? Do we want to publish this as our main site? Is there anything that should block this?
 
@@ -427,7 +427,7 @@ MF: I think this, with a link to the ratified notes is a really good recent addi
 
 TST: If no one has any concerns, then we should put it out.
 
-YSV: Does anyone have any issues with the crawler proposal. 
+YSV: Does anyone have any issues with the crawler proposal.
 
 JRL: GitHub supports a YAML format for issues. We could use that.
 
@@ -481,7 +481,7 @@ Due to lack of time, the discussion of the website was concluded with the follow
 
 AKI: This is to follow up on discussions from the breakout sessions about how we can interact better with the community. Lots of developers think we don't care about them or their needs. So how do we move forward in a constructive manner? It seems clear that GitHub repos aren't enough to get the word out to the community. We saw this with globalThis, which was a proposal for like 2.5 years, and it still came as a huge surprise for the community. I propose we push more to more places, perhaps blog posts explaining proposals in plain language. Maybe champions can explain how materially it will impact average JavaScript developers. I'm not sure who controls our Twitter account (YSV explained who does, but I couldn't hear). I also created a Hacker News account and a Lobste.rs accounts and published syndicated content on those platforms. We have a very engaged community, and they have a lot of ideas. Often, community members have ideas that have already been proposed and considered, which suggests that we're not doing a good enough job communicating these proposals and our rejections of failed ones.
 
-AKI: Where do we direct chatter?  es-discuss is overwhelming and delegates don't like to engage with it. I propose we retire es-discuss. We could try replacing it with [Discourse](https://www.discourse.org/). We already have a Discourse instance at es-discourse.com. The long-term goal is better communication. 
+AKI: Where do we direct chatter?  es-discuss is overwhelming and delegates don't like to engage with it. I propose we retire es-discuss. We could try replacing it with [Discourse](https://www.discourse.org/). We already have a Discourse instance at es-discourse.com. The long-term goal is better communication.
 
 YSV: I had discussions with Rust team members from last year, and they said if you have a tool that you don't use, you need to shut it down. If you don't do this, it implies you don't care about the community. Their social media strategy is to not tweet their own content unless it's very simple status updates. So they end up promoting Rust users more frequently which has worked quite well for them.
 
@@ -493,7 +493,7 @@ TDE: I've joined communities in the past, and written things in a forum and it g
 
 AKI: Hard agree. We have to go to one place to centralize these discussions.
 
-MBS: We did this in Node, but it slowly devolved into a toxic environment that wasn't well-moderated. And thus, to reiterate what others have been saying, I think it's valuable to be explicit about these spaces. 
+MBS: We did this in Node, but it slowly devolved into a toxic environment that wasn't well-moderated. And thus, to reiterate what others have been saying, I think it's valuable to be explicit about these spaces.
 
 MM: I participated very intensely on es-discuss for 5-7 years, but as it evolved, it changed into something not worth my time. I'm grateful for JHB continuing to engage. With regard to Discourse, the key phrase that AKI used was "moderate." What do you mean by moderate?
 
@@ -583,17 +583,17 @@ MB: We looked into this, and there was [some discussion on GitHub](https://githu
 
 - [slides](https://docs.google.com/presentation/d/1u3kbSc5Iga6lG7xoiilTEe2Z59Snz5xNumZaASwSHCI/edit#slide=id.p)
 
-LBR: There has been massive pushback from the community about the name globalThis and the process we used to decide on the name. Our process was too defensive probably. My proposal is to rename globalThis to Global. (describes discussions with links in slides.)  (continues presenting slides summarizing history of globalThis.) globalThis is very difficult to explain from an education perspective. I'm proud of TC39 for our tendency to avoid difficult to understand additions to EcmaScript like this, so I think this would be a bad direction for the language. Global on the other hand is much easier to understand—it feels like the global namespace. 
+LBR: There has been massive pushback from the community about the name globalThis and the process we used to decide on the name. Our process was too defensive probably. My proposal is to rename globalThis to Global. (describes discussions with links in slides.)  (continues presenting slides summarizing history of globalThis.) globalThis is very difficult to explain from an education perspective. I'm proud of TC39 for our tendency to avoid difficult to understand additions to EcmaScript like this, so I think this would be a bad direction for the language. Global on the other hand is much easier to understand—it feels like the global namespace.
 
-MM: In an earlier slide, you stated "in strict code, this is undefined". The instinction is not strict code. Strict scripts still have this bound to the global this. 
+MM: In an earlier slide, you stated "in strict code, this is undefined". The instinction is not strict code. Strict scripts still have this bound to the global this.
 
 LBR: You telling me this as a TC39 delegate, to someone who works on Test262, is so interesting. To someone who's not as familiar with the language, you can imagine how difficult this is to understand.
 
 MM: I agree that top-level this binding and global namespace is confusing. We should not encourage use of the global object in general and we shouldn't spend time trying to find a name for it. With regard to the the naming you're proposing, I'm in favor.
 
-AK: To the point about being willing to change, if we decide this is a big deal, V8 would be OK with giving it a try. But my position is that I'm not excited about changing this. 
+AK: To the point about being willing to change, if we decide this is a big deal, V8 would be OK with giving it a try. But my position is that I'm not excited about changing this.
 
-LBR: Why would you rather stick with globalThis as opposed to changing it?  
+LBR: Why would you rather stick with globalThis as opposed to changing it?
 
 AK: I feel like the main use of this is for code that needs to access the global object directly, and that is not code a lot of people should be writing.
 
@@ -607,13 +607,13 @@ LBR: I'm not an implementer, but I think it's totally worth trying it.
 
 TST: Figuring out whether we can change the implementations is hard work, whether the change is web-compatible.
 
-LBR: I'm not assuming it's very webcompat, but I don't have enough resources to conclusively say whether it is. 
+LBR: I'm not assuming it's very webcompat, but I don't have enough resources to conclusively say whether it is.
 
 TST: To me, it seems like we cannot make a decision here without that data.
 
 YSV: I believe JHB collected data on these names.
 
-BT: Unfortunately, not Global. 
+BT: Unfortunately, not Global.
 
 JHB: I had 10-20 names from a bikeshed thread. One of them was Global. I was under the impression Firefox was going to collect the data, but then Edge also volunteered, and Firefox ultimately said they'd rather wait for Edge to collect the data. Edge told me 20 names was too many, so I trimmed the list down. I tested "global", "globalThis", "globalObject", and "globals". "global" was wildly unavailable. It would be most effective if we got multiple browsers to collect data for a larger list of names.
 
@@ -631,7 +631,7 @@ TST: It still doesn't solve the web compat issue.
 
 BFS: We want to make sure we don't make people feel empowered by using backlashes. I'm not opposed to changing the name, but I would be careful in how we present it if we do.
 
-LBR: This is not about backlashes but acknowledging an issue raised in good faith. 
+LBR: This is not about backlashes but acknowledging an issue raised in good faith.
 
 KS: I actually like the idea of protests; what else are people going to do?  I think it's good for people to make themselves heard.
 
@@ -649,23 +649,23 @@ KS: At this time, I don't think we're interested in adding counters to Edge.
 
 GCN: So in the future, is it just the other three browsers?
 
-KS: I'm not ruling out that we could do something in the future. 
+KS: I'm not ruling out that we could do something in the future.
 
 YK: If you were motivated, you _could_ add a counter? Or do you mean it wouldn't be possible on top of Chromium?
 
 KS: In theory, we could upstream something, but it's not something we're interested in doing at the moment.
 
-LHB: I don't know how technically to capture this data. 
+LHB: I don't know how technically to capture this data.
 
 DE: It seems clear we're not going to get browser work from this. What we should be deciding here is whether we're going to move forward with globalThis, or start researching new names. If we're not moving forward with globalThis, then we should tell Chrome/Firefox to stop shipping this.
- 
+
 MBS: We can go and talk on this for hours.
 
 DE: There's a time-sensitive option; the longer we wait, the longer Chrome and Firefox will have this shipped. We can't defer this to next meeting and decide to remove the name.
 
 MS: Safari tech preview is shipping it as well.
 
-LBR: This is a thread that has been going for a very long time, and I don't want to keep advocating for this renaming if we can't solve it during this meeting as the problem is time sensitive considering globalThis is already shipping in browsers. I am only proposing that we switch to Global. If we don't recommend anything else, the ship has sailed with globalThis. 
+LBR: This is a thread that has been going for a very long time, and I don't want to keep advocating for this renaming if we can't solve it during this meeting as the problem is time sensitive considering globalThis is already shipping in browsers. I am only proposing that we switch to Global. If we don't recommend anything else, the ship has sailed with globalThis.
 
 MS: I don't think people want this to be the resolution, but procedurally this is the default state.
 
@@ -680,7 +680,7 @@ Consensus was not reached to rename globalThis to Global
 
 - [slides](https://docs.google.com/presentation/d/1BeqsmXGPm_GEAApnpIfVZd3KTOykS4tQVQ7FvYTDtHg/edit)
 
-SGN: I'm proposing 7 new methods -- these methods were already presented last time we discussed this proposal. Today, I want talk about specifics of the semantics and the specification of this proposal. How do we deal with set subclasses? We could do minimal core, or per method override (presents slides). 
+SGN: I'm proposing 7 new methods -- these methods were already presented last time we discussed this proposal. Today, I want talk about specifics of the semantics and the specification of this proposal. How do we deal with set subclasses? We could do minimal core, or per method override (presents slides).
 
 DD: I'm really excited about how rekey helps subclassing. The rekey proposal is a single customization point.
 
@@ -688,7 +688,7 @@ KG: On rekey, it's important to note that rekey is not the same thing as subclas
 
 BFS: It's a normalization step for the input parameters.
 
-DD: If you want something that's like "unrekey" that's a much more robust API than what's proposed. 
+DD: If you want something that's like "unrekey" that's a much more robust API than what's proposed.
 
 KG: It won't be consistent over iterations, so I dispute the characterization that rekey solves any of the use cases that were put out there.
 

@@ -1,14 +1,14 @@
 # March 21, 2018 Meeting Notes
 -----
 
-Waldemar Horwat (WH), Dean Tribble (DT), Mark Miller (MM), Till Schneidereit (TST), Michael Saboff (MLS), Robin Morisset (RMT), Keith Miller (KM), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Adam Klein (AK), Sathya Gunasekaran (SGN),Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Bradley Farias (BFS), Thomas Wood (TW), Alan Schmitt (AS), Sven Sauleau (SSA), Chris Needham (CNM), Edd Yerburgh (EYH), Jason Williams (JWS), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Conrad Watt (CWT), Philippa Gardner (PGR), Godfrey Chan (GCN), Chris Hyle (CHE), Lin Clark (LCK), Ben Newman (BN), Jake Archibald (JAD), István Sebestyén (IS), Brian Warner (BWR), Mathias Bynens (MB), Surma (SSA), Alex Russell (AR), Peter van der Zee (PZE), Maël Nison (MNN), Dan Abramov (DAV), Christoph Nakazawa (CNA)
+Waldemar Horwat (WH), Dean Tribble (DT), Mark Miller (MM), Till Schneidereit (TST), Michael Saboff (MLS), Robin Morisset (RMT), Keith Miller (KM), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Adam Klein (AK), Sathya Gunasekaran (SGN),Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Bradley Farias (BFS), Thomas Wood (TW), Alan Schmitt (AS), Sven Sauleau (SSA), Chris Needham (CNM), Edd Yerburgh (EYH), Jason Williams (JWS), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Conrad Watt (CWT), Philippa Gardner (PGR), Godfrey Chan (GCN), Chris Hyle (CHE), Lin Clark (LCK), Ben Newman (BN), Jake Archibald (JAD), István Sebestyén (IS), Brian Warner (BWR), Mathias Bynens (MB), Surma (SUR), Alex Russell (AR), Peter van der Zee (PZE), Maël Nison (MNN), Dan Abramov (DAV), Christoph Nakazawa (CNA)
 
-Remote: 
+Remote:
 Ron Buckton (RBN), Leo Balter (LBR), Rick Waldron (RW)
 
 -----
 
-## 10.ii.c Hashbang Grammar for Stage 2 
+## 10.ii.c Hashbang Grammar for Stage 2
 
 (Bradley Farias)
 
@@ -22,9 +22,9 @@ BFS: Are we allowing private access state within `eval`?  We don't have a valid 
 
 DE: In Joshua's smart pipeline proposal he uses hash as a placeholder. And place holder means partial application in this case. His proposal doesn't specifically permit this, but if we allow the placeholder to be used in the `eval`. You could have `x |> eval("#!")`, it would be a different interpretation of the same syntax. (Note: DE got this backwards during the meeting, #! vs !#)
 
-BFS: to my knowledge all placeholder syntax should be static. 
+BFS: to my knowledge all placeholder syntax should be static.
 
-DE: we should treat the placeholder like yield. 
+DE: we should treat the placeholder like yield.
 
 DE: I'm not arguing that we should allow the placeholder in `eval`. It doesn't inherit the same placeholder syntax, I also argued the same thing for private field's that they are not accessible from `eval`. However, we ended up permitting private field access in `eval`.
 
@@ -32,11 +32,11 @@ WH: There's enough noise (side conversations) that I can't hear you
 
 DE: let me write the example on the board one moment
 
-BFS: there's some concern with the other proposal we're going to talk about that. If we allow #! in `eval` there might be some confusing with ???, or also I tried to prevent private state, also using the hash, from being used in `eval`. because `eval` is a string my arguement is that we can't use it there because we cannot statically determine if it exists. 
+BFS: there's some concern with the other proposal we're going to talk about that. If we allow #! in `eval` there might be some confusing with ???, or also I tried to prevent private state, also using the hash, from being used in `eval`. because `eval` is a string my arguement is that we can't use it there because we cannot statically determine if it exists.
 
 DE: Even though this is my intuition also, we should consider the applications here, since it falls outside of the applications we've seen before.
 
-MM: We have some parameterized productions in the grammer and then other things we get the context by saying that its allowed in the context .. ? does direct `eval` (we are only talking about direct `eval` here) does it ever inherit parser parameters from its context? Does direct `eval` ever (permit?) a context with this grammar? 
+MM: We have some parameterized productions in the grammer and then other things we get the context by saying that its allowed in the context .. ? does direct `eval` (we are only talking about direct `eval` here) does it ever inherit parser parameters from its context? Does direct `eval` ever (permit?) a context with this grammar?
 
 DE: There's just a lot of ways we can specify this kind of things
 
@@ -48,7 +48,7 @@ BT: I don't think we have a parser parameter that assigns context to `eval` but 
 
 MM: I knew about ???... As Dan says, we have flexibility about how we can specify it . but that flexibility should be coordinated with regard to which static context we want.
 
-MM: I dont think that we should use the parsing parameter in direct `eval`. 
+MM: I dont think that we should use the parsing parameter in direct `eval`.
 
 MM: It gives us guidance but it doesn't gives us a decision
 
@@ -59,9 +59,9 @@ WH: That's a good reason
 YK: What I was thinking is that since the only reason to do this is to communication with a shell, and since `eval` is not used inside of a shell, so. the anwser I guess it you read the file and you `eval` it..
 
 MM: All of those evaluations are indirect
-However it would be extremely weird.. I think the hashbang, having that be part of script or not based on having parse ?? semantics would be good. Parse node(?) production. 
+However it would be extremely weird.. I think the hashbang, having that be part of script or not based on having parse ?? semantics would be good. Parse node(?) production.
 
-YK: I guess it goes back to the first part that I said, the issue we possibly have is place-holder semantics. Given that this is already a defacto standard in node, 
+YK: I guess it goes back to the first part that I said, the issue we possibly have is place-holder semantics. Given that this is already a defacto standard in node,
 
 MM: After this discussion im strongly in favour of this proposal be phrased as script, direct-`eval`, and indirect-`eval` continue to have the same start production, and this start production would now accept an optional initial hashbang.
 
@@ -85,9 +85,9 @@ BT: sure
 
 
 
-## 10.ii.b Richer Keys for stage 1 
+## 10.ii.b Richer Keys for stage 1
 
-(Bradley Farias) 
+(Bradley Farias)
 
 - [slides](https://docs.google.com/presentation/d/1q3CGeXqskL1gHTATH_VE9Dhj0VGTIAOzJ1cR0dYqDBk/edit#slide=id.p)
 
@@ -113,7 +113,7 @@ YK: That was a clarifying question, so at this point I will wait and say. TL;DR 
 
 BFS: It's sane to me to have single argument string to be equal to Symbol.for. Once we talk about using primitives in this composite key we have to be careful about GC because we essentially are keeping an idempotent thing around. The global symbol table isn't specified
 
-BFS: The companion proposal I am suggesting to this, "companion key" its a mapping function for when you are having a custom keyed collection. it returns any value and could be a reference to an object. 
+BFS: The companion proposal I am suggesting to this, "companion key" its a mapping function for when you are having a custom keyed collection. it returns any value and could be a reference to an object.
 We can bike-shed the names forever, which I don't want to doBFS: , Its a generic API, any sort of keyed collection sets I'm saying are keyed based on the identity. You can return any value, could be a reference to an object, I could have A map to a different object such as B
 
 BFS: S: I could be argued that you want to have the original key passed to set for entry for keys, but I think that would just keep them alive when it's not needed. I can't think of any use cases where you need the original key (but I could imagine the opposite direction). If we return the original key, we can reuse the entry keys to reuse set and get. but if we return the synthetic keys that may not be true, so im not sure how to tackle that at this time, this is something for future investigation. So right now I don't think we need this on weak collections, in use cases we could probably figure it out. If it is a weak collection, we have to return something like adam said with a lifetime. doesn't have to inherit from the object protoype. ...? basically it is a mapping function, here we have a create user function. im using the email as a primary key.
@@ -130,7 +130,7 @@ YK: so you haeva symboe that contains several object. once those objects are col
 
 BFS: Correct. It can be collected, in the reference implementation and the spec ??? are collected.
 
-YK: but in this case that symbols is strongly held by some other map. 
+YK: but in this case that symbols is strongly held by some other map.
 
 BFS: I'm not sure of that because you're storing it in a Map.
 
@@ -146,11 +146,11 @@ YK: Right, that's not what i'm proposing.
 
 MM: I think I can reduce your question down to the symbols themselves, we could have allowed symbols that are not created by `symbol.for`
 
-YK: I dont think symbols are a good mechanism for this. 
+YK: I dont think symbols are a good mechanism for this.
 
 DE: I wanted to thank you for iterating on this proposal based on the feedback. I really liked some of the recent changes like reKey used to be called hash, and that was really confusing. It seems like compositeKeys are a really core feature. I don't quite understand the memory leak issue, but it seems like something we should continue to look into. But to me the composite key seems to solve a use case that comes up in situations. To me the composite key seems to solve a pretty common use case.
 
-BFS: I only have a couple more slides, I expect this to be some kind of composite key destructuring or ?? With this, we need to be careful a little bit, if we have all these things we've been talking about, GC and all that. We need to be sure that when people are doing these, that we can have good intuition of how things CAN be garbage collected. In particular, if a single life time object is collected. the entire key - the path to it, the composite key is destroyed. for example I have this example with x and y. I only need one of them collected to make the entire symbol to go away. Likewise if X is some disposable object ??. Once a single object is destroyed we can destroy the entire path to it. Since order is important, you really want the object references to be invalidated. That's actually a bit tricky to do. its not in my naive implementation but it is doable I think. 
+BFS: I only have a couple more slides, I expect this to be some kind of composite key destructuring or ?? With this, we need to be careful a little bit, if we have all these things we've been talking about, GC and all that. We need to be sure that when people are doing these, that we can have good intuition of how things CAN be garbage collected. In particular, if a single life time object is collected. the entire key - the path to it, the composite key is destroyed. for example I have this example with x and y. I only need one of them collected to make the entire symbol to go away. Likewise if X is some disposable object ??. Once a single object is destroyed we can destroy the entire path to it. Since order is important, you really want the object references to be invalidated. That's actually a bit tricky to do. its not in my naive implementation but it is doable I think.
 
 MM: What do you mean by destroyed in JavaScript?
 
@@ -160,7 +160,7 @@ AK: Its unreachable?
 
 MM: Ok, I am very confused
 
-AK: I'm not sure this is important. I think it just falls out of how its specified. I think you are reiterating something that is logically implied by how it is specified. 
+AK: I'm not sure this is important. I think it just falls out of how its specified. I think you are reiterating something that is logically implied by how it is specified.
 
 BFS: Let me try to rephrase, so once a lifetime associate with this symbol we can remove this symbol from the global symbol table.
 
@@ -188,9 +188,9 @@ BFS: Yes
 
 JRL: why isn't the code who calls map.set creating the composite key before calling set (eliminating rekey)?
 
-BFS: Because I've tried to get people to use that multiple times, also even if you do something that is also a solution for extending map which has these problems. Lets say email map. then I have to reimplement all the functionnality of map and doing it manually to all these places. it seems a little grunt-worky. 
+BFS: Because I've tried to get people to use that multiple times, also even if you do something that is also a solution for extending map which has these problems. Lets say email map. then I have to reimplement all the functionnality of map and doing it manually to all these places. it seems a little grunt-worky.
 
-JRL: My second point: are the keys only objects? I'm trying to do this in Babel, and my first thought is to implement this on `WeakMap` (that points to another `WeakMap`, that points to another `WeakMap`...). 
+JRL: My second point: are the keys only objects? I'm trying to do this in Babel, and my first thought is to implement this on `WeakMap` (that points to another `WeakMap`, that points to another `WeakMap`...).
 
 MM: so it is a "weak trie"?
 
@@ -198,7 +198,7 @@ BFS: It is not a "weak trie" because it has to have reference to value types
 
 YK: ???
 
-AK: I wanna go back to what you were saying about subclassing. it seems like subclassing seems like a .. approach instead of using rekey. 
+AK: I wanna go back to what you were saying about subclassing. it seems like subclassing seems like a .. approach instead of using rekey.
 
 AK: That's wasn't it
 
@@ -206,11 +206,11 @@ AK: subclassing gives you the ability to do that
 
 BFS: This is very tailored just for changing the keys though. If they want more behaviour they can do more.
 
-AK: thats exactly my point. this is tailored to something very specific that can be done in user space. in comparison to composite key, its easy to make a composite key implementation that is leaky. 
+AK: thats exactly my point. this is tailored to something very specific that can be done in user space. in comparison to composite key, its easy to make a composite key implementation that is leaky.
 
 BFS: Mine is not (Laughs...).
 
-AK: rekey seems more... specific and not generally applicable while this seems more significant. I would prefer not to have rekey. 
+AK: rekey seems more... specific and not generally applicable while this seems more significant. I would prefer not to have rekey.
 
 BFS: can you say why you would prefer not have rekey.
 
@@ -258,7 +258,7 @@ BT: Can you clarify what you mean by a philosophical discussion?
 
 RJE: The idea that some of these things have been floating around for some time, so we should decide whether they can be reconciled...
 
-AK: I would like to hear the presentation of the new thing 
+AK: I would like to hear the presentation of the new thing
 
 BT: we can discuss the actual proposal but there might be higher level things that we can discuss in advance to that. such as in what ways is the process broken in some ways?
 
@@ -270,7 +270,7 @@ YK: I have a smaller version of Brian's question: what is the proposed resolutio
 
 BE: The proposed resolutions address both the concrete and the abstract...
 
-BE: Take this thought experiment; think about and reject it. That's fine, I think we should just present it and talk about it first. OK, I'm a late comer to this. I think Allen pinged me about this, I think others are aware of this. The history goes back very far, the first TC39 meeting ever in November 1996, Netscape took the lead, and we had a proposal at that time for classes. We had lots and lots of false starts. We had a problem with the baggage that classes have from related languages. Adding them with prototype inheritance is problematic. We almost dropped them from es6, that would have been a disaster—we did it by what's called maximally-minimal design. since then we have classes as a building block. I think what might be said is we have gone in an independent path lead by Babel and other transpilers. And maybe we should back up. I'm presenting this on behalf of Kevin and Allen. we have non modular properties, cross cutting concerns. its treacherously easy to lose some of them as you add to the language. Making sure as we go we keep track of these concerns. We want to minimize the kernel, but its all easy to say rather than to do. One of the suspicions I think some people have, is that we've lost that with classes. We probably need to try and minimize global complexity. We should probably need to take another trip around that. and take a look at what we should maybe look at what should be taken out. We have a habit in the committee, which is quite large now, that makes it hard to make more minimal proposals. I don't have a strong position on how this proposal relates to minimalism. If we have any problem in getting down to any dependent path that doesn't optimize for complexity. We should look at alternative proposals even if they're too modest, too small, too simple. It can be a useful thought experiment. So I hope this framing helps—we should be conscious of what is going on. Reluctance to break consensus is a great thing. This is going to take us back to 
+BE: Take this thought experiment; think about and reject it. That's fine, I think we should just present it and talk about it first. OK, I'm a late comer to this. I think Allen pinged me about this, I think others are aware of this. The history goes back very far, the first TC39 meeting ever in November 1996, Netscape took the lead, and we had a proposal at that time for classes. We had lots and lots of false starts. We had a problem with the baggage that classes have from related languages. Adding them with prototype inheritance is problematic. We almost dropped them from es6, that would have been a disaster—we did it by what's called maximally-minimal design. since then we have classes as a building block. I think what might be said is we have gone in an independent path lead by Babel and other transpilers. And maybe we should back up. I'm presenting this on behalf of Kevin and Allen. we have non modular properties, cross cutting concerns. its treacherously easy to lose some of them as you add to the language. Making sure as we go we keep track of these concerns. We want to minimize the kernel, but its all easy to say rather than to do. One of the suspicions I think some people have, is that we've lost that with classes. We probably need to try and minimize global complexity. We should probably need to take another trip around that. and take a look at what we should maybe look at what should be taken out. We have a habit in the committee, which is quite large now, that makes it hard to make more minimal proposals. I don't have a strong position on how this proposal relates to minimalism. If we have any problem in getting down to any dependent path that doesn't optimize for complexity. We should look at alternative proposals even if they're too modest, too small, too simple. It can be a useful thought experiment. So I hope this framing helps—we should be conscious of what is going on. Reluctance to break consensus is a great thing. This is going to take us back to
 some goals and some anti goals. This is word salad—I'm not going to read it out. Allen and Kevin, in particular, want to find a new way forward for, the essential parts of the class which are missing now, so lets get into it. This is a little bit preliminary. while proposals that are early implemented for getting feedback, ultimately the committee is also going to dispose of things in a way that the implementations have looked into and not just going to move a proposal that is popular only for that reason. There's been controversy on twitter about this, like "how can you pull back on a stage 3 proposal?" its happened before. We can always pull back from a stage-3 proposal, so I want to make sure that is not controversial. This proposal form k and a has hidden names, per instance encapsulated state .... (see slides)
 
 (presenting slide showing `class Point` implementation example)
@@ -291,11 +291,11 @@ BE: this looks a lot safer than the hash. if you leave out the hash you have pro
 
 WH: I have lots to say about this but I am waiting for you to finish the presentation first.
 
-(presenting slide "a simple example: add a hidden method") 
+(presenting slide "a simple example: add a hidden method")
 
 BE: This is just showing a minimal case of an instance variable. You go along showing a hidden method, and a static initializer. I suppose the idea is the outer frame bound. I think one of the most appealing parts of this is not the syntax, but the lexical bodies being hidden. you could have a computed property name, ie `["foo"]` and have `this.foo` The meaning of this is radically different. I was saying that there is a missing illustration of how computed properties are ... ? Polyfilling allows this.foo as a static initializer, seems like a problem. What this proposal tries to do is get away from this. and use lexical names where possible. When referring hidden names is where you have to make a choice—could be .# could be -> .
 
-BE: we realized any kind of shorthanding doesn't work because of what people call the "ASI" problem. you would need a semicolon before a line that starts with an instance variable access. 
+BE: we realized any kind of shorthanding doesn't work because of what people call the "ASI" problem. you would need a semicolon before a line that starts with an instance variable access.
 
 BE: `#` has the advantage of using it without a prefix. The disadvantage is aesthetics .
 
@@ -303,9 +303,9 @@ BE: There are a lot of issues on the github issue like "why var", though the cho
 
 BE: public fields are left out of the proposal.
 
-YK: clarifying question. I read their documents carefully and my instinct is that they have to reject public fields. 
+YK: clarifying question. I read their documents carefully and my instinct is that they have to reject public fields.
 
-BE: I think Kevin or Allen might want to reject them, but I don't want to make that case here. We don't need to get into that. You can get around that the long way. We are not adding new kernel semantics. There's nothing novel about the syntax proposal. I think this is a fruitless debate. I'm going to advocate against all appeals here. Public fields desugar. This is probably not a surprise given Allen's small talk background. Why use var? Short, love it or hate it, its already there. 
+BE: I think Kevin or Allen might want to reject them, but I don't want to make that case here. We don't need to get into that. You can get around that the long way. We are not adding new kernel semantics. There's nothing novel about the syntax proposal. I think this is a fruitless debate. I'm going to advocate against all appeals here. Public fields desugar. This is probably not a surprise given Allen's small talk background. Why use var? Short, love it or hate it, its already there.
 
 BE: I think hidden is too long but I think it works as an intentional keyword.
 
@@ -321,9 +321,9 @@ BE: Dan you should help me out here...
 
 AK: The answer is "no", there's a slight difference but the methods are the same.
 
-BE: Hidden methods are statically determinable. 
+BE: Hidden methods are statically determinable.
 
-AK: the only concrete difference here is the absence of brand check for private/hidden methods. 
+AK: the only concrete difference here is the absence of brand check for private/hidden methods.
 
 BE: I'll work in this proposal
 
@@ -333,7 +333,7 @@ YK: Are the methods different in any way other than the brand-checking?
 
 DE: If we go with this strategy, this method static branches do not encounter the issue that we saw with static private methods. but we had the objection that this would not be "methody" enough if they were missing a brand check.
 
-BE: this proposal does not have a branch check. 
+BE: this proposal does not have a branch check.
 
 DE: Methods have a brand check in the current private methods proposal, on the other hand
 
@@ -369,17 +369,17 @@ DE: We will discuss it later, in the static public fields presentation.
 
 BE: This slide is worth calling attention to the unbulleted items at the bottom (behinds the scenes slide) -- you can resolve hidden method references statically.
 
-DE: So to answer this question, Without decorators, the methods are already statically resolvable. 
+DE: So to answer this question, Without decorators, the methods are already statically resolvable.
 
 BE: You need to partially evaluate a brand check or ..?
 
-DE: What I mean is, without decorators, when you call a private method it's already lexically resolvable; the method is a non-writable part of the field. but you still have to check when reading the method of the object that you are reading  the right brand. 
+DE: What I mean is, without decorators, when you call a private method it's already lexically resolvable; the method is a non-writable part of the field. but you still have to check when reading the method of the object that you are reading  the right brand.
 
 BE: Interesting...
 
 DE: Without decorators, it's statically determinable, though we lose that property for private methods in decorated classes.
 
-BE: We should talk about decorators because this is a composition issue that I thought would come up. we should discuss that. ok. in spite of the backwards presentation. but I think people get the idea. this isn't as far a long as other proposals but I think its interesting as a maximally minimal solution. This is not a mature proposal to the degree for the stage 2 or 3. I think if we keep blazing this path of taking (talking?) compiler implementations as the way forward it is more likely that we will make a mistake. 
+BE: We should talk about decorators because this is a composition issue that I thought would come up. we should discuss that. ok. in spite of the backwards presentation. but I think people get the idea. this isn't as far a long as other proposals but I think its interesting as a maximally minimal solution. This is not a mature proposal to the degree for the stage 2 or 3. I think if we keep blazing this path of taking (talking?) compiler implementations as the way forward it is more likely that we will make a mistake.
 
 WH: What happens when you nest a class within a class. would you see the outer ones as well as the inner ones?
 
@@ -399,21 +399,21 @@ AK: you talked about the this.foo and the this.['foo'] initializer. Another haza
 
 BE: Agreed.
 
-YK: I read the proposal in great detail, and I wrote a summary. one thing that I did was make a table that showed the syntactic difference. It's now clear to me I really like the fact that in the current proposal definitions and uses are analogous. (and I agree that we can change any of these names) but `->` is how we declare them here, previously, `#` is how we declare them and `#` is how we get them. here in this proposal we have arrow for read and write and invoking, and var or hidden is for declaring. and in the hash proposal it uses a single syntax for all of these. 
+YK: I read the proposal in great detail, and I wrote a summary. one thing that I did was make a table that showed the syntactic difference. It's now clear to me I really like the fact that in the current proposal definitions and uses are analogous. (and I agree that we can change any of these names) but `->` is how we declare them here, previously, `#` is how we declare them and `#` is how we get them. here in this proposal we have arrow for read and write and invoking, and var or hidden is for declaring. and in the hash proposal it uses a single syntax for all of these.
 
 MM: The same syntax is used at the declaration side and the use side
 
-YK: and at the invocation site. 
+YK: and at the invocation site.
 
-Yes thats a difference for sure, this claims to be more orthogonal in concepts. 
+Yes thats a difference for sure, this claims to be more orthogonal in concepts.
 
 BFS: One thing that strikes me about this proposal is thatI have trouble with the mental model consistency when comparing it to both public and private fields in this proposal. You said these are instance variables basically, its a difference design but I think one of the advantage of the current field proposal, they have no new kernel behavior, they do use define instead of assign and you need to be a bit careful about this. The current staged proposal is more like a minimal proposal, that also draws an analogy between public and private.
 
 BFS: I have some concerns about scoping when you nest things and In particular, you delegate up to whatever is not shadowed, I think this essentially may solve some use cases, but it isn't addressing all use cases. And the semantics are different enough that I don't really like comparing the proposals I would prefer to treat them as different paths we can take but have 1 supercede the other
 
-BE: Can we try to break that down? I agree with you, but having some concerns is not actionable. I agree each scope can be nested? You're shadowing that's your problem. None of these proposals claims to solve all problems. I agree. 
+BE: Can we try to break that down? I agree with you, but having some concerns is not actionable. I agree each scope can be nested? You're shadowing that's your problem. None of these proposals claims to solve all problems. I agree.
 
-MM: I want to just clarify a pedantic point that because people keep using `WeakMap`s. Its a `WeakMap`-like collection. 
+MM: I want to just clarify a pedantic point that because people keep using `WeakMap`s. Its a `WeakMap`-like collection.
 
 MM: It has to differentiate assignment from invocation, otherwise you get a confused delegate problem
 
@@ -421,11 +421,11 @@ BE: that was BFS last point, MM is pointing out that what we have in the hash pr
 
 MM: You could create a `WeakMap`-like collection in the user space. I would still say that the right characterisation of is a desugaring to that feature of ES6.
 
-BFS: the point about define vs assign though is critical. 
+BFS: the point about define vs assign though is critical.
 
 BE: One of the lesser arguments here is consistency with the use of equal, assignment uses equal as well... This proposal uses a separate selector, and avoids the define vs assign by construction,
 
-MM: the only difference that I see is the lack of initializer. and then syntactically there are of course a number of difference. The fact that there is a leading keyword makes the equals less confusing. Declaring keyword variable name equals expression is never thought to have assignment. 
+MM: the only difference that I see is the lack of initializer. and then syntactically there are of course a number of difference. The fact that there is a leading keyword makes the equals less confusing. Declaring keyword variable name equals expression is never thought to have assignment.
 
 (discussion of the leading keyword)
 
@@ -439,7 +439,7 @@ DE: maybe you could put yourself on the queue
 
 BE: I wanted to pick up on that because theres a syntactic controversy on using equals.
 
-YK: the little aside that we had is why we should reject certain aspects of features. . 
+YK: the little aside that we had is why we should reject certain aspects of features. .
 
 BE: Public fields?
 
@@ -447,11 +447,11 @@ YK yes, you don't have to reject them, but if you do add them in the future what
 
 BE: Allen or Kevin does argue that it's better to put the initializer in the constructor body.
 
-YK: I think that whole perspective hangs together and we should consider it as a cohesive thing. 
+YK: I think that whole perspective hangs together and we should consider it as a cohesive thing.
 
-BE: The example that came out in one of the issues I mentioned. 
+BE: The example that came out in one of the issues I mentioned.
 
-BE: the example that I'm thinking of: 
+BE: the example that I'm thinking of:
 
 ```js
 class {
@@ -470,7 +470,7 @@ i think that we should not ignore this issue.
 
 BFS: Why can't we use curly braces in the initializer to symbolize that the `this` binding is changing?
 
-BE: Nowhere else do curly braces change the meaning of this. If we adopt computed property names and public initializer and we will have to make a very convincing story. 
+BE: Nowhere else do curly braces change the meaning of this. If we adopt computed property names and public initializer and we will have to make a very convincing story.
 
 (more back and forth)
 
@@ -490,7 +490,7 @@ BE: It sort of gestures in the direction that we shouldn't have it
 
 BE: wanted to avoid that controversy. I think the softest form of this is that in this case you won't need public fields.
 
-BE: I'm not here to condem public fields based on this proposal but this example came out and it has nothing to do with ??? proposal 
+BE: I'm not here to condem public fields based on this proposal but this example came out and it has nothing to do with ??? proposal
 
 DE: I wanted to give a little more historical context to what we're discussing. As Adam mentioned, both the syntax and the equal sign. People were suggesting maybe we should put in some curly braces, we ended up coming to some consensus on this that = should be explicitly OK as a syntax. Its a cost benefit thing. There are other options than not having public fields. For example not having computed public fields. The other thing was, the use of equals and the keyword at the start of it. We were considering whether a keyword before the field declaration would clarify "define" rather than "set". An educator in the room. Ashley Williams, gave an interesting perspective that a keyword doesn't add that much. Rather people will just have to learn this regardless. The keyword just doesn't give explanatory power, for the issue that you raised about when things are evaluated, we discussed in the Munich meeting that this integrated idea for when things are evaluated, for example you might expect that static public fields would be evaluated in a strictly top-down, left-to-right way way. This really doesn't work for a bunch a reasons: first, the static public field maybe decorated and you need to coalesce getters/setters. The other issue was the static public fields had to have the class no longer in TDZ. So we really had to do all the other things to build a class. If we want to put expressions in these places, that's what we're buying into.
 
@@ -516,13 +516,13 @@ YK: I think the current implementation, which in strict mode in modules is undef
 
 JRL: It's not always undefined. It's the outer this, which can be defined by `.call`ing an enclosing function
 
-MM: 
+MM:
 
-a reasonable semantic change would be to ..? 
+a reasonable semantic change would be to ..?
 
 KG: Which seems confusing, that first thing doesn't seems problematic, the only thing which seems bad here, is this having a different meaning depending on whether this is on the left or right of the equals sign. We can just ban it on the left and have no problem.
 
-BE: Its a breaking change and its an irregularity. 
+BE: Its a breaking change and its an irregularity.
 
 KG: My claim is that the current behaviour is confusing. In the class body you're in the class, you enter strict mode.
 
@@ -536,7 +536,7 @@ DH: The whole proposal it's not actually obvious to me if a change to the scopes
 
 DH: We are discussing again topics that have come up multiple times. I just want to reiterate that there is some discomfort. The public fields are you know we have different context that have not the same as computed property names. We have sublty different contexts that do not have visual nesting. I've argued it before and I will argue it again, this is the nature of class syntax. Class syntax is describing a pretty compound construct with a pretty flat context structure.
 
-DH: That's just sort of the nature of a syntactically more sparse syntax for describing a compound protocol. To begin with classes are already combing the se layers of static properteies and ... (properties). So you have to learn the different things that shift your context. Based on some of those signifiers based on prefix and that I think there is some budget in classes where you have to learn this. 
+DH: That's just sort of the nature of a syntactically more sparse syntax for describing a compound protocol. To begin with classes are already combing the se layers of static properteies and ... (properties). So you have to learn the different things that shift your context. Based on some of those signifiers based on prefix and that I think there is some budget in classes where you have to learn this.
 
 YK: Its really a different point that I would like to make
 
@@ -546,7 +546,7 @@ BT: I suspect that it will be hard to not wanting to reply if they're not in the
 
 (discussion about what to do right now, 5 minutes before lunch)
 
-YK: We've been discussing that we can make this more of an error. The natural form is 
+YK: We've been discussing that we can make this more of an error. The natural form is
 
 (demonstrating the following class on the whiteboard)
 
@@ -599,13 +599,13 @@ BE: There's a risk that this proposal is taken as such a clean slate that this b
 
 BT Its probably true
 
-WH: We've had maximally minimal classes before. They were insufficient, so this is another attempt at that. However it's clear to me that this does not cover many of the use cases, so, extrapolating a little bit, I don't think this will prevent people from proposing more class extensions later on. Maybe someone is idealist enough to think that this will end future proposals for classes, but I don't believe it. What concerns me is what position we'll be in if we adopted this and then want to address the other use cases. Unfortunately it looks like we will back ourselves into a corner. One way I look at that is refactorings—the kinds of code transformations that people are likely want to do. There is a desire to use public fields, not just private ones. Dynamically creating public fields doesn't work if you want to attach decorators to them. The obvious syntax for public properties is taken and they won't be able to be made consistent with the private ones. 
+WH: We've had maximally minimal classes before. They were insufficient, so this is another attempt at that. However it's clear to me that this does not cover many of the use cases, so, extrapolating a little bit, I don't think this will prevent people from proposing more class extensions later on. Maybe someone is idealist enough to think that this will end future proposals for classes, but I don't believe it. What concerns me is what position we'll be in if we adopted this and then want to address the other use cases. Unfortunately it looks like we will back ourselves into a corner. One way I look at that is refactorings—the kinds of code transformations that people are likely want to do. There is a desire to use public fields, not just private ones. Dynamically creating public fields doesn't work if you want to attach decorators to them. The obvious syntax for public properties is taken and they won't be able to be made consistent with the private ones.
 
 BE: Because `->` vs. `.`?
 
 WH: Yes. And also because the syntax for private fields doesn't visibly mark them as private.
 
-??: I dont like arrow because its buggy. 
+??: I dont like arrow because its buggy.
 
 BE: I was asking why you think this proposal, other than the attitude of its creators precludes that...
 
@@ -631,7 +631,7 @@ BE: You still have to do the work for it(?). This is controversial and it came u
 
 WH: I think of the `#` as part of the name of a private member. `->` doesn't have the same connotation and leads to more confusion.
 
-DH: I like Waldemar's point, especially regarding backing ourselves into a corner. The proposal is that the slides said at the beginning and Allen had said on Twitter that we need to make sure we're considering cross-cutting concerns and looking holistically. 
+DH: I like Waldemar's point, especially regarding backing ourselves into a corner. The proposal is that the slides said at the beginning and Allen had said on Twitter that we need to make sure we're considering cross-cutting concerns and looking holistically.
 
 DH: So we've done all this work to consider cross-cutting concerns, "lets remove those from the discussion". That's the _opposite_ of cost-cutting concerns, that's not even thinking about them!
 
@@ -660,7 +660,7 @@ DE: Thats a frequently asked question that I get about this proposal. It's clear
 
 BFS: He brings up the ? concern, when you refactor from a . to an arrow, a `.` is a reference lookup vs. an `->` which is a lexical lookup. We are not just changing how things are looked up. we are also changing what I fundamentally understand intuitively about dispatch. that brings up a new concern which I had a horrible time describing earlier. It make it more complex for me to explain. This makes it much harder to understand, it may be like this in other languages, but it seems much harder to understand this way.
 
-TST: I would like to say something about how the proposal ??? One of my main concerns that I would like to make explicit is, to me but at the ?? box? I'm sympathetic to some of the changes proposed, and we arrivesd at the proposal as it is right now as we were influenced by many factors. A lot of it has been discussed earlier. It might be worth revisiting them, its also presented as a counter to some proposals that I feel are completely orthogonal to this one. and that feels like a slight of hand. I feel like the proposal should in this case go and argue against the specific proposal, rather than being one about the private state. and you mentioned this that this doesnt preclude these other proposals. you said that this should also be a reset and I dont agree with that. 
+TST: I would like to say something about how the proposal ??? One of my main concerns that I would like to make explicit is, to me but at the ?? box? I'm sympathetic to some of the changes proposed, and we arrivesd at the proposal as it is right now as we were influenced by many factors. A lot of it has been discussed earlier. It might be worth revisiting them, its also presented as a counter to some proposals that I feel are completely orthogonal to this one. and that feels like a slight of hand. I feel like the proposal should in this case go and argue against the specific proposal, rather than being one about the private state. and you mentioned this that this doesnt preclude these other proposals. you said that this should also be a reset and I dont agree with that.
 
 BE: I didn't do that. I said it was a thought experiment. I'm not Allen or Kevin. Smalltalk design point ... I think they have sympathy for decorators, and I think that bringing up cases where we have allowed this mean things that it shouldnt might be worth the time that we spent this morning. I hope it was worth considering alternative design. I don't want to drag this out too long...
 
@@ -676,17 +676,17 @@ BE: which we might want, I believe static locks might be desired? The static ini
 
 MM:  I want to discuss an answer to Brian with regard to Process. One of the dynamics that has repeatedly come up, the suggestion here is calling into question decision X and has decision X already some into consensus. and that happening again for decision y and decision z... Our process is not broken as long as we don't take our process too seriously. There are reasons why sticking with the process literally would be broken, but the right fix to that is not to try to design and write down an amended process. the right way to deal with that is to deal with it when it comes up. The particular thing that's triggering this for me, is that (and the reason I pulled my item from the queue) is that the consensus of decisions is perfectly sensible, for Y by itself and Z by itself. Is that the reason is that I called my item in the queue " the atom of consensus" But as stewards as the language as a whole, we are to put all of those things together, that have consensus back on the table to see if they still have concesnsus when they are combined together.
 
-??: people said repeatedly in the repo that it was our process that lead us to that issue. 
+??: people said repeatedly in the repo that it was our process that lead us to that issue.
 
 MM: I think that there is a bug in the process, but I don't think we should fix it by writing more process documents. The bug in the process is that it is all forward oriented. where as the visible pogress is adding stuff. The focus of the process are the individual proposals considered individually
 
 MM: Doesn't leave us discussion time for the overall complexity of the language. It doesnt allow us to consider cross cutting issues between proposals and makes us focus on proposals individually.
 
-BE:  There is definitely some fear that the committee will add too much. Never say never use namespaces—except for regards to  Common Lisp there's name packages 
+BE:  There is definitely some fear that the committee will add too much. Never say never use namespaces—except for regards to  Common Lisp there's name packages
 
 MM: There is a very particular kind of "never". There are safety properties that people come to depend on, and adding features can break existing safety properties. I really feel like it's a distraction from the classes that we're discussing. There's concern with focusing too much on safety features that it ends up as destroying an added feature.
 
-the way we talk about safety properties is really important. I would love to formalize it so that we do not lose it over time. 
+the way we talk about safety properties is really important. I would love to formalize it so that we do not lose it over time.
 
 BE: I don't think anybody should fear that we'll break your code, stage 3 doesn't mean stage 4.
 
@@ -725,7 +725,7 @@ DE: I wanted to propose the public static field to stage 3. It is syntactic suga
 ```js
 class MyClass {
   static myStaticProp = 42;
-  
+
   constructor() {
     console.log(MyClass.myStaticProp);
     // prints 42
@@ -733,7 +733,7 @@ class MyClass {
 }
 ```
 
-DE: Beginng a class body allows visually grouping, this static public field with other elements. Nailing down common semantics follow the pattern that we have followed so far. A big part of the reason why public static field are justified, they are heavily used in big frameworks like React. They expected properties to be set like PropTypes. Its not just react, its many many things in the ecosystem using babel or typescript to cross compile or transpile down to es5. The syntax here in this proposal almost entirely matches what's deployed and used of this ecosystem of transpiled JavaScript. Here on the right, I have this tweet by Kent C. Dodds:  (see slide) For background kent was a TC39 delegate for a while. He was in the committee when we was discussion this proposal. That shows how deeply in the community this proposal is. 
+DE: Beginng a class body allows visually grouping, this static public field with other elements. Nailing down common semantics follow the pattern that we have followed so far. A big part of the reason why public static field are justified, they are heavily used in big frameworks like React. They expected properties to be set like PropTypes. Its not just react, its many many things in the ecosystem using babel or typescript to cross compile or transpile down to es5. The syntax here in this proposal almost entirely matches what's deployed and used of this ecosystem of transpiled JavaScript. Here on the right, I have this tweet by Kent C. Dodds:  (see slide) For background kent was a TC39 delegate for a while. He was in the committee when we was discussion this proposal. That shows how deeply in the community this proposal is.
 
 (showing slides regarding implementation "Semantic details proposed")
 
@@ -744,7 +744,7 @@ DE: In the bottom right you see what we were talking at the committee regarding 
 
 The subclass can read the super class' property, but if you write to it later it creates its own data property.
 
-As an example here we have class D extends C, 
+As an example here we have class D extends C,
 
 ```js
 class C {
@@ -778,8 +778,8 @@ DE: I'm making sure to say to the committee why I think this is acceptable. We e
 ```js
 class C {
   static count = 0;
-  static inc() { 
-    return this.count++; 
+  static inc() {
+    return this.count++;
   }
 }
 class D extends C { }
@@ -791,7 +791,7 @@ alert(C.count);  // 1
 alert(D.count);  // 2
 ```
 
-DE: If you call `C.inc()` you can cont of the fact that's the class C, you don't even need to think about what's inside of the subclass, personally I would just refer to C if thats what I want to do, but maybe if you have a very long class them, then you'll want to do something different. To mitigate for the duplication for a very long class name, if you add some syntactic sugar which ??? `class.count` is always refering to c.count, this sort of hazard case would not occurs, the semantics that I would suggest for this is to always refer to the inner most class. there is som concern about how this would behave with static private. This proposal is not proposing static private, but if we were, we would suggest it refers to the class of which it's private name was. The case where this comes up is where you have nested classes and there may be multiple different classes you may be thinking about with this proposal you could get these Java-like static semantics. 
+DE: If you call `C.inc()` you can cont of the fact that's the class C, you don't even need to think about what's inside of the subclass, personally I would just refer to C if thats what I want to do, but maybe if you have a very long class them, then you'll want to do something different. To mitigate for the duplication for a very long class name, if you add some syntactic sugar which ??? `class.count` is always refering to c.count, this sort of hazard case would not occurs, the semantics that I would suggest for this is to always refer to the inner most class. there is som concern about how this would behave with static private. This proposal is not proposing static private, but if we were, we would suggest it refers to the class of which it's private name was. The case where this comes up is where you have nested classes and there may be multiple different classes you may be thinking about with this proposal you could get these Java-like static semantics.
 
 ```js
 class C {
@@ -841,14 +841,14 @@ DE: The final option is lexically declared elements in class bodies. Allen and K
 const registry = new JSDOMRegistry();
 export class JSDOM {
   #createdBy;
-  
+
   #registerWithRegistry(registry) {
     // ... elided ...
   }
- 
+
   static async fromURL(url, options) {
     url = normalizeFromURLOptions(url, options);
-    
+
     const body = await getBodyFromURL(url);
     return finalizeFactoryCreated(body, options, "fromURL");
   }
@@ -874,7 +874,7 @@ DE: Anyway, why we should advance static public fields  to stage-3: there's a lo
 
 DE: Valerie Young from Bocoup wrote the spec on Test262 which V8 passes. Previously this proposal reach stage-3 as part of the class fields proposal. This is in the context from Kevin proposal to re-initliaze static public fields. Aside from that, the accessor possiblity, I just don't see any interaction with other proposals that we need to look through and docuement. You can see this document here about which interaction and other ideas were considered. Stage three review will be done by Sathya Gunasekaran. There's no change in the semantics, or in the way they are organized, if there are any changes, they're just bugs that we'll figure out how to revert. Should we go to stage-3?
 
-YK: I should just conflate the first two of my comments. The first thing is I want to express strong support for this proposal. Just last week we added a protocol to ember that is a static symbol protocol. I think there's a lot of use-cases for static fields. The second thing (and I'll just read what I wrote in the queue) is are we willing to have static public fields even if we might never have static private fields? Or is accepting this proposal tantamount to accepting static private fields in a big enough time horizon? If we accept this proposal are we ok to reject other proposal? Some people don't want to reject others proposal 
+YK: I should just conflate the first two of my comments. The first thing is I want to express strong support for this proposal. Just last week we added a protocol to ember that is a static symbol protocol. I think there's a lot of use-cases for static fields. The second thing (and I'll just read what I wrote in the queue) is are we willing to have static public fields even if we might never have static private fields? Or is accepting this proposal tantamount to accepting static private fields in a big enough time horizon? If we accept this proposal are we ok to reject other proposal? Some people don't want to reject others proposal
 
 DE: I don't know what you're suggesting we discuss. But I will answer the question of whether it makes sense to add this proposal without static private. I think it does make sense to add this proposal without static private. It seems like there's some cases where people ran into the subclassing issue; some people said that ,  so theres a difference between having a runtime error when the ??? and having a early error when you type the code not having static private, you will get a syntax error that says that static private does not exist. Potentially, it could even link to documentation containing idioms where you can get the same thing.
 
@@ -960,14 +960,14 @@ DE: I'm not sure if I understand the question, in this topic im trying to unders
 
 YK: As MM pointed out, we don't have inheriting on static/private. So for me when I think about this problem I avoid the syntax with the issue of inheritance.
 
-JHD: I just wanted to talk about static and private field, when we talk about footgun and user confusing. Actual usage tends to ??? a lot. Public class fields probably have more usage than any other new feature in JavaScript in years. It has been many years of very wide usage, so what I was seen the current semantics are expected by everyone—very intuitive. And the foot-guns were are talking about are no different from foot-guns in JavaScript. deviating from that would be a mistake. it's a good thing to improve JavaScript when we can but it's not possible to redesign JavaScript from the first time. Discussing public and static field is fine, whatever we include them or not. The community pushback on us doing anything different will be very large so  it means we should think very carefully about... we were unwilling @ and # because of years of documentation changes that would be required. I don't see how we should be willing what to override that since it means going against conventions in very popular frameworks like React, etc. 
+JHD: I just wanted to talk about static and private field, when we talk about footgun and user confusing. Actual usage tends to ??? a lot. Public class fields probably have more usage than any other new feature in JavaScript in years. It has been many years of very wide usage, so what I was seen the current semantics are expected by everyone—very intuitive. And the foot-guns were are talking about are no different from foot-guns in JavaScript. deviating from that would be a mistake. it's a good thing to improve JavaScript when we can but it's not possible to redesign JavaScript from the first time. Discussing public and static field is fine, whatever we include them or not. The community pushback on us doing anything different will be very large so  it means we should think very carefully about... we were unwilling @ and # because of years of documentation changes that would be required. I don't see how we should be willing what to override that since it means going against conventions in very popular frameworks like React, etc.
 I don't think it's a strong ??? to overide that.
 
 DE: Jordan, what do you think at this point of removing this feature and just using static blocks?
 
 JHD: Decidedly not. that would be terrible,  users have been using this for many years,. Changing the public properties in static blocks is not a viable option. Both public instance field and static public field are supported by the transpilers. How much actual, do you have a sense, how much static public as opposed to the public instance In the react ecosystem in 90%, It's very massive. Every class should theoretically define propTypes and default props. Dan right here is in the React team.
 
-DAV: I just ran a search on static/nonstatic proptypes. I see about 4000 matches across 50,000 components 
+DAV: I just ran a search on static/nonstatic proptypes. I see about 4000 matches across 50,000 components
 
 YK: What was the query?
 
@@ -999,7 +999,7 @@ DE: I've been trying to get this moving for a long time. I got in touch with a n
 
 AK: I appreciate your work on this. I'm diagnosing the disconnect that happened in the room.
 
-YK: I am removing myself from the queue, but I still have a point to make. I think from the fact that people feel strongly about public/private static. even though WH and I have the opposite perspective. Due to the fact that static private does not inherit we do not have this yet. people talk about filling out the grid. For me filling out the grid is not a good solution 
+YK: I am removing myself from the queue, but I still have a point to make. I think from the fact that people feel strongly about public/private static. even though WH and I have the opposite perspective. Due to the fact that static private does not inherit we do not have this yet. people talk about filling out the grid. For me filling out the grid is not a good solution
 
 DE: This proposal attempts to follow Allen and Mark's orthogonal classes framework, which was a "grid with holes". By doing this, the runtime "hazard" is converted to an early error.
 
@@ -1007,7 +1007,7 @@ YK: It's not what people are worried about. When we'll add public, people will b
 
 DE: I think it's the case either ways, because transpilers will continue to support static/private fields.
 
-YK: I think you are overly aggressively rejecting static block, multiple people presented it as an alternative 
+YK: I think you are overly aggressively rejecting static block, multiple people presented it as an alternative
 
 JRL: back on the static block init, it's literally no better than declaring the prop after the class declaration. All of done now it's increase my identantions twice
 
@@ -1039,7 +1039,7 @@ DE: So, first we met with native implementors, in this meeting there would be JS
 
 DE: We also met with framework authors, Polymer, Ember, Mobx, view. We went through the decorators proposal with them. Some interesting feed back here is that the additional features that were added in this iteration of the proposal is that ???. Adding decorators or first class decorator support for ?? fields, would be directly useful with ?? there is also an issue with parenthesis, which I have more description of in a future slide. One action from this is to continue with the full proposed feature set, we thought about moving/adding certain things. But this meeting seemed to solidify we're settling or more on this feature set.
 
-DE: We also met with transpiler authors, Google closure compiler, typescript and babel, which all implemented es6-> es5 and are at various stages of implementing various language features that we at TC39 are currently specifying. We got some feedback about some things would be a little bit verbose to compile or might have layering issues in compiling. Some feedback from Google closure compiler which is also used as a JavaScript static analysis tool. For example, dead code elimination, which closures are especially good. Decorated classes do not lend themselves so well to dead code elimination. We in the champions group think that's OK, because decorators are expected to be for more dynamic features. The hope isn't to take some static code and add a bunch of decorators and make everything worse but to fill use cases that are used in more dynamic language use cases. So, when talking about the compiler output there's sort of a trade of that cross-compilers can use. They will have to think about what they want to do in some of these cases. Another piece of feedback was again asking the question "should we allow decorated private field methods at all". This is something we discussed in the previous meeting and I recorded the champion groups decision that we should because they're important use cases and there's and important privacy model is that only things within the class and decorators are only within the class. It's well defined, if you call out to a decorator, the decorator for this particular field or method then this decorator can only see this particular field or method. If its for the class as a whole, then it can see the entire contents of the class. That's the model we are going with for now. Spec updates: there was feedback in the Jan meeting that element descriptors should be more ?? so we tweaked that. There was something about coalecing the getters and setters so we implemented that. We reverted that and element ordering change ??? The other thing that we added is ...? to string property. which should be easier for branch-x spec. There are also a number of spec type and documentation improvements from new contributors. There is also an increase in new contributors which I am really happy to see that. 
+DE: We also met with transpiler authors, Google closure compiler, typescript and babel, which all implemented es6-> es5 and are at various stages of implementing various language features that we at TC39 are currently specifying. We got some feedback about some things would be a little bit verbose to compile or might have layering issues in compiling. Some feedback from Google closure compiler which is also used as a JavaScript static analysis tool. For example, dead code elimination, which closures are especially good. Decorated classes do not lend themselves so well to dead code elimination. We in the champions group think that's OK, because decorators are expected to be for more dynamic features. The hope isn't to take some static code and add a bunch of decorators and make everything worse but to fill use cases that are used in more dynamic language use cases. So, when talking about the compiler output there's sort of a trade of that cross-compilers can use. They will have to think about what they want to do in some of these cases. Another piece of feedback was again asking the question "should we allow decorated private field methods at all". This is something we discussed in the previous meeting and I recorded the champion groups decision that we should because they're important use cases and there's and important privacy model is that only things within the class and decorators are only within the class. It's well defined, if you call out to a decorator, the decorator for this particular field or method then this decorator can only see this particular field or method. If its for the class as a whole, then it can see the entire contents of the class. That's the model we are going with for now. Spec updates: there was feedback in the Jan meeting that element descriptors should be more ?? so we tweaked that. There was something about coalecing the getters and setters so we implemented that. We reverted that and element ordering change ??? The other thing that we added is ...? to string property. which should be easier for branch-x spec. There are also a number of spec type and documentation improvements from new contributors. There is also an increase in new contributors which I am really happy to see that.
 
 MM: I heard brand check and I don't see anything on the list about it?
 
@@ -1049,7 +1049,7 @@ MM: So, its not a brand?
 
 DE: It's not a brand but it should be usable in practice. When you want to have a function that can both be used as a decorator or as something else. You can check the @@toString to see whether you were given a decorator descriptor.
 
-DE: Specification questions: as I was just mentioning, this issue with PrivateName. This is really the top concern for implementations that I've heard. Some parts of this proposal sit in the front end of the implementation but it also adds complexity to the back end implementation to add a new primitive type. A new primitive type would require the need to think about how property access, well have to specially update ToPropertyKey. That's what the current specification text does. and all of this is complicated because of how heavily optimized property access is. There are just many different implementations of it, there are a number of different usage patterns. By making it a frozen object rather than a primitive, all this complexity is avoided and decorators don't need as many cross-cutting changes. Spec text is not written yet, but there is a plan in a linked issue. 
+DE: Specification questions: as I was just mentioning, this issue with PrivateName. This is really the top concern for implementations that I've heard. Some parts of this proposal sit in the front end of the implementation but it also adds complexity to the back end implementation to add a new primitive type. A new primitive type would require the need to think about how property access, well have to specially update ToPropertyKey. That's what the current specification text does. and all of this is complicated because of how heavily optimized property access is. There are just many different implementations of it, there are a number of different usage patterns. By making it a frozen object rather than a primitive, all this complexity is avoided and decorators don't need as many cross-cutting changes. Spec text is not written yet, but there is a plan in a linked issue.
 
 DE: Parenthesis? So this is a long running issue from years ago. One issue was that back when decorators were passed to the class as an argument. Then it was hard to overload, a function which could be used as a decorator and a function which could be passed as an argument. To determine whether it was being alled in the decorator sense, or if it is called as a function within a function. That particular case is actually fine now, because its easy to tell whether we have a function or decorator. We added `toString` tag to make it even easier. maybe you have a function that has a certain property and you want to overload that. When we discussed this at the framework meeting, there were mixed opinions. some people are strongly in favor of... I should step back. when I say adding parenthesis. With this change in the calling convention, when you have @ decorator and class we would make it so first you call that function and undefined?? So the champions' recommendation is to not do that and stick with the simpler model. Where we just evaluate that as an expression whether its a function call or not, and then call that resulting function with the class decorator or the element decorator as an argument. So, for both of these questions I would be really interested in more feedback.
 
@@ -1081,7 +1081,7 @@ DE: I don't actually see how that changes anything. but there were methods on Pr
 
 BFS: I can look it up on GitHub but I think I understood it. This is a very difficult topic for me.
 
-MM: Clearly the PrivateName needs its own very detailed careful discussion. That should not happen right now because its a detailed discussion that was focused on private name and I think that as long as PrivateName becomes something. and as long as it acts as the right kind of `WeakMap` collection 
+MM: Clearly the PrivateName needs its own very detailed careful discussion. That should not happen right now because its a detailed discussion that was focused on private name and I think that as long as PrivateName becomes something. and as long as it acts as the right kind of `WeakMap` collection
 
 JRL: (Context: https://github.com/tc39/proposal-decorators/issues/43) I tried to argue for the same proposal that you just mention so that you create a PrivateName object instance? The solution I came on was using syntax to construct the private name securely. The private name is a constructor but you can't new it, it will just throw. The only way to properly make a private name is to use the private key syntax so you would say `private x` and `x` would be a private name and would have own properties, get/set and others that would allow you to do `WeakMap` properties. That would be the only way at this point to secure a private name instance object. In that case you don't even need an instance object at that point, because you can just use access syntax much like you have privates in classes ? You can just define a private property on the class or you define a private property on the object (using the lexical private) and use it as though its a regularly property on the object (like a private instance field on a class). YK has added a gist to the chat a couple of times that fully describes this.
 
@@ -1099,7 +1099,7 @@ MM: The internals are in a special realm that can't be monkey patched and what I
 
 BFS: Humm, yes but to an extent if we allow anything like user-land decorators we might have issues, so that's a long conversation. You could create an uncorruptable realm and create the primitives you need in there and use those in an uncorruptable manner.
 
-MM: In which case te safety that you are seeking by transitively freezing the ?? 
+MM: In which case te safety that you are seeking by transitively freezing the ??
 
 BFS: That is a performance bottle neck for us
 
@@ -1115,7 +1115,7 @@ WH: I'm curious about one of the things you raised in the presentation, which is
 
 DE: Err, some decorators take arguments and some don't and some are overloaded between taking arguments and not taking argument. To your question on the queue regarding operator new grammar. I think we would re-usue the grammar. some people have also raised concern about this. So there was a thread where Alan suggested we create an object for this case and that we call this decorate method on it, and that would be the semantics. Alternatively it wouldn't be clear on the benefits.
 
-WH: I'm not proposing creating an object. I'm pointing out there there is a precedent for taking an object and omitting the parenthesis and have it mean the same as if you called it without arguments. 
+WH: I'm not proposing creating an object. I'm pointing out there there is a precedent for taking an object and omitting the parenthesis and have it mean the same as if you called it without arguments.
 
 DE: The concern is whether we'll be coming up with more and more cases where the parenthesis will be optional. There are other languages that you don't need parenthesis. in JavaScript we cant work like that and we. won't work like that. We can only add specific cases where there's explicitly a function call. The default that i'm leading towards is not adding this additional case, decorator authors could if they choose to overload their decorator. It's basically a one liner. in the first line of your decorator checks for arguments, and that is how you can return this function. On the thread so far people have talked about a few different overloading cases, no one has brought up that particular case.
 
@@ -1161,7 +1161,7 @@ DE: Ok so how would the committee feel if we moved forward or back on this. With
 
 YK: Any objections?
 
-AK: that sounds like its a big piece of feedback. 
+AK: that sounds like its a big piece of feedback.
 
 DE: Really the champion group doesn't consider either option to be fatal. This is an aesthetic preference as far as we are concerned. If anybody wants to argue in the other direction that would also be useful.
 
@@ -1180,7 +1180,7 @@ DE: Members of the champions group have discussed both options. Thanks for all o
 
 ## 12.iii.b. What does 1JS mean in a world of transpilers?
 
-(Daniel Ehrenberg) 
+(Daniel Ehrenberg)
 
 - [slides](https://docs.google.com/presentation/d/1sermrj6TCCf-6mCj05sVORBBVQZeDbc2KVtvKk5uNBs/edit#slide=id.p)
 
@@ -1190,7 +1190,7 @@ DE: When we talk about evidence from the ecosystem, there's two different exampl
 
 BT: I wanted to add additional context here. The users of transpilers, developers are, this is the result of research by TypeScript, developers are extremely skeptical of new features that are not on the standards track. On the typescript team, we've heard endless feedback that a handful of features in advance of standards (just features TS users wanted) that didn't make sense to go on the standards track, and those all came back to bite us in the end. The biggest problem I believe is that if you're not on the standards track. Anything you do that isn't on a standards track is possibly problematic for your users. TypeScript is said to be a separate language from JS for this point.
 
-DE: One thing that's been a factor, a vote of confidence for us, if this ecosystem saw TC39 as stagnant, they wouldn't have adopted these "must be on standards track" policies. Dave Herman proposed the One JS. We don't split out JS into many more mode than we have now, and that we harmonize among these modes as much as possible. I want to ask, should we have two JavaScript? I think the ecosystem of tools will have a language that will evolve. Such as public fields, private fields, decorators. So I think, ecosystem-wide there should be some sort of standard, if we don't have 1js, 1js here is seen as the standards track policies,  So, an issue with the current status if we don't continue pushing forward with decorators, people may have trouble (due to policies, recognition of the development of the feature) flipping these flags on. Ultimately, if TC39 doesn't want to be the body for these types of things, or to defer to transpilers, they should be coupled with a different standard (not EcmaScript?). I wanna say, 1JS including transpilers ** (big ast) JSX for a typed language, we won't put these things in JavaScript. (this doesn't make sense, missed something) Such as these class features and decorators. We can talk about advantages/disadvantages of 1vs2JS. Advantages: minimal powerful version of JS, if a team chooses they can stick to minimal form of JavaScript, It may be simpler to implement, maybe with respect to optimizablility this feature should, some of the features proposed don't give a lot of optimization anyway, but just add complexity. There's some cost to going through with this divergence. We could view these compile to js languages as out of scope. There's a lot of JavaScript programmers who consider the complexity, because long term they need to see the divergence (?). At the same time, even if we do do this, we stil need to take into account these other languages if our users care about interop between standard JS and the other language. If our users 
+DE: One thing that's been a factor, a vote of confidence for us, if this ecosystem saw TC39 as stagnant, they wouldn't have adopted these "must be on standards track" policies. Dave Herman proposed the One JS. We don't split out JS into many more mode than we have now, and that we harmonize among these modes as much as possible. I want to ask, should we have two JavaScript? I think the ecosystem of tools will have a language that will evolve. Such as public fields, private fields, decorators. So I think, ecosystem-wide there should be some sort of standard, if we don't have 1js, 1js here is seen as the standards track policies,  So, an issue with the current status if we don't continue pushing forward with decorators, people may have trouble (due to policies, recognition of the development of the feature) flipping these flags on. Ultimately, if TC39 doesn't want to be the body for these types of things, or to defer to transpilers, they should be coupled with a different standard (not EcmaScript?). I wanna say, 1JS including transpilers ** (big ast) JSX for a typed language, we won't put these things in JavaScript. (this doesn't make sense, missed something) Such as these class features and decorators. We can talk about advantages/disadvantages of 1vs2JS. Advantages: minimal powerful version of JS, if a team chooses they can stick to minimal form of JavaScript, It may be simpler to implement, maybe with respect to optimizablility this feature should, some of the features proposed don't give a lot of optimization anyway, but just add complexity. There's some cost to going through with this divergence. We could view these compile to js languages as out of scope. There's a lot of JavaScript programmers who consider the complexity, because long term they need to see the divergence (?). At the same time, even if we do do this, we stil need to take into account these other languages if our users care about interop between standard JS and the other language. If our users
 end up caring about the interaction. This happens in other languages as well, for example C++ syntax in Objective-C. How many users use Objective-C++? Not many but they can still be considered a stake holder. We also must take into account, Node and other developer tools, which have certain sets of mismatches —Maybe those could be solve in other ways. When we figure out a language feature, how do we decide whether it goes into real JS or this other language? What are your thoughts on this language?
 
 BT: no I think you covered it, lets go to the queue
@@ -1219,7 +1219,7 @@ De: I'm talking about other features like Decorators, that are not specific to ?
 
 MM: I'm going to take that as a clarifying question to me, so I can answer. What I have in mind is a proposal to standardize the TypeScript syntax as an extension, but not the semantics. We rejected that because what does it mean to have the syntax without the semenatics? What I am now suggesting is realizing tha thtey are converging on multiple syntactic spaces as a single syntactic space, with the goal to mutually decide to converge on the lessons learned. We should standardize some of these syntatic spaces, as reserved for expierimentation (lol) for these authors that we won't take over.
 
-DAV: In case of TypeScript or Flow, and JSX. What about something like public class fields? 
+DAV: In case of TypeScript or Flow, and JSX. What about something like public class fields?
 
 MM: So public class fields would not be in this catagory. That's the kind of thing that people who are prime to introduce it would run into the same problems as BT (context?). This is the kind of thing that we won't use unless it's standardized, so there'd be pressure to standardize this at the language level.
 
@@ -1255,7 +1255,7 @@ We discussed this morning if we wanted any clarification about Class related con
 DE: Brendan made a proposal this morning, do we have a conclusion on it? Do we want multiple competing proposals, do we want to return feedback to a single proposal?
 
 
--- Return to the class 1.1 feature update discussion. -- 
+-- Return to the class 1.1 feature update discussion. --
 
 YK: So I enumerated a bunch of things, I'll narrow it down. I think we should reconsider whether we want a brand-check. Whether we want private methods, Should we reconsider initializers? I think we should reconsider having a mandatory leading key word
 

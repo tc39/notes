@@ -3,8 +3,8 @@
 Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLA), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM), Lin Clark (LCK)
 
 
-Remote: 
-Istvan Sebestyen (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBR), Conrad Watt (CWT), Guy Bedford (GBD), Justin Fagnani (JFI), Robert Pamely (RPY)
+Remote:
+Istvan Sebestyen (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBR), Conrad Watt (CWT), Guy Bedford (GB), Justin Fagnani (JFI), Robert Pamely (RPY)
 -----
 
 
@@ -38,11 +38,11 @@ CWT: We already have that proof. We're currently working to prove the correctnes
 
 WH: So you also have a formal model of the ARM atomics?
 
-CWT: Yes. 
+CWT: Yes.
 
 WH: Sounds good!
 
-SYG: Does this sound like consensus? To the implementers in the room, does this sound good? 
+SYG: Does this sound like consensus? To the implementers in the room, does this sound good?
 
 SGN: I need to look at what this means for V8.
 
@@ -67,9 +67,9 @@ BFS: Some people are arguing we should not change source-text modules at all, es
 
 BFS: I do think it is valuable to have source text module record in the JS spec. Unlike other module records, which are based on other types of parsing, we've been evolving the syntax around these constructs, so my hope is that we can modify the source text module record (STMR) here.
 
-GBD: In the November meeting, there was a question about export*. Davis said that if we have export* support, it might provide a "spilling over" of the reduction in the guarantees of the bindings into source text on the interface where you have the two module formats interacting. So you would inherit the weaker behavior.
+GB: In the November meeting, there was a question about export*. Davis said that if we have export* support, it might provide a "spilling over" of the reduction in the guarantees of the bindings into source text on the interface where you have the two module formats interacting. So you would inherit the weaker behavior.
 
-YK: In the last meeting we discussed the merits of the relative static weakening. I am comfortable with the outcome here. 
+YK: In the last meeting we discussed the merits of the relative static weakening. I am comfortable with the outcome here.
 
 AK: You mentioned one of the options is for Node to use something other than STMR for its modules. What is the downside of that option?
 
@@ -89,7 +89,7 @@ BFS: I do not think. If our module record is insufficient for Node, how do peopl
 
 YK: What does it mean exactly that it doesn't work for node?
 
-GBD: We have a current implementation which builds off the V8 Modules implementation. Originally, I was attempting to fully separate it as its own module record type. Because of the closeness of the code dealing with the parser and the source text module, it ended up being a very close implementation. 
+GB: We have a current implementation which builds off the V8 Modules implementation. Originally, I was attempting to fully separate it as its own module record type. Because of the closeness of the code dealing with the parser and the source text module, it ended up being a very close implementation.
 
 YK: Are you saying that if ES6 modules, ESM modules, aren't STMRs or can't be STMRs?
 
@@ -101,7 +101,7 @@ AK: That's actually the behavior. Things will happen differently in the web envi
 
 BFS: To be clear Adam, are you saying that V8 won't be able to support this behavior? (?)
 
-AK: I think this has nothing to do with the V8 implementation. There's behavior you can't get if you can load modules in a dynamic environment. There's things that cannot happen with STMRs. 
+AK: I think this has nothing to do with the V8 implementation. There's behavior you can't get if you can load modules in a dynamic environment. There's things that cannot happen with STMRs.
 
 YK: Would that theoretical person... I think Guy and I agree, we just want to avoid a fork from Node.
 
@@ -125,11 +125,11 @@ BFS: OK, so it seems like we have some people who don't want to change the seman
 
 DE: I don't see why you would need to fix Abstract Module Record (AMR).
 
-BFS: AMR can export a list, not null right now. 
+BFS: AMR can export a list, not null right now.
 
 YK: The problem with forking the spec is that it opens the door for each side to change each side of the spec without talking to each other. We don't want Node to have a whole different version of the STMR spec.
 
-AK: To answer that question, aren't we already talking about introducing a new record type for this? 
+AK: To answer that question, aren't we already talking about introducing a new record type for this?
 
 YK: That's for CJS modules. It makes sense that they'd have to introduce something for modules that are not interoperable.
 
@@ -141,7 +141,7 @@ DE: Switching from talking about this layering to discussing what we think about
 
 DRR: If there is a different preference over the current approach, the people working on this want to know specifically what that is. We need to know what the limitations are and what's forbidden or not. Interop is crucial. If there is a problem with layering, what is the alternative?
 
-DE: My motivation for asking this question, is whether putting this outside the spec, it doesn't really say whether we think this proposal is good or not. 
+DE: My motivation for asking this question, is whether putting this outside the spec, it doesn't really say whether we think this proposal is good or not.
 
 TST: I agree that this is the much more crucial question here. And I have some concerns about it. If this is used judiciously to make the module system between browsers and Node interoperable and nothing else, that seems fine. However, it seems more likely that this could infect ES Modules and weaken ESM in the browser going forward. We might potentially admit the semantics simply aren't worth doing.
 
@@ -159,7 +159,7 @@ YK: In terms of what is likely to happen on the web, peoples' compilers will com
 
 JDD: If the standards body is open to allowing the weakening of source text modules, it would be great to revisit the export* case.
 
-GBD: At the previous meeting we discussed this as well. Upon further investigation, there were other edge cases that were missed. Like multiple export* statements, we don't know which one is the one we're after. There is currently a path to solve that export* case, but there isn't actually a path forward.
+GB: At the previous meeting we discussed this as well. Upon further investigation, there were other edge cases that were missed. Like multiple export* statements, we don't know which one is the one we're after. There is currently a path to solve that export* case, but there isn't actually a path forward.
 
 JDD: There is actually a path forward.
 
@@ -185,7 +185,7 @@ AKI: Short answer no, long answer maybe. But we should discuss this at a later t
 - Further discussion to be scheduled.
 
 
-## Promise.allSettled 
+## Promise.allSettled
 
 Mathias Bynens
 
@@ -212,9 +212,9 @@ MB: Thanks to Jason Williams & Robert Pamely for writing the initial spec text. 
 
 YK: RSVP added this feature in 2013. So I think it's a slam dunk.
 
-RBN: If the concern was that there would be branching logic, I don't know why we'd need to have a separate property for `reason`. 
+RBN: If the concern was that there would be branching logic, I don't know why we'd need to have a separate property for `reason`.
 
-DD: The key distinction is the difference between exception vs. not. 
+DD: The key distinction is the difference between exception vs. not.
 
 RBN: But we also have a distinction between `yield` and `return`.
 
@@ -231,7 +231,7 @@ MB: Let's discuss that in a GH issue post-stage 2.
 #### Conclusion/Resolution
 
 - Stage 2 acceptance
-- Reviewers: 
+- Reviewers:
   - DD
   - YSV
   - RGN
@@ -268,7 +268,7 @@ DE: There is an inner binding of `C` that shadows the outer, replaced version of
 
 (DE continues presenting from Slide 11.)
 
-DE: Do we have support for Stage 3? 
+DE: Do we have support for Stage 3?
 
 WH: For the sloppy mode tweak, why not make all decorators be strict mode, even if they're in sloppy contexts?
 
@@ -396,7 +396,7 @@ JFI: That was my reply to the version proposal, but we can get to it in a minute
 
 SGN: I think more of a process point... I think the spec has changed quite a bit in the last two weeks. I don't know if this is really ready to ship. Why are we going to Stage 3?
 
-DE: There have been some changes. We tried to get in the substantial ones in advance of the 2-week deadline. We ended up having to make these changes based on feedback. My impression is that the most recent changes shouldn't have much implementation impact. Another reason for proposing for Stage 3 was to get the opinions from the committee, which isn't possible if I just say "what do you think about decorators". 
+DE: There have been some changes. We tried to get in the substantial ones in advance of the 2-week deadline. We ended up having to make these changes based on feedback. My impression is that the most recent changes shouldn't have much implementation impact. Another reason for proposing for Stage 3 was to get the opinions from the committee, which isn't possible if I just say "what do you think about decorators".
 
 SGN: I'm not convinced I should implement and ship the currently specified proposal in Chrome. What do other implementers think?
 
@@ -408,7 +408,7 @@ DE: Speaking as a member of the champion group, the impact we're imagining is st
 
 TDE: We were talking about this at lunch; I refer to YK, but it seems that there's a bit of a disagreement about what exactly Stage 3 means. Browser vendors are reluctant to implement, understandably, but at the same time, TypeScript wants a signal from TC39 on what a stable decorator looks like so they can move in that direction and start using it. For Ember, based on our own rules, we're not allowed to ship features until we hit Stage 3. We are in a deadlock where we need feedback and tooling to test these things. We've been using this as "stage 3 is ready for testing" we need some stability from the committee that now is the time.
 
-YK: In the case of inner class bindings, my perspective is that this is the best guess for our answer to this. If we want to implement it for the broad spectrum use, this was very problematic. Iterating on that further to have a logical debate, and to get this feedback. 
+YK: In the case of inner class bindings, my perspective is that this is the best guess for our answer to this. If we want to implement it for the broad spectrum use, this was very problematic. Iterating on that further to have a logical debate, and to get this feedback.
 
 DE: You're getting this feedback now.
 
@@ -423,7 +423,7 @@ KS: I liked to read choose-your-own-adventure novels. I feel like I'm doing good
 
 AK: According to the process doc, for changes during Stage 3, it says, "Limited: only those deemed critical based on implementation experience." For any proposal I'm not excited to taking this proposal with changes just a week before. The state of TypeScript is their problem and not something we can solve by ourselves. There should be a knob we can turn to help TypeScript. But going to Stage 3 should be about being ready for implementation. This proposal is still changing a lot.
 
-YK: We believe the proposal meets the requirements of Stage 3. 
+YK: We believe the proposal meets the requirements of Stage 3.
 
 AK : As we experienced in globalThis discussion, there is nothing that changes people to not change major API
 
@@ -431,7 +431,7 @@ BT: Proposing for Stage 3 implies that the champions are comfortable with the st
 
 AK: If this proposal stop changing for 2 months... this proposal changes every month and that seems to me not ready.
 
-DE: Process point is taken, I understand your concern, we don't have to go to stage 3 at this meeting. 
+DE: Process point is taken, I understand your concern, we don't have to go to stage 3 at this meeting.
 
 YK: If the only issue that's left is stability issue...
 
@@ -443,8 +443,8 @@ YK: Committee seems always ready to push to next meeting but that does not give 
 BT: there is no more stability related comments in the queue so we can continue discussion
 
 YK: There are basically 3 options.
-(1) standardize somewhere else that is not TC39, which has problems with private state, 
-(2) we standardise as offline annex, or 
+(1) standardize somewhere else that is not TC39, which has problems with private state,
+(2) we standardise as offline annex, or
 (3) just include it in the spec.
 I don't really care which thing we do, as long as the committee agrees. If we go with Option 1, we have to figure out who the standards body is. If answer is option 2 we need to expect that it works in web browsers.
 
@@ -476,7 +476,7 @@ YK: To me it does not seem like Decorators are happening. There is no commitment
 
 #### Conclusion/Resolution
 We will revisit tomorrow according to BT's recommendation. The proposal is not advanced right now.
-Discussion continued on [separate document](https://docs.google.com/document/d/1FlIp0EgVpC6l2e-gVLicrzd511WdTUBWJh7_gHU2018/edit#heading=h.5hoafvu479ok). Champion group will come back next meeting. 
+Discussion continued on [separate document](https://docs.google.com/document/d/1FlIp0EgVpC6l2e-gVLicrzd511WdTUBWJh7_gHU2018/edit#heading=h.5hoafvu479ok). Champion group will come back next meeting.
 
 ## Private fields and methods refresher
 
@@ -491,7 +491,7 @@ JRL: I am happy to answer questions about private symbols in the private symbols
 
 WH: I think the presentation was spot-on. I'm curious about the status. What is the next step?
 
-DE: Implementations are in progress in V8, SpiderMonkey, JSC, Babel and TypeScript. 
+DE: Implementations are in progress in V8, SpiderMonkey, JSC, Babel and TypeScript.
 
 WH: Do we have a timeline?
 
@@ -507,7 +507,7 @@ TST: We are in much the same situation as V8.
 
 SGN: In V8, we plan to store the private method not on the object but on the context, which saves memory. I'm curious if other implementations can do the same.
 
-DE: This specification draft was written in terms of storing the private method on the name itself, so it's written in terms of a private brand accessors of a particular class. This uses an a particular brand for a group of methods, so if you have a deep hierarchy, this has to take a brand marker, and you can measure that in theory but this can be pretty low in practice. 
+DE: This specification draft was written in terms of storing the private method on the name itself, so it's written in terms of a private brand accessors of a particular class. This uses an a particular brand for a group of methods, so if you have a deep hierarchy, this has to take a brand marker, and you can measure that in theory but this can be pretty low in practice.
 
 SGN: That's correct, though the memory overhead may be one word per class in the class hierarchy per instance. The reason I asked was that we don't have a memory overhead with Justin's private symbol proposal. I also don't think we should pick one method over the other only for memory. I think language semantics should trump that.
 
@@ -515,7 +515,7 @@ TST: That doesn't seem negligible to me, and there is a way to avoid it but it w
 
 WH: Explain?
 
-TST: We have an overhead. Each instance increases by one word per ancestor in the inheritance chain. 
+TST: We have an overhead. Each instance increases by one word per ancestor in the inheritance chain.
 
 DE: For the ancestors that have private methods.
 
@@ -529,9 +529,9 @@ DE: Ok, I'll present then (shows slides starting at [slide 30](https://docs.goog
 
 TST: Not sure which question you're referring to?
 
-BT: Maybe BFS' question in the queue? 
+BT: Maybe BFS' question in the queue?
 
-BFS: Yes, it answered my question. 
+BFS: Yes, it answered my question.
 
 SGN: Another way to remove this overhead is to not have the brand check. What do you think?
 
@@ -539,13 +539,13 @@ DE: Yeah, I would be open to going back to the original private methods proposal
 
 SGN: It seems odd that with this case, you could call a private method on undefined.
 
-DE: This is going back to a slide from 2017. What private methods look like are a non-writable private field. Should we throw a TypeError or alert? We previously settled on it being a non-writable own property. 
+DE: This is going back to a slide from 2017. What private methods look like are a non-writable private field. Should we throw a TypeError or alert? We previously settled on it being a non-writable own property.
 
 WH: I think it's a misnomer to call these brand checks. There are no user-visible brand checks in this proposal. It's just an invisible spec optimization for field accesses so an implementation doesn't need to create a private field on each instance for each private method.
 
 SGN: This is not just an optimization—it has behavior changes.
 
-DE: There are no visible behavior changes in the way WH is thinking about them. We check logically on the bit of the object. 
+DE: There are no visible behavior changes in the way WH is thinking about them. We check logically on the bit of the object.
 
 SGN: OK that makes sense to me too.
 
@@ -577,7 +577,7 @@ YK: When you say it's not coherent, why?
 
 KS: When I say it's not coherent, I think that depending on how I look at it, from some perspectives, it looks like an apple, and from other perspectives, it looks like an orange. It cannot be an apple and an orange at the same time.
 
-YK: It's always a weakmap holding property descriptors. 
+YK: It's always a weakmap holding property descriptors.
 
 KS: But they don't hold property descriptors, they hold EcmaScript values.
 
@@ -595,7 +595,7 @@ BFS: Regarding decorators, there is stuff you can do to reify to an extent priva
 
 YK: In the process of doing design of private...
 
-DE: I intend to work towards a solution for these issues. We don't have a solution yet, if the current decorators proposal is not acceptable. 
+DE: I intend to work towards a solution for these issues. We don't have a solution yet, if the current decorators proposal is not acceptable.
 
 YK: If you're a person in the room who had a feature that worked that way, talk to DE offline.
 
@@ -655,7 +655,7 @@ JRL: `Set.prototype.keys.name` actually equals "values"
 
 WH: Are we expecting any web compat concerns? In particular, does anyone already pass a second argument to the constructors?
 
-BFS: Not to my knowledge. 
+BFS: Not to my knowledge.
 
 RBN: the issue we are trying to resolve is issue with JS subclassing anyways. Is it better for us to look at more general solution ?
 
@@ -663,9 +663,9 @@ BFS : you might be focusing on prototype calling, this proposal was for normaliz
 
 AK: Lack of flexibility around sets... this proposal address that. I understand why `toKey` is needed to mutate keys, but why do we need `toValue` on maps to mutate values?
 
-BFS: ... 
+BFS: ...
 
-BFS: would you be okay if we keep this as one proposal? 
+BFS: would you be okay if we keep this as one proposal?
 AK : I don't think I have problem with that.
 
 
@@ -682,8 +682,8 @@ AK: The only existing usage of `value` is by extracting the name of one of the s
 
 WH: Agree.
 
-RBN: I don't have issue with toKey or toValue If you want ... 
-I'm concerned this is ... 
+RBN: I don't have issue with toKey or toValue If you want ...
+I'm concerned this is ...
 
 BFS: I had a fairly lengthy talk on IRC with Jordan. This is not overlooking to overtake an equality hook. This does not cover a use cases that differentiates -0 and 0. I think equality is a different thing. I think they would be a little verbose; I think if you want concrete examples, we can add them to explicitly show that this is not about serializing or normalizing to a primitive for equality.
 

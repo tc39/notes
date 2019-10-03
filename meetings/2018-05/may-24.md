@@ -123,42 +123,42 @@ RW: Rather than run through pop-quizzes about "what happens when," I suggest you
 - [proposal](https://github.com/tc39/proposal-pattern-matching)
 - [slides](https://docs.google.com/presentation/d/1WPyAO4pHRsfwGoiIZupz_-tzAdv8mirw-aZfbxbAVcQ/edit)
 
-KMN: Rust, Elixir etc. all have this pattern matching feature. You can think of this as an advanced `switch`. Pattern matching is one of these core features that new users of a language are introduced to and use them all the time from then on. How would this look for JS? (Shows example slide). Another motivating example, in React, you're often matching with deep values within your state (in Redux, for example, and you have a message with a complex structure).
+KZM: Rust, Elixir etc. all have this pattern matching feature. You can think of this as an advanced `switch`. Pattern matching is one of these core features that new users of a language are introduced to and use them all the time from then on. How would this look for JS? (Shows example slide). Another motivating example, in React, you're often matching with deep values within your state (in Redux, for example, and you have a message with a complex structure).
 
-KMN: There are 3 separate proposals here: the core proposal uses existing patterns to make basic pattern matching work, As-patterns allow you to bind to the expected value to a variable more ergonomically, and Collection Literals allow you to map matches to custom data structures.
+KZM: There are 3 separate proposals here: the core proposal uses existing patterns to make basic pattern matching work, As-patterns allow you to bind to the expected value to a variable more ergonomically, and Collection Literals allow you to map matches to custom data structures.
 
-KMN: Core Proposal: the semantics are based on the structuring assignment. Using `when` to say when the property matches this literal, do this.
+KZM: Core Proposal: the semantics are based on the structuring assignment. Using `when` to say when the property matches this literal, do this.
 
 
 WH: What does `when 1` mean? (Object Equality) Does `when 0` match -0?
 
-KMN: This applies to numeric literals, and I believe -0 is not a numeric literal. Continuing... `when x` is an irrefutable pattern. You can also have guards using something like `when x if ()`
+KZM: This applies to numeric literals, and I believe -0 is not a numeric literal. Continuing... `when x` is an irrefutable pattern. You can also have guards using something like `when x if ()`
 
 DD: What is the match doing here? If you do this on an object that doesn't have a match method, will that throw an exception?
 
-KMN: Yes.
+KZM: Yes.
 
 WH: (Question about the scope of a variable `v` on the slide)
 
-KMN: It's like `if` scoping.
+KZM: It's like `if` scoping.
 
 MM: Why did you reject the arrow function body?
 
-KMN: When I was playing around with it and showing people, these cases (continue and break) got very weird. Let's not create a completely new kind of scope.
+KZM: When I was playing around with it and showing people, these cases (continue and break) got very weird. Let's not create a completely new kind of scope.
 
 DD: You also have an example that works with a return which makes this a lot simpler.
 
 WH: What does `continue` do in here? It doesn't seem to have it regular meaning of resuming the innermost enclosing loop.
 
-KMN: That's exactly what it would do. There is also no fall-through (not implicitly or explicitly). Anything that is a collection literal can use this. For pathological cases: `Infinity`, `NaN`, `undefined`, etc. we currently have no specific answer.
+KZM: That's exactly what it would do. There is also no fall-through (not implicitly or explicitly). Anything that is a collection literal can use this. For pathological cases: `Infinity`, `NaN`, `undefined`, etc. we currently have no specific answer.
 
 WH: It's not just `-Infinity`, even `-3` wouldn't work here.
 
-KMN: Yeah, I guess negative numbers don't work either.
+KZM: Yeah, I guess negative numbers don't work either.
 
 MM: Does the syntax use parens to wrap expressions?
 
-KMN: I don't think you should be able to do that. I'd rather avoid it.
+KZM: I don't think you should be able to do that. I'd rather avoid it.
 
 MS: (something...)
 
@@ -168,86 +168,86 @@ EFT: You want to basically do a jump table on some hidden class.
 
 DD: Personally, I'd really like to make these things work, it may be special casing but does that bother anyone?
 
-KMN: I think this is a nitty gritty question that we can talk about later.
+KZM: I think this is a nitty gritty question that we can talk about later.
 
-KMN: It is specced to use NLTH (No line terminator here), I don't want to. I hate NLTH. This is not pretty or great. There's a number of languages that use `case`, so I prefer that. Or we could use `super switch` which would _not_ be syntactically ambiguous (jokingly). I would rather use proper grammar here (as opposed to NLTH) but this is the core proposal, and for simplicity let's start with that. There's a massive thread on the issue tracker. Please jump into that if you have opinions. There's issues for working with iterators and how many times they get called.
+KZM: It is specced to use NLTH (No line terminator here), I don't want to. I hate NLTH. This is not pretty or great. There's a number of languages that use `case`, so I prefer that. Or we could use `super switch` which would _not_ be syntactically ambiguous (jokingly). I would rather use proper grammar here (as opposed to NLTH) but this is the core proposal, and for simplicity let's start with that. There's a massive thread on the issue tracker. Please jump into that if you have opinions. There's issues for working with iterators and how many times they get called.
 
-KMN: I want the other proposals to land (especially collection literals), since they would correspond to pattern matching in other languages (any languages with record constructors). The concept behind pattern matching is to use the left-hand side as a simulation or mirror for the match to succeed. It's very important to have that correspondence so that you're not learning a special syntax just for this.
+KZM: I want the other proposals to land (especially collection literals), since they would correspond to pattern matching in other languages (any languages with record constructors). The concept behind pattern matching is to use the left-hand side as a simulation or mirror for the match to succeed. It's very important to have that correspondence so that you're not learning a special syntax just for this.
 
 WH: Is a the only thing allowed within `match` block a `when` clause?
 
-KMN: Correct. We could add default, but it's not necessary. You don't actually need it.
+KZM: Correct. We could add default, but it's not necessary. You don't actually need it.
 
 MSL: If the parser sees an `match (` (match plus open parens), does the parser have to parse as a potential function?
 
-KMN: Yes, there's NLTH and a lookahead to handle this case.
+KZM: Yes, there's NLTH and a lookahead to handle this case.
 
 MSL: Another point, to resolve the undefined ambiguity, could `when ===` be an expression for syntactic sugar for `when if()`?
 
-KMN: This is not adding very much, I think (over the current if-guard syntax). In general, these kinds of things slow down the pattern matching a lotl
+KZM: This is not adding very much, I think (over the current if-guard syntax). In general, these kinds of things slow down the pattern matching a lotl
 
 SYG: We looked at this - the iteration protocol is destructive. Multiple array patterns in the same Match statement could exhaust an iterator. Is this desirable?
 
-KMN: It would only iterate over it once - in the lifetime of the match statement. Multiple cases of `when [...]` will only cause one iteration. It would also need to call next() one more time to determine the length of an iterator.
+KZM: It would only iterate over it once - in the lifetime of the match statement. Multiple cases of `when [...]` will only cause one iteration. It would also need to call next() one more time to determine the length of an iterator.
 
 SYG: Are unbraced declarations allowed in the body of `when`? If so what is the scope?
 
-KMN: Yup. It's the same as `if`.
+KZM: Yup. It's the same as `if`.
 
 SYG: There are some edge cases, around let
 
-KMN: This just copies the syntax from `if` itself. I'm not sure what the issues are around the edge cases.
+KZM: This just copies the syntax from `if` itself. I'm not sure what the issues are around the edge cases.
 
 TST: The behavior you just described, does that also apply to `property.get`s? (Yes) Multiple `when`s with the same property, is that OK?
 
-KMN: We can make this normative but it was assumed that would be the case.
+KZM: We can make this normative but it was assumed that would be the case.
 
 MF: We can solve some of the problems you mentioned by allowing arbitrary arithmetic expressions. This exists with your true and false and nulls, but we can also add a parenthesized identifier.
 
-KMN: I think that was already mentioned.
+KZM: I think that was already mentioned.
 
 MF: It's worth exploring arithmetic expressions though.
 
-KMN: I don't think we need arithmetic expressions. Basically, the negative numbers we can address and we could special case unary literals though - like Infinity/NaN.
+KZM: I don't think we need arithmetic expressions. Basically, the negative numbers we can address and we could special case unary literals though - like Infinity/NaN.
 MF: Do you allow spread destructuring?
 
-KMN: It's not in this example, but if you put a splat here it matches on any length.
+KZM: It's not in this example, but if you put a splat here it matches on any length.
 
 MF: that's exactly what I'd expect, and frankly the most common usage for me for this feature.
 
-KMN: I considered special-casing splats (to note include the variable/pattern following `...`. That is `[a, b, ..]`) because of their frequent use, but I think not doing this is much simpler.
+KZM: I considered special-casing splats (to note include the variable/pattern following `...`. That is `[a, b, ..]`) because of their frequent use, but I think not doing this is much simpler.
 
 MF: I agree. This not having an expression form makes it less useful to me. Why would you not want expression form?
 
-KMN: Optimization.
+KZM: Optimization.
 
 MF: Putting a match in expression position?
 
-KMN: If this becomes an expression it needs to answer all the questions `do` expressions have.
+KZM: If this becomes an expression it needs to answer all the questions `do` expressions have.
 
 MF: I think that would be great to answer.
 
-KMN: While `do` is alive, I would want to let `do` do it's thing. I would _much_ rather all conditional statements use the same semantics for their bodies. Having match define its own semantics, and then having different semantics for if statements within do expressions would be bad. What does it mean for an expression to have a statement? We don't have answers to those questions yet.
+KZM: While `do` is alive, I would want to let `do` do it's thing. I would _much_ rather all conditional statements use the same semantics for their bodies. Having match define its own semantics, and then having different semantics for if statements within do expressions would be bad. What does it mean for an expression to have a statement? We don't have answers to those questions yet.
 
 MF: I wouldn't feel comfortable conforming to `do`'s specifics, given that `do` hasn't gotten much progress recently and it's basically used as a mechanism to stop more interesting proposals.
 
-KMN: My opinion is all or nothing. Either `do` lands or it doesn't.
+KZM: My opinion is all or nothing. Either `do` lands or it doesn't.
 
 BN: What about object ...spread?
 
-KMN: Object spread is object spread - including its oddities. For example, the ...rest can only be an identifier, with no further destructuring inside.
+KZM: Object spread is object spread - including its oddities. For example, the ...rest can only be an identifier, with no further destructuring inside.
 
 DH: First, this is a ton of great work. Years ago, I wanted to do similar things, but not nearly as much work so I appreciate this. One other syntactic option is to keep `switch` for the name but use `when` for the cases?
 
-KMN: It's been brought up and there's reasons...
+KZM: It's been brought up and there's reasons...
 
 DH: If we have `do` expressions, having to wrap this in the `do` expression just to get a result out. This is way too verbose and there's no ambiguity for the precedence there. You may want to couple the challenges of `do` expressions, but that's very difficult, so if you need collaboration from other team members, we can make progress on that. Of course we shouldn't block landing this on `do` expressions. We should try to make statement right hand sides to work, and we can discuss do.
 
-KMN: Expressions are useful for `if`, `switch` etc, not just `do`.
+KZM: Expressions are useful for `if`, `switch` etc, not just `do`.
 
 DH: In a perfect world we would maintain that symmetry, but unfortunately JavaScript is not that perfect world, and we don't have symmetry already. I'd rather get the new, desirable conditional form without that perfect symmetry, then incrementally advanced to reach that symmetry eventually.
 
-KMN: I would like to keep this as a statement until later stages and when we've looked into more of these questions and answers. I'm even comfortable blocking this on answers for `do`, eventually.
+KZM: I would like to keep this as a statement until later stages and when we've looked into more of these questions and answers. I'm even comfortable blocking this on answers for `do`, eventually.
 
 DH: As this goes through the stages, I will become more and more uncomfortable with (not having them be) expressions.
 
@@ -255,7 +255,7 @@ YK: People really want `match`, plus there's some desire of `match` not being an
 
 Eric: Are we strict (as in, exhaustive property matches) on objects in the when clauses or just arrays?
 
-KMN: Just arrays.
+KZM: Just arrays.
 
 WH: I'm uncomfortable with proposals that introduce new no-line-terminator-here restrictions and am glad that you're trying to remove those from the proposal.
 
@@ -263,21 +263,21 @@ WH: We need to have a discussion about us introducing new proposals with a lot o
 
 WH: This proposal conflates assignments with values. A lot of people use named constants for things—if you have an object with a color field and you say `if { color: red }`, this assigns the color field's value to red instead of testing if it's the red constant.
 
-KMN: This is covered by the collection literals proposals. I want to keep the variable-based semantics.
+KZM: This is covered by the collection literals proposals. I want to keep the variable-based semantics.
 
 WH: Collection literals doesn't apply to named constants. I would be uncomfortable with this because it conflicts with named constants.
 
-KMN: There's a number of named discussion points in that proposal, so you should consult that. What elixir does, which has similar semantics to JS, it puts a hat before a variable, and that adds a pin to that variable. e.g. `when ^x` that would match against a higher-scope x. This is called the pinning operator.
+KZM: There's a number of named discussion points in that proposal, so you should consult that. What elixir does, which has similar semantics to JS, it puts a hat before a variable, and that adds a pin to that variable. e.g. `when ^x` that would match against a higher-scope x. This is called the pinning operator.
 
 DD: Could I persuade you to add catch guards to the proposal?
 
-KMN: I don't think it makes sense in this proposal, but rather in a separate connected proposal.
+KZM: I don't think it makes sense in this proposal, but rather in a separate connected proposal.
 
 DD: This is not nearly as useful to me as catch guards.
 
 ??: One cool piece in other languages is for pattern matching is exhaustiveness checking. Have you thought about that?
 
-KMN: I had that in the proposal because it's common in other languages. It's not very hard to do your own exhaustiveness check, but it's kind of either or and open to discussion. I personally like exhaustiveness checks.
+KZM: I had that in the proposal because it's common in other languages. It's not very hard to do your own exhaustiveness check, but it's kind of either or and open to discussion. I personally like exhaustiveness checks.
 
 WH: Not objecting to Stage 1, but I want to reiterate that I'm uncomfortable because of the issues I raised above.
 
@@ -293,37 +293,37 @@ WH: Not objecting to Stage 1, but I want to reiterate that I'm uncomfortable bec
 
 (Kat Marchán)
 
-KMN: It would be great to construct a map with an object literal, or a Set with an iterator/array. This gets very cool with destructuring.
+KZM: It would be great to construct a map with an object literal, or a Set with an iterator/array. This gets very cool with destructuring.
 
 MM: Not a Stage 1 blocker, but we'll be fighting over infix bang.
 
-KMN: That's fine, I'm going to win.
+KZM: That's fine, I'm going to win.
 
-KMN: This would make it useful for pattern matching. (Shows example of pattern-matching )
+KZM: This would make it useful for pattern matching. (Shows example of pattern-matching )
 
 WH: Does this use the current value of x or assign the value to x? If you have x:y inside the tagged collection literal, does it assign to x and y or use the current values of x and y?
 
-KMN: These are fully numeric keys in this case.
+KZM: These are fully numeric keys in this case.
 
 DH: In your first presentation, you talked about `new Map`, and the structuring/destructuring Map. Does this proposal supplant that? Would this new syntax completely replace `new`?
 
-KMN: It would not use the same protocol. For destructuring Maps, it uses this thing called `valueOf` which returns an iterator. It's possible you could use the valueOf in both cases, but it would have to use three arguments. It could work off the same protocol.
+KZM: It would not use the same protocol. For destructuring Maps, it uses this thing called `valueOf` which returns an iterator. It's possible you could use the valueOf in both cases, but it would have to use three arguments. It could work off the same protocol.
 
 WH: What comes before `!`?
 
-KMN: An expression.
+KZM: An expression.
 
 WH: So `when` clauses can now take an expression?
 
-KMN: Only left of a bang.
+KZM: Only left of a bang.
 
 MF: I don't see the value in the kind of destructuring you're doing. (Gives example)
 
-KMN: Checking against the type is a thing I want in pattern matching (doing an instanceof check and the value).
+KZM: Checking against the type is a thing I want in pattern matching (doing an instanceof check and the value).
 
 TST: Why would it be so valuable for pattern matching?
 
-KMN: This would be very useful for error matching. They may all have the same property names, but you want to handle special cases for these different errors.
+KZM: This would be very useful for error matching. They may all have the same property names, but you want to handle special cases for these different errors.
 
 TST: You could use guards.
 
@@ -337,7 +337,7 @@ WH: This is much more complicated than I thought reading the original document. 
 
 DH: I have a lot of issues with the syntax, but I would not object to Stage 1. In Rust, I believe there are syntactically characterized subsets that we could base off here.
 
-KMN: It hadn't occurred to me that it would actually look that terrible as a special case only in pattern matching but also in destructuring. I pretty much agree with everything you all said, so I will update the proposal with this feedback.
+KZM: It hadn't occurred to me that it would actually look that terrible as a special case only in pattern matching but also in destructuring. I pretty much agree with everything you all said, so I will update the proposal with this feedback.
 
 #### Conclusion/Resolution
 

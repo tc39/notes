@@ -1,11 +1,11 @@
 # July 24, 2012 Meeting Notes
 -----
 
-Yehuda Katz (YK), Luke Hoban (LH), Rick Waldron (RW), Alex Russell (AR), Tom Van-Cutsem (TVC), Bill Ticehurst (BT), Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Doug Crockford (DC), John Neumann (JN), Oliver Hunt (OH), Erik Arvidsson (EA), Dave Herman (DH)
+Yehuda Katz (YK), Luke Hoban (LH), Rick Waldron (RW), Alex Russell (AR), Tom Van-Cutsem (TVC), Bill Ticehurst (BTT), Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Doug Crockford (DC), John Neumann (JN), Oliver Hunt (OH), Erik Arvidsson (EA), Dave Herman (DH)
 
 -----
 
-## Agenda 
+## Agenda
 
 10:00-11:00am
 
@@ -92,7 +92,7 @@ BE: matches reality because based on SpiderMonkey circa 1998
 
 Test cases? Yes.
 
-BT: Yes, cases exist in Chakra
+BTT: Yes, cases exist in Chakra
 
 LH: (Refers to examples)
 
@@ -256,7 +256,7 @@ so essentially three ways within string literal:
 - two new-style escapes, expressing utf16 encoding
 - one new-style escape, expressing code point
 
-BT: treating curlies as utf32 value?
+BTT: treating curlies as utf32 value?
 AWB: curlies contain code point value, which you *could* call utf32
 
 DH: old-style escapes always are a single utf16 code unit, so always

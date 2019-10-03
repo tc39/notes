@@ -2,7 +2,7 @@
 -----
 
 
-John Neumann (JN), Luke Hoban (LH), Rick Hudson (RH), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Anne van Kesteren (AVK), Jeff Morrison (JM), Sebastian Markage (SM), Paul Leathers (PL), Avik Chaudhuri (AC), Ian Halliday (IH), Alex Russell (AR), Dave Herman (DH), István Sebestyén (IS), Mark S. Miller (MM), Norbert Lindenberg (NL), Erik Arvidsson (EA), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Rick Waldron (RW)
+John Neumann (JN), Luke Hoban (LH), Rick Hudson (RH), Allen Wirfs-Brock (AWB), Yehuda Katz (YK), Anne van Kesteren (AVK), Jeff Morrison (JM), Sebastian Markage (SM), Paul Leathers (PL), Avik Chaudhuri (AVC), Ian Halliday (IH), Alex Russell (AR), Dave Herman (DH), István Sebestyén (IS), Mark S. Miller (MM), Norbert Lindenberg (NL), Erik Arvidsson (EA), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Matt Sweeney (MS), Doug Crockford (DC), Rick Waldron (RW)
 
 -----
 
@@ -180,7 +180,7 @@ RW: In non-strict mode, a program can create an object with all duplicate keys a
 
 MM:
 
-AC: Creation can be what is the least requirement for what it takes to create a map. Taking an arbitrary structure and make a map and it's perfectly good semantics to
+AVC: Creation can be what is the least requirement for what it takes to create a map. Taking an arbitrary structure and make a map and it's perfectly good semantics to
 
 
 LH/MM: Offline conversation about what qualifies for extra defense.
@@ -553,7 +553,7 @@ Current spec is fail soft
 
 As long as Brendan and Andreas are ok with it, we can fall back to fail soft.
 
-AC: The fail soft is consistent with JS behaviour. If you want something stricter, then the problem should be on the right side, not the left side. Otherwise you need to introduce an operator for the left.
+AVC: The fail soft is consistent with JS behaviour. If you want something stricter, then the problem should be on the right side, not the left side. Otherwise you need to introduce an operator for the left.
 
 AWB: (reads back conversation from Andreas)
 

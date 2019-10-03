@@ -1,7 +1,7 @@
 # March 14, 2013 Meeting Notes
 -----
 
-John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Rick Waldron (RW), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Luke Hoban (LH), Matt Sweeney (MS), Doug Crockford (DC), Yehuda Katz (YK), Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Alex Russell (AR), Dave Herman (DH), Adam Klein (AK), Bernd Mathiske (BM), John Pampuch (JP), Avik Chaudhuri (AC), Theresa O'Connor (TOC), Rick Hudson (RH), Andreas Rossberg (ARB), Rafeal Weinstein (RWN), Mark S. Miller (MM), Reid Burke (RB),
+John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Rick Waldron (RW), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Luke Hoban (LH), Matt Sweeney (MS), Doug Crockford (DC), Yehuda Katz (YK), Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Alex Russell (AR), Dave Herman (DH), Adam Klein (AK), Bernd Mathiske (BM), John Pampuch (JP), Avik Chaudhuri (AVC), Theresa O'Connor (TOC), Rick Hudson (RH), Andreas Rossberg (ARB), Rafeal Weinstein (RWN), Mark S. Miller (MM), Reid Burke (RB),
 
 -----
 
@@ -378,7 +378,7 @@ If an ECMAScript implementation has a mechanism that produces diagnostic warning
 
 WH: #1 is a circular definition. Some references to g will go to the outer g in the example. It is up to us to define which definition points to which.
 
-AC: It would be beneficial to look at examples and then apply the fix rules and allow that inform the direction.
+AVC: It would be beneficial to look at examples and then apply the fix rules and allow that inform the direction.
 
 AWB: (whiteboard)
 ```js
@@ -457,7 +457,7 @@ AWB: Per the proposed rules, both calls to g() are bound to the inner definition
 
 [MM walks into the room and expresses speechless incredulity when he learns that adding the second call to g in this example changes which g the first call to g is referring to.]
 
-AC: There is merit to avoid being clever. Benefit to preserving any existing semantics.
+AVC: There is merit to avoid being clever. Benefit to preserving any existing semantics.
 
 BM: There should be a vision for a desired semantics goal
 
@@ -467,17 +467,17 @@ STH/LH: Two goals, which are competing:
 
 BM: Bad that an outer binding can change
 
-AC: ...correlates to AS
+AVC: ...correlates to AS
 
 STH: We have sensible semantics for ES6/strict mode
 
 AWB: We have sensible semantics for both modes
 
-AC: Confident that we might be able cover all existing use cases. But what happens when someone discovers a case that was covered?
+AVC: Confident that we might be able cover all existing use cases. But what happens when someone discovers a case that was covered?
 
 STH: Easy to come up with sensible rules from other languages
 
-AC: All practical purposes
+AVC: All practical purposes
 
 [? trying to start a meta-discussion about getting sidetracked on theoretical rather than practical problems]
 
@@ -489,7 +489,7 @@ AWB: Where we're at, is the hypothesis that we can identify and fix the cases th
 
 STH: ...clarifies the subset semantics definition
 
-AC: Two cases:
+AVC: Two cases:
 1. What to do?
 2. Identify that subset.
 
@@ -878,11 +878,11 @@ WH: I like #1 and #2, which are similar, but prefer #2 purely for a couple of pr
 - Forgetting the html in html`...` causes a syntax error instead of introducing a security hole.
 - s`...` is preferable to `...` because it's practical to search for s` in general-purpose editors, while it's not practical to search for only the occurrences of ` that do string concatenation.
 
-AC: If using this feature and just want to use string interpolation, why should I have to think about "raw" when "raw" doesn't really even reflect what I want.
+AVC: If using this feature and just want to use string interpolation, why should I have to think about "raw" when "raw" doesn't really even reflect what I want.
 
 (Allen leaving. 4, 1, 3, 2)
 
-AR/AC: ...continued discussion
+AR/AVC: ...continued discussion
 
 Beginning to devolve.
 
@@ -906,7 +906,7 @@ RW: Should we table?
 
 DH: Yes, that's where I'm heading.
 
-AC: We may never get consensus
+AVC: We may never get consensus
 
 DH: We won't give up, we've gained consensus under worse duress.
 

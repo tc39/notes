@@ -1,7 +1,7 @@
 # March 12, 2013 Meeting Notes
 -----
 
-John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Rick Waldron (RW), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Luke Hoban (LH), Matt Sweeney (MS), Doug Crockford (DC), Yehuda Katz (YK), Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Alex Russell (AR), Dave Herman (DH), Adam Klein (AK), Edward Yang (EY), Dan Stefan (DS), Bernd Mathiske (BM), John Pampuch (JP), Avik Chaudhuri (AC), Theresa O'Connor (TOC), Rick Hudson (RH), Andreas Rossberg (ARB), Rafeal Weinstein (RWN), Mark S. Miller (MM)
+John Neumann (JN), Norbert Lindenberg (NL), Allen Wirfs-Brock (AWB), Rick Waldron (RW), Waldemar Horwat (WH), Eric Ferraiuolo (EF), Erik Arvidsson (EA), Luke Hoban (LH), Matt Sweeney (MS), Doug Crockford (DC), Yehuda Katz (YK), Brendan Eich (BE), Sam Tobin-Hochstadt (STH), Alex Russell (AR), Dave Herman (DH), Adam Klein (AK), Edward Yang (EY), Dan Stefan (DS), Bernd Mathiske (BM), John Pampuch (JP), Avik Chaudhuri (AVC), Theresa O'Connor (TOC), Rick Hudson (RH), Andreas Rossberg (ARB), Rafeal Weinstein (RWN), Mark S. Miller (MM)
 
 -----
 
@@ -299,7 +299,7 @@ AWB: This is certainly better then the current plan of record
 
 AR: Agree.
 
-BM, JP, AC: Agree
+BM, JP, AVC: Agree
 
 BM: This is also future proof and works well with concurrency and the semantics are sound. It's also easy to implement and optimize.
 

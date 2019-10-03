@@ -1,7 +1,7 @@
 # July 29, 2015 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Waldemar Horwat (WH), István Sebestyén (IS), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Jonathan Turner (JT), Paul Leathers (PL), Chip Morningstar (CM), Vladimir Matveev (VM), Ron Buckton (RBN), Brian Terlson (BT), Alan Schmitt (AS), Ben Newman (BN), Mohamed Hegazy (MH), Abhijith Chatra (AC), Tom Care (TC), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Daniel Ehrenberg (DE), Dan Gohman (DGN), Andreas Rossberg (ARB), Rick Waldron (RW), Mike Pennisi (MP), Akrosh Gandhi (AGI), Jonathan Sampson (JSN)
+Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Waldemar Horwat (WH), István Sebestyén (IS), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Jonathan Turner (JT), Paul Leathers (PL), Chip Morningstar (CM), Vladimir Matveev (VM), Ron Buckton (RBN), Brian Terlson (BT), Alan Schmitt (AS), Ben Newman (BN), Mohamed Hegazy (MDH), Abhijith Chatra (AC), Tom Care (TC), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Daniel Ehrenberg (DE), Dan Gohman (DGN), Andreas Rossberg (ARB), Rick Waldron (RW), Mike Pennisi (MP), Akrosh Gandhi (AGI), Jonathan Sampson (JSN)
 
 
 -----

@@ -1,7 +1,7 @@
-# July 28, 2015 Meeting Notes    
+# July 28, 2015 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Waldemar Horwat (WH), István Sebestyén (IS), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Jonathan Turner (JT), Paul Leathers (PL), Chip Morningstar (CM), Vladimir Matveev (VM), Ron Buckton (RBN), Brian Terlson (BT), Alan Schmitt (AS), Ben Newman (BN), Mohamed Hegazy (MH), Abhijith Chatra (AC), Tom Care (TC), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Mike Pennisi (MP)
+Allen Wirfs-Brock (AWB), Sebastian Markbåge (SM), Jafar Husain (JH), Eric Ferraiuolo (EF), Caridy Patiño (CP), Waldemar Horwat (WH), István Sebestyén (IS), Mark S. Miller (MM), Adam Klein (AK), Michael Ficarra (MF), Peter Jensen (PJ), Domenic Denicola (DD), Jordan Harband (JHD), Jonathan Turner (JT), Paul Leathers (PL), Chip Morningstar (CM), Vladimir Matveev (VM), Ron Buckton (RBN), Brian Terlson (BT), Alan Schmitt (AS), Ben Newman (BN), Mohamed Hegazy (MDH), Abhijith Chatra (AC), Tom Care (TC), John Neumann (JN), Dave Herman (DH), Brendan Eich (BE), Rick Waldron (RW), Mike Pennisi (MP)
 
 -----
 
@@ -22,7 +22,7 @@ YK: Propose that future agendas be organized by stage advancement
 
 IS: Need to add Ecma Secretariat items (Allen adds) like report from the GA.
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Approved
 
@@ -31,7 +31,7 @@ IS: Need to add Ecma Secretariat items (Allen adds) like report from the GA.
 
 AWB: Posted on Github and es-discuss
 
-IS: Ecma is archiving (mirroring) the most significant documents from GitHub, like technical notes as well as summaries associated with the agendas. 
+IS: Ecma is archiving (mirroring) the most significant documents from GitHub, like technical notes as well as summaries associated with the agendas.
 This practice should satisfy both the requirements of Ecma as an SDO as well as of Tc39.
 
 
@@ -48,20 +48,20 @@ AWB: Can we push through our current documents, as-is? Without changes?
 
 IS: Similar to 5.0 -> 5.1, editorial changes allowed. Any technical changes, no. Concerns about stability.
 
-AWB: Concerns about an ISO document that says one thing, vs. the Ecma document that says another. 
+AWB: Concerns about an ISO document that says one thing, vs. the Ecma document that says another.
 
 IS: Can disallow discrepancies, therefore it is always the policy to synchronize the standard on both sides
 
 WH: What happens if the ISO reviewers discover technical issues?
 
-IS: The problem is that the yearly update for JTC1 might to be too fast. We are elaborating on them. Theoretically worst case, we withdraw the "fast track" 
+IS: The problem is that the yearly update for JTC1 might to be too fast. We are elaborating on them. Theoretically worst case, we withdraw the "fast track"
 
 WH: [incredulous] Withdraw instead of fixing bugs? That wouldn't be nice.
 
-IS: (explains why fast track). We have started this about 17 years ago, as long TC39 came out with big time gaps between Edition, no problem, but the current "turbo speed" like standardization (update) may create problems in synchronization. we are discussing this new thing with ISO. 
+IS: (explains why fast track). We have started this about 17 years ago, as long TC39 came out with big time gaps between Edition, no problem, but the current "turbo speed" like standardization (update) may create problems in synchronization. we are discussing this new thing with ISO.
 
-AWB: Good to communicate to ISO 
-  
+AWB: Good to communicate to ISO
+
 - We appreciate technical feedback
 - Feedback will be put into the next edition as part of the on going process
 
@@ -69,13 +69,13 @@ IS: Explained to Rex Jaeschke (JTC1 SC22 Chair) the new schedule. Normally ISO l
 
 WH: Afraid ISO might not like "take it or leave it". In the past, we got excellent technical reviews from them and have integrated the changes into the ISO standard and to the Ecma standard.
 
-AWB: But that would be next June 
+AWB: But that would be next June
 
 WH: That's how we've always done it. The ISO version was a year behind the ECMA version. If we don't integrate the known defect fixes, the ISO version would be multiple years behind ECMA.
 
-AWB: Ignoring unknown issues, we have 5 or 6 technical issues that could comprise a 6.1 
+AWB: Ignoring unknown issues, we have 5 or 6 technical issues that could comprise a 6.1
 
-RW: If we have a yearly release for full edition points, perhaps we can also include a 6 month "sub release" to address minor changes to current 
+RW: If we have a yearly release for full edition points, perhaps we can also include a 6 month "sub release" to address minor changes to current
 
 YK: Not unreasonable when the work is done by a group using shared tools
 
@@ -89,16 +89,16 @@ RW: Can correspond with our September meeting.
 
 IS: (agreed)
 
-AWB: Trivial to make minor changes, willing to work through the first round as we transition editorship. 
+AWB: Trivial to make minor changes, willing to work through the first round as we transition editorship.
 
-- Need to decide this meeting and produce a draft for approval at next meeting. 
+- Need to decide this meeting and produce a draft for approval at next meeting.
 - https://bugs.ecmascript.org/describecomponents.cgi?product=ECMA-262%20Edition%206
 
 RW: Does this need to include the ISO review comments (Waldemar's concern)
 
-YK: Would like to come back to this after we have a more in depth discussion about the future of our tooling. 
+YK: Would like to come back to this after we have a more in depth discussion about the future of our tooling.
 
-Discussion about what we produce. 
+Discussion about what we produce.
 
 AWB: We can produce errata any time, but it's not the standard
 
@@ -118,19 +118,19 @@ WH: There are benefits to ISO publication
 
 AWB: There are organizations that may require
 
-IS: Public procurement, if it's an Ecma standard, maybe problematic. ISO is in the "highest level" of international standard category. 
+IS: Public procurement, if it's an Ecma standard, maybe problematic. ISO is in the "highest level" of international standard category.
 
 BT: Are there concrete examples of using ISO specification over Ecma?
 
 (Spending too much time on something we don't know the value of)
 
-DD: Propose that we don't do this process unless an external request for it is made. 
+DD: Propose that we don't do this process unless an external request for it is made.
 
-IS: We are already for 17 years in this process, and it is expected that we continue for future editions as well. So this is automatic and not exteranl request is needed. How to explain why ES 1, 2, 3, 5 & 5.1 are ISO standards, but 6 and 7 etc. not and what if Ecma is already e.g. at 7 and ISO still on 5.1?. 
+IS: We are already for 17 years in this process, and it is expected that we continue for future editions as well. So this is automatic and not exteranl request is needed. How to explain why ES 1, 2, 3, 5 & 5.1 are ISO standards, but 6 and 7 etc. not and what if Ecma is already e.g. at 7 and ISO still on 5.1?.
 
 Can we be forced to do this?
 
-IS: Yes, the current rule for synchronization "forces" it. 
+IS: Yes, the current rule for synchronization "forces" it.
 
 YK: (clarify) Once we issue _any_ ISO spec, we're required to maintain?
 
@@ -144,14 +144,14 @@ YK: ISO was ok with a two year wait for 5 to 5.1, should be ok with a year betwe
 
 WH: But much longer since 5.1
 
-AWB: 
-  
+AWB:
+
 - Errata?
 
 
-Discussion re: schedule, responsibilities, etc. 
+Discussion re: schedule, responsibilities, etc.
 
-AWB: We will submit to ISO, with exact same text (subject to ISO naming, etc). But the text will include any known errors. 
+AWB: We will submit to ISO, with exact same text (subject to ISO naming, etc). But the text will include any known errors.
 
 WH: No, they have to be fixed. I'm not ok with shipping standard with defects known to us.
 
@@ -166,23 +166,23 @@ WH: No, we _must_ fix defects
 STH: Why does fast track require fixing errata?
 
 
-WH: Not a lot of work 
+WH: Not a lot of work
 
 DD: You're saying that you no longer agree to fast track
 
 WH: We will get comments from ISO reviewers, these will identify defects, these need to be fixed. It is our job to fix
 
-CM: Exactly the proposal: take the existing text and put it in the pipeline and publish the errata later. 
+CM: Exactly the proposal: take the existing text and put it in the pipeline and publish the errata later.
 
 YK: Treat ISO as an LTS?
 
 WH: That's _what_ it is
 
-DD: Can we have members of the committee that are responsible for incorporating the errata, as a separate task. 
+DD: Can we have members of the committee that are responsible for incorporating the errata, as a separate task.
 
 AWB: That's the editor's job. Incorporating errata is not a lot of work.
 
-RW: This is exactly my suggestion, but with a schedule requirement. 
+RW: This is exactly my suggestion, but with a schedule requirement.
 
 Discussion about who and how.
 
@@ -190,25 +190,25 @@ AK/JT: What is the cut off for known defects?
 
 DD: Suggest that we let whoever volunteers be responsible for making those decisions
 
-YK: With better tooling, we could really just do this as branches in a repository where all work is tracked. 
+YK: With better tooling, we could really just do this as branches in a repository where all work is tracked.
 
 AWB: Don't think that any editorial difficulty. Bigger isssue: what are we going to do with ISO on a regular basis? Yearly ISO and it's the same document?
 
-BT: Agreed. 
+BT: Agreed.
 
-AWB: Ideally we'd have "fast track authority", submit the Ecma document and they either take it or leave it. 
+AWB: Ideally we'd have "fast track authority", submit the Ecma document and they either take it or leave it.
 
 YK: Can we revisit this after we've read the agenda items? (Specifically item 5)
 
 AWB: That item is Editorship?
 
-YK: That seems to determine tooling. 
+YK: That seems to determine tooling.
 
-JN: Assignment of Editorship role. 
+JN: Assignment of Editorship role.
 
 BT/AWB: Yearly release, give them to ISO without change, accept them as is. Take their changes and roll them into next year's edition.
 
-WH: This is agreed to an incorrect assumption. All ISO comments must be addressed. 
+WH: This is agreed to an incorrect assumption. All ISO comments must be addressed.
 
 IS: That's correct. That's required by the ISO process.
 
@@ -216,18 +216,18 @@ BT: If István can convince ISO to accept yearly releases "as-is", are you ok wi
 
 WH: If ISO can accept as-is, then let's discuss this again, but I don't think they can
 
-IS: I told ISO at the last meeting that we are moving much faster and that we need to create a new way to submit. This is a way to handle that and I can present it to them as a solution. Normally, they don't update until every 3 years. I pointed out the issue with their timeline and they agreed. This is a possible solution and I will work with them to sort out this problem. 
+IS: I told ISO at the last meeting that we are moving much faster and that we need to create a new way to submit. This is a way to handle that and I can present it to them as a solution. Normally, they don't update until every 3 years. I pointed out the issue with their timeline and they agreed. This is a possible solution and I will work with them to sort out this problem.
 
 WH: Are they ok with not making comments?
 
 IS: From some members, but not all, awaiting final word.
 
-WH: Not ok with making decision until we know where they stand. 
+WH: Not ok with making decision until we know where they stand.
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
-- Yearly release, given to ISO without change, to accept as is. 
+- Yearly release, given to ISO without change, to accept as is.
 - No sub releases
 - Publish errata as follow up
 - Take their reivew comments/changes and integrate them into next year's edition.
@@ -239,12 +239,12 @@ WH: Not ok with making decision until we know where they stand.
 
 (Rick Waldron)
 
-RW: As we have for Brendan, I'd like to propose inviting Allen Wirfs-Brock as a lifetime member of TC39 
+RW: As we have for Brendan, I'd like to propose inviting Allen Wirfs-Brock as a lifetime member of TC39
 
-IS: Such a category does not exists officially at Ecma, only some freedom for the Secretary General to allow partication as invited expert. He will bring this to Ecma Management for seeking agreement. This is a special case, and I am confident. 
+IS: Such a category does not exists officially at Ecma, only some freedom for the Secretary General to allow partication as invited expert. He will bring this to Ecma Management for seeking agreement. This is a special case, and I am confident.
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - István to get approval
 
@@ -252,7 +252,7 @@ IS: Such a category does not exists officially at Ecma, only some freedom for th
 
 ## 5 ECMA-262, Editorship
 
-JN: Need to appoint a new editor, only one volunteer has come forward and that's Brian Terlson. 
+JN: Need to appoint a new editor, only one volunteer has come forward and that's Brian Terlson.
 
 - Motion to appoint Brian
 
@@ -262,12 +262,12 @@ JN: Discussion?
 
 WH: Do you see your approach as different from Allen?
 
-BT: Only in that I'm a different person, but generally the same. I'm not Allen, but I will do my best. 
+BT: Only in that I'm a different person, but generally the same. I'm not Allen, but I will do my best.
 
 AWB: Appropriate to also appoint a manager for the content that we're producing.
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Brian Terlson is new editor of Ecma-262
 - Unanimous consent
@@ -278,17 +278,17 @@ AWB: Appropriate to also appoint a manager for the content that we're producing.
 
 AWB: Useful to have some web content which will need a manager
 
-Discussion, re: content manager 
+Discussion, re: content manager
 
 "web master"
 
 IS: Need procedures to archive the github material
 
-AWB: Unless someone wants to volunteer now, then let's resolve to appoint someone by the next meeting. 
+AWB: Unless someone wants to volunteer now, then let's resolve to appoint someone by the next meeting.
 
 JN: Allen please generate a "job description"
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Allen will produce a "job description"
   - Coordinate with Brian
@@ -345,9 +345,9 @@ https://github.com/benjamingr/RegExp.escape
 DD: (presents slides)
 
 
-YK: Don't make user think about escaping. 
+YK: Don't make user think about escaping.
 
-AWB: Generate a complete regexp from string. Append cases 
+AWB: Generate a complete regexp from string. Append cases
 
 WH: What does it mean to create a regexp from a string? (w/r to Proposal Ruled Out)
 
@@ -355,7 +355,7 @@ AWB: Regexp construction that will exactly match
 
 YK: A simple example: a lexer, the lexemes provided as a string
 
-DD: 
+DD:
 
 SyntaxCharacter Proposal
 
@@ -369,7 +369,7 @@ Safe With Extra Escape Set
 
 - Escapes everything the SyntaxCharacter proposal does
 - Escapes `-` addl. for the context sensitive inside-character-class matching
-- Escapes hex numeric literals (0-9a-f) at the start of the string in order to 
+- Escapes hex numeric literals (0-9a-f) at the start of the string in order to
 - Less readable output but safer
 
 WH: Escaping `d` by replacing it with `\d` completely changes its meaning. The latter matches any digit but not the letter 'd'.
@@ -407,7 +407,7 @@ MM: You get the escape functionality in terms of the template string tag.
 
 MF: Concerns about unnecessary escaping
 
-DD: 
+DD:
 
 WH: Readability costs. Don't want RegExp.escape to turn '7' into '\u0037'.
 
@@ -415,9 +415,9 @@ MM: template string doesn't have those costs
 
 DD: cannot compose a variable number of strings together with template string tag
 
-YK: Assumes certain amount of "static-ness". 
+YK: Assumes certain amount of "static-ness".
 
-... Would like to see an injection scenario that seems realistic. 
+... Would like to see an injection scenario that seems realistic.
 
 DD: it's possible, it can happen. Reasonable for a TC created solution to address all the cases. All we need to do is address all of the cases presented, at the beginning of the string
 
@@ -465,13 +465,13 @@ DD: Proposal coming from people that need to ship code to non-edge browsers
 
 YK: Use today? Library code.
 
-DD: Has been a request for a long time, give what's requested even if unsafe? Give them what they want plus things that make it safe? or make a new thing from template strings. 
+DD: Has been a request for a long time, give what's requested even if unsafe? Give them what they want plus things that make it safe? or make a new thing from template strings.
 
 Discussion, re: issues with template strings in this use case
 
 YK: Maybe template string API is flawed and needs work to be dynamic
 
-MM: Agreed with need. 
+MM: Agreed with need.
 
 
 CM: this output from one piece of code to another
@@ -480,7 +480,7 @@ STH: The spec can say "the output looks like literally the input"
 
 YK: People will then rely on it
 
-STH: State the goal, then go back and specify to reach the goal. 
+STH: State the goal, then go back and specify to reach the goal.
 
 DD: We've done this, and the constraints are illustrated https://github.com/benjamingr/RegExp.escape/blob/master/EscapedChars.md
 
@@ -505,21 +505,21 @@ MM: I think the template string proposal is better in all dimensions
 YK: Maybe do both?
 
 - Safe version of `RegExp.escape`
-- Template String solution 
+- Template String solution
 
 AWB: Stage 1? Will the champions know that this could change from RegExp.escape to template strings?
 
 DD: Want to say that `RegExp.escape` can move forward for now
 
 YK: ?
-  
+
 MM: template strings handle all of the malformed fragment cases
 
 - Small list completely safe?
 
 AWB: and is 100% convinced is safe?
 
-MM: eval thing is safer than 
+MM: eval thing is safer than
 
 DD: "only beginning of string"
 
@@ -531,7 +531,7 @@ WH: Readability
 
 Ok to escape everything, but don't have to
 
-MM: Rather not inro hazards, ok with either solution that doesn't 
+MM: Rather not inro hazards, ok with either solution that doesn't
 
 DD: Ok to advance is escape everuthing?
 
@@ -543,8 +543,8 @@ WH: it does't buy anything and there are others that aren't covered.
 
 DD: Can you give example
 
-WH: 
-  
+WH:
+
 ```
 new RegExp("\\" + RegExp.escape("x"))
 ```
@@ -563,11 +563,11 @@ YK: Non capturing parens solution
 new RegExp("\\\\(?:x)")
 ```
 
-WH: Stick to well-behaved 
+WH: Stick to well-behaved
 
 Each case fails where another does not. Template strings address all issues, but fails for not being dynamic
 
-MM: Would Benjamin be interested in pursuing the template string solution. 
+MM: Would Benjamin be interested in pursuing the template string solution.
 
 DD: Will bring this to Benjamin
 
@@ -575,11 +575,11 @@ DD: Will bring this to Benjamin
 
 WH: The caveats of protecting against all possible prefixes are inherent and irremovable. I want RegExp.escape to move forward despite those. It's safe for concatenating arbitrary escaped user input with well-behaved regexp fragments.
 
-MM: I'm not ok 
+MM: I'm not ok
 
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - dynamic solution that has caveats
 - caveats cannot be eliminated
@@ -588,7 +588,7 @@ MM: I'm not ok
 
 
 
-## 6.i Advance Array.prototype.includes to stage 3 
+## 6.i Advance Array.prototype.includes to stage 3
 
 (Domenic Denicola)
 
@@ -604,7 +604,7 @@ DD: Walking through https://github.com/tc39/Array.prototype.includes/issues/12
 
 
 
-## Introduce promise rejection tracking proposal 
+## Introduce promise rejection tracking proposal
 
 (Domenic Denicola)
 
@@ -629,21 +629,21 @@ DD: Use to correlate
 - dedupe on client
 
 
-Discussion, re: potential hazards 
+Discussion, re: potential hazards
 
 YK: People often try to deal with promise debugging incorrectly
 
-MM: This provides diagnotistic tools that allow for better debugging 
+MM: This provides diagnotistic tools that allow for better debugging
 
-YK: 
-  
+YK:
+
 MM: Instead of using the turn boundary, await gc, but gc may never happen
 
 - Intead of calling something to notify, a query API: did a promise get rejected? provide reason
 
 DD: (refocusing) All I'm hoping for is the addition of these non-observable steps to the specification (showing https://github.com/domenic/unhandled-rejections-browser-spec#promise--executor- )
 
-AWB: Nothing there that an implemenation couldn't do in terms of the current spec, it's totally allowed. 
+AWB: Nothing there that an implemenation couldn't do in terms of the current spec, it's totally allowed.
 
 DD: You'd have to say "insert steps here"
 
@@ -670,16 +670,16 @@ Discussion, re: .done
 
 AWB: Different promise's can have different handlers? No
 
-AWB: no reason an implementation needs to define HostPromiseRejectionTracker, so a default handler should be specified. 
+AWB: no reason an implementation needs to define HostPromiseRejectionTracker, so a default handler should be specified.
 
-DD: Didn't see something like that 
+DD: Didn't see something like that
 
-YK: Move to stage 2, because already implemented. 
+YK: Move to stage 2, because already implemented.
 
 Discussion, re: stage process? Yes.
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Specify a default handler
 - Filed: https://github.com/domenic/unhandled-rejections-browser-spec/issues/14
@@ -696,7 +696,7 @@ Discussion, re: stage process? Yes.
 - [slides](tooling-updates.pdf)
 
 BT:
-  
+
 Grammarkdown (Grmd)
 
 - http://github.com/rbuckton/grammarkdown
@@ -706,7 +706,7 @@ Grammarkdown (Grmd)
 
 AsyncArrowFunction[In, Yield] ::
   `async` [no LineTerminator here] AsyncArrowBindingIdentifier[?Yield] [no LineTerminator here] `=>` AsyncConciseBosy[?In] #1
-  
+
 
 MM: Can I use this standalone?
 
@@ -719,7 +719,7 @@ Ecmarkup (Emu)
 - Emu-syntax element supports Grammarkdown
 - In use by SIMD, Intl 2.0, Async Function and others
 - Michael Dyck now maintaining es-spec-html, working on high-fidelity emu output
-- Next steps: 
+- Next steps:
 - Unclock authoring of new specs and porting of 262
 - New EMD processing model
 - Continue improving authoring tools
@@ -737,7 +737,7 @@ Ecmarkdown (Emd)
 - Support for more Markdown-like syntax
 - Bullet lists
 - Backslash escape
-- Next steps: 
+- Next steps:
 - Unblock authoring of new specs and porting exsting spec
 - Syntax for links
 - Smart quotes
@@ -763,7 +763,7 @@ Possible Avenues
 2. Remove support for a bunding pattern in a rest element
 3. Align AssignmentPattern with BindingPattern to allow further destructuring of the rest element
 
-BindingRestElement[Yield] : 
+BindingRestElement[Yield] :
   `...` BindingIdentifier[?Yield]
   `...` BindingPattern[?Yield]
 
@@ -778,32 +778,32 @@ BT: No
 BT: Babel already treats the same
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Align AssignmentPattern with BindingPattern to allow further destructuring of the rest element
 
 
 
-## 6.7 new & GeneratorFunction 
+## 6.7 new & GeneratorFunction
 
 (Brian Terlson)
 
 - [slides](new-generator-function.pdf)
 
-BT: 
+BT:
 
-Current Semantics: 
-  
+Current Semantics:
+
   - [[call]] `this` set normally by caller
   - [[construct]] `this` is a dynamic ReferenceError
-  
+
 Issues:
-  
+
   - Potentially confusing
   - new doesn't do anything useful
-  
+
 Possible Solution:
-  
+
   - GenerationFunction doesn't implement constructor, so new throws
   - `this` is not a dynamic ReferenceError, but instead refers to the GeneratorFunction instance (align with current implementations: Babel, V8, SM)
 
@@ -821,7 +821,7 @@ DH: A generator used with new is weird. (giving an example)
 
 ```js
 function * Thing(x) {
-  this.x = x    
+  this.x = x
 }
 
 Thing.prototype.sayHi = function() {};
@@ -848,7 +848,7 @@ AWB: Generator method
 ```js
 let obj = {
   *foo() {
-    yield this;    
+    yield this;
   }
 };
 
@@ -872,14 +872,14 @@ AWB: imagine "MyCollection"
 class MyCollection {
   constructor() {
     // ...
-  }  
+  }
   * values() {
     let k = 0;
     let length = this.length;
     while (k < length) {
-      yield this[k++];    
+      yield this[k++];
     }
-  }    
+  }
 }
 
 let collection = new MyCollection();
@@ -892,7 +892,7 @@ let values = collection.values();
 class MyCollection {
   constructor() {
   //
-  }    
+  }
 }
 
 let collection = new MyCollection();
@@ -913,7 +913,7 @@ AWB: Cannot re-enter
 ```js
 function * Thing(x, y) {
   this.x = x  // current ES6: throw here.
-  yield;   
+  yield;
   this.y = y;
 }
 
@@ -936,7 +936,7 @@ thing.y // 39
 (Note that SpiderMonkey doesn't throw at either of the places called out above)
 
 
-DH: The \* is a way of saying that you're providing a way to the precise thing you would do by hand, but without the long form hand written 
+DH: The \* is a way of saying that you're providing a way to the precise thing you would do by hand, but without the long form hand written
 
 RW: Then generator method should throw TypeError when called with new
 
@@ -946,15 +946,15 @@ MM: What is the instance created from whehn a generator method is called with ne
 
 AWB: instance of Generator
 
-MM: 
-  
+MM:
+
 ```js
 let coll = {*values() {}};
 let it = coll.values();
 it instanceof coll.values; // true
 ```
 
-MM: Unseen: allocatiing a new generator instance. Contains an implicit `new` and implcit constructor body. 
+MM: Unseen: allocatiing a new generator instance. Contains an implicit `new` and implcit constructor body.
 
 DH: \* imputes an implicit `new` (in both the method and constructor)
 
@@ -966,11 +966,11 @@ BT: it's a factory
 DH: Simpler: "\* is never new-able"
 
 
-Alternative 2: a function \* has 
+Alternative 2: a function \* has
 
 
-MM: 
-  
+MM:
+
 ```js
 let coll = { *values() { this; } }
 coll.values(); // ?
@@ -980,7 +980,7 @@ coll.items(); // ?
 ```
 
 
-DH: 
+DH:
 
 | S | I | Code |
 |---|---|-----------------------------------------------|
@@ -991,7 +991,7 @@ DH:
 AK (offline): Further spec reading suggests that GeneratorMethods need to have their [[Construct]] removed just like GeneratorFunctions (they both pass "generator" to FunctionInitialize, which is where the decision to set up [[Construct]] is made).
 
 
-#### Conclusion/Resolution  
+#### Conclusion/Resolution
 
 - Maintain spec that cannot construct generator methods (or change spec to make them non-constructible, see above)
 - Spec change: generator function do not have a [[construct]] trap, so `new` throws
@@ -1000,20 +1000,20 @@ AK (offline): Further spec reading suggests that GeneratorMethods need to have t
 
 
 
-  
+
 ## 6.12 String.prototype.split, its limit argument, and ToLength vs ToUint32
 
 (Adam Klein)
 
 https://gist.github.com/ajklein/335e0f948c500a0c25dc
 
-AK: Issues: 
-  
+AK: Issues:
+
 - ES5 (15.5.4.14.5): If limit is undefined, let lim = 2**32-1; else let lim = ToUint32(limit).
 - ES6 (21.1.3.17.8): If limit is undefined, let lim = 2**53-1; else let lim = ToLength(limit).
-  
-Problems: 
-    
+
+Problems:
+
 - Return value is an Array, so a limit greater than 2**32-1 would result in a "malformed" array (one with elements past the end of the array). Iteration over the return value will skip all such elements.
 - Behavior changes for negative limit: ToUint32 transforms -1 to 232-1; ToLength instead transforms -1 to 0.
 
@@ -1027,7 +1027,7 @@ Discussion about changes
 
 - break web?
 - but this will never likely be hit by any real world code
-- clamping is valued 
+- clamping is valued
 
 
 Proposal: Revert this spec change. Existing implementations still match ES5, and the old behavior still makes sense (even with ES6's longer String length limit).

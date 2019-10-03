@@ -1,7 +1,7 @@
 # January 24, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Gabriel Isenberg (GI), Bert Belder (BB), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Mathias Bynens (MB), Leo Balter (LB), István Sebestyén (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AH), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CH), Gabriel Isenberg (GI), Bert Belder (BB), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Mathias Bynens (MB), Leo Balter (LBR), István Sebestyén (IS)
 
 -----
 
@@ -48,7 +48,7 @@ WH: What's happening with es-discuss? I'm getting bounces.
 
 AWB: The list administrators of this are Brendan Eich and myself. If someone else wants to be an administrator on that list, I am sure Brendan and I would be happy about that. There isn't a lot of work but occasionally something does come in.
 
-IS: I think this is an example for another TC39 tool, that was popular for a few years, and maybe now is slowly disappearing. It is a real challange for us, how to archive all this for long-term. 
+IS: I think this is an example for another TC39 tool, that was popular for a few years, and maybe now is slowly disappearing. It is a real challange for us, how to archive all this for long-term.
 
 ## ECMA-262 Status Updates--countdown to ES2017
 
@@ -60,11 +60,11 @@ DE: There may be some for 402
 
 AK: Do you mean big proposals, or do bugs count?
 
-BT: Any needs-consensus PRs after January 31st becomes a part of ES2018 (if at all). 
+BT: Any needs-consensus PRs after January 31st becomes a part of ES2018 (if at all).
 
 BT: For those new to the committee, we're not a technical committee, we're a royalty free task group (of the technical committee). All that means is that there is a royalty free commitment to the content we create in the specification. If you would like to patent something that is in ECMA or if you think you have a patent that is pertinent to something we are standardizing in this version. You should talk to your lawyers and potentially opt out of the royalty free agreement. you'd be the first person to do this. We've never had an opt out. Talking to István, I'm not sure we even know what happens.
 
-IS: Brian is right. In the current TC39 RFTG everything is expected to be RF. At an "opt out" - which we did not have so far - we have to see how that part of the policy plays out. But it will be difficult because a) who decides and how if the claim for the opt out is valid? b) If valid then either an alternative method has to be found or the RF project cancelled... So, if TC39 wants also "RAND" components in the standard, maybe for some special case, options that must be done in a new, different TG working with a RAND based policy. 
+IS: Brian is right. In the current TC39 RFTG everything is expected to be RF. At an "opt out" - which we did not have so far - we have to see how that part of the policy plays out. But it will be difficult because a) who decides and how if the claim for the opt out is valid? b) If valid then either an alternative method has to be found or the RF project cancelled... So, if TC39 wants also "RAND" components in the standard, maybe for some special case, options that must be done in a new, different TG working with a RAND based policy.
 
 WH: If someone opts out (or makes an unexpected patent claim), which happened in other TCs, then we have a standard that someone claims a patent on, then chances are we'd end up voting no on the proposal. We approve the proposal pending it not having an opt-out.
 
@@ -147,7 +147,7 @@ BT: Previously ecmarkup would dump a css and js file next to your built spec and
 
 BT: That's everything for 262 tooling this year.
 
-AWB: Any decisions we need to make? 
+AWB: Any decisions we need to make?
 
 BT: Yes, we have a decision to make about atomics and array buffer and some needs consensus PRs I'd like to discuss but not now. I'd like to do some socialization first. Minor stuff. Not on the critical path, to put it that way.
 
@@ -161,7 +161,7 @@ DH: Didn't we already talk about this?
 
 AK: Yes, this is a tweak and it turns out we didn't fix it entirely
 
-BT: This is the situation 
+BT: This is the situation
 
 AWB: So, delete for a nonconfigurable property normally returns false, is that right?
 
@@ -214,7 +214,7 @@ AWB: In the current specification, if you captured this object, and then you do 
 
 JHD: If you're doing that with a try/catch the error wouldn't allow the second super code path, right? The only impact that Brian's change is on the spec algo and the fact that there is a second observable.
 
-AWB: The real point here is that you can do all sorts of crazy stuff. The primary thing we're trying to make sure here is that implementations always do the same thing when you do this crazy stuff. The actual crazy stuff, what it is, who cares, it's crazy. 
+AWB: The real point here is that you can do all sorts of crazy stuff. The primary thing we're trying to make sure here is that implementations always do the same thing when you do this crazy stuff. The actual crazy stuff, what it is, who cares, it's crazy.
 
 JHD: Is that any reason to not minimize it?
 
@@ -318,7 +318,7 @@ DH: Feels radical, feels like it needs more than "sure why not?"
 
 WH: Wouldn't work once we implement private fields.
 
-DE: Eliminating the check doesn't add any basic incompatibilites with private fields here, adding a private field twice will fail, so even if we eliminate this check, it'll throw an exception later 
+DE: Eliminating the check doesn't add any basic incompatibilites with private fields here, adding a private field twice will fail, so even if we eliminate this check, it'll throw an exception later
 
 AK: My worries, my implementation feedback. I haven't looked to see what a static check would be. If it is easy, I don't care about this, no concerns for this proposal. I have a guess there are some edge cases that could be hard to detect. This is a case where my moderate opposition might go away.
 
@@ -326,7 +326,7 @@ DH: I still worry, even in that case, 70% of code doesn't ever put super under a
 
 AK: The super call can't be in a tight loop
 
-DH: The single super call has the additional check, if you're instantiation stuff in a tight loop it could come up. Maybe it's not likely to every be noticeable. 
+DH: The single super call has the additional check, if you're instantiation stuff in a tight loop it could come up. Maybe it's not likely to every be noticeable.
 
 BT: I'd argue the performance would not be a noticeable performance difference
 
@@ -368,7 +368,7 @@ AWB: I think spidermonkey is the right error. Super was called twice and that's 
 
 JHD: You can call it twice. You just can't call it successfully twice and bind this. Are you going to put that into an error message and say it's going to be less confusing? If one of them throws you can call it as many times as you wan't, you can only call it successfully once.
 
-SYG: I don't think the performance cost here is too bad. 
+SYG: I don't think the performance cost here is too bad.
 
 MS: I haven't looked at the implementation.
 
@@ -380,7 +380,7 @@ AK: I fixed this. I can't remember what ours says. It used to use the same error
 
 BT: Let me ask you this. If you investigate and find that the perf implications are neglible, which I suspect will happen, would you support this change or would you still be against it?
 
-AK: I would actually be OK with it was easy to see. I feel like it might be easy for us to detect. I'm not as worried about someone moving that super call into an error function I don't think that's a thing people do unless they are intentionally messing with the interpreter. 
+AK: I would actually be OK with it was easy to see. I feel like it might be easy for us to detect. I'm not as worried about someone moving that super call into an error function I don't think that's a thing people do unless they are intentionally messing with the interpreter.
 
 SYG: Independently, we already have some checks scheduled around super calls
 
@@ -412,7 +412,7 @@ BT: IF Adam looks at this and finds it's not a problem. If it isn't in this meet
 
 DE: In general are we really aiming to get these in by the cutoff? We have a draft spec.
 
-AWB: The goal right now is what goes into the cutoff. We do have these checkpoints every year. People do pay attention to this in the outside world. 
+AWB: The goal right now is what goes into the cutoff. We do have these checkpoints every year. People do pay attention to this in the outside world.
 
 BT: It's important what goes into that document. Everyone in this room only cares about the edge version of the spec but it's not true for everyone. We should just be intentional about this.
 
@@ -444,7 +444,7 @@ BT: As far as I'm aware, i think it's just renaming it. Putting it in annex b. M
 
 DE: We also got a new pull request to clarify about timezones, but it's kind of new.
 
-BT: I don't want to mess with that right now. 
+BT: I don't want to mess with that right now.
 
 AWB: It's not just a clarification, it's non trivial
 
@@ -488,13 +488,13 @@ AWB: If we're going that route, we can just say January... March is a little bet
 
 DH: Is it okay if I just pick what makes sense?
 
-BT: I've already started on booking catering for 2018 
+BT: I've already started on booking catering for 2018
 
-DH: I can't tell if you're joking! 
+DH: I can't tell if you're joking!
 
 DE: How far in advance do you really need to do this?
 
-DH: Let me find out. 
+DH: Let me find out.
 
 
 ## Scheduling aside
@@ -535,7 +535,7 @@ AWB: We don't have any strict requirements for what the Stage 4 tests consist of
 
 DE: In this case, you're working with V8 to make sure the tests are compatible with the harness, so it should be especially not a problem.
 
-LB: I have been reviewing the tests. They seem to have reasonable coverage so far. About the harness support, this is not the first time that the harnesses are expected to provide functionality (also for TypedArray detach). As far as reviewed the PR, this has my +1.
+LBR: I have been reviewing the tests. They seem to have reasonable coverage so far. About the harness support, this is not the first time that the harnesses are expected to provide functionality (also for TypedArray detach). As far as reviewed the PR, this has my +1.
 
 AWB: Any objections to Stage 4?
 
@@ -567,7 +567,7 @@ WH: I will look at any changes!
 #### Conclusion/Resolution
 
 Named reviewers for Stage 3
-- RegExp lookbehind: 
+- RegExp lookbehind:
   - Someone from Microsoft (nominated by Brian Terlson)
   - Kevin Gibbons (nominated by Michael Ficarra)
   - Waldemar Horwat
@@ -583,7 +583,7 @@ DH: Just a quick update, I did verify that this march is the week earlier, the 2
 
 AWB: Do you know yet where it is?
 
-DH: I can get more details. Obviously we'll fill out the agenda page. 
+DH: I can get more details. Obviously we'll fill out the agenda page.
 
 AWB: Just curious!
 
@@ -622,7 +622,7 @@ DH: Base.prototype, do we care, do you care, do you know, if, base.prototype is 
 
 AWB: No, it isn't. Anything defines as class, prototype objects created by class declarations are
 
-DH: That was just some groundwork I wanted to be sure of. 
+DH: That was just some groundwork I wanted to be sure of.
 
 (Discussion about the details on the slide)
 
@@ -666,7 +666,7 @@ MM: if you're going to create a new special form you shouldn't do it by giving s
 
 AWB: When we did this in 2015, if you say extends, and you don't have an explicit constructor, it does a super call.
 
-AWB: If you say, class extends null, what it evaluates to, the prototype of the prototype that is created is set to null and the `__proto__` internal slot is set to function.prototype. So the question is then, is function.prototype constructable? 
+AWB: If you say, class extends null, what it evaluates to, the prototype of the prototype that is created is set to null and the `__proto__` internal slot is set to function.prototype. So the question is then, is function.prototype constructable?
 
 MM: Isn't it right now?
 
@@ -748,7 +748,7 @@ AK: Okay, i'm 3x my timebox!
 
 #### Conclusion/Resolution
 
-- Revert the ES2017 change for now; 
+- Revert the ES2017 change for now;
 - AK to investigate a new solution for a follow-up spec change.
 
 
@@ -764,7 +764,7 @@ All: having a hard time reading the screen
 
 All: Scaling in the browser is hard. Booo at the results!
 
-GI: The common pattern today is using && operator, which is very verbose. We want to support message.body?.user?.firstname || 'default'. If any object is not defined along the way, we should return null/undefined. There has been a lot of discussion around this in the past. We have spec text that speaks to what happens when we hit null or undefined in the chain. This has been proposed in Typescript but was ultimately punted waiting on EcmaScript support. 
+GI: The common pattern today is using && operator, which is very verbose. We want to support message.body?.user?.firstname || 'default'. If any object is not defined along the way, we should return null/undefined. There has been a lot of discussion around this in the past. We have spec text that speaks to what happens when we hit null or undefined in the chain. This has been proposed in Typescript but was ultimately punted waiting on EcmaScript support.
 
 BT: Typescript has similar syntax already.
 
@@ -784,13 +784,13 @@ JLZ: I think this is needed, but it shouldn't be the only place it's added (supp
 
 DH: There is an important sense for which this ties into the specific semantics of this operator. How does this operator treat falsy values. If we want a cohesive overall story. None of that is a stage 1 concern.
 
-JLZ: Before we finalize it, even before we, we should consider additional operators. 
+JLZ: Before we finalize it, even before we, we should consider additional operators.
 
 AWB: Relevant to stage one is what are we making stage 1? Is it just this operator? Or is it the general problem dealing with accessing and invoking properties. Is it the dot operator, is it new? The scope of this item should be large enough to explore this space.
 
 DH: It's full of cross-cutting concerns. We want to think about this. It's the usual dance, the totality of the problem is large and we want to consider it but we don't want it to stop progress.
 
-AWB: As long as we define this item in a way that is broad enough to make it clear that we want to consider 
+AWB: As long as we define this item in a way that is broad enough to make it clear that we want to consider
 
 DH: I think at stage one we shouldn't care too much. Null propagation operator or operators is the concern.
 
@@ -844,7 +844,7 @@ WH: ?.( is not a syntax issue. I don't think you should be calling functions on 
 
 AWB: Isn't that your classic, "I want to call this method if it is there?"
 
-JLZ: I agree that the .? or whatever syntax we use, the property accessors we use are the most valuable. The rest of them seem like they have reasonable alternatives. 
+JLZ: I agree that the .? or whatever syntax we use, the property accessors we use are the most valuable. The rest of them seem like they have reasonable alternatives.
 
 DH: To my mind, when you're adding syntax to the language it's for the most common idioms that you're trying to bless with the most concise notation. That you might ever want to say something is not the bar, it's that it's very common and idiomatic. I could be convinced otherwise, but pulling out a function from something that might not be there is much much less common than accessing a piece of data. In the cases where you might need to access a function you can handle using the existing && syntax but accessing field data is so common that we want concise syntax.
 
@@ -943,7 +943,7 @@ ZB: This is the one that we know if we try to get to extension key to options, w
 
 BB: Are there options other than 24 and 12?
 
-ZB: Yes, 23 and 11. 
+ZB: Yes, 23 and 11.
 
 BB: Don't forget Mars time!
 
@@ -951,7 +951,7 @@ ZB: This is academic right now, we only support Gregorian calendars, but as we s
 
 BB: I have no real objection. I've never been to a country or seen a 17 hour clock.
 
-ZB: If you look at a unicode 
+ZB: If you look at a unicode
 
 DH: Swatch invented internet time in the 90s, like a 10 or 100 clock
 
@@ -959,7 +959,7 @@ BB: I could imagine some metric time system but it seems a little extreme to ant
 
 AWB: The real question is, if this is a pattern, does this pattern apply to other specs. Do we have option objects in any of the shared buffer or atomic stuff? We don't have them yet in 262.... but we might someday. So, if we had any... would we apply the same principal? We probably should.
 
-DE: This sets some other precedents. AS a part of this deprecation, if you instantiated something with hourCycle, if it can emulate the old hour12 format, it will, then you can read off the old property or it will be missing if it can't. I don't think this is that academic. In the US midnight is 12. In many places in the world midnight is 0. 
+DE: This sets some other precedents. AS a part of this deprecation, if you instantiated something with hourCycle, if it can emulate the old hour12 format, it will, then you can read off the old property or it will be missing if it can't. I don't think this is that academic. In the US midnight is 12. In many places in the world midnight is 0.
 
 ZB: I agree it's not that academic. It has the value of closing the gap and being more consistent. I wanted to test the procedure of this kind of change with this community. I wasn't sure what the reaction would be. I'm not sure if you have a precedent of this.
 
@@ -969,9 +969,9 @@ MPT: On the record, we have an extension point in moment.js for this and it gets
 
 AWB: I think we're fine.
 
-CP: Are we going to do a pull request on this? What is the consensus here? Is a PR enough? 
+CP: Are we going to do a pull request on this? What is the consensus here? Is a PR enough?
 
-AWB: I suggest treating this as a bug that needs consesnsus. 
+AWB: I suggest treating this as a bug that needs consesnsus.
 
 DE: Could we get especially much feedback from implementors before landing it?
 
@@ -1019,7 +1019,7 @@ ZB: My thinking around this is that CLDR is a great place to have those conversa
 
 AWB: It sounds to me like this should go through the stages process, and that this should be at stage one.
 
-ZB: I'm not quite ready, no draft yet. 
+ZB: I'm not quite ready, no draft yet.
 
 AWB: Not needed, this is enough. Unless somebody thinks this is not clearly described.
 
@@ -1030,8 +1030,8 @@ AWB: it sounds like there isn't necessarily a simple obvious solution that every
 ZB: I think there is. The solution is based on CLDR consensus. Which, as the name suggests is just the consensus. There are a significant number of poeple who dsiagree CLDR, but that's okay. We seek to confirm to CLDR, regardless if everyone agrees 100% with CLDR. We don't forbid people do other things, though.
 
 AWB: Is adherence to CLDR a recorded decision and we have consensus on within tc39 or the 402 subgroup?
- 
-CP: Even if we adhere to CDLR, there are still questions to answer. We just don't know. We don't have a solution yet. 
+
+CP: Even if we adhere to CDLR, there are still questions to answer. We just don't know. We don't have a solution yet.
 
 AWB: For me, that sounds like stage one. I'm not sure what the scope of that items is. Is it just datetimeformat style?
 
@@ -1047,7 +1047,7 @@ AWB: It's stage one for something!
 
 ZB: Okay, stage one for datetimeformat style.
 
-AWB: If you guys really want to consider saying yeah, CLDR is your guiding light for a lot of these things. You ought to say that and do it--see if you get any push back. 
+AWB: If you guys really want to consider saying yeah, CLDR is your guiding light for a lot of these things. You ought to say that and do it--see if you get any push back.
 
 ZB: Dan, so far we haven't explictly stated supporting CLDR right?
 
@@ -1098,8 +1098,8 @@ ZB: Thanks for your time!
 
 https://github.com/tc39/ecma262/issues/753
 
-SYG: No browser is spec-compliant with this Andre Bargull test case. Reviewing the issue contents. 
-    
+SYG: No browser is spec-compliant with this Andre Bargull test case. Reviewing the issue contents.
+
 ```
 var f = "x";
 eval("print(f); { function f(){} }")
@@ -1185,11 +1185,11 @@ AWB: So, it still seems to me, whatever the semantics of var foo, block function
 
 KB: The problem is that the declaration occurs later with the eval. With eval, creating the binding occurs after someone else might have created that binding. It's only observable in this case because creating the binding happens in a different place. It has to.
 
-AWB: You're saying the difference is that within the block if you don't have the eval you have block level hoisting. 
+AWB: You're saying the difference is that within the block if you don't have the eval you have block level hoisting.
 
 KB: At the beginning of the script
 
-SYG: So Kevin is saying for Annex B there are two phases. 
+SYG: So Kevin is saying for Annex B there are two phases.
 
 AWB: In this example, when we do the eval we are clobbering f, even if we never execute the block. That's the semantics of Annex B.
 
@@ -1209,7 +1209,7 @@ SYG: What Kevin has proposed: https://github.com/tc39/ecma262/issues/753#issueco
 
 (quick discussion)
 
-SYB: We have consensus that it is a bug. We want it to print x and we may need a new spec mechanism to do this. 
+SYB: We have consensus that it is a bug. We want it to print x and we may need a new spec mechanism to do this.
 
 MF: The small mechanics around it can be resolved in a PR
 
@@ -1222,10 +1222,10 @@ SYG: I think the same thing happens. Properties of window are just like "var f" 
 - Consensus on new semantics to print "x"
   - This is a bug.
   - This should print x
-  - We may need a new spec mechanism to do this. 
+  - We may need a new spec mechanism to do this.
   - To get in ES2017 (not too late, as this is a bug fix)
-  
-  
+
+
 
 ## 13.ii.b Function.prototype.toString updates
 
@@ -1296,7 +1296,7 @@ AWB: Capture groups?
 - [slides](https://docs.google.com/presentation/d/1fx5S4DpuD7z4K6ItFW7BjbvYPiuQNxU2769F5YhGP3o/edit#slide=id.p3)
 - [proposal](https://github.com/tc39/proposal-regexp-named-groups)
 
-DE: A quick overview of the feature: it allows you to access matched groups by a name in the match object. 
+DE: A quick overview of the feature: it allows you to access matched groups by a name in the match object.
 
 AWB: Can the same name occur more than once?
 
@@ -1326,9 +1326,9 @@ MM: Is there a reason -not- to use a map?
 
 DE: It's not ergonomic, having a separate groups property is already some overhead, but maps are much more; but you can't do destructuring on a map.
 
-BT/DE: Examining potential issues on destructuring assignments when exec returns null. 
+BT/DE: Examining potential issues on destructuring assignments when exec returns null.
 
-DE: There is spec text for all of this. 
+DE: There is spec text for all of this.
 
 MF: Is groups possibly null?
 
@@ -1360,7 +1360,7 @@ AWB: It could be the same value, an internal slot that we keep returning.
 
 DH: We have lots of situations like this! Does it have to not exist? Could we just set it to the value of undefined to allow destructuring?
 
-DE: I don't understand what code would require these. If you use destructuring, you know what groups you're looking for. If you write a regex, you know what groups you're looking for. Why would you introspect keys for groups of a regex that you don't know? 
+DE: I don't understand what code would require these. If you use destructuring, you know what groups you're looking for. If you write a regex, you know what groups you're looking for. Why would you introspect keys for groups of a regex that you don't know?
 
 KG: There are two completely separate concerns, making destructuring work, and making object.keys work. It doesn't sound to me like anything in this change, having groups or not, would affect destructuring. Having the match object return undefined vs null would have mattered but that ship has long sailed. Having groups there or not doesn't affect destructuring as far as I can tell.
 
@@ -1374,7 +1374,7 @@ BT: Yes. You do a match, you see you matched something. You want to get a list o
 
 DE: Okay. So, then, making an empty object be in the groups property makes it so you can always introspect which groups exist.
 
-KG: Or just do || empty object. 
+KG: Or just do || empty object.
 
 BT: The reason we are discussing this is to determine if it is reasonable for us to make it easy to work around.
 
@@ -1433,7 +1433,7 @@ DE: OK; we'll disable the `\k` identity production in `+N` mode in Annex B.
 WH: That would work.
 
 AWB: What if we just kick the regular expression to the non-Annex B if named capture groups are present?
-    
+
 MS: It makes implementation very difficult. I have existing regexps, Unicode ones, named I'm going to go partially into, but if I'm not in Unicode mode, then this other behavior is invoked
 
 AWB: The biggest issue could be that you may be way at the end of a parse before you realize you need to change.
@@ -1442,7 +1442,7 @@ DE: That's already going to be the case in some places. (NB: See related blog po
 
 #### Conclusion/Resolution
 
-  - Moves to stage two  
+  - Moves to stage two
   - Groups are segregated into a separate object (to avoid conflicting with prototype changes)
   - Reviewers: WH, someone from MSFT
   - Issues to look into:

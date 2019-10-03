@@ -1,7 +1,7 @@
 # December 1, 2016 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TW), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LB), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS), Mark S. Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TW), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LBR), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS), Mark S. Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
 
 
 
@@ -19,7 +19,7 @@ IS has distributed the minutes via TC39 Email Reflector and has also uploaded it
 - Approved
 
 
-## 6.i Determine 2017 TC39 meeting dates, locations, and hosts. 
+## 6.i Determine 2017 TC39 meeting dates, locations, and hosts.
 
 IS: WE said that in 2017 there will be no European meeting. But if nothing else works Ecma and Switzerland are always a fall-back possibility for organization of TC39 meetings. Of course we need a few months lead-up time.
 I will also bring up the issue of the TC39 at the GA next week. Maybe I can find some additional hosting help in the Bay Area. Last point (not said in the meeting): we may try to access some of our university members, Universities usually easily have sufficient large rooms, especially if we come during a time when there is no teaching.
@@ -71,9 +71,9 @@ JHD: Looking at the spec, .catch() calls out to .then(), and .finally() should d
 
 Details in PR: https://github.com/tc39/proposal-promise-finally/pull/14#issue-192162240
 
-Downside of finally calling into .then: 
-    
-- another call added 
+Downside of finally calling into .then:
+
+- another call added
 - another place where spec created functions are exposed to user code.
 
 AWB: Implementations can do lots of things to make the overhead of closures go away.
@@ -100,7 +100,7 @@ AWB: I'd want to understand the benchmarks better; is this all microbenchmarks?
 
 BT: ecmarkup improved build times by 25% by using Bluebird rather than V8 native promises.
 
-YK: The gap is partly spec compliance and partly implementation quality. Ember does get faster 
+YK: The gap is partly spec compliance and partly implementation quality. Ember does get faster
 
 MM: What are the use cases for Promise subclassing?
 
@@ -180,7 +180,7 @@ JM: Maybe this should work across environments.
 
 AK: Yes, that's why we need to discuss here, if it should work on the web too.
 
-DH: So, the proposal is to allow the "use module" in addition to the import/export conditionality. "use module" would be an early error in a script on the web, permitted but not required in modules on the web, and in Node 
+DH: So, the proposal is to allow the "use module" in addition to the import/export conditionality. "use module" would be an early error in a script on the web, permitted but not required in modules on the web, and in Node
 it would be the conditionality. I wouldn't want "use module" to have to be sprinkled all over the top of all modules, though.
 
 WH: This suffers from the same perils as you just listed as arguments against Node's proposal. If you use the presence of import statements, scripts will be misclassified as modules in the future when we add the ability to import into scripts. To make this work you'd need to either get rid of the import/export statement sniffing or define a "use script" in addition to "use module" to in-band force scripts to be interpreted as scripts.
@@ -189,7 +189,7 @@ AK/CP: What if we just did `"use module"` without the import/export conditionali
 
 DH: (Experimental implementation at https://github.com/dherman/esprit)
 
-DH: Usually the mode is known upfront, but the deferred check will have some cost in the cases where it runs. Maybe the import/export conditionality will only come up in a few of the Node corner cases. 
+DH: Usually the mode is known upfront, but the deferred check will have some cost in the cases where it runs. Maybe the import/export conditionality will only come up in a few of the Node corner cases.
 
 AK: So you think it's uncommon is because Node folks were receptive to the idea that it could only come up in certain circumstances? (NB: Background is that the import/export check may require parsing multiple times.)
 
@@ -239,9 +239,9 @@ DD: (walking through https://github.com/tc39/proposal-dynamic-import/issues/26)
 
 MM: We're expecting that we'll work towards a standardized loader spec for generalized hooking, and be happy with how embedding environments (e.g., Web and Node) do provide an API.
 
-AWB: If need API, then say you need in spec. 
+AWB: If need API, then say you need in spec.
 
-MM: minimal requirement, have a standardized API now. Minimal requirement that there exists a way for this to be implemented on all runtimes, there must be a spec hook to 
+MM: minimal requirement, have a standardized API now. Minimal requirement that there exists a way for this to be implemented on all runtimes, there must be a spec hook to
 
 AWB: We can also require host environments to provide a way to expose these hooks, rather than just expect it, writing out in the spec what is required for it to be sufficient.
 
@@ -307,8 +307,8 @@ DE: Private state to stage 2
 class Foo {
     #x;
     #y = z;
-    foo() { 
-        #x++; 
+    foo() {
+        #x++;
         return this.#x;
     }
 }
@@ -328,12 +328,12 @@ DE: (semantics)
 - Scope of initializers as in property declarations
 
 
-The intention is to match public fields, need to be interleaved, specifically the ordering of steps e.g. adding fields. 
+The intention is to match public fields, need to be interleaved, specifically the ordering of steps e.g. adding fields.
 
 AWB: Concerns about separate proposal for public fields. Merge the proposals.
 
 DE: The plan is to merge the specs for Stage 3
-- 
+-
 
 DE: If feedback reveals that the # syntax for private state is fatally unworkable, we wouldn't want to kill public state because of it
 
@@ -350,12 +350,12 @@ AWB: Concerns about separate proposals modifying the same spec algorithms. They 
 
 DH: I love the smell of consensus in the afternoon ;)
 
-DE: Should there be a way, through reflection, to access private state outside of the class? No. 
+DE: Should there be a way, through reflection, to access private state outside of the class? No.
 
 - Previously, formalism based on weakmaps
 - New formalism is same, but without the GC semantics
 
-DE: Add field after `super()` returns, or at beginning in base class—no matter where `super()` is called 
+DE: Add field after `super()` returns, or at beginning in base class—no matter where `super()` is called
 
 AWB: May be issue? Reflect.construct call is intended to be an alternative `super()`. Possible to move this in the construct, doesn't have to relate to token
 - construct is where belongs
@@ -365,8 +365,8 @@ WH: Concerns that one shouldn't be able to use this to stick a class's private f
 
 ...
 
-DE: 
-    
+DE:
+
 Interaction with other features
 
 
@@ -393,7 +393,7 @@ YK: Not yet
 
 (back to syntax)
 
-MM/DE: (discussion about the dot in `o.#p`, ultimately they came around to the dot.) 
+MM/DE: (discussion about the dot in `o.#p`, ultimately they came around to the dot.)
 
 DE: Why hard private? (https://docs.google.com/presentation/d/1QBK8GsTYmQHJQJm_P0HuELNN4uGkm9gB7Df9g4tRK-o/edit#slide=id.g1994dec4f4_0_20 )
 
@@ -408,7 +408,7 @@ JM: Have you seen the decorator opt-out?
 
 DH: yes, but concerned we're making wrong decision.
 
-DE: the developer field is split evenly, some for hard and some for soft private. 
+DE: the developer field is split evenly, some for hard and some for soft private.
 
 JM: The concern of hard private is that its very hard to debug
 - if debugging in a debugger, you can see the hard private, but your tests cannot
@@ -423,7 +423,7 @@ MM: It's important for me that hard-private be ergonomic.
 
 AWB: The key elements of the proposal are hard private and lexical scoping of private declarations. If either of those were reversed, this would turn into a radically different proposal. If we're advancing this to stage 2, it's with the understanding that these will be in the proposal.
 
-DE/DH: (further discussion of hard private). 
+DE/DH: (further discussion of hard private).
 
 - Want real usability feedback
 
@@ -440,8 +440,8 @@ MM, WH: No proxy issue.
 
 MM: Intended to be observationally equivalent to weak maps. If there is a place that isn't, it's a bug.
 
-DE: Can add text that explains the equivalence to weakmaps; semantics of this proposal, etc. 
-    
+DE: Can add text that explains the equivalence to weakmaps; semantics of this proposal, etc.
+
 
 Internal slot-based specification mechanics
 
@@ -454,17 +454,17 @@ DE: Q. is this just too unergonomic? Some wanted @, not #—and very opposed to 
 
 WH: Need a sigil or equivalent. We've spent years working through attempts to define private state without any distinguishing sigils on use. None of them worked. They work fine in statically typed languages, but in dynamically typed ECMAScript were hopelessly mired in the same class of namespace shadowing problems that plagued the with statement. Consider what happens if a class defines a private field called "length" and also wants to access a length field of an unrelated object.
 
-AWB: 6-7 years ago worked through extensive ways of doing this and all had problems. 
+AWB: 6-7 years ago worked through extensive ways of doing this and all had problems.
 
 AWB: Extensively documented in old wiki
 
 DE: static private, methods included? Or wait?
 
-AWB: Do the full package here. 
+AWB: Do the full package here.
 
 KG: why? (as opposed to a later proposal, if confident that this will allow for a later proposal?)
 
-AWB: cross cutting concerns, if not pinned down together, and proceed with only confidence, then discovery later will be problematic or impossible to fix. 
+AWB: cross cutting concerns, if not pinned down together, and proceed with only confidence, then discovery later will be problematic or impossible to fix.
 
 DE: Open issue: require a "private" keyword on declarations? (i.e. `private #x;` instead of `#x;`)
 
@@ -476,21 +476,21 @@ DE: No.
 
 AWB: had to chose: follow separator of block or object literal, went `;`
 
-YK: important to support commas to enumerate a list of fields: 
-    
+YK: important to support commas to enumerate a list of fields:
+
 ```js
 class A {
-  #x, #y, #z    
+  #x, #y, #z
 }
 ```
 
-Annoying to write: 
+Annoying to write:
 
 ```js
 class A {
   private x;
   private y;
-  private z;  
+  private z;
 }
 ```
 
@@ -519,15 +519,15 @@ JM: There is a question on public fields, `=` is assign/set, `:` is define—sti
 
 KG: only relevant for public fields, evaluation order
 
-YK: TypeScript and Babel transpile as: 
-    
+YK: TypeScript and Babel transpile as:
+
 ```js
 class A {
-  x = 1;  
+  x = 1;
 }
 ```
 
-to 
+to
 
 ```js
 var A = function A() {
@@ -539,7 +539,7 @@ var A = function A() {
 
 JK: It does this by default, however when you enable "spec" mode it will switch to using a defineProp to set configurable to false
 
-KG: concern that if not addressed now, Babel will proceed and like the "sigil swap", it will become hard to change later. 
+KG: concern that if not addressed now, Babel will proceed and like the "sigil swap", it will become hard to change later.
 
 AK: valid concern, but `public` is much more widely used
 
@@ -549,7 +549,7 @@ JK: This is a slightly different situation from the sigil swap, there is a bette
 
 WH: keyword ship has sailed, problems when we do private methods with `private` but public without `public`
 
-AWB: This is why I proposed `own` and not 
+AWB: This is why I proposed `own` and not
 
 AWB: Change to IdentifierName, not IdentifierPart
 
@@ -566,15 +566,15 @@ AWB: We use IdentifierName in the grammar
 WH: It seems odd to have a PrivateName be a single token. The more natural way to express it would be as two tokens, `#` followed by an IdentifierName.
 
 KG: Won't that allow whitespace between `#` and IdentifierName?
-- The hash is intended to be thought of as part of the property name, ie: 
-    
+- The hash is intended to be thought of as part of the property name, ie:
+
 ```js
 this.
   #foo.
   #bar;
 ```
 
-(RW, LB: Weird)
+(RW, LBR: Weird)
 
 
 AWB: No whitespace between `#` and `foo` in `#foo`, but also `foo` not IdentifierPart
@@ -592,7 +592,7 @@ DE: Should private state be accessible within eval?
 
 
 
-## 13.vi Process proposal: require an implementation to land a normative PR to the spec 
+## 13.vi Process proposal: require an implementation to land a normative PR to the spec
 
 (Daniel Ehrenberg)
 
@@ -603,7 +603,7 @@ WH: What are the majority of the spec pull requests?
 
 BT: Editorial. Among the remainder, the majority are consensus items.
 
-DE: proposes that PRs for normative changes should also have an implementation before being merged. 
+DE: proposes that PRs for normative changes should also have an implementation before being merged.
 
 AWB: case by case?
 
@@ -632,8 +632,8 @@ YK: But it would cause more process lawyering.
 ## 13.vii Open-ended: How can we promote diversity and inclusion in TC39
 
  (Daniel Ehrenberg and others)
- 
- 
+
+
 DE: How can we improve this?
 
 AWB: member companies need to send more diverse language implementors
@@ -646,7 +646,7 @@ RW: We should talk to István to have ECMA adopting this Code of Conduct
 
 (general agreement)
 
-RW: The next step is we as delegates communicate to our companies that we should sponsor and support diversity, affecting who we bring to the meetings as well. This might be done via scholarship or otherwise. 
+RW: The next step is we as delegates communicate to our companies that we should sponsor and support diversity, affecting who we bring to the meetings as well. This might be done via scholarship or otherwise.
 
 MM: We lack geographical diversity.
 
@@ -666,7 +666,7 @@ WH: Are they members?
 
 JK: Certainly within member companies, but also people who don't push their companies to become members       There ertainly within member companies and without
 
-JK: w/r to certain places being unwelcoming to disenfranchised groups. I'd ask that the committee never hold meetings in places where anyone's personal safety isn't guaranteed, eg. countries where gay people are killed for being gay. 
+JK: w/r to certain places being unwelcoming to disenfranchised groups. I'd ask that the committee never hold meetings in places where anyone's personal safety isn't guaranteed, eg. countries where gay people are killed for being gay.
 
 DE: Mark makes a good point about geographic diversity; globally, many of our companies are focused on the next billion users, and we don't have much representation from developers who are targeting that, who may have different mental models. It's not just diversity of people who we bring here, but also inclusion of the people that are in the room. Our culture here can be intimidating--it is hard to give a presentation when committee members will interrupt from very early on, and this works for some cultural styles of presenters but not for others.
 
@@ -688,15 +688,15 @@ SYG: Can we really expect people to follow this?
 
 MS: We are getting better at enforcing timeboxes, but we should consider being even more strict in enforcement--if members don't grant an extension, it should be done.
 
-LB: Some companies may have trouble/refuse participating because they see the lack of diversity and a code of conduct on a company. I have had discouragement from colleagues personally as English is my second language--this made me feel like running away. Fortunately, my employer, Bocoup, on hearing this, put me on the Test262 project and eventually sent me to the committee. I have many people from my country (Brazil) who contact me and want to get in touch about reading the spec, etc. I am just a normal person--I needed to find that, regardless of where I come from, I was able to attend. It would be very useful to have an official document from ECMA saying that ECMA and TC39 commit to social responsibility, where people can feel respected in any sort of background. Everyone should feel encouraged. I am here, I am the proof of it. I feel responsible to bring that forward to the new people.
+LBR: Some companies may have trouble/refuse participating because they see the lack of diversity and a code of conduct on a company. I have had discouragement from colleagues personally as English is my second language--this made me feel like running away. Fortunately, my employer, Bocoup, on hearing this, put me on the Test262 project and eventually sent me to the committee. I have many people from my country (Brazil) who contact me and want to get in touch about reading the spec, etc. I am just a normal person--I needed to find that, regardless of where I come from, I was able to attend. It would be very useful to have an official document from ECMA saying that ECMA and TC39 commit to social responsibility, where people can feel respected in any sort of background. Everyone should feel encouraged. I am here, I am the proof of it. I feel responsible to bring that forward to the new people.
 
 
 
 #### Conclusion/Resolution
 
-- Consensus that diversity is important and something we'd like to address and improve 
+- Consensus that diversity is important and something we'd like to address and improve
 - Take initial steps to adopt a Code of Conduct and determine how to enforce
-- Rick Waldron will contact István 
+- Rick Waldron will contact István
 - Rick to review with Kevin Smith
 - Representatives should work with their member organizations to promote more diverse representatives, via scholarship/sponsorship or diversification of member team
 - Extend our charter to include social commitment to committee representative diversity.

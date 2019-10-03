@@ -1,7 +1,7 @@
 # November 29, 2016 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Adam Klein (AK), Thomas Wood (TW), Mark S. Miller (MM), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LB), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Adam Klein (AK), Thomas Wood (TW), Mark S. Miller (MM), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LBR), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS)
 
 -----
 
@@ -199,13 +199,13 @@ JHD: This avoids creating an immediately invoked async function, avoids the Prom
 
 DD: This is used all over the place in userspace. It always runs synchronously. It traps any exceptions and turns them into exceptions, critically.
 
-MM: Is this ambiguous? Will it always run synchronously, or sometimes? 
+MM: Is this ambiguous? Will it always run synchronously, or sometimes?
 
 JHD: Always.
 
 MM: This is important that it's done like this.
 
-JHD: Virtually any Promise library has this feature. 
+JHD: Virtually any Promise library has this feature.
 
 DD: Example for motivation: If you have a function that returns a Promise, it's not supposed to throw. Wrapping the function body in a Promise.try() will achieve the right result of converting the throw into a rejected Promise.
 
@@ -347,7 +347,7 @@ MM: A coercion which always wraps has overhead, and we want to avoid that expens
 
 YK: Whether we remove the constructor check seems like whether we consider subclassing an important feature.
 
-DD: Or, subclasses could do a little more work to make their own resolve method. 
+DD: Or, subclasses could do a little more work to make their own resolve method.
 
 AWB: If you want a Promise, you say Promise.resolve, you don't say SubPromise.resolve. We currently, with the constructor check, guarantee that we get a direct instance of Promise.
 
@@ -545,7 +545,7 @@ DH: That's understanding the mechanism, but when we design policies, they have t
 
 YK: The intuition part is true, but the default of one will be different from the default of another.
 
-JM: What about the scenario like lodash where you want to combine a bunch of libraries . If you're wrapping another module, and adding a couple things, where the default is forwarded, is more plausible. The language already exposes `import { default as alias }` -- the conceptual module is reasonable, but it's at a high level. There's a difference between suggesting (with nice syntax) and imposing constraints (the behavior that the proposal is reverting) it's different, making an inconsistency with the rest of the scenarios. 
+JM: What about the scenario like lodash where you want to combine a bunch of libraries . If you're wrapping another module, and adding a couple things, where the default is forwarded, is more plausible. The language already exposes `import { default as alias }` -- the conceptual module is reasonable, but it's at a high level. There's a difference between suggesting (with nice syntax) and imposing constraints (the behavior that the proposal is reverting) it's different, making an inconsistency with the rest of the scenarios.
 
 JHD: Why does import * bring in "default"?
 
@@ -618,7 +618,7 @@ Pros for function-like:
 
 - Future extensibility (second argument)
 - Ambiguity with 'import x' form in modules. You could use this from a script, and you might expect that you can write 'import x' in a script. But that would not be the same--it would create a Promise and then throw it away
-    
+
 AWB: You could require it to be parenthesized when it's in statement position, with the same logic that prohibits a function expression there
 
 DD: But, at that point, if you need parens, you might as well have them after the import, rather than before
@@ -630,10 +630,10 @@ DD, WH: There's no lookahead involved here; this is just what grammars do, and b
 - Parens are usually required anyway, e.g., if you'll then the result
 - If we were to do `await import x`, then it would be impossible because we've already used the unary operator
 - Another possibility (though AWB expressed dislike) is local import being hoisted, which this would disallow
-    
+
 AWB: Pros for unary operator, with a low precedence like yield:
     - We are looking at something which is not a call, it's really based on conceptual state
-    
+
 BT: This is a little more like super(), which uses contextual information.
 
 DH: But you could conceptually think of this as a function call. We have both forms, function-like and operator-ilke. Also, eval.
@@ -688,11 +688,11 @@ DH: Seems like predicting the future in a possibly fallable way
 
 DE: Concretely, a hash for SRI or a nonce for CORS may take this second argument position
 
-DH: In the past, implementations which gave an interpretation for the second argument for eval, and this poisoned the well so we couldn't add our own meaning for a second argument. 
+DH: In the past, implementations which gave an interpretation for the second argument for eval, and this poisoned the well so we couldn't add our own meaning for a second argument.
 
 WH: If we don't support spread now, we can always extend the syntax compatibly in the future.
 
-AWB: My concern is teaching and learnability. Anyway, the precedence issue seems like the fatal thing that makes DD's proposal the winner 
+AWB: My concern is teaching and learnability. Anyway, the precedence issue seems like the fatal thing that makes DD's proposal the winner
 
 JHD: People would only run into this if an error occurs and it's hard to explain
 
@@ -746,7 +746,7 @@ BT: I want to avoid spending a lot of time writing spec text for the job queue m
 
 DH: It may be very important to Node to do this synchronously (as Domenic was attempting to do, but which AWB's semantics object to)
 
-DE: Could we decouple this into another proposal? 
+DE: Could we decouple this into another proposal?
 
 YK: Interoperability concern: top-level evaluation in modules imported in Node may see the side effects synchronously.
 

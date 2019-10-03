@@ -2,8 +2,8 @@
 -----
 Istvan Sebestyen (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Daniel Ehrenberg (DE), Mike Samuel (MSL), Qiuyi Zhang (QZG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KV), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBR), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro (DF), Domenic Denicola (DD)
 
-Remote: 
-Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCN), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Igor Minar (IMR), Misko Hevery (MHY), Brendan Eich (BE), Rick Waldron (RW)
+Remote:
+Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCL), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Igor Minar (IMR), Misko Hevery (MHY), Brendan Eich (BE), Rick Waldron (RW)
 -----
 
 
@@ -153,7 +153,7 @@ JHD: (continues presentation)
 
 JHD: Does anyone have thoughts on an alternative of how stacks can be specified and meet the constraints I specified?
 
-AK: There's definitely some confusion about scope in this proposal—there's a lot of machinery about stacks, but it doesn't say what's in the stack. 
+AK: There's definitely some confusion about scope in this proposal—there's a lot of machinery about stacks, but it doesn't say what's in the stack.
 
 JHD: That's intentional. The scope is supposed to be the existence of stack frames and stack strings, the machinery to access them, and the structure they have. I have yet to write in the spec that has hand-wavy implementation-dependent prose.
 
@@ -183,7 +183,7 @@ DD: Yes, that specifies what browsers do.
 
 YK: This has shades of the conversations from yesterday. The things that this addresses are not in the top 10 of the difficulties of looking at the stack.
 
-YK: So yesterday, the implementers said they would be happy if there was not interoperable behavior in date parsing, they would be happy to migrate. Maybe I'm overstating that, but I'm wondering if it's also the case if someone were to make the stack more interoperable here, if that would be interesting to implementers. 
+YK: So yesterday, the implementers said they would be happy if there was not interoperable behavior in date parsing, they would be happy to migrate. Maybe I'm overstating that, but I'm wondering if it's also the case if someone were to make the stack more interoperable here, if that would be interesting to implementers.
 
 JHD: That depends on what changes they'd be willing to make, which requires research.
 
@@ -227,7 +227,7 @@ MM: I'm not sure what counts as a study, but I wrote code to probe it and ran co
 
 MS: Is that available publicly?
 
-MM: It's not available public now, but I'll make what I have available public. 
+MM: It's not available public now, but I'll make what I have available public.
 
 AK: It's not that, if this fully specified, that I would say this advance. It's if we did work on error stacks, I want it to say what is required, what is implementation-specific.
 
@@ -241,7 +241,7 @@ YK: So I carefully avoided asking the question MM asked harder, which is if ther
 
 MM: I said "are you willing?"
 
-YK: I really suspect that if someone really wanted to do a project to work on this spec, either you'd find there is no interest from implementers or indeed a lot of interest from implementers. I'd really like to see you pursue that though. 
+YK: I really suspect that if someone really wanted to do a project to work on this spec, either you'd find there is no interest from implementers or indeed a lot of interest from implementers. I'd really like to see you pursue that though.
 
 JHD: I thought creating this proposal was doing that, and my impression from that was that there wasn't much help to be had, but it sounds like as I get deeper into this, I think there is interest from implementers.
 
@@ -307,7 +307,7 @@ JHD: No, the textual representation was tightly defined. The string would be tig
 
 MF: Then I share TST's opinion, that a sharing a textual representation of the frame is unlikely to be possible on the web.
 
-JHD: My idea would be that we would give a choice of several formats, based on web reality. That's the only way I could invision hardcoding in the spec something that allows for these several formats. 
+JHD: My idea would be that we would give a choice of several formats, based on web reality. That's the only way I could invision hardcoding in the spec something that allows for these several formats.
 
 MS: Wouldn't you want a standard format for the stack frame?
 
@@ -315,7 +315,7 @@ JHD: We could make an ideal format, and hope browsers would migrate to that, or 
 
 YK: I think the conversation yesterday about Temporal and Date was useful. Although it would be nice to do patchwork on broken API, it may be better to make a new thing. You should check offline if the implementations would be interested in doing something like that.
 
-JHD: The thing you're suggesting is the possibility of exploring something that isn't `.stack`. 
+JHD: The thing you're suggesting is the possibility of exploring something that isn't `.stack`.
 
 YK: Something like that. Maybe there's something I haven't thought about.
 
@@ -325,7 +325,7 @@ DD: (groans)
 
 WH: It's hard for me to parse what the proposal is saying. It's built around and reads ErrorData which is not defined anywhere in the spec.
 
-JHD: It's Stage 1, so it's not required at this point, but there's an open issue for that. My idea is to formalize that in Stage 2. 
+JHD: It's Stage 1, so it's not required at this point, but there's an open issue for that. My idea is to formalize that in Stage 2.
 
 WH: It's kind-of key to the proposal.
 
@@ -335,7 +335,7 @@ MM: There's been several mentions of async and I'd like to clarify that there's 
 
 TST: Verified.
 
-MM: The other form async should be remembered as a feature concern, but something that should be kept out of this proposal is the causal structure that one turn causes another. In FF nightly, there's deep stacks that are many turns deep, and FF has wisely chosen to keep them out of mainstream FF. 
+MM: The other form async should be remembered as a feature concern, but something that should be kept out of this proposal is the causal structure that one turn causes another. In FF nightly, there's deep stacks that are many turns deep, and FF has wisely chosen to keep them out of mainstream FF.
 
 JHD: V8 I think has something about long stack traces. Or maybe that's a library I'm thinking of.
 
@@ -411,7 +411,7 @@ DE: Another way to look at this is, we've heard a signal from many people that w
 
 MM: I agree with that positive sentiment whole-heartedly.
 
-YK: MM earlier said "engines already implemented this, it's on the web". That seems true, but it's not clear to me why you should care about the differences between Stage 3 and Stage 4. 
+YK: MM earlier said "engines already implemented this, it's on the web". That seems true, but it's not clear to me why you should care about the differences between Stage 3 and Stage 4.
 
 DE: There's a big difference—something can get to Stage 3 without any implementations.
 
@@ -443,7 +443,7 @@ DE: Thank you for the consensus for the numeric separators and I'm sorry for the
 
 - Committee agrees to the next steps shown on the final slide.
 
-Reviewer Note: 
+Reviewer Note:
 This conclusion recorded by "All Anonymous Users" is completely useless—the "final slide" in the presentation doesn't offer any "next steps". (RW)
 
 
@@ -474,7 +474,7 @@ DE: I did some local benchmarks about the promise resolution impacts this could 
 
 MBS: (continues presenting)
 
-YK: I strongly agree that this is a problem worth solving, Node already has the sync vs. async split and is painful. I've always been excited about this syntax change, because if you're in the top level you can just use await now which is awesome instead of mkdirp.sync. 
+YK: I strongly agree that this is a problem worth solving, Node already has the sync vs. async split and is painful. I've always been excited about this syntax change, because if you're in the top level you can just use await now which is awesome instead of mkdirp.sync.
 
 MBS: As Node goes and recreates a lot of our APIs to be promise-based, it alleviates the burden on us. With top-level await, Node could design all of our APIs with promise first-class. I also want to make sure that it's clear that this runs in modules but not scripts.
 
@@ -484,7 +484,7 @@ DE: There's a grammar reason.
 
 MBS: There's nothing in what we're doing that would limit that work.
 
-MM: Where are implicit interleaving points? Meaning, in the existing language, we have a very nice invariant which are all interleaving points marked with "await" or "yield" (a point with straigh-tline code, but at the interleaving point where code may run stuff above or below the interleaving point; a zalgo issue). When Module A does an import of Module B, and Module B has a top-level await, and then Module A has side effects, do the side effects in A happen before the side effects in B? 
+MM: Where are implicit interleaving points? Meaning, in the existing language, we have a very nice invariant which are all interleaving points marked with "await" or "yield" (a point with straigh-tline code, but at the interleaving point where code may run stuff above or below the interleaving point; a zalgo issue). When Module A does an import of Module B, and Module B has a top-level await, and then Module A has side effects, do the side effects in A happen before the side effects in B?
 
 DE: Imports are always hoisted, so this is always happening at the beginning. Synchronous graphs are held synchronous, then once you hit async, everything happens on the next tick following up the graph. I think it's in a very regular and predictable way.
 
@@ -512,7 +512,7 @@ JHD: How so?
 
 MBS: For example, database initialization. (gives example.) So it basically requires that the root be present.
 
-JHD: In most cases you wouldn't put this; it's only when it's important. The subgraph has to all be in sync. The tooling add could be adding a linter rule, for example. Ideally, there would be some warning in the runtime. 
+JHD: In most cases you wouldn't put this; it's only when it's important. The subgraph has to all be in sync. The tooling add could be adding a linter rule, for example. Ideally, there would be some warning in the runtime.
 
 YK: Would it block you if the module had previously been processed and had a top-level await?
 
@@ -540,7 +540,7 @@ RPR:  We've said that if we have a long module chain, and the base of that uses 
 
 MBS: I have some thoughts on this, but I think a lot of the techniques used by bundlers exist for the script goal, so as we introduce web assembly modules and HTML modules, we're faced with the exact same problems. I am not just trying to say "hey, put a tool on it" but when we look at web packages, we need to signal this to the bundler. I think that is the real solution. What we really need are new bundling solutions at a platform level that allow bundlers to give us the actual execution order that's expected.
 
-DE: I want to push back on this phrasing a bit—we have made in this proposal something that _is_ implementable by bundlers. 
+DE: I want to push back on this phrasing a bit—we have made in this proposal something that _is_ implementable by bundlers.
 
 DE: We've discussed with people on webpack. We've incorporated their feedback. I don't think this proposal should wait on webpackage. If we had something with synchronous reactions, like RPR suggested, there might be graphs where module modules import the same module. It's not as simple as straight inlining. Modules is how we deal with that. We've talked with rollup and webpack on this proposal. The feedback we've gotten—while some people prefer the import await proposal for semantic reasons—they're all still implementable according to them. I think we might want to diverge from what tools do today if we hit an impasse. We have not yet hit any such edge case that suggests it is not possible for bundlers.
 
@@ -578,7 +578,7 @@ TST: Can you just say if this is allowed it's a bug in the grammar?
 
 MBS: Yes, It is not allowed.
 
-DE: Inside a decorator parameter, yes, definition, no. Do you see errors in the draft specification? 
+DE: Inside a decorator parameter, yes, definition, no. Do you see errors in the draft specification?
 
 WH: Yes.
 
@@ -609,11 +609,11 @@ WH: (Asks several questions about the API)
 
 WH: I couldn't figure out the API from the presentation. There is no explanation of the function parameters or behavior.
 
-TST: Maybe it helps to give an example. 
+TST: Maybe it helps to give an example.
 
 WH: The example had all parameters being `{}`, which wasn't informative.
 
-SGN: I'd like to point out that this isn't new functionality. 
+SGN: I'd like to point out that this isn't new functionality.
 
 WH: The API is new and core to this proposal.
 
@@ -621,11 +621,11 @@ TST: (describes API and how we got to it)
 
 SGN: (continues presenting)
 
-AK: There seems like there's a problem with exposing WeakRefs outside of SES realms. It doesn't make sense to me whether TC39 thinks SES needs to be fully compliant. There's already a lot of places where SES deviates from EcmaScript. 
+AK: There seems like there's a problem with exposing WeakRefs outside of SES realms. It doesn't make sense to me whether TC39 thinks SES needs to be fully compliant. There's already a lot of places where SES deviates from EcmaScript.
 
-MM: What AK is saying about "SES is not ES-compliant" is correct. We're going to add a proposal to create a way to write SES-compliant JS. The issue is that it's an explicit goal that SES be compatible with JS written to recognized best practices, including not modifying primordials. That's been a goal since ES5. None of that gives a hard-and-fast answer to your question. The issue here about the covert channels—it's not a SES-specific issue. We don't consider meltdown/spectre to be SES-specific issues. You can have simply separated realms not using SES. 
+MM: What AK is saying about "SES is not ES-compliant" is correct. We're going to add a proposal to create a way to write SES-compliant JS. The issue is that it's an explicit goal that SES be compatible with JS written to recognized best practices, including not modifying primordials. That's been a goal since ES5. None of that gives a hard-and-fast answer to your question. The issue here about the covert channels—it's not a SES-specific issue. We don't consider meltdown/spectre to be SES-specific issues. You can have simply separated realms not using SES.
 
-TST: I think it's a valid discussion to be had whether SES concerns (or other security concerns that not all committee members think are important to address) are blocking issues. We have a consensus model. 
+TST: I think it's a valid discussion to be had whether SES concerns (or other security concerns that not all committee members think are important to address) are blocking issues. We have a consensus model.
 
 YK: I feel this is derailing into a zero-sum situation. There are a lot of reasons you care about these situations. MM likes making arguments about security. In this case, I often have to write universal JS (having no understanding about the environment in which it runs) and maybe there are theoretical arguments, but in reality, ECMA-262 is the right thing to target if you're writing compatible JS. That is how the community works, and I think for universal JS, there's a question on how much you can rely on when you're reading out of a WeakRef. This model feels better from a programming model perspective. Knowing that the weakref won't change from under you is something you should be able to rely on. I think trying to ask ourself if we care about SES is not the right question. I think the questions are (1) does it make sense for the language (?) and (2) does it make sense for the programmer? The answer to those question is yes.
 
@@ -649,7 +649,7 @@ WH: Getting back to the substance of the proposal, in the presentation you posed
 
 TST: There was a slide about this as an open question.
 
-WH: Yes, and I'm stating my position on that question. 
+WH: Yes, and I'm stating my position on that question.
 
 WH: On another subject, what happens if you have a large amount of garbage created in one turn and happen to get weak references to it. Is that ever a problem that you can't collect it?
 
@@ -715,7 +715,7 @@ LBR: (presents examples demonstrating grammar issues around interpretation of `-
 
 LBR: Can we get consensus on `Function(...)` source text including a prepended line feed?
 
-MB: Please forget everything Leo said about HTML comments. I want to clarify that this is unrelated to the behavior of `-->`. The proposed change here is to align the spec with implementation reality w.r.t. Function#toString. 
+MB: Please forget everything Leo said about HTML comments. I want to clarify that this is unrelated to the behavior of `-->`. The proposed change here is to align the spec with implementation reality w.r.t. Function#toString.
 
 WH: Fixing `-->` needs a coherent proposal.
 

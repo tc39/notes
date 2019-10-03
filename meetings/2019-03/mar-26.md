@@ -2,8 +2,8 @@
 -----
 Istvan Sebestyen (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Daniel Ehrenberg (DE), Mike Samuel (MSL), Qiuyi Zhang (QZG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KV), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBR), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro (DF), Domenic Denicola (DD)
 
-Remote: 
-Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCN), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS)
+Remote:
+Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCL), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS)
 -----
 
 
@@ -97,7 +97,7 @@ JHD: In previous years, there was more willingness to pull in any non-normative 
 
 DE: There are conversations we've been having on GitHub about best practices for PRs. It would be great if the editorial board could document that and help come up with best practices.
 
-JHD: This is definitely something we plan to do. 
+JHD: This is definitely something we plan to do.
 
 
 ## ECMA-402 Updates
@@ -108,11 +108,11 @@ SFC: (Presents slides) (Presents all stage 1-3 proposals). ecma402-admin@chromiu
 
 AK: What is the process for stage 3 proposals that introduce major changes?
 
-SFC: For example, in segmenter, which had a major API change, our process has been to iterate over what this process looks like. 
+SFC: For example, in segmenter, which had a major API change, our process has been to iterate over what this process looks like.
 
 DE: segmenter isn't the only time, there were also changes to relative time format at Stage 3. We've tried to discuss in a very open way in ECMA-402 and also in plenary here. I think after some experience, going up and down stages isn't always productive. We all want things to happen, and we want to work out the details with more stakeholders as time goes on. If the committee has more feedback about how we can work out process improvements, we'd love to hear them.
 
-LBR: (Presents slides on Editorship) [Editorship slides](https://docs.google.com/presentation/d/1D2vP7GMknBFaXkuBteCLk5bhL-PN_j7z2yK4MmmfYnE/edit#slide=id.p)  
+LBR: (Presents slides on Editorship) [Editorship slides](https://docs.google.com/presentation/d/1D2vP7GMknBFaXkuBteCLk5bhL-PN_j7z2yK4MmmfYnE/edit#slide=id.p)
 
 LBR: Do we have consensus to adopt the proposed editorship group?
 
@@ -127,7 +127,7 @@ LBR: Do we have consensus to adopt the proposed editorship group?
 
 (Leo Balter (LBR))
 
-LBR: We're now using Test262 to show reports automatically on every PR. I cannot block PRs on this, (we only block on linting files or formatting metadata). But you can also see the results of the tests on every PR. If you click on "Details" you can see the results. We now use CircleCI instead of Travis CI (since Circle is faster). 
+LBR: We're now using Test262 to show reports automatically on every PR. I cannot block PRs on this, (we only block on linting files or formatting metadata). But you can also see the results of the tests on every PR. If you click on "Details" you can see the results. We now use CircleCI instead of Travis CI (since Circle is faster).
 
 ### ECMA-404 Update
 
@@ -171,7 +171,7 @@ YK: Another reason you may want this to be public is because sometimes you get c
 
 MS: I feel it makes sense to discuss with CoC Committee, like an escalation process, if there is an issue, but I fear we are jumping the gun by exposing that information sooner.
 
-YK: My concern is that these things happen fast—in real time. 
+YK: My concern is that these things happen fast—in real time.
 
 JBR: Accountability is very important here—so you want to be able to tell someone that an individual has been blocked and then to show them.
 
@@ -240,13 +240,13 @@ MM: If the current system was what you are proposing—and if you were proposing
 
 LBR: For clarification, yes, this thing affects an observable change. But I think any syntactical change to NXB should be discussed and it should have time for a full discussion later since it is important.
 
-MM: I'm objecting to the idea that HTML comments come to be accepted where they are rejected today. 
+MM: I'm objecting to the idea that HTML comments come to be accepted where they are rejected today.
 
 MF: I'd like to respond to MM's question. This is fixing an inconsistency in the spec that exists currently. The synthesised source text includes new lines in the rendering, but the function body is parsed without them. Parsing it unlike how it is displayed is an inconsistency. We should either remove the newlines in the synthesised source text or allow the HTML start comments. We shouldn't leave it as it currently is.
 
 JHD : If you pass two slashes, it does work as expected. That supports the consistency argument that we should make this change.
 
-YK: If there is a thing that could be rendered but not parsed, doesn't that violate the round-tripping of toString? 
+YK: If there is a thing that could be rendered but not parsed, doesn't that violate the round-tripping of toString?
 
 MM: The function.toString invariant has to do with output render and is in turn parsable and thus evaluable with "eval". Given the structure of the spec, and since I support adding the new lines, I'd have to agree that this adheres to the principle of least surprise. Any engine that doesn't support HTML comments—as a JS engine is free to ignore them—I think this is OK, so I remove my objection.
 
@@ -254,7 +254,7 @@ YK: I remember WH having an objection to some other changes related to the HTML 
 
 WH: The issue is whether `-->` is allowed at the beginning of a script. According to Annex B grammar, it's not.
 
-LBR: It's not written in any grammar. 
+LBR: It's not written in any grammar.
 
 WH: The issue is more about if `-->` is allowed at the beginning of a script or not. Adding the newlines here is a red herring. So I would not support this change. If we want to fix it, we should look at what `-->` does at the beginning of various parsing contexts.
 
@@ -272,7 +272,7 @@ WH: In Annex B, `-->` is allowed only after a new line. However, implementations
 
 MM: I'll try to clarify WH's issue. Although the current spec does imply that the acceptance of `-->` is whether there is a newline or not, not just in function body but also in eval, all of the places where it should be rejected because of an absence of a newline are actually getting accepted. So the problem is that the grammar in Annex B already does not match web reality. And if you fix it there, then the newline issue there no longer affects whether `-->` is accepted or not. The problem with `-->` is not unique to function bodies.
 
-LBR: That sounds like it would be extending the HTML comments grammar. If we cannot find consensus now, I'd rather we bring it to the end of the meeting. 
+LBR: That sounds like it would be extending the HTML comments grammar. If we cannot find consensus now, I'd rather we bring it to the end of the meeting.
 
 BT: Maybe we can discuss it at the end.
 
@@ -306,7 +306,7 @@ JHD: There is a line in the spec that specifically covers that case.
 
 ## Normative: Make Async-from-Sync iterator object inaccessible to ECMAScript code
 
-JHD: Presenting on behalf of André Bargull. I think this PR is not very objectionable, but it needs consensus. 
+JHD: Presenting on behalf of André Bargull. I think this PR is not very objectionable, but it needs consensus.
 
 JRL: How is this currently accessible?
 
@@ -346,11 +346,11 @@ JHD: According to the PR, we had consensus to move forward with the feature, but
 
 TST: As an implementer, I think Mozilla would be fine without blocking on additional implementations.
 
-DE: Processes that TC39 could use here—some committees use multi-user buy-in. That seems like something we could use. This makes me very comfortable with merging this PR. If we only have feedback from only one browser, and feedback from tooling, I think that would not be sufficient, but here we have Mozilla's buy-in and already one implementation. 
+DE: Processes that TC39 could use here—some committees use multi-user buy-in. That seems like something we could use. This makes me very comfortable with merging this PR. If we only have feedback from only one browser, and feedback from tooling, I think that would not be sufficient, but here we have Mozilla's buy-in and already one implementation.
 
 TST: I agree with DE.
 
-SGN: ChakraCore has it too, so I think it's fine to merge it. 
+SGN: ChakraCore has it too, so I think it's fine to merge it.
 
 KS: We have an implementation behind a flag right now.
 
@@ -427,7 +427,7 @@ DE: A list of locales, possibly among other things. It was a difficult discussio
 
 Proceeding to Stage 3
 
-## Intl.DateTimeFormat.prototype.formatRange for Stage 3 
+## Intl.DateTimeFormat.prototype.formatRange for Stage 3
 
 (Felipe Balbontín (FBN))
 
@@ -504,9 +504,9 @@ SFC: In the slides, you have tables including different specifications. I've see
 
 RGN: I'd like to carve out an area in our interchange format. Anything that doesn't parse clean has to be rejected. If you have something that looks like the RFC or the EcmaScript interchange format, it must pass all the checks to be parsed as not a number.
 
-RGN: You have cases where input is obviously invalid, except with weird edge cases (like the February 30th example). All the cases that I'm changing are rejected by at least one engine already. 
+RGN: You have cases where input is obviously invalid, except with weird edge cases (like the February 30th example). All the cases that I'm changing are rejected by at least one engine already.
 
-BT: This feature seems to be all about driving interoperability. 
+BT: This feature seems to be all about driving interoperability.
 
 RGN: One thing that I can commit to is that if there's anything that's required to support interoperability, then we should include that. I do still want to move the ball forward.
 
@@ -518,7 +518,7 @@ SFC: If we did want to move in the direction of supporting other calendars for d
 
 RGN: Or Temporal.
 
-AK: If I were to restate what BT said, we may have to change what's in the proposal as we go, but it would be nice to know as an implementer how much time we'll be playing whack-a-mole with those changes. 
+AK: If I were to restate what BT said, we may have to change what's in the proposal as we go, but it would be nice to know as an implementer how much time we'll be playing whack-a-mole with those changes.
 
 RGN: My intention is to make a full picture of what the landscape looks like.
 
@@ -526,7 +526,7 @@ BT: It's hard to say we want this in a standard without understanding that. It's
 
 AK: I would second that. To give an example, someone could say, "let's make JavaScript more interoperable," and we all agree on that, and finish that at Stage 2.
 
-RGN: We can commit to a desire that may never materialize. 
+RGN: We can commit to a desire that may never materialize.
 
 AK: We'd want the desire to be more concrete before committing to Stage 2.
 
@@ -536,11 +536,11 @@ RGN: Do we want portability of something like "2019-03-26Q"? Do you want to acce
 
 DE: We do want portability. This may be something of a union and something of an intersection.
 
-RGN: I'm interested in a post-check on that. I'm interested in the formats that the rest of the internet has committed to in terms of portability. But if we do want more like, we want to accept something that all engines have accepted, ... 
+RGN: I'm interested in a post-check on that. I'm interested in the formats that the rest of the internet has committed to in terms of portability. But if we do want more like, we want to accept something that all engines have accepted, ...
 
 DE: I don't think it should be necessarily the union. But we need to do damage control because there is not currently interoperability on Date.parse. We need to focus on interoperability. On Temporal, I really want to define for Temporal how it can accept the ISO-8601 strings. That's unrelated to the goal for Date. So I'm wondering what the rest of the committee thinks about these goals.
 
-LBN: I would like to request for Stage 2, even if this proposal doesn't advance. I would like more input from others, and I don't think this meeting is a fair enough time for this work. 
+LBN: I would like to request for Stage 2, even if this proposal doesn't advance. I would like more input from others, and I don't think this meeting is a fair enough time for this work.
 
 KM: My main concern is that there's enough random pages with compatibility issues that break whenever you make changes to Date.parse(). I think it's a bottomless pit.
 
@@ -558,7 +558,7 @@ LBR: The effects are clearly way more spread than the actual spec text. I feel l
 
 MB: To respond to DE's comments, I'm worried we may never get a full spec to solve all Date.parse()'s problems if we try to do it all in a single proposal. I think we should be open to accept smaller, incremental improvements.
 
-DE: The author of the previous proposal (Morgan) stopped working on the project because they left Mozilla. 
+DE: The author of the previous proposal (Morgan) stopped working on the project because they left Mozilla.
 
 RGN: As far as I know, the previous proposals never even got this far.
 
@@ -601,7 +601,7 @@ RGN: The goals of the proposal that I'm bringing forward are to get uniform pars
 MB: (presents slides)
 
 MB: The main questions are why do we add Promise.allSettled instead of Promise.reflect? My answer is that it's different enough that it should be a separate proposal. I'd like to propose that we close this issue on `Promise.reflect` and move on with that consensus.
- 
+
 SGN: What is Promise.reflect?
 
 MB: It's basically something like the userland function that you'd write today to get similar behavior. It keeps track of the promise state, and it takes it turned into an object with a status/value pair. Promise.allSettled does not block adding that feature in the future.
@@ -653,7 +653,7 @@ JRL: When you pass in a non-global regex as the search string, what happens?
 
 MB: That's an open issue (which you filed!). The current spec text gives us a way forward. We can address that detail before Stage 3.
 
-YK: ... 
+YK: ...
 
 MS: What semantic do you prefer for a RegExp searchValue?
 
@@ -664,7 +664,7 @@ JHD: At various times it threw or added a 'g' flag. But now it just returns a si
 #### Conclusion/Resolution
 
 - Stage 2 acceptance
-- Stage 3 reviewers: MS, RGN, and DE 
+- Stage 3 reviewers: MS, RGN, and DE
 
 
 ## Private declarations for Stage 1
@@ -676,7 +676,7 @@ JHD: At various times it threw or added a 'g' flag. But now it just returns a si
 
 JRL: (presents slides)
 
-MM: I like this direction. I want to make sure we are preserving the integrity constraint on private state that distinguishes initialization, which registers in the weak map. Whether it's outer or private, on the "#x = 0", I just want to make sure that's the registration of the instance of Ex, and if in the constructor you'd have "this.#x = 0;" but #x wasn't previously declared... 
+MM: I like this direction. I want to make sure we are preserving the integrity constraint on private state that distinguishes initialization, which registers in the weak map. Whether it's outer or private, on the "#x = 0", I just want to make sure that's the registration of the instance of Ex, and if in the constructor you'd have "this.#x = 0;" but #x wasn't previously declared...
 
 JRL: I haven't changed those semantics; that case should still throw. You have to declare a private field on the class so it can be initialized on instances, you can't just access an outer private on an instance that didn't declare the field.
 
@@ -688,7 +688,7 @@ MM: I'm very happy with this, I'm glad that you're also opposed to abusing the c
 
 CM: I like the general flavor of what you're trying to do. I might come very close to bikeshedding on syntax, but now we're overloading "private" to mean non-private, private on the file scope. I've gotten used to `#` meaning "private", and now we have `private #` to mean "not really private".
 
-YK: I don't necessarily agree that this scoping is that difficult to understand. We should be careful with complicating the model. 
+YK: I don't necessarily agree that this scoping is that difficult to understand. We should be careful with complicating the model.
 
 KCL: Alternative 1 has a problem—if you were to bundle this with unminified code. There would be nothing stopping me from leaking scope.
 
@@ -704,7 +704,7 @@ YK: In general, we need to get more clear on whether to lean on module scoping. 
 
 WH: I share the syntax confusion worries mentioned already. The other thing I'm unclear about is, what is `x.#y` supposed to mean? Does it call get/set/init? If you have Object-dot-hash-y?
 
-JRL: I am not introducing any changes with respect to the semantics of access. 
+JRL: I am not introducing any changes with respect to the semantics of access.
 
 WH: So it doesn't cause get/set/init to be called?
 

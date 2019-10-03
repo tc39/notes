@@ -2,8 +2,8 @@
 -----
 Istvan Sebestyen (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Daniel Ehrenberg (DE), Mike Samuel (MSL), Qiuyi Zhang (QZG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KV), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBR), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro (DF), Domenic Denicola (DD)
 
-Remote: 
-Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCN), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Igor Minar (IMR), Misko Hevery (MHY)
+Remote:
+Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCL), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Igor Minar (IMR), Misko Hevery (MHY)
 -----
 
 
@@ -18,11 +18,11 @@ Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCN), Valerie Young (VYG), Jo
 
 - [proposal](https://github.com/domenic/proposal-function-implementation-hiding)
 
-DD: The scope of this proposal has slightly expanded. 
+DD: The scope of this proposal has slightly expanded.
 
 DD: There is a question from the audience about `Function.prototype.length`. This will be discussed more in the presentation.
 
-DD: One major clarification is that this is an encapsulation primitive only. After discussion with major implementers, this is not a memory saving (something?). 
+DD: One major clarification is that this is an encapsulation primitive only. After discussion with major implementers, this is not a memory saving (something?).
 
 WH: Can you clarify memory saving? Is this application-level?
 
@@ -102,7 +102,7 @@ YK: This is great in the direction of being a native feature instead of a V8 fea
 
 YK: I agree that this doesn't have anything to do with debugging tools, but frameworks like Ember have our own debugging tools, and it seems scope-expanding to solve this problem, but in the same sense that the browser needs access to the truth, Ember needs access to the truth.
 
-DD: Does the Ember debugger use the DevTools API? 
+DD: Does the Ember debugger use the DevTools API?
 
 YK: There are 2 ways this can go down. The first part is that you could use devtools APIs. You have to have code on both sides and you want to force a reflection. You'd need handles to objects to make that work. I don't know the prioritization of the DevTools team, but it seems like something that could get lost. The second thing is test frameworks might want stack traces that contain extra info.
 
@@ -122,7 +122,7 @@ DD: Okay cool, thank you all. I find your case about the opposite directive real
 
 YK: At first glance, my sense is, I can imagine in Ember that we are forced to do runtime introspection of our code. We sometimes need to check the version of Ember we are running. Like, targeted unhiding seems like it could be a thing when you start looking into the codebase.
 
-CPO: Bundling is a problem, obviously. We show the implementation, if we're forced to revert that we can possibly do that via .toString(). 
+CPO: Bundling is a problem, obviously. We show the implementation, if we're forced to revert that we can possibly do that via .toString().
 
 YK: I didn't understand that.
 
@@ -130,7 +130,7 @@ CPO: You have this show string method. Can there be a unshow string method?
 
 MM: To clarify, the membrane use-case was slightly different. I don't think a membrane should introduce a distortion of the showing of code from one side of the membrane to another. Rather, it is about hiding the membrane mechanism, so the two sides seem to have called each other directly.
 
-MSL: For the proxies stuff, you can always (?). 
+MSL: For the proxies stuff, you can always (?).
 
 DD: I think we should proceed as is, instead of adding these considerations for the membrane use-case. We can then address the membrane use-case later.
 
@@ -142,7 +142,7 @@ DD: There _is_ tooling, but that's a good point. I want to present and work with
 
 WH: I also wanted to emphasize the comment about negating the directive. It really does make sense to have everything hidden except for a few things in your code, so we should have both polarities of this directive rather than deferring the negative to the future.
 
-YK: This is a clarifying question: Bundling tools would have to make functions in order to ... Have you considered allowing you to put it in blocks? 
+YK: This is a clarifying question: Bundling tools would have to make functions in order to ... Have you considered allowing you to put it in blocks?
 
 DD: I guess so, yeah.
 
@@ -162,7 +162,7 @@ DD: There's a few things. Disabling runtime introspections through toString and 
 
 YK: It's always the case when you talk about hiding things from runtime JS that curl would work. The browser has a massive amount of functionality with that objection. It's necessary in the security model. But in the browser already, you can use curl, but you can't use curl that includes a user's credential. The thing I would be interested in is people casually looking at the source code as a version detection mechanism or generally trying to make a choice at runtime based on the implementation. I would prefer to avoid that if there were a way to do that in another way.
 
-MM: I want to remind everyone that DD was clear about the purpose of the proposal (and what its purpose is not)—this is not intended to hide source code from human developers. Purely intended as a runtime matter: to hide source code from other code in the same runtime. 
+MM: I want to remind everyone that DD was clear about the purpose of the proposal (and what its purpose is not)—this is not intended to hide source code from human developers. Purely intended as a runtime matter: to hide source code from other code in the same runtime.
 
 MF: The directive prologue is called that b/c it's intended to support multiple types of directives. It's supposed to be extended by host directives, and it's intended to allow us to add more directives. `use strict` was not intended to be the only directive. I wanted to mention that we intended to, as part of this proposal, add a directed prologue to class bodies. I think most people won't care but some people might feel strongly about that.
 
@@ -194,7 +194,7 @@ DD: Good question. Application-wide switches work through the host-wide hasFeatu
 
 SYG: Given that we've talked about source hiding... I think that's a good argument for separating the knobs.
 
-DD: If we were to add an application-level switch, maybe it should only hide toString. Wrapping up, we have a few things to address. (1) Name of the directive: if you care about that, let's talk about that here or on GitHub. (2) Censoring name and length of functions. Those are the big ones. 
+DD: If we were to add an application-level switch, maybe it should only hide toString. Wrapping up, we have a few things to address. (1) Name of the directive: if you care about that, let's talk about that here or on GitHub. (2) Censoring name and length of functions. Those are the big ones.
 
 YK: When you're hiding stacks you probably don't want to hide the entry point but you want to hide everything inside the function.
 
@@ -260,7 +260,7 @@ KM: I don't know enough about this, because I don't write enough web code, but i
 
 DE: Yeah, that's the goal of this. BigInt is not intended to be polymorphic with number. Developers are supposed to learn that, or else they need to paper over it.
 
-DD: One thing people miss is that the coercion behavior is key. The reason we want to avoid overloading... it makes it accepts number in the way every WebIDL accepts number, which is toNumber, and also accepts BigInt. ... 
+DD: One thing people miss is that the coercion behavior is key. The reason we want to avoid overloading... it makes it accepts number in the way every WebIDL accepts number, which is toNumber, and also accepts BigInt. ...
 
 DE: Thanks for explaining, DD.
 
@@ -308,7 +308,7 @@ MM: OK, so here's an empirical question. In *ignoring* the export of "then", how
 
 YK: How often are you talking? 0%?
 
-MM: Does it come up more than ~3%? 
+MM: Does it come up more than ~3%?
 
 YK: It's come up but not a lot.
 
@@ -346,7 +346,7 @@ LBR: For a wrapper solution. I'm not sure if this matches the current proposed t
 
 SYG: The module thing is a motivating example here, but it's not intended to be solving a particular module problem.
 
-LBR: I strongly oppose to statically prohibit exporting `then`. 
+LBR: I strongly oppose to statically prohibit exporting `then`.
 
 SYG: That ship has sailed already.
 
@@ -369,13 +369,13 @@ SYG: I'd like thinking more about DD's idea about a protocol for wrapping anythi
 - If you are interested, follow up with SYG.
 
 
-## BigInt follow up conversation 
+## BigInt follow up conversation
 
 (Daniel Ehrenberg (DE))
 
 DE: There was a question from JHD about if you put a string into Number.format(), do we lose accuracy? This is not the intention. We cannot satisfy the intuitions that people generate. People think it should just work out, but this is impossible.
 
-JHD: My question was actually If I pass a number and I pass a BigInt, both of those should work sensibly. 
+JHD: My question was actually If I pass a number and I pass a BigInt, both of those should work sensibly.
 
 DE: How would you answer that question?
 
@@ -409,7 +409,7 @@ MBS: I think you should make a direct statement about which options you want to 
 
 DE: Stage 3. It's not integrated to the main spec...
 
-MBS: Let's discuss what the two options are and reach a conclusion on the committee. 
+MBS: Let's discuss what the two options are and reach a conclusion on the committee.
 
 DE: The two options are: (1) encourage in these two cases we're considering that a new method be added. (2) Or using toNumeric as on BigInt to Number. I would be happy with using this overloading with toNumeric, personally, but MM seems to be opposed to that.
 
@@ -425,7 +425,7 @@ WH: More generally, things that consume numbers and convert them to strings shou
 
 CM: We have advocates for each about the aesthetic concerns and what or would not cause more difficulty in practice. The question is, do we have any read on the ergonomics of these—what's more likely to trip up developers using these APIs.
 
-DE: It's very hard to collect this feedback now, since BigInt isn't widely available. Developers expect BigInts to just work, when you're parsing JSON for example, which will just not work. 
+DE: It's very hard to collect this feedback now, since BigInt isn't widely available. Developers expect BigInts to just work, when you're parsing JSON for example, which will just not work.
 
 CM: To take a step back from the BigInt question, are there other APIs that faced similar dilemmas that may be illustrative?
 
@@ -437,7 +437,7 @@ YK: I agree with Dan's point about us already having made this call—if we give
 
 LBR: AFAIK, WebIDL can follow from the decision from TC39. I would like to advocate for ToNumeric. For this very specific case, I would be happier to have ToNumeric overloading.
 
-JHD: I'd asked on GitHub with Math.max if you give it an array of BigInts and Numbers, it throws. If we go with overloading as an example, eventually there may be a day where we want to mix those. There's no technical reason why I couldn't use .max or .min on those. I feel like we're going to run into a lot of cases where we're not going to run into those. 
+JHD: I'd asked on GitHub with Math.max if you give it an array of BigInts and Numbers, it throws. If we go with overloading as an example, eventually there may be a day where we want to mix those. There's no technical reason why I couldn't use .max or .min on those. I feel like we're going to run into a lot of cases where we're not going to run into those.
 
 DE: We made an explicit decision not to create this expectation that things are interoperable in this way.
 
@@ -445,7 +445,7 @@ JHD: That's a good case for consistency. But, I'm worried there will be a number
 
 DE: I think people have legitimate use cases for many legitimate things we're not adding to the standard, like parsing BigInts in JSON. So I don't really see the issue.
 
-JHD: I think it makes sense if we say we don't want to satisfy that now, and maybe we'll look at satisfying it later. 
+JHD: I think it makes sense if we say we don't want to satisfy that now, and maybe we'll look at satisfying it later.
 
 DE: I don't see how if we made that second method now, that that precludes us from overloading later.
 
@@ -485,7 +485,7 @@ WH: Advising WebIDL doesn't need to be a part of this proposal. What I think Web
 
 #### Conclusion/Resolution
 
-- Consensus to move forward on [Intl.NumberFormat.prototype.format overloading with ToNumeric](https://github.com/tc39/ecma402/pull/236). 
+- Consensus to move forward on [Intl.NumberFormat.prototype.format overloading with ToNumeric](https://github.com/tc39/ecma402/pull/236).
 - DE can advise WebIDL to adopt this behavior in a personal capacity; there is no committee consensus yet on providing such advice.
 
 
@@ -496,7 +496,7 @@ WH: Advising WebIDL doesn't need to be a part of this proposal. What I think Web
 - [slides](https://docs.google.com/presentation/d/1mGqWHfs1EkBneG9CGJZj5mefzMrXQnt2FjqRp9geGxI/)
 - [proposal](https://github.com/tc39/proposal-decorators/)
 
-YK: Basically, you have to understand proxies to be able to write a decorator. 
+YK: Basically, you have to understand proxies to be able to write a decorator.
 
 DE: We see in the ecosystem abstractions on top of the decorators proposal to make them easier to write. Separately, it might be difficult to add features to decorators and add to them over time. Lots of people have expectations that we can extend decorators.
 
@@ -549,15 +549,15 @@ DE: Since they're not values, they can only be constructed in these fixed ways. 
 
 RBN: In the stage 2 proposal, we'd run these decorators in the class declaration. I understand why this is an issue in the static analysis of the class. In the current proposal, it kinda rolls back the clock to stage 1, but it also emulates what transpilers are doing today. That's basically what this proposal is doing with the added complexity of @wrap decorators, or having to define new properties with hidden class transitions.
 
-DE: I was trying to meet the goals of the transpiler output. 
+DE: I was trying to meet the goals of the transpiler output.
 
-RBN: So there are a couple things that make me feel that stack decorators are not necessary if the actual runtime semantics is that these are not evaluated until the end of the runtime definition. The decorators that are registered... 
+RBN: So there are a couple things that make me feel that stack decorators are not necessary if the actual runtime semantics is that these are not evaluated until the end of the runtime definition. The decorators that are registered...
 
 DE: I agree that these original decorators don't do too much. The idea was that we have a space to build on these primitive operations.
 
 RBN: (refers to slide entitled "@register") If I set something as not writeable or not configurable, ... (too fast)
 
-DE: The idea is that wrap would handle accessors. It would just wrap the accessor, not coalescing. That's in the README. We should hopefully be able to use the mechanisms that JS engines have to conditionally execute the class definition and create a template out of that. So if we were to go back to a Stage 1... 
+DE: The idea is that wrap would handle accessors. It would just wrap the accessor, not coalescing. That's in the README. We should hopefully be able to use the mechanisms that JS engines have to conditionally execute the class definition and create a template out of that. So if we were to go back to a Stage 1...
 
 RBN: Since the semantics to evaluate these at the end, the semantic of static is not necessary... this adds more complexity than necessary. Of all the built-in decorators, the only one that adds a use case not present in Stage 1 is the @register(?) decorator.
 
@@ -567,13 +567,13 @@ RBN: lexically scoped decorators cannot be "namespaced". You can't logically gro
 
 DE: I think that's fixable. There's an issue thread where the proposed syntax is listed.
 
-IMR: We want to make a quick support statement on behalf of Angular. We've been using them for the longest in the JS. Stage 1 and Stage 2 proposals are in a stalemate and this proposal represents a way out of that stalemate. There's some risk to this proposal, but the Stage 2 proposal didn't add enough value for the overhead, whereas this one adds much more value. 
+IMR: We want to make a quick support statement on behalf of Angular. We've been using them for the longest in the JS. Stage 1 and Stage 2 proposals are in a stalemate and this proposal represents a way out of that stalemate. There's some risk to this proposal, but the Stage 2 proposal didn't add enough value for the overhead, whereas this one adds much more value.
 
 DE: Thanks.
 
 AK: Happy to see the focus on performance concerns. Thanks for taking that feedback seriously.
 
-DRR: There is this cross resolution problem. When we need to generate code at parse time, that seems like one of the biggest things we'll need to tackle. 
+DRR: There is this cross resolution problem. When we need to generate code at parse time, that seems like one of the biggest things we'll need to tackle.
 
 IMR: Locality is very important, and losing that should not be taken lightly.
 
@@ -583,7 +583,7 @@ MM: I'd like to see it pursued, but I'd like to see some course-corrections.
 
 DRR: The cross-resolution is probably the biggest concern for tooling—babel included.
 
-TST: I personally like this direction personally, and I think this has a better chance to actually be implemented in a performant way. 
+TST: I personally like this direction personally, and I think this has a better chance to actually be implemented in a performant way.
 
 DE: If anyone wants to get involved, please submit feedback on GitHub issues, but also let me know if you want to help spell out some of the more complex things.
 
@@ -600,7 +600,7 @@ DE: If anyone wants to get involved, please submit feedback on GitHub issues, bu
 
 PDL: (presents slides)
 
-PDL: We resolved several issues. (1) we are using BigInt always now. ToNumeric will be used for input types. In terms of polyfills, we'll have a number of factories that make it very clear what is happening. Instant will show nanoseconds since the epoch (?). (2) Zoned: Zoned toInstance (or ZonedInstance?) was renamed to ZonedDateTime... (PDL continues discussing other issues in the slides). 
+PDL: We resolved several issues. (1) we are using BigInt always now. ToNumeric will be used for input types. In terms of polyfills, we'll have a number of factories that make it very clear what is happening. Instant will show nanoseconds since the epoch (?). (2) Zoned: Zoned toInstance (or ZonedInstance?) was renamed to ZonedDateTime... (PDL continues discussing other issues in the slides).
 
 PDL: We would like the committee to move forward with standard modules. That has now turned into a blocking issue.
 
@@ -672,7 +672,7 @@ AKI: The CoC committee and volunteers from TC39. Once someone's been involved fo
 
 TST: You make this sound very objectively non-inclusive.
 
-WH: I merely said that I feel that it is non-inclusive. 
+WH: I merely said that I feel that it is non-inclusive.
 
 TST: OK, that's a good clarification. But ....
 
@@ -688,11 +688,11 @@ AKI: We'll manage these settings—we have that power.
 
 AK: It's not obvious to me that shutting down esdiscuss. The signal to noise ratio is low enough—without intending to sound demeaning—proposals that are largely out of left field, that don't really consider the history. My strawperson proposal would be to encourage the committee to use Discourse today before shutting down esdiscuss in some months.
 
-AKI: One thing I really like about Discourse is that it attempts to surface the most active threads. It tries to help you find the things that are going to be interesting to you. If we seed it with our own conversations, and for want of a better word, _force_ a better format. I'd be interested in that strawperson proposal, but I'd still very like a timeline for when esdiscuss is shutting down. 
+AKI: One thing I really like about Discourse is that it attempts to surface the most active threads. It tries to help you find the things that are going to be interesting to you. If we seed it with our own conversations, and for want of a better word, _force_ a better format. I'd be interested in that strawperson proposal, but I'd still very like a timeline for when esdiscuss is shutting down.
 
 JRL: If we do migrate away from the current esdiscuss, please create a read-only archive of it. When working on proposals, I found it enormously helpful to use the esdiscuss archive.
 
-AK: I don't know who's responsible for that, but I would be hugely supportive of this 
+AK: I don't know who's responsible for that, but I would be hugely supportive of this
 
 TST: You're probably talking about esdiscuss.org? That's not hosted by Mozilla. We will keep the esdiscuss live forever, since it's basically a static website.
 
@@ -819,7 +819,7 @@ DD: I think this proposal's narrow focus on a narrow subset based on other stand
 
 RGN: What would that look like?
 
-DD: You write an algorithm that parses dates. Then you would come up with test cases, (that's the fun part). We've done this with things like URLs, Base64 encoding, MIME-type parsing, HTML parsing, also line type parsing. 
+DD: You write an algorithm that parses dates. Then you would come up with test cases, (that's the fun part). We've done this with things like URLs, Base64 encoding, MIME-type parsing, HTML parsing, also line type parsing.
 
 RGN: HTML parsing wasn't finished in 2004.
 
@@ -853,7 +853,7 @@ WH: Yeah, we should fix that. It leads to interoperability concerns because RFC 
 
 JHD: One thing we often do here is basically specify web reality—specify to everyone that's how it should be so it's consistent for everyone. The intersection, even though it may be a very gargantuan task, and possibly something you don't want to do RGN, it still seems useful to have that implemented. Then the stuff that already works somewhere can't break in the future. That seems like a useful direction just because Temporal might show up in the future might show up doesn't seem responsible to me. I still want `Date.parse` to be somewhat reliable to me.
 
-RGN: That's the essence of what I'm trying to do. I've presented it from a standards perspective or a engines perspective. The majority of the two subsets I'm talking about _are_ accepted everywhere. 
+RGN: That's the essence of what I'm trying to do. I've presented it from a standards perspective or a engines perspective. The majority of the two subsets I'm talking about _are_ accepted everywhere.
 
 JHD: To be clear, I'm not saying it would be not be useful to look at the standards and make sure browsers comply. Look at what the browsers do and continue to do that forever—even if that means maintaining non-compliance with RFC 3339.
 
@@ -865,7 +865,7 @@ DD: There's a difference between specifying the features and saying implementati
 
 YK: In addition to the risks DD identified, even if you make a change that in theory increases interoperability, there is risk of breaking things. An example is function in block in Annex B.
 
-RGN: But if I remember correctly, it did change multiple times. 
+RGN: But if I remember correctly, it did change multiple times.
 
 BT: Only tightening and aligning.
 

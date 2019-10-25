@@ -737,7 +737,7 @@ DE: I have no plans to introduce operator overloading any time soon; I have only
 KCL: I was going to propose operator overloading this meeting but didnt have time to finish it.
 
 TST: A year ago we worked on typed objects but stopped because of WASM. Value types may not suffer these problems. It makes sense to explore value types more.
---> Link to last version of the value types explainer: https://github.com/tschneidereit/typed-objects-explainer/blob/value-types/valuetypes.md
+--> Link to last version of the value types explainer: https://github.com/tschneidereit/typed-objects-explainer/blob/master/valuetypes.md
 
 KM: In particular with Rationals, if we did it in an engine I'm not sure it'd be substantially faster than a userland library.
 

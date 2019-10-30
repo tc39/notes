@@ -36,6 +36,7 @@
   - New Stage 1 proposals:
     - Standardization of [Error.prototype.stack](https://github.com/ljharb/proposal-error-stacks) and more detailed stack introspection
     - [Realm API](https://github.com/tc39/proposal-realms) for isolation, virtualization and more in a light-weight context
+    - [Math.signbit](https://github.com/tc39/proposal-Math.signbit) from IEEE 754
   - RegExp features
     - [Overview of proposals](https://mathiasbynens.be/notes/es-regexp-proposals) by Mathias Bynens
     - [Named groups](https://github.com/tc39/proposal-regexp-named-groups) got to Stage 2; still working out details

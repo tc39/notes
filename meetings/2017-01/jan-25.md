@@ -903,7 +903,7 @@ JFB: Math.sign doesn't let you differentiate 0 and -0; it has five possible outp
 
 MM: Just to clarify, you're not proposing to change Math.sign and the operation is named specifically
 
-JFB: Correct, I'm boring from IEEE 754 that has an concept called sign bit. They don't affect the number in any way. If you look at C++ or Go, there are also functions that do exactly this. It's shift and mask, just give me the bit that indicates sign.
+JFB: Correct, I'm borrowing from IEEE 754 that has an concept called sign bit. They don't affect the number in any way. If you look at C++ or Go, there are also functions that do exactly this. It's shift and mask, just give me the bit that indicates sign.
 
 ??: What does signbit do with respect to NaN's in IEEE 754?
 

@@ -110,7 +110,7 @@ MM: is opposed to having bare "global". They should be gathered; having that be 
 
 JHD: will ship in stable behind a flag. Not currently trying to get to stage 4 today (currently at Stage 3). Just wanted to update because of recent discussion. there is not enough implementations to move it forward in stage.
 
-MS: It's now in WebKit Nightly
+MLS: It's now in WebKit Nightly
 
 JHD: Small number of people have asked about the fill string (the second argument). If you pass anything that is not a non-empty string it defaults to a space character. Ascii space is maybe English-centric.
 
@@ -590,7 +590,7 @@ SG, EF: Cross realm proper tail calls conflict with the SpiderMonkey security mo
 
 BT, DE: Explicit syntax could be part of addressing this
 
-MS: We'll have fixed stack space anyway; we already implemented it.
+MLS: We'll have fixed stack space anyway; we already implemented it.
 
 SG, EF: Let's make that a separate question, and discuss it Thursday. What if we start with a pull request which encodes that cross-realm calls don't to make cross-realm tail calls not have fixed stack space, while also allowing that it *may* have fixed stack space
 

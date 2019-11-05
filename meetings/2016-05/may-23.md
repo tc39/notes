@@ -372,7 +372,7 @@ BT: But it is very useful and works on all implementations
 
 WH: This is the exact same problem that I solved in ES3 by adding the prohibition to case-canonicalization of non-ASCII Unicode characters into ASCII characters. Without that, the same \W weirdness would have appeared in ES3.
 
-MLS: Recap of very strange semantics caused by Unicode case folding (MS please insert link to slides). \W includes K because the kevin symbol case-folds to something in \w, so K is case-insensitive in the set of things that aren't a letter.
+MLS: Recap of very strange semantics caused by Unicode case folding (MLS please insert link to slides). \W includes K because the kevin symbol case-folds to something in \w, so K is case-insensitive in the set of things that aren't a letter.
 
 MLS: Proposal: make \W be the inverse of \w, and change \b and \B to be consistent. An alternate proposal would be to stick to ASCII-only as Waldemar did for ES3.
 
@@ -386,7 +386,7 @@ YG: Chrome shipped this in 50, with the spec's semantics.
 
 DE: It should still be web-compatible, though, as it is very recently shipped. The bug reporter was someone who was writing a conformance test, rather than finding this in actual usage.
 
-BT: Edge actually ships MS's proposal, so we don't need to worry about web compat.
+BT: Edge actually ships MLS's proposal, so we don't need to worry about web compat.
 
 MLS: Should we change \b as well?
 
@@ -418,7 +418,7 @@ _discussion: Good to follow Unicode going forward, as it has changed over time, 
 
 #### Conclusion/Resolution
 
-Consensus on MS's pull request, and working out \b and \B as he indicated.
+Consensus on MLS's pull request, and working out \b and \B as he indicated.
 
 ## [Function names](https://github.com/tc39/ecma262/pull/575)
 
@@ -458,7 +458,7 @@ MLS: Hard to do telemetry for this
 
 #### Conclusion/Resolution
 
-No change in the spec for now; MS says Safari will likely ship their compat workaround for now, and see if it can get more information for the next meeting or the one after that to consider the decision
+No change in the spec for now; MLS says Safari will likely ship their compat workaround for now, and see if it can get more information for the next meeting or the one after that to consider the decision
 
 
 ## [TypedArray/ArrayBuffer/DataView constructor changes](https://github.com/tc39/ecma262/pull/410)

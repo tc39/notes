@@ -3,7 +3,7 @@
 István Sebestyén (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Philipp Dunkel (PDL), Aki Rose (AKI), Myles Borins (MBS), Mathias Bynens (MB), Randy Luecke (RLE), Daniel Ehrenberg (DE), Till Schneidereit (TST), Patrick Soquet (PST), Peter Hoddie (PHE), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MLS), Mark Miller (MM), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Justin Ridgewell (JRL), Rob Palmer (RPR), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Nicolò Ribaudo (NRO), Caio Lima (CLA), Valerie Young (VYG), Logan Smyth (LSH), Alan Schmitt (AS), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Nicolò Ribaudo (NRO), Guy Bedford (GB), Ben Coe (BCE), Amal Hussein (AHN), Julien Gilli (JGI), Sven Sauleau (SSA), Jack Steinberg (JBS), Ross Kirsling (RKG)
 
 Remote:
-Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LBR), Frank Yung-Fong Tang (FTG), Mike Samuel (MSL), Shane Carr (SFC)
+Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LBR), Frank Yung-Fong Tang (FYT), Mike Samuel (MSL), Shane Carr (SFC)
 -----
 
 # Agenda
@@ -985,7 +985,7 @@ MLS: agree that MDN good place to start documenting this.
 
 GB: not sure about ambiguity on web apis and Node.js. In case of examples we mentioned like fetch, Node.js implementation is not compatible with web one. Could fallback from one to the other.
 
-MS. Yes and if you have web:worker and js:worker importer needs to know the difference.
+MLS: Yes and if you have web:worker and js:worker importer needs to know the difference.
 
 BCE: Forcing sharing can be good. Some exciting stuff in node is that we've been integrating Inspector from chrome, as an example. Other thing is worst case scenario is you have a nodejs URL and a web URL.
 

@@ -1,6 +1,6 @@
 # November 29, 2018 Meeting Notes
 -----
-Mattijs Hoitink (MHK), Michael Saboff (MLS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean-Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbåge (SME), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontín (FBN), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
+Mattijs Hoitink (MHK), Michael Saboff (MLS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean-Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbåge (SME), Justin Ridgewell (JRL), Shane Carr (SFC), Dustin Savery (DSY), Frank Yung-Fong Tang (FYT), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontín (FBN), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
 
 Remote:
 Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), István Sebestyén (IS), Richard Gibson (RGN), Guy Bedford (GB), Conrad Watts (CWS)
@@ -663,7 +663,7 @@ JHD: He accepts the constraints.
 
 KG: There were some names that seemed not totally terrible that we objected to on aesthetic or pedantic grounds. but we're not necessarily the best for judging aesthetics. I wanted to point out Global with capital G. We reject that because it's not a constructor, namespace, etc. But maybe we should consider taking that aesthetic pain since globalThis has aesthetic.
 
-SCR:300 seems like a lot of votes. how big is it ?
+SFC:300 seems like a lot of votes. how big is it ?
 
 JHD: Axel (and another educator that retweeted) has a lot of twitter followers and got a lot of people to upvote; 300 people is for sure a lot, very quickly, but maybe take it with a grain of salt.
 
@@ -719,7 +719,7 @@ Attendees:
 - MHK
 - NHD
 - DE
-- SCR
+- SFC
 - MF
 - CM
 - MM
@@ -1332,7 +1332,7 @@ AKI: We talked about hosting and did some recruiting. Talk to me about what's in
 
 ### Locale Data
 
-SCR:Talked about how Intl has hard coded database. Can vary between browsers. Users might want fresher data. How can provide a service to users so they can provide their own data. How can browsers implement new features without adding to what browsers already have to do.
+SFC:Talked about how Intl has hard coded database. Can vary between browsers. Users might want fresher data. How can provide a service to users so they can provide their own data. How can browsers implement new features without adding to what browsers already have to do.
 
 ### Jessie Semantics
 
@@ -1348,7 +1348,7 @@ YSV: We talked about how we make decisions, and what do we make decisions about,
 
 ## End of Meeting
 
-RJE: Thanks to Michael and others from Apple for the facilities and hosting the dinner!  (applause). Thanks to the note takers, mainly SCR and AY  :-).
+RJE: Thanks to Michael and others from Apple for the facilities and hosting the dinner!  (applause). Thanks to the note takers, mainly SFC and AY  :-).
 
 YSV: Thanks to RJE for doing the last 15 months of organizing!
 

@@ -695,7 +695,7 @@ MM: Eliminating the membrane is TCO. If you're doing an STC tail call into a non
 
 YK: the problem is that such cross realms tail call may work in V8, but would not work in Firefox
 
-EFT: Back to MS point, we've heard from implementers and users, and we still stand at an impasse.
+EFT: Back to MLS point, we've heard from implementers and users, and we still stand at an impasse.
 
 DE: I think when safari ships release, when google has users in number largers, we're more likely to see missing frames and dev impact.
 

@@ -471,7 +471,7 @@ MLS: is this list the intersection or the union of what browsers already ship?
 
 JHD: based on my previous testing, the intersection
 
-AWB/MM/MS all agree that with verification, intersection is best
+AWB/MM/MLS all agree that with verification, intersection is best
 
 #### Conclusion/Resolution
 

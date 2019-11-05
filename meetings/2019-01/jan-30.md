@@ -4,7 +4,7 @@ Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA),
 
 
 Remote:
-István Sebestyén (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBN), Conrad Watt (CWT), Guy Bedford (GB), Justin Fagnani (JFI), Robert Pamely (RPY)
+István Sebestyén (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FYT), Jory Burson (JBN), Conrad Watt (CWT), Guy Bedford (GB), Justin Fagnani (JFI), Robert Pamely (RPY)
 -----
 
 
@@ -324,7 +324,7 @@ MLS: Developers within Apple who use decorators. One surprising comment was some
 
 DE: I'd like to talk with that person offline.
 
-WH: I agree this is complex. I'm just trying to understand MS's position of wanting decorators but not with the current complexity. Is there something concrete or actionable you'd like to see changed?
+WH: I agree this is complex. I'm just trying to understand MLS's position of wanting decorators but not with the current complexity. Is there something concrete or actionable you'd like to see changed?
 
 MLS: We'll discuss this within Apple.
 
@@ -346,7 +346,7 @@ DRR: About whether tooling benefits from this proposal, I think it does. Having 
 
 YK: I think a general problem is that when we added private state, there were a lot of problems. We took private state and moved them to decorators.
 
-SGN: I want to back up MS's comments about complexity. To be more specific, about implementation complexity. I have concerns about how non-optimizable this will be. I want feedback on the concerns that I've raised about implementability. This also leads to static performance where it's hard to optimize. Maybe that's what we want, or maybe we could tweak this proposal to have fewer use cases that make it easier to optimize. I would like the champions to explore alternatives and convince us that this is the correct solution.
+SGN: I want to back up MLS's comments about complexity. To be more specific, about implementation complexity. I have concerns about how non-optimizable this will be. I want feedback on the concerns that I've raised about implementability. This also leads to static performance where it's hard to optimize. Maybe that's what we want, or maybe we could tweak this proposal to have fewer use cases that make it easier to optimize. I would like the champions to explore alternatives and convince us that this is the correct solution.
 
 DE: Can you be more specific about the startup time concerns?
 
@@ -390,7 +390,7 @@ MLS: Personally, I am in favor of decorators. The complexity is the sum of the w
 
 RB: ...
 
-JFI: I wanted to point out that this proposal is tooling-friendly, Stage 2 better than Stage 1. There are parts of this proposal that can be run in a transform, e.g., properties to accessors. This proposal strongly leans in MS's direction already.
+JFI: I wanted to point out that this proposal is tooling-friendly, Stage 2 better than Stage 1. There are parts of this proposal that can be run in a transform, e.g., properties to accessors. This proposal strongly leans in MLS's direction already.
 
 JFI: That was my reply to the version proposal, but we can get to it in a minute.
 

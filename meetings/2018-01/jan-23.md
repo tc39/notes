@@ -1299,7 +1299,7 @@ TST: We added support for essentially this in spidermonkey based on memory conce
 
 DD: I was talking to Adam and he said it wouldn't be a quick change because of similar issues. But given how much memory it involves, this is worth pursuing.
 
-MS?: maybe pass a function *into* some feature to ask for its source code (?)
+MLS?: maybe pass a function *into* some feature to ask for its source code (?)
 
 DD: seems isomorphic. Hard to mass-censor a lot of functions if you use a runtime `f.censor()`.
 

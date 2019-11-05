@@ -1,6 +1,6 @@
 # November 27, 2018 Meeting Notes
 -----
-Mattijs Hoitink (MHK), Michael Saboff (MLS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean-Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbåge (SM), Justin Ridgewell (JRL), Shane Carr (SCR), Dustin Savery (DSY), Frank Yung-Fong Tang (FTG), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontín (FBN), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
+Mattijs Hoitink (MHK), Michael Saboff (MLS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean-Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbåge (SM), Justin Ridgewell (JRL), Shane Carr (SFC), Dustin Savery (DSY), Frank Yung-Fong Tang (FYT), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontín (FBN), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
 
 Remote:
 Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), István Sebestyén (IS), Richard Gibson (RGN), Guy Bedford (GB), Conrad Watts (CWS)
@@ -50,7 +50,7 @@ DE: The official membership policy and defacto membership policy are well-aligne
 
 BFS: I need dietary concerns/any other needs from attendees. I need in at least 2 weeks in advance so we can coordinate.
 
-SCR: Please state your name when you talk so I can record it.
+SFC: Please state your name when you talk so I can record it.
 
 #### Conclusion/Resolution
 
@@ -767,15 +767,15 @@ MF: So... any objections to stage 4?
 
 ## Intl.NumberFormat Feature Proposal for Stage 3
 
-Shane Carr (SCR)
+Shane Carr (SFC)
 
 - [proposal](https://github.com/sffc/proposal-unified-intl-numberformat)
 
-SCR: This is an update proposal I showed in July to stage 2 and now we want to go to stage 3. Most of the slides are the same but wanted to give it again for newcomers.
+SFC: This is an update proposal I showed in July to stage 2 and now we want to go to stage 3. Most of the slides are the same but wanted to give it again for newcomers.
 
-SCR: Motivation for this format is to add more number formatting features to ECMA-402. Feature and important to Google because locale data footprint and barrier to entry. Adding features as opposed to
+SFC: Motivation for this format is to add more number formatting features to ECMA-402. Feature and important to Google because locale data footprint and barrier to entry. Adding features as opposed to
 
-SCR: 4 sections: Spec clean up
+SFC: 4 sections: Spec clean up
 
 Spec updated limited behavior changes
 A few sections of the spec have been refactored for currency plural forms
@@ -794,11 +794,11 @@ Currency Sign, Combining Options, etc.
 
 BH Is there a way to not show the sign?
 
-SCR: there are a couple of issues opened against the spec about negative zero but I resolved all of them. The way they are resolved is they are treated as a negative number as a sign and then for math it's resolved as 0.
+SFC: there are a couple of issues opened against the spec about negative zero but I resolved all of them. The way they are resolved is they are treated as a negative number as a sign and then for math it's resolved as 0.
 
 DE: Can we make a request to convert zeroes appropriately? ...
 
-SCR: Changes from July. Biggest things include:
+SFC: Changes from July. Biggest things include:
 
 - Core unit identifier: units no longer need the type prefix. Also allows for custom compound units supported by CLDR
 - Compact notation uses its own rounding strategy unless the user provides their own
@@ -812,27 +812,27 @@ SCR: Changes from July. Biggest things include:
 - Resolved issue by having a list and we change appropriately assuming its in the list
 - Spec language cleanup based on review feedback
 
-SCR: Thanks to stage 3 reviewers zenparsing, gsathya and additional thanks rxaviers, ms2ger, littledan. Can we promote to stage 3?
+SFC: Thanks to stage 3 reviewers zenparsing, gsathya and additional thanks rxaviers, ms2ger, littledan. Can we promote to stage 3?
 
 RJE: Any objections?
 
 WH: How did you pick the list mentioned in unit identifiers?
 
-SCR: List of units comes from list of units currently available in unicode locale data. The CLDR committee vets every single unit to make sure it has reasonably common use and adds them to the CLDR database. We took that list and used it here.
+SFC: List of units comes from list of units currently available in unicode locale data. The CLDR committee vets every single unit to make sure it has reasonably common use and adds them to the CLDR database. We took that list and used it here.
 
 WH: You have picometer but not newton, gauss, tesla? I encounter uses of newtons much more often than picometers.
 
-SCR: In fact newton is being added to the CLDR version 35? Daniel can add more details about how list changes are made.
+SFC: In fact newton is being added to the CLDR version 35? Daniel can add more details about how list changes are made.
 
 DE: So the list is made pragmatically. The schema for CLDR includes these units. Translators collect different pieces of locale data and when units are added, the data has to be collected. I was thinking for this we can go about this the same way we do for Unicode property escapes in RegExp? There, we explicitly list the supported properties, to signal to engines: this is what you must support, no more, no less. It's good for interoperability. I think the process of how this worked would work here too. Shane went out of his way to make CLDR upstream was easier for developers here. Shane made sure all of that was all well-defined.
 
 WH: You made a mention of sanctioned units that can be combined using "-per-". However, some sanctioned units have a "-per-" inside them. How does that work?
 
-SCR: The LDL spec enumerates that you are only allowed to combine 2 simple units. CLDR version 35 specifically annotates...
+SFC: The LDL spec enumerates that you are only allowed to combine 2 simple units. CLDR version 35 specifically annotates...
 
 Nathan: No objections but the negative zero case isn't very clear in the spec of what is described. I don't find it particularly clear.
 
-SCR: Yeah that makes sense.. That's the human understandable part... we should do that.
+SFC: Yeah that makes sense.. That's the human understandable part... we should do that.
 
 RJE: Last chances?
 

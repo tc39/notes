@@ -4,7 +4,7 @@
 Daniel Rosenwasser (DRR), Andrew Paprocki (API), Adam Klein (AK), Shu-yu Guo (SYG), Michael Ficarra (MF), Jordan Harband (JHD), Alex Rattray (ARY), Pieter Ouwerkerk (POK), Michael Saboff (MLS), Keith Miller (KM), Aki Braun (AKI), Brian Terlson (BT), Ron Buckton (RBN), Till Schneidereit (TST), Yehuda Katz (YK), Aaron Davis (ADS), Sebastian Markbåge (SM), Andrew Burgess (ABS), Jonathan Keslin (JKN), Ashley Hauck (AEH), Peter Hoddie (PHE), Patrick Soquet (PST), Ben Coe (BCE), Waldemar Horwat (WH), Mark Miller (MM), Chip Morningstar (CM), Erica Pramer (EPR), Kevin Smith (KS), Adrian Hall (AHL), Caio Lima (CLA), Ben Lichtman (BLN), Tierney Cyren (TCN), Shelley Vohr (SVR), Michal Hollman (MHN), Bill Ticehurst (BTT), Dean Tribble (DT), Godfrey Chan (GCN), Guilherme Hermeto (GHO), Jordan Gensler (JGR), Leo Balter (LBR), Dale Bustad (DBD), Joffrey Richten (JRN), Shane Carr (SFC)
 
 Remote:
-Bradley Farias (BFS), Gus Caplan (GCL), Kevin Gibbons (KG), Pedram Emrouznejad (PED), Yulia Startsev (YSV), Mattijs Hoitink (MHK), Ross Kirsling (RKG), Justin Ridgewell (JRL), Caridy Patiño (CP), John-David Dalton (JDD), Paolo Severini (PSI), Benjamin Georges (BGS), Paul Leather (PLR), Mathias Bynens (MB), Aliaksander Palpko (APO), Shi-jun He (JHX), Ravi Jayaramappan (RJN), Sanket Joshi (SJI), Jose David Rodrigues Veloso (JVO), Mike Samuel (MSL), Frank Yung-Fong Tang (FTG), Rob Palmer (RPR), Diego Ferreiro Val (DFV), István Sebestyén (IS), Jason Williams (JWS), Richard Gibson (RGN), Seth Brenith (SBH), Suraj Sharma (SUS), Steve Faulkner (SFR), Chris Anderson (CAN), Michael Fig (MFG), Valerie Young (VYG)
+Bradley Farias (BFS), Gus Caplan (GCL), Kevin Gibbons (KG), Pedram Emrouznejad (PED), Yulia Startsev (YSV), Mattijs Hoitink (MHK), Ross Kirsling (RKG), Justin Ridgewell (JRL), Caridy Patiño (CP), John-David Dalton (JDD), Paolo Severini (PSI), Benjamin Georges (BGS), Paul Leather (PLR), Mathias Bynens (MB), Aliaksander Palpko (APO), Shi-jun He (JHX), Ravi Jayaramappan (RJN), Sanket Joshi (SJI), Jose David Rodrigues Veloso (JVO), Mike Samuel (MSL), Frank Yung-Fong Tang (FYT), Rob Palmer (RPR), Diego Ferreiro Val (DFV), István Sebestyén (IS), Jason Williams (JWS), Richard Gibson (RGN), Seth Brenith (SBH), Suraj Sharma (SUS), Steve Faulkner (SFR), Chris Anderson (CAN), Michael Fig (MFG), Valerie Young (VYG)
 
 -----
 
@@ -544,7 +544,7 @@ MLS: Import maps is one way to use the chain-loading process.  We could add some
 
 JHD: And then you've changed the requirement that …
 
-(MS and JHD exchange a bit more… not recorded)
+(MLS and JHD exchange a bit more… not recorded)
 
 BF: We're talking about, if polyfill code runs sync at the top of the page, and if it tries to access async-only code, it could install the very first reaction handler, it could do whatever it wants before any user code runs.  I don't know how user code could act on a built-in module before the first thing to act on it.  If a polyfill can always act before user code, what's preventing it from using its job?
 
@@ -1019,13 +1019,13 @@ MLS: I think this is disrespectful, I think this is out of bounds
 
 DD:  I really don’t want to be disrespectful, so maybe it would be best for delegates to have such  conversations with the other standards bodies, if them coming here is not OK.
 
-WH: I don’t understand MS’s comment, what is disrespectful here?
+WH: I don’t understand MLS’s comment, what is disrespectful here?
 
 MLS: As one of the champions of the built-in module proposal, I think it would have been good to discuss rules about how to build a module. I think that is a good thing to discuss. The point I’m trying to make is that it’s a little premature. Very similar to what happened in Berlin when several delegates made a proposal. I look at our CoC and I find the first point is to be respectful.
 
 JHD: I’m terrified that DD or anyone else walks away discouraged about getting TC39 feedback.
 
-TST: I think the elephant in the room is disagreement on DD's representation of built-in modules (missed…) I agree with the Apple position that they are not independent and that there is a need to coordinate. It is _not_ ok to pretend they are entirely separate. I do believe that you understand this position, to make it sound like this just doesn’t exist, is maybe what MS is reacting to.
+TST: I think the elephant in the room is disagreement on DD's representation of built-in modules (missed…) I agree with the Apple position that they are not independent and that there is a need to coordinate. It is _not_ ok to pretend they are entirely separate. I do believe that you understand this position, to make it sound like this just doesn’t exist, is maybe what MLS is reacting to.
 
 DD: I'd like to shut this down.  It seems my intentions have been misconstrued.  It seems this is not the right venue; let's establish more trust.  I agree that it has been discouraging.  I was hoping for more collaboration but that doesn’t seem to be possible.
 
@@ -1043,4 +1043,4 @@ DD: I would rather discuss this one-on-one offline with you. We do not have a fo
 
 #### Conclusion/Resolution
 
-- discuss offline between DD, MS
+- discuss offline between DD, MLS

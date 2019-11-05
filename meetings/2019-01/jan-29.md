@@ -4,7 +4,7 @@ Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA),
 
 
 Remote:
-István Sebestyén (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBN)
+István Sebestyén (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FYT), Jory Burson (JBN)
 -----
 
 
@@ -359,7 +359,7 @@ BFS: Earlier, we were saying that running code in Node and browser are different
 
 YK: I agree, but I think there's a difference in extent.
 
-YK: With regard to MS's comment, what can we as a committee do to ensure that your situation doesn't happen?  I think it depends on how much V8 values this standards committee. If we're too heavy-handed, then V8 might flex its power more.
+YK: With regard to MLS's comment, what can we as a committee do to ensure that your situation doesn't happen?  I think it depends on how much V8 values this standards committee. If we're too heavy-handed, then V8 might flex its power more.
 
 MM: Another hosting environment is blockchain running either JS or wasm. They need a standard deterministic profile specification. This has already appeared in the wasm committee. A deterministic profile is one that specifies disambiguations for every issue purposely left ambiguous or implementation-defined in the original spec. A system conforming to a deterministic profile is thereby also conformant to the original spec. As we evolve the spec itself, we should keep in mind the need to coordinate with the evolution of the corresponding deterministic profile. For JS, we only need a deterministic profile of the SES subset.
 

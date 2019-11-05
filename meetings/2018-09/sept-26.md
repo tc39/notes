@@ -52,7 +52,7 @@ MB: This explanation is from the perspective of the implementer, (shows examples
 
 MB: For property forms that we already support, the negated form `\P` is clear, but for sequence properties, it's not so clear. What is the inverse of a sequence, for example? I think there are no reasonable semantics for this. You can use negative look-aheads, to achieve this anyway, so I don't think we should support these forms. I'm hoping we can move forward with this discussion.
 
-MB: MS suggested `\q` for se*q*uence, but my personal preference is to stick to `\p` to not introduce new syntax. I don't think it's a good idea for our syntax to depend on an upstream spec. What does the committee think we should use?
+MB: MLS suggested `\q` for se*q*uence, but my personal preference is to stick to `\p` to not introduce new syntax. I don't think it's a good idea for our syntax to depend on an upstream spec. What does the committee think we should use?
 
 MLS: There's a couple issues with using `\p`. What if Unicode changes that property to map that property to a sequence anyway. (i.e. property `foo` becomes changed by Unicode to a sequence). If a user uses this in a character class, then all of a sudden this throws a syntax error. Secondly, let's suppose Unicode changes something from a property to a sequence, the programmer should have to know that to use it. Unicode will often prefix these with underscores anyway, so a programmer wouldn't probably even be able to use it without
 

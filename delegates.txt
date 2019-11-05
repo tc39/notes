@@ -305,12 +305,3 @@ Yang Guo (YGO)
 Yehuda Katz (YK)
 Yulia Startsev (YSV)
 Zibi Braniecki (ZB)
-
-----------
-
-Deprecated Aliases:
-
-Frank Yung-Fong Tang (FTG)
-Michael Saboff (MS)
-Shane Carr (SCR)
-Steven Loomis (SLS)

@@ -175,7 +175,7 @@ YK: My concern is that these things happen fast—in real time.
 
 JBN: Accountability is very important here—so you want to be able to tell someone that an individual has been blocked and then to show them.
 
-AKI: Following up, do we have consensus? MS, do you have concerns?
+AKI: Following up, do we have consensus? MLS, do you have concerns?
 
 MLS: I guess I'm fine with it. I understand the real-time concerns of being able to verify.
 
@@ -664,7 +664,7 @@ JHD: At various times it threw or added a 'g' flag. But now it just returns a si
 #### Conclusion/Resolution
 
 - Stage 2 acceptance
-- Stage 3 reviewers: MS, RGN, and DE
+- Stage 3 reviewers: MLS, RGN, and DE
 
 
 ## Private declarations for Stage 1

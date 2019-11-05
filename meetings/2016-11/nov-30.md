@@ -188,7 +188,7 @@ SYG: Complicated math, but helps implementations decide what to do
 
 SYG: Memory model could have a lot of undefined behavior, but this tries to be fully defined, to provide interoperability and security. Also need to work with WebAssembly with a common model.
 
-MS: Will WebAssembly use this?
+MLS: Will WebAssembly use this?
 
 JFB: Yes
 
@@ -486,7 +486,7 @@ AWB: Do you return a string which literally points at the input?
 
 AK: Yes, it's just pointing at the original memory.
 
-MS: JSC does the same thing.
+MLS: JSC does the same thing.
 
 AWB: When you originally parse the thing, you can determine whether it was already normalized.
 
@@ -518,7 +518,7 @@ MM: I want to move forward here; I would be OK with either way, though I'd prefe
 
 AWB: What percentage of source text is already normalized? Maybe the cost here is not so big.
 
-MS: That would require introducing an extra scan, or a lot of extra complexity in the scanner. When we're scanning, we're looking for other things, and just ignore whitespace.
+MLS: That would require introducing an extra scan, or a lot of extra complexity in the scanner. When we're scanning, we're looking for other things, and just ignore whitespace.
 
 CM: Just normalize the source text as you read it.
 
@@ -534,7 +534,7 @@ BT: We use source text for all sorts of things, e.g., debugging. Maintaining the
 
 AWB: Or, you could normalize way at the beginning, so you don't need the
 
-MS: Our parser is really performance-sensitive
+MLS: Our parser is really performance-sensitive
 
 KM: Recovering parser performance from async/await parsing took weeks of work
 
@@ -560,7 +560,7 @@ BT: How many people saw painful regressions for @@toStringTag? (All implementers
 
 AK: To answer the question, I'm not likely to want to ship this with normalization.
 
-MS: What's the compelling use case for fast, normalized strings?
+MLS: What's the compelling use case for fast, normalized strings?
 
 AK: Storing another copy of the normalized string is a non-starter.
 
@@ -687,7 +687,7 @@ YK: Rust does some things differently, like suffixes and overflows, so we should
 
 MM: sidestepping all the hard problems by requiring homogeneous operands is a great idea
 
-MS: I'd like to see Int32, and Float32, etc, it seems like a wart on the side. It would be great if we had proper types for all of these things, which would be a better way to do things for numbers that makes sense, e.g., for asm.js.
+MLS: I'd like to see Int32, and Float32, etc, it seems like a wart on the side. It would be great if we had proper types for all of these things, which would be a better way to do things for numbers that makes sense, e.g., for asm.js.
 
 BE: I'd like to keep it limited to just these for now. Scope creep is the enemy.
 
@@ -742,7 +742,7 @@ WH: should be numbered forward
 
 BT: Should, but confirm
 
-MS: what about negative look ahead/look behind?
+MLS: what about negative look ahead/look behind?
 - When doesn't match
 - Instead of `=`? Can do all at once
 

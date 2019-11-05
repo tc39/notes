@@ -4,7 +4,7 @@ Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA),
 
 
 Remote:
-István Sebestyén (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FTG), Jory Burson (JBN), Conrad Watt (CWT), Guy Bedford (GB), Justin Fagnani (JFI), Robert Pamely (RPY), Eric Faust (EFT), Caridy Patiño (CP)
+István Sebestyén (IS), John-David Dalton (JDD), Adam Klein (AK), Daniel Ehrenberg (DE), Jordan Harband (JHD), Domenic Denicola (DD), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FYT), Jory Burson (JBN), Conrad Watt (CWT), Guy Bedford (GB), Justin Fagnani (JFI), Robert Pamely (RPY), Eric Faust (EFT), Caridy Patiño (CP)
 -----
 
 ## Freezing prototypes for stage 1
@@ -132,11 +132,11 @@ MLS: I agree with that, this is a patch.
 
 DE: I see this as a fundamental primitive, where it makes the common case ergonomic but the extra case something you opt-in to.
 
-YK: I agree with MS; I am a proponent of return override because of base classes. How do you create a base class that allocates?  Having constructors that return is important. The problem is that you use return override in a non-base class. I want to learn more about the DOM use cases, but I think this may add too much power.
+YK: I agree with MLS; I am a proponent of return override because of base classes. How do you create a base class that allocates?  Having constructors that return is important. The problem is that you use return override in a non-base class. I want to learn more about the DOM use cases, but I think this may add too much power.
 
 MLS: This is basically a C++ placement new. So even though it seems like a simple addition, it would have to be replaced everywhere where this is called.
 
-KG: In reply to MS; I think the reason this is relevant for a library who has classes that are consumed by someone else's code. They want to behave in an expected way, regardless of what the user does.
+KG: In reply to MLS; I think the reason this is relevant for a library who has classes that are consumed by someone else's code. They want to behave in an expected way, regardless of what the user does.
 
 MLS: If the library changes its prototype, it's in control of all its code and can easily work. If the user changes the prototype, the library can simply disallow that. So I'm not entirely sure what the use case is for that.
 

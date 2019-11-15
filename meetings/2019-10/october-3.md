@@ -1075,10 +1075,10 @@ MM: Oh yeah, WH’s proposal I find very attractive and it certainly would be an
 
 
 #### Conclusion/Resolution
-
-
 - Stage 1. 4 for 4!
-## Promise.any Reprise
+
+
+## Promise.any Reprise (see also [first day](https://github.com/tc39/notes/blob/master/meetings/2019-10/october-2.md#promiseprototypeany-for-stage-3))
 KG: The outstanding issue was that errors property on instances of aggregate error was an own data property or an accessor on the prototype which returns an array. There was some more discussion on GH - JHD said it would be more consistent with the rest of the language to have an accessor on the prototype. MB pinged Benedikt Meurer on the chrome team who said he did not feel strongly that it didn’t need to be an accessor. I would like to ask for Stage 3 for the variant of the proposal that has an accessor on the prototype for errors.
 
 

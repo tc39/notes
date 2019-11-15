@@ -9,15 +9,11 @@ set -e # Exit with nonzero exit code if anything fails
 
 SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
-MINE="git@github.com:rwaldron/tc39-notes.git";
-TC39="git@github.com:tc39/tc39-notes.git";
+NOTES_REPO="git@github.com:tc39/notes.git";
 SHA=`git rev-parse --verify HEAD`
 
-# Update masters:
-# rwaldron/tc39-notes#gh-pages
-git push $MINE $SOURCE_BRANCH
-# tc39/tc39-notes#gh-pages
-git push $TC39 $SOURCE_BRANCH
+# Update master:
+git push $NOTES_REPO $SOURCE_BRANCH
 
 
 # Checkout "gh-pages"
@@ -36,11 +32,8 @@ buildGHPages
 git add --all .
 git commit -m "Build: ${SHA}"
 
-# Push updates to:
-# rwaldron/tc39-notes#gh-pages
-git push $MINE $TARGET_BRANCH -f
-# tc39/tc39-notes#gh-pages
-git push $TC39 $TARGET_BRANCH -f
+# Push updates:
+git push $NOTES_REPO $TARGET_BRANCH -f
 
 
 # When done, gtfo.

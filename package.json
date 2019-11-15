@@ -4,6 +4,7 @@
   "description": "These are the notes that I've taken since joining TC39 as a representative of the jQuery Foundation.",
   "main": "index.js",
   "scripts": {
+    "check": "./scripts/check-delegates.js",
     "build": "./scripts/builder.js",
     "generate-tocs": "./scripts/toc.js --all",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -13,7 +13,7 @@ NOTES_REPO="git@github.com:tc39/notes.git";
 SHA=`git rev-parse --verify HEAD`
 
 # Update master:
-git push $NOTES_REPO
+git push $NOTES_REPO $SOURCE_BRANCH
 
 
 # Checkout "gh-pages"

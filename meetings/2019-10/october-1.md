@@ -1,4 +1,4 @@
-﻿# October 1, 2019 Meeting Notes
+# October 1, 2019 Meeting Notes
 -----
 
 Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MCN), Pieter Ouwerkerk (POK), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Daniel Rosenwasser (DRR), Erica Pramer (ELP), Myles Borins (MBS), Richard Button (RBU), Robin Ricard (RRI)

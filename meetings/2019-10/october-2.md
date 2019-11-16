@@ -1,4 +1,4 @@
-﻿# October 2, 2019 Meeting Notes
+# October 2, 2019 Meeting Notes
 -----
 Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MCN), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Robin Ricard (RRI), Jean-Francois Paradis (JFP), Valerie Young (VYG), Erica Pramer (EPR), Richard Gibson (RGN), Philipp Dunkel (PDL), Godfrey Chan (GCN), Joyee Cheung (JCG), Patrick Soquet (PST)
 

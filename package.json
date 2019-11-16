@@ -1,32 +1,7 @@
 {
-  "name": "tc39-notes",
-  "version": "1.0.0",
-  "description": "These are the notes that I've taken since joining TC39 as a representative of the jQuery Foundation.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "check": "./scripts/check-delegates.js",
-    "build": "./scripts/builder.js",
-    "generate-tocs": "./scripts/toc.js --all",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rwaldron/tc39-notes.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rwaldron/tc39-notes/issues"
-  },
-  "homepage": "https://github.com/rwaldron/tc39-notes#readme",
-  "devDependencies": {
-    "common-tags": "^1.4.0",
-    "glob": "^7.1.2",
-    "highlight.js": "^9.12.0",
-    "markdown-link": "^0.1.1",
-    "markdown-toc": "^1.1.0",
-    "remarkable": "^1.7.1",
-    "yargs": "^11.0.0"
   }
 }

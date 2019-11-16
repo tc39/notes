@@ -1,12 +1,7 @@
 ﻿# October 1, 2019 Meeting Notes
 -----
-Delegates: re-use your existing abbreviations! If you’re a new delegate and don’t already have an abbreviation, choose any three-letter combination that is not already in use, and send a PR to add it upstream.
-
 
 Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MCN), Pieter Ouwerkerk (POK), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Daniel Rosenwasser (DRR), Erica Pramer (ELP), Myles Borins (MBS), Richard Button (RBU), Robin Ricard (RRI)
-
-
-
 
 Remote: Daniel Ehrenberg (DE), Ron Buckton (RBT), Caio Lima (CLA), Yulia Startsev (YSV), Jory Burson (JBN), Ben Newman (BNN), Kyle, HE Shi-Jun (HSJ), Pedram Emrouznejad (PED), Dan Ehrenberg (DE), Mathias Bynens (MB), Jonathan Keslin (JKN), Frank Yung-fong Tang (FYT), Brendan Eich (BE), Andy Fleming (AFL), Bradley Farias (BFS), Caridy Patiño (CPM)
 

@@ -1,17 +1,8 @@
 ﻿# October 3, 2019 Meeting Notes
 -----
-Delegates: re-use your existing abbreviations! If you’re a new delegate and don’t already have an abbreviation, choose any three-letter combination that is not already in use, and send a PR to add it upstream.
-
-
 Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MCN), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Robin Ricard (RRI), Jean-Francois Paradis (JFP), Valerie Young (VYG), Erica Pramer (EPR), Richard Gibson (RGN), Philipp Dunkel (PDL), Godfrey Chan (GCN), Joyee Cheung (JCG), Patrick Soquet (PST), Shu-yu Guo (SYG)
 
-
-
-
 Remote: Daniel Ehrenberg (DE), Ron Buckton (RBT), Caio Lima (CLA), Yulia Startsev (YSV), Jory Burson (JBN), Ben Newman (BNN), Kyle, HE Shi-Jun (HSJ), Pedram Emrouznejad (PED), Dan Ehrenberg (DE), Mathias Bynens (MB), Jonathan Keslin (JKN), Frank Yung-Fong Tang (FYT), Yulia Startsev (YSV), Benjamin E. Coe (BEC), Peter Hoddie (PHE), Istvan Sebestyen (IS)
-
-
-
 
 ## UUID for stage 1
 

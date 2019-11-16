@@ -131,7 +131,7 @@ WH: Not ready to approve yet. Will read overnight.
 
 (Shu-Yu Guo)
 
-- [Proposal](https://tc39.github.io/ecmascript_sharedmem/shmem.html)
+- [Proposal](https://tc39.es/ecmascript_sharedmem/shmem.html)
 - [Slides](http://tc39.github.io/ecmascript_sharedmem/presentation-nov-2016.pdf)
 
 SYG: Goal: Advance SAB to Stage 3. We have already agreed on agents and the API, and are at Stage "2.95". Since then, we revised the memory model to fix a bug from WH.
@@ -430,7 +430,7 @@ AK: Yes
 (Michael Ficarra)
 https://github.com/tc39/Function-prototype-toString-revision/issues/19
 
-MF: Function.prototype.toString is supposed to maintain the source text, in the new version. Based on feedback from AWB, the current proposal normalizes all line terminators, consistent with template string literals. However, implementation feedback from Mozilla raised questions as to the cost of doing the normalization. Seems serious, should we reconsider normalization?  Normalization is on 2.b-c of https://tc39.github.io/Function-prototype-toString-revision/#sec-function.prototype.tostring .
+MF: Function.prototype.toString is supposed to maintain the source text, in the new version. Based on feedback from AWB, the current proposal normalizes all line terminators, consistent with template string literals. However, implementation feedback from Mozilla raised questions as to the cost of doing the normalization. Seems serious, should we reconsider normalization?  Normalization is on 2.b-c of https://tc39.es/Function-prototype-toString-revision/#sec-function.prototype.tostring .
 
 AWB: Template string literals normalize line endings so as to avoid changing the behavior of a program when run on different platforms.
 

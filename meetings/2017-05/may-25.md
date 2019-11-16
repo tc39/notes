@@ -48,7 +48,7 @@ IS: Therefore now other members of Ecma (better TC39) may step forward and volun
 
 IS: However, to lead such a big and intensive group like TC39 is a challanging job. So experience is required. Direct recruitment of people is the next step - if we can not find a good leadership among ourselves, I recommended Rex Jaeschke as an excellent candidate for that (details about Rex has publishedon Github), but this decision is entirely up to the committee (see https://github.com/tc39/Reflector/issues/71 )
 
-IS: Rex has been working with Ecma for 10+ years and is very experienced with standards committee work. Knows Ecma very well and has been working with several technical committees already. Very familiar with programming languages in general. Participating in TC49 (C#). Main position that he has held is that he has been chairing JTC1 SC22 (including C++). This is the place where we are fast-tracking also the TC39 standards. He was there recently when we discussed with ISO the fast-track of ECMA-414. 
+IS: Rex has been working with Ecma for 10+ years and is very experienced with standards committee work. Knows Ecma very well and has been working with several technical committees already. Very familiar with programming languages in general. Participating in TC49 (C#). Main position that he has held is that he has been chairing JTC1 SC22 (including C++). This is the place where we are fast-tracking also the TC39 standards. He was there recently when we discussed with ISO the fast-track of ECMA-414.
 
 IS: ISO allows you only to be a chairman for 9 years. He has been the chairman of SC22 for 8 years, therefore he has availability forthcoming. He knows a lot of people on this committee very well and has worked with people in this committee previously.
 
@@ -82,7 +82,7 @@ DD: Confirming: Vice chairs would not be setting direction of conversation in th
 
 LBR: Confirm.
 
-AWB: There is a lot of stuff that a chair does that committee does not know: Primary layer between committee and ECMA. Months and months dealing with patents, documentation... Takes real time to interact with ECMA. Also helping the committee structure and organize technical work. 
+AWB: There is a lot of stuff that a chair does that committee does not know: Primary layer between committee and ECMA. Months and months dealing with patents, documentation... Takes real time to interact with ECMA. Also helping the committee structure and organize technical work.
 
 AWB: This also works to develop future leadership of the committee. A vice-chair could step forward to run a meeting in the event that the chairman is unable to be present.
 
@@ -224,7 +224,7 @@ YK: No particular concern if there aren't user-facing changes. Happy to delegate
 
 #### Conclusion/Resolution
 
-- Editor to make changes/updates as necessary 
+- Editor to make changes/updates as necessary
 
 
 
@@ -238,7 +238,7 @@ YK: No particular concern if there aren't user-facing changes. Happy to delegate
 
 
 ## Prohibit async methods named 'function' #884
-    
+
 - https://github.com/tc39/ecma262/pull/884
 - https://github.com/tc39/ecma262/issues/832
 
@@ -258,7 +258,7 @@ KG:  Seems ok since its already very complicated.
 
 KM: non-issue
 
-WH: Can get us unintentionally stuck in a corner, where we can't extend language in the future 
+WH: Can get us unintentionally stuck in a corner, where we can't extend language in the future
 
 MM: Acknowledging Waldemar , in the sense of implementation concern, YK points is valid: We should be careful with the inconsistencies for keywords.
 
@@ -333,7 +333,7 @@ Yes.
 
 YK: There is a a new property that we define as writable that is not writable.
 
-AWB: Not new. 
+AWB: Not new.
 
 AK: Since... Proxys!
 
@@ -367,7 +367,7 @@ DD: It's well-defined.
 
 WH: Yes. It rounds to multiples of positive powers of 10 instead of negative powers of 10. It's only sensible for toFixed, which is why toExponential doesn't support it. But I'm fine with negative numbers going away.
 
-DE: 
+DE:
 
 BT: We presently support 0 to 21. This is just changing the requirements to the range 0 - 100.
 
@@ -377,7 +377,7 @@ YK: What do admins do if you put a number outside of the range? (after the patch
 
 RW: RangeError
 
-BT: Can also change it to _not_ throw for negative to 
+BT: Can also change it to _not_ throw for negative to
 
 
 #### Conclusion/Resolution
@@ -401,13 +401,13 @@ MM: We should be consistent across all of the occasions to not throw, or this is
 
 
 
-## 15.i.a RegExp Legacy Features for Stage 3 
+## 15.i.a RegExp Legacy Features for Stage 3
 
 (Mark S. Miller, by Claude Pache)
 
 - https://github.com/tc39/proposal-regexp-legacy-features
 
-MM: WH & DE objected to exempting subclasses from legacy features 
+MM: WH & DE objected to exempting subclasses from legacy features
 
 DE, WH: Exempting subclasses doesn't serve positive purpose and is very confusing.
 
@@ -431,7 +431,7 @@ WH: Another issue: for polyfilling, want to run regexp without polluting static 
 - Stage 3 acceptance
 
 
-## 15.ii.f import.meta for stage 2 
+## 15.ii.f import.meta for stage 2
 
 (Domenic Denicola)
 
@@ -440,11 +440,11 @@ WH: Another issue: for polyfilling, want to run regexp without polluting static 
 DD: Ready for stage 2; let me give an overview of the spec:
 
 - `import.meta` is a "meta property"
-- architecture: 
+- architecture:
 - at eval, create null proto object
 - ask host for list of property keys and values
 - define them on the object
-- escape hatch: 
+- escape hatch:
 - https://domenic.github.io/proposal-import-meta/#sec-hostfinalizeimportmeta
 
 
@@ -469,9 +469,9 @@ BN: In node there is a Module constructor with a prototype, which is shared by a
 
 YK: No longer worried about not sealing the objects because they're not shared.
 
-MM: this object is the "system object". When discussions arise about what goes on the system object, this will be the place to put them. 
+MM: this object is the "system object". When discussions arise about what goes on the system object, this will be the place to put them.
 
-DD: No, because this object is for hosts only. 
+DD: No, because this object is for hosts only.
 
 MM: I just don't want Domenic to be blind sided
 
@@ -486,11 +486,11 @@ MM: I just don't want Domenic to be blind sided
 - Yehuda Katz
 
 
-##  15.iii.b Updates on class-field proposals (both public and private). 
+##  15.iii.b Updates on class-field proposals (both public and private).
 
 (Jeff Morrison)
 
-- ~https://littledan.github.io/proposal-class-fields/~ https://tc39.github.io/proposal-class-fields/
+- ~https://littledan.github.io/proposal-class-fields/~ https://tc39.es/proposal-class-fields/
 - slides: https://drive.google.com/file/d/0B-TAClBGyqSxWHpyYmg2UnRHc28/view
 
 JM: integrating public and private into one proposal to avoid proposals racing
@@ -517,7 +517,7 @@ YK: Ok with [[Define]] as long was we work on mitigations
 
 2. Include 2 categories in the framework design: "fields" and "methods". Within each category, say that the common-case form uses the no-keyword syntax, all ... (slide changed)
 
-JM: want to choose one of the above this meeting to fix the orthogonality issue before we can proceed. 
+JM: want to choose one of the above this meeting to fix the orthogonality issue before we can proceed.
 
 WH: In favor of 2
 
@@ -539,11 +539,11 @@ JM: modifiers in languages that allow varying order are problematic, can be addr
 
 WH: In C++ you can write `static const` but not `const static`.
 
-JM: concern that `own` keyword, interaction with decorator: 
-    
+JM: concern that `own` keyword, interaction with decorator:
+
 ```js
 class C {
-   @deprecated own foo = 42;   
+   @deprecated own foo = 42;
 }
 ```
 
@@ -553,13 +553,13 @@ class C {
 
 JM: The issue is the case where an own property gets turned into a getter/setter
 
-JM: Possible solution: 
-    
-- Permit fields with a decorator to omit keyword if and only if the decorator makes a concrete determination of own/static/proto in the descriptor it eventually returns. 
+JM: Possible solution:
+
+- Permit fields with a decorator to omit keyword if and only if the decorator makes a concrete determination of own/static/proto in the descriptor it eventually returns.
 
 WH: (question about interaction with the two framework solutions shown earlier)
 
-RW: Need to review those two options in the context of this solution 
+RW: Need to review those two options in the context of this solution
 
 JM: applies in either case (still needs to work out specifics with YK, re: decorators)
 
@@ -582,7 +582,7 @@ DH: There was a slide that indicated some additional syntax for an uncommon case
 DH: problems in the reasoning that lead to the `own` keyword in the first place
 
 JM: Two possible conclusions:
-    
+
 1. Create a new keyword for proto
 2. Fields and Methods
 
@@ -607,7 +607,7 @@ MM: own vs. shared is a very intuitive contract...
 
 AK: not shared
 
-JM: say we used `proto` in front of 
+JM: say we used `proto` in front of
 
 
 ??: If you had an alias for own and shared will be easier to understand
@@ -655,7 +655,7 @@ D: What is the path for people to go from 0 to learn the language in a comfortab
 
 AWS: Adding own looks weird to learn, since there is not precedents to it.
 
-AWS: Looks like assignment no matter what, confusion no matter what. 
+AWS: Looks like assignment no matter what, confusion no matter what.
 
 MM: So, additionally adding a keyword is more confusing?
 
@@ -663,7 +663,7 @@ AWS: Yes
 
 AWB: "own" is already used in the language in getOwnProperty... methods
 
-AK: Extends has the same context 
+AK: Extends has the same context
 
 AWS: Most people don't realize it exists.
 
@@ -677,14 +677,14 @@ JM: The committee has to make a decision. New syntax might confuse somebody, but
 
 MM: The case for `own` that we made, with the case stated, we are willing to give up "own".
 
-JM: We have consensus for solution 2? 
+JM: We have consensus for solution 2?
 We are agreeing to the syntactic specification that Dan has put together in thel ink proposal in teh agenda. which is a merge of a private fields and public fields proposal
 
 
-Moving on to DE's ~https://littledan.github.io/proposal-class-fields/~ https://tc39.github.io/proposal-class-fields/
+Moving on to DE's ~https://littledan.github.io/proposal-class-fields/~ https://tc39.es/proposal-class-fields/
 
 
-WH: The proposed spec does not have an `own` keyword, but does not preclude supporting `own` to designate instance methods 
+WH: The proposed spec does not have an `own` keyword, but does not preclude supporting `own` to designate instance methods
 
 DD: There are two small changes: Supporting private static fields: It feel very natural since the semantics are consistent.
 Also comma separated fields declaration for static and non-static.
@@ -696,7 +696,7 @@ KG: Methods already do not have that restriction, so can't really introduce it
 DE: Kevin implemented this and it works
 
 WH:  `own` (or most other keywords) does not have any meaning (right now). If you add it later, it will need to have a line break restriction to avoid changing the meaning of
-    
+
     ```own
     foo() {...}```
 which currently would declare a variable named `own`.
@@ -726,10 +726,10 @@ JM: What do we need for this proposal to be in stage 3?
 #### Conclusion/Resolution
 
 - No `own`
-- Moving forward on DE's [Integrated public and private fields proposal](https://tc39.github.io/proposal-class-fields/)
+- Moving forward on DE's [Integrated public and private fields proposal](https://tc39.es/proposal-class-fields/)
   + This is the active proposal for class fields
   + This supercedes (by way of integration) all previous proposals
-- Reviewers: 
+- Reviewers:
     - Waldemar Horwat
     - Kevin Gibbons
     - Kent C. Dodds
@@ -803,10 +803,10 @@ WH: I also favor option 3.
 
 ## 15.iv.b Updates on Cancellation Proposals
 
-(Brian Terlson, Ron Buckton) 
+(Brian Terlson, Ron Buckton)
 
 - https://github.com/tc39/proposal-cancellation
-- https://tc39.github.io/proposal-cancellation/CancellationPrimitives-tc39.pptx (triggers download)
+- https://tc39.es/proposal-cancellation/CancellationPrimitives-tc39.pptx (triggers download)
 
 
 RBN: (walking through slides)
@@ -827,14 +827,14 @@ Goals
 - Composable for non-trivial cancellation graphs
 
 
-Source/Sink 
+Source/Sink
 
-- Source   
+- Source
 - Owned by caller
 - Can share entangled Sink with multiple callees
 - Initiates cancellation signal
 
-- Sink 
+- Sink
 - Received by callee
 - Can observe cancellation state
 - Cannot initiate cancellation signal on Source
@@ -847,7 +847,7 @@ Source/Sink
 
 
 
-Promise As A Token 
+Promise As A Token
 
 
 
@@ -864,7 +864,7 @@ DD: Disagreed with explanation of https://github.com/whatwg/dom/pull/437
 
 (reached some slide with a callable constructor)
 
-YK: I thought we were avoiding 
+YK: I thought we were avoiding
 
 RW: callable constructors can't be subclassed
 
@@ -890,7 +890,7 @@ RBN: borrows heavily from the established .net APIs
 
 
 
-## 15.i.h. BigInt for Stage 3 
+## 15.i.h. BigInt for Stage 3
 
 (Daniel Ehrenberg)
 
@@ -928,15 +928,15 @@ MM: Promises were popular and could be implemented in library code, but it was a
 
 MM: This is going into Angular
 
-YK: The way Angular is using observable is, in my opinion, wrong. 
+YK: The way Angular is using observable is, in my opinion, wrong.
 
 MM: Where does this fit in?
 
 YK: The DOM
 
-DD: There are also libraries where Observable has gone in and then out. 
+DD: There are also libraries where Observable has gone in and then out.
 
-SM: Never fully integrated into React. 
+SM: Never fully integrated into React.
 
 YK: Observables fundamentally push, where pull is proven to be more effective
 
@@ -950,13 +950,13 @@ WH: Will there be risk of `Observable` identifier clashes, with scripts resolvin
 
 AK: There is an interest in an Observable, but no one wants to deal with "which one"
 
-JH: Believe this is fundamental 
+JH: Believe this is fundamental
 
 MM: Support that. Prior to Promises, we were designing a sequential iterative language; since Promises we're designing a language for asynchronous programming as well. We are figuring out what the toolkit is of basic asynchronous programming abstractions. Asynchronous iterators give us pull streams. Observables give us push streams. Both seem to be necessary, serving broad needs.
 
 AK: Then why not Streams?
 
-DD: async iterators 
+DD: async iterators
 
 Stage 2?
 

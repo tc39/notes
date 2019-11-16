@@ -286,7 +286,7 @@ BT: We may just not learn about what things need to be specified if we have only
 
 (Ron Buckton)
 
-- [slides](https://tc39.github.io/proposal-cancellation/CancellationPrimitives-tc39.pptx)
+- [slides](https://tc39.es/proposal-cancellation/CancellationPrimitives-tc39.pptx)
 - [proposal](https://github.com/tc39/proposal-cancellation#readme)
 
 RBN: Cancellation is for all environments, web, Node, IOT. We also have to work out the interaction with the WHATWG cancellation controller proposal
@@ -416,7 +416,7 @@ LBR: (Presents vision talk)
 LBR: (closes the vision talk with suggestions)
 
 - Establish a public meta repo on GitHub for open and general discussions.
-- Recognize ECMAScript as a living standard, refer to the [latest draft](https://tc39.github.io/ECMA-262) and skip the year or edition numbers.
+- Recognize ECMAScript as a living standard, refer to the [latest draft](https://tc39.es/ECMA-262) and skip the year or edition numbers.
 
 (the suggestions are not necessarily being applied to TC39, this is an async work that still requires further discussion)
 
@@ -470,7 +470,7 @@ PHE: I would have no problem moving the sentence that requires F.p.toString to i
 
 (Michael Ficarra)
 
-- [proposal](https://tc39.github.io/proposal-Symbol-description/)
+- [proposal](https://tc39.es/proposal-Symbol-description/)
 
 MF: Proposal to put a "description" getter on Symbol.prototype that returns `desc` given a symbol created with `Symbol(desc)`
 

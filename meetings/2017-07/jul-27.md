@@ -9,7 +9,7 @@ Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE), Andrew Paprocki 
 
 (Sam Goto, Rick Waldron)
 
-- [proposal](https://tc39.github.io/proposal-numeric-separator/)
+- [proposal](https://tc39.es/proposal-numeric-separator/)
 - [slides](https://docs.google.com/presentation/d/1i3pI_Z34xxg6_1gHVB6Q0RzZzpINmpI7yu8SVXSEgRo/edit#slide=id.p)
 
 SGO: (revisiting background/recap)
@@ -994,7 +994,7 @@ YK: I am also concerned about how one is supposed to reason about the rest of th
 
 (Michael Ficarra)
 
-- [proposal](https://tc39.github.io/proposal-optional-catch-binding/)
+- [proposal](https://tc39.es/proposal-optional-catch-binding/)
 
 MF: The proposal is to make the catch binding optional. i.e. `try {} catch {}` with no parenthesised binding follow the catch.
 

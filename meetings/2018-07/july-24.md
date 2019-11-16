@@ -58,7 +58,7 @@ RJE: Approval?
 
 RJE: September 25-27, 2018 at PayPal in New York
 
-AKI: Next meeting will be hosted at PayPal in Lower Manhattan. Logistics will be posted as soon as I have them. While I'm talking, I also have a quick CoC update: everyone is expected to uphold the code of conduct, which is [on GitHub](https://tc39.github.io/code-of-conduct/). This explains our expectations as well as how to handle things when they go wrong. Separately, I have stickers for TC39, please let me know if you want one (and didn't already take one at JSConf EU).
+AKI: Next meeting will be hosted at PayPal in Lower Manhattan. Logistics will be posted as soon as I have them. While I'm talking, I also have a quick CoC update: everyone is expected to uphold the code of conduct, which is [on GitHub](https://tc39.es/code-of-conduct/). This explains our expectations as well as how to handle things when they go wrong. Separately, I have stickers for TC39, please let me know if you want one (and didn't already take one at JSConf EU).
 
 ## Report from the Ecma Secretariat
 

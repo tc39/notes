@@ -151,7 +151,7 @@ BT: There's also a large backlog of editorial changes, if Jordan and Kevin revie
 
 IS: It's OK. I understand. Priority is HTML.
 
-MB: We could just use Chrome headless to generate the PDF from the HTML version: `chrome --headless --disable-gpu --print-to-pdf 'https://tc39.github.io/ecma262/'`
+MB: We could just use Chrome headless to generate the PDF from the HTML version: `chrome --headless --disable-gpu --print-to-pdf 'https://tc39.es/ecma262/'`
 
 BT: You need things like page numbers, though.
 

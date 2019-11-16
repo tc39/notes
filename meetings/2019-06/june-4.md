@@ -429,7 +429,7 @@ YS: Sounds good as in silence.
 
 (Shu-yu Guo)
 
-- [proposal](https://tc39.github.io/proposal-atomics-wait-async/)
+- [proposal](https://tc39.es/proposal-atomics-wait-async/)
 - [slides](https://docs.google.com/presentation/d/1L6cBV_r6RBA_n3NPeab9hSx86QVy3-DPeXg4Dy3yDx0/edit)
 
 SG: async version of Atomics.wait. Was presented maybe a year ago but dropped the ball on updating it.

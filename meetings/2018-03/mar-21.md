@@ -717,7 +717,7 @@ BE: I didn't say grinding the axe... what I find small talky here is not the var
 
 (Daniel Ehrenberg)
 
-- [proposal](https://tc39.github.io/proposal-static-class-features/)
+- [proposal](https://tc39.es/proposal-static-class-features/)
 - [slides](https://docs.google.com/presentation/d/1tbOgkZT_vxUAJiAOQ2tGjneZpkecHhI8wyclRLmgyHE/edit#slide=id.p)
 
 DE: I wanted to propose the public static field to stage 3. It is syntactic sugar to make data properties on the constructor. In this example it's sort of equivalent.
@@ -1030,7 +1030,7 @@ WH: I also object. I want the cross-cutting issues addressed.
 (Brian Terlson, Yehuda Katz, Daniel Ehrenberg)
 
 - [explainer](https://github.com/tc39/proposal-decorators/)
-- [spec](https://tc39.github.io/proposal-decorators/)
+- [spec](https://tc39.es/proposal-decorators/)
 - [slides](https://docs.google.com/presentation/d/1Sx5gwx9yd3gbRhbzgwQijGLRIbfR9PkwLlwfNK_USQs/edit#slide=id.p)
 
 DE: This is a status update of the decorators proposal which is at stage two. I think we're getting into the last stretch and my hope is to present this at the next meeting for stage 3. What are decorators: they are a mechanism for meta-programming in classes. Decorators let you modify a class declaration. There is an earlier version which is significantly different from the current proposal which is implemented in transpilers. So as an example, here is an example of using field decorators (example). That comes up in multiple frameworks such as Polymer and Salesforce. To modify a field declaration or to modify a calls or method. We heard more about use-cases in the previous meetings.The core semantics, classes methods and fields are reified into special descriptor objects. You can see a full description of the API and ??. So in the past couple of months, YK and I arranged meetings with various stakeholders to go over the API and get feedback.

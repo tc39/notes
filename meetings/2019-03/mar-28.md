@@ -201,7 +201,7 @@ JHD: I would have liked to have heard this feedback earlier and I don't want to 
 
 DD: I think this feedback was given earlier, but in terms of Stage 1 concerns. Introducing a new system object and all this talk about Realms is not trivial, so I think we should not take it lightly. This is a major semantic decision, and absolutely a Stage 2 blocker, as far as I'm concerned.
 
-MB: I wanted to respond to what JHD said. I don't think this is new feedback at all. I said the same thing after MF's presentation [at the January 2019 meeting](https://tc39.github.io/tc39-notes/2019-01_jan-29.html#security-implications-of-errorprototypestack). There are ways to resolve the problems he outlined in the current landscape, using non-standard but de facto standard methods. We should focus on specifying those before we add anything new.
+MB: I wanted to respond to what JHD said. I don't think this is new feedback at all. I said the same thing after MF's presentation [at the January 2019 meeting](https://tc39.es/tc39-notes/2019-01_jan-29.html#security-implications-of-errorprototypestack). There are ways to resolve the problems he outlined in the current landscape, using non-standard but de facto standard methods. We should focus on specifying those before we add anything new.
 
 JHD: Maybe I misunderstood, but I got the impression from Stage 1 that everyone would be super happy if the contents of interop were specified, not that it was a blocker for Stage 2.
 

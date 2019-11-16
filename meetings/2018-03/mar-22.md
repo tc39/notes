@@ -239,7 +239,7 @@ Dan Ehrenberg
 
 - [Slides](https://docs.google.com/presentation/d/1kexAmEsKMi8Blkb_wUeHKyx-3iqKUjWoyaDBMQ168Bk/edit#slide=id.p)
 - [explainer](https://github.com/tc39/proposal-bigint/)
-- [spec](https://tc39.github.io/proposal-bigint/)
+- [spec](https://tc39.es/proposal-bigint/)
 
 DE: The bigint proposal is moving along , it's currently stage-3. It adds a new arbitrary size integers in JavaScript. At the last meeting, we discussed some sort of edge-cases. Should we permit coercion between int and bigint in the case of writes into a TypedArray? We concluded no.
 There have been several other fixes that have happened, there has been some work on Atomics, and TypedArrays from the v8 team. There were various problems with int64 and memory atomics. There were also typo fixes.
@@ -877,7 +877,7 @@ BT: are we going to get to pipeline?
 (Gabriel Isenberg)
 
 - [explainer](https://github.com/tc39/proposal-nullish-coalescing)
-- [proposal](https://tc39.github.io/proposal-nullish-coalescing/)
+- [proposal](https://tc39.es/proposal-nullish-coalescing/)
 - [slides](https://docs.google.com/presentation/d/1vRiLFVYOXrKrqCxe-xEAkhAEaWXAdfZ0h8MPAIQ6mtc/edit#slide=id.p)
 
 GI: Its an operator that provides some value. The rational is that the current syntax is ?? and that can provide surprising results. The current status is initial spec text and we're at stage 1

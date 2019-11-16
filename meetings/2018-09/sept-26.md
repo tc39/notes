@@ -145,7 +145,7 @@ MB: I'll reach out to the Unicode consortium for clarification w.r.t. our use of
 
 ## Hashbang for Stage 2
 
-- [proposal](https://tc39.github.io/proposal-hashbang/out.html)
+- [proposal](https://tc39.es/proposal-hashbang/out.html)
 (Bradley Farias, BFS)
 
 BFS: This already was approved for Stage 2, but we have made many changes so we're doing this again. Due to feedback from WH, I introduce this now as a lexical grammar. The main change text is this: "Hashbang Comments are location sensitive and like other types of comments are discarded from the stream of input elements for the syntactic grammar." That's about it. I'm asking for Stage 2.

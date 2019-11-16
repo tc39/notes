@@ -215,7 +215,7 @@ DE: We can explore syntactic versions of that. Should we be Stage 1 or 0 then? A
 
 ## Code of Conduct update
 
-https://tc39.github.io/code-of-conduct/
+https://tc39.es/code-of-conduct/
 
 LBR: Since last meeting we have Code of Conduct approved. We expect everyone to act accordingly. Document is a single page document, one can get it printed. It will be sent to ECMA. We need to assemble an enforcement team; we're looking for volunteers to enforce this. Any volunteers? Please reach out to me if you wish to volunteer for the Code of Conduct Enforcement Committee.
 
@@ -807,7 +807,7 @@ MB: Me too
 
 (Michael Ficarra)
 
-- [Explainer/Spec](https://tc39.github.io/proposal-flatMap/)
+- [Explainer/Spec](https://tc39.es/proposal-flatMap/)
 
 MF: Current issue is what do we consider "flattenable"? Candidates are Iterable - but unexpected behaviour with Strings; or another Symbol. For Stage 2 we've stuck with `isConcatSpreadable` Symbol.
 

@@ -225,7 +225,7 @@ YK: Take a look at the decorate proposal which does this well. One thing I'd say
 
 AWB: We're getting into document design space. We need to get that as a cohesive whole, not just one step as a time.
 
-BT: I totally agree with Dan's request for more semantic meaning to notes and that side of things. Ecmarkup has some [new tools] that make it easier to notice what's happening. Everyone should check out the decorators spec, because that's kind of where I've been putting my ideas. (Examples: https://tc39.github.io/proposal-decorators/#sec-runtime-semantics-makefunctionuninitialized, https://littledan.github.io/proposal-integer/)
+BT: I totally agree with Dan's request for more semantic meaning to notes and that side of things. Ecmarkup has some [new tools] that make it easier to notice what's happening. Everyone should check out the decorators spec, because that's kind of where I've been putting my ideas. (Examples: https://tc39.es/proposal-decorators/#sec-runtime-semantics-makefunctionuninitialized, https://littledan.github.io/proposal-integer/)
 
 AWB: I don't see substr() as needing to be in Annex B. I looked back and couldn't figure out why it really was put there. Everyone has added it. I don't see why it needs to fall into that category. It's just a redundant.
 

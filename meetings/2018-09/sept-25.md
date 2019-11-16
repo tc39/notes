@@ -60,7 +60,7 @@ CM: Nothing to say.
 
 - [slides](https://docs.google.com/presentation/d/16cO1w3PZqCew0LLtYmAw344C3TmKlWr0sDkbe9txBmI/edit?usp=sharing)
 
-JKB: It's good to take time each meeting to introduce new people and review our CoC guidelines. The goal is to ensure that our culture is aligned with the values that the CoC encourages. The TC39 can be seen at [https://tc39.github.io/code-of-conduct/](https://tc39.github.io/code-of-conduct/).
+JKB: It's good to take time each meeting to introduce new people and review our CoC guidelines. The goal is to ensure that our culture is aligned with the values that the CoC encourages. The TC39 can be seen at [https://tc39.es/code-of-conduct/](https://tc39.es/code-of-conduct/).
 
 JKB: We meet every other Thursday at 1:30pm EST. If interested in joining, please contact us.
 

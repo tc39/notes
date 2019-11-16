@@ -489,7 +489,7 @@ JHD: No, exec doesn't change. match and exec work differently. I'll file a few g
 
 (Gabriel Isenberg)
 
-- [Spec](https://tc39.github.io/proposal-optional-chaining/)
+- [Spec](https://tc39.es/proposal-optional-chaining/)
 - [Explainer](https://github.com/tc39/proposal-optional-chaining)
 - [Presentation](https://docs.google.com/presentation/d/1iiCtJSW42Z7lg0YlagOZOfI-FTrkN88OuiO3pySawSo/edit?usp=sharing)
 

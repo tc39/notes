@@ -1018,7 +1018,7 @@ BT: I think it needs to be reflected, so we know years from now why we didn't go
 
 Brian Terlson
 
-https://tc39.github.io/ecmascript-asyncawait
+https://tc39.es/ecmascript-asyncawait
 
 
 BT: When we got async functions to Stage 3, we did spend hours talking about possible futures for cancelation and how those futures would impact async functions. We found that additive things to async functions would also be additive things to Promises. So whatever you would add to one that would be a breaking change would be a breaking change for the other. I didn't see anything in Domenic's preentation that made me think otherwise. Even the third state proposal, I'm not sure would run afoul of that.

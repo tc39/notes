@@ -225,13 +225,13 @@ JHD: Sounds like the next steps are for Mark to think through Yehuda's objection
 
 Tim Disney
 
-https://tc39.github.io/proposal-template-literal-revision/
+https://tc39.es/proposal-template-literal-revision/
 
 Reviewers: Mark Miller and Waldemar Horwat
 
 TD: (recap) w/ tagged template literals, escape seq. illegal. Changes seek to allow
 
-- Only change: https://tc39.github.io/proposal-template-literal-revision/#sec-static-semantics-template-early-errors removed the parameterization of the lexical grammar productions and instead enforces early errors via static semantics attached to the syntactic grammar. This change was a result of Mark and Waldemar's review.
+- Only change: https://tc39.es/proposal-template-literal-revision/#sec-static-semantics-template-early-errors removed the parameterization of the lexical grammar productions and instead enforces early errors via static semantics attached to the syntactic grammar. This change was a result of Mark and Waldemar's review.
 
 TD: Approval Stage 3?
 
@@ -700,7 +700,7 @@ AK: This isn't thought of as a statement, but rather as a declaration, so the ev
 
 DH: "identifier : identifier" currently means type annotation
 
-with respect to this ^^ https://tc39.github.io/ECMA-262/#sec-forbidden-extensions:
+with respect to this ^^ https://tc39.es/ECMA-262/#sec-forbidden-extensions:
 
 
 > The Syntactic Grammar must not be extended in any manner that allows the token : to immediate follow source text that matches the BindingIdentifier nonterminal symbol.

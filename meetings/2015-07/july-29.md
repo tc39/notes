@@ -440,7 +440,7 @@ BT: Implementors on both V8 and SpiderMonkey have shown interest in making gener
 
 (Domenic Denicola)
 
-DD: (Showing https://tc39.github.io/process-document/)
+DD: (Showing https://tc39.es/process-document/)
 
 Reviewed:
 

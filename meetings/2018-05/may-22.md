@@ -325,7 +325,7 @@ DE: Seems like this is good overall, with various people wanting small changes. 
 
 (Michael Ficarra)
 
-- [proposal](https://tc39.github.io/proposal-optional-catch-binding/)
+- [proposal](https://tc39.es/proposal-optional-catch-binding/)
 
 MF: Alternative syntax for catches. The PR is here (https://github.com/tc39/ecma262/pull/1185), and it has been approved by editors. We have Safari, Chrome and Firefox implementations already. I am requesting Stage 4.
 

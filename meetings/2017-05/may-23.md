@@ -143,7 +143,7 @@ MM: Goals: minimal semantic pollution, while matching web reality as closely
 
 (JF Bastien, presented by Keith Miller)
 
-https://tc39.github.io/proposal-Math.signbit/Math.signbit.html
+https://tc39.es/proposal-Math.signbit/Math.signbit.html
 
 KM: propose a signbit function that will behave as a signbit function should
 - The existing Math.sign gives results that are unexpected
@@ -152,7 +152,7 @@ WH: I disagree with how it's presented, but don't disagree with the feature
 
 KM:
 
-https://tc39.github.io/proposal-Math.signbit/Math.signbit.html#sign
+https://tc39.es/proposal-Math.signbit/Math.signbit.html#sign
 
 - Should we coerce the number?
 - What should we do with NaN?
@@ -185,7 +185,7 @@ WH: How many of them are bugs?
 
 KM: Need to answer these questions:
 
-https://tc39.github.io/proposal-Math.signbit/Math.signbit.html#alts
+https://tc39.es/proposal-Math.signbit/Math.signbit.html#alts
 
 WH: If we're going to do this, the way it's specified now is the right way to do it: result is a boolean, NaNs are always "positive" to avoid another Pandora's box. However, I haven't seen any good motivation so far as to why we should do it. The one thing this does is provide a way to distinguish between +0 and -0; the canonical way of doing that has been to take their reciprocals.
 

@@ -11,7 +11,7 @@ Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), J
 Remote: Daniel Ehrenberg (DE), Ron Buckton (RBT), Caio Lima (CLA), Yulia Startsev (YSV), Jory Burson (JBN), Ben Newman (BNN), Kyle, HE Shi-Jun (HSJ), Pedram Emrouznejad (PED), Dan Ehrenberg (DE), Mathias Bynens (MB), Jonathan Keslin (JKN), Frank Yung-Fong Tang (FYT), Yulia Startsev (YSV), Istvan Sebestyen (IS)
 
 
-## Promise.prototype.any for Stage 3
+## Promise.any for Stage 3
 
 
 Presenter: Mathias Bynens (MB)
@@ -154,7 +154,7 @@ AKI: Let’s table this and discuss in the issue.
 
 
 #### Conclusion/Resolution
-- This will be tabled and discussed in the GH issue, re-raised tomorrow for 3 minutes.
+- This will be tabled and discussed in the GH issue, re-raised [tomorrow](https://github.com/tc39/notes/blob/master/meetings/2019-10/october-3.md#promiseany-reprise) for 3 minutes.
 
 
 ## Reduce the amount of implementation-defined behavior in Array.prototype.sort

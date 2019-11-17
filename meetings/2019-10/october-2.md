@@ -1,6 +1,6 @@
 # October 2, 2019 Meeting Notes
 -----
-Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MCN), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Robin Ricard (RRI), Jean-Francois Paradis (JFP), Valerie Young (VYG), Erica Pramer (EPR), Richard Gibson (RGN), Philipp Dunkel (PDL), Godfrey Chan (GCN), Joyee Cheung (JCG), Patrick Soquet (PST)
+Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MPC), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Robin Ricard (RRI), Jean-Francois Paradis (JFP), Valerie Young (VYG), Erica Pramer (EPR), Richard Gibson (RGN), Philipp Dunkel (PDL), Godfrey Chan (GCN), Joyee Cheung (JCG), Patrick Soquet (PST)
 
 Remote: Daniel Ehrenberg (DE), Ron Buckton (RBT), Caio Lima (CLA), Yulia Startsev (YSV), Jory Burson (JBN), Ben Newman (BNN), Kyle, HE Shi-Jun (HSJ), Pedram Emrouznejad (PED), Dan Ehrenberg (DE), Mathias Bynens (MB), Jonathan Keslin (JKN), Frank Yung-Fong Tang (FYT), Yulia Startsev (YSV), Istvan Sebestyen (IS)
 
@@ -287,7 +287,7 @@ MB: I'm OK with this and it is consistent with `String.prototype.replace`, which
 MB: (presents slides)
 
 
-MCN: I think this is cool.  I'm curious on the use case behind this.  how do people use it?
+MPC: I think this is cool.  I'm curious on the use case behind this.  how do people use it?
 
 
 MB: The readme for the proposal has the best answer to this, we've also covered this previously in the committee. Basically there's lots of libraries devs are using (we've looked at NPM download numbers) that export a regular expression that matches.There are NPM packages that matches hashtags according to unicode. And then you have to solve the subproblem of matching emoji sequences.  And 99% of the file size is a big dynamically generated regex. Tens of kilobytes of JS code on the critical path, slowing down app load times. We can significantly reduce file size on the web by implementing this.

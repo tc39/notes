@@ -1,7 +1,7 @@
 # October 1, 2019 Meeting Notes
 -----
 
-Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MCN), Pieter Ouwerkerk (POK), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Daniel Rosenwasser (DRR), Erica Pramer (ELP), Myles Borins (MBS), Richard Button (RBU), Robin Ricard (RRI)
+Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MPC), Pieter Ouwerkerk (POK), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Daniel Rosenwasser (DRR), Erica Pramer (ELP), Myles Borins (MBS), Richard Button (RBU), Robin Ricard (RRI)
 
 Remote: Daniel Ehrenberg (DE), Ron Buckton (RBT), Caio Lima (CLA), Yulia Startsev (YSV), Jory Burson (JBN), Ben Newman (BNN), Kyle, HE Shi-Jun (HSJ), Pedram Emrouznejad (PED), Dan Ehrenberg (DE), Mathias Bynens (MB), Jonathan Keslin (JKN), Frank Yung-fong Tang (FYT), Brendan Eich (BE), Andy Fleming (AFL), Bradley Farias (BFS), Caridy Patiño (CPM)
 
@@ -50,7 +50,7 @@ BT: [speeding through several slides]
 BT: István will be joining us in the afternoon. He is driving through Europe and will join us from the road 🚗🏘
 
 
-(note from MCN: sorry! I put this below the template…)
+(note from MPC: sorry! I put this below the template…)
 
 
 ## ECMA262 Status Updates
@@ -736,7 +736,7 @@ WH: We are trying to pull some of the features from Annex B into the main spec, 
 WH: (presents slides)
 
 
-MCN: What is the obvious and uncontroversial way to express if-else?
+MPC: What is the obvious and uncontroversial way to express if-else?
 
 
 WH: We do similar things in the expression grammar - there are other places where it is not obvious and uncontroversial. A nonobvious example is that we have both `new foo` and `new foo(args)`, so if you nest `new`, you want to attach the parenthesized arguments to the closest unmatched `new`. That’s done by the expression grammar. The obvious way you’d have nested `if`-`else` attach an `else` to the closest unmatched `if` is by bifurcating the statement nonterminal using a grammar parameter (analogous to how we have yield and await parameters on some nonterminals) that indicates whether a statement ends with an unmatched `if`. That’s what I did when validating the statement grammar.

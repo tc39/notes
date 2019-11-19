@@ -1,6 +1,6 @@
 # October 3, 2019 Meeting Notes
 -----
-Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MCN), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Robin Ricard (RRI), Jean-Francois Paradis (JFP), Valerie Young (VYG), Erica Pramer (EPR), Richard Gibson (RGN), Philipp Dunkel (PDL), Godfrey Chan (GCN), Joyee Cheung (JCG), Patrick Soquet (PST), Shu-yu Guo (SYG)
+Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MPC), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Robin Ricard (RRI), Jean-Francois Paradis (JFP), Valerie Young (VYG), Erica Pramer (EPR), Richard Gibson (RGN), Philipp Dunkel (PDL), Godfrey Chan (GCN), Joyee Cheung (JCG), Patrick Soquet (PST), Shu-yu Guo (SYG)
 
 Remote: Daniel Ehrenberg (DE), Ron Buckton (RBT), Caio Lima (CLA), Yulia Startsev (YSV), Jory Burson (JBN), Ben Newman (BNN), Kyle, HE Shi-Jun (HSJ), Pedram Emrouznejad (PED), Dan Ehrenberg (DE), Mathias Bynens (MB), Jonathan Keslin (JKN), Frank Yung-Fong Tang (FYT), Yulia Startsev (YSV), Benjamin E. Coe (BEC), Peter Hoddie (PHE), Istvan Sebestyen (IS)
 
@@ -76,7 +76,7 @@ MM: Random bits have no endianness!
 WH: They’re not *all* random, they have a version number in the middle.
 
 
-MCN: Why not both apis? It seems like low cost to us to support both, but not supporting both would be an unnecessary burden on the developer to write conversions with lots of pitfalls.
+MPC: Why not both apis? It seems like low cost to us to support both, but not supporting both would be an unnecessary burden on the developer to write conversions with lots of pitfalls.
 
 
 BEC: I think that’s a really fair point. I think we haven’t answered that question yet, but it would paint ourselves into corner to only support one. Folks have made a case for both. I just want this to be a really straightforward API for everyone using it.
@@ -130,13 +130,13 @@ WH: So you think that UUIDs would get longer than 128 bits?
 GFC: If the assertion is that it’s a known thing that the algorithm won’t change then I think the default is fine.
 
 
-MCN: This stuff is not a v1 concern, although if this is a web compatibility concern, maybe we should not pick a default. None of us are cryptographers.
+MPC: This stuff is not a v1 concern, although if this is a web compatibility concern, maybe we should not pick a default. None of us are cryptographers.
 
 
 WH: How do you know none of us are cryptographers?
 
 
-MCN: Good point - rather, it’s that this isn’t a cryptographic standards committee.
+MPC: Good point - rather, it’s that this isn’t a cryptographic standards committee.
 
 
 BEC: I agree - I’ve read the papers around UUID v4, but I’m not enough of a mathematician to make any definitive claims about it. What if databases have a trillion items in them soon? Right now if you generate a billion a second for (some amount of time), you’d have a one in a million chance of getting a collision.
@@ -202,7 +202,7 @@ CM: Having a standard way to represent it seems fine.
 WH: As a more direct reply to CM’s question, UUIDv4 is not just printing a random number.  There are several fields that you must get correct, which are right in the middle.  You can't just print urandom bytes with dashes and expect to get a valid UUID.
 
 
-MCN: +1; there have been attacks on RSA in the ‘90s and ‘00s due to bad padding algorithms.
+MPC: +1; there have been attacks on RSA in the ‘90s and ‘00s due to bad padding algorithms.
 
 
 MSL: I wonder if comparing this to erlang’s make_ref might explain or clarify how this is different from just a random printf.
@@ -549,7 +549,7 @@ KG: I believe that there are some applications that would make heavy use of this
 MM: I agree with the bar you’re raising. I’m one of the harshest critics of adding syntax to the language. It would need to cross the bar that I apply to everyone else. I support ?., so some new syntax does cross my bar.
 
 
-MCN: I’m sensitive to the idea of putting the carriage before the horse. I think it is very possible for syntax to inform value and polarity of a feature. Being convinced may very well be gated on syntax, or at least on good syntax.
+MPC: I’m sensitive to the idea of putting the carriage before the horse. I think it is very possible for syntax to inform value and polarity of a feature. Being convinced may very well be gated on syntax, or at least on good syntax.
 
 
 JGR: For proxies can't you have a function with a then property to allow it to be both a thenable and a function?
@@ -627,7 +627,7 @@ SFC: In the current world without HandledPromise, you can await the promise and 
 MM: This proposal does depend on HandledPromise. It is purely trying to make it pleasant to use the functionality of the previous proposal. In absence of previous proposal this proposal is meaningless.
 
 
-MCN: Why not roll this into the previous proposal then?
+MPC: Why not roll this into the previous proposal then?
 
 
 MM: We should apply a very very high bar to new syntax. I don’t want the previous proposal to be held up by this proposal. If this proposal never gets accepted, the previous proposal still adds tremendous value.
@@ -887,7 +887,7 @@ KM: You’re probably going to want to do that. Otherwise, it would be a disaste
 MM: What's the general reaction of bundling into this proposal something like the keeper mechanism so that you can, in a host-independent way, bundle code that could run in reaction to other code?
 
 
-MCN: Is the idea that if we don’t bundle them, there wouldn’t be a way to observe this behavior in tests?
+MPC: Is the idea that if we don’t bundle them, there wouldn’t be a way to observe this behavior in tests?
 
 
 MM: In the absence of the keeper mechanism, hosts can keep whatever mechanism they want, … that test environments could assume.

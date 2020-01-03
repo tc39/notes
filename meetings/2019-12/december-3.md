@@ -136,7 +136,7 @@ AKI: Rob Palmer has volunteered. Brian and I intend to stay on.  On the reflecto
 
 MBS: I'd be interested in this, but I wouldn't want to commit to something I can't always be available for.  Something I'd like to do, I would love to meet all the candidates to discuss time commitments.  We should figure out what everyone is comfortable committing to.
 
-RK (who? RKG?): People have asked if I can help facilitate.  Not sure I want to commit but am interested to help facilitate.  I assumed that would be separate from the chair group.
+RKG: People have asked if I can help facilitate.  Not sure I want to commit but am interested to help facilitate.  I assumed that would be separate from the chair group.
 
 YSV: We had chairs vs. facilitators, where chairs were more committed and facilitators had specific tasks. Task-based splitting of the roles worked well.  Things not split by task got dropped. We need a smaller group that can be contacted.  Let's talk at lunch.
 

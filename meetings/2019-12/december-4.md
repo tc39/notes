@@ -282,7 +282,7 @@ MM: if the precedence had been reversed, it would have been identical
 
 DRR: exactly
 
-RKG: Non-normatively, if we were bothered by needing parens in the future, at the point the precedent would become observable, so having it in the spec would be useful then.
+RKG: Non-normatively, if we were bothered by needing parens in the future, at that point the precedent would become observable, so having it in the spec would be useful then.
 
 DRR: We can change our minds later on precedence.
 
@@ -717,10 +717,7 @@ Presenter: Justin Ridgewell (JRL)
 JRL: (presents slides)
 
 
-RKG: It could just be in underscore or lodash, but regardless, to address what “filter” means, I think it makes sense. “Filter x in” or “filter x out”
-
-I wouldn’t read out loud as if this is “filter x in” or “filter x out”, but filter ??
-You’re providing the function to say what it means to be good.
+RKG: Seems like it would suffice for these to just be in Underscore / Lodash, but regardless, to address what “filter” means: I don't think either of “filter in” or “filter out” are the right way to look at it; the intended meaning is more like “filter on”. When we say numbers.filter(isEven), we're filtering “on” even numbers and leaving out everything else. And in the general case, it might not even be easy to write a predicate that specifies “everything else”.
 
 MM: I am sympathetic to the proposal even though I reject it. If we were adding new functionality fresh to the language, I agree these names are better. But we’re not adding new functionality, we’re doing redundant naming of existing functionality.
 Does it pay for its weight? My opinion is no. Is there a story you can tell such that when people think “filter” it has the right meaning? What does a blue filter do? It lets in blue light. We need to optimize for reading code, not writing.  We are not relieving the burden of needing to understand “filter”. Now they need to know two names instead of one.

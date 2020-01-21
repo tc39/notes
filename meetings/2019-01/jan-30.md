@@ -521,7 +521,7 @@ DE: For the ancestors that have private methods.
 
 WH: OK.
 
-DE: Should I go to my bonus slice where I explain that case?
+DE: Should I go to my bonus slide where I explain that case?
 
 TST: Maybe?
 

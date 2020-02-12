@@ -394,7 +394,7 @@ We can solve this problem by disallowing for of loops that begin with `async`, b
 Presenter: Alan Schmitt (AS)
 
 - [code](https://gitlab.inria.fr/star-explain/jsexplain)
-- [demo](jsexplain.gforge.inria.fr/index.html)
+- [demo](http://jsexplain.gforge.inria.fr/index.html)
 
 AS: The motivation is to have a simpler way to read the spec. You can give it a program and step through it. Naive interpreter in OCaml compiles to javascript and a pseudo code language which we hope is more friendly to read. Every function in the javascript/pseudo code has the esid, and that is how you can follow along in the specification. (demos demo)
 
@@ -609,4 +609,3 @@ SYG: We flip flop on the API.  I have not proposed this.
 ### Conclusion
 
 Seems like the committee consents with the performance regression noted in SYG's presentation.
-

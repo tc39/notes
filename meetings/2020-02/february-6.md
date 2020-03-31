@@ -3,7 +3,7 @@
 
 **In-person attendees:** Aki Braun (AKI), Andrew Paprocki (API), Rob Palmer (RPR), Waldemar Horwat (WH), Chip Morningstar (CM), Shane F Carr (SFC), Shu-yu Guo (SYG), Jordan Harband (JHD), Michael Saboff (MLS), Keith Miller (KM), Michael Ficarra (MF), Jonathan Keslin (JKN), Kevin Gibbons (KG), Richard Gibson (RGN), Justin Ridgewell (JRL), Zibi Braniecki (ZB), Myles Borins (MBS), Bradford C. Smith (BCS) Rick Button (RBU), Matheus Marchini (MAR), Guilherme Hermeto (GHO)
 
-**Remote attendees:** Dan Ehrenberg (DE), Brian Terlson (BT), David Rudin (DRN), Jason Nutter (JAN), Ron Buckton (RBN), Pieter Ouwerkerk (POK), István Sebestyén (IS), Min Qi Wu (WMQ), Leo Balter (LBR), Valerie Young (VYG), Jack Works (JWK), Mathieu Hofman (MHN), John Hax (JHX), Caridy Patiño (CP), Sergey Rubanov (SRV), Rajiv Batra (!!!), Yulia Startsev (YSV), Bradley Farias (BFS), Gus Caplan (GCL) Younies Mahmoud (YMD) HE Shi-Jun (JHX), Robert Pamely (RPY), Caio Lima (CLA)
+**Remote attendees:** Dan Ehrenberg (DE), Brian Terlson (BT), David Rudin (DRN), Jason Nutter (JAN), Ron Buckton (RBN), Pieter Ouwerkerk (POK), István Sebestyén (IS), Min Qi Wu (WMQ), Leo Balter (LBR), Valerie Young (VYG), Jack Works (JWK), Mathieu Hofman (MAH), John Hax (JHX), Caridy Patiño (CP), Sergey Rubanov (SRV), Rajiv Batra (!!!), Yulia Startsev (YSV), Bradley Farias (BFS), Gus Caplan (GCL) Younies Mahmoud (YMD) HE Shi-Jun (JHX), Robert Pamely (RPY), Caio Lima (CLA)
 
 ## SES Compartments
 
@@ -138,23 +138,23 @@ Presenter: Daniel Ehrenberg (DE)
 DE: I want to make the case for independent lifetimes more intuitive. You will export some function that wants to do finalization work. …. In that kind of case the group will be held live.
 In WebAssembly, you may have memory, and that memory will have allocations against it, and a group associated with that memory. When that group dies, it’s probably because the whole module dies. This is usually a resource you are sub-allocating. It would be extra work that wouldn’t serve any particular purpose. If we didn’t have any independent lifetimes, we would need to keep track of this additional work. It just makes sense to have independent lifetimes.
 
-MHN : I’m not sure I quite understand the resources. If we have a live object that has some storage and decide that goes away, if we don’t want to do cleanup, but let it fall away, what happens to the live object that the user has? Does it become corrupted? I don’t understand the use case for the independent lifetimes.
+MAH: I’m not sure I quite understand the resources. If we have a live object that has some storage and decide that goes away, if we don’t want to do cleanup, but let it fall away, what happens to the live object that the user has? Does it become corrupted? I don’t understand the use case for the independent lifetimes.
 
 DE: I’m confused by the question. Either the object refers to the storage or the function does.
 
-MHN: With a WeakRef, I suppose, And if it doesn’t that means the store isn’t collected anyway.
+MAH: With a WeakRef, I suppose, And if it doesn’t that means the store isn’t collected anyway.
 
 DE: I don't see why you would use a WeakRef there.  Can you explain?
 
-MHN: If you don’t use a WeakRef, that means your object has a strong reference to a backend store.
+MAH: If you don’t use a WeakRef, that means your object has a strong reference to a backend store.
 
 DE: That is what I think would make sense for the cases I can think of. If you have an object that points to a WASM heap—I’m making these references to WASM because it’s a concrete case, but if you have another one, we could use that instead.
 
-MHN: No, we can use that one. I just don’t understand the advantage of letting the group die if the backing store isn’t collected.
+MAH: No, we can use that one. I just don’t understand the advantage of letting the group die if the backing store isn’t collected.
 
-SYG: I think, MHN, you can imagine for the WASM case that the things you hand out are WeakRefs, and you manually dispose the memory somehow from the main linear memory.  you would not need to run the finalizers anymore.
+SYG: I think, MAH, you can imagine for the WASM case that the things you hand out are WeakRefs, and you manually dispose the memory somehow from the main linear memory.  you would not need to run the finalizers anymore.
 
-MHN: Right, so that is what I am saying. The live object would have a weakref to the backing store. Which means when the object tries to access the backing store it would blow up.
+MAH: Right, so that is what I am saying. The live object would have a weakref to the backing store. Which means when the object tries to access the backing store it would blow up.
 
 DE: This just seems independent--whether or not the instance holds the WASM memory, you’re already buying into this blowing up design decision—and opt-into doing the finalizer work.
 
@@ -162,7 +162,7 @@ SYG: Imagine your API was that you attach the finalizer per WeakRef.  In that AP
 
 DE: I think the practical effect of not having independent lifetimes, would be that the object has a reference to the backing store. If not, you can just hold the reference yourself.
 
-MHN: I agree it's easy to do one on top of the other and not the opposite. We should try to at least be very clear and make sure users don’t expect to get the callback.
+MAH: I agree it's easy to do one on top of the other and not the opposite. We should try to at least be very clear and make sure users don’t expect to get the callback.
 
 DE: I agree we need to follow up with improvements to the documentation.
 

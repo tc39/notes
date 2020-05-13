@@ -1031,7 +1031,7 @@ MM: It sounded like anyone who would be fine with both host hooks should be fine
 MBS: We have more time tomorrow. Let’s put a 15 minute time box for tomorrow at the end of the day.
 
 ### Conclusion/Resolution
-- Will continue discussion tomorrow in a 15 minute timebox.
+- Will continue discussion [tomorrow](https://github.com/tc39/notes/blob/master/meetings/2020-03/april-1.md#importmeta-for-stage-4-continued-from-previous-day) in a 15 minute timebox.
 
 New Topic: Do we need to worry about this prior to Compartments actually exposing hooks?
 Jordan Harband

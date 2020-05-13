@@ -483,7 +483,7 @@ Mark S. Miller (@Agoric )
 
 ### Conclusion/Resolution
 - consensus to remove FinalizationRegistry cleanup iterators and pass values directly
-- SYG will follow up with KM on cleanupSome before the end of this meeting.
+- SYG will follow up with KM on cleanupSome before the end of this meeting ([link](https://github.com/tc39/notes/blob/master/meetings/2020-03/april-2.md#revisit-weakrefs-finalizationregistry-api-change)).
 
 ## Temporal update
 
@@ -789,7 +789,7 @@ RPR: No objections. You have stage 1.
 ### Conclusion/Resolution
 -  Consensus reached for Intl.NumberFormat V3 for Stage 1.
 
-## import.meta for Stage 4 (continued from previous day)
+## import.meta for Stage 4 ([continued from previous day](https://github.com/tc39/notes/blob/master/meetings/2020-03/march-31.md#importmeta-for-stage-4))
 
 Presenter: Gus Caplan (GCL) and Myles Borins (MBS)
 

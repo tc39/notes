@@ -378,8 +378,9 @@ RW: I also just had some of the same conversations on that topic.
 
 Presenter: Keith Miller (KM)
 
-- [proposal](url)
-- [slides](url)
+- [previous discussion on April 1](https://github.com/tc39/notes/blob/master/meetings/2020-03/april-1.md#weakrefs-finalizationregistry-api-change)
+- [pull request](https://github.com/tc39/proposal-weakrefs/pull/187)
+- [slides](https://docs.google.com/presentation/d/1mT9qcho2gGGDTNFd5KnOTvweJ9NFM_fbmxbGnZz5H4s/edit)
 
 KM: (presents slides)
 

@@ -511,7 +511,7 @@ JHD: So yeah, we’d have to handle the infinities and the NaNs, just like all t
 
 RPR: Queue is empty
 
-JHD: Sounds like there is pretty strong opposition against spending committee time exploring generic comparison, but people are roughly okay with addressing the problem of comparing arrays. I am unclear how we can compare arrays without requiring a comparator without also addressing generic comparison of values. But either way it seems like this problem space has even more to talk about even though we’ve been given strong feedback on which parts to focus on and which parts to avoid. So it seems worthy of exploring further in stage 1. Can we have stage 1 for the proposal given that all the strong feedback we’ve received would be weighted highly?
+JHD: Sounds like there is pretty strong opposition to spend committee time exploring generic comparison, but people are roughly okay with addressing the problem of comparing arrays. I am unclear how we can compare arrays without requiring a comparator without also addressing generic comparison of values. But either way it seems like this problem space has even more to talk about even though we’ve been given strong feedback on which parts to focus on and which parts to avoid. So it seems worthy of exploring further in stage 1. Can we have stage 1 for the proposal given that all the strong feedback we’ve received would be weighted highly?
 
 
 TLY: The original pb was how do you compare equality of arrays rather than comparing any value. I think it’s a lot easier to talk about a new way of determining equality than it is to try to give a total ordering to all values in JavaScript, or even a partial ordering.

@@ -75,7 +75,9 @@ Approved
 [Slides](https://docs.google.com/presentation/d/1NyD7mS7qFXUPVWtUhCsR7gPGEZJKCRwznx4a6efz9yU)
 
 RPR: (presents slides)
+
 RPR: no questions at the moment, please give feedback to the chair group via reflector or individual feedback, ideally in the form of a constructive proposal
+
 RPR: chair group will have final say
 
 ## Secretary’s report
@@ -589,4 +591,3 @@ JRL: Did you just say `==` would use Object.is?
 DE: Yes.
 
 JRL: It would be extremely surprising, but we can discuss it later.
-

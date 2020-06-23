@@ -47,7 +47,7 @@
 | Dan Clark            | DDC            | Microsoft          |
 | Bradley Farias       | BFS            | GoDaddy            |
 | Devin Rousso         | DRO            | Apple              |
-| Leo Balter           | LBR            | Salesforce         |
+| Leo Balter           | LEO            | Salesforce         |
 | Younies Mahmoud      | YMD            | Google             |
 | Robert Pamely        | RPY            | Bloomberg          |
 | Jordan Harband       | JHD            | Invited Expert     |
@@ -490,12 +490,12 @@ It might be a correctness problem, it might be an API abuse problem, but I would
 
 MLS: From JSC, I do not think that the security use case is valid.
 
-LBR: Talking about the notes: I think for us to make it a following pattern for decision that tc39 makes, 
+LEO: Talking about the notes: I think for us to make it a following pattern for decision that tc39 makes, 
 And not as YSV tried to say - it’s not blocking the actual proposal. Rather than creating a new pattern on how we distinguish thing here, we should be more clear in the notes that we are blocking the stage advancement, and not the proposal. Is that okay to say, YSV and MLS?
 
 YSV: Sorry I think I wasn’t clear. We don’t reject as a rule, we block. We can just say that it’s blocked from advancement. I know how much work this took, and I’m sorry for the surprise.
 
-LBR: Yep, I understand, I just want to remove the ambiguity.
+LEO: Yep, I understand, I just want to remove the ambiguity.
 
 ### Conclusion/Resolution
 
@@ -512,7 +512,7 @@ Presenter: Shane F. Carr (SFC)
 
 SFC: (presenting slides)
 
-LBR: I don’t have any specific questions. Appreciate the work and the thoughts into it. And yes my team just fixed a thing that is being solved in a very nice way here that I discussed with SFC the other day. So it does have a +1 from the editor.
+LEO: I don’t have any specific questions. Appreciate the work and the thoughts into it. And yes my team just fixed a thing that is being solved in a very nice way here that I discussed with SFC the other day. So it does have a +1 from the editor.
 
 WH: You mentioned you take strings as input and you can format strings. What can be in them?
 
@@ -567,7 +567,7 @@ SFC: If we have WH as a half reviewer and YSV as a half reviewer, maybe that’s
 
 DE: I have some idea for other people to recruit offline and if I can’t I will bring that up in next meeting
 
-LBR: It’s definitely something where we can get reviewers from TG2, because not everyone from there is in this meeting. 
+LEO: It’s definitely something where we can get reviewers from TG2, because not everyone from there is in this meeting. 
 
 SFC: Ok sounds good, I will reach out later in the summer when ready for stage 3 review. So for now there’s no work for those reviewers.
 

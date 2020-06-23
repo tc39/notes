@@ -1,6 +1,6 @@
 # July 24, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SFC), Kevin Smith (KS), Ron Buckton (RBN), Jean-Francois Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DRR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbåge (SM), Dustin Savery (DSY), Mike Murry (MMY), Alex Vincent (AVT) John-David Dalton (JDD)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LEO), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SFC), Kevin Smith (KS), Ron Buckton (RBN), Jean-Francois Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DRR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbåge (SM), Dustin Savery (DSY), Mike Murry (MMY), Alex Vincent (AVT) John-David Dalton (JDD)
 
 Remote:
 Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell (JRL), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
@@ -117,7 +117,7 @@ RJE: Questions for DE? (None). Thank you DE!
 
 (Leo Balter)
 
-LBR: Some updates since the last meeting. (Reads slide about Git diff; quite a few changes to Test262). We refactored several tests for Atomics and reviewed repeatedly these changes. Thanks to Rick Waldron and André Bargull for their efforts on this. We're ready to rename Atomics.wake to Atomics.notify (we will discuss this more). We have coverage for Symbol.prototype.description. We also updated RegExp Unicode property escape tests for Unicode 11. We now have tests for `export *` as namespace from `foo` syntaxDynamic Imports. We've had our first implementation-contributed where bots will check for updates and verify Test262 coverage, starting with JavaScriptCore; initial curation is in progress here, though it requires a lot of manual work. Lastly, we have a new Test262 harness in C++!
+LEO: Some updates since the last meeting. (Reads slide about Git diff; quite a few changes to Test262). We refactored several tests for Atomics and reviewed repeatedly these changes. Thanks to Rick Waldron and André Bargull for their efforts on this. We're ready to rename Atomics.wake to Atomics.notify (we will discuss this more). We have coverage for Symbol.prototype.description. We also updated RegExp Unicode property escape tests for Unicode 11. We now have tests for `export *` as namespace from `foo` syntaxDynamic Imports. We've had our first implementation-contributed where bots will check for updates and verify Test262 coverage, starting with JavaScriptCore; initial curation is in progress here, though it requires a lot of manual work. Lastly, we have a new Test262 harness in C++!
 
 
 
@@ -127,9 +127,9 @@ LBR: Some updates since the last meeting. (Reads slide about Git diff; quite a f
 
 - [slides](https://docs.google.com/presentation/d/1iiGJyVwy6YM3p8T0hfaDuj4fQ4tT0b4Oz24OzzCetAg/)
 
-LBR: Some engines have already renamed Atomics.wake to Atomics.notify. ChakraCore, V8, Moddable XS among others. Node.js has introduced an experimental worker API that has cautious aliasing. Unfortunately, UnrealEngine repository requires a developer account, which we don't have.
+LEO: Some engines have already renamed Atomics.wake to Atomics.notify. ChakraCore, V8, Moddable XS among others. Node.js has introduced an experimental worker API that has cautious aliasing. Unfortunately, UnrealEngine repository requires a developer account, which we don't have.
 
-LBR: So, can we have consensus for this to land?
+LEO: So, can we have consensus for this to land?
 
 AK: Didn't this already have consensus?
 
@@ -223,7 +223,7 @@ DD: I agree, I think it is an interesting area to explore. There are a lot more 
 
 YK: First of all, I've used this idiom in the web platform, and I think it's great to add better workarounds. As a person who writes a lot of Rust code, I think the ownership transfer idiom is a good one, and I'm not concerned that the style would leak into your other code that doesn't use this idiom. Rust has something very similar – I would be happy to see it in JavaScript.
 
-LBR: I like the proposal, from Test262, it's great to have the observable points of ArrayBuffers from ECMAScript tools. Is the second part of the proposal (realloc) also going for Stage 2?
+LEO: I like the proposal, from Test262, it's great to have the observable points of ArrayBuffers from ECMAScript tools. Is the second part of the proposal (realloc) also going for Stage 2?
 
 DD: More realistically, that will probably spin out into a separate proposal.
 
@@ -412,7 +412,7 @@ DH: Why wearables as opposed to small IoT devices?
 
 PHE: I suspect that maybe eventually TC53 will extend to all small devices. One of the more important things that this committee is concerned about is energy, about which wearables have particular concerns.
 
-LBR: Bocoup is excited to host. It will not be at the cave, but our nice office. (Laughs)
+LEO: Bocoup is excited to host. It will not be at the cave, but our nice office. (Laughs)
 
 
 ## Update on `do`-expressions

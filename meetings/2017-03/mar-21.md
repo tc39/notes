@@ -1,7 +1,7 @@
 # March 21, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MLS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LSH), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), Mathias Bynens (MB)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MLS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LSH), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LEO), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), Mathias Bynens (MB)
 
 -----
 
@@ -57,7 +57,7 @@ YK: Only once a feature gets to stage 4 does it get in the spec. What we're doin
 
 AWB: I suggest we do a single vote covering both docs.
 
-LBR: We also have the Ecma TR104.
+LEO: We also have the Ecma TR104.
 
 AWB: We will handle that separately.
 
@@ -101,25 +101,25 @@ All: _clapping_
 
 (Leo Balter)
 
-LBR: Need help from Ecma for an email for use by Test262 so that private emails don't need to be used.
+LEO: Need help from Ecma for an email for use by Test262 so that private emails don't need to be used.
 
-LBR: In other updates. I was able to do a bug triage on more than 100 issues and pull requests in the last month. There were many many closed issues (around 50) including tests on rest and spread properties. We now have over 100k LOC for async/generator tests. For object rest/spread, we have a new JSC contributor from my country who has been very helpful with the tests. He also implemented it in JSC. We need more support--I'm glad Google is supporting me, but I need more support for Test262 development.
+LEO: In other updates. I was able to do a bug triage on more than 100 issues and pull requests in the last month. There were many many closed issues (around 50) including tests on rest and spread properties. We now have over 100k LOC for async/generator tests. For object rest/spread, we have a new JSC contributor from my country who has been very helpful with the tests. He also implemented it in JSC. We need more support--I'm glad Google is supporting me, but I need more support for Test262 development.
 
-LBR: I'd like to discuss removing the copyright line in Test262 tests in a timebox.
+LEO: I'd like to discuss removing the copyright line in Test262 tests in a timebox.
 
 AWB: Let's discuss TR 104.
 
-LBR: There's still a draft.
+LEO: There's still a draft.
 
 AWB: People have probably not reviewed it adequately to vote on it yet. Post a link here for TR104.
 
 __[link](https://github.com/tc39/test262/blob/master/Draft%20TR%20ECMA-104%202nd%20edition.doc)__
 
-LBR: Yes, I will post a link. We didn't have any updates on it since last year.
+LEO: Yes, I will post a link. We didn't have any updates on it since last year.
 
 AWB: If we can get the link posted, people should have time here before the end of the day Thursday to do a quick review of that. I'm guessing people wont have any concerns. That also requires a GA vote, so we should have that taken care of in the same package. Is that ok everyone?
 
-LBR: Yes.
+LEO: Yes.
 
 AWB: So get the link up there.
 
@@ -365,7 +365,7 @@ DE: We have two implementations. One in V8 and one in the Dart VM. It's not a JS
 
 AWB: 2 implementations are not required for stage 3 anyway.
 
-LBR: Writing a test for this (Test262) would be the best thing to review the proposed syntax.
+LEO: Writing a test for this (Test262) would be the best thing to review the proposed syntax.
 
 DE: We would love your help in writing tests!! There are some tests already on github, but we would love and plan to do work on these tests, but having started porting them to Test262. .... Okay, I think we had a few reviewers, trying to find the notes from the last meeting to be sure. So the reviewers were: someone from Microsoft, Kevin Gibbons, WH. Did anyone from the Microsoft team look at this?
 
@@ -726,7 +726,7 @@ We will treat the 3 proposals independently.
 
 ## 6. Addendum to Test262 item
 
-LBR: People asked me to mention. We are using an integrated test generation tool. That's why we have so many lines of code. It has documentation on Test262. I would be very happy to show this test generation tool to anyone who is interested. The automated deployment I mentioned earlier uses this tool to confirm that tests are properly generated.
+LEO: People asked me to mention. We are using an integrated test generation tool. That's why we have so many lines of code. It has documentation on Test262. I would be very happy to show this test generation tool to anyone who is interested. The automated deployment I mentioned earlier uses this tool to confirm that tests are properly generated.
 
 
 ## 10.i.c RegExp Unicode Property Escapes for stage 3
@@ -877,7 +877,7 @@ AWB: Is there a reason this can't be stage 3?
 
 BT: Stage 3? Anyone object? We're basing that on Waldemar's review. Based on the spec text I think we're good.
 
-LBR: I've actually reviewed it as well.
+LEO: I've actually reviewed it as well.
 
 BT: Then we're good process-wise.
 
@@ -1327,7 +1327,7 @@ DH: I apologize that I missed this...this might be a slightly different perspect
 
 WH: I don't understand what you mean by changing the context.
 
-LBR: We are over the timebox.
+LEO: We are over the timebox.
 
 AWB: We have a conclusion. We want some documentation about why that is. Dan will write it up.
 
@@ -1373,7 +1373,7 @@ AWB: Sounds good.
 
 ## 10.i.i Test262: using root license as default for files
 
-LBR: This is mostly to ask to defer to discretion of lawyers. (My company doesn't have any working on this.) I'm trying to make Test262 a nice place for new contributors. It's already too complex for new contributors. We struggle with pull requests. We require every test file to be prefixed with two copyright lines declaring the copyright for who is contributing. But today we already have the CLA. Considering that, for new tests, without these copyright lines, we're deferring to the license that's in the Test262 project. I'm not looking for consensus now, because we need to talk to lawyers.
+LEO: This is mostly to ask to defer to discretion of lawyers. (My company doesn't have any working on this.) I'm trying to make Test262 a nice place for new contributors. It's already too complex for new contributors. We struggle with pull requests. We require every test file to be prefixed with two copyright lines declaring the copyright for who is contributing. But today we already have the CLA. Considering that, for new tests, without these copyright lines, we're deferring to the license that's in the Test262 project. I'm not looking for consensus now, because we need to talk to lawyers.
 
 AWB: What you need to do is refer this to Ecma ?? because there is a specific Ecma policy document that specifies that, for Ecma modules, how the software should express itself...so you have to go through Ecma.
 
@@ -1385,7 +1385,7 @@ WH: You need the header where?
 
 BT: At the top of the file.
 
-LBR: Every test file.
+LEO: Every test file.
 
 AWB: I'm confident that if you go, can we get by with 1 line?
 
@@ -1395,7 +1395,7 @@ AWB: One line is the best you can get.
 
 BT: Having it at all is the difficulty. We've had people push back because they don't want their real name on the test.
 
-LBR: We've got a lot of contributions without the copyright lines; some of the contributions say I can agree on a copyright as long as I have a CC ShareAlike...
+LEO: We've got a lot of contributions without the copyright lines; some of the contributions say I can agree on a copyright as long as I have a CC ShareAlike...
 
 AWB: Strictly speaking you're not supposed to accept anything that doesn't conform to the license.
 
@@ -1409,7 +1409,7 @@ MPT: As far as the real name thing goes, if it's a concern of anonymity on the i
 
 BT: That's not the major issue here. The major issue is ease of writing tests. We want people to contribute as many tests as possible, so the fewer roadblocks as possible.
 
-LBR: Yes.
+LEO: Yes.
 
 BT: We recognize that the copyright header is potentially useful, but is not a requirement for copyright. We just have to make...if we have consensus, the burden of having to put that in every file. [Risk of] not having it in every file is extremely unlikely...
 
@@ -1433,7 +1433,7 @@ AWB: I don't believe we have the authority to say that.
 
 BT: I'm not saying we have the power to change it. I'm saying we're agreeing that asking for a change is a good idea.
 
-LBR: If I have an objection here, I'm not going to move this forward. I want to confirm: I don't have an objection, so I'm going to move forward.
+LEO: If I have an objection here, I'm not going to move this forward. I want to confirm: I don't have an objection, so I'm going to move forward.
 
 AWB: I can help you explain that to him if you need to.
 
@@ -1476,7 +1476,7 @@ Bradley will help out and they will report back in 2+ months.
 
 ## Day ending.....
 
-LBR: I have a link for TR104.
+LEO: I have a link for TR104.
 
 MM: What is ECMA-104?
 

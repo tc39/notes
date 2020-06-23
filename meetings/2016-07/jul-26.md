@@ -1,7 +1,7 @@
 # July 26, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MLS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Rick Waldron (RW), Stefan Penner (SP), Jonathan Sampson (JSN), Caridy Patiño (CP), Sam Tobin-Hochstadt (STH), John Buchanan (JB), Kevin Gibbons (KG), Lars Hansen (LHN), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Kris Gray (KGY), Adam Klein (AK), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Ben Newman (BN)
+Brian Terlson (BT), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Michael Saboff (MLS), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LEO), Yehuda Katz (YK), Jafar Husain (JH), István Sebestyén (IS), John Neumann (JN), Domenic Denicola (DD), Rick Waldron (RW), Stefan Penner (SP), Jonathan Sampson (JSN), Caridy Patiño (CP), Sam Tobin-Hochstadt (STH), John Buchanan (JB), Kevin Gibbons (KG), Lars Hansen (LHN), Peter Jensen (PJ), Tom Care (TC), Dave Herman (DH), Bradley Farias (BFS), Kris Gray (KGY), Adam Klein (AK), Dean Tribble (DT), Eric Faust (EFT), Jeff Morrison (JM), Sebastian Markbåge (SM), Saam Barati (SBI), Kris Gray (KGY), John-David Dalton (JDD), Ben Newman (BN)
 
 -----
 
@@ -183,7 +183,7 @@ No updates
 
 (Leo Balter)
 
-LBR: Bocoup has just wrapped project delivering coverage for ES2015
+LEO: Bocoup has just wrapped project delivering coverage for ES2015
 
 - Iterating on feedback from other members
 - Moving forward on ES2016 tests
@@ -195,7 +195,7 @@ DE: Work to be done on Test262 presence
 
 - Spoke with Kangax about including Test262 in the compat table sites
 
-LBR: More visibility for Test262
+LEO: More visibility for Test262
 
 TC: Need help with reviewing contributions
 
@@ -566,7 +566,7 @@ JHD: Implementors are aware and following progress
 
 (Leo Balter & John-David Dalton)
 
-LBR: Discussing https://github.com/leobalter/object-enumerables
+LEO: Discussing https://github.com/leobalter/object-enumerables
 
 JDD: No built-in API that allows getting own and inherited properties
 

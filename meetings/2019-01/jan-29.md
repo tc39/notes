@@ -1,6 +1,6 @@
 # January 29, 2019 Meeting Notes
 -----
-Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MLS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLN), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM)
+Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LEO), Shu-yu Guo (SYG), Michael Saboff (MLS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLN), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM)
 
 
 Remote:
@@ -181,7 +181,7 @@ DE: Get involved!
 
 YSV: Questions?
 
-LBR: I am interested in being editor of ecma402 and I'd like to volunteer myself for the position. I have time for it already arranged internally at Bocoup.
+LEO: I am interested in being editor of ecma402 and I'd like to volunteer myself for the position. I have time for it already arranged internally at Bocoup.
 
 DE: Yeah, thanks for your help landing Test262 tests, too. Very helpful.
 
@@ -193,9 +193,9 @@ CM: ECMA-404 is the JSON standard. We have big priority on stability, so part of
 
 ## Test262 Status Update
 
-(Leo Balter (LBR))
+(Leo Balter (LEO))
 
-LBR: We've been receiving lots of Ecma 402 updates, largely from Frank Tang from the V8 team. Thanks to the V8 team for the contract so I can continue this work. There has also been a lot of back-end work to make it easier for clients to use Test262.
+LEO: We've been receiving lots of Ecma 402 updates, largely from Frank Tang from the V8 team. Thanks to the V8 team for the contract so I can continue this work. There has also been a lot of back-end work to make it easier for clients to use Test262.
 
 ## Updates from the CoC Committee
 
@@ -583,17 +583,17 @@ MB: We looked into this, and there was [some discussion on GitHub](https://githu
 
 - [slides](https://docs.google.com/presentation/d/1u3kbSc5Iga6lG7xoiilTEe2Z59Snz5xNumZaASwSHCI/edit#slide=id.p)
 
-LBR: There has been massive pushback from the community about the name globalThis and the process we used to decide on the name. Our process was too defensive probably. My proposal is to rename globalThis to Global. (describes discussions with links in slides.)  (continues presenting slides summarizing history of globalThis.) globalThis is very difficult to explain from an education perspective. I'm proud of TC39 for our tendency to avoid difficult to understand additions to EcmaScript like this, so I think this would be a bad direction for the language. Global on the other hand is much easier to understand—it feels like the global namespace.
+LEO: There has been massive pushback from the community about the name globalThis and the process we used to decide on the name. Our process was too defensive probably. My proposal is to rename globalThis to Global. (describes discussions with links in slides.)  (continues presenting slides summarizing history of globalThis.) globalThis is very difficult to explain from an education perspective. I'm proud of TC39 for our tendency to avoid difficult to understand additions to EcmaScript like this, so I think this would be a bad direction for the language. Global on the other hand is much easier to understand—it feels like the global namespace.
 
 MM: In an earlier slide, you stated "in strict code, this is undefined". The instinction is not strict code. Strict scripts still have this bound to the global this.
 
-LBR: You telling me this as a TC39 delegate, to someone who works on Test262, is so interesting. To someone who's not as familiar with the language, you can imagine how difficult this is to understand.
+LEO: You telling me this as a TC39 delegate, to someone who works on Test262, is so interesting. To someone who's not as familiar with the language, you can imagine how difficult this is to understand.
 
 MM: I agree that top-level this binding and global namespace is confusing. We should not encourage use of the global object in general and we shouldn't spend time trying to find a name for it. With regard to the the naming you're proposing, I'm in favor.
 
 AK: To the point about being willing to change, if we decide this is a big deal, V8 would be OK with giving it a try. But my position is that I'm not excited about changing this.
 
-LBR: Why would you rather stick with globalThis as opposed to changing it?
+LEO: Why would you rather stick with globalThis as opposed to changing it?
 
 AK: I feel like the main use of this is for code that needs to access the global object directly, and that is not code a lot of people should be writing.
 
@@ -603,11 +603,11 @@ YK: I tried to do some research on this by asking educators. I don't think it's 
 
 TST: I'm surprised, JHB, that you say you're willing to go along with the committee given that you spent a _ton_ of time working with various partners searching for a name that would be webcompat. I think you even said Global is not especially better for webcompat than global. I'm fairly skeptical.
 
-LBR: I'm not an implementer, but I think it's totally worth trying it.
+LEO: I'm not an implementer, but I think it's totally worth trying it.
 
 TST: Figuring out whether we can change the implementations is hard work, whether the change is web-compatible.
 
-LBR: I'm not assuming it's very webcompat, but I don't have enough resources to conclusively say whether it is.
+LEO: I'm not assuming it's very webcompat, but I don't have enough resources to conclusively say whether it is.
 
 TST: To me, it seems like we cannot make a decision here without that data.
 
@@ -631,7 +631,7 @@ TST: It still doesn't solve the web compat issue.
 
 BFS: We want to make sure we don't make people feel empowered by using backlashes. I'm not opposed to changing the name, but I would be careful in how we present it if we do.
 
-LBR: This is not about backlashes but acknowledging an issue raised in good faith.
+LEO: This is not about backlashes but acknowledging an issue raised in good faith.
 
 KS: I actually like the idea of protests; what else are people going to do?  I think it's good for people to make themselves heard.
 
@@ -665,7 +665,7 @@ DE: There's a time-sensitive option; the longer we wait, the longer Chrome and F
 
 MLS: Safari tech preview is shipping it as well.
 
-LBR: This is a thread that has been going for a very long time, and I don't want to keep advocating for this renaming if we can't solve it during this meeting as the problem is time sensitive considering globalThis is already shipping in browsers. I am only proposing that we switch to Global. If we don't recommend anything else, the ship has sailed with globalThis.
+LEO: This is a thread that has been going for a very long time, and I don't want to keep advocating for this renaming if we can't solve it during this meeting as the problem is time sensitive considering globalThis is already shipping in browsers. I am only proposing that we switch to Global. If we don't recommend anything else, the ship has sailed with globalThis.
 
 MLS: I don't think people want this to be the resolution, but procedurally this is the default state.
 

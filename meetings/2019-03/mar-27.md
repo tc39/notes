@@ -1,6 +1,6 @@
 # March 27, 2019 Meeting Notes
 -----
-István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Daniel Ehrenberg (DE), Mike Samuel (MSL), Joyee Cheung (JCG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KVR), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MLS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro (DF), Domenic Denicola (DD)
+István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LEO), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Daniel Ehrenberg (DE), Mike Samuel (MSL), Joyee Cheung (JCG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KVR), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MLS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro (DF), Domenic Denicola (DD)
 
 Remote:
 Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCL), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FYT), Igor Minar (IMR), Miško Hevery (MHY)
@@ -338,27 +338,27 @@ JHD: Like array length?
 
 DD: Yeah, it should protect you against everything!
 
-LBR: Yeah, I agree with CM here. I think it's wacky that we can return something that's not that thing. If I'm importing some external library, I could do brand checking at some point. It seems there's no happy solution to any of these. None of these are the best.
+LEO: Yeah, I agree with CM here. I think it's wacky that we can return something that's not that thing. If I'm importing some external library, I could do brand checking at some point. It seems there's no happy solution to any of these. None of these are the best.
 
 SYG: Focussing on a wrapper-like solution, how do you feel about a wrapper being a known solution? Do you think it's on the level of the current state of things?
 
-LBR: For a wrapper solution. I'm not sure if this matches the current proposed thing. Then only think I proposed was moving the proposed to somewhere else.
+LEO: For a wrapper solution. I'm not sure if this matches the current proposed thing. Then only think I proposed was moving the proposed to somewhere else.
 
 SYG: The module thing is a motivating example here, but it's not intended to be solving a particular module problem.
 
-LBR: I strongly oppose to statically prohibit exporting `then`.
+LEO: I strongly oppose to statically prohibit exporting `then`.
 
 SYG: That ship has sailed already.
 
-LBR: Yeah, that shipped with modules.
+LEO: Yeah, that shipped with modules.
 
 SYG: To be clear, we are in no way saying we are trying to statically prohibit exporting then.
 
-LBR: I with I could say that we could not wrap the module namespace ever, but I also don't want to see myself doing `await await` in a module expression. So seeing people eventually wrap their module namespace, it seems the status quo based on how we are today, it seems the solution is the status quo.
+LEO: I with I could say that we could not wrap the module namespace ever, but I also don't want to see myself doing `await await` in a module expression. So seeing people eventually wrap their module namespace, it seems the status quo based on how we are today, it seems the solution is the status quo.
 
 SYG: So you like the ad-hoc solution?
 
-LBR: Yes, I like the status quo. I don't like any of the solutions but I think it's the less problematic one.
+LEO: Yes, I like the status quo. I don't like any of the solutions but I think it's the less problematic one.
 
 YK: I think in general I'm worried about overfitting on modules. I think overfitting is overfitting. I think lints are at a minimum an incremental improvement here. ESLint rejected the lint, which suggests we have a big problem. It seems we don't have consensus in the community about what "then" means.
 
@@ -435,7 +435,7 @@ DD: Taking a step back. On the web, we've tried to increasingly avoid using over
 
 YK: I agree with Dan's point about us already having made this call—if we give people some cases where that works and other cases where there's a problem, that doesn't help a lot. That just increases the surface area for people to get confused. I don't know if that means I agree with you or not.
 
-LBR: AFAIK, WebIDL can follow from the decision from TC39. I would like to advocate for ToNumeric. For this very specific case, I would be happier to have ToNumeric overloading.
+LEO: AFAIK, WebIDL can follow from the decision from TC39. I would like to advocate for ToNumeric. For this very specific case, I would be happier to have ToNumeric overloading.
 
 JHD: I'd asked on GitHub with Math.max if you give it an array of BigInts and Numbers, it throws. If we go with overloading as an example, eventually there may be a day where we want to mix those. There's no technical reason why I couldn't use .max or .min on those. I feel like we're going to run into a lot of cases where we're not going to run into those.
 

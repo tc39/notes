@@ -1,7 +1,7 @@
 # September 28, 2017 Meeting Notes
 -----
 
-Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MLS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), Caio Gondim (CGM), Brittany Storoz (BSZ), Sathya Gunasekaran (SGN), Domenic Denicola (DD), Richard Gibson (RGN), Michael Z Goddard (MZG)
+Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LEO), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MLS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD), Caio Gondim (CGM), Brittany Storoz (BSZ), Sathya Gunasekaran (SGN), Domenic Denicola (DD), Richard Gibson (RGN), Michael Z Goddard (MZG)
 
 Remote:
 István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM), Gabriel Isenberg (GI), Zibi Braniecki (ZB), James M Snell (JSL)
@@ -14,15 +14,15 @@ István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM)
 
 ## Other Test262 updates
 
-LBR: During this meeting we hold some break off sections to talk about Test262 and we had some productive conversations to move it forward. We should have another meeting today, probably on lunch time and everyone is welcome to join. We should release a report after this meeting.
+LEO: During this meeting we hold some break off sections to talk about Test262 and we had some productive conversations to move it forward. We should have another meeting today, probably on lunch time and everyone is welcome to join. We should release a report after this meeting.
 
 ## Updates on the Code of Conduct Enforcement Committee
 
-LBR: Since Tuesday we found more volunteers and I'm now vouching for Maggie Pint to steward this group and I'm also deferring to her to give more updates about it.
+LEO: Since Tuesday we found more volunteers and I'm now vouching for Maggie Pint to steward this group and I'm also deferring to her to give more updates about it.
 
 MPT: Volunteers for the code of conduct enforcement committee include myself, Jordan Harband, Jory Burson, and Aki Rose. I would like to approach Myles Borins to work on this as well. Our first action will be to create some scenario playbooks to help the committee understand what course of action will be taken when code of conduct violations occur. These are something that we can publicly share and accept feedback on.
 
-LBR: To confirm this is approved by consensus, I'd like to ask if anyone has any objections.
+LEO: To confirm this is approved by consensus, I'd like to ask if anyone has any objections.
 
 (no objections)
 
@@ -312,7 +312,7 @@ WH: I'm happy to advance to stage 1 — I think the general closure capture this
 
 MF: I don't object to stage 1, but don't believe that we'll be able to come up with a syntax that makes this proposal viable.
 
-LBR: I agree with Michael.
+LEO: I agree with Michael.
 
 
 ## 12.iii.c import.meta for stage 3
@@ -469,7 +469,7 @@ YK: I share Domenic's intuition that it is a foot gun. On the other hand, we're 
 
 ## Process for adding agenda items
 
-LBR: I want to codify the deadline for adding agenda items - the deadline should be Friday, UTC-12, 7 days before the date of a meeting. This gives everyone a week to read the specifications and prepare for the meeting.
+LEO: I want to codify the deadline for adding agenda items - the deadline should be Friday, UTC-12, 7 days before the date of a meeting. This gives everyone a week to read the specifications and prepare for the meeting.
 
 DD: It is important for the Chrome team to keep track of any advancement - we would ask if it is put on the agenda with little time for the Chrome team to review - don't expect advancement.
 
@@ -477,7 +477,7 @@ MPT: Its a concern for us at JSF too - we need to publicize information about th
 
 YK: I think the level of prep is stage dependant.
 
-LBR: I don't want to stress it too much. I really just want to raise the intention to add a deadline - please feel free to send feedback to me.
+LEO: I don't want to stress it too much. I really just want to raise the intention to add a deadline - please feel free to send feedback to me.
 
 JHD: I thought we had agreed on previous meetings to have this deadline. We just need to agree on something to avoid meeting disputes or disputes on GitHub. We just need to pick a moment in time.
 
@@ -485,7 +485,7 @@ DH: Whatever we pick - let's just consistently apply to everybody to prevent any
 
 YK: So for stage 0 and 1 it seems as though these have some lenience but Stage 2 or 3 should prepare these materials before the deadline.
 
-LBR: I'm not asking for consensus - let's defer to next meeting.
+LEO: I'm not asking for consensus - let's defer to next meeting.
 
 JHD: No, let's make a decision now, and we can change it in November if need be.
 
@@ -520,7 +520,7 @@ DD: I have other use cases, e.g., testing.
 
 MZG: Float16s are useful for graphics and physics calculations, numpy, texture information. You don't need 32 bit precision.
 
-LBR: We're not sure if want to advance to stage 2 yet, this is just an update.
+LEO: We're not sure if want to advance to stage 2 yet, this is just an update.
 
 DE: Do you actually need element by element access as a scalar? Or just memory buffers? The latter is already possible with array buffers.
 
@@ -550,7 +550,7 @@ DH: Yes, is this even useful for JS if you cant compute without GLSL? The questi
 
 MZG: Yeah
 
-LBR: I'll bring a draft spec next meeting.
+LEO: I'll bring a draft spec next meeting.
 
 #### Conclusion/Resolution
 - No advancement, a draft for Stage 2 should be prepared as a follow up.

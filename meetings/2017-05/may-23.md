@@ -1,7 +1,7 @@
 # May 23, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Jeff Morrison (JM), James Snell (JSL), Keith Miller (KM), Myles Borins (MBS), Rick Waldron (RW), Mariko Kosaka (MKA), Stephen Murphy (SMY), Rob Palmer (RPR), Andrew Paprocki (API), Philippa Gardner (PGR), Sam Goto (SGO), Mark S. Miller (MM), Nathan Hammond (NHD), Masud Rahman (MRN), Henry Zhu (HZU), Sebastian Markbåge (SM), Joe Mordetsky (JMY), Franziska Hinkelmann (FHN), Caridy Patiño (CP), Myles Borins (MBS), Ron Buckton (RBN), Ashley Williams (AWS), Domenic Denicola (DD), Patrick Soquet (PST), Peter Hoddie (PHE), Leo Balter (LBR), Ben Newman (BN), Jafar Husain (JH), Yehuda Katz (YK), Sarah D'Onofrio (SDO), Kirill Cherkoshin (KCN), Andres Suarez (ASZ), Diego Ferreiro Val (DFV), Tzvetan Mikov (TMV)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Jeff Morrison (JM), James Snell (JSL), Keith Miller (KM), Myles Borins (MBS), Rick Waldron (RW), Mariko Kosaka (MKA), Stephen Murphy (SMY), Rob Palmer (RPR), Andrew Paprocki (API), Philippa Gardner (PGR), Sam Goto (SGO), Mark S. Miller (MM), Nathan Hammond (NHD), Masud Rahman (MRN), Henry Zhu (HZU), Sebastian Markbåge (SM), Joe Mordetsky (JMY), Franziska Hinkelmann (FHN), Caridy Patiño (CP), Myles Borins (MBS), Ron Buckton (RBN), Ashley Williams (AWS), Domenic Denicola (DD), Patrick Soquet (PST), Peter Hoddie (PHE), Leo Balter (LEO), Ben Newman (BN), Jafar Husain (JH), Yehuda Katz (YK), Sarah D'Onofrio (SDO), Kirill Cherkoshin (KCN), Andres Suarez (ASZ), Diego Ferreiro Val (DFV), Tzvetan Mikov (TMV)
 
 Remote:
 Jamund Ferguson (JXF), Bradley Farias (BFS)
@@ -72,7 +72,7 @@ AWB: We'll get to this on Thursday, please read the documents in reflector
 
 (Leo Balter)
 
-LBR:
+LEO:
 
 - over 200k new lines of test code written thanks to test generator
 - a lot of coverage for async iteration
@@ -82,7 +82,7 @@ LBR:
     - https://github.com/tc39/test262/blob/master/FEATURES.md
     - Aiming to grow the contributor base.
 
-LBR: (explaining clean up of erroneous tests that interact with implied global, re: "length" and "name")
+LEO: (explaining clean up of erroneous tests that interact with implied global, re: "length" and "name")
 
 AWB:
 - Tests are required for reaching Stage 4.
@@ -225,7 +225,7 @@ Status:
 - Sarah working on this in ChakraCore!
 
 
-LBR: I believe Andre Bargul is working on this in SpiderMonkey?
+LEO: I believe Andre Bargul is working on this in SpiderMonkey?
 
 SYG: Need to sync upstream? Not a clear rebase path forward
 
@@ -332,7 +332,7 @@ AK: Not a stage 3 issue.
 
 (Further discussion re: unspecified or underspecified features)
 
-LBR: Would like to ensure that someone from Microsoft is formally reviewing.
+LEO: Would like to ensure that someone from Microsoft is formally reviewing.
 
 
 #### Conclusion/Resolution
@@ -407,11 +407,11 @@ AWB: (explains how 262 defers to 402 in toLocaleString cases)
 
 https://docs.google.com/presentation/d/1Ta_IbravBUOvu7LUhlN49SvLU-8G8bIQnsS08P3Z4vY/edit?usp=sharing
 
-LBR: (presenting direct from slides above)
+LEO: (presenting direct from slides above)
 
 AWB: Who's blocked by not having this feature? What's the use-case? Pain point or "nice-to-have"?
 
-LBR: Main usecase: webgl, graphics,
+LEO: Main usecase: webgl, graphics,
 
 DD: Support stage 1 to explore.
 - For stage 2, need to determine how widespread the need is, from webgl/graphics/etc folks.
@@ -422,7 +422,7 @@ DD: largely about memory and movement between cpu and gpu
 
 DE: speed gains are in communication between CPU and GPU  (I thought there was mention of DMA?) (not sure)
 
-LBR: A polyfill exists, but not efficient
+LEO: A polyfill exists, but not efficient
 
 AWB: If the concern is memory compactness, not performance, and there are no operations... add extra zeroes?
 - Can produce a memory buffer containing Float 16s...missed

@@ -3,7 +3,7 @@
 István Sebestyén (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Philipp Dunkel (PDL), Aki Rose (AKI), Myles Borins (MBS), Mathias Bynens (MB), Randy Luecke (RLE), Daniel Ehrenberg (DE), Till Schneidereit (TST), Patrick Soquet (PST), Peter Hoddie (PHE), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MLS), Mark Miller (MM), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Justin Ridgewell (JRL), Rob Palmer (RPR), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Nicolò Ribaudo (NRO), Caio Lima (CLA), Valerie Young (VYG), Logan Smyth (LSH), Alan Schmitt (AS), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Nicolò Ribaudo (NRO), Guy Bedford (GB), Ben Coe (BCE), Amal Hussein (AHN), Julien Gilli (JGI), Sven Sauleau (SSA), Jack Steinberg (JBS), Ross Kirsling (RKG)
 
 Remote:
-Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LBR), Frank Yung-Fong Tang (FYT), Mike Samuel (MSL), Shane Carr (SFC)
+Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LEO), Frank Yung-Fong Tang (FYT), Mike Samuel (MSL), Shane Carr (SFC)
 -----
 
 # Agenda
@@ -641,7 +641,7 @@ DE: Can we agree that on this editorial plan of moving parts of Annex B to the m
 
 DE: We're really talking about a series of editorial changes.
 
-LBR: Should we do this as a staged proposal in a separate repository?
+LEO: Should we do this as a staged proposal in a separate repository?
 
 DE: I think it'd be best to coordinate via a GitHub issue in ecma262. We can work with online contributors that way. I'll write this up, help coordinate, and do reviews.
 
@@ -814,7 +814,7 @@ What we could try to accomplish here, is if we could get consensus on the semant
 
 SGN: That's exactly what I'd like to do. Once the reviews are done can we merge it?
 
-LBR: I'm +1 with this change and I'm interested in writing the tests for this. The skip list we have in V8 will be helpful to flag the tests necessary to update on Test262.
+LEO: I'm +1 with this change and I'm interested in writing the tests for this. The skip list we have in V8 will be helpful to flag the tests necessary to update on Test262.
 
 #### Conclusions/Resolutions
 

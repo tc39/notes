@@ -4,7 +4,7 @@
 István Sebestyén (IS), Waldemar Horwat (WH), Dean Tribble (DT), Brian Warner (BWR), Mark Miller (MM), Till Schneidereit (TST), Michael Saboff (MLS), Robin Morisset (RMT), Keith Miller (KM), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Adam Klein (AK), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Bradley Farias (BFS), Thomas Wood (TWD), Mathias Bynens (MB), Alan Schmitt (AS), Sven Sauleau (SSA), Chris Needham (CNM), Edd Yerburgh (EYH), Jason Williams (JWS), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Conrad Watt (CWT), Philippa Gardner (PGR), Godfrey Chan (GCN), Chris Hyle (CHE), Lin Clark (LCK), Ben Newman (BN), Jake Archibald (JAD)
 
 Remote:
-Ron Buckton (RBN), Leo Balter (LBR), Rick Waldron (RW)
+Ron Buckton (RBN), Leo Balter (LEO), Rick Waldron (RW)
 
 -----
 
@@ -925,13 +925,13 @@ RJE: Can you hear us Leo?
 
 BT: Ah, we don't have speakers.
 
-LBR: I object to the short-circuiting, I do not see a use case that is not solved by default params. It adds more to the language complexity vs solve problems.
+LEO: I object to the short-circuiting, I do not see a use case that is not solved by default params. It adds more to the language complexity vs solve problems.
 
 JRL: Default params only solves if you are in the lexical scope, we're not solving the 'don't repeat yourself' part.
 
 DE: This is not necessarily true.
 
-LBR: Loop is a very specific use case, I don't really have a concern to "fix" it, it adds complexity that clouds clarity for the language.
+LEO: Loop is a very specific use case, I don't really have a concern to "fix" it, it adds complexity that clouds clarity for the language.
 
 BT: Why aren't we having this discussion when audio works?
 

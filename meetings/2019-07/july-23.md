@@ -1,7 +1,7 @@
 # July 23, 2019 Meeting Notes
 -----
 
-Daniel Rosenwasser (DRR), Andrew Paprocki (API), Adam Klein (AK), Shu-yu Guo (SYG), Michael Ficarra (MF), Jordan Harband (JHD), Alex Rattray (ARY), Pieter Ouwerkerk (POK), Michael Saboff (MLS), Keith Miller (KM), Aki Braun (AKI), Brian Terlson (BT), Ron Buckton (RBN), Till Schneidereit (TST), Yehuda Katz (YK), Aaron Davis (ADS), Sebastian Markbåge (SM), Andrew Burgess (ABS), Jonathan Keslin (JKN), Ashley Hauck (AEH), Peter Hoddie (PHE), Patrick Soquet (PST), Ben Coe (BCE), Waldemar Horwat (WH), Mark Miller (MM), Chip Morningstar (CM), Erica Pramer (EPR), Kevin Smith (KS), Adrian Hall (AHL), Caio Lima (CLA), Ben Lichtman (BLN), Tierney Cyren (TCN), Shelley Vohr (SVR), Michal Hollman (MHN), Bill Ticehurst (BTT), Dean Tribble (DT), Godfrey Chan (GCN), Guilherme Hermeto (GHO), Jordan Gensler (JGR), Leo Balter (LBR), Dale Bustad (DBD), Joffrey Richten (JRN), Shane Carr (SFC)
+Daniel Rosenwasser (DRR), Andrew Paprocki (API), Adam Klein (AK), Shu-yu Guo (SYG), Michael Ficarra (MF), Jordan Harband (JHD), Alex Rattray (ARY), Pieter Ouwerkerk (POK), Michael Saboff (MLS), Keith Miller (KM), Aki Braun (AKI), Brian Terlson (BT), Ron Buckton (RBN), Till Schneidereit (TST), Yehuda Katz (YK), Aaron Davis (ADS), Sebastian Markbåge (SM), Andrew Burgess (ABS), Jonathan Keslin (JKN), Ashley Hauck (AEH), Peter Hoddie (PHE), Patrick Soquet (PST), Ben Coe (BCE), Waldemar Horwat (WH), Mark Miller (MM), Chip Morningstar (CM), Erica Pramer (EPR), Kevin Smith (KS), Adrian Hall (AHL), Caio Lima (CLA), Ben Lichtman (BLN), Tierney Cyren (TCN), Shelley Vohr (SVR), Michal Hollman (MHN), Bill Ticehurst (BTT), Dean Tribble (DT), Godfrey Chan (GCN), Guilherme Hermeto (GHO), Jordan Gensler (JGR), Leo Balter (LEO), Dale Bustad (DBD), Joffrey Richten (JRN), Shane Carr (SFC)
 
 Remote:
 Bradley Farias (BFS), Gus Caplan (GCL), Kevin Gibbons (KG), Pedram Emrouznejad (PED), Yulia Startsev (YSV), Mattijs Hoitink (MHK), Ross Kirsling (RKG), Justin Ridgewell (JRL), Caridy Patiño (CP), John-David Dalton (JDD), Paolo Severini (PSI), Benjamin Georges (BGS), Paul Leather (PLR), Mathias Bynens (MB), Aliaksander Palpko (APO), Shi-jun He (JHX), Ravi Jayaramappan (RJN), Sanket Joshi (SJI), Jose David Rodrigues Veloso (JVO), Mike Samuel (MSL), Frank Yung-Fong Tang (FYT), Rob Palmer (RPR), Diego Ferreiro Val (DFV), István Sebestyén (IS), Jason Williams (JWS), Richard Gibson (RGN), Seth Brenith (SBH), Suraj Sharma (SUS), Steve Faulkner (SFR), Chris Anderson (CAN), Michael Fig (MFG), Valerie Young (VYG)
@@ -89,17 +89,17 @@ Editorial: 24
 
 ## Ecma 402 (Intl) status update
 
-Leo Balter (LBR)
+Leo Balter (LEO)
 
 - [slides](https://docs.google.com/presentation/d/1xzf-s3Rm4sJKVQBqcxQCBxVCFIIc2mOF93Pk2wOaJDQ/edit#slide=id.p)
 
-LBR: (Presents slides)
+LEO: (Presents slides)
 
-LBR: Any questions?
+LEO: Any questions?
 
 *silence*
 
-LBR: No questions, let’s move on to Test262!
+LEO: No questions, let’s move on to Test262!
 
 ## Test262 Updates
 
@@ -107,7 +107,7 @@ LBR: No questions, let’s move on to Test262!
 - [video]
 (https://www.youtube.com/watch?v=mzCyJK9NYGI&feature=youtu.be)
 
-LBR: Test262 is probably the most challenging project I’ve ever worked on in my life. (Presents slides) Here’s a [visualization](https://www.youtube.com/watch?v=mzCyJK9NYGI) emphasizing the number of people actively working on various tests at the same time.
+LEO: Test262 is probably the most challenging project I’ve ever worked on in my life. (Presents slides) Here’s a [visualization](https://www.youtube.com/watch?v=mzCyJK9NYGI) emphasizing the number of people actively working on various tests at the same time.
 
 MM: Even with the engines providing a special hook, Test262 should not expect even with a special hook that the engine is providing deterministic garbage collection. To the degree that the engine actually collects something when the hook is called, it gives test262 the opportunity to detect and report bugs. If the engine doesn’t collect anything there’s no bug there and we cannot report any violation. I think that’s a modest statement of what the hook does.
 
@@ -115,11 +115,11 @@ KM: Your request is part of the solution that someone else proposed and would wo
 
 MM: At the end of the WeakRefs section, there was an issue: How do you detect quiescence. Are they all in place?
 
-LBR: There are two things here, one of these involves synchronous execution. There can only be call to `$done`. If multiple calls happen, that’s an error. It’s been working pretty consistently with the current engines.
+LEO: There are two things here, one of these involves synchronous execution. There can only be call to `$done`. If multiple calls happen, that’s an error. It’s been working pretty consistently with the current engines.
 
 MM: If something has a finalizer and WeakRef has gone null, if it’s not finalized before quiescence, should test262 report a normative violation?
 
-LBR: With synchronous WeakRefs tests, there is a timeout. If we don’t have any error, it will be treated by Test262 with no error code. We do our best to create assertions with no false positives. A test with no error at the end is considered as passing, but that’s not sufficient here, especially with synchronous execution.
+LEO: With synchronous WeakRefs tests, there is a timeout. If we don’t have any error, it will be treated by Test262 with no error code. We do our best to create assertions with no false positives. A test with no error at the end is considered as passing, but that’s not sufficient here, especially with synchronous execution.
 
 TST: You said earlier, without such a hook, you’d have to remove all the tests. MM said that a hook should not be required to do GC. I mostly disagree with that. There’s nothing to be made normative about this.
 
@@ -154,7 +154,7 @@ MM: If a WeakRef to it goes to null, than the finalizer should run.
 
 TST: That’s less clear to me.
 
-LBR: My goal for Test262 is not to create competition, but to create cross-compatibility with JavaScript. Test262 would be not rich enough to not have tests for WeakRefs, so I appreciate this discussion. I want to make sure that all the engines can use this test suite.
+LEO: My goal for Test262 is not to create competition, but to create cross-compatibility with JavaScript. Test262 would be not rich enough to not have tests for WeakRefs, so I appreciate this discussion. I want to make sure that all the engines can use this test suite.
 
 YK: What I find confusing in following this, there seems to be some conflict to use the existing test suite for compliance testing. It seems very important to make sure references don’t disappear. On the other hand, I’m not sure that in practice, there’s a lot of ways to satisfy the GC requirements.
 
@@ -188,7 +188,7 @@ MM: Ah, the timing side-channel already gives you the conservative collection si
 
 CLA: I'm wondering if this change in BigInt literals blocks current PR somehow
 
-LBR: I think it’s a timely question and important to be addressed.
+LEO: I think it’s a timely question and important to be addressed.
 
 ## Ecma404 Update
 
@@ -335,7 +335,7 @@ MM: I think a “champion” is strong.
 
 YK: Sure, I’m generally very much in favor of these kinds of proposal, but I also think that it will go a lot faster if we get some buy-in from implementers. If there are no implementers that are enthusiastic about it, we should discuss that. That’s all.
 
-LBR: As we usually do for Intl, it’s good to have expressed intention to implement, so I’d encourage something similar.
+LEO: As we usually do for Intl, it’s good to have expressed intention to implement, so I’d encourage something similar.
 
 YK: I am trying to suggest as weak-as-possible of a requirement, so yeah, an expressed intention to implement is a good idea.
 
@@ -372,13 +372,13 @@ Caio Lima (CLA)
 
 CLA: Last week, there was a proposal about Annex-B non-octal digits on BigInt, so we’re seeking consensus here. I’d like to ask if anyone has a problem with this kind of change?
 
-LBR: This is not a PR, this is an issue. The current PR is merging this BigInt into Test262. It’s very important to address this now, because it’s blocking merging BigInt into Test262.
+LEO: This is not a PR, this is an issue. The current PR is merging this BigInt into Test262. It’s very important to address this now, because it’s blocking merging BigInt into Test262.
 
 JHD: To clarify, BigInt has an open PR in this spec, and if we get this change approved, we’d be able to make that change prior to merging BigInt into the spec.
 
 AK: This is already the V8 behavior, correct?
 
-LBR: Correct.
+LEO: Correct.
 
 MFS: Could you give me some source text that would be parsed differently?
 
@@ -520,11 +520,11 @@ KM: One common use case for things like this, is similar to an RAII -- having it
 
 RBN: I haven’t considered that and I have no opinion on it. It’s something we could add in the future, as well.
 
-LBR: I still am strongly opposed to extending the try syntax to anything like this. Far from being convinced. I don’t think I’ll get convinced to extend try given the complexity that it adds to the language. I can see how it would be used, but I’m not convinced it’s useful enough. I am going to express my strong objection to extending the try syntax.
+LEO: I still am strongly opposed to extending the try syntax to anything like this. Far from being convinced. I don’t think I’ll get convinced to extend try given the complexity that it adds to the language. I can see how it would be used, but I’m not convinced it’s useful enough. I am going to express my strong objection to extending the try syntax.
 
 RBN: There are a lot of other languages that have similar syntax. Java has the exact same syntax. C# has the using syntax that is easy to adapt. It reduces the boilerplate that developers need to use to accomplish a goal.
 
-LBR: I still have questions for motivations on other parts of the feature. Specifically on the try/catch syntax I’m entirely unconvinced.
+LEO: I still have questions for motivations on other parts of the feature. Specifically on the try/catch syntax I’m entirely unconvinced.
 
 ARY: I wouldn’t intuitively expect to call a method on that nested try, destructuring aside. The nested try seems very strange. One suggestion I would have for that is potentially using the `with` statement’s syntax in strict mode, if that would work.
 
@@ -554,11 +554,11 @@ MM: Only with one of the two solutions to the await problem, either a syntactic 
 
 RBN: I think YK is against dropping async
 
-LBR: I have a strong objection on the way the extension of try works.
+LEO: I have a strong objection on the way the extension of try works.
 
 AK: What sort of evidence would convince you that this is useful? RBN has presented a lot of evidence about why this is useful.
 
-LBR: No answer right now
+LEO: No answer right now
 
 MM: I want to raise a question that your proposal may already address. What’s the best we can do in this direction in the language today using arrow functions?
 
@@ -647,12 +647,12 @@ MM: Sounds like we’re agreed that the thing you’re asking for stage 3 is wit
 
 ## Symbol.reverse
 
-Leo Balter (LBR), Jordan Harband (JHD)
+Leo Balter (LEO), Jordan Harband (JHD)
 
 - [sample code](https://gist.github.com/leobalter/092fc36adccfcc86e8e7b074817078e1)
 - [slides](https://docs.google.com/presentation/d/1nPJORyKqZ2AHloPg8ZzdFLz79tAyccpY2CIsmARjUXc/edit#slide=id.p)
 
-LBR: (presents gist)
+LEO: (presents gist)
 
 KM: From an API perspective it’s weird to have Symbol do this. It also seems like an easy feature to implement, however it turns out that it’s enormously important for performance.
 
@@ -660,7 +660,7 @@ JHD: We wouldn’t add reverse versions of all array methods, the call would be 
 
 MM: LIFO in Set seems bizarre as a way to handle elements added during iteration.
 
-LBR: It would be great if they could use Map/Set using LIFO.
+LEO: It would be great if they could use Map/Set using LIFO.
 
 MM: If you don’t mutate the body of the loop, the issue I’m describing doesn’t occur. I thought you were saying that you have this issue in the reverse direction with added elements, but that would be LIFO, rather than FIFO.
 
@@ -674,11 +674,11 @@ MM: Yes. It’s not a blocker at this stage.
 
 AK: This proposal's approach seems too incremental. Symbol.iterator is just an alias, so I don’t really see what purpose this solves. This isn’t a name bikeshed issue, this is an ontology bikeshed. I’m not blocking anything, I just think you should avoid the symbol.
 
-LBR: I’m OK with not using the symbol. I need to check some things in the other existing proposal.
+LEO: I’m OK with not using the symbol. I need to check some things in the other existing proposal.
 
 DT: I’ve been programming for a lot of years on a bunch of collections that have reverse and never wanted to use it. All the times I’ve wanted to use things _like_ this, I’ve ended up writing something myself anyway.
 
-LBR: The use case of grabbing the last 5 items of a list is one i’ve had
+LEO: The use case of grabbing the last 5 items of a list is one i’ve had
 
 DT: I assume the complexity of this will dramatically overshadow the utility of it.
 

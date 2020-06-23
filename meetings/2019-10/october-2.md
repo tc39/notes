@@ -1,6 +1,6 @@
 # October 2, 2019 Meeting Notes
 -----
-Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MPC), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Robin Ricard (RRI), Jean-Francois Paradis (JFP), Valerie Young (VYG), Erica Pramer (EPR), Richard Gibson (RGN), Philipp Dunkel (PDL), Godfrey Chan (GCN), Joyee Cheung (JCG), Patrick Soquet (PST)
+Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MPC), Pieter Ouwerkerk (POK), Randy Luecke (RCL), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LEO), Justin Ridgewell (JRL), Robin Ricard (RRI), Jean-Francois Paradis (JFP), Valerie Young (VYG), Erica Pramer (EPR), Richard Gibson (RGN), Philipp Dunkel (PDL), Godfrey Chan (GCN), Joyee Cheung (JCG), Patrick Soquet (PST)
 
 Remote: Daniel Ehrenberg (DE), Ron Buckton (RBT), Caio Lima (CLA), Yulia Startsev (YSV), Jory Burson (JBN), Ben Newman (BNN), Kyle, HE Shi-Jun (HSJ), Pedram Emrouznejad (PED), Dan Ehrenberg (DE), Mathias Bynens (MB), Jonathan Keslin (JKN), Frank Yung-Fong Tang (FYT), Yulia Startsev (YSV), Istvan Sebestyen (IS)
 
@@ -95,7 +95,7 @@ JFP: We already have to do it, so it's just extending our patch for the override
 MB: For the current version of the proposal, we followed precedent from Error properties.
 
 
-LBR: I appreciate the consistency.  The same thing happens with message for native errors.  I've never seen this being a problem before.
+LEO: I appreciate the consistency.  The same thing happens with message for native errors.  I've never seen this being a problem before.
 
 
 JHD: A lot of things in ES6 were changed to be accessors instead of data properties.  Why not the message property?
@@ -131,16 +131,16 @@ AKI: We’re over the timebox, I think we need to just make a decision.
 MB: I'm fine using an accessor if that appeases the committee.  We have spec text written and reviewed by committee members (missed the names).
 
 
-PD: V8 and LBR expressed preference for messages as an own property, and there is nothing strong that says this should be an accessor for any reason. So i would put it the other way around is there any reason why it shouldn't be an own property?
+PD: V8 and LEO expressed preference for messages as an own property, and there is nothing strong that says this should be an accessor for any reason. So i would put it the other way around is there any reason why it shouldn't be an own property?
 
 
-LBR: I'm not objecting one way or another for this proposal.  I have a strong preference but not an objection.  I prefer consistency.
+LEO: I'm not objecting one way or another for this proposal.  I have a strong preference but not an objection.  I prefer consistency.
 
 
 JHD: To be clear, consistency goes both ways. Consistency with message dictates an own property, consistency with the rest of the spec means an accessor.
 
 
-LBR: I'm saying that I want consistency with error.  (I like property)
+LEO: I'm saying that I want consistency with error.  (I like property)
 
 
 AKI: Let’s table this and discuss in the issue.
@@ -537,7 +537,7 @@ Presenter: Shane F. Carr (SFC)
 SFC: (presents [PR](https://github.com/tc39/ecma402/pull/377))
 
 
-LBR: As the editor, …. We discussed this at the last meeting but somehow did not have much engagement from outside Intl. I’m really happy with this work and as the editor I would like to sign on as a +1.
+LEO: As the editor, …. We discussed this at the last meeting but somehow did not have much engagement from outside Intl. I’m really happy with this work and as the editor I would like to sign on as a +1.
 
 
 YK: I’m really happy that the thing I asked for last meeting happened. Very excited, happy, no objections.
@@ -807,7 +807,7 @@ SFC: We’ll sync later, I’m not convinced it completely works
 PDL: Any comments on the Global namespace? Otherwise i'll take it as acceptance…
 
 
-LBR: I don't have comments on global but one feedback ive been giving, i wish we could have better examples of the API in general, there's a lot of use cases here and I need to do some ??,I like to read the repo itself, maybe it's a good exercise to go into MDN and create documentation for this API (which i believe is really rich and really powerful).
+LEO: I don't have comments on global but one feedback ive been giving, i wish we could have better examples of the API in general, there's a lot of use cases here and I need to do some ??,I like to read the repo itself, maybe it's a good exercise to go into MDN and create documentation for this API (which i believe is really rich and really powerful).
 
 
 PDL: I think that's excellent feedback. Actually the polyfill gives a good idea of what the repo is. Plans to seek help to write MDN docs
@@ -869,7 +869,7 @@ DCR: My original proposal was that the named variable would only be visible in t
 YK: I think you don’t have to answer what should happen in the else clause to make it an error to access it.
 
 
-LBR: I don’t think this issue should block anything for stage 1. I think this is a very reasonable thing for investigation during stage 1. If I have to answer immediately I’d say I agree with WH and YK but I think this should be investigated during stage 1.
+LEO: I don’t think this issue should block anything for stage 1. I think this is a very reasonable thing for investigation during stage 1. If I have to answer immediately I’d say I agree with WH and YK but I think this should be investigated during stage 1.
 
 
 SYG: More scope tricks are a lot scarier to me than consistency with C++.
@@ -1068,7 +1068,7 @@ MM: I’m definitely thinking of something that is more informal than the CoC or
 MLS: I might contact Alan to ask if we can include this in his existing document.
 
 
-LBR: I believe it should be everyone's goals here to improve transparency.  We can always find improvements.  For this reason I’m +1 to work through what is being discussed here. I think we should refine what we want for this transparency. There’s an issue, and I think it’s valid, which is that there are some companies here who feel like they might be affected. We are not trying to jeopardize business models for anyone.  Our goal is to increase transparency.  I'd like to have more discussions about this.  For example, I really like the idea of following the document from Allen, or maybe we can even consider a technical report at ECMA with best practice.  Also, if we have anything that we want to discuss that might be a GA thing, TC39 should make a request for the GA.  We shouldn't just go one way here and have GA decide for us in the future.  We should be more proactive with GA.
+LEO: I believe it should be everyone's goals here to improve transparency.  We can always find improvements.  For this reason I’m +1 to work through what is being discussed here. I think we should refine what we want for this transparency. There’s an issue, and I think it’s valid, which is that there are some companies here who feel like they might be affected. We are not trying to jeopardize business models for anyone.  Our goal is to increase transparency.  I'd like to have more discussions about this.  For example, I really like the idea of following the document from Allen, or maybe we can even consider a technical report at ECMA with best practice.  Also, if we have anything that we want to discuss that might be a GA thing, TC39 should make a request for the GA.  We shouldn't just go one way here and have GA decide for us in the future.  We should be more proactive with GA.
 
 
 MLS: If we make this like Alan's doc, do we think this alleviates the need of going to GA?  That it's just a normative practice; there's nothing binding here, and we just want everyone to participate with the same level of transparency?  WH, do you think we still need to go to GA?
@@ -1243,7 +1243,7 @@ SYG: That’s correct.
 WH: It would’ve been much better to explain this. The PR is titled “Define private names at the beginning of the class” - it didn’t seem like it had anything to do with what you were talking about. So I will look at it but right now but I would have liked for the proposal to describe what was proposed ahead of the meeting.
 
 
-LBR: I think it’s respectful to take a closer look at the issues and I think this is a question that could’ve been addressed before this meeting. Saying it’s random is very harsh.
+LEO: I think it’s respectful to take a closer look at the issues and I think this is a question that could’ve been addressed before this meeting. Saying it’s random is very harsh.
 
 
 WH: I did look at the issue; neither the slides nor the issue clearly described what was the actual proposal.

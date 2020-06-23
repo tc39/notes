@@ -1,7 +1,7 @@
 # May 25, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Jeff Morrison (JM), James Snell (JSL), Keith Miller (KM), Myles Borins (MBS), Rick Waldron (RW), Mariko Kosaka (MKA), Stephen Murphy (SMY), Rob Palmer (RPR), Andrew Paprocki (API), Philippa Gardner (PGR), Sam Goto (SGO), Mark S. Miller (MM), Nathan Hammond (NHD), Masud Rahman (MRN), Henry Zhu (HZU), Sebastian Markbåge (SM), Joe Mordetsky (JMY), Franziska Hinkelmann (FHN), Caridy Patiño (CP), Myles Borins (MBS), Ron Buckton (RBN), Ashley Williams (AWS), Domenic Denicola (DD), Patrick Soquet (PST), Peter Hoddie (PHE), Leo Balter (LBR), Ben Newman (BN), Jafar Husain (JH), Yehuda Katz (YK), Sarah D'Onofrio (SDO), Kirill Cherkoshin (KCN), Andres Suarez (ASZ), Diego Ferreiro Val (DFV), Tzvetan Mikov (TMV), Brendan Eich (BE), István Sebestyén (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Jeff Morrison (JM), James Snell (JSL), Keith Miller (KM), Myles Borins (MBS), Rick Waldron (RW), Mariko Kosaka (MKA), Stephen Murphy (SMY), Rob Palmer (RPR), Andrew Paprocki (API), Philippa Gardner (PGR), Sam Goto (SGO), Mark S. Miller (MM), Nathan Hammond (NHD), Masud Rahman (MRN), Henry Zhu (HZU), Sebastian Markbåge (SM), Joe Mordetsky (JMY), Franziska Hinkelmann (FHN), Caridy Patiño (CP), Myles Borins (MBS), Ron Buckton (RBN), Ashley Williams (AWS), Domenic Denicola (DD), Patrick Soquet (PST), Peter Hoddie (PHE), Leo Balter (LEO), Ben Newman (BN), Jafar Husain (JH), Yehuda Katz (YK), Sarah D'Onofrio (SDO), Kirill Cherkoshin (KCN), Andres Suarez (ASZ), Diego Ferreiro Val (DFV), Tzvetan Mikov (TMV), Brendan Eich (BE), István Sebestyén (IS)
 
 -----
 
@@ -68,19 +68,19 @@ IS: No consensus around different models of working with subgroups or a combined
 
 DE: Leo expressed interest in being chairman?
 
-LBR: Searching for somebody who would not be taking sides as a person who would act as a chair. Believe that it is good to have a conversation with Rex and let TC39 consider that as an option. I volunteered myself for something I don't have a lot of experience with. Rex has a lot of experience which we could use to be able to learn from. I would love be part of a vice chair group (although not official by ECMA)
+LEO: Searching for somebody who would not be taking sides as a person who would act as a chair. Believe that it is good to have a conversation with Rex and let TC39 consider that as an option. I volunteered myself for something I don't have a lot of experience with. Rex has a lot of experience which we could use to be able to learn from. I would love be part of a vice chair group (although not official by ECMA)
 
-LBR: There may be additional people who have interest.
+LEO: There may be additional people who have interest.
 
 DD: What exactly is the role of a vice-chair, and a "vice-chair group"?
 
 YK: Single person who has the sole responsibility for setting the direction of the conversation. Better received if there is a working group.
 
-LBR: The vision that I have is: Support the chair in all of their functions. There are a lot of things during the meeting. Supporting the hosts in the process of setting up the meetings. Supporting the process of followup after the meetings, sending the notes... Having a group of people to support these goals is valuable.
+LEO: The vision that I have is: Support the chair in all of their functions. There are a lot of things during the meeting. Supporting the hosts in the process of setting up the meetings. Supporting the process of followup after the meetings, sending the notes... Having a group of people to support these goals is valuable.
 
 DD: Confirming: Vice chairs would not be setting direction of conversation in the meeting? But would instead be helping with administrative efforts?
 
-LBR: Confirm.
+LEO: Confirm.
 
 AWB: There is a lot of stuff that a chair does that committee does not know: Primary layer between committee and ECMA. Months and months dealing with patents, documentation... Takes real time to interact with ECMA. Also helping the committee structure and organize technical work.
 
@@ -92,9 +92,9 @@ DD: What I found clarifying that . The primary thing that person will own is not
 
 DE: I can help with the administrative stuff, but too involved technically. It would be desirable that the person running the meeting has a  internal understanding and technical expertise to weight on the decision in an unbiased way.
 
-LBR: I am tempted to not sign up for too much ("overloaded") and I want to be able to take sides. I am open to try and experience with Rex here.
+LEO: I am tempted to not sign up for too much ("overloaded") and I want to be able to take sides. I am open to try and experience with Rex here.
 
-LBR: To follow our vision goals, we should the use language Chairperson or just Chair instead of Chairman.
+LEO: To follow our vision goals, we should the use language Chairperson or just Chair instead of Chairman.
 
 AWB: We will call it Chair going forward. Rex can be very helpful trying to figure out the structure. The recommendation is to try to get Rex to do this, but waiting until is here to come up to speed so he can help with advice and the administrative stuff. Give him a chance to show his expertise.
 
@@ -108,7 +108,7 @@ IS: We would have to pay to bring him in as a consultant for the first little bi
 
 _Discussion about ECMA finances_
 
-LBR: Is there any alternative?
+LEO: Is there any alternative?
 
 WH: Let's not worry about that for now.
 
@@ -142,11 +142,11 @@ Invite Rex to the next meeting.
 
 General assent to Leo running the next meeting.
 
-LBR: I'm willing to try.
+LEO: I'm willing to try.
 
 AWB: I may not show, it would be valuable to have it, but he'll play it by ear.
 
-LBR: Will need to define and document the role.
+LEO: Will need to define and document the role.
 
 #### Conclusion/Resolution
 
@@ -183,7 +183,7 @@ WH: We can't do this without blessing of the executive committee. They are the o
 
 YK: Physical danger has been removed which is odd, and should be revisited. By definition, CoCs are trying to provide more protections than the protections of law enforcement.
 
-LBR:  Code of conduct doesn't prevent anybody to seek for legal authority.
+LEO:  Code of conduct doesn't prevent anybody to seek for legal authority.
 
 IS: Need to build consensus between us and the executive committee.
 
@@ -341,7 +341,7 @@ YK: If you define object.define property with writable true, and you can't write
 
 MM: Non-writeable provides guarantee. Writable provides no guarantee.
 
-LBR: We need to provide tests before merging. Okay to mark as consensus.
+LEO: We need to provide tests before merging. Okay to mark as consensus.
 
 #### Conclusion/Resolution
 

@@ -3,7 +3,7 @@
 István Sebestyén (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Till Schneidereit (TST), Logan Smyth (LSH), Yulia Startsev (YSV), Ben Coe (BCE), Guy Bedford (GB), Myles Borins (MBS), Domenic Denicola (DD), Jack Steinberg (JBS), Sven Sauleau (SSA), Clark Sampson (CSN), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Henry Zhu (HZU), Alan Schmitt (AS), Justin Ridgewell (JRL), Patrick Soquet (PST), Peter Hoddie (PHE), Caio Lima (CLA), Daniel Ehrenberg (DE), Anne van Kesteren (AVK), Shu-yu Guo (SYG), Ross Kirsling (RKG), Keith Miller (KM), Mattijs Hoitink (MHK), Michael Saboff (MLS), Guilherme Hermeto (GHO), Rob Palmer (RPR), Philipp Dunkel (PDL), Szabolcs Szabolcsi-Toth (SZT), Nicolò Ribaudo (NRO), Joyee Cheung (JCG), Kevin Gibbons (KG), Aki Rose (AKI), Tierney Cyren (TCN), Amal Hussein (AHN), Julien Gilli (JGI), Sean Larkin (SLN), Sathya Gunasekaran (SGN), Daniel Rosenwasser (DRR), Randy Luecke (RLE), Kat Marchán (KZM), Andrew Paprocki (API), Mark Miller (MM), Joe Sepi (JSI)
 
 Remote:
-Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LBR), Frank Yung-Fong Tang (FYT), Mike Samuel (MSL), Shane Carr (SFC), Jordan Gensler (JGR), Robert Pamely (RPY)
+Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LEO), Frank Yung-Fong Tang (FYT), Mike Samuel (MSL), Shane Carr (SFC), Jordan Gensler (JGR), Robert Pamely (RPY)
 -----
 
 # Agenda
@@ -185,17 +185,17 @@ MBS: Do we have consensus to move this proposal to stage 2? No objections.
 
 MBS: Any reviewers for stage 3?
 
-LBR: Really excited with this one, I think I'm already in.
+LEO: Really excited with this one, I think I'm already in.
 
 FYT: Good enough to have just 2, do we need from other companies?
 
 MBS: 2 editors and reviewers sign off. Seems like need one more reviewer than what you have today.
 
-LBR: We can someone from another company to sign up for this.
+LEO: We can someone from another company to sign up for this.
 
 DE: Can try to get more reviewers async. We do lots of reviews for ECMA-402. Ask this committee if I'm reviewing and you're reviewing for ECMA-402. We've had a tradition of multiple reviewers, not sure if it's required, We can try to have more reviewers offline.
 
-LBR: We can get it async.
+LEO: We can get it async.
 
 #### Conclusion/Resolution
 
@@ -423,19 +423,19 @@ DD: On backpressure: in my experience backpressure for push primitives doesn't w
 
 PED: Absolutely, yes.
 
-LBR: Second DE and DD's comments. I'd like more experimentation as a library. It's a swiss army knife - too many things. Repo is complicated. Would like to see more examples and more widespread usage. Not convinced of why it's important as a native feature rather than a library. The points here are not convincing me, still miss some pain points. Stated advantages seem to be about convincing the community to use the same thing. If this goes to stage 1 I'd like to have better illustration how everything works. I like better documentation of this. To clarify better the points of having this as native rather than as a library.
+LEO: Second DE and DD's comments. I'd like more experimentation as a library. It's a swiss army knife - too many things. Repo is complicated. Would like to see more examples and more widespread usage. Not convinced of why it's important as a native feature rather than a library. The points here are not convincing me, still miss some pain points. Stated advantages seem to be about convincing the community to use the same thing. If this goes to stage 1 I'd like to have better illustration how everything works. I like better documentation of this. To clarify better the points of having this as native rather than as a library.
 
 PED: The repo is not like a readme. It documents research that we've done. Not finalized. Shows ideas we could consider. All libs are converging on similar API. If you agree with motivation this is problem space that we should look into.
 
 SYG: I would push back on the native vs lib argument.
 
-LBR: I'm not yet convinced why we really need this for it to be native and why couldn't be done as library. I'd like to see better illustration of this. Why being a native feature. What does it enable that we cannot have as a library?
+LEO: I'm not yet convinced why we really need this for it to be native and why couldn't be done as library. I'd like to see better illustration of this. Why being a native feature. What does it enable that we cannot have as a library?
 
 SYG: If this were to be standard library, does that count as native to you?
 
-LBR: By native I mean that people have implemented in browsers. Maybe be loaded as std lib. Not shaped by community as lodash is.
+LEO: By native I mean that people have implemented in browsers. Maybe be loaded as std lib. Not shaped by community as lodash is.
 
-LBR: Don't want to block anything, just saying I might be missing some point here. If goes to stage 1, means we're expecting further investigation on this. Seems people are interested in doing further investigation on this.
+LEO: Don't want to block anything, just saying I might be missing some point here. If goes to stage 1, means we're expecting further investigation on this. Seems people are interested in doing further investigation on this.
 
 SGN: Why should this be a language feature? Point a./ b./ and f./ all seem like the same thing to me. Get motivation for core operators. Trying to understand if this is better for Collection methods.
 You would have to create an Emitter to operate on something.
@@ -833,11 +833,11 @@ MLS: "Purpose" in slide: For Stage 2 precisely describe the syntax and semantics
 
 DD: It's an _entry_ requirement for stage 2 to establish major semantics that we are agreeing to. The purpose of stage 2 is not to figure things out and reach agreement; it's to write detailed spec text for what we've already figured out and agreed on.
 
-LBR:. These can be solved at stage 2. We have problem that we identified, we have to find a solution to this. This could be done in stage 2. If concerns not addressed in stage 2, will never advance to stage 3. We are aware of those problems.
+LEO:. These can be solved at stage 2. We have problem that we identified, we have to find a solution to this. This could be done in stage 2. If concerns not addressed in stage 2, will never advance to stage 3. We are aware of those problems.
 
 DD: Reminder: Stage 1 identify problem, Stage 2 propose solution. You've identified the problem; to get to stage 2 you need to propose the solution.
 
-LBR: yes exactly.
+LEO: yes exactly.
 
 PDL: these points well raised, by simply declaring 3) as out of scope leaves you with 2). Just because a question has been raised, doesn't mean we need an answer.
 
@@ -968,7 +968,7 @@ DD: Not independent, came directly from builtin modules discussion. Instead of m
 
 DE: Not meant to be competing proposal. Working together.
 
-LBR: I think we would have a better discussion if this had been proposed right before the modules proposal.
+LEO: I think we would have a better discussion if this had been proposed right before the modules proposal.
 
 DE: We proposed that.
 
@@ -982,13 +982,13 @@ MLS: Not discussed with builtin modules champions [discussed but did not see sli
 
 DD: These are not dueling slide decks. We saw builtin modules proposal, thought we need to talk about this.
 
-LBR: like to see 2 diff proposals, so we can extract better max/min on both. More constructive discussion in last presentation if I knew about this. Coordination here has failed.
+LEO: like to see 2 diff proposals, so we can extract better max/min on both. More constructive discussion in last presentation if I knew about this. Coordination here has failed.
 
 AVK: what was presented before was the infra, this is for namespaces alongside that for governance, not conflicting.
 
 DD: Want to apologize if messed up on the ordering. We're sorry.
 
-LBR: No need to apologize. If I knew about this would have a diff perspective discussing builtin modules.
+LEO: No need to apologize. If I knew about this would have a diff perspective discussing builtin modules.
 
 DE: Next steps: would be great to having you all participating. Seems interesting for collaboration. Would be great to hear more from builtin modules champions.
 
@@ -1055,11 +1055,11 @@ JRL: Can we go for stage 2?
 
 YSV: Don't hear any objection, no objection online.
 
-LBR: Got confused on the optional call operation. Forgot how you named it. Optional call. Looks like you're chaining to an expression in (). Don't know how to do investigation. This specific desugaring might be more confusing. Ok to discuss this during stage 2.
+LEO: Got confused on the optional call operation. Forgot how you named it. Optional call. Looks like you're chaining to an expression in (). Don't know how to do investigation. This specific desugaring might be more confusing. Ok to discuss this during stage 2.
 
 JRL: I agree. One of the reasons I tried to remove it. But there were objects that it feels incomplete if we don't include this. Not a better syntax for this particular one.
 
-LBR:  Won't have fully convincing arg today, but optional feels it should be separate discussion. Can be discussed async.
+LEO:  Won't have fully convincing arg today, but optional feels it should be separate discussion. Can be discussed async.
 
 MM: saying on behalf of Waldemar Horwat. Received email before the meeting. Wants optional call to be part of this. Would object if not part of this. Don't think I need to go into rationale since no objection.
 
@@ -1067,11 +1067,11 @@ JRL: Would like to see rationale that Waldemar had provided later.
 
 DE: discussed optional call before. Waldemar mentioned this rationale 3 times. Rather have this proposal continue rather than have argue about optional call. Proposal gives lots of benefits to JS programmers, if you're confused about optional call, you can look it up. People can learn about it if people are confused.
 
-LBR:  If language is getting harder to learn, I think that's a bad point. We should have a separate proposal. Don't think I have energy to engage.
+LEO:  If language is getting harder to learn, I think that's a bad point. We should have a separate proposal. Don't think I have energy to engage.
 
 DE: that's what some of us to in that case, giving up.
 
-LBR: That's sad.
+LEO: That's sad.
 
 DRR: Still incredibly enthusiastic about this proposal. Still think optional call is nice to have. Would still like to hear more to know if we can make it better. Still think it's a huge benefit, let's keep that in mind.
 
@@ -1284,4 +1284,4 @@ NTE: Huge thanks to JGI for hero-ing the notes today! (Applause)
 
 #### Conclusion/Resolution
 
-- Reviewers: POK, LBR
+- Reviewers: POK, LEO

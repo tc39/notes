@@ -3,7 +3,7 @@
 István Sebestyén (IS), Valerie Young (VYG), Pieter Ouwerkerk (POK), Noah Tye (NTE), Till Schneidereit (TST), Logan Smyth (LSH), Yulia Startsev (YSV), Ben Coe (BCE), Guy Bedford (GB), Myles Borins (MBS), Domenic Denicola (DD), Jack Steinberg (JBS), Sven Sauleau (SSA), Clark Sampson (CSN), Pedram Emrouznejad (PED), Sergey Rubanov (SRV), Henry Zhu (HZU), Alan Schmitt (AS), Justin Ridgewell (JRL), Patrick Soquet (PST), Peter Hoddie (PHE), Caio Lima (CLA), Daniel Ehrenberg (DE), Anne van Kesteren (AVK), Shu-yu Guo (SYG), Ross Kirsling (RKG), Keith Miller (KM), Mattijs Hoitink (MHK), Michael Saboff (MLS), Guilherme Hermeto (GHO), Rob Palmer (RPR), Philipp Dunkel (PDL), Szabolcs Szabolcsi-Toth (SZT), Nicolò Ribaudo (NRO), Joyee Cheung (JCG), Kevin Gibbons (KG), Aki Rose (AKI), Tierney Cyren (TCN), Amal Hussein (AHN), Julien Gilli (JGI), Sean Larkin (SLN), Sathya Gunasekaran (SGN), Daniel Rosenwasser (DRR), Randy Luecke (RLE), Kat Marchán (KZM), Andrew Paprocki (API), Dr. Felienne Hermans (FHS), Mark Miller (MM), Joe Sepi (JSI)
 
 Remote:
-Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LBR), Frank Yung-Fong Tang (FYT), Mike Samuel (MSL), Shane Carr (SFC), Jordan Gensler (JGR), Robert Pamely (RPY)
+Brian Terlson (BT), Ron Buckton (RBN), Jordan Harband (JHD), Leo Balter (LEO), Frank Yung-Fong Tang (FYT), Mike Samuel (MSL), Shane Carr (SFC), Jordan Gensler (JGR), Robert Pamely (RPY)
 -----
 
 # Agenda
@@ -171,7 +171,7 @@ MLS: Dutch students experiment: related to native language vs non-native. Most P
 
 FHS: Huge impediment.Python made by dutch guy, still English feeling. Keyword "for" is bad chosen word. If I could choose one thing to change. People think about number 4. Why not "repeat"? Especially where people are struggling. Definitely think that it's aspect that is overlooked. Who knows "crash"? Can localize keywords to other languages. Useful but still issues: left to right language, indentation, etc. Should think about those aspects more. Personal opinion is: more words is better than more symbols.
 
-LBR: Native vs non-native: English as a 2nd language, people who don't know english at all. When first learned PLs. All words were symbols for me. Had no idea what if, for, while meant. Remember learning basic. "LOAD", "CAS", "PRINT" were symbols to me. When writing tests, bdd vs other styles. Bdd more natural language. My mental model and preference, get confused by bdd style. Much simpler to interpret other style (which one, didn't get it?). Random language would probably be easier for me. Like these points of views. Really appreciate that.
+LEO: Native vs non-native: English as a 2nd language, people who don't know english at all. When first learned PLs. All words were symbols for me. Had no idea what if, for, while meant. Remember learning basic. "LOAD", "CAS", "PRINT" were symbols to me. When writing tests, bdd vs other styles. Bdd more natural language. My mental model and preference, get confused by bdd style. Much simpler to interpret other style (which one, didn't get it?). Random language would probably be easier for me. Like these points of views. Really appreciate that.
 
 FHS: Do think valid distinction between people english as 2nd language and people who don't understand any english.
 
@@ -541,13 +541,13 @@ DE: Fortunately we see a really strong attention to detail. In the web platform 
 
 SGN: quick point: when you talk about jobs, don't want to get into the weeds of what jobs queue is right now. Can we go for stage 3?
 
-LBR: Quick point of order. What does pending one editor mean? Would like some clarification.
+LEO: Quick point of order. What does pending one editor mean? Would like some clarification.
 
 TST: if that reviewer doesn't provide feedback that requires more than editorial changes, then stage 3. If more than editorial, then not stage 3.
 
 DE: Sounds great to me.
 
-LBR: Thanks for the clarification.
+LEO: Thanks for the clarification.
 
 #### Conclusion/Resolution
 
@@ -610,11 +610,11 @@ VYG: going to open issue on reflector for human transcription. Draft of what pro
 
 YSV: Maybe policy we ask presenters whether they want notes to be taken before presentation?
 
-LBR: We've discussed a lot in meetings and reflector a lot about automatic transcription. Reached out conclusion several times it's bad for several reasons. Being verbose is more work for who is taking notes. More work for people who read notes. Aki asked to be less verbose about taking notes, and it's in notes. Transcription is ok, but what I want to see is technical context, don't want to see typos, etc.
+LEO: We've discussed a lot in meetings and reflector a lot about automatic transcription. Reached out conclusion several times it's bad for several reasons. Being verbose is more work for who is taking notes. More work for people who read notes. Aki asked to be less verbose about taking notes, and it's in notes. Transcription is ok, but what I want to see is technical context, don't want to see typos, etc.
 
 TCN: Are you talking about manually taken notes or notes with automated transcription?
 
-LBR: People working hard to note everything, people shouldn't do all that work. Instead capturing context of what being said. Should be easier for note takers and for readers.
+LEO: People working hard to note everything, people shouldn't do all that work. Instead capturing context of what being said. Should be easier for note takers and for readers.
 
 TCN: I took notes my first two meetings and it was a lot. The purpose of automated transcription is to reduce the burden, not increase.
 
@@ -625,11 +625,11 @@ TST:  Could make things easier to navigate. Could move conclusion up. Disagree t
 
 YSV: Something that can be addressed with editing. We'd have people who would edit. Removing repetition, fix any issue with misspelling, bugs. And add names. Would contribute to accessibility for remote folks. If someone doesn't hear or checks out, they'd be able to know what happened
 
-LBR: Once again, as someone who reads whole minutes, lots of things we need to format for markdown. Even with automatic transcription, would make my best to make notes more contextual. Community deserves better notes, needs to understand context without too much work. Make sure meeting notes are true to actual context.
+LEO: Once again, as someone who reads whole minutes, lots of things we need to format for markdown. Even with automatic transcription, would make my best to make notes more contextual. Community deserves better notes, needs to understand context without too much work. Make sure meeting notes are true to actual context.
 
 TCN: Not clear if docs are contextual, do we take notes during presentations? Seems to be 2 groups who feel diff. Tangential to the subject we're discussing. Decision as a group, but separate issue from technical impl of taking notes.
 
-DE: I want to say I appreciate all the work going into taking notes. From the notetakers here, to the work done by RW and LBR. Also summary and TOCs. Especially useful to know who made particular argument. Recent discussions: history of optional chain you can see many things that were said and really helped those who needed to figure out what changes to make. Really helps to understand where folks are coming from.
+DE: I want to say I appreciate all the work going into taking notes. From the notetakers here, to the work done by RW and LEO. Also summary and TOCs. Especially useful to know who made particular argument. Recent discussions: history of optional chain you can see many things that were said and really helped those who needed to figure out what changes to make. Really helps to understand where folks are coming from.
 
 Still want summary of technical points. Not going to be able to ???
 

@@ -1,7 +1,7 @@
 # September 26, 2017 Meeting Notes
 -----
 
-Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LBR), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MLS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD),
+Andrew Paprocki (API), Brian Terlson (BT), Chip Morningstar (CM), Claude Pache (CPE), Godfrey Chan (GCN), Jordan Harband (JHD), Leo Balter (LEO), Maggie Pint (MPT), Michael Ficarra (MF), Michael Saboff (MLS), Patrick Soquet (PST), Peter Hoddie (PHE), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Waldemar Horwat (WH), Yehuda Katz (YK), Mathias Bynens (MB), Justin Ridgewell (JRL), Kyle Verrier (KVR), Keith Cirkel (KCL), Till Schneidereit (TST), Aki Rose (AKI), Daniel Ehrenberg (DE), Valerie Young (VYG), Rick Waldron (RW), Dave Herman (DH), Henry Zhu (HZU), Tim Disney (TD),
 
 Remote:
 István Sebestyén (IS), Ben Newman (BN), Caridy Patiño (CP), Keith Miller (KM), Gabriel Isenberg (GI), Zibi Braniecki (ZB)
@@ -107,7 +107,7 @@ CM: 262 only
 
 (Leo Balter)
 
-LBR: Have updates on test 262. We have more comtributors since last meeting. We've been working with contributors from Igalia, partnership with Bloomberg. At Bocoup we have partnership with Facebook on Test262 - thankful for these. Valerie Young joining us for Test262 with interesting work, really appreciate. Test runners added that we're incorporating with, allow us to integrate with projects that want to use Test262. We're going beyond browser implementations and making sure Test262 is useful for other projects - brings us more feedback, more contributors & improvements. Really appreciate work so far. Rick & I are doing mentorship for contributors. Almost 60,000 tests right now in Test262. Thankyou
+LEO: Have updates on test 262. We have more comtributors since last meeting. We've been working with contributors from Igalia, partnership with Bloomberg. At Bocoup we have partnership with Facebook on Test262 - thankful for these. Valerie Young joining us for Test262 with interesting work, really appreciate. Test runners added that we're incorporating with, allow us to integrate with projects that want to use Test262. We're going beyond browser implementations and making sure Test262 is useful for other projects - brings us more feedback, more contributors & improvements. Really appreciate work so far. Rick & I are doing mentorship for contributors. Almost 60,000 tests right now in Test262. Thankyou
 
 BT: Related projects are [eshost-cli](https://github.com/bterlson/eshost-cli) and [eshost](https://github.com/bterlson/eshost)... It's used in the Test262 harness to run scripts uniformly across node, browsers. Gotten a lot better recently. If you're testing scripts in different engines, `eshost` is going to help a lot. Check it out!
 
@@ -217,7 +217,7 @@ DE: We can explore syntactic versions of that. Should we be Stage 1 or 0 then? A
 
 https://tc39.es/code-of-conduct/
 
-LBR: Since last meeting we have Code of Conduct approved. We expect everyone to act accordingly. Document is a single page document, one can get it printed. It will be sent to ECMA. We need to assemble an enforcement team; we're looking for volunteers to enforce this. Any volunteers? Please reach out to me if you wish to volunteer for the Code of Conduct Enforcement Committee.
+LEO: Since last meeting we have Code of Conduct approved. We expect everyone to act accordingly. Document is a single page document, one can get it printed. It will be sent to ECMA. We need to assemble an enforcement team; we're looking for volunteers to enforce this. Any volunteers? Please reach out to me if you wish to volunteer for the Code of Conduct Enforcement Committee.
 
 #### Conclusion/Resolution
 
@@ -654,11 +654,11 @@ WH: If we allow ASI for now, we're stuck with it forever. Disallowing now means 
 
 KCL: What we're saying is that to use private class fields we _have_ to use semicolons? Right now we have workarounds for ASI through changing code, but this would be the first feature where to opt-in we need to use semicolons.
 
-LBR: Semicolons are already there. We cannot get rid of them. ASI Issues are inevitable. I had a proposal for comma, but ASI is inevitable.
+LEO: Semicolons are already there. We cannot get rid of them. ASI Issues are inevitable. I had a proposal for comma, but ASI is inevitable.
 
 WH: I think it is harmful to allow ASI. Class syntax is evolving rapidly. ASI will mandate no-line-terminator-here restrictions in weird places, which are hard to remember — they're in some places but not other. Let's bite the bullet and disallow ASI for now.
 
-LBR: We already have semicolons in class bodies, we already have ASI within method definitions, etc. The semicolon is already a ClassElement, ASI comes with it, I don't think adding limitations between new class fields will be a good thing. (The current proposal seems just fine as it is).
+LEO: We already have semicolons in class bodies, we already have ASI within method definitions, etc. The semicolon is already a ClassElement, ASI comes with it, I don't think adding limitations between new class fields will be a good thing. (The current proposal seems just fine as it is).
 
 SM: (an example of class fields assigned with arrow function)
 
@@ -819,7 +819,7 @@ YK: Not really no.
 
 MF: Do we have a consensus on Stage 2?
 
-LBR: Can we take the time to make this stage 3? I'd be up for it.
+LEO: Can we take the time to make this stage 3? I'd be up for it.
 
 BT: The spec has not changed for a year, the one big issue was around `isConcatSpreadable` - which has been addressed. Personally I have no problems with Stage 3.
 

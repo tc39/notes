@@ -1,7 +1,7 @@
 # October 1, 2019 Meeting Notes
 -----
 
-Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MPC), Pieter Ouwerkerk (POK), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LBR), Justin Ridgewell (JRL), Daniel Rosenwasser (DRR), Erica Pramer (ELP), Myles Borins (MBS), Richard Button (RBU), Robin Ricard (RRI)
+Waldemar Horwat (WH), Andrew Paprocki (API), Rob Palmer (RPR), Joe Sepi (JSI), Jordan Gensler (JGR), Jason Williams (JWS), Brian Terlson (BT), Aki Rose (AKI), Mark Cohen (MPC), Pieter Ouwerkerk (POK), Michael Ficarra (MF), Kevin Gibbons (KG), Shane Carr (SFC), Robert Pamely (RPY), Michael Saboff (MLS), Keith Miller (KM), Chip Morningstar (CM), Mattijs Hoitink (MHK), Devin Rousso (DCR), Jordan Harband (JHD), Leo Balter (LEO), Justin Ridgewell (JRL), Daniel Rosenwasser (DRR), Erica Pramer (ELP), Myles Borins (MBS), Richard Button (RBU), Robin Ricard (RRI)
 
 Remote: Daniel Ehrenberg (DE), Ron Buckton (RBT), Caio Lima (CLA), Yulia Startsev (YSV), Jory Burson (JBN), Ben Newman (BNN), Kyle, HE Shi-Jun (HSJ), Pedram Emrouznejad (PED), Dan Ehrenberg (DE), Mathias Bynens (MB), Jonathan Keslin (JKN), Frank Yung-fong Tang (FYT), Brendan Eich (BE), Andy Fleming (AFL), Bradley Farias (BFS), Caridy Patiño (CPM)
 
@@ -129,19 +129,19 @@ SFC: Advertisement: get involved! See slides for more info on getting involved.
 
 
 ## Test262
-Presenter: Leo Balter (LBR)
+Presenter: Leo Balter (LEO)
 
 
-LBR: (presents slides)
+LEO: (presents slides)
 
 
-LBR: Oddities #5 questions below
+LEO: Oddities #5 questions below
 
 
 WH: How is this possible? There needs to be a newline and there isn’t one in the example, right?
 
 
-LBR: I was saying we have a specific rule for do while. Can you repeat your question?
+LEO: I was saying we have a specific rule for do while. Can you repeat your question?
 
 
 JRL: Is there a semi colon being inserted directly before x = 39?
@@ -150,10 +150,10 @@ JRL: Is there a semi colon being inserted directly before x = 39?
 KG: ASI applies when… (reads spec carve out for do-while, ECMA-262 section 11.9.1)
 
 
-LBR: Now this is covered better in Test 262.
+LEO: Now this is covered better in Test 262.
 
 
-LBR: (back to presentation)
+LEO: (back to presentation)
 
 
 ## Updates from the CoC Committee
@@ -232,7 +232,7 @@ DE: When we talked about this in Munich 2016, we discussed the class evaluation 
 JHD: Sounds like the overarching suggestion is to close the pull request, any disagreements?
 
 
-LBR: Are there tests to update?
+LEO: Are there tests to update?
 
 
 JHD: I'll check to make sure when I close the PR.
@@ -312,7 +312,7 @@ JHD: (presents PR)
 MF: I don't think the syntax pays for itself.  I think this is a really uncommon scenario.  Why is this justified?
 
 
-LBR: (indecipherable)
+LEO: (indecipherable)
 
 
 JHD: If you do await a Promise.reject with no argument, you can throw undefined without an explicit `throw undefined`
@@ -351,13 +351,13 @@ JHD: I don't share KG's intuition; when I look at it, you can put defaults almos
 RBT: Without having something like defaults, binding parameters … is inherently unsafe to use.  This is syntax that may not seem full in most cases.  Having the ability to be defensive would be valuable, even if that means adding a default.  So I don't know if I agree that this is a needs-consensus PR; maybe this is better as a proposal.  But I think this has value.
 
 
-LBR: What is the threshold of, I don't want this syntax?  For other syntax proposals, I'm not allowed to say I don't want something, unless I bring a valid technical argument. This proposal is a missing part of the current code.  I know we're using a formal parameter.  This looks like a destructuring grammar; not only to destructure an object like catching a value, but also adding a default parameter.  I've been working on the tests.  To be fairly honest, I think this is much more valuable than some of the other sugars we've been discussing.  Syntax is expensive but I think this one is valuable, and it doesn't add much.  If you read the code, it's easy to understand, easy to consume.
+LEO: What is the threshold of, I don't want this syntax?  For other syntax proposals, I'm not allowed to say I don't want something, unless I bring a valid technical argument. This proposal is a missing part of the current code.  I know we're using a formal parameter.  This looks like a destructuring grammar; not only to destructure an object like catching a value, but also adding a default parameter.  I've been working on the tests.  To be fairly honest, I think this is much more valuable than some of the other sugars we've been discussing.  Syntax is expensive but I think this one is valuable, and it doesn't add much.  If you read the code, it's easy to understand, easy to consume.
 
 
 WH: We've had this come up before.  After much discussion the committee decided to get rid of initializers where they didn't make sense, like in the for-in statement.  That didn't have much use and we got rid of it.  I'm surprised to see us moving back in the opposite direction.  I think this is not a positive change.
 
 
-DE: It was a fun project with KG to work on revising that and reinstating it, even though it was sad.  In my opinion, I agree with LBR that this adds regularity.  I was expecting this would be supported.  But I think this isn't worth a big disagreement in the committee.  I would like to thank the community for their input here.
+DE: It was a fun project with KG to work on revising that and reinstating it, even though it was sad.  In my opinion, I agree with LEO that this adds regularity.  I was expecting this would be supported.  But I think this isn't worth a big disagreement in the committee.  I would like to thank the community for their input here.
 
 
 WH: To clarify, I'm skeptical, but I'm not strongly opposed. If you can show me a good use case, you might convince me to support this.
@@ -435,7 +435,7 @@ DRR: (Shows Slides)
 DRR: My plan is to have this progress to stage 4 by december (nullish coalescing).
 
 
-LBR: Just FYI, I plan to start on the tests for nullish coalescing next week.  I know we don't have the tests but I have 1 day per week.  I am wondering how many of the implementations are unflagged?
+LEO: Just FYI, I plan to start on the tests for nullish coalescing next week.  I know we don't have the tests but I have 1 day per week.  I am wondering how many of the implementations are unflagged?
 
 
 DRR: My understanding is that they are all behind flags right now, so they are nightly versions or flagged.
@@ -496,19 +496,19 @@ YK: I more-or-less agree 100% with what MM said.  One thing is, `Object.fromEntr
 WH: I agree with MM.  I want to see the bigger picture.  I want to avoid getting into a situation where we have lots of `map`/collection method variants, each one being slightly different.
 
 
-LBR: I've also found myself in cases where I've wrote this code, most of the time I use `Object.entries` is the same reason I would want some `Object.map` for things I've already been doing. We don't need to solve the whole work but i think this would be useful, if its consistent with `Object.entries`
+LEO: I've also found myself in cases where I've wrote this code, most of the time I use `Object.entries` is the same reason I would want some `Object.map` for things I've already been doing. We don't need to solve the whole work but i think this would be useful, if its consistent with `Object.entries`
 
 
 JKN: I would love to see `Object.collect`.  I could look into a proposal for that in the future.  I think `Object.map` is a particularly useful utility.
 
 
-LBR: I think these would be great problems to investigate at Stage 1.
+LEO: I think these would be great problems to investigate at Stage 1.
 
 
-LBR: I'd love to see anything we have here stick with how `Object.entries` right now for consistency. Note: please rely on `EnumerableOwnPropertyNames` for consistency w/ `Object.entries`
+LEO: I'd love to see anything we have here stick with how `Object.entries` right now for consistency. Note: please rely on `EnumerableOwnPropertyNames` for consistency w/ `Object.entries`
 
 
-LBR: Web-compat: Do we know of any library setting `Object.map` today?
+LEO: Web-compat: Do we know of any library setting `Object.map` today?
 
 
 JHD: Iterable helpers proposal + standard Object iterator? There is tons and tons of code I could make more concise with something like this.  On the other hand, I'm sensitive to slapping every array method on Object. When I think about a world of slapping array methods on to things that may be useful. There is no easy way right now to get an iterator over an object (without writing a generator with a `for..in`-loop etc), so it does seem like there is a useful problem area to explore here which could be coupled with the iterator helpers proposal.  You could make an iterator for entries, and at the end, it would be good to have a useful way to say, I have an iterator for entries, now give me an object.  That sounds like something we can discuss at Stage 1.
@@ -887,7 +887,7 @@ Presenter: Myles Borins (MBS)
 MBS: (presents slides)
 
 
-LBR: Please let me know if there are any normative changes to the proposal so I can keep it in sync with test262
+LEO: Please let me know if there are any normative changes to the proposal so I can keep it in sync with test262
 
 
 MBS: Absolutely and there are no normative changes expected.

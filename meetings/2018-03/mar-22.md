@@ -4,7 +4,7 @@
 Waldemar Horwat (WH), Dean Tribble (DT), Mark Miller (MM), Till Schneidereit (TST), Michael Saboff (MLS), Robin Morisset (RMT), Keith Miller (KM), Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Adam Klein (AK), Sathya Gunasekaran (SGN),Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Bradley Farias (BFS), Thomas Wood (TWD), Alan Schmitt (AS), Sven Sauleau (SSA), Chris Needham (CNM), Edd Yerburgh (EYH), Jason Williams (JWS), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Conrad Watt (CWT), Philippa Gardner (PGR), Godfrey Chan (GCN), Chris Hyle (CHE), Lin Clark (LCK), Ben Newman (BN), Jake Archibald (JAD), István Sebestyén (IS), Brian Warner (BWR), Mathias Bynens (MB), Surma (SUR), Alex Russell (AR), Peter van der Zee (PZE), Maël Nison (MNN), Dan Abramov (DAV), Christoph Nakazawa (CNA)
 
 Remote:
-Ron Buckton (RBN), Leo Balter (LBR), Valerie Young (VYG), Mike Pennisi (MP)
+Ron Buckton (RBN), Leo Balter (LEO), Valerie Young (VYG), Mike Pennisi (MP)
 -----
 
 ## Meeting planning
@@ -682,7 +682,7 @@ GI: ok
 ## 7.iv Test262 Status Updates (15m)
 (Leo Balter and Valerie Young)
 
-LBR: I like to have Valerie Young presenting the latest updates, as she did very nice summary for it.
+LEO: I like to have Valerie Young presenting the latest updates, as she did very nice summary for it.
 
 VYG: (updates)
 
@@ -743,20 +743,20 @@ WH: Or whatever we change nullish coalescing operator to.
 
 JRL: Yes, there will be some operator but it will include nullish coalescing assignment operator. DH still has reservations about ||=, maily because it opens the falsey footgun. The only objections that I haven't heard it from Leo on the call.
 
-LBR: I think there is a major problem here. I want to discuss this in the next meeting. as discussed yesteday regarding 1js and 2js that not many things are fixing problems in the language, they are just creating a lot of sugar, and im not happy with the extra complexity. I feel like we just overloaded the syntax with thigns taht are not really necessary and I have the same feeling for this one. in other languages yes, those are like reasonable features, in terms of feature they're reasonable, in terms of adding new syntax to this language I am not happy. But I wont give a hard objection here alone. I would like to collect the new meetings and talk this through in the next meeting.
+LEO: I think there is a major problem here. I want to discuss this in the next meeting. as discussed yesteday regarding 1js and 2js that not many things are fixing problems in the language, they are just creating a lot of sugar, and im not happy with the extra complexity. I feel like we just overloaded the syntax with thigns taht are not really necessary and I have the same feeling for this one. in other languages yes, those are like reasonable features, in terms of feature they're reasonable, in terms of adding new syntax to this language I am not happy. But I wont give a hard objection here alone. I would like to collect the new meetings and talk this through in the next meeting.
 
 JRL: Ok (Sumarizing what Leo just said) He is objecting because he feels like we're adding new sugar syntax that is not paying for itself. Have I explained that correcttly?
 
-LBR: Correct
+LEO: Correct
 
 JRL: it's just kind of a nicety to avoid object[key] || (object[key] = 1). Especially when we have nullish colleasing operating to set properties on an object.
 
-LBR: There is something that we discussed last year, errm, how javascript is a good language for all levels of expertise, and when you talk about nicety, its not a fix. its a nice to have. the problems we have wen we add a whole spectrum of nice to have, the problem is that when you add a lot of nice to have things we end up with like... 3 amazing things but they just cause confusion. I like the way js communicates to developers. and I like this diversity of expertise of developers.
+LEO: There is something that we discussed last year, errm, how javascript is a good language for all levels of expertise, and when you talk about nicety, its not a fix. its a nice to have. the problems we have wen we add a whole spectrum of nice to have, the problem is that when you add a lot of nice to have things we end up with like... 3 amazing things but they just cause confusion. I like the way js communicates to developers. and I like this diversity of expertise of developers.
 Soo.... Im totally aware you'd probably use it like this, this operator is common in perl for example, and those developers love it. but its not uncommon to see them needing to expalin it again and again. I think that adding all this new extra things will allow to do the same thing in multiple ways, and creating multiple ways of doing things in the language rather than fixing pain points is a problem. I dont think this is fixing a pain point. I dont think this is good for the complexity of the language.
 
 WH: If no one else objects, you won't object either?
 
-LBR: if im the only one then I will not block. if tc39 wants this then its ok for. but its really good to talk about this. It's really good ??? as a warming, because we might end creating this while lot of complexity. When we had this 1js thing, I think it's what we all want.
+LEO: if im the only one then I will not block. if tc39 wants this then its ok for. but its really good to talk about this. It's really good ??? as a warming, because we might end creating this while lot of complexity. When we had this 1js thing, I think it's what we all want.
 
 YK: I just want to say that I appreciate that you took seriously what I said yesterday.
 

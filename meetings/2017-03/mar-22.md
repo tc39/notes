@@ -1,7 +1,7 @@
 # March 22, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MLS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LSH), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LBR), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), István Sebestyén (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Dave Herman (DH),  Kent C. Dodds (KCD), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MLS), Sebastian Markbåge (SM), Bradley Farias (BFS), Maggie Pint (MPT), Jamund Ferguson (JXF), Myles Borins (MBS), Logan Smyth (LSH), Sarah D'Onofrio (SDO), Alan Schmitt (AS), Dean Tribble (DT), Peter Jensen (PJ), Mark S. Miller (MM), Leo Balter (LEO), Zibi Braniecki (ZB), Rafael Xavier (RX), Yehuda Katz (YK), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Brendan Eich (BE), Lyza Gardner (LGR), István Sebestyén (IS)
 
 -----
 
@@ -31,15 +31,15 @@ AWB: Our next agenda item is a non-technical item about Code of Conduct and it m
 
 (Leo Balter)
 
-LBR: Last meeting got a lot of feedback; I'm trying to address all the feedback on the current CoC proposal.
+LEO: Last meeting got a lot of feedback; I'm trying to address all the feedback on the current CoC proposal.
 
-LBR: The open issue is whether...
+LEO: The open issue is whether...
 
 ...lots of discussion..
 
 BT: You would like us to approve this document at which point we can at least get Ecma management to take a look at it and make sure there are no problems.
 
-LBR: We can only move to Ecma if we have consensus.
+LEO: We can only move to Ecma if we have consensus.
 
 DH: I would certainly move to accept the document with the consensus that TC39 thinks it's the right document ... we'd prefer feedback than having them reject it outright.
 
@@ -47,7 +47,7 @@ MLS: Do we want to include just the Code of Conduct or all related documents?
 
 BT: Are you sure we want to remove the 4th paragraph about how to report problems?
 
-LBR: The question marks denote a place where we don't have an email.
+LEO: The question marks denote a place where we don't have an email.
 
 YK: There is no consensus on having a subcommittee.
 
@@ -75,11 +75,11 @@ MPT: If everyone thinks document is toothless without enforcement, can we add so
 
 AWB: I'm really uncomfortable with the whole "enforcement" idea vs. the aspirational goals of how we want to conduct ourselves. It seems to take away from the focus on how we want to behave and the focus on correct behavior.
 
-LBR: If I rename it to Code of Conduct supporters, would that help?
+LEO: If I rename it to Code of Conduct supporters, would that help?
 
 MLS: Can we add the chair and the Ecma Representative for the time being?
 
-LBR: We've had a discussion around an individual person, I'm not really...I don't think an individual person would be able to solve, for example, sexual harassment. If I'm chair, and someone brings an issue like this to me... I need support to help and/or talk to this person.
+LEO: We've had a discussion around an individual person, I'm not really...I don't think an individual person would be able to solve, for example, sexual harassment. If I'm chair, and someone brings an issue like this to me... I need support to help and/or talk to this person.
 
 AWB: István or the chair in this case would go to the accused person and talk to them.
 
@@ -119,7 +119,7 @@ AWB: If we have a set of documents that we're willing to pass on to the executiv
 
 IS: I think this is a good idea. You will have the first reaction by the next meeting.
 
-LBR: I believe this current proposal without an enforcement sub-committee is not effective. If we don't set the format of how to move forward.
+LEO: I believe this current proposal without an enforcement sub-committee is not effective. If we don't set the format of how to move forward.
 
 MPT: You will get social-media blowback if you put this out without enforcement. e.g. People on social media right now are pointing out how few women are here. Do not put that document out without an enforcement body.
 
@@ -567,11 +567,11 @@ AK: Can you give a two-sentence summary of this?
 
 AWB: TR-104 directs people to say "yes, Test262 consists of all of these things on GitHub. Go look at GitHub."
 
-LBR: Basically a description of Test262 with formalities and ready to bring to Ecma.
+LEO: Basically a description of Test262 with formalities and ready to bring to Ecma.
 
 AWB: Blesses Test262 as official Ecma work product. Non-normative.
 
-LBR: There are a few facts. As of September 2016, Test262 consisted of over 23k test files...
+LEO: There are a few facts. As of September 2016, Test262 consisted of over 23k test files...
 
 AK: I skimmed it. I will give it affirmative: yes. I find it hard to imagine someone objecting.
 
@@ -677,7 +677,7 @@ AK: My intuition is probably that it's web compatible to change this.
 
 MPT: This seems like a great up-for-grabs.
 
-LBR: No tests for this. This is the most frustrating function I have for Test262, everything is implementation-defined. I'm really positive to anything that allows me to write a test on this.
+LEO: No tests for this. This is the most frustrating function I have for Test262, everything is implementation-defined. I'm really positive to anything that allows me to write a test on this.
 
 MLS: The first row there [in table]: shouldn't that also throw an error...OK, so it's callable but you're not going to call it because only one element.
 
@@ -709,7 +709,7 @@ MM: This is not even an edge case, a major part of proxy design...it's by the do
 
 BT: Any objections to taking this PR?
 
-LBR: If we accept this we will have breaking tests.
+LEO: If we accept this we will have breaking tests.
 
 BT: We have a needs-tests label. Feel free to apply it.
 

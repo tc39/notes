@@ -1,7 +1,7 @@
 # November 30, 2016 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TWD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LBR), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MLS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS), Mark S. Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Thomas Wood (TWD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Jeff Morrison (JM), Chip Morningstar (CM), Dave Herman (DH), Yehuda Katz (YK), Leo Balter (LEO), Sebastian Markbåge (SM), Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Peter Jensen (PJ), Juan Dopazo (JDO), Domenic Denicola (DD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), JF Bastien (JFB), Keith Miller (KM), Michael Saboff (MLS), Chris Hyle (CHE), Alex Russell (AR), Brendan Eich (BE), Caridy Patiño (CP), Diego Ferreiro Val (DFV), James Kyle (JK), Eric Ferraiuolo (EF), Mathias Bynens (MB), István Sebestyén (IS), Mark S. Miller (MM), Cristian Mattarei (CMI), Brad Nelson (BNN), Jafar Husain (JH)
 
 
 -----
@@ -285,7 +285,7 @@ LH: Firefox has a shell function for creating agents, and a shell function for s
 
 (Leo Balter)
 
-LBR: Bocoup has a new contract with Google, so we will work on maintanence of Test262, but this is a smaller contract, just a single day per week. We are looking for other partnerships to provide skilled work for the maintanence of Test262 to fund its development.
+LEO: Bocoup has a new contract with Google, so we will work on maintanence of Test262, but this is a smaller contract, just a single day per week. We are looking for other partnerships to provide skilled work for the maintanence of Test262 to fund its development.
 
 KG: I made a web-based Test262 runner, which we hadn't had for a while. It loads from the repository, so it should only need updates for harness changes. https://bakkot.github.io/Test262-web-runner/
 

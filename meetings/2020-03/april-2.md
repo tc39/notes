@@ -51,11 +51,11 @@ WH: I was really hurt by the rude remark on github, when I suggested the June me
 Regarding the scheduling my preference is the current schedule of 3 days.
 The problem with using more days is the jet lag if we start messing around with the timezones. That’s also a problem with more frequent, like monthly meetings. If i have to do a meeting between midnight and 5am (my time) then that would put me out of commission for a few days, just due to jet lag. So I would rather have longer meetings, and if we need to mess with timezones, I’d rather do it all at once rather than once a month.
 
-LBR: I agree scientifically that we can't expect a miracle, we need to wait for data. Considering what I've heard, we are not going to have an update in the next 2 months. So I honestly would rather not make travel plans for at least 2020. This is my approach to it because I don’t know what to expect, and I need to figure out what it’s going to be like in the next few months to figure out what I’ll be doing in the meeting, so I think it’s much safer to say we just won’t travel in 2020.
+LEO: I agree scientifically that we can't expect a miracle, we need to wait for data. Considering what I've heard, we are not going to have an update in the next 2 months. So I honestly would rather not make travel plans for at least 2020. This is my approach to it because I don’t know what to expect, and I need to figure out what it’s going to be like in the next few months to figure out what I’ll be doing in the meeting, so I think it’s much safer to say we just won’t travel in 2020.
 
 MM: I agree with many of the things that have been said. I'd like to add, even if a vaccine were discovered tomorrow and we were all immune and safe soon, I would advocate that we permanently move to only-remote meetings. The reason is that my experience up til now has been that often it’s quite burdensome to travel, so I've occasionally tried the remote option. Each time it's been a really terrible experience. It’s always for me and my own experience it sucked to be remote for an in person meeting. These last few days have really worked well, as a remote attendee the experience was really comparable in terms of productivity and in terms of our ability to communicate - and this was our first one, we’re still debugging the process. I think putting it online-only brings up the quality of the online experience to the level of the in-person experience.
 
-LBR: I have strong support for the monthly remote meetings. As I like the in person meetings I would love to keep in person meetings, but definitely not for 2020. I’d love to have this merging of monthly meetings and in person meetings. I’m not going to say anything about how many days because I’m flexible about it, so it should be what fits best for TC39. This meeting, for being a full-remote meeting, has been very productive as MM said.
+LEO: I have strong support for the monthly remote meetings. As I like the in person meetings I would love to keep in person meetings, but definitely not for 2020. I’d love to have this merging of monthly meetings and in person meetings. I’m not going to say anything about how many days because I’m flexible about it, so it should be what fits best for TC39. This meeting, for being a full-remote meeting, has been very productive as MM said.
 
 PDL: I second what MM said.
 
@@ -63,7 +63,7 @@ WH: Remote only meetings may not be sustainable, as we all know each other but a
 
 JHD: I don’t agree with MM, I don’t think this has worked anywhere close to as well as the in-person meetings. This is definitely going to be the best experience for a remote attendee because we’re all remote - that’s not arguable, when everyone is remote the remote experience is better. But I think there is a huge loss if we never did an in person meeting. Even if the tooling gets better, I think there is a lot of - I’m trying not to relate it to Asimov, there is a lot of socialization that humans thrive on, more subtle cues, that 2d video doesn’t replicate. We need to see each other every now and then. When we are talking about this we are talking about two different time periods. During it, sure, we’re obviously only going to have remote meetings - everyone would have to be comfortable traveling, everyone’s companies, every host country would have to be comfortable, so that’s clearly a ways out. But at the time that that happens, I would hope that we could restore the in-person plenaries.
 
-LBR: Are you supporting in person meetings for this year as well?
+LEO: Are you supporting in person meetings for this year as well?
 
 JHD: Like I said, the conditions for when we could have an in-person meeting are many, it requires agreement from people, companies, countries, medical experts. I am certainly hopeful it will be this year, but a more realistic view is that it will not be this year. I understand that planning an in person meeting that the host needs lead time. And the uncertainty in that lead time causes issues. So it may not be fair to the July, September, November meetings to leave them planned in person given the likelihood that they will be cancelled.
 
@@ -123,15 +123,15 @@ BT: It’s still a meeting, you’re still giving presentations… I agree, it w
 
 WH: I couldn't justify that in good faith to my manager.
 
-LBR: We can advance proposals if we are meeting informally (?) But honestly I think we should be using conferences that already exist for informal meetings, and not create something from TC39.
+LEO: We can advance proposals if we are meeting informally (?) But honestly I think we should be using conferences that already exist for informal meetings, and not create something from TC39.
 
 BT: I don’t mean a literal conference we open to everyone, but a more optional opportunity for a hallway track.
 
-LBR: For that, I think it’s complicated for that to be organized by TC39, and I agree with the sentiment that TC39 should not be organizing informal meetings.
+LEO: For that, I think it’s complicated for that to be organized by TC39, and I agree with the sentiment that TC39 should not be organizing informal meetings.
 
 BT: That’s what plenary is though.
 
-LBR: Right, non-normative plenaries would be informal. I have mixed feelings, although i want to support people meeting all the time.
+LEO: Right, non-normative plenaries would be informal. I have mixed feelings, although i want to support people meeting all the time.
 
 MBS: For the Node.js project, we do bi-annual collaborators summit, different people working on specific things. It’s maybe more akin to SYG’s incubator calls than the current proposal. But NodeJS for example piggy-backs on existing conferences. Independent of the format that we use, we could consider pairing the events with others events (what we did with JSConf in Berlin for example).
 
@@ -173,7 +173,7 @@ MBS: In this case the expertise is in Chairs saying that they don’t feel comfo
 
 SFC: So the second part of my comment is replying to MBS, which is that we still have remote plenaries. If delegates don’t feel comfortable travelling, it’s the same as if they didn’t feel comfortable travelling in 2019, they can still join remotely. I personally find in person plenary more productive. I personally have been making plans for the rest of 2020. It’s disruptive to me if we’re not going to be having those remaining meetings in 2020. If delegates don’t feel comfortable travelling that is fine, we should make efforts to make plenary more remote friendly than in the past. We should be making in-person plenaries remote friendly. But for delegate planning, I understand it’s disruptive for other delegates that they have to figure out and plan travel, but it’s also disruptive to delegates like myself, to have to change plans.
 
-LBR: SFC, on top of what you say, I agree with you, I prefer in person meetings. I am in agreement with a lot of things. I understand you have made plans. Making plans for me has a very high cost. API mentioned that it is a burden to host a meeting, and it is a burden to me to plan for a meeting. What I’m proposing here is playing more safe in terms of burden for the delegates - not even discussing pandemics, let’s put that aside - it’s hard for me to commit to a plan but having the plan on thin ice because I’m not sure if it is not going to happen. I prefer to play it safe with my plans for the year. I understand there is a lot of frustration involved. I prefer in person meetings over remote. For the burden of committing to travel plans it is really complicated in my case. The meeting in July would not be one I would be able to attend, it is too hard to commit myself to going there than dealing with going or not going. I need to make a plan this year.
+LEO: SFC, on top of what you say, I agree with you, I prefer in person meetings. I am in agreement with a lot of things. I understand you have made plans. Making plans for me has a very high cost. API mentioned that it is a burden to host a meeting, and it is a burden to me to plan for a meeting. What I’m proposing here is playing more safe in terms of burden for the delegates - not even discussing pandemics, let’s put that aside - it’s hard for me to commit to a plan but having the plan on thin ice because I’m not sure if it is not going to happen. I prefer to play it safe with my plans for the year. I understand there is a lot of frustration involved. I prefer in person meetings over remote. For the burden of committing to travel plans it is really complicated in my case. The meeting in July would not be one I would be able to attend, it is too hard to commit myself to going there than dealing with going or not going. I need to make a plan this year.
 We could probably find more people -
 
 MBS: I’m not trying to be dismissive but I am personally finding this topic unproductive and in the interest of time I think we should move.
@@ -216,7 +216,7 @@ MBS: I would also add that 60 people are on this call right now and nobody else 
 
 SYG: I want to clarify something that MBS said, given that we handle this in this meeting, I don’t think it will be productive to discuss planning at the next plenary as DE suggested, I think if folks feel very strongly they should individually reach out to chairs or comment on Github and then the chair group synthesizes that feedback and comes up with a plan. I think devoting an hour to this at the next meeting will eat up an hour with no results.
 
-MBS: ONe thing we could do there SYG, which speaks to what LBR’s queue topic is - you’re going to be presenting on incubator calls soon, I think planning for meetings is something we could discuss in those incubator calls. I would be willing to participate in these calls even if the chair groups is making the decision.
+MBS: ONe thing we could do there SYG, which speaks to what LEO’s queue topic is - you’re going to be presenting on incubator calls soon, I think planning for meetings is something we could discuss in those incubator calls. I would be willing to participate in these calls even if the chair groups is making the decision.
 
 BT: I also agree. What we can commit to as a chair group, is we will have a concrete proposal at the next meeting. And we’ll definitely have some conversation here, and I’m not comfortable with just saying here’s what we’re doing, but if there are no blocking issues we can then just shift to adopting that schedule.
 
@@ -228,7 +228,7 @@ MLS: The reason I want to revisit this is not in order to rehash whether we are 
 
 SYG: That sounds great to me, to discuss logistics. Folks should be more aware when the conversations derail to who gets inconvenienced.
 
-LBR: MBS answered my first question - the chairs are working on channels for feedback and I believe this is going on, and I believe the reflector would be the correct channel for it.
+LEO: MBS answered my first question - the chairs are working on channels for feedback and I believe this is going on, and I believe the reflector would be the correct channel for it.
 It comes with a suggestion, if you can present candidate solution before the meeting if we intend to have a discussion, please present something so we can mitigate details of the discussion. Today I kind of feel overwhelmed with all of the options. I prefer to work on top of a single option.
 
 MBS: I’m open to receiving feedback and to discussing 1-1. You can email me, we can find time on the calendar together, there’s also a chair group email you can send things to. I’m always open to discussing things, I don’t know all the answers. Everyone’s feedback helps make these decisions.
@@ -580,10 +580,10 @@ WH: Do the links in the table of contents work?
 
 JHD: There are clickable links in the TOC and all the pages as well.
 
-LBR: Just for the record I think the opt-out period applies to Ecma-402, just in case.
+LEO: Just for the record I think the opt-out period applies to Ecma-402, just in case.
 
 MBS: Do you have anything to say about Ecma-402 as well?
-LBR: On tues I mentioned that I have been looking for volunteers for the editorship for Ecma-402 from now on - consider this 2021 exercise. I haven’t heard from anyone else, and I’m in a very limited capacity. And I’m very much hoping to find someone else to work on the editorship and this person would be very welcome by the TC39-TG2. Please volunteer here, otherwise I will open a thread on the reflector.
+LEO: On tues I mentioned that I have been looking for volunteers for the editorship for Ecma-402 from now on - consider this 2021 exercise. I haven’t heard from anyone else, and I’m in a very limited capacity. And I’m very much hoping to find someone else to work on the editorship and this person would be very welcome by the TC39-TG2. Please volunteer here, otherwise I will open a thread on the reflector.
 
 AKI: Just think about the fame and prestige!
 

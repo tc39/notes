@@ -31,7 +31,7 @@
 | Frank Yung-Fong Tang | FYT            | Google             |
 | Devin Rousso         | DRO            | Apple              |
 | Justin Ridgewell     | JRL            | Google             |
-| Leo Balter           | LBR            | Salesforce         |
+| Leo Balter           | LEO            | Salesforce         |
 | Ilias Tsangaris      | IT             | Evernote           |
 | Michael Saboff       | MLS            | Apple              |
 | Ron Buckton          | RBN            | Microsoft          |
@@ -130,7 +130,7 @@ Items seeking consensus:
 
 SFC: No one on the queue - if there are no comments by end of presentation, we can record a tc39 consensus on those PRs
 
-LBR: A note about the new Editorship. Thank you for this work. SFC hugely facilitated that work. Very thankful and will help Richard Gibson. Thanks to everyone in ECMA402! 
+LEO: A note about the new Editorship. Thank you for this work. SFC hugely facilitated that work. Very thankful and will help Richard Gibson. Thanks to everyone in ECMA402! 
 
 AKI: Clapping!
 
@@ -144,9 +144,9 @@ Consensus on:
 * ecma402#444: https://github.com/tc39/ecma402/pull/444
 
 ## Test262
-Presenter: Leo Balter (LBR)
+Presenter: Leo Balter (LEO)
 
-LBR: (presents active proposals in stage 3) everything is good so far. I ask the champions to frequently review the Stage 3 proposals table at the tc39/proposals repo as it guides us on what needs to be tested.
+LEO: (presents active proposals in stage 3) everything is good so far. I ask the champions to frequently review the Stage 3 proposals table at the tc39/proposals repo as it guides us on what needs to be tested.
 
 ## Updates from CoC committee
 Presenter: Aki (AKI)
@@ -175,7 +175,7 @@ RPR: There is no-one on the queue.
 
 KM: I will take that no-body has joined the queue and that there are no objections.
 
-LBR: We need to coordinate someone to write a test for it.  We have tests for the behavior you want to change.
+LEO: We need to coordinate someone to write a test for it.  We have tests for the behavior you want to change.
 
 KM: yea we need but I did not bother doing that without consensus but I will do that
 
@@ -501,7 +501,7 @@ WH: I said why. We’re short on time so let’s go to the remaining queue entri
 
 JHD: I’m very much in favor of banning it. I think the proposal already has massive weight without it, and I think the vast majority of users would not be using that. GCL in IRC said it should be banned by linters, but I suspect the vast majority of users would immediately turn on a linter rule to ban this.
 
-LBR: I tend to have a preference for not banning. I believe this would be a natural… I want to see how this goes, and I agree with the next comment from RBN.
+LEO: I tend to have a preference for not banning. I believe this would be a natural… I want to see how this goes, and I agree with the next comment from RBN.
 
 RBN: Want to make sure that throw is still allowed. If we are still focused on `do` expressions, I want to make sure that `throw` is still there. There are also languages that allow non-local exits from expression position. I think there is some value, but there is nothing wrong with banning them now and adding them at a later date.
 

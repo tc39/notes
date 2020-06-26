@@ -1,6 +1,6 @@
 # March 28, 2019 Meeting Notes
 -----
-István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Daniel Ehrenberg (DE), Mike Samuel (MSL), Joyee Cheung (JCG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KVR), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MLS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Domenic Denicola (DD)
+István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LEO), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Daniel Ehrenberg (DE), Mike Samuel (MSL), Joyee Cheung (JCG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KVR), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MLS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Domenic Denicola (DD)
 
 Remote:
 Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCL), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS), Ben Newman (BN), Ross Kirsling (RKG), Frank Tang (FYT), Igor Minar (IMR), Miško Hevery (MHY), Brendan Eich (BE), Rick Waldron (RW)
@@ -435,7 +435,7 @@ DE: MM was saying it wasn't clear at the time dynamic import came out that the R
 
 TST: I meant to say that if this agreement had been made, that was a mistake. I also want to say there's a bit of an odd precedent with separators where they were demoted from Stage 3 to Stage 2, where implementers said we're not going to fix this until we figure it out.
 
-LBR: Just as TST has said, we should be consistent in our communication how stable something is. I possibly missed that there was any blocker, but the work I did was in very good faith and I'm sure the implementers are very good at following this too. It's difficult to follow just by details in the notes and we should be very clear in our communication about stage advancement and demotion. That communication can vastly be improved and should affect any other proposal.
+LEO: Just as TST has said, we should be consistent in our communication how stable something is. I possibly missed that there was any blocker, but the work I did was in very good faith and I'm sure the implementers are very good at following this too. It's difficult to follow just by details in the notes and we should be very clear in our communication about stage advancement and demotion. That communication can vastly be improved and should affect any other proposal.
 
 DE: Thank you for the consensus for the numeric separators and I'm sorry for the delay that caused.
 
@@ -683,7 +683,7 @@ KM: We could have this test run 100,000 times and pass once, and pass the test i
 
 DE: I could see how Test262 could include something that's like, "I work most of the time but not always"
 
-LBR: There's no space for flaky tests on Test262. Maybe implementers could expose the GC call for the purposes of Test262.
+LEO: There's no space for flaky tests on Test262. Maybe implementers could expose the GC call for the purposes of Test262.
 
 KM: The problem is that even if we do a GC, ... (lots of grumbling)
 
@@ -709,23 +709,23 @@ YK: Seems like browsers really like to know when it's safe to implement a featur
 
 ## Update: PR: Normative: CreateDynamicFunction early concatenates bodyText
 
-(Leo Balter (LBR))
+(Leo Balter (LEO))
 
-LBR: (presents examples demonstrating grammar issues around interpretation of `-->` as a comment head and `Function(...).toString()` implementation behavior)
+LEO: (presents examples demonstrating grammar issues around interpretation of `-->` as a comment head and `Function(...).toString()` implementation behavior)
 
-LBR: Can we get consensus on `Function(...)` source text including a prepended line feed?
+LEO: Can we get consensus on `Function(...)` source text including a prepended line feed?
 
 MB: Please forget everything Leo said about HTML comments. I want to clarify that this is unrelated to the behavior of `-->`. The proposed change here is to align the spec with implementation reality w.r.t. Function#toString.
 
 WH: Fixing `-->` needs a coherent proposal.
 
-LBR: Is there a champion for that? There are a lot of issues.
+LEO: Is there a champion for that? There are a lot of issues.
 
 WH: I'm not OK dribbling in fixes one by one.
 
-WH: This is a grammar problem. The fix is a patch of one case out of many (see LBR's updated slide deck for numerous others). I'm not ok with fixing these things one by one by incremental patching. In fact, the real fix for this one would be different from what you propose.
+WH: This is a grammar problem. The fix is a patch of one case out of many (see LEO's updated slide deck for numerous others). I'm not ok with fixing these things one by one by incremental patching. In fact, the real fix for this one would be different from what you propose.
 
-LBR: I guess the issue will remain open until we decide to either close it or replace it with a larger fix.
+LEO: I guess the issue will remain open until we decide to either close it or replace it with a larger fix.
 
 MBS: before we wrap this up there are two more items in the queue, we will take 5 more minutes to clear the queue
 
@@ -737,7 +737,7 @@ MB: The output of Function#toString would have the function body surrounded by n
 
 DD: There were fun and interesting examples involving `-->` but they were distracting.
 
-LBR: I reviewed on Tuesday and I found issues with HTML close comments. I was trying to show my observations today here as requested by other delegates in this room.
+LEO: I reviewed on Tuesday and I found issues with HTML close comments. I was trying to show my observations today here as requested by other delegates in this room.
 
 WH: We're talking past each other.
 
@@ -755,9 +755,9 @@ MF: That will match the current output of Function toString. We can't have a mis
 
 WH: I don't want to rabbit-hole.
 
-DE: I'm really happy LBR is working on aligning the spec with web reality. We want to drive consensus between JS implementations and make sure everything is well-defined and matching. We should encourage more of this work and rapidly come to conclusions on it. This is one piece, but there are several pieces that would be nice to get through so that the ES spec matches web reality.
+DE: I'm really happy LEO is working on aligning the spec with web reality. We want to drive consensus between JS implementations and make sure everything is well-defined and matching. We should encourage more of this work and rapidly come to conclusions on it. This is one piece, but there are several pieces that would be nice to get through so that the ES spec matches web reality.
 
-LBR: I want to be pragmatic and update the spec to match reality w.r.t. Function#toString.
+LEO: I want to be pragmatic and update the spec to match reality w.r.t. Function#toString.
 
 MBS: So with all of that conversation, Leo are you looking for consensus?
 
@@ -767,9 +767,9 @@ MBS: Do we need to come back to plenary next time we want to merge this PR?
 
 MM ... Speaking for myself, if we agree in the meeting that this is the interlock of what happens in the meeting ... The PR should be able to land between the meetings.
 
-MBS: So does anyone object to this landing between meetings if LBR and WH resolve this offline?
+MBS: So does anyone object to this landing between meetings if LEO and WH resolve this offline?
 
-MM: that is right, the situation in which we are going into the ...(too fast) If LBR convinces WH to the current PR, we don't have to bring it back.
+MM: that is right, the situation in which we are going into the ...(too fast) If LEO convinces WH to the current PR, we don't have to bring it back.
 
 WH: I feel like I'm being steamrolled. I want the language to match web reality here, but that requires finding a consistent solution. What I see happening in today's discussions is that the objective of getting a PR committed or proposal advanced acquired more importance than getting ECMAScript right and consistent with web reality, which should be our primary objective. I am upset about this.
 
@@ -777,7 +777,7 @@ WH: This is a complex enough set of problems that we may want to go through stag
 
 MBS: OK, I apologize.
 
-LBR: We would need a champion for that.
+LEO: We would need a champion for that.
 
 KS: I'd like to thank WH for being conservative.
 

@@ -3,7 +3,7 @@
 Mattijs Hoitink (MHK), Michael Saboff (MLS), Keith Miller (KM), Tadeu Zagallo (TZO), Natalie Silvanovich (NSH), Waldemar Horwat (WH), Daniel Ehrenberg (DE), Jean-Francois Paradis (JFP), Chip Morningstar (CM), Alan Schmitt (AS), Ross Kirsling (RKG), Jordan Harband (JHD), Brian Terlson (BT), Kevin Smith (KS), Eric Faust (EFT), Sathya Gunasekaran (SGN), Till Schneidereit (TST), Lin Clark (LCK), Godfrey Chan (GCN), Kevin Gibbons (KG), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Devin Rousso (DRO), Reefath Rajali (RRI), Adam Klein (AK), Rex Jaeschke (RJE), Mark Miller (MM), Shaheer Shabbir (SSR), Mrelita Tiwari (MTI), Jonathan Dallas (JDS), Brendan Eich (BE), Emily Huynh (EHH), Michael Ficarra (MF), Ilias Tsangaris (IT), Thomas Levy (TLY), Augustus Yuan (AYN), Nathan Hammond (NHD), Sebastian Markbåge (SM), Justin Ridgewell (JRL), Shane Carr (SFC), Dustin Savery (DSY), Frank Yung-Fong Tang (FYT), Mariko Kosaka (MKA), Peter Hoddie (PHE), Patrick Soquet (PST), Felipe Balbontín (FBN), Dave Herman (DH), Shu-yu Guo (SYG), Yehuda Katz (YK), Yulia Startsev (YSV), Sebastian McKenzie (SMK), Aki Rose (AKI), Tab Atkins (TAB), Mathias Bynens (MB), Scott Myers (SMS)
 
 Remote:
-Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LBR), István Sebestyén (IS), Richard Gibson (RGN), Guy Bedford (GB), Conrad Watts (CWS)
+Ron Buckton (RBN), Bradley Farias (BFS), Robert Pamely (RPY), Leo Balter (LEO), István Sebestyén (IS), Richard Gibson (RGN), Guy Bedford (GB), Conrad Watts (CWS)
 -----
 
 
@@ -366,7 +366,7 @@ GB: Yes.
 
 (Leo Balter)
 
-LBR: Want to share some current goals:
+LEO: Want to share some current goals:
 
 - Finish class fields and methods. Not finished yet but probably good for class fields (pub and priv). Progress leading to completion for methods. Want to experiment with early implementations
 - Dynamic import is fully covered V8 100%, JSC almost 100%, bugs identified and filed. ChakraCore has impl under debug build and identified bugs and filed. SpiderMonkey started implementation
@@ -374,17 +374,17 @@ LBR: Want to share some current goals:
 - Dedicated test curation time
 - Invest more time Intl test reviews, having nice wave of contributions
 
-LBR: We now have CI to run tests in PRs (https://travis-ci.org/tc39/test262/builds/460049237). There is a lot of room for improvement. Runs new modified tests against major engines.
+LEO: We now have CI to run tests in PRs (https://travis-ci.org/tc39/test262/builds/460049237). There is a lot of room for improvement. Runs new modified tests against major engines.
 
-LBR: Officially released https://Test262.report and the "Features" view shipping before holiday season. Issue tracker at [repo](https://github.com/bocoup/Test262-reporter-issue-tracker) (Cannot access?)
+LEO: Officially released https://Test262.report and the "Features" view shipping before holiday season. Issue tracker at [repo](https://github.com/bocoup/Test262-reporter-issue-tracker) (Cannot access?)
 
 DE: Thanks to LB and ... from Bloomberg for writing tests on private methods and bugs were found from the test runs.
 
-LBR: One last thing to report is we got some of the specs we wanted -- bugzilla and bugs have been reported with the Test262.report link which shows accurately the test. Really happy with this.
+LEO: One last thing to report is we got some of the specs we wanted -- bugzilla and bugs have been reported with the Test262.report link which shows accurately the test. Really happy with this.
 
 RKG: It's exciting for me too to fix something and see it show up in the interface.
 
-LBR: Would love to see more like this so thank you!
+LEO: Would love to see more like this so thank you!
 
 #### Conclusion/Resolution
 

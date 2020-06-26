@@ -4,7 +4,7 @@
 Jordan Harband (JHD), Rex Jaeschke (RJE), Michael Saboff (MLS), Caridy Patiño (CP), Peter Jensen (PJ), Sebastian McKenzie (SMK), Fabio Rocha (FRA), Till Schneidereit (TST), Peter Hoddie (PHE), Michael Ficarra (MF), Kat Z. Marchán (KZM), Bradley Farias (BFS), Daniel Ehrenberg (DE), Kevin Gibbons (KG), Chip Morningstar (CM), Dave Herman (DH), Aki Rose (AKI), Godfrey Chan (GCN), Yehuda Katz (YK), Natalie Silvanovich (NSH), Adam Klein (AK), Alan Schmitt (AS), Andrew Paprocki (API), Chris Hyle (CHE), Mattijs Hoitink (MHK), Mark S. Miller (MM), Mathias Bynens (MB), Keith Cirkel (KCL), Justin Ridgewell (JRL), Shu-yu Guo (SYG), Zibi Braniecki (ZB), Mariko Kosaka (MKA), Sam Goto (SGO), Keith Miller (KM)
 
 Remote:
-István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LBR), Rick Waldron (RW)
+István Sebestyén (IS), Brian Terlson (BT), Leo Balter (LEO), Rick Waldron (RW)
 
 -----
 
@@ -38,7 +38,7 @@ CM: We're on the fast track to have 404 as an ISO standard early/mid December.
 
 ## 7.iv Test262 Status Updates (15m)
 
-LBR: Looking for volunteers all the time. Good coverage coming in: class fields and object spread. Those are all big features in test-262. Coverage is great, looking forward to what is next. We discussed possible changes to help external committers and published a document explaining the rationale of code review criteria.
+LEO: Looking for volunteers all the time. Good coverage coming in: class fields and object spread. Those are all big features in test-262. Coverage is great, looking forward to what is next. We discussed possible changes to help external committers and published a document explaining the rationale of code review criteria.
 
 ## 10 Timeboxed agenda items (15 Minute Items)
 

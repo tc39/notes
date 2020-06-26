@@ -1,7 +1,7 @@
 # July 27, 2017 Meeting Notes
 -----
 
-Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE), Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JEL), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MLS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK),
+Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE), Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JEL), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LEO), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MLS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK),
 
 -----
 
@@ -104,7 +104,7 @@ CP: Today you have to `export {default} from`, then `export * from`, two lines.
 
 AK: For this one (`export v from "mod"`), I think the existing syntax is pretty clear, and the new syntax is not clear, since the exported name is not in curlies--it looks like you're exporting default, and so it seems like a funny form. It would be clearer to say, `export { default as v } from mod`
 
-LBR: Maybe a real use-case/example will help.
+LEO: Maybe a real use-case/example will help.
 
 BFS: This a real compiler use, it's sort of a microbenchmark.
 
@@ -156,7 +156,7 @@ BN: Something like export default, * from "mod" could be an interesting approach
 
 BN: The reason why we are still looking for this syntax is because it allows us better static analysis on the code.
 
-LBR: We have two options: 1) we have objections, should we kill it, or 2) should this be just a PR.
+LEO: We have two options: 1) we have objections, should we kill it, or 2) should this be just a PR.
 
 AWB: MF do you object this proposal?
 
@@ -512,12 +512,12 @@ In the interim, any current platform use cases will be appreciated.
 
 ## 13.v. Meeting schedule for 2018
 
-LBR: Need volunteer to coordinate our schedule.
+LEO: Need volunteer to coordinate our schedule.
 
 ?: The chair should do it
 
 
-LBR: I'm voting for Rex to become our chair.
+LEO: I'm voting for Rex to become our chair.
 
 RJE: Introduces his background: Chair of Committee for 7 years, TC41, .net, C#, TC39 in 2000, edited specs, TC45, TC46, PHP and Hack for Facebook (open source).
 
@@ -539,7 +539,7 @@ YK: Why can't I nominate folks like Dan as chair?
 
 DE: I like Rex's presentation.
 
-LBR: I'll be available if needed in September but not November.
+LEO: I'll be available if needed in September but not November.
 
 IS: Need an ECMA member as chair. Can't come in as an individual.
 
@@ -563,7 +563,7 @@ AWB: Oh, come on. I've been raising the chair search at meetings for the last ye
 
 YK: Concerned about process
 
-MLS: Like the proposal of Rex chairing two meetings and then having an election in January. DE and LBR are interested in being vice chairs. We should jump at the opportunity!
+MLS: Like the proposal of Rex chairing two meetings and then having an election in January. DE and LEO are interested in being vice chairs. We should jump at the opportunity!
 
 BT: I don't see a reason to attach an "interim" title to the chair.
 
@@ -666,9 +666,9 @@ WH: I reviewed this and all the other class-related proposals for this meeting. 
 
 ## Agenda review
 
-LBR: (shows agenda to discuss what we are doing the rest of the day)
+LEO: (shows agenda to discuss what we are doing the rest of the day)
 
-LBR: we have time constraints, e.g., Ron won't be able to join us at the next meeting. similarly, Gabriel Isenberg also won't be available.
+LEO: we have time constraints, e.g., Ron won't be able to join us at the next meeting. similarly, Gabriel Isenberg also won't be available.
 
 WH: Is there a particular technical reason to defer, or are you just doing it to yield time?
 

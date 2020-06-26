@@ -78,15 +78,15 @@ No remarks.
 
 ## ECMA-402 7th Edition (2020) RC Cut
 
-Presenter: Leo Balter (LBR)
+Presenter: Leo Balter (LEO)
 
 - [slides](https://drive.google.com/file/d/1z3v23piIHSBxZnQhbR2bvYNuuzYqDvER/view?usp=sharing)
 
-LBR: (presents slides)
+LEO: (presents slides)
 
-LBR: Any volunteers for 2021 Editorship?
+LEO: Any volunteers for 2021 Editorship?
 
-SFC: I just wanted to say that LBR has been doing an excellent job being editor of 402. We have a really high quality document coming for 2020. Whoever wants to get involved will have a great mentor. I am grateful for the work LBR has been doing over the last year.
+SFC: I just wanted to say that LEO has been doing an excellent job being editor of 402. We have a really high quality document coming for 2020. Whoever wants to get involved will have a great mentor. I am grateful for the work LEO has been doing over the last year.
 
 MBS: Maye one of the other chairs can handle the vote? Do we have to go through each member company and gather the votes or just do a call for objections?
 
@@ -153,7 +153,7 @@ WH: Ecma voting rules are only for GA. NFPs can vote at the TC level.
 
 MBS: With that in mind, the only NFPs from this list present here are Mozilla and the OpenJS Foundation. I’ll call them and then make a general call for other NFPs.
 
-LBR: Thanks! With the passing votes I’ll communicate the result to Ecma. I already sent the RC to them.
+LEO: Thanks! With the passing votes I’ll communicate the result to Ecma. I already sent the RC to them.
 
 ## Test262 Status Updates
 
@@ -312,7 +312,7 @@ Presenter: Shu-yu Guo (SYG)
 
 SYG: (presents slides)
 
-LBR: I appreciate the strategy from Chrome. Thanks for reporting this. I think it’s really thoughtful, and as a web developer I appreciate it a lot.
+LEO: I appreciate the strategy from Chrome. Thanks for reporting this. I think it’s really thoughtful, and as a web developer I appreciate it a lot.
 
 ## Surrogate pairs in RegExp capture groups
 
@@ -580,17 +580,17 @@ SYG: The thing to remember is that it’s memory allocated by the wasm.memory co
 
 BFS: Correct.
 
-LBR: I don’t have any objections. Instead of the PR describing optional, it seems like it is conditional. I’m OK if it is actually conditional or optional, but I want clarification if we are going for optional.
+LEO: I don’t have any objections. Instead of the PR describing optional, it seems like it is conditional. I’m OK if it is actually conditional or optional, but I want clarification if we are going for optional.
 
 SYG: I don’t have too strong an opinion here, I think I prefer to use the word ‘optional’
 
-LBR: If you prefer optional, the phrasing is not referring to optional, but instead conditional.
+LEO: If you prefer optional, the phrasing is not referring to optional, but instead conditional.
 
 KG: It is optional if they can’t provide cross-thread access. The host has a choice in that scenario.
 
 MM: I object to that. I think it should simply be “optional”.
 
-LBR: I would be more comfortable with it just being generically optional.
+LEO: I would be more comfortable with it just being generically optional.
 
 MM: I’d like it to be aligned with other things in the spec that are stated to be normatively optional, and using the word ‘optional’ is a good step towards that.
 
@@ -753,17 +753,17 @@ JRL: Having a public repo allows you to open issues and discussion. Having a pub
 
 MPC: I want to strongly voice support for YSV’s point about ease of access as a newcomer.
 
-LBR: I am strongly in favor of maintaining consistency. If every proposal is to become a repo, I would like it to be enforced at the beginning. It shows preparation before presenting to TC39. I am in favor of it.
+LEO: I am strongly in favor of maintaining consistency. If every proposal is to become a repo, I would like it to be enforced at the beginning. It shows preparation before presenting to TC39. I am in favor of it.
 
 HHM: Should the proposal repo be on github, or somewhere else? If it is not on github, where should it be?
 
 JHD: I think GitHub is the only place that makes sense because everything is on GitHub, and the repo needs to be easily transferable to the tc39 org upon stage 1.
 
-LBR: One of the things mentioned is the process template. I believe GitHub does have some useful actions to transform a template repo into an actual one we can reuse.
+LEO: One of the things mentioned is the process template. I believe GitHub does have some useful actions to transform a template repo into an actual one we can reuse.
 
 JHD: The template repo has a big green button that says “use this template”.
 
-LBR: I am also in favor of having a link in the process document to the template, if not mandatory make it optional. I believe it is good to have it featured there.
+LEO: I am also in favor of having a link in the process document to the template, if not mandatory make it optional. I believe it is good to have it featured there.
 
 GMS: If there is no requirement for the exact structure, then at least some mandatory information must exist. Even if it’s just a title or a description.
 

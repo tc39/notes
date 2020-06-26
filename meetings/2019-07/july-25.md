@@ -1,7 +1,7 @@
 # July 25, 2019 Meeting Notes
 -----
 
-Daniel Rosenwasser (DRR), Andrew Paprocki (API), Adam Klein (AK), Shu-yu Guo (SYG), Michael Ficarra (MF), Jordan Harband (JHD), Alex Rattray (ARY), Pieter Ouwerkerk (POK), Michael Saboff (MLS), Keith Miller (KM), Aki Braun (AKI), Brian Terlson (BT), Ron Buckton (RBN), Till Schneidereit (TST), Yehuda Katz (YK), Aaron Davis (ADS), Sebastian Markbåge (SM), Andrew Burgess (ABS), Jonathan Keslin (JKN), Ashley Hauck (AEH), Peter Hoddie (PHE), Patrick Soquet (PST), Ben Coe (BCE), Waldemar Horwat (WH), Mark Miller (MM), Chip Morningstar (CM), Erica Pramer (EPR), Kevin Smith (KS), Adrian Hall (AHL), Caio Lima (CLA), Ben Lichtman (BLN), Tierney Cyren (TCN), Shelley Vohr (SVR), Michal Hollman (MHN), Bill Ticehurst (BTT), Dean Tribble (DT), Godfrey Chan (GCN), Guilherme Hermeto (GHO), Jordan Gensler (JGR), Leo Balter (LBR), Dale Bustad (DBD), Joffrey Richten (JRN), Shane Carr (SFC)
+Daniel Rosenwasser (DRR), Andrew Paprocki (API), Adam Klein (AK), Shu-yu Guo (SYG), Michael Ficarra (MF), Jordan Harband (JHD), Alex Rattray (ARY), Pieter Ouwerkerk (POK), Michael Saboff (MLS), Keith Miller (KM), Aki Braun (AKI), Brian Terlson (BT), Ron Buckton (RBN), Till Schneidereit (TST), Yehuda Katz (YK), Aaron Davis (ADS), Sebastian Markbåge (SM), Andrew Burgess (ABS), Jonathan Keslin (JKN), Ashley Hauck (AEH), Peter Hoddie (PHE), Patrick Soquet (PST), Ben Coe (BCE), Waldemar Horwat (WH), Mark Miller (MM), Chip Morningstar (CM), Erica Pramer (EPR), Kevin Smith (KS), Adrian Hall (AHL), Caio Lima (CLA), Ben Lichtman (BLN), Tierney Cyren (TCN), Shelley Vohr (SVR), Michal Hollman (MHN), Bill Ticehurst (BTT), Dean Tribble (DT), Godfrey Chan (GCN), Guilherme Hermeto (GHO), Jordan Gensler (JGR), Leo Balter (LEO), Dale Bustad (DBD), Joffrey Richten (JRN), Shane Carr (SFC)
 
 Remote:
 Bradley Farias (BFS), Gus Caplan (GCL), Kevin Gibbons (KG), Pedram Emrouznejad (PED), Yulia Startsev (YSV), Mattijs Hoitink (MHK), Ross Kirsling (RKG), Justin Ridgewell (JRL), Caridy Patiño (CP), John-David Dalton (JDD), Paolo Severini (PSI), Benjamin Georges (BGS), Paul Leather (PLR), Mathias Bynens (MB), Aliaksander Palpko (APO), Shi-jun He (JHX), Ravi Jayaramappan (RJN), Sanket Joshi (SJI), Jose David Rodrigues Veloso (JVO), Mike Samuel (MSL), Frank Yung-Fong Tang (FYT), Rob Palmer (RPR), Diego Ferreiro Val (DFV), István Sebestyén (IS), Jason Williams (JWS), Richard Gibson (RGN), Seth Brenith (SBH), Suraj Sharma (SUS), Steve Faulkner (SFR), Chris Anderson (CAN), Michael Fig (MFG), Valerie Young (VYG)
@@ -38,23 +38,23 @@ WH: The same argument applies to `?.[`, also in this proposal.
 
 DRR: The element access has the same issue.  It's not a property access syntactically.  We did a lot of work to get the most ideal syntax. There was no perfect syntax that everyone agreed on that would be uncontroversial. We went through a lot of iteration here.  If we made the language all over again, we could get something better, but this is the best option going forward.
 
-LBR: There was one question whether you have fn and then an optional call. `fn?.();` The result of this is undefined. I feel like it’s a bad contract to not know if fn was undefined or if the result of the function is undefined. No one wants to create an objection over optional call, but people tend to feel uncomfortable with optional call.
+LEO: There was one question whether you have fn and then an optional call. `fn?.();` The result of this is undefined. I feel like it’s a bad contract to not know if fn was undefined or if the result of the function is undefined. No one wants to create an objection over optional call, but people tend to feel uncomfortable with optional call.
 
 YK: I saw the slides…
 
 DRR: When you do an optional call, you cannot necessarily assert if the result is undefined or the original value is undefined.
 
-LBR: I'm not creating an objection for advancement.  I'm just trying to express that I'd prefer if we could advance the two proposals separately.
+LEO: I'm not creating an objection for advancement.  I'm just trying to express that I'd prefer if we could advance the two proposals separately.
 
 WH: If you’re going to worry about distinguishing between whether the `x` is undefined or whether the result is undefined in `x.?()`, then you should disallow `x?.foo` and `x?.[y++]`, which have the same issue. If you disallow all of those, then the proposal is empty.
 
-LBR: Ideally, accessing properties would have less side effects than calling the function.
+LEO: Ideally, accessing properties would have less side effects than calling the function.
 
 WH: No, because in the square brackets there can be side effects too: `x?.[y++]`.
 
 DRR: I think there are 2 use cases you can imagine.  There's the, function that returns a specific value case, and function that needs to be called for side effect case.  For the second case, you don't care about the return value.  In the case when you care about the return value, it's discernable in cases where the function isn't expected to return undefined.  So there's sort-of the same problem when it comes to property access.  I hear what you mean about side effects, but I think those two cases put clarity between the scenarios.
 
-LBR: I don’t want to extend this too much. Also interested in what YK has to say.
+LEO: I don’t want to extend this too much. Also interested in what YK has to say.
 
 YK: I'm on the fence about the utility of (optional call).  I'm more persuaded after the examples.  If you say `?.()` and the thing is not callable, you get an error.
 
@@ -74,7 +74,7 @@ YK: I feel really uncomfortable that I have to object to the whole proposal, inc
 
 WH: Plenty of arguments have been expressed that these features can't be separated.  You say there are questions that haven’t been addressed, but I haven't seen any new questions about this for months.
 
-YK: I think I have now emotionally gotten to the place that LBR was at when I walked in. A lot of the meta of this is the desire to see it in.
+YK: I think I have now emotionally gotten to the place that LEO was at when I walked in. A lot of the meta of this is the desire to see it in.
 
 DRR: I think there is a general desire to break the two features into their own proposals, because we could more piecewise evaluate their utility and semantics.  I think that is a thing that has been expressed a couple of times.  I don't know if there's a way we can get consensus on that point.  WH has said earlier that it's him why the proposals are combined, but that’s not the only reason.  I've heard from other parties that it's important to keep the features together for other reasons.  The feeling I have right now is that we cannot think about them separately.  My intent is to deliver this feature is because it is a highly demanded feature by both TypeScript and JavaScript developers.  To the one specific item you brought up: I believe we are picking the correct semantics, and I’m willing to work with you on them.
 
@@ -90,7 +90,7 @@ MLS: This is a tool, and it can be properly used by developers.  You have a func
 
 WH: I concur with the previous two answers. YK made an argument about testing for callability instead of testing for null/undefined, but that argument would apply to situations other than just `?.(`. For example, you could have `a?.b.c(z)`. What happens then if `c` is not a function?
 
-LBR: You still expect `c` to be callable?
+LEO: You still expect `c` to be callable?
 
 WH: YK’s point was that maybe optional chaining should protect you against calling uncallable things. I’m just saying that that situation arises even without `?.(`, and you just can’t protect against that.
 
@@ -150,7 +150,7 @@ YK: I feel persuadable on that topic.
 
 DRR: Ok!
 
-LBR: One thing we've been talking about is, we've been looking at desirable examples.  I would like to make sure.  I want people to make sure what we're making with optional chaining.  You can start from any expression, including chaining from a regex literal, which is weird.  I wonder if there's a possibility to start optional chaining from actual names.  Because a reasonable developer would never use it, but you could start optional chaining from false, regex.  It's a nice feature to create very confusing code, just for fun.  But I wonder if it's possible that we could do a better tailoring of the syntax to start in more reasonable places.
+LEO: One thing we've been talking about is, we've been looking at desirable examples.  I would like to make sure.  I want people to make sure what we're making with optional chaining.  You can start from any expression, including chaining from a regex literal, which is weird.  I wonder if there's a possibility to start optional chaining from actual names.  Because a reasonable developer would never use it, but you could start optional chaining from false, regex.  It's a nice feature to create very confusing code, just for fun.  But I wonder if it's possible that we could do a better tailoring of the syntax to start in more reasonable places.
 
 DRR: You can write a lot of nonsense code, ben actually has been writing tests and asking these questions as we've gone along. One of the examples was a class that extends from the optional chain. Should you disallow this from the grammar? Well you can but we have historically not allowed this
 
@@ -158,7 +158,7 @@ I don't understand why you would do an optional ??
 
 Disambiguation is one thing, we weren't totally sold on doing that 2 days ago, but im open to the idea but I don't really feel like i'm strongly convinced. I think it would add complexity to the grammar as well.
 
-LBR: I understand this feature is highly desired by a lot of people. But at the same time, there's a high cost to complexity to the final code.  And in the end, this is just sugar.  I consider, as a developer, I am very skeptical if the tradeoffs we are offering here really compensate for the complexity we are adding to the language.  It seems that we are getting so many different syntaxes, and we are just celebrating everything.  I'm afraid in the future that we get problems with languages that added so much sugar, like Perl.  It's the value but also the doom at the same time. I think we should be more, and i feel at the same time, because of the complexity I am aggressively challenged from my objections. I think this is an important flag for one, I am not going to be able to object this log? Once this goes to Stage 3, I don't think there will be web compatibility issues with this, and this will ship as soon as this gets to Step 3.
+LEO: I understand this feature is highly desired by a lot of people. But at the same time, there's a high cost to complexity to the final code.  And in the end, this is just sugar.  I consider, as a developer, I am very skeptical if the tradeoffs we are offering here really compensate for the complexity we are adding to the language.  It seems that we are getting so many different syntaxes, and we are just celebrating everything.  I'm afraid in the future that we get problems with languages that added so much sugar, like Perl.  It's the value but also the doom at the same time. I think we should be more, and i feel at the same time, because of the complexity I am aggressively challenged from my objections. I think this is an important flag for one, I am not going to be able to object this log? Once this goes to Stage 3, I don't think there will be web compatibility issues with this, and this will ship as soon as this gets to Step 3.
 
 DRR: I don't entirely disagree.  MM said, we should think about not adding features to the language as progress as well. The overwhelming feedback that I get from users is extremely positive towards these features. AKI has said to me "Since I joined TC39 people have asked me about optional chaining"
 
@@ -166,7 +166,7 @@ AKI: Every time!
 
 DRR: The number one feature I’ve seen on TypeScript since moving to GitHub is optional chaining as well.
 
-LBR: I think we should avoid being just like an echo chamber for whatever is in the hype. We are a technical committee to prevent things being implemented just because of public cheering. I celebrate a lot of the work but there is a lot of very precise work that's being done here. We should not implement things because people cheer about it. Otherwise we could be speaking about static-types in the language, and we are pragmatically not doing this.
+LEO: I think we should avoid being just like an echo chamber for whatever is in the hype. We are a technical committee to prevent things being implemented just because of public cheering. I celebrate a lot of the work but there is a lot of very precise work that's being done here. We should not implement things because people cheer about it. Otherwise we could be speaking about static-types in the language, and we are pragmatically not doing this.
 
 JRL: Chaining any part of this proposal to `typeof`... if you were to do `foo.?bar`, the behavior changes if foo is not a local.  That's supposed to throw a TypeError.  If `foo.?()` didn't throw an error because we start using `typeof` instead, that becomes a very different behavior.  That kind of thing requires different syntax and semantics.  This is not related to the optional chaining proposal that we're trying to get through.
 
@@ -367,11 +367,11 @@ DD: Can I get a thumbs-up?
 
 (a few thumbs up)
 
-LBR: I want some clarification.  For what is being proposed there, it looks like it does not evaluate the subsequent calls.
+LEO: I want some clarification.  For what is being proposed there, it looks like it does not evaluate the subsequent calls.
 
 DD: Wording these things is tricky.  The intent is to retain the behavior in the success case.  We're rewording it so that in the failure case, you (don't?) have to give back the same error.
 
-LBR: What is the test impact?
+LEO: What is the test impact?
 
 DD: Yeah, that's important.  Thanks for bringing that up.
 
@@ -380,7 +380,7 @@ MM: It's good that you brought this to committee.
 #### Conclusion/Resolution
 
 - Approved to merge the change
-- DD will follow up with LBR about Test 262
+- DD will follow up with LEO about Test 262
 
 ## MetaMask, safe modules, and Sesify
 
@@ -607,23 +607,23 @@ RBN: But it can have todos
 
 BFS: PoO stage 2 requires syntax.
 
-PDL: I agree that we shoulndt spend time on syntax, is this blocked from stage 2 LBR and others, are your concerns addressed?
+PDL: I agree that we shoulndt spend time on syntax, is this blocked from stage 2 LEO and others, are your concerns addressed?
 
-LBR: What was presented right now is not blocked for stage 2.
+LEO: What was presented right now is not blocked for stage 2.
 
 AK: Java introduced this. If you search Google for this, you’ll find the Java syntax. So clearly, there’s a developer way to discover this. If Java was able to do this, why do we need a different syntax for Javascript?
 
 RBN: my preference is that we don’t have the `using` keyword. I’m wary about ceremony around syntax that’s unnecessary. You want concise and clear syntax. I don’t want the feature to be postponed for a minor compromise
 
-LBR: So I had concerns about intuition for the proposed syntax, as I was strongly convinced it would be confusing. But it comes from other languages, not just ones that use the `try` syntax. I had the chance to talk to potentially at least 20 developers from different perspectives to see what they see in the new syntax and all of them got confused by the new syntax.
+LEO: So I had concerns about intuition for the proposed syntax, as I was strongly convinced it would be confusing. But it comes from other languages, not just ones that use the `try` syntax. I had the chance to talk to potentially at least 20 developers from different perspectives to see what they see in the new syntax and all of them got confused by the new syntax.
 
 AK: right now on Google, you can’t search this for js, but you would be able to
 
-LBR: To be very honest, I am much more comfortable with a distinct keyword like is being presented right now.
+LEO: To be very honest, I am much more comfortable with a distinct keyword like is being presented right now.
 
 AK: Why would JS devs have more trouble than Java devs?
 
-LBR: I could not tell you that. Just having a different keyword for this helps it be more discoverable. It’s my intuition and how I got confused, and how I expect this to be the same for other web practitioners
+LEO: I could not tell you that. Just having a different keyword for this helps it be more discoverable. It’s my intuition and how I got confused, and how I expect this to be the same for other web practitioners
 
 RBN: A similar investigation was done for the pipeline operator recently I think. Not sure where that went.
 
@@ -665,15 +665,15 @@ AK: What did we decide about the syntax? Should we investigate further and maybe
 
 RBN: We have had syntax change discussion on other proposals in the past at stage 2
 
-LBR: I want to continue investigating it. I know I’m responsible for this change we’re discussing now.
+LEO: I want to continue investigating it. I know I’m responsible for this change we’re discussing now.
 
 JHD: It is worth noting when we’ve done stage 2 syntax changes before, we were initially confident in the syntax at stage 2 time. I’m not going to put a foot down, though.
 
-LBR: One thing that I missed from the slides is more examples showing the part where we dispose. The examples show the initial syntax but not really showing the part where this feature is really useful.
+LEO: One thing that I missed from the slides is more examples showing the part where we dispose. The examples show the initial syntax but not really showing the part where this feature is really useful.
 
 RBN: Yes, I had more of that in the motivations section
 
-LBR: My only request is that next time we discuss this feature we emphasize the part where disposal is happening.
+LEO: My only request is that next time we discuss this feature we emphasize the part where disposal is happening.
 
 RBN: alright, that’s fine.
 

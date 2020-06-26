@@ -1,7 +1,7 @@
 # July 25, 2017 Meeting Notes
 -----
 
-Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE),Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JEL), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LBR), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MLS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK),
+Adam Klein (AK), Allen Wirfs-Brock (AWB), Andrew Burgese (ABE),Andrew Paprocki (API), Ben Newman (BN), Benoit Girard (BGD), Bradley Farias (BFS), Brendan Eich (BE), Brian Terlson (BT), Caridy Patiño (CP), Chip Morningstar (CM), Chris Hyle (CHE), Claude Pache (CPE), Dave Herman (DH), David Teller (DTL), David Turissini (DTI), Dean Tribble (DT), Diego Ferreiro Val (DFV), Domenic Denicola (DD), Gabriel Isenberg (GI), István Sebestyén (IS), Jeff Morrison (JM), John-David Dalton (JDD), Jonathan Keslin (JKN), Jordan Harband (JHD), Jorge Lopez (JEL), Kent C. Dodds (KCD), Kevin Gibbons (KG), Kevin Venkiteswaran (KVN), Leo Balter (LEO), Maggie Pint (MPT), Mariko Kosaka (MKA), Mark S. Miller (MM), Michael Ficarra (MF), Michael Saboff (MLS), Nathan Hammond (NHD), Patrick Soquet (PST), Peter Hoddie (PHE), Pierre-Marie Dartus (PMD), Rex Jaeschke (RJE), Rob Palmer (RPR), Ron Buckton (RBN), Sam Goto (SGO), Sebastian Markbåge (SM), Shu-yu Guo (SYG), Vladan Djeric (VDC), Waldemar Horwat (WH), Yehuda Katz (YK),
 
 -----
 
@@ -20,7 +20,7 @@ RJE: Presented his background, has worked on C# spec, PHP spec, involved with la
 
 ## Approval of the minutes from last meeting
 
-LBR: Any objections to adopting the agenda?
+LEO: Any objections to adopting the agenda?
 
 MLS: Question about three related 60-minute slots for class fields-related proposals. Why don't the proposers coordinate a consistent story in advance?
 
@@ -34,11 +34,11 @@ YK: Tomorrow will present a 15-minute overview
 
 MLS: My concern has been addressed.
 
-KG/LBR: Can we adopt the agenda anyway?
+KG/LEO: Can we adopt the agenda anyway?
 
 IS: 15 minutes for ECMA GA administration and status report tomorrow.
 
-LBR: Adopting the minutes from the last meeting?
+LEO: Adopting the minutes from the last meeting?
 
 #### Conclusion/Resolution
 
@@ -72,11 +72,11 @@ DE: There are two other features which may reach 2018, which have presentations 
 
 ### 8.i Follow up: Use the default license file for tests files
 
-LBR: Now using a default license so test files don't have to contain copyright notice. Ecma is fine with using a root license file.
+LEO: Now using a default license so test files don't have to contain copyright notice. Ecma is fine with using a root license file.
 
 AWB: Does the contributor agreement change the ownership of the original copyright?
 
-LBR: You can still specify the author of each test.
+LEO: You can still specify the author of each test.
 
 YK: Copyright belongs to both the author and contributors?
 
@@ -88,29 +88,29 @@ DT: Add something to the pull request template prompting the contributor to addr
 
 IS: I think I understand the problem, and Ecma will look into solutions that are acceptable. I will report in the next meeting.
 
-LBR: Would appreciate legal feedback, e.g. from Brian Terlson.
+LEO: Would appreciate legal feedback, e.g. from Brian Terlson.
 
 IS: Please write down your proposal and Ecma will review it.
 
-LBR: Please reach out to me by this weekend if you're interested in being involved.
+LEO: Please reach out to me by this weekend if you're interested in being involved.
 
 ### 8.ii Using Frontmatter tags that matter
 
-LBR: https://github.com/tc39/test262/blob/master/features.txt defines features that can be used to filter or group tests.
+LEO: https://github.com/tc39/test262/blob/master/features.txt defines features that can be used to filter or group tests.
 
 MM: Is this for semantic purposes, or just organization?
 
-LBR: Organization, and also to avoid running tests you expect to fail, and to skip unrelated tests.
+LEO: Organization, and also to avoid running tests you expect to fail, and to skip unrelated tests.
 
-LBR: Bocoup is looking for more contributors to Test262!
+LEO: Bocoup is looking for more contributors to Test262!
 
 KG: I'm working with projects like Babel (and other projects that parse/process ECMAScript) to integrate Test262.
 
-LBR: Would love to have a compatibility table that ensures features are fully implemented, not just that the API seems to exist (e.g. typeof Map === "function").
+LEO: Would love to have a compatibility table that ensures features are fully implemented, not just that the API seems to exist (e.g. typeof Map === "function").
 
 AWB: When Test262 was started, the original understanding was there wouldn't be any comparison of engines/browsers.
 
-LBR: The compatibility table is being done by Bocoup. We don't intend to only compare, but provide a good compatibility perspective as WPT does.
+LEO: The compatibility table is being done by Bocoup. We don't intend to only compare, but provide a good compatibility perspective as WPT does.
 
 MM: Feelings may have changed, since more browsers pass many more of the tests now.
 
@@ -133,7 +133,7 @@ DE: IRC?
 
 RW: (object to IRC, on grounds: I don't want to have to do the work of making IRC logs markdown friendly. Impossible to record code examples that change over a discussion)
 
-LBR: Perhaps every champion should review the discussion about their own presentation.
+LEO: Perhaps every champion should review the discussion about their own presentation.
 
 JHD: Seems like a good contract!
 
@@ -145,7 +145,7 @@ JHD: Seems like a good contract!
 
 ## Agenda item deadline
 
-LBR: It would be good to add items to the agenda 10 days prior to the meeting. This is not always happening; we do not have strict process on this. I'd kindly ask people to add the agenda items ahead of time. I plan to notify people 10 days ahead of time to ask them to add their items.
+LEO: It would be good to add items to the agenda 10 days prior to the meeting. This is not always happening; we do not have strict process on this. I'd kindly ask people to add the agenda items ahead of time. I plan to notify people 10 days ahead of time to ask them to add their items.
 
 YK: Could have an agenda section for last-minute additions, in case there's time to get to them (lower priority).
 
@@ -411,9 +411,9 @@ RBN: What I can summarize with:
 
 (Leo Balter)
 
-LBR: (Presents vision talk)
+LEO: (Presents vision talk)
 
-LBR: (closes the vision talk with suggestions)
+LEO: (closes the vision talk with suggestions)
 
 - Establish a public meta repo on GitHub for open and general discussions.
 - Recognize ECMAScript as a living standard, refer to the [latest draft](https://tc39.es/ECMA-262) and skip the year or edition numbers.

@@ -1,6 +1,6 @@
 # May 23, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Mattijs Hoitink (MHK), Kyle Verrier (KVR),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LBR), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (AKI), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SFC), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), Jean-Francois Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW), Tom Dale (TDE), István Sebestyén (IS), Lin Clark (LCK)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Mattijs Hoitink (MHK), Kyle Verrier (KVR),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Kevin Gibbons (KG), Mariko Kosaka (MKA), Myles Borins (MBS), Jordan Harband (JHD), Daniel Ehrenberg (DE), Keith Cirkel (KCL), Justin Ridgewell (JRL), Patrick Soquet (PST), Sathya Gunasekaran (SGN), Sam Goto (SGO), Gabriel Isenberg (GI), Dave Herman (DH), Brendan Eich (BE), Rob Palmer (RPR), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Kat Z. Marchán (KZM), Yulia Startsev (YSV), Leo Balter (LEO), Caridy Patiño (CP), Jory Burson (JBN), Limin Zhu (LZU), Aki Rose (AKI), Valerie Young (VYG), Henry Zhu (HZU), Ross Kirsling (RKG), Shane Carr (SFC), Mike Samuel (MSL), Tab Atkins-Bittner (TAB), Kevin Smith (KS), Ron Buckton (RBN), Eric Faust (EFT), Jean-Francois Paradis (JFP), Peter Hoddie (PHE), Patrick Soquet (PST), Till Schneidereit (TST), Diego Ferreiro Val (DFV), Godfrey Chan (GCN), Domenic Denicola (DD), Rick Waldron (RW), Tom Dale (TDE), István Sebestyén (IS), Lin Clark (LCK)
 
 Remote:
 Valerie Young (VYG), Maggie Pint (MPT), Ben Newman (BN), Brendan Eich (BE), Dean Tribble (DT), Robert Pamely (RPY), David Turissini (DTI), Felipe Balbontín (FBN), Pedram Emrouznejad (PED), Tim McClure (TME), Bradley Farias (BFS), Jason Williams (JWS), Trevor Bliss (TBS), Robin Ricard (RRD)
@@ -630,7 +630,7 @@ WH: Excluding things like return, await, yield, or break or continue to an outer
 
 RBN: Effectively yes. Even if we allowed return as an early exit condition, that would make sense, but there's no mechanism for that. Stage 1?
 
-LBR: I would like to see the static block just be declarative for static fields. It does so much more than the simple thing.
+LEO: I would like to see the static block just be declarative for static fields. It does so much more than the simple thing.
 
 RBN: Some languages allow this pattern. It's just statements. And there's a need to extract helper functions to access private state.
 
@@ -658,7 +658,7 @@ WH: Isn't a simpler solution just to use the name of the outer class that you ca
 
 RBN: Yes.
 
-RW: Conversely, and this might satisfy LBR's concern about order of initialization and availability of the class binding in the previous proposal for static blocks: could `class.` stand in for the `C.` name in static blocks?
+RW: Conversely, and this might satisfy LEO's concern about order of initialization and availability of the class binding in the previous proposal for static blocks: could `class.` stand in for the `C.` name in static blocks?
 
 RBN: Yup. Both of these were born out of the private field issues. Static fields has already set precedent that the binding exists by the time this runs.
 

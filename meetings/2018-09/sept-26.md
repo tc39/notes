@@ -1,6 +1,6 @@
 # September 26, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBS), Tom Dale (TDE), Daniel Rosenwasser (DRR), Henry Zhu (HZU), Matt Johnson (MAJ), Robert Pamely (RPY)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LEO), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG), Myles Borins (MBS), Tom Dale (TDE), Daniel Rosenwasser (DRR), Henry Zhu (HZU), Matt Johnson (MAJ), Robert Pamely (RPY)
 
 Remote:
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG)
@@ -336,7 +336,7 @@ YSV: If you have any concerns or thoughts, please reach out to me.
 
 - [slides](https://docs.google.com/presentation/d/1P5DdJBQrr5hj_x-SqQxk8HOTaipJUaxbH0icp1g9iMk/edit?usp=drivesdk)
 
-YSV: (Presents slides). YSV, AKI, and BT have volunteered for high-time investment roles, MBN, TST, and LBR for low-time investment roles. LBR is specifically interested in being a notes facilitator. (Presents slides). That concludes this presentation. Any there questions?
+YSV: (Presents slides). YSV, AKI, and BT have volunteered for high-time investment roles, MBN, TST, and LEO for low-time investment roles. LEO is specifically interested in being a notes facilitator. (Presents slides). That concludes this presentation. Any there questions?
 
 WH: This seems like a fairly radical change and I'm not sure how it fits into the ECMA rules. ECMA requires each committee to have a chair and one or more vice-chairs. A chair is a person; it's not a committee. How does this proposal fit in with ECMA's rules?
 
@@ -499,7 +499,7 @@ YK: I would like to find a decision, some decision. Or we'll go back into a cycl
 
 DE: We have an implementation of the new decorators proposal in Babel 7.1. Thanks to the Babel core team for implementing this.
 
-LBR: We wouldn't need babel for Test262.
+LEO: We wouldn't need babel for Test262.
 
 DE: It would just be helpful as our first implementation.
 

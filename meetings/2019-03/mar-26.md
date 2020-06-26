@@ -1,6 +1,6 @@
 # March 26, 2019 Meeting Notes
 -----
-István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LBR), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Daniel Ehrenberg (DE), Mike Samuel (MSL), Joyee Cheung (JCG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KVR), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MLS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Domenic Denicola (DD)
+István Sebestyén (IS), Kevin Smith (KS), Adam Klein (AK), Leo Balter (LEO), Richard Gibson (RGN), Yehuda Katz (YK), Godfrey Chan (GCN), Philipp Dunkel (PDL), Brian Terlson (BT), Aki Rose (AKI), Michael Ficarra (MF), Chip Morningstar (CM), Waldemar Horwat (WH), Kat Marchán (KZM), Tierney Cyren (TCN), Shelley Vohr (SVR), Myles Borins (MBS), Jordan Harband (JHD), Mathias Bynens (MB), Pieter Ouwerkerk (POK), Randy Luecke (RLE), Daniel Ehrenberg (DE), Mike Samuel (MSL), Joyee Cheung (JCG), Till Schneidereit (TST), Shane Carr (SFC), Patrick Soquet (PST), Peter Hoddie (PHE), Kyle Verrier (KVR), Mattijs Hoitink (MHK), Keith Miller (KM), Michael Saboff (MLS), Jordan Gensler (JGR), Mark Miller (MM), Joshua Peek (JPK), Mu-an Chiou (MCU), Guilherme Hermeto (GHO), Sathya Gunasekaran (SGN), Felipe Balbontín (FBN), Jory Burson (JBN), Shu-yu Guo (SYG), Joe Sepi (JSI), Chris Hyle (CHE), Justin Ridgewell (JRL), Rob Palmer (RPR), Keith Cirkel (KCL), Robert Pamely (RPY), Henry Zhu (HZU), Daniel Rosenwasser (DRR), Caridy Patiño (CP), Diego Ferreiro Val (DFV), Domenic Denicola (DD)
 
 Remote:
 Ron Buckton (RBN), Kevin Gibbons (KG), Gus Caplan (GCL), Valerie Young (VYG), John-David Dalton (JDD), Gabriel McAdams (GMS)
@@ -112,9 +112,9 @@ SFC: For example, in segmenter, which had a major API change, our process has be
 
 DE: segmenter isn't the only time, there were also changes to relative time format at Stage 3. We've tried to discuss in a very open way in ECMA-402 and also in plenary here. I think after some experience, going up and down stages isn't always productive. We all want things to happen, and we want to work out the details with more stakeholders as time goes on. If the committee has more feedback about how we can work out process improvements, we'd love to hear them.
 
-LBR: (Presents slides on Editorship) [Editorship slides](https://docs.google.com/presentation/d/1D2vP7GMknBFaXkuBteCLk5bhL-PN_j7z2yK4MmmfYnE/edit#slide=id.p)
+LEO: (Presents slides on Editorship) [Editorship slides](https://docs.google.com/presentation/d/1D2vP7GMknBFaXkuBteCLk5bhL-PN_j7z2yK4MmmfYnE/edit#slide=id.p)
 
-LBR: Do we have consensus to adopt the proposed editorship group?
+LEO: Do we have consensus to adopt the proposed editorship group?
 
 #### Conclusion/Resolution
 
@@ -125,9 +125,9 @@ LBR: Do we have consensus to adopt the proposed editorship group?
 
 ### Test262 Updates
 
-(Leo Balter (LBR))
+(Leo Balter (LEO))
 
-LBR: We're now using Test262 to show reports automatically on every PR. I cannot block PRs on this, (we only block on linting files or formatting metadata). But you can also see the results of the tests on every PR. If you click on "Details" you can see the results. We now use CircleCI instead of Travis CI (since Circle is faster).
+LEO: We're now using Test262 to show reports automatically on every PR. I cannot block PRs on this, (we only block on linting files or formatting metadata). But you can also see the results of the tests on every PR. If you click on "Details" you can see the results. We now use CircleCI instead of Travis CI (since Circle is faster).
 
 ### ECMA-404 Update
 
@@ -222,23 +222,23 @@ PHE: Primarily in TC53, we are looking at the secure subset of JavaScript. Jessi
 MM: Google Caja and Salesforce use SES in production and there have not been any major issues. Google EarthEngine, that has been using Caja/SES in production for years, document it by saying, just react to the occasional error message. Salesforce has a 5 million developer ecosystem running on SES, most of whose programmers just see it as JavaScript + a framework.
 
 ## Normative: CreateDynamicFunction early concatenates body
-(Leo Balter (LBR))
+(Leo Balter (LEO))
 - [slides](https://docs.google.com/presentation/d/1mGBFCw4M37q4cF8JHnXzaLI2wLdOxoVEfq9RL_xMRW0/edit#slide=id.p)
 - [proposal](https://github.com/tc39/ecma262/pull/1479)
 
-LBR: (Presents slides) What should we do with `function("-->").toString();`?
+LEO: (Presents slides) What should we do with `function("-->").toString();`?
 
 MM: Since you asked what should be the result, I'm going to say "throw an exception."
 
-LBR: In ch, xs, it throws an error, in others there's an HTML comment. I propose we wrap the body function earlier, so that HTML comments will reflect the current behavior.
+LEO: In ch, xs, it throws an error, in others there's an HTML comment. I propose we wrap the body function earlier, so that HTML comments will reflect the current behavior.
 
 MM: Are you proposing that it doesn't throw an exception?
 
-LBR: Yes. The proposed change is to change where this happens. It moves the Line Feed. (Presents slides).
+LEO: Yes. The proposed change is to change where this happens. It moves the Line Feed. (Presents slides).
 
 MM: If the current system was what you are proposing—and if you were proposing to make it a syntax error, I would support that. I think a syntax error is a better thing for the engine to do, I think this proposal is actually a regression.
 
-LBR: For clarification, yes, this thing affects an observable change. But I think any syntactical change to NXB should be discussed and it should have time for a full discussion later since it is important.
+LEO: For clarification, yes, this thing affects an observable change. But I think any syntactical change to NXB should be discussed and it should have time for a full discussion later since it is important.
 
 MM: I'm objecting to the idea that HTML comments come to be accepted where they are rejected today.
 
@@ -254,29 +254,29 @@ YK: I remember WH having an objection to some other changes related to the HTML 
 
 WH: The issue is whether `-->` is allowed at the beginning of a script. According to Annex B grammar, it's not.
 
-LBR: It's not written in any grammar.
+LEO: It's not written in any grammar.
 
 WH: The issue is more about if `-->` is allowed at the beginning of a script or not. Adding the newlines here is a red herring. So I would not support this change. If we want to fix it, we should look at what `-->` does at the beginning of various parsing contexts.
 
-LBR: What is the actual behavior of the Function constructor in passing the body parameters? In this proposed change, I'd like to know that the source text has a guaranteed output.
+LEO: What is the actual behavior of the Function constructor in passing the body parameters? In this proposed change, I'd like to know that the source text has a guaranteed output.
 
 WH: We don't normally dictate the spacing/parentheses placement/line breaks.
 
-LBR: If we don't change this today, we end up with implementations not being consistent with the spec in a way.
+LEO: If we don't change this today, we end up with implementations not being consistent with the spec in a way.
 
 WH: There's an inconsistency problem with `-->` in other places, not just here. And that might solve the problem in the way you want.
 
-LBR: I would rather not have HTML close comment at all. I'm just looking at the web reality today and what's elegant for the code.
+LEO: I would rather not have HTML close comment at all. I'm just looking at the web reality today and what's elegant for the code.
 
 WH: In Annex B, `-->` is allowed only after a new line. However, implementations seem to accept that even in contexts where it's not preceded by a newline, such as in `eval("-->")`. We need to figure out whether the new line prefix is necessary or not. For example, if you do `eval("-->")` you don't get a syntax error even though Annex B states that you should? We should make the grammar consistent throughout the language, not just in the Function constructor.
 
 MM: I'll try to clarify WH's issue. Although the current spec does imply that the acceptance of `-->` is whether there is a newline or not, not just in function body but also in eval, all of the places where it should be rejected because of an absence of a newline are actually getting accepted. So the problem is that the grammar in Annex B already does not match web reality. And if you fix it there, then the newline issue there no longer affects whether `-->` is accepted or not. The problem with `-->` is not unique to function bodies.
 
-LBR: That sounds like it would be extending the HTML comments grammar. If we cannot find consensus now, I'd rather we bring it to the end of the meeting.
+LEO: That sounds like it would be extending the HTML comments grammar. If we cannot find consensus now, I'd rather we bring it to the end of the meeting.
 
 BT: Maybe we can discuss it at the end.
 
-LBR: I'd like to discuss it with browser implementers, since I'd like to fix it for this case.
+LEO: I'd like to discuss it with browser implementers, since I'd like to fix it for this case.
 
 BT: Please discuss with Leo offline.
 
@@ -336,11 +336,11 @@ KS: Do we have consensus on this change?
 
 ## Normative: Add export * as ns from "mod" to Export production and Module Semantic
 
-(Leo Balter (LBR))
+(Leo Balter (LEO))
 
 [PR](https://github.com/tc39/ecma262/pull/1174)
 
-LBR: (Shows Test262 report for PR lacking multiple implementations)
+LEO: (Shows Test262 report for PR lacking multiple implementations)
 
 JHD: According to the PR, we had consensus to move forward with the feature, but we wanted to treat it more like a Stage 3 proposal. Do we want to wait until we have more unflagged implementations?
 
@@ -415,7 +415,7 @@ WH: If it is implementation-defined, how do you write tests for it?
 
 DE: Would the Bocoup people want to answer this?
 
-LBR: We cannot have observable tests for it, but it is pointing to a specific standard.
+LEO: We cannot have observable tests for it, but it is pointing to a specific standard.
 
 DE: We've compromised by allowing people to turn off these tests and comparing the strings, which is actually still pretty useful.
 
@@ -554,7 +554,7 @@ KM: It's really hard to tell.
 
 DE: Interoperability spec work is hard. That's why we're here as professional spec writers figuring this out. It would be unfair to implementers to expect them to piece out this work and expect them to determine independently how to proceed as opposed to proceeding together once the interoperability path has been decided.
 
-LBR: The effects are clearly way more spread than the actual spec text. I feel like there's a lot of uncertainty that we will affect what we're restricting or allowing. As of this minute, I can't consume all of that information. I would like others to investigate what else is being changed here.
+LEO: The effects are clearly way more spread than the actual spec text. I feel like there's a lot of uncertainty that we will affect what we're restricting or allowing. As of this minute, I can't consume all of that information. I would like others to investigate what else is being changed here.
 
 MB: To respond to DE's comments, I'm worried we may never get a full spec to solve all Date.parse()'s problems if we try to do it all in a single proposal. I think we should be open to accept smaller, incremental improvements.
 

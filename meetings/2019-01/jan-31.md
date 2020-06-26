@@ -1,6 +1,6 @@
 # January 31, 2019 Meeting Notes
 -----
-Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LBR), Shu-yu Guo (SYG), Michael Saboff (MLS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLN), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM), Lin Clark (LCK)
+Bradley Farias (BFS), Aki Rose (AKI), Yulia Startsev (YSV), Mariko Kosaka (MKA), Shane Carr (SFC), Richard Gibson (RGN), Brian Terlson (BT), Michael Ficarra (MF), Kevin Gibbons (KG), Kevin Smith (KS), Justin Ridgewell (JRL), Mathias Bynens (MB), Sathya Gunasekaran (SGN), Chip Morningstar (CM), Peter Hoddie (PHE), Waldemar Horwat (WH), Leo Balter (LEO), Shu-yu Guo (SYG), Michael Saboff (MLS), Mattijs Hoitink (MHK), Yehuda Katz (YK), Till Schneidereit (TST), Pieter Ouwerkerk (POK), Tom Dale (TDE), Myles Borins (MBS), Sean Larkin (SLN), Godfrey Chan (GCN), Rick Markins (RMS), Daniel Rosenwasser (DRR), Mark Miller (MM), Lin Clark (LCK)
 
 
 Remote:
@@ -54,11 +54,11 @@ SGN: We already have implemented it in V8.
 
 DE: How about use cases?
 
-LBR: As someone who worked a lot in translation for Firefox, this seems great, but I think it's just a kick start.
+LEO: As someone who worked a lot in translation for Firefox, this seems great, but I think it's just a kick start.
 
 SGN: Can you be more specific about what functionality you want to see?
 
-LBR: Not for this method, which I think is a very nice kickstart. I think it's very useful from my perspective. So I want to see more proposals like this extending the functionally to expressions as well.
+LEO: Not for this method, which I think is a very nice kickstart. I think it's very useful from my perspective. So I want to see more proposals like this extending the functionally to expressions as well.
 
 SFC: I'm very happy with Frank and Sathya working on this proposal; we've discussed it in Ecma 402 subcommittee and I'm very happy to see it presented as Stage 1.
 
@@ -688,7 +688,7 @@ TST: As a next step, set up a Discourse instance and work with delegates that th
 
 ## globalThis Follow-up
 
-LBR: This is a conclusion statement on globalThis. I tried different approaches, talked to browser implementors, and determined there's no possible way to get an actual browser get actual metrics about the usage. There's simply no way, unfortunately. The alternative way was trying the other names, but we also collected objections for those. I don't think I will have energy or time for that. Since browsers are already shipping `globalThis`, I think it's too late. Some parting thoughts on this, I think secrecy didn't work on this. We did this in light of smooshgate but I think communication should have been better. It would be interesting if we could find ways to reach out to JS educators or those who come in good faith to give feedback to us. This is frankly upsetting, I wish it could have a different end, but this is how it is.
+LEO: This is a conclusion statement on globalThis. I tried different approaches, talked to browser implementors, and determined there's no possible way to get an actual browser get actual metrics about the usage. There's simply no way, unfortunately. The alternative way was trying the other names, but we also collected objections for those. I don't think I will have energy or time for that. Since browsers are already shipping `globalThis`, I think it's too late. Some parting thoughts on this, I think secrecy didn't work on this. We did this in light of smooshgate but I think communication should have been better. It would be interesting if we could find ways to reach out to JS educators or those who come in good faith to give feedback to us. This is frankly upsetting, I wish it could have a different end, but this is how it is.
 
 SFC: This committee has a communications problem, which AKI has been doing great work to resolve. We should engage AKI and Comms to make a PR strategy that makes sure that the community understands that their concerns were heard and that we considered them carefully in this committee.
 

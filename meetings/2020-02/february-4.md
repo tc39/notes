@@ -3,7 +3,7 @@
 
 **In-person attendees:** Aki Braun (AKI), Andrew Paprocki (API), Rob Palmer (RPR), Waldemar Horwat (WH), Chip Morningstar (CM), Shane F Carr (SFC), Shu-yu Guo (SYG), Jordan Harband (JHD), Michael Saboff (MLS), Keith Miller (KM), Michael Ficarra (MF), Jonathan Keslin (JKN), Kevin Gibbons (KG), Andrew Paprocki (API), Richard Gibson (RGN), Justin Ridgewell (JRL), Zibi Braniecki (ZB), Myles Borins (MBS), Bradley Farias (BFS), Bradford C. Smith (BCS) Rick Button (RBU)
 
-**Remote attendees:** Dan Ehrenberg (DE), Brian Terlson (BT), David Rudin (DRN), Jason Nutter (JAN), Ron Buckton (RBN), Pieter Ouwerkerk (POK), István Sebestyén (IS), Min Qi Wu(WMQ), Leo Balter (LBR), Valerie Young (VYG), Jack Works (JWK), Mathieu Hofman (MAH), John Hax (JHX), Caridy Patino (CP), Sergey Rubanov (SRV), Rajiv Batra (!!!), Yulia Startsev (YSV), Caio Lima (CLA)
+**Remote attendees:** Dan Ehrenberg (DE), Brian Terlson (BT), David Rudin (DRN), Jason Nutter (JAN), Ron Buckton (RBN), Pieter Ouwerkerk (POK), István Sebestyén (IS), Min Qi Wu(WMQ), Leo Balter (LEO), Valerie Young (VYG), Jack Works (JWK), Mathieu Hofman (MAH), John Hax (JHX), Caridy Patino (CP), Sergey Rubanov (SRV), Rajiv Batra (!!!), Yulia Startsev (YSV), Caio Lima (CLA)
 
 ## Housekeeping
 ### Adoption of the agenda
@@ -342,7 +342,7 @@ MF: This will happen as soon as possible following this agenda item. Any opposit
 
 JHD: It just needs to be clear in the notes that I do not agree to this long-term, but only for the duration of this meeting.
 
-LBR: +1 what JHD said
+LEO: +1 what JHD said
 
 MBS: With that in mind, I will personally volunteer to work with counsel to come up with proposals.
 
@@ -478,14 +478,14 @@ DE: We can also discuss this.
 
 
 ## Test262 Report
-Presenter: Leo Balter (LBR)
+Presenter: Leo Balter (LEO)
 
 - [Test-262 repo](https://github.com/tc39/test262)
 - [Slides](https://docs.google.com/presentation/d/1mtGzLk8hyoo74N22n4SsFKcneZk1bBZ2DLU-svJF1ZI/edit?ts=5e39de01#slide=id.p)
 
-LBR: (presents slides)
+LEO: (presents slides)
 
-LBR: Any questions?
+LEO: Any questions?
 
 (silence)
 

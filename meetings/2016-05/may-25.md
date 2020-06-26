@@ -1,7 +1,7 @@
 # May 25, 2016 Meeting Notes
 -----
 
-Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark S. Miller (MM), Kevin Smith (KS), Michael Saboff (MLS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LBR), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TWD), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Jeff Morrison (JM), Domenic Denicola (DD)
+Brian Terlson (BT), Dave Herman (DH), Michael Ficarra (MF), Jordan Harband (JHD), Waldemar Horwat (WH), Tim Disney (TD), Shu-yu Guo (SYG), Mark S. Miller (MM), Kevin Smith (KS), Michael Saboff (MLS), Eric Faust (EFT), Chip Morningstar (CM), Daniel Ehrenberg (DE), Leo Balter (LEO), Yehuda Katz (YK), Jafar Husain (JH), Andreas Rossberg (ARB), Ben Smith (BS), Thomas Wood (TWD), Alan Schmitt (AS), Brad Nelson (BNN), István Sebestyén (IS), John Neumann (JN), Jeff Morrison (JM), Domenic Denicola (DD)
 
 Remote:
 Dean Tribble (DT), Nikolaus Papaspyrou (NPU)
@@ -635,7 +635,7 @@ WH: I like this a lot but am concerned about the ergonomics of practical use pat
 
 ## [Definitive decision for Test262 python runner](https://github.com/tc39/test262/issues/647) (Mike Pennisi)
 
-LBR: TC39 agreed to deprecate the python runner in 2014, we want to remove it from Test262 as it demands extra energy on a deprecated tool while implementing new features.
+LEO: TC39 agreed to deprecate the python runner in 2014, we want to remove it from Test262 as it demands extra energy on a deprecated tool while implementing new features.
 
 EFT: We can work it out. It does not need to move it to a new TC39's repository.
 

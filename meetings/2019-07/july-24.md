@@ -1,7 +1,7 @@
 # July 24, 2019 Meeting Notes
 -----
 
-Daniel Rosenwasser (DRR), Andrew Paprocki (API), Adam Klein (AK), Shu-yu Guo (SYG), Michael Ficarra (MF), Jordan Harband (JHD), Alex Rattray (ARY), Pieter Ouwerkerk (POK), Michael Saboff (MLS), Keith Miller (KM), Aki Braun (AKI), Brian Terlson (BT), Ron Buckton (RBN), Till Schneidereit (TST), Yehuda Katz (YK), Aaron Davis (ADS), Sebastian Markbåge (SM), Andrew Burgess (ABS), Jonathan Keslin (JKN), Ashley Hauck (AEH), Peter Hoddie (PHE), Patrick Soquet (PST), Ben Coe (BCE), Waldemar Horwat (WH), Mark Miller (MM), Chip Morningstar (CM), Erica Pramer (EPR), Kevin Smith (KS), Adrian Hall (AHL), Caio Lima (CLA), Ben Lichtman (BLN), Tierney Cyren (TCN), Shelley Vohr (SVR), Michal Hollman (MHN), Bill Ticehurst (BTT), Dean Tribble (DT), Godfrey Chan (GCN), Guilherme Hermeto (GHO), Jordan Gensler (JGR), Leo Balter (LBR), Dale Bustad (DBD), Joffrey Richten (JRN), Shane Carr (SFC)
+Daniel Rosenwasser (DRR), Andrew Paprocki (API), Adam Klein (AK), Shu-yu Guo (SYG), Michael Ficarra (MF), Jordan Harband (JHD), Alex Rattray (ARY), Pieter Ouwerkerk (POK), Michael Saboff (MLS), Keith Miller (KM), Aki Braun (AKI), Brian Terlson (BT), Ron Buckton (RBN), Till Schneidereit (TST), Yehuda Katz (YK), Aaron Davis (ADS), Sebastian Markbåge (SM), Andrew Burgess (ABS), Jonathan Keslin (JKN), Ashley Hauck (AEH), Peter Hoddie (PHE), Patrick Soquet (PST), Ben Coe (BCE), Waldemar Horwat (WH), Mark Miller (MM), Chip Morningstar (CM), Erica Pramer (EPR), Kevin Smith (KS), Adrian Hall (AHL), Caio Lima (CLA), Ben Lichtman (BLN), Tierney Cyren (TCN), Shelley Vohr (SVR), Michal Hollman (MHN), Bill Ticehurst (BTT), Dean Tribble (DT), Godfrey Chan (GCN), Guilherme Hermeto (GHO), Jordan Gensler (JGR), Leo Balter (LEO), Dale Bustad (DBD), Joffrey Richten (JRN), Shane Carr (SFC)
 
 Remote:
 Bradley Farias (BFS), Gus Caplan (GCL), Kevin Gibbons (KG), Pedram Emrouznejad (PED), Yulia Startsev (YSV), Mattijs Hoitink (MHK), Ross Kirsling (RKG), Justin Ridgewell (JRL), Caridy Patiño (CP), John-David Dalton (JDD), Paolo Severini (PSI), Benjamin Georges (BGS), Paul Leather (PLR), Mathias Bynens (MB), Aliaksander Palpko (APO), Shi-jun He (JHX), Ravi Jayaramappan (RJN), Sanket Joshi (SJI), Jose David Rodrigues Veloso (JVO), Mike Samuel (MSL), Frank Yung-Fong Tang (FYT), Rob Palmer (RPR), Diego Ferreiro Val (DFV), István Sebestyén (IS), Jason Williams (JWS), Richard Gibson (RGN), Seth Brenith (SBH), Suraj Sharma (SUS), Steve Faulkner (SFR), Chris Anderson (CAN), Michael Fig (MFG), Valerie Young (VYG)
@@ -23,11 +23,11 @@ Mathias Bynens, MB
 
 MB: (Presents slides) Are we ready for Stage 4?
 
-LBR: I have a meta question—what happens if an editor finds something (i.e. has feedback) and it’s in Stage 4?
+LEO: I have a meta question—what happens if an editor finds something (i.e. has feedback) and it’s in Stage 4?
 
 MB: Then we change the PR and address the feedback. If the feedback is significant, in that rare case, we could bring back to Stage 3, but I think that should be rare because normally Stage 3 already has a rigorous review.
 
-LBR: Thanks—just wanted to ask for TC39 in general, what should our plan be if there is some feedback at the late stage. Thank you for this great feature.
+LEO: Thanks—just wanted to ask for TC39 in general, what should our plan be if there is some feedback at the late stage. Thank you for this great feature.
 
 YK: I was noticing that the name for `Promise.allSettled` is long, which is not problematic necessarily, just strange.
 
@@ -114,7 +114,7 @@ BT: Let’s take this one proposal at a time? Any objections to Stage 2 for `Pro
 
 MB: I'll work for Stage 3 next, but not today.
 
-LBR: Why aren't you asking for Stage 3 today?
+LEO: Why aren't you asking for Stage 3 today?
 
 MB: Not everyone has done their full review.  There have been recent changes landing to the spec.  I think it would be better to wait for the next meeting.  But I appreciate the review work you've done.
 
@@ -436,7 +436,7 @@ YK: Im generally a fan. No objections. One thing I want to say. I think these co
 
 DD: Let me repeat.  The methods make this possible to be useful.  Whereas if this were functional, it's more wishy-washy to be useful.
 
-LBR: This matches the use case I had for the reverse iterator.  The same thing that got me motivated for the reverse iterator is that you could put these methods in the method chain. Basically like this, having a mapper with a map function. You're showing my use case. I support that and want it to move forward.
+LEO: This matches the use case I had for the reverse iterator.  The same thing that got me motivated for the reverse iterator is that you could put these methods in the method chain. Basically like this, having a mapper with a map function. You're showing my use case. I support that and want it to move forward.
 
 DD: Agreed. Reverse iterator becomes more useful when forward iterators also become more useful.
 
@@ -811,7 +811,7 @@ YD: For example, I'm Twitch, and people are hacking around making Chrome extensi
 
 WH: My preference is for the Proposal from the slide deck and not for Alternatives 1-4. In fact, I’d be even happier if we had only the “hide implementation” part of the Proposal. On the other hand, things like Alternative 4 — hiding only the functions _called_ by the function annotated with a directive — appear too weird to me.
 
-(LBR comment missed)
+(LEO comment missed)
 
 (another comment missed)
 
@@ -865,7 +865,7 @@ SFC: (referring to slide) Can we use option 3 (i.e. use camel case everywhere) a
 
 YK: I have no objections.
 
-LBR: Would it be fine for TC39 to recommend camelCase?
+LEO: Would it be fine for TC39 to recommend camelCase?
 
 YK: My expected result from this whole thing is that web specs will use kebab case and some subset of JavaScript will use camel case.
 
@@ -892,7 +892,7 @@ SFC: I want to raise one more con for opt 2. If we introduce kebab now but in th
 
 YK: You do  expect DateTime field (??) to use a different API?
 
-LBR: There’s one point missing here. We’ve got an extensive offline discussion in the display names proposal repo (issues 29/32) that is very valuable. My first sentiment was to follow option 2. Shane and Daniel also +1’d. At the end, though, we couldn’t recommend kebab case.
+LEO: There’s one point missing here. We’ve got an extensive offline discussion in the display names proposal repo (issues 29/32) that is very valuable. My first sentiment was to follow option 2. Shane and Daniel also +1’d. At the end, though, we couldn’t recommend kebab case.
 
 SFC: 3 concrete outcomes possible for today: 1. recommend option 3 officially, 2. Say we’re not ready to recommend across the standard. 3. Roll back and use kebab case more frequently.
 
@@ -948,33 +948,33 @@ WH: I don't know what “weight the W3C precedent more” means.
 
 YK: I think there’s general consensus that 402 could have thought a bit more about the W3C precedent. The fact that we would accept whatever conclusion doesn’t mean we wouldn't want them to think about it.
 
-LBR: Just for extra information, this immediately affects two active proposals displayNames and format.
+LEO: Just for extra information, this immediately affects two active proposals displayNames and format.
 
 YK: I think what im saying is that 402 can do whatever it wants here, there is a sense in the room that 402 should think about the recommendation
 
-LBR: Yes, we’ve got a lot of wait. One of the most important motivations for kebab case was consistency in the recommendation document from the W3C. I really tried to bring that in, but one thing that’s important here—if we stick with it for 402, and as proposals are being implemented, it will be impossible to change after the fact. We cannot break the web. This is why we’ve decided not to change what’s already been implemented. We can’t go back and we can’t break the web.
+LEO: Yes, we’ve got a lot of wait. One of the most important motivations for kebab case was consistency in the recommendation document from the W3C. I really tried to bring that in, but one thing that’s important here—if we stick with it for 402, and as proposals are being implemented, it will be impossible to change after the fact. We cannot break the web. This is why we’ve decided not to change what’s already been implemented. We can’t go back and we can’t break the web.
 
 YK: It sounds like there’s no possibility 402 would change their mind.
 
-LBR: There is a possibility. We want to follow through on TC39’s recommendation. I believe 402 is asking for acceptance to follow through on this proposal.
+LEO: There is a possibility. We want to follow through on TC39’s recommendation. I believe 402 is asking for acceptance to follow through on this proposal.
 
 AKI: Can we get consensus that 402 can do what they think is right and if affects anything outside of that scope, it must require consensus from this committee?
 
-LBR: In the scope of casing [yes].
+LEO: In the scope of casing [yes].
 
 YK: I will take this offline
 
 ------- Later discussion ------
 
-LBR: I  just had a conversation with YK offline, and I want to make sure I apologize if anyone felt bad or not included. As the editor of Ecma402, we want to be respectful for everyone. We also meet privately monthly, and I recognize that can sometimes feel not inclusive, but I want to emphasize that we are always open to anyone to attend these monthly meetings.
+LEO: I  just had a conversation with YK offline, and I want to make sure I apologize if anyone felt bad or not included. As the editor of Ecma402, we want to be respectful for everyone. We also meet privately monthly, and I recognize that can sometimes feel not inclusive, but I want to emphasize that we are always open to anyone to attend these monthly meetings.
 
 WH: I’m so glad that you brought the Casing Convention item here, it was _very_ interesting! You brought up a design aspect I had not thought about much before and is an important cross-cutting concern throughout the language.
 
-LBR: Does the committee think it useful to bring changes for unified numberFormat?
+LEO: Does the committee think it useful to bring changes for unified numberFormat?
 
 (Silence)
 
-LBR: If you have any concerns, please let me know.
+LEO: If you have any concerns, please let me know.
 
 #### Conclusion/Resolution
 

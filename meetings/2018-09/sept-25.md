@@ -1,6 +1,6 @@
 # September 25, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LBR), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Jory Burson (JKB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Dave Herman (DH), Pieter Ouwerkerk (POK), Leo Balter (LEO), Aki Rose (AKI), Kevin Smith (KS), Peter Hoddie (PHE), Godfrey Chan (GCN), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Richard Gibson (RGN), Maggie Pint (MPT), Mike Murry (MMY), Mathias Bynens (MB), Jory Burson (JKB), Keith Miller (KM), Mattijs Hoitink (MHK), Kyle Verrier (KVR), Justin Ridgewell (JRL), Katie Broida (KBA), Randy Luecke (RLE), Daniel Ehrenberg (DE), Sathya Gunasekaran (SGN), Rob Palmer (RPR), Kevin Gibbons (KG)
 
 Remote:
 Brian Terlson (BT), Rick Waldron (RW), Caridy Patiño (CP), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG), Thomas Wood (TWD), Isaac Durazo (IDO)
@@ -123,11 +123,11 @@ DE: There's always opportunities to be a reviewer or to contribute to Intl, so p
 
 - [slides](https://docs.google.com/presentation/d/1LgxaVZcj4IAIKDtVObwA4HN-w9TlCSFWDGOi8m2xw80/edit#slide=id.p)
 
-LBR: Just a quick recap from the previous meeting and summary of new things since last meeting. We've added 1400 new test files—4041 files changed.
+LEO: Just a quick recap from the previous meeting and summary of new things since last meeting. We've added 1400 new test files—4041 files changed.
 
 WH: [Referring to the slide showing ~800,000 insertions] What's an insertion?
 
-LBR: New lines of code. Thanks for all the contributions. We've made a bunch of small fixes and additional test coverage. (Presents slides). We've finally set up a bot to import tests from JSC and V8. The curation process of reviewing new tests from JSC is long, but very exciting work. We have 400,000 new lines of code to review. Moving forward, we'll be finishing class fields and methods with reviewed coverage, and continue this test curation work. Specifically, we have to finish coverage for Dynamic Imports, and we'll coordinate with implementers. As always, look at the github repo here: https://github.com/tc39/test262
+LEO: New lines of code. Thanks for all the contributions. We've made a bunch of small fixes and additional test coverage. (Presents slides). We've finally set up a bot to import tests from JSC and V8. The curation process of reviewing new tests from JSC is long, but very exciting work. We have 400,000 new lines of code to review. Moving forward, we'll be finishing class fields and methods with reviewed coverage, and continue this test curation work. Specifically, we have to finish coverage for Dynamic Imports, and we'll coordinate with implementers. As always, look at the github repo here: https://github.com/tc39/test262
 
 ## Announcing a Tests Reports Project
 
@@ -135,9 +135,9 @@ LBR: New lines of code. Thanks for all the contributions. We've made a bunch of 
 
 - [slides](https://docs.google.com/presentation/d/1PReJMVRRlh6sL5R0P2cVITGPAGMSwAol0DIkMQxzQhU/edit#slide=id.g42aeb5f1bf_1_45)
 
-LBR: Next, I'd like to present the Test262 Results. Out of ~60,000 executed tests, how do we measure how compatible the web is?
+LEO: Next, I'd like to present the Test262 Results. Out of ~60,000 executed tests, how do we measure how compatible the web is?
 
-LBR: There's Test262-harness and eshost project started by BT, which can quickly run Test262 tests in multiple JS engines. Also, JSVU has been created by MB against pre-compiled engines, which has been an enormous help.
+LEO: There's Test262-harness and eshost project started by BT, which can quickly run Test262 tests in multiple JS engines. Also, JSVU has been created by MB against pre-compiled engines, which has been an enormous help.
 
 IDO: Here's Web Platform Reports that we've been working on at Bocoup. There are other tables like caniuse.com, but they have their own rules. We decided to build WPR to use the Test262 suites as the source of truth. Designed for devs, implementers, automation tools, TC39.
 
@@ -145,17 +145,17 @@ KNB: Let me demonstrate how the website works. This is a React site on AWS, we u
 
 DE: How do you execute the tests? There's Test262-runner, but for V8 there's a runner that uses Python to turn on flags for some features... How do you do that?
 
-LBR: Just doing a quick run from what is provided by the engine. Planning to expand beyond the regular engine.
+LEO: Just doing a quick run from what is provided by the engine. Planning to expand beyond the regular engine.
 
 DE: This is really great work. I'm very happy with the progress you made and the visualizations.
 
 BFS: This is a very similar name to the Web Platform results? We also have Node which is not really part of the Web Platform either.
 
-LBR: Naming is hard, this is the best name we have so far.
+LEO: Naming is hard, this is the best name we have so far.
 
 JRL: Babel has presets which find all the things that aren't supported in Chrome 60, for example, to allow users to compile JavaScript bundles knowing which lowest-level features are available in the majority of the web. Is there a way we can use these tests to determine what is the lowest browser version that added support for a feature?
 
-LBR: We don't have it yet, but this is a good idea.
+LEO: We don't have it yet, but this is a good idea.
 
 
 ## Introducing: Ad-hoc TC39 History Group - Archival data and you!
@@ -260,7 +260,7 @@ KG: Perhaps we can have an issue on GitHub to get implementers involved? How do 
 
 YK: I don't think we should try to come to consensus at this particular time for set methods. As much as no one wants to own this species discussion, we should really have it now.
 
-LBR: If we work together to get the tests...
+LEO: If we work together to get the tests...
 
 YK: I don't think we want to make this change—the next steps are to identify a rationalization for what species are for in JavaScript.
 
@@ -400,7 +400,7 @@ WH: If it doesn't occur in reality, then let's pick the solution that allows for
 
 MB: This only affects enumeration order. This PR doesn't disallow large strings.
 
-LBR: I'm not rejecting it, but I wish we could keep the spec text. Is this just because we don't have Test262 coverage for this before it was written?
+LEO: I'm not rejecting it, but I wish we could keep the spec text. Is this just because we don't have Test262 coverage for this before it was written?
 
 MB: Why is it better to use integer index instead of array index for the cut-off point? It's not any less confusing to developers. There's still a seemingly-arbitary cut-off point.
 
@@ -497,7 +497,7 @@ MB: It's not very common to call sort in hot code, so in that sense, maybe perfo
 
 BT: Once this is in Chrome, this is almost web reality. Devs will eventually find issues if they can't depend on it in very hard to debug areas. Once we're there, we should change the spec to just mandate it.
 
-LBR: I'm not sure what we need for performance if we're not consistent.
+LEO: I'm not sure what we need for performance if we're not consistent.
 
 YK: The Sizzle engine actually detects [if it has a duplicate](https://github.com/jquery/sizzle/blob/3116795bba9a0c3d624e0718006b25aa5568d4cb/src/sizzle.js#L918-L922) in the comparator function:
 
@@ -614,11 +614,11 @@ WH: Professor Chaos could write code that would do something weird if it detects
 
 KG: You would follow this algorithm until something weird happens. If something does happen, you're free to fall back onto your own process.
 
-LBR: Should we follow the stage process? I think it follows the normative process.
+LEO: Should we follow the stage process? I think it follows the normative process.
 
 DE: I'd be ok with a normative PR with an implementation with changes.
 
-LBR: Metrics as well.
+LEO: Metrics as well.
 
 KG: I'm fine with the stage process. Up until 2 years ago, all the implementations differed. Now we have the potential to change it.
 

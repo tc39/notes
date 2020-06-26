@@ -1,6 +1,6 @@
 # July 25, 2018 Meeting Notes
 -----
-Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LBR), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SFC), Kevin Smith (KS), Ron Buckton (RBN), Jean-Francois Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DRR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbåge (SM), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent(AVT), John-David Dalton (JDD)
+Waldemar Horwat (WH), Mark Miller (MM), Till Schneidereit (TST), Michael Ficarra (MF), Michael Saboff (MLS), James Burke (JRB), Maxim Aleksa (MAA),  Brian Terlson (BT), Shu-yu Guo (SYG), Rex Jaeschke (RJE), Yehuda Katz (YK), Andrew Paprocki (API), Chip Morningstar (CM), Mariko Kosaka (MKA), Jordan Harband (JHD), Patrick Soquet (PST), Sam Goto (SGO), Dave Herman (DH), Brendan Eich (BE), Pieter Ouwerkerk (POK), Leo Balter (LEO), Limin Zhu (LZU), Aki Rose (AKI), Ross Kirsling (RKG), Shane Carr (SFC), Kevin Smith (KS), Ron Buckton (RBN), Jean-Francois Paradis (JFP), Peter Hoddie (PHE), Godfrey Chan (GCN), Domenic Denicola (DD), István Sebestyén (IS), Bradley Farias (BFS), Adam Klein (AK), Gus Caplan (GCL), Felipe Balbontín (FBN), Daniel Rosenwasser (DRR), Jonathan Keslin (JKN), Christopher Blappert (CBT), Dean Tribble (DT), Richard Gibson (RGN), Lin Clark (LCK), Allen Wirfs-Brock (AWB), Maggie Pint (MPT), Timothy Gu (TGU), Sebastian Markbåge (SM), Dustin Savery(DSY), Mike Murry (MMY), Alex Vincent(AVT), John-David Dalton (JDD)
 
 Remote:
 Rick Waldron (RW), Daniel Ehrenberg (DE), Caridy Patiño (CP), Justin Ridgewell (JRL), Brian Warner (BWR), Yulia Startsev (YSV), Jason Williams (JWS), Ron Buckton (RBN), Ross Kirsling (RKG), Ben Newman (BN), Edd Yerburgh (EYH)
@@ -209,7 +209,7 @@ YSV: Are people okay with calendar, notes, and agenda?
 
 No objections.
 
-LBR: There was a question on how the CoC applies to non-members. Feel free to talk to me or anyone from the CoC committee if you have any questions about CoC.
+LEO: There was a question on how the CoC applies to non-members. Feel free to talk to me or anyone from the CoC committee if you have any questions about CoC.
 
 AK: Working in Groups has worked very well for `Intl`. So I think more of us splitting out into Groups will be effective for TC39.
 

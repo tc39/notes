@@ -1,7 +1,7 @@
 # January 24, 2017 Meeting Notes
 -----
 
-Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MLS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AHN), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CHE), Gabriel Isenberg (GI), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Mathias Bynens (MB), Leo Balter (LBR), István Sebestyén (IS)
+Allen Wirfs-Brock (AWB), Waldemar Horwat (WH), Jordan Harband (JHD), Brian Terlson (BT), Michael Ficarra (MF), Adam Klein (AK), Chip Morningstar (CM), Dave Herman (DH),  Kent C. Dodds (KCD), Kevin Gibbons (KG), Tim Disney (TD), Daniel Ehrenberg (DE), Shu-yu Guo (SYG), Michael Saboff (MLS), James Kyle (JK), Franziska Hinkelmann (FHN), Anna Henningsen (AHN), John Lenz (JLZ), Sebastian Markbåge (SM), Bradley Farias (BFS), Jeff Morrison (JM), Tyler Kellen (TKN), Gabriel Isenberg (GI), James Snell (JSL), Maggie Pint (MPT), Chris Hyle (CHE), Gabriel Isenberg (GI), Bert Belder (BBR), Zibi Braniecki (ZB), Jamund Ferguson (JXF), Mathias Bynens (MB), Leo Balter (LEO), István Sebestyén (IS)
 
 -----
 
@@ -535,7 +535,7 @@ AWB: We don't have any strict requirements for what the Stage 4 tests consist of
 
 DE: In this case, you're working with V8 to make sure the tests are compatible with the harness, so it should be especially not a problem.
 
-LBR: I have been reviewing the tests. They seem to have reasonable coverage so far. About the harness support, this is not the first time that the harnesses are expected to provide functionality (also for TypedArray detach). As far as reviewed the PR, this has my +1.
+LEO: I have been reviewing the tests. They seem to have reasonable coverage so far. About the harness support, this is not the first time that the harnesses are expected to provide functionality (also for TypedArray detach). As far as reviewed the PR, this has my +1.
 
 AWB: Any objections to Stage 4?
 

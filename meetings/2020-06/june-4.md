@@ -125,7 +125,7 @@ JWK: So, the membrane is implemented in userland. It’s easy to make mistakes a
 
 CP: yea proxies are complex things and you have to be careful, But again we’re not proposing a security boundary, we’re proposing an encapsulation boundary, and this hazard exists today. Think about it, ??? and somehow you call it from an iframe or another realm, you’re leaking that, and we do not expect that to be prevented. So it’s a hazard that exists today in the language when it comes to having multiple realms interacting with each other in a synchronous way.
 
-LBR: Just wanted to mention that we’re also getting a lot of back and forth with the SES group, and we've been discussing these concepts at large. So I invite everyone interested in membranes and ses-related things to come to the meeting.
+LEO: Just wanted to mention that we’re also getting a lot of back and forth with the SES group, and we've been discussing these concepts at large. So I invite everyone interested in membranes and ses-related things to come to the meeting.
 
 CP: Yeah. We have a weekly meeting, so you can come and we can answer any questions you have there.
 
@@ -137,7 +137,7 @@ RPR: ok, nothing on the queue
 
 CP: Thank you.
 
-LBR: I actually have a question for the group, just want to make sure, I’m going to say in the notes that I believe the next topics would be getting the thumbs up from the HTML group and the TAG group. After we get that as positive intent, to bring that back for stage advancement. If there’s anything else I’d like to bring that back for stage advancement.
+LEO: I actually have a question for the group, just want to make sure, I’m going to say in the notes that I believe the next topics would be getting the thumbs up from the HTML group and the TAG group. After we get that as positive intent, to bring that back for stage advancement. If there’s anything else I’d like to bring that back for stage advancement.
 
 YSV: mention that we agree a lot with what SYG mentioned, there is skepticism on our side regarding how this fits in with the broader web architecture and we have some concerns there, but we’ve been in touch with the champion group and will continue to do so.
 
@@ -716,7 +716,7 @@ SYG: Sure? I don’t have anything against that. The original intent of the call
 
 DE: I agree with that prioritization.
 
-LBR: As SYG said, it applies for any discussion if anything already have a regular meeting then it is not needed to go in incubator calls since they can’t really benefit from the incubation more than smaller proposals. __Note: I made this horrible choice of calling "smaller proposals". I don't mean smaller, but any proposals without frequent meetings that need to solve specific challenges before stage advancement.__
+LEO: As SYG said, it applies for any discussion if anything already have a regular meeting then it is not needed to go in incubator calls since they can’t really benefit from the incubation more than smaller proposals. __Note: I made this horrible choice of calling "smaller proposals". I don't mean smaller, but any proposals without frequent meetings that need to solve specific challenges before stage advancement.__
 
 ### Conclusion / Resolution
 

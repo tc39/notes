@@ -3,7 +3,7 @@
 
 **In-person attendees:**
 
-**Remote attendees:** Yulia Startsev (YSV), Mark Cohen (MPC), Jeff Long (JHL), Bradley Farias (BFS), Rick Button (RBU), Michael Ficarra (MF), Mathias Bynens (MB), Myles Borins (MBS), Caio Lima (CLA), Dave Poole (DMP), Jason Williams (JWS), Kevin Gibbons (KG), Chip Morningstar (CM), Philip Chimento (PFC), Matheus Marchini (MAR), Rob Palmer (RPR), Ross Kirsling (RKG), Waldemar Horwat (WH), Pieter Ouwerkerk (POK), Bradford C. Smith (BCS), Ujjwal Sharma (USA), Richard Gibson (RGN), Felienne Hermans (FHS), Nicolò Ribaudo (NRO), Shane F Carr (SFC), Justin Ridgewell (JRL), Jack Works (JWK), Philipp Dunkel (PDL), Robin Ricard (RRD), Ben Newman (BN), Sergey Rubanov (SRV), Jordan Harband (JHD), Guilherme Hermeto (GHO), Robert Pamely (RPY), Edgar Barragan (EB), Mark Miller (MM), Hemanth HM (HHM), Aki (AKI), Daniel Rosenwasser (DRR)
+**Remote attendees:** Yulia Startsev (YSV), Mark Cohen (MPC), Jeff Long (JHL), Bradley Farias (BFS), Rick Button (RBU), Michael Ficarra (MF), Mathias Bynens (MB), Myles Borins (MBS), Caio Lima (CLA), Dave Poole (DMP), Jason Williams (JWS), Kevin Gibbons (KG), Chip Morningstar (CM), Philip Chimento (PFC), Mary Marchini (MAR), Rob Palmer (RPR), Ross Kirsling (RKG), Waldemar Horwat (WH), Pieter Ouwerkerk (POK), Bradford C. Smith (BCS), Ujjwal Sharma (USA), Richard Gibson (RGN), Felienne Hermans (FHS), Nicolò Ribaudo (NRO), Shane F Carr (SFC), Justin Ridgewell (JRL), Jack Works (JWK), Philipp Dunkel (PDL), Robin Ricard (RRD), Ben Newman (BN), Sergey Rubanov (SRV), Jordan Harband (JHD), Guilherme Hermeto (GHO), Robert Pamely (RPY), Edgar Barragan (EB), Mark Miller (MM), Hemanth HM (HHM), Aki (AKI), Daniel Rosenwasser (DRR)
 Not present, but reviewed the notes: Istvan Sebestyen (IS)
 
 

@@ -33,7 +33,7 @@
 | Marja Hölttä         | MHA            | Google             |
 | Rob Palmer           | RPR            | Bloomberg          |
 | Shane F. Carr        | SFC            | Google             |
-| Matheus Marchini     | MAR            | Netflix            |
+| Mary Marchini        | MAR            | Netflix            |
 | Jordan Harband       | JHD            | Invited Expert     |
 | Kris Kowal           | KKL            | Agoric             |
 | Kevin Gibbons        | KG             | F5 Networks        |

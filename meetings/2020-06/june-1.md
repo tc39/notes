@@ -37,7 +37,7 @@
 | Ron Buckton          | RBN            | Microsoft          |
 | Ross Kirsling        | RKG            | Sony               |
 | Mathieu Hofman       | MAH            | Stripe             |
-| Matheus Marchini     | MAR            |                    |
+| Mary Marchini        | MAR            | Netflix            |
 | Chengzhong Wu        | CZW            | Alibaba            |
 | Jordan Harband       | JHD            | Invited Expert     |
 | Ukyo Pu              | PSY            | Alibaba            |

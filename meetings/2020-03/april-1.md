@@ -3,7 +3,7 @@
 
 **In-person attendees:**
 
-**Remote attendees:** Yulia Startsev (YSV), Mark Cohen (MPC), Jeff Long (JHL), Bradley Farias (BFS), Rick Button (RBU), Michael Ficarra (MF), Mathias Bynens (MB), Myles Borins (MBS), Caio Lima (CLA), Dave Poole (DMP), Jason Williams (JWS), Kevin Gibbons (KG), Chip Morningstar (CM), Philip Chimento (PFC), Matheus Marchini (MAR), Rob Palmer (RPR), Ross Kirsling (RKG), Waldemar Horwat (WH), Pieter Ouwerkerk (POK), Bradford C. Smith (BCS), Ujjwal Sharma (USA), Richard Gibson (RGN), Felienne Hermans (FHS), Nicolò Ribaudo (NRO), Shane F Carr (SFC), Justin Ridgewell (JRL), Jack Works (JWK), Philipp Dunkel (PDL), Robin Ricard (RRD), Ben Newman (BN), Sergey Rubanov (SRV), Jordan Harband (JHD), Guilherme Hermeto (GHO), Robert Pamely (RPY), Edgar Barragan (EB), Mark Miller (MM), Hemanth HM (HHM), Aki (AKI), HE Shi-Jun (John Hax) [JHX], Daniel Rosenwasser (DRR)
+**Remote attendees:** Yulia Startsev (YSV), Mark Cohen (MPC), Jeff Long (JHL), Bradley Farias (BFS), Rick Button (RBU), Michael Ficarra (MF), Mathias Bynens (MB), Myles Borins (MBS), Caio Lima (CLA), Dave Poole (DMP), Jason Williams (JWS), Kevin Gibbons (KG), Chip Morningstar (CM), Philip Chimento (PFC), Mary Marchini (MAR), Rob Palmer (RPR), Ross Kirsling (RKG), Waldemar Horwat (WH), Pieter Ouwerkerk (POK), Bradford C. Smith (BCS), Ujjwal Sharma (USA), Richard Gibson (RGN), Felienne Hermans (FHS), Nicolò Ribaudo (NRO), Shane F Carr (SFC), Justin Ridgewell (JRL), Jack Works (JWK), Philipp Dunkel (PDL), Robin Ricard (RRD), Ben Newman (BN), Sergey Rubanov (SRV), Jordan Harband (JHD), Guilherme Hermeto (GHO), Robert Pamely (RPY), Edgar Barragan (EB), Mark Miller (MM), Hemanth HM (HHM), Aki (AKI), HE Shi-Jun (John Hax) [JHX], Daniel Rosenwasser (DRR)
 
 
 ## Record and Tuple Update
@@ -352,7 +352,7 @@ Philip Chimento
 Devin Rousso
 
 8 New Topic: Hashbang starting with a space is not a valid hashbang on Linux (and probably other UNIX systems)
-Matheus Marchini (@Netflix)
+Mary Marchini (@Netflix)
 
 9 New Topic: Even simple ASCIIfiers need to understand JS semantics
 Justin Ridgewell (@google -> @ampproject )

@@ -38,7 +38,7 @@
 | Rick Waldron         | RW             | Bocoup             |
 | Mark Cohen           | MPC            | PayPal             |
 | Justin Ridgewell     | JRL            | Google             |
-| Matheus Marchini     | MAR            | Netflix            |
+| Mary Marchini        | MAR            | Netflix            |
 | Frank Yung-Fong Tang | FYT            | Google             |
 | Ilias Tsangaris      | IT             | Evernote           |
 | Felienne Hermans     | FHS            | University of Leiden |

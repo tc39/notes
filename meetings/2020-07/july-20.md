@@ -433,7 +433,7 @@ SYG: Yes
 
 RBN: I’ll be honest, if I could’ve written this as `static(){`, then I would have, but that's already legal JS 
 Because it has special semantics around how `this` works, because otherwise who knows what `this` would be referring to, and then we have the complexity around what happens with return, await, yield. I saw on IRC that there’s some discussion about the class access expressions, that one, I may eventually bring back, but that one had some strange things around evaluation, since its main motivation was around private static and subclassing.
-So again the main reason that it’s essentially treated kind of like a function but I can’t put parens in because it would conflict with existing syntax, and then vars ??? be hoisted out.
+So again the main reason that it’s essentially treated kind of like a function but I can’t put parens in because it would conflict with existing syntax, and as such vars would not be hoisted out.
 
 SYG: So you really want this to be thought of as a static constructor, not a static block.
 

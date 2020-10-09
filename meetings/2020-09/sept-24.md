@@ -81,7 +81,7 @@ SYG: In my spec draft, it is a RangeError.
 
 MM: RangeError sounds good. My other question is, how upwards compatible is RSB from GSAB and the others? Rather than adding two new types, I'm wondering if we can just upgrade the spec of the types we have, such that ArrayBuffer is growable according to the spec, and same with SharedArrayBuffer.
 
-SYG: Indeed, that was the first draft internally. Users liked it but the security team had to push back. Anything that requires us to audit existing array buffers and array paths, not just in JS engine but also in the web browser itself is ???. I wouldn't say it is a non starter but it has pretty big repercussions. 
+SYG: Indeed, that was the first draft internally. Users liked it but the security team had to push back. Anything that requires us to audit existing array buffers and array paths, not just in JS engine but also in the web browser itself uses ArrayBuffers in its code. I wouldn't say it is a non starter but it has pretty big repercussions.
 
 MM: So the issue is not the use of these by JavaScript code, but rather the use of fixed-length ones by things in the host?
 

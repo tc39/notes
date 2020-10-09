@@ -357,7 +357,7 @@ SYG: A question at JSC, in my testing, correct me if I’m wrong, JSC throws and
 
 MM: The set operation returning false is only a no-op in sloppy mode. In strict mode, it causes an assignment to throw.
 
-SYG: So the question to JSC is (???) in aligning with V8 and SpiderMonkey behavior?
+SYG: So the question to JSC is are you interested in aligning with V8 and SpiderMonkey behavior?
 
 RKG: I will say that I’ve already been planning on correcting JSC’s behavior but am waiting for the result of this presentation; I can’t speak on behalf of Apple though.
 

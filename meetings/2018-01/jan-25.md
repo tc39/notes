@@ -728,7 +728,7 @@ WH: `a + return / c` . the slash is both a division symbol `a + (return) / c`, o
 
 RBN: yeah, one of the purposes of this discussion is, is this a direction ECMA-262 wants to go for expressions, if it is, other than throw, none of these are proposed for any stage right now. Concerns like whether return requires an expression should be had. For cases like the throw operator, does it make sense to have throw in light of do, or have do in light of all these statements possibly becoming expressions, how do all these decisions correlate, want to hear from the committee
 
-YK: I'm strongly interested in this direction. Sometimes people object: don't do this piecemeal, why do X with out also doing Y. Is there any intuitive understanding of the relationship between expressions and staements today? Any grammatical reason to not do it is a good one. I don't think there's a current strong intuition as to whether yo uvan treat any given things as an expression or a statement. I wouldn't feel bad if we went down the path and stopped halfway
+YK: I'm strongly interested in this direction. Sometimes people object: don't do this piecemeal, why do X with out also doing Y. Is there any intuitive understanding of the relationship between expressions and statements today? Any grammatical reason to not do it is a good one. I don't think there's a current strong intuition as to whether yo uvan treat any given things as an expression or a statement. I wouldn't feel bad if we went down the path and stopped halfway
 
 DH: so you're saying the state of the world today is that we're halfway
 

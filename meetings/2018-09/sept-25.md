@@ -228,11 +228,11 @@ KG: I think the stage process helps with this. Array.species was originally quit
 
 YK: Probably good to distinguish between consensus positions and whether some decision was intentional to begin with.
 
-JH: If we do change this to only work for species check?
+JHD: If we do change this to only work for species check?
 
 KG: Only `RegExp.prototype[Symbol.split]` doesn't do a brand check, so it would only be necessary there.
 
-JH: Should those brand checks exist?
+JHD: Should those brand checks exist?
 
 KG: They exist for other reasons; their behavior won't need to change. Only `RegExp.prototype[Symbol.split]`, but maybe we don't want to add that.
 
@@ -302,7 +302,7 @@ DE: ARe you saying that although there already is this issue, we should use this
 
 MM: It would remove the pressure to consult the `then` method. Replacing the `then` method doesn't fix the return value.
 
-JH: When you invoke an async function, it creates a promise immediately.
+JHD: When you invoke an async function, it creates a promise immediately.
 
 MM: The dynamic constructor property of the builtin `Promise.prototype`.
 

@@ -42,17 +42,17 @@ WH: You can get integer literals, fractions, and exponents.
 
 SGO: Alternative 4: a pair of separators (_ for extensions, 1 for separators), but this would necessitate a Stage 3 -> Stage 4 regression,
 
-JH: Between 1 and 2, (Alt 1 is basically the same as the original, with a different sigil). 2 seems much more ergonomic.
+JHD: Between 1 and 2, (Alt 1 is basically the same as the original, with a different sigil). 2 seems much more ergonomic.
 
 RW: I can speak to that. When you have all these names floating around in a program, there's a belief that forcing this convention, we reduce the likelihood of variable name collision. Whether or not you agree with that,
 
 DD: Not being able to use imaginary numbers in a for loop seems pretty terrible... With `for (let i = 0; ...) { 123i }` the `i` would now refer to the wrong thing.
 
-JH: I hear the conflict, but I feel if that one case is an issue, we can use j or k in a for loop, if i conflicts with imaginary numbers, or just to use the more common pattern of iteration.
+JHD: I hear the conflict, but I feel if that one case is an issue, we can use j or k in a for loop, if i conflicts with imaginary numbers, or just to use the more common pattern of iteration.
 
 SGO: Your point is valid.
 
-JH: Using a different sigil seems like the best thing with Alternative 2.
+JHD: Using a different sigil seems like the best thing with Alternative 2.
 
 SGO: That works for us.
 
@@ -666,11 +666,11 @@ MM: The graceful degradation of what happens with the pragma with other implemen
 
 SGO: If you take that it needs to be in the source code itself, than pragmas seem to be the only viable mechanism for that. This is also importantly a feature that the developer can use to protect itself. This is done on an author basis, not a the language level—done at userland. My intuition is on the lines of whether the feature itself pays for itself, than pragmas seem to be the only option for it.
 
-JH: How does this interact with error stacks?
+JHD: How does this interact with error stacks?
 
 DD: Line numbers are tricky.
 
-JH: An error stack trace with some functions that are censored seem impossible to reconcile. But this may be better for a later discussion.
+JHD: An error stack trace with some functions that are censored seem impossible to reconcile. But this may be better for a later discussion.
 
 DD: I appreciate the Stage 3 concerns, do we have Stage 2 approval?
 

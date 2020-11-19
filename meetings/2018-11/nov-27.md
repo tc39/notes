@@ -649,13 +649,13 @@ MF: This is that the name of the intrinsic is in the name of the function produc
 
 NHD: Whether or not this meets the official rules we have, we have an example that says it does not.
 
-JH: Official rules for stage 4 which is the most vague part of the process document: doesn't necessarily specify fully compliant and it's up to the general opinion of the committee.
+JHD: Official rules for stage 4 which is the most vague part of the process document: doesn't necessarily specify fully compliant and it's up to the general opinion of the committee.
 
 MF: Whether we think there could be a backwards compatibility, I think it's possible but unlikely.
 
 DE: I think the vagueness of that part of the requirements shouldn't be that we have a lower bar. It is case-by-case. If there are compatibility concerns, that should be taken into account.
 
-JH: I agree we have neither decided or not decided if it has met the bar.
+JHD: I agree we have neither decided or not decided if it has met the bar.
 
 RBN: I don't have any objections with the proposal. Concerns I have decorators would fit into making changes with grammar which probably isn't happening.
 
@@ -719,7 +719,7 @@ MF: It's restricting in that they have to provide the source text they can't hav
 
 MF: Yes, yes
 
-JH: I think in the current spec in the crossed out lines... if the implementation can't produce a sourcehost string, it must return...? (See Function.prototype.toString()). When they do it, it has to be native code.
+JHD: I think in the current spec in the crossed out lines... if the implementation can't produce a sourcehost string, it must return...? (See Function.prototype.toString()). When they do it, it has to be native code.
 
 SM: I think there's a pretty strong argument that bound functions have been an exact string for a long time that this issue would have happened in the ecosystem anyway that it's not going to be a concern.
 
@@ -727,7 +727,7 @@ WH: I am a bit concerned what happens when the user starts using the functionali
 
 MF: Replace Function.prototype.toString
 
-JH: Why is showing source code of built-ins not possible? I don't see in the diff at all.
+JHD: Why is showing source code of built-ins not possible? I don't see in the diff at all.
 
 WH: It's in step 1 of the proposed Function.prototype.toString algorithm: "... must have the syntax of a NativeFunction."
 

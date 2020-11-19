@@ -381,11 +381,11 @@ DE: Trying to call trusted source string with a string it will throw an error. P
 
 CM: I think explanations are farther ahead than where we are at.
 
-JH: Execution point?
+JHD: Execution point?
 
 DE: We are not proving that template object was literally in source code?
 
-JH: It sounds like you are trying to verify if a tag is from source code. Since it is frozen, we can guarantee that.
+JHD: It sounds like you are trying to verify if a tag is from source code. Since it is frozen, we can guarantee that.
 
 DE: There are further properties that would be nice but this matches the original request and isn't that bad.
 

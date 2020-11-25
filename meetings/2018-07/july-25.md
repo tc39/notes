@@ -397,11 +397,11 @@ Proposed semantics are to add a @@cancelSignal built-in signal that is defined, 
 
 Next steps are to draft ECMAScript spec text and draft WHATWG spec text.
 
-JH: This has come up often. The term "cancel" seems to be an overloaded term. It might be helpful to rename things.
+JHD: This has come up often. The term "cancel" seems to be an overloaded term. It might be helpful to rename things.
 
 RBN: That is why this is named a "signal" and not a primitive. That signal means that the cancellation has been requested and not any specific mean for the signal.
 
-JH: I appreciate that disambiguation, but would like "cancel" removed from the name.
+JHD: I appreciate that disambiguation, but would like "cancel" removed from the name.
 
 RBN: I still like "cancelSignal" to be the name to describe what is is doing.
 
@@ -450,7 +450,7 @@ RBN: At a meeting last year we put forth a similar and more restrictive proposal
 
 MM: I don't want this proposal to ride on the back of that restrictive proposal.
 
-JH: This achieved stage 1 at the July 2017 meeting.
+JHD: This achieved stage 1 at the July 2017 meeting.
 
 AWB: Everywhere else we add one of these proposals, we have a concrete use of it in the spec.
 
@@ -480,15 +480,15 @@ This results in a "partially applied functions" with arguments for each of these
 
 Changes since from the previous proposal, eager evaluation for all arguments with the placeholders filled in when the actually function is called. The `?` token is NOT a function. Dropped support for ellipses (`...`), but will likely reintroduce. Also disallow use with `new`, but may reopen later.
 
-JH: Does this allow for method extraction? If I reference something on Array.prototype, is that "fixed" at the time of partial application?
+JHD: Does this allow for method extraction? If I reference something on Array.prototype, is that "fixed" at the time of partial application?
 
 RBN: No; that would require a new reference type, which I'm hesitant to introduce.
 
-JH: That means that this proposal does not support method extraction.
+JHD: That means that this proposal does not support method extraction.
 
 RBN:
 
-JH: One of my objections with pipeline operator is that it might kill the bind operator. I hope we have some plan for method extraction.
+JHD: One of my objections with pipeline operator is that it might kill the bind operator. I hope we have some plan for method extraction.
 
 RBN:
 

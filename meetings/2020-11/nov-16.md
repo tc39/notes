@@ -123,7 +123,7 @@ RPR: Alright, will review that now and make a swift change to the tc39 meeting t
 Presenter: Kevin Gibbons (KG)
 
 - [spec](https://github.com/tc39/ecma262)
-- [slides]()
+- [slides](https://docs.google.com/presentation/d/1MtgFNmwetns_mOWu0k6VKfwAuLrqom8GZdQhHna4WBE/edit)
 
 KG: Alright, so starting off with an overview of changes since last meeting. The big one is 2007, which was the work of many people over many many months, which was to make the distinction between various kinds of number in the specification clearer. We have historically, and particularly with the introduction of bigint, conflated various types of numbers, especially between IEEE floating-point numbers (that is, JavaScript numbers) and actual mathematical numbers. These obviously have different semantics in a number of cases and in a few cases the difference was observable and in all cases that distinction was unclear - no one thinks that if you say to do a thing until a counter hits a certain point that you actually mean that you want to go forever if that certain point is above 2^53rd or whatever. I'll talk more about that particular PR later. A few other changes: we changed the Reference type to an explicit Record. Previously, it was a value with components, but we have a type that represents a value with components in the spec. That's a record. It's much like a JavaScript object. Hopefully, that's a good bit clearer.
 

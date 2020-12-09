@@ -282,7 +282,7 @@ KG: But not the __proto__ accessor; the __proto__ accessor would be a separate p
 
 MM: exactly. And in fact, I would be okay with the __defineGetter__ bundle becoming mandatory. Salesforce had a security concern that surprised me, but that is real, that makes me agree that the __proto__ accessor should remain optional. And in any case it's quite distinct from the defineGetter bundle conceptually.
 
-JHD:  So I'm going to then assume that we have consensus on making those four items one bundle and leaving the Proto accessor separate. And in the future as these questions come up we will bring them to plenary with the understanding that we are likely to decide on various little bundles ad hoc. Thanks everybody. 
+JHD: So I'm going to then assume that we have consensus on making those four items one bundle and leaving the `__proto__` accessor separate. And in the future as these questions come up we will bring them to plenary with the understanding that we are likely to decide on various little bundles ad hoc. Thanks everybody. 
 #### Conclusion/Resolution
 `__defineGetter__`, `__defineSetter__`, `__lookupGetter__`, `__lookupSetter__`, will be treated as one “bundle”: an implementation must implement either all or none of them
 `__proto__` accessor will remain independently normative optional

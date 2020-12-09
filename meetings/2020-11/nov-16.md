@@ -287,6 +287,7 @@ JHD: So I'm going to then assume that we have consensus on making those four ite
 `__defineGetter__`, `__defineSetter__`, `__lookupGetter__`, `__lookupSetter__`, will be treated as one “bundle”: an implementation must implement either all or none of them
 `__proto__` accessor will remain independently normative optional
 Future questions of this nature will be addressed in plenary in an ad-hoc nature as items are lifted out of Annex B
+
 ## Re-resolve unresolvable bindings in PutValue
 Presenter: Shu-yu Guo (SYG)
 

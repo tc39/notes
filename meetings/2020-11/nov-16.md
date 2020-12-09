@@ -364,6 +364,7 @@ KG: I don't believe we know why, unfortunately.
 BSH: Okay. Just wondering, yeah.
 #### Conclusion/Resolution
 * Accepted, reluctantly.
+
 ## clarifying conclusion to __proto__ normative optional agenda item
 JHD: Should __proto__ getter/setter be bundled as well? I'm not a hundred percent sure of what to suggest actually because I believe only the center has a security concern not together.
 

@@ -375,8 +375,6 @@ WH: I'm really impressed by all the changes Shu has made here.
 ## Incubation call chartering
 Presenter: Shu-yu Guo (SYG)
 
-- [slides](https://docs.google.com/presentation/d/1oZbRMtnZW78wFUjSY8HXxgsEqeUiXC-2IB2NA_fMV9I/edit)
-
 SYG: Due to the new tick-tock cadence we only had time to run to incubator calls since the last meeting which were error cause and module blocks, which leaves one overflow from last Charter for lazy Imports. I assume Yulia you would still like to have that call.
 
 YSV: Yes very much.

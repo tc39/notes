@@ -40,7 +40,7 @@
 
 ## Opening
 
-AKI: Has everyone had a chance to review last meeting's notes? [silence] That sounds like yes.one thing I really wanted to quickly mention. We had announced on the reflector that DRW will be helping us facilitate this meeting. I just want to make sure that we're all good with that. Does anybody have any concerns?
+AKI: Has everyone had a chance to review last meeting's notes? [silence] That sounds like yes. One thing I really wanted to quickly mention—we had announced on the reflector that DRW will be helping us facilitate this meeting. I just want to make sure that we're all good with that. Does anybody have any concerns?
 
 (silence)
 
@@ -213,7 +213,9 @@ SFC: I support the forming of this TG. I'm just a bit disappointed that you deci
 YSV: I think that's a really good comment. I would love to see a discussion about maybe something privacy focused also because it is a separate expertise than security.
 
 AKI: That would bring me great joy.
+
 ### Conclusion/Resolution
+
 TG3 is chartered
 
 ## `Intl.NumberFormat` V3 Stage 2 Update
@@ -393,7 +395,7 @@ CLA: Yeah, personally think that it's good to have these because even though eve
 
 MLS: We support of course for stage 4 as well. Thank you to Igalia and Caio for the work on this. We reviewed it, you know if we were to go back probably 7 or 10 years some design class features things would be a little bit different but nothing major. This is the best we think we can do given the constraints of what was already in life.
 
-AKI:  Approximately 20 minutes before the end of lunch an issue was posted to the class fields repo (https://github.com/tc39/proposal-class-fields/issues/329). I'm going to let hax speak.
+AKI:  Approximately 20 minutes before the end of lunch an issue was posted to the class fields repo (https://github.com/tc39/proposal-class-fields/issues/329). I'm going to let JHX speak.
 
 CLA: Okay, give us a sec just to take a look at this statement okay. I think I got it right here.
 
@@ -403,7 +405,7 @@ AKI: Okay, so 20 minutes before the end of lunch there was an issue posted in th
 
 JHX: Sorry, so I'm not 360 representative anymore but I believe it's a formal block.
 
-JHD: There are two angles I want to talk about. One is, as you mentioned Aki, is that this is web reality - this feature can never go away now. It's what it's on the web. So objecting to it means that even if it doesn't land in stage 4, it's there forever. So that sort of objection to stage 4 has no effect because browsers aren't willing to unship - it doesn't achieve anything. But then the other thing is that we had a long, long-standing norm and convention that was undocumented, restricting the reasons that are reasonable to object to at given stages, and some of those were documented about a year ago. They were added to the process document - that wasn't a change to the process, it was a change to the explicit process to reflect the implicit process we've always had; according to that process I've read through, and that long issue posted in the repo, none of those items meet that criteria, and in fact, it's specifically indicated there. It says _“the July 2020 process document update makes our rejection invalid”_ and that was part of the motivation to make it explicit. We had thought it went without saying that this was how the process works, and it didn’t, and so the committee decided to explicitly document that requirement so that it would be more clear.
+JHD: There are two angles I want to talk about. One is, as you mentioned AKI, is that this is web reality - this feature can never go away now. It's what it's on the web. So objecting to it means that even if it doesn't land in stage 4, it's there forever. So that sort of objection to stage 4 has no effect because browsers aren't willing to unship - it doesn't achieve anything. But then the other thing is that we had a long, long-standing norm and convention that was undocumented, restricting the reasons that are reasonable to object to at given stages, and some of those were documented about a year ago. They were added to the process document - that wasn't a change to the process, it was a change to the explicit process to reflect the implicit process we've always had; according to that process I've read through, and that long issue posted in the repo, none of those items meet that criteria, and in fact, it's specifically indicated there. It says _“the July 2020 process document update makes our rejection invalid”_ and that was part of the motivation to make it explicit. We had thought it went without saying that this was how the process works, and it didn’t, and so the committee decided to explicitly document that requirement so that it would be more clear.
 
 AKI: That's what I was referring to when I said, I don't believe it's a formal block because it specifically says _“which makes our objection invalid”_ in the issue.
 
@@ -518,11 +520,13 @@ AKI: I'm sorry. I lost your last sentence again. Could you just repeat that last
 JHX: Okay, I mean, to revert a stage it needs consensus, but in the case of this proposal there are many essential disagreements. So it's impossible, in my opinion, to achieve any new consensus. So after stage 3 I think the 360 delegates are saying that the stage 3 consensus of this class fields actually is weak, but it's impossible to achieve any new consensus. So that's the problem.
 
 BT: All right, so we're well over time for this item so we have to move on I think. JHX, thank you for bringing process concerns, you know, we should work to address those going forward. Now is not time to litigate what stage 3 means or which proposals were properly stage 3 or not. We're very much past that point, so I think at this time I'd like to congratulate this proposal for getting to stage 4. It's been quite a journey. And we can work on addressing all of these process concerns going forward. That's something that I am personally very interested in doing and so, you know, anyone can feel free to talk to me about that, to talk to the chairs generally about that. This is, I know, something that the chairs are watching out for a lot, ways that we can improve our process. To help everyone work better together. So please do bring up those concerns. Are there any final non-process related questions before we move on? Sounds like no. Congratulations to everyone who worked on this project - it was a lot of work.
+
 ### Conclusion/Resolution
 - All three proposals advance to Stage 4
 - Any general process concerns should be brought up to the chairs
 
 AKI: Thank you. Congratulations everyone before we move on to import assertions.
+
 ## Import Assertions update
 
 Presenter: Dan Clark (DDC)
@@ -582,7 +586,7 @@ BFS: I think it has a problem of just colliding between types if no type asserti
 
 DDC: Yeah, thank you Bradley. Yeah, I'm not seeing anything else in the queue and I think I'm like, it's I'm not yeah, I think I think I'd want to go further with this one until at least until like we've gone made progress on the previous item. So I think I'm gonna just move on to the next one. Unless someone wants to wants to talk further on this one. So this last ones much simpler this way we plug in our spec for dynamic Imports. We were failing to check if this second argument to Dynamic import was an object or not. So we need to check that and then it's a simple question of does the check we check if something's an object and rejects the import promise if it's not an object, or do we use two objects and kind of the arguments my feeling is rather strongly that we should reject we should do an object check and reject the promise if the passed argument is not an object because I feel like doing an implicit conversion here and implicit conversion here to an object is like pretty much never going to be what the author wants and probably they just made a mistake and would want to know right away rather than have it like invisibly accept it and then fail later in some probably more confusing way. So the only question here would be whether there's so I saw that there's precedent it was raised in the issue. And just in my own looking through the spec. I see that there's like some precedent for either approach year looking at just various APIs. But so I like the precedent. It can be made from either direction. So I'm just thinking about it in terms of like what an author might expect. So I think I would like to I'd like to push that like it is object check and I guess I just like to ask like this is is there any objection to that? Is there any like precedents that I might not be aware of or like direction that TC39 is trying to go with this that would suggest that we should go the other way.
 
-AKI: Two minutes left in the time box and the queue has more things in it now. So first Mark Miller,
+AKI: Two minutes left in the time box and the queue has more things in it now. So first Mark Miller.
 
 MM: I like rejecting. The precedent that you're citing on 402 is that specifically for an options object?
 
@@ -594,7 +598,7 @@ DDC: I think it might have been this.
 
 MM: It doesn't look specific enough. I'm sorry. I don't remember but I think if there is a precedent regarding options object specifically that that says more than just use is object assert that it's is object. It would be nice to take a look at that because you'd be great to have more regularity understood regularity among options.
 
-AKI: All right. Thank you. Mark. Next topic is from Gus. Just there's also an issue for import argument evaluation order and they say they would PR open for that. Next up is bread. 
+AKI: All right. Thank you. Mark. Next topic is from Gus, just a note that there's also an issue for import argument evaluation order and they say they would PR open for that. Next up is BFS. 
 
 BFS: Sure, So this is an aside we can do this later if we pull off the Prototype that Ihave varied opinions on if it should or shouldn't reject depends upon if we pull off the Prototype all … I’ll follow up offline.
 
@@ -609,7 +613,8 @@ AKI: JHD, 30 seconds.
 
 JHD: Sure, so I'll start backwards. “throw rejects” is the only, choice because for async functions we explicitly decided that things should always, or never, return a Promise. For the object check, we have a lot of precedent in ecma-262: For example, IterationResults have to be Objects; they can not be something that coerces to one. For this case, using anything that isobject coercible, but not an object, is pretty much always going to be a bug. There's just no use case for a non-object, so I support this.
 
-AKI: Thank you. Everyone. Alright, great. Thank you. And next up DE.
+AKI: Thank you.
+
 ## Requests for services from Ecma for TC39
 
 DE: Okay, so request for services from ecma for TC39, so I want to talk about how we can work with Ahmed to make sure that Community needs are met. So each one talked about how this was done recently for the typesetting request which is going to require continued collaboration. I don't want to come to a conclusion about what services to request that's a much more detailed discussion and it will be for future presentations but more about what kind of process we could use. So why should we request services from Ecma? Ecma is leaders would like to meet TC39s needs we're clearly the biggest and most successful TC and Ecma, you know, most downloads. most people joining these days and paying membership fees and Ecma does want to see us succeed and does want to provide what we need to succeed. At least they have in the past said that when I talked to them about it . that are nine is recognized to have different needs from other TCs in ECMA So, you know, we have three co-editors who are working very hard and Ecma levels So, you know TC39 recognized have different needs from other TCS and works differently other TCS are largely TCS are largely run by Ecma staff and contractors. Actors just to get to get Services being provided by the Secretariat and we're you know, we need different services so So it came over once explicit signals from the committee about what need. and in writing would be the best way to get these kinds of requests for example, they mentioned conclusions in the TC39  meeting minutes. And in particular we talked previously like in the November 20 meeting about different ways that TC39 could get budget like maybe we could get our own budget to allocate ourselves. And so far what I've heard from ecma and I don't know if he's trying is there but, you know, correct me if I'm ? didn't think anything is that the ecma secretary would prefer if instead of asking for a budget we ask instead for services. So that's why this presentation is to bill services that are planned and we're encouraged not to think about the overall economic budget because that's the domain of the Ecma Secretariat the equity exact calm in the I could General Assembly. All TC39 member organizations can go to the Ecma General Assembly meetings in order. Your members vote on the budget. So I want to propose a kind of flow for making these requests. So, you know, someone will propose a request in DC that are 9 mm?. Plenary somehow the committee will come to conclusion. I'll talk more about that in a minute. So then the chairs or a chair appointed liaison would explain this request to to ECMA; ECMA can consider these requests and make a final judgment. And then you know from there it may take three to six months for the Ecma Secretariat or exact calm or GA or whichever decision-making bodies equities appropriate to decide on it in this type of setting case. I guess it was the Secretariat of the execom who needed to be engaged.
@@ -647,5 +652,3 @@ DE: Okay. Well, thanks for the feedback. Any other thoughts?
 AKI: It is end of day and the queue is empty.
 
 DE: Okay. Well, thanks everyone.
-
-AKI: Thank you. All right, everyone. I hope you all have a wonderful afternoon. We will see you here tomorrow morning bright and early at 10 a.m. Eastern, 7 a.m. Pacific. If you're going to be hanging out, please by all means join the hallway track. I will not be joining you all because I have a meeting immediately after this, but I hope you all hang out and I will talk to you tomorrow and hubs. Have a good day everyone. Bye.

@@ -673,7 +673,7 @@ LEO: Yes that yes. Yeah, it does have the option if you use well-known symbol or
 
 WH: I'm not concerned with collecting the few well-known symbols. 
 
-CP: I believe when we talk about these in the SES meeting as we were saying that if you're using symbol for and using that as Aki for the requirement for a WeakMap, that's not different from using something like array prototype as the key for weak map for those who never be collected either.
+CP: I believe when we talk about these in the SES meeting as we were saying that if you're using symbol for and using that as a key for the requirement for a WeakMap, that's not different from using something like array prototype as the key for weak map for those who never be collected either.
 
 WH: There is a big qualitative difference between those and arbitrary `Symbol.for` symbols.
 
@@ -764,7 +764,7 @@ YSV: it was promoted to stage 2 and three reviewers signed up. That was it think
 
 ## Resizable ArrayBuffer Overflow
 
-AKI: They are available on the schedule under a time box. Overrun. There's the thing PHE was talking about explanation of reservations with global constructors. And next up was Yulia with a reply and you can do you can see this on the on the on the schedule. 
+AKI: They are available on the schedule under time box overrun. There's the thing PHE was talking about explanation of reservations with global constructors. And next up was Yulia with a reply and you can do you can see this on the on the on the schedule.
 
 YSV: I believe I believe those two topics covered while we were discussing unless PHE wants to jump in with further discussions about models position here, but I think we did we did cover that topic as well as 
 

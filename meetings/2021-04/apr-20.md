@@ -618,21 +618,20 @@ JHD: figuring out names is a legitimate concern to figure out during stage 2, be
 
 TCN: I mean, I'm not going to say no. All right. 
 
-AKI: So any objections to Stage 2. All right, cool. I think I'm going to declare it and congratulations hear any for stage 2 for object has or has owned by look forward to the new title.
+AKI: So any objections to Stage 2? All right, cool. I think I'm going to declare it, and congratulations to `Object.has` `Object.hasOwn`, I look forward to the new title.
 
 ### Conclusion/Resolution
+
 Reached Stage 2 consensus
 
- 
 ## Pattern matching update
+
 Presenter: Mark Cohen (MPC)
 
 - [proposal](https://github.com/tc39/proposal-pattern-matching)
 - [slides](https://hackmd.io/@mpcsh/HkZ712ig_)
 
-
-MPC: Let's Jump Right In so this is pattern matching. This proposal was formerly being authored and championed by Kat Marchán before they left TC39 it achieved stage 1 I believe in 2018. A new group of Champions has taken the proposal back up with a new direction so that group of Champions: myself, TAB, JHD, YSV, DRW, JWK, and RKG. thanks to all of you for your ha
-<rd work and thoughtful contributions so far and also thank you to Kat for all the hard work. They did before this group took up the proposal before we get too far into this. I just want to state very clearly. This is an update and not a request for stage advancement. So as a Champions group, we're presenting what we think is the best version of this construct it like at the current moment, but we're not married to any particular syntax, spelling, etc. We're not seeking advancement of the examples we present we're just showing you where we are. There is going to a lot of byte shedding. So I'd like to as best we can avoid tons of bikeshedding here in plenary that can take place on GitHub and we can also address those kinds of questions when we do come back for stage advancement in the future. 
+MPC: Let's Jump Right In so this is pattern matching. This proposal was formerly being authored and championed by Kat Marchán before they left TC39 it achieved stage 1 I believe in 2018. A new group of Champions has taken the proposal back up with a new direction so that group of Champions: myself, TAB, JHD, YSV, DRW, JWK, and RKG. thanks to all of you for your hard work and thoughtful contributions so far and also thank you to Kat for all the hard work. They did before this group took up the proposal before we get too far into this. I just want to state very clearly. This is an update and not a request for stage advancement. So as a Champions group, we're presenting what we think is the best version of this construct it like at the current moment, but we're not married to any particular syntax, spelling, etc. We're not seeking advancement of the examples we present we're just showing you where we are. There is going to a lot of byte shedding. So I'd like to as best we can avoid tons of bikeshedding here in plenary that can take place on GitHub and we can also address those kinds of questions when we do come back for stage advancement in the future. 
 
 MPC: All right, so let's jump into priorities. Priority number one is this is pattern matching. So this might seem obvious, but we thought it was worth stating explicitly. This proposal is a entire conditional logic construct. It's more than just patterns. And so we have had to and we'll have to in the future make trade-off decisions involving ergonomics of like different use cases. And so this priority is us saying we want to prioritize the use cases of patterns because  the biggest hole that we're filling. Another priority is we want to subsume switch. So first of all, we want there to be zero syntactic overlap with switch to make it more easily google-able. We feel like any overlap with switch will produce confusion and hinder the discoverability and Google-ability of pattern matching. We also want to reduce the reasons to reach for switch. A lot of us feel like switch is pretty confusing, a frequent source of bugs, and generally not the best design. So we'd like there to be really no more reason to reach for switch after pattern matching is in the language. However, switch is pretty ergonomic for working with tagged unions, for example, so we'd like to ensure pattern matching is equally or more ergonomic for those use cases where switch is good. We'd also like to be better than switch. So switch has a lot of footguns, The big one is that fall through is opt out. So if you forget a break statement that's really easy to do but potentially really hard to debug. Additionally omitting curly braces in your case statements hoists declarations to the top which is usually surprising. It's also difficult to work with things like untagged unions in switch. So we'd like that to be ergonomic and pattern matching as ergonomic as we can possibly make it.
 
@@ -706,4 +705,4 @@ AKI: Alright, and that is time.
 
 JHD: Within the next day or so, I'm going to be updating the actual proposal repo; the proposal repo currently does not contain any of these changes. I will also be closing all issues and pull requests that are no longer relevant. So if you do file a new issue in the meantime, and you think it wouldn’t be immediately obvious to me, please note that it’s based on the presentation from today and I’ll make sure I leave it intact. Thanks everyone!
 
-AKI: All right, and with that we are wrapped for the day. It's 3 p.m. In New York, in Savannah and, you know, DC, I hope everyone has a wonderful afternoon or evening or morning and I look forward to seeing you all tomorrow or in hubs right now.
+AKI: And with that we are wrapped for the day. It's 3 p.m. In New York, in Savannah, and in D.C. I hope everyone has a wonderful afternoon or evening or morning and I look forward to seeing you all tomorrow or in hubs right now.

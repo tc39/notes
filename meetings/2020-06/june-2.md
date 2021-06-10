@@ -183,7 +183,7 @@ SYG: queue empty, asking for consensus for slide about #59, should be trivial to
 Presenter: Philip Chimento (PFC)
 
 * [proposal](https://github.com/tc39/proposal-temporal)
-* [slides](http://pipobscure.github.io/temporal-2020-06/)
+* [slides](https://pipobscure.github.io/slides/temporal-2020-06/)
 
 PFC: (presents slides)
 

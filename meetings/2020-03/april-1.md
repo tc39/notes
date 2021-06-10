@@ -490,7 +490,7 @@ Mark S. Miller (@Agoric )
 Presenter: Philipp Dunkel (PDL), Jason Williams (JWS), Philip Chimento (PFC), Ujjwal Sharma (USA)
 
 - [proposal](https://github.com/tc39/proposal-temporal)
-- [slides](https://pipobscure.github.io/temporal-2020-03/)
+- [slides](https://pipobscure.github.io/slides/temporal-2020-03/)
 
 PDL: (presents slides)
 

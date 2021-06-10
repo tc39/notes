@@ -749,7 +749,7 @@ EPR: Stage 2 reviewers?
 Presenter: Philipp Dunkel (PDL)
 
 
-PDL: (presents [slides](https://pipobscure.github.io/temporal-2019-10/))
+PDL: (presents [slides](https://pipobscure.github.io/slides/temporal-2019-10/))
 
 
 WH: As an example of DateTime, you had an example of a TC39 meeting, but no time zone.  So now when you combine a date with a time zone you have a DateTime?

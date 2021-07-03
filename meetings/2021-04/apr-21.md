@@ -17,7 +17,7 @@
 | Philip Chimento      | PFC            | Igalia             |
 | Jack Works           | JWK            | Sujitech           |
 | Istvan Sebestyen     | IS             | Ecma               |
-
+| Frank Yung-Fong Tang | FYT            | Google             |
 
 
 ## Move test262 requirement to Stage 3
@@ -267,7 +267,7 @@ JWK: Thanks.
 
 RPR: I just want to add one extra note on the previous topic, which was the NVC training proposal by DMP, which is also just to explain that also. Just wanted to say that the chair group supports the NVC training proposal
 ## Intl Enumeration API update
-Presenter: Firstname Lastname (FLE)
+Presenter: Frank Yung-fong Tange (FYT)
 
 - [proposal](https://github.com/tc39/proposal-intl-enumeration)
 - [slides](https://docs.google.com/presentation/d/1LLuJJvGsppQfFf0eCBBcplub_E7NY4EdbSVeE2duyoA/edit#slide=id.g96c285a300_1_0)

@@ -1,7 +1,7 @@
 # 1 September, 2021 Meeting Notes
 -----
 
-**In-person attendees:**  
+**In-person attendees:** None
 
 **Remote attendees:** 
 | Name                 | Abbreviation   | Organization       |

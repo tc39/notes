@@ -72,7 +72,7 @@ CM: No update.
 ## Mark `with` as legacy
 Presenter: Jordan Harband (JHD)
 
-- [PR](​​https://github.com/tc39/ecma262/pull/2441)
+- [PR](https://github.com/tc39/ecma262/pull/2441)
 
 JHD: We’ve discussed in committee about when we want to mark things as “legacy”, which is different from “normative optional”. Annex B has two connotations: normative optional and legacy. We’re now splitting these apart into two separate labels and pulling things out of Annex B, so we need consensus to mark things as either one. So, we’re trying to mark the `with` statement as legacy. Given that we no longer allow it in module code, or class bodies, this seems in line with the committee’s preference. So, is there anyone who has an issue with marking `with` as legacy?
 
@@ -406,7 +406,7 @@ YSV: Do I understand correctly that this is our only option and there won’t be
 
 LEO: Um, I’m trying to. A conclusion for that bikeshed because all the names like I can tell like from my Discovery, like all the names that we found in that we discussed, we came in with problems. But as it is to see, don’t know? Nothing is pretty like, set in stone before it’s shipping. I want to say my sentiment is that we have a positive conclusion at this meeting. I would prefer not to change this name again. But of course if something very strong happens, the renaming would be necessary. That’s all right.
 
-SYG: I would like to interject here. Sorry, I didn’t get on the queue, and the queue was empty. So I want to thank Leo and the Champions for shepherding the name bikeshading thread, which has grown very long, and it’s been there since July 14. Now it is the end of August, I think that is sufficient time for bikeshedding, and I would be and I would support getting a conclusion today and stopping the bikeshed.
+SYG: I would like to interject here. Sorry, I didn’t get on the queue, and the queue was empty. So I want to thank LEO and the Champions for shepherding the name bikeshading thread, which has grown very long, and it’s been there since July 14. Now it is the end of August, I think that is sufficient time for bikeshedding, and I would be and I would support getting a conclusion today and stopping the bikeshed.
 
 LEO: And just one more clarification. We are excluding even names that are private personal preferences for specific champions of this. Cool. This is not my main personal preference. I think this is the most pragmatic suggestion. Like my personal preference gives more challenges in the other aspects that I mentioned in the list.
 
@@ -418,7 +418,7 @@ Presenter: Tab Atkins (TAB), J. S. Choi (JSC)
 
 - [proposal](https://github.com/js-choi/proposal-hack-pipes/)
 - [slides](https://docs.google.com/presentation/d/1xTnIoh1ECLKAjEQ5YZ5hRw2MZzW67Q78exAR_q2EDgM/edit?usp=sharing)
-- [2021-07 incubator meeting](https://github.com/tc39/incubator-agendas/blob/master/notes/2021/06-17.md)
+- [previous 2021-07 incubator meeting](https://github.com/tc39/incubator-agendas/blob/master/notes/2021/06-17.md)
 
 TAB: [slide 1] So there’s an update on the pipe operator. We’re going to where we last talked about this at the beginning of the year and as well get into it during the slides. We got to consensus on the important issues that were blocking things before. So we’ll run through this real quick.
 

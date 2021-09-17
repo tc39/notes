@@ -474,7 +474,7 @@ SYG: I hear you and I intend to work closely with you. To the urgency question a
 
 YSV: Yeah, for sure. For this, I’m going to have our GC folks take a look and work with you on that once they’ve got some cycles to do that.
 
-JWK: Currently on the web, the concurrent programming model is based on posting messages instead of memory sharing. So, adding a high-level abstraction of shared structs…that means we are encouraging the concurrent programming model based on memory sharing. 
+JWK: Currently on the web, the concurrent programming model is based on post messages instead of memory sharing. Adding a high-level abstraction of shared structs… That means we are encouraging the concurrent programming model based on memory sharing. 
 
 SYG: I will say no, so one answer there is that SharedArrayBuffers exist. So we already have shared memory and the other part of the answer is that—
 

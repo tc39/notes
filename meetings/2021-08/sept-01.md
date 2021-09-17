@@ -528,7 +528,7 @@ WH: You could make all accesses sequentially consistent, but then it would be to
 
 SYG: Okay. Sorry, [where was?] I? Let’s continue this chat. This needs to be worked out. But not before Stage 1. I would like to ask for Stage 1 explicitly to explore the space of fixed layout objects for the following two use cases of shared memory and WasmGC. Any objections to Stage 1?
 
-JWK: I like the non-shared parts, but I think it’s skeptical for the shared parts, but I think Stage 1 is okay. 
+JWK: I like the non-shared parts, but the shared parts are skeptical. I think Stage 1 is okay though.
 
 WH: Yeah, I do not believe this can be implemented efficiently for the reasons I stated, but you’re welcome to explore it. 
 

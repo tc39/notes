@@ -223,7 +223,7 @@ JWK: This makes me think of the polyfill. For example, we need to add new intrin
 
 JHD: I don’t think it is, because if that object is mutable, then it defeats the purpose of being robust. If that object is immutable then it prevents polyfills from adding it. So, like, literally the only option is a function that gives direct access that I’m aware of. We can still discuss that in Stage 1.
 
-JWK: You can run the polyfill first then save a copy of the Intrinsics object. Deep clone. So you get the polyfilled intrinsics and at once, to be modified later. 
+JWK: You can run the polyfill first (to add new intrinsics) then save a copy of the Intrinsics object with a deep clone. Then you get the polyfilled intrinsics at the initialization stage that won't be affected later.
 
 JHD: If you’re doing that, you’re already doing the wrapping, and it’s almost the exact same code for the function call, you know. And then delegating to the original function for the original intrinsics. And calling, you know, and returning your new intrinsic. So it’s I think it’s effectively the same—but I’m happy to explore that during Stage 1.
 

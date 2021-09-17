@@ -235,7 +235,7 @@ SYG: I think the point I’m trying to make is, I guess, the same point that I m
 
 JHD: That’s very well understood. 
 
-JWK: Would want to come back. I suppose it is Stage 1. It’s worth the problem, too slow [?]. 
+JWK: I suppose it to Stage 1. It’s a worth problem to solve. 
 
 JHD: All right. Do you have any objections to Stage 1 here?
 

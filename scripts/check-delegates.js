@@ -16,22 +16,43 @@ const TWO_LETTER_ABBRS = new Set([
 ]);
 
 const contents = fs.readFileSync('./delegates.txt', 'utf8').toString();
-const re = /^(?<name>[^\(]+) \((?<abbr>[A-Z]{2,3})\)$/;
-const abbrs = new Set();
-for (const line of contents.split('\n')) {
+const re = /^(?<name>[^(]+)(?: \((?<abbr>[^)]*)\))?$/;
+const abbrs = new Map;
+const lines = contents.split('\n');
+
+let lineNumber = 1;
+let previousLine = '';
+
+for (const line of lines) {
   if (line.length === 0) continue;
   const match = re.exec(line);
   const {name, abbr} = match.groups;
 
-  // Check for two-letter abbreviations.
-  if (abbr.length < 3 && !TWO_LETTER_ABBRS.has(abbr)) {
-    throw new Error(`Invalid abbreviation: ${abbr} New delegate abbreviations must consist of three letters.`);
+  if (previousLine.localeCompare(line, 'en') > 0) {
+    throw new Error(`Line ${lineNumber}: Not in lexicographic order.`);
   }
 
-  // Check for duplicates.
+  if (abbr == null) {
+    throw new Error(`Line ${lineNumber}: Missing abbreviation for ${JSON.stringify(line)}.`);
+  }
+
+  if (!/^[A-Z]+$/.test(abbr)) {
+    throw new Error(`Line ${lineNumber}: Abbreviations must be all uppercase Latin letters.`);
+  }
+
+  if (abbr.length === 2) {
+    if (!TWO_LETTER_ABBRS.has(abbr)) {
+      throw new Error(`Line ${lineNumber}: 2-letter abbreviation ${JSON.stringify(abbr)} not in allowlist. New delegate abbreviations must be three letters.`);
+    }
+  } else if (abbr.length !== 3) {
+    throw new Error(`Line ${lineNumber}: Invalid abbreviation ${JSON.stringify(abbr)}. New delegate abbreviations must be three letters.`);
+  }
+
   if (abbrs.has(abbr)) {
-    throw new Error(`Duplicate abbreviation: ${abbr}`);
+    throw new Error(`Line ${lineNumber}: Duplicate abbreviation ${JSON.stringify(abbr)}. Conflicting usage on line ${abbrs.get(abbr)}.`);
   }
-  abbrs.add(abbr);
+  abbrs.set(abbr, lineNumber);
 
+  previousLine = line;
+  ++lineNumber;
 }

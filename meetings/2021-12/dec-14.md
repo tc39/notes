@@ -143,7 +143,7 @@ Presenter: Jordan Harband (JHD)
 
 - [PR](https://github.com/tc39/ecma262/pull/2106)
 
-JHD: So, the committee has previously decided essentially that name space objects like reflection and atomics should have a @@toStringTag for debuggability.
+JHD: So, the committee has previously decided essentially that namespace objects like Reflect, JSON, and Atomics should have a `@@toStringTag` for debuggability.
 
 Only really, what is the proposed content of the two string tag? Oh, in this pull request. It is the string import meta in Pascal case.
 
@@ -153,7 +153,7 @@ JHD: Yes, capital I.
 
 MM: Got it. it. Thank you.
 
-JHD: Yeah, and it could be anything the exact content of the string is I think pretty byte shuttle. The thing that we need consensus on most. Most importantly here is, should we add the property or not? The arguments for would be debug ability and you know, it's a built-in object that holds stuff like reflective Amendment and you know math and atomics  and so on. The arguments against it would be that, it's not like a globally available one where the same instance is always everywhere, each module gets their own so, Bradley commented that PR year and a half ago for some reasons why we may be shouldn't do it. So, the analog here, there's three bullet points. The fourth bullet point here to me, is sort of contradicted by the fact that module namespace objects already have own symbol that to string tag properties. So even though every module has can be imported as its own module name, space object, that will have a symbol to string had property. So for me, the that can import that matter are conceptually similar. There's no like, you know, one per module and The hold on Jordan get have bugged.
+JHD: Yeah, and it could be anything the exact content of the string is I think pretty bikesheddable. The thing that we need consensus on most importantly here is, should we add the property or not? The arguments "for" would be debuggability. It's a built-in object that holds stuff like Reflect, Math, Atomics, and so on. The arguments "against" would be that, it's not like a globally available one where the same instance is always everywhere, each module gets their own. Bradley commented on that PR a year and a half ago with some reasons why we maybe shouldn't do it - there's three bullet points. The fourth bullet point here to me, is sort of contradicted by the fact that module namespace objects already have own `Symbol.toStringTag` properties. So even though every module can be imported as its own module namespace object, that will have a `Symbol.toStringTag` property. So for me, that and `import.meta` are conceptually similar. There's not one per module.
 
 JHD: Okay, so to MM's question about enumerable writable configurable the `__proto__`, currently it is configurable and writable but not enumerable. I don't think there's a strong reason to do it that way. That's just what happens to be this pull request.
 
@@ -337,9 +337,9 @@ Presenter: Justin Ridgewell (JRL)
 
 JRL: This is super easy because there are essentially no changes. We reached the stage 3 criteria since the last meeting for Array `groupBy` and `groupByMap`. We have spec text. That's been pushed out, reviewers have all approved and editors have all approved - except one change that's currently in flight, but it's an editorial change to the methods.
 
-JRL: The only discussion point which needs to be brought up is, Jordan brought up a groupByMap naming issue. Essentially. He's equating flatMap meaning `map` followed by `flat` and if that would be confusing for people who see groupByMap as map followed by groupBy, or groupBy into a  map output. I'm not super sold on it. I think it's okay to have groupByMap return a map. But that's the only discussion point we have - and then I can ask for stage 3.
+JRL: The only discussion point which needs to be brought up is, JHD brought up a groupByMap naming issue. Essentially. He's equating flatMap meaning `map` followed by `flat` and if that would be confusing for people who see groupByMap as map followed by groupBy, or groupBy into a  map output. I'm not super sold on it. I think it's okay to have groupByMap return a map. But that's the only discussion point we have - and then I can ask for stage 3.
 
-JHD: Yeah, I just want to make sure we discussed this. So yeah, I mean it's a relatively minor issue. The polyfill that I already made would have to be renamed so it's not like - this will cause friction for me to rename it anyway, but I still wanted to bring it up. The other thing is - it's kind of unfortunate, right? We have this naming conflict between mapping and a Map and it seems - I don't really have a better suggestion for the name, but it seems like not a great name for the groups, where the groups are maps instead of objects. Before stage 3 is the time to discuss it. So I wanted to bring it up before the advancement.
+JHD: Yeah, I just want to make sure we discussed this. So yeah, I mean it's a relatively minor issue. The polyfill that I already made would have to be renamed so this will cause friction for me to rename it anyway, but I still wanted to bring it up. The other thing is - it's kind of unfortunate, right? We have this naming conflict between mapping and a Map and it seems - I don't really have a better suggestion for the name, but it seems like not a great name for the groups, where the groups are Maps instead of Objects. Before stage 3 is the time to discuss it. So I wanted to bring it up before the advancement.
 
 YSV: So, I do see you're saying, Jordan. So actually, when I initially read groupByMap, I thought we were grouping by a mapped key. So, I do, see what you're saying there. The suggestion I can make is that we can also take this to an issue and give conditional acceptance to this. We could rename both of these because groupBy and groupByMap work. Well together we can have `groupToMap`, which indicates the direction. What kind of object it might return: it's not very pretty, but it could also be grouped to objects and group to map. That's not very pretty, but those are two suggestions.
 
@@ -771,7 +771,7 @@ BT: We have a few explicit approvals and thumbs up.
 
 JSC: I would like to request for a formal reviewer for Stage 3.
 
-JHD: I'd happy to be a reviewer.
+JHD: I'd be happy to be a reviewer.
 
 NRO: I can review too.
 

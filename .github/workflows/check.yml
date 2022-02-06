@@ -1,0 +1,16 @@
+name: 'ci'
+
+on: [pull_request, push]
+
+jobs:
+  build:
+    name: 'check'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ljharb/actions/node/install@1f631e8a1b9d01db48955c090cf4720b1897942b
+        name: 'nvm install lts/* && npm ci'
+        with:
+          node-version: lts/*
+      - run: npm run check

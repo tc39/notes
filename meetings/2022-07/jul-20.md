@@ -30,55 +30,102 @@
 Day 1 <- yesterdays notes
 
 CERTAIN PARTS OF THE NOTES ARE GOING TO BE WRITTEN BY THE ATTENDEES OR EDITING, IT WILL REQUIRE KIND OF HUMAN EDITING AND CONFIRMATION.  bUT STILL, TRANSCRIBING EVERYTHING THAT WE ARE SAYING IN that section leading up to that will be good.
+
 Transcribed.
+
 tHAT IS THE STANDARD WAY OF DOING IT.  oKAY.
+
 I will do it small here.
+
 You know, if it’s not too difficult to do it in kind of natural casing, then that would be nice.  But it’s understandable, but that’s the standard way of doing the text.
+
 Yeah, I think she has it turned on so it’s – it’s in normal text here, it looks like.  
+
 ?: okay.  Perfect.  So . . .  my understanding from our conversation before, is that if you don’t know who is talking, you will put in
 
 ?: SPEAKER:
+
 ?: we have them in there right now, and we can put in either speaking or just chevrons.  Because we just got that name list, and there’s no way we can even get remotely close to doing that today.  
+
 ?: right.  
+
 ?: okay.  Yeah.  Then we will – we will work on filling that in.  
+
 ?: okay.  Great.  
+
 ?: one thing . . .  Dan, would you prefer, like, chevron speaker colon or just chevrons?  
-DE: >> we – so what we usually do for the final version of the notes is, you know, we have the three letter acronyms, you know, that there’s no time to use those for today.  3 letter acronym, colon and the comment.  So if you could
+
+DE: we – so what we usually do for the final version of the notes is, you know, we have the three letter acronyms, you know, that there’s no time to use those for today.  3 letter acronym, colon and the comment.  So if you could
+
 ?: I can do an audio check at any time.  
-DE: >> can people go around the room and say, hello.  I work at Bloomberg
+
+DE: can people go around the room and say, hello.  I work at Bloomberg
 The audio needs to be turned up in order to hear everything
+
 ?: the last one was quite inaudible.  
+
 ?: hi, I am Daniel.  From Mozilla.  
+
 ?: pretty good.  
+
 ?: who are you?  Brian?  
-BT:>> hi, I am Brian I work for Microsoft.  
-RPR:>> hi.  I am Rick.  I work for Bloomberg and one of the cochairs of the meeting so you may hear me meeting a little more than others.  
-DE:>> Julia, who are you
-YSV:>> that is an excellent question.  Hi, I am Julia.  I work for Mozi
-DE:>> okay.  So . . .  
-YSV:>> I have a question.  Are we doing a test for the note-taker.  
-DE:>> so now we have professional captioners with us.  And the first presentation of the day will be to review the motivation for this and open it up briefly to questions with them.  Before going on to two hours of captioning support.  And then, you know, they will leave.  And we will decide whether we want to continue with this for future meetings
-YSV:>> .  Okay.  And the process will be forwarding to get a quick preview, it’s going to be our current bot-based note-taking or full note-taking?  
-DE:>> they are taking the notes.  We will have to fill in names because I failed to send the name list to the captioners before the event.  Hopefully in the future meetings, it will be possible for people to – for the names to be part of this as well.  
-YSV:>> okay.  
-DE:>> and I will explain more in the presentation.  I wanted to ask people, the first time they talk, to identify, just say their name and the three-letter acronym in this topic
-YSV:>> that sounds great.  That’s a good idea
-DE:>> and that is a practice going forward so everything will start to catch on
-MF: >> should we ask Kevin to have the transcription about simultaneously into a separate document
-DE:>> in my opinion, no.  I am watching the transcription, and the bot needs a lot of human help anyway, so . . .  I don’t – I don’t think that will be a good use of anyone’s time, to provide that human help, given this.  
-MF: >> okay.  
+
+BT: hi, I am Brian I work for Microsoft.  
+
+RPR: hi.  I am Rick.  I work for Bloomberg and one of the cochairs of the meeting so you may hear me meeting a little more than others.  
+
+DE: Julia, who are you
+
+YSV: that is an excellent question.  Hi, I am Julia.  I work for Mozi
+
+DE: okay.  So . . .  
+
+YSV: I have a question.  Are we doing a test for the note-taker.  
+
+DE: so now we have professional captioners with us.  And the first presentation of the day will be to review the motivation for this and open it up briefly to questions with them.  Before going on to two hours of captioning support.  And then, you know, they will leave.  And we will decide whether we want to continue with this for future meetings
+
+YSV: Okay.  And the process will be forwarding to get a quick preview, it’s going to be our current bot-based note-taking or full note-taking?  
+
+DE: they are taking the notes.  We will have to fill in names because I failed to send the name list to the captioners before the event.  Hopefully in the future meetings, it will be possible for people to – for the names to be part of this as well.  
+
+YSV: okay.  
+
+DE: and I will explain more in the presentation.  I wanted to ask people, the first time they talk, to identify, just say their name and the three-letter acronym in this topic
+
+YSV: that sounds great.  That’s a good idea
+
+DE: and that is a practice going forward so everything will start to catch on
+
+MF: should we ask Kevin to have the transcription about simultaneously into a separate document
+
+DE: in my opinion, no.  I am watching the transcription, and the bot needs a lot of human help anyway, so . . .  I don’t – I don’t think that will be a good use of anyone’s time, to provide that human help, given this.  
+
+MF: okay.  
+
 ?: yeah.  A person.  
+
 ?: okay.  
+
 ?: someone in the room
+
 ?: no.  They are on the Internet.  So Duane O’Geil.  Am I pronouncing the name properly?  
+
 ?: no one ever does.  It’s O’giel.  
-DE: >> he runs a transcription company and we are working with somebody in his firm to do this, and this is sponsored by Bloomberg.  
+
+DE: he runs a transcription company and we are working with somebody in his firm to do this, and this is sponsored by Bloomberg.  
+
 ?: awesome.  [inaudible]
-DE: >> that transcribed as [inaudible].  
-Duane O’Giel>> I think one of the key things beings just to note for everyone here too, when you are speaking, remember to be close to your mic.  And also, allow others to finish their instead ofer sentence.  It just makes it a little easier for the captioner to get the information in there properly.  
-DE: >> I wanted to request that you interrupt us, maybe through a message in the chat or just a message in the document when things are difficult to hear, so that it can be, you know, reported to the committee.  Would that be okay?  
-Duane O’Giel>> yeah.  I think one of the things that you will see that the writer will do is, they will put up [inaudible].  
-DE:>> okay the great.  People watching the notes, if you see that coming up, you can just, you know, shut out or put a point of order on TCQ to say, point of order, we have an [inaudible] comment.  So we will repeat this when the presentation happens
+
+DE: that transcribed as [inaudible].  
+
+Duane O’Giel: I think one of the key things beings just to note for everyone here too, when you are speaking, remember to be close to your mic.  And also, allow others to finish their instead ofer sentence.  It just makes it a little easier for the captioner to get the information in there properly.  
+
+DE: I wanted to request that you interrupt us, maybe through a message in the chat or just a message in the document when things are difficult to hear, so that it can be, you know, reported to the committee.  Would that be okay?  
+
+Duane O’Giel: yeah.  I think one of the things that you will see that the writer will do is, they will put up [inaudible].  
+
+DE: okay the great.  People watching the notes, if you see that coming up, you can just, you know, shut out or put a point of order on TCQ to say, point of order, we have an [inaudible] comment.  So we will repeat this when the presentation happens
+
 ?: okay.  
 
 ## Professional Stenography
@@ -88,46 +135,89 @@ Presenter: Dan Ehrenberg (DE)
 [issue](https://github.com/tc39/Reflector/issues/426)
 [glossary](https://github.com/tc39/how-we-work/blob/main/terminology.md)
 
-DE: >> yes.  So – so this is about professional support.  This is my first presentation as Bloomberg, but it continues a line of work through to the TC39 group.  This is an inclusion issue for multiple issues.  I am happy to see many of you in San Francisco and remote.  The note takers are exhausted.  It falls on the same few people.  In principle, the notes don’t have to be as extensive as what we have been taking.  But in practice, we find there’s a lot of subtle things in the conversation that would get missed by this potentially and have been historically.  So it’s important to have full transcriptions for us, for that purpose.  Further, this can help, you know, hearing impaired participants follow during meeting as well by following the notes or for whatever reason that the audible version might not work as well.  KG made a bot and working on incremental improvements based on speech that detects API.  But it’s too much work for the human note-takers to keep up with corrections and end up checking in gibberish in the notes.  So this is our solution, a professional captioner.  And we have a professional person on this call taking the notes right now, into our notes document on line.  The flow is like before.  The captioner writes the transcript into our Google docs document and corrections can happen from the committee, the other document, both during the meeting and after the meeting.  So some tips for enabling good transcription: if people can contribute to the glossary, this forms some base material that the captioner can use to assist in understanding what are the technical words that come up.  We are using the replacement JS filed used in the bot, but into more human readable form.  So please, when you talk, because we are a new group for the captioner, if the first time you speak, you can identify yourself, and your 3-letter acronym, then that will be helpful for the captioner.  It might not be sufficient just one time, but if – TC39 delegates can fill in missing names, that’s good for today, at least.  So we are joined by the IR broadcast captioning company from Duane O’Geil and his staff.  They have been taking notes from the beginning of this presentation.  Today we have two hours of professional captioning sponsored by Bloomberg.  If this experiment work wells, then we plan to ask ECMA for support for ongoing professional captioning.  This is well within the Ecma bylaws which state that the secretary should prepare the minutes of the meetings.  It’s clear that ECMA was always in the loop for that.  So I want to make sure, is everyone okay with her being here for the next two hours and later, maybe tomorrow, for example, we can recap and whether we want to continue with the professional captioner.  That’s the whole presentation.  Do people have any concerns or comments?  
-BT: >> no, none in the queue at this time.  But we can give it a couple of seconds to see if anyone is typing
-DE: >> SPEAKER: We have Duane on the line if anyone has any questions.  
-JHD: >>: I have a question.  So the – for mark down, the style of things in the notes needs to end up a certain way.  But obviously, that may not be, like, that would be disruptive to the process of taking the notes.  So is there – is that something we should take on ourselves or feedback we can provide for the stenographer to clean it up after or what are your thoughts
-DE:>> the answer is both.  For today, I didn’t give advance instructions about how to do the mark down formatting.  Over time, maybe this is something that they could be writing things a little bit more in that format or fixed up afterwards.  But it will take time to, to, you know, have this conversation about the format.  Duane, do you have any more comments on this
-Duane O’Geil >> I think what you just said sums it up quite well.  Once we have better information, understand the conversations and such, we can, you know, definitely adapt to that.  However, you know, coming into this, as newbies, it’s going to be more difficult.  So we will just have straight text.  If this is something that does proceed in the future, we can certainly work to understanding what exactly it is that you need, and trying to incorporate that moreso into everything that we provide.  
-JHD: >> and we will presumably have some feedback channel set up for having – for conveying that.  
-DE: >> yeah.  I have an email thread with them and we can be in touch.  
+DE: yes.  So – so this is about professional support.  This is my first presentation as Bloomberg, but it continues a line of work through to the TC39 group.  This is an inclusion issue for multiple issues.  I am happy to see many of you in San Francisco and remote.  The note takers are exhausted.  It falls on the same few people.  In principle, the notes don’t have to be as extensive as what we have been taking.  But in practice, we find there’s a lot of subtle things in the conversation that would get missed by this potentially and have been historically.  So it’s important to have full transcriptions for us, for that purpose.  Further, this can help, you know, hearing impaired participants follow during meeting as well by following the notes or for whatever reason that the audible version might not work as well.  KG made a bot and working on incremental improvements based on speech that detects API.  But it’s too much work for the human note-takers to keep up with corrections and end up checking in gibberish in the notes.
 
-BT: >> a couple queue items, Michael:
-MLS: >> our desire to take exhaustive notes may not be reasonable.  Other TCs don’t do that.  MLS, Michael.  I know other TCs, they record salient points of the discussion, and the result of the discussion, it may be the case that it’s just not reasonable for us to continue the process.  And I understand it is difficult for the note-takers or the bot fixers or whatever you want to call them
-DE: >> so I addressed that in the beginning of the presentation.  Why isn’t it reasonable if we have a technical path forward with this sort of support?  
-MLS: >> because even with the stenographer, I don’t think we are going to fully capture everything without people going back and editing what has been recorded.  Especially when we have – especially when we have multiple people involved in a conversation which occasionally happens
-DE: >> to clarity, this is – IR broadcast captioning has been flexible enough to work with our existing work flow.  They are typing into Google docs.  People who want to edit, can, but they will have more accurate base material than they did with the bot.  
-MLS: >> I am not sure you’re understanding my point.  
-DE: >> we would have humans editing the notes for some of the reasons they do today, to get – to make sure the points fully accurate, but they will be working with a base of more accurately transcribed material.  I disagree with you that it’s feasible for us to choose the salient points.  When looking at the past notes of TC39, important points have been left out by attempts to only list the salient points.  It’s hard to read some of the notes from back – from back then.  I think it’s person for our process to have this more fully captioned
-MLS: >> let me continue what I was going to say, when you replied.  I think – I think a speaker could register that there’s certain points they want captured in the notes.  And if they do that, it reduces the amount of note-taking that needs to happen.  
-DE >> okay.  That’s an interesting idea.  
-BT >> we have a few more items on the queue, and only like a minute or two left on in the timebox.  So let’s try and get through this.  Would you all have a reply on this topic
-USA: >> real quick, I understand Michael, the point that you’re trying to make, but I – I have a strong feeling, looking at the quality of notes that we have right now, that the proposal is still a lot for work than what we have currently, which is a very good base to – to make slight edits on.  If speakers have to specify more details or if we go back to the bot or whatever, all of those require more work.  Of course, without having to pay for the transcription.  
-DE: >> yeah.  What we have seen is that the work for note-taking falls on a fall number of people who have trouble participating in meetings.  And I think that would still be the case, even if the notes were high-level.  But maybe note takers can comment.  Can you extend the time box by 5 minutes?  So we can work through the queue.  
-BT: >> I will look at that.  Let’s get Robin
-RRD:>> So.  Yeah.  I’ve been taking notes in the past and this meeting yesterday.  To first answer to JHD earlier, for the mark down formatting, I think the amount of work we need to adapt to our formatting is very minimal.  So I am not at all concerned about this.  Also, to answer to MLS . . .  for us and what we are seeing right now, we haven’t gone into technical discussions yet.  So there is a caveat on this.  But we will see when we go to the technical discussions.  Right now, the way the notes are being written is way more helpful than the bot ever was because there is less repetition.  We really feel like this is transcribing what is being said in the room.  So we are still able to go and edit, we are still doing this, but we are doing it at a frequency that is much lower than with the bot previously.  I think there is huge plus on a different state
-DE: >> the note takers have a hard time getting people to listen to them, when they ask people to talk more slowly or – or to, you know, talk more to the microphone.  So I think asking it to be on the committee to when a point is salient is kind of difficult.  And it can be difficult to figure that out in an online conversation.  
-BT: >> okay.  There’s a few folks in the queue.  Just a time note.  We can continue this discussion to 10:20.  But absolutely no later.  So let’s try to actually get done in more than 5 minutes.  
-DE: >> okay.  Thanks.  
-HHM: >> yeah.  Adding on to the same discussion here.  We have taken notes a number of times, and we highlight the challenge . . .  feeling what the stenographer convey, can we have a summary of what happened during this presentation?  Like the notes in the meeting.  Yes, it’s really useful.  But to create a summary of what happened during this particular segment in the meeting.  
-DE: >> that is a welcome contribution.  It can be done for past meetings.  It’s pretty separate from the – the note-taking.  I mean, one did not subsume the other.  If somebody wants to do that work, it’s a great initiative.  
-HHM: >> okay.  Then.  Thank you.  
-BT: >> go ahead, Shane.  
-SFC: >> I just wanted to remark that there is no delegate in the room that has complete context on every TC39 discussion, and relying only on note-takers to decide what the salient points are is just simply not scalable.  Having a comprehensive or exhaustive baseline I think is essential.  I want to reiterate that point.
-DE: >> any more on in queue
-CP: >> I am with MLS on some of the things he mentioned.  What is the point of having notes beyond the ECMA archives? I believe there is much more but it’s hard for me to think about how are we going to enable other people to rely on the notes and today, I know most people will never go back and look at the notes and look for points in the conversations. Maybe we have to do some work around it by creating tools that allow us to maybe link from proposals to the notes for every time that the proposal is discussed in plenary and so on . . .  so maybe there’s more that we can get out of the notes, and having professional notes helps.  So to date, it’s very, very minimal what is useful from the point of view of the notes.
-DE: >> my experience as a proposal author differs significantly from that.  I need to look back at what was previously stated to follow up with the concerns raised.  They are in the course of the discussion also.  So, yeah.  Improved tooling, separately separate from a captioner.  This is an extra piece of work that we can’t contract for, and great to have volunteers for.  
-BT: >> first, MLS wanted to say that his point was the speaker identifies the points that they want recorded.  But he doesn’t need to speak.  YSV go ahead.  
-YSV: >> I wanted to remark, first, that I’ve been following the note takers and the note-taking is really high quality.  I would like to remind folks that I had a project, it’s – I haven’t had time for it – but I had a project that was linking different parts of the discussion, how we were switching from which concerns were being addressed and how.  And actually, doing a detailed tagging through all of the notes in order to generate for us a design rationale.  This was part of the rationale project.  That was a point in which I thought it was a really a shame we couldn’t have more high-quality notes because if we only take, for example, the salient notes, you don’t actually capture – if you go back in history, when we were only taking salient notes. Back when only taking the salient notes, it was very difficult to understand how a decision was come upon.  Why we made a certain decision.  Because only the decision was recorded and not how we got to it.  We already have a problem where we are losing information about a decision that’s been made in the past.  We end up with a design and we don’t know how we got to it.  Like DE mentioned, I too go back into the notes to determine how we came to certain decisions.  And that is much easier with a high-quality, high-resolution note-taking system.  The only alternative, I could imagine, to what we do today with these high-resolution notes, is something like recording video of these.  But that is a contentious alternative.  
-DE:>> yeah.  Thank you very much.  
-BT>> we have to leave it there.  But thankfully the queue is empty
-DE: >> I take it there’s no objection to continuing with the transcription until noon?  Okay.  Thank you.  
-BT:>> thank you, DE.  
+DE: So this is our solution, a professional captioner.  And we have a professional person on this call taking the notes right now, into our notes document on line.  The flow is like before.  The captioner writes the transcript into our Google docs document and corrections can happen from the committee, the other document, both during the meeting and after the meeting.
+
+DE: So some tips for enabling good transcription: if people can contribute to the glossary, this forms some base material that the captioner can use to assist in understanding what are the technical words that come up.  We are using the replacement JS filed used in the bot, but into more human readable form.  So please, when you talk, because we are a new group for the captioner, if the first time you speak, you can identify yourself, and your 3-letter acronym, then that will be helpful for the captioner.  It might not be sufficient just one time, but if – TC39 delegates can fill in missing names, that’s good for today, at least.
+
+DE: So we are joined by the IR broadcast captioning company from Duane O’Geil and his staff.  They have been taking notes from the beginning of this presentation.  Today we have two hours of professional captioning sponsored by Bloomberg.  If this experiment work wells, then we plan to ask ECMA for support for ongoing professional captioning.  This is well within the Ecma bylaws which state that the secretary should prepare the minutes of the meetings.  It’s clear that ECMA was always in the loop for that.  So I want to make sure, is everyone okay with her being here for the next two hours and later, maybe tomorrow, for example, we can recap and whether we want to continue with the professional captioner.  That’s the whole presentation.  Do people have any concerns or comments?  
+
+BT: no, none in the queue at this time.  But we can give it a couple of seconds to see if anyone is typing
+
+DE: SPEAKER: We have Duane on the line if anyone has any questions.  
+
+JHD: I have a question.  So the – for mark down, the style of things in the notes needs to end up a certain way.  But obviously, that may not be, like, that would be disruptive to the process of taking the notes.  So is there – is that something we should take on ourselves or feedback we can provide for the stenographer to clean it up after or what are your thoughts
+
+DE: the answer is both.  For today, I didn’t give advance instructions about how to do the mark down formatting.  Over time, maybe this is something that they could be writing things a little bit more in that format or fixed up afterwards.  But it will take time to, to, you know, have this conversation about the format.  Duane, do you have any more comments on this
+
+Duane O’Geil: I think what you just said sums it up quite well.  Once we have better information, understand the conversations and such, we can, you know, definitely adapt to that.  However, you know, coming into this, as newbies, it’s going to be more difficult.  So we will just have straight text.  If this is something that does proceed in the future, we can certainly work to understanding what exactly it is that you need, and trying to incorporate that moreso into everything that we provide.  
+
+JHD: and we will presumably have some feedback channel set up for having – for conveying that.  
+
+DE: yeah.  I have an email thread with them and we can be in touch.  
+
+BT: a couple queue items, Michael:
+
+MLS: our desire to take exhaustive notes may not be reasonable.  Other TCs don’t do that.  MLS, Michael.  I know other TCs, they record salient points of the discussion, and the result of the discussion, it may be the case that it’s just not reasonable for us to continue the process.  And I understand it is difficult for the note-takers or the bot fixers or whatever you want to call them
+
+DE: so I addressed that in the beginning of the presentation.  Why isn’t it reasonable if we have a technical path forward with this sort of support?  
+
+MLS: because even with the stenographer, I don’t think we are going to fully capture everything without people going back and editing what has been recorded.  Especially when we have – especially when we have multiple people involved in a conversation which occasionally happens
+
+DE: to clarity, this is – IR broadcast captioning has been flexible enough to work with our existing work flow.  They are typing into Google docs.  People who want to edit, can, but they will have more accurate base material than they did with the bot.  
+
+MLS: I am not sure you’re understanding my point.  
+
+DE: we would have humans editing the notes for some of the reasons they do today, to get – to make sure the points fully accurate, but they will be working with a base of more accurately transcribed material.  I disagree with you that it’s feasible for us to choose the salient points.  When looking at the past notes of TC39, important points have been left out by attempts to only list the salient points.  It’s hard to read some of the notes from back – from back then.  I think it’s person for our process to have this more fully captioned
+
+MLS: let me continue what I was going to say, when you replied.  I think – I think a speaker could register that there’s certain points they want captured in the notes.  And if they do that, it reduces the amount of note-taking that needs to happen.  
+
+DE: okay.  That’s an interesting idea.  
+
+BT: we have a few more items on the queue, and only like a minute or two left on in the timebox.  So let’s try and get through this.  Would you all have a reply on this topic
+
+USA: real quick, I understand Michael, the point that you’re trying to make, but I – I have a strong feeling, looking at the quality of notes that we have right now, that the proposal is still a lot for work than what we have currently, which is a very good base to – to make slight edits on.  If speakers have to specify more details or if we go back to the bot or whatever, all of those require more work.  Of course, without having to pay for the transcription.  
+
+DE: yeah.  What we have seen is that the work for note-taking falls on a fall number of people who have trouble participating in meetings.  And I think that would still be the case, even if the notes were high-level.  But maybe note takers can comment.  Can you extend the time box by 5 minutes?  So we can work through the queue.  
+
+BT: I will look at that.  Let’s get Robin
+
+RRD: So.  Yeah.  I’ve been taking notes in the past and this meeting yesterday.  To first answer to JHD earlier, for the mark down formatting, I think the amount of work we need to adapt to our formatting is very minimal.  So I am not at all concerned about this.  Also, to answer to MLS . . .  for us and what we are seeing right now, we haven’t gone into technical discussions yet.  So there is a caveat on this.  But we will see when we go to the technical discussions.  Right now, the way the notes are being written is way more helpful than the bot ever was because there is less repetition.  We really feel like this is transcribing what is being said in the room.  So we are still able to go and edit, we are still doing this, but we are doing it at a frequency that is much lower than with the bot previously.  I think there is huge plus on a different state
+
+DE: the note takers have a hard time getting people to listen to them, when they ask people to talk more slowly or – or to, you know, talk more to the microphone.  So I think asking it to be on the committee to when a point is salient is kind of difficult.  And it can be difficult to figure that out in an online conversation.  
+
+BT: okay.  There’s a few folks in the queue.  Just a time note.  We can continue this discussion to 10:20.  But absolutely no later.  So let’s try to actually get done in more than 5 minutes.  
+
+DE: okay.  Thanks.  
+
+HHM: yeah.  Adding on to the same discussion here.  We have taken notes a number of times, and we highlight the challenge . . .  feeling what the stenographer convey, can we have a summary of what happened during this presentation?  Like the notes in the meeting.  Yes, it’s really useful.  But to create a summary of what happened during this particular segment in the meeting.  
+
+DE: that is a welcome contribution.  It can be done for past meetings.  It’s pretty separate from the – the note-taking.  I mean, one did not subsume the other.  If somebody wants to do that work, it’s a great initiative.  
+
+HHM: okay.  Then.  Thank you.  
+
+BT: go ahead, Shane.  
+
+SFC: I just wanted to remark that there is no delegate in the room that has complete context on every TC39 discussion, and relying only on note-takers to decide what the salient points are is just simply not scalable.  Having a comprehensive or exhaustive baseline I think is essential.  I want to reiterate that point.
+
+DE: any more on in queue
+
+CP: I am with MLS on some of the things he mentioned.  What is the point of having notes beyond the ECMA archives? I believe there is much more but it’s hard for me to think about how are we going to enable other people to rely on the notes and today, I know most people will never go back and look at the notes and look for points in the conversations. Maybe we have to do some work around it by creating tools that allow us to maybe link from proposals to the notes for every time that the proposal is discussed in plenary and so on . . .  so maybe there’s more that we can get out of the notes, and having professional notes helps.  So to date, it’s very, very minimal what is useful from the point of view of the notes.
+
+DE: my experience as a proposal author differs significantly from that.  I need to look back at what was previously stated to follow up with the concerns raised.  They are in the course of the discussion also.  So, yeah.  Improved tooling, separately separate from a captioner.  This is an extra piece of work that we can’t contract for, and great to have volunteers for.  
+
+BT: first, MLS wanted to say that his point was the speaker identifies the points that they want recorded.  But he doesn’t need to speak.  YSV go ahead.  
+
+YSV: I wanted to remark, first, that I’ve been following the note takers and the note-taking is really high quality.  I would like to remind folks that I had a project, it’s – I haven’t had time for it – but I had a project that was linking different parts of the discussion, how we were switching from which concerns were being addressed and how.  And actually, doing a detailed tagging through all of the notes in order to generate for us a design rationale.  This was part of the rationale project.  That was a point in which I thought it was a really a shame we couldn’t have more high-quality notes because if we only take, for example, the salient notes, you don’t actually capture – if you go back in history, when we were only taking salient notes. Back when only taking the salient notes, it was very difficult to understand how a decision was come upon.  Why we made a certain decision.  Because only the decision was recorded and not how we got to it.  We already have a problem where we are losing information about a decision that’s been made in the past.  We end up with a design and we don’t know how we got to it.  Like DE mentioned, I too go back into the notes to determine how we came to certain decisions.  And that is much easier with a high-quality, high-resolution note-taking system.  The only alternative, I could imagine, to what we do today with these high-resolution notes, is something like recording video of these.  But that is a contentious alternative.  
+
+DE: yeah.  Thank you very much.  
+
+BT: we have to leave it there.  But thankfully the queue is empty
+
+DE: I take it there’s no objection to continuing with the transcription until noon?  Okay.  Thank you.  
+
+BT: thank you, DE.  
 
 ## Avoid triggering throw in corner case in async generators or Avoid mostly-redundant await in async yield*
 
@@ -137,43 +227,85 @@ Presenter: Kevin Gibbons (KG)
 
 - Alternative PR: [Avoid mostly-redundant await in async yield*](https://github.com/tc39/ecma262/pull/2819)
 
-KG: >> So this – the title of this issue is misleading because when I originally noticed the issue, I proposed a fix and realized that the fix was for an issue which shouldn’t have happened in the first place. So I have a slightly larger proposal to make.  But it needs a lot of background.  So we will spend a while doing background on this.  So this is the main pull request that I want to get feedback for.  There’s an alternative one linked there that makes the smaller more technical change.  But it’s 2819 that I wanted to focus on today.  So I'm going to do a bit of background.  Some of this will be familiar to many of you.  But it’s important to understand, and also, some of this will be important later for the iterator helpers proposal.  So . . .  there are a couple of protocols in the spec that are not necessarily completely defined, or the definitions are not necessarily consistent with how they are used in the spec.  I am going to talk about a thing I will call “the iterator protocol.”  This method `.next` and optionally `.return`, where `.next` returns an object that has a `done` boolean and a `value`.  And this is like the main way you interact with an iterator.  You call`next` repeatedly and check the `done`Boolean.  There is a method to call on the iterator to perform cleanup.  So the value from return is required to be an object, but not otherwise particularly inspected.  But I want to focus on the format of the return value from next because it’s important later.
-So the iterator protocol is used primarily by`for-of`loops. It will get Symbol.iterator from the iterable and invoke .next on the iterator.  And if you exit the loop early, by calling break, it calls iterator.return.  The value is the contents of the value slot from the return value of the next method.
-Okay.  The generator protocol extends that slightly.  By adding an additional method, throw, as well as by adding arguments to next and return.  These arguments are not strictly given an interpretation in the generator protocol, but they are a way to communicate to the generator instead of consuming values from it.  The point of throw is, according to the spec, to notify the generator that the caller has detected an error condition in the generator itself.  But nothing calls that.  That's not quite true, but we'll be coming back to that.  Almost nothing in the spec calls throw.  So the interpretation of throw is something you have to work out based on how it works in generators itself.  There’s an example of a generator.  If you are paused at a yield, the yield itself you have to call next to get to the first yield.  And then the first call to next will give you done false and the value that was yielded.  And then if you call throw after that, that will – while the generator is paused, it will trigger the catch block.  If you call dot return it will not trigger the catch block, but it will trigger the finally block.  So this is when it means to say that throw is for error conditions in the generator itself.  One other interesting part of syntactic generators, part of the syntax of generators, is that there’s the yield* operation.  Which forwards all three of the things, including the arguments, to another generator.  And there’s logic for if the other generator hasn't implemented part of the protocol.  The important part it’s forwarding the entire protocol.  Then we can make stuff async.  This is pretty much the same as the iterator protocol, but you get promises for objects instead of just raw objects.  But again, the done boolean and the value.  I want to emphasize that the for await loop does one await.  And that's the result of`iterator.next`.  It’s awaiting this first promise on the screen here.  It is not awaiting the values slot from the object inside of the promise.  And in fact, it is possible to write an async iterator that has a promise in that value slot and the for await loop will observe, in the body of the loop, the promise.  It will not unwrap that promise.  And then again, we have the async extension of the generator protocol which is exactly like the regular generator protocol, but they return promises rather than just the objects.  There’s an asterisk on the "anything" there.  The reason for that asterisk is that in a syntactic generator, when you do a yield, it awaits the value yielded before it wraps it up in this {done,value} pair.  So, for example, if you yield a rejected promise, instead of yielding, it will trigger the catch.  It will not pause the generator.  It pauses the generator in sense of performing an await.  But not the value from next.  But it will actually immediately trigger the catch just as if you had replaced that whole yield with a throw.  I guess with a throw of `await 1`.  And of course, if you yield a non rejected promise  it will unwrap that promise just the same.  So this is the syntactic generator.  Similarly, the async from sync wrapper, where you are doing a for await loop for something that is a sync iterator of promises, it will unwrap those.  so in practice, while it is technically possible to put an arbitrary promise in the value slot, the syntactic generator and the automatic wrapper for sync iterators will not ever have a promise there because it will await it first.  And it’s basically for this reason that`for await` doesn’t unwrap promises in the value slot.  It’s because the assumption is that a well-behaved generator is never going to do that.  Let’s see.
+KG: So this – the title of this issue is misleading because when I originally noticed the issue, I proposed a fix and realized that the fix was for an issue which shouldn’t have happened in the first place. So I have a slightly larger proposal to make.  But it needs a lot of background.  So we will spend a while doing background on this.  So this is the main pull request that I want to get feedback for.  There’s an alternative one linked there that makes the smaller more technical change.  But it’s 2819 that I wanted to focus on today.  So I'm going to do a bit of background.  Some of this will be familiar to many of you.  But it’s important to understand, and also, some of this will be important later for the iterator helpers proposal.
 
-KG So that’s all of the background.  The weird part is that yield star in async generators does do an await.  If you `yield*` from a weird iterator like this, where you have very carefully manually arranged to have a promise value in the slot - and it’s only possible to do it like this - then the yield star will await that value.  So it’s not just transparently forwarding the protocol to an inner generator; it’s putting this extra await here.  And I claim this is weird.  The only way this await is relevant is if you have a manually implemented iterator as on the previous slide.  It’s not something that comes up with a syntactic generator. And it's different from how `for await of` works.  `For await of` will observe the promise.  I would like to propose we get rid of this await: this is a normative change, but likely to be web-compatible.  You can run into this in the sense that your code will run slower because it’s doing an await it doesn’t need to do.  But to see different values rather than just differences in timing, you have to have have a manual async iterator as well as do a `yield*` in an async generator of that async iterator.  I don’t think this is likely to come up very much.  I would like to propose that we get rid of it.  Also, I think this might have just been a mistake.  We went back and forth on how yield should work with promises in async generators several times, and at the point we did decide that it should be yield that does the await rather than having `for await` doing two awaits, the decision was only really talking about yield itself, not yield*.  There was even a line in the presentation that said `yield*` doesn’t peek into the promises returned from `next`.  But because of the way the spec text was written, the change that made yield do the await, also happened to make `yield*` do an additional wait.  So I would like to change this.  Again, not guaranteed to be web compatible.  There are different technical issues we can discuss if we don't like this, but I am hoping for consensus for this change.  Do we have anything in the queue?
-BT: >> yeah.  Kris, strongly supports this bug fix, but doesn’t want to talk.  And then Mark has a question.  
-MM: >> So there was a lot of discussion around all of these issues originally about where the double await should be and all that.  And I was wondering besides looking at the old presentations, did you take a look at the – or were you around for when we were – when we had those arguments and . . .  I am just wondering if you’re – if this is informed by what the arguments were, as well as what the conclusions were?  
-KG: >> I was not around, or it was my first meeting, so I don’t particularly remember it.  Yes, I went through the notes and the discussion in the pull requests and the various alternatives.  There wasn’t much discussion of `yield*` itself.  It was on the for-await loop and the yield.  So as far as I am aware, this is just a case that we didn’t discuss at all
-MM: >> I did participate heavily in those, and everything is consistent with my memory.  And I find it plausible.  So I support this change.  I do want to make sure that I didn’t misunderstand something.  You said throw is almost never called into spec.  If a for loop is exited with a thrown error, that causes – that does cause throw on the iterator being iterated, correct?  
-KG: >> no.  That calls return.  It closes the iterator.  But it is not considered an error condition in the iterator itself.  
-MM: >> oh.  Interesting.  So you said it almost never calls.  Is the only call the yield star?
-KG: >> yes.  Well, yes.  The only call is in `yield*`.  But, of course, that’s forwarding the protocol.  So if you do – like a user had to write `.throw` manually, except for the issue which prompted this, which I can direct you to the GitHub issue to show you the code which does a yield star of a rejected promise in that case.  
-MM:>> got it.  Okay.  I support this.  I am done.  
-BT: >> thank you, mark.  YSV is up next
-YSV: >> yeah. So from our perspective, we don’t see an issue.  And this is a nice bug fix.  But we agree that there is a potential for web compatibility issues.  This has been shipping for quite a while.  That is only impacting this one case, where you have manually constructed an async generator and then yield star.  Does yield star potentially have impacts where this extra await is observable for other code?  Is there any way for us to investigate that?  
-KG: >> so this will affect code that is not doing this weird manually async iterator in the sense that an additional await implies an additional tick.  So this will change the ordering of code that is doing `yield*` in an async generator.  As far as I can tell, the only effects are the number of ticks and this case where you have a manually implemented iterator that puts a promise in the value slot and then you do a yield star in an async generator of that manual async iterator, that will observe different values.  As far as I can tell, those are the only two cases.  So timing and this weird manual async iterator case.  Not aware of any other differences.  
-YSV: >> okay.  So the proposal here would be we take the risk, have an implementor test this, see if we get bugs?  
-KG: >> yeah.  
-YSV: >> okay.  I have some web compat data.  I will post it to the issue.  
-KG: >> okay.  
-BT: >> all right.  KKL is next.  
-KKL: >> KKL.  I support this change.  It looks like a bug fix to me.  It should be possible to do ordered delivery of promises for which the promises that are delivered have an orthogonal order which is consistent with the way promise queue would work.  It’s possible to deliver a promise that resolves much later.  
-BT: >> all right.  Thank you, KKL.  DE is up next.  
-DE: >> as someone who was involved in this particular discussion, I agree that yield* was kind of an after-thought.  And the attempt was to plumb through in a consistent way and this fix makes a lot of sense.  
-BT: >> all right.  Thank you, Dan.  Next up is WH.
-WH: >> You have two issues here.  What is the throw issue? Can you give an example of how it’s triggered?  
-KG: >> yes.  I will pull up the code because it is very hard to talk about, without having code. `<<showing issue #2813>>`  Okay.  Here is a horrible program.  The thing that is going on here is that you have a manual implementation of an async iterator.  The manual implementation returns a promise wrapper that contains done: false and `value` is a rejected promise. And then you are doing yield star on this manually implemented async iterator.  The thing that happens, and I am almost certain this is a bug . . .  is that when the – when you do `yield*` of the inner iterator, the promise rejection is awaited during the yield star, and because of how the spec is written, let’s see . . .  so in the evaluation semantics for yield *, when we got the normal success the call to next, we call async generator yield.  And inside of async generator yield, we are performing this await, and exceptions are propagated.  We are awaiting a rejected promise and then propagating exceptions of the promise was rejected.  So a throw completion.  With this question mark.  We propagate the throw completion.  And then in the yield* semantics, we set received to the results of the async generator yield.  And then the next time through, we say that `received.type` is ‘throw’.  The name of this variable is probably indicative of what it is supposed to be.  The idea is that ‘received’ is what the consumer of the generator is trying to provide to the generator.  With a regular generator, the only way to get this is if someone called dot throw when the generator was paused.  Similarly, the way you get a return completion is that someone called dot return while the generator was paused.  But because the exception happens inside of async generator yield, rather than happening outside of async generator yield, where propagated, like called to generator is thrown, the spec language thinks basically that the throw completion came from the consumer of the generator, rather than coming from the rejected promise that the generator returned. <<15.5.5 AO>>  As far as I can tell, this is the only place in the entire specification that dot throw will be called without a user having first called dot throw and that getting propagated somehow.  And I am almost certain it’s a bug due to async generator yield having await inside of it.  Does that make sense?  
-WH: >> Kind of, yeah.  
-KG: >> okay.  And, of course, the way that getting rid of the await fixes it, is that getting rid of the await in yield * means this line will not be here. <<27.6.8 AO>>  It will go back to being the case, the only way you get a throw completion out of async generator yield is if someone called throw explicitly instead of having another way of getting a throw completion.  
-WH: >> Okay.  Thank you.  
-KG: >> I don’t see anything else on the queue.  I would like to ask for consensus for this normative change.  I will write test262 tests and of course we would need an engine to volunteer to ship at some point and hopefully confirm it is web compatible.  We can’t do that without getting consensus.  So I would like to ask for consensus for this change.  
-BT: >> I am not seeing any – Rick go ahead
-RW: >>My only question was, you mentioned writing test262 tests . . .  awesome.  Have you identified existing test262  tests that will use – that will changed by this.  If you haven’t, will you do that work and we can rely on you to make sure that this gets sorted.  
-KG: >> My current plan is to use engine626 and implement this change and run test 262 and see what fails.  If it doesn’t work, I would have a harder time, but I'll do my best to identify any tests that will be invalidated.  
-RW: >> great.  You literally jumped to my next point, which was, to recommend using GCL’s engine262 to find them.  Perfect.  Awesome.  It sounds like you have a great plan.  I love it.  I am all in.  
-BT: >> all right.  It sounds like consensus to me.  
-KG: >> .  Thanks very much.  
+KG: So . . .  there are a couple of protocols in the spec that are not necessarily completely defined, or the definitions are not necessarily consistent with how they are used in the spec.  I am going to talk about a thing I will call “the iterator protocol.”  This method `.next` and optionally `.return`, where `.next` returns an object that has a `done` boolean and a `value`.  And this is like the main way you interact with an iterator.  You call`next` repeatedly and check the `done`Boolean.  There is a method to call on the iterator to perform cleanup.  So the value from return is required to be an object, but not otherwise particularly inspected.  But I want to focus on the format of the return value from next because it’s important later.
+
+KG: So the iterator protocol is used primarily by`for-of`loops. It will get Symbol.iterator from the iterable and invoke .next on the iterator.  And if you exit the loop early, by calling break, it calls iterator.return.  The value is the contents of the value slot from the return value of the next method.
+
+KG: Okay.  The generator protocol extends that slightly.  By adding an additional method, throw, as well as by adding arguments to next and return.  These arguments are not strictly given an interpretation in the generator protocol, but they are a way to communicate to the generator instead of consuming values from it.  The point of throw is, according to the spec, to notify the generator that the caller has detected an error condition in the generator itself.  But nothing calls that.  That's not quite true, but we'll be coming back to that.  Almost nothing in the spec calls throw.  So the interpretation of throw is something you have to work out based on how it works in generators itself.  There’s an example of a generator.  If you are paused at a yield, the yield itself you have to call next to get to the first yield.  And then the first call to next will give you done false and the value that was yielded.  And then if you call throw after that, that will – while the generator is paused, it will trigger the catch block.  If you call dot return it will not trigger the catch block, but it will trigger the finally block.  So this is when it means to say that throw is for error conditions in the generator itself.
+
+KG: One other interesting part of syntactic generators, part of the syntax of generators, is that there’s the yield* operation.  Which forwards all three of the things, including the arguments, to another generator.  And there’s logic for if the other generator hasn't implemented part of the protocol.  The important part it’s forwarding the entire protocol.  Then we can make stuff async.  This is pretty much the same as the iterator protocol, but you get promises for objects instead of just raw objects.  But again, the done boolean and the value.  I want to emphasize that the for await loop does one await.  And that's the result of`iterator.next`.  It’s awaiting this first promise on the screen here.  It is not awaiting the values slot from the object inside of the promise.  And in fact, it is possible to write an async iterator that has a promise in that value slot and the for await loop will observe, in the body of the loop, the promise.  It will not unwrap that promise.  And then again, we have the async extension of the generator protocol which is exactly like the regular generator protocol, but they return promises rather than just the objects.
+
+KG: There’s an asterisk on the "anything" there.  The reason for that asterisk is that in a syntactic generator, when you do a yield, it awaits the value yielded before it wraps it up in this {done,value} pair.  So, for example, if you yield a rejected promise, instead of yielding, it will trigger the catch.  It will not pause the generator.  It pauses the generator in sense of performing an await.  But not the value from next.  But it will actually immediately trigger the catch just as if you had replaced that whole yield with a throw.  I guess with a throw of `await 1`.  And of course, if you yield a non rejected promise  it will unwrap that promise just the same.  So this is the syntactic generator.  Similarly, the async from sync wrapper, where you are doing a for await loop for something that is a sync iterator of promises, it will unwrap those.  so in practice, while it is technically possible to put an arbitrary promise in the value slot, the syntactic generator and the automatic wrapper for sync iterators will not ever have a promise there because it will await it first.  And it’s basically for this reason that`for await` doesn’t unwrap promises in the value slot.  It’s because the assumption is that a well-behaved generator is never going to do that.  Let’s see.
+
+KG: So that’s all of the background.  The weird part is that yield star in async generators does do an await.  If you `yield*` from a weird iterator like this, where you have very carefully manually arranged to have a promise value in the slot - and it’s only possible to do it like this - then the yield star will await that value.  So it’s not just transparently forwarding the protocol to an inner generator; it’s putting this extra await here.  And I claim this is weird.  The only way this await is relevant is if you have a manually implemented iterator as on the previous slide.  It’s not something that comes up with a syntactic generator. And it's different from how `for await of` works.  `For await of` will observe the promise.  I would like to propose we get rid of this await: this is a normative change, but likely to be web-compatible.  You can run into this in the sense that your code will run slower because it’s doing an await it doesn’t need to do.  But to see different values rather than just differences in timing, you have to have have a manual async iterator as well as do a `yield*` in an async generator of that async iterator.  I don’t think this is likely to come up very much.  I would like to propose that we get rid of it.
+
+KG: Also, I think this might have just been a mistake.  We went back and forth on how yield should work with promises in async generators several times, and at the point we did decide that it should be yield that does the await rather than having `for await` doing two awaits, the decision was only really talking about yield itself, not yield*.  There was even a line in the presentation that said `yield*` doesn’t peek into the promises returned from `next`.  But because of the way the spec text was written, the change that made yield do the await, also happened to make `yield*` do an additional wait.  So I would like to change this.  Again, not guaranteed to be web compatible.  There are different technical issues we can discuss if we don't like this, but I am hoping for consensus for this change.  Do we have anything in the queue?
+
+BT: yeah.  Kris, strongly supports this bug fix, but doesn’t want to talk.  And then Mark has a question.  
+
+MM: So there was a lot of discussion around all of these issues originally about where the double await should be and all that.  And I was wondering besides looking at the old presentations, did you take a look at the – or were you around for when we were – when we had those arguments and . . .  I am just wondering if you’re – if this is informed by what the arguments were, as well as what the conclusions were?  
+
+KG: I was not around, or it was my first meeting, so I don’t particularly remember it.  Yes, I went through the notes and the discussion in the pull requests and the various alternatives.  There wasn’t much discussion of `yield*` itself.  It was on the for-await loop and the yield.  So as far as I am aware, this is just a case that we didn’t discuss at all
+
+MM: I did participate heavily in those, and everything is consistent with my memory.  And I find it plausible.  So I support this change.  I do want to make sure that I didn’t misunderstand something.  You said throw is almost never called into spec.  If a for loop is exited with a thrown error, that causes – that does cause throw on the iterator being iterated, correct?  
+
+KG: no.  That calls return.  It closes the iterator.  But it is not considered an error condition in the iterator itself.  
+
+MM: oh.  Interesting.  So you said it almost never calls.  Is the only call the yield star?
+
+KG: yes.  Well, yes.  The only call is in `yield*`.  But, of course, that’s forwarding the protocol.  So if you do – like a user had to write `.throw` manually, except for the issue which prompted this, which I can direct you to the GitHub issue to show you the code which does a yield star of a rejected promise in that case.  
+
+MM: got it.  Okay.  I support this.  I am done.  
+
+BT: thank you, mark.  YSV is up next
+
+YSV: yeah. So from our perspective, we don’t see an issue.  And this is a nice bug fix.  But we agree that there is a potential for web compatibility issues.  This has been shipping for quite a while.  That is only impacting this one case, where you have manually constructed an async generator and then yield star.  Does yield star potentially have impacts where this extra await is observable for other code?  Is there any way for us to investigate that?  
+
+KG: so this will affect code that is not doing this weird manually async iterator in the sense that an additional await implies an additional tick.  So this will change the ordering of code that is doing `yield*` in an async generator.  As far as I can tell, the only effects are the number of ticks and this case where you have a manually implemented iterator that puts a promise in the value slot and then you do a yield star in an async generator of that manual async iterator, that will observe different values.  As far as I can tell, those are the only two cases.  So timing and this weird manual async iterator case.  Not aware of any other differences.  
+
+YSV: okay.  So the proposal here would be we take the risk, have an implementor test this, see if we get bugs?  
+
+KG: yeah.  
+
+YSV: okay.  I have some web compat data.  I will post it to the issue.  
+
+KG: okay.  
+
+BT: all right.  KKL is next.  
+
+KKL: KKL.  I support this change.  It looks like a bug fix to me.  It should be possible to do ordered delivery of promises for which the promises that are delivered have an orthogonal order which is consistent with the way promise queue would work.  It’s possible to deliver a promise that resolves much later.  
+
+BT: all right.  Thank you, KKL.  DE is up next.  
+
+DE: as someone who was involved in this particular discussion, I agree that yield* was kind of an after-thought.  And the attempt was to plumb through in a consistent way and this fix makes a lot of sense.  
+
+BT: all right.  Thank you, Dan.  Next up is WH.
+
+WH: You have two issues here.  What is the throw issue? Can you give an example of how it’s triggered?  
+
+KG: yes.  I will pull up the code because it is very hard to talk about, without having code. `<<showing issue #2813>>`  Okay.  Here is a horrible program.  The thing that is going on here is that you have a manual implementation of an async iterator.  The manual implementation returns a promise wrapper that contains done: false and `value` is a rejected promise. And then you are doing yield star on this manually implemented async iterator.  The thing that happens, and I am almost certain this is a bug . . .  is that when the – when you do `yield*` of the inner iterator, the promise rejection is awaited during the yield star, and because of how the spec is written, let’s see . . .  so in the evaluation semantics for yield *, when we got the normal success the call to next, we call async generator yield.  And inside of async generator yield, we are performing this await, and exceptions are propagated.  We are awaiting a rejected promise and then propagating exceptions of the promise was rejected.  So a throw completion.  With this question mark.  We propagate the throw completion.  And then in the yield* semantics, we set received to the results of the async generator yield.  And then the next time through, we say that `received.type` is ‘throw’.  The name of this variable is probably indicative of what it is supposed to be.  The idea is that ‘received’ is what the consumer of the generator is trying to provide to the generator.  With a regular generator, the only way to get this is if someone called dot throw when the generator was paused.  Similarly, the way you get a return completion is that someone called dot return while the generator was paused.  But because the exception happens inside of async generator yield, rather than happening outside of async generator yield, where propagated, like called to generator is thrown, the spec language thinks basically that the throw completion came from the consumer of the generator, rather than coming from the rejected promise that the generator returned. <<15.5.5 AO>>  As far as I can tell, this is the only place in the entire specification that dot throw will be called without a user having first called dot throw and that getting propagated somehow.  And I am almost certain it’s a bug due to async generator yield having await inside of it.  Does that make sense?  
+
+WH: Kind of, yeah.  
+
+KG: okay.  And, of course, the way that getting rid of the await fixes it, is that getting rid of the await in yield * means this line will not be here. <<27.6.8 AO>>  It will go back to being the case, the only way you get a throw completion out of async generator yield is if someone called throw explicitly instead of having another way of getting a throw completion.  
+
+WH: Okay.  Thank you.  
+
+KG: I don’t see anything else on the queue.  I would like to ask for consensus for this normative change.  I will write test262 tests and of course we would need an engine to volunteer to ship at some point and hopefully confirm it is web compatible.  We can’t do that without getting consensus.  So I would like to ask for consensus for this change.  
+
+BT: I am not seeing any – Rick go ahead
+
+RW: My only question was, you mentioned writing test262 tests . . .  awesome.  Have you identified existing test262  tests that will use – that will changed by this.  If you haven’t, will you do that work and we can rely on you to make sure that this gets sorted.  
+
+KG: My current plan is to use engine626 and implement this change and run test 262 and see what fails.  If it doesn’t work, I would have a harder time, but I'll do my best to identify any tests that will be invalidated.  
+
+RW: great.  You literally jumped to my next point, which was, to recommend using GCL’s engine262 to find them.  Perfect.  Awesome.  It sounds like you have a great plan.  I love it.  I am all in.  
+
+BT: all right.  It sounds like consensus to me.  
+
+KG: Thanks very much.  
 
 ### Conclusion/Decision
 
@@ -186,24 +318,41 @@ Presenter: Richard Gibson (RGN)
 
 - [pr](https://github.com/tc39/ecma262/pull/2791)
 
-RGN >> okay.  I am Richard Gibson, abbreviation RGN.  And I am here to talk today about fixing an irregularity with regular expressions that was discovered or probably rediscovered as part of introducing the V-flag.  So there are a number of regular expression methods that need to check the flags of their receiver or argument.  And for the most part, the way they do it is by using the flags getter.  Look at String.prototype.matchAll and String.prototype.replaceAll, both Get "flags" off the regular expression.  And it's the same on RegExp.prototype for Symbol.matchAll and Symbol.split.  But there are two methods that behave differently.  And they are being changed by the V flag, prompting a comment from JHD in the pull request to introduce it, why are we doing a conditional Get of "unicode" after getting "unicodeSets"?  We should instead be reading it unconditionally.  More predictable behaviour.  And the reason for that was that the existing method already did conditional reading.  If you look in Symbol.match, we see an example of it.  Right here. <<22.2.5.8>>  Where it reads the "global" property off of the regular expression, if that’s false, does down one path, otherwise reads the "unicode" property only in the other one.  The Symbol.replace operation is similar.  Reads the "global" flag, and then only if it’s `true` reads "unicode".  This is surprising.  It surprised JHD and me, and the champions of the V flag proposal, and it’s a little awkward.  The built-in "flags" getter, in fact, does do observable Gets of the individual properties, always all of them and always in the same deterministic order, and concatenates them to a string, which is what we see the other methods such as split interacting with (after forcing ToString just in case an override has done something weird), checking it for specific characters representing the flags.  So the needs-consensus pull request is proposing that we update the two divergent methods to instead behave like the others.  Rather than reading individual properties directly and conditionally, a pattern which gets worse after we have the V flag and after we introduce even more relevant regular expression flags, we just basically cut it off now if we can do so with web compatibility.  It makes things a little bit simpler and certainly more in alignment with the other four methods.  And that’s where this stands.  It is a normative change.  I suspect web compatibility, but I don’t have any firm evidence of that yet and the best way to find out is to attempt this if we get consensus to try.  That’s the end of the presentation, and I open it up to the queue.
-BT: >> WH is up first.  
-WH: >> If I were changing this, I would rather move in the direction of reading individual flags rather than what this is doing, which is moving from reading individual flags to calling a method which reads every flag, accumulates them into a string, and then decodes the string looking for single characters.  It just seems like it’s doing more unnecessary work.  So — what is the reason for the change?
-RGN: >> largely to avoid unnecessary litigation with every new regular expression proposal about which individual flag properties should be read in which order and under what circumstances.  
-JHD: >> I put a response on the queues.  It’s unnecessary work when somebody writes a subclass because otherwise will detect that all of these getters are unmodified and they will pull the value out of the slot.  Since essentially zero people on the planet write – the overwrite design of the getters is something that while the committee decided it wasn’t worth the turn to change the feeling of the room when it’s been discussed, it’s consistently been that we wish we hadn’t included all of it.  It’s simpler from a perspective of this specific algorithm like `match`, in this case that we are looking at, it’s simpler in terms of the observable calls are deterministic and also avoidable for the common case.  But that seems like an improvement
-WH: >> If approximately nobody encounters this, what’s the point of changing it?  
-RGN: >> to reiterate, to avoid litigation with every regular expression proposal.  Only two methods of the six read individual flag properties directly, and it would be a better use of our time if they didn’t.  Reading "flags" ends up in the same place, except for pathological cases that intentionally diverge from the standard built-in behaviour.  
-BT: >> YSV has a reply on this topic
-YSV: >> yeah, to chime in.  This might be something that is optimizable at the engine level.  But the benefit here is at the spec level where we have consistency across all of the methods and then for, for example, in an implementation we could comment, keep an existing version if it is fully one-on-one transation.  Except for the branch case, which might be a – subclass built-in, for example
-BT: >> thank you, YSV.  Dan has a comment next.  
-DLM: >> yes.  I just wanted to express positive from the SpiderMonkey’s team
-RGN: >> thanks, I’m happy to hear that early on from an implementation
-BT: >> with that, the queue is empty.  Would you like a call for consensus on this change
-RGN: >> absolutely.
-BT: >>Anyone object to making this change?  
-BT: >> all right.  I am not seeing anyone on the queue.  So it sounds like consensus to me.  
-RGN: >> okay.  Next up is going to be, I think, preparing test 262 changes to capture them.  The pull request against Ecma 626 is already in good shape.  So thank you
-BT >> all right.  Excellent.  And I believe you have the next agenda item as well.  
+RGN: okay.  I am Richard Gibson, abbreviation RGN.  And I am here to talk today about fixing an irregularity with regular expressions that was discovered or probably rediscovered as part of introducing the V-flag.  So there are a number of regular expression methods that need to check the flags of their receiver or argument.  And for the most part, the way they do it is by using the flags getter.  Look at String.prototype.matchAll and String.prototype.replaceAll, both Get "flags" off the regular expression.  And it's the same on RegExp.prototype for Symbol.matchAll and Symbol.split.  But there are two methods that behave differently.  And they are being changed by the V flag, prompting a comment from JHD in the pull request to introduce it, why are we doing a conditional Get of "unicode" after getting "unicodeSets"?  We should instead be reading it unconditionally.  More predictable behaviour.  And the reason for that was that the existing method already did conditional reading.  If you look in Symbol.match, we see an example of it.  Right here. <<22.2.5.8>>  Where it reads the "global" property off of the regular expression, if that’s false, does down one path, otherwise reads the "unicode" property only in the other one.  The Symbol.replace operation is similar.  Reads the "global" flag, and then only if it’s `true` reads "unicode".  This is surprising.  It surprised JHD and me, and the champions of the V flag proposal, and it’s a little awkward.  The built-in "flags" getter, in fact, does do observable Gets of the individual properties, always all of them and always in the same deterministic order, and concatenates them to a string, which is what we see the other methods such as split interacting with (after forcing ToString just in case an override has done something weird), checking it for specific characters representing the flags.  So the needs-consensus pull request is proposing that we update the two divergent methods to instead behave like the others.  Rather than reading individual properties directly and conditionally, a pattern which gets worse after we have the V flag and after we introduce even more relevant regular expression flags, we just basically cut it off now if we can do so with web compatibility.  It makes things a little bit simpler and certainly more in alignment with the other four methods.  And that’s where this stands.  It is a normative change.  I suspect web compatibility, but I don’t have any firm evidence of that yet and the best way to find out is to attempt this if we get consensus to try.  That’s the end of the presentation, and I open it up to the queue.
+
+BT: WH is up first.  
+
+WH: If I were changing this, I would rather move in the direction of reading individual flags rather than what this is doing, which is moving from reading individual flags to calling a method which reads every flag, accumulates them into a string, and then decodes the string looking for single characters.  It just seems like it’s doing more unnecessary work.  So — what is the reason for the change?
+
+RGN: largely to avoid unnecessary litigation with every new regular expression proposal about which individual flag properties should be read in which order and under what circumstances.  
+
+JHD: I put a response on the queues.  It’s unnecessary work when somebody writes a subclass because otherwise will detect that all of these getters are unmodified and they will pull the value out of the slot.  Since essentially zero people on the planet write – the overwrite design of the getters is something that while the committee decided it wasn’t worth the turn to change the feeling of the room when it’s been discussed, it’s consistently been that we wish we hadn’t included all of it.  It’s simpler from a perspective of this specific algorithm like `match`, in this case that we are looking at, it’s simpler in terms of the observable calls are deterministic and also avoidable for the common case.  But that seems like an improvement
+
+WH: If approximately nobody encounters this, what’s the point of changing it?  
+
+RGN: to reiterate, to avoid litigation with every regular expression proposal.  Only two methods of the six read individual flag properties directly, and it would be a better use of our time if they didn’t.  Reading "flags" ends up in the same place, except for pathological cases that intentionally diverge from the standard built-in behaviour.  
+
+BT: YSV has a reply on this topic
+
+YSV: yeah, to chime in.  This might be something that is optimizable at the engine level.  But the benefit here is at the spec level where we have consistency across all of the methods and then for, for example, in an implementation we could comment, keep an existing version if it is fully one-on-one transation.  Except for the branch case, which might be a – subclass built-in, for example
+
+BT: thank you, YSV.  Dan has a comment next.  
+
+DLM: yes.  I just wanted to express positive from the SpiderMonkey’s team
+
+RGN: thanks, I’m happy to hear that early on from an implementation
+
+BT: with that, the queue is empty.  Would you like a call for consensus on this change
+
+RGN: absolutely.
+
+BT: Anyone object to making this change?  
+
+BT: all right.  I am not seeing anyone on the queue.  So it sounds like consensus to me.  
+
+RGN: okay.  Next up is going to be, I think, preparing test 262 changes to capture them.  The pull request against Ecma 626 is already in good shape.  So thank you
+
+BT: all right.  Excellent.  And I believe you have the next agenda item as well.  
 
 ### Conclusion/Decision
 
@@ -215,51 +364,95 @@ Presenter: Richard Gibson (RGN)
 
 - [pr](https://github.com/tc39/ecma262/pull/2695)
 
-RGN: >> This one is regarding `function.prototype.toString`.  The highlight of the issue in question . . .  behaviour of XS, not matching the other implementations with respect to the name portion of the output from the built-in `function.prototype.toString`.  Other implementations always output either an identifier or nothing at all, or in the special cases of a symbol-name function, a special branch for a computed name.  What XS is doing, instead is outputting a computed name for it, which is allowed in a different branch of `function.prototype.toString` but not for a built-in.  The concern and the proposal here is around whether or not that should be permitted.  Essentially, we are looking at the . . .  the behaviour that is required when the function in question is built in.  Currently, it is the case that the portion of the returned string that would be managed by a particular production must be the value of the [[InitialName]] slot.  The [[InitialName]] slot is something that every built in function has.  And it is set at creation to equal the "name" property, which in certain circumstances could be changed later.  Most of the time, the initial name slot value is an IdentifierName, but again in the case of the symbol-named functions, it’s actually instead a computed property name that looks like “[Symbol.something]” optionally preceded by “get” or “set”. << Production: NativeFunction >> The question here, the normative aspect of the change is around whether or not we should permit the bracketed string literal to be considered valid for a built in function.  It is important to note that in the case of a function which is not built in but also doesn’t have source text, such as one that is a proxy or the output of bind, must also conform to NativeFunction but doesn’t have this name constraint and so the XS output is valid.  So the fundamental problem here, I think, is that we probably could nail down `function.prototype.toString` a little bit better.  This particular change is normative in the direction of being more flexible, but I would be willing to listen to should it be less flexible . . .  but the pull request here is, towards increased flexibility and I think that’s the starting point of the discussion for today.  With that, I am ready to hit the queue.  
-MF: >>  So you gave a single example there, where XS outputs a computed name looking thing, but it’s using empty string, which isn’t compelling because they could omit that name at that point.  Match the implementations.  Is there a case where you could cause XS to output something that wouldn’t be a valid identifier at that spot?
-RGN: >> yes.  That is the case for some built ins, but also the case for the ones I was talking about, like when you bind it.  You get things like this . . .  and this . .  (highlighted parts of PR).  XS has the interesting property that the string inside the brackets for these functions always matches the name of the function as far as I can tell, which is not the case for the other implementations.  There’s this, like, split between the "name" property of the function, and the content of the string output by `toString`.  
-BT: >> all right.  MM has the next queue item.  
-MM: >> yeah.  Um, I strongly object to the idea of making the spec more permissive and less deterministic.  You know, the whole purpose of having a standards committee originally was because of the capability problems between browsers and the pathological game theory as we called it.  All of the engine-makers have an interest, especially in things like this, where what the decision is matters much less than whether there’s agreement.  We all have an interest in having the engines agree so that the programs that are out there, that were – tested against some engines work on other engines.  We have a normative spec.  We don’t have adequate test 262 coverage to flag those in error and has a simple solution to, add the test 262 tests to bring everyone in conformance with the normive spec, and in any case, over time, because of this – the capability issue, it more important than the particular resolution of how strings print, we should be seeking to be more deterministic in the perspective, not less deterministic.  
-RGN: >> I am extremely sympathetic to this point.  And if there is appetite to nail down not just what goes between the function token and the left parenthesis, I would be willing to pursue not just that, but also the whitespace.  
-MM: >> I would appreciate that.  I would certainly support that.  
-BT: >> okay.  JHD is on the queue next
-JHD: >> yeah.  So I asked in matrix, but I haven’t got an issue yet.  In safari, I pulled up this string prototype dot symbol dot Iterator, and the dot name is the – symbol dot iterator and brackets and that’s fine.  Two spring also contains the same thing.  Is that currently valid or is your PR – what would be required to make it valid?  
-RGN: >> what does it look like right now?  
-JHD: >> the . . .  function space brackets surrounding symbol dot iterator, parenthesis and the rest of it.  
-RGN: >> it looks like this one, but in place here is symbol dot iterator? (“`function [Symbol.iterator]() { [native code] }`”)
-JHD: >> correct
-RGN: >> that is valid right now.  And remains valid
-JHD: >> would it be then correct to say that your changes only allow a string literal inside the brackets.  That’s the addition?  
-RGN: >> it has to deal with this, between the `function` token and the left parenthesis `(`.  The current spec allows any property name in the grammar, identifier or computed, but has an extra constraint in the algorithm for a built-in function.  The one that would be changing, if we adapted this, is . . .  this part. <<Diff: 20.2.3.5 >>  So the reason why the bracket symbol dot iterator is valid, not just valid but required, is because that’s what the [[InitialName]] slot of the function holds.  So it would not be valid right now to have `function ["[Symbol.iterator]"]`.  That would not be valid because [[InitialName]] itself starts with bracket S, not bracket quote.  If you take it and drop it in, that’s valid now and remains valid.  What is not valid is wrapping it in double quotes to make a string and wrapping that in brackets to make it computed.  
-JHD: >> with your change, do the contents of the quote still have to match the initial name slot
-RGN: >> yeah.  If we go this way.  The – it introduces a NativeFunctionName function, which says, for anything that is a computed property name where the value is a string literal, just evaluate the string and make your checks against the result.  So . . .  it would treat as equivalent this from XS, where the computed property name is a string containing bracketed contents, with this from JavaScriptCore, where the computed property name is a symbol.
-JHD: >>: Thank you.  That clarifies it for me.  
-BT: >> we have MF in the queue again.  9 minutes left on this top
-MF: >> have you spoken to XS about why they made this implementation
-RGN: >> I have not, and there are issues around it anyway that need to be fixed no matter what.  XS was just the discovery point for this particular weirdness.  
-MF: >> it would make me more comfortable hearing if we have heard from XS about whether this change was intentional or easy for them to match the spec as-is.  I see they see value in choosing the more descriptive name, but I can’t speculate beyond that
-RGN: >> Peter is not with us today, or at least not right now
-MF: >> okay.  
-RGN: >> honestly, though, my preferred outcome would be what MM suggested, which is more determinism that nails everything down even further.  So I mean, I am willing to have anything that is better specified, but that can be editorial or normative.  And if implementations are willing, I am willing to put in the spec work to nail things down either further, rather than going in this direction of more flexibility.  But really, I want to know how the committee as a whole, feels about this area and any changes that might be made.  
-BT: >> all right.  MM..  
-MM: >> you said normative or non-normative in term of pinning things down.  It really needs to be normative.  
-RGN: >> if I said that, I misspoke.  There’s an editorial aspect to clean up toString, which I separated out into #2828 and that has not landed yet.  But no, I am specifically talking in this discussion, about the normative changes.  
-MM: >> okay.  So I certainly object to anything that is more permissive than the current spec.  And I certainly support a normative spec as deterministic as possible and deterministic, if that’s possible.  
-RGN: >> okay.  I think we are willing to pursue it regardless.  So maybe the question around that now would be, if it’s better to do so as a needs-consensus pull request, or series of pull requests, or instead as a proposal?  
-MM: >> I think it needs – my sense; it should be a proposal.  It can be – proposals that don’t generate a lot of controversy can go through the process quickly.  But I think it should be a proposal.  
-RNG: >> ok.  With that, I think I would like to take it in that direction.  Given that there’s no – no proposal yet for it, but I am willing to do that, you know, essentially immediately, how does the committee feel about giving it stage 1?  
-MM: >> I am obviously in favour of that.  
-BT >> Are we sure what the proposal is. Is it what is in this PR
-RGN: >> The proposal will be “reduce flexibility in `Function.prototype.toString`”.  
-BT: >> but there isn’t a proposal written up?  
-RGN: >> no.  Because it’s actually a reverse course from this pull request.  Not only not do this, but also, go even harder in the other direction.  
-BT: >> okay.  If there’s no reason for a rush here, just write a proposal and come back.  We can, you know, move fairly quickly through the stages of it.  
-RGN: >> okay.  
-BT: >> in fact, if you have something that you can put to paper, by the end of the meeting, we may have some additional time.  
-RGN: >> yeah.  I think – I think I can do that.  I will definitely give it a shot.  As far as this topic before it’s ready, is there any other feedback?  
-BT: >> the queue is empty.  
-RGN>> okay.  Well, thanks, then.  Expect to hear more on this in the near future
-BT: >> all right.  Thank you.
+RGN: This one is regarding `function.prototype.toString`.  The highlight of the issue in question . . .  behaviour of XS, not matching the other implementations with respect to the name portion of the output from the built-in `function.prototype.toString`.  Other implementations always output either an identifier or nothing at all, or in the special cases of a symbol-name function, a special branch for a computed name.  What XS is doing, instead is outputting a computed name for it, which is allowed in a different branch of `function.prototype.toString` but not for a built-in.  The concern and the proposal here is around whether or not that should be permitted.  Essentially, we are looking at the . . .  the behaviour that is required when the function in question is built in.  Currently, it is the case that the portion of the returned string that would be managed by a particular production must be the value of the [[InitialName]] slot.  The [[InitialName]] slot is something that every built in function has.  And it is set at creation to equal the "name" property, which in certain circumstances could be changed later.  Most of the time, the initial name slot value is an IdentifierName, but again in the case of the symbol-named functions, it’s actually instead a computed property name that looks like “[Symbol.something]” optionally preceded by “get” or “set”. << Production: NativeFunction >> The question here, the normative aspect of the change is around whether or not we should permit the bracketed string literal to be considered valid for a built in function.  It is important to note that in the case of a function which is not built in but also doesn’t have source text, such as one that is a proxy or the output of bind, must also conform to NativeFunction but doesn’t have this name constraint and so the XS output is valid.  So the fundamental problem here, I think, is that we probably could nail down `function.prototype.toString` a little bit better.  This particular change is normative in the direction of being more flexible, but I would be willing to listen to should it be less flexible . . .  but the pull request here is, towards increased flexibility and I think that’s the starting point of the discussion for today.  With that, I am ready to hit the queue.  
+
+MF: So you gave a single example there, where XS outputs a computed name looking thing, but it’s using empty string, which isn’t compelling because they could omit that name at that point.  Match the implementations.  Is there a case where you could cause XS to output something that wouldn’t be a valid identifier at that spot?
+
+RGN: yes.  That is the case for some built ins, but also the case for the ones I was talking about, like when you bind it.  You get things like this . . .  and this . .  (highlighted parts of PR).  XS has the interesting property that the string inside the brackets for these functions always matches the name of the function as far as I can tell, which is not the case for the other implementations.  There’s this, like, split between the "name" property of the function, and the content of the string output by `toString`.  
+
+BT: all right.  MM has the next queue item.  
+
+MM: yeah.  Um, I strongly object to the idea of making the spec more permissive and less deterministic.  You know, the whole purpose of having a standards committee originally was because of the capability problems between browsers and the pathological game theory as we called it.  All of the engine-makers have an interest, especially in things like this, where what the decision is matters much less than whether there’s agreement.  We all have an interest in having the engines agree so that the programs that are out there, that were – tested against some engines work on other engines.  We have a normative spec.  We don’t have adequate test 262 coverage to flag those in error and has a simple solution to, add the test 262 tests to bring everyone in conformance with the normive spec, and in any case, over time, because of this – the capability issue, it more important than the particular resolution of how strings print, we should be seeking to be more deterministic in the perspective, not less deterministic.  
+
+RGN: I am extremely sympathetic to this point.  And if there is appetite to nail down not just what goes between the function token and the left parenthesis, I would be willing to pursue not just that, but also the whitespace.  
+
+MM: I would appreciate that.  I would certainly support that.  
+
+BT: okay.  JHD is on the queue next
+
+JHD: yeah.  So I asked in matrix, but I haven’t got an issue yet.  In safari, I pulled up this string prototype dot symbol dot Iterator, and the dot name is the – symbol dot iterator and brackets and that’s fine.  Two spring also contains the same thing.  Is that currently valid or is your PR – what would be required to make it valid?  
+
+RGN: what does it look like right now?  
+
+JHD: the . . .  function space brackets surrounding symbol dot iterator, parenthesis and the rest of it.  
+
+RGN: it looks like this one, but in place here is symbol dot iterator? (“`function [Symbol.iterator]() { [native code] }`”)
+
+JHD: correct
+
+RGN: that is valid right now.  And remains valid
+
+JHD: would it be then correct to say that your changes only allow a string literal inside the brackets.  That’s the addition?  
+
+RGN: it has to deal with this, between the `function` token and the left parenthesis `(`.  The current spec allows any property name in the grammar, identifier or computed, but has an extra constraint in the algorithm for a built-in function.  The one that would be changing, if we adapted this, is . . .  this part. <<Diff: 20.2.3.5 >>  So the reason why the bracket symbol dot iterator is valid, not just valid but required, is because that’s what the [[InitialName]] slot of the function holds.  So it would not be valid right now to have `function ["[Symbol.iterator]"]`.  That would not be valid because [[InitialName]] itself starts with bracket S, not bracket quote.  If you take it and drop it in, that’s valid now and remains valid.  What is not valid is wrapping it in double quotes to make a string and wrapping that in brackets to make it computed.  
+
+JHD: with your change, do the contents of the quote still have to match the initial name slot
+
+RGN: yeah.  If we go this way.  The – it introduces a NativeFunctionName function, which says, for anything that is a computed property name where the value is a string literal, just evaluate the string and make your checks against the result.  So . . .  it would treat as equivalent this from XS, where the computed property name is a string containing bracketed contents, with this from JavaScriptCore, where the computed property name is a symbol.
+
+JHD: Thank you.  That clarifies it for me.  
+
+BT: we have MF in the queue again.  9 minutes left on this top
+
+MF: have you spoken to XS about why they made this implementation
+
+RGN: I have not, and there are issues around it anyway that need to be fixed no matter what.  XS was just the discovery point for this particular weirdness.  
+
+MF: it would make me more comfortable hearing if we have heard from XS about whether this change was intentional or easy for them to match the spec as-is.  I see they see value in choosing the more descriptive name, but I can’t speculate beyond that
+
+RGN: Peter is not with us today, or at least not right now
+
+MF: okay.  
+
+RGN: honestly, though, my preferred outcome would be what MM suggested, which is more determinism that nails everything down even further.  So I mean, I am willing to have anything that is better specified, but that can be editorial or normative.  And if implementations are willing, I am willing to put in the spec work to nail things down either further, rather than going in this direction of more flexibility.  But really, I want to know how the committee as a whole, feels about this area and any changes that might be made.  
+
+BT: all right.  MM..  
+
+MM: you said normative or non-normative in term of pinning things down.  It really needs to be normative.  
+
+RGN: if I said that, I misspoke.  There’s an editorial aspect to clean up toString, which I separated out into #2828 and that has not landed yet.  But no, I am specifically talking in this discussion, about the normative changes.  
+
+MM: okay.  So I certainly object to anything that is more permissive than the current spec.  And I certainly support a normative spec as deterministic as possible and deterministic, if that’s possible.  
+
+RGN: okay.  I think we are willing to pursue it regardless.  So maybe the question around that now would be, if it’s better to do so as a needs-consensus pull request, or series of pull requests, or instead as a proposal?  
+
+MM: I think it needs – my sense; it should be a proposal.  It can be – proposals that don’t generate a lot of controversy can go through the process quickly.  But I think it should be a proposal.  
+
+RNG: ok.  With that, I think I would like to take it in that direction.  Given that there’s no – no proposal yet for it, but I am willing to do that, you know, essentially immediately, how does the committee feel about giving it stage 1?  
+
+MM: I am obviously in favour of that.  
+
+BT: Are we sure what the proposal is. Is it what is in this PR
+
+RGN: The proposal will be “reduce flexibility in `Function.prototype.toString`”.  
+
+BT: but there isn’t a proposal written up?  
+
+RGN: no.  Because it’s actually a reverse course from this pull request.  Not only not do this, but also, go even harder in the other direction.  
+
+BT: okay.  If there’s no reason for a rush here, just write a proposal and come back.  We can, you know, move fairly quickly through the stages of it.  
+
+RGN: okay.  
+
+BT: in fact, if you have something that you can put to paper, by the end of the meeting, we may have some additional time.  
+
+RGN: yeah.  I think – I think I can do that.  I will definitely give it a shot.  As far as this topic before it’s ready, is there any other feedback?  
+
+BT: the queue is empty.  
+
+RGN: okay.  Well, thanks, then.  Expect to hear more on this in the near future
+
+BT: all right.  Thank you.
 
 ### Conclusion/Decision
 
@@ -272,42 +465,94 @@ Presenter: Allen Wirfs-Brock (AWB)
 - [slides](https://docs.google.com/presentation/d/1eNKAGEoa6WGgg9IEhTBHdHj1jA7aJFPO5PIsYminP3E/edit)
 
   All right.  Next up, we have Allen.  Allen, welcome back.  
-AWB: >> hey.  You guys hear me?  
-BT >> yeah.  You sound good
-AWB >> cool.  Let’s see if I can . . .  figure out here how to make my slides visible.  And there it is.  Hello, everybody.  Most of you probably don’t know me, but I am Allen, and I was the project editor for ES5 and ES6.  I’ve been working with IS, the secretary in a bit to look at PDF issues and stuff.  I wanted to fill you in, on what I have done.  And present to you some things that you need to consider for TC39 is going to do going forward in this area.  So let’s get started.  So Ecma always had a standard for formatting standards as a book.  And traditionally standards, of course, were published essentially as books.  They are documents on the Ecma’s website, you can go to that in great detail, describe the formatting requirements of these book-like standards.  And they, themselves, that description, I believe, is derived from even more detailed standards for what a standard is supposed to look like.  And there is a Microsoft word template, a docx file that lays out the matrix for such a format.  Up through 2015, the standards were developed exclusively in Microsoft word using that template.  They generated nice printed documents.  But, you know, by the time ES6 was done, it was pretty clear that most users of the spec were using it on the web and make a much better experience with a presentation of the standard that was really authored to be used on the web.  And so you have got what we have today.  And it’s a great format for online presentation.  And we are authored using the ECmarkup tools.  And so people don’t have to learn word and just as importantly, the standard is really now too big to work with Word for some several reasons we discovered.  But there’s been a problem since then, and how do you turn this into a book?  Because there are important constituents of Ecma that have an expectation that important standards are published as nice books.  And in particular libraries and archives, national archives and other standards of bodies have an expectation for these book-like standards.  And so this has been quite a pain for the Ecma and the secretriat since then.  So in . . .  in 2016, when we were going to to the new process for authoring the spec – let’s see here.  Well, okay.  Let me give you an example here.  So this an example.  So basically, the best that could be done in 2016 was to – okay – load the HTML version into a browser forcing the table of contents to be linearized at the front of the doc instead of in the side – interactive side bar, and then telling the browser to print.  And you got this long continuous thing with arbitrary break pages.  And various other issues like anything that required horizontal scrolling would get truncated and you ended up with . . .  you see something at the front of the document like on the left here . . .  when the expectation of these external customers is something on the right.  And by the way, this thing on the right is now how it looks, until the work I recently did.  So back then . . .  okay.  So back in 2016, Brian, I think, who did a lot of the – this original work in migrating the EC markup and creating it, you know, we talked about this problem of printing.  And I remember him saying, he thought that CSS page media support, whatever that was, was a likely solution.  But I seem to recall he went off and he talked to some of the browser people at Microsoft, and he came back and said, basically, well, unfortunately, browser don’t support any of this.  So while there’s all these great features in theory in CSS, for doing exactly what we want to do, is producing nicely-formatted books, browsers just don’t support them.  We just kind of moved ahead and the best we could do, and kind of held off Ecma saying we can’t do any better.  So actually almost a year ago, I was talking to them he said, can’t we do better?  And I looked around a bit more at – at the CSS page media and stuff and I discovered that for me, I discovered that the fact, while browsers can’t handle this, there are a number of nonbrowser renders that do.  So . . .  you know, you take your HTML and out comes a PDF that is nicely formatted, if you’re HTML has the right imputing and stuff.  Most of these are commercial products, some of them are quite expensive, and some of them have – have – you know, quite restrictive licencing.  You could only one on CPR with most 4 cores and things like that.  And but there are solutions out there, and there are people who use these to create very sophisticated book-like things using CSS and HTML.  But more recently, I noticed that there is this one open-source project called “paged.JS’ it’s a polyfill of this media support and it works – it was intended to work primarily in chrome-based browsers.  Is itize a polyfill.  It’s a polyfill for the CSS constructs that support paged media and it does it in the browser by making the Dong, interpreting the both what the layout – the browser has initially created and then looking at the CSS paged media property that is are in there, and figuring out how big each page will be and creating a bunch of individual containers and flowing it into them.  In the browser, you get a paged view of the document, and then you can use this a regular print function of – of a browser, and chrome is smart unlawful that you get nice, paged output with all the footers and  – prior to the GA approval of the 2002 standards headers that are described using the CSS paged media constructs . . .  so that’s what I did.  I took the – I took a week investigating this process.  What it would take to do this with the 2022 versions of the standard.  And what I do, the basic idea was, to . . .  start with the output of AC markup.  Basically, I started with the – the HTML output, and the CSS file for EC markup.  And I started just running it through this paged JS polyfill in a chromium-based browser to see what would happen.  And I discovered various things that was in the markup that would cause it to crash, cause paged JS to crash or not render appropriately.  And so, you know, I didi an iterative process basically of fixing things, going back, editing the HTML file, running it through the process again.  And initially, I did this experimenting with the 2021 education of Ecma 626.  And I got far enough with it to say to the – to them that I think we can do this for the – for the new standards.  And so . . .  we talked about that and I said, okay.  Let’s go ahead and do it.  And so as soon as GA approved the 2022 editions, I sat down and applied this process to both 262 and 402.  And it took me about a week and a half to do the two of them.  And they’re now up on the Ecma website as the PDFs.  There’s a number of things I had to do.  To do this, you have to modify the CSS, so it has, you know, has the page metrics or what – the dimensions, and line and page layouts, where the headers and footers are.  And the Ecma standard has things like, you know, where the page number is, flips from side to side.  And the front side has Roman numerals.  So that’s all specified there in the CSS file.  And the text is justified.  And there’s a number of convenient classes, convenience CSS classes that are created.  So you can make it easy at the HTML level to specify if I need a page break or I don’t want a page break here and things like that.  So anyway, I did that.  It was a bunch of manual work involved.  But it didn’t actually take all that long.  And the real question for you guys, I think, to consider is, I don’t think – I would hope nobody thinks that it would be a good idea to go back to the really bad PDFs being produced before and I am sure the secretriat wouldn’t like that, the standards, the peers would hold their nose again.  So I think as a group, or maybe it’s the editors and chairs as a group, but you know, TC39 needs to think about what they want to do going forward.  And so I just wanted to layout a couple of options for you guys to think about and talk about and eventually make some decisions on.  One of which is, assuming you buy into that CSS page media applied to the – the core HTML documents that are produced by TC39, is the way to proceed?  One decision is whether to continue to use paged JS or switch to a commercial project.  I suggest stick with paged JS.  Some of the commercial products have some more capabilities, arguably they may be more stage in the long run, the commercial projects, paged JS is a pretty young, open-sourced project.  And – and they keep work on producing – they definitely have people working on it and they have plans and a road map for their future.  But it – you know, whether in the long term, it survives or not, maybe really knowses.  For sure –
-BT: >> sorry to interpret, there’s quite a few people in the queue and 4 minutes left in the topic.  We have to go through it pretty quick.  
-AWB: >> I am almost done.  Anyway, so the question is, assuming you’re going to stay with this general approach, how do you want to do it?  Do you want to repeat the 2022 process it’s not that hard to do.  And I have a document and work to do, to document that process.  Something I have noticed that – another one is the simply diff, the HTML level from 2022 to 2023.  And so carried forward the 2022 augmented HTML, if you will, that is driving this process, and just applying this.  It’s probably less work.  And the third one is, trying to automate this process so it’s done easier and detectly from the original EC markup source.  And one important consideration I wanted to mention here was that good pagination requires aesthetic decisions and so some human has to look at it, to really, you know, decide that the page breaks are right.  At the very least, you need a PDF editor important for that.  Here is how you might automate the work flow.  Currently, the source files, go through the EC markup program, CSS.  An option that says, well, generator HTML with some variation specifically that support the page markup and use as the alternative CSS file.  Run that through the process – run that through the processing.  If you need manual edits, make them at the EC markup level.  Add classes that are specific to the PDF presentation.  And it won’t effect the web presentation and spit it out.  And so that’s basically it.  So . . .  it’ your decision to make and think about.  I can answer any questions anyone else in the 30 seconds remaining or whatever
-BT>> we have like a minute and a half.  
-AWB >> okay
-BT >>: Let’s go quick.  SFC wants to know if you resolved text searching in the PDF
-AWB: >> yes.  That was resolved.  Don’t use a MAC preview to concatenate
-BT >> DE is on the queue next.  
-DE: >> yes.  As we have been discussing in TC39 delegates, I think we previously agreed as a committee to ask the secretariat for a contractor to help with this task.  If you’re saying you don’t want to do this task forever, which makes perfect sense, maybe we work on boarding a contractor for this work.  I am not sure we have volunteers in TC39 to do this manual work that you talked about
-AWB: >> so I guess two points I want to make: to do a good job, these are aesthetic decisions where understanding the materials are important.  For example, where to make sense to break an HTML production or not.  So that’s one consideration.  And so just a front-end HTML-CSS contractor.  I don’t know how well they will do on that.  Cumulatively, this is a couple weeks of work for a year.  It looks like . . .  and so I would think it’s – it would make sense for TC39 to try to find somebody who can commit to that level of work.  It’s not – it’s not a lot.  It’s not a big job.  
-DE: >> yeah.  It seems reasonable to look for someone who can do a couple of weeks of work.  If we can’t find them, search for a contractor.  
-BT: >> we are over our timebox.  We do have some –
-IS: >> it’s very, very quick.  
-BT: >> we have some spare time, is there any observation to extending this item up to 15 minutes?  All right.  Let’s go to 11:45 at the latest.  Go ahead.  
-IS: >> okay.  I am from Ecma.  So basically, when we started this project we tried to find a “contractor''.  And actually, we had close contact with one of the professional companies (PDFreactor) who had a leading professional renderer program.  And the company which I have in contact with, which had the best marks also in Allen’s presentation, what it could do; and we worked with them quite a lot because they had quite a large number of professional user companies “on the hook”. PDFreactor, and especially one gentleman in that company was very helpful to us.  But unfortunately, we (or better he) was not able to find anybody among their good contacts, and so that was the point, you know, when we – when we went back in the discussion to AWB what to do and how to progress with the project. I mean, AWB was involved in the entire process, of course.  And then I told AWB that unfortunately we couldn’t get any “contractor” we have to carry on with the project ourselves.  So we tried to get them, with the help of this company, but it was not successful. It doesn’t mean, of course, you know, if somebody else tries to look for it and then they have more luck.  And then you find somebody.  But we also tried that other avenue and in the end, we came up with the current solution, that we make a “quick and dirty” solution for ES2022 internally, and then we have one more year time to work out a more professional solution for ES2023 and beyond. So this the full story behind it.  Thank you.  
-USA:: >> next, we have WH
-WH: >> Looking at past ECMAScript PDFs, the older ones such as Edition 5 have a nice sidebar with the entire table of contents as an outline you can click on and go to the section.  The newest one doesn’t support that. Do any of these tools support that? What’s required to make it work?
+
+AWB: hey.  You guys hear me?  
+
+BT: yeah.  You sound good
+
+AWB: cool.  Let’s see if I can . . .  figure out here how to make my slides visible.  And there it is.  Hello, everybody.  Most of you probably don’t know me, but I am Allen, and I was the project editor for ES5 and ES6.  I’ve been working with IS, the secretary in a bit to look at PDF issues and stuff.  I wanted to fill you in, on what I have done.  And present to you some things that you need to consider for TC39 is going to do going forward in this area.  So let’s get started.
+
+AWB: So Ecma always had a standard for formatting standards as a book.  And traditionally standards, of course, were published essentially as books.  They are documents on the Ecma’s website, you can go to that in great detail, describe the formatting requirements of these book-like standards.  And they, themselves, that description, I believe, is derived from even more detailed standards for what a standard is supposed to look like.  And there is a Microsoft word template, a docx file that lays out the matrix for such a format.  Up through 2015, the standards were developed exclusively in Microsoft word using that template.  They generated nice printed documents.  But, you know, by the time ES6 was done, it was pretty clear that most users of the spec were using it on the web and make a much better experience with a presentation of the standard that was really authored to be used on the web.  And so you have got what we have today.  And it’s a great format for online presentation.  And we are authored using the ECmarkup tools.  And so people don’t have to learn word and just as importantly, the standard is really now too big to work with Word for some several reasons we discovered.
+
+AWB: But there’s been a problem since then, and how do you turn this into a book?  Because there are important constituents of Ecma that have an expectation that important standards are published as nice books.  And in particular libraries and archives, national archives and other standards of bodies have an expectation for these book-like standards.  And so this has been quite a pain for the Ecma and the secretriat since then.  So in . . .  in 2016, when we were going to to the new process for authoring the spec – let’s see here.  Well, okay.  Let me give you an example here.  So this an example.  So basically, the best that could be done in 2016 was to – okay – load the HTML version into a browser forcing the table of contents to be linearized at the front of the doc instead of in the side – interactive side bar, and then telling the browser to print.  And you got this long continuous thing with arbitrary break pages.  And various other issues like anything that required horizontal scrolling would get truncated and you ended up with . . .  you see something at the front of the document like on the left here . . .  when the expectation of these external customers is something on the right.  And by the way, this thing on the right is now how it looks, until the work I recently did.  So back then . . .  okay.
+
+AWB: So back in 2016, Brian, I think, who did a lot of the – this original work in migrating the EC markup and creating it, you know, we talked about this problem of printing.  And I remember him saying, he thought that CSS page media support, whatever that was, was a likely solution.  But I seem to recall he went off and he talked to some of the browser people at Microsoft, and he came back and said, basically, well, unfortunately, browser don’t support any of this.  So while there’s all these great features in theory in CSS, for doing exactly what we want to do, is producing nicely-formatted books, browsers just don’t support them.  We just kind of moved ahead and the best we could do, and kind of held off Ecma saying we can’t do any better.
+
+AWB: So actually almost a year ago, I was talking to them he said, can’t we do better?  And I looked around a bit more at – at the CSS page media and stuff and I discovered that for me, I discovered that the fact, while browsers can’t handle this, there are a number of nonbrowser renders that do.  So . . .  you know, you take your HTML and out comes a PDF that is nicely formatted, if you’re HTML has the right imputing and stuff.  Most of these are commercial products, some of them are quite expensive, and some of them have – have – you know, quite restrictive licencing.  You could only one on CPR with most 4 cores and things like that.  And but there are solutions out there, and there are people who use these to create very sophisticated book-like things using CSS and HTML.  But more recently, I noticed that there is this one open-source project called “paged.JS’ it’s a polyfill of this media support and it works – it was intended to work primarily in chrome-based browsers.  Is itize a polyfill.  It’s a polyfill for the CSS constructs that support paged media and it does it in the browser by making the Dong, interpreting the both what the layout – the browser has initially created and then looking at the CSS paged media property that is are in there, and figuring out how big each page will be and creating a bunch of individual containers and flowing it into them.  In the browser, you get a paged view of the document, and then you can use this a regular print function of – of a browser, and chrome is smart unlawful that you get nice, paged output with all the footers and  – prior to the GA approval of the 2002 standards headers that are described using the CSS paged media constructs . . .
+
+AWB: so that’s what I did.  I took the – I took a week investigating this process.  What it would take to do this with the 2022 versions of the standard.  And what I do, the basic idea was, to . . .  start with the output of AC markup.  Basically, I started with the – the HTML output, and the CSS file for EC markup.  And I started just running it through this paged JS polyfill in a chromium-based browser to see what would happen.  And I discovered various things that was in the markup that would cause it to crash, cause paged JS to crash or not render appropriately.  And so, you know, I didi an iterative process basically of fixing things, going back, editing the HTML file, running it through the process again.  And initially, I did this experimenting with the 2021 education of Ecma 626.  And I got far enough with it to say to the – to them that I think we can do this for the – for the new standards.  And so . . .  we talked about that and I said, okay.  Let’s go ahead and do it.  And so as soon as GA approved the 2022 editions, I sat down and applied this process to both 262 and 402.  And it took me about a week and a half to do the two of them.  And they’re now up on the Ecma website as the PDFs.
+
+AWB: There’s a number of things I had to do.  To do this, you have to modify the CSS, so it has, you know, has the page metrics or what – the dimensions, and line and page layouts, where the headers and footers are.  And the Ecma standard has things like, you know, where the page number is, flips from side to side.  And the front side has Roman numerals.  So that’s all specified there in the CSS file.  And the text is justified.  And there’s a number of convenient classes, convenience CSS classes that are created.  So you can make it easy at the HTML level to specify if I need a page break or I don’t want a page break here and things like that.  So anyway, I did that.  It was a bunch of manual work involved.  But it didn’t actually take all that long.
+
+AWB: And the real question for you guys, I think, to consider is, I don’t think – I would hope nobody thinks that it would be a good idea to go back to the really bad PDFs being produced before and I am sure the secretriat wouldn’t like that, the standards, the peers would hold their nose again.  So I think as a group, or maybe it’s the editors and chairs as a group, but you know, TC39 needs to think about what they want to do going forward.  And so I just wanted to layout a couple of options for you guys to think about and talk about and eventually make some decisions on.  One of which is, assuming you buy into that CSS page media applied to the – the core HTML documents that are produced by TC39, is the way to proceed?  One decision is whether to continue to use paged JS or switch to a commercial project.  I suggest stick with paged JS.  Some of the commercial products have some more capabilities, arguably they may be more stage in the long run, the commercial projects, paged JS is a pretty young, open-sourced project.  And – and they keep work on producing – they definitely have people working on it and they have plans and a road map for their future.  But it – you know, whether in the long term, it survives or not, maybe really knowses.  For sure –
+
+BT: sorry to interpret, there’s quite a few people in the queue and 4 minutes left in the topic.  We have to go through it pretty quick.  
+
+AWB: I am almost done.  Anyway, so the question is, assuming you’re going to stay with this general approach, how do you want to do it?  Do you want to repeat the 2022 process it’s not that hard to do.  And I have a document and work to do, to document that process.  Something I have noticed that – another one is the simply diff, the HTML level from 2022 to 2023.  And so carried forward the 2022 augmented HTML, if you will, that is driving this process, and just applying this.  It’s probably less work.  And the third one is, trying to automate this process so it’s done easier and detectly from the original EC markup source.  And one important consideration I wanted to mention here was that good pagination requires aesthetic decisions and so some human has to look at it, to really, you know, decide that the page breaks are right.  At the very least, you need a PDF editor important for that.
+
+AWB: Here is how you might automate the work flow.  Currently, the source files, go through the EC markup program, CSS.  An option that says, well, generator HTML with some variation specifically that support the page markup and use as the alternative CSS file.  Run that through the process – run that through the processing.  If you need manual edits, make them at the EC markup level.  Add classes that are specific to the PDF presentation.  And it won’t effect the web presentation and spit it out.  And so that’s basically it.  So . . .  it’ your decision to make and think about.  I can answer any questions anyone else in the 30 seconds remaining or whatever
+
+BT: we have like a minute and a half.  
+
+AWB: okay
+
+BT: Let’s go quick.  SFC wants to know if you resolved text searching in the PDF
+
+AWB: yes.  That was resolved.  Don’t use a MAC preview to concatenate
+
+BT: DE is on the queue next.  
+
+DE: yes.  As we have been discussing in TC39 delegates, I think we previously agreed as a committee to ask the secretariat for a contractor to help with this task.  If you’re saying you don’t want to do this task forever, which makes perfect sense, maybe we work on boarding a contractor for this work.  I am not sure we have volunteers in TC39 to do this manual work that you talked about
+
+AWB: so I guess two points I want to make: to do a good job, these are aesthetic decisions where understanding the materials are important.  For example, where to make sense to break an HTML production or not.  So that’s one consideration.  And so just a front-end HTML-CSS contractor.  I don’t know how well they will do on that.  Cumulatively, this is a couple weeks of work for a year.  It looks like . . .  and so I would think it’s – it would make sense for TC39 to try to find somebody who can commit to that level of work.  It’s not – it’s not a lot.  It’s not a big job.  
+
+DE: yeah.  It seems reasonable to look for someone who can do a couple of weeks of work.  If we can’t find them, search for a contractor.  
+
+BT: we are over our timebox.  We do have some –
+
+IS: it’s very, very quick.  
+
+BT: we have some spare time, is there any observation to extending this item up to 15 minutes?  All right.  Let’s go to 11:45 at the latest.  Go ahead.  
+
+IS: okay.  I am from Ecma.  So basically, when we started this project we tried to find a “contractor''.  And actually, we had close contact with one of the professional companies (PDFreactor) who had a leading professional renderer program.  And the company which I have in contact with, which had the best marks also in Allen’s presentation, what it could do; and we worked with them quite a lot because they had quite a large number of professional user companies “on the hook”. PDFreactor, and especially one gentleman in that company was very helpful to us.  But unfortunately, we (or better he) was not able to find anybody among their good contacts, and so that was the point, you know, when we – when we went back in the discussion to AWB what to do and how to progress with the project. I mean, AWB was involved in the entire process, of course.  And then I told AWB that unfortunately we couldn’t get any “contractor” we have to carry on with the project ourselves.  So we tried to get them, with the help of this company, but it was not successful. It doesn’t mean, of course, you know, if somebody else tries to look for it and then they have more luck.  And then you find somebody.  But we also tried that other avenue and in the end, we came up with the current solution, that we make a “quick and dirty” solution for ES2022 internally, and then we have one more year time to work out a more professional solution for ES2023 and beyond. So this the full story behind it.  Thank you.  
+
+USA:: next, we have WH
+
+WH: Looking at past ECMAScript PDFs, the older ones such as Edition 5 have a nice sidebar with the entire table of contents as an outline you can click on and go to the section.  The newest one doesn’t support that. Do any of these tools support that? What’s required to make it work?
+
 AWB:  sorry.  Yeah.  You’re talking about PDF bookmarks, basically.  That is one feature that paged JS doesn’t currently support, which is the generation of PDF bookmarks, which is what is used, the PDF side bar and such.  Some of the other commercial packages do.  The table of contents, in the PDF, does work.  You click on a page and it takes you to that page or whatever.  There isn’t a side bar.  At least my rationalization for now is that the primary purpose of this document, this PDF isn’t for onscreen viewing because the HTML is vastly superior for that, but it’s for printing books and printed books you don’t have that side bar.  So . . .  but that could go into the decision of what to use for the . . .  for the renderer.  
-WH: >> One of the critical uses is archiving.  PDFs are self-contained.  With HTML, you never know when you got the whole bundle or have some missing resources.
-AWB >> right.  
-USA: >> okay.  Next up, we have Michael
-MF: >> hi.  Can you give us an idea of what portion of the – what changes you have done or changes to the kind of like infrastructural parts and what portion of the changes were changes to like content parts.  Because the infrastructural starts, I would like to ingrate into Ecma, so you don’t have to repeat year after year
-AWB: >>: it’s almost all structural changes.  Some of the customs like ECU grammar would break sometimes.  It just – paged JS has a hard time with custom elements.  And so the solution to that is to turn them into DIVs.  And that’s one of the things, if we had this alternative paths with PDF output option is turn those into DIVs.  In terms of the actual content, the only content change I had to make was, there was some wide tables relating to modules in the Ecma 262.  There’s no way they would fit on the page.  If I pivot them, switch the columns and the row, they would fit nicely on page.  And I would recommend that in the master document because that presentation is just as nice as one that is currently there.  The only other content-like change I had to do was, I manually – I semi-manually created the table of contents.  And again, I think that’s something that could be done within EC markup.  
-MF: >> okay.  I am looking forward to seeing your writeup, then.  
-AWB: >> yeah.  Thank you
-USA: >> next we have Shane.  
-SFC: >> yeah.  Thank you for your work on this.  I think that we would all agree that, you know, in the long term, it would be good to have be an automated process.  And in terms of the ways to get to that, I think that it would be helpful for us to establish a list of requirements that we want out of the generated PDFs to evaluate one of the other solutions for that.  And then hopefully, we can get to a point where we run this as a GitHub action, the PDF is generated.  Then you download it off the GitHub actions.  We already do that for documentation and for the HTML version of the perspective.  Why not for the PDF version of the perspective?  I think that, you know, these are the kinds of problems that we should be able to solve.  You know, and . . .  yeah.  I just wanted to start that conversation.  That’s all.  Thank you.  
-AWB: >> yeah.  I understand.  Yeah.  I agree.  I think that’s the ideal forum, is that edits are done in terms of the EC markup level and runs through the process.  The one caveat I throw it, you don’t have to do this on a weekly or daily or . . .  but before final publication, a human is going to have to take some time and go through the documents and say, hey.  Now that’s a bad place to do a page break.  Let’s tweak the class annotations here and get a better page break.  
-SFC: >>:  rather than having like a contractor to do this every year, manually, it would be better to have a contractor automate the process once and we don’t have to have a contractor anymore because, then, you know, we just – you know, because the PDFs are always generated in the exact same way every time and if there’s a page break in a weird place, that’s one, small change to make upstream in the EC markup and that problem is fixed.  But we don’t need to have, like, a high-skill contractor for that
-AWB: >> yeah.  I just – I would say I suspect most of the work in automated this is actually in the EC markup HTML generator.  I don’t know if that is something you want to stick – a contractor or not.  I don’t know which of you guys currently maintain, you know, that – that tool chain.  
-DE: >> so to maybe draw a conclusion to this discussion for next steps.  In the chat, there’s an interest in the editors in looking into this process and seeing if it can be made work well enough without too much work going forward.  And if there’s more support needed, you know, MF did an extensive search for type setters, finding 4 different for quotes.  Not for a software licence, but for a human.  If we find that after a decent amount of looking into improving automation this we need significant human work, then we will probably be coming back to the secretriat asking for this professional support, unless somebody on committee can do this.  This has been presented before and no volunteers, but maybe that will change.  Does that capture a conclusion for this topic?  
-BT?>> Sounds right to me.  
-AWB>> okay.  Let me end by saying, as you guys think about and you want to drill in it more, I am available to talk to people, and . . .  and, you know, tell you a bit more about my experience as you get into it.  So . . .  so thanks.  
-BT: >> thank you.  AWB, for this excellent work.  
+
+WH: One of the critical uses is archiving.  PDFs are self-contained.  With HTML, you never know when you got the whole bundle or have some missing resources.
+
+AWB: right.  
+
+USA: okay.  Next up, we have Michael
+
+MF: hi.  Can you give us an idea of what portion of the – what changes you have done or changes to the kind of like infrastructural parts and what portion of the changes were changes to like content parts.  Because the infrastructural starts, I would like to ingrate into Ecma, so you don’t have to repeat year after year
+
+AWB: it’s almost all structural changes.  Some of the customs like ECU grammar would break sometimes.  It just – paged JS has a hard time with custom elements.  And so the solution to that is to turn them into DIVs.  And that’s one of the things, if we had this alternative paths with PDF output option is turn those into DIVs.  In terms of the actual content, the only content change I had to make was, there was some wide tables relating to modules in the Ecma 262.  There’s no way they would fit on the page.  If I pivot them, switch the columns and the row, they would fit nicely on page.  And I would recommend that in the master document because that presentation is just as nice as one that is currently there.  The only other content-like change I had to do was, I manually – I semi-manually created the table of contents.  And again, I think that’s something that could be done within EC markup.  
+
+MF: okay.  I am looking forward to seeing your writeup, then.  
+
+AWB: yeah.  Thank you
+
+USA: next we have Shane.  
+
+SFC: yeah.  Thank you for your work on this.  I think that we would all agree that, you know, in the long term, it would be good to have be an automated process.  And in terms of the ways to get to that, I think that it would be helpful for us to establish a list of requirements that we want out of the generated PDFs to evaluate one of the other solutions for that.  And then hopefully, we can get to a point where we run this as a GitHub action, the PDF is generated.  Then you download it off the GitHub actions.  We already do that for documentation and for the HTML version of the perspective.  Why not for the PDF version of the perspective?  I think that, you know, these are the kinds of problems that we should be able to solve.  You know, and . . .  yeah.  I just wanted to start that conversation.  That’s all.  Thank you.  
+
+AWB: yeah.  I understand.  Yeah.  I agree.  I think that’s the ideal forum, is that edits are done in terms of the EC markup level and runs through the process.  The one caveat I throw it, you don’t have to do this on a weekly or daily or . . .  but before final publication, a human is going to have to take some time and go through the documents and say, hey.  Now that’s a bad place to do a page break.  Let’s tweak the class annotations here and get a better page break.  
+
+SFC: rather than having like a contractor to do this every year, manually, it would be better to have a contractor automate the process once and we don’t have to have a contractor anymore because, then, you know, we just – you know, because the PDFs are always generated in the exact same way every time and if there’s a page break in a weird place, that’s one, small change to make upstream in the EC markup and that problem is fixed.  But we don’t need to have, like, a high-skill contractor for that
+
+AWB: yeah.  I just – I would say I suspect most of the work in automated this is actually in the EC markup HTML generator.  I don’t know if that is something you want to stick – a contractor or not.  I don’t know which of you guys currently maintain, you know, that – that tool chain.  
+
+DE: so to maybe draw a conclusion to this discussion for next steps.  In the chat, there’s an interest in the editors in looking into this process and seeing if it can be made work well enough without too much work going forward.  And if there’s more support needed, you know, MF did an extensive search for type setters, finding 4 different for quotes.  Not for a software licence, but for a human.  If we find that after a decent amount of looking into improving automation this we need significant human work, then we will probably be coming back to the secretriat asking for this professional support, unless somebody on committee can do this.  This has been presented before and no volunteers, but maybe that will change.  Does that capture a conclusion for this topic?  
+
+BT?: Sounds right to me.  
+
+AWB: okay.  Let me end by saying, as you guys think about and you want to drill in it more, I am available to talk to people, and . . .  and, you know, tell you a bit more about my experience as you get into it.  So . . .  so thanks.  
+
+BT: thank you.  AWB, for this excellent work.  
 
 ### Conclusion/Decision
 
@@ -321,12 +566,17 @@ Presenter: Jordan Harband (JHD)
 
 - [proposal](https://github.com/tc39/proposal-hashbang)
 
-JHD: >> all righty.  Hi, everyone.  We have had this proposal for hash bang comments for a while.  It was championd by BFS who is no longer in the committee.  Stage 3 shipping and chrome, firefox and chakra core and node JS and safari and XS.  I will update this before this is archived.  My hope is that something that stage 3 in the shipping virtually everywhere and has an open perspective PR approved by an editor is acceptable for stage 4.  So any observations to stage 4?  Or consensus for stage 4?  
-BT: >> let’s give folks a couple of seconds
-JHD: >> Of course
-BT: >>  In the room, we have thumb’s up.  
-BT: >> The queue remains empty.  I think we have stage 4 consensus.  
-BT: >> awesome.  Congratulations, BFS.  
+JHD: all righty.  Hi, everyone.  We have had this proposal for hash bang comments for a while.  It was championd by BFS who is no longer in the committee.  Stage 3 shipping and chrome, firefox and chakra core and node JS and safari and XS.  I will update this before this is archived.  My hope is that something that stage 3 in the shipping virtually everywhere and has an open perspective PR approved by an editor is acceptable for stage 4.  So any observations to stage 4?  Or consensus for stage 4?  
+
+BT: let’s give folks a couple of seconds
+
+JHD: Of course
+
+BT: In the room, we have thumb’s up.  
+
+BT: The queue remains empty.  I think we have stage 4 consensus.  
+
+BT: awesome.  Congratulations, BFS.  
 
 ### Conclusion/Decision
 
@@ -336,32 +586,58 @@ BT: >> awesome.  Congratulations, BFS.
 
 Presenter: Jordan Harband (JHD)
 
-JHD: >> all right.  Is that on?  All righty.  Okay.  So there is a symbol inside the Ecma 402 spec called the fall back symbol.  This is the – the way you get it, this is my code from the package that gets it.  Call into format like this.  And then you get the symbols off the object, and you look for the one that has the appropriate description, depending on which browser you’re in.  This one is the [inaudible] so the symbol in the specification is a same realm symbol.  A standard unique symbol.  Symbol parenthesis and to fall back string?  As the description.  However, V8, I believe, implements it’s a well known symbol.  In other words, the same value across different realms.  The choices – so there’s a deviation between some implications and the spec.  Other implications, all implemented as same-realm symbol.  So technically, we don’t have to do anything.  We could make sure the test 262 tests are up to date and V8 will decide if or when to make their implication match the specification.  But it seemed a good idea to get affirmative, to reaffirm consensus of that’s what we want.  I don’t have any strong opinion whether it’s same or cross-realm.  There are kind of – I believe there are arguments in favour of either course or against either course.  There are tradeoffs no matter which way you go.  One of the important reasons to answer the question is that there are – is another proposal later in the agenda to answer if something is a well-known symbol or not, so this is an open question that I would want resolved.  There’s the issue that – if it’s a well known symbol, there is cross-realm instrickensic, which complicates things for the lockdown environments.  So, yeah.  I am sure there are folks on the queue to add context to those sorts of concerns.  But my hope is that we end this agenda topic with either yes, it is same realm and we will make sure test matches that or no, change to be cross-realm and then we can discuss it.  
-BT: >> Shane.  
-SFC: >> yes.  So I – thanks for bringing this to my attention yesterday during lunch.  I am reviewing the specification for this symbol.  My understanding is the symbol is used as a way to – for users to detect when fallback has occurred or not, by comparing the results of an operation to this symbol.  So it seems to make sense that the intent is basically – it could be a comparison to a string literal.  But it uses symbols, so you compare to a symbol, I think it’s odd – I think it would be the expected behaviour to essentially have it be a well known symbol because that’s the expectation of a string.  Because if you compare a string to a string, it’s fine.  If it cross-realm, they have the same comparison.  Having the symbol also be cross-realm makes the most sense intuitively for the use case.  I see there’s some more agenda items in the queue.  Why don’t we go through those first
-BT: >> Dan on this topic?  
-DE: >> yeah.  To explain the rationale for Intl.FallbackSymfinebol.  It’s completely a hack.  Ecma402 was designed – Allen, if you’re on the call, can confirm because he was there and I wasn’t . . .  or some other people here.  When it came out, before ES6 classes were fully defined and it was attempted to be consistent with what we thought classes were going to be.  Including what we thought calling a constructor would do.  That turned out to not be the case.  There were some late changes, making sure the internal slots were available rather than adding internal slots later.  Which were good changes.  But it meant that some of Ecma 402 semantics made it to initiallyize an existing object as an Intl object.  When ES6 came out, there was an attempt to say, we don’t need this anymore.  We can use them as, you know, make them be what classes ended up finally.  And Rick is raising his hand.  
-RW: >> yeah.  I want to confirm your story because I was actually the one that did all this work you’re describing and you’re 100% correct.  
-DE: >> .  Okay.  I did the worse part, trying to implement and ship this or working with Caitlin potter, I think she was the one that implemented it in V8.  It wasn’t web compatible because this were libraries using this older pattern for caching.  It wasn’t introduced to detect anything in particular.  It’s the mechanism.  We have symbol, but didn’t add internal slots.  We didn’t want to go back to that.  
-RW: >> I’m sorry.  You had to do that.  
-DE: >> it’s okay.  I liked the – the effort.  
-BT: >> we have MM on the queue next.  
-MM: >> there a distinction that seems to be missing from the discussion, which is, well known symbol, and often seems to be taken into the discussion to be synonymous with cross-realm symbol.  Registered symbols are cross-realm.  It was a mistake that we made that well known symbols were not registered.  To have – there’s basically 3 categories of symbol.  And there should have been 2.  There’s registered symbols, which are cross-realm.  Well known symbols, not registered, still cross-realm.  And non-registered sim bottoms, which are not is well known and per realm.  If we want something to be – if we want to introduce a new cross-realm symbol for some reason, I think any – any new one that we add beyond what is already in the mistaken category of well known symbol should be added as a registered symbol.  And the conflict any work that assumes that can discover all of the well known symbols by looking at the – the string named property – string named symbol valued of the constructor, I have written codes several times because I have needed it, I suspect many other people have.  So even if I reform all the code that I have written, I think many things out there in the ecosystem that will break that may not be detected for a long time because of the assumption because if it’s – if it’s not registered and cross-realm, then it’s on the symbol constructor.  So I just want everyone to keep in mind that there is this third category, with regard to the fall back symbol.  I don’t care whether it stays per realm or whether it becomes a registered symbol or whether it becomes simply a string.  But I certainly do not want it to become a new well known symbol.  
-BT: >> thank you, MM.  A lot of discussion on the queue and we have 7 minutes left.  Dan is next.  
-DE: >> so I think being per realm just makes sense for simplicity, I don’t want to get into the issues that mark raised.  I think when it was implemented initially, it was in V8 per realm, it might have been part of the conversion, C + + where it happened to be cross-realm.  And yeah.  I think it would – if V8 finds it high priority to fix, then it seems okay.  But I couldn’t make that case for them either.  
-BT: >> frank has a discussion.  
-FYT: >> yeah.  I have the current container for that part of the V8.  Whatever we decide, I will try to implement, in V8, as long as we have good enough unit tasks . . .  don’t worry about that part.  This is some part we didn’t somehow pay attention to in the past.  Apologies for that
-BT: >> all right.  Thank you, frank.  SFC is next.  
-SFC >> yeah.  I have two agenda items.  The first is, thank you, DE for your explanation.  I noticed in the specification that the fall back symbol is only set in sections that are labeled normative optional.  So it’s fairly clear that this symbol is, like – if not deprecated, then legacy.  So I think the option that is – I don’t exactly know the implications side, but whichever is least intrusive is the definitely the one we should do.  Let’s see.  No responses to that, I will go to the next agenda item.  I know, for example, RGN has been working on the pull request to clarify what types of things Ecma 402 is able to specify.  If registering a new symbol is in the area of things that Ecma 402 was allowed to specify.  If 262 has a list of registered symbols, is Ecma allowed to add to that list?  Is that legal to do?  Or is that not compatible for 262 implementation is 402 adds more symbol
-JHD: >> from a spec perspective point of view, we don’t have anything that – like, it would be correct for 402, to patch the wellknown symbols table in order to make a well known symbol editorially.  There isn’t yet that cares about in the table, but there might be based on current proposals, whether they are allowed to do it or not, I think with consensus, they would be.  Whether we would want to give that consensus is obviously a different discussion.  And then, yeah.  Sorry.  I will let MM answer.  
-MM: >> so the – I think the question steps right into this ambiguity, which is the question that you stated was, allowed to register new symbols, which makes me think about registering symbols, but the question is, as I stated verbally, was about well known symbols.  I would certainly say that – I would certainly say that creating any well known symbols is something that I would like to resist and that should not be done lightly.  It should be brough to the attention of the committee as something to examine whether there’s a good case for a well known symbol.  With regard to creating new registered symbols, I would – obviously, it’s still a thing that needs consensus and should be examined, but I would be very relaxed about registering new symbols.  I wouldn’t have a problem with that.  
-BT: >> all right.  Thank you with that.  One more item in the queue, which is Ashley.  
-ACE: >> so . . .  my understanding – when I first saw symbols, my understanding is the great thing about them is they are guaranteed impossibility to clash with anything on the web.  You get web capability for for free.  My concern and maybe it’s not a real concern and in actually a pragmatic would remind, if we started using register symbols for things in general, fall back symbol is an exception, is that we, then, go back to having web compatibility issues.  You take a random example like the double ended iterators.  People go, and start using this, you know, symbol dot fall double ended iterator.  But then it doesn’t conform to what the proposal ends up being in stage 4.  And yes, .  It feels a shame we could lose that guaranteed web compatibility things of well known symbols not being registered.  
-MM: >> I think that’s a good point.  I think it’s – I think that it certainly a true, in theory, as you stated, I am not sure it is realistically.  The flip side of it is that introducing new well known symbols, where there’s a shared cross-realm identity that is not discoverible is something that has some very severe problems.  So these two – so I think we now have the pros and cons for both sides of this dilemma.  And, therefore, each case should be talked about.  It’s always the case as mentioned with the fall back symbol, a registered symbol and just using a string, logically, are not much different from each other.  So any time it might be a registered symbol, we should also put on the table, as a possibility, should it just be a string?  
-BT: >> all right.  SFC . . .  we are slightly over, SFC.  If you can talk in less than 30 seconds or so
-SFC: >> yeah.  My comment is, I don’t know if it was clear what the web reality is here, but I think we should just do what the web reality is.  It doesn’t seem like something spending a lot of time on.  
-JHD: >> right.  I mean, web reality in terms of number of implementations would be it’s the same realm, unique symbol or or pro realm unique symbol.  Which is what the spec currently says.  We can go for that, unless someone has a desire for change.  And I am not hearing that.  Cool.  Thank you
+JHD: all right.  Is that on?  All righty.  Okay.  So there is a symbol inside the Ecma 402 spec called the fall back symbol.  This is the – the way you get it, this is my code from the package that gets it.  Call into format like this.  And then you get the symbols off the object, and you look for the one that has the appropriate description, depending on which browser you’re in.  This one is the [inaudible] so the symbol in the specification is a same realm symbol.  A standard unique symbol.  Symbol parenthesis and to fall back string?  As the description.  However, V8, I believe, implements it’s a well known symbol.  In other words, the same value across different realms.  The choices – so there’s a deviation between some implications and the spec.  Other implications, all implemented as same-realm symbol.  So technically, we don’t have to do anything.  We could make sure the test 262 tests are up to date and V8 will decide if or when to make their implication match the specification.  But it seemed a good idea to get affirmative, to reaffirm consensus of that’s what we want.  I don’t have any strong opinion whether it’s same or cross-realm.  There are kind of – I believe there are arguments in favour of either course or against either course.  There are tradeoffs no matter which way you go.  One of the important reasons to answer the question is that there are – is another proposal later in the agenda to answer if something is a well-known symbol or not, so this is an open question that I would want resolved.  There’s the issue that – if it’s a well known symbol, there is cross-realm instrickensic, which complicates things for the lockdown environments.  So, yeah.  I am sure there are folks on the queue to add context to those sorts of concerns.  But my hope is that we end this agenda topic with either yes, it is same realm and we will make sure test matches that or no, change to be cross-realm and then we can discuss it.  
+
+BT: Shane.  
+
+SFC: yes.  So I – thanks for bringing this to my attention yesterday during lunch.  I am reviewing the specification for this symbol.  My understanding is the symbol is used as a way to – for users to detect when fallback has occurred or not, by comparing the results of an operation to this symbol.  So it seems to make sense that the intent is basically – it could be a comparison to a string literal.  But it uses symbols, so you compare to a symbol, I think it’s odd – I think it would be the expected behaviour to essentially have it be a well known symbol because that’s the expectation of a string.  Because if you compare a string to a string, it’s fine.  If it cross-realm, they have the same comparison.  Having the symbol also be cross-realm makes the most sense intuitively for the use case.  I see there’s some more agenda items in the queue.  Why don’t we go through those first
+
+BT: Dan on this topic?  
+
+DE: yeah.  To explain the rationale for Intl.FallbackSymfinebol.  It’s completely a hack.  Ecma402 was designed – Allen, if you’re on the call, can confirm because he was there and I wasn’t . . .  or some other people here.  When it came out, before ES6 classes were fully defined and it was attempted to be consistent with what we thought classes were going to be.  Including what we thought calling a constructor would do.  That turned out to not be the case.  There were some late changes, making sure the internal slots were available rather than adding internal slots later.  Which were good changes.  But it meant that some of Ecma 402 semantics made it to initiallyize an existing object as an Intl object.  When ES6 came out, there was an attempt to say, we don’t need this anymore.  We can use them as, you know, make them be what classes ended up finally.  And Rick is raising his hand.  
+
+RW: yeah.  I want to confirm your story because I was actually the one that did all this work you’re describing and you’re 100% correct.  
+
+DE: Okay.  I did the worse part, trying to implement and ship this or working with Caitlin potter, I think she was the one that implemented it in V8.  It wasn’t web compatible because this were libraries using this older pattern for caching.  It wasn’t introduced to detect anything in particular.  It’s the mechanism.  We have symbol, but didn’t add internal slots.  We didn’t want to go back to that.  
+
+RW: I’m sorry.  You had to do that.  
+
+DE: it’s okay.  I liked the – the effort.  
+
+BT: we have MM on the queue next.  
+
+MM: there a distinction that seems to be missing from the discussion, which is, well known symbol, and often seems to be taken into the discussion to be synonymous with cross-realm symbol.  Registered symbols are cross-realm.  It was a mistake that we made that well known symbols were not registered.  To have – there’s basically 3 categories of symbol.  And there should have been 2.  There’s registered symbols, which are cross-realm.  Well known symbols, not registered, still cross-realm.  And non-registered sim bottoms, which are not is well known and per realm.  If we want something to be – if we want to introduce a new cross-realm symbol for some reason, I think any – any new one that we add beyond what is already in the mistaken category of well known symbol should be added as a registered symbol.  And the conflict any work that assumes that can discover all of the well known symbols by looking at the – the string named property – string named symbol valued of the constructor, I have written codes several times because I have needed it, I suspect many other people have.  So even if I reform all the code that I have written, I think many things out there in the ecosystem that will break that may not be detected for a long time because of the assumption because if it’s – if it’s not registered and cross-realm, then it’s on the symbol constructor.  So I just want everyone to keep in mind that there is this third category, with regard to the fall back symbol.  I don’t care whether it stays per realm or whether it becomes a registered symbol or whether it becomes simply a string.  But I certainly do not want it to become a new well known symbol.  
+
+BT: thank you, MM.  A lot of discussion on the queue and we have 7 minutes left.  Dan is next.  
+
+DE: so I think being per realm just makes sense for simplicity, I don’t want to get into the issues that mark raised.  I think when it was implemented initially, it was in V8 per realm, it might have been part of the conversion, C + + where it happened to be cross-realm.  And yeah.  I think it would – if V8 finds it high priority to fix, then it seems okay.  But I couldn’t make that case for them either.  
+
+BT: frank has a discussion.  
+
+FYT: yeah.  I have the current container for that part of the V8.  Whatever we decide, I will try to implement, in V8, as long as we have good enough unit tasks . . .  don’t worry about that part.  This is some part we didn’t somehow pay attention to in the past.  Apologies for that
+
+BT: all right.  Thank you, frank.  SFC is next.  
+
+SFC: yeah.  I have two agenda items.  The first is, thank you, DE for your explanation.  I noticed in the specification that the fall back symbol is only set in sections that are labeled normative optional.  So it’s fairly clear that this symbol is, like – if not deprecated, then legacy.  So I think the option that is – I don’t exactly know the implications side, but whichever is least intrusive is the definitely the one we should do.  Let’s see.  No responses to that, I will go to the next agenda item.  I know, for example, RGN has been working on the pull request to clarify what types of things Ecma 402 is able to specify.  If registering a new symbol is in the area of things that Ecma 402 was allowed to specify.  If 262 has a list of registered symbols, is Ecma allowed to add to that list?  Is that legal to do?  Or is that not compatible for 262 implementation is 402 adds more symbol
+
+JHD: from a spec perspective point of view, we don’t have anything that – like, it would be correct for 402, to patch the wellknown symbols table in order to make a well known symbol editorially.  There isn’t yet that cares about in the table, but there might be based on current proposals, whether they are allowed to do it or not, I think with consensus, they would be.  Whether we would want to give that consensus is obviously a different discussion.  And then, yeah.  Sorry.  I will let MM answer.  
+
+MM: so the – I think the question steps right into this ambiguity, which is the question that you stated was, allowed to register new symbols, which makes me think about registering symbols, but the question is, as I stated verbally, was about well known symbols.  I would certainly say that – I would certainly say that creating any well known symbols is something that I would like to resist and that should not be done lightly.  It should be brough to the attention of the committee as something to examine whether there’s a good case for a well known symbol.  With regard to creating new registered symbols, I would – obviously, it’s still a thing that needs consensus and should be examined, but I would be very relaxed about registering new symbols.  I wouldn’t have a problem with that.  
+
+BT: all right.  Thank you with that.  One more item in the queue, which is Ashley.  
+
+ACE: so . . .  my understanding – when I first saw symbols, my understanding is the great thing about them is they are guaranteed impossibility to clash with anything on the web.  You get web capability for for free.  My concern and maybe it’s not a real concern and in actually a pragmatic would remind, if we started using register symbols for things in general, fall back symbol is an exception, is that we, then, go back to having web compatibility issues.  You take a random example like the double ended iterators.  People go, and start using this, you know, symbol dot fall double ended iterator.  But then it doesn’t conform to what the proposal ends up being in stage 4.  And yes, .  It feels a shame we could lose that guaranteed web compatibility things of well known symbols not being registered.  
+
+MM: I think that’s a good point.  I think it’s – I think that it certainly a true, in theory, as you stated, I am not sure it is realistically.  The flip side of it is that introducing new well known symbols, where there’s a shared cross-realm identity that is not discoverible is something that has some very severe problems.  So these two – so I think we now have the pros and cons for both sides of this dilemma.  And, therefore, each case should be talked about.  It’s always the case as mentioned with the fall back symbol, a registered symbol and just using a string, logically, are not much different from each other.  So any time it might be a registered symbol, we should also put on the table, as a possibility, should it just be a string?  
+
+BT: all right.  SFC . . .  we are slightly over, SFC.  If you can talk in less than 30 seconds or so
+
+SFC: yeah.  My comment is, I don’t know if it was clear what the web reality is here, but I think we should just do what the web reality is.  It doesn’t seem like something spending a lot of time on.  
+
+JHD: right.  I mean, web reality in terms of number of implementations would be it’s the same realm, unique symbol or or pro realm unique symbol.  Which is what the spec currently says.  We can go for that, unless someone has a desire for change.  And I am not hearing that.  Cool.  Thank you
+
 SFC: Does that mean we are keeping as single realm
+
 JHD: Conclusion is that we are keeping it as a per-realm unique symbol, like in the spec, and to ensure that test262 tests correctly reflect that.
 
 ### Conclusion/Decision

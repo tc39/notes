@@ -306,7 +306,7 @@ PFC: That's all. Thank you.
 
 Presenter: Kevin Gibbons (KB)
 
-- [pull request](https://github.com/tc39/ECMA-262/pull/2812)
+- [pull request](https://github.com/tc39/ecma262/pull/2812)
 
 KB:  Yes. Okay so this was an issue that was raised on the discourse, our more asynchronous forum. Someone points out that the BigIntint Constructor, which is used to coerce values to a bigint, does coercion twice. So here I am passing a value has different Behavior the first time you call toPrimitive on it than the second time, and even though you're only passing it to BigInt once it would get coerced twice. This is silly, it doesn't match any of the major implementations, although GraalJS and Engine 262 actually implement spec correctly, so congratulations to them, but I'm proposing to change the specification to match implementations. So that you first do a call to toPrimitive and then if that results in a value which is not already a number, you use the post-to Primitive value as the argument to toBigInt rather than using the original value again, which would call toPrimitive a second time. That's the change. Do we have anything on the Queue or can I ask for a consensus for this change?
 

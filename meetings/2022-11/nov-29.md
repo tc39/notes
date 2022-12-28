@@ -1089,7 +1089,7 @@ es actually means. I guess, Okay, so Richard Cho switch it off with the the narr
 
 SFC: And in areas like well what does narrow?
 
-Yes actually mean we should write that down in the notes. Okay. understanding of it. is that we, as a committee commit to not make such extensions without a note in 262, or other text into 62, describing that 402. is pacifying what they are. Are.
+Yes actually mean we should write that down in the notes. Okay. understanding of it. is that we, as a committee commit to not make such extensions without a note in 262, or other text into 262, describing that 402. is pacifying what they are. Are.
 
 SFC: Okay. so it's just a note. It's a non normative note back referencing 402. Which is, but that's not the same as a toLocaleString method, because toLocaleString method is an empty method that gets overwritten. So this is more like what? I think Shu says, which is to characterize it as additional this class may have additional properties. Not defined here. I was just looking back in Matrix, and I just want to make sure that we are aligned on that because it seemed like SYG and USA were not aligned on what the the discussion was.
 

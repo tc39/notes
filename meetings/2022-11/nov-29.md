@@ -674,7 +674,7 @@ MM: I don't. Understand.
 
 MF: I can get you the section number. I don't remember the number. I think it is 19. That has restrictions on extensions. What exemption are you referring to?
 
-MM: The idea that hosts can add properties to promote to the intrinsic objects defined by 262? I mean, do you have any text from expected? the first time? I thought it was quoted in Richard's presentation.
+MM: The idea that hosts can add properties to promote to the intrinsic objects defined by 262? I mean, do you have any text from expected? the first time? I thought it was quoted in RGN's presentation.
 
 RGN: I excerpted from the conformance section of 262, which off the top of my head I don’t think includes extension restrictions.
 

@@ -522,7 +522,7 @@ BT: All right. So I think we have consensus on Stage 2. Congratulations?
 
 ### Conclusion/Resolution
 
-* Building off of [earlier discussion of import assertions this meeting](TODO: Fill in link), the committee reached the shared the understanding that we should revise this proposal to meet [the requirements of the web platform](https://github.com/whatwg/html/issues/7233) that the module type drive its interpretation.
+* Building off of [earlier discussion of import assertions this meeting](jan-31.md#problems-with-import-assertions-for-module-types-and-a-possible-general-solution--downgrade-to-stage-2), the committee reached the shared the understanding that we should revise this proposal to meet [the requirements of the web platform](https://github.com/whatwg/html/issues/7233) that the module type drive its interpretation.
 
 * To reflect the scope of expected future changes, the committee reached consensus to demote the proposal to Stage 2.
 

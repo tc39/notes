@@ -459,7 +459,7 @@ SYG, WH and editors to review new grammar for `await using` syntax, to be propos
 
 Presenter: Jack Works (JWK)
 
-- [proposal](https://github.com/tc39/proposal-import-assertions/)
+- [proposal](https://github.com/tc39/proposal-iterator.range/)
 - [slides](https://docs.google.com/presentation/d/1ecfsO-KyLs5UFxbFQ9RWXIDp8kycul6NZXQPZr71BCo/)
 
 JWK: Let’s have a quick recap of this proposal. As you can see on the slide, it’s a simple proposal that’s return an iterator and designed to be used with the iterator helper proposal. One of the big problems in this proposal, should it return iterator or iterable. This is an endless discuss – we have discussed this about three years, and my final solution is to rename the API to Iterator.range to make it less likely to be misused. Previous: Number.range and BigInt.range, Now: Iterator.range where Iterator global object is bring by the iterator helper proposal.

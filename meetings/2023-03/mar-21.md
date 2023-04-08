@@ -500,7 +500,7 @@ MF: Great.
 Presenter: Philip Chimento (PFC)
 
 - [proposal](https://github.com/tc39/proposal-temporal)
-- (slides)[https://docs.google.com/presentation/d/1b74GI-zHrG0wDzmwFs_yPWRli24KyVUNx3GeZt8JouA/]
+- [slides](https://docs.google.com/presentation/d/1b74GI-zHrG0wDzmwFs_yPWRli24KyVUNx3GeZt8JouA/)
 
 PFC: (**Slide 1**) Hi everyone. It's me again. You heard me this morning about test262. My name is Philip Chimento. I'm going to be presenting about the Temporal proposal. Unlike the presentation this morning, this work here is a partnership with Bloomberg. In particular, I'd like to thank JWS from Bloomberg for helping prepare the slides. He did a lot of work on that.
 

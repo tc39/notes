@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "check": "./scripts/check-delegates.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check": "node -e 'import(\"./scripts/check-delegates.mjs\").then(cd => cd.checkDelegates())'",
+    "test": "node ./scripts/check-delegates-test.mjs"
   }
 }

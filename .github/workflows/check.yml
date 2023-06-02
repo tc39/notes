@@ -13,5 +13,6 @@ jobs:
         name: 'nvm install lts/* && npm ci'
         with:
           node-version: lts/*
+      - run: npm run lint
       - run: npm run test
       - run: npm run check

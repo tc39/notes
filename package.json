@@ -3,8 +3,8 @@
   "scripts": {
     "check": "node -e 'import(\"./scripts/check-delegates.mjs\").then(cd => cd.checkDelegates())'",
     "test": "node ./scripts/check-delegates-test.mjs",
-    "lint": "eslint . --ext .js --ext .mjs --ext .cjs",
-    "lint:fix": "eslint . --ext .js --ext .mjs --ext .cjs --fix"
+    "lint": "eslint . --ext .js,.mjs,.cjs",
+    "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
     "eslint": "^8.41.0"

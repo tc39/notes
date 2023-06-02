@@ -3,7 +3,6 @@ module.exports = {
   extends: ["eslint:recommended"],
   parserOptions: {
     ecmaVersion: "latest",
-    sourceType: "module",
   },
   env: {
     es6: true,
@@ -13,4 +12,12 @@ module.exports = {
     "arrow-spacing": "error",
     "object-curly-spacing": ["error", "always"]
   },
+  overrides: [
+    {
+      files: ["**/*.mjs"],
+      parserOptions: {
+        sourceType: "module",
+      },
+    }
+  ]
 };

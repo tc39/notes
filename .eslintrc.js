@@ -11,5 +11,6 @@ module.exports = {
   },
   rules: {
     "arrow-spacing": "error",
+    "object-curly-spacing": ["error", "always"]
   },
 };

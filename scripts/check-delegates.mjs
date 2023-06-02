@@ -30,7 +30,7 @@ export function checkDelegates(contents = fs.readFileSync('./delegates.txt', 'ut
   for (const line of lines) {
     if (line.length === 0) continue;
     const match = re.exec(line);
-    const {abbr} = match.groups;
+    const { abbr } = match.groups;
 
     if (previousLine.localeCompare(line, 'en') > 0) {
       throw new Error(`Line ${lineNumber}: Not in lexicographic order.`);

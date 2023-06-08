@@ -2,7 +2,7 @@
 
 -----
 
-**Remote attendees:** 
+**Remote attendees:**
 
 | Name                | Abbreviation | Organization      |
 | ------------------- | ------------ | ----------------- |
@@ -35,13 +35,13 @@
 
 ## Introduction
 
-USA: Hello, and welcome, everyone, to the 96th meeting of TC39. It is my absolute pleasure to welcome you all to this one. We have a lot of stuff to cover, so without further ado -- okay, I need to keep letting people in. Please be introduced to your chair group. There is me, Rob and Chris up top, and a special thanks to Brian, Yulia and Justin for helping us facilitate. So we look forward to making this meeting more productive. 
+USA: Hello, and welcome, everyone, to the 96th meeting of TC39. It is my absolute pleasure to welcome you all to this one. We have a lot of stuff to cover, so without further ado -- okay, I need to keep letting people in. Please be introduced to your chair group. There is me, Rob and Chris up top, and a special thanks to Brian, Yulia and Justin for helping us facilitate. So we look forward to making this meeting more productive.
 
 USA: Next up is something very important, our IPR policy. Please remember that this -- everything that we do is according to our IPR policy. Most of you here would be ECMA member delegates. There’s also invited experts.Make sure irrespective of your status that you have signed the RFTG form. And there is details about it in the ECMA-262 repository. So please check this out. I’m not a lawyer, but make sure that you’re on the right side of Things. All right. So notes. We have the transcriptions right now. But we need somebody to help out. So it would be really nice right about now to have some volunteers. Would somebody like to help?
 
 CDA: Well, just a reminder on the last item that we’ve been asking folks to -- at the end of presentations to do a quick summary in the notes. That’s been very helpful. And it’s kind of on all us to remember to do that. Sometimes we forget. So please speak up, you know, use point of order if we haven’t addressed it and make sure we’re doing the end of presentation summaries.
 
-DE: I also want to note that these notes are not intended to contain personal information, and they’re available to be edited now or later in the Google Docs, 
+DE: I also want to note that these notes are not intended to contain personal information, and they’re available to be edited now or later in the Google Docs,
 so everyone in the committee has access to those. If you feel like a comment of yours has been inaccurately described or want to rephrase it to make it more clear, you’re really encouraged to do so.
 And further, any information deleted, you can do so yourself or you can ask the chairs or the secretary to do so. So there will be a written notice of this posted as well.
 There already has been a notice posted, so you can just refer to that.
@@ -52,7 +52,7 @@ USA: Okay. Then the current agenda is adopted, and we move on with Istvan’s re
 
 ## TC39 Secretary’s update
 
-Presenter: Istvan Sebestyen (IS) 
+Presenter: Istvan Sebestyen (IS)
 
 - [Slides](https://github.com/tc39/agendas/blob/main/2023/tc39-2023-025.pdf)
 
@@ -68,20 +68,20 @@ IS: Okay, so, yeah, so this is very good. So here we are now on the list of docu
 
 IS: We are now approaching the general assembly meeting, so now the number of these documents is increasing.Okay, so then I also explain what I already said, why are these two lists interesting. You can read it, but I repeat it every time, so this is nothing new to you. Next slide: Now, this is important, because since March we have one new TC39 member application, and actually, they have submitted all the relevant, necessary documentation, as application, to ECMA, then filled out the RFTG form, et cetera. The company is a small company from San Francisco, so small software development company, and the name is Oramasearch, and I looked at their web page. The web page is not showing much yet. It’s a brand new company founded this year. So they are most welcome to TC39 and to ECMA from the Secretariat point of view.
 
-IS: Next slide. Okay, so as I mentioned, the status of short summaries to the meeting contributions. So this now works, so thank you very much that everybody in the March meeting, behaved absolutely correctly. Next slide: Status of the ES2023 approval. Internally in TC39 we have an agreement that we go ahead with the current two specifications as they are and published them in the opt out version and in the ECMA -- final draft version. But what we have to do is we have also to show it externally and externally means here to the general assembly, to the other ECMA TCs, et cetera. That’s the reason why we have on our Agenda the formal ES2023 approval in this meeting. It has been already very nicely introduced on the GitHub, so we are going to have this approval in two days, so I’m not going to spend here any more time on this point, because it will come up also in detail two days later. So please go now to the next one. 
+IS: Next slide. Okay, so as I mentioned, the status of short summaries to the meeting contributions. So this now works, so thank you very much that everybody in the March meeting, behaved absolutely correctly. Next slide: Status of the ES2023 approval. Internally in TC39 we have an agreement that we go ahead with the current two specifications as they are and published them in the opt out version and in the ECMA -- final draft version. But what we have to do is we have also to show it externally and externally means here to the general assembly, to the other ECMA TCs, et cetera. That’s the reason why we have on our Agenda the formal ES2023 approval in this meeting. It has been already very nicely introduced on the GitHub, so we are going to have this approval in two days, so I’m not going to spend here any more time on this point, because it will come up also in detail two days later. So please go now to the next one.
 
 IS: Next slide. I have explained in the past what is the philosophy in ECMA regarding publication of ECMA standards and so I’m not going here to repeat it in length: Ecma standards are edited in OOXML and published in PDF. But for TC39, who are publishing more than half of all Ecma standards the situation is a little bit different from the overall ECMA policy. For ECMA-262 and ECMA-402 we edit and publish in an interactive HTML version (we are doing that over the GitHub), but we also need in ECMA, for the ECMA publication, the PDF version. But the PDF version is like a book. Now for these two ECMA TC39 standards, and especially for ECMA-262, which is very long, we have since 2016 a little bit of quality problems with the PDF format. Finaly last year we found a solution for that Allen Wirfs-Brock - the previous editor of ECMA-262 offered to produce “nice” PDF formats for ECMA-262 and ECMA 402. This year we are a little bit late, but we convinced Allen the do the same thing again. He fortunately has accepted and has already started to do it for ECMA-402. It was already successful, but obviously he can’t start the real work, only after the html - with the last minute editing - will be approved by the GA. So, practically in July after the GA. The good news is at least for 2023, we have a solution. The bad news is that for 2024 and beyond we don’t have a solution yet, but, again, the good news is that we have one year to solve the problem.
 
 IS: Next slide. Here I have taken out always the yearly current statistics for the ECMA-262. Not for the previous versions. In 2012 we started with the HTML format, so this was only a trial, and then 2015 and 2016, it was a peak, so that was when we have introduced html, and then it went -- it went a little bit down and now for the yearly -- for the latest yearly output, we have here around 100,000 -- 122,000. Last year we had, for the HTML access, about 100,000, which is still quite a lot. We still have the peaks for the edition 5.1, 6 and 7 editions too, --about which I reported many times. We don’t know where they come from. But now this is obviously not counted here because here I am always taking the last year only -- only the actual year’s access.
 
-IS: Next slide. Is actually the same thing, a little bit try to compare the two things (access and downloads). Also one is “apples”, the other is “oranges”. You can see the latest download for the ECMA 262. You can see it is pretty stable over the years. And what you see below, you know, these figures, with 
+IS: Next slide. Is actually the same thing, a little bit try to compare the two things (access and downloads). Also one is “apples”, the other is “oranges”. You can see the latest download for the ECMA 262. You can see it is pretty stable over the years. And what you see below, you know, these figures, with
 the -- with the yellow background, this is compared in percentage to the all ECMA downloads. So you can see that only this one standard, this ECMA-262 is very important to ECMA as a whole and that’s why we’re trying to solve this “nice” PDF problem. There’s a huge user community out there that is really demanding that.
 
 IS: Next slide. So this is the usual type of statistic that I always give to you: figures since the beginning of the year. And you can see all the TC39 standards, added together, it is always, since the beginning of the statistic, over 50% of the total Ecma standards, so at the moment, it is 54% of all the download TC39 standards. The second one is interesting, is the ECMA-404, JSON data format, which is booming. It is almost now half of the downloads of the ECMAScript language standard, ECMA-262.
 
 IS: Next slide. Meeting participation. From the March meeting, it is still a very stabil meeting participation, so the statistics are in total 65 (for the mixed Seattle meeting), local 20, remote 45, and local ⅓, remote 2/3 and exactly 25 companies, which is the usual average. Next slide: Now, this is the last one, which is really important. The status of the two standards, which is up for periodic review in ISO. So the first one, the JSON one, I have good news, is already through, and the second one, the ECMA-414, the ECMAScrip Suite, it has just started.
 
-IS: Next slide. Here the good news, which I have copied out, so it was -- it has ended with 10 positive votes in March the 6th, for the JSON one. So JSON is confirmed for the next five years. Next slide: And here is the other one where you have to speed up and talk to your SC22 national body people, if you happen to know them. So it opened this -- the reconfirmation process in mid-April, and it will close the second of September. So if you have any possibilities to influence your national body in the voting, then please do it. It is rather important for ECMA that this goes through for the next five years. Next slide: As usual here the GA and ExeCom venues and dates. Just copy and paste from other documents and that’s the end of the presentation. Sorry that it took me longer. 
+IS: Next slide. Here the good news, which I have copied out, so it was -- it has ended with 10 positive votes in March the 6th, for the JSON one. So JSON is confirmed for the next five years. Next slide: And here is the other one where you have to speed up and talk to your SC22 national body people, if you happen to know them. So it opened this -- the reconfirmation process in mid-April, and it will close the second of September. So if you have any possibilities to influence your national body in the voting, then please do it. It is rather important for ECMA that this goes through for the next five years. Next slide: As usual here the GA and ExeCom venues and dates. Just copy and paste from other documents and that’s the end of the presentation. Sorry that it took me longer.
 
 ## Secretary General introduction
 
@@ -97,19 +97,19 @@ USA: Thank you very much, and we appreciate it.
 
 SHN: Thank you.
 
-USA: All right. Since there is nothing else in the queue, I suppose we can move on to the next item, 
+USA: All right. Since there is nothing else in the queue, I suppose we can move on to the next item,
 which is 262 status updates..
 
 ## ECMA-262 Status Updates
 
 Presenter: Kevin Gibbons (KG)
 
-KG: Okay, this will be an extremely brief update. There were no editorial changes and no normative 
-changes. We have the same list of upcoming and planned work. Also, the spec was cut last meeting. 
+KG: Okay, this will be an extremely brief update. There were no editorial changes and no normative
+changes. We have the same list of upcoming and planned work. Also, the spec was cut last meeting.
 There will be a formal vote later and not as part of this presentation. That’s it. Thanks.
 
-KG: We did do a bunch of small editorial tweaks. It’s not like we just stopped working for last 
-two months. It’s just that not much was particularly worth calling to the attention of the 
+KG: We did do a bunch of small editorial tweaks. It’s not like we just stopped working for last
+two months. It’s just that not much was particularly worth calling to the attention of the
 delegates.
 
 ### Conclusion
@@ -123,7 +123,7 @@ Presenter: Ujjwal Sharma (USA)
 - [spec](https://github.com/tc39/ecma402)
 - [PR](https://github.com/tc39/ecma402/pull/768)
 
-USA: All right. Hello. And welcome again. Well, okay, real quick, status update. We have one PR 
+USA: All right. Hello. And welcome again. Well, okay, real quick, status update. We have one PR
 that needs consensus, so or #768 on ECMA-402, I can open it up real quick for you. It is a reorder of the resolved options in number format. So we have reordered the resolved option to move up `roundingPriority` in order to move it closer to all the other rounding related operations. This for a little bit of context, this is a rounding related option that was recently added as part of NumberFormat V3, however, because it was added at the end, alongside all the new options, it felt a bit odd to have all the rounding related options all over the place, so RGN made this PR to reorder this in order to have all the rounding related options neatly grouped next to each other, and this has TG2 consensus, so I would like to hear any thoughts folks might have regarding this. I’ll post a link to these slides on the agendas and, you can check out the discussion we had on this in TG2.
 
 USA: Quickly talking about the editorial updates we made, we did a couple of refactors. Some of them are pretty substantial. I’m not sure if you are familiar with most of this work going on, but I’m sure that if you have been following both the specs, you’d find some of them really interesting. For example, ECMA-402 had this thing where we had camelCase field names, which is not a thing in ECMA-262. It is frowned upon, and we are working on replacing that with pascal case, which is is the sort of convention, and we are changing some phrasing here and there to make it more consistent. We added notes regarding the presences to CLDR as well as UTS 35, and we add more material notes about the CAL behavior and we updated the properties of Intl locale, and all these tiny editorial changes that sort of improved the reading experience of the spec. And that’s it. Well, first of all, I would like to specifically ask for consensus regarding this.
@@ -132,7 +132,7 @@ CDA: We are expecting at least some proactive voices of support for consensus. A
 
 ### Conclusion
 
-* The presented normative PR #768 got consensus with explicit support from DLM.
+- The presented normative PR #768 got consensus with explicit support from DLM.
 
 ## ECMA-404 Status Updates
 
@@ -152,7 +152,7 @@ Presenter: Philip Chimento (PFC)
 
 - [repo](https://github.com/tc39/test262)
 
-PFC: We went over a short status update in our maintainers meeting last week and don’t 
+PFC: We went over a short status update in our maintainers meeting last week and don’t
 have a lot to report. One thing that’s happened since last time is test coverage for the `Array.fromAsync` proposal has landed, and others are in the works.
 
 ## Updates from the CoC Committee
@@ -161,11 +161,11 @@ Presenter: Jordan Harband (JHD)
 
 JHD: So the only thing to report is one item that’s been on our docket for a while, but unfortunately, there’s been a dearth of available CoC group members to discuss it, so I have nothing to report on that just yet, but I would like to invite anyone who is interested in participating in code of conduct committee to indicate your interest. You can feel free to reach out privately or file an issue on the reflector, because the more people we have, the more efficiently we can address items. Thank you.
 
-DE: Question, do -- how many people are active in the conduct committee these days? Like, regularly 
+DE: Question, do -- how many people are active in the conduct committee these days? Like, regularly
 attending meetings?
 
-JHD: There have only been two people regularly attending meetings, myself and CDA, for a little 
-while. The time slot conflicts with one person, and we haven’t been able to reschedule yet. And 
+JHD: There have only been two people regularly attending meetings, myself and CDA, for a little
+while. The time slot conflicts with one person, and we haven’t been able to reschedule yet. And
 another two people at least have had a lot on their plate and been generally unavailable. I haven’t gone and audited the entire list, but that’s what I have in my head about it.
 
 ## TC39 Public Calendar
@@ -180,7 +180,7 @@ CDA: So the chairs had agreed that there’s utility in having a public calendar
 
 CDA: I see those down sides are listed down here. Some people find the, you know, being able to see who is attending the meeting to be incredibly useful. And that’s fine. But, again, we have to be respectful for those who do not want their email addresses to be exposed. The tradeoffs -- the benefits outweigh the down sides in being able to have just one source of truth for all of the meetings and not have some meetings on this calendar and some meetings on this other calendar and we have to subscribe to both of them to get the entire view of everything that’s going on. So, yeah, just wanted to mention this here. On the one hand, bring awareness that this is happening, as well as just get any feedback on thoughts and concerns, if any.
 
-SYG: So I support not changing how we use the existing calendar. Remind me again what 
+SYG: So I support not changing how we use the existing calendar. Remind me again what
 the goal is for having a public calendar, in addition to the existing one?
 
 CDA: The goal for having a public calendar is for people that participate in the other meetings that folks that are not delegates or invited experts or ECMA staff would be able to be in tune to what is going on. Particularly the outreach group meetings. I think for ECMA-402, this is requested by one of the editors. I think the editors’ meeting, is that -- I don’t know if that’s open -- you know, open invitation or anything, but that was one that was mentioned to be appearing on the public calendar.
@@ -191,16 +191,16 @@ MF: Just that some of the meetings that we have are open invite. Not necessarily
 
 SYG: I don’t really have any concerns. That all seems to be to me to be more addressable as a per-meeting thing. Like, you can add folks you want to each meeting. But to have a consolidated public calendar for TC39, I mean, I’m still not entirely convinced that that needs to be there. But if there’s no existing change to how we use the existing calendar, I don’t really have any concerns.
 
-CDA: Yeah, the changes to how we use and existing calendar are the ones I mentioned, and that’s anything that was meant to go on the public calendar. The folks involved in those meetings need to 
-decide, first of all, whether the description contains anything that shouldn’t be on the public calendar, and then the issue with regard to the guest list being public or not. Is there any other 
+CDA: Yeah, the changes to how we use and existing calendar are the ones I mentioned, and that’s anything that was meant to go on the public calendar. The folks involved in those meetings need to
+decide, first of all, whether the description contains anything that shouldn’t be on the public calendar, and then the issue with regard to the guest list being public or not. Is there any other
 thoughts, comments, concerns, anybody in the queue?
 
 USA: Yes. Next up we have Dan Minor.
 
-DLM: Yes, I want to say this seems like a good compromise to me and I’m in favor of this and I’m 
-hoping this will increase visibility of our actions and maybe, therefore, also increase diversity 
-and participation by more people. I mean, we do have the outreach meetings, but I’m not sure how 
-discoverable those are at the moment, and probably other meetings as well that other people want to 
+DLM: Yes, I want to say this seems like a good compromise to me and I’m in favor of this and I’m
+hoping this will increase visibility of our actions and maybe, therefore, also increase diversity
+and participation by more people. I mean, we do have the outreach meetings, but I’m not sure how
+discoverable those are at the moment, and probably other meetings as well that other people want to
 observe or even if they don’t observe directly, just have awareness that they are occurring. I think this is a positive change.
 
 MF: So the public calendar will help with discoverability of other meetings with people who know about the public calendar, but are we doing anything to promote or make the public calendar more discoverable or put it up on our website or as the topic of the matrix room? Do we have any plans like that?
@@ -212,9 +212,10 @@ DE: I support this effort. Discoverability has been a challenge with our calenda
 CDA: This comes up in inclusion group as well and anything that promotes contributions from folks, especially where access to meetings is not predicated on needing to be a TC39 delegate is a great thing. So thanks everyone.
 
 ### Conclusion
-* Proceed as outlined in the GH issue
-* CDA will probably create a GH issue for every meeting and tag the organizers/participants to determine how they want to proceed wrt meeting description and attendee list policy
-* as discussed, will add links to the calendar in appropriate places
+
+- Proceed as outlined in the GH issue
+- CDA will probably create a GH issue for every meeting and tag the organizers/participants to determine how they want to proceed wrt meeting description and attendee list policy
+- as discussed, will add links to the calendar in appropriate places
 
 ## Needs consensus: #3052 limit ArrayBuffer size to 2^53 bytes
 
@@ -244,10 +245,12 @@ USA : Perfect, there is overwhelming support, I believe. Yeah, is that it? Micha
 MF: Yup thank you. No more requests.
 
 ### Summary of Key Points
-* There exists a theoretical edge case where an ArrayBuffer is created that is so large that not all bytes it contains can be accessed.
+
+- There exists a theoretical edge case where an ArrayBuffer is created that is so large that not all bytes it contains can be accessed.
 
 ### Conclusion/Decision
-* Consensus on the proposed normative change to land https://github.com/tc39/ecma262/pull/3052
+
+- Consensus on the proposed normative change to land <https://github.com/tc39/ecma262/pull/3052>
 
 ## `Array.fromAsync` #41: avoid double construction of this value
 
@@ -287,12 +290,15 @@ the screen and sort of collaboratively summarize and write the conclusions.
 DE: Let’s go back to the previous topic. And I think administrative topics are good to the extent it was a good idea to have that topic because it did it in the first place.
 
 ### Summary of Key Points
-* Implementers found this edge case where the constructor is called twice, and we discussed improvement of making that happen only once.
+
+- Implementers found this edge case where the constructor is called twice, and we discussed improvement of making that happen only once.
 
 ### Conclusion/Decision
-* The committee agreed to consensus on PR #41 to fix the double construction issue
+
+- The committee agreed to consensus on PR #41 to fix the double construction issue
 
 ## Well-Formed Unicode Strings for Stage 4
+
 Presenter: Micheal Ficarra (MF)
 
 - [proposal](https://github.com/tc39/proposal-is-usv-string)
@@ -313,7 +319,8 @@ USA: Thank you KG, and we have DLM and CDA supporting stage 4. So it looks like 
 MF: Thank you.
 
 ### Conclusion/Decision
-* Consensus for stage 4 for Well-Formed Unicode Strings
+
+- Consensus for stage 4 for Well-Formed Unicode Strings
 
 ## Atomics.waitAsync for Stage 4
 
@@ -324,12 +331,13 @@ Presenter: Shu-yu Go (SYG)
 
 SYG: Let me zoom in a bit. So, this is async news of atomics.waitAsync. And this is for blocking the thread, and this is originally motivated because you cannot block the main thread on the environment browser, and that is policy. And so if you want to interact with worker threads that use `Atomics.notify` notify and only option is to use async version, and this is quite old, and we have not presented this for a while, and Chrome got stage two or three years ago and the thread in’ 87 and some time in November of 2020. And then it stopped for a while, and so Safari shipped in 16.4. So this PR is the spec text PR against the main line spec text. And it has gotten fair bunch of reviews at this point and it rating and it is good to go. And there is an HTML component to this because it needs a bunch of post interaction to in queue task to resolve promises across threads or as we call them agents and there are 60 tests. So with that, I would like to and for stage 4 for `Atomics.waitAsync`.
 
-USA: Okay, DE says plus one for stage 4. We got his support. Anybody else? JHD also supports. And SYG we have enough support there. 
+USA: Okay, DE says plus one for stage 4. We got his support. Anybody else? JHD also supports. And SYG we have enough support there.
 
 USA: And you have consensus, congratulations as well, and thank you for – I think this is the first comments in your PR is good in your summary as well.
 
 ### Conclusion/Decision
-* Consensus for Stage 4 on Atomics.waitAsync
+
+- Consensus for Stage 4 on Atomics.waitAsync
 
 ## Base64 for Uint8Array for Stage 2
 
@@ -389,15 +397,18 @@ USA: You have stage 2.
 KG: Thanks so much. And then so the main things to be worked out are assigning to an existing buffer, and this question of handling of padding and the white space, and the mixed decoding. And these are surely subjective. We can have different defaults and options or not options and if anyone has opinions or arguments or decisions you don't agree with, please bring them up now because I have been waffling on all of them, and there are arguments for both sides. The current plan is not to enforce padding and not have an option to enforce padding and not allow white space and not allow mixed decoding. Just to fill out this matrix here. So if anyone wants including those options, please, please bring it up on the issue
 tracker and I will be coming back for stage 3 once I have worked those details out.
 
-KG: There is nothing else on the queue, so that is all I had. 
+KG: There is nothing else on the queue, so that is all I had.
 
 ### Speaker's Summary of Key Points
-* Proposal reached stage 2 with support from a variety of people. Details to be worked out include assigning into an existing buffer especially for the streaming API, handling of padding, handling of whitespace, and the question of whether to allow mixed alphabet decoding.
+
+- Proposal reached stage 2 with support from a variety of people. Details to be worked out include assigning into an existing buffer especially for the streaming API, handling of padding, handling of whitespace, and the question of whether to allow mixed alphabet decoding.
 
 ### Conclusion
-* The proposal achieved consensus for stage 2
+
+- The proposal achieved consensus for stage 2
 
 ## Symbol Predicates
+
 Presenter: Jordan Harband (JHD)
 
 - [proposal](https://github.com/tc39/proposal-symbol-predicates)
@@ -419,7 +430,7 @@ KG: What isNaN currently does is insane.
 
 JHD: Sure, but we corrected that with `Number.isNaN`. It does the expected thing and never throws for any reason. I agree with you that we should be more rigorous with the types we accept in our APIs, but I think predicates are a special case for that.
 
-KG: If we are making a predicate, I think if the question the predicate is asking is “is this a well-known Symbol?”, then I agree, but if it is asking “is this Symbol well-known?”, then the question only applies to 
+KG: If we are making a predicate, I think if the question the predicate is asking is “is this a well-known Symbol?”, then I agree, but if it is asking “is this Symbol well-known?”, then the question only applies to
 Symbols and it should throw on non-Symbol inputs.
 
 JHD : I think that the question it is asking is “is this a well-known Symbol?” full stop, and if you think the name should be changed, that is fine.
@@ -461,11 +472,13 @@ JSC: I want to express my opinion to the method name and if it is a predicate, i
 JHD: Decorators was about property names and not functions, and I hope it is uncontroversial that predicate functions should always start with “is” or “has”, or something similar.
 
 ### Speaker's Summary of Key Points
-* we will continue to keep the current semantics and continue to have the word Symbol at the end
-* will file an issue to address the concerns about isWellKnownSymbol
+
+- we will continue to keep the current semantics and continue to have the word Symbol at the end
+- will file an issue to address the concerns about isWellKnownSymbol
 
 ### Conclusion
-* Spec reviewers: DLM, NRO, MAH
+
+- Spec reviewers: DLM, NRO, MAH
 
 ## Module Harmony: interaction semantics of the different proposals
 
@@ -571,11 +584,13 @@ NRO: Yes like I included this reference in the slides but I did not mention it b
 GB: Maybe we can pick that up in the module at some point. Make sure that we are tracking that in whatever form it sits at on the graph.
 
 ### Speaker's Summary of Key Points
-* We’ve gone through all the keys parts of the proposal and how they fit together.
-* There has been discussion about how to make it clear, how the different processes interact so that this can be taken into account while implementing the proposals. Because we this is a very big features and we currently develop them in many small businesses and it is rare to have this many proposals interacting with each other.
-* The champions of these proposals need to make sure to document all of these interactions somewhere.
+
+- We’ve gone through all the keys parts of the proposal and how they fit together.
+- There has been discussion about how to make it clear, how the different processes interact so that this can be taken into account while implementing the proposals. Because we this is a very big features and we currently develop them in many small businesses and it is rare to have this many proposals interacting with each other.
+- The champions of these proposals need to make sure to document all of these interactions somewhere.
 
 ### Conclusion
+
 Module harmony champions will set up a “module harmony epic” repository to continue developing documentation about cross-cutting module proposal concerns.
 
 ## Source Phase Imports for Stage 3
@@ -589,7 +604,7 @@ CDA: Next one will be source phase import for stage 3.
 
 LCA: Just setting up. Is my presentations visible? Okay. Okay, hi everyone. I am Luca and I have GB with me and we will present the source phase imports of stage 2 for advancement to stage, 3. So module loading can be thought of as happening in approximately five stage and resolve, fetch, compile, attach evaluation context, link, and eval stage. Today we will talk about current state import. Which is execute all of these stage and `import foo from “specifier”` this is through all five stage which is fully will evaluated module. So this is fetch and compile stage, what we do here is take the will result’s specifier from the result phase and fetch it from the network or disk or elsewhere and compile it. So on the web, this uses network web and the CSP is enforced and it is completely stateless and the there is no evaluation context and this can be shared across threads, it can be shared across realms, across module graphs, there is nothing specific to a given like realm at this.
 
-LCA: What we are proposing is to add a way to import specifically this source phase, and intercept the module – in this example we can importing the source of web assembly module which is WebAssembly.Module, and this is statically analyzable syntax, and this is difficult to analyze. This is useful because it allows you to fetch enforce and the source can carry with it this CSP information required for evaluation later. 
+LCA: What we are proposing is to add a way to import specifically this source phase, and intercept the module – in this example we can importing the source of web assembly module which is WebAssembly.Module, and this is statically analyzable syntax, and this is difficult to analyze. This is useful because it allows you to fetch enforce and the source can carry with it this CSP information required for evaluation later.
 
 LCA: So syntax. In previous presentations, we had considered whether the loading phase can be part of import attributes. Especially attributes can now affect loading and we have concluded this is not suitable and putting the phase in the attribute is not suitable. And one reason is that loading phase can some asset reference and this can only have default binding and deferred-eval imports only support `* as ns` binding and so imports at Istanbul modify module loading but think don’t they have early exit. So yeah, so these are fully composable – you can have a module – you can import something as earlier phase as like the source phase, and so the specific phase syntax is `import <phase> <binding> from <specifier>` and then import attributes (“with” attributes) at the end. And the phase is in front of the bindings because the phase enforce what syntax bindings are and avoids color grammar and there is a dynamic form of this is which is the import – dynamic import as usual with the phase specified as a stream in the option bag. This phase syntax, there is little note at the bottom of the slide which says phase syntax by convention, not specification, so we are trying to come up with a unified syntax that can be shared across all proposals and we don’t have a bunch of different behaviors that don’t interact with each other.
 
@@ -635,7 +650,7 @@ GB: The problem with dynamic code if you don’t know whether it will run or not
 RBN: I don’t think I had a fully understanding of the specifics around why the top level
 imports were a useful piece to this. And I think I do now, and I appreciate that. I still have a concern about the very somewhat complex mix of what is it a default import or when it is a namespace import and can it make space to have a named import but that does not feel that fits either or import binding and all of these weird requirements around what you can actually do with syntax, feel strange to have all of this disparity that makes it feel not like a great fit. So I think there – of all of the import phase modifiers and most of them seem to use defaults imports but I think still one is listed as using a namespace import and I don’t know why we need that disparity if you cannot of a import.
 
-LCA: There is a couple of reasons for this. And so for the first specifically destructuring is not possible because engines have told us they are not willing or able to support like binding getters, I guess they call them. Where the whole point of defer is that once you access a property of this namespace, does the module get evaluated, right? So destructuring does not make sense. What makes sense is * name space. This does not make sense to do default unless the defer would somehow be – unless the default value would be the name space, but then it would make it difficult to take an existing import which would be like import * as name space and defer to namespace because then you replace the star with defer and why doesn’t the defer use the same syntax that the regular import syntax does and the idea is to make it easy to go from one syntax to another and one module phase to another module phase specifically for defer. And for the asset and first phase, there is no destructuring because there is no module name phase destructured, and there is no star as namespace because there is no name for subject. So only default – there is only one bonding to be bounds which is default binding.
+LCA: There is a couple of reasons for this. And so for the first specifically destructuring is not possible because engines have told us they are not willing or able to support like binding getters, I guess they call them. Where the whole point of defer is that once you access a property of this namespace, does the module get evaluated, right? So destructuring does not make sense. What makes sense is *name space. This does not make sense to do default unless the defer would somehow be – unless the default value would be the name space, but then it would make it difficult to take an existing import which would be like import* as name space and defer to namespace because then you replace the star with defer and why doesn’t the defer use the same syntax that the regular import syntax does and the idea is to make it easy to go from one syntax to another and one module phase to another module phase specifically for defer. And for the asset and first phase, there is no destructuring because there is no module name phase destructured, and there is no star as namespace because there is no name for subject. So only default – there is only one bonding to be bounds which is default binding.
 
 RBN: I appreciate that information and when I was discussing with my team, a lot of people on
 the team was somewhat negative on the idea of import phase keyword following import. That is what type script having a type keyword following import. And one of the reasons is that had the idea of these import attributes been a thing prior to us looking for a way to say you want to import a type from a module, we might have said maybe import attribute makes sense instead. In which case, we were under the impression that was not idea to go down that route or the source attributes to go down that without or to go with – someone on my team said all of arguments of why it sudden not be with but the argument of why it should be with. It does not argue the case in that case.
@@ -759,7 +774,7 @@ RBN: Yeah I wanted to point out or respond to GB, your explanation of the benefi
 
 LCA: Because of time, is there anybody who explicitly has preference against import.phase?
 
-JHD: I mean my only strong preference is that static and dynamic have as much symmetry as possible, so I would not be comfortable with less symmetry than the current spec. So we can eg do a `import.phase` that is for dynamic _and_ static but would not want a different form between the two.
+JHD: I mean my only strong preference is that static and dynamic have as much symmetry as possible, so I would not be comfortable with less symmetry than the current spec. So we can eg do a `import.phase` that is for dynamic *and* static but would not want a different form between the two.
 
 RBN: I would argue that import.phase as dynamic and import.phase as a static is symmetrical.
 
@@ -787,14 +802,15 @@ MM: It is well after the meeting is adjourned other people including everyone fr
 CDA : Okay, capture the queue. We were able to get to a couple of items squeezed into the other half of the meeting today. So it is possible – there was a lot of schedule constraints for folks but it is possible to revisit this on one of the other days this week. And we will look at what the constraints are and work with you folks to – after we get this scheduled to resume. Does that sound okay? All right thanks everybody.
 
 ### Speaker's Summary of Key Points
-* A proposal to conditionally advance to Stage 3 was not accepted, due to widely held discomfort in committee (in the #tc39-delegates chat) with using conditional advancement for such a broad and not-well-defined set of possible changes.
-* Agreement on semantics and static import syntax, with the exception of the possibly confusing `import source from from …`
-   * DE proposes to ban `import source from from …` (banning from binding for source phase imports). Champions are in favor.
-* Discussion on `import.<phase>(...)` static syntax instead of `import(..., { phase: “...” })`
-   * RBN is strongly in favor of `import.<phase>(...)`
-   * DE prefers lower complexity of options bag, but is still happy with `import.<phase>(...)`
-   * GB and LCA have no strong preference either way.
+
+- A proposal to conditionally advance to Stage 3 was not accepted, due to widely held discomfort in committee (in the #tc39-delegates chat) with using conditional advancement for such a broad and not-well-defined set of possible changes.
+- Agreement on semantics and static import syntax, with the exception of the possibly confusing `import source from from …`
+  - DE proposes to ban `import source from from …` (banning from binding for source phase imports). Champions are in favor.
+- Discussion on `import.<phase>(...)` static syntax instead of `import(..., { phase: “...” })`
+  - RBN is strongly in favor of `import.<phase>(...)`
+  - DE prefers lower complexity of options bag, but is still happy with `import.<phase>(...)`
+  - GB and LCA have no strong preference either way.
 
 ### Conclusion
 
-* Import source phase remains at Stage 2
+- Import source phase remains at Stage 2

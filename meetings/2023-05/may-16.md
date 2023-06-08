@@ -2,7 +2,7 @@
 
 -----
 
-**Remote attendees:** 
+**Remote attendees:**
 
 | Name                | Abbreviation | Organization      |
 | ------------------- | ------------ | ----------------- |
@@ -61,11 +61,13 @@ RPR: No objections. Congratulations. You have stage 4.
 MB: Thanks, everyone, and thanks in particular to everyone who helped with this proposal. You know who you are. It’s a lot of people. Thank you.
 
 ### Speaker's Summary of Key Points
-* we have agreement on stage 4, and additionally, I think it’s useful to know that the SpiderMonkey implementation is in progress. I didn’t actually know that. We did file implementation issues a while back. Yeah, it’s good to know that this is being worked on actively.
+
+- we have agreement on stage 4, and additionally, I think it’s useful to know that the SpiderMonkey implementation is in progress. I didn’t actually know that. We did file implementation issues a while back. Yeah, it’s good to know that this is being worked on actively.
 
 ### Conclusion
-* Consensus for stage 4 with explicit support from CDA, DLM, MF
-* Implementation in SpiderMonkey has started.
+
+- Consensus for stage 4 with explicit support from CDA, DLM, MF
+- Implementation in SpiderMonkey has started.
 
 ## Add Implementation status to proposal pages
 
@@ -77,7 +79,7 @@ MLS: DE presented I think two meetings ago talking about how we communicate, wha
 
 MLS: And maybe there’s a moral here. It seems like when you add something to the array intrinsic, you run into problems. Is not the first time. The issue was found by Mozilla. and found this past December. Bikeshedding ensued and if you go to issue 44 about the array grouping proposal you’ll see there’s been a lot of discussion about what to do, but nothing has been decided yet. We talked about this at the end of November, beginning of December 2022 meeting, so very quickly we got to it. There was three basic proposals: stay the course, come up with a new name or names, or propose a static method. Again, no conclusion was reached at that meeting. A call was put out for implementers not to ship. But let’s go back in time. The JSC team actually had implemented this before the change that was done in July of 2022, and we changed the names to the new names on August 3rd. And we shipped in Safari 16.4. So we’re currently shipping, so we didn’t heed the not ship because we actually had done the work before the not ship call had gone out. And it turns out that, I attend TC39 meetings and there’s other people on JSC that occasionally attend, but I don’t follow what proposals everybody checks in. So we had some breakdown in our internal process, but I didn’t put two and two together. We didn’t have good communication from TC39, do not ship, to actually we should turn this thing off. So they didn’t mark this as do not ship, but the problem is that implementers would have to pull anything that’s got marked with do not ship.
 
-MLS: And proposal, they may not know what implementations they should alert. If you go to this proposal, how would they know what implementers have been doing with this, how long they are in their implementation, so on and so forth. What if every Stage 3 or higher proposal had an implementation status? We just talked about RegExp v flag, and if you go to the RegExp v flag proposal page, the main one, you will see something looks just like this. I took the screen shotlast week. And it has the blues are links, and they’re typically links to the bug used by that implementation to track the progress on the implementation. So you’ll see that there’s SpiderMonkey, Chrome, JavaScriptCore and we enabled it in STP166 and so forth. And I might add for the open source implementations, the -- I think in the case for this proposal, the proposal champion actually created the bug. So the information here as to what limitations are in progress or done is available on the main page. 
+MLS: And proposal, they may not know what implementations they should alert. If you go to this proposal, how would they know what implementers have been doing with this, how long they are in their implementation, so on and so forth. What if every Stage 3 or higher proposal had an implementation status? We just talked about RegExp v flag, and if you go to the RegExp v flag proposal page, the main one, you will see something looks just like this. I took the screen shotlast week. And it has the blues are links, and they’re typically links to the bug used by that implementation to track the progress on the implementation. So you’ll see that there’s SpiderMonkey, Chrome, JavaScriptCore and we enabled it in STP166 and so forth. And I might add for the open source implementations, the -- I think in the case for this proposal, the proposal champion actually created the bug. So the information here as to what limitations are in progress or done is available on the main page.
 
 MLS: So this is a -- it’s not a proposal. I’m not talking about something for stage 0, 1, 2, 3 or 4. I’m talking about a meta proposal, process proposal and basically it’s two-way communication. And the first thing is that every Stage 3 plus, maybe we can talk about 3, we can do this earlier, but the main proposal page includes an implementations section. And for each current expected or related implementation, when I talk about related, maybe it’s in some other language or something like that, the -- we include at least these things. The implementation status proposal, this is for each implementation. The status for that implementations for the particular proposal, and if possible, a link to the bug, an implementation issue tracking system, and if possible, a TC39 member contact for issues, stage changes, et cetera. And the implementers are responsible for letting champions know, status changes, typically, you know, an arbitrary person can’t go into a proposal page and just arbitrarily change it, so they would have to send an email to champions or something like that. And the champions are responsible for having communication with implementers when issues arise or to state changes and, conversely, this already happens, but implementers, they let champions know, hey, we’re having problems with this, usually that would come to plenary at some point. But that’s basically the proposal. And we can talk about should this be maybe Stage 2 and greater or Stage 3, that we can bicker about what we want to do there. But I think at least Stage 3. That’s basically the proposal that I’m putting forward, and like I say, it’s a process proposal.
 
@@ -161,7 +163,7 @@ RPR: Do we have a volunteer to update it?
 
 SYG: I mean, I volunteer if somebody tells me where it is. I don’t even know where it is.
 
-DE: https://github.com/tc39/template-for-proposals
+DE: <https://github.com/tc39/template-for-proposals>
 
 MLS: And I’m willing to help with that as well.
 
@@ -256,8 +258,9 @@ MLS: So in the case of a name change, it happened with array grouping, we respon
 JRL: Okay. So we just need the urgent communication channel and implementers will track whatever urgent thread issue we have.
 
 ### Conclusion
-* SYG and MLS to update proposal template to have implementation status section - https://github.com/tc39/template-for-proposals
-* SYG and MLS to add column to proposals repo to represent urgent info/status.
+
+- SYG and MLS to update proposal template to have implementation status section - <https://github.com/tc39/template-for-proposals>
+- SYG and MLS to add column to proposals repo to represent urgent info/status.
 
 ## Decorator field/accessor initializer order
 
@@ -266,9 +269,9 @@ Presenter: Chris Garrett (CHG)
 - [issue](https://github.com/tc39/proposal-decorators/issues/508)
 - [slides](https://slides.com/pzuraq/decorators-field-accessor-initializer-order)
 
-CHG: This issue got brought up recently by someone who was playing around with the decorators implementations in the transforms and Babel and what not. They thought it was a bug at first, and we started looking at it and realized that this actually may be an issue, and may warrant a change. So I just thought I’d bring it to committee to see what everybody thinks. So basically the issue right now is that field and accessor initializers run from the innermost decorator to the outermost decorator. So in this example here, an Int of times 4 is called four and then-2 is called. So we take 5, multiply it by 4, and subtract 2 and the result is 18. However, getters and setters are replaced from inner most to outer most and that what this means is they execute in the reverse order from outer most to inner most. So in this example here we have minus 2 gets called first when we set the value to update it to the exact same value it started as. Minus 2 is called first and then times 4. And that is a result of 12. So after looking at this for a while, I realized there wasn’t really a way to have an accessor specifically that can set the initial value and the updated value given the same input through the same output. So, yeah, this could be an issue for people who would expect that and are trying to write decorators that do that. 
+CHG: This issue got brought up recently by someone who was playing around with the decorators implementations in the transforms and Babel and what not. They thought it was a bug at first, and we started looking at it and realized that this actually may be an issue, and may warrant a change. So I just thought I’d bring it to committee to see what everybody thinks. So basically the issue right now is that field and accessor initializers run from the innermost decorator to the outermost decorator. So in this example here, an Int of times 4 is called four and then-2 is called. So we take 5, multiply it by 4, and subtract 2 and the result is 18. However, getters and setters are replaced from inner most to outer most and that what this means is they execute in the reverse order from outer most to inner most. So in this example here we have minus 2 gets called first when we set the value to update it to the exact same value it started as. Minus 2 is called first and then times 4. And that is a result of 12. So after looking at this for a while, I realized there wasn’t really a way to have an accessor specifically that can set the initial value and the updated value given the same input through the same output. So, yeah, this could be an issue for people who would expect that and are trying to write decorators that do that.
 
-CHG: So why is this an issue that’s coming up now? First off, previously, TypeScript and Babel legacy, you know, the original decorators transforms that we based the proposal off of and that it evolved from did run initializers in this current order. And it worked for a very long time and there were really no issues with it. The reason, though, that it worked, that we didn’t realize was an issue here was they would also then take that initial value and assign it to the field with set semantics, so it would trig for setters for that field and it would set that value on the instance through the setters. With the switch to define semantics, that kind of -- it’s no longer the case and the current proposal does not do that. So the initial value just gets set directly and the setters are never triggered. 
+CHG: So why is this an issue that’s coming up now? First off, previously, TypeScript and Babel legacy, you know, the original decorators transforms that we based the proposal off of and that it evolved from did run initializers in this current order. And it worked for a very long time and there were really no issues with it. The reason, though, that it worked, that we didn’t realize was an issue here was they would also then take that initial value and assign it to the field with set semantics, so it would trig for setters for that field and it would set that value on the instance through the setters. With the switch to define semantics, that kind of -- it’s no longer the case and the current proposal does not do that. So the initial value just gets set directly and the setters are never triggered.
 
 CHG: So we have two proposals potentially for how we can solve this. One is to simply reverse the order of the initializers so they would run from outermost to innermost. Conceptually we can think as if the value is being set and the initializers are running through same order as if you called a setter on this field. And this would mean that basically all execution of decorators would run from outermost to innermost in all cases. To be clear, decorators themselves would still evaluate and apply their transform from innermost to outermost, but the value they return, for instance, the method or the setter or the initializer, that would be called from outermost to innermost, which is already the case for methods. So that’s one option. The other option would be to restore the previous behavior. We would essentially have setters be called with -- so the initial value for accessors specifically would still be initialized in the current order and then it would run through the setters of the accessor, so in this case, with the original implementations, we would end up with 64 as the initial value, but that’s because the initial value is going through this twice. So what you would really do is if you wanted to implement this, you would just remove this init from both of these and the setters would call like normal and you would end up with the same value, so the benefits of this one are that it is basically similar to what the current system is doing so it’s less churn overall, and, yeah, it really only affects auto accessors, fields would remain exactly the same, methods would remain exactly the same. And so on. The only other downside of this approach is that it does make it slightly harder to distinguish between the initial value and the updated value. Like, if the setter has ever been called, but it should still be possible to do via a WeakSet. So, yeah, I do think both of these would work. Any thoughts, questions, clarifications?
 
@@ -278,7 +281,7 @@ CHG: Yes.
 
 NRO: Okay. If you also did a get to both the decorators, that does the same thing. So minusTwo that subtracts 2 from the value, and timesFour that multiplies by 4. Would the result here be that the values first subtract 2 and multiply by 4 or multiply by 4 and subtract 2?
 
-CHG: So with a getter, they run from timesFour to minusTwo, I believe, because you’re calling the original getter first, and then -- so the outer one calls the inner one. You know, you’re replacing the getter with another getter. Yeah, that calls the inner one. And you could get the correct behavior, quote, unquote, here, by replacing both of these with a getter, but the reason you might want to do this style of using set and init is to cache that value to you’re not calling it on every single get. So that’s one of the reasons why this particular issue could be a problem. To be clear, the getter is the -- the outermost getter still runs first, it just calls within its own function the timesFour decorator and then that calls within its function the getter that gets the initial value or the value that’s stored in the private slot. Like, first and last here is kind of not really -- it’s like -- that’s why I say outermost and innermost. You could order your logic in minusTwo to happen before or after timesFour. Yeah. 
+CHG: So with a getter, they run from timesFour to minusTwo, I believe, because you’re calling the original getter first, and then -- so the outer one calls the inner one. You know, you’re replacing the getter with another getter. Yeah, that calls the inner one. And you could get the correct behavior, quote, unquote, here, by replacing both of these with a getter, but the reason you might want to do this style of using set and init is to cache that value to you’re not calling it on every single get. So that’s one of the reasons why this particular issue could be a problem. To be clear, the getter is the -- the outermost getter still runs first, it just calls within its own function the timesFour decorator and then that calls within its function the getter that gets the initial value or the value that’s stored in the private slot. Like, first and last here is kind of not really -- it’s like -- that’s why I say outermost and innermost. You could order your logic in minusTwo to happen before or after timesFour. Yeah.
 
 NRO: Yeah, so just to clarify, getter and setter would always run in, like in the same direction, which means that the transformations applied to the value are in different directions, because for one it's happening on the return value and for the other on the parameter?
 
@@ -352,7 +355,7 @@ WH: When you have two decorators, each doing one level of quoting/unquoting, the
 
 JHD: Thanks, that helps clarify it for me a lot, eg with JSON stringifying and parsing and back and forth. Okay, so yeah, I think in that case, I am reacting because this example is about setters, and with a mix of getters and setters, I would not have such a strong opinion.
 
-CHG: The proposed solution would treat the initial definition of the field as a set in that case. Instead of an access so it would run minus two times four because you are setting the value. 
+CHG: The proposed solution would treat the initial definition of the field as a set in that case. Instead of an access so it would run minus two times four because you are setting the value.
 
 PFC: We were talking about the example. I would like to give my compliments on how clearly it illustrated the problem. I think that the code sample really showed something that was unintuitive, and I shared the same intuition as JHD at first. I think the example really helps justify why we should consider a normative change here. I don’t have anything to say about which option it should be, just giving my compliments.
 
@@ -435,14 +438,16 @@ CHG: objection to option 2 it was more confusing it did not seem – technically
 WH: If you had only initializers you want the initializers to do the transformations. If you had only setters you want the setters to do the transformations. But with both, option 2 would run the transformations twice which would be really bad.
 
 ### Speaker's Summary of Key Points
-*  objections to option 2:
-* Was more confusing, possibly introduce more bugs because people would not understand that initializers run and setters run. Counterintuitive
-* Option 2 seems like a poor emulation of parts of Set semantics, rather than sticking with coherent Define-based semantics
-* Option 2 has certain cases where things run multiple times in a counterintuitive way.
+
+- objections to option 2:
+- Was more confusing, possibly introduce more bugs because people would not understand that initializers run and setters run. Counterintuitive
+- Option 2 seems like a poor emulation of parts of Set semantics, rather than sticking with coherent Define-based semantics
+- Option 2 has certain cases where things run multiple times in a counterintuitive way.
 
 ### Conclusion
-* Consensus on option 1: To reverse the initializer order for fields and accessors, conceptually treating them like an update to the value, the same order that setters run in.
-* In a future meeting, the champion will come back with a more detailed explanation 
+
+- Consensus on option 1: To reverse the initializer order for fields and accessors, conceptually treating them like an update to the value, the same order that setters run in.
+- In a future meeting, the champion will come back with a more detailed explanation
 
 ## Decorator Metadata for Stage 3
 
@@ -451,7 +456,7 @@ Presenter: Chris Hewell Garrett (CHG)
 - [proposal](https://github.com/pzuraq/ecma262/pull/10)
 - [slides](https://slides.com/pzuraq/decorator-metadata-for-stage-3)
 
-CHG: Decorator metadata, last time we talked about the design, and we kind of came to consensus of the overall design. And we updated the spec and everything and so yeah we are proposing for stage 3. And so a refresher and why metadata is useful and there are a lot of cases that use it: * ORM’s and so we have meta-data and what type of columns are being – what types they are and constraints are and et cetera. And runs on type information, and routing type *`reflect.metadata` is the single most-used decorator library and so it has this valuable capability. 
+CHG: Decorator metadata, last time we talked about the design, and we kind of came to consensus of the overall design. And we updated the spec and everything and so yeah we are proposing for stage 3. And so a refresher and why metadata is useful and there are a lot of cases that use it: *ORM’s and so we have meta-data and what type of columns are being – what types they are and constraints are and et cetera. And runs on type information, and routing type*`reflect.metadata` is the single most-used decorator library and so it has this valuable capability.
 
 CHG: How it used to work, a quick refresher: in legacy TypeScript decorator the class is the first parameter. So they could assign metadata to the class and add it to a WeakMap, and there is any number of ways they can key into that metadata. Decorators in the current proposal do not have this capability and they never receive the class so there is no way to do that publicly expose metadata and proposal is a shared metadata object and when we are decorating the class the decorators will receive this object on the context, and it is just a plain JavaScript object and we can use it to assign values and use it in a key in a weak map, and passes to all decorators and get assigned to `Symbol.metadata` on the class itself.
 
@@ -506,13 +511,15 @@ KG: I would be happier if we can come back tomorrow with spec text and ask for c
 CHG: cool okay that sounds good. And I will get it done by Thursday for the committee to review. Thanks everyone.
 
 ### Summary of Key Points
-* There’s a constraint from implementers that it be syntactically determinable whether a class should be given a Symbol.metadata property. This means it can be conditional based on the presence of decorators, but not by the actual usage of metadata by decorators. Additionally, we all agree that we don’t want it to be possible to add metadata to everything by modifying Function.prototype. The only way it turns out to be practical to do that is to add a non-configurable, non-writeable property of null to Function.prototype, to avoid injecting metadata on everyone. Given those constraints, there’s only one design that makes sense, and that’s the design everyone likes.
+
+- There’s a constraint from implementers that it be syntactically determinable whether a class should be given a Symbol.metadata property. This means it can be conditional based on the presence of decorators, but not by the actual usage of metadata by decorators. Additionally, we all agree that we don’t want it to be possible to add metadata to everything by modifying Function.prototype. The only way it turns out to be practical to do that is to add a non-configurable, non-writeable property of null to Function.prototype, to avoid injecting metadata on everyone. Given those constraints, there’s only one design that makes sense, and that’s the design everyone likes.
 
 ### Conclusion
-* The committee generally agrees on the design for metadata discussed. It will revisit this topic later in the meeting for full consensus on Stage 3 based on spec text currently in progress. Changes to be made:
-* A new non-configurable non-writable null `Symbol.metadata` property will be added to Function.prototype
-* Only syntactically derived classes will look up Symbol.metadata on their parent
-* Classes without decorators will not get a Symbol.metadata property at all
+
+- The committee generally agrees on the design for metadata discussed. It will revisit this topic later in the meeting for full consensus on Stage 3 based on spec text currently in progress. Changes to be made:
+- A new non-configurable non-writable null `Symbol.metadata` property will be added to Function.prototype
+- Only syntactically derived classes will look up Symbol.metadata on their parent
+- Classes without decorators will not get a Symbol.metadata property at all
 
 ## Iterator Helpers: should Symbol.iterator fallback be a callable check or an undefined/null check?
 
@@ -521,7 +528,7 @@ Presenter: Michael Ficarra (MF)
 - [issue](https://github.com/tc39/proposal-iterator-helpers/pull/272)
 - [slides](https://docs.google.com/presentation/d/1WlhX7mT7n-lgYmU9RR0AVUmNzFVbhBs2bQtvhjuSgss)
 
-MF: So before I start, I just wanted to make it clear that I am aware that these topics are fairly dense and can be difficult to understand, so I wanted to just give everyone free reign to at any point, if you have a clarifying question, don’t even bother jumping in the queue. Feel free to just unmute and ask me a clarifying question at any point during the presentation. Afterwards, we can start using the queue. Because I’m sure that there will be other people with the same question if you have a question. So this is the first of the two topics. It should be the easier one, so let’s get started. So this pertains to this pull request, which you can follow along if you want, issue https://github.com/tc39/proposal-iterator-helpers/pull/272 in the iterator helpers repo. I have two sections. On the left is the section of code from the iterator helpers proposal. On the right are some sections of code from ECMA 262. What they’re showing is the fallback from a Symbol.iterator to the string "next" method in cases like `flatMap` where we accept both iterables and iterators or in `Iterator.from` where we do the same. On the right we have a similar fallback, except it’s from asyncIterator to iterator. And that happens in existing places. So if you have for await, it will fall back to the sync iterator. So the difference I’m highlighting is that on the left, the fallback happens based on the callability of `Symbol.iterator`. If `Symbol.iterator` is not callable we fall back to `"next"`, treating it as an iterator already. On the right, the fallback happens based on, as you can see in the top, it being undefined or null. So if asyncIterator is undefined or null, it will fall back to iterator, but if it is non-callable, it will just fail by trying to treat asyncIterator as a function.
+MF: So before I start, I just wanted to make it clear that I am aware that these topics are fairly dense and can be difficult to understand, so I wanted to just give everyone free reign to at any point, if you have a clarifying question, don’t even bother jumping in the queue. Feel free to just unmute and ask me a clarifying question at any point during the presentation. Afterwards, we can start using the queue. Because I’m sure that there will be other people with the same question if you have a question. So this is the first of the two topics. It should be the easier one, so let’s get started. So this pertains to this pull request, which you can follow along if you want, issue <https://github.com/tc39/proposal-iterator-helpers/pull/272> in the iterator helpers repo. I have two sections. On the left is the section of code from the iterator helpers proposal. On the right are some sections of code from ECMA 262. What they’re showing is the fallback from a Symbol.iterator to the string "next" method in cases like `flatMap` where we accept both iterables and iterators or in `Iterator.from` where we do the same. On the right we have a similar fallback, except it’s from asyncIterator to iterator. And that happens in existing places. So if you have for await, it will fall back to the sync iterator. So the difference I’m highlighting is that on the left, the fallback happens based on the callability of `Symbol.iterator`. If `Symbol.iterator` is not callable we fall back to `"next"`, treating it as an iterator already. On the right, the fallback happens based on, as you can see in the top, it being undefined or null. So if asyncIterator is undefined or null, it will fall back to iterator, but if it is non-callable, it will just fail by trying to treat asyncIterator as a function.
 
 MF: I claim that this is a discrepancy worth looking into and possibly fixing. I see three possible options. The first would be changing what we saw on the left side, the IsCallable check in iterator helpers to an undefined and null fallback. And the other is to change async to sync fallback from an undefined or null check to a callable check, which would have an impact on existing programs, and I’m not sure of what that impact would be, but probably fairly minor. We’ll get into that more later. And our third option is to not fix it and be okay with that inconsistency. So as an example of option 1, consider this program: [on slides] iterator.from, remember I said there were two places in iterator helpers where that AO was used. `Iterator.from` and `Iterator.prototype.flatMap`. If we gave Iterator.from something that has a Symbol.iterator that is `0`, which is non-callable, currently, we don’t consider that to be iterable. We consider that to be an iterator, so we fall back. If we make the change in option 1, we would consider this to be iterable and then it would try to call `0`, and it would throw. This program would go from non-throwing to throwing. As an example of option 2, we have something similar, an iterable that is possibly also async iterable, because it has a `Symbol.asyncIterator` property, but it’s non-callable. Currently, if we use that in a for-await loop, the for await loop will consider it to be async iterable and it will call `0`, which will throw. If we make the change for option 2, this will not consider the value to be async iterable, so we’ll fall back to Symbol.iterator and call that and it will succeed at sync iteration. And option 3 of course is obvious: we don’t make any change.
 
@@ -543,7 +550,7 @@ JHD: [on queue] Strong support for option 2 if web compatible. Option 1 if not.
 
 DE: Yeah, I personally prefer option 1. But I think for iterators today, it’s using just undefined, not null or undefined in and your patch in option 2 uses undefined as well. I think this makes sense because we’re looking to our -- the normal cases where the property doesn’t exist. That will return undefined. I don’t think it’s a good idea for us to work on trying to get things somehow fixed up in an error case. I think it will fail more loudly, and I think that’s the protocol pattern that ES6 set in place, which is different from the pattern with valueOf and toString. The rationale that Waldemar gave for callable checking for valueOf/toString is unique to non-symbols, so doesn’t apply here. More broadly, ES6 made a number of things more strict, so I’d like to continue with that more strict, more loud errors pattern. And I’m fine with it if we end up putting option 1, null or undefined, or even option 2. I think it’s good to get consistency.
 
-MF: So just to quickly correct a statement you made, the pull request for option 2 I have here, doesn’t 
+MF: So just to quickly correct a statement you made, the pull request for option 2 I have here, doesn’t
 do just an undefined check. It may be confusing because you can see that, in GetIterator, we’re comparing against undefined. But that undefined is returned by GetMethod, which does an undefined or null check, so it is testing for either and treating them the same.
 
 DE: Oh, sorry. I support Option 1 as is.
@@ -591,13 +598,15 @@ MF: Yes. That -- that’s this. So we have updated spec text.
 MLS: Thank you for calling that out.
 
 ### Speaker's Summary of Key Points
-* Strong support for option 1: e.g. WH/CM said that undefined/null more clearly indicates absence whereas other values are more clearly an error
-* Strong opposition to option 3 (continue with inconsistency)
-* Committee generally prefers errors to be louder and more obvious in error cases, hence disprefer option 2 (the presenter was the only one to support option 2)
+
+- Strong support for option 1: e.g. WH/CM said that undefined/null more clearly indicates absence whereas other values are more clearly an error
+- Strong opposition to option 3 (continue with inconsistency)
+- Committee generally prefers errors to be louder and more obvious in error cases, hence disprefer option 2 (the presenter was the only one to support option 2)
 
 ### Conclusion
-* Consensus on change #272 of changing the Stage 3 iterator helpers proposal to make fallback for non-iterable things to be based on null/undefined, rather than callability. This PR will be merged.
-* Champions will need to inform existing implementers about this urgent change (per Michael Saboff’s earlier topic)
+
+- Consensus on change #272 of changing the Stage 3 iterator helpers proposal to make fallback for non-iterable things to be based on null/undefined, rather than callability. This PR will be merged.
+- Champions will need to inform existing implementers about this urgent change (per Michael Saboff’s earlier topic)
 
 ## iterator helpers: should malformed iterators fail early or fail only when iterated?
 
@@ -607,11 +616,12 @@ Presenter: Michael Ficarra (MF)
 - [issue](https://github.com/tc39/proposal-iterator-helpers/pull/274)
 - [slides](https://docs.google.com/presentation/d/107HP2juNXjuCkoxhUqHZfHiJ0HEGcz-kbraHdpdEiMg)
 
-MF: So like the last presentation, we have an example of the spec text here. On the left is the iterator helpers proposal again, and on the right is 262. What this is showing is on the left, an AO that is called with every iterator helper right at the start of the helper to get the next method out of the iterator. So an iterator is an object. It has a string `“next”` property, which is a function. So you can see that the first thing we do after getting that value is we check for the callability of that "next" method. If it’s not callable, we throw right away. And remember, a lot of the work of iterator helpers is delayed. So this could be like a map over an existing iterator, you know, of some function and it produces an iterator, but nothing happens at that moment until the resulting iterator is iterated. So if you have a malformed iterator used with that iterator helper, it will throw immediately even though no iteration happens on the result. On the right, you see 262. In 262, we do something a little bit different. We’ve broken it up into two parts. In 262, there’s the part at the top, which gets the string `”next”` property, and sticks it in this iterator record. And then some time later when we call iterator next to advance the iterator, it just blindly calls whatever was stuck in that NextMethod slot of that record. So you can see there’s no explicit check for callability immediately when we get the next method, the check for callability ends up just failing when we try to advance it. But remember, that’s when we try to advance it, which is different from when we get the next method out of the iterator. 
+MF: So like the last presentation, we have an example of the spec text here. On the left is the iterator helpers proposal again, and on the right is 262. What this is showing is on the left, an AO that is called with every iterator helper right at the start of the helper to get the next method out of the iterator. So an iterator is an object. It has a string `“next”` property, which is a function. So you can see that the first thing we do after getting that value is we check for the callability of that "next" method. If it’s not callable, we throw right away. And remember, a lot of the work of iterator helpers is delayed. So this could be like a map over an existing iterator, you know, of some function and it produces an iterator, but nothing happens at that moment until the resulting iterator is iterated. So if you have a malformed iterator used with that iterator helper, it will throw immediately even though no iteration happens on the result. On the right, you see 262. In 262, we do something a little bit different. We’ve broken it up into two parts. In 262, there’s the part at the top, which gets the string `”next”` property, and sticks it in this iterator record. And then some time later when we call iterator next to advance the iterator, it just blindly calls whatever was stuck in that NextMethod slot of that record. So you can see there’s no explicit check for callability immediately when we get the next method, the check for callability ends up just failing when we try to advance it. But remember, that’s when we try to advance it, which is different from when we get the next method out of the iterator.
 
 MF: And it’s different in exactly one case: empty array destructuring. It’s the only case where you can observe this difference between iterator helpers and 262 today -- because you separate the two concepts of getting the next method out of the iterator and doing iteration because empty array destructuring doesn’t end up doing any iteration, so you can see the difference. So I, again, claim that this is an inconsistency worth looking into.
 
 MF: We have four options in this case. And I’ll run you through them just like the last presentation. The first two of these options, in my opinion, set some kind of consistent design philosophy. The remaining two don’t, but they are valid options that we can take.
+
 1. So the first sets a design philosophy that we should consistently fail early, even if iteration may never happen, just like in my `map` example that I gave you where the resulting iterator is never iterated, or just in case of an empty array destructuring, we would just fail early in those cases.
 2. The second is also a design philosophy and it’s the opposite. It’s consistently delay failure until iteration happens because iteration may never happen, so you may not actually run into that failure.
 3. The third option is to remain inconsistent, but we still want to make a change to iterator helpers until iteration. We’ll get into why that might be a desirable option as well.
@@ -635,7 +645,7 @@ MF: Because you would be fetching and closing the iterator for empty array destr
 
 SYG: I see. Thanks.
 
-MF: That was all. But, yes, options 1, 2, 3 all provide consistency between this property that we’re looking to get out of iterator helpers and existing other forms of iteration. Okay, 
+MF: That was all. But, yes, options 1, 2, 3 all provide consistency between this property that we’re looking to get out of iterator helpers and existing other forms of iteration. Okay,
 
 MF: So let’s go into examples of what will change given the choice of each option. So remember option 1 means we have a design philosophy of failing early. So if we have empty array destructuring for something that’s iterable, but returns a broken iterator, today this does not throw, because remember, we fetch the iterator, we don’t iterate, and then we close it. So with the change in option 1, this kind of program would throw. We would be more strict about broken iterators. It seems like the choice that we made in the last presentation. Option 2 has a design philosophy of delaying failure until we actually do iteration. So on the other end, iterator helpers, if we invoke an iterator helper on a broken iterator, but then never iterate it, currently, this throws because it does a callability check, but with option 2’s change, this would not throw until we actually start iterating that result, which may never happen. So the similar change that would happen in 262 with option 2 is that when we have an empty array destructuring, we don’t even bother getting the iterator because we know we’re not going to iterate ahead of time so there’s no point in getting the iterator just to close it. So right now, this getter will be called, but with the change in option 2, this getter will not be called. It will completely skip it. And, yeah, I just kind of explained this -- we won’t, like, close the iterator either. So this skips all of the iterator protocol because we know that we don’t need anything. We’re not pulling anything out of it. Option 3, as we’ve talked about earlier, it is similar to option 2. So this is the exact same example. This would be a change to iterator helpers, but we would not get that change to skipping iteration entirely for empty array destructuring. So that brings us to this diagram again now. I went over it earlier, so I don’t think we need to go over it again. But option 1 changes only 262. Option 2 changes both 262 and iterator helpers. And option 3 changes just iterator helpers.
 
@@ -682,17 +692,21 @@ DE: [on queue] +1 to SYG’s comment
 JHD: Since I don’t like 2, and if 1’s not going to get consensus, which it seems it won’t, then I definitely prefer option 3 to 4, because that at least creates consistency, so I’m fine with that as a fallback.
 
 ### Speaker's Summary of Key Points
-* Skepticism about risk/reward tradeoff of changing array destructuring semantics and of special-casing empty array patterns
-* General design feedback that, in this sort of case, it’s fine to follow the principle of letting things flow and triggering an error when it comes up, rather than bringing it up artificially soon.
+
+- Skepticism about risk/reward tradeoff of changing array destructuring semantics and of special-casing empty array patterns
+- General design feedback that, in this sort of case, it’s fine to follow the principle of letting things flow and triggering an error when it comes up, rather than bringing it up artificially soon.
+
 ### Conclusion
-* Consensus on option 3
+
+- Consensus on option 3
 
 ## Array.prototype.group rename for web compatibility
+
 Presenter: Daniel Ehrenberg (DE)
 
 - [proposal](https://github.com/tc39/proposal-array-grouping/)
 - [slides](https://docs.google.com/presentation/d/1QvTThZlYfsXDHGIGR-vAR3AhTbRe9ySukuW-H1ZnjKM/edit#slide=id.p)
- 
+
 DE: We heard Michael’s meta topic, now we see the visualization of a Lie group conveniently on the right side of the screen, which does not pertain to this topic at all. Next slide.
 
 DE: So we heard the history, and overall, the -- this proposal has held up based on we encountered an issue and the champion hasn’t been available to work on this proposal. So next slide. So what should we do from here? I think Michael Saboff said -- led the discussion about the most important thing, which is to improve the coordination and communication between champions and implementers. I’m very happy about that conclusion.
@@ -712,33 +726,33 @@ DE: I agree completely with everything you said. In particular, once we have thi
 DLM: Thank you. Hopefully I’m audible this time. We discussed this in our proposal review meeting and the team is quite opposed to renaming this again and in general, we would be opposed to adding new array methods. The bugs that surfaced for this that we discovered through this implementation were not easily localized back to this renaming. As a matter of fact, the I think second time this came up, the bugs were fairly obscure, and I think the lesson that we learned here is that in the lack of -- you know, without extremely compelling evidence, there won’t be any problems with the name, we would only consider static methods in the future for this. And EAO is next in the queue to discuss this.
 
 EAO: As Dan said, I thought we had earlier some consensus on looking over this. But -- so I was a bit surprised by the shape of the question here from DLM, but that was probably not intentional. However, I do think that this is really less important than the metadiscussion here about what to do in general with this proposal. And there I’m -- I think I’m on the same sort of direction as I’ve had others before with this -- that this ought to get bumped down to Stage 23, especially if we don’t know whether we’re talking about an instance method and what it’s called and whether it’s a static method and what it’s called and how man
- 
-KG: Yeah, this, I guess -- DLM already said most of this, but it does seem like we 
+
+KG: Yeah, this, I guess -- DLM already said most of this, but it does seem like we
 basically don’t have the option of using good names for things, given how often we have been running into bugs. I do hope that we can keep the option of using more obscure names, so in particular, the suggestion for these methods was groupToObject and groupToMap. And I feel reasonably confident in predicting that those are not going to have compat issues. In fact, it would not surprise me if literally no one has used the identifier "groupToObject" in any JavaScript program at any point, but certainly not as a method on arrays or as a property on arrays or a property on something that might get type punned with arrays, as we ran into with group. So while I am basically neutral between static methods and obscure names in this particular case, I do hope that in the future, we can consider obscure names for adding new array prototype methods. Even though it seems like we are unfortunately constrained to obscure names.
 
 DE: I want to turn this question back to DLM. Would SpiderMonkey be open to considering very obscure names or should we rule those out as well?
 
 DLM: I think if it has a UUID or something in it. Yeah, I think this has come up several times in the context of the bug.
 
-DLM: The bugs that showed up a second time were quite difficult to trace back to being caused by this rename. So I think – I mean, obviously I am not going to say no, never again. But I think a compelling argument, a more compelling argument than we don’t think it’s going to cause problems. 
+DLM: The bugs that showed up a second time were quite difficult to trace back to being caused by this rename. So I think – I mean, obviously I am not going to say no, never again. But I think a compelling argument, a more compelling argument than we don’t think it’s going to cause problems.
 
 DE: I think we were saying the same thing. Yeah, I think it would be kind of unreasonable to claim this is very obscure but group is not found in any of the five old libraries that keep causing problems for us or however many there are. So yeah. I think – I think there is a difference between these, but also, I would be okay with the conclusion that we just never add any methods. We should probably make a decision one way or the other on this.
 
-DLM: I mean, I guess, just to add one more point. We are developing from the developers point of view and not choosing names that are possibly not very guessable or hard to remember. I don’t know. It’s just – a slight argument. But I think without, you know, saying never, I think we definitely SpiderMonkey team has a strong preference for seeing and a static method as opposed to new array methods in the future. 
+DLM: I mean, I guess, just to add one more point. We are developing from the developers point of view and not choosing names that are possibly not very guessable or hard to remember. I don’t know. It’s just – a slight argument. But I think without, you know, saying never, I think we definitely SpiderMonkey team has a strong preference for seeing and a static method as opposed to new array methods in the future.
 
-CDA: Okay. Justin is up next. 
+CDA: Okay. Justin is up next.
 
 JRL: To clear up the confusion about this, the last time I presented this, in November of 2022. We had a slight preference for a static method, Object.groupBy, a static method on the Object constructor, and Map.groupBy, a static on the Map constructor. We did not get consensus to change to a static method. What was proposed is that I write the spec text and bring it back in the next meeting and we decide whether we like the direction. The spec is written, a PR open for it, but I did not bring it back to get consensus to change the direction. If we can’t get consensus on static methods, then we go back to defining new names. I just don’t have the time to do that and I don’t have access to that anymore to do the scans to figure out what names are available.
 
-DE: That’s great. I am glad to hear about this progress. Justin would be open to additional code Champion for this proposal? 
+DE: That’s great. I am glad to hear about this progress. Justin would be open to additional code Champion for this proposal?
 
-JRL Yeah. That would be great. 
+JRL Yeah. That would be great.
 
 DE: Okay. If a situation like this recurs, can we plan to ask the committee for pro promisize, proactively, like make a promise of coming back next meeting, we are not able to do the work, we can all ask for help? Would that be doable? Is there anybody who wants to coChampion, this now it’s explained the spec work is done and presenting the results to the committee
 
-JHD: It’s related to my next queue item. I would be happy to. 
+JHD: It’s related to my next queue item. I would be happy to.
 
-JHD: My queue item was basically, can we establish consensus to do the static methods, keep at Stage 3, (even though arguably, it should have been reduced to stage 2 in the past) and move forward with that? And if we want a separate metadiscussion about this, a longer metadiscussion than this timebox, about how whether array prototype methods are on the table in the future or not, then that seems like worthy of a separate agenda item. Is there any – I mean, any issue with that? Those things weren’t on the agenda ten days in advance, but like the semantics seem like a pretty obvious delta on what we got consensus on. Array.groupBy . . . 
+JHD: My queue item was basically, can we establish consensus to do the static methods, keep at Stage 3, (even though arguably, it should have been reduced to stage 2 in the past) and move forward with that? And if we want a separate metadiscussion about this, a longer metadiscussion than this timebox, about how whether array prototype methods are on the table in the future or not, then that seems like worthy of a separate agenda item. Is there any – I mean, any issue with that? Those things weren’t on the agenda ten days in advance, but like the semantics seem like a pretty obvious delta on what we got consensus on. Array.groupBy . . .
 
 DE: So I am happy with that personally if we have a champion who is available to present this. Could we review this new PR in an overflow topic?
 
@@ -746,41 +760,44 @@ JHD: That seems fine. Yeah. Either way, I am willing to join as a co-champion.
 
 EAO: I think switching to static methods has not been reviewed as a thing by everyone on this call previously. And it’s big enough change that we have to consider this to currently be at Stage 2 and possibly open for consideration for Stage 3 at the very next call. Because I mean if we are close to fulfilling the requirements, that ought to be achievable. So I would much rather bump down to Stage 2, to represent really – to match the very representation of what we claim it is and what we want it to do and what it’s going to be.
 
-JHD: Yeah. I am fine with that as well. It’s just I will bring it back with, you know, JRL as well as if it’s variable in the next plenary meeting with the changes in Stage 3. Again, either way. 
+JHD: Yeah. I am fine with that as well. It’s just I will bring it back with, you know, JRL as well as if it’s variable in the next plenary meeting with the changes in Stage 3. Again, either way.
 
-EAO: Okay. Just to be clear, I would be happy with this. 
+EAO: Okay. Just to be clear, I would be happy with this.
 
 DE: Maybe we can do both. We can have an overflow topic of looking into this, on Thursday afternoon, and then talk about it more next meeting if we have more to discuss.
 
-JHD: Would that mean that the conclusion for this item is I will join as a co-champion, discuss as overflow item later this week and unless we get consensus as keeping in Stage 3 in the overflow item, we move to Stage 2 and in the event it stays at – in the event that we don’t get consensus to keep it at Stage 3, then in the next meeting we come back and try to re-achieve Stage 3. But in the absence of consensus to keep it at Stage 3 we have consensus to move to Stage 2. Does that seem like a good conclusion? 
+JHD: Would that mean that the conclusion for this item is I will join as a co-champion, discuss as overflow item later this week and unless we get consensus as keeping in Stage 3 in the overflow item, we move to Stage 2 and in the event it stays at – in the event that we don’t get consensus to keep it at Stage 3, then in the next meeting we come back and try to re-achieve Stage 3. But in the absence of consensus to keep it at Stage 3 we have consensus to move to Stage 2. Does that seem like a good conclusion?
 
 DE: So all of these moves, adopting the static methods or demoting, they’re all kind of a big deal and require consensus. Why don’t we make sure to schedule the overflow item if we have to all think about it and then try to come to a conclusion on demoting and/or switching to static methods on Thursday.
 
-JHD: Okay. 
+JHD: Okay.
 
 MF: I feel like I am getting mixed feedback from Mozilla on their position. It sounded like DLM said earlier that Mozilla is not willing to entertain an alternative name for `Array.prototype.group` and if that is the case, I don’t see why any other proposal for a new method for Arrays would be acceptable for experimentation on Array.prototype unless it naturally has a very obscure name. I would like clarification on whether there are future implications from this statement from Mozilla
 
-DLM: Thank you. I think you summarized our position quite nicely. So yes. We wouldn’t want to see this particular one, another rename attempt for it. It’s already not worked twice. And in general, we are opposed to further prototype methods on Array, except in the case you mentioned, where there’s a naturally obscure name. I guess I would hesitate a little bit. I don’t really want to say, never again in the absence of YSV since she has much more experience on the committee than myself. So I would say the context of our internal discussion is yes, we are very reluctant to consider something like this again. But I wouldn’t say never. At least not until I have had a chance to get YSV's opinion on that. 
+DLM: Thank you. I think you summarized our position quite nicely. So yes. We wouldn’t want to see this particular one, another rename attempt for it. It’s already not worked twice. And in general, we are opposed to further prototype methods on Array, except in the case you mentioned, where there’s a naturally obscure name. I guess I would hesitate a little bit. I don’t really want to say, never again in the absence of YSV since she has much more experience on the committee than myself. So I would say the context of our internal discussion is yes, we are very reluctant to consider something like this again. But I wouldn’t say never. At least not until I have had a chance to get YSV's opinion on that.
 
-MF: Okay. That satisfies me. 
+MF: Okay. That satisfies me.
 
-DE: Okay. I want to make a further suggestion: maybe since there aren’t that many Stage 3 proposals, maybe we can do a quick like 15-minute or 20-minute sweep, just check on what is going on with the Stage 3 proposals that are not on the agenda. Ask people how they are doing. So we can be in sync. Does that make sense? We could try this at the next meeting. We don’t have to come to a conclusion now. Anyway, thanks, everyone. 
+DE: Okay. I want to make a further suggestion: maybe since there aren’t that many Stage 3 proposals, maybe we can do a quick like 15-minute or 20-minute sweep, just check on what is going on with the Stage 3 proposals that are not on the agenda. Ask people how they are doing. So we can be in sync. Does that make sense? We could try this at the next meeting. We don’t have to come to a conclusion now. Anyway, thanks, everyone.
 
 EAO: Yeah. Just wanted to make it clear because I think we glossed over it. Are we now assigning for allowing or some term, I don’t know what is even valid here, JHD to be a Champion of this proposal? As an action taken by this committee without, if I understand right, the Champion off the proposal itself being proposed
 
 JRL: I am the champion of this proposal. I am happy for JHD to be a co-champion and present at the next meeting or whenever.
 
-DE: In general, if the champion were completely absent, we have already indicated in various documents that someone else can step up to be the champion of the proposal. Thanks, everyone. 
+DE: In general, if the champion were completely absent, we have already indicated in various documents that someone else can step up to be the champion of the proposal. Thanks, everyone.
 
 ### Speaker's Summary of Key Points
-* Mozilla indicated strong skepticism to new Array.prototype methods including future renames of this proposal.
-* Committee members were generally on board with static methods for grouping.
+
+- Mozilla indicated strong skepticism to new Array.prototype methods including future renames of this proposal.
+- Committee members were generally on board with static methods for grouping.
 
 ### Conclusion
-* JHD will be a co-champion of this proposal and present it towards the end of this meeting or next meeting for investigating static methods.
-* And no change to the stage right now, but we anticipate that if there’s a big delay, that it would be proposed for downgrading Stage 2.
+
+- JHD will be a co-champion of this proposal and present it towards the end of this meeting or next meeting for investigating static methods.
+- And no change to the stage right now, but we anticipate that if there’s a big delay, that it would be proposed for downgrading Stage 2.
 
 ## Float16Array for stage 3
+
 Presenter: Kevin Gibbons (KG)
 
 - [proposal](http://tc39.es/proposal-float16array/)
@@ -792,7 +809,7 @@ KG: The proposal is to add a new kind of TypedArray: Float16Array. These are ana
 
 KG: And so why? This has been talked about for years it turns out. The primary reason and the reason it’s more relevant now than previously is for web platform integration. So there are a couple of web platform features already which make use of Float16 values, WebGL and WebGPU, because graphic cards make use of float16 values and I will talk about that more in detail later. WebGL has been around for a long time and has a terrible hack for Float16 values which I will get to later. WebGPU is shipping in Chrome and I understand implementations are underway everywhere else. People are excited by it. And also, there are new features in the pipeline, and I don’t want to make promises about the features ever actually maturing and shipping, but there are things that are actively worked on, in particular float-backed canvases which higher than 8-bit colour depth and WebNN, which is a proposal for neural networks in the web platform directly. There are other use cases that exist as well but the primary concern here is web platform integration. You can’t do platform integration in user land. Like if you have a WebGP takes buffers and in some cases vends buffers, the thing that it takes can’t be a userland Float16Array because it won’t have any idea what to do with that. That looks like a user class. It has to be built into the platform to have platform integration.
 
-KG: So I am going to talk in not too much detail about the various existing features and support it with miscellaneous screenshots. This is a screenshot from the WebGPU specification. Float16 is in fact an extension to WebGPU. It’s optional. But it is the first extension because everyone knows we are going to need this. And I have a screenshot from the WebGPU repo issue tracker where I said, hey, would this be useful for webGPU. And several people said yes. This person in particular said he expects many users of WebGPU are going to want Float16Array when they start to write shaders which use this. 
+KG: So I am going to talk in not too much detail about the various existing features and support it with miscellaneous screenshots. This is a screenshot from the WebGPU specification. Float16 is in fact an extension to WebGPU. It’s optional. But it is the first extension because everyone knows we are going to need this. And I have a screenshot from the WebGPU repo issue tracker where I said, hey, would this be useful for webGPU. And several people said yes. This person in particular said he expects many users of WebGPU are going to want Float16Array when they start to write shaders which use this.
 
 KG: Then WebGL is already shipping. This is the horrible hack that I mentioned previously. The texToImage API takes a buffer or array containing values to specify the texture, and do you see that these are all pretty reasonable. If you are – if the buffer is backed by bytes, you pass an int 8 array or uint8array. Float, a Float32Array. But if you want to pass it a half float, that is to say a binary 16 or float 16 buffer, the only way you can do that is by passing a UInt16Array, where it’s in fact a UInt16 interpretation of the binary for float 16 values. Not actually UInt16s. This is horrible. We are just – we have to live this because there’s no other way to have a TypedArray containing 16 bit values at all. Uint16Array or nothing. Fortunately, because this is a place that is accepting values rather than producing values, this can be changed to also accept Float16Array without breaking anything.
 
@@ -808,27 +825,29 @@ KG: I want to briefly run through some other considerations. I am not going to t
 
 KG: As to whether it’s practical to implement, there is a universal support in compilers for storing 16 bit floats and that’s sufficient except for sorting. There's also standards-track extensions in C and C++ for proper types. Not super relevant since there is no need to do arithmetic. And then there is some support in hardware, which is also not very relevant, but the fact that casting operations exist in hardware is nice. It’s trivial to do in software of course.
 
-KG: So finally here is the spec text. [shows text] I don't want to suggest that implementation will be trivial. But that’s all there is. Yeah. I would like to go to the queue and ask for Stage 3. 
+KG: So finally here is the spec text. [shows text] I don't want to suggest that implementation will be trivial. But that’s all there is. Yeah. I would like to go to the queue and ask for Stage 3.
 
-DLM: Thanks. Since the last time we had the chance to dig in from SpiderMonkey and we have no concerns for this. I think it’s fine for Stage 3. 
+DLM: Thanks. Since the last time we had the chance to dig in from SpiderMonkey and we have no concerns for this. I think it’s fine for Stage 3.
 
-SYG: We support Stage 3. We don’t have any real concerns. Sync’d with the V8 team as well and basically there’s no – yeah, there’s no issues that we can foresee. That’s all fine. I want to set some performance expectations because this is basically going to be for ferrying bites from GPUs more or less, do not expect float operations to be fast – do not expect code that is written, for example, in asm.js style, where you get stuff out of the a float16, do math by casting everyone operation with float16 around and storing it back to Float16Array, do not expect that to be optimized any time soon, if ever. Because of things you mentioned like limited CPU support on older CPUs and we don’t do the work for that. I think if everyone is clear on that, this is basically for interchange with GPUs, no concerns here. 
+SYG: We support Stage 3. We don’t have any real concerns. Sync’d with the V8 team as well and basically there’s no – yeah, there’s no issues that we can foresee. That’s all fine. I want to set some performance expectations because this is basically going to be for ferrying bites from GPUs more or less, do not expect float operations to be fast – do not expect code that is written, for example, in asm.js style, where you get stuff out of the a float16, do math by casting everyone operation with float16 around and storing it back to Float16Array, do not expect that to be optimized any time soon, if ever. Because of things you mentioned like limited CPU support on older CPUs and we don’t do the work for that. I think if everyone is clear on that, this is basically for interchange with GPUs, no concerns here.
 
-KG: Yeah. Absolutely. This is not about the performance of arithmetic on float16. 
+KG: Yeah. Absolutely. This is not about the performance of arithmetic on float16.
 
 DE: Looks good to me for Stage 3, having reviewed the spec text.
 
-WH: I reviewed the spec and support this. 
+WH: I reviewed the spec and support this.
 
-MS: [on queue] offering support. No need to speak. 
+MS: [on queue] offering support. No need to speak.
 
 ### Speaker's Summary of Key Points
-* engines consider this feasible to implement
-* but, don't expect them to optimize arithmetic on float16 values
+
+- engines consider this feasible to implement
+- but, don't expect them to optimize arithmetic on float16 values
 
 ### Conclusion
-* Consensus for stage 3
-* KG to update proposal README to list implementation status
+
+- Consensus for stage 3
+- KG to update proposal README to list implementation status
 
 ## Source maps: Should TC39 standardize and improve them?
 
@@ -838,7 +857,7 @@ Presenter: Daniel Ehrenberg (DE)
 - [slides](https://docs.google.com/presentation/d/10nYC0dD-CWXnmPtqeuQMVM15b8kWMgrIS6j2G2wpoyw/edit)
 - [ongoing development](https://github.com/source-map/source-map-rfc)
 
-DE: Excited to be talking about this stuff. Source maps. I want to move towards an interoperable and reliable standard and some other people do as well. The question is, do we, as a committee, want to work on this? 
+DE: Excited to be talking about this stuff. Source maps. I want to move towards an interoperable and reliable standard and some other people do as well. The question is, do we, as a committee, want to work on this?
 
 DE: So source maps are a JSON mapping with this VLQ coding thing to associate the corresponds between original source code and compiled bundled transpiled, whatever source code. There’s a great [article](https://web.dev/source-maps/) about this.
 
@@ -846,7 +865,7 @@ DE: The source maps specification is in a Google doc. It’s gotten far this way
 
 DE: To look into this issue, in the TC39 tools outreach call, we have gotten together to start discussing this in an informal capacity, just an outreach call. We will be continuing to discuss this topic monthly. Among participants there were some shared goals. And we have some shared communication channels.
 
-DE: Actually, the repository https://github.com/source-map/source-map-rfc was set up 7 or 8 years ago by people in Mozilla and Google. Purely an asynchronous mechanism to try to build agreement on improvements. I want to work on source map through TC39 as the next step.
+DE: Actually, the repository <https://github.com/source-map/source-map-rfc> was set up 7 or 8 years ago by people in Mozilla and Google. Purely an asynchronous mechanism to try to build agreement on improvements. I want to work on source map through TC39 as the next step.
 
 DE: The goals that the participants are outlined were one is, any effort here would be based on incrementally modifying the current definition of V3 source maps. Ideas have been floated to move towards a DWARF-based format, or to have something more directly readable than VLQ, but we are not considering either of those two extremes. We want to just work on evolving slowly from the existing format.We do want to complete the current specification. This is sort of like a process that has happened with HTML, where with an ambiguous standard that people interpreted slightly different ways, certain supersets, you do archaeology to say, what is the web reality for the standard? And through that, complete and correct the specification. For names, there are a few concrete sources and places where we need improvements. One is that we don’t have any mappings for variables to names. One is we don’t have any mapping from object properties to original names. And function names, those exist, but they only show you where the function starts. They don’t show you the extent of the function. You can reconstruct it by reparsing, but we want that information to be present explicitly. And finally, improving the association of the original and the compiled files. There are a couple different ideas for this. Ultimately, sometimes, the association gets lost based on the ambiguities of path resolution. We could have certain debugging identifiers, that could associate these things better.
 
@@ -854,67 +873,69 @@ SYG: How did you select TC39 for this effort? Did you consider other standards v
 
 DE: We have an issue in the source maps RFC repository where I presented two options. My preferred option. Another option is WICG. WICG doesn’t answer the question of, where the final standard would be, but it answers the question of what could we use temporarily to kind of – a way to safeguard IP while the proposal is under development. I would be okay with that. This is what I will encourage the group to do if TC39 is not interested in working in this area.
 
-DE: Starting with WICG and then seeking another standards venue seems like more overhead, and it’s especially complicated if we ever want to make an actual standard and want to ensure the continued equality of position of different stakeholders. We can go into other alternatives, but the group of participants is aware that there are multiple options and has so far been fine to go along with my suggestion of going through TC39. 
+DE: Starting with WICG and then seeking another standards venue seems like more overhead, and it’s especially complicated if we ever want to make an actual standard and want to ensure the continued equality of position of different stakeholders. We can go into other alternatives, but the group of participants is aware that there are multiple options and has so far been fine to go along with my suggestion of going through TC39.
 
-SYG: Okay. Thanks for the background. I will close with, if Ecma is chosen as the standards body for IPR stuff, I strongly urge that the source maps spec adopt the alternative copyright that we adopted for TC39, as opposed to the regular ECMA copyright. For W3C, I believe the copyright is relaxed in the way we want. 
+SYG: Okay. Thanks for the background. I will close with, if Ecma is chosen as the standards body for IPR stuff, I strongly urge that the source maps spec adopt the alternative copyright that we adopted for TC39, as opposed to the regular ECMA copyright. For W3C, I believe the copyright is relaxed in the way we want.
 
-DE: Yeah, definitely. I would also want to adopt the RFTG policy, which is equally important. 
+DE: Yeah, definitely. I would also want to adopt the RFTG policy, which is equally important.
 
-SYG: Agreed. 
+SYG: Agreed.
 
 MLS: I believe a TC requires 3 members of ECMA to want to create it and create the charter of what that TC is. And the new TC, it may be more difficult to get invited experts because they would have to be invited by who the members are, of that TC.
 
-MLS: I don’t think a TG is too far out of what we’re talking about here. And Chris, I will roll into my next topic, which I think Dan pretty much answered. But that’s what other coordination with other standards bodies. Because it sounds like, certainly there’s obviously JavaScript tie-in, but there’s tie-in with other, you know, possibly Wasm, possibly the browser itself. And so on and so forth. So if this is done in Ecma, with most likely a new TG, how much of the work would require that coordination? Could it all be done under a new TG or a new TC? 
+MLS: I don’t think a TG is too far out of what we’re talking about here. And Chris, I will roll into my next topic, which I think Dan pretty much answered. But that’s what other coordination with other standards bodies. Because it sounds like, certainly there’s obviously JavaScript tie-in, but there’s tie-in with other, you know, possibly Wasm, possibly the browser itself. And so on and so forth. So if this is done in Ecma, with most likely a new TG, how much of the work would require that coordination? Could it all be done under a new TG or a new TC?
 
 DE: Well, it’s just like in TC39, how the work ends up spanning multiple standards bodies, we end up having to think about how JavaScript integrates with various embedders. I would expect source maps integration work to extend beyond Ecma. We already have an established pattern for doing that in TC39.
 
-DE: As far as barriers that a separate TC would provide: I would also add internal company processes. In some companies, an employee may have permission based on legal approval, to participate in one particular TC or working group in other standards bodies, and having another separate TC might require going through such an approval process again. 
+DE: As far as barriers that a separate TC would provide: I would also add internal company processes. In some companies, an employee may have permission based on legal approval, to participate in one particular TC or working group in other standards bodies, and having another separate TC might require going through such an approval process again.
 
 SYG: Okay.
 
-DRR: Consider that a working group is a good first step maybe as an incubation step to figure out what the heck this starts out as. What it grows into. But it doesn’t need to be a technical – I mean, I don’t know if it really fits into TC39 itself. I don’t have a strong opinion on that. That’s a point in on time. But keep that in mind. 
+DRR: Consider that a working group is a good first step maybe as an incubation step to figure out what the heck this starts out as. What it grows into. But it doesn’t need to be a technical – I mean, I don’t know if it really fits into TC39 itself. I don’t have a strong opinion on that. That’s a point in on time. But keep that in mind.
 
 DE: The participants in the source maps discussion are in agreement that source maps need to remain a multilanguage thing. What is the part it doesn’t match with TC39?
 
-DRR: I don’t know if it doesn’t match. But it definitely feels like – well, I mean you could imagine that it’s independent of JS. Over time, different debuggers and tools, different formats something like that. I don’t necessarily know. Again, I don’t have a strong opinion against bringing this into TC39, but off the bat it doesn’t necessarily feel like it’s in the usual scope of what we do. But that doesn’t mean I wouldn’t change my view over time, couldn’t be convinced otherwise. But having a working group working on this doesn’t seem that far out. 
+DRR: I don’t know if it doesn’t match. But it definitely feels like – well, I mean you could imagine that it’s independent of JS. Over time, different debuggers and tools, different formats something like that. I don’t necessarily know. Again, I don’t have a strong opinion against bringing this into TC39, but off the bat it doesn’t necessarily feel like it’s in the usual scope of what we do. But that doesn’t mean I wouldn’t change my view over time, couldn’t be convinced otherwise. But having a working group working on this doesn’t seem that far out.
 
 DE: Okay. It’s definitely change in our scope. BTW our term for subcommittee is "task group". Working groups are for W3C or others.
 
-CDA: I just popped in a reply to that comment and that’s just that the charter of TC39 does include libraries and complementary technologies that support the language. And you could certainly argue that the source maps would fit within that definition. 
+CDA: I just popped in a reply to that comment and that’s just that the charter of TC39 does include libraries and complementary technologies that support the language. And you could certainly argue that the source maps would fit within that definition.
 
-DRR: Yeah. I can kind of see that. 
+DRR: Yeah. I can kind of see that.
 
-DE: I think there’s a change in scope is which is why I am bringing it to the committee, whether we are changed in that change in scope. 
+DE: I think there’s a change in scope is which is why I am bringing it to the committee, whether we are changed in that change in scope.
 
 MLS: Do we need to formally call for consensus to form TG4?
 
-DE: I don’t know if this is required for Ecma, but I would like to call for consensus for this committee. Like, are we in agreement that we want this scope change? 
+DE: I don’t know if this is required for Ecma, but I would like to call for consensus for this committee. Like, are we in agreement that we want this scope change?
 
 MLS: Yeah. I think TC39 needs to recommend this to GA.
- 
-DE: So let’s call for consensus. 
 
-IS: I think you are going too fast. Yes. So at the moment, what I feel is, is that, you know, these are the first ideas, and certainly I mean you have to digest and you have to discuss all these points what you have said. Does it now fit in the certainly scope in TC39? If it does, you have the possibility of creating a TG. The TG has advantage of course, that you are completely in the control of creating and running the TG. So you don’t have to go to the higher body, to the GA, to, et cetera, ; you just create it. But if you cannot agree, you know whether it fits into the current scope, et cetera, then unfortunately, you have to go up. And then you have to involve the GA and so on. And at the moment, you know, my feeling that this was now the first presentation. I think people have to have questions and people want to get familiar with it, what is this new – new topic, new animal. And then you can move forward. I mean, both ways are possible either to create a TG or not a create a TG, if it is fits fully into the scope of TC39 and the working of TC39, which – what I understood so far, that it is a little – it is different. So my feeling is, you know, that you should think a little bit about it and come back to the next meeting until you have a clear picture. So I mean, this is my first feeling via listening to this points. So thank you. 
+DE: So let’s call for consensus.
 
-DE: To conclude, I am okay to continue informally without a TC for now. However, without IP protection, I worry this will have a detrimental effect on who can participate. Many companies have policies they can only participate if there is an IP policy put in place. So I don’t know. 
- 
-IS: Yeah. Sorry about that. I do not understand that you go immediately, you know, into details. Yeah. So whether it is a royalty-free patent policy, whether we should have the alternative copyright policy, et cetera. So these are very, very important. I fully agree with that. But this is a second – the next level of question, you know? When you already know, you know, okay. This fits into TC39. And et cetera. Et cetera. You should go from the top to the bottom. So don’t bother at the moment about the IP policy. 
+IS: I think you are going too fast. Yes. So at the moment, what I feel is, is that, you know, these are the first ideas, and certainly I mean you have to digest and you have to discuss all these points what you have said. Does it now fit in the certainly scope in TC39? If it does, you have the possibility of creating a TG. The TG has advantage of course, that you are completely in the control of creating and running the TG. So you don’t have to go to the higher body, to the GA, to, et cetera, ; you just create it. But if you cannot agree, you know whether it fits into the current scope, et cetera, then unfortunately, you have to go up. And then you have to involve the GA and so on. And at the moment, you know, my feeling that this was now the first presentation. I think people have to have questions and people want to get familiar with it, what is this new – new topic, new animal. And then you can move forward. I mean, both ways are possible either to create a TG or not a create a TG, if it is fits fully into the scope of TC39 and the working of TC39, which – what I understood so far, that it is a little – it is different. So my feeling is, you know, that you should think a little bit about it and come back to the next meeting until you have a clear picture. So I mean, this is my first feeling via listening to this points. So thank you.
 
-DE: The question was asked and we can continue in an overflow topic on this. 
+DE: To conclude, I am okay to continue informally without a TC for now. However, without IP protection, I worry this will have a detrimental effect on who can participate. Many companies have policies they can only participate if there is an IP policy put in place. So I don’t know.
+
+IS: Yeah. Sorry about that. I do not understand that you go immediately, you know, into details. Yeah. So whether it is a royalty-free patent policy, whether we should have the alternative copyright policy, et cetera. So these are very, very important. I fully agree with that. But this is a second – the next level of question, you know? When you already know, you know, okay. This fits into TC39. And et cetera. Et cetera. You should go from the top to the bottom. So don’t bother at the moment about the IP policy.
+
+DE: The question was asked and we can continue in an overflow topic on this.
 
 CDA: We are a little over time. If I understand correctly, I think what I am hearing from that is a formation of the task group is separate from the standardization of a specification and the patent policy and IP agreements and things like that, which makes sense. You can’t feed all the birds with one scone.
 
-CDA: We’re at time. Daniel, would you like to – shall we just add a continuation on Thursday? 
+CDA: We’re at time. Daniel, would you like to – shall we just add a continuation on Thursday?
 
 DE: Yeah. I am not sure where to go. If we have 10 more minutes some other day that would be great.
 
 ### Speaker's Summary of Key Points
-* Several participants in the TC39 tools outreach call have been discussing improving the source maps informal standard, with the goals of
-   * Correcting and completing the existing specification
-   * Improve mappings for names
-   * Improve associations between files
-* DE proposed to form TC39-TG4 to develop a source map standard
-* Committee members discussed whether this was in scope and whether TC39 was a good venue.
+
+- Several participants in the TC39 tools outreach call have been discussing improving the source maps informal standard, with the goals of
+  - Correcting and completing the existing specification
+  - Improve mappings for names
+  - Improve associations between files
+- DE proposed to form TC39-TG4 to develop a source map standard
+- Committee members discussed whether this was in scope and whether TC39 was a good venue.
 
 ### Conclusion
+
 Continue discussion on Thursday

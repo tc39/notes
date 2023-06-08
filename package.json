@@ -4,9 +4,13 @@
     "check": "node -e 'import(\"./scripts/check-delegates.mjs\").then(cd => cd.checkDelegates())'",
     "test": "node ./scripts/check-delegates-test.mjs",
     "lint": "eslint . --ext .js,.mjs,.cjs",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "//": "markdownlint commands ignore old files",
+    "mdlint": "markdownlint-cli2 '**/*.md' '!node_modules' '!meetings/201*/*.md' '!meetings/202[0-2]*/*.md' '!meetings/2023-0[1-3]/*.md'",
+    "mdlint:fix": "markdownlint-cli2-fix '**/*.md' '!node_modules' '!meetings/201*/*.md' '!meetings/202[0-2]*/*.md' '!meetings/2023-0[1-3]/*.md'"
   },
   "devDependencies": {
-    "eslint": "^8.41.0"
+    "eslint": "^8.41.0",
+    "markdownlint-cli2": "^0.7.1"
   }
 }

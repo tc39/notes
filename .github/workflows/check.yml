@@ -14,5 +14,6 @@ jobs:
         with:
           node-version: lts/*
       - run: npm run lint
+      - run: npm run mdlint
       - run: npm run test
       - run: npm run check

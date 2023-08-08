@@ -264,84 +264,84 @@ JRL: Okay. So we just need the urgent communication channel and implementers wil
 
 ## Decorator field/accessor initializer order
 
-Presenter: Chris Garrett (CHG)
+Presenter: Kristen Hewell Garrett (KHG)
 
 - [issue](https://github.com/tc39/proposal-decorators/issues/508)
 - [slides](https://slides.com/pzuraq/decorators-field-accessor-initializer-order)
 
-CHG: This issue got brought up recently by someone who was playing around with the decorators implementations in the transforms and Babel and what not. They thought it was a bug at first, and we started looking at it and realized that this actually may be an issue, and may warrant a change. So I just thought I’d bring it to committee to see what everybody thinks. So basically the issue right now is that field and accessor initializers run from the innermost decorator to the outermost decorator. So in this example here, an Int of times 4 is called four and then-2 is called. So we take 5, multiply it by 4, and subtract 2 and the result is 18. However, getters and setters are replaced from inner most to outer most and that what this means is they execute in the reverse order from outer most to inner most. So in this example here we have minus 2 gets called first when we set the value to update it to the exact same value it started as. Minus 2 is called first and then times 4. And that is a result of 12. So after looking at this for a while, I realized there wasn’t really a way to have an accessor specifically that can set the initial value and the updated value given the same input through the same output. So, yeah, this could be an issue for people who would expect that and are trying to write decorators that do that.
+KHG: This issue got brought up recently by someone who was playing around with the decorators implementations in the transforms and Babel and what not. They thought it was a bug at first, and we started looking at it and realized that this actually may be an issue, and may warrant a change. So I just thought I’d bring it to committee to see what everybody thinks. So basically the issue right now is that field and accessor initializers run from the innermost decorator to the outermost decorator. So in this example here, an Int of times 4 is called four and then-2 is called. So we take 5, multiply it by 4, and subtract 2 and the result is 18. However, getters and setters are replaced from inner most to outer most and that what this means is they execute in the reverse order from outer most to inner most. So in this example here we have minus 2 gets called first when we set the value to update it to the exact same value it started as. Minus 2 is called first and then times 4. And that is a result of 12. So after looking at this for a while, I realized there wasn’t really a way to have an accessor specifically that can set the initial value and the updated value given the same input through the same output. So, yeah, this could be an issue for people who would expect that and are trying to write decorators that do that.
 
-CHG: So why is this an issue that’s coming up now? First off, previously, TypeScript and Babel legacy, you know, the original decorators transforms that we based the proposal off of and that it evolved from did run initializers in this current order. And it worked for a very long time and there were really no issues with it. The reason, though, that it worked, that we didn’t realize was an issue here was they would also then take that initial value and assign it to the field with set semantics, so it would trig for setters for that field and it would set that value on the instance through the setters. With the switch to define semantics, that kind of -- it’s no longer the case and the current proposal does not do that. So the initial value just gets set directly and the setters are never triggered.
+KHG: So why is this an issue that’s coming up now? First off, previously, TypeScript and Babel legacy, you know, the original decorators transforms that we based the proposal off of and that it evolved from did run initializers in this current order. And it worked for a very long time and there were really no issues with it. The reason, though, that it worked, that we didn’t realize was an issue here was they would also then take that initial value and assign it to the field with set semantics, so it would trig for setters for that field and it would set that value on the instance through the setters. With the switch to define semantics, that kind of -- it’s no longer the case and the current proposal does not do that. So the initial value just gets set directly and the setters are never triggered.
 
-CHG: So we have two proposals potentially for how we can solve this. One is to simply reverse the order of the initializers so they would run from outermost to innermost. Conceptually we can think as if the value is being set and the initializers are running through same order as if you called a setter on this field. And this would mean that basically all execution of decorators would run from outermost to innermost in all cases. To be clear, decorators themselves would still evaluate and apply their transform from innermost to outermost, but the value they return, for instance, the method or the setter or the initializer, that would be called from outermost to innermost, which is already the case for methods. So that’s one option. The other option would be to restore the previous behavior. We would essentially have setters be called with -- so the initial value for accessors specifically would still be initialized in the current order and then it would run through the setters of the accessor, so in this case, with the original implementations, we would end up with 64 as the initial value, but that’s because the initial value is going through this twice. So what you would really do is if you wanted to implement this, you would just remove this init from both of these and the setters would call like normal and you would end up with the same value, so the benefits of this one are that it is basically similar to what the current system is doing so it’s less churn overall, and, yeah, it really only affects auto accessors, fields would remain exactly the same, methods would remain exactly the same. And so on. The only other downside of this approach is that it does make it slightly harder to distinguish between the initial value and the updated value. Like, if the setter has ever been called, but it should still be possible to do via a WeakSet. So, yeah, I do think both of these would work. Any thoughts, questions, clarifications?
+KHG: So we have two proposals potentially for how we can solve this. One is to simply reverse the order of the initializers so they would run from outermost to innermost. Conceptually we can think as if the value is being set and the initializers are running through same order as if you called a setter on this field. And this would mean that basically all execution of decorators would run from outermost to innermost in all cases. To be clear, decorators themselves would still evaluate and apply their transform from innermost to outermost, but the value they return, for instance, the method or the setter or the initializer, that would be called from outermost to innermost, which is already the case for methods. So that’s one option. The other option would be to restore the previous behavior. We would essentially have setters be called with -- so the initial value for accessors specifically would still be initialized in the current order and then it would run through the setters of the accessor, so in this case, with the original implementations, we would end up with 64 as the initial value, but that’s because the initial value is going through this twice. So what you would really do is if you wanted to implement this, you would just remove this init from both of these and the setters would call like normal and you would end up with the same value, so the benefits of this one are that it is basically similar to what the current system is doing so it’s less churn overall, and, yeah, it really only affects auto accessors, fields would remain exactly the same, methods would remain exactly the same. And so on. The only other downside of this approach is that it does make it slightly harder to distinguish between the initial value and the updated value. Like, if the setter has ever been called, but it should still be possible to do via a WeakSet. So, yeah, I do think both of these would work. Any thoughts, questions, clarifications?
 
 NRO: Yes, can you share the first example with a set and init. So if in this example we also added a get -- now a set would first run the minusTwo setter and then the timesFour setter, right?
 
-CHG: Yes.
+KHG: Yes.
 
 NRO: Okay. If you also did a get to both the decorators, that does the same thing. So minusTwo that subtracts 2 from the value, and timesFour that multiplies by 4. Would the result here be that the values first subtract 2 and multiply by 4 or multiply by 4 and subtract 2?
 
-CHG: So with a getter, they run from timesFour to minusTwo, I believe, because you’re calling the original getter first, and then -- so the outer one calls the inner one. You know, you’re replacing the getter with another getter. Yeah, that calls the inner one. And you could get the correct behavior, quote, unquote, here, by replacing both of these with a getter, but the reason you might want to do this style of using set and init is to cache that value to you’re not calling it on every single get. So that’s one of the reasons why this particular issue could be a problem. To be clear, the getter is the -- the outermost getter still runs first, it just calls within its own function the timesFour decorator and then that calls within its function the getter that gets the initial value or the value that’s stored in the private slot. Like, first and last here is kind of not really -- it’s like -- that’s why I say outermost and innermost. You could order your logic in minusTwo to happen before or after timesFour. Yeah.
+KHG: So with a getter, they run from timesFour to minusTwo, I believe, because you’re calling the original getter first, and then -- so the outer one calls the inner one. You know, you’re replacing the getter with another getter. Yeah, that calls the inner one. And you could get the correct behavior, quote, unquote, here, by replacing both of these with a getter, but the reason you might want to do this style of using set and init is to cache that value to you’re not calling it on every single get. So that’s one of the reasons why this particular issue could be a problem. To be clear, the getter is the -- the outermost getter still runs first, it just calls within its own function the timesFour decorator and then that calls within its function the getter that gets the initial value or the value that’s stored in the private slot. Like, first and last here is kind of not really -- it’s like -- that’s why I say outermost and innermost. You could order your logic in minusTwo to happen before or after timesFour. Yeah.
 
 NRO: Yeah, so just to clarify, getter and setter would always run in, like in the same direction, which means that the transformations applied to the value are in different directions, because for one it's happening on the return value and for the other on the parameter?
 
-CHG: Yes. I believe.
+KHG: Yes. I believe.
 
 NRO: Okay, thank you.
 
 WH: I had the same question, and I do not understand the answer. To give a concrete example, if `minusTwo` also had a getter which added 2, and `timesFour` also had a getter which divided by 4, then what would be the value actually stored and what would the getter show you if you had both the setter and the getter?
 
-CHG: that would make this example more confusing. Because then you would be doing it twice. So if you had a setter and a getter and they were both doing this, and you set the value,
+KHG: that would make this example more confusing. Because then you would be doing it twice. So if you had a setter and a getter and they were both doing this, and you set the value,
 
 WH: The scenario is this. The setters are as on the slide, but the getter of `minusTwo` would add 2 and the getter of `timesFour` would divide by four.
 
-CHG: okay, so set would be called first, and say we set it to 6, and so minus two times four is 16 and 16 is stored in there and when we get the value of 16, it will divide it by 4 and that is 4 and add 2 and that is 6 again.
+KHG: okay, so set would be called first, and say we set it to 6, and so minus two times four is 16 and 16 is stored in there and when we get the value of 16, it will divide it by 4 and that is 4 and add 2 and that is 6 again.
 
 WH: The getters are running in the opposite order of the setters, correct?
 
-CHG: kind of like, the effects of getters are going to be in the opposite order of setters, but again, the reason is because the outer getter is calling the inner getter and the outer getter can replace the inner getter entirely and not call it at all if it wanted to. Which is the point of decoration and you are turning a new function that will replace the old function. I guess. Like the effect is that the inner getter will run before the outer getter.
+KHG: kind of like, the effects of getters are going to be in the opposite order of setters, but again, the reason is because the outer getter is calling the inner getter and the outer getter can replace the inner getter entirely and not call it at all if it wanted to. Which is the point of decoration and you are turning a new function that will replace the old function. I guess. Like the effect is that the inner getter will run before the outer getter.
 
 WH: And the inner setter will run before the outer set?
 
-CHG: yes
+KHG: yes
 
 WH: Okay, that is good. That is the correct answer.
 
 JRL: Option two does not seem to be solving the bug but adding a new bug. On the issue thread, the bug is that the order of the init and the set call order are different. And we can see that still here in this option 2. If you noticed init does times `initValue * 4 - 2` and the set value will do `initValue - 2 * 4` and it is still in the opposite order. We have not solved the bug, in fact we will have made it worse, because init will call all of your setters?
 
-CHG: two points there, because of the setters, you no longer need the init, you could remove it and have the behavior that you want. The other part of this is the existing behavior that many things need init on top, it is not my preferred behavior, I would prefer proposal 1 but that would mean less churn and be a smaller change overall in some ways.
+KHG: two points there, because of the setters, you no longer need the init, you could remove it and have the behavior that you want. The other part of this is the existing behavior that many things need init on top, it is not my preferred behavior, I would prefer proposal 1 but that would mean less churn and be a smaller change overall in some ways.
 
 JRL: The churn is happening because we chose Define semantics. And we are adding back Set semantics in Option 2.
 
-CHG: I would be happy with reversing the initial order.
+KHG: I would be happy with reversing the initial order.
 
 JRL: Option 1 is my preferred option as well.
 
 SYG: So let me make sure I fully understand. So my initial thought is that reverse order initializers and this is just different. So could you remind me again the like why we should fix the ordering to be completely the same here?
 
-CHG: The reason would be let’s say you wanted to make these decorators, right and you wanted them to cache the value. We would really not be able to do it. You would have to implement this as a getter that completes the value, and that is only way to do it. And additionally, like for our use cases for this type of thing where people will want to take a value or transform it or wrap it and cache the that result. So it does seem to make sense to enable that. Yeah.
+KHG: The reason would be let’s say you wanted to make these decorators, right and you wanted them to cache the value. We would really not be able to do it. You would have to implement this as a getter that completes the value, and that is only way to do it. And additionally, like for our use cases for this type of thing where people will want to take a value or transform it or wrap it and cache the that result. So it does seem to make sense to enable that. Yeah.
 
 SYG: Okay, I am not deep enough into the ecosystem, and I can take that at face value.But given that, I think I agree with what Justin was saying we have made a decision on Define for fields, as opposed to Set, and the proposal 2 feels very strange given that starting point. So if this needs to be fixed, or the behavior needs to be changed, seems 1 is better there.
 
 RBN : I want to clarify and if we change the initializer for accessor field we would be changing the initializer for non-accessor field because decorator design is specifically designed to allow you to overload a decorator and switch on kind and for some examples accessor field could apply to non-accessor field and switch unkind and make sure it happens in both cases.
 
-CHG: Absolutely, and this would apply to fields and accessors if we changed it.
+KHG: Absolutely, and this would apply to fields and accessors if we changed it.
 
 JHD: I think if you go back to the example slide? Yeah, so this seems super clear to me. And in simple cases decorators feel like they should be sugared for wrapped function and this should in all cases to my reading only b five times four minus two and always multiply by 4 and subtract 2, and nothing else should happen. This seems like it is a bug but the second bullet here from innermost to outermost, so yeah if that happens, and I am not entirely sure if I am advocating for proposal 1 but if proposal 1 addresses that behavior so those things are always consistent and that should be consistent for accessor or non-ACK second error any field or for methods and anything should be innermost to outermost.
 
-CHG: to clarify decorators are evaluated from innermost to outermost but should be executed always from outermost to innermost. When assigning a value. The proposal would make that always the case. And I understand that seems a kind of counterintuitive but think about it from the setter perspective. What we are doing with the decoration is replacing the setter with a new method that has to call the original setter.
+KHG: to clarify decorators are evaluated from innermost to outermost but should be executed always from outermost to innermost. When assigning a value. The proposal would make that always the case. And I understand that seems a kind of counterintuitive but think about it from the setter perspective. What we are doing with the decoration is replacing the setter with a new method that has to call the original setter.
 
 JHD: It is currently implemented that way, but does not need to be implemented that way.
 
-CHG: how would it work in the reverse?
+KHG: how would it work in the reverse?
 
 JHD: I would have to think about it. But I am saying from a broader perspective, it feels like the only right behavior to me is both evaluation of decorators and on execution of them from assignment value going from innermost to outermost.
 
-CHG: Let’s think about this from a getter perspective, right. Like getters like WH pointed out and what you’re asking is that thinking about things like assignments I think should be from outer to inner and kind of get or executions should be from inner to outer, if that makes sense?
+KHG: Let’s think about this from a getter perspective, right. Like getters like WH pointed out and what you’re asking is that thinking about things like assignments I think should be from outer to inner and kind of get or executions should be from inner to outer, if that makes sense?
 
 JHD: I clearly have not paged in enough of this to speak about this clearly and I feel strongly, by reading this code, that timesFour should happen first and minusTwo should happen second and it would be confusing to me if it was different. Before I don’t know if that answers the question on how to implement and that seems like the challenge and not something – we should focus on what the reader of the code believes what it should do.
 
-CHG: I don’t think we can, and I don’t think it logically makes sense to have an inner decorator replace the outer decorator setter. In order for this to work, actually, minusTwowould have to decorate before timesFour and do it is recovery placement first and so then receive minus 4 to replace minus 2.
+KHG: I don’t think we can, and I don’t think it logically makes sense to have an inner decorator replace the outer decorator setter. In order for this to work, actually, minusTwowould have to decorate before timesFour and do it is recovery placement first and so then receive minus 4 to replace minus 2.
 
 JHD: I will take this off life to see how it can implemented but reading this code it should be timesFour and minusTwo
 
@@ -355,27 +355,27 @@ WH: When you have two decorators, each doing one level of quoting/unquoting, the
 
 JHD: Thanks, that helps clarify it for me a lot, eg with JSON stringifying and parsing and back and forth. Okay, so yeah, I think in that case, I am reacting because this example is about setters, and with a mix of getters and setters, I would not have such a strong opinion.
 
-CHG: The proposed solution would treat the initial definition of the field as a set in that case. Instead of an access so it would run minus two times four because you are setting the value.
+KHG: The proposed solution would treat the initial definition of the field as a set in that case. Instead of an access so it would run minus two times four because you are setting the value.
 
 PFC: We were talking about the example. I would like to give my compliments on how clearly it illustrated the problem. I think that the code sample really showed something that was unintuitive, and I shared the same intuition as JHD at first. I think the example really helps justify why we should consider a normative change here. I don’t have anything to say about which option it should be, just giving my compliments.
 
 EAO: Do we lose much functionality by restricting the syntax to only support one decorator on a thing rather than figuring how multiple decorators combine? As I have looked at the read of the proposal, and that only has examples that only ever use one decorator at a time. And I have looked through the issues as well and I was not able to find anything that discussed this. And as context I am not much of a decorator user and I will presume that this is something, this is obvious that it does not need to be stated but I am asking for it to be stated. Why do we need multiple decorators on any one thing?
 
-CHG: so I can answer that in different parts. There are a lot of examples in the ecosystem that use multiple decorators and so you have ORM and define a column through multiple decorators and combinations of decorators and it really is like what the pattern of decorators is. And the idea is that you have a decorator that will take a value and transform it into the same type of value but add some decorations to it. This is how decorators and annotations have worked in other languages so it would be counterintuitive to say that JavaScript will only support a single decoration and both, conceptually, it is crucial and in the ecosystem it is extremely common.
+KHG: so I can answer that in different parts. There are a lot of examples in the ecosystem that use multiple decorators and so you have ORM and define a column through multiple decorators and combinations of decorators and it really is like what the pattern of decorators is. And the idea is that you have a decorator that will take a value and transform it into the same type of value but add some decorations to it. This is how decorators and annotations have worked in other languages so it would be counterintuitive to say that JavaScript will only support a single decoration and both, conceptually, it is crucial and in the ecosystem it is extremely common.
 
 NRO: Yes, so if `init` was designed to be used the way `set` is, and instead of returning the value it would transform value and call the next initializer, this would solve the issue. Like now if we call all the `set` hooks and they are in order because one happens in the next decorator, and init happens after the initializer from the previous decorator returns. While if we use the same style of transform them passing it, would that solve the problem.
 
-CHG: Are you saying proposed solution 1 is what you would prefer?
+KHG: Are you saying proposed solution 1 is what you would prefer?
 
 NRO: If you go back to the first slide --- If we modified this example by adding `init` together with `get` and `set` in the destructuring, and calling `init` inside the `init` hook exactly as we do for `set`.
 
-CHG: right, so okay so that would actually work. However that was a hard constraint placed by implementers, that we could not capture the init function. If you could capture the init function you could maybe change the ordering.
+KHG: right, so okay so that would actually work. However that was a hard constraint placed by implementers, that we could not capture the init function. If you could capture the init function you could maybe change the ordering.
 
 NRO: If that is something you could not do, my preference would be option 1.
 
 RPR: That is the end of the queue.
 
-CHG: this is a late addition. So because this issue just came up last week, so, we can wait for consensus but I would like to wait for anyone and do we have consensus for normative change of proposal solution # and reverse order of initializers and treat it as a set?
+KHG: this is a late addition. So because this issue just came up last week, so, we can wait for consensus but I would like to wait for anyone and do we have consensus for normative change of proposal solution # and reverse order of initializers and treat it as a set?
 
 RPR: Dan is on the queue.
 
@@ -391,17 +391,17 @@ DE: Very weak support. I have not prepared for this topic so I don’t have stro
 
 WH: How do the two solutions behave in the case where you don’t want a setter and only want an initializer?
 
-CHG: if all you wanted was an initializer and in this case, the minusTwo timesFour and that is it and the getter and setter just initialize the slot. And proposed solution 2, it would be times four and then minus two and that would be set and the values would be 18 and there would be no getter or setter that would access the private slot directly.
+KHG: if all you wanted was an initializer and in this case, the minusTwo timesFour and that is it and the getter and setter just initialize the slot. And proposed solution 2, it would be times four and then minus two and that would be set and the values would be 18 and there would be no getter or setter that would access the private slot directly.
 
 WH: Just to make sure I understand this, one can initialize without running the setters?
 
-CHG: In proposed solution 2. it does run the setters but the setters is just setting the value on the private slot. If we are adding the setters there, like back, if it is exact implementation as is here, then what we would have initial value of times 2 – then again you would update the implementation here to just have setters and remove the initializer entirely so if you set it to the same initial value, you would end up with the same result.
+KHG: In proposed solution 2. it does run the setters but the setters is just setting the value on the private slot. If we are adding the setters there, like back, if it is exact implementation as is here, then what we would have initial value of times 2 – then again you would update the implementation here to just have setters and remove the initializer entirely so if you set it to the same initial value, you would end up with the same result.
 
 WH: This makes option 2 unpalatable to me, so I will go with option 1.
 
 RPR: So we have some opposition to solution 2.
 
-CHG: I am happy to wait for consensus if no one wants to strongly support option 1.
+KHG: I am happy to wait for consensus if no one wants to strongly support option 1.
 
 RPR: We have explicit support for solution 1. Any others?
 
@@ -413,7 +413,7 @@ RPR: I will check because this was a late breaking item. So it is possible to ob
 
 WH: I support option 1 but I would like to ask the champion to come back to this topic in a future meeting and actually explain all the details including examples with setters and getters. I want to understand the consequences of option 1, but this does not block consensus.
 
-CHG: okay that sounds good. So next meeting I can set that up.
+KHG: okay that sounds good. So next meeting I can set that up.
 
 RPR: Chris will come back with a greater explanation of proposal of solution 1. So far no particular opposition. Thank you.
 
@@ -421,7 +421,7 @@ NRO: To clarify we do not have consensus yet until the next meeting?
 
 WH: I am not withholding consensus — I support option 1. I’m just asking for a future full presentation out of curiosity.
 
-CHG: okay.
+KHG: okay.
 
 RPR: It seems that we are agreeing we should return before we stamp this as accepted, we will return to the next meeting? That is the course of action?
 
@@ -429,11 +429,11 @@ JHD : So sounds like we have consensus, and Chris will hopefully will come back 
 
 RPR: Okay thank you. So then we do have consensus on accepting solution 1. And but with the request to come back, and can you verbally dictate the conclusion?
 
-CHG: so we have consensus to accept the proposal solution 1 which is to reverse the initializer order for field and accessors and treating them like a set to the value like we are updating the value. So the same order that setters went in. And we will make that change and I will return in the future meeting to discuss more thoroughly that change.
+KHG: so we have consensus to accept the proposal solution 1 which is to reverse the initializer order for field and accessors and treating them like a set to the value like we are updating the value. So the same order that setters went in. And we will make that change and I will return in the future meeting to discuss more thoroughly that change.
 
 DE : In the summary a quick explanation of option two. And can someone dictate a summary if?
 
-CHG: objection to option 2 it was more confusing it did not seem – technically did addressed the bug possibly introduced more because people would not understand that initializers run and setters run. It could be counterintuitive.
+KHG: objection to option 2 it was more confusing it did not seem – technically did addressed the bug possibly introduced more because people would not understand that initializers run and setters run. It could be counterintuitive.
 
 WH: If you had only initializers you want the initializers to do the transformations. If you had only setters you want the setters to do the transformations. But with both, option 2 would run the transformations twice which would be really bad.
 
@@ -451,64 +451,64 @@ WH: If you had only initializers you want the initializers to do the transformat
 
 ## Decorator Metadata for Stage 3
 
-Presenter: Chris Hewell Garrett (CHG)
+Presenter: Kristen Hewell Garrett (KHG)
 
 - [proposal](https://github.com/pzuraq/ecma262/pull/10)
 - [slides](https://slides.com/pzuraq/decorator-metadata-for-stage-3)
 
-CHG: Decorator metadata, last time we talked about the design, and we kind of came to consensus of the overall design. And we updated the spec and everything and so yeah we are proposing for stage 3. And so a refresher and why metadata is useful and there are a lot of cases that use it: *ORM’s and so we have meta-data and what type of columns are being – what types they are and constraints are and et cetera. And runs on type information, and routing type*`reflect.metadata` is the single most-used decorator library and so it has this valuable capability.
+KHG: Decorator metadata, last time we talked about the design, and we kind of came to consensus of the overall design. And we updated the spec and everything and so yeah we are proposing for stage 3. And so a refresher and why metadata is useful and there are a lot of cases that use it: *ORM’s and so we have meta-data and what type of columns are being – what types they are and constraints are and et cetera. And runs on type information, and routing type*`reflect.metadata` is the single most-used decorator library and so it has this valuable capability.
 
-CHG: How it used to work, a quick refresher: in legacy TypeScript decorator the class is the first parameter. So they could assign metadata to the class and add it to a WeakMap, and there is any number of ways they can key into that metadata. Decorators in the current proposal do not have this capability and they never receive the class so there is no way to do that publicly expose metadata and proposal is a shared metadata object and when we are decorating the class the decorators will receive this object on the context, and it is just a plain JavaScript object and we can use it to assign values and use it in a key in a weak map, and passes to all decorators and get assigned to `Symbol.metadata` on the class itself.
+KHG: How it used to work, a quick refresher: in legacy TypeScript decorator the class is the first parameter. So they could assign metadata to the class and add it to a WeakMap, and there is any number of ways they can key into that metadata. Decorators in the current proposal do not have this capability and they never receive the class so there is no way to do that publicly expose metadata and proposal is a shared metadata object and when we are decorating the class the decorators will receive this object on the context, and it is just a plain JavaScript object and we can use it to assign values and use it in a key in a weak map, and passes to all decorators and get assigned to `Symbol.metadata` on the class itself.
 
-CHG: So, yeah. I will say in review, just before the plenary there were some issues raised with the current spec and the first one was that some so decorators context object does inherent from parent class data object and this will lead to it eventually – something is inheriting and we want it to make a null – no okay, so it is inheriting from class from the `Symbol.metadata` from the simple class and that will come from the `Symbol.metadata` function and that cease like a bad thing if someone replaces that and people could inject metadata into everything and the proposed solution were to have it be define `Symbol.metadata` function to be non-configurable null, or we don’t inherit the superclass is function itself.
+KHG: So, yeah. I will say in review, just before the plenary there were some issues raised with the current spec and the first one was that some so decorators context object does inherent from parent class data object and this will lead to it eventually – something is inheriting and we want it to make a null – no okay, so it is inheriting from class from the `Symbol.metadata` from the simple class and that will come from the `Symbol.metadata` function and that cease like a bad thing if someone replaces that and people could inject metadata into everything and the proposed solution were to have it be define `Symbol.metadata` function to be non-configurable null, or we don’t inherit the superclass is function itself.
 
-CHG: The other issue that was brought up and the other one the spec currently just blanket assign `Symbol.metadata` for every class. And that was not my initial intention and I did intend for it to only be assigned on classes that are decorated and that was my review after the last implementation. So I would need to make that change. So happy to withhold stage 3 based on those.
+KHG: The other issue that was brought up and the other one the spec currently just blanket assign `Symbol.metadata` for every class. And that was not my initial intention and I did intend for it to only be assigned on classes that are decorated and that was my review after the last implementation. So I would need to make that change. So happy to withhold stage 3 based on those.
 
 KG: It is important not to add metadata by classes by swapping out `Symbol.metadata` on Function.prototype. So for our solution to that problem, I don’t have a strong opinion about which way to go, and I lean towards making the get conditional. But the thing said in the presentation was not what was proposed in the issue. The thing said in the presentation was to the get if the superclass is function.prototype. But the proposed thing or at least I think the proposed thing was to only do – only make the metadata object be derived when the class itself is derived, which is syntax. You can syntatically extend function and you do want the get to occur in that case. I would say the metadata object is derived based on whether the syntax is derived.
 
-CHG : One issue with that if we combine that with the other change where the only decorated classes get metadata assigned at all, um, then the idea is that if you have like class A which has metadata and class B which does not have metadata and class C has metadata, and so class C would inherit from class A metadata. And then up the chain of the prototype. So define it as non-configurable and not enable null, that is not an issue because that will be just be null.
+KHG: One issue with that if we combine that with the other change where the only decorated classes get metadata assigned at all, um, then the idea is that if you have like class A which has metadata and class B which does not have metadata and class C has metadata, and so class C would inherit from class A metadata. And then up the chain of the prototype. So define it as non-configurable and not enable null, that is not an issue because that will be just be null.
 
 KG: That makes sense and in that case, I like that option. I would also want to make the get conditional even though it does not solve the problem. It just seems silly to do the get in the case of nonderived classes. But we should also have nonconfigurable nonwriteable null Symbol.metadata on Function.prototype.
 
-CHG: That is an optimization we should put in there.
+KHG: That is an optimization we should put in there.
 
 SYG: I zoned out why it is non-sufficient.
 
-CHG: the idea is that say you have class A, class B which extends to class C which extends B, and class A has metadata, and class C has metadata and class B does not and intermediary class does not and update is that class D would not get a single metadata object and class C and its metadata would inherent from class A metadata directly and we would do that on doing a get about the superclass to get that property which is inherited, `Symbol.metadata`, and it would get the metadata object from class A. And then it would inherit from class A. So, you know if class A did not have metadata, it would then skip class A and get a function that prototype again. So you know, that case where we would need the prototype that could not be changed.
+KHG: the idea is that say you have class A, class B which extends to class C which extends B, and class A has metadata, and class C has metadata and class B does not and intermediary class does not and update is that class D would not get a single metadata object and class C and its metadata would inherent from class A metadata directly and we would do that on doing a get about the superclass to get that property which is inherited, `Symbol.metadata`, and it would get the metadata object from class A. And then it would inherit from class A. So, you know if class A did not have metadata, it would then skip class A and get a function that prototype again. So you know, that case where we would need the prototype that could not be changed.
 
 SYG: I had understood that if it was tactically extending it would get the metadata, and if it was not extending, it would not get the metadata
 
-CHG: even if it is syntactically extending it could still get the metadata on function of that prototype because it is going to get it in the superclass and it is going to call get and go through a normal process.
+KHG: even if it is syntactically extending it could still get the metadata on function of that prototype because it is going to get it in the superclass and it is going to call get and go through a normal process.
 
 SYG: Oh yes, yes, I understand. Thank you.
 
 JHD: My queue item says only decorated classes that assigned metadata get the symbol, but it was pointed out in Matrix that that would violate previous implementer constraints here that the shape of the class would be determined based on syntax. But then that always means that classes that are currently decorated would suddenly start acquiring metadata as this feature gets shipped, and as we add new protocols we add them to the tree. And so maybe there is no other way to do it. It struck me as strange that everyone would get the burden of metadata even if an application is not using metadata at all for example.
 
-CHG: So the constraints from implementers I think is more that we need to be able to tell the shape of the class from the syntax. Right? So if we added decoration to a class and that will result in always having `Symbol.metadata` then we can tell what the shape of the class would be from it is syntax and we can tell it get some of that metadata on the instance at that Point because there is a decorator. What they are opposed to is “maybe the decorator will create metadata, and maybe that will create Symbol.metadata, and so I think –
+KHG: So the constraints from implementers I think is more that we need to be able to tell the shape of the class from the syntax. Right? So if we added decoration to a class and that will result in always having `Symbol.metadata` then we can tell what the shape of the class would be from it is syntax and we can tell it get some of that metadata on the instance at that Point because there is a decorator. What they are opposed to is “maybe the decorator will create metadata, and maybe that will create Symbol.metadata, and so I think –
 
 JHD: That is what my queue item proposed and the Matrix comment made me realize that would not work for that reason. To preserve the static shape, we would have to add another keyword like `accessor` syntactically for metadata.
 
-CHG: We would also need to change the API as we agreed on previously because this metadata objects just exists, passed to the decorators. And if you don’t use it will still get defined on the `Symbol.metadata` and we previously talked about having admin.metadata which is a function and there was a security issue with that. And yeah, I do think this API is both intuitive and does tend to work. And I also not super concerned with the the cost of adding that because it is just one object on class definitions. And if it were like an objects on every single instance, I would just be concerned but they are just on the definitions themselves and typically, and unless you are dynamically defining classes, it is 0 tens of thousands.
+KHG: We would also need to change the API as we agreed on previously because this metadata objects just exists, passed to the decorators. And if you don’t use it will still get defined on the `Symbol.metadata` and we previously talked about having admin.metadata which is a function and there was a security issue with that. And yeah, I do think this API is both intuitive and does tend to work. And I also not super concerned with the the cost of adding that because it is just one object on class definitions. And if it were like an objects on every single instance, I would just be concerned but they are just on the definitions themselves and typically, and unless you are dynamically defining classes, it is 0 tens of thousands.
 
 JHD: I have one other question then - the `Symbol.metadata` object on a decorated base class, what is its prototype?
 
-CHG: The object inherits its prototype is superclass, oh on a base class? It would be `null`.
+KHG: The object inherits its prototype is superclass, oh on a base class? It would be `null`.
 
 SYG: Backing up what Chris is saying: our requirement is that the object shape be determinable statically, and things that look declaratively will look declaratively with respect to shape, and adding to `Symbol.metadata` to classes that have decorators still meets that constraint. So I’m not excited about adding extra properties on every decorated class, but if it is just classes, in that instance like Chris was saying that would be okay.
 
 KG: We talked about a lot of stuff, and I want to recap, since it sounded like we were on the same page about a solution. Just to confirm: the idea is that there is no symbol.metadata property created on any class that does not have a decorator, and for any derived class that does have a decorator, during class creation the metadata property is looked up on the parent class and whatever value you get is used for the `Symbol.metadata` object for the derived class. And in addition, there will be a non-configurable and nonwritable null `Symbol.metadata` property on Function.prototype to avoid this problem where you have a base class without decorators and derived class with decorators. Is that an accurate summary?
 
-CHG: Yes.
+KHG: Yes.
 
 KG: I am happy with that state of things. It does require a couple of small tweaks to the spec text but I think we can do that readily.
 
-CHG: only tricky part is getting like figuring out how to whether a decorator exist on that class and answering that question on the spec, and I should figure that out pretty quickly.
+KHG: only tricky part is getting like figuring out how to whether a decorator exist on that class and answering that question on the spec, and I should figure that out pretty quickly.
 
 MHG: So consensus? Anyone? Does anyone oppose to consensus before changes or are we okay moving to stage 3 conditional on these changes?
 
 KG: I would be happier if we can come back tomorrow with spec text and ask for consensus then. I think it would be pretty straightforward. We have a little bit of extra time, it is only Tuesday, and I would be happier to have all of the boxes checked first.
 
-CHG: cool okay that sounds good. And I will get it done by Thursday for the committee to review. Thanks everyone.
+KHG: cool okay that sounds good. And I will get it done by Thursday for the committee to review. Thanks everyone.
 
 ### Summary of Key Points
 

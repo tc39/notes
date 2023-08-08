@@ -404,54 +404,54 @@ I don't know, that might be a new proposal. And when we are ready, I will bring 
 
 ## Minor decorators followups
 
-Presenter: Chris Garrett (CHG)
+Presenter: Kristen Hewell Garrett (KHG)
 
 - [proposal](https://github.com/tc39/proposal-decorators)
 - [slides](https://slides.com/pzuraq/decorators-for-stage-3-2022-03)
 
-CHG: So there's just a few issues that have been brought that people are concerned about. So the first one here is the naming of "isPrivate" and "isStatic" on the context object for decorators. These are just two booleans that allow people to understand whether or not the value being decorated, is a private value or is a static value or both. So, as DD notes here, there's precedent for using "is" for functions, and not using “is” prefixed for values. I don't have a strong opinion here. And as far as I understand, just based on all my context. There was not a particular reason to do this. Other than the fact that both static and private are keywords, but that wasn't a conscious design decision when we made this API decision. I think I just didn't realize that there was a naming precedent here. So I don't particularly have a strong opinion here. Does the committee, does anybody on the committee feel it should be one way or the other?
+KHG: So there's just a few issues that have been brought that people are concerned about. So the first one here is the naming of "isPrivate" and "isStatic" on the context object for decorators. These are just two booleans that allow people to understand whether or not the value being decorated, is a private value or is a static value or both. So, as DD notes here, there's precedent for using "is" for functions, and not using “is” prefixed for values. I don't have a strong opinion here. And as far as I understand, just based on all my context. There was not a particular reason to do this. Other than the fact that both static and private are keywords, but that wasn't a conscious design decision when we made this API decision. I think I just didn't realize that there was a naming precedent here. So I don't particularly have a strong opinion here. Does the committee, does anybody on the committee feel it should be one way or the other?
 
 JSC: With  t my developer hat on, I would strongly expect all boolean flags to have, no No, "is" prefix. would have been really surprised at properties named with is do not refer to predicate methods when using them from the options argument. I would prefer not to have Structuring like, have developers either. Not used. you know, `options.private`, or just rename the variables and destructuring like a `private: privateFlag`. The destructuring thing I think is way less important than matching developer expectations with regards to predicate naming.
 
-CHG: Yeah, yeah. And for what it's worth, we have also always said that, you know, decorators usage patterns. Is they're authored by very few people and generally you only have a few of them overall and then they're used in many places. That's the whole point of meta programming in general, right? Is to, to be able to reduce amount of code. Anyways, so the point is the authoring experience can be a little bit less ideal, I think because it's just not as common to have to destructure these. And if you do, there are options for renaming them.
+KHG: Yeah, yeah. And for what it's worth, we have also always said that, you know, decorators usage patterns. Is they're authored by very few people and generally you only have a few of them overall and then they're used in many places. That's the whole point of meta programming in general, right? Is to, to be able to reduce amount of code. Anyways, so the point is the authoring experience can be a little bit less ideal, I think because it's just not as common to have to destructure these. And if you do, there are options for renaming them.
 
 JSC: Just real quick. Are you also planning to talk about the parentheses after parenthesized expressions?
 
-CHG: Yes, I have these open. I was just wanting to get through each topic before we moved on to the next ones.
+KHG: Yes, I have these open. I was just wanting to get through each topic before we moved on to the next ones.
 
 KG: I did want to call out that this isn't just that there's a little bit of precedent; that there's an actual w3c TAG style guideline for the web platform that says don't use ‘is’ as a prefix for booleans. So I strongly support dropping the "is" prefix.
 
-CHG: Okay. So yeah, is there any opposition to dropping the “is” prefix?
+KHG: Okay. So yeah, is there any opposition to dropping the “is” prefix?
 
 [silence]
 
-CHG: Sounds like no.
+KHG: Sounds like no.
 
 RPR: Agreed.
 
-CHG: So I'll take that as consensus then so I'll make that change the next issue.
+KHG: So I'll take that as consensus then so I'll make that change the next issue.
 
-CHG: So the next issue I came up with was kind of a quirk of the previous Babel implementation. I couldn't actually find a fully coherent spec or what the previous iterations agreed upon. But I knew there were when I adopted this proposal. I knew that there were lots of discussions around the syntax that was allowed in decorator expressions. And I also knew that because of a lot of considerations, we, the committee had decided upon having a very restricted set generally with an escape hatch so that the restricted set is you can, is described here. You can chain variables, you can have property access. You can't have basically anything else? No expressions you know with method calls in the chains, you can end that that chain of property accesses with a single function call method call, or you can just put whatever expression you want in parens and that's allowed. I wasn't there for the original discussion. So I'm not exactly sure what the constraints were for this decision. But one thing that the Babel parser currently does allow is calling the results of an expression that is in parentheses and like this example here (`@(foo)() class {}`). And when I was transcribing this back and updating it, I updated it to match Babel because that It was, again, the thing that I could find that was the most concrete from that time period. yeah, this does seem like a little bit - not exactly in line with what was originally described to me and it would be simpler, I think, to not allow it. So just wanted to see if anybody would. I see there's clarifying question So `a(B)` is not allowed `a.b` is allowed to do a Open Bracket, be you. I'd have to do like a The inside parentheses that is allowed.
+KHG: So the next issue I came up with was kind of a quirk of the previous Babel implementation. I couldn't actually find a fully coherent spec or what the previous iterations agreed upon. But I knew there were when I adopted this proposal. I knew that there were lots of discussions around the syntax that was allowed in decorator expressions. And I also knew that because of a lot of considerations, we, the committee had decided upon having a very restricted set generally with an escape hatch so that the restricted set is you can, is described here. You can chain variables, you can have property access. You can't have basically anything else? No expressions you know with method calls in the chains, you can end that that chain of property accesses with a single function call method call, or you can just put whatever expression you want in parens and that's allowed. I wasn't there for the original discussion. So I'm not exactly sure what the constraints were for this decision. But one thing that the Babel parser currently does allow is calling the results of an expression that is in parentheses and like this example here (`@(foo)() class {}`). And when I was transcribing this back and updating it, I updated it to match Babel because that It was, again, the thing that I could find that was the most concrete from that time period. yeah, this does seem like a little bit - not exactly in line with what was originally described to me and it would be simpler, I think, to not allow it. So just wanted to see if anybody would. I see there's clarifying question So `a(B)` is not allowed `a.b` is allowed to do a Open Bracket, be you. I'd have to do like a The inside parentheses that is allowed.
 
 JHX: If we ban this, how would you write that?
 
-CHG: Yeah, so the way that you would write this is you would do `@((expr)())` because you can put any arbitrary expression inside parens. There are no restrictions inside parens. I have a good example here. To kind of document what is allowed and what is not allowed. And what we're not sure about yet.
+KHG: Yeah, so the way that you would write this is you would do `@((expr)())` because you can put any arbitrary expression inside parens. There are no restrictions inside parens. I have a good example here. To kind of document what is allowed and what is not allowed. And what we're not sure about yet.
 
 JSC: I strongly support banning trailing parentheses after the arbitrary expression syntax. If developers want to call a function and use that as a decorator, they can just put that inside the original parentheses. Allowing trailing parentheses after the arbitrary expression parenthesized syntax would make parsing the topic reference from the pipe operator. Much more complicated if it's ‘@’ sign, like we decided yesterday, so I strongly The explained already use Use already as the topic says, that it says planning. This, it's a good mental model. I strongly support changing the spec to reflect the explainer.
 
 WH: I just want to point out that this will be incompatible with the pipe operator anyway, even if you are going to restrict it this way, because the last allowed form is ambiguous with decorators.
 
-RPR: Okay. Is there anything more you need on this CHG?
+RPR: Okay. Is there anything more you need on this KHG?
 
-CHG: No, if nobody objects I'll take that as consensus to not allow this last form this and I'll update the spec to require this to be parenthesized.
+KHG: No, if nobody objects I'll take that as consensus to not allow this last form this and I'll update the spec to require this to be parenthesized.
 
 JSC: Sorry, just to clarify. Are you banning the last five expressions in that block?
 
-CHG: It would be banning this expression, and these are already banned.
+KHG: It would be banning this expression, and these are already banned.
 
 JSC: Yeah, what about the? What about the very last one?
 
-CHG: So, the last one, where your that's the next topic to talk about? Okay. Last one to talk about today, -
+KHG: So, the last one, where your that's the next topic to talk about? Okay. Last one to talk about today, -
 
 LCA: I've one more question about the this previous one. So WH said that the fourth item of the first allowed block would also interfere with the at as a topic reference for the pipe. If that is the case, and we want the pipe operator to use the apps, we would also need to ban this one, right?
 
@@ -461,21 +461,21 @@ WH: We're treading on very thin ice here. In that case I don't understand the ar
 
 JSC: To clarify that it would not make it, it would not make it impossible. It would make it more expensive because we will then have to ahead for any parentheses after the first parenthesized expression, following the at sign rather than only having to check right after only the parenthesized expression following the at sign. Does that make sense? Otherwise, we might have to bring in some cover grammars or something like that. Whereas right now, we don't need any cover grammars or whatever to distinguish between a decorator versus a function call on the topic.
 
-CHG: I guess one other option would also be to disallow this for pipe in general, and require you to parentheses the at, if you want to, it involved with the pipe Champion, group probably would be strongly against that. I know TAB is against special casing that requires parenthization of the topic reference. Really. This isn't, it's not like this allowing. This makes it impossible to distinguish. It just makes it more expensive.
+KHG: I guess one other option would also be to disallow this for pipe in general, and require you to parentheses the at, if you want to, it involved with the pipe Champion, group probably would be strongly against that. I know TAB is against special casing that requires parenthization of the topic reference. Really. This isn't, it's not like this allowing. This makes it impossible to distinguish. It just makes it more expensive.
 
 WH: Okay, I'm getting very uncomfortable with the overload of `@` between these two proposals.
 
-CHG: All right, that's fair, but I don't think it matters for this proposal or this change. So I'll take it as consensus like I said before to continue with that path to ban this form.
+KHG: All right, that's fair, but I don't think it matters for this proposal or this change. So I'll take it as consensus like I said before to continue with that path to ban this form.
 
 WH: Yes, that's fine.
 
-CHG: Okay. So the last one is, should we allow private fields in decorators? This is like a very not common use case. I can't think of a single time when anybody would really want to do this. But as JHD pointed out and few other people just seems odd to not allow it given we're allowing we're allowing any static, not dynamic expression like just public property name, so might well as allow private names. Is there any opposition to including this? [silence]
+KHG: Okay. So the last one is, should we allow private fields in decorators? This is like a very not common use case. I can't think of a single time when anybody would really want to do this. But as JHD pointed out and few other people just seems odd to not allow it given we're allowing we're allowing any static, not dynamic expression like just public property name, so might well as allow private names. Is there any opposition to including this? [silence]
 
 RPR: okay, so here's no response. Then we are including private names.
 
 MM: I just wanted to interject a question. Is there anything non-obvious about the semantics of it? Is there anything about the semantics including private here? That we should be aware of?
 
-CHG Nope, they would generally work just like public Fields, it would access the value and then attempt to apply it as a decorator function. Just the same as a public value. It just would be accessing it on like if it was a static private field, it would be accessing it on the class, all the same restrictions around private Fields, apply here. You would still only be able to use the private field within the class where the private field was defined etcetera. okay,
+KHG: Nope, they would generally work just like public Fields, it would access the value and then attempt to apply it as a decorator function. Just the same as a public value. It just would be accessing it on like if it was a static private field, it would be accessing it on the class, all the same restrictions around private Fields, apply here. You would still only be able to use the private field within the class where the private field was defined etcetera. okay,
 
 KG: and in particular, you can already put a private field there, just by wrapping the whole method chain in parentheses. This just allows you to omit the parentheses.
 
@@ -483,33 +483,33 @@ MM: Okay, I'm satisfied. Thank you. Perfect.
 
 WH: There's still, I believe, a conflict between using `@`  for decorators and for pipeline operators for the cases of expressions in which we have infix non-reserved keywords.
 
-CHG: so you're talking about pipelines versus decorators. Okay. So, like an example that I guess would be like just this like `@foo`, there are some places in the where I
+KHG: so you're talking about pipelines versus decorators. Okay. So, like an example that I guess would be like just this like `@foo`, there are some places in the where I
 
 WH: I’d need to look more at that, but there are some places in expressions where we have or will have an expression followed by a word. And if the expression is `@` then that starts to look like a decorator.
 
-CHG: Fair enough. I think that's something to consider for the pipeline proposal or do you think that affects decorators?
+KHG: Fair enough. I think that's something to consider for the pipeline proposal or do you think that affects decorators?
 
 WH: I think decorators should get the `@` and the pipeline operators should use some other sigil.
 
-CHG: Well, I feel like that's not related to the topic at the moment. So I'm going to if allight. Could we schedule a discussion for that some other time?
+KHG: Well, I feel like that's not related to the topic at the moment. So I'm going to if allight. Could we schedule a discussion for that some other time?
 
 WH: Sure.
 
-CHG: The last thing I wanted to bring up here, was this point, which of people brought up of whether or not whitespace should be allowed between the at sign and the decorator itself. Currently we do allow white space. So any amount of white space could exist, there have been arguments for and against and I don't really have a strong opinion here.
+KHG: The last thing I wanted to bring up here, was this point, which of people brought up of whether or not whitespace should be allowed between the at sign and the decorator itself. Currently we do allow white space. So any amount of white space could exist, there have been arguments for and against and I don't really have a strong opinion here.
 
 WH: We allow white space between any two tokens, and `@` is a token.
 
-CHG: My instinct would be to keep it as is, is there anybody who would like to change it?
+KHG: My instinct would be to keep it as is, is there anybody who would like to change it?
 
 SYG: Seems like extra work in the spec and in parsers and scanners to do the work of disallowing. So without a super compelling evidence to the reason to disallow. I would err on the side of allowing.
 
 KG: +1 [allow whitespace]
 
-CHG: All right, then I'm going to continue allowing whitespace. Doesn't seem like anybody really opposes that. Cool seems like everything.
+KHG: All right, then I'm going to continue allowing whitespace. Doesn't seem like anybody really opposes that. Cool seems like everything.
 
-RPR: All right yeah, that's been an excellent use of time CHG. Thank you. So that concludes all decorators for this meeting. Is that right?
+RPR: All right yeah, that's been an excellent use of time KHG. Thank you. So that concludes all decorators for this meeting. Is that right?
 
-CHG: Yep, those are all the open issues at the moment that I can think of.
+KHG: Yep, those are all the open issues at the moment that I can think of.
 
 ### Conclusion/Resolution
 

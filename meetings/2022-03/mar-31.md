@@ -259,7 +259,7 @@ SYG: No. Yeah, that sounds good.
 
 KG: All right. Well, we are basically at time. We have another minute or so if anyone else has something to say, but I think this was a productive discussion at least for me and I am hoping that MF and I can come back with either a concrete proposal for set methods following this discussion, or something to talk about principles that we could write down more broadly if we think we can do that. I'm really excited to have a set that supports union.
 
-RPR: Thank you. you. KG and MF. all right, then, so that concludes the morning session or the morning, according to the schedule, maybe afternoon, or evening, depending on where you are in the world. So for this afternoon, JSC has kindly agreed to give up a little bit of time so that so that CHG can bring back decorators over a few more more small issues. So we're starting off with JSC on the dataflow expiration. And it's decorators and then finally types of comments. So, for now, please do make your way to Hubs 3D world where everyone chats. And thanks to ACE and RGN for taking notes this morning. We will resume in exactly one hour.
+RPR: Thank you. you. KG and MF. all right, then, so that concludes the morning session or the morning, according to the schedule, maybe afternoon, or evening, depending on where you are in the world. So for this afternoon, JSC has kindly agreed to give up a little bit of time so that so that KHG can bring back decorators over a few more more small issues. So we're starting off with JSC on the dataflow expiration. And it's decorators and then finally types of comments. So, for now, please do make your way to Hubs 3D world where everyone chats. And thanks to ACE and RGN for taking notes this morning. We will resume in exactly one hour.
 
 ## Holistic discussion of TC39 dataflow proposals
 
@@ -337,12 +337,12 @@ JHX: [from queue] Syntax cost is important. This is why we need a much more powe
 
 ## Minor decorator tweaks, part 2
 
-Presenter: Firstname Lastname (CHG)
+Presenter: Firstname Lastname (KHG)
 
 - [proposal](https://github.com/tc39/proposal-decorators)
 - [slides](https://slides.com/pzuraq/decorators-for-stage-3-2022-03)
 
-CHG: So a few more issues were brought up for decorators that basically are mostly kind of similar to the Private Fields discussion. So the first one is, should we allow the `this` keyword in the decorator without parentheses, without the Escape? Similarly to private fields There's no real - there's nothing non-obvious about this. It is already possible if you wrap it parens, so this should be ok. Just wanted to confirm with the committee. Are there, is there any reason we would not want to allow this?
+KHG: So a few more issues were brought up for decorators that basically are mostly kind of similar to the Private Fields discussion. So the first one is, should we allow the `this` keyword in the decorator without parentheses, without the Escape? Similarly to private fields There's no real - there's nothing non-obvious about this. It is already possible if you wrap it parens, so this should be ok. Just wanted to confirm with the committee. Are there, is there any reason we would not want to allow this?
 
 [silence]
 
@@ -356,11 +356,11 @@ KG: Well, I guess I don't know what static and dynamic mean in this context. But
 
 JHX: I know that `this` in syntax is okay, but I really feel this is confusing and I really don't like to allow `this`. I think it's in practice no one will write code like that. So it might be disallowed. That will be a bad choice.
 
-CHG: So I agree that in practice nobody will this. I also think that is true of private fields, and I also think that's true of super and new. I think, like JHD said, this is kind of just like the design decision. Here would be that things that look Static. Member Expressions that look static are allowed here and only only things that look Dynamic are It's, and I think that it is, if that's the mental model that people intuit, it will be confusing if they attempt to use this for whatever reason, and they find that it's it's a syntax error.
+KHG: So I agree that in practice nobody will this. I also think that is true of private fields, and I also think that's true of super and new. I think, like JHD said, this is kind of just like the design decision. Here would be that things that look Static. Member Expressions that look static are allowed here and only only things that look Dynamic are It's, and I think that it is, if that's the mental model that people intuit, it will be confusing if they attempt to use this for whatever reason, and they find that it's it's a syntax error.
 
 JHX: I think we already found many limitations on this place. So why not disallow it?
 
-CHG: I mean, I would argue that if that were the case, then we should disallow private Fields as. Because for similar reasons, private Fields, don't generally make sense here.
+KHG: I mean, I would argue that if that were the case, then we should disallow private Fields as. Because for similar reasons, private Fields, don't generally make sense here.
 
 KG: Private fields make a lot of sense like you could just be in a context in which a private Fields means a thing. You can be in a nested class, and referring to its private Fields totally reasonable. I agree that `this` is a little more suspicious, but private fields in particular are just like - they're totally reasonable.
 
@@ -368,11 +368,11 @@ TAB: [from queue] Agree with JHD; accidents of grammar that don't have actual pr
 
 WH: I just wanted to bring up a procedural issue, which is that we have multiple proposals trying to grab the `@` symbol. It would be confusing if they all got it. So I'm just wondering how we're going to resolve this.
 
-CHG:  yeah, that is definitely an issue to discuss. I'm not sure that that is relevant exactly. If you're worried about it being. [audio-issue] I'm just saying like I'm not sure how that's relevant to this particular issue. Unless you're concerned about how `@` is being used in one of those other proposals.
+KHG:  yeah, that is definitely an issue to discuss. I'm not sure that that is relevant exactly. If you're worried about it being. [audio-issue] I'm just saying like I'm not sure how that's relevant to this particular issue. Unless you're concerned about how `@` is being used in one of those other proposals.
 
 WH: I'm asking a procedural question of how we are going to resolve this. I don’t want to discuss the technical issues now, but in case it matters, my preference is that decorators should get `@` and other proposals should not.
 
-CHG: We only have 20 minutes and we have a few of these items to get through. So I'm just not sure that this is the right time to address that because that could be a larger conversation.
+KHG: We only have 20 minutes and we have a few of these items to get through. So I'm just not sure that this is the right time to address that because that could be a larger conversation.
 
 WH: I'm not asking to address it right now, I'm just asking how are we going to address it. Given the history, I'm going to assume that decorators get the `@` symbol. The other proposals would have to have to pick something else.
 
@@ -382,7 +382,7 @@ WH: No, that's way too confusing. And they will conflict in various contexts.
 
 JHX: Disallow it, we could allow it in the future if we really want to. And if we allow it right now, we cannot remove it anymore.
 
-CHG: Like I said, I think this is extremely edge-case-y so it doesn't sound like we have consensus to change it. So I'm happy to move on to the next one. The next one being `super.dec`. I'm guessing for similar reasons people will object to this one.
+KHG: Like I said, I think this is extremely edge-case-y so it doesn't sound like we have consensus to change it. So I'm happy to move on to the next one. The next one being `super.dec`. I'm guessing for similar reasons people will object to this one.
 
 [audio-issues]
 
@@ -412,11 +412,11 @@ KG:  like, if I have a super class and the super class has a static method named
 
 JHX: okay, I think if you could add some code example, in the jitsi it would it will help you to understand it. Thank you
 
-CHG: Okay, cool, so I think we can come back to this item, possibly in the next plenary. Then after those examples have been added, does that sound good?
+KHG: Okay, cool, so I think we can come back to this item, possibly in the next plenary. Then after those examples have been added, does that sound good?
 
 USA: Yeah, sure.
 
-CHG: That's the last one. of these was the `new` keyword `new.target` and `import` keyword `import.meta`  So yeah, JHX. How do you feel about these two same position?
+KHG: That's the last one. of these was the `new` keyword `new.target` and `import` keyword `import.meta`  So yeah, JHX. How do you feel about these two same position?
 
 JHX: I hope we wish we could ban all of those
 
@@ -438,15 +438,15 @@ JHX: Okay. Yeah, I think it makes sense. Yeah. Maybe meta property is okay. I'm 
 
 USA: Yeah. It seems like something that could be discussed offline.
 
-CHG: Yeah, I think we can continue to iterate on this question and bring it back up at the next meeting. I will take it as an item to continue discussion here. So there's one last thing. I know we're at almost that time, but I'd like to get through real quick. I thought I had moved this part of the spec forward in the most recent draft, but I hadn't, it turned out. So I just wanted to see if this is still acceptable. So this was I believe where we landed on the strictness of decorators and the modification I believe is right here. It's essentially that all parts of the class declaration and expression are ‘strict mode’ except for a decorator list at the top level of a class declaration or class expression, so the decorator list applied to the class itself, which is contained in strict mode code there. There's a long Thread about this if anybody wants to read it (issue #204), but this seems to be where we landed. Is anybody objecting to pulling this forward into the current spec?
+KHG: Yeah, I think we can continue to iterate on this question and bring it back up at the next meeting. I will take it as an item to continue discussion here. So there's one last thing. I know we're at almost that time, but I'd like to get through real quick. I thought I had moved this part of the spec forward in the most recent draft, but I hadn't, it turned out. So I just wanted to see if this is still acceptable. So this was I believe where we landed on the strictness of decorators and the modification I believe is right here. It's essentially that all parts of the class declaration and expression are ‘strict mode’ except for a decorator list at the top level of a class declaration or class expression, so the decorator list applied to the class itself, which is contained in strict mode code there. There's a long Thread about this if anybody wants to read it (issue #204), but this seems to be where we landed. Is anybody objecting to pulling this forward into the current spec?
 
 MM: Yes, I object in the absence. I did not follow the thread. I was not aware of a thread. So let me say in the absence of understanding. What Authority is our objective. We sure I'm getting (?) is correct. Without this addition, the decorator list is interpreted as strict code. And with the addition that you're asking about, the decorator list would be interpreted as sloppy mode, is that correct?
 
-CHG:  ah, I mean, I'm not super sure about this strict parts of the spec. I'm not super familiar with them the strictness parts, so I would to kind of look at it. But I think the current spec says all parts of the class declaration and the decorator list would be considered part of the class declaration or class expression.
+KHG:  ah, I mean, I'm not super sure about this strict parts of the spec. I'm not super familiar with them the strictness parts, so I would to kind of look at it. But I think the current spec says all parts of the class declaration and the decorator list would be considered part of the class declaration or class expression.
 
 MM: So I need to understand what the normative difference is. Of Accepting or not accepting this language. I don't know what the current behavior is that this language would change and I don't understand how that language would change.
 
-CHG: So what I understand is that it would allow you to use - like the code for decorators outside of the class body itself, so specifically the decorators applied to the class itself, would not be considered in strict mode. A reason for this was because of a look-ahead concern, so there was concern that we would have to like, you know, parse everything in order to understand, if this module was going to be strict or not.
+KHG: So what I understand is that it would allow you to use - like the code for decorators outside of the class body itself, so specifically the decorators applied to the class itself, would not be considered in strict mode. A reason for this was because of a look-ahead concern, so there was concern that we would have to like, you know, parse everything in order to understand, if this module was going to be strict or not.
 
 MM: Okay. Thanks. Mentioning that concern makes a huge difference. I understand that sometimes these look ahead concerns can be very painful on people who implement parsers.  Were there implementers on that thread that voice a strong desire to avoid the implementation complexity and held by this look-ahead. And and if not, are there any implementers in the room that would like to venture an opinion as to whether the look-ahead in question here would be painful.
 
@@ -456,21 +456,21 @@ KG: No, since decorators are part of classes, but this would amount to a decisio
 
 SYG: Exactly. So it comes down to yes, exactly that. So if we want to preclude right now that we don't have non-class decorators, then the rule is just all decorators are strict all the time.
 
-CHG: I think function decorators are the most agreed upon and most desired possible feature. Good place for decorators. I'm not sure I have not dug into them deeply, but I definitely think it would be good to not preclude the ability to add function decorators in the future.
+KHG: I think function decorators are the most agreed upon and most desired possible feature. Good place for decorators. I'm not sure I have not dug into them deeply, but I definitely think it would be good to not preclude the ability to add function decorators in the future.
 
 SYG: In any case. I'm not comfortable making the decision right now, with the time remaining. Meaning, whether we should preclude.
 
-CHG: Yeah, sounds good.
+KHG: Yeah, sounds good.
 
 MM: Agreed, I don't want to make a decision right now.
 
-CHG: Okay, so we will take it as an item to continue digging in here and figure out what's going on with the strictness.
+KHG: Okay, so we will take it as an item to continue digging in here and figure out what's going on with the strictness.
 
 ### Conclusion/Resolution
 
 - No conclusions
 - JHX to think more about `import.meta` etc
-- CHG to think more about strictness
+- KHG to think more about strictness
 
 ## Types as comments (continuation)
 

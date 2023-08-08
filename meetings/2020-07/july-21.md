@@ -1,10 +1,10 @@
 # July 21, 2020 Meeting Notes
 -----
 
-**In-person attendees:**  
+**In-person attendees:**
 None :(
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Mathias Bynens       | MB             | Google             |
@@ -371,7 +371,7 @@ KM: WeakRefs landed in JSC! There are just some bugs to fix.
 
 DE/YSV: (presents slides)
 
-MM: You’ve changed my mind. I originally was against splitting up cleanupSome because of the wasm use case. I like your rationale for why to postpone it. I'm wondering, with it postponed, we'll gain experience as to how well we can do without it. It may be one of those you-ain't-gonna-need-it (YAGNI) things, where we find that we don't need it in the end. So I would recommend bumping cleanupSome back to Stage 2, and even consider never advancing it if we consider that life is ok without it. I support advancing WeakRefs to Stage 4. Congratulations on changing my mind. 
+MM: You’ve changed my mind. I originally was against splitting up cleanupSome because of the wasm use case. I like your rationale for why to postpone it. I'm wondering, with it postponed, we'll gain experience as to how well we can do without it. It may be one of those you-ain't-gonna-need-it (YAGNI) things, where we find that we don't need it in the end. So I would recommend bumping cleanupSome back to Stage 2, and even consider never advancing it if we consider that life is ok without it. I support advancing WeakRefs to Stage 4. Congratulations on changing my mind.
 
 DE: Thank you MM. I want to point out that when we’re talking about the Wasm use case, the use case for cleanupSome is really particular to particular instances the Wasm long-jobs use case--not just where you are doing calculations and communication with SharedArrayBuffer, but also where you are synchronously calling out to JavaScript. So it is quite specific. It might be more valuable to invest in wasm long-jobs to yield to the event loop. I'm not a Wasm expert but I've heard some exciting ideas in this space.
 
@@ -472,24 +472,24 @@ AKI: Congratulations! Another one! Yay!
 - Stage 4!
 
 ## Decorators status update
-Presenter: Chris Garrett (CHG)
+Presenter: Kristen Hewell Garrett (KHG)
 
 - [proposal](https://github.com/tc39/proposal-decorators/)
 - [slides](https://slides.com/pzuraq/decorators-3cb407)
 
-CHG: (presents slides)
+KHG: (presents slides)
 
 WH: What does “downlevel” mean in this presentation? You used it several times and I couldn’t figure out what it was referring to.
 
-CHG: It’s a term we coined within the decorator group. Every single decorator usage would have to be compiled to the polyfilled version, even if it potentially was using a native decorator, in other words "downlevelled."
+KHG: It’s a term we coined within the decorator group. Every single decorator usage would have to be compiled to the polyfilled version, even if it potentially was using a native decorator, in other words "downlevelled."
 
 WH: I'm still unclear as to what “downlevel” means here.
 
-CHG: Basically if you were in a case where you had a mix of native and non-native decorators they had to apply, they would have to transpile all of the decorators - because there is presumably no easy way to un-transpile a decorator which has already been transpiled.
+KHG: Basically if you were in a case where you had a mix of native and non-native decorators they had to apply, they would have to transpile all of the decorators - because there is presumably no easy way to un-transpile a decorator which has already been transpiled.
 
 WH: Why can't the transpiler transpile only some of the decorators?
 
-CHG: Because the syntax itself, when used, would not necessarily be compatible with the polyfill or transpiled version.
+KHG: Because the syntax itself, when used, would not necessarily be compatible with the polyfill or transpiled version.
 
 JHD: WH the first thing is that in your deps graph, you will have non dependency code using transpiled code. Before the feature is available to you on your platforms, you will be using Babel or something to transpile the decorators in native syntax.
 
@@ -499,25 +499,25 @@ JHD: At the point where the platform is able to change from transpiling the deco
 
 WH: Another point on the first slide that I didn't quite understand. You talked about “byte size”. Did you mean byte size of objects?
 
-CHG: It’s just the byte size of decorated values in general that are using decorator syntax
+KHG: It’s just the byte size of decorated values in general that are using decorator syntax
 
 WH: So, you're concerned that if you decorate an object, then the object will require more bytes to store in memory?
 
-CHG: I’m sorry those are the bytes for the output syntax actually
+KHG: I’m sorry those are the bytes for the output syntax actually
 
 WH: You mean outputting the object via, for example, JSON?
 
-CHG: One solution proposed is that decorators would be a reserved syntax that isn't actually implemented in JavaScript, and have build tools compile decorators into JavaScript, and let the ecosystem figure out what it should mean, and ship that over the wire. If that were the solution we're gonna go with and we’re always going to solve the byte size problem. It would result in much larger class definitions, because in a lot of cases, you're decorating a field, which turns a field into a getter and setter, and that getter and setter would have to be transferred over the wire. Even minimized, that will be 10 times the size. (gist: https://gist.github.com/pzuraq/6c2ff5594bf16f9693a7d9131855ee2d)
+KHG: One solution proposed is that decorators would be a reserved syntax that isn't actually implemented in JavaScript, and have build tools compile decorators into JavaScript, and let the ecosystem figure out what it should mean, and ship that over the wire. If that were the solution we're gonna go with and we’re always going to solve the byte size problem. It would result in much larger class definitions, because in a lot of cases, you're decorating a field, which turns a field into a getter and setter, and that getter and setter would have to be transferred over the wire. Even minimized, that will be 10 times the size. (gist: https://gist.github.com/pzuraq/6c2ff5594bf16f9693a7d9131855ee2d)
 
 WH: Ah, I think you mean the byte size of the transpiled code, is that correct?
 
-CHG: Yes. And one other proposal is that it is always transpiled, that we never standardize on a decorator syntax. 
+KHG: Yes. And one other proposal is that it is always transpiled, that we never standardize on a decorator syntax.
 
 WH: From the slides and presentation I got the completely wrong idea of what you meant by “byte size”, so it was hard for me to follow the presentation. Thank you for clearing it up.
 
-DE: A lot of people are talking about tooling solutions, as CHG mentioned in the byte size discussion, even in tooling a lot of these constraints still exist. I want to raise another one. Constraint #2 basically this gets at decorators being transpilable in a single-file mode. If you want to transpile decorators differently based on whether they add metadata, make fields into accessors, etc, you either need some cross-file communication, or you need to add runtime overhead conditionally. So, the constraints are still in conflict even in a pure tools mode. Personally, I'm optimistic that we can find some of these constraints that can be relaxed to find a solution. We’ll have to relax some of the constraints on whether we put this in tooling or in the language. My hope is that this presentation will illustrate the contradictions and get people thinking about which concerns do we really care about, which concerns can we relax. Then we can find more solutions.
+DE: A lot of people are talking about tooling solutions, as KHG mentioned in the byte size discussion, even in tooling a lot of these constraints still exist. I want to raise another one. Constraint #2 basically this gets at decorators being transpilable in a single-file mode. If you want to transpile decorators differently based on whether they add metadata, make fields into accessors, etc, you either need some cross-file communication, or you need to add runtime overhead conditionally. So, the constraints are still in conflict even in a pure tools mode. Personally, I'm optimistic that we can find some of these constraints that can be relaxed to find a solution. We’ll have to relax some of the constraints on whether we put this in tooling or in the language. My hope is that this presentation will illustrate the contradictions and get people thinking about which concerns do we really care about, which concerns can we relax. Then we can find more solutions.
 
-CHG: DE summed it up very well and we’d like to continue in that direction and the group will continue to work that way
+KHG: DE summed it up very well and we’d like to continue in that direction and the group will continue to work that way
 
 ## NumericLiteralSeparator for Stage 4
 Presenter: Rick Waldron (RW)
@@ -540,7 +540,7 @@ RW: That's correct.
 
 [Background noises from somewhere drowning out the meeting. Notetakers can’t hear what’s being said and are asking for clarification.]
 
-WH: I think I can summarize the situation. We’re not allowing underscores in unicode escape sequences. V8 is allowing them and therefore failing the test. V8 should fix this. Is that correct? 
+WH: I think I can summarize the situation. We’re not allowing underscores in unicode escape sequences. V8 is allowing them and therefore failing the test. V8 should fix this. Is that correct?
 
 RW: Presumably that’s why it’s failing, correct. Everyone else is throwing the correct SyntaxError.
 
@@ -618,7 +618,7 @@ WH: I have similar views to YSV, I feel like this is adding a bit of complexity 
 On the other hand, with x[a:b] you have to remember which things allow the single argument in brackets x[a] and which things allow two arguments in brackets x[a:b].
 And those are likely to be different sets. And then I see that we’re discussing that slicing a string should index by unicode characters, so if you apply s[a:b] to a string, you get indices by unicode characters, but if you apply s[a] to a string, you’d get indices by code points, which would be terribly confusing.
 
-LEO: (queue reply: This improves Developer Experience) 
+LEO: (queue reply: This improves Developer Experience)
 
 DRR: To further WH’s point, the fact that slice already exists as a method and has the semantics I intend means that this is a nice-to-have for me. With this syntax, when I show it to people, they’re like “oh cool, I can get the last element of an array”, but then it was weird, because everyone would realize that, oh wait, I still have to re-index with 0 to get the last element. Maybe this leads into SYG’s topic, but the fact that you can’t do a negative index on these things makes it a little confusing. I know that there is a related proposal that we'll discuss about later, but  I think that that is something to consider.
 
@@ -817,7 +817,7 @@ Presenter: Richard Gibson (RGN)
 
 RGN: (presents slides)
 
-DE: You referred to the string getter as superpower, and I wanted to express reservations about that characterization. There was that previous exotic internal slot hazard discussion - we discussed this more in the SES strategy meeting. MM is here, so he can talk more, but what we arrived at is that internal slots with objects are not dangerous if accessed from `this`. https://github.com/tc39/proposal-intl-segmenter/issues/96#issuecomment-661008571 
+DE: You referred to the string getter as superpower, and I wanted to express reservations about that characterization. There was that previous exotic internal slot hazard discussion - we discussed this more in the SES strategy meeting. MM is here, so he can talk more, but what we arrived at is that internal slots with objects are not dangerous if accessed from `this`. https://github.com/tc39/proposal-intl-segmenter/issues/96#issuecomment-661008571
 
 RGN: It would impose additional work for what have been referred to as “near membranes” in the SES call. But the change was primarily about ergonomics, avoiding the internal slot use wasn’t a motivating factor. I’m willing to back off on the characterization.
 

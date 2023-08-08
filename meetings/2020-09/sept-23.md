@@ -1,9 +1,9 @@
 # September 23, 2020 Meeting Notes
 -----
 
-**In-person attendees:**  
+**In-person attendees:**
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Ross Kirsling        | RKG            | Sony               |
@@ -79,7 +79,7 @@ Should this proposal be blocked on exploring that. Sounds like you are implying 
 BFS: That’s it.
 
 MM: I like almost all of this. I do think that the reified path is sufficiently separate that it shouldn’t be part of this proposal, the in syntax should advance, I am not interested in re-litigating the mental model which in a way ???
-Sort of property like, consistent with the syntax we have in the proposal, and consistent with the 2xx, things that are ??? 
+Sort of property like, consistent with the syntax we have in the proposal, and consistent with the 2xx, things that are ???
 The reified form is really a much more specialized kind of use and very rare, for reflective purposes. That is the one where the mental model has to be the WeakMap model, and I think that it doesn’t need to be bundled into this proposal. The one disagreement I have with the WeakMap proposal is that I think the reified form should not simply be #x, the reason is another least surprise issue, for people in other class based languages, seeing #x they will expect it to be bound to this.#x. Reifying the name is weird, and doesn’t have precedence in other languages. I won’t mention concrete suggestions there but it is OK if that syntax has more ceremony to it, and is less easy to stumble on accidentally.
 
 JHD: One thing I forgot to mention, the inconsistency between string symbol and private fields, are intentional. We explicitly designed this over years of debate and perhaps considering perhaps too many alternative options, and this is kind of what we agreed upon. To me, suggesting consistency between private fields and strings and ignoring the fact that ??? was intentional is not a constraint that I agree with. Thank you for your thoughts on reifications and I’m not planning to bring forth a proposal for reification.
@@ -104,18 +104,18 @@ WH: By “this feature”, do you mean `in` or reification?
 
 DE: Reification.
 
-DE: I am not suggesting that JHD's feature takes a dependency on adding the reification feature. I think the dependency is on us thinking through the design space and I think we have done that. 
+DE: I am not suggesting that JHD's feature takes a dependency on adding the reification feature. I think the dependency is on us thinking through the design space and I think we have done that.
 
 JRL: I think what JHX is saying, if we have `#x in foo`, that implies that `#x` can be keyed in computed property access like `foo[#x]`. My problem with that is that we already have `foo.#x` syntax, and we think of that as `WeakMap.p.get` in the map-like API. If we already have `foo.#x`, I don’t see how `#x in foo` matching a map-like API for `WeakMap.p.has` is that different. It is not a huge jump in logic for both of these syntaxes even if we were to reify into a WeakMap API.
 
 JHD: I certainly agree with that.
 
-AK?: How are we on clarity right now? Silence cool. 
+AK?: How are we on clarity right now? Silence cool.
 
 YK: I just want to say positive things. JHD did a good job of presenting the mental model, and that he did a good job stating why the syntax is. In general reification interacts with ??? Obviously that proposal is not going to proceed as-is.
 We will want to see how reification interacts with other proposals anyway, and there is no reason for us to wait on this for that to shake out.
 
-MM: The reified thing is a separate reflective level which is a much more specialized use, and we don’t know what the demand is. For the same rationale I don’t want to add syntax for other features. If there isn’t special syntax for it, how hard is it to do it yourselves? I pasted code in chat, that is a few lines of code that does this. If you have to do this all the time it will be a pain, but if you need to do it rarely you can roll it yourself. If we find that people end up doing this a lot even if it is 3 lines, then we have established a need. 
+MM: The reified thing is a separate reflective level which is a much more specialized use, and we don’t know what the demand is. For the same rationale I don’t want to add syntax for other features. If there isn’t special syntax for it, how hard is it to do it yourselves? I pasted code in chat, that is a few lines of code that does this. If you have to do this all the time it will be a pain, but if you need to do it rarely you can roll it yourself. If we find that people end up doing this a lot even if it is 3 lines, then we have established a need.
 ```
 ({
   has: obj => #x in obj,
@@ -183,12 +183,12 @@ AKI: Before or after lunch.
 
 Decision deferred until JHX can review notes.
 ## Decorators: A new proposal iteration
-Presenter: Chris Garrett (CHG)
+Presenter: Kristen Hewell Garrett (KHG)
 
 - [proposal](https://github.com/tc39/proposal-decorators/)
 - [slides](https://slides.com/pzuraq/decorators-a-new-proposal-2020-09)
 
-CHG: (presents slides)
+KHG: (presents slides)
 
 WH: I'm confused by the explanation of init decorators.
 
@@ -298,7 +298,7 @@ DE: For that particular one, that is something you can do with a type system, bu
 
 BSH: For class decorators it does decorators a class and return a class, ?? was given.
 
-DE: The answer to the question is no. We can discuss this more in the decorators call, I want to learn more about these invariants. 
+DE: The answer to the question is no. We can discuss this more in the decorators call, I want to learn more about these invariants.
 
 I want lean more about what you want . thats not awared by previous decorators.
 DE: Do people have concerns on the high level, thanks for feedback.

@@ -3,7 +3,7 @@
 
 **In-person attendees:**  (none)
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Yulia Startsev       | YSV            | Mozilla            |
@@ -19,7 +19,7 @@
 | Rick Button          | RBU            | Bloomberg          |
 | Jason Williams       | JWS            | Bloomberg          |
 | Waldemar Horwat      | WH             | Google             |
-| Chris Hewell Garrett | CHG            | LinkedIn           |
+| Kristen Hewell Garrett | KHG            | LinkedIn           |
 | Richard Gibson       | RGN            | OpenJS Foundation  |
 | Bradford C. Smith    | BSH            | Google             |
 | Shane F. Carr        | SFC            | Google             |
@@ -57,7 +57,7 @@
 | Ron Buckton          | RBN            | Microsoft          |
 
 ## Hallway track update
-YSV: Online towns did not really work, there was another alternative, shane are you in the call? We can try that alternative or Mozilla Hubs today 
+YSV: Online towns did not really work, there was another alternative, shane are you in the call? We can try that alternative or Mozilla Hubs today
 
 SFC: A couple alternatives are posted on the GitHub issue on the Reflector.
 
@@ -148,7 +148,7 @@ I was under the impression, seperate from my own intuition, that WebIDL processe
 
 So, my personal preference is that we prioritize what's observable to callers and not the implementation code that one might write to do it, but there are implementation concerns in general, but today it sounds like a priority of consistency question.
 
-SYG: I think for users, my intuition is that keeping with the mental model that by the time the super constructor runs, it would have done its logic normally, it would have set the message. It is easier for the user to understand the current state. We might skip this logic in constructor ….??? 
+SYG: I think for users, my intuition is that keeping with the mental model that by the time the super constructor runs, it would have done its logic normally, it would have set the message. It is easier for the user to understand the current state. We might skip this logic in constructor ….???
 
 SYG: I agree that it's edge casey.
 
@@ -213,15 +213,15 @@ PFC: They don’t. Anything that could tell you about the current time or enviro
 
 KKL: Thank you, this answer is very satisfying.
 
-JHD: Temporal is large, and the preference of the champions is often to merge PRs quickly and then continue iterating from there, which at least for me personally makes it really hard to keep up with all the changes. In order for there to be sufficient time to review, I would like to request that whenever you are ready to ask for stage 3, please give a significant period of time for us to review and announce it. 
+JHD: Temporal is large, and the preference of the champions is often to merge PRs quickly and then continue iterating from there, which at least for me personally makes it really hard to keep up with all the changes. In order for there to be sufficient time to review, I would like to request that whenever you are ready to ask for stage 3, please give a significant period of time for us to review and announce it.
 
 KG: And announce that you’re doing so.
 
 PFC: That's a good point.
 
-JHD: For a normal proposal I’d say at least two months for review, but this is a very large proposal. We will need multiple meetings of time with it static in order to do a proper review. 
+JHD: For a normal proposal I’d say at least two months for review, but this is a very large proposal. We will need multiple meetings of time with it static in order to do a proper review.
 
-PFC: That is good to know. What we intended to do between this week and stage 3, after incorporating feedback from users, was freeze the API and release a second version of the polyfill. So ideally by that time we’d have all of our provisional decisions revisited and addressed. 
+PFC: That is good to know. What we intended to do between this week and stage 3, after incorporating feedback from users, was freeze the API and release a second version of the polyfill. So ideally by that time we’d have all of our provisional decisions revisited and addressed.
 
 JHD: Hopefully that is the way it plays out. Sometimes issues are discovered by usage, some by review. And the kind that needs review to discover them, we need review to happen first in order to discover them.
 
@@ -253,7 +253,7 @@ PFC: This seems like something we should talk about in an issue tracker thread.
 
 DE: I think it was interesting that PFC raised to the committee this question of the default calendar, and the initial decision to release the polyfill defaulting to the Gregorian calendar. Do people have thoughts about that?
 
-TAB: As discussed in the delegates chat, I believe the Gregorian calendar is the right default here. You’re still interacting with the Gregorian calendar regardless of your locale. It is so strongly weighted that all usage will be Gregorian that we should keep that as the default. 
+TAB: As discussed in the delegates chat, I believe the Gregorian calendar is the right default here. You’re still interacting with the Gregorian calendar regardless of your locale. It is so strongly weighted that all usage will be Gregorian that we should keep that as the default.
 
 SFC: I would like more feedback from TAB and the committee on that. The options that I listed in the discussion thread, linked here in the slides, cover a very wide spectrum, from making the calendar always explicit, to only requiring it in a calendar-dependent operation. For example, adding a month is a calendar-dependent operation, but adding a day is not. Converting timezones is not a calendar dependent operation, etc. And for the small number of operations that are calendar-dependent, there are a number of options for what we could do in those specific cases but not have it be required by the rest of the API. What is your general feeling to have this as two levels, calendar dependent and calendar independent?
 
@@ -358,14 +358,14 @@ MB: What do you think about the idea of doing what you were planning on doing, b
 MF: I would be fine with that. Thank you. Think we’re done with this topic.
 
 ## Decorators update
-Presenter: Chris Garrett (CHG)
+Presenter: Kristen Hewell Garrett (KHG)
 
 * [proposal](https://github.com/tc39/proposal-decorators)
 * [slides](https://slides.com/pzuraq/decorators-status-update-2020-06)
 
-CHG: (presents slides)
+KHG: (presents slides)
 
-CHG: Decorators Design Space Analysis - https://docs.google.com/document/d/1DSuLlEbAjBImDutX_rhjnA6821EUyj9rANzDVJS3QV0
+KHG: Decorators Design Space Analysis - https://docs.google.com/document/d/1DSuLlEbAjBImDutX_rhjnA6821EUyj9rANzDVJS3QV0
 Decorator Use Case Analysis - https://docs.google.com/spreadsheets/d/1QP0hfXkkkAXTktGrI7qrt-RUqKp2KtsVKuPo4yuoZZI/edit?ouid=115900510010132195082&usp=sheets_home&ths=true
 
 RPR: Empty queue, which is weird for decorators.
@@ -475,7 +475,7 @@ BFS: There is precedent in nodejs of muting down our stacktraces when outputting
 
 MF: We mentioned in readme that devtools could default by hiding but would let you show them. It kind of acts as an opt-in to black-boxing directive in that way.
 
-YSV: Cursory note: Mozilla is blocking this but, for anyone who isn’t familiar, the proposal is not rejected, as TC39 doesn’t have a model for rejecting. As such, I am open to discussing, and I will go to the library calls and listen to the library authors as requested. And maybe we will come out of this with a better solution, maybe with the same solution. 
+YSV: Cursory note: Mozilla is blocking this but, for anyone who isn’t familiar, the proposal is not rejected, as TC39 doesn’t have a model for rejecting. As such, I am open to discussing, and I will go to the library calls and listen to the library authors as requested. And maybe we will come out of this with a better solution, maybe with the same solution.
 
 MF: Takeaway is - I don’t have much for conclusion on my side. The feedback was kind of a backstepping from stage 2 where we were committing to a direction for the problem. So I will await feedback from Mozilla and Apple as to what they would like to do, otherwise I will feel kind of stalled. I will attend the library call and hear feedback there too.
 
@@ -490,7 +490,7 @@ It might be a correctness problem, it might be an API abuse problem, but I would
 
 MLS: From JSC, I do not think that the security use case is valid.
 
-LEO: Talking about the notes: I think for us to make it a following pattern for decision that tc39 makes, 
+LEO: Talking about the notes: I think for us to make it a following pattern for decision that tc39 makes,
 And not as YSV tried to say - it’s not blocking the actual proposal. Rather than creating a new pattern on how we distinguish thing here, we should be more clear in the notes that we are blocking the stage advancement, and not the proposal. Is that okay to say, YSV and MLS?
 
 YSV: Sorry I think I wasn’t clear. We don’t reject as a rule, we block. We can just say that it’s blocked from advancement. I know how much work this took, and I’m sorry for the surprise.
@@ -567,7 +567,7 @@ SFC: If we have WH as a half reviewer and YSV as a half reviewer, maybe that’s
 
 DE: I have some idea for other people to recruit offline and if I can’t I will bring that up in next meeting
 
-LEO: It’s definitely something where we can get reviewers from TG2, because not everyone from there is in this meeting. 
+LEO: It’s definitely something where we can get reviewers from TG2, because not everyone from there is in this meeting.
 
 SFC: Ok sounds good, I will reach out later in the summer when ready for stage 3 review. So for now there’s no work for those reviewers.
 
@@ -606,7 +606,7 @@ DE: looking at localedata the other day, no locales have spaces around the numbe
 
 RKG: You had called out that certain fields in the API were still being discussed, but I wanted to ask about hiding zeros for leading or trailing or both or none, and it seems like if you’re going to cover all possibilities, why not have two booleans? Has that been discussed?
 
-YMD: So the idea is that many people 
+YMD: So the idea is that many people
 
 People hide all of them or none, yes?
 
@@ -704,7 +704,7 @@ DE: That’s good, I’m glad to hear that that’s not a blocker. I don’t lik
 JHD: On the slide where you have the table and say “why not”, I think it’s sort of a “must”, that if any of the Weak things accept or reject a value, then all the other Weak things should do the same. So if they are allowed as WeakMap keys, they must be allowed as WeakSet members and WeakRef targets. And registered vs unregistered Symbols, they would also have to be treated the same. Like however we treat registered and unregistered symbols has to be the same everywhere.Which dovetails into my next item which is about treating registered and unregistered the same everywhere. Even if Record and Tuple does not advance any further,
 There was a long thread on ecma262 on this a year ago where a bunch of folks wanted it but the main reasons that issue got closed were because MM insisted that registered symbols not be included, and I insisted that registered and unregistered symbols be treated the same. And that presented an intractable block. So if there’s no longer an obstacle to treating registered and unregistered symbols the same in that regard, then that could support moving this forward without tying it to Records and Tuples.
 
-DE: Thanks for your comments. To be clear, the proposal here is yes for all 3: all symbols would be keys for all structures. I do not know whether I agree with this use of MUST. About the previous discussion, there is motivation, independent of Records and Tuples, for Symbols as weakmap keys. This one about records and tuples is super relevant to me now, but that doesn’t exclude that there’s other important motivations. 
+DE: Thanks for your comments. To be clear, the proposal here is yes for all 3: all symbols would be keys for all structures. I do not know whether I agree with this use of MUST. About the previous discussion, there is motivation, independent of Records and Tuples, for Symbols as weakmap keys. This one about records and tuples is super relevant to me now, but that doesn’t exclude that there’s other important motivations.
 
 AKI: Tension resolved?
 

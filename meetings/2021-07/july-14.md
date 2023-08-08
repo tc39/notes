@@ -1,7 +1,7 @@
 # 14 July, 2021 Meeting Notes
 -----
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Waldemar Horwat      | WH             | Google             |
@@ -66,7 +66,7 @@ DDC:  and one question that has come up with this is what to do with unsupported
 
 DDC: So I think I'd like to go to the queue at this point and get thoughts. Like are there other ideas for having  some kind of useful limitation here or is this something that we're okay with? Just going to dropping after learning about these concerns from other hosts.
 
-GCL: So from, from the requirements that node has, as long as the spec doesn't say something like an implementation must declaratively know what types it supports, you know, something like where you're like putting it at the limitation on the specific way that the implementation determining whether or not it understands what a type is, you could have something that says the host should throw. I don't know exactly what the text for that would look like, but I don't think this is inherently like something that node - like I think it's reasonable to say that within any like VM context you could add new types but also unknown types could still throw. I think we could get to text that does that, but I'm also fine with leaving the proposal as if I just wanted to mention that. 
+GCL: So from, from the requirements that node has, as long as the spec doesn't say something like an implementation must declaratively know what types it supports, you know, something like where you're like putting it at the limitation on the specific way that the implementation determining whether or not it understands what a type is, you could have something that says the host should throw. I don't know exactly what the text for that would look like, but I don't think this is inherently like something that node - like I think it's reasonable to say that within any like VM context you could add new types but also unknown types could still throw. I think we could get to text that does that, but I'm also fine with leaving the proposal as if I just wanted to mention that.
 
 SYG: I just want to clarify, Gus has a point about "declarative". Do you mean, Declarative in the sense of the host of the new host hook where it would upfront get the static list of supported types that Dan was talking about. Is that what you mean by declarative?
 
@@ -86,7 +86,7 @@ BT: Any other thoughts on the topic? `[silence]` Looks like no. All right. Feel 
 
 DDC: Yeah, I know, there might be some others that aren't present here. That might also have thoughts on this end. Uncertain, whether this is the right time to like, ask for consensus on sticking with the status quo on that.
 
-KG: I mean, you never need consensus to stick with the status quo; the status quo is what happens in the absence of calls for consensus. 
+KG: I mean, you never need consensus to stick with the status quo; the status quo is what happens in the absence of calls for consensus.
 
 DDC: Okay. In that case, I think. Yeah, I think I would also prefer to just leave it like that. I'm kind of also questioning the specifics of what it would look like to have to say, what an unrecognized type would look like. In this with without knowing more, like also not a node experts unless we have something very concrete there that we could that we could say, I'm not sure. I'm not really sure how to move forward. So yeah, I guess in the absence of that I think I think that would be it. I think we'd just leave it as is.
 
@@ -129,16 +129,16 @@ No changes sought or made, general agreement on the status quo
 
 
 ## Decorators update
-Presenter: Chris Garrett (CHG)
+Presenter: Kristen Hewell Garrett (KHG)
 
-- [proposal](https://github.com/tc39/proposal-decorators) 
+- [proposal](https://github.com/tc39/proposal-decorators)
 - [slides](https://slides.com/pzuraq/decorators-update-2021-07)
 
-CHG: So yeah, my name is Chris. I'm here with a quick update on decorators today. Basically, the tldr is, the spec has been written and the decorators champion group has achieved internal consensus on all of the details. In this presentation, I want to go over the proposal just as a broad overview, kind of the general design principles and the way that it works and then I wanted to talk about the current status.
+KHG: So yeah, my name is Chris. I'm here with a quick update on decorators today. Basically, the tldr is, the spec has been written and the decorators champion group has achieved internal consensus on all of the details. In this presentation, I want to go over the proposal just as a broad overview, kind of the general design principles and the way that it works and then I wanted to talk about the current status.
 
-CHG: So first off the proposal overview. So decorators in This proposal are plain JavaScript functions, so no, custom syntax, no new types of elements or anything. Like that, unlike the static decorators proposal that came before. And as in previous proposals, they can be applied to classes and class elements. They have three main capabilities, which is the way that we've kind of distilled them into some design principles that should make it pretty intuitive to understand what decorators are capable and what they should be in general. And those capabilities are Replacements, Metadata, and Access. In addition, there is a notion of modifiers syntax which is the ability to prepend a keyword on to the invocation of a decorator as seen here in the last decorator in this example on the right (`@init:`). Modifiers add additional capabilities to a decorator if the user chooses to opt into capability. But default decorators are not able to do what modifiers are able to do because it's basically like opt-in if you want that extra cost, that extra capability, otherwise don't incur it for every single user. And the only modifier that is included in this proposal is the `@init` modifier, which we will be going over in a bit. Also, this proposal includes a new type of class element, which is a Class Auto accessor, an auto accessor is very similar to a field, and it is defined using a new access or keyword which will go over as well, on.
+KHG: So first off the proposal overview. So decorators in This proposal are plain JavaScript functions, so no, custom syntax, no new types of elements or anything. Like that, unlike the static decorators proposal that came before. And as in previous proposals, they can be applied to classes and class elements. They have three main capabilities, which is the way that we've kind of distilled them into some design principles that should make it pretty intuitive to understand what decorators are capable and what they should be in general. And those capabilities are Replacements, Metadata, and Access. In addition, there is a notion of modifiers syntax which is the ability to prepend a keyword on to the invocation of a decorator as seen here in the last decorator in this example on the right (`@init:`). Modifiers add additional capabilities to a decorator if the user chooses to opt into capability. But default decorators are not able to do what modifiers are able to do because it's basically like opt-in if you want that extra cost, that extra capability, otherwise don't incur it for every single user. And the only modifier that is included in this proposal is the `@init` modifier, which we will be going over in a bit. Also, this proposal includes a new type of class element, which is a Class Auto accessor, an auto accessor is very similar to a field, and it is defined using a new access or keyword which will go over as well, on.
 
-CHG: Okay, so, so first off, let's look at the decorator function API, what it looks like generally. Generally decorators receive the value they are decorating as their first argument. So that's the input value, if they're decorating a method, it'll be a function, if they're decorating a class, it'll be the class constructor so on and forth. The second argument is a context object. This object provides just general context about the value that is being decorated. So what kind is it, is that a class, method, field Etc. What is its name? If it is class elements, the name of that class elements. If it's a private element, the spelling of the element for debugging purposes, but not for any access purposes. And so on. It also has information like whether or not the value is private, is it static, and then also the ability to get instead metadata and add initializers which we'll talk about later on. The return value of the decorator is the replacement value, the value that replaces the decorated value, and this is optional for all decorators, you can either return a new value or you can do nothing and that's completely fine. The types of the input and output values are dependent on what is being decorated. Of course, I'm using typescript here just to kind of show briefly what the API looks like in general.
+KHG: Okay, so, so first off, let's look at the decorator function API, what it looks like generally. Generally decorators receive the value they are decorating as their first argument. So that's the input value, if they're decorating a method, it'll be a function, if they're decorating a class, it'll be the class constructor so on and forth. The second argument is a context object. This object provides just general context about the value that is being decorated. So what kind is it, is that a class, method, field Etc. What is its name? If it is class elements, the name of that class elements. If it's a private element, the spelling of the element for debugging purposes, but not for any access purposes. And so on. It also has information like whether or not the value is private, is it static, and then also the ability to get instead metadata and add initializers which we'll talk about later on. The return value of the decorator is the replacement value, the value that replaces the decorated value, and this is optional for all decorators, you can either return a new value or you can do nothing and that's completely fine. The types of the input and output values are dependent on what is being decorated. Of course, I'm using typescript here just to kind of show briefly what the API looks like in general.
 
 DDC: Let's dig into the capabilities of decorators. The first one, as I mentioned before is Replacement so decorators may replace a value that they are applied to with another value. Of the same type. This is the primary capability of decorators, so class decorators return, into class method, decorators can return a new method. The one exception is in a somewhat of an exception is field decorators. You might expect that field decorators would for instance, receive the initializer of the field and return a new initializer, but the constraints for performance reasons on the proposal was that could not do this because capturing the initializer would allow too much dynamism. So instead they are pipelines, so when return a new initializer from a field decorator, that initializer will receive as its first argument the value of the previous initializer. So you can then transform it or add on to it for each field that is initialized. Crucially, in this proposal decorators cannot replace a value with a different type of value. So they cannot turn a method into a field, a field into an accessor, or so on. So that reduces dynamism and reduces the ability of decorators to change the shape of a class. And in addition they cannot add, remove, or replace any other values other than the decorated value. And this is both important from like a just static analysis and performance standpoint, but it's also important from a user/developer experience standpoint. Previously decorators could do all of this and you could potentially have a decorator that would affect every other element on a class except for the one that was decorating. Something that would be counterintuitive to the user. Now users can look at what a decorator is applied to and have a general understanding of what that decorator is capable doing whether or not It's replacing a value or so on. So that limitation really helps to inform users what that decorator is doing.
 
@@ -146,9 +146,9 @@ DDC: Next up, the second capability of decorators is the ability to add metadata
 
 WH: Re: the slide, you could run `validate` on an instance of `MyClass`?
 
-DC: Yes, you could do that. 
+DC: Yes, you could do that.
 
-WH: And where does `​​obj[Symbol.metadata]` come from? Every object has a binding of metadata now? 
+WH: And where does `​​obj[Symbol.metadata]` come from? Every object has a binding of metadata now?
 
 DC: So if the object has a decorator that adds metadata via context.addMetadata, then that creates an object at the end of class, create a class definition and assigns it to the symbol table metadata property, property. So done So it's done at a specific time during Glass construction and only done. if, if the metadata was added in the first place, if no metadata was added during definition, this will just be an undefined property, it won't be defined at all.
 
@@ -192,7 +192,7 @@ JHD: It should never fail, but if it's called instead on something else, so it'l
 
 DDC: Yes.
 
-JHD: Thank you. 
+JHD: Thank you.
 
 DDC: So, back to modifiers. So basically initializers run during class construction for class elements so they can do things like, for instance, in example, they bind the function to the instance. So this is a pretty common ask for decorators, the ability to kind of auto bind functions that you might want to use as a callback, for instance. So, this is how you would do that. And the other use case is to run for classes is to run after the class has been fully defined, meaning after static fields have been assigned. This is something that has been a topic of some debate on the decorators proposal, but essentially decorators themselves run before static fields have been assigned, meaning you can't actually use those them in the process of decoration. so, having class initializers, which run after everything has been defined, cannot change the class. They can't rebind the value. They can't return a new class Constructor solves that use case. So yeah, any questions on that one?
 
@@ -214,7 +214,7 @@ IID: Thanks.
 
 DDC: Moving on, so that's modifiers. And then, I also mentioned previously that we have a new type of class elements, so auto-accessors are basically like a class field, but instead of being defined on the instance, they are sort of defined on the prototype, a getter, and Setter are defined on the Prototype and that backing, that getter and Setter just basically access backing storage on the instance, instance, which is a private slot. It is quite similar to this [slide] in the spec, like these are basically equivalent. The purpose of this, there are a few purposes. One is to provide some syntactic sugar to do something that users. Do occasionally asked to do these days which is making a field on the Prototype users might want to do this to make a field not enumerable, or for any other number reasons. But also its so that we can have a value that basically works like a field but can be decorated and allow the decorator to intercept access so intercepting getting and setting and that allows us to do things like provide reactivity to that field, to that value. And allows us to do things like validate the field when it is set, to run code when the value is being set, lazy dependency injection basically requires this well. The ability to look up the value lazily the first time it is accessed, you need to have a getter there and so either, you have to decorate an accessor or you have to decorate a field. And this kind of is in between for those two. The idea is also that this could potentially be extended in the future with a more general syntax which Ron Buckton has proposed. There's a link to the proposal here. I forget the exact name of the proposal, but I definitely am excited to see where that goes. But it's out of scope for this proposal.
 
-DDC: Okay. So that's an overview of the proposal. Any questions about auto accessors? 
+DDC: Okay. So that's an overview of the proposal. Any questions about auto accessors?
 
 BT: There are a few questions on the queue, but also just a quick time note. We're down about eight minutes in the time box, I believe. So try to be brief.
 
@@ -224,7 +224,7 @@ DDC: I think it could move independently on its own. I definitely think that the
 
 JHD: Okay. And then the second question was with your "similar to". I was curious how faithful that sugar was. In other words, will the getter throw if it's called an object that isn't it? Like the didn't run through the constructor? You know like where as if it was a private field like your line 6 through 16 here will throw if the receiver lacks that private field. So I'm wondering if the auto accessors works the same. Then if so, how would I determine in advance without a try/catch if the accessor is going to throw or not?
 
-DDC: That is a great question. The second one, rather. The first one is the answer is it will throw, I believe, because in the spec we back the field with a private slot, it uses all the same mechanisms as a private field. For the second question, I'm not too sure. I think you would have to use a try/catch. I'd have to think on that or what it means that like General concern, 
+DDC: That is a great question. The second one, rather. The first one is the answer is it will throw, I believe, because in the spec we back the field with a private slot, it uses all the same mechanisms as a private field. For the second question, I'm not too sure. I think you would have to use a try/catch. I'd have to think on that or what it means that like General concern,
 
 JHD: there is the proposal I discussed recently that just got stage 4 is that I wanted to determine if something is going to throw or not with the `in` keyword, so that works for private fields now. But in this case because it's sugar for it, there isn't a special way to refer to it that would work within and tell you if it's going to throw or not. Because if did some value in an object, it'll just tell you if the accessors, you know, if the property is successful there, right?
 
@@ -284,7 +284,7 @@ Presenter: Wenlu Wang (KWL)
 - [proposal](https://github.com/tc39/proposal-array-find-from-last)
 - [slides](https://kingwl.github.io/proposal-array-find-from-last-looking-for-stage-3-sides)
 
-KWL: quick recap, this allows you find some elements or a from end of list to the start. This proposal will be seeking stage 3. No major changes from last meeting. You can see the pr and they are not semantical. All around and behavior changes. The final spec text: [shows text]. 
+KWL: quick recap, this allows you find some elements or a from end of list to the start. This proposal will be seeking stage 3. No major changes from last meeting. You can see the pr and they are not semantical. All around and behavior changes. The final spec text: [shows text].
 
 KWL: we have completed the spec text, reviewers have signed off, and editors have signed off too. I have to say thanks to everyone. And we have a few implementations: coreJS has had already implemented, there are other polyfills that have implemented, and Chakra has been implemented behind a flag, even if Chakra may not related to the web Compact anymore. For web compat, we would appreciate it if someone could help with the investigation. Thanks, that's all. So this proposal is seeking for stage 3.
 
@@ -298,7 +298,7 @@ KWL: I'm not familiar with your proposal, but this proposal the spec test text i
 
 JRL: Yeah, I agree with your behavior actually. I'm asking for consensus on standardizing on get behavior and not doing has and then get.
 
-SYG: I'm not sure, the queue is an appropriate place to ask consensus for a precedent. 
+SYG: I'm not sure, the queue is an appropriate place to ask consensus for a precedent.
 
 BT: Yeah, like that sounds like something we could discuss the context of your other proposal Justin.
 
@@ -310,7 +310,7 @@ BT: We can try and get that on the agenda if there's time.
 
 KWL: should I...
 
-BT: I think your proposal is good from this perspective. Hax was just pointing out that this is following the find and findIndex precedent. 
+BT: I think your proposal is good from this perspective. Hax was just pointing out that this is following the find and findIndex precedent.
 
 MF: I probably won't feel comfortable with addressing this topic on that short of preparation.
 
@@ -337,7 +337,7 @@ Proposal achieves stage 3
 
 
 
-## Guidance for nested namespaces 
+## Guidance for nested namespaces
 Presenter: Philip Chimento (PFC)
 
 - [slides](https://ptomato.github.io/talks/tc39-2021-07/index.html)
@@ -345,9 +345,9 @@ Presenter: Philip Chimento (PFC)
 
 PFC: This is a short last-minute agenda item that SYG suggested that I add. Coincidentally enough from the context of the previous discussion, this is a request for plenary to give guidance and set a precedent for the situation that we have in a proposal, so that future proposals will be consistent with it. Namespace objects, I think nobody disagrees that they should start with a capital letter. We have Math with a capital M since 1995 probably; and Temporal with a T. In the plenary about a year ago we decided that namespace objects should have a @@toStringTag property at least for top level namespace objects, which are the only namespace objects that we have so far that I'm aware of. The Temporal proposal is going to add a nested namespace object, `Temporal.now`, which until now has been spelled with a lowercase n probably because nobody actually thought about it, and it started out life as a function. So we got a request to change this to a capital N. And you know, this also raises the question, should it have a @@toStringTag property and if so, what should that be? Should it be `"now"` or should it be `"Temporal.now"`? It seems like this is something that we should provide explicit guidance about so that we don't make an ad hoc decision that's done differently by different proposals. It seems from the thread that was started, that people think in general that nested namespaces should be capitalized. My proposal here that I'm going to ask for a consensus on is, is that, plus having a @@toStringTag property equal to the fully qualified name. So, in the case of `Temporal.Now`, it would be Now with a capital N, and the @@toStringTag property, would have a value of `"Temporal.Now"`. So, after whatever discussion we have, I'd like to ask for consensus on a guidance and consensus on making this change in any current proposals. Temporal is the only one that I'm aware of that is affected by this, but there may be others. So discuss away.
 
-MM: I just have a clarifying question first. Last I looked it was just simple. What is currently in the namespace? 
+MM: I just have a clarifying question first. Last I looked it was just simple. What is currently in the namespace?
 
-JHD: [link] 
+JHD: [link]
 
 MM: Is it brief enough that you can just enumerate it?
 
@@ -383,7 +383,7 @@ JRL: `Date.now()` is a method that you call and having `Temporal.now` be lowerca
 
 JHD: This is a counter to my own constructor comment as well, but if you think it's a thing that it's not, and you try to use it that way, and then it immediately tells you it's not a function, you can't do something. If it's not a function, and you can't call it, you're not going to be confused anymore. So I don't know if the confusion argument really pushes in either direction very strongly.
 
-SYG: If there's no initial confusion at all, even if it's quickly resolved, isn't that better? 
+SYG: If there's no initial confusion at all, even if it's quickly resolved, isn't that better?
 
 JHD: Well yeah, but I shared one intuition, others have shared others, right? I think there's the chance of confusion either way, it's just about which kinds of confusion we prefer. In either case, I think someone will try it and immediately discover what's going on and the confusion will be gone. And so I think it's a moot point towards this proposal.
 
@@ -393,7 +393,7 @@ KG: I do actually draw a distinction. If I am creating a bunch of instances of a
 
 MM: I don't. I don't know what to do about that. It would be interesting to see whether there's an adequately dominant, consensus, practice to help there. But this question, as a question to debate, hasn't even come up that I'm aware of; as something people have argued about, the things people have referred to as namespaces. It's always just been top level.
 
-BT: Just to note that we are up against the time box, we did get some time back so we have maybe another five minutes maximum for this. Hopefully we finish up the discussion. It looks like there's a few more replies on this topic. 
+BT: Just to note that we are up against the time box, we did get some time back so we have maybe another five minutes maximum for this. Hopefully we finish up the discussion. It looks like there's a few more replies on this topic.
 
 JHD: KG's answer may answer this, but to MM's point, what is a namespace object? The decorator API we just got a presentation about, where a decorator function gets an object argument that has an `access` property that contains two functions: that's lowercase `access`, right? But it's not a singleton, that’s true, but how would we even define this? Is it that it has to be a global singleton object containing stuff?
 
@@ -403,9 +403,9 @@ SYG: Yes. So I think context is decidedly not a namespace object, even though it
 
 JHD: Yeah, I think so.
 
-MM: What you said, I agree that it makes sense. I just — and I see from the title of your reply to your question to me, the only things where I give them capital names and think of them as namespace objects are at top level. Other than that, I just think of myself as handling records with properties. And some of them are singletons. And I don't strongly distinguish that; sometimes I refactor code from from a singleton to something that's multiply instantiated or vice versa. I don't think of the fact that an object is a singleton. If it's just immutable data or if it's just functions as being a completely different category of object, an object that's made by a factory that can create multiple instances. That's certainly different in some ways but not that different. 
+MM: What you said, I agree that it makes sense. I just — and I see from the title of your reply to your question to me, the only things where I give them capital names and think of them as namespace objects are at top level. Other than that, I just think of myself as handling records with properties. And some of them are singletons. And I don't strongly distinguish that; sometimes I refactor code from from a singleton to something that's multiply instantiated or vice versa. I don't think of the fact that an object is a singleton. If it's just immutable data or if it's just functions as being a completely different category of object, an object that's made by a factory that can create multiple instances. That's certainly different in some ways but not that different.
 
-SYG: I guess I do. I'm somewhat surprised, being primarily a C++ programmer that has non-reified namespaces. I feel like any language that has a concept of the namespace thing where you scope things to group them together, also has a way to nest them, and then the way to name those namespaces are consistent, regardless of nesting. I'm both kind of surprised by the argument that nesting makes it qualitatively a different thing; and that namespaces you don't think of them, MM, as nestable. 
+SYG: I guess I do. I'm somewhat surprised, being primarily a C++ programmer that has non-reified namespaces. I feel like any language that has a concept of the namespace thing where you scope things to group them together, also has a way to nest them, and then the way to name those namespaces are consistent, regardless of nesting. I'm both kind of surprised by the argument that nesting makes it qualitatively a different thing; and that namespaces you don't think of them, MM, as nestable.
 
 MM: I'm glad you brought up the C++ example because that really helps understand what the question is. And I agree that when I nest them and think of them as namespace-like, then they're a different category subjectively than when I just happen to have a reified record that has properties. The problem is that, if we're going to talk about this as a precedent for something, in JavaScript there is no concept of namespaces, we're just overloading reified objects as records. Some of them are holders of data and function and is just a reified object and some of them are as if they were second-class namespaces. There's nothing to grab onto in JavaScript to make a crisp distinction such that we would set a precedent according to the distinction.
 
@@ -417,7 +417,7 @@ No conclusion, will revisit later this meeting if there is time
 
 
 
-## Restricting callables to only be able to return normal and throw completions 
+## Restricting callables to only be able to return normal and throw completions
 Presenter: Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/tc39/ecma262/pull/2448)
@@ -428,7 +428,7 @@ SYG: when doing a review of the resizable buffers proposal, Mike Pennisi noticed
 
 MM: I enthusiastically support this.
 
-BT: the queue is empty. 
+BT: the queue is empty.
 
 WH: This seems like motherhood and apple pie. I support this.
 
@@ -461,13 +461,13 @@ Consensus on both PRs
 
 
 
-## Guidance for nested namespaces again 
+## Guidance for nested namespaces again
 
 MM: The `now` thing is separate exactly because of the desire to virtualize. If you desire to have different compartments, have different settings of `now`. In order to do dependency injection of what the current time is, (??). So in that sense, there will be multiple `now` objects running around, and the replacement of `now` is the meaningful thing. So SYG, I want you to clarify given that from your definition of what it means to be a namespace object, that anticipated usage would make the `now` not be a namespace object. Is that correct?
 
 SYG: Interesting point, let me think that through. When I said the identity of the namespace holder object matters, I was thinking of if — like a static method — if I'd reassign to somewhere else, if I pulled it out as a free function, and I called it, it would behave the same regardless of the receiver. In that sense, even if virtualized, that would still be true, right? Are you thinking of virtualizing with functions where its receiver matters?
 
-MM: I would certainly prefer the all the functions not to be `this`-sensitive. When I program with the objects with closure pattern, which I do a lot, I also program with functions that are properties of objects that act like methods that close over instance state, but do it without being `this`-sensitive. So that by itself does not make it into a namespace. 
+MM: I would certainly prefer the all the functions not to be `this`-sensitive. When I program with the objects with closure pattern, which I do a lot, I also program with functions that are properties of objects that act like methods that close over instance state, but do it without being `this`-sensitive. So that by itself does not make it into a namespace.
 
 SYG: I haven't thought through exactly what a namespace object is, but you can virtualize `Math.random` by virtualizing the Math object, and we don't seem to disagree that is a namespace object?
 
@@ -500,7 +500,7 @@ No outcome on capitalization, we may or may not revisit at this meeting, status 
 
 
 
-## Renaming Strawperson to Concept or something better 
+## Renaming Strawperson to Concept or something better
 Presenter: Hemanth HM (HHM)
 
 - [slides](https://docs.google.com/presentation/d/11PBKeQOGVj3r3F9xBJIKpgftfyeW5lGHHAJrI7Misgc/edit?usp=sharing)
@@ -525,7 +525,7 @@ SYG: I see. It seems like it would be clear for the process document to perhaps 
 
 AKI: All right. Thank you for that. I'm next on the Queue. I'm going to say honestly we have a lot of time this plenary. So I'm less concerned about utilizing the time to discuss the topic like this. Except I agree with Shu in that I think it could be as simple as - I think getting rid of strawperson a good idea. I think maybe just getting rid of English names for hard to grasp esoteric concepts is maybe the best idea.
 
-GCL: I'm also in agreement that we should just remove this column and be done with it. 
+GCL: I'm also in agreement that we should just remove this column and be done with it.
 
 HHM: currently the the page, which talks about the process or the progression of proposals, has strawperson and proposal, and draft and likes. So, if you were to remove this, what would we call it? Are we happy with calling it concept or we just stick with stages like State 0 to stage four more? What are currently proposing?
 
@@ -567,7 +567,7 @@ HHM: So from what we heard, a few people voted and they were comfortable with ha
 
 KG: So that was two questions. Can we ask one question?
 
-HHM: Yeah, the question is, should we have names or not? 
+HHM: Yeah, the question is, should we have names or not?
 
 [TCQ temperature check]
 
@@ -575,7 +575,7 @@ SYG: I want this to be narrowly about removing the name column from the process 
 
 AKI: Okay, so I'm seeing the strongest feelings about just getting rid of the column. There are some people who are unconvinced. There's some people who are indifferent. Those of you who are unconvinced, do you think that we should not get rid of that column and instead should spend some time bikeshedding what we call things, or - I would like to be done with this actually, I would like to know what people who are unconvinced, how strongly you feel. `[silence]` I think we have consensus to remove the column, that is what it sounds like to me. No one has spoken up to stop that. I will give everybody one brief opportunity to speak up and otherwise let's just get rid of it and move on and we can all use whatever phrasing we want when we're educating people because use the language that matches your audience.
 
-LEO: I am sorry. I just got late to this topic because it was putting my kid to sleep. I totally just saw the slides already mentioned part of my point of view. I'm getting late to this train, just I have like there are many problematics with Straw Men, straw person or anything that derives from these terms, like my biggest pet peeve is any wording that derives from that. And also like the original one comes in from like very problematic	. I just want to mention like for someone who does have English as a second language even like Straw Men was problematic so many perspectives, not only like by, there's one, there is a most of anyone but like, just a perspective, it doesn't mean anything else, like, for technical for a technical naming - In concept was actually like, dictionary based naming for that, but there's another discussion here that see on removing that column. Sorry. I just wanted to give this perspective as like, if I see a column, if there is anything that we call for stage zero, I'd rather have it with something that it's easier for me to translate. And it's also like legit to what it means. That's that's like the point of view why I support this. There are many other problematics that I also support this change as well but I'm just giving a perspective that that I don't believe everyone shares the same point view and I hope you understand that Thank you Leo for that perspective. 
+LEO: I am sorry. I just got late to this topic because it was putting my kid to sleep. I totally just saw the slides already mentioned part of my point of view. I'm getting late to this train, just I have like there are many problematics with Straw Men, straw person or anything that derives from these terms, like my biggest pet peeve is any wording that derives from that. And also like the original one comes in from like very problematic	. I just want to mention like for someone who does have English as a second language even like Straw Men was problematic so many perspectives, not only like by, there's one, there is a most of anyone but like, just a perspective, it doesn't mean anything else, like, for technical for a technical naming - In concept was actually like, dictionary based naming for that, but there's another discussion here that see on removing that column. Sorry. I just wanted to give this perspective as like, if I see a column, if there is anything that we call for stage zero, I'd rather have it with something that it's easier for me to translate. And it's also like legit to what it means. That's that's like the point of view why I support this. There are many other problematics that I also support this change as well but I'm just giving a perspective that that I don't believe everyone shares the same point view and I hope you understand that Thank you Leo for that perspective.
 
 SFC: Yeah, I think the mental model is useful, but now that I've thought through this a little more, I think the column called "Acceptance Signifies" is actually more useful than like the single word stage names. That already forms a very good mental model, because, as others have said, trying to use a single word for this is problematic; there are lots of issues with that. So I'll withdraw my negative vote, and move it to a weak positive (for removing the single-word names altogether).
 
@@ -599,7 +599,7 @@ KG: Basically, my thesis is that we should have a built-in mechanism for convert
 
 KG: Here is a possible API. At this stage obviously nothing is fixed, but it could look like this. We can have a prototype method that converts a buffer to a base64 string and a static method that consumes a base64 string and gives you an array buffer of the appropriate length.
 
-KG: Now, of course, there are a lot of details that need to be worked out here. For example, should it be asynchronous? My claim is no, it shouldn't. Userland solutions aren't and we should not be less convenient than userland solutions. If you are operating on very large data, for example if you are uploading a base64 version of a file or something, then you want to use a stream anyway, which is an HTML concept, and not really something that we currently deal with. Again, open to changing this - I should say, I am open to having different answers for all of the questions I am about to pose. I just want to raise them as questions, and to give my opinion so that if people strongly disagree, we can fight about it in the future. 
+KG: Now, of course, there are a lot of details that need to be worked out here. For example, should it be asynchronous? My claim is no, it shouldn't. Userland solutions aren't and we should not be less convenient than userland solutions. If you are operating on very large data, for example if you are uploading a base64 version of a file or something, then you want to use a stream anyway, which is an HTML concept, and not really something that we currently deal with. Again, open to changing this - I should say, I am open to having different answers for all of the questions I am about to pose. I just want to raise them as questions, and to give my opinion so that if people strongly disagree, we can fight about it in the future.
 
 KG: Should we also support hex, the other common method of encoding arbitrary, binary data as text? I think yes, probably. It comes up often enough. It's easy to do in userland but we might as well. It seems like we ought to support hex.
 
@@ -607,7 +607,7 @@ KG: If we are doing base64, of course there are different variants of base64. Th
 
 KG:  Now padding is controversial. The RFC for base64 does not say that decoders are required to verify that the string that they are decoding is correctly padded, it gives them the option of doing so. Almost all base 64 decoders do not enforce that the string that they are given is correctly padded. Note here that I'm speaking of both kinds of padding, the equals signs on the end and the additional bits that might be in the last character. If you don't know what those are, don't worry about it. Just for those who are aware, I want to emphasize I'm talking about both kinds of padding. The fact that decoders don't typically verify means that you end up in the situation where base64 is not actually a canonical encoding. I think that this surprises many people, it surprised me when I learned about it. I have a nice collection of screenshots of it surprising other people. And because people are not aware of this, it is very easy to write code which is subtly incorrect, possibly in a way that causes a security vulnerability, that relies on the assumption that it is canonical. For example, you might be checking membership in a list of revoked keys by comparing the base64 encoding of some values and that simply does not work if your decoding is not canonical, meaning to say, if your decoding does not enforce that padding is correct and reject strings that are incorrectly padded. So it is my opinion that we should verify padding by default and have an option that allows you to not verify padding. However, there's disagreement about this point. I don't want to fight that out before stage 1, but do want to fight that out before stage 2. So I also would be interested in hearing opinions on that topic, if people think that the proposal as a whole is reasonable, so that I have something to be going with towards advancing this in the future. So let's go to the queue.
 
-WH: What do you mean by canonical? 
+WH: What do you mean by canonical?
 
 KG: What I mean is that there is only one string of characters which is accepted by the decoder which decodes to a given sequence of bytes.
 
@@ -623,9 +623,9 @@ KG:  I pretty strongly disagree. This proposal is about the serialization and de
 
 GCL: I think maybe utf-8 was a poor way to say just like raw strings because I don't think we need to enforce the like well-formedness of Unicode data, but besides hex and base 64. I feel like that would be a very useful thing. That's a thing I run into all the time at least and I'm sure other people do.
 
-KG: I agree that a mechanism for taking a string and getting the binary representation of it according to some particular choice of Unicode encoding is a useful thing. I just don't think that it has anything to do with this proposal. Also it already exists in the web platform so I don't care very much. 
+KG: I agree that a mechanism for taking a string and getting the binary representation of it according to some particular choice of Unicode encoding is a useful thing. I just don't think that it has anything to do with this proposal. Also it already exists in the web platform so I don't care very much.
 
-GCL: Okay. I would just say that doing it performantly, I guess is a task that is easier thought of than actually implemented, and doing it at the language level could facilitate that. But I guess this is something that can be discussed in the repository more in depth. 
+GCL: Okay. I would just say that doing it performantly, I guess is a task that is easier thought of than actually implemented, and doing it at the language level could facilitate that. But I guess this is something that can be discussed in the repository more in depth.
 
 KG: I want to take a strong stance on this being out of scope for this proposal. I want to say that this proposal is strictly concerned with arbitrary data serialization and deserialization, which has absolutely nothing to do with text encoding, which is what you are asking for.
 
@@ -645,7 +645,7 @@ GCL: Yeah.
 
 AKI: How are you doing on clarifying? Are we clarified? All right, Shu.
 
-SYG: I'll fold my two items into one. I want to back Kevin up on the APIs on drawing a strong line. I am not interested in having the scope of this extend into bringing text encoder and text decoder into the JS spec. If that were your goal, I guess I would recommend engaging that as a separate proposal that I wouldn't think has a high chance of succeeding. 
+SYG: I'll fold my two items into one. I want to back Kevin up on the APIs on drawing a strong line. I am not interested in having the scope of this extend into bringing text encoder and text decoder into the JS spec. If that were your goal, I guess I would recommend engaging that as a separate proposal that I wouldn't think has a high chance of succeeding.
 
 GCL: if I wanted to have a separate proposal, that would be, you know, something but I would just want it to not be like a desperate idea from whatever API happens here, which is the reason that I sort of see it as being related to this? so, at the very least, designing this proposal with the idea in mind that further “encodings” may be added in the future. Maybe it is a good way to phrase it.
 
@@ -661,9 +661,9 @@ SYG: No, I'm saying if you want this in scope for this proposal, I am saying, no
 
 GCL: okay, I know, I was just saying, if that's the case, I would then say it would be in nice to have in scope for this proposal, not a specific encoding, not specifically like binary encoding but just the ability to... just keeping the design and in a way that allows future expansion nicely with whatever we may want to add in the future without saying what we want to add in the future because we haven't decided that yet.
 
-SYG: That is too abstract of a thing for me to respond to. If you have a concrete thing how, how the API maybe doesn't find one way or another to to not preclude future extensions that you had in mind, then I can respond to that better. 
+SYG: That is too abstract of a thing for me to respond to. If you have a concrete thing how, how the API maybe doesn't find one way or another to to not preclude future extensions that you had in mind, then I can respond to that better.
 
-AKI: I think it might be time to move on to the next topic. 
+AKI: I think it might be time to move on to the next topic.
 
 SYG: Okay. So my next item is a suggestion. So this is on the arraybuffer types, right? Not TypedArrays?
 
@@ -671,17 +671,17 @@ KG: That is correct, yes.
 
 SYG: If it were on - I agree it's kind of weird to have it only on Uint8Array, but if you were on, if it were only on uint8 arrays, you get the shared array buffer stuff for free, you get the slicing for free without copying. I don't know what you think about that.
 
-KG: I don't think you get the shared array buffer stuff for free. For shared array buffers there's the question of whether the buffer is atomic, right? 
+KG: I don't think you get the shared array buffer stuff for free. For shared array buffers there's the question of whether the buffer is atomic, right?
 
 SYG: The whole operation probably is not going to be atomic without actually locking because that's going to be pretty expensive, right? Whether each access is atomic, I think you can just decide when you iterate over to the device,
 
 KG: I would want the whole access to get Atomic and SharedArrayBuffers, kind of weird not having that.
 
-SYG: So we can't do that on the main thread, but yeah, we don't have to discuss this during stage one. 
+SYG: So we can't do that on the main thread, but yeah, we don't have to discuss this during stage one.
 
 KG: Yeah, I don't know about doing this without locking. I don't mind also putting this uint8array. I do however think that it belongs on arraybuffer because arraybuffer is the sequence of bytes type in the language and uint8array is, in fact, a sequence of width-8 numbers that is backed by a sequence of bytes. But like I said, I'm okay with putting it on. uint8array as well. Please open an issue to that effect.
 
-AKI: OK. Moving on to Philip. 
+AKI: OK. Moving on to Philip.
 
 PFC: I just wanted to say I support this proposal going to stage 1. I think this is a great tool to have in the toolbox of a language's standard library.
 
@@ -719,21 +719,21 @@ KG: my intention is for this proposal to cover base64 and hex, those two and no 
 
 WH:  I just re-read the spec. The forgiving spec removes whitespace from the string before parsing. On GitHub KG wrote that the only differences between the forgiving and the strict versions are the padding and the overflow bits. So does this mean that the strict version will also ignore whitespace?
 
-KG: My comment on GitHub was mistaken. I had missed the white space difference, 
+KG: My comment on GitHub was mistaken. I had missed the white space difference,
 
-WH: Okay 
+WH: Okay
 
 KG: My preference is for ignoring white space to be an opt-in feature, like ignoring padding.
 
-WH: So will there be two switches or just one? 
+WH: So will there be two switches or just one?
 
-KG: I am open to either. I would probably make two. 
+KG: I am open to either. I would probably make two.
 
 WH: Okay. I just wanted to understand the whitespace situation.
 
 KG: I apologize for my mistake in comments on github. Thank you.
 
-AKI: All right, we are at time. Shane had added one thing to the queue chain. Can you get through this real quick? 
+AKI: All right, we are at time. Shane had added one thing to the queue chain. Can you get through this real quick?
 
 SFC: Yeah, I just wanted to say that I agree with what Hax said and I think having the encoding as a string argument looks a lot like how Node.js solves this problem. This way, it also would possibly be a way for us to support the URL friendly encoding by just making string encoding like "base64url".
 
@@ -743,7 +743,7 @@ KG: I would like to ask for stage 1. Definitely not stage 2 at this time. It sou
 
 PHE: So you read me, right. I really don't think we should. In the interest of letting this work its natural way through, I'm okay with progressing to stage one, but I have a bunch of questions that I guess we should talk about at some point which I'm not confident we're going to be able to address, but I'd be thrilled if somehow we found a way to do it. So I'm okay with stage one, but strong reservations.
 
-KG: I will make sure that is captured in the notes, and please do open issues on GitHub. 
+KG: I will make sure that is captured in the notes, and please do open issues on GitHub.
 
 AKI: if you think will need to be addressed it's also a great reminder for everyone to make sure that you check the notes at the end of the meeting so that you can be sure that your feelings and intent are captured accurately. All right?
 
@@ -763,21 +763,21 @@ DE: So I wanted to present on module fragments. We talked about this a few month
 
 DE: So the motivation is that module fragments allow bundling multiple modules in a single file. At first, I thought that we could handle bundling just by general-purpose resource bundles that contain multiple different file types. I still think we should have general-purpose resource bundles, but my understanding is that resource bundles that operate at the network level are just going to be too slow for the huge number of Javascript modules that we have so we probably also want a complimentary JavaScript only bundling format and that's what module fragments can accomplish. So for this basic bundling example, if you declare these modules `countBlock` and uppercase block, then you could declare another module that imports from them and you can see that none of these have quotes around them. So this is kind of the difference. Another aspect of this proposal is that these module fragments are only exported if they have the `export` keyword, so you can import from this private local module fragment and that's possible in the same file and then if something else imports this, then it can also import that export here
 
-MM: you're referring to "different" several times, different from what? 
+MM: you're referring to "different" several times, different from what?
 
 DE: Oh, from the previous draft to this proposal.
 
-MM: Okay, thank you. 
+MM: Okay, thank you.
 
 DE: So just in a self-contained way. if you have this module, priv then it's only accessible here in this same file. Where we have this multiple Pub declared, if you have export, then it can be imported from another file. And we have an example of those Imports in future slide, Module fragments can also be used to declare what's used at runtime in a module block. So here is an example from the actual module blocks explainer, where we have this worker block this module, that's going to be executed in a worker as a parameter to the worker constructor. What this does when it's referred to at runtime in an expression context, is it just evaluates to a module specifier, namely a module block that can be passed around like normal. And you can still use anonymous normal module blocks in the exact same context where you could use one of these. As an example for nested imports - Sorry, this should probably say `export module foo` instead of being on separate lines - but the idea is that you could have a module fragment that you export and then import from another one and then these import statements could still be applied. Or it could be used as a runtime module block value. But yeah, this should definitely be export multiple foo. So that it's statically analyzable or link-time analyzable that you're exporting module.
 
-DE: A possible extension is, if we want module fragments to work with import mmaps, if we want an import map to be able to make it so that your logical module map onto where the modules are stored than we might want to have an extension to import Maps, which addresses them because these are not addressed by strings the way previously in the proposal we discussed before, you would have a URL with it with an actual fragment in it. Now, we need some other way to refer to it. Like maybe this kind of object better so, as I mentioned when with marks question in previous presentation, you would declare a module fragment with this `"#foo"`. Now, all that noise is gone and the reason is the idea of the new proposals that unifies a single mental model between module blocks and module fragments. so for a long time, basically everyone who looked at these proposals said, hey, these should be the same proposal and I said, “no, they can't. That's never going to work.” But the reason I thought this couldn't work is because we need the namespace of this to be statically analyzed. After thinking it through and and talking it over with the incubator group, I think this is fine, actually. Another big piece of motivation was to avoid stomping on the existing, specifier namespace. So hash foo already can be used as a suffix. in both node.js and the web and it has different semantics in these places. I thought it would be okay to shadow that but some of the feedback that I've gotten is that, that's actually not a good design. And finally, this new design exposes non exported module fragments, which was a common feature request. 
+DE: A possible extension is, if we want module fragments to work with import mmaps, if we want an import map to be able to make it so that your logical module map onto where the modules are stored than we might want to have an extension to import Maps, which addresses them because these are not addressed by strings the way previously in the proposal we discussed before, you would have a URL with it with an actual fragment in it. Now, we need some other way to refer to it. Like maybe this kind of object better so, as I mentioned when with marks question in previous presentation, you would declare a module fragment with this `"#foo"`. Now, all that noise is gone and the reason is the idea of the new proposals that unifies a single mental model between module blocks and module fragments. so for a long time, basically everyone who looked at these proposals said, hey, these should be the same proposal and I said, “no, they can't. That's never going to work.” But the reason I thought this couldn't work is because we need the namespace of this to be statically analyzed. After thinking it through and and talking it over with the incubator group, I think this is fine, actually. Another big piece of motivation was to avoid stomping on the existing, specifier namespace. So hash foo already can be used as a suffix. in both node.js and the web and it has different semantics in these places. I thought it would be okay to shadow that but some of the feedback that I've gotten is that, that's actually not a good design. And finally, this new design exposes non exported module fragments, which was a common feature request.
 
 DE: So the important semantic goal of this is that the runtime early namespaces match. So, critically when you import a module fragment, especially in this nested way, where a module exports and module fragments. And then another module Imports that export and then Imports that fragment, this has to all be visible at link time. It has to be visible actually, before link time at the fetch and parse Loop. So it has to be identifiable which module you are importing because that module fragment might contain other static imports that need to be fetched all together, so it's really critically important if we have this kind of compile time or early semantics for bindings that, We really don't want - I think we shouldn't introduce multiple namespaces that programmers have to follow. The way that, e.g. in some languages macros or, I mean, classically in common lisp macros being in like a separate namespace is a thing that's confusing for people. And sorry, that's maybe not the best example but the idea is that these namespaces just correspond with each other. So I think this can work out, just fine if module fragment bindings are const. I think if we say that this is a run-time variable binding, that that maps to this module block, as long as you're not able to overwrite that variable, I think everything matches up.
 
-DE: So with module blocks, which as reminder those are in line anonymous modules that evaluate to a new kind of object that be used as a multiple specifier. we have a unified mental model because module fragments, when they referred to just as a variable evaluate to module blocks. So, module blocks are the base proposal. the module fragments proposal builds on module blocks. I'm still proposing them as separate proposals because module blocks are just a lot simpler and module fragments, by being named, add a lot of complexity on top of them. ModuleModule blocks are useful on their own. Maybe we could consider renaming them to capture this closer kind of unified relationship, like inline modules. 
+DE: So with module blocks, which as reminder those are in line anonymous modules that evaluate to a new kind of object that be used as a multiple specifier. we have a unified mental model because module fragments, when they referred to just as a variable evaluate to module blocks. So, module blocks are the base proposal. the module fragments proposal builds on module blocks. I'm still proposing them as separate proposals because module blocks are just a lot simpler and module fragments, by being named, add a lot of complexity on top of them. ModuleModule blocks are useful on their own. Maybe we could consider renaming them to capture this closer kind of unified relationship, like inline modules.
 
-DE: So there is a small syntactic conflict with this proposal that Ron (?) raised which is that in typescript module is currently synonym for namespace. They're making ISM for declaring something like math or (?). Which he could do with. You know, with an object literal but you could also do with the namespace, this proposal, semantics do not correspond to typescript semantics and the new syntax without the quotes overlaps with the existing typescript syntax. So, there are a number of possible resolutions to the ambiguity. Maybe typescript could change, maybe this proposal could change, and I think that's something we could work out before stage 3. 
+DE: So there is a small syntactic conflict with this proposal that Ron (?) raised which is that in typescript module is currently synonym for namespace. They're making ISM for declaring something like math or (?). Which he could do with. You know, with an object literal but you could also do with the namespace, this proposal, semantics do not correspond to typescript semantics and the new syntax without the quotes overlaps with the existing typescript syntax. So, there are a number of possible resolutions to the ambiguity. Maybe typescript could change, maybe this proposal could change, and I think that's something we could work out before stage 3.
 
 DE: So far we've discussed this in the incubator group and the tools Outreach group. and I felt like the feedback was generally positive. You can check the notes, I'd previously asked for other Champions people to be involved and I didn't, I apologize for not getting back to people but I hope we can work together in the future here. There's still a lot to do. So, I want to ask the committee just a new design but being based on variables not strings seem like a reasonable path forward. If so, I think the next steps are to update the readme to be in line with this presentation to to write the initial spec text, maybe some tooling support or some playground or something that. And sorry, the slides said proposed for stage 3 but I meant proposed for stage 2,two, not jumping ahead that quickly. So yeah, right now it's in stage 1 would just be proposing for stage 2 and the future. so thanks, that's the presentation and he thank you.
 
@@ -793,7 +793,7 @@ DE: Yeah, yeah, so I think I agree with you. To maybe put it another way these d
 
 MM: the static thing itself, the module block is a reification of the static thing. Is there a is the variable that's bound to The name, the static concept?
 
-DE: Yes, 
+DE: Yes,
 
 MM: I see. And the end the export and import is the thing that is referring to an in a linked initialized instance, rather than the static thing?
 
@@ -807,9 +807,9 @@ MM: Okay. So it has the same meaning here as it does if I send it elsewhere, whi
 
 DE: I don't know if I understand that question.
 
-MM: If it were locally linked but a unit of communicating code elsewhere that did not communicate is linkage graph, then it's local meaning and the meaning of it as something portable to express behavior let's say on the other side of a realm boundary, or for parameterizing worker creation or something, that the module itself does not carry its linkage graph, its linkage graph has to be provided from the context. 
+MM: If it were locally linked but a unit of communicating code elsewhere that did not communicate is linkage graph, then it's local meaning and the meaning of it as something portable to express behavior let's say on the other side of a realm boundary, or for parameterizing worker creation or something, that the module itself does not carry its linkage graph, its linkage graph has to be provided from the context.
 
-DE: Yes, that's right. I agree that that mismatch will be bad and I think we're avoiding that mismatch here. 
+DE: Yes, that's right. I agree that that mismatch will be bad and I think we're avoiding that mismatch here.
 
 MM: Okay, so I don't understand. So clearly, when I was listening to the whole proposal, I misunderstood what I was seeing very badly. I like the sound of everything I'm hearing now. So I will need to go over it again and re-understand it, but I do like the sound of everything I'm hearing now.
 
@@ -817,7 +817,7 @@ DE: Okay, I have to say the proposal materials are not in such great shape right
 
 MM: And I would also be interested in having you present this again to the SES meeting. Specifically, to make sure that the static module record and the module block are still aligned Concepts where we can expect to unify those as well.
 
-DE: Yeah, I'm happy to discuss it further with the SES group, their comments were really helpful so far. This proposal does not make any changes at all to module blocks. Okay. So everything from that discussion is still valid. 
+DE: Yeah, I'm happy to discuss it further with the SES group, their comments were really helpful so far. This proposal does not make any changes at all to module blocks. Okay. So everything from that discussion is still valid.
 
 MM: great. Thank you.
 
@@ -829,15 +829,15 @@ JWK: OK.
 
 GCL: Yeah, just from the know, just from the Node perspective. At least we don't care so much about shoving things over the network. But uses that this provides in terms of, you know, worker APIs and stuff is fantastic. And just, you know, good strong support, this is a Great proposal.
 
-DE: My understanding was that even in the node.js world there was still a relevant thing about startup performance and bundling has been catching on more and more there and for this reason. Especially because of Windows file IO cost, So I thought this would be an important proposal there too. 
+DE: My understanding was that even in the node.js world there was still a relevant thing about startup performance and bundling has been catching on more and more there and for this reason. Especially because of Windows file IO cost, So I thought this would be an important proposal there too.
 
 GCL: yeah, that's a fair point.
 
-DRR: hey, so I think from the typescript perspective there's really two things that I just want to call out the first is what you've already mentioned, in your with the module and namespace sort of Collision there, right? We've really pushed the community to move off of the `module` keyword to proper namespaces just because that's general parlance what they represent. But we really have never pulled the rug out from underneath someone on this on syntax. That's something I think we'll have to speak a little bit more broadly as a team about, so I'll bring that back. The other thing there is something that I've raised in the inline modules proposal discussion, which is just whether or not the tooling can support the sort of scenarios that you have in mind. While bundling is a fine scenario, I don't know how well this can model something like a worker that is in another project context, for example. That has all to do with being able to nest multiple global environments within the same project. That's something that we're not exactly wired up to do. And we don't really have a good sense of how to capture that today. Well today. So that is technically an implementation concern but it's something that I need to be up front with you about now because it's still something that we're not really clear on how we would achieve that. So we don't want you to have a feature that has a crappy developer experience but it is something that will continue to investigate. 
+DRR: hey, so I think from the typescript perspective there's really two things that I just want to call out the first is what you've already mentioned, in your with the module and namespace sort of Collision there, right? We've really pushed the community to move off of the `module` keyword to proper namespaces just because that's general parlance what they represent. But we really have never pulled the rug out from underneath someone on this on syntax. That's something I think we'll have to speak a little bit more broadly as a team about, so I'll bring that back. The other thing there is something that I've raised in the inline modules proposal discussion, which is just whether or not the tooling can support the sort of scenarios that you have in mind. While bundling is a fine scenario, I don't know how well this can model something like a worker that is in another project context, for example. That has all to do with being able to nest multiple global environments within the same project. That's something that we're not exactly wired up to do. And we don't really have a good sense of how to capture that today. Well today. So that is technically an implementation concern but it's something that I need to be up front with you about now because it's still something that we're not really clear on how we would achieve that. So we don't want you to have a feature that has a crappy developer experience but it is something that will continue to investigate.
 
 DE: Yeah. Thanks for bringing up that second point. I mean, we've been discussing that point pretty -  kind of on and off, over the recent months, and  understanding is that there's already lots of developer excitement about solving this pre-existing problem of getting a better developer experience for those cases. Because juggling multiple projects, even if there are multiple files, is not really fun for anybody. So so, you know, seems like the same opportunity for improving things.
 
-DDR: Yeah, just being forthright with you. 
+DDR: Yeah, just being forthright with you.
 
 JK: Oh, I just wanted to say that we would really strongly support this on Rome. I have wanted something like this in JavaScript for various build tools for a long time. I think there are many tools beyond even just bundling that make use of syntax transforms to replicate some of the sort of isolation of these module blocks provide and I think that this could replace lot of the syntax transforms, or what many people would call "magic" in those tools, so strong support all around.
 
@@ -903,7 +903,7 @@ JRL: There are a few open questions that we have about grouping. The first is wh
 
 JRL: There's also a slight issue with python. Python has a standard library package called itertools. Itertools provides a groupby, except it has a subtle difference with the way JavaScript lodash and underscore work. In python groupby combines sequential running groups, and does not combine all groups of the same key. It's easier to just look at my code sample below. So taking 1 2 2 1 and keying on the value, it's giving me three groups here because the first group is 1, I then have 2 sequential 2s which are joined into a single group, and then I have another 1, which will form its own group. Notice that the two `1` groups are not joined together. Python will only group items together if they are sequentially, the exact key. This is different than the way that underscore or lodash work, with this exact same code example. Both will group the 1s together. I'll just have a single 1 group with those two items. I don't know what to do about this, besides renaming it, but there's such strong precedents from lodash and underscore that I'm not sure it's necessary.
 
-JRL: Finally, we have the other thing that I was talking about with the findLast proposal. What do we do about holes in an array? ES6 methods were supposed to standardize on just ignoring holes, pretending they're just undefined and we don't do anything special about them. ES5 methods and strangely flat/flatMap skip holes, they see a hole and they continue on. What is the practical effect of this is shown in this code example, if you have a hole and you groupBy, should that value get turned into undefined in your output groups or should we just skip the item entirely and not call the predicate. Hoping to have discussion one on the array filtering into on the three points. 
+JRL: Finally, we have the other thing that I was talking about with the findLast proposal. What do we do about holes in an array? ES6 methods were supposed to standardize on just ignoring holes, pretending they're just undefined and we don't do anything special about them. ES5 methods and strangely flat/flatMap skip holes, they see a hole and they continue on. What is the practical effect of this is shown in this code example, if you have a hole and you groupBy, should that value get turned into undefined in your output groups or should we just skip the item entirely and not call the predicate. Hoping to have discussion one on the array filtering into on the three points.
 
 JHD: yeah, so this came up when you were joining the filter reject slide, I was curious. Why I named it that instead of just reject which is what like lodash and ruby called it.
 
@@ -911,27 +911,27 @@ JRL: the reason lodash and Ruby and underscore have both a select and they rejec
 
 JHD: The lack of a filterSelect doesn't change that at all?
 
-JRL: Well, I initially brought up that we should have a select alias and a reject but I was told we are not going to add an alias. So I've dropped that one. 
+JRL: Well, I initially brought up that we should have a select alias and a reject but I was told we are not going to add an alias. So I've dropped that one.
 
 JHD: Okay.
 
 WH: I’m weakly unconvinced about `filterReject`. I just don't see much of a use case for it, and if we do have it, we should call it `reject`.
 
-WH: I'm much more interested in `groupBy`. It seems like a useful thing for grouping things. My concern is about making things which work 99 percent of the time and have weird edge cases like the inheritance problems you mentioned. People will want to use this for database-like things where you get a bunch of results and group them by some part of a key. When that happens, I don't want to have to look up what happens if somebody uses “__proto__” for that key. Or if somebody puts both the value `true` and the string `"true"` in there. So my preference would be to have Maps because that's the most well-behaved kind of output. 
+WH: I'm much more interested in `groupBy`. It seems like a useful thing for grouping things. My concern is about making things which work 99 percent of the time and have weird edge cases like the inheritance problems you mentioned. People will want to use this for database-like things where you get a bunch of results and group them by some part of a key. When that happens, I don't want to have to look up what happens if somebody uses “__proto__” for that key. Or if somebody puts both the value `true` and the string `"true"` in there. So my preference would be to have Maps because that's the most well-behaved kind of output.
 
-JRL: I could agree to that. I don't feel strongly enough about any of the three options to force anything here. I think all three options are valuable and the only reason prefer the regular object is just because of the ecosystem precedent. 
+JRL: I could agree to that. I don't feel strongly enough about any of the three options to force anything here. I think all three options are valuable and the only reason prefer the regular object is just because of the ecosystem precedent.
 
 WH: Yeah.
 
-JRL: I think the ecosystem standardized back when we still had ES5, and we didn't have Maps at that point, it may be more appropriate to choose Map as our output now. 
+JRL: I think the ecosystem standardized back when we still had ES5, and we didn't have Maps at that point, it may be more appropriate to choose Map as our output now.
 
-WH: Yeah, I definitely don't want regular objects. Objects with no prototype would be significantly better, but then we have to decide what the keys are — whether the keys are always strings or whether you can have symbols. Maps seem the safest approach. 
+WH: Yeah, I definitely don't want regular objects. Objects with no prototype would be significantly better, but then we have to decide what the keys are — whether the keys are always strings or whether you can have symbols. Maps seem the safest approach.
 
 JH: I would prefer null objects. It's very, very strongly over an app apps or simply not useful enough because they have like no helper methods or not enough. So I agree with the inheritance inference returning an `Object.prototype` would be unwise for groupBy.
 
-BSH: I just want to say regarding the python thing reason, it has that behavior that python version of group by is because it acts on a potentially infinite iterable. So it can't group together. It's really different use case, if we're only doing, definitely finite arrays. I don't think we have to worry about that difference. 
+BSH: I just want to say regarding the python thing reason, it has that behavior that python version of group by is because it acts on a potentially infinite iterable. So it can't group together. It's really different use case, if we're only doing, definitely finite arrays. I don't think we have to worry about that difference.
 
-MF: I have a couple things to say and I like to echo what Bradford just said there. Haskell has the same behavior again because of infinite lists there. It's called groupBy. So, maybe the name we'll have to talk about. But as you mentioned in the JavaScript ecosystem, I think it's fairly common to call the operation you're proposing groupBy. So I don't think it should be an issue. I am pretty excited about groupBy. I think that it covers the original use case that you had with filtering fairly well and I'm excited to see the other things that it will solve because it has much more flexibility. As far as the proposal just to do a rejection method. I am not very supportive of that route, I am still not convinced that it would have the kind of discoverability that would help people make the decision about filtering in versus out. I don't really think it will help too much there. 
+MF: I have a couple things to say and I like to echo what Bradford just said there. Haskell has the same behavior again because of infinite lists there. It's called groupBy. So, maybe the name we'll have to talk about. But as you mentioned in the JavaScript ecosystem, I think it's fairly common to call the operation you're proposing groupBy. So I don't think it should be an issue. I am pretty excited about groupBy. I think that it covers the original use case that you had with filtering fairly well and I'm excited to see the other things that it will solve because it has much more flexibility. As far as the proposal just to do a rejection method. I am not very supportive of that route, I am still not convinced that it would have the kind of discoverability that would help people make the decision about filtering in versus out. I don't really think it will help too much there.
 
 JRL: I speak with experience. Whenever I try to write a filter method. I first think as if I could have written a filterReject. So it does help me even though it doesn't exist, but that doesn't help anyone else because it doesn't exist for anyone else to use. Google has an internal meeting before each tc39. also a strong supporter of a filter reject method because he also sees filtration the exact same way that I do. And so he screws up just like I did.
 
@@ -961,7 +961,7 @@ JRL: I heard two parts to that. One about filterReject, and I believe that filte
 
 JHX: Yeah, I agree with you.
 
-JHX: My next point is, naming is always a bikeshed issue. I want to point out that filterReject. may have some conflict with Promise.reject. There are other contexts where we use the same word, but it seems avoidable. But I really hope if we have other choices I would like to see other words, not reject. 
+JHX: My next point is, naming is always a bikeshed issue. I want to point out that filterReject. may have some conflict with Promise.reject. There are other contexts where we use the same word, but it seems avoidable. But I really hope if we have other choices I would like to see other words, not reject.
 
 JRL: Thank you. I actually had that same opinion brought up when I was calling it select/reejct. I was hoping that filterReject would avoid any confusion because it starts with filter. Because then I felt like it was more closely associated with filtering than with promise rejection.
 
@@ -971,7 +971,7 @@ JRL: I don't think it's appropriate to ask for stage 2 on groupBy. So I'll ask f
 
 MF: I would not support stage 2 on filterReject until we've done further research on whether groupBy solved the originally stated problem here because I feel that if we have grouped by and it is a solution to your originally stated problem that we do not need filterReject.
 
-JRL: Okay. 
+JRL: Okay.
 
 IID:(?): Yeah, Mozilla agrees.
 
@@ -983,7 +983,7 @@ MM: Thank you. I would feel uncomfortable -I understand the argument Aki made, b
 
 JRL: okay, so I think I'm with the resolution here. I'm definitely going to split groupBy into its own proposal, and then, I'm just asking stage 1 for `groupBy`.
 
-WH: Sounds good. I support stage 1 for `groupBy`. 
+WH: Sounds good. I support stage 1 for `groupBy`.
 
 MF: Great. I don't want to be difficult here, but like Aki was saying earlier, stage one is about defining a problem. Stage two is about selecting a solution. "groupBy for stage 1", I don't think is a meaningful statement here. We can be trying to solve just your filtering problem or trying to solve the problems that group by solves. We're not trying to group by if that makes sense.
 
@@ -991,7 +991,7 @@ MM: Okay, groupBy solves a much bigger range of problems. So I would certainly. 
 
 MF:  I'm fine with that. Please Justin in your description in your repository, address the problem and not just the solution.
 
-WH: I take a different procedural position and I would say that, in my opinion, the `groupBy` proposal is almost at stage 2. We already have spec text for it, with the only modulo being that I would want the prototype gone from the produced objects and possibly a Map version. 
+WH: I take a different procedural position and I would say that, in my opinion, the `groupBy` proposal is almost at stage 2. We already have spec text for it, with the only modulo being that I would want the prototype gone from the produced objects and possibly a Map version.
 
 JRL: So, I think with agreement that the Prototype object has to be changed to use object.create(null), or we have to use a Map, or a solution that does both. I think that's an agreement. There's also holes, which I think we still need to discuss but we can do that at stage one, and naming, which I think we're in agreement that just normal "groupBy" is fine. I think that is what I'm proposing to go to the stage one, that agreement
 
@@ -1001,7 +1001,7 @@ JRL: I agree.
 
 AKI: Do we have a conclusion to record here?
 
-JRL:  I'm hoping the conclusion is groupBy reaches stage one. 
+JRL:  I'm hoping the conclusion is groupBy reaches stage one.
 
 JHD: Can we come up with a name for the problem that groupBy solves and perhaps grouping with its own repo. Okay. And then that addresses Michael's point and then filter rejected be discussed separately.
 
@@ -1009,13 +1009,13 @@ JRL: That seemed reasonable. So I'm asking for "array grouping" to go to Stage 1
 
 [general agreement]
 
-JRL: Okay, then I'm being blocked from reaching stage 2 for filterReject pending progress on array grouping. 
+JRL: Okay, then I'm being blocked from reaching stage 2 for filterReject pending progress on array grouping.
 
-MM: I'm just un-enthused about `filterReject` period. 
+MM: I'm just un-enthused about `filterReject` period.
 
-AKI: Is that the same thing as blocking consensus? I'm sorry. I'm a little bit unclear. 
+AKI: Is that the same thing as blocking consensus? I'm sorry. I'm a little bit unclear.
 
-MM: So what am I agreeing to? If I were to agree to stage two, I'm sorry I keep having to for a refresher as almost What is the implication of advancing solution? 
+MM: So what am I agreeing to? If I were to agree to stage two, I'm sorry I keep having to for a refresher as almost What is the implication of advancing solution?
 
 MF: I would not like `filterReject` to advance to stage 2 until `groupBy` has had further progress, so it should not advance to stage 2 today. I don't think we need to go into process discussion right now.
 

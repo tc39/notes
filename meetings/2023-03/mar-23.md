@@ -805,7 +805,7 @@ DE: But . . . I would like people who have strong concerns to think about whethe
 
 CDA: We are over time. But . . . I think we can use the last few minutes here to maybe hopefully get through the last items in the queue, if that’s all right.
 
-RBN: I want to respond to DE if we could and a response to KG as well. I fully intend to bring a proposal for function declaration decorators and object decorators most likely this year. This is something I’ve been discussing with CHG and others over time. However, because of the existing TypeScript eco system and the potential – migrating everybody to native decorators I wanted to get out here first to have these discussions first. Regardless of what state function declaration decorators end up being. I plan to have those as part of the discussion. Talking about class and method, this is higher than bringing them themselves.
+RBN: I want to respond to DE if we could and a response to KG as well. I fully intend to bring a proposal for function declaration decorators and object decorators most likely this year. This is something I’ve been discussing with KHG and others over time. However, because of the existing TypeScript eco system and the potential – migrating everybody to native decorators I wanted to get out here first to have these discussions first. Regardless of what state function declaration decorators end up being. I plan to have those as part of the discussion. Talking about class and method, this is higher than bringing them themselves.
 
 DE: Yeah. I think that’s reasonable. But I also think we can see that we will have to have the bigger picture together. Before we can advance these things beyond Stage 1.
 

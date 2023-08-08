@@ -1,7 +1,7 @@
 # December 4, 2019 Meeting Notes
 -----
 
-Brian Terlson (BT), Aki Rose (AKI), Daniel Rosenwasser (DRR), Shelley Vohr (SVR), Michael Saboff (MLS), Yulia Startsev (YSV), Ross Kirsling (RKG), Waldemar Horwat (WH), Chip Morningstar (CM), Rob Palmer (RPR), Shane Carr (SFC), Jordan Harband (JHD), Kevin Gibbons (KG), Sebastian Markbage (SM), Tierney Cyren (TCN), Damien Engels (DES), Caio Lima (CLA), Alan Schmitt (AS), Tab Atkins (TAB), Shu-yu Guo (SYG), Justin Ridgewell (JRL), Till Schneidereit (TST), Michael Ficarra (MF), Pieter Ouwerkerk (POK), Zibi Braniecki (ZB), Hemanth HM (HHM), Dan Finlay (DJF), Benjamin Coe (BCE?), Chris Hewell Garrett (CHG), Gabriel McAdams (GMS), Valerie Young (VYG), Tantek Çelik (TEK)
+Brian Terlson (BT), Aki Rose (AKI), Daniel Rosenwasser (DRR), Shelley Vohr (SVR), Michael Saboff (MLS), Yulia Startsev (YSV), Ross Kirsling (RKG), Waldemar Horwat (WH), Chip Morningstar (CM), Rob Palmer (RPR), Shane Carr (SFC), Jordan Harband (JHD), Kevin Gibbons (KG), Sebastian Markbage (SM), Tierney Cyren (TCN), Damien Engels (DES), Caio Lima (CLA), Alan Schmitt (AS), Tab Atkins (TAB), Shu-yu Guo (SYG), Justin Ridgewell (JRL), Till Schneidereit (TST), Michael Ficarra (MF), Pieter Ouwerkerk (POK), Zibi Braniecki (ZB), Hemanth HM (HHM), Dan Finlay (DJF), Benjamin Coe (BCE?), Kristen Hewell Garrett (KHG), Gabriel McAdams (GMS), Valerie Young (VYG), Tantek Çelik (TEK)
 
 
 Remote: István Sebestyén (IS), Bradley Farias (BFS), John Hax (JHX), Caridy Patiño (CP), Daniel Ehrenberg (DE), Erica Pramer (EPR), Mike Samuel (MSL), Richard Gibson (RGN), Ron Buckton (RBN), Mathias Bynens (MB), d2g, Ujjwal Sharma, Jonathan Keslin (JKN), Ben Newman (BN), Sergey Rubanov (SRV), Mark S. Miller (MM)

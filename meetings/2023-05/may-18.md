@@ -547,7 +547,7 @@ KG: That seems like a valid concern, if you are writing to metadata outside of a
 
 JRL: I don’t use decorator metadata or have any experience, maybe this is not something that ever comes up.
 
-KG: Unfortunately, I don’t either. I am only presenting this because I asked CHG to write the spec text, which he did; we agreed on the semantics on Monday or Tuesday or wherever day. I can’t speak to it either way. I don’t know if there any people who have more thoughts on that topic. But this is the semantics we agreed on.
+KG: Unfortunately, I don’t either. I am only presenting this because I asked KHG to write the spec text, which he did; we agreed on the semantics on Monday or Tuesday or wherever day. I can’t speak to it either way. I don’t know if there any people who have more thoughts on that topic. But this is the semantics we agreed on.
 
 RBN: First to clarify, which mutability concern are you discussing? Talking about mutability of making a change to the decorator after it’s been defined or talking about making a decorator trying to write a mutable property that might be a object –
 
@@ -557,7 +557,7 @@ RBN: This is because the subclass does not have a own `Symbol.metadata` with its
 
 JRL: Correct.
 
-RBN: I don’t know if CHG put thought into this. The purpose of metadata, the expectation is that mutations that occur to metadata after the fact are a bad idea. So I don’t really know that I have a perspective on what that really should be. I think that the expectation with metadata, at least in the libraries that use it today, is that even the reflecting metadata allows metadata to be mutated after the fact so there is the possibility, although it hasn’t come up in practice. And it’s always possible to have a class that might be concerned about mutations to have a class decorator that freezes its metadata before it’s written to the class as well.
+RBN: I don’t know if KHG put thought into this. The purpose of metadata, the expectation is that mutations that occur to metadata after the fact are a bad idea. So I don’t really know that I have a perspective on what that really should be. I think that the expectation with metadata, at least in the libraries that use it today, is that even the reflecting metadata allows metadata to be mutated after the fact so there is the possibility, although it hasn’t come up in practice. And it’s always possible to have a class that might be concerned about mutations to have a class decorator that freezes its metadata before it’s written to the class as well.
 
 JRL: Okay. I don’t have the experience to say whether or not this happens. If RBN who has extensive experience with decorators, shouldn’t have any experience writing after the fact, then that’s totally fine.
 

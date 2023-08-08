@@ -33,7 +33,7 @@
 | Eemeli Aro           | EAO            | Mozilla            |
 | Daniel Minor         | DLM            | Mozilla            |
 | Jordan Harband       | JHD            | Invited Expert     |
-| Chris Garrett        | CHG            | Invited Expert     |
+| Kristen Hewell Garrett        | KHG            | Invited Expert     |
 | Sergey Rubanov       | SRV            | Invited Expert     |
 | Duncan MacGregor     | DMM            | ServiceNow         |
 | Duncan MacGregor     | DMM            | ServiceNow         |
@@ -638,7 +638,7 @@ RBN: I also want to point out a couple thing. One, as Daniel said, whether or no
 
 USA: Right, we have run around two minutes left and next up on the queue we have Chris.
 
-CHG: Hi. So, yeah, I think that another thing to consider about these migrations, decorators are changing -- they’re going to change both the semantics and the syntax. And especial away the semantics, it’s something I have found code bases are typically wanting to do in parts, not via a large code mod. You typically want to try to get it massage your code base into as close as it’s going to be afterward. You know, one file at a time. Sometimes especially with some of the other changes. Before you kind of do anything like that or flip the switch, so to speak. I’ve even talked through situations where people want to run both transforms at the same time, and use both specs at the same time because it is going to be so difficult to migrate just straight. So I do think, like, a solution like a code mod isn’t particularly helpful for this style of migration. And like Ron said, I do think this is like a case where given there is no real other reason, it is significantly easier to migrate, you know, the existing style. So that’s just my experience in what I’ve seen so far in the ecosystem.
+KHG: Hi. So, yeah, I think that another thing to consider about these migrations, decorators are changing -- they’re going to change both the semantics and the syntax. And especial away the semantics, it’s something I have found code bases are typically wanting to do in parts, not via a large code mod. You typically want to try to get it massage your code base into as close as it’s going to be afterward. You know, one file at a time. Sometimes especially with some of the other changes. Before you kind of do anything like that or flip the switch, so to speak. I’ve even talked through situations where people want to run both transforms at the same time, and use both specs at the same time because it is going to be so difficult to migrate just straight. So I do think, like, a solution like a code mod isn’t particularly helpful for this style of migration. And like Ron said, I do think this is like a case where given there is no real other reason, it is significantly easier to migrate, you know, the existing style. So that’s just my experience in what I’ve seen so far in the ecosystem.
 
 USA: Right. Next up we have a reply from Shu. Could you be really quick, please.
 

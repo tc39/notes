@@ -21,7 +21,6 @@
 | Daniel Rosenwasser   | DRR          | Microsoft         |
 | Mikhail Barash       | MBH          | Univ. of Bergen   |
 
-
 ## Using WebAssembly as a polyfill for ECMAScript proposals
 
 Presenter: Shane F. Carr  (SFC)
@@ -498,7 +497,6 @@ PKA: So here are several proposals we have heard from relatively recently.  A la
 
 PKA: Now going to go through some proposals that have not been presented recently, but where the Champions are, I think, present.  And by the way, if any of these proposals are sort in the wrong column or have the wrong information, I apologize.  I threw the slides together quickly.
 
-
 PKA: One other thing, if a proposal is actively continuing, or work continues and nothing is blocking we can just say that and move on immediately.  There’s no need to go into detail in the interest of getting through everything.
 
 ### `JSON.parseImmutable`
@@ -641,7 +639,6 @@ Ten (10) Stage 2 Proposals have been presented recently and did not need to be d
 - Source Phase Imports
 - String Dedent
 - Symbol Predicates
-
 
 Two (3) proposals were identified as being fully active:
 
@@ -1076,7 +1073,6 @@ Gibbons, who wants us to stop coercing things.
 
 Presenter: Kevin Gibbons (KG)
 
-- [proposal]()
 - [slides](https://docs.google.com/presentation/d/1m5R5J98W6adegghgkAlbSuFgAYJDT52yyFVdAqLjm00/edit)
 
 KG: So I should say before we get started, this proposal -- well, it’s not
@@ -1151,7 +1147,6 @@ getting a value out of math.max that is not the same as one of the values you pu
 Like, max is generally considered to be give me the -- one of these which is largest, but it
 doesn’t.  It coerces them to numbers and then gives you the largest number after coercion,
 which is just never going to be the thing you want, or at least never the thing I want.
-
 
 KG: Similarly, there’s APIs that take integral numbers and right now we round, or to be more
 precise, we truncate.  So that’s not true universally, but it’s true almost universally.  There
@@ -1979,13 +1974,13 @@ what we do during Stage 3, writing tests for implementations first or writing to
 
 RPR: All right.  Okay.  So is there anything more you wanted to say, Michael?
 
-#### Summary
+### Summary
 
-##### Main points
+#### Main points
 
 RE the "spiraling", the thing we need to keep in mind is that it's fine if we have *an* implementation during stage 2.75 (Dan suggested polyfills/transpilers, but it can also be an engine), it's just the idea is to avoid recommending for general implementation, which is where that aggregate work is extremely high.
 
-##### Conclusion
+#### Conclusion
 
 No change to the stage process is made.
 

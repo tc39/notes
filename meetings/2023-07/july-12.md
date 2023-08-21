@@ -42,8 +42,6 @@
 | Justin Grant           | JGT          | Invited Expert    |
 | Mikhail Barash         | MBH          | Univ. of Bergen   |
 
-
-
 ## Conversation on note summaries
 
 MLS: So specifically, I want to talk about summaries.  This was discussed at the beginning of the meeting yesterday.
@@ -251,7 +249,7 @@ RPR: Thumbs up in the room from MLS.
 
 DE: I would be happy with that, but we don’t have a PR to agree consensus on.
 
-RPR:	The question is to  FYT, are you in principle happy with that conclusion?
+RPR: The question is to  FYT, are you in principle happy with that conclusion?
 
 FYT: I do think I need to think about that.  I do think there may be consequence that could cause problems.  I mean, this first time I heard people suggest that.  I don’t feel comfortable to agree upon that.
 
@@ -376,8 +374,8 @@ RPR: All right.  So ACE notes that we are missing a link to the slides in the ag
 ### Summary and conclusion
 
 - Two normative changes ([PR#150](https://github.com/tc39/proposal-intl-duration-format/pull/150), [PR#158](https://github.com/tc39/proposal-intl-duration-format/pull/158)) achieved consensus
-    - #150: Revert previously approved normative change to how fractionalDigits works in DF.
-    - #158: Backport a change to the ToIntegerIfIntegral proposal in Temporal.
+  - #150: Revert previously approved normative change to how fractionalDigits works in DF.
+  - #158: Backport a change to the ToIntegerIfIntegral proposal in Temporal.
 - Still need to spent time reasoning about
 - Open issues need to be triaged and labeled
 
@@ -565,7 +563,6 @@ KG: Okay.  Thanks.  I will do that.
 KG: I presented on a method for writing to an existing buffer as part of the streaming API, which had a couple of open questions including whether to have offset parameters.  The committee was split on having offset parameters, but expressed no disagreement with my positions on the other open questions namely, the decision to have separate methods for writing to an existing buffer.  And the naming question, which is I proposal to use toChunked. So that was the presentation.  And then the next steps are, I will come back to the committee, hopefully after talking to Peter, and present the proposal with spec text for both the streaming and one-shot versions.  And hopefully with a stronger story around motivation for the streaming versions, and then the committee can decide at that point whether or not it wants to have the streaming versions.  And we can hopefully go for Stage 3 for one-shot or streaming version and await implementation feedback whether or for the the offset parameters are actually necessary for performance.
 
 KG: My take-aways are that the committee is not universally convinced that it makes sense to do streaming as part of this proposal.  Although I have heard support from several people, and a concrete user story around this being frustrating to do without something in the language for use with compression stream.  As to the concrete design questions presented, there is not agreement on the use of the offset parameters.  Some people are in favor of them.  I continue to feel that the right thing to do is to not include them unless implementations come back at Stage 3 and say that “no really, we need these for performance”, at which point we can include them. and no one disputed my decision to have separate methods.  So I would do that.
-
 
 ## Explicit Resource Management (continuation)
 
@@ -876,41 +873,42 @@ CDA: Yeah.  Justin would you like to dictate a summary for the notes
 ### Summary
 
 - Presentation:
-    - Problems to solve:
-        - Implementation divergence
-        - ECMAScript unexpectedly changes programmer input, e.g. Europe/Kyiv ⇨ Europe/Kiev
-        - Developers are upset by obsolete names, e.g. Calcutta, Kiev, Saigon
-        - ===  is unreliable for comparing IDs across engines, platforms, or time
-        - Temporal intensifies these problems by making IDs more discoverable
-            - e.g. Temporal.ZonedDateTime shows ID in console, debugger, logs, JSON, etc.
-    - During Stage 2:
-        - Landed editorial PRs: tc39/ecma262#3035, tc39/proposal-temporal#2573
-        - Finished Test262 tests (and built polyfill to run them)
-        - Implementer discussions in GH issues
-        - 2x TG2 reviews, with outcome of not expanding spec changes beyond Stage 2 text, because further changes didn't have TG2 consensus and/or were dependent on CLDR/ICU changes that aren't ready.
-    - Status of planned work
-        - API changes: spec complete, tests complete
-        - TZDB identifier guidelines for implementers
-            - Handling future changes (esp. renames): spec note complete, no tests needed
-            - Help implementers converge on a cross-engine set of canonical IDs: not complete, waiting on CLDR (won't ship in time for this proposal). Will follow up in ECMA-402 separate from this proposal.  We'll move open issues to 402 repo.
-    - Spec changes:
-        - Stop canonicalizing in 5 places in the spec
-        - Add canonicalization to TimeZoneEquals
-        - Add new Temporal.TimeZone.p.equals method
-        - Add a note that recommends a 2-year waiting period before a renamed ID becomes primary (idea borrowed from Android)
-    - Stage 3 status
-        - Spec, tests, polyfill: all complete
-        - Stage 3 reviewers: approved
-        - 3 ECMA-262 reviewers (SYG, KG, MF): approved
+  - Problems to solve:
+    - Implementation divergence
+    - ECMAScript unexpectedly changes programmer input, e.g. Europe/Kyiv ⇨ Europe/Kiev
+    - Developers are upset by obsolete names, e.g. Calcutta, Kiev, Saigon
+    - ===  is unreliable for comparing IDs across engines, platforms, or time
+    - Temporal intensifies these problems by making IDs more discoverable
+      - e.g. Temporal.ZonedDateTime shows ID in console, debugger, logs, JSON, etc.
+  - During Stage 2:
+    - Landed editorial PRs: tc39/ecma262#3035, tc39/proposal-temporal#2573
+    - Finished Test262 tests (and built polyfill to run them)
+    - Implementer discussions in GH issues
+    - 2x TG2 reviews, with outcome of not expanding spec changes beyond Stage 2 text, because further changes didn't have TG2 consensus and/or were dependent on CLDR/ICU changes that aren't ready.
+  - Status of planned work
+    - API changes: spec complete, tests complete
+    - TZDB identifier guidelines for implementers
+      - Handling future changes (esp. renames): spec note complete, no tests needed
+      - Help implementers converge on a cross-engine set of canonical IDs: not complete, waiting on CLDR (won't ship in time for this proposal). Will follow up in ECMA-402 separate from this proposal.  We'll move open issues to 402 repo.
+  - Spec changes:
+    - Stop canonicalizing in 5 places in the spec
+    - Add canonicalization to TimeZoneEquals
+    - Add new Temporal.TimeZone.p.equals method
+    - Add a note that recommends a 2-year waiting period before a renamed ID becomes primary (idea borrowed from Android)
+  - Stage 3 status
+    - Spec, tests, polyfill: all complete
+    - Stage 3 reviewers: approved
+    - 3 ECMA-262 reviewers (SYG, KG, MF): approved
 - Conclusions:
-    - Proposal reaches Stage 3 🚀🚀🚀
-    - We'll merge this proposal as a normative PR into Temporal Stage 3 spec so that implementers only have one thing they need to implement. JGT will author this PR ASAP.
-    - Implementations should NOT implement this proposal's changes to Intl.DateTimeFormat until Temporal.TimeZone.p.equals() is implemented, because without equals() there's no way to know if two time zones are equivalent. (Also because it'd likely break all Temporal polyfills.)
-    - We'll change this proposal's repo and rendered spec text to avoid confusion with Temporal. What specific changes those should be will be worked out with JHB, SFC, Temporal champions, and maybe others.
-    - We tentatively agreed that this proposal will be subsumed into Temporal, but SFC had concerns around that. JGT will follow up with him to understand those concerns. We may get extra time tomorrow to work things out further.
-     - We'll continue working with TG2, CLDR, and ICU on further changes to align implementations' canonicalization behavior. We'll port issues from the proposal repo to the 402 repo, and will propose normative changes to ECMA-402 as they are unblocked.
+  - Proposal reaches Stage 3 🚀🚀🚀
+  - We'll merge this proposal as a normative PR into Temporal Stage 3 spec so that implementers only have one thing they need to implement. JGT will author this PR ASAP.
+  - Implementations should NOT implement this proposal's changes to Intl.DateTimeFormat until Temporal.TimeZone.p.equals() is implemented, because without equals() there's no way to know if two time zones are equivalent. (Also because it'd likely break all Temporal polyfills.)
+  - We'll change this proposal's repo and rendered spec text to avoid confusion with Temporal. What specific changes those should be will be worked out with JHB, SFC, Temporal champions, and maybe others.
+  - We tentatively agreed that this proposal will be subsumed into Temporal, but SFC had concerns around that. JGT will follow up with him to understand those concerns. We may get extra time tomorrow to work things out further.
+  - We'll continue working with TG2, CLDR, and ICU on further changes to align implementations' canonicalization behavior. We'll port issues from the proposal repo to the 402 repo, and will propose normative changes to ECMA-402 as they are unblocked.
 
 ## Source Phase Imports for Stage 3
+
 Presenter: Guy Bedford and Luca Cassonato (GB) & (LCA)
 
 - [proposal](https://github.com/tc39/proposal-source-phase-imports)
@@ -946,7 +944,7 @@ GB: And obviously, we should consider what this representation is going to be fo
 
 GB: Now, there is some risk with that because it’s a step – it’s a big step we are taking.  But it’s a great opportunity for us to be able to start shipping these proposals, which we have been working on for I think coming on two years at the moment.  And we have identified a huge amount of cross-cutting concerns and gone through the design discussions from the start.  So that we have alignment between the proposals that we believe can come up with some really powerful primitives for JavaScript that should significantly improve virtualization cases.
 
-LCA:	We discussed the proposal already.   First up is the dynamic import syntax.  In the meeting with he discussed whether to use the `import.source` syntax or regular with options bag.  We agreed during the meeting it use the `import.source` syntax.  And the proposal updated to use this.
+LCA: We discussed the proposal already.   First up is the dynamic import syntax.  In the meeting with he discussed whether to use the `import.source` syntax or regular with options bag.  We agreed during the meeting it use the `import.source` syntax.  And the proposal updated to use this.
 Next up the export source at that timeic (?) syntax.  The topic of this came up in the last meeting.  Import source, shorthand and exporting the I am – identifier.  As identified by Ron, we believe there may be actual potentially use for reexporting.  By allowing defining a module composed of multiple sources which is a single file with module expressions and proposals in the future.  We will not pursuet this in the current proposal because the export default from form for regular evaluation imports does not exist.  So we would like to see this explored within the context of the export default proposal.
 Finally, a follow-up on aligning the import source static and dynamic syntax.  We discussed whether to align the static syntax with a space, the dynamic with a dot.  There is currently no precedent for declarations containing dots.  Additionally, the export source causes a space for the export syntax has to use a dot in this case.  And didn't introduce a second declaration containing dots.  And also introduced export dot something as a new syntax.  Because of the points we decided against this change and we are sticking with import space source and I don’t think there was major controversy in the last meeting.  Everybody seemed okay with that.
 
@@ -1211,8 +1209,8 @@ Presenter: Kevin Gibbons (KG)
 
 - [proposal](https://github.com/tc39/proposal-set-methods)
 - no slides presented
-    - https://github.com/tc39/proposal-set-methods/issues/98
-    - https://github.com/tc39/proposal-set-methods/issues/84
+  - https://github.com/tc39/proposal-set-methods/issues/98
+  - https://github.com/tc39/proposal-set-methods/issues/84
 
 KG: Okay.  So I have a couple of small PRs for set methods, which is at Stage 3, so these
 are just extremely minor tweaks.  The first one is this callability check for the next method,
@@ -1774,19 +1772,19 @@ SYG: If we want to do this tomorrow in the morning, by the way, I won’t be her
 
 CDA: We can discuss the continuation asynchronously.
 
-
 ### Speaker's Summary of Key Points
 
-* A detailed sketch of a path forward for Decimal was offered
-* The speaker solicited feedback on the data model (Decimal128), rounding modes, and generally, whether we want to do Decimal at all, and if so, in what form.
+- A detailed sketch of a path forward for Decimal was offered
+- The speaker solicited feedback on the data model (Decimal128), rounding modes, and generally, whether we want to do Decimal at all, and if so, in what form.
 
 ### Conclusion
 
-* The issue of normalization vs. non-normalized Decimal128 was raised. It appears that we do not have consensus on this issue.
-* The issue of fidelity to official IEEE 754 Decimal128 was raised
-* We discussed whether the modest proposal made here is good enough for JS developers
+- The issue of normalization vs. non-normalized Decimal128 was raised. It appears that we do not have consensus on this issue.
+- The issue of fidelity to official IEEE 754 Decimal128 was raised
+- We discussed whether the modest proposal made here is good enough for JS developers
 
 ## Meta-review of Stage 3 proposals
+
 Presenter: Peter Klecha (PKA)
 
 - [slides](https://docs.google.com/presentation/d/17LEF7f7vU53cOawMphJwOnG59R_Au5bnJhIdLYn30cM)

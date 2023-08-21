@@ -39,11 +39,9 @@
 | Tom Kopp            | TKP          | Zalari            |
 | Mikhail Barash      | MBH          | Univ. of Bergen   |
 
-
 ## Introduction
 
 Presenter: Ujjwal Sharma (USA)
-
 
 USA: Thank you for having us in your city. A quick introduction. We are here in person, CDA will be [inaudible]. Justin who is one of the facilitators and Brian, will be also make the rest of our facilitator group, they are on the – but yeah.
 
@@ -71,6 +69,7 @@ RPR: Just to confirm... any objections to the past meeting’s notes being publi
 ## Secretary’s Report
 
 Presenter: Samina Husain (SHN)
+
 - [slides](https://github.com/tc39/agendas/blob/main/2023/tc39-2023-032_Final.pdf)
 
 SHN: Thank you very much for the excellent organization to our host at the university. We already started off well. It’s a pleasure to meet everybody. I see the names online, this is my second meeting. So I am Samina Husain from the Secretariat. Together we will do a presentation today, and I think there are changes in how we do the presentation and information. And feedback. Let me go through this a bit to give you an overview and happy to have questions. All right. IS next to me and myself, we have a few changes to the agenda. There’s a bunch of information in the annex. Read it for the areas that you’re interested in. What I will do is go over the first few bullets, what I have not mentioned is some of the work that’s going on in the background with other mem bers that we are trying to develop more projects with, and look for new work items and this is where your feedback and input is important. And also, how we can support the TC39 team.
@@ -160,7 +159,6 @@ Initial meetings and contacts with the Linux Foundation (LF) have taken place ex
 
 TC39 committee feedback is requested, what items are relevant for the secretariat's report?  Where can Ecma collaborate and build partnerships?
 
-
 USA: All right. Thank you to our secretaries. That’s all for this item.
 
 ## ECMA-262 status updates
@@ -168,7 +166,6 @@ USA: All right. Thank you to our secretaries. That’s all for this item.
 Presenter: Kevin Gibbons (KG)
 
 - [slides](https://docs.google.com/presentation/d/1v5pcXHdJDtTj1_q9fncoUnY2GezpvLOKAYEhxkyjMc8)
-
 
 KG: We have had a small number of editorial changes that we considered worth calling to the committee's attention. The first is this refactor from Justin Grant (JGT) of the handling of TimeZone identifiers spec. This shouldn’t affect anyone directly. But in preparation for both Temporal and Justin’s TimeZone canonicalization, there are some of the internal machinery and the TimeZone identifiers.
 
@@ -205,7 +202,6 @@ BAN: Cool. All right. I have got a very, very short slide show. We have just a h
 Sharing problems. It’s probably best to get straight through them instead of sharing. We have a couple of different editorials . . . The one that is manier meaningful is the explanatory note on usage of search collation. With that is – so there is a type of colonelation used for string only. It has different roles for strings with diacritical marks and we added a note to say it should not be used for sorting since it’s not guaranteed to be in any particular order.
 There is a really small one. As part of cleaning up, we are regularizing all of the references to UT35 and added references or detailed blanks. And one that’s not on here, we also merged one. It’s PR779 on ECMA402. We just added a note saying that we update to reflect UTS35 and CLDR on ad hoc basis, stating what we – the practice we had been already following.
 
-
 ## Summary
 
 The committee is pleased with the work of the ECMA-402 editors. (See slides for more details)
@@ -232,7 +228,7 @@ PFC: As in the update I gave in the March plenary, we don’t have a lot of main
 
 PFC: We have a pull request open for explicit resource management, which we'd appreciate some help with review on. There’s a pull request open for TimeZone canonicalization and we'd also appreciate help reviewing those.
 
-### Summary and Conclusion:
+### Summary and Conclusion
 
 Tests for Stage 3 proposals are moving along. Help with review from delegates and experts would be appreciated.
 
@@ -293,11 +289,11 @@ USA: Perfect. Thank you.
 
 Consensus on #709, #768, #786 and intl-numberformat-v3#130.
 
-#709: when we pass an options object to the DateTimeFormat constructor, the property reads are user-visible yet irregular. This PR makes it so every property is read only once.
+- #709: when we pass an options object to the DateTimeFormat constructor, the property reads are user-visible yet irregular. This PR makes it so every property is read only once
 
-The committee decided against landing “ecma402#783 Added support for sentence break suppressions to Intl.Segmenter“ for now, as the optionality causes interoperability risk, and the feature isn’t supported by ICU4X which is used by SpiderMonkey to implement Segmentation under the scenes.
+- The committee decided against landing “ecma402#783 Added support for sentence break suppressions to Intl.Segmenter“ for now, as the optionality causes interoperability risk, and the feature isn’t supported by ICU4X which is used by SpiderMonkey to implement Segmentation under the scenes.
 
-We are trying in a new sort of way of proposing 402 need consensus PRs. Based on plenary feedback, reach out to me or editors to improve processes within 402. Thank you.
+- We are trying in a new sort of way of proposing 402 need consensus PRs. Based on plenary feedback, reach out to me or editors to improve processes within 402. Thank you.
 
 ## Import Attributes
 
@@ -305,7 +301,6 @@ Presenter: Nicolò Ribaudo (NRO)
 
 - [proposal](https://github.com/tc39/proposal-import-attributes)
 - [slides](https://docs.google.com/presentation/d/1XKSeyxhCiSrzqJRqZ6ioYeqHh72oBHkd9izufPiRktY)
-
 
 NRO: So import attributes updates. We got the consensus in March, on the condition of changing the wording for what “deprecated” is. And we still needed reviews for the proposal. Both have been done and there are some changes that, similar changes that came up during the reviews, but they are normative so they are bringing up today. The first one was that when using dynamic import, there are two different validations to happen to attributes because ECMA262 requires they are strings and only like – like, there are only known attributes. But they do [inaudible] like maybe the host could type in case so there are two different validation passes. The old behavior was that ECMA-262 was validating each attribute individually while reading those values. And it was pointed out that it’s better to first read all attributes – add all the values and validate. We change the behaviour from Option 1 to Option 2. And then validate.
 
@@ -381,7 +376,7 @@ RBN: In addition, a draft PR for test262 has been put together which should have
 
 RBN: In addition to engine implementations, TypeScript is now shipping support for the downlevel emit and `using` and `await using`. It went out last week. It uses the downlevel and emit for `using`. It requires a shim for `Symbol.dispose` and `Symbol.asyncDispose`. Babel 7.22 supports explicit resource management In downlevel emit, they do provide a shim for `Symbol.dispose` and `Symbol.asyncDispose`. In the runtime side, this is a new version of Node that supports or provides a shim for the `Symbol.dispose` and `Symbol.asyncDispose` symbols and added support for (?) in advance of support coming from V8. There are a number of other shim that is are available via npm that provide shimming and adding support for `DisposalStack` and `AsyncDisposalStack`.
 
-### [PR180](https://github.com/tc39/proposal-explicit-resource-management/pull/180) - Ignore return value of [Symbol.dispose]() method when hint is 'async-dispose'
+### [PR180](https://github.com/tc39/proposal-explicit-resource-management/pull/180) - Ignore return value of `[Symbol.dispose]()` method when hint is 'async-dispose'
 
 RBN: As part of the process of working on the test262 tests and putting together a full implementation in engine262, I found a couple issues that we need to be worked out in the specification that I believe require normative changes and need consensus, although I think for the most part these are fairly straightforward. One question is whether we ignore the return value of `Symbol.dispose` methods when in an async dispose hint is passed to the abstract operations. This occurs for `await using` and AsyncDisposalStack use. When they acquire that resource, so when dispose happens currently, it treats `Symbol.dispose` like it was `Symbol.asyncDispose`. It uses the same behavior that we use for getting AsyncIterator versus iterator getting the method to call. But the result is currently that when you – when disposal happens it will look at the return value from `Symbol.dispose` and if that happens to be a promise, it waits for that to revolve. However, the sync behaviour of `Symbol.dispose` will ignore the return value. Should we potentially change the current semantics which are represented conceptually here to what is currently being proposed, which is to ignore the return value of dispose. This is consistent in the linked issue. It has been discussed whether this is consistent with what for-of does with the AsyncFromSyncIterator. I believe that it is and it isn’t because that acts – that case acts as both a argument for and against because there are parts of the AsyncFromSyncIterator that do not await. For example, the result of `next` is not awaited from AsyncFromSync, even though the value is awaited. But that is a little bit after discrepancy that means that this could go either direction.
 
@@ -438,7 +433,6 @@ So I would like to seek consensus on this change as well
 USA: We have a clarifying question.
 
 NRO: If I wrote some code using the proposal as it was yesterday, does this request change somehow the behaviour of the code, or is it a spec bug?
-
 
 RBN: It should not change any code. The question is whether an implementation might have an issue due to trying to run code when the execution context that was associated with those resources is not longer on top of the stack and what that means. In engine262, it caused a bug in the engine, which is why I needed to make a change in the implementation. Otherwise, it should not be observable to the end-user.
 
@@ -504,7 +498,6 @@ RBN: I brought this issue up and I put together a poll request on the issue trac
 
 DE: It’s common, where programming language add these things based on GC and then realize it’s a bad thing to do. So the fact that some programming language has it in their practices doesn’t seem like sufficient evidence to me. I am fine with not having a recommendation. If we have a recommendation, I would like the opposite polarity.
 
-
 DE: Let’s go to the enter and exit slide. This is an interesting design. I am not opposed to this for the design of resource management. But I think that this should be part of the core proposal. If we’re considering this, if we want to seriously consider adding this, we should demote to Stage 2 and make this part of the initial proposal. We shouldn’t consider such fundamental ideas as an add-on later. It might be compatible to add later. Strictly speaking, it’s bad to add async operations later. Maybe it would be compatible enough. But yeah. This is a design that in discussing resource management with YK he suggested that we have such an explicit enter part. I really do think that is pretty unrelated to whether we have GC clean up resources, regardless, you could allocate a resource and drop it on the floor.
 
 DE: Also, I want to note any comparison with Python we should be cautious about, because of the use of reference counting, making, you know, the lazy pattern of forgetting to use `with`, the equivalent of `using` more tenable because the reference count more deterministically goes to zero. So just be cautious about the comparisons. But that doesn’t cast did you know on the protocol which is `using`, but a core part of the using protocol and so we should decide whether or not we want to go with it up front.
@@ -546,7 +539,6 @@ Consensus on PRs: 180,178,175,171 and 167.
 
 Debates about the appropriate use of GC and Symbol.enter are ongoing and will take place in overflow time
 
-
 ## TG3 update and chair appointment
 
 Presenter: Chris de Almeida (CDA)
@@ -576,7 +568,6 @@ Consensus on JHD and CDA as convenors of TG3.
 ## TG4 charter and chair appointment
 
 Presenter: Jon Kuperman (JKP)
-
 
 - [repo](https://github.com/source-map)
 - [slides](https://docs.google.com/presentation/d/11Cv2XnTZfd9yBCq1WctKzSwc9Q2ZJkhklOVTbNyUyxU/)
@@ -653,7 +644,7 @@ CDA: Well, welcome the new convenors of the freshly chartered task group 4 for s
 
 CDA: All right. I don’t see anything in the queue.
 
-### Summary and conclusion:
+### Summary and conclusion
 
 Task group 4 for source maps is chartered with DE and JKP as co-conveners. Also CSS will be explicitly called out as in-scope, alongside the existing EcmaScript mention.
 
@@ -821,9 +812,11 @@ SYG: Okay. I see things on the queue saying better to wait for Stage 4. I agree.
 ### Summary and conclusion
 
 SYG: Consensus was achieved for all normative fixes.
-#120 - Do a single detach check after coercing argument of ArrayBuffer.prototype.resize
-#126 - Fix loop bounds arithmetic on %TypedArray%.prototype.copyWithin due to shrinkage in argument coercion
-#127 - Fix loop bounds arithmetic on %TypedArray%.prototype.slice due to shrinkage in argument coercion
+
+- #120 - Do a single detach check after coercing argument of ArrayBuffer.prototype.resize
+- #126 - Fix loop bounds arithmetic on %TypedArray%.prototype.copyWithin due to shrinkage in argument coercion
+- #127 - Fix loop bounds arithmetic on %TypedArray%.prototype.slice due to shrinkage in argument coercion
+
 Do not do out-of-bounds copy in ArrayBuffer.prototype.slice due to shrinkage in argument coercion
 
 This proposal is shipping in Chrome and Safari. There are some test262 tests, but some are in `staging/`, and coverage is not 100% for these latest fixes.
@@ -1306,7 +1299,6 @@ Forcing the namespace imports syntax may make it less statically analyzable for 
 ### Conclusion
 
 Deferred imports reached Stage 2. Before Stage 3, the champions need to investigate how this interacts with WebAssembly modules and how the "use dynamic import (possibly with top-level await) to optimize performance" and "use `import defer` (and avoid top-level await) to optimize performance" stories fit together.
-
 
 ## Iterator Helpers: small optimisation to avoid String wrapper objects
 

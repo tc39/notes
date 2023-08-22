@@ -10,6 +10,7 @@ module.exports = {
   },
   rules: {
     "arrow-spacing": "error",
+    "brace-style": ["error", "1tbs"],
     "object-curly-spacing": ["error", "always"]
   },
   overrides: [

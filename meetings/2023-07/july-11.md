@@ -38,6 +38,7 @@
 | Christian Ulbrich   | CHU          | Zalari            |
 | Tom Kopp            | TKP          | Zalari            |
 | Mikhail Barash      | MBH          | Univ. of Bergen   |
+| Jordan Harband      | JHD          | Invited Expert    |
 
 ## Introduction
 
@@ -657,7 +658,7 @@ Presenter: Chris de Almeida (CDA)
 CDA: Updates from the code of conduct committee. I don’t have slides for this. The only update we have is we received a report back in March, it was addressed, we consider the matter now resolved.
 One snag with that, however, is that per the code of conduct itself, we are meant to resolve any reports of violations in a speedy manner. Ideally, within a week. And it took outside months. And the reason it took us months is because we could not – we did not have a quorum in meetings. This surfaced a problem that we have, and hopefully it’s in the fast. The members of the CoC Committee looked numerous but a large number were not active and did not come to the meeting. We need a functional code of conduct to deal with any reports that come in and the other activities that the code of conduct committee is responsible for.
 
-CDA: To that end, we pruned inactive folks and then put out a call for additional participants. And to that end, we are thankful that both TAB and RCA have agreed to join us on the CoC Committee. The way that we handle new folks for the committee is a little different than we have done for the convenors, of the task groups, for example, we are not going to be doing that in real-time here. We ask if any objections to the new folks joining, again, that’s TAB and RCA, please let us know before the end of plenary. You can do that by either contacting, you know, the existing code of conduct email or just reaching out to one of the committee members directly. Those are currently myself, JHD and MM (?). That’s it for the CoC update. I see an item on the TCQ.
+CDA: To that end, we pruned inactive folks and then put out a call for additional participants. And to that end, we are thankful that both TAB and RCA have agreed to join us on the CoC Committee. The way that we handle new folks for the committee is a little different than we have done for the convenors, of the task groups, for example, we are not going to be doing that in real-time here. We ask if any objections to the new folks joining, again, that’s TAB and RCA, please let us know before the end of plenary. You can do that by either contacting, you know, the existing code of conduct email or just reaching out to one of the committee members directly. Those are currently myself, JHD, and MPC. That’s it for the CoC update. I see an item on the TCQ.
 
 MF: Do we need to get reports from the CoC group on attendance?
 
@@ -1218,19 +1219,8 @@ just to do a best-effort optimization or the idea is to try to optimize performa
 things until you absolutely need them, then I think eager evaluation of async modules and that
 best effort for import defer is probably the only option that’s viable.
 
-JHD: I have a couple thoughts here. So one is that the -- like, I understand why you have to use `import *`, because it’s super weird and magic to have accessing a variable have effects. But one of the reasons -- like, `import *` is something that I’ve generally considered and found to be considered “gross”, for lack of a more precise word, sloppily and
-implicit and prevents a lot of static analysis. And, you know, it makes tree shaking more
-difficult things like that. And the original -- some of the original design goals of ESM were -- like, or a lot of them, seems to be “let’s make everything as static as possible”, so a
-lot of decisions were made that we might not have made if we had expected that eventually we
-were going to have dynamic import and deferred imports and so on and so forth. So it’s sort of -- it just kind of feels like it leaves us in an awkward position, and I’m not sure if anyone still shares those original design goals and wants things to be maximally static or if
-we’ve just decided that’s not important anymore. And then related is there was an attempt to
-make a proposal for conditional static imports, and it kind of seems like this import deferral
-would be a way to do that, where you do an import defer and then you just conditionally access
-to property or not. So, yeah, I don’t know, I’m just -- I just kind of wanted to bring this
-all up. This is not a straightforward, obvious win for me. It’s -- like, the benefit that is
-being sought is valuable, but I’m just not -- I’m not super convinced on the limitations,
-fitting in the syntax and, you know, combining it with the mental model of ESM. I just wanted
-to bring that up.
+JHD: I have a couple thoughts here. So one is that the -- like, I understand why you have to use `import *`, because it’s super weird and magic to have accessing a variable have effects. But one of the reasons -- like, `import *` is something that I’ve generally considered and found to be considered “gross”, for lack of a more precise word, sloppily and implicit and prevents a lot of static analysis. And, you know, it makes tree shaking more difficult things like that. And the original -- some of the original design goals of ESM were -- like, or a lot of them, seems to be “let’s make everything as static as possible”, so a lot of decisions were made that we might not have made if we had expected that eventually we were going to have dynamic import and deferred imports and so on and so forth. So it’s sort of -- it just kind of feels like it leaves us in an awkward position, and I’m not sure if anyone still shares those original design goals and wants things to be maximally static or if we’ve just decided that’s not important anymore. And then related is there was an attempt to make a proposal for conditional static imports, and it kind of seems like this import deferral would be a way to do that, where you do an import defer and then you just conditionally access to property or not. So, yeah, I don’t know, I’m just -- I just kind of wanted to bring this all up. This is not a straightforward, obvious win for me. It’s -- like, the benefit that is
+being sought is valuable, but I’m just not -- I’m not super convinced on the limitations, fitting in the syntax and, you know, combining it with the mental model of ESM. I just wanted to bring that up.
 
 NRO: So when it casts a static analysis, like, if you use, like, your name space object as name
 space.property, like, bundlers are already able to statically analyze that and tree shake that. The problem is when code starts passing the namespace object around or when you, like, do some, like, computed

@@ -45,16 +45,11 @@
 ## Conversation on note summaries
 
 MLS: So specifically, I want to talk about summaries.  This was discussed at the beginning of the meeting yesterday.
- .TXT we traditionally take near verbatim trips.  We have done this, before we had transcription, we did this manually.  But it provides all the details of the discussion.
-And each of us has the opportunity to go back and to make changes to those.  I often do that to make sure that when I say um, ah or whatever, clarify or if I wanted to say it differently, that’s what I do.  A summary is a little bit different.  Most of the rest of the TC’s, include summaries for each of the topics discussed.  It is just to start with, what was discussed.  So discussing this proposal for Stage 3…
-And in that, slides are presented, whatever.  And the link to the slides would be good.  But the summary, it needs to include the salient points, the things where there was in depth discussion back and forth, and if during those salient points of the discussions, one method or one approach was chosen over another.  That should be noted.
-And there should be a conclusion.  What was the discussion reached during the discussion: “We agreed to move this to Stage 3. I will take the groupBy, pending review in this case, and that includes the next extension.”  So any next steps should be include there as well. It doesn’t have to say who said what.  It’s better if it doesn’t.  But what was discussed, what – where was there tension, how was that resolved and what was the end result.
-Any questions on what w – coming up with a summary?
+ .TXT we traditionally take near verbatim trips.  We have done this, before we had transcription, we did this manually.  But it provides all the details of the discussion. And each of us has the opportunity to go back and to make changes to those.  I often do that to make sure that when I say um, ah or whatever, clarify or if I wanted to say it differently, that’s what I do.  A summary is a little bit different.  Most of the rest of the TC’s, include summaries for each of the topics discussed.  It is just to start with, what was discussed.  So discussing this proposal for Stage 3… And in that, slides are presented, whatever.  And the link to the slides would be good.  But the summary, it needs to include the salient points, the things where there was in depth discussion back and forth, and if during those salient points of the discussions, one method or one approach was chosen over another.  That should be noted. And there should be a conclusion.  What was the discussion reached during the discussion: “We agreed to move this to Stage 3. I will take the groupBy, pending review in this case, and that includes the next extension.”  So any next steps should be include there as well. It doesn’t have to say who said what.  It’s better if it doesn’t.  But what was discussed, what – where was there tension, how was that resolved and what was the end result. Any questions on what w – coming up with a summary?
 
 DE: How long do you think the summary should be?
 
-MLS: It depends, maybe a few paragraphs at most.  For really involved topics of disagreement or some discussion back and forth on several unrelated things, they would reach, you know, have some statements.
-It shouldn’t be as short, as know: “this was discussed, we agree to go to Stage 3.”  You know, what issues were discussed or important for somebody to consider when they review that summary.
+MLS: It depends, maybe a few paragraphs at most.  For really involved topics of disagreement or some discussion back and forth on several unrelated things, they would reach, you know, have some statements. It shouldn’t be as short, as know: “this was discussed, we agree to go to Stage 3.”  You know, what issues were discussed or important for somebody to consider when they review that summary.
 
 DE: Are there some topics that not need summaries?
 
@@ -68,9 +63,7 @@ MLS: Daniel have called, have we captured that.  And I think that’s a good tim
 
 DE: Should the summary include the key points of the presentation?  Or only the key points of the scent discussion?
 
-SHN: Yes.  First, thank you for doing this.  I mean, it’s not easy.  You’re all doing a lot of work ask asking yet to do something else.
-Maybe one thought is, you know what you are going to present before you come here.  And you may already have a little frame of some bullets of what you are going to present and fill in the results of the conversation, and cut and paste it in.  So it may save a bit of time.
-To make it more effective during the meeting. Could I project something on the screen, please, if you don’t mind. Yesterday, I reviewed all of the notes.  It was excellent at reading.  100 pages.  The minutes are always good.  The summaries, the ones there, are always good.  I have put it there.  I haven’t put names.  We haven’t got summaries for some.  Some of the summaries are short, as Michael said, one-liners about the document and it points to the slide.  Perhaps that . . .  there are other discussions that have taken place, and I am going to scroll down.  Okay.  Nothing for the Code of Conduct and the public calendar.  Maybe a few words to add there.  Perhaps for some of the other discussions, there were detailed discussion and maybe we can write a few bullets.  Here were the key points discussed and it would be helpful the for summarizing the objective of what you’re discussing.  List of points and the conclusion and next steps, similar to what Michael was saying.  If you want to do it in bullet form, it’s okay.  It doesn’t have to be paragraphs.  It would be very helpful so that is my input and example.  I did have a chance to go through notes.  Some need more work.
+SHN: Yes.  First, thank you for doing this.  I mean, it’s not easy.  You’re all doing a lot of work ask asking yet to do something else. Maybe one thought is, you know what you are going to present before you come here.  And you may already have a little frame of some bullets of what you are going to present and fill in the results of the conversation, and cut and paste it in.  So it may save a bit of time. To make it more effective during the meeting. Could I project something on the screen, please, if you don’t mind. Yesterday, I reviewed all of the notes.  It was excellent at reading.  100 pages.  The minutes are always good.  The summaries, the ones there, are always good.  I have put it there.  I haven’t put names.  We haven’t got summaries for some.  Some of the summaries are short, as Michael said, one-liners about the document and it points to the slide.  Perhaps that . . .  there are other discussions that have taken place, and I am going to scroll down.  Okay.  Nothing for the Code of Conduct and the public calendar.  Maybe a few words to add there.  Perhaps for some of the other discussions, there were detailed discussion and maybe we can write a few bullets.  Here were the key points discussed and it would be helpful the for summarizing the objective of what you’re discussing.  List of points and the conclusion and next steps, similar to what Michael was saying.  If you want to do it in bullet form, it’s okay.  It doesn’t have to be paragraphs.  It would be very helpful so that is my input and example.  I did have a chance to go through notes.  Some need more work.
 
 MLS: For normative things, there where pull requests, it was discussed, and we approved it.
 
@@ -122,9 +115,7 @@ DE: Yes, the summary I wrote for your presentation was not good. It’s great if
 
 MLS: In reply, I look in the transcriptions to find something and sometimes we discuss things on one day and come back another day.  Summaries make it very helpful for me to find where we talked about that.  So I find the summary and I go look in the transcription.  That’s just me.
 
-RPR: And it sounds like SHN is doing the detail of each point.  That would be something that if SHN and yourself could talk about, to see if a summary is appropriate.  Thank you.
-All right.  Good stuff.
-Thank you for raising this.  This will help improve quality of notes.
+RPR: And it sounds like SHN is doing the detail of each point.  That would be something that if SHN and yourself could talk about, to see if a summary is appropriate.  Thank you. All right.  Good stuff. Thank you for raising this.  This will help improve quality of notes.
 
 ## Stage 3 update of Intl Locale Info API
 
@@ -133,26 +124,15 @@ Presenter: Frank Yung-Gong Tang (FYT)
 - [slides](https://docs.google.com/presentation/d/1mJS1ZHnUr66nq9P4HZUrGzaujVS1nI_Rmpf7SoPIiso/)
 - [proposal](https://github.com/tc39/proposal-intl-locale-info)
 
-FYT: Thank you.  Hi, everybody.  Thank you for coming for today’s presentation.  Sorry I cannot be there in Norway.  I am going to talk about an update about the stage 3 proposal locale info app and this is not for any other stage of this, but give you a update about what API currently is and there’s I think one of the normative PR consensus to agree upon this.  The motivation for this proposal is that we try to expose locale information, such as week data.  And our cycle and on and so forth using the locale.
-The history of this proposal is that we have advanced to Stage 1 in 2020, in September, and in January 2021 to Stage 3, in April 2021, and have come here and it gave some of the update.
+FYT: Thank you.  Hi, everybody.  Thank you for coming for today’s presentation.  Sorry I cannot be there in Norway.  I am going to talk about an update about the stage 3 proposal locale info app and this is not for any other stage of this, but give you a update about what API currently is and there’s I think one of the normative PR consensus to agree upon this.  The motivation for this proposal is that we try to expose locale information, such as week data.  And our cycle and on and so forth using the locale. The history of this proposal is that we have advanced to Stage 1 in 2020, in September, and in January 2021 to Stage 3, in April 2021, and have come here and it gave some of the update.
 
-FYT: A couple things changed after the Stage 3, one in December 2021, we have changed the order in the list.  And also, I think more importantly, that we figured out that we have to change the getter to a function because a lot of those functionality or expose API as a returning object.  And we decided to change to a function instead of getter after Stage 3, which is unfortunate that happened in the Stage 3 period of time.
-Not only that, we figured out that the – those functions should have a get prefix.
-So one new issue that I want to bring your attention that actually is related to some effort with the Ecma 402 other part, which is we try to look at across to see well, is there anything that should – in the locale extension, impacting the functionality and we figured out one thing that actually should be considered is that Intl.Locale currently, we do not take the fw value key words, the fw keyword and type was defined in UTC #35 to override where provide a presence for the first day of the week.  In all other preexisting Ecma API, that have no impact to any functionality.  In this proposal, because we return a week data, it should be able to impact the return value of the week – the week data.  Whenever you say there is `fw`, on Tuesday, the first day of the week, it should be Tuesday.  Or Sunday.  Or Monday.  So that is the background.
-And the thing is defined in the UTS #35 in the consultation.  And actually, it was originally introduced into UTS #35 in the revision 41 in 2015.  Which is about eight years ago.
+FYT: A couple things changed after the Stage 3, one in December 2021, we have changed the order in the list.  And also, I think more importantly, that we figured out that we have to change the getter to a function because a lot of those functionality or expose API as a returning object.  And we decided to change to a function instead of getter after Stage 3, which is unfortunate that happened in the Stage 3 period of time. Not only that, we figured out that the – those functions should have a get prefix. So one new issue that I want to bring your attention that actually is related to some effort with the Ecma 402 other part, which is we try to look at across to see well, is there anything that should – in the locale extension, impacting the functionality and we figured out one thing that actually should be considered is that Intl.Locale currently, we do not take the fw value key words, the fw keyword and type was defined in UTC #35 to override where provide a presence for the first day of the week.  In all other preexisting Ecma API, that have no impact to any functionality.  In this proposal, because we return a week data, it should be able to impact the return value of the week – the week data.  Whenever you say there is `fw`, on Tuesday, the first day of the week, it should be Tuesday.  Or Sunday.  Or Monday.  So that is the background. And the thing is defined in the UTS #35 in the consultation.  And actually, it was originally introduced into UTS #35 in the revision 41 in 2015.  Which is about eight years ago.
 
-FYT: So in order to reflect that, it means that we have this PR.  What is it that it means?  It means for Intl locale, we need to add an `fw` to the RelevantExtensionKeys internal slot.  Currently, have some other key for that like `tz` – not `tz`.  `ca` for calendar, et cetera.  But `fw` was not there.  It needed to be added.  Internals will have to have a first day of week to remember that.  In other Ecma APIs we always, whenever we add that, we also allow that value to be read from option bag.  That means we should also read the first day of week from the option bag which have the value could be “mon”, “tue”, “wed”, “thu”, “fri”, “sat”, and “sun”.  Those are in the our choice.  Those synchronized with the Unicode locale extension.  It’s defined in UTS #35.  It has to be the same.
-But also, because we supply this information, we should also be able to – by the way, that option will be default to `undefined`.  People don’t define that, they will be undefined.  We have to add a getter to first day of week to return the value, if the locale extension was provided or the option back have that Valerie of after all the thing adds, get week info, the first week – sorry, I think the first day, I type it wrong here.  It should be the get week info first day, the valued will be based on the internal slot first day of the week.  So this is a required change in the PR for [PR #70](https://github.com/tc39/proposal-intl-locale-info/pull/70).  Thank you, Andres from Mozilla to raise this issue.  We have this PR that have been discussed in the TG2 about that.
+FYT: So in order to reflect that, it means that we have this PR.  What is it that it means?  It means for Intl locale, we need to add an `fw` to the RelevantExtensionKeys internal slot.  Currently, have some other key for that like `tz` – not `tz`.  `ca` for calendar, et cetera.  But `fw` was not there.  It needed to be added.  Internals will have to have a first day of week to remember that.  In other Ecma APIs we always, whenever we add that, we also allow that value to be read from option bag.  That means we should also read the first day of week from the option bag which have the value could be “mon”, “tue”, “wed”, “thu”, “fri”, “sat”, and “sun”.  Those are in the our choice.  Those synchronized with the Unicode locale extension.  It’s defined in UTS #35.  It has to be the same. But also, because we supply this information, we should also be able to – by the way, that option will be default to `undefined`.  People don’t define that, they will be undefined.  We have to add a getter to first day of week to return the value, if the locale extension was provided or the option back have that Valerie of after all the thing adds, get week info, the first week – sorry, I think the first day, I type it wrong here.  It should be the get week info first day, the valued will be based on the internal slot first day of the week.  So this is a required change in the PR for [PR #70](https://github.com/tc39/proposal-intl-locale-info/pull/70).  Thank you, Andres from Mozilla to raise this issue.  We have this PR that have been discussed in the TG2 about that.
 
-FYT: There are also other thing discussed related to this, and in TG2.  But later on, we will decide, well, we shouldn’t made that [chismt] the issue is is that because now we are adding `fw` to this, so there are currently have 3 different way in ECMA262 42 to represent the idea of day of week.  In the Date API, the Mondays represented by 1.  And the Sundays represented by 0.  In Temporal, the number 1 represents Monday still.  But Sunday is 7.
-But also, as I just mentioned to you, Intl.Locale, W string you have to take the 3-letter words for that.  So it becomes 3 different representations.
-So what we have discussed, in the TG2 is that, well, in the get week info, the first day, and the weekend, the information, should that change 1 to 7 to the 3-letter form.  And through discussion, we should keep this and not changing it.
-So it will be better to operate with the Temporal date of week proposal.  That is discussed and TG2 other people think that shouldn’t be the move.  It’s not in this PR that have been discussed.  There are several remaining issues and I am going to tell you that this detail today because this hasn’t been fully discussed doing TG2.  But next time I will bring it here.  One is how well the CA, the calendar extension impacting the `getWeekInfo` currently the language in the proposal is very vague.  It just says it will be considered.  Right?
-But there are issues, I think, about the order, whether the CA will have more important order than an other extension called `rg`.  Et cetera.  And I have to send, ask CLDR and Peter and Mark from Google about that.  I am waiting for their reply.  Instead of writing our own spec, we can maybe just follow their specification, if there is something, maybe we need to repeat it or refer to that.  But I think we need to have a conversation with them.  The other issue have been discussed, haven’t been, but will be currently the get TimeZone, if the region tags basically return – I think we return nothing, but there are discussions for Andres from Mozilla to apply to max that.  The other consideration is the getTimeZone, the naming for that could have some forward-capability issue.  And if anyone have interest about these three topics, please join the discussion issue and/or a TG2 call.  And we tried to have some at least some common understanding before bringing to the plenary next time.
+FYT: There are also other thing discussed related to this, and in TG2.  But later on, we will decide, well, we shouldn’t made that [chismt] the issue is is that because now we are adding `fw` to this, so there are currently have 3 different way in ECMA262 42 to represent the idea of day of week.  In the Date API, the Mondays represented by 1.  And the Sundays represented by 0.  In Temporal, the number 1 represents Monday still.  But Sunday is 7. But also, as I just mentioned to you, Intl.Locale, W string you have to take the 3-letter words for that.  So it becomes 3 different representations. So what we have discussed, in the TG2 is that, well, in the get week info, the first day, and the weekend, the information, should that change 1 to 7 to the 3-letter form.  And through discussion, we should keep this and not changing it. So it will be better to operate with the Temporal date of week proposal.  That is discussed and TG2 other people think that shouldn’t be the move.  It’s not in this PR that have been discussed.  There are several remaining issues and I am going to tell you that this detail today because this hasn’t been fully discussed doing TG2.  But next time I will bring it here.  One is how well the CA, the calendar extension impacting the `getWeekInfo` currently the language in the proposal is very vague.  It just says it will be considered.  Right? But there are issues, I think, about the order, whether the CA will have more important order than an other extension called `rg`.  Et cetera.  And I have to send, ask CLDR and Peter and Mark from Google about that.  I am waiting for their reply.  Instead of writing our own spec, we can maybe just follow their specification, if there is something, maybe we need to repeat it or refer to that.  But I think we need to have a conversation with them.  The other issue have been discussed, haven’t been, but will be currently the get TimeZone, if the region tags basically return – I think we return nothing, but there are discussions for Andres from Mozilla to apply to max that.  The other consideration is the getTimeZone, the naming for that could have some forward-capability issue.  And if anyone have interest about these three topics, please join the discussion issue and/or a TG2 call.  And we tried to have some at least some common understanding before bringing to the plenary next time.
 
-FYT: The main focus is really requesting from committee to have consensus of [PR #70](https://github.com/tc39/proposal-intl-locale-info/pull/70), which is adding the `fw` or the first day of week, the scope of – this list of five thing.  So here.  Sorry.
-The thing, this should be first day.  I’m sorry.  I have a typo here.
-So that’s my request.  And also, like to tell you that I hope that Firefox can have a commitment to ship the thing, and also my goal is that I am hope to go targeting to Stage 4 in November.  But this is just basically what we asking.  Any questions?
+FYT: The main focus is really requesting from committee to have consensus of [PR #70](https://github.com/tc39/proposal-intl-locale-info/pull/70), which is adding the `fw` or the first day of week, the scope of – this list of five thing.  So here.  Sorry. The thing, this should be first day.  I’m sorry.  I have a typo here. So that’s my request.  And also, like to tell you that I hope that Firefox can have a commitment to ship the thing, and also my goal is that I am hope to go targeting to Stage 4 in November.  But this is just basically what we asking.  Any questions?
 
 RPR: There is one item in  the queue from EAO.
 
@@ -162,9 +142,7 @@ FYT: So the thing, the answer is this . . .  right.  First of all, if you have l
 
 EAO: That’s clear and fine.
 
-FYT: The second thing, because of that, option, we read option – you can have option to have first day of week and the value have to match that.  So you can have – passing object, the object first day of week, then a string.  Of the 7 value.  Right?
-And because that, then whenever you have a get and to read that information, a getter for the Intl locale, first day of week it has to return whatever you passed in.  The principle in ECMA-402 is whatever you put in the option should be the same thing you return from the getter.  Right?  So basically, that 3-thing would be in the three-letter code.
-But we are not going to change is the get info, the return get info. That stayed with 1 to 7.
+FYT: The second thing, because of that, option, we read option – you can have option to have first day of week and the value have to match that.  So you can have – passing object, the object first day of week, then a string.  Of the 7 value.  Right? And because that, then whenever you have a get and to read that information, a getter for the Intl locale, first day of week it has to return whatever you passed in.  The principle in ECMA-402 is whatever you put in the option should be the same thing you return from the getter.  Right?  So basically, that 3-thing would be in the three-letter code. But we are not going to change is the get info, the return get info. That stayed with 1 to 7.
 
 EAO:  Can you clarify?
 
@@ -172,8 +150,7 @@ FYT: But the value of that, well, could be changing from – instead of 1, it co
 
 EAO: Could you clarify why do we need the string “first day of week” option?
 
-FYT: Right.  So the reason is that in UTS #35, it has that defined as in the locale.  Right?
-So in the locale specification, there’s a way to transfer that.  So there are regions where their culture may have some way to say, the first day of the week is Friday because, for example, in some Muslim or Jewish country, maybe the city government or some business, their locale is their starter first day of week not in Monday or Sunday.
+FYT: Right.  So the reason is that in UTS #35, it has that defined as in the locale.  Right? So in the locale specification, there’s a way to transfer that.  So there are regions where their culture may have some way to say, the first day of the week is Friday because, for example, in some Muslim or Jewish country, maybe the city government or some business, their locale is their starter first day of week not in Monday or Sunday.
 
 EAO: I don’t think . . .  can I clarify my question; because I understand that this definition does exist.  And for parsing the `u-fw` subtag, I understand why we need to support the string identifiers.  What I do not understand is why when we parse this and represent it as an option value we cannot continue to use the integer representation of these weekdays that we are already using in different places.  Why do those need to be strings rather than the numbers 1 through 7?
 
@@ -223,11 +200,7 @@ USA: I think – I understand DE’s concern line, for something like IDML?, all
 
 RPR: We only have 6 minutes remaining on this topic, Frank.  Carry on with the queue.  It’s SFC..
 
-SFC: Yeah.  I wanted to clarify, if FYT you can go to – yeah, this is the right slide.
-So on – you know, there is input and I couldn’t tell put.  So, like, on input, so the only place where these strings are returned on output is the Intl locale.prototype.first day of week getter, which is the fourth bullet point on this slide.
-So the first day of week getter.  That’s the only place where the strings are proposed to be returned from this API and that’s because they correspond to – this is a getter for exactly the unicode extension keyword. This is not the week info.  The line this bullet point 5 is the week info and that will return the integer values.  As proposed, that’s my understanding of what is being proposed here.
-So . . .  I want to clarify that, like, I don’t think anyone is proposing that we use the strings in the part of the API that we expect use the interface with Temporal.
-Like that’s definitely something that that we value, that we discussed at the TG2 call.  But the question was like the get – is specifically extremely narrow.  It’s been a very narrow question and that is, for the individual getter and setter on Intl.Locale locale subtext do we use the numbers or the strings?  So it’s a very narrow question.  And FYT is proposing we keep 1 to 7 for all the stuff there.  This is the new getter and setter for API 47
+SFC: Yeah.  I wanted to clarify, if FYT you can go to – yeah, this is the right slide. So on – you know, there is input and I couldn’t tell put.  So, like, on input, so the only place where these strings are returned on output is the Intl locale.prototype.first day of week getter, which is the fourth bullet point on this slide. So the first day of week getter.  That’s the only place where the strings are proposed to be returned from this API and that’s because they correspond to – this is a getter for exactly the unicode extension keyword. This is not the week info.  The line this bullet point 5 is the week info and that will return the integer values.  As proposed, that’s my understanding of what is being proposed here. So . . .  I want to clarify that, like, I don’t think anyone is proposing that we use the strings in the part of the API that we expect use the interface with Temporal. Like that’s definitely something that that we value, that we discussed at the TG2 call.  But the question was like the get – is specifically extremely narrow.  It’s been a very narrow question and that is, for the individual getter and setter on Intl.Locale locale subtext do we use the numbers or the strings?  So it’s a very narrow question.  And FYT is proposing we keep 1 to 7 for all the stuff there.  This is the new getter and setter for API 47
 
 EAO: I am not going to block any of this.  I am just really quite uncomfortable with a third definition of weekdays.  We should be able to avoid this.  It’s unfortunate if we can’t.
 
@@ -255,8 +228,7 @@ FYT: I do think I need to think about that.  I do think there may be consequence
 
 RPR: And USA has a slight concern.
 
-USA: Yeah.  I just wanted to note on the topic of using the numbers for output, that might harm interoperability since I suppose the output would be used for that as well.
-So yeah.  We should discuss this further and also with people from unicode.
+USA: Yeah.  I just wanted to note on the topic of using the numbers for output, that might harm interoperability since I suppose the output would be used for that as well. So yeah.  We should discuss this further and also with people from unicode.
 
 DE: So was this idea not raised in the TG2 call?
 
@@ -272,8 +244,7 @@ RPR: Okay.  Thank you.
 
 FYT: Thank you.
 
-RPR: To one of the note takers project the notes, so we have captured the summary.  Frank, if you would
-like to project the notes . . .
+RPR: To one of the note takers project the notes, so we have captured the summary.  Frank, if you would like to project the notes . . .
 
 FYT: I don’t know how to do that.  Let me see
 
@@ -322,8 +293,7 @@ USA: So actually, it is a better solution to keep the value undefined. Now, it�
 
 ### [PR#158](https://github.com/tc39/proposal-intl-duration-format/pull/158) normative: align ToIntegerIfIntegral with Temporal
 
-USA: And the next one is corresponding to a normative change that happened in Temporal during the last meeting.
-So there’s a funny – the like the name is called ToIntegerIfIntegral.  It takes a number and if it said integer, it makes – it’s fun.  But it’s one of the abstract operations that are from Temporal that used for processing durations because, of course, durations need to be integral within the subunits and this was changed during the last meeting in Temporal.  But we need to backport the change.  We need a rubber stamp on that.  These are the two changes: DurationFormat is looking in good shape.  I believe we are very close to calling it a day. But I would like to hear your thoughts abouts these two changes.  Let’s see if we can get consensus.
+USA: And the next one is corresponding to a normative change that happened in Temporal during the last meeting. So there’s a funny – the like the name is called ToIntegerIfIntegral.  It takes a number and if it said integer, it makes – it’s fun.  But it’s one of the abstract operations that are from Temporal that used for processing durations because, of course, durations need to be integral within the subunits and this was changed during the last meeting in Temporal.  But we need to backport the change.  We need a rubber stamp on that.  These are the two changes: DurationFormat is looking in good shape.  I believe we are very close to calling it a day. But I would like to hear your thoughts abouts these two changes.  Let’s see if we can get consensus.
 
 ### Queue
 
@@ -388,47 +358,29 @@ Presenter: Kevin Gibbons (KG)
 - [proposal](https://github.com/tc39/proposal-arraybuffer-base64)
 - [slides](https://docs.google.com/presentation/d/1ng6v9I6-jJSUPB-YNxjnHYFDzaL136lb7FpTKRxHhNM/)
 
-KG: So this is just an update on the Base64 proposal. The name of it still says ArrayBuffer, but it’s not ArrayBuffers anymore. The proposal is currently at Stage 2.
-At the last meeting, there was some feedback and asked for it to support, in particular, writing to an existing ArrayBuffer. And we have been talking about how to do that on the issue.  And we have a rough shape on how to do that and some open questions.  So I want to get the committee’s feedback on all of that and hopefully confirm that we are happy with the design as it is here.  And then I can come back for Stage 3 later, after writing up the spec text.  Right now, there’s no spec text for this because I didn’t want to do all of the work to specify something without first getting the committee’s approval for the design.
+KG: So this is just an update on the Base64 proposal. The name of it still says ArrayBuffer, but it’s not ArrayBuffers anymore. The proposal is currently at Stage 2. At the last meeting, there was some feedback and asked for it to support, in particular, writing to an existing ArrayBuffer. And we have been talking about how to do that on the issue.  And we have a rough shape on how to do that and some open questions.  So I want to get the committee’s feedback on all of that and hopefully confirm that we are happy with the design as it is here.  And then I can come back for Stage 3 later, after writing up the spec text.  Right now, there’s no spec text for this because I didn’t want to do all of the work to specify something without first getting the committee’s approval for the design.
 
 KG: Recap of the proposal: there are first these one-shot methods, where there's a static method on Uint8Array and gives you a string by Base64.  There’s a prototype method that gives you a Base64 encoded string.  And there's hex versions too. Nothing has changed.
 
-KG: In addition, there will be these streaming methods which require managing a little bit of extra state.  So they’re not annoying to use.  But not very complicated to use.
-Where the idea is that you pass in these extra parts into subsequent calls to the streaming methods.  And then do this repeated until you are done.
-And this gives you chunks of, in of case of Base64, chunks from your strings.  And in the case of it gives you Base64 encoded string chunks.  Uint8arrays.  Right now there’s no hex versions - or in the version of the proposal I presented at the previous meeting, there’s not hex versions of these because there is no obvious reason to. Base64 is much more complicated than hex because with Base64 you have these – this like thing where you get 3 bytes of input correspond to 4 encoded characters and so you can have state where you have one byte and you need to seek 2 more before you can emit the Base64.  It doesn’t come up with hex because the correspondence between input bytes and output characters is more direct.
+KG: In addition, there will be these streaming methods which require managing a little bit of extra state.  So they’re not annoying to use.  But not very complicated to use. Where the idea is that you pass in these extra parts into subsequent calls to the streaming methods.  And then do this repeated until you are done. And this gives you chunks of, in of case of Base64, chunks from your strings.  And in the case of it gives you Base64 encoded string chunks.  Uint8arrays.  Right now there’s no hex versions - or in the version of the proposal I presented at the previous meeting, there’s not hex versions of these because there is no obvious reason to. Base64 is much more complicated than hex because with Base64 you have these – this like thing where you get 3 bytes of input correspond to 4 encoded characters and so you can have state where you have one byte and you need to seek 2 more before you can emit the Base64.  It doesn’t come up with hex because the correspondence between input bytes and output characters is more direct.
 
-KG: There’s no changes to the one-shot methods at this time.  And 99% of users will end up using that.  But we need to work out the more powerful versions.
-So concretely, if you are using fromPartialBase64 in the version of the proposal, I presented previously, this is what it would actually look like in your code.  Iterate over your chunks of input, and call from partial basic 64 repeatedly. You would have to pass this true argument on every initial call, and then more false on the last one to generate padding.
+KG: There’s no changes to the one-shot methods at this time.  And 99% of users will end up using that.  But we need to work out the more powerful versions. So concretely, if you are using fromPartialBase64 in the version of the proposal, I presented previously, this is what it would actually look like in your code.  Iterate over your chunks of input, and call from partial basic 64 repeatedly. You would have to pass this true argument on every initial call, and then more false on the last one to generate padding.
 
 KG: With the updated design, the way that we are managing state has changed.  So that instead of keeping characters, so a substring of the input, instead we keep this pair that keeps track of individual bits from the input.  This is nicer because it allows you to output more bytes and keep less stuff in the state.
 
 KG: You can always completely consume all of the input as long as your input is correctly padded or is the final chunk and there’s no bits coming in and subsequent chunks.  So you don’t need a final call to say, oh, there’s no more input because you will have always consumed all of the input that is possible to call.
 
-KG: And this does mean that you don’t get enforcement of correct padding automatically.
-But it’s trivial to check if you want to.  I should mention most Base64 decoders don’t actually check that the padding is correct.  So it’s up to the user to do that themselves, if they want to, with this design, which is the final one here.
+KG: And this does mean that you don’t get enforcement of correct padding automatically. But it’s trivial to check if you want to.  I should mention most Base64 decoders don’t actually check that the padding is correct.  So it’s up to the user to do that themselves, if they want to, with this design, which is the final one here.
 
 KG: And then there’s no change to the `toPartialBase64`.  You still need to pass this parameter with `toPartialBase64` no matter what design we go with as long as we can’t individual chunks to be correctly padded, which is like a property to preserve.  On the final chunk, if you had finalizer,, only two bytes of input, you need to pass `more: false` so that it knows to generate padding characters.  Rather than keeping extra state assuming that you will call it again.
 
-KG: The main change since last time is support for writing into an existing buffer.
-I am going to show you one thing that that could look like.  There will be some open questions later.  So don’t get too hung up on the details but the broad strokes are here.
-So basically, and I realize this is a lot of code to be throwing at you.  The idea is you have this partial Base64 into method this takes an output and input parameter, and rather than – as previously giving you the result, as one of the things that it gives you back, it gives you read and written, which counts of characters and input rather than bytes . . .  obviously, and it is up to you to call substring and subarray on the input and output respectfully, and consume the output buffer once it’s full, and then you have consumed all the input, it’s up to you get a sub array of the output array for a number of bytes that it ends up containing.
+KG: The main change since last time is support for writing into an existing buffer. I am going to show you one thing that that could look like.  There will be some open questions later.  So don’t get too hung up on the details but the broad strokes are here. So basically, and I realize this is a lot of code to be throwing at you.  The idea is you have this partial Base64 into method this takes an output and input parameter, and rather than – as previously giving you the result, as one of the things that it gives you back, it gives you read and written, which counts of characters and input rather than bytes . . .  obviously, and it is up to you to call substring and subarray on the input and output respectfully, and consume the output buffer once it’s full, and then you have consumed all the input, it’s up to you get a sub array of the output array for a number of bytes that it ends up containing.
 
-KG: None of this is very difficult.  This is like the complete code that you would use in real life, except not with `console.log()`.  You would do whatever it is you’re doing with each chunk as it comes in. This is broadly the design I am asking for the commitee’s feedback on.  The read and written and the general shape of it
-One question that there’s debate about is offset parameters.  Basically, I mentioned the user needed to substring and subarray themselves, a possible design would instead be to take an input offset and output offset from that address the part of the buffer that user updates, to not create these additional views [TypedArrays] of input and output themselves, which may be important.  I know we are had feedback from Jarred Sumner who is working with JavaScriptCore and Bun, saying that subarray is expensive because it involves making a copy of the backing buffer the first time you do it because most buffers don’t have more than one view [so they can be allocated inline, whereas ArrayBuffers with multiple TypedArrays pointing to them need to be allocated out of line].
-So there’s a slow path for making a second view.  So by having explicit offset parameters, we allow not creating these views.  On the other hand, it’s probably not that bad.  And it makes the API more complicated.  Conversely, it’s not like you are forced to use the input and output offset parameters, and the code that I have on the previous slide would work exactly the same even in a world which they existed, you could not simply pass them. I would like to get the committee’s feedback on that.
+KG: None of this is very difficult.  This is like the complete code that you would use in real life, except not with `console.log()`.  You would do whatever it is you’re doing with each chunk as it comes in. This is broadly the design I am asking for the commitee’s feedback on.  The read and written and the general shape of it One question that there’s debate about is offset parameters.  Basically, I mentioned the user needed to substring and subarray themselves, a possible design would instead be to take an input offset and output offset from that address the part of the buffer that user updates, to not create these additional views [TypedArrays] of input and output themselves, which may be important.  I know we are had feedback from Jarred Sumner who is working with JavaScriptCore and Bun, saying that subarray is expensive because it involves making a copy of the backing buffer the first time you do it because most buffers don’t have more than one view [so they can be allocated inline, whereas ArrayBuffers with multiple TypedArrays pointing to them need to be allocated out of line]. So there’s a slow path for making a second view.  So by having explicit offset parameters, we allow not creating these views.  On the other hand, it’s probably not that bad.  And it makes the API more complicated.  Conversely, it’s not like you are forced to use the input and output offset parameters, and the code that I have on the previous slide would work exactly the same even in a world which they existed, you could not simply pass them. I would like to get the committee’s feedback on that.
 
 KG: The pros and cons, as I mentioned, my preference is to not have these parameters.  Keep the API simpler.  Take the performance of creating subarrays.  It’s probably not a big deal and if it is we can expand the API later.
 
-KG: Next question is whether to have a separate method.  So as I presented earlier, it has this additional method with an additional parameter.  But of course we could instead have an extra argument to the options bag that would specify where to write the data.
-I think the writing to existing buffer case is pretty different.  There’s also precedent on the web platform with separate and code versus code on text encoder.  So I think it makes sense to have a separate method rather than just an additional options bag parameter.
-It does mean there’s more methods.
-So there’s also a question of do we want to have support for doing this for hex?  I mentioned, there’s not in the previous version of the proposal, there was no reason to have streaming support for text, if you’re writing into an existing buffer, you do need streaming support for text.  Maybe it’s useful?
-The main down side is additional methods.
-I guess, we should do this for hex, just for consistency-sake.  It’s not like it’s that much extra work to specify or implement.  And it probably is useful in some cases.
-And then last thing is just the names for these things.
-So `fromPartialBase64` is a gross name. Is `fromChunkedBase64` better?  We need an actual name before Stage 3.  The “chunk” names are what I am considering the both candidate, but maybe there’s some more reasonable thing here.
-So if we make all of these changes, this is what would be the proposal.  We would have simple versions, the one-shot versions and then we would have from chunk and to chunked methods.  And from chunked into methods.  Of course there’s no `toChunkedInto` methods because we don’t have a string buffer type in JavaScript.  I should note that I am not showing the full API here because of the Base64 methods take an additional alphabet parameter in the options bag whether to use the [SEB] safe variant of that or not
-Yeah.  Let’s go to the queue.  That was all I had.
+KG: Next question is whether to have a separate method.  So as I presented earlier, it has this additional method with an additional parameter.  But of course we could instead have an extra argument to the options bag that would specify where to write the data. I think the writing to existing buffer case is pretty different.  There’s also precedent on the web platform with separate and code versus code on text encoder.  So I think it makes sense to have a separate method rather than just an additional options bag parameter. It does mean there’s more methods. So there’s also a question of do we want to have support for doing this for hex?  I mentioned, there’s not in the previous version of the proposal, there was no reason to have streaming support for text, if you’re writing into an existing buffer, you do need streaming support for text.  Maybe it’s useful? The main down side is additional methods. I guess, we should do this for hex, just for consistency-sake.  It’s not like it’s that much extra work to specify or implement.  And it probably is useful in some cases. And then last thing is just the names for these things. So `fromPartialBase64` is a gross name. Is `fromChunkedBase64` better?  We need an actual name before Stage 3.  The “chunk” names are what I am considering the both candidate, but maybe there’s some more reasonable thing here. So if we make all of these changes, this is what would be the proposal.  We would have simple versions, the one-shot versions and then we would have from chunk and to chunked methods.  And from chunked into methods.  Of course there’s no `toChunkedInto` methods because we don’t have a string buffer type in JavaScript.  I should note that I am not showing the full API here because of the Base64 methods take an additional alphabet parameter in the options bag whether to use the [SEB] safe variant of that or not Yeah.  Let’s go to the queue.  That was all I had.
 
 RPR: Waldemar is on the queue.
 
@@ -466,8 +418,7 @@ ACE: My gut feeling is it’s nice when things change in Stage 2 rather than Sta
 
 RPR: DE has a reply
 
-DE: Yeah.  I generally agree with what ACE is saying.  It would be okay for this proposal to go ahead as is, but the goal of making this “bring your own buffer version” was to be easier to copy in the first place.  And I am pretty confident it’s possible to construct a benchmark, whether it’s performance concern in applications is difficult to really assess.  But what we could assess is how many engine implement the pattern of using inline ArrayBuffers.  I believe V8 does this only for ArrayBuffers at that are pretty small.  And in which ways, it’s cheap to copy.
-So I think to do a quick survey of – in which cases this is done in JSC, and how this works out in some other engines to understand whether this really breaks zero copy.
+DE: Yeah.  I generally agree with what ACE is saying.  It would be okay for this proposal to go ahead as is, but the goal of making this “bring your own buffer version” was to be easier to copy in the first place.  And I am pretty confident it’s possible to construct a benchmark, whether it’s performance concern in applications is difficult to really assess.  But what we could assess is how many engine implement the pattern of using inline ArrayBuffers.  I believe V8 does this only for ArrayBuffers at that are pretty small.  And in which ways, it’s cheap to copy. So I think to do a quick survey of – in which cases this is done in JSC, and how this works out in some other engines to understand whether this really breaks zero copy.
 
 KG: I guess I don’t really see the value in looking at other engines here.  Like, if it is going to be expensive in JavaScriptCore that seems sufficient and I don’t care whether or not it’s expensive in SpiderMonkey at that point.
 
@@ -517,8 +468,7 @@ KG: Yeah.
 
 LCA: Yeah.  I agree with CM and Mozilla’s point about the usefulness of the streaming API.  I think streaming can be useful, but in many cases uses cannot use it directly, they either an iterator or maybe on the web a readable stream that they want to decode or encode.  And using the API will not make their life any easier.  Implementing API on top of the non-streaming one by just doing the like only pass multiple of 2 thing, this is implemented in the transform stream on the web.  It could be pretty easily implemented with a generator too.  Yeah.
 
-KG: I don’t feel like I care all that much about the streaming API.  But I feel the need to defend it here.  It is useful for streaming cases on the web.  Like I have this example here.  Where this is how you use the streaming API with the transform stream and it is much simpler than trying to do it yourself.
-Like it’s definitely doable without the streaming API.  You would just need to get pretty into the weeds of the details of Base64 and keeping track of the 3 characters input, 4 characters output distinction and making your views.  You need to do concatenation which is annoying with ArrayBuffers, or with Uint8Arrays.  If the first chunk is 8 bytes, then your set – you will have 2 bytes left over and put those to the next call.  Which is just like an annoying thing to do.  You have to make a copy of your entire subsequent chunk is you can prepenned those two bytes.  And that is exactly what the streaming API is for.  And it plays nicely with transform streams.  I do think it’s useful.  If we think that streaming is useful ever, anyway.
+KG: I don’t feel like I care all that much about the streaming API.  But I feel the need to defend it here.  It is useful for streaming cases on the web.  Like I have this example here.  Where this is how you use the streaming API with the transform stream and it is much simpler than trying to do it yourself. Like it’s definitely doable without the streaming API.  You would just need to get pretty into the weeds of the details of Base64 and keeping track of the 3 characters input, 4 characters output distinction and making your views.  You need to do concatenation which is annoying with ArrayBuffers, or with Uint8Arrays.  If the first chunk is 8 bytes, then your set – you will have 2 bytes left over and put those to the next call.  Which is just like an annoying thing to do.  You have to make a copy of your entire subsequent chunk is you can prepenned those two bytes.  And that is exactly what the streaming API is for.  And it plays nicely with transform streams.  I do think it’s useful.  If we think that streaming is useful ever, anyway.
 
 LCA: Most users the complexity of implementing this transform stream is going to be, especially making sure that the implement is fleshed out correctly, it’s the same level of complexity as going through and implementing the manual version of this.  Ultimately, people are going to copy this from stack overflow or import it through npm library.  I think this is going to be very rare, I think.
 
@@ -530,16 +480,13 @@ DE: We have clear steps to follow up with Moddable, and perhaps Chrome, to under
 
 KG: Obviously, Moddable tends to work in constrained environments and environments where you don’t want to copy all the full data in memory.  Certainly the streaming API is useful in any case where you don’t want to create a full copy of all the data in memory.
 
-TKP: Yeah.  As people were asking about – the streaming API, just last week, I had to implement something like this transform stream to compress large JSON data into a URL appendable string (query string).  I put them into messaging services because of the length of restrictions.  And implementing this transform stream myself was kind of annoying and actually, I had to learn more about base64 encoding in detail than I ever wanted to.
-So yeah.  I think the streaming API for Base64 is kind of useful.  And not a waste of time.  And to have an offset is also quite nice because you actually know where you are.  So you don’t need to have a shifting window on top of your data.  So if we have the streaming API, I would prefer the offset.
+TKP: Yeah.  As people were asking about – the streaming API, just last week, I had to implement something like this transform stream to compress large JSON data into a URL appendable string (query string).  I put them into messaging services because of the length of restrictions.  And implementing this transform stream myself was kind of annoying and actually, I had to learn more about base64 encoding in detail than I ever wanted to. So yeah.  I think the streaming API for Base64 is kind of useful.  And not a waste of time.  And to have an offset is also quite nice because you actually know where you are.  So you don’t need to have a shifting window on top of your data.  So if we have the streaming API, I would prefer the offset.
 
 WH: Having listened to the conversation we just had, I’ve been swayed and am now on the side that streaming is useful to avoid extra copying.
 
-KG: Okay.  Next steps.  That’s good feedback from both of you.  Yeah.  I agree that the main benefits for the streaming API which . . .  not having to learn all of of the details of Base64 and avoid copies.  I would like that clearer in the next presentation regardless of which direction we end up going with.
-And then I see that was everything in the queue.
+KG: Okay.  Next steps.  That’s good feedback from both of you.  Yeah.  I agree that the main benefits for the streaming API which . . .  not having to learn all of of the details of Base64 and avoid copies.  I would like that clearer in the next presentation regardless of which direction we end up going with. And then I see that was everything in the queue.
 
-LCA: Yeah.  I want to talk about this copy thing one more time.
-I think there is a path where you can implement this on top of the simple API, the non-streaming API that avoids doing a copy for the entire buffer every time, the most amount of data that you have to copy is 3 bytes.  In a fixed allocated data array, where you put this extra bytes and if you get a new chunk you add one byte from the new chunk into the extra.  And then you put that . . .  and I don’t think implementation of this is super complicated.  I can post one on matrix in a couple of minutes, if anyone is interested.
+LCA: Yeah.  I want to talk about this copy thing one more time. I think there is a path where you can implement this on top of the simple API, the non-streaming API that avoids doing a copy for the entire buffer every time, the most amount of data that you have to copy is 3 bytes.  In a fixed allocated data array, where you put this extra bytes and if you get a new chunk you add one byte from the new chunk into the extra.  And then you put that . . .  and I don’t think implementation of this is super complicated.  I can post one on matrix in a couple of minutes, if anyone is interested.
 
 KG: The thing that is complicated about that, right, that you could take this extra parameter that I have here, and move it into the one-shot API, but getting that parameter, the value for that parameter is gross . . .  it’s certainly doable.  But it’s not trivial.  Especially if you don’t already have a bunch of familiarity with the precise details of 64.
 
@@ -573,8 +520,7 @@ Presenter: Ron Buckton (RBN)
 
 RBN: Yesterday, there was an open question about a concern brought up by someone. There's a way to amend this proposal to enforce `using` in certain cases.  To avoid leaky dispose.  The possibility of leaking disposables.  I have made a couple minor amendments to the slides based on prior commentary, such as not saying that clean up is a must or a should, but a may.  Also, amended the slide to indicate that a other option which might be a preferred option if the recommendation would be to report a warning or notify the developer of the leak rather than implicitly close.  And as part of the discussion I mentioned I believe yesterday Python context managers are a basis for some of that discussion.  There’s an additional slide in a different color to show it was not part of the original subslides I had in yesterday.  Just describes what that approach looks like, where to implement it in case we wanted to talk about.  We can go to the queue which I believe the chairs have restored from yesterday.
 
-LCA: Yeah.  I wanted to comment on your note from yesterday about the base cleanup.  I think we should not recommend this.  This is in most cases a footgun. We've seen this …  over the years we are seeing in Deno.  For concrete example, the fetch API, the response body of a fetch API when you make a fetch call it’s cleaned up on GC, unless the user consumes the body.  And we see very frequently in real applications that users will perform a fetch, look at just the headers, will not read the response body.  And then start like consuming very large amount of memory, because they are not closing this response body.
-And need, are letting GC dealing with and it’s slow.  And people will run out, using HTTP1 because the response body keeps the handle open, until the entire body has been read.  Yeah.  It’s generally a bad time.  Like, GC based cleanup, I don’t think we should be recommending.  Reporting a warning, seems more reasonable.
+LCA: Yeah.  I wanted to comment on your note from yesterday about the base cleanup.  I think we should not recommend this.  This is in most cases a footgun. We've seen this …  over the years we are seeing in Deno.  For concrete example, the fetch API, the response body of a fetch API when you make a fetch call it’s cleaned up on GC, unless the user consumes the body.  And we see very frequently in real applications that users will perform a fetch, look at just the headers, will not read the response body.  And then start like consuming very large amount of memory, because they are not closing this response body. And need, are letting GC dealing with and it’s slow.  And people will run out, using HTTP1 because the response body keeps the handle open, until the entire body has been read.  Yeah.  It’s generally a bad time.  Like, GC based cleanup, I don’t think we should be recommending.  Reporting a warning, seems more reasonable.
 
 PFC: Okay.  Yeah.  I agree with that.  I would prefer not to recommend GC cleanup.  I mentioned some things yesterday about embedding JS into context where the final GC when the embedding is torn down, it’s problematic to have dispose call backs occurring.  I won’t go into the detail again, but it’s in the notes from yesterday.
 
@@ -586,8 +532,7 @@ RBN: And I will state this proposal does have a slight recommendation in the tex
 
 DE: Good work.  Let’s keep doing this.
 
-SFC: Yeah.  I will just say that I think the FinalizationRegistry solution is fine because – I think there’s definitely use cases that I have noted previously where the disposable interface can be available for cases where the developer knows that the object will be short-lived.  There could be cases where a disposable tends to be longer lived.  In which case it’s convenient to use the finalization registry to handle its lifetime.
-And like it’s fairly easy to write a wrapper thing.  For example, it uses – puts it in before returning to the user.  So I think it’s a perfectly valid design to suggest that author’s of libraries that make use of the disposable intercase also have the finalization registry.  They feel it’s a valid use case for the primitive that they are releasing.
+SFC: Yeah.  I will just say that I think the FinalizationRegistry solution is fine because – I think there’s definitely use cases that I have noted previously where the disposable interface can be available for cases where the developer knows that the object will be short-lived.  There could be cases where a disposable tends to be longer lived.  In which case it’s convenient to use the finalization registry to handle its lifetime. And like it’s fairly easy to write a wrapper thing.  For example, it uses – puts it in before returning to the user.  So I think it’s a perfectly valid design to suggest that author’s of libraries that make use of the disposable intercase also have the finalization registry.  They feel it’s a valid use case for the primitive that they are releasing.
 
 RBN: This isn’t necessarily something we have to document in the specification.  It could be just Q&A on StackOverflow.  If I wanted to do this, how do I do it correctly?
 
@@ -597,17 +542,13 @@ RBN: I actually be opposed to that for a number of reasons.  One, the performanc
 
 PFC: I understand what you are saying.  I don’t want to do that. Of course, if you didn’t have disposables and you had an open and closed method on some object, and you would leak a resource if you didn’t call close, there’s a possibility of forgetting to call close.  I think that `using` makes it slightly easier to forget that because it’s possible to think, "this object is a disposable. So it disposes automatically." It’s not as serious as I was thinking yesterday. But I was uncomfortable that the path of least resistance is the wrong one.
 
-RBN: Languages can be helpful to enforce.  That goes to the second slide here which was the discussion of something along the lines of Python’s context managers.  And this came up in issue 159 which is linked at the bottom of this slide.
-The idea of being that if you had a mechanism to indicate that you have to – the user declaration would call this method to get the actual resource, such that if you are writing a whole – new API and want to enforce that somebody is using, you would use this symbol.enter to give them what they interact with.  And it doesn’t force them – force the user to use using, but it leads them towards it.  If they didn’t want to, they have to call the symbol.enter method themselves, which was – is the suggestion from 159.
-But the problem with that is, if it was something that was mandated as part of the using protocol, existing APIs already have a close method, it would have to essentially implement an enter method that just returned this; that’s what Python does.  But in the same vein, the abstract base class that you use for context managers, the abstract context manager defines as the default implementation.
-Therefore, we could feasibly say that symbol. . . .  this is just has a dispose.  And if you want to option into stricter semantics for using, then you would add symbol.enter to your class and that allows the caller to either use using to get the value or option out of the semantics by calling enter themselves.
+RBN: Languages can be helpful to enforce.  That goes to the second slide here which was the discussion of something along the lines of Python’s context managers.  And this came up in issue 159 which is linked at the bottom of this slide. The idea of being that if you had a mechanism to indicate that you have to – the user declaration would call this method to get the actual resource, such that if you are writing a whole – new API and want to enforce that somebody is using, you would use this symbol.enter to give them what they interact with.  And it doesn’t force them – force the user to use using, but it leads them towards it.  If they didn’t want to, they have to call the symbol.enter method themselves, which was – is the suggestion from 159. But the problem with that is, if it was something that was mandated as part of the using protocol, existing APIs already have a close method, it would have to essentially implement an enter method that just returned this; that’s what Python does.  But in the same vein, the abstract base class that you use for context managers, the abstract context manager defines as the default implementation. Therefore, we could feasibly say that symbol. . . .  this is just has a dispose.  And if you want to option into stricter semantics for using, then you would add symbol.enter to your class and that allows the caller to either use using to get the value or option out of the semantics by calling enter themselves.
 
 PFC: Okay. I heard some negative comments about this yesterday, but I am very positive about this.
 
 RBN: There is a second part to this too, which is if we wanted to go the full Python context manager route which is something I wanted to avoid, the extra slide I added here.  This is a full context manager in Python when you enter the context you get the resource.  But the way you clean up the resource by calling the exit method on the context itself, not on the resource.  Exit has the extra power that added too much complexity for the lightweight use case, which is the exit method in Python can receive the exception that if one existed, that caused the disposable to occur, and they can either replace that exception or swallow the exception by returning true, allowing a context manager to act like a try catch.  That’s a lot of complexity for developers to do the wrong thing when doing the more simple one, I wanted dispose something, clean up, which is why I stayed away from the Python enter/exit approach.  You could have lightweight disposable, that symbol dispose, and about heavy wear weight that have a symbol exit and using would be use exercise if it exists, use exit, if it exists.  If exist doesn’t exist, I will use dispose with the semantics of this exit example here . . .  and the run time or the code in here, essentially emulates most of the work the dispose resources do to aggregate exceptions as it processes multiple disposable objects when exiting a block.
 
-LCA: The point I wanted to bring up is, also on this enforceability. In Deno our test runner does not leak a file resource for any other native resource.
-And I think through tools like this, test sanitizers and tools that allow you to track the amount of open resources at a time, within a given process, can help a lot here.  Especially if those things are integrated with DevTools.  Showing you the list of all objects that have a disposed symbol that have not had it called, this would be useful to sort of find run away resources.  So maybe part of the solution is Dev tooling and not the language itself
+LCA: The point I wanted to bring up is, also on this enforceability. In Deno our test runner does not leak a file resource for any other native resource. And I think through tools like this, test sanitizers and tools that allow you to track the amount of open resources at a time, within a given process, can help a lot here.  Especially if those things are integrated with DevTools.  Showing you the list of all objects that have a disposed symbol that have not had it called, this would be useful to sort of find run away resources.  So maybe part of the solution is Dev tooling and not the language itself
 
 MSF: Yeah. I support looking into enter/async enter as part of the proposal.  Similar to, not exactly, but similar to what Python has
 
@@ -658,18 +599,15 @@ PFC: This range is well above what you need in order to perform calculations rel
 
 PFC: (Slide 7) In March, we had some discussion about whether to express this in the specification as just regular operations on mathematical values and note they are fit in 96 bits, or also explicitly spelling out the steps you have to do if you are going to implement this in, say, 64 + 32-bits.  In the normative PR that I'm presenting today, we have chosen the former, because there are several ways to implement it. There was some disagreement last time we talked about this on what was better.  So if, if the committee or the editors decides to explicitly spell out the steps on how to use this 64 + 32-bits it’s an editorial change.  We don’t have to use plenary time for that if we prefer to express it differently in the spec.
 
-PFC: All in all this had a fairly small effect on the actual code that would be written in the wild using Temporal.  It has only a few observable effects, mostly around durations where one component is too large and no longer allowed, but doesn’t change much the behavior of the APIs at all. I have a code sample here showing the top half is durations that are no longer allowed.  So you can’t have `Number.MAX_VALUE` seconds anymore.  You can have `Number.MAX_SAFE_INTEGER` seconds but no milliseconds on top of that.
-The bottom half shows examples of the kinds of durations that are the maximum now accepted.  So, for example, you can have max u32 weeks, month and weeks and a number of days, hours, second, millisecond, nanoseconds that works out to MAX_SAFE_INTEGER.999999999.  And then the bottom line is basically the same duration but different units and negative, so like `-Number.MAX_SAFE_INTEGER`  and `-999999999` nanoseconds.
+PFC: All in all this had a fairly small effect on the actual code that would be written in the wild using Temporal.  It has only a few observable effects, mostly around durations where one component is too large and no longer allowed, but doesn’t change much the behavior of the APIs at all. I have a code sample here showing the top half is durations that are no longer allowed.  So you can’t have `Number.MAX_VALUE` seconds anymore.  You can have `Number.MAX_SAFE_INTEGER` seconds but no milliseconds on top of that. The bottom half shows examples of the kinds of durations that are the maximum now accepted.  So, for example, you can have max u32 weeks, month and weeks and a number of days, hours, second, millisecond, nanoseconds that works out to MAX_SAFE_INTEGER.999999999.  And then the bottom line is basically the same duration but different units and negative, so like `-Number.MAX_SAFE_INTEGER`  and `-999999999` nanoseconds.
 
-PFC: (Slide 8) The second change is to limit the precision of offset TimeZones. To recap the background here, TimeZones can be either named or they can be UTC offset.  The named time zones, they are taken from the time zone database, we will hear about that in JGT's Canonicalization of TimeZone presentation after this.  But this is not about those time zones.  This is about time zones that are constructed from a UTC offset that is fixed, does not change, no daylight saving rules.
-So an example of one of these TimeZone . . .  "+01:00".  A fixed offset of UTC+1.
-Previously, in the proposal, we allowed you to create the time zones with UTC offsets up to nanoseconds precision.  For example, this string here with `.00000001`, we overlooked that the IETF string format does not allow this precision of offset strings.  We figured it’s better to limit the precision now and relax the constraint now than to go back and try to make another change to the IETF document.  This is not named time zones.  There are time zones in the IANA database that have an offset that is not whole minutes and those continue to work as they did.
-It’s offset time zones, like this little code sample here, which are affected.  You are not allowed to put a number of seconds in the UTC offset.
+PFC: (Slide 8) The second change is to limit the precision of offset TimeZones. To recap the background here, TimeZones can be either named or they can be UTC offset.  The named time zones, they are taken from the time zone database, we will hear about that in JGT's Canonicalization of TimeZone presentation after this.  But this is not about those time zones.  This is about time zones that are constructed from a UTC offset that is fixed, does not change, no daylight saving rules. So an example of one of these TimeZone . . .  "+01:00".  A fixed offset of UTC+1. Previously, in the proposal, we allowed you to create the time zones with UTC offsets up to nanoseconds precision.  For example, this string here with `.00000001`, we overlooked that the IETF string format does not allow this precision of offset strings.  We figured it’s better to limit the precision now and relax the constraint now than to go back and try to make another change to the IETF document.  This is not named time zones.  There are time zones in the IANA database that have an offset that is not whole minutes and those continue to work as they did. It’s offset time zones, like this little code sample here, which are affected.  You are not allowed to put a number of seconds in the UTC offset.
 
 PFC: (Slide 9) The third normative change and this is probably relating very closely to the presentation that we will hear from KG about "stop coercing things".  Some of the test cases that ABL wrote for the Firefox implementation of Temporal uncovered this concern, that led to to make a change in the way we coerce strings to dates. So the story is that some numbers are, if you convert them exactly to a string they are valid ISO strings.  Here is a number that converts to yesterday’s date if you use `toString` on it.  Some numbers look like they might, but they don’t convert to valid ISO strings.  For example, here is one that starts with a zero. It's an 8-digit octal literal, in base 10 it’s a 7-digit number.  So not an ISO string.  This is an evil trap to fall into. So the change we are proposing is not to use `toString()` on this sort of input.  But require that if you pass a primitive, it’s a string. And that also changes the semantics of what error we throw there.  If you pass the non-string primitive, it’s a TypeError rather than a RangeError, from when it was converted to a string that was not allowed.
-(Slide 10) Here are some code samples of that.
-This top one is the silliest one.  It used to be able to create a calendar from the number 10.  And that would end up as the ISO8601 calendar, because 10 was parsed as a time string for 10 o’clock.  And without an explicit calendar annotation, it has the ISO calendar. It was silly that this was allowed in the first place.
-You used to be able to create a TimeZone from -10 because it would be a fixed offset TimeZone of UTC-10 hours.  Here is the date I shared before.  Then the bottom one shows an example of the change in the error that we are throwing.  It used to be if you created a date from boolean value `true`, it converts to the string `"true"`.  A `RangeError` because "true" is a string outside of the set of strings that are accepted.  And it’s a `TypeError` now because it’s not a string. (Slide 11) I will take questions on any of these now.
+
+PFC: (Slide 10) Here are some code samples of that. This top one is the silliest one.  It used to be able to create a calendar from the number 10.  And that would end up as the ISO8601 calendar, because 10 was parsed as a time string for 10 o’clock.  And without an explicit calendar annotation, it has the ISO calendar. It was silly that this was allowed in the first place. You used to be able to create a TimeZone from -10 because it would be a fixed offset TimeZone of UTC-10 hours.  Here is the date I shared before.  Then the bottom one shows an example of the change in the error that we are throwing.  It used to be if you created a date from boolean value `true`, it converts to the string `"true"`.  A `RangeError` because "true" is a string outside of the set of strings that are accepted.  And it’s a `TypeError` now because it’s not a string.
+
+PFC: (Slide 11) I will take questions on any of these now.
 
 DLM: First of all, thank you for your continued work on this.  We support all of the normative changes. I wanted to say, we fully understand why you are limiting to minutes for offset time zones, but in our internal review, it was pointed out the iCalendar format supports seconds, so we might want to expand to seconds in the future.
 
@@ -685,8 +623,7 @@ SYG: Numbers were never accepted.  I understand.  I see.
 
 PFC: This `"05000101"` is fine as a string because it was a valid ISO string.
 
-SYG:  It’s not the new thing that accepts numbers or strings.  Just no coercion, but it
-only accepts strings.
+SYG:  It’s not the new thing that accepts numbers or strings.  Just no coercion, but it only accepts strings.
 
 PFC: That’s right. Yeah.
 
@@ -732,10 +669,10 @@ PFC: I can add that as well.
 
 ### Summary
 
-Consensus on making normative changes to:
-Remove arbitrary-precision integer math and calculations in loops (PR [#2612](https://github.com/tc39/proposal-temporal/pull/2612))
-Limit offset time zones to minutes precision (PR [#2607](https://github.com/tc39/proposal-temporal/pull/2607))
-Require ISO strings and offset strings to be Strings (PR [#2574](https://github.com/tc39/proposal-temporal/pull/2574))
+- Consensus on making normative changes to:
+  - Remove arbitrary-precision integer math and calculations in loops (PR [#2612](https://github.com/tc39/proposal-temporal/pull/2612))
+  - Limit offset time zones to minutes precision (PR [#2607](https://github.com/tc39/proposal-temporal/pull/2607))
+  - Require ISO strings and offset strings to be Strings (PR [#2574](https://github.com/tc39/proposal-temporal/pull/2574))
 
 We agreed to follow up with Sean Burke from the Thunderbird team about use cases for sub-minute-precision UTC offset time zones. (https://github.com/tc39/proposal-temporal/issues/2631)
 
@@ -749,23 +686,17 @@ Presenter: Justin Grant (JGT)
 - [slides](​​https://docs.google.com/presentation/d/1MVBKAB8U16ynSHmO6Mkt26hT5U-28OjyG9-L-GFdikE/edit#slide=id.g22181d24971_0_41)
 - [spec](https://tc39.es/proposal-canonical-tz/)
 
-JGT: Firstly, again I want to – this is an obscure topic and I am grateful the committee is willing to spend time on this and thanks for having me.  And it’s 4:30 in the morning for me.  I am a little slower than I would normally be.  So I want to apologize for that in advance.  But hopefully I can keep the energy up.
-So today, we are talking about TimeZone canonicalization and hopefully getting to Stage 3.
+JGT: Firstly, again I want to – this is an obscure topic and I am grateful the committee is willing to spend time on this and thanks for having me.  And it’s 4:30 in the morning for me.  I am a little slower than I would normally be.  So I want to apologize for that in advance.  But hopefully I can keep the energy up. So today, we are talking about TimeZone canonicalization and hopefully getting to Stage 3.
 
 JGT: So first, we will talk about today is just a recap of the proposal.  It hasn’t changed very much since Staged 1.  But I will go through what is going on during Stage 2, and try it recap the spec text changes to keep it fresh in everybody’s mind, and ask for Stage 3.
 
-JGT: Reminder about the scope of the proposal and what we are doing, it’s based on the IANA, TimeZone, for ECMAScript and for everybody else in computing. There’s a database called CLDR, a database of metadata that is used for localization purposes including TimeZone data.  CLDR takes updates from the IANA database and includes them in their own data.  There is another API called ICU which ECMAScript engines call into.  This proposal is based on time don’t know identifiers like Europe/Paris, Pacific/Auckland.  Two kinds.  Primary identifier zeros which is the main – the main identifier for TimeZone.  It’s called a zone in the TZDB and also nonprimary identifies.  So a good example is Asia/Kolkata for Asia/Calcutta is link that points to nonprimary identifier that points to Asia/Calcutta.  Not all time zones have nonprimary identifiers but some do and that’s one of the focusses of this proposal.
-Now, in terms of manipulated TimeZone identifiers there’s two variations on this.  One is case nomralization.  So the TimeZone did a is a sense sensitive Dai base.  If you give it America/Los_Angeles.  Big L, A.  That's an important implementation. I don't want to store the string that the user provides and so for us storage efficiently it’s important to do case normalization.  This is about canonicalization.
-So what this is, is like in 2022, Europe/Kiev was renamed Europe/Kyiv.  And so figuring out how we handle those kinds of cases where there are multiple identifiers corresponding to a particular time zone is the focus.
+JGT: Reminder about the scope of the proposal and what we are doing, it’s based on the IANA, TimeZone, for ECMAScript and for everybody else in computing. There’s a database called CLDR, a database of metadata that is used for localization purposes including TimeZone data.  CLDR takes updates from the IANA database and includes them in their own data.  There is another API called ICU which ECMAScript engines call into.  This proposal is based on time don’t know identifiers like Europe/Paris, Pacific/Auckland.  Two kinds.  Primary identifier zeros which is the main – the main identifier for TimeZone.  It’s called a zone in the TZDB and also nonprimary identifies.  So a good example is Asia/Kolkata for Asia/Calcutta is link that points to nonprimary identifier that points to Asia/Calcutta.  Not all time zones have nonprimary identifiers but some do and that’s one of the focusses of this proposal. Now, in terms of manipulated TimeZone identifiers there’s two variations on this.  One is case nomralization.  So the TimeZone did a is a sense sensitive Dai base.  If you give it America/Los_Angeles.  Big L, A.  That's an important implementation. I don't want to store the string that the user provides and so for us storage efficiently it’s important to do case normalization.  This is about canonicalization. So what this is, is like in 2022, Europe/Kiev was renamed Europe/Kyiv.  And so figuring out how we handle those kinds of cases where there are multiple identifiers corresponding to a particular time zone is the focus.
 
-JGT: So reminder this user complaint slide, you seen it a few times.  The current stat state is not great from the perspective of developers.  So the common theme is why are you – the people for sensible reasons, prefer to name their countries and cities the names they want.  And not the names some colonizers from hundreds of years ago decided to call it.  So this is actually just a pretty small sampling of what you can find on Google for people complaining how how this works.  How this proposal will reduce in the future these kinds of complaints.
-So to summarize the problems that exist today: one is there is divergence between implementations.  If I pass this line of code into firefox I will get Asia/Kolkata. If I pass it into Chrome or Safari or Node, I get Asia/Calcutta back.  And so it’s because the latter uses CLDV and the former uses IANA which IDs are canonical.  ECMAScript will change the values that programmers give it.  So if you pass in Europe/Kyiv or Europe/Kiev, you might get one or the other back, depending on what implementation and at what time you’re making the calls.  That’s confusing and/annoying when you have automated tests that you don’t want your snapshot data to change.  So it’s frustrating.  I mentioned before that developers are reasonably update that their cities are not called what they think they should be called.  The final thing is that because there are multiple identifiers for the same TimeZone, you can’t use `===` to compare them.  You need to have some code between to do an accurate comparison.  These are all bad.  But they will get worse.  Because Temporal makes these problems worse because, the Temporal.ZonedDateTime class when you serialize into a string it shows you the ID.  In the browser console, debuggers convert to JSON.  When you store in a database.  Logs.  So we have already seen and today it’s like a JavaScript detract to get the identifier today’s.  You have to dig in keep and call levels down.  Whereas, with Temporal it’s going to be right there in people’s face.  We will see a lot more of dates and time of the essence that we – before Temporal gets wide adoption, it’s great to the proposal out there so that we can vent the compilation of the problems we saw in the last side.
+JGT: So reminder this user complaint slide, you seen it a few times.  The current stat state is not great from the perspective of developers.  So the common theme is why are you – the people for sensible reasons, prefer to name their countries and cities the names they want.  And not the names some colonizers from hundreds of years ago decided to call it.  So this is actually just a pretty small sampling of what you can find on Google for people complaining how how this works.  How this proposal will reduce in the future these kinds of complaints. So to summarize the problems that exist today: one is there is divergence between implementations.  If I pass this line of code into firefox I will get Asia/Kolkata. If I pass it into Chrome or Safari or Node, I get Asia/Calcutta back.  And so it’s because the latter uses CLDV and the former uses IANA which IDs are canonical.  ECMAScript will change the values that programmers give it.  So if you pass in Europe/Kyiv or Europe/Kiev, you might get one or the other back, depending on what implementation and at what time you’re making the calls.  That’s confusing and/annoying when you have automated tests that you don’t want your snapshot data to change.  So it’s frustrating.  I mentioned before that developers are reasonably update that their cities are not called what they think they should be called.  The final thing is that because there are multiple identifiers for the same TimeZone, you can’t use `===` to compare them.  You need to have some code between to do an accurate comparison.  These are all bad.  But they will get worse.  Because Temporal makes these problems worse because, the Temporal.ZonedDateTime class when you serialize into a string it shows you the ID.  In the browser console, debuggers convert to JSON.  When you store in a database.  Logs.  So we have already seen and today it’s like a JavaScript detract to get the identifier today’s.  You have to dig in keep and call levels down.  Whereas, with Temporal it’s going to be right there in people’s face.  We will see a lot more of dates and time of the essence that we – before Temporal gets wide adoption, it’s great to the proposal out there so that we can vent the compilation of the problems we saw in the last side.
 
-JGT: So here is what we did during Stage 2.  We landed the two editorial PRs,  refactoring how TimeZone identifier are dealt with, both in ECMA262 and in the Temporal spec. These are now landed.  Thanks a lot – so much to especially to the 262 editors for spending so much time with me to ensure that went through.
-We finished tests.  Tests aren’t required for stage 3, .  We had a lot of discussion in the repo, you know, probably we have 20 or 30 issues in there.  And we had 2, TG2 reviews.  The summary of the TG2 reviews, we are not going to expand beyond stage 1 and 2.  There were ideas on how to expand the scope.  But we weren’t really able to get consensus on any of the things that were actionable and some are not actionable yet.  And so the plan; we will specifically have the proposal as is.  And then other future-related changes would be normative PRs in ECMA402.  Because it’s time sensitive, we want to get the changes out before Temporal is widely adopted.  There’s no normative spec changes.  To run through it quick here.
+JGT: So here is what we did during Stage 2.  We landed the two editorial PRs,  refactoring how TimeZone identifier are dealt with, both in ECMA262 and in the Temporal spec. These are now landed.  Thanks a lot – so much to especially to the 262 editors for spending so much time with me to ensure that went through. We finished tests.  Tests aren’t required for stage 3, .  We had a lot of discussion in the repo, you know, probably we have 20 or 30 issues in there.  And we had 2, TG2 reviews.  The summary of the TG2 reviews, we are not going to expand beyond stage 1 and 2.  There were ideas on how to expand the scope.  But we weren’t really able to get consensus on any of the things that were actionable and some are not actionable yet.  And so the plan; we will specifically have the proposal as is.  And then other future-related changes would be normative PRs in ECMA402.  Because it’s time sensitive, we want to get the changes out before Temporal is widely adopted.  There’s no normative spec changes.  To run through it quick here.
 
-JGT: So as reminder, this is the same proposed solution slide that we presented last time.  I will run through and give you a status update of the pieces and where API changes that reduce the impact of canonicalization.  And so changes to how canonicalization works in the IANA.  The first piece is to stop canonicalizing user input. If I do Asia/Calcutta, and get it back. If I do Asia/Kolkata, and get it back.  And that one change is actually probably the biggest thing we can do to reduce the level of user complaints because, you know, we’re not changing people’s data anymore.  The next is to expose a new public API to compare two different TimeZone identifiers to see if they represent the same TimeZone.
-And so for both of these API changes, the spec is complete.  The tests are fully – the full surface of the API.  Passing.  Reviewed.  And the spec text hasn’t changed except for minor editorial tweaks since Stage 2.
+JGT: So as reminder, this is the same proposed solution slide that we presented last time.  I will run through and give you a status update of the pieces and where API changes that reduce the impact of canonicalization.  And so changes to how canonicalization works in the IANA.  The first piece is to stop canonicalizing user input. If I do Asia/Calcutta, and get it back. If I do Asia/Kolkata, and get it back.  And that one change is actually probably the biggest thing we can do to reduce the level of user complaints because, you know, we’re not changing people’s data anymore.  The next is to expose a new public API to compare two different TimeZone identifiers to see if they represent the same TimeZone. And so for both of these API changes, the spec is complete.  The tests are fully – the full surface of the API.  Passing.  Reviewed.  And the spec text hasn’t changed except for minor editorial tweaks since Stage 2.
 
 JGT: So the next piece of it is to provide guidelines for implementers of how they should teal with future changes to the TimeZone database.  Especially in the – when we have future renames, because they tend to be the most destabilizing.  Like Kiev to Kyiv.  There’s a recommendation into a note, similar to the note we had in Stage 2, we wordsmithed it a little bit. But there is one piece of this – we sort of had hoped we also be able to include, spec text how you should align cross-engine set of canonical IDs.  We are not there yet.  Reason is that, engines generally rely on CLDR and ICU to handle the interaction with the TimeZone database.  CLDR has agreed to expose IANA canonicalizal values out to the world.  They are moving – they are moving slow. And so we are not on the time frame we need this proposal to go, I don’t think we will get that support from CLDR and ICU in time.  We are going to continue to encourage folks to support this and continue discussing it but wait for for any spec changes with that to really wait until that support is available. Thankfully because we’re making the API changes it reduces the impact of this – of these kind of things.  Even though we are not engines will act the same, the scope of which they will act differently is going to be a lot smaller with this proposal API changes.
 
@@ -821,8 +752,7 @@ JGT: That makes sense.  Why don’t with do: take that as a open issue and discu
 
 DE: I think that’s a fine conclusion.
 
-SYG: This addressed my concern.  I will say my concern: if this remains separate from Temporal, and there are two separate spec text and two proposal repos at Stage 3, this is not something to ship ahead of Temporal because then we will have shipped this without having the equality operator to compare.
-I want to confirm my understanding of the agreement.  If so, merging this spec text into the Temporal spec text addressing my concern.  If there’s no two separate spec text and no way to decently for someone who was not here at the meeting who understands to ship independently, I support Stage 3.  If there is a risk, then I would rather that doesn’t appear as3
+SYG: This addressed my concern.  I will say my concern: if this remains separate from Temporal, and there are two separate spec text and two proposal repos at Stage 3, this is not something to ship ahead of Temporal because then we will have shipped this without having the equality operator to compare. I want to confirm my understanding of the agreement.  If so, merging this spec text into the Temporal spec text addressing my concern.  If there’s no two separate spec text and no way to decently for someone who was not here at the meeting who understands to ship independently, I support Stage 3.  If there is a risk, then I would rather that doesn’t appear as3
 
 JGT: I definitely agree what SYG said.  It’s the simplest – having thought through some of the option zeros, let’s merge the proposal specs text into Temporal and not try to do anything before Temporal ends.  There’s a bunch of moving parts.  We can take that off-line and figure out the right way to do.  I am inclined to agree with you that that is the right way to do.
 
@@ -918,8 +848,7 @@ GB: Presenting again source phase imports.  Hopefully for Stage 3.  We have had 
 
 GB: So to summarize the syntax, this is the syntax for the proposal.  It’s both a static syntax and a dynamic syntax for importing modules in their source phase.  And in particular, this is a new reflection of the loading pipeline in different phases of the module loading process, where getting access to the earlier phase unlocks new capabilities both for JavaScript and other languages that integrate with JavaScript.  The motivation for the proposal initially comes from WebAssembly where there is an explicit distinction in WebAssembly between the source and the instance that you have WebAssembly.module .and webassembly.instance  and the next a link and executed instance.  And because of that distinction, we want to be able to get a hold of a WebAssembly.Module object through the module system and this cuts out a bunch of existing boilerplate code that exists today.  And that causes a lot of friction in various WebAssembly workflows, bundlers, and code that can work across different JavaScript environments.  This is the standard way in which one needs to do WebAssembly today.  This the key part of the instantiation process.  How to resolve the WebAssembly binary and this is a step that exists parallel to the normal JS module system.  You have to fetch the binary, pipe it in and then separately do that and in this case, ESbuild has to be instantiated with a particular specifier for the run time.  And the WebAssembly has an integration on its own and not all for dynamic WebAssembly instantiation.
 
-GB: So the benefits we get for WebAssembly are fixing this portability issue that we currently have in the WebAssembly ecosystem where you do the separate steps and bundlers don’t understand it easily.  Getting access to WebAssembly.module and statically analyzing that is difficult.  Users might get to wrong and not do it right.  With the WASM integration, you want to multiple sending models between workers and various virtualization or specific cases.
-And so it fills a gap in that use case while solving the linking for WebAssembly and sort of providing a bunch of ergonomic benefits should significantly improve the portability of the workflows.
+GB: So the benefits we get for WebAssembly are fixing this portability issue that we currently have in the WebAssembly ecosystem where you do the separate steps and bundlers don’t understand it easily.  Getting access to WebAssembly.module and statically analyzing that is difficult.  Users might get to wrong and not do it right.  With the WASM integration, you want to multiple sending models between workers and various virtualization or specific cases. And so it fills a gap in that use case while solving the linking for WebAssembly and sort of providing a bunch of ergonomic benefits should significantly improve the portability of the workflows.
 
 GB: We get static error semantics, improve and security argument as well.  That because – this is the syntax that ES build to update using the new import source phase syntax you get the WebAssembly through the JavaScript module system and can then directly instantiate  with the existing WebAssembly instantiation where the ESB object is a WebAssembly.module and there is even potential security benefits that could apply either in browsers or in service side run times where because the code is no longer arbitrary WASM bytes being compiled, we have access to this through the module system, so the same types of security policies and reachability policies can also be employed to the WebAssembly code that’s executed.  So it’s  another level at which you can obtain a reference to source code that you can then dynamically link and opens up the virtualization policy
 
@@ -927,16 +856,11 @@ GB: To explain the history of the path of where this proposal came from and how 
 
 GB: And so this became the phases simplification, we were able to see these a part of a separate proposal of different phases in which you can import a model, and this being a particular phase of loading it’s new Tim active in the module system and that’s the process.  I will pass it over it leucoto go into more details on the phasing
 
-LCA: To recap the phases here.  You can take a model in approximately 5 stages.  The 5 you see on the screen.  But generally, this is how it works.
-You start with resolve phase that makes a specify . . .  and resolves these module requests or on the web URL resolution.  And that may take [inaudible] maps.  Fetch and compile this module.  Through the network.  From the disk or from elsewhere.  On the web, network to fetch CPS (?) right here.  This is also the part of the phasing that we are hooking into with source imports, exposing the result of this phase to user.  The next phase is attaching evaluation context.  This is when a module getting an identity, it gets linked to a specific realm, import metaobject, those things.  Next, we go through the list of imports that the module also.  Possibly load the modules and link them together.  This is also a phase working on posting through the defer proposal that Nicolo presented yesterday
-And then finally, we evaluate and this is the phase that we currently always try to get when importing we are – we do all of the behaviors.
+LCA: To recap the phases here.  You can take a model in approximately 5 stages.  The 5 you see on the screen.  But generally, this is how it works. You start with resolve phase that makes a specify . . .  and resolves these module requests or on the web URL resolution.  And that may take [inaudible] maps.  Fetch and compile this module.  Through the network.  From the disk or from elsewhere.  On the web, network to fetch CPS (?) right here.  This is also the part of the phasing that we are hooking into with source imports, exposing the result of this phase to user.  The next phase is attaching evaluation context.  This is when a module getting an identity, it gets linked to a specific realm, import metaobject, those things.  Next, we go through the list of imports that the module also.  Possibly load the modules and link them together.  This is also a phase working on posting through the defer proposal that Nicolo presented yesterday And then finally, we evaluate and this is the phase that we currently always try to get when importing we are – we do all of the behaviors.
 
-LCA: Th semantics of this proposal are that source phase imports are exposed the module’s source object.  This is a representation of the module source.  This is [spo*is]d (?) via new module.GetModuleSource abstract method.  The host load hook returns exactly one result per riverrer + (?)  specify attributes.  This is unchanged.  Models that do not expose a source representation yet, will get back to this a minute, throw when they are  loaded via a source phase import.  All module source objects, the values provided from source phase imports inherent this the same be able to identify them.
-This abstract module source class is not exposed on the global scope.  It is the all module source inherent from this class.  In the future we might extend it to add common methods, for example, binding, this is part of the modules epic that we’re working towards in the modules call.  We only have a toString tag implementation.  An internal slot check like TypedArrays do.  This allows for checking and the spec requires all module source objects from the class.  The class is not constructible or callable.  Users cannot create their own module source objects.  Host objects can infer from abstract module source and host objects like webassembly module that inherent from can be constructed.  But TA constructible right now.
+LCA: Th semantics of this proposal are that source phase imports are exposed the module’s source object.  This is a representation of the module source.  This is [spo*is]d (?) via new module.GetModuleSource abstract method.  The host load hook returns exactly one result per riverrer + (?)  specify attributes.  This is unchanged.  Models that do not expose a source representation yet, will get back to this a minute, throw when they are  loaded via a source phase import.  All module source objects, the values provided from source phase imports inherent this the same be able to identify them. This abstract module source class is not exposed on the global scope.  It is the all module source inherent from this class.  In the future we might extend it to add common methods, for example, binding, this is part of the modules epic that we’re working towards in the modules call.  We only have a toString tag implementation.  An internal slot check like TypedArrays do.  This allows for checking and the spec requires all module source objects from the class.  The class is not constructible or callable.  Users cannot create their own module source objects.  Host objects can infer from abstract module source and host objects like webassembly module that inherent from can be constructed.  But TA constructible right now.
 
-GB: The discussion as a new proposal came out of previous meeting, and the – in order to support this WebAssembly, we need to update the WebAssembly prototype and constructor for WebAssembly module to have this new inheritance chain.  There is web observability to this change, because we are changing the inheritance there is precedent for the changes and we haven’t identified any use cases in which there would be exact type checks that would be invalidated in existing WebAssembly code.
-So we were able to work on the WebAssembly integration and integrate a PR into the proposal.
-And so there are a few PRs and so the update was also presented to the webassembly CG committee meeting on the 20th of June.  And there were some really interesting questions that were asked about the proposals.  But there was generally positive feedback and no major implementation concerns were raised.  So that’s the current status.  We were able to investigate the specifications changes and follow up on them in terms of how this can be integrated with the current WebAssembly as an integration proposal.
+GB: The discussion as a new proposal came out of previous meeting, and the – in order to support this WebAssembly, we need to update the WebAssembly prototype and constructor for WebAssembly module to have this new inheritance chain.  There is web observability to this change, because we are changing the inheritance there is precedent for the changes and we haven’t identified any use cases in which there would be exact type checks that would be invalidated in existing WebAssembly code. So we were able to work on the WebAssembly integration and integrate a PR into the proposal. And so there are a few PRs and so the update was also presented to the webassembly CG committee meeting on the 20th of June.  And there were some really interesting questions that were asked about the proposals.  But there was generally positive feedback and no major implementation concerns were raised.  So that’s the current status.  We were able to investigate the specifications changes and follow up on them in terms of how this can be integrated with the current WebAssembly as an integration proposal.
 
 GB: So this now puts us in a position in which the WebAssembly integration proposal should be ready for shipping.  And the Champions recommend that these features can now be shipped together.  So we can now ship both the ability to import WebAssembly in the JavaScript module system with normal imports, as well as these new source phase imports.  By shipping both of these features combined we should cater to all of the use case that is are necessary to support WebAssembly on the web.  If implementers do not want implement the full integration at first, source phase imports also provide a simpler initial implementation potentially.  Because there is less heavy lifting involved in tying the module systems together.  So we created a note that is a possibility.  That we certainly recommend that both are implemented, if possible.
 
@@ -944,86 +868,46 @@ GB: And obviously, we should consider what this representation is going to be fo
 
 GB: Now, there is some risk with that because it’s a step – it’s a big step we are taking.  But it’s a great opportunity for us to be able to start shipping these proposals, which we have been working on for I think coming on two years at the moment.  And we have identified a huge amount of cross-cutting concerns and gone through the design discussions from the start.  So that we have alignment between the proposals that we believe can come up with some really powerful primitives for JavaScript that should significantly improve virtualization cases.
 
-LCA: We discussed the proposal already.   First up is the dynamic import syntax.  In the meeting with he discussed whether to use the `import.source` syntax or regular with options bag.  We agreed during the meeting it use the `import.source` syntax.  And the proposal updated to use this.
-Next up the export source at that timeic (?) syntax.  The topic of this came up in the last meeting.  Import source, shorthand and exporting the I am – identifier.  As identified by Ron, we believe there may be actual potentially use for reexporting.  By allowing defining a module composed of multiple sources which is a single file with module expressions and proposals in the future.  We will not pursuet this in the current proposal because the export default from form for regular evaluation imports does not exist.  So we would like to see this explored within the context of the export default proposal.
-Finally, a follow-up on aligning the import source static and dynamic syntax.  We discussed whether to align the static syntax with a space, the dynamic with a dot.  There is currently no precedent for declarations containing dots.  Additionally, the export source causes a space for the export syntax has to use a dot in this case.  And didn't introduce a second declaration containing dots.  And also introduced export dot something as a new syntax.  Because of the points we decided against this change and we are sticking with import space source and I don’t think there was major controversy in the last meeting.  Everybody seemed okay with that.
+LCA: We discussed the proposal already.   First up is the dynamic import syntax.  In the meeting with he discussed whether to use the `import.source` syntax or regular with options bag.  We agreed during the meeting it use the `import.source` syntax.  And the proposal updated to use this. Next up the export source at that timeic (?) syntax.  The topic of this came up in the last meeting.  Import source, shorthand and exporting the I am – identifier.  As identified by Ron, we believe there may be actual potentially use for reexporting.  By allowing defining a module composed of multiple sources which is a single file with module expressions and proposals in the future.  We will not pursuet this in the current proposal because the export default from form for regular evaluation imports does not exist.  So we would like to see this explored within the context of the export default proposal. Finally, a follow-up on aligning the import source static and dynamic syntax.  We discussed whether to align the static syntax with a space, the dynamic with a dot.  There is currently no precedent for declarations containing dots.  Additionally, the export source causes a space for the export syntax has to use a dot in this case.  And didn't introduce a second declaration containing dots.  And also introduced export dot something as a new syntax.  Because of the points we decided against this change and we are sticking with import space source and I don’t think there was major controversy in the last meeting.  Everybody seemed okay with that.
 
 LCA: On Stage 3 reviews.  Stage 3 reviewer reviews are complete.  From NRO, DE, and KKL.  Thank you for those.  And editor reviews are mostly done, some editorial fixes and a rebase onto import attributes. So thank you to SYG, KG and MF for those.
 
-LCA:  One question came up, whether this phase that we are exposing should be called the source phase.  We refer to this as the module source phase with source as the key word.
-There’s a question of whether users will think source means parsed or unparse source or parsed source.  Right now the representation is parsed compiled source.
-Do you want to speak to this?
+LCA:  One question came up, whether this phase that we are exposing should be called the source phase.  We refer to this as the module source phase with source as the key word. There’s a question of whether users will think source means parsed or unparse source or parsed source.  Right now the representation is parsed compiled source. Do you want to speak to this?
 
-GB: So I suppose the concern is that source typically refers to the source code.  And the concept of a source phase is a new concept we are introducing.  And whether that will be confused with the concept of source code.  When it comes to the JS representation, the source phase can very much be thought of as a representation of the source code.  And so far as source code can be considered optimizeible, perhaps the distinction for parsing isn’t as clear to end-users as it is to V8 enginers.  So we may also for the JS source be exposing things like looking up the imports and exports and even having a getter to the source text.  It very much would be that kind of representation.
-We did initially explore the module term for this.  But the issue we have with the module term there is conflation on that term between WASM ecosystem in JavaScript.  Module means the compiled module in the source phase.  And so it’s – we probably don’t want to use that term and we haven’t heard any proposals for a better term.
-So that’s pretty much where we land on that at the moment.  But we can certainly hear from SYG shortly.
+GB: So I suppose the concern is that source typically refers to the source code.  And the concept of a source phase is a new concept we are introducing.  And whether that will be confused with the concept of source code.  When it comes to the JS representation, the source phase can very much be thought of as a representation of the source code.  And so far as source code can be considered optimizeible, perhaps the distinction for parsing isn’t as clear to end-users as it is to V8 enginers.  So we may also for the JS source be exposing things like looking up the imports and exports and even having a getter to the source text.  It very much would be that kind of representation. We did initially explore the module term for this.  But the issue we have with the module term there is conflation on that term between WASM ecosystem in JavaScript.  Module means the compiled module in the source phase.  And so it’s – we probably don’t want to use that term and we haven’t heard any proposals for a better term. So that’s pretty much where we land on that at the moment.  But we can certainly hear from SYG shortly.
 
-SYG: Yes, specifically the concern was that source sounds like what you actually already mean by
-asset, or at least in the future when we have asset.  That’s what it means, it’s just like
-uninterpreted, just get the text kind of thing.  When we bikeshedded the name internally, the
-two names that had some traction were “handle”, which I think is not good because that’s just
-like “handle”  means anything, and “instantiable”, which I think has some promise.
-Specifically source, in this case, is about the thing that you can instantiate into a module,
-whereas assets are probably never going to be things that are instantiable.  So if you import
-An instantiable, I guess the problem be the name is it doesn’t sound like a phase, it
-sounds like a thing, but it seems to reflect the intuition better, in our opinion.
+SYG: Yes, specifically the concern was that source sounds like what you actually already mean by asset, or at least in the future when we have asset.  That’s what it means, it’s just like uninterpreted, just get the text kind of thing.  When we bikeshedded the name internally, the two names that had some traction were “handle”, which I think is not good because that’s just like “handle”  means anything, and “instantiable”, which I think has some promise. Specifically source, in this case, is about the thing that you can instantiate into a module, whereas assets are probably never going to be things that are instantiable.  So if you import An instantiable, I guess the problem be the name is it doesn’t sound like a phase, it sounds like a thing, but it seems to reflect the intuition better, in our opinion.
 
-LCA: I have a couple comments on this.  First on the asset, that source sounds like an asset.  I
-think this also depends a bit on how you define an asset, which I think right now is not
-completely clear, asset could mean a blob of bytes or proposals for asset references are
-floated around, especially the beginning of this proposal, we were considering asset references
-as one of the directions to take this.  So, yeah, I see the confusion, but I don’t think saying
-that it sounds like what assets actually are is correct either, because we don’t really know
-what assets are.  I agree with “handle”.  Handle could mean anything.  Handle could also mean
-an asset reference.  It does not even mean it has to be fetched.  It could be “handle’ to the
-module request.  “Instantiable” seems more reasonable.  I agree on your point that it not really
-sounding like a phase, but rather like a thing.  It also brings up the question what is the
-JavaScript representation, it is a module instantiable.  Right now the proposed name is
-module source, which I think makes sense and would fit with the source keyword here, so I think
-that’s something else to take into account.
+LCA: I have a couple comments on this.  First on the asset, that source sounds like an asset.  I think this also depends a bit on how you define an asset, which I think right now is not completely clear, asset could mean a blob of bytes or proposals for asset references are floated around, especially the beginning of this proposal, we were considering asset references as one of the directions to take this.  So, yeah, I see the confusion, but I don’t think saying that it sounds like what assets actually are is correct either, because we don’t really know what assets are.  I agree with “handle”.  Handle could mean anything.  Handle could also mean an asset reference.  It does not even mean it has to be fetched.  It could be “handle’ to the module request.  “Instantiable” seems more reasonable.  I agree on your point that it not really sounding like a phase, but rather like a thing.  It also brings up the question what is the JavaScript representation, it is a module instantiable.  Right now the proposed name is module source, which I think makes sense and would fit with the source keyword here, so I think that’s something else to take into account.
 
-SYG: Thanks for your response.  I think the -- I think the instantiable name need not be the
-name of the concrete constructor of the module JS source.  I think it makes perfect sense as,
-like, where it tops out, like, an abstract instantiable module sounds like a perfectly good
-super class module.  But we’re not bikeshedding that yet.  But it seems that -- that threads in
-needle for me for the source confusion at least.  This is not a blocking point, but if there’s
-no violent reaction against instantiable, we prefer that over source.
+SYG: Thanks for your response.  I think the -- I think the instantiable name need not be the name of the concrete constructor of the module JS source.  I think it makes perfect sense as, like, where it tops out, like, an abstract instantiable module sounds like a perfectly good super class module.  But we’re not bikeshedding that yet.  But it seems that -- that threads in needle for me for the source confusion at least.  This is not a blocking point, but if there’s no violent reaction against instantiable, we prefer that over source.
 
-LCA: I’d like to hear what other folks have to say.  Maybe this is just because I’ve been working
-on this for a while.  I personally prefer source, but it’s not a super strong opinion.
+LCA: I’d like to hear what other folks have to say.  Maybe this is just because I’ve been working on this for a while.  I personally prefer source, but it’s not a super strong opinion.
 
 DE: More people had agreed with ‘source’ in the Matrix chat by the way.
 
-KG:  Yeah, I just instinctively strongly dislike instantiable.  It’s harder to say, it’s harder
-to spell, it’s harder to tell what it means.  It’s not a word that you will ever have used
-before in your entire life.  I agree source is a little confused, but instantiable seems worse
-to me.
+KG:  Yeah, I just instinctively strongly dislike instantiable.  It’s harder to say, it’s harder to spell, it’s harder to tell what it means.  It’s not a word that you will ever have used before in your entire life.  I agree source is a little confused, but instantiable seems worse to me.
 
-LCA: Okay, let me rephrase that question.  Is there anybody that strongly dislikes the source name?  Is
-there anybody that’s on -- that -- sorry, go ahead.
+LCA: Okay, let me rephrase that question.  Is there anybody that strongly dislikes the source name?  Is there anybody that’s on -- that -- sorry, go ahead.
 
 SYG: Like, other than me, you mean?
 
 LCA:  Yeah, other than you.
 
-NRO:  I feel like the general reaction on Matrix has been that, like, some people don’t really
-much like source, but, like, it’s the best name of all the names that have been proposed.
+NRO:  I feel like the general reaction on Matrix has been that, like, some people don’t really much like source, but, like, it’s the best name of all the names that have been proposed.
 
 MLS: I’m not so fond of names having source, but I don’t like instantiable.
 
 CDA:  Just a reminder to please use the queue for responding.  DE  is next.
 
-DE: I’m plus one for keeping the source name for the same logic NRO used.  Should we do a
-temperature check here?  The goal would be to capture potentially distributed discomfort with
+DE: I’m plus one for keeping the source name for the same logic NRO used.  Should we do a temperature check here?  The goal would be to capture potentially distributed discomfort with
 “source”
 
 LCA:  Okay.  Sounds like some folks want a temperature check.  So do you have time to set that up?  Do you need time to set up the temperature check?
 
-CDA: I do not.  We can go ahead and do it.  Let’s just be very clear on this -- what the
-statement is for the temperature check.
+CDA: I do not.  We can go ahead and do it.  Let’s just be very clear on this -- what the statement is for the temperature check.
 
-DE: So before we do the temperature check, let’s go through the replies and we’ll give a
-statement of what the temperature check is before it starts.
+DE: So before we do the temperature check, let’s go through the replies and we’ll give a statement of what the temperature check is before it starts.
 
 CDA:  I’m not sure we have replies on the topic.  Nicolo, was your reply?
 
@@ -1031,74 +915,50 @@ NR:  That was reply for the next topic.
 
 CDA: So we don’t have anything on the queue for replies.  Is there any --
 
-DE:  I see.  So I want to propose for the temperature check, like, do you feel good about using
-the name “source” -- the goal of the temperature check is to capture potentially distributed
-but not quite, you know, vetoing discomfort with the “source” term.  If there is this very
-widespread discomfort, we should reconsider to another term.  But if everybody’s sort of okay
-with it or strongly okay with it, then we should -- or most people are, then I think we should
-move forward with it.  So if you put up the emojis again.
+DE:  I see.  So I want to propose for the temperature check, like, do you feel good about using the name “source” -- the goal of the temperature check is to capture potentially distributed but not quite, you know, vetoing discomfort with the “source” term.  If there is this very widespread discomfort, we should reconsider to another term.  But if everybody’s sort of okay with it or strongly okay with it, then we should -- or most people are, then I think we should move forward with it.  So if you put up the emojis again.
 
 SFC: The word source in the syntax.
 
-DE:  Yes, so ‘strong positive’ if the name “source” seems awesome to you.  ‘Unconvinceed’ if it seems
-pretty strange to you, ‘confused’ if you’re confused by it.  Does that make sense?
+DE:  Yes, so ‘strong positive’ if the name “source” seems awesome to you.  ‘Unconvinceed’ if it seems pretty strange to you, ‘confused’ if you’re confused by it.  Does that make sense?
 
-CDA: All right, maybe give it till, I don’t know, the 39 minute mark, which is another 30 seconds
-or so.  We have only a little over 20 responses so far.  And we have quite a few more than that
-in the room and participating, I think.  I’d like to see some more responses, if possible.  All
-right, we’re going to screenshot the temperature check.
+CDA: All right, maybe give it till, I don’t know, the 39 minute mark, which is another 30 seconds or so.  We have only a little over 20 responses so far.  And we have quite a few more than that in the room and participating, I think.  I’d like to see some more responses, if possible.  All right, we’re going to screenshot the temperature check.
 
 > 10 strong positive, 4 positive, 2 following, 5 confused, 2 indifferent, 0 unconvinced
 
-DE:  So a lot of people answered confused.  Including people who haven’t spoken yet in this
-discussion.  Could people maybe elaborate on your thoughts there.
+DE:  So a lot of people answered confused.  Including people who haven’t spoken yet in this discussion.  Could people maybe elaborate on your thoughts there.
 
 CM:  Do you want to do the queue or just speak up?
 
 LCA:  Just speak up.
 
-CM:  Yeah, I mean, confused is literally what it is.  I’m kind of indifferent in the sense of,
-well, it’s okay, I guess, but I prefer a different term.  But if you can’t come up with
-anything better, go for it.
+CM:  Yeah, I mean, confused is literally what it is.  I’m kind of indifferent in the sense of, well, it’s okay, I guess, but I prefer a different term.  But if you can’t come up with anything better, go for it.
 
 DE: Chris, you also put that you’re confused.  What do you think?
 
-CDA: I don’t know if I have strong thoughts on this.  I don’t know if confused is the right word.
-I just -- it’s more of a -- it’s just the overloading of the term, I think, is what I struggle
-with.  That’s it.
+CDA: I don’t know if I have strong thoughts on this.  I don’t know if confused is the right word. I just -- it’s more of a -- it’s just the overloading of the term, I think, is what I struggle with.  That’s it.
 
 DE:  Okay, and Hax, do you have any thoughts here?
 
-Hax:  I think I have similar feelings.  Previously when I introduced this proposal to others,
-people always ask if that just give you a string, but I think it’s not -- it’s not a blocker,
-so if we can’t find a better name, I think people will learn to love the term, yeah.
+Hax:  I think I have similar feelings.  Previously when I introduced this proposal to others, people always ask if that just give you a string, but I think it’s not -- it’s not a blocker, so if we can’t find a better name, I think people will learn to love the term, yeah.
 
-DE:  Okay, so overall from the confused voters, what do you recommend we do next on this
-proposal?  Thanks for giving your recommendation, Hax.  And, yeah, feel free to yell out.
+DE:  Okay, so overall from the confused voters, what do you recommend we do next on this proposal?  Thanks for giving your recommendation, Hax.  And, yeah, feel free to yell out.
 
-CM:  What I say, if you’re inspired, if somebody comes up with a great suggestion, and keep your
-eyes out -...My -- my sense is keep your eyes open for a better term actively.  If you can’t
-come up with one, so it goes.
+CM:  What I say, if you’re inspired, if somebody comes up with a great suggestion, and keep your eyes out -...My -- my sense is keep your eyes open for a better term actively.  If you can’t come up with one, so it goes.
 
 DE: Thank you.  Do you have thoughts on what the next steps should be?
 
-MLS:  Well, slide 9 says it’s the best compiled stage of when we’re doing this, so this is
-I don’t think is right one.  But “compile”?
+MLS:  Well, slide 9 says it’s the best compiled stage of when we’re doing this, so this is I don’t think is right one.  But “compile”?
 
-SYG:  But it’s like not maybe compiled.  Sorry, I should get on the queue, but I have a concrete
-suggestion for next steps.
+SYG:  But it’s like not maybe compiled.  Sorry, I should get on the queue, but I have a concrete suggestion for next steps.
 
 DE:  You’re confused about our also.
 
-SYG:  I think let’s open an issue for inspired suggestions, set a hard deadline that’s reasonable
-and, like, T plus, I don’t know, six days, five days something like that from the end of this plenary.  And if there’s nothing that is, like -- that not everyone
-can live with, especially the champions, we keep “source”.  And consider that, like, the
+SYG:  I think let’s open an issue for inspired suggestions, set a hard deadline that’s reasonable and, like, T plus, I don’t know, six days, five days something like that from the end of this plenary.  And if there’s nothing that is, like -- that not everyone can live with, especially the champions, we keep “source”.  And consider that, like, the
  consider that as a condition of Stage 3.
 
 LCA:  Yeah, that seems very reasonable.  We can do that.
 
-CDA:  Okay.  We have a little under 10 minutes left.  If it’s all right, we can proceed with some
-other topics in the queue.  Does that seem okay?
+CDA:  Okay.  We have a little under 10 minutes left.  If it’s all right, we can proceed with some other topics in the queue.  Does that seem okay?
 
 LCA:  Yeah.
 
@@ -1106,96 +966,57 @@ CDA: All right.  We had EAO.
 
 EAO:  How can we test this without a concrete JavaScript module?
 
-NRO:  Import attributes have a similar problem with testing them is difficult
-because there are this layer between 262 and, like, whatever wraps 262, and, like, specifically
-for import attributes, the only way to test the specific behavior is to we require whatever tool you
-used to test262 -- like, 262-valid protectable to see how we acquire the global dollar (!?) to fix
-to variable.  And I think the only way to fix this proposal would be to require this run or the
-provide, like, a stub module source we can use in some test.
+NRO:  Import attributes have a similar problem with testing them is difficult because there are this layer between 262 and, like, whatever wraps 262, and, like, specifically for import attributes, the only way to test the specific behavior is to we require whatever tool you used to test262 -- like, 262-valid protectable to see how we acquire the global dollar (!?) to fix to variable.  And I think the only way to fix this proposal would be to require this run or the provide, like, a stub module source we can use in some test.
 
 EAO:  I’m happy to accept an assertion that this is testable without a concrete JS ModuleSource.
 
-LCA:  Yeah, that it’s testable if we add some assertions to test262 that the host must follow
-certain protocols.  Okay.  The queue is empty.  So we’d like to ask for Stage 3.  And this is
-conditional on opening an issue for naming suggestions and I guess we’ll set the deadline to
-next Friday.  That would be one week after the next meeting -- or after the end of the meeting.
-Sorry, guys, that should be rephrased to conditional Stage 3 pending that we open an issue that
-is collecting feedback until next Friday for naming suggestions and unless we find a better
-name in that issue by next Friday, we will proceed with the current “source” name.
+LCA:  Yeah, that it’s testable if we add some assertions to test262 that the host must follow certain protocols.  Okay.  The queue is empty.  So we’d like to ask for Stage 3.  And this is conditional on opening an issue for naming suggestions and I guess we’ll set the deadline to next Friday.  That would be one week after the next meeting -- or after the end of the meeting. Sorry, guys, that should be rephrased to conditional Stage 3 pending that we open an issue that is collecting feedback until next Friday for naming suggestions and unless we find a better name in that issue by next Friday, we will proceed with the current “source” name.
 
 CDA:  Nicolo?
 
-NRO:  Yes, so, like, if in this week we find a better name and the keyword changes, is there,
-like, Stage 3 problematic or is it only problematic if the proposal remains as it is?
+NRO:  Yes, so, like, if in this week we find a better name and the keyword changes, is there, like, Stage 3 problematic or is it only problematic if the proposal remains as it is?
 
 LCA: Yeah, I don’t really know what the answer is?  I would expect –I expect we want to ratify this at the next meeting if we have a new name.
 
-SYG: A conditional Stage 3 is that once the condition is met, we’re not -- sorry, let me rephrase
-the condition I propose.  That the condition I propose is that basically this will
-unconditionally reach Stage 3 after a week.  There might be a change -- like, it’s not Stage 3
-until at least a week, and in that week, a new name could arise and it changes.  But whatever
-it changes to, that becomes the Stage 3 proposal after the issue closes.  Because we have a
-default.  It’s not that we don’t have a name.  We have a default name, which is “source.”
-Which nobody is objecting to, including myself.  Even though I’m unhappy with it.  It’s not -- I
-guess that’s not quite like a condition -- that the condition is just like a -- like an extra
-period of time.
+SYG: A conditional Stage 3 is that once the condition is met, we’re not -- sorry, let me rephrase the condition I propose.  That the condition I propose is that basically this will unconditionally reach Stage 3 after a week.  There might be a change -- like, it’s not Stage 3 until at least a week, and in that week, a new name could arise and it changes.  But whatever it changes to, that becomes the Stage 3 proposal after the issue closes.  Because we have a default.  It’s not that we don’t have a name.  We have a default name, which is “source.” Which nobody is objecting to, including myself.  Even though I’m unhappy with it.  It’s not -- I guess that’s not quite like a condition -- that the condition is just like a -- like an extra period of time.
 
-DE:  Yeah, so I’m next on the queue.  I think what you’re saying makes sense, so maybe it was my
-initial intuition, but honestly, if we come up with a different name, we should probably run it
-by the whole committee for review before settling on it, because we may find -- people may have
-opinions or we may find problems with it that are not people who are among the thread
-respondents.  On the other hand, if we keep the same name, I think we can go to Stage 3 without
-returning to plenary.  Overall, we’ve been discussing cases where conditionality might not make sense.  There’s been a couple times recently where things were proposed for a conditional stage advancement where we rejected that as a committee because the conditions were kind of too complicated.  I think this one passes the kind of test for being simple and scoped enough that it makes sense.
+DE:  Yeah, so I’m next on the queue.  I think what you’re saying makes sense, so maybe it was my initial intuition, but honestly, if we come up with a different name, we should probably run it by the whole committee for review before settling on it, because we may find -- people may have opinions or we may find problems with it that are not people who are among the thread respondents.  On the other hand, if we keep the same name, I think we can go to Stage 3 without returning to plenary.  Overall, we’ve been discussing cases where conditionality might not make sense.  There’s been a couple times recently where things were proposed for a conditional stage advancement where we rejected that as a committee because the conditions were kind of too complicated.  I think this one passes the kind of test for being simple and scoped enough that it makes sense.
 
 CDA: Okay, we have a clarifying question from Jordan.
 
-JHD:  Yeah, I just was like you.  You mentioned that through this process, y’all have come up with
-the idea of phases.  So what are the phases?  Like, presumably it’s like a list of words of
-which “source” is one of them.  Thank you if there’s a slide that I missed.  So you’re calling
-source as the fetch compile?
+JHD:  Yeah, I just was like you.  You mentioned that through this process, y’all have come up with the idea of phases.  So what are the phases?  Like, presumably it’s like a list of words of which “source” is one of them.  Thank you if there’s a slide that I missed.  So you’re calling source as the fetch compile?
 
-LCA:  Yes, exactly.  Source is the fetch compile phase.  I can go through them again.  This one is
-the asset import.  This one is the source phase import.  This one is the instance import.  This
-is the thing that would be returned from a module expression or module declaration.  The link
-phase is defer.  And eval phase has no name.
+LCA:  Yes, exactly.  Source is the fetch compile phase.  I can go through them again.  This one is the asset import.  This one is the source phase import.  This one is the instance import.  This is the thing that would be returned from a module expression or module declaration.  The link phase is defer.  And eval phase has no name.
 
 JHD:  Okay.  Thank you.  It would be great to link this slide or quote it in the issue as well.
 
 LCA:  Sure.
 
-CDA:  Yeah.  Yeah, I agree.  I’m next in the queue and I think it’s the same as SFC’s item,
-which I moved up in the queue, which is agreeing with DE that it strikes me as odd that we
-would conditional approve the name change when we don’t know the name.  I think that’s
-something that needs to be brought back to committee.  But I think it’s fair to treat the
-proposal as Stage 3 still sort of conditionally. SFC, did you want to add anything to that?
+CDA:  Yeah.  Yeah, I agree.  I’m next in the queue and I think it’s the same as SFC’s item, which I moved up in the queue, which is agreeing with DE that it strikes me as odd that we would conditional approve the name change when we don’t know the name.  I think that’s something that needs to be brought back to committee.  But I think it’s fair to treat the proposal as Stage 3 still sort of conditionally. SFC, did you want to add anything to that?
 
 SFC:  Not really, except I think it’s a process.
 
 CDA: Okay.
 
-SFC:  It’s more like I think I like the word “source,” but if there were another word, I think it
-would be good to, you know, review that.  Like, if someone comes up with the word “compiled” as
-the other proposal, I think we should discuss that term.
+SFC:  It’s more like I think I like the word “source,” but if there were another word, I think it would be good to, you know, review that.  Like, if someone comes up with the word “compiled” as the other proposal, I think we should discuss that term.
 
 CDA:  Okay.  SYG is in the queue, did you want to speak on -- next Friday sounding good?
 
 SYG:  No, that was just a quick response to them.
 
-CDA: All right, so consensus for the conditional Stage 3?  I think you had some words of support
-already, and then we’ve got CM plus one for Stage 3 from Agoric.  I am also supporting Stage
+CDA: All right, so consensus for the conditional Stage 3?  I think you had some words of support already, and then we’ve got CM plus one for Stage 3 from Agoric.  I am also supporting Stage
 3.  JWK supports for Stage 3 with or without renaming.  Anybody else want to chime in on
-support or objection before we move on?  EAO, plus 1 for Stage 3.  And NRO, plus 1 for
-Stage 3 as well.  All right, we have Stage 3 for source phase imports pending the discussion on
-the naming.
+support or objection before we move on?  EAO, plus 1 for Stage 3.  And NRO, plus 1 for Stage 3 as well.  All right, we have Stage 3 for source phase imports pending the discussion on the naming.
 
 LCA: Thank you.
 
 ### Summary
 
 The significant follow ups from last meeting:
-Dynamic import syntax has switched to `import.source()`
-`export source <default> from` will not be tackled as part of this proposal, to be investigated in export <default> from proposal.
-The static `import source` syntax will not be aligned with the dynamic `import.source` syntax.
+
+- Dynamic import syntax has switched to `import.source()`
+- `export source <default> from` will not be tackled as part of this proposal, to be investigated in export <default> from proposal.
+- The static `import source` syntax will not be aligned with the dynamic `import.source` syntax.
 
 There is discussion about the name of the phase keyword (currently source). Shu brought up that some folks were confused by the source keyword, expecting it to return unparsed, uncompiled source code.
 
@@ -1212,106 +1033,45 @@ Presenter: Kevin Gibbons (KG)
   - https://github.com/tc39/proposal-set-methods/issues/98
   - https://github.com/tc39/proposal-set-methods/issues/84
 
-KG: Okay.  So I have a couple of small PRs for set methods, which is at Stage 3, so these
-are just extremely minor tweaks.  The first one is this callability check for the next method,
-so you may recall at the last meeting, there was a tweak to the iterator helpers proposal, also
-at Stage 3, to remove this eager callability check for the next method that you looked up on
-the result of calling simple.iterator.  The idea was that you are just sort of assuming that
-the thing that it gives you is well formed and you will get an error if you ever actually go
-the call the next method.  But not if, like, you don’t actually end up consuming the iterator.
-The idea is we’re not trying to be super eager about validating everything up front.
+KG: Okay.  So I have a couple of small PRs for set methods, which is at Stage 3, so these are just extremely minor tweaks.  The first one is this callability check for the next method, so you may recall at the last meeting, there was a tweak to the iterator helpers proposal, also at Stage 3, to remove this eager callability check for the next method that you looked up on the result of calling simple.iterator.  The idea was that you are just sort of assuming that the thing that it gives you is well formed and you will get an error if you ever actually go the call the next method.  But not if, like, you don’t actually end up consuming the iterator. The idea is we’re not trying to be super eager about validating everything up front.
 
-KG: So in iterator helpers we removed this callability check on `next` on the
-assumption that it would just fail when you actually tried to call it, and that was okay.
-There is a similar eager callability check on a next method in the set methods proposal, which
-I filed here.  It’s not quite identical because we are getting it out of the keys method rather
-than the symbol.iterator method.  But it is quite similar.  So SYG points out that for
-consistency, we should probably remove this callability check.  So the first thing I would like
-to ask for is consensus on removing this line.  So with nothing on the queue, I’m hearing no
-objections, I see I have explicit support from SYG, I will take that as consensus.
+KG: So in iterator helpers we removed this callability check on `next` on the assumption that it would just fail when you actually tried to call it, and that was okay. There is a similar eager callability check on a next method in the set methods proposal, which I filed here.  It’s not quite identical because we are getting it out of the keys method rather than the symbol.iterator method.  But it is quite similar.  So SYG points out that for consistency, we should probably remove this callability check.  So the first thing I would like to ask for is consensus on removing this line.  So with nothing on the queue, I’m hearing no objections, I see I have explicit support from SYG, I will take that as consensus.
 
-KG: The second thing is that there are other callability checks, in particular, for the `has` and `keys` methods
-that you look up on a set.  And MF suggested perhaps we should drop these callability
-checks.  I am not inclined to do so because I think these are a useful way to get errors that
-you kind of want to get if you pass something of the wrong type as an argument to `Set.prototype.union` or whatever.  Without these checks, if you pass something which happens to have
-a numeric size property, it will pass, and when the algorithm will run on it and maybe
-will you get an error and maybe you won’t.  In particular, if you’re like doing an intersection
-where the receiver is the empty set, you actually won’t get an error.  I think that’s a bad
-experience, so I’m inclined to keep these callability checks, seeing as they are on string keyed
-properties of an arbitrary object instead of something that’s specifically supposed to vend an
-iterator.  So unless someone feels very strongly that we should drop these callability checks
-as well, I will keep them.  But I did want to raise the issue.  I see SYG is on the queue.
+KG: The second thing is that there are other callability checks, in particular, for the `has` and `keys` methods that you look up on a set.  And MF suggested perhaps we should drop these callability checks.  I am not inclined to do so because I think these are a useful way to get errors that you kind of want to get if you pass something of the wrong type as an argument to `Set.prototype.union` or whatever.  Without these checks, if you pass something which happens to have a numeric size property, it will pass, and when the algorithm will run on it and maybe will you get an error and maybe you won’t.  In particular, if you’re like doing an intersection where the receiver is the empty set, you actually won’t get an error.  I think that’s a bad experience, so I’m inclined to keep these callability checks, seeing as they are on string keyed properties of an arbitrary object instead of something that’s specifically supposed to vend an iterator.  So unless someone feels very strongly that we should drop these callability checks as well, I will keep them.  But I did want to raise the issue.  I see SYG is on the queue.
 
-SYG: Yeah, let’s keep those.  I think there’s -- I think there’s less of a -- like, from the
-merits argument to remove the other ones, other than consistency with what we decided, and,
-yeah, there’s no reason to really remove these.
+SYG: Yeah, let’s keep those.  I think there’s -- I think there’s less of a -- like, from the merits argument to remove the other ones, other than consistency with what we decided, and, yeah, there’s no reason to really remove these.
 
 KG: Okay.  JHD?
 
-JHD: Yeah, same thing.  I think we should be, in general, checking and eagerly throwing anything
-as early as possible wherever we can, except for the places where we must not for consistency
-or where it doesn’t make sense, so I think we should keep these.
+JHD: Yeah, same thing.  I think we should be, in general, checking and eagerly throwing anything as early as possible wherever we can, except for the places where we must not for consistency or where it doesn’t make sense, so I think we should keep these.
 
-KG: Sounds good.  Okay, I will keep those.  So that’s my first of the two normative issues with
-set methods.  I guess I’ll just go ahead and move on to the other one.
+KG: Sounds good.  Okay, I will keep those.  So that’s my first of the two normative issues with set methods.  I guess I’ll just go ahead and move on to the other one.
 
-KG: So this one was raised actually a while ago, and I just completely failed to address it, so I’m bringing it back now.  I’d like to highlight this line for you, which in the -- as you may recall, when you pass an object as an argument to `Set.prototype.union` or whatever, we look up the size, has, keys properties on
-it, and as just discussed for as has and key, we enter they are callable and for size, we enter
-not nan, and then ToInteger it, but we had an assert -- or not an assert, but a type
-description that said that the size was a non-negative integer.  The algorithm didn’t actually
-enforce that, so the spec was incoherent on this point for the treatment of negative integers
-passed as the size property of an argument to these methods.  So there’s the question of how
-should we handle negative integers.  There’s basically two options.  We can clamp it to zero or
-we can throw a range error.  I originally figured we should clamp it to for consistency, but
-since then I have thought about whether we would be well served as coercing things in general,
-as we will discuss later in the meeting, I think we are basically not.  If you pass something
-with a negative size property, that’s just incoherent, and I think an error is more useful.  So
-I am hoping that the committee is amenable to inserting a check after this line -- I guess
-after this line 6 here that says if the in size is negative, throw a range error exception.
-And then this description of the type would become correct.
+KG: So this one was raised actually a while ago, and I just completely failed to address it, so I’m bringing it back now.  I’d like to highlight this line for you, which in the -- as you may recall, when you pass an object as an argument to `Set.prototype.union` or whatever, we look up the size, has, keys properties on it, and as just discussed for as has and key, we enter they are callable and for size, we enter not nan, and then ToInteger it, but we had an assert -- or not an assert, but a type description that said that the size was a non-negative integer.  The algorithm didn’t actually enforce that, so the spec was incoherent on this point for the treatment of negative integers passed as the size property of an argument to these methods.  So there’s the question of how should we handle negative integers.  There’s basically two options.  We can clamp it to zero or we can throw a range error.  I originally figured we should clamp it to for consistency, but since then I have thought about whether we would be well served as coercing things in general, as we will discuss later in the meeting, I think we are basically not.  If you pass something with a negative size property, that’s just incoherent, and I think an error is more useful.  So I am hoping that the committee is amenable to inserting a check after this line -- I guess after this line 6 here that says if the in size is negative, throw a range error exception. And then this description of the type would become correct.
 
 SYG: You said the clamping would be consistent.  What is it consistent with?
 
-KG: You know, for some reason, I thought it was consistent with something, but now I no longer
-think that.  The array constructor throws if you pass it a negative value.  `Array.prototype.at`,
+KG: You know, for some reason, I thought it was consistent with something, but now I no longer think that.  The array constructor throws if you pass it a negative value.  `Array.prototype.at`,
 `slice`, et cetera, treat negative values as indexing from the end.  Yeah, I don’t think that’s
 strong consistency argument here for --
 
 SYG: Yeah, I think indexes are categorically different than sizes.  Yeah, cool.
 
-RGN: Yeah, so rejecting negative numbers while maintaining two integer or infinity is going to
-result in, I think, the weird case where a negative fraction is accepted.
+RGN: Yeah, so rejecting negative numbers while maintaining two integer or infinity is going to result in, I think, the weird case where a negative fraction is accepted.
 
-KG: In this one there definitely is a consistency argument.  All of the methods in
-the language that take integer arguments, with two exceptions (three with temporal, but two
-prior to temporal) round rather than throwing if you give them non-integral values.  So if you
-do `Array.prototype.at(1.5)`, then it’s actually 1.  That is also something that I will discuss in
-the coercing talk later in the meeting.  But you’re right, that’s kind of weird, rounding in
-general -- or truncating in general, extremely weird.  I would be open to throwing if it is
-non-integral, having this be one of the very few places in the language that does that.  I
-think we probably should do that for new methods going forward.
+KG: In this one there definitely is a consistency argument.  All of the methods in the language that take integer arguments, with two exceptions (three with temporal, but two prior to temporal) round rather than throwing if you give them non-integral values.  So if you do `Array.prototype.at(1.5)`, then it’s actually 1.  That is also something that I will discuss in the coercing talk later in the meeting.  But you’re right, that’s kind of weird, rounding in general -- or truncating in general, extremely weird.  I would be open to throwing if it is non-integral, having this be one of the very few places in the language that does that.  I think we probably should do that for new methods going forward.
 
-RGN: Okay, I think I also would support that, but mostly I was just looking for clarification
-here that the current intent is to keep the truncation of two integer or infinity even with the
-introduction of rejecting negative values.
+RGN: Okay, I think I also would support that, but mostly I was just looking for clarification here that the current intent is to keep the truncation of two integer or infinity even with the introduction of rejecting negative values.
 
-KG: Yes, that’s right.  That was the intention, and I’m not asking for anything different right
-now. Depending on how the conversation later in the meeting goes, I may come back and suggest
-tweaks to this and other Stage 3 proposals where we can get away with it.
+KG: Yes, that’s right.  That was the intention, and I’m not asking for anything different right now. Depending on how the conversation later in the meeting goes, I may come back and suggest tweaks to this and other Stage 3 proposals where we can get away with it.
 
 RGN: Great.  Thanks.
 
-KG: Okay, so concretely, inserting a range error for negative values between steps 6 and 7 here in
-my proposal.  Sounds like people are in favor, unless anyone is  opposed, I will take that as
-consensus.  Great.  I will get those PRs landed.  Thanks very much.
+KG: Okay, so concretely, inserting a range error for negative values between steps 6 and 7 here in my proposal.  Sounds like people are in favor, unless anyone is  opposed, I will take that as consensus.  Great.  I will get those PRs landed.  Thanks very much.
 
 ### Summary
 
-The committee was in favor of removing the callability check for
-the `next` method for consistency with the rest of the language, but keeping the callability
-checks for `has` and `keys` methods since there’s less of a consistency argument and it’s a better
-user experience.  The committee was also in favor of throwing a range error for negative sizes
-with some discussion of the treatment of fractional arguments to integer-taking methods to happen as part of the later presentation on coercion in general.
+The committee was in favor of removing the callability check for the `next` method for consistency with the rest of the language, but keeping the callability checks for `has` and `keys` methods since there’s less of a consistency argument and it’s a better user experience.  The committee was also in favor of throwing a range error for negative sizes with some discussion of the treatment of fractional arguments to integer-taking methods to happen as part of the later presentation on coercion in general.
 
 ## Decimal: Open-ended discussion
 
@@ -1324,40 +1084,15 @@ JMN: Yeah, so thanks for coming, everyone.  My name is JMN, I work at Igalia doi
 
 JMN: I had initially intended to present this back in May, but then I got sick.  The context is Decimal has been at Stage 1 for a while.  The last update was March 2023.  We had a great discussion, but then the queue was full, no time.  I wanted to continue the discussion in May but then I got sick, so here we are again.  Let’s get your math engines fired up.
 
-JMN: So the outstanding discussion items I tried to remember as best I could from the queue from March, with a little bit of loaded prompting
-here, one of the questions is should we do decimals at all?  What should this feature look like,
-and there are other topics like why not rational numbers or other representations of rational
-numbers? And then there was also a question in March of whether the problem might be too specialized
-and whether this should just be a library.
+JMN: So the outstanding discussion items I tried to remember as best I could from the queue from March, with a little bit of loaded prompting here, one of the questions is should we do decimals at all?  What should this feature look like, and there are other topics like why not rational numbers or other representations of rational numbers? And then there was also a question in March of whether the problem might be too specialized and whether this should just be a library.
 
 JMN: Just to give you a brief sketch of my thinking before we get into some of these things.  I’ll flesh out some of these points later if you haven’t heard about this stuff.
 
-JMN: Just to lay the groundwork here, so decimal is not some kind of frozen thing.  There is a proposal or a plan forward about this stuff.  The data model that I had in mind, that I’d like to discuss here with you all today, is decimal 128, so this is a standard for decimal floating point arithmetic using 128 bits.  The idea is to use normalized values.  So in this world, 1.2 and 1.20 are exactly the same thing.  Not distinct values.  In official IEEE 754, those are actually distinct, though they compare equal, but here they would be equal.  The proposal is to add some new syntax there.  You see that little `m` suffix, the idea would be that
-that’s a new decimal 128 value.  There would be a new decimal class with some static methods
-for calculations.  All the confusing parts of floating points just die.  They go away.  So plus
-and minus infinity don’t exist in this understanding, NaN doesn’t exist.  There’s no negative
-zero -- well, it’s kind of a consequence of our commitment to normalization.  There’s no mixing
-with the methods in the `Math` class, so just throw whenever you’re given decimal128 in arguments.
-There’s no operator overloading.  Only basic arithmetic is supported and there’s just one
-rounding mode.  So the idea here is to try to keep things simple to try to keep things fast, I
-think all of us can agree that we want to keep our JS engines fast.  And the idea here is to
-also satisfy the needs of developers and those who want decimal numbers, so there’s a lot of
-use cases being addressed here.  All these things are of course, up for discussion.  It’s also
-part of the point of this discussion here today.
+JMN: Just to lay the groundwork here, so decimal is not some kind of frozen thing.  There is a proposal or a plan forward about this stuff.  The data model that I had in mind, that I’d like to discuss here with you all today, is decimal 128, so this is a standard for decimal floating point arithmetic using 128 bits.  The idea is to use normalized values.  So in this world, 1.2 and 1.20 are exactly the same thing.  Not distinct values.  In official IEEE 754, those are actually distinct, though they compare equal, but here they would be equal.  The proposal is to add some new syntax there.  You see that little `m` suffix, the idea would be that that’s a new decimal 128 value.  There would be a new decimal class with some static methods for calculations.  All the confusing parts of floating points just die.  They go away.  So plus and minus infinity don’t exist in this understanding, NaN doesn’t exist.  There’s no negative zero -- well, it’s kind of a consequence of our commitment to normalization.  There’s no mixing with the methods in the `Math` class, so just throw whenever you’re given decimal128 in arguments. There’s no operator overloading.  Only basic arithmetic is supported and there’s just one rounding mode.  So the idea here is to try to keep things simple to try to keep things fast, I think all of us can agree that we want to keep our JS engines fast.  And the idea here is to also satisfy the needs of developers and those who want decimal numbers, so there’s a lot of use cases being addressed here.  All these things are of course, up for discussion.  It’s also part of the point of this discussion here today.
 
-JMN: Just some kind of sample code about how this would go.  So I assume that some of you have been out to restaurants here.
-And you look at your receipt, doesn’t have to be here of course.  Know when you buy items, they
-typically have some kind of tax on them so you have a list of items that you buy.  There’s a
-count, you know, say you got two of this and five of that or whatever.  And there’s some kind
-of tax applied.  If you want to do some calculation here to calculate a bill, you can see that
-there’s some decimals scattered throughout here.  You see there’s that `1m` there when we add
-some kind of tax, which the find down at the bottom.  That’s what it would look like.  That’s
-just a very simple example.  You can talk about all sorts of examples.
+JMN: Just some kind of sample code about how this would go.  So I assume that some of you have been out to restaurants here. And you look at your receipt, doesn’t have to be here of course.  Know when you buy items, they typically have some kind of tax on them so you have a list of items that you buy.  There’s a count, you know, say you got two of this and five of that or whatever.  And there’s some kind of tax applied.  If you want to do some calculation here to calculate a bill, you can see that there’s some decimals scattered throughout here.  You see there’s that `1m` there when we add some kind of tax, which the find down at the bottom.  That’s what it would look like.  That’s just a very simple example.  You can talk about all sorts of examples.
 
-JMN: This for instance, another great way that decimals would help us would be with some kind of
-relational database or non-relational database.  You imagine plugging into Postgres and specify
-that decimal columns, something that SQL has had for ages and which are, of course, real, exact
-decimals get down correctly.  You would do your query and you get some kind of JS decimal values back.
+JMN: This for instance, another great way that decimals would help us would be with some kind of relational database or non-relational database.  You imagine plugging into Postgres and specify that decimal columns, something that SQL has had for ages and which are, of course, real, exact decimals get down correctly.  You would do your query and you get some kind of JS decimal values back.
 
 JMN: There’s a playground that has been developed for some of this stuff.  It’s somewhat behind the most up-to-date thinking that I am talking about here today.  But nonetheless, I think it’s okay to mention that this thing exists.  You can run this and have some fun with it.  There may be some bugs there, please report them on GitHub.  I’ll take a look.
 
@@ -1365,165 +1100,49 @@ JMN: There’s a new npm package out there.  I had some fun trying to do decimal
 
 JMN: So now we tried to get to some of the motivating factors here.  The primary domain are business and finance.  I think that should be a bit of a no-brainer.  Think about all of the things that you deal with on a day to day basis where you yourself have to read and write numbers.  A lot of that has to do with money, right?  Data exchange, so this is about JS engines sitting between two systems, say a relational database and the browser or between two other systems.  And then another class of use cases come from science, engineering, mathematics.  The difficulty is that with binary floats, the kind of flows that we know and love or not in JavaScript, can be incorrect in ways that really matter in these contexts.
 
-JMN: So in business and finance, you can get sued if you get a calculation wrong.
-For instance, I live in Germany and German banks can sometimes get sued if you get something wrong, even by one cent in, say, some kind of official bank printout or bank statement.  Data exchange, of course we all want to get that correct.  In science, engineering and math, the same thing, right?  The status quo is that decimal numbers need to be handled with strings.  If you want to do exact computations with decimal numbers, you have to treat them as a string.  And you have to do some kind of digit by digit arithmetic on these things.
+JMN: So in business and finance, you can get sued if you get a calculation wrong. For instance, I live in Germany and German banks can sometimes get sued if you get something wrong, even by one cent in, say, some kind of official bank printout or bank statement.  Data exchange, of course we all want to get that correct.  In science, engineering and math, the same thing, right?  The status quo is that decimal numbers need to be handled with strings.  If you want to do exact computations with decimal numbers, you have to treat them as a string.  And you have to do some kind of digit by digit arithmetic on these things.
 
-JMN: Or you either don’t know or don’t care, and you work with binary floats and data loss just
-happens. or things are just wrong, and you don’t know why.  There are various userland libraries out there with varying APIs.  But you know what, this is just me pounding the table.
-Let’s skip that and try to look at some data.
+JMN: Or you either don’t know or don’t care, and you work with binary floats and data loss just happens. or things are just wrong, and you don’t know why.  There are various userland libraries out there with varying APIs.  But you know what, this is just me pounding the table. Let’s skip that and try to look at some data.
 
-JMN: Igalia has been running a survey to solicit JS developers to get their views about decimal numbers and floating point numbers.  You can fill it out too, so if you go to the slides, can link is down and the thing is not closed, you can fill it out.  We have received 73 responses so far and I want to give you an appreciation of some of these answers.  So here is a question that we asked, are there any places in your code where you’re afraid of a rounding error?  I talked about normalization earlier, so let’s take an unnormalized version here.  You see lots of yeses.  This is maybe not so good because of course the purpose of this survey is to get the opinions of people who care about these kinds of things, so of course they’re going to say yes.  But to be more serious here, everywhere we deal with money, which is all over the place, yes, there are many.  Every time we show a price or discount to the user, which is constantly.  I saw a “no” in the survey data, which is surprising, but also quite uncommon, as
-you might have guessed.
+JMN: Igalia has been running a survey to solicit JS developers to get their views about decimal numbers and floating point numbers.  You can fill it out too, so if you go to the slides, can link is down and the thing is not closed, you can fill it out.  We have received 73 responses so far and I want to give you an appreciation of some of these answers.  So here is a question that we asked, are there any places in your code where you’re afraid of a rounding error?  I talked about normalization earlier, so let’s take an unnormalized version here.  You see lots of yeses.  This is maybe not so good because of course the purpose of this survey is to get the opinions of people who care about these kinds of things, so of course they’re going to say yes.  But to be more serious here, everywhere we deal with money, which is all over the place, yes, there are many.  Every time we show a price or discount to the user, which is constantly.  I saw a “no” in the survey data, which is surprising, but also quite uncommon, as you might have guessed.
 
 JMN: What kinds of applications in your organization are teal dealing with numbers?  Here we have people doing point of sale, purchasing, calculating shipping weights, e-commerce, you can see that there’s a kind of domain that’s developing here.  Back-office processing and reporting.  One person said we work a lot with currencies of products and invoices, et cetera, and sometimes notice rounding errors.  “I work in a digital transformation lab for investment services, so pretty much all of our applications are working with these kinds of numbers.”  Data visualization.  Someone said that they have some  kind of numerical input with the step up, step down interface.  Numerical projections of actuarial projections and calculations.  Exchange, precision and structural calculation it’s a bit of a mixed thing, but okay.  I like this one, “we are building a bank”.  I thought that was an incredible use case.
 
-JMN: So how do you process decimals?  Some interesting stuff here.  We have to show up to two des malls in the applications and we might calculate up to more on the server, present a rounded value, and then in the front end, have to add and round again.  That sounds uncomfortable.  In our systems, we calculate pricing, some kind of metered usage for providers of these cloud services, we have to input the cost in micro cents, so that’s very fine grind.  When we display to user, we I did display in a form they’re
-familiar with and calculate in JS and display it.  We transfer the amount entry and display, so it sounds like some kind of banking or money thing, VAT, that’s European value added tax computation.  Sums of selected transactions, kind of like this sample code I gave you earlier.
-Here is another one, to avoid round trips on the server, we recalculate many money values on
-the client on JS to preview what the value will be on saving them as well as immediately
-validating some values.  User type in items weights and ounces, fractional line item
-quantities, item costs and prices.  So you can see there’s a nice mix of front end and back end
-applications here.
+JMN: So how do you process decimals?  Some interesting stuff here.  We have to show up to two des malls in the applications and we might calculate up to more on the server, present a rounded value, and then in the front end, have to add and round again.  That sounds uncomfortable.  In our systems, we calculate pricing, some kind of metered usage for providers of these cloud services, we have to input the cost in micro cents, so that’s very fine grind.  When we display to user, we I did display in a form they’re familiar with and calculate in JS and display it.  We transfer the amount entry and display, so it sounds like some kind of banking or money thing, VAT, that’s European value added tax computation.  Sums of selected transactions, kind of like this sample code I gave you earlier. Here is another one, to avoid round trips on the server, we recalculate many money values on the client on JS to preview what the value will be on saving them as well as immediately validating some values.  User type in items weights and ounces, fractional line item quantities, item costs and prices.  So you can see there’s a nice mix of front end and back end applications here.
 
-JMN: So what kinds of calculations do you do?  Getting it wrong is fines and refunds to clients, so that’s something we’re incredibly cautious about.
-It’s nice to be able to show something fast in the browser.  So here one, it’s almost always
-summation, and it’s on the client and the server.  We use a decimal library on the client and
-its error prone.  That sounds bad.  Here is someone who says addition and subtraction, both
-client and the server side and the testimony data.  So far pretty good, but we have to provide
-work arounds when we encounter the usual JS decimal representation.  Pitfalls?  Arithmetic
-calculations are very common.  This done on both the client and the server.  This
-trick-or-treatly comes up in calculating arbitrary percentage of a money value.  So we work in
-manufacturing and almost all of those come up in some fashion or another calculating distances,
-money, we’ve got do it all we’ve got to do it using decimals.
+JMN: So what kinds of calculations do you do?  Getting it wrong is fines and refunds to clients, so that’s something we’re incredibly cautious about. It’s nice to be able to show something fast in the browser.  So here one, it’s almost always summation, and it’s on the client and the server.  We use a decimal library on the client and its error prone.  That sounds bad.  Here is someone who says addition and subtraction, both client and the server side and the testimony data.  So far pretty good, but we have to provide work arounds when we encounter the usual JS decimal representation.  Pitfalls?  Arithmetic calculations are very common.  This done on both the client and the server.  This trick-or-treatly comes up in calculating arbitrary percentage of a money value.  So we work in manufacturing and almost all of those come up in some fashion or another calculating distances, money, we’ve got do it all we’ve got to do it using decimals.
 
-JMN: So that’s actually just a tiny snippet of this data.  It’s really fantastic.  There’s a ton of juicy
-quotes that I omitted, but I hope you start to get the point just from that sample.  You can
-see that many developers need decimals for accuracy, and most of the cases involve money.  They
-also need to be fast.  They generally need to be fast to support some kind of live user
-feedback.  And we can see that need goes beyond merely displaying decimal numbers, so it’s not
-just enough to treat these as a string and present the string.  More over, in the data which we
-just suggest that pretty much everyone would be satisfied with basic arithmetic.  There’s a
-minority that wants exponential function, log or ?, but that’s a small minority.
+JMN: So that’s actually just a tiny snippet of this data.  It’s really fantastic.  There’s a ton of juicy quotes that I omitted, but I hope you start to get the point just from that sample.  You can see that many developers need decimals for accuracy, and most of the cases involve money.  They also need to be fast.  They generally need to be fast to support some kind of live user feedback.  And we can see that need goes beyond merely displaying decimal numbers, so it’s not just enough to treat these as a string and present the string.  More over, in the data which we just suggest that pretty much everyone would be satisfied with basic arithmetic.  There’s a minority that wants exponential function, log or ?, but that’s a small minority.
 
-JMN: So the use cases are finance and business data exchange and science engineering.  Let’s just dig into those a little bit more. So money.  So handing money exactly is the clearest motivation.  Binary flows just won’t do in many cases.  What are some calculations that come up in finance?  Well, things like adding together two items.  That’s addition, that’s simple.  Removing an item from a total is another one where you need exactness, that’s subtraction.  Multiplying a cost by tax rate.  We saw that before.
-Multiplication.  How about getting an average?  Well, that’s addition and division.  Dividing
-an interval into equal or -- is equal to possible parts.  That’s kind of remainder operation.
-Currency conversion.  That’s also multiplication and division.
+JMN: So the use cases are finance and business data exchange and science engineering.  Let’s just dig into those a little bit more. So money.  So handing money exactly is the clearest motivation.  Binary flows just won’t do in many cases.  What are some calculations that come up in finance?  Well, things like adding together two items.  That’s addition, that’s simple.  Removing an item from a total is another one where you need exactness, that’s subtraction.  Multiplying a cost by tax rate.  We saw that before. Multiplication.  How about getting an average?  Well, that’s addition and division.  Dividing an interval into equal or -- is equal to possible parts.  That’s kind of remainder operation. Currency conversion.  That’s also multiplication and division.
 
-JMN: Data exchange.  This is one where JS engines, whether front end or back end, say a browser consuming JSON input or some kind of nodes server are surrounded by systems that natively support
-decimals like relational databases or other systems written in languages that natively support
-decimals.  There’s a need in that use case for consuming these of course.  Possibly doing some
-light computations or (inaudible) and then passing them on or just displaying the results.
+JMN: Data exchange.  This is one where JS engines, whether front end or back end, say a browser consuming JSON input or some kind of nodes server are surrounded by systems that natively support decimals like relational databases or other systems written in languages that natively support decimals.  There’s a need in that use case for consuming these of course.  Possibly doing some light computations or (inaudible) and then passing them on or just displaying the results.
 
-JMN: There’s a whole class of use cases here, science, engineering and mathematics, so working with dimensions, so things like, you know, fees, cubic meters and so on
-and converting between them.  So here you might need exponential log or ITm, possibly
-trigonometric functionsish maybe not but this comes up a little bit infrequently, as I
-mentioned earlier.
+JMN: There’s a whole class of use cases here, science, engineering and mathematics, so working with dimensions, so things like, you know, fees, cubic meters and so on and converting between them.  So here you might need exponential log or ITm, possibly trigonometric functionsish maybe not but this comes up a little bit infrequently, as I mentioned earlier.
 
 JMN: There’s a number of interesting questions about how to represent these things.  So even if you buy the idea that decimal numbers are something that you may want, there are a number of different representations, concrete representations that could be chosen to represent them.  And one of the discussion points that we had back in March is a what about rational numbers?  And the thinking there is I think quite understandable, in the mathematical sense, rations are of course strictly more expressive than decimals  in the did since that every decimal, as we normally understand it, is a rational number, obviously, right?  It’s some integer over the power of 10, right?  And then -- so all use cases for decimals, again, following this kind of math mall Cal thinking, could be handled by rations, and even more, there are some use case involving, say, images and video where one has to work with rational numbers.  Think of the aspect ratios in television, prince.  And then here is one, so if we work with exact decimal numbers, then we have this kind of classical, it’s almost a meme among number nerds.  0.1 plus 0.2 is equal 0.3.  But if you do things like 1 divided by 3 and multiply that by 3, I guess that’s not going to be 1, and the decimal 128 universe.  Why would that be okay?  Why don’t you use rational numbers, right?
 
-JMN: There are some good reasons not to use rations.  If I could mention this very last point, I think that’s actually the most important.  Up with is their just a separate data type.  They could be an added JavaScript independently of the decimal numbers, and some languages indeed have both.  But then to add even more to this argument, one issue is that normalization is an issue.  Normalization means trying to find out the greatest common deviser and repeatedly doing that until you have some kind of normal form rational number.  There might be some kind of good normalization strategies out there, but I feel like we’re starting to go down a rabbit hole when we explore that kind of issue.  Rendering a rational number, you know, like 1 over 3 as a decimal string involves -- or it may involve quite a lot of computation.  This is the thing that we all learned in probably elementary school, you know, be long division, to generate
-the digits of some kind of quotient while we have to really just do it digit by digit.  Probably the worst thing here, in my view, is that it’s calculations -- as calculations get more complex, the numerators and denominators get bigger and bigger very, very quickly,
-exponentially quickly.  And to convince yourself of that, just write down what it is to say A
-over B plus C over D, uh-oh, you’re starting to multiply numerators and denominators, and you
-do that again, now you multiplied the multiresult of the multiplication.  If you have a
-computation that involves three steps, now these things are getting huge.  And if you have some
-kind of normalization where you reduce everything to a minimal form, then you’re generating the
-big numbers only to shrink them down again.  So it’s not a very light weight things.
-Especially when in front of us there’s a very simple alternative and some kind of decimal
-number, right?  And as I mentioned, rations are just a separate data type.  So although I, as a
-math guy, I’m very attracted to the idea that rational numbers are just of course some kind of
-super set of decimals, you pay a price for that expressiveness.  Next slide, please.  So,
-again, just to repeat this from earlier, we’re currently leaning toward, again, it’s not a
-final decision, but leaning toward decimal 128.  Just a bit more details about that.  Decimal
+JMN: There are some good reasons not to use rations.  If I could mention this very last point, I think that’s actually the most important.  Up with is their just a separate data type.  They could be an added JavaScript independently of the decimal numbers, and some languages indeed have both.  But then to add even more to this argument, one issue is that normalization is an issue.  Normalization means trying to find out the greatest common deviser and repeatedly doing that until you have some kind of normal form rational number.  There might be some kind of good normalization strategies out there, but I feel like we’re starting to go down a rabbit hole when we explore that kind of issue.  Rendering a rational number, you know, like 1 over 3 as a decimal string involves -- or it may involve quite a lot of computation.  This is the thing that we all learned in probably elementary school, you know, be long division, to generate the digits of some kind of quotient while we have to really just do it digit by digit.  Probably the worst thing here, in my view, is that it’s calculations -- as calculations get more complex, the numerators and denominators get bigger and bigger very, very quickly, exponentially quickly.  And to convince yourself of that, just write down what it is to say A over B plus C over D, uh-oh, you’re starting to multiply numerators and denominators, and you do that again, now you multiplied the multiresult of the multiplication.  If you have a computation that involves three steps, now these things are getting huge.  And if you have some kind of normalization where you reduce everything to a minimal form, then you’re generating the big numbers only to shrink them down again.  So it’s not a very light weight things. Especially when in front of us there’s a very simple alternative and some kind of decimal number, right?  And as I mentioned, rations are just a separate data type.  So although I, as a math guy, I’m very attracted to the idea that rational numbers are just of course some kind of super set of decimals, you pay a price for that expressiveness.  Next slide, please.  So, again, just to repeat this from earlier, we’re currently leaning toward, again, it’s not a final decision, but leaning toward decimal 128.  Just a bit more details about that.  Decimal
 128 is a standard, I didn’t make what up.  It’s IEE 754 since 2008.  Rereflects a rot of
-research or various representations of decimal numbers.  Here as the name suggests, values take
-up 128 bits.  There might be some optimizations possible in some cases, but just naively.
+research or various representations of decimal numbers.  Here as the name suggests, values take up 128 bits.  There might be some optimizations possible in some cases, but just naively.
 
-JMN: You can think 128 bits is my default approach there.  What can you represent there?  You can
-represent up to 34 significant digits, and the exponent or the power of 10 here, the kind of
-way you shift the decimal point left or right can vary by about 6,000.  And just to convince
-yourself of whether 34 is needed or whether that’s enough, just ask yourself how many times you
-have yourself used a number that uses even something close to that many decimal places.  I
-mean, we can talk about LL and S bank account, but even that uses, what, nine decimal places,
-nine significant digits, so we’re talking about 34 here.  We can represent all sort of things
-using 34 significant digits.  I challenge anyone to find me a real use case where they have 20
-significant digits.  We’re talking about human readable and human writable numbers here, so
-that many digits is probably going to be hard to find.  The nice thing about the decimal 128
-approach is that it’s fast.  Memory requirements are easy to reason about even in the face of
-complex calculations.  That’s maybe one of the down sides of more liberal approaches like some
-kind of big decimal approach where you have essentially unlimited precision.  The difficulty
-there is that analogous to rational numbers, the number of digits you need grows quickly.
-That’s relatively straightforward to implement, especially considering that we have only a
-limited repertoire of functions in mind here, addition, subtraction, so on.  Libraries exist.
-There’s one by Bloomberg, another one by IBM.  And depending on your setting, your compiler,
-your C compiler might support this out of the box.  There’s work on trying to add this to C and
-C++ standards.  Decimal 128 is not a silver bullet.  There will be some weirdness.  So, yes, in
-this setting, 0.1 plus 0.2 really is exactly 0.3, but unfortunately, 1 divided by 3 times 3
-isn’t 1.  It’s just 34 nines.  And, well, this is one of the things where you have to say this
-is some progress.  This gives us what we probably want in many cases, but it’s not a silver
-bullet.  If you really need that to be exactly one, then you would need something like rational
-numbers.  By the way, other decimal representations also suffer from this problem.  Other
-things like big decimal or some kind of fixed number of digits or fixed number of decimal point
-digits are also going to suffer from this problem.  Somehow inherent in working with decimal
-numbers here.  Next slide, please.  There is another issue that has come up since the March
-discussion, which I would love to get some input about, which is rounding.  There are a few
-different ways to round numbers out there.  What’s interesting is some languages pick one.
-It’s usually this kind of bankers rounding or rounding ties up to nearest even number.  C#,
-WebAssembly.  Actually, the methods in JS number class also do this.  And then that’s it,
-there’s no options to specify a rounding mode.  There’s just this one thing available to you.
-Whereas other languages support multiple rounding modes.  You can say things like round to tie
-to even or round up or round down.  These kinds of things.  And this is just an open question
-here.  What kind of rounding options should we support?  And if we support multiple options,
-should there be a default, and if so, what should that be called?  Next slide.  So that’s about
-it.  So that was a kind of stage 1 update about what I’ve been up to since March.  Recap
-itlation of some of the main points about the decimal project, the motivations for it.  The use
-cases.  But there are some interesting questions, and I guess we do have some time.  That’s why
-we’re here today.  I hope there are some of you out in the audience who are interested in this
-stuff.  The question is do we really want to do some kind of decimal built-in type.  And you
-are okay with this sketch that I made here of having a new decimal class with some static
-methods for calculation.
+JMN: You can think 128 bits is my default approach there.  What can you represent there?  You can represent up to 34 significant digits, and the exponent or the power of 10 here, the kind of way you shift the decimal point left or right can vary by about 6,000.  And just to convince yourself of whether 34 is needed or whether that’s enough, just ask yourself how many times you have yourself used a number that uses even something close to that many decimal places.  I mean, we can talk about LL and S bank account, but even that uses, what, nine decimal places, nine significant digits, so we’re talking about 34 here.  We can represent all sort of things using 34 significant digits.  I challenge anyone to find me a real use case where they have 20 significant digits.  We’re talking about human readable and human writable numbers here, so that many digits is probably going to be hard to find.  The nice thing about the decimal 128 approach is that it’s fast.  Memory requirements are easy to reason about even in the face of complex calculations.  That’s maybe one of the down sides of more liberal approaches like some kind of big decimal approach where you have essentially unlimited precision.  The difficulty there is that analogous to rational numbers, the number of digits you need grows quickly. That’s relatively straightforward to implement, especially considering that we have only a limited repertoire of functions in mind here, addition, subtraction, so on.  Libraries exist. There’s one by Bloomberg, another one by IBM.  And depending on your setting, your compiler, your C compiler might support this out of the box.  There’s work on trying to add this to C and C++ standards.  Decimal 128 is not a silver bullet.  There will be some weirdness.  So, yes, in this setting, 0.1 plus 0.2 really is exactly 0.3, but unfortunately, 1 divided by 3 times 3 isn’t 1.  It’s just 34 nines.  And, well, this is one of the things where you have to say this is some progress.  This gives us what we probably want in many cases, but it’s not a silver bullet.  If you really need that to be exactly one, then you would need something like rational numbers.  By the way, other decimal representations also suffer from this problem.  Other things like big decimal or some kind of fixed number of digits or fixed number of decimal point digits are also going to suffer from this problem.  Somehow inherent in working with decimal numbers here.  Next slide, please.  There is another issue that has come up since the March discussion, which I would love to get some input about, which is rounding.  There are a few different ways to round numbers out there.  What’s interesting is some languages pick one. It’s usually this kind of bankers rounding or rounding ties up to nearest even number.  C#, WebAssembly.  Actually, the methods in JS number class also do this.  And then that’s it, there’s no options to specify a rounding mode.  There’s just this one thing available to you. Whereas other languages support multiple rounding modes.  You can say things like round to tie to even or round up or round down.  These kinds of things.  And this is just an open question here.  What kind of rounding options should we support?  And if we support multiple options, should there be a default, and if so, what should that be called?  Next slide.  So that’s about it.  So that was a kind of stage 1 update about what I’ve been up to since March.  Recap itlation of some of the main points about the decimal project, the motivations for it.  The use cases.  But there are some interesting questions, and I guess we do have some time.  That’s why we’re here today.  I hope there are some of you out in the audience who are interested in this stuff.  The question is do we really want to do some kind of decimal built-in type.  And you are okay with this sketch that I made here of having a new decimal class with some static methods for calculation.
 
-WH: I’m confused about whether this is using IEEE decimal128 or not.  You say you’re
-using decimal128, but at the same time, the results are different from what decimal128 would
-produce because you took out minus zero, infinities and NaN.  So this seems incompatible with
-the way that math has been standardized. I don’t understand why we’d want to diverge and
-sign up for a huge amount of work to develop our own math standard library rather than using existing
-ones.
+WH: I’m confused about whether this is using IEEE decimal128 or not.  You say you’re using decimal128, but at the same time, the results are different from what decimal128 would produce because you took out minus zero, infinities and NaN.  So this seems incompatible with the way that math has been standardized. I don’t understand why we’d want to diverge and sign up for a huge amount of work to develop our own math standard library rather than using existing ones.
 
-JMN: Right, yeah.  That’s a good point.  I guess this is not literally an implementation of
-decimal 128, but some kind of simplified version of it.  The idea was that the plus and minus
-infinity and the not a number could be done.  We could export them after all JavaScript itself
-has these things.  I think one issue that I found is that many developers find this confusing
-to work with comparing the minus infinity to other numbers, and always having to worry about
-the possibility that the results might not be a number.  So this is, I guess, a chance to clean
-up some of that that are included in the first place, just to say that this probably doesn’t
-match the needs of many of the use cases that we deal with.
+JMN: Right, yeah.  That’s a good point.  I guess this is not literally an implementation of decimal 128, but some kind of simplified version of it.  The idea was that the plus and minus infinity and the not a number could be done.  We could export them after all JavaScript itself has these things.  I think one issue that I found is that many developers find this confusing to work with comparing the minus infinity to other numbers, and always having to worry about the possibility that the results might not be a number.  So this is, I guess, a chance to clean up some of that that are included in the first place, just to say that this probably doesn’t match the needs of many of the use cases that we deal with.
 
-WH: Yeah, this would be an enormous mistake.  This is not cleaning up.  This is introducing our
-own alternate standard for decimal which is different from what IEEE specified.  Furthermore,
-if we did this, there’d be no way back, because basic arithmetic operations would produce different
-results from what IEEE decimal does.  So the result would be slower, incompatible, and would prevent the use of other IEEE functions such as power or exponentials.
+WH: Yeah, this would be an enormous mistake.  This is not cleaning up.  This is introducing our own alternate standard for decimal which is different from what IEEE specified.  Furthermore, if we did this, there’d be no way back, because basic arithmetic operations would produce different results from what IEEE decimal does.  So the result would be slower, incompatible, and would prevent the use of other IEEE functions such as power or exponentials.
 
-JMN: Yeah, that’s right.  Yeah, I mean, we are, I guess, open to the possibility of including
-those things.  A things like plus and minus infinity and not a number.  That could be done.
-That could be added to what we’re doing here.  If I think about the case of data exchange, I
-wonder, though, if passing along not a number helps or if people really care.  If I’m a
-consumer of data coming from a JS engine, and I get, you know, not a number from some kind of
-calculation, you know, what do I do?
+JMN: Yeah, that’s right.  Yeah, I mean, we are, I guess, open to the possibility of including those things.  A things like plus and minus infinity and not a number.  That could be done. That could be added to what we’re doing here.  If I think about the case of data exchange, I wonder, though, if passing along not a number helps or if people really care.  If I’m a consumer of data coming from a JS engine, and I get, you know, not a number from some kind of calculation, you know, what do I do?
 
 WH: You most likely got it because you divided zero by zero.
 
 JMN: Right.
 
-WH: Or you took the square root of -1.  We should not be inventing our
-own math library.  We should be using one of the existing ones.  This is my first
-point.
+WH: Or you took the square root of -1.  We should not be inventing our own math library.  We should be using one of the existing ones.  This is my first point.
 
-WH: My second point is that you seem to have coercions in there.  I took a look at some of the
-code on the slides and the coercions are really weird, with coercions going between Decimals and Numbers, but not all Numbers.  The example code uses Numbers for item counts and
-wouldn’t work without those coercions. I’m surprised to see no mention of that in the
-presentation.
+WH: My second point is that you seem to have coercions in there.  I took a look at some of the code on the slides and the coercions are really weird, with coercions going between Decimals and Numbers, but not all Numbers.  The example code uses Numbers for item counts and wouldn’t work without those coercions. I’m surprised to see no mention of that in the presentation.
 
 JMN: You mean that the code prefers not to do coercions?
 
@@ -1531,14 +1150,7 @@ WH: No, the code relies on coercions.
 
 DE: I can jump in as a co-champion here. I think this was simply an error on the slide about using -- forgetting the use the M suffix for some cases.  I think the code on the slide should throw an error, just like it would for biggens, so I agree with WH’s point.
 
-DE: So just to address the previous point, this is decimal 128.  I mean, you are -- IEEE
-arithmetic famously has all these different modes.  When some of these modes are about throwing
-exceptions when you would reach infinities or NaN.  Maybe negative zero is something to
-consider.  But I completely agree that this is -- this has caused problems in the past that I
-don’t want to introduce here.  I disagree with the notion of adding operations like square root
-or log to decimal.  I think we should be explicitly saying that these are, like, anti-goals,
-and I’m quite confused about why they should be considered goals.  So, yeah, you have also
-asked for normalization.
+DE: So just to address the previous point, this is decimal 128.  I mean, you are -- IEEE arithmetic famously has all these different modes.  When some of these modes are about throwing exceptions when you would reach infinities or NaN.  Maybe negative zero is something to consider.  But I completely agree that this is -- this has caused problems in the past that I don’t want to introduce here.  I disagree with the notion of adding operations like square root or log to decimal.  I think we should be explicitly saying that these are, like, anti-goals, and I’m quite confused about why they should be considered goals.  So, yeah, you have also asked for normalization.
 
 WH: I have not asked for normalization.  Who asked for normalization?
 
@@ -1555,134 +1167,53 @@ JMN: Would it help perhaps to choose a different name, then?  Something like ins
 
 DE: Sorry, I don’t think that would address the point.  The point is --
 
-WH: No, the problem is that we’re inventing a new standard when there’s a perfectly
-adequate existing one.  We should not be in the business of inventing math standards.
+WH: No, the problem is that we’re inventing a new standard when there’s a perfectly adequate existing one.  We should not be in the business of inventing math standards.
 
 DE: The intention is to not invent a new standard.  I think we --
 
-WH: Okay.  And my third point is that this has object identity.  Which means that for every decimal
-calculation, you can ask the question of is the thing that your function
-produces a new decimal number or is it reusing an existing decimal number?  Like, if you take
-the max of two decimal values, do you get a new decimal number or do you
-get an existing decimal number?  This will be a giant foot gun.  I
-guess people may rely on decimal values being `===` in some contexts.
+WH: Okay.  And my third point is that this has object identity.  Which means that for every decimal calculation, you can ask the question of is the thing that your function produces a new decimal number or is it reusing an existing decimal number?  Like, if you take the max of two decimal values, do you get a new decimal number or do you get an existing decimal number?  This will be a giant foot gun.  I guess people may rely on decimal values being `===` in some contexts.
 
-DE: I can answer that. All operations would produce new decimal numbers, max in particular.  I think we can think about it, this proposal doesn’t -- I don’t think it includes a max operation.  The claim that
-it’s a foot gun, I’m somewhat sympathetic to that.  You know, the previous version of this
-proposal did include operator both for arithmetic operations as well as for comparison
-operations.  This version does not.  And that’s largely based on feedback from potential
-implementers who have told us that they don’t want to do operator overloading again.  They
-don’t want to repeat -- some of them don’t want to repeat what happened with BigInt, of having
-a bigint operating overloading.  So this proposal is trying to be conservative and minimal in
-omitting those.  But I think this is something that we’re open to reconsider.
+DE: I can answer that. All operations would produce new decimal numbers, max in particular.  I think we can think about it, this proposal doesn’t -- I don’t think it includes a max operation.  The claim that it’s a foot gun, I’m somewhat sympathetic to that.  You know, the previous version of this proposal did include operator both for arithmetic operations as well as for comparison operations.  This version does not.  And that’s largely based on feedback from potential implementers who have told us that they don’t want to do operator overloading again.  They don’t want to repeat -- some of them don’t want to repeat what happened with BigInt, of having a bigint operating overloading.  So this proposal is trying to be conservative and minimal in omitting those.  But I think this is something that we’re open to reconsider.
 
 WH: And, yet, you have a new syntax for literals, which is —
 
-DE: For literals, that’s -- it’s just a lot lighter weight to add a new syntax, and I have
-the -- the extensible numerics literals, which we could pick up again.  This doesn’t cause
-the operational overloading issues --
+DE: For literals, that’s -- it’s just a lot lighter weight to add a new syntax, and I have the -- the extensible numerics literals, which we could pick up again.  This doesn’t cause the operational overloading issues --
 
 WH: It makes it very attractive to ask if a decimal is === to a literal.
 
 DE: Users may try and compare array literals as that works in other languages.
 
-DE: We could also compare with what was raised with IEEE.  I’m ultimately -- ultimately, I’m not
-disagreeing with you.  I see that there are significant ergonomic benefits to supporting
-operator overloading.
+DE: We could also compare with what was raised with IEEE.  I’m ultimately -- ultimately, I’m not disagreeing with you.  I see that there are significant ergonomic benefits to supporting operator overloading.
 
-WH: Anyway, I have major reservations about some of these decisions here. Let’s go on down
-the queue.
+WH: Anyway, I have major reservations about some of these decisions here. Let’s go on down the queue.
 
 MLS: This proposal is a non-starter for me if this isn’t using a standard format, (e.g. IEEE 754 Decimal128).
 
-SFC: Yeah, I’ve raised multiple past meetings that trailing zeros are very important for
-internationalization perspective, so I just wanted to raise that again.
+SFC: Yeah, I’ve raised multiple past meetings that trailing zeros are very important for internationalization perspective, so I just wanted to raise that again.
 
-DE: Okay.  I just want to mention, when talking about the context of decimals, in a presentation
-that API and I gave a few years ago, we outlined how almost all other programming languages
-and database systems include some notion of decimal, and I think part of what we can notice
-from that experience is that programmers don’t actually complain about the details of decimal
-semantics.  IEEE is not supported in many systems.  And I don’t think we should be inventing our
-own decimal semantics.  My takeaway is that we have a lot of flexibility as to the choices
-that we can make because there’s just a lack of anybody complaining about the inconsistency
-here, somehow.  And strong support in the ecosystem demonstrates that it’s a widely shared need
-when this isn’t the easiest thing to add to a system.  Oh, my next topic, rationale against
-rationals.  The other thing about this is that rationals relate to -- sorry, decimals relate
-to, as wuss mentioned, formatting.  It only makes sense to do the operation of printout in
-decimal form, if it’s the range of things is restricted to decimals.  But further, decimals
-have this operation of rounding, which comes up all the time in financial applications.  It’s
-just an inherent operation that you do when formatting and calculating that comes up
-frequently, and just doesn’t quite make logical sense on rationals.  So that’s why I think they’re distinct data types.  Even if we left aside the efficiency of time
-and space that rationals have more overhead for.
+DE: Okay.  I just want to mention, when talking about the context of decimals, in a presentation that API and I gave a few years ago, we outlined how almost all other programming languages and database systems include some notion of decimal, and I think part of what we can notice from that experience is that programmers don’t actually complain about the details of decimal semantics.  IEEE is not supported in many systems.  And I don’t think we should be inventing our own decimal semantics.  My takeaway is that we have a lot of flexibility as to the choices that we can make because there’s just a lack of anybody complaining about the inconsistency here, somehow.  And strong support in the ecosystem demonstrates that it’s a widely shared need when this isn’t the easiest thing to add to a system.  Oh, my next topic, rationale against rationals.  The other thing about this is that rationals relate to -- sorry, decimals relate to, as wuss mentioned, formatting.  It only makes sense to do the operation of printout in decimal form, if it’s the range of things is restricted to decimals.  But further, decimals have this operation of rounding, which comes up all the time in financial applications.  It’s just an inherent operation that you do when formatting and calculating that comes up frequently, and just doesn’t quite make logical sense on rationals.  So that’s why I think they’re distinct data types.  Even if we left aside the efficiency of time and space that rationals have more overhead for.
 
-EAO: So given that this is not considering operator overloading, I’m really struggling to see why
-does this need to get baked into the language rather than just being a really good library for
-the users who need this sort of functionality?  The motivation that I’ve -- that’s been
-presented here previously, at least to me, doesn’t really tell the story of why does it need to
-be in the language rather than just being a library?
+EAO: So given that this is not considering operator overloading, I’m really struggling to see why does this need to get baked into the language rather than just being a really good library for the users who need this sort of functionality?  The motivation that I’ve -- that’s been presented here previously, at least to me, doesn’t really tell the story of why does it need to be in the language rather than just being a library?
 
-JMN: Yeah, you’re right.  I think overall, this certainly could be, and of course it exists as a
-library, or even multiple libraries out there that do these kinds of things.  Certainly speed
-is a big factor there.  In the survey data, we saw some, you know, people saying that they need
-to have some computations in the browser, so this needs to be very fast.  For data exchange,
-you might imagine that this needs to be quite fast, especially if we’re talking about, you
-know, financial applications.
+JMN: Yeah, you’re right.  I think overall, this certainly could be, and of course it exists as a library, or even multiple libraries out there that do these kinds of things.  Certainly speed is a big factor there.  In the survey data, we saw some, you know, people saying that they need to have some computations in the browser, so this needs to be very fast.  For data exchange, you might imagine that this needs to be quite fast, especially if we’re talking about, you know, financial applications.
 
-DE: I disagree that performance is a main concern here.  I think the bigger concern is, as was
-mentioned previously: interchange.  We want to have a standard way to pass around decimal
-values both between different components within JavaScript, as well as between programs that
-are on different servers.  This is why Bloomberg is working on this proposal.  Because we use
-decimal all over the place to represent money quantities.  It does risk having bugs if these
-end up being converted to JavaScript numbers, you know, it’s important to convert things to
-strings instead, so, you know, that’s the best practice that usually happens, but it’s just --
-it’s just pretty difficult to hold everything to that.  And it leads to a risky situation,
-risking bugs.  So this is why it makes sense to have it built into the platform, because
-this -- because it can be used for interchange and because both across libraries and across
-systems, and because the existence of it can reduce bugs further.  Something like temporal, you
-could article that temporal should also just be a library, but we’ve decided, I think for these
-same kinds of reasons, that it makes sense for it to be built in, because it’s widely used, of
-course we already had a built-in data type, but if we didn’t, we should have been adding one
-anyway.  It makes sense for us as a committee to add things to solve shared problems.  I think
-survey results show that this is such a shared problem.
+DE: I disagree that performance is a main concern here.  I think the bigger concern is, as was mentioned previously: interchange.  We want to have a standard way to pass around decimal values both between different components within JavaScript, as well as between programs that are on different servers.  This is why Bloomberg is working on this proposal.  Because we use decimal all over the place to represent money quantities.  It does risk having bugs if these end up being converted to JavaScript numbers, you know, it’s important to convert things to strings instead, so, you know, that’s the best practice that usually happens, but it’s just -- it’s just pretty difficult to hold everything to that.  And it leads to a risky situation, risking bugs.  So this is why it makes sense to have it built into the platform, because this -- because it can be used for interchange and because both across libraries and across systems, and because the existence of it can reduce bugs further.  Something like temporal, you could article that temporal should also just be a library, but we’ve decided, I think for these same kinds of reasons, that it makes sense for it to be built in, because it’s widely used, of course we already had a built-in data type, but if we didn’t, we should have been adding one anyway.  It makes sense for us as a committee to add things to solve shared problems.  I think survey results show that this is such a shared problem.
 
-MLS: Talking about data exchange, we’re probably not going to extend JSON to support this.  So we
-have to come up with some other customized way to exchange data?
+MLS: Talking about data exchange, we’re probably not going to extend JSON to support this.  So we have to come up with some other customized way to exchange data?
 
-DE: Well, the JSON source access proposal was built partly to solve this.  You know, it solves
-it just as well or powerly for BigInt, it it was designed for in decimal.  But we can unfortunately not change JSON.  JSON has a lot of things it’s lacking.  Many RPC systems use either abstractions over JSON, which could be extended to support this or buffer protocols that can be extended.  In Bloomberg, we have an RPC system which does have a decimal type in its schema, and I think our decimal system is not exceptional.  It’s not irrelevant even if JSON is immutable.
+DE: Well, the JSON source access proposal was built partly to solve this.  You know, it solves it just as well or powerly for BigInt, it it was designed for in decimal.  But we can unfortunately not change JSON.  JSON has a lot of things it’s lacking.  Many RPC systems use either abstractions over JSON, which could be extended to support this or buffer protocols that can be extended.  In Bloomberg, we have an RPC system which does have a decimal type in its schema, and I think our decimal system is not exceptional.  It’s not irrelevant even if JSON is immutable.
 
-DLM: I’m wondering why not use strings for interchange.  I see your argument about how people
-cannot use them reliably.  But I don’t see how adding a new decimal type guarantees that people
-will use it reliably.  I think with the point Michael Saboff just made, if we use strings for interchange, it can then also be used in JSON.
+DLM: I’m wondering why not use strings for interchange.  I see your argument about how people cannot use them reliably.  But I don’t see how adding a new decimal type guarantees that people will use it reliably.  I think with the point Michael Saboff just made, if we use strings for interchange, it can then also be used in JSON.
 
 DE: That’s in fact what people should do for JSON,.
 
-JMN: I think there was also some discussion about doing calculations.  I think what you’re doing
-is discussing the simplest case, where we take some kind of input and just pass it on as a
-string.  If we take some input and then we have to do some calculations with it, then
-potentially we might be shooting ourselves in the foot if we get something wrong there.
+JMN: I think there was also some discussion about doing calculations.  I think what you’re doing is discussing the simplest case, where we take some kind of input and just pass it on as a string.  If we take some input and then we have to do some calculations with it, then potentially we might be shooting ourselves in the foot if we get something wrong there.
 
-DE: Yeah, the thing is when you have a string in JavaScript that represents a numeric quantity,
-it’s extremely tempting to just convert it to a number.  You can pass it to all these different
-APIs, such as plus, that take numbers -- or not plus, but minus, that take numbers and put
-strings in there instead, and it will, you know, work, kind of, but it will give you rounding
-errors.  That’s why it’s extremely dangerous to not have a separate data type, so, you know,
-you may use strings when putting it in JSON, but in memory, ideally you should wrap it with
-something else so you avoid this class of bugs.
+DE: Yeah, the thing is when you have a string in JavaScript that represents a numeric quantity, it’s extremely tempting to just convert it to a number.  You can pass it to all these different APIs, such as plus, that take numbers -- or not plus, but minus, that take numbers and put strings in there instead, and it will, you know, work, kind of, but it will give you rounding errors.  That’s why it’s extremely dangerous to not have a separate data type, so, you know, you may use strings when putting it in JSON, but in memory, ideally you should wrap it with something else so you avoid this class of bugs.
 
-SYG: Yeah, I agree with MLS’s point about about JSON.
-I think in practice, adding new data types in the name of interchange in the hopes that the --
-that we will migrate to using those just really has not borne out precisely because of JSON,
-such a large number of applications are JSON transformers.  And I think what we see in practice
-over and again is that developers will do things that make it easier and simpler to work with
-JSON and JSON app, which means, for example, keep using objects instead of Maps and Sets.  Keep
-using numbers instead of BigInts.  I think that is just what happens in practice.  And JSON
-being eternal is what it is.  And I think the interchange hope is really quite misplaced.
+SYG: Yeah, I agree with MLS’s point about about JSON. I think in practice, adding new data types in the name of interchange in the hopes that the -- that we will migrate to using those just really has not borne out precisely because of JSON, such a large number of applications are JSON transformers.  And I think what we see in practice over and again is that developers will do things that make it easier and simpler to work with JSON and JSON app, which means, for example, keep using objects instead of Maps and Sets.  Keep using numbers instead of BigInts.  I think that is just what happens in practice.  And JSON being eternal is what it is.  And I think the interchange hope is really quite misplaced.
 
-DE: I mean, you use things in RPC systems in Google that are not based on JSON that you have
-open source protocol buffers.  I mean, although some applications won’t update, others can.
-Given that we’ve been adding other things to the standard library that are not represented in
-JSON, I’m really confused by this argument.
+DE: I mean, you use things in RPC systems in Google that are not based on JSON that you have open source protocol buffers.  I mean, although some applications won’t update, others can. Given that we’ve been adding other things to the standard library that are not represented in JSON, I’m really confused by this argument.
 
 SYG: What are you confused by?
 
@@ -1690,77 +1221,35 @@ DE: Like, why did we add temporal when temporal doesn’t have a representation 
 
 SYG: Because temporal is independently useful without being used for peer interchange.
 
-DE: So we went through examples based from the survey data where people expressed that there was
-utility from this.  Like, locally.
+DE: So we went through examples based from the survey data where people expressed that there was utility from this.  Like, locally.
 
-SYG: Perhaps they hoped that it would be used for interchange.  I’ll take the other side of the
-bet that it won’t be.
+SYG: Perhaps they hoped that it would be used for interchange.  I’ll take the other side of the bet that it won’t be.
 
-CHU: Well, coming back to the original question, why does it need to be taken to the language,
-well, coming from a user perspective, I can only (inaudible) for the service.  And it’s not
-only financial applications.  We need for such simple things -- so we need it for subletting
-the slider, and I agree it’s not a performance, but it’s about the balances, and it’s about
-that right now we have to resort to third party libraries, and we have to, like, evaluate them.
-And if this is something that is built into the language, there’s a great benefit.  It takes
-away this burden of selecting something and, yeah, as we discussed, there’s input.
+CHU: Well, coming back to the original question, why does it need to be taken to the language, well, coming from a user perspective, I can only (inaudible) for the service.  And it’s not only financial applications.  We need for such simple things -- so we need it for subletting the slider, and I agree it’s not a performance, but it’s about the balances, and it’s about that right now we have to resort to third party libraries, and we have to, like, evaluate them. And if this is something that is built into the language, there’s a great benefit.  It takes away this burden of selecting something and, yeah, as we discussed, there’s input.
 
 DE:  So do you find use cases in the front end or only in the back end or both?
 
-CHU: We had a very simple use case in the front end, so I think it’s not only something that is
-Bloomberg is interested about, but it’s every data, as has been mentioned, this is needed.  So
-we had a use case that we needed to scale from it, so we just -- we have a simple yard
-component, some slider.  We can put a scale to it.  And then you just pass it and you need to,
-like -- if you -- basically (inaudible).  So that was our use case, and I can totally relate to
-the things mentioned.
+CHU: We had a very simple use case in the front end, so I think it’s not only something that is Bloomberg is interested about, but it’s every data, as has been mentioned, this is needed.  So we had a use case that we needed to scale from it, so we just -- we have a simple yard component, some slider.  We can put a scale to it.  And then you just pass it and you need to, like -- if you -- basically (inaudible).  So that was our use case, and I can totally relate to the things mentioned.
 
-DLM: I guess I’m next i just wanted to say that I was very surprised in the survey results that
-so many people were doing financial calculations on the client side.  But in finance it is, but it
-just doesn’t seem like it’s that great an idea to me.  And I’m not sure if it’s something that
-we really should be encouraging.
+DLM: I guess I’m next i just wanted to say that I was very surprised in the survey results that so many people were doing financial calculations on the client side.  But in finance it is, but it just doesn’t seem like it’s that great an idea to me.  And I’m not sure if it’s something that we really should be encouraging.
 
-DE: That’s a legitimate point.  I think different -- I’ve heard different things from different
-people on this.  Some like to send all their calculations to the back end to do, for more kind
-of security, because even a preview could be interpreted as something significant.  But we’ve
-also heard that it’s been a lot on the front end.  I think that the front end case that you
-just mentioned was pretty legitimate.
+DE: That’s a legitimate point.  I think different -- I’ve heard different things from different people on this.  Some like to send all their calculations to the back end to do, for more kind of security, because even a preview could be interpreted as something significant.  But we’ve also heard that it’s been a lot on the front end.  I think that the front end case that you just mentioned was pretty legitimate.
 
-CHU: It’s not about, like, doing calculations on a project or activity.  It’s very common that
-you do something, you know, like to send the (inaudible).  And don’t get decimal wrong.  Those
-huge, big financial calculations, as I said, it’s about a slider.  This has nothing to do with
-slider, like, selecting our own, like, the -- some kind of size of machinery.  It’s not about
-financial calculations.
+CHU: It’s not about, like, doing calculations on a project or activity.  It’s very common that you do something, you know, like to send the (inaudible).  And don’t get decimal wrong.  Those huge, big financial calculations, as I said, it’s about a slider.  This has nothing to do with slider, like, selecting our own, like, the -- some kind of size of machinery.  It’s not about financial calculations.
 
 DE: RBN, you made an interesting point in the chat.  Do you want to speak up here.
 
-RBN:  The -- I was -- in a way, I kind of echoed Bradford’s statement in the chat as well, that
-this statement before that don’t do financial calculations on the front end in the c client, do
-it in the back, and the front end could be no JS and the front end could be electron.
+RBN:  The -- I was -- in a way, I kind of echoed Bradford’s statement in the chat as well, that this statement before that don’t do financial calculations on the front end in the c client, do it in the back, and the front end could be no JS and the front end could be electron.
 
-JMN: That’s something we’ve also consistently seen in the survey data.  We’ve seen multiple cases
-of front end and back end use, so I think it’s hard to draw a line here.  The use cases go both
-ways.
+JMN: That’s something we’ve also consistently seen in the survey data.  We’ve seen multiple cases of front end and back end use, so I think it’s hard to draw a line here.  The use cases go both ways.
 
-CDA: We have Dan Minor next in the queue, but we have only a couple minutes left for this item.
-We’re not going to be able to get through all the items in the queue.  SYG?
+CDA: We have Dan Minor next in the queue, but we have only a couple minutes left for this item. We’re not going to be able to get through all the items in the queue.  SYG?
 
-SYG: Which item was this?  Oh, yes.  The main one.  Okay, I’m leaning towards not doing this in
-the language, but I want to emphasize the word “leaning.”  I find Waldemar’s correctness foot-gun thing argument fairly convincing in, that if we’re not doing operator overloading and V8
-remains of the position that we would not like to have a decimal as a primitive.  And given
-that constraint, the literal syntax poses significant correctness foot gun for the reasons that
-WH has brought up.  I think I’m -- we don’t really have any -- like, we would not block a
-non-primitive built-in type probably without the literal syntax.  The utility of that is
-diminished, but if the users who would -- the developers who say there is demand for this and
-would use there can live with that, then I think that is a reasonable path forward.  But if
-instead the preferred path forward is to go back to a primitive or to keep this correctness
-foot gun in, then my feeling is leaning towards not doing this in the language and continuing
-to use user libraries.
+SYG: Which item was this?  Oh, yes.  The main one.  Okay, I’m leaning towards not doing this in the language, but I want to emphasize the word “leaning.”  I find Waldemar’s correctness foot-gun thing argument fairly convincing in, that if we’re not doing operator overloading and V8 remains of the position that we would not like to have a decimal as a primitive.  And given that constraint, the literal syntax poses significant correctness foot gun for the reasons that WH has brought up.  I think I’m -- we don’t really have any -- like, we would not block a non-primitive built-in type probably without the literal syntax.  The utility of that is diminished, but if the users who would -- the developers who say there is demand for this and would use there can live with that, then I think that is a reasonable path forward.  But if instead the preferred path forward is to go back to a primitive or to keep this correctness foot gun in, then my feeling is leaning towards not doing this in the language and continuing to use user libraries.
 
-DE: Could you elaborate on your position on primitives, and also could we hear from other
-implementers how they feel about adding a primitive type.
+DE: Could you elaborate on your position on primitives, and also could we hear from other implementers how they feel about adding a primitive type.
 
-CDA: So just real quick point of order.  We are out of time.  We do have time for a continuation
-tomorrow in the morning, ideally, but I think we might have some time in the afternoon as well.
-But we are out of time for this item.  We need to move on.
+CDA: So just real quick point of order.  We are out of time.  We do have time for a continuation tomorrow in the morning, ideally, but I think we might have some time in the afternoon as well. But we are out of time for this item.  We need to move on.
 
 JMN: Could someone capture the queue.
 
@@ -1795,75 +1284,37 @@ PKA: So we’ve heard from most of our Stage 3 proposals pretty priestly.  Six o
 
 ### JSON Modules
 
-PKA: On that, I’ll move on to the five proposals that we haven’t heard from in this past
-calendar year.  The first is JSON modules.  Among whose champions is DE.  This proposal has
-tests, has been worked on implementation.  It was last presented in January of 2021, so I now
-want to ask DE if he’d like to share anything about -- briefly about this proposal.
+PKA: On that, I’ll move on to the five proposals that we haven’t heard from in this past calendar year.  The first is JSON modules.  Among whose champions is DE.  This proposal has tests, has been worked on implementation.  It was last presented in January of 2021, so I now want to ask DE if he’d like to share anything about -- briefly about this proposal.
 
-DE: Yeah.  Even though we haven’t brought it to plenary recently, I think JSON modules are
-moving along well.  The big thing blocking them, shipping and conditional browsers beyond
-chromium was the ongoing discussion about import assertions or import attributes now.  Now that
-this is settled, I would encourage everyone to implement and ship this proposal.  We have some
-tests, I’m not sure, maybe some of them need to be updated for the import attributes change.
-Both in -- I think in test 262 as well as web platform tests.  So please let me know if you
-have any concerns, but other than that, I think it’s doing well at Stage 3.
+DE: Yeah.  Even though we haven’t brought it to plenary recently, I think JSON modules are moving along well.  The big thing blocking them, shipping and conditional browsers beyond chromium was the ongoing discussion about import assertions or import attributes now.  Now that this is settled, I would encourage everyone to implement and ship this proposal.  We have some tests, I’m not sure, maybe some of them need to be updated for the import attributes change. Both in -- I think in test 262 as well as web platform tests.  So please let me know if you have any concerns, but other than that, I think it’s doing well at Stage 3.
 
-PKA: Are there any thoughts or questions or comments, not to relitigate any details of the
-proposal, but thoughts or questions or comments about the proposal status for Dan from the
-committee?
+PKA: Are there any thoughts or questions or comments, not to relitigate any details of the proposal, but thoughts or questions or comments about the proposal status for Dan from the committee?
 
-DLM: I was just going to say this is still on our road map for SpiderMonkey.  It was something that a
-contributor, I’ve been working on, and I’ll continue with and we’re trying to pick it up
-Ourselves. We can add more information on the status.
+DLM: I was just going to say this is still on our road map for SpiderMonkey.  It was something that a contributor, I’ve been working on, and I’ll continue with and we’re trying to pick it up Ourselves. We can add more information on the status.
 
-NRO: Yeah, for JSON modules, there is still one unsolved point, which is about how, like,
-SP and the fetch headers for fetching the models, like, like, they were the whole reason why we
-were discussing processions and, this is being sought now in HTML, but it’s not finished yet.
+NRO: Yeah, for JSON modules, there is still one unsolved point, which is about how, like, SP and the fetch headers for fetching the models, like, like, they were the whole reason why we were discussing processions and, this is being sought now in HTML, but it’s not finished yet.
 
-DE: Right.  Thank you so much for that correction.  This will be one of the first times that the
-web platform is fetching JSON directly.  So I don’t think there’s, like, an established JSON
-destination type for fetch.  Yeah.
+DE: Right.  Thank you so much for that correction.  This will be one of the first times that the web platform is fetching JSON directly.  So I don’t think there’s, like, an established JSON destination type for fetch.  Yeah.
 
 ### Legacy Regex Features
 
-PKA: If there’s nothing else, we’ll move on to the next proposal.  Legacy regex features in
-JavaScript, champions are MM and CPE.  This proposal does have tests, but not
-sure about the implementation status.  It hasn’t been presented for quite some time.  I’m not
-sure if either MM or CPE are with us.  If they are, I’d like to prompt them to --
+PKA: If there’s nothing else, we’ll move on to the next proposal.  Legacy regex features in JavaScript, champions are MM and CPE.  This proposal does have tests, but not sure about the implementation status.  It hasn’t been presented for quite some time.  I’m not sure if either MM or CPE are with us.  If they are, I’d like to prompt them to --
 
 CM: They are not.
 
-PKA:  Okay, so, DE, I know you’ve been most recently in touch with Mark.  Do you -- are you able
-to summarize his recent?
+PKA:  Okay, so, DE, I know you’ve been most recently in touch with Mark.  Do you -- are you able to summarize his recent?
 
 DE: I was in touch with MM?  MM was in favor of us discussing this at committee.
 
-DE: So what Mark told us was that at this point, the SES itself service to the kind of security
-issues that led to them specifically proposing some of the details about the way that these
-legacy regex features intersect with SES.  However, regardless of whether we stick with those
-details or not, I think this is a really worthwhile proposal because it describes the semantics
-of a corner of JavaScript that has to ship in implementation for them to be web compatible and
-the different gentleman have script engines have slightly different implementations of.  I
-think this is excellent work from CPE, and I hope it can be picked up and that we can arrive
-at fully interoperable implementations without these differences somehow.
+DE: So what Mark told us was that at this point, the SES itself service to the kind of security issues that led to them specifically proposing some of the details about the way that these legacy regex features intersect with SES.  However, regardless of whether we stick with those details or not, I think this is a really worthwhile proposal because it describes the semantics of a corner of JavaScript that has to ship in implementation for them to be web compatible and the different gentleman have script engines have slightly different implementations of.  I think this is excellent work from CPE, and I hope it can be picked up and that we can arrive at fully interoperable implementations without these differences somehow.
 
-MLS: I’m not sure that this is as important for web compatibility since all the engines have
-slightly different semantics and implement some or the other global values.  And there’s been
-no movement since -- for six years.  There doesn't seem to be a big clamor for this.  All browser implementations are probably 80% compatible, but the venn diagram for all implementations is probably closer to 50 or 60%.
+MLS: I’m not sure that this is as important for web compatibility since all the engines have slightly different semantics and implement some or the other global values.  And there’s been no movement since -- for six years.  There doesn't seem to be a big clamor for this.  All browser implementations are probably 80% compatible, but the venn diagram for all implementations is probably closer to 50 or 60%.
 
-DE:  While that’s true, and I think it’s more like 98 to 99% than 50 or 60%, this committee has
-previously worked on standardizing lots of things down to the last detail.  And so have other
-standards bodies in the web platform.  And I think that’s inherently valuable even if the cases
-are not currently causing everyone to have huge issues.
+DE:  While that’s true, and I think it’s more like 98 to 99% than 50 or 60%, this committee has previously worked on standardizing lots of things down to the last detail.  And so have other standards bodies in the web platform.  And I think that’s inherently valuable even if the cases are not currently causing everyone to have huge issues.
 
-MLS: I believe that they will -- many of these could hurt the performance of various engines
-because of what they actually do.
+MLS: I believe that they will -- many of these could hurt the performance of various engines because of what they actually do.
 
-DE: In that case, it would be good to understand the performance requirements more, and how the
-the current proposal does hurt performance so that we can iterate on it.  At least towards a
-perspective of matching between engines.  I think mismatches between engines in cases like this
-tend to be kind of random and not actually based on differing performance requirements from
-different engines.
+DE: In that case, it would be good to understand the performance requirements more, and how the the current proposal does hurt performance so that we can iterate on it.  At least towards a perspective of matching between engines.  I think mismatches between engines in cases like this tend to be kind of random and not actually based on differing performance requirements from different engines.
 
 MLS: Well, I’m not too interested in this proposal.  Let’s put it that way.
 
@@ -1875,33 +1326,21 @@ DE: Could you elaborate.
 
 MLS: Most of these proposal is adding values on the global RegExp object, usually as related to what happened with the last match.  So we do matching, in line matching at our highest tiers.  We would now have to populate those values while we’re doing that kind of matching.
 
-DE: I’m confused.  You already support this API?  You just have minor differences we support
-some of them. There’s some things that this contains that you don’t support?
+DE: I’m confused.  You already support this API?  You just have minor differences we support some of them. There’s some things that this contains that you don’t support?
 
 MLS: Yes.  Every implementation has parts of this proposal that they support.  We cover many parts of this proposal, but we don’t cover everything.  And it’s worked to add them and they could affect our performance.  Because now we’re populating things.  Currently none of our customer care about this proposal
 
-DE: I see.  This was an issue that I wasn’t aware of.  I thought the only change here was the
-sort of roam properties.  So I think --
+DE: I see.  This was an issue that I wasn’t aware of.  I thought the only change here was the sort of roam properties.  So I think --
 
 MLS: The proposal is basically adding properties to the global RegExp.
 
-DE: We all agree that the API is bad.  But it’s -- so it’s -- I think this leads to a very
-concrete, good thing that we could do next of pruning the ones that are not supported in all
-the browsers and seeing if they can with unshipped from the browsers that do ship them.  That’s
-concrete thing we can do in this space, right?
+DE: We all agree that the API is bad.  But it’s -- so it’s -- I think this leads to a very concrete, good thing that we could do next of pruning the ones that are not supported in all the browsers and seeing if they can with unshipped from the browsers that do ship them.  That’s concrete thing we can do in this space, right?
 
-DLM: A follow on to what MLS said, it’s something that we discussed every time we do internal
-reviews of Stage 3 proposes for implementation, but it always kind of floats down to the bottom
-just because while we acknowledge there are incompatibles between the engine, they’ve been
-there for a long time so it never seems like it’s a very pressing thing for us to implement.
+DLM: A follow on to what MLS said, it’s something that we discussed every time we do internal reviews of Stage 3 proposes for implementation, but it always kind of floats down to the bottom just because while we acknowledge there are incompatibles between the engine, they’ve been there for a long time so it never seems like it’s a very pressing thing for us to implement.
 
-DE: Is there a comment from any other implementations?  So we could withdraw this proposal.  We
-could say, look, we just don’t care about interoperability here.  This is just a weird legacy thing that we’re not going to fix, unlike the other things that we’ve worked on fixing that are
-weird legacy.  But we should probably do that rather than leave it as a Stage 3 proposal, which
-everybody does not plan on implementing.
+DE: Is there a comment from any other implementations?  So we could withdraw this proposal.  We could say, look, we just don’t care about interoperability here.  This is just a weird legacy thing that we’re not going to fix, unlike the other things that we’ve worked on fixing that are weird legacy.  But we should probably do that rather than leave it as a Stage 3 proposal, which everybody does not plan on implementing.
 
-DLM: That sounds like something to discuss in the future.  Maybe since shoe very not here, we
-can’t have that discussion.
+DLM: That sounds like something to discuss in the future.  Maybe since shoe very not here, we can’t have that discussion.
 
 DE: What do you think about this proposal, SYG?
 
@@ -1911,12 +1350,9 @@ DE: Should we withdraw it in this case?
 
 DE: Okay.  Does anybody want to work on this proposal going forward?
 
-CM: I think it would probably be worth getting in touch with CPE.  Mark’s connection to this
-is sort of tertiary.  He is basically sponsoring CPE to do this work.  I think touching back
-with the champion might be a good place to start.
+CM: I think it would probably be worth getting in touch with CPE.  Mark’s connection to this is sort of tertiary.  He is basically sponsoring CPE to do this work.  I think touching back with the champion might be a good place to start.
 
-DE: Great.  I’m not sure if I have CPE’s email address.  Do you think you could start that
-thread?
+DE: Great.  I’m not sure if I have CPE’s email address.  Do you think you could start that thread?
 
 CM: Yeah, I could ping MM.
 
@@ -1924,87 +1360,51 @@ DE: Great.  Thank you.
 
 ### RegExp Modifiers
 
-PKA: Great.  Thank you, everybody, for that discussion.  Our next proposal to discuss is regex
-modifiers, the champion is RBN. According to read-me, there are not tests and I’m not sure about implementation status.
-This was presented a year ago.  Is there anything you would like to say about this proposal.
+PKA: Great.  Thank you, everybody, for that discussion.  Our next proposal to discuss is regex modifiers, the champion is RBN. According to read-me, there are not tests and I’m not sure about implementation status. This was presented a year ago.  Is there anything you would like to say about this proposal.
 
 RBN: This is in my backlog currently.  I switch to focus to getting `using` in place.
 
 PKA: Great.  Thank you.  Does anybody have any thoughts or questions for RBN about this proposal?
 
-DE: Question for RBN.  Would you be interested in working with more collaborators from committee
-on this, if you’ve had limited time to work on it?
+DE: Question for RBN.  Would you be interested in working with more collaborators from committee on this, if you’ve had limited time to work on it?
 
-RBN: Possibly.  There’s not really much that needs to be done for it.  It’s just the small amount
-because it’s not terribly complex from a featured implementation perspective.  It’s just more a
-matter of how much time I have had.  So if there are folks that are interested in assisting, I
-would be more than happy to accept some additional contributions.
+RBN: Possibly.  There’s not really much that needs to be done for it.  It’s just the small amount because it’s not terribly complex from a featured implementation perspective.  It’s just more a matter of how much time I have had.  So if there are folks that are interested in assisting, I would be more than happy to accept some additional contributions.
 
-DE: That’s great.  What do implementers think about this proposal?  You are working on it?  Do
-you think it’s not worth it or anything?
+DE: That’s great.  What do implementers think about this proposal?  You are working on it?  Do you think it’s not worth it or anything?
 
-MLS: We looked into it.  I’ve looked at what we need to do in our engine, and it’s possible, but
-it’s not a high priority given the other things that we have.
+MLS: We looked into it.  I’ve looked at what we need to do in our engine, and it’s possible, but it’s not a high priority given the other things that we have.
 
-DE: All right.  Is that -- was that a thumbs up from DLM?  No.  It was not.  Do you have
-anything to report from Mozilla?
+DE: All right.  Is that -- was that a thumbs up from DLM?  No.  It was not.  Do you have anything to report from Mozilla?
 
-DLM: I just looked it up, and, yeah, we haven’t been tracking this closely at all.  I have no
-updates.
+DLM: I just looked it up, and, yeah, we haven’t been tracking this closely at all.  I have no updates.
 
 SYG: For V8, it’s on the queue.  I agree MLS that it is also not high priority.  I don’t have a regex expertise, so I can’t speak to the work involved here or if it’s possible or not possible.  It’s on the queue for the regex folks to take a look.
 
-DE: Okay.  I think somehow this demonstrates a mismatch in priorities between, you know, subsets
-of the committee and the -- what the committee had consensus on as a whole, because we agreed
-to Stage 3 for this, which kind of expresses that we all feel this is motivated.  I think we
-should keep an eye on whether folks still think it’s motivated.  Given the prioritization.
+DE: Okay.  I think somehow this demonstrates a mismatch in priorities between, you know, subsets of the committee and the -- what the committee had consensus on as a whole, because we agreed to Stage 3 for this, which kind of expresses that we all feel this is motivated.  I think we should keep an eye on whether folks still think it’s motivated.  Given the prioritization.
 
-SYG: So I want to -- can I respond to that? I think historically, when things reach Stage 3, there is an agreement that it is motivated, but that does not say anything about the relative prioritization for each specific engine’s backlog.  Like, that -- I think given June 2022 and July 2023, that’s not terribly long.  Like,
-you are suggesting that this year and one month suggests that the implementers are signaling
-that we’re not going to do it?  Because that’s not the sense I have at all.  It’s just that
-it’s on the backlog.
+SYG: So I want to -- can I respond to that? I think historically, when things reach Stage 3, there is an agreement that it is motivated, but that does not say anything about the relative prioritization for each specific engine’s backlog.  Like, that -- I think given June 2022 and July 2023, that’s not terribly long.  Like, you are suggesting that this year and one month suggests that the implementers are signaling that we’re not going to do it?  Because that’s not the sense I have at all.  It’s just that it’s on the backlog.
 
-DE: Probably I’m over indexing from the unexpected hostility towards the previous proposal.  And
-just overreacting.  So, yeah, no, I agree that that’s not a huge signal.
+DE: Probably I’m over indexing from the unexpected hostility towards the previous proposal.  And just overreacting.  So, yeah, no, I agree that that’s not a huge signal.
 
-SYG: Like, we could say -- like, we could start saying something about relative prioritization,
-but, yeah, they a different discussion that we ought to have.  Like, we just don’t have that
-norm right now.  Things hit Stage 3 and then it’s up to each implementation to prioritize the
-things that implement ships, in which order.
+SYG: Like, we could say -- like, we could start saying something about relative prioritization, but, yeah, they a different discussion that we ought to have.  Like, we just don’t have that norm right now.  Things hit Stage 3 and then it’s up to each implementation to prioritize the things that implement ships, in which order.
 
-DE: Yeah, I think that would be useful to share different organizations thoughts on the priority
-things.  But I agree, that’s not the discussion right now.
+DE: Yeah, I think that would be useful to share different organizations thoughts on the priority things.  But I agree, that’s not the discussion right now.
 
-PFC: I wanted to point out that there are partial tests for this.  But they are not merged
-into test262 main yet because they need some work on the test generation code.  So that would be a
-good place for somebody to get involved in they’re interested in fixing a bug and making that
-test PR mergable.  I think the test PR covers the new syntax, but not the behavior yet.
+PFC: I wanted to point out that there are partial tests for this.  But they are not merged into test262 main yet because they need some work on the test generation code.  So that would be a good place for somebody to get involved in they’re interested in fixing a bug and making that test PR mergable.  I think the test PR covers the new syntax, but not the behavior yet.
 
-SYG: And I just want to say the fact that regular expression proposals are generally slower is
-just because there’s, like, a number -- like a single digit number of people with JS regular expression engine expertise in the world.  So I think it’s just usually a staffing question, not really even a relative
-prioritization question, or rather the relative prioritization question is just determined by
-staffing rather than, like an actual formed opinion on how important we think something is.
+SYG: And I just want to say the fact that regular expression proposals are generally slower is just because there’s, like, a number -- like a single digit number of people with JS regular expression engine expertise in the world.  So I think it’s just usually a staffing question, not really even a relative prioritization question, or rather the relative prioritization question is just determined by staffing rather than, like an actual formed opinion on how important we think something is.
 
-DE: Good.  That’s a relief.  So this proposal can continue moving on.  And if anybody has time
-to contribute, if anybody is interested in contributing to test 262 tests on the behavior of
-regex modifiers, that will be very much welcome.
+DE: Good.  That’s a relief.  So this proposal can continue moving on.  And if anybody has time to contribute, if anybody is interested in contributing to test 262 tests on the behavior of regex modifiers, that will be very much welcome.
 
 ### Duplicate named capture groups
 
-PKA: Okay.  Thanks, everybody, for that productive discussion.  Our next proposal is duplicate
-name capture groups, the champion is Kevin Gibbons.  There are tests and there is
-implementation work.  This was last presented also about a year ago.  KG, would you like to
-share my brief update about this proposal.
+PKA: Okay.  Thanks, everybody, for that productive discussion.  Our next proposal is duplicate name capture groups, the champion is Kevin Gibbons.  There are tests and there is implementation work.  This was last presented also about a year ago.  KG, would you like to share my brief update about this proposal.
 
-MF: KG went to bed but left me with a message.  He is in California.  He said that the
-tests have been available for like a year and he is waiting on implementations, so his message
-to implementers is please, please, please implement this.
+MF: KG went to bed but left me with a message.  He is in California.  He said that the tests have been available for like a year and he is waiting on implementations, so his message to implementers is please, please, please implement this.
 
-DE: Yes, and thank you to probably MLS for implementing and shipping this.  Is that
-accurate?
+DE: Yes, and thank you to probably MLS for implementing and shipping this.  Is that accurate?
 
-MLS: Yeah.  And we’ll ship it probably in the next several months.  It’s available to STP now,
-it’s available in seeds, so I’m -- I’m just fixing a bug today.
+MLS: Yeah.  And we’ll ship it probably in the next several months.  It’s available to STP now, it’s available in seeds, so I’m -- I’m just fixing a bug today.
 
 DE: Oh, great.  So this all seems on track.
 
@@ -2016,76 +1416,33 @@ MLS: I guess two of the four experts are in the room.
 
 ### Shadow Realm
 
-PKA: That’s great to hear.  And, yeah, any other thoughts or questions about this one? Seems like a -- we’re moving along.  Great.  The final proposal is ShadowRealm with many
-champions.  There are -- there’s some work on tests, there’s some work towards implementation.
-This was last presented in December.  Is there a champion present for this proposal who would
-like to share an update?
+PKA: That’s great to hear.  And, yeah, any other thoughts or questions about this one? Seems like a -- we’re moving along.  Great.  The final proposal is ShadowRealm with many champions.  There are -- there’s some work on tests, there’s some work towards implementation. This was last presented in December.  Is there a champion present for this proposal who would like to share an update?
 
-CM: Yeah, but I don’t think any -- I know MM is not here.  We haven’t heard from (inaudible)
-for a while.  (inaudible).
+CM: Yeah, but I don’t think any -- I know MM is not here.  We haven’t heard from (inaudible) for a while.  (inaudible).
 
 CM: MM and I spoke about this prior to my coming here.  His understanding is that we’re -- at this point we’re waiting on some web integration work.  I’m not sure what that means.  But that’s what he said.
 
-DE: Yeah, I can give an update on the web integration work, but I’ll -- we can get a comment
-from DLM as well, since Mozilla provided really helpful feedback here.  So the web integration
-work has been -- we’ve been blocking on that for I think more than a year now.  The champions
-were previously working with Igalia on it, that contract ended.  And no one has picked it up
-since then.  So there were multiple issues.  One was that it was unclear which APIs were
-intended to be exposed on the web.  There was kind of a lack of full logic for that.  And then
-more recently, Mozilla raised some sort of uncertainty about whether we had fully added the set
-of APIs, and definitely we -- what we omit is tests.  We only test the existence in IBL of
-things in ShadowRealms, the existence of the properties, but we need to also test the
-functionality.  Because in practice, although in the specification there’s one point that says,
-oh, yeah, every place you look for the global object, just look for this other thing.  That’s
-easier said than done and has to be replicated in different ways across the code base.  We’ll
-need both the tests and the audit of the specification to move forward.  I think Leo said in
-his communication with us they’re going to look into it in sales force, so I think we should
-revisit this in the September meeting.  Whether that is to have an update on the progress or
-consider a demotion to Stage 2 if the project remains unstaffed.
+DE: Yeah, I can give an update on the web integration work, but I’ll -- we can get a comment from DLM as well, since Mozilla provided really helpful feedback here.  So the web integration work has been -- we’ve been blocking on that for I think more than a year now.  The champions were previously working with Igalia on it, that contract ended.  And no one has picked it up since then.  So there were multiple issues.  One was that it was unclear which APIs were intended to be exposed on the web.  There was kind of a lack of full logic for that.  And then more recently, Mozilla raised some sort of uncertainty about whether we had fully added the set of APIs, and definitely we -- what we omit is tests.  We only test the existence in IBL of things in ShadowRealms, the existence of the properties, but we need to also test the functionality.  Because in practice, although in the specification there’s one point that says, oh, yeah, every place you look for the global object, just look for this other thing.  That’s easier said than done and has to be replicated in different ways across the code base.  We’ll need both the tests and the audit of the specification to move forward.  I think Leo said in his communication with us they’re going to look into it in sales force, so I think we should revisit this in the September meeting.  Whether that is to have an update on the progress or consider a demotion to Stage 2 if the project remains unstaffed.
 
-DLM: That was a great summary of our concerns.  Thank you.  And the only thing I’d add is that we
-consider implementation blocked until these concerns are resolved.
+DLM: That was a great summary of our concerns.  Thank you.  And the only thing I’d add is that we consider implementation blocked until these concerns are resolved.
 
-DE: Yeah, and I would note that the three browsers do have implementations of the core
-ShadowRealm logic, which is not, you know, a trivial thing.  So it would be -- it would be
-quite unfortunate if we could not work out this last bit.
+DE: Yeah, and I would note that the three browsers do have implementations of the core ShadowRealm logic, which is not, you know, a trivial thing.  So it would be -- it would be quite unfortunate if we could not work out this last bit.
 
-SYG: Yeah, just that V8 has discussed the same concerns with SpiderMonkey, and the SES folks and
-agree with SpiderMonkey’s concerns and we also consider ourselves blocked until the steps are
-done.
+SYG: Yeah, just that V8 has discussed the same concerns with SpiderMonkey, and the SES folks and agree with SpiderMonkey’s concerns and we also consider ourselves blocked until the steps are done.
 
-DE: So is anybody interested in getting involved here?  I would be happy to sort of mentor them
-or anything.  Okay, I guess we’ll leave it up to the sales force people, or if anybody wants to
-volunteer offline, you are completely welcome to.  Just get in touch with me or the champions.
+DE: So is anybody interested in getting involved here?  I would be happy to sort of mentor them or anything.  Okay, I guess we’ll leave it up to the sales force people, or if anybody wants to volunteer offline, you are completely welcome to.  Just get in touch with me or the champions.
 
-PKA: Thanks, everybody.  I hope this was useful.  I think some productive things were said and
-learned.  I don’t know if there’s I know questions comments or -- at a meta level about this
-presentation, about repeating it, about potentially doing a similar thing for Stage 2
-proposals, of which there are many more.  So obviously not all online committee time
-necessarily, but doing a similar kind of review in hopes of prompting forward or backward
-progress on those.  Open to any questions or comments.
+PKA: Thanks, everybody.  I hope this was useful.  I think some productive things were said and learned.  I don’t know if there’s I know questions comments or -- at a meta level about this presentation, about repeating it, about potentially doing a similar thing for Stage 2 proposals, of which there are many more.  So obviously not all online committee time necessarily, but doing a similar kind of review in hopes of prompting forward or backward progress on those.  Open to any questions or comments.
 
-DLM: I just wanted to say thank you for doing this.  I thought it was very helpful and it was
-nice to be able to discuss this with the other implementers at the same time.  So I think it’s
-particularly helpful for Stage 3 proposals, but it could be interesting for Stage 2 as well.
+DLM: I just wanted to say thank you for doing this.  I thought it was very helpful and it was nice to be able to discuss this with the other implementers at the same time.  So I think it’s particularly helpful for Stage 3 proposals, but it could be interesting for Stage 2 as well.
 
-PFC: I want to mention that some of the tests that -- or some of the proposals that do have 262
-tests like JSON.parse source access and resizable array buffers and temporal to a certain
-extent, they all have tests in the staging folder of test262.  So another way for more people
-to get involved would be to help with the effort of porting those to the main tree of test262
-since that is a requirement for Stage 4.
+PFC: I want to mention that some of the tests that -- or some of the proposals that do have 262 tests like JSON.parse source access and resizable array buffers and temporal to a certain extent, they all have tests in the staging folder of test262.  So another way for more people to get involved would be to help with the effort of porting those to the main tree of test262 since that is a requirement for Stage 4.
 
-DE: I want to raise something that was raised on the chat, that we do is have a lot of proposals
-in Stage 2 and 1 that haven’t been discussed in a long time and maybe just kind of unowned, and
-I hope that discussions like there, whether in plenary or not, can be a good way for us to
-decide on what to do with them next.  I’m really interested in any feedback that you have
-offline also about how to approach this problem.
+DE: I want to raise something that was raised on the chat, that we do is have a lot of proposals in Stage 2 and 1 that haven’t been discussed in a long time and maybe just kind of unowned, and I hope that discussions like there, whether in plenary or not, can be a good way for us to decide on what to do with them next.  I’m really interested in any feedback that you have offline also about how to approach this problem.
 
-CDA: Okay.  There’s nothing else in the queue.  We are right at time.  So thank you, everyone.
-Correct me if I’m wrong, I don’t think we need a summary for this item?
+CDA: Okay.  There’s nothing else in the queue.  We are right at time.  So thank you, everyone. Correct me if I’m wrong, I don’t think we need a summary for this item?
 
-DE: I think we need a summary.  We have five different things we discussed and came to
-conclusions for each of them.
+DE: I think we need a summary.  We have five different things we discussed and came to conclusions for each of them.
 
 PKA: I’m happy to write that offline.
 

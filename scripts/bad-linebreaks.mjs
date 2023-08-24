@@ -23,23 +23,41 @@ export function findBadLinebreaks(file, fix = false) {
 
   const re = /(?<=[\w\d ])\n(?=[\w\d])/g;
   const matches = Array.from(contents.matchAll(re));
+  let badLinebreaks = matches.length;
 
-  for (const m of matches) {
+  if (matches.length > 0) {
 
-    if (fix) {
-      contents = `${contents.slice(0, m.index).trimEnd()} ${contents.slice(m.index + 1)}`;
-    } else {
+    const lines = contents.split('\n');
 
-      const start = Math.max(0, m.index - 33);
-      const end = Math.min(contents.length - 1, m.index + 33);
+    for (const m of matches) {
 
-      console.log(`found erroneous linebreak at line ${getLine(contents, m.index)}:\n${contents.slice(start, end)}\n`);
+      const lineNumber = getLine(contents, m.index);
+
+      // we can't use quantifiers with lookbehind, so we must resort to this
+      // to skip code blocks where the linebreak is likely deliberate/desired
+      const previousLine = lines[lineNumber - 1];
+
+      if (previousLine.startsWith('`')) {
+        badLinebreaks -= 1;
+        continue;
+      }
+
+      if (fix) {
+        contents = `${contents.slice(0, m.index).trimEnd()} ${contents.slice(m.index + 1)}`;
+      } else {
+
+        const start = Math.max(0, m.index - 33);
+        const end = Math.min(contents.length - 1, m.index + 33);
+
+        console.log(`found erroneous linebreak at line ${lineNumber}:\n${contents.slice(start, end)}\n`);
+
+      }
 
     }
 
   }
 
-  if (matches.length > 0) {
+  if (badLinebreaks > 0) {
 
     if (fix) {
       fs.writeFileSync(file, contents);

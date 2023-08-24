@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     "arrow-spacing": "error",
     "brace-style": ["error", "1tbs"],
+    "keyword-spacing": "error",
     "object-curly-spacing": ["error", "always"]
   },
   overrides: [

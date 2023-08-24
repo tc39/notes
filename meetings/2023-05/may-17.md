@@ -200,11 +200,9 @@ CDA: Okay. So, Frank, you were calling for consensus for Stage 1 advancement?
 
 FYT: Yes.
 
-DE: Yeah. So we’re calling for consensus specifically on the scope that JGT and I articulated, not the
-broader scope that FYT named? Right?
+DE: Yeah. So we’re calling for consensus specifically on the scope that JGT and I articulated, not the broader scope that FYT named? Right?
 
-FYT: No, no, I didn’t propose extended. Someone else did that. I made it very clear, this particular proposal is only for ZonedDateTime. Someone else suggest amendment for change it. I never agree
-with it. I just bring this here. So my proposal is only zone date time format.
+FYT: No, no, I didn’t propose extended. Someone else did that. I made it very clear, this particular proposal is only for ZonedDateTime. Someone else suggest amendment for change it. I never agree with it. I just bring this here. So my proposal is only zone date time format.
 
 CDA: Okay, great. So we’re calling for a consensus on a way to efficiently format zone date times?
 

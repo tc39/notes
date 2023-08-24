@@ -74,8 +74,7 @@ IS: Next slide. I have explained in the past what is the philosophy in ECMA rega
 
 IS: Next slide. Here I have taken out always the yearly current statistics for the ECMA-262. Not for the previous versions. In 2012 we started with the HTML format, so this was only a trial, and then 2015 and 2016, it was a peak, so that was when we have introduced html, and then it went -- it went a little bit down and now for the yearly -- for the latest yearly output, we have here around 100,000 -- 122,000. Last year we had, for the HTML access, about 100,000, which is still quite a lot. We still have the peaks for the edition 5.1, 6 and 7 editions too, --about which I reported many times. We don’t know where they come from. But now this is obviously not counted here because here I am always taking the last year only -- only the actual year’s access.
 
-IS: Next slide. Is actually the same thing, a little bit try to compare the two things (access and downloads). Also one is “apples”, the other is “oranges”. You can see the latest download for the ECMA 262. You can see it is pretty stable over the years. And what you see below, you know, these figures, with
-the -- with the yellow background, this is compared in percentage to the all ECMA downloads. So you can see that only this one standard, this ECMA-262 is very important to ECMA as a whole and that’s why we’re trying to solve this “nice” PDF problem. There’s a huge user community out there that is really demanding that.
+IS: Next slide. Is actually the same thing, a little bit try to compare the two things (access and downloads). Also one is “apples”, the other is “oranges”. You can see the latest download for the ECMA 262. You can see it is pretty stable over the years. And what you see below, you know, these figures, with the -- with the yellow background, this is compared in percentage to the all ECMA downloads. So you can see that only this one standard, this ECMA-262 is very important to ECMA as a whole and that’s why we’re trying to solve this “nice” PDF problem. There’s a huge user community out there that is really demanding that.
 
 IS: Next slide. So this is the usual type of statistic that I always give to you: figures since the beginning of the year. And you can see all the TC39 standards, added together, it is always, since the beginning of the statistic, over 50% of the total Ecma standards, so at the moment, it is 54% of all the download TC39 standards. The second one is interesting, is the ECMA-404, JSON data format, which is booming. It is almost now half of the downloads of the ECMAScript language standard, ECMA-262.
 
@@ -104,13 +103,10 @@ which is 262 status updates..
 
 Presenter: Kevin Gibbons (KG)
 
-KG: Okay, this will be an extremely brief update. There were no editorial changes and no normative
-changes. We have the same list of upcoming and planned work. Also, the spec was cut last meeting.
+KG: Okay, this will be an extremely brief update. There were no editorial changes and no normative changes. We have the same list of upcoming and planned work. Also, the spec was cut last meeting.
 There will be a formal vote later and not as part of this presentation. That’s it. Thanks.
 
-KG: We did do a bunch of small editorial tweaks. It’s not like we just stopped working for last
-two months. It’s just that not much was particularly worth calling to the attention of the
-delegates.
+KG: We did do a bunch of small editorial tweaks. It’s not like we just stopped working for last two months. It’s just that not much was particularly worth calling to the attention of the delegates.
 
 ### Conclusion
 
@@ -123,8 +119,7 @@ Presenter: Ujjwal Sharma (USA)
 - [spec](https://github.com/tc39/ecma402)
 - [PR](https://github.com/tc39/ecma402/pull/768)
 
-USA: All right. Hello. And welcome again. Well, okay, real quick, status update. We have one PR
-that needs consensus, so or #768 on ECMA-402, I can open it up real quick for you. It is a reorder of the resolved options in number format. So we have reordered the resolved option to move up `roundingPriority` in order to move it closer to all the other rounding related operations. This for a little bit of context, this is a rounding related option that was recently added as part of NumberFormat V3, however, because it was added at the end, alongside all the new options, it felt a bit odd to have all the rounding related options all over the place, so RGN made this PR to reorder this in order to have all the rounding related options neatly grouped next to each other, and this has TG2 consensus, so I would like to hear any thoughts folks might have regarding this. I’ll post a link to these slides on the agendas and, you can check out the discussion we had on this in TG2.
+USA: All right. Hello. And welcome again. Well, okay, real quick, status update. We have one PR that needs consensus, so or #768 on ECMA-402, I can open it up real quick for you. It is a reorder of the resolved options in number format. So we have reordered the resolved option to move up `roundingPriority` in order to move it closer to all the other rounding related operations. This for a little bit of context, this is a rounding related option that was recently added as part of NumberFormat V3, however, because it was added at the end, alongside all the new options, it felt a bit odd to have all the rounding related options all over the place, so RGN made this PR to reorder this in order to have all the rounding related options neatly grouped next to each other, and this has TG2 consensus, so I would like to hear any thoughts folks might have regarding this. I’ll post a link to these slides on the agendas and, you can check out the discussion we had on this in TG2.
 
 USA: Quickly talking about the editorial updates we made, we did a couple of refactors. Some of them are pretty substantial. I’m not sure if you are familiar with most of this work going on, but I’m sure that if you have been following both the specs, you’d find some of them really interesting. For example, ECMA-402 had this thing where we had camelCase field names, which is not a thing in ECMA-262. It is frowned upon, and we are working on replacing that with pascal case, which is is the sort of convention, and we are changing some phrasing here and there to make it more consistent. We added notes regarding the presences to CLDR as well as UTS 35, and we add more material notes about the CAL behavior and we updated the properties of Intl locale, and all these tiny editorial changes that sort of improved the reading experience of the spec. And that’s it. Well, first of all, I would like to specifically ask for consensus regarding this.
 
@@ -152,8 +147,7 @@ Presenter: Philip Chimento (PFC)
 
 - [repo](https://github.com/tc39/test262)
 
-PFC: We went over a short status update in our maintainers meeting last week and don’t
-have a lot to report. One thing that’s happened since last time is test coverage for the `Array.fromAsync` proposal has landed, and others are in the works.
+PFC: We went over a short status update in our maintainers meeting last week and don’t have a lot to report. One thing that’s happened since last time is test coverage for the `Array.fromAsync` proposal has landed, and others are in the works.
 
 ## Updates from the CoC Committee
 
@@ -161,12 +155,9 @@ Presenter: Jordan Harband (JHD)
 
 JHD: So the only thing to report is one item that’s been on our docket for a while, but unfortunately, there’s been a dearth of available CoC group members to discuss it, so I have nothing to report on that just yet, but I would like to invite anyone who is interested in participating in code of conduct committee to indicate your interest. You can feel free to reach out privately or file an issue on the reflector, because the more people we have, the more efficiently we can address items. Thank you.
 
-DE: Question, do -- how many people are active in the conduct committee these days? Like, regularly
-attending meetings?
+DE: Question, do -- how many people are active in the conduct committee these days? Like, regularly attending meetings?
 
-JHD: There have only been two people regularly attending meetings, myself and CDA, for a little
-while. The time slot conflicts with one person, and we haven’t been able to reschedule yet. And
-another two people at least have had a lot on their plate and been generally unavailable. I haven’t gone and audited the entire list, but that’s what I have in my head about it.
+JHD: There have only been two people regularly attending meetings, myself and CDA, for a little while. The time slot conflicts with one person, and we haven’t been able to reschedule yet. And another two people at least have had a lot on their plate and been generally unavailable. I haven’t gone and audited the entire list, but that’s what I have in my head about it.
 
 ## TC39 Public Calendar
 
@@ -180,8 +171,7 @@ CDA: So the chairs had agreed that there’s utility in having a public calendar
 
 CDA: I see those down sides are listed down here. Some people find the, you know, being able to see who is attending the meeting to be incredibly useful. And that’s fine. But, again, we have to be respectful for those who do not want their email addresses to be exposed. The tradeoffs -- the benefits outweigh the down sides in being able to have just one source of truth for all of the meetings and not have some meetings on this calendar and some meetings on this other calendar and we have to subscribe to both of them to get the entire view of everything that’s going on. So, yeah, just wanted to mention this here. On the one hand, bring awareness that this is happening, as well as just get any feedback on thoughts and concerns, if any.
 
-SYG: So I support not changing how we use the existing calendar. Remind me again what
-the goal is for having a public calendar, in addition to the existing one?
+SYG: So I support not changing how we use the existing calendar. Remind me again what the goal is for having a public calendar, in addition to the existing one?
 
 CDA: The goal for having a public calendar is for people that participate in the other meetings that folks that are not delegates or invited experts or ECMA staff would be able to be in tune to what is going on. Particularly the outreach group meetings. I think for ECMA-402, this is requested by one of the editors. I think the editors’ meeting, is that -- I don’t know if that’s open -- you know, open invitation or anything, but that was one that was mentioned to be appearing on the public calendar.
 
@@ -191,17 +181,11 @@ MF: Just that some of the meetings that we have are open invite. Not necessarily
 
 SYG: I don’t really have any concerns. That all seems to be to me to be more addressable as a per-meeting thing. Like, you can add folks you want to each meeting. But to have a consolidated public calendar for TC39, I mean, I’m still not entirely convinced that that needs to be there. But if there’s no existing change to how we use the existing calendar, I don’t really have any concerns.
 
-CDA: Yeah, the changes to how we use and existing calendar are the ones I mentioned, and that’s anything that was meant to go on the public calendar. The folks involved in those meetings need to
-decide, first of all, whether the description contains anything that shouldn’t be on the public calendar, and then the issue with regard to the guest list being public or not. Is there any other
-thoughts, comments, concerns, anybody in the queue?
+CDA: Yeah, the changes to how we use and existing calendar are the ones I mentioned, and that’s anything that was meant to go on the public calendar. The folks involved in those meetings need to decide, first of all, whether the description contains anything that shouldn’t be on the public calendar, and then the issue with regard to the guest list being public or not. Is there any other thoughts, comments, concerns, anybody in the queue?
 
 USA: Yes. Next up we have Dan Minor.
 
-DLM: Yes, I want to say this seems like a good compromise to me and I’m in favor of this and I’m
-hoping this will increase visibility of our actions and maybe, therefore, also increase diversity
-and participation by more people. I mean, we do have the outreach meetings, but I’m not sure how
-discoverable those are at the moment, and probably other meetings as well that other people want to
-observe or even if they don’t observe directly, just have awareness that they are occurring. I think this is a positive change.
+DLM: Yes, I want to say this seems like a good compromise to me and I’m in favor of this and I’m hoping this will increase visibility of our actions and maybe, therefore, also increase diversity and participation by more people. I mean, we do have the outreach meetings, but I’m not sure how discoverable those are at the moment, and probably other meetings as well that other people want to observe or even if they don’t observe directly, just have awareness that they are occurring. I think this is a positive change.
 
 MF: So the public calendar will help with discoverability of other meetings with people who know about the public calendar, but are we doing anything to promote or make the public calendar more discoverable or put it up on our website or as the topic of the matrix room? Do we have any plans like that?
 
@@ -276,16 +260,14 @@ DE: If this makes sense, I will review it briefly, thanks. This is a good exampl
 
 CDA: There is also a +1 from JHD.
 
-USA: And that is it. So I think you have a lot of support. Would you like
-to conclude?
+USA: And that is it. So I think you have a lot of support. Would you like to conclude?
 MF : No I think that is all, thank you everyone.
 
 USA: I guess we can spend a couple of minutes summarizing. How do we do this, and pull up the notes and do it collaboratively or?
 
 DE: Yes for context, sorry to jump in because I proposed this and in the past, we did not really get some of these written unless we did it collectively. I think this is really important because the summary and the conclusions are the results of our work. If we can present the notes for a second and then the champion or the presenter or anybody else who wants to write a summary, that would be valuable. So both the summary and the conclusion.
 
-CDA: I think we were glossing over the earlier ones because it was more administrative items earlier on but now we are getting to normative changes and proposals. And I think, we need to flash it up on
-the screen and sort of collaboratively summarize and write the conclusions.
+CDA: I think we were glossing over the earlier ones because it was more administrative items earlier on but now we are getting to normative changes and proposals. And I think, we need to flash it up on the screen and sort of collaboratively summarize and write the conclusions.
 
 DE: Let’s go back to the previous topic. And I think administrative topics are good to the extent it was a good idea to have that topic because it did it in the first place.
 
@@ -375,8 +357,7 @@ KG: It is a string. I did not mention it, I thought it was self-evident because 
 
 SYG: Apologize if this has been discussed on the tracker and is there a BYOB? Is there bring-your-own-buffer? Do the `from` methods always create their own buffer? Can I give them a buffer to write into, or do I then have to stitch them together at the end?
 
-KG: Right now they create a new buffer. I am open to adding more stuff that to assign into an existing buffer. I have never wanted that personally. For the streaming API, you have to stitch them together at
-the end, assuming that is the thing you want, but if you are streaming to the network you can send each chunk as it comes in.
+KG: Right now they create a new buffer. I am open to adding more stuff that to assign into an existing buffer. I have never wanted that personally. For the streaming API, you have to stitch them together at the end, assuming that is the thing you want, but if you are streaming to the network you can send each chunk as it comes in.
 
 SYG: I think for one shot, I agree and I don’t see much of a use case of BYOB but for multishot, that – none of these are stage 2 concerns, and I support Stage 2.
 
@@ -394,8 +375,7 @@ KG: I do want to come back and talk about options but I want to explicitly and s
 
 USA: You have stage 2.
 
-KG: Thanks so much. And then so the main things to be worked out are assigning to an existing buffer, and this question of handling of padding and the white space, and the mixed decoding. And these are surely subjective. We can have different defaults and options or not options and if anyone has opinions or arguments or decisions you don't agree with, please bring them up now because I have been waffling on all of them, and there are arguments for both sides. The current plan is not to enforce padding and not have an option to enforce padding and not allow white space and not allow mixed decoding. Just to fill out this matrix here. So if anyone wants including those options, please, please bring it up on the issue
-tracker and I will be coming back for stage 3 once I have worked those details out.
+KG: Thanks so much. And then so the main things to be worked out are assigning to an existing buffer, and this question of handling of padding and the white space, and the mixed decoding. And these are surely subjective. We can have different defaults and options or not options and if anyone has opinions or arguments or decisions you don't agree with, please bring them up now because I have been waffling on all of them, and there are arguments for both sides. The current plan is not to enforce padding and not have an option to enforce padding and not allow white space and not allow mixed decoding. Just to fill out this matrix here. So if anyone wants including those options, please, please bring it up on the issue tracker and I will be coming back for stage 3 once I have worked those details out.
 
 KG: There is nothing else on the queue, so that is all I had.
 
@@ -430,8 +410,7 @@ KG: What isNaN currently does is insane.
 
 JHD: Sure, but we corrected that with `Number.isNaN`. It does the expected thing and never throws for any reason. I agree with you that we should be more rigorous with the types we accept in our APIs, but I think predicates are a special case for that.
 
-KG: If we are making a predicate, I think if the question the predicate is asking is “is this a well-known Symbol?”, then I agree, but if it is asking “is this Symbol well-known?”, then the question only applies to
-Symbols and it should throw on non-Symbol inputs.
+KG: If we are making a predicate, I think if the question the predicate is asking is “is this a well-known Symbol?”, then I agree, but if it is asking “is this Symbol well-known?”, then the question only applies to Symbols and it should throw on non-Symbol inputs.
 
 JHD : I think that the question it is asking is “is this a well-known Symbol?” full stop, and if you think the name should be changed, that is fine.
 
@@ -506,9 +485,7 @@ NRO: And so this is again the graph of all the modules that depend on each other
 
 JRL: So you have an example showing importing a module expression. I am curious, how this interacts with the “import hook” hook, what is the specifier that you receive in the hook method? What is specifier that the import hook message receives when you have import hook or declaration.
 
-NRO: I have an example in the slides for that but however, the import hook is just in the host and the
-module will not have a separate hook, so you have importing a module expression declaration and the
-module will be present and the hook will not be called.
+NRO: I have an example in the slides for that but however, the import hook is just in the host and the module will not have a separate hook, so you have importing a module expression declaration and the module will be present and the hook will not be called.
 
 JRL: Can you show the five phases?
 
@@ -516,9 +493,7 @@ NRO: Yes.
 
 JRL: Um so essentially, import hook is between “fetch/compile” and “attach context”, and modules are already at the attached context?
 
-NRO: So, so this slide, the hook is the first three phases that is currently hand by the host and with
-the single module. And the first two hook is complete inside the 262, and the 262 will continue linking
-the dependency.
+NRO: So, so this slide, the hook is the first three phases that is currently hand by the host and with the single module. And the first two hook is complete inside the 262, and the 262 will continue linking the dependency.
 
 JRL: Module expression and declaration are at the attached state and they are already attached to the context and waiting for linking?
 
@@ -526,8 +501,7 @@ NRO: Yes.
 
 JRL: Thank you.
 
-GB: Can you mention if you have any specific constraints on the proposal graph As it were where we can record somewhere. And I know we have this picture. The hard constraints are those the
-circle boxes?
+GB: Can you mention if you have any specific constraints on the proposal graph As it were where we can record somewhere. And I know we have this picture. The hard constraints are those the circle boxes?
 
 NRO: Circle boxes is current proposals, and the module declaration and module expression happens here if the right of this slide. And just module feature has dependency with imports that show – however this is not a problem because they are currently grouped in a single group also and in happens after module expression, and then we have another hard dependency where module source static analysis which is known as the layer one of the compartment proposal with the changes in the proposal. That has a dependency on something that exposes the module source object. Either the source phase import proposal that defines some import of the source of module or the module hook proposal other than defining how to hook into a process defining what a source is. And there is another hard dependency between some other sources which is called compartments layer two, I believe. Needs to happen after the previous compartments layer because it introduces a way to cast a module with custom behavior when loaded into the import hook. Those are the three hard dependencies that we have that are proposals and all of the import phase modifier and modular hooks known as compartments layer zero. These can advance without any other proposal, as long as we make sure that the picture is coherent at any ten step.
 
@@ -636,24 +610,18 @@ KKL: We have waffled on this point and we do not hold feelings strongly one-way 
 
 RBN: I have not had a chance to speak. And my point is a little bit broader than I think what JHD was referring to. We were having a discussion internally with my team and some folks from the edge team about this future. And one of the things that came up from one of my team members is that there is a couple of issues that I have with the import syntax or that they had with the import syntax at the top level. In that it really does feel like you are trying to shoehorn in the import phase by mandating certain things like you have to import * if it is thing and use default import to get asset. And making it feel import is not exactly – or top level import syntax is not the right place for those things and being one position. Another position being that having phase in with feels like trying to feel before via the object you are trying to pass in which feels odd, and the point that is confusing and we have a question about whether or not the import metaproperty call like syntax would be considered – i been searching through the insert tracker and there is some potential advantages to that method call syntax that might be a better position. One is that i resolution that you get with the asset references design, does not really depend on module loading. So there is not really dynamic operation that needs to necessarily occur, it is just URL resolution for the most part, and if that is the case, then does it makes sense to return a promise that wraps the result in a dynamic import that is just doing a URL resolution? Versus having a mechanism to do URL resolution that is not dynamic? Does not return a promise. And if import call does not return a promise and that goes down the Zalgo path this is something that sometimes is async and returns a promise and sometimes it does not. Something like a import metaproperty call-like syntax is easier to enforce and it is new syntax so you are exposing new capability and you want to block, then tooling today will not support because it is new syntax. It is the – it will give us a place to differentiate what the value is and not get into the Zalgo is async and is it not – and custom tailored to the call, and so it might have more insert that is specific to a call and you have this complexity of potentially in the a future going with well if you are trying to do a resolve hook, then this specific attribute does not make sense or this specific extension does not make sense but now we got this open design that will allow us to put these things in here or during static semantics checks, and align in with the phases that you provided. And encompassing all of this and the fact that of what you are wanting to do with the import phase imperative operation and get the module source for a later work, and it does not feel like top level syntax will give benefit of this and we thought that the import metaproperty call is the best approach.
 
-GB: To clarify, you say that is also for the static case and not just the dynamic case. How would the
-metaproperty solve the problems that static source imports solve which we have been describing
-for the the last few weeks?
+GB: To clarify, you say that is also for the static case and not just the dynamic case. How would the metaproperty solve the problems that static source imports solve which we have been describing for the the last few weeks?
 
-RBN: That was the question I had, so an import resolve call or even import source at the top
-level that isn’t a condition is still statically analyzable and still be a part of the module graph,
-does not depends on you actually saying that I will write a top level import declaration but a
-call – except for possibly an exception you would normally have purchased, if you don’t –
+RBN: That was the question I had, so an import resolve call or even import source at the top level that isn’t a condition is still statically analyzable and still be a part of the module graph,
+does not depends on you actually saying that I will write a top level import declaration but a call – except for possibly an exception you would normally have purchased, if you don’t –
 
 GB: The problem with dynamic code if you don’t know whether it will run or not, you cannot treat it as part of static build optimization. That is just parts of import system and we know that the top level execution of this module will require this JavaScript module source or web assembly module source to be in a compared form and furthermore not be evaluated, and from a security perspective that is a difficult property to import. Something similar to what you are describing is resource imports which we do describe in the same phase module where you can retain a handle on the resource through import system. And we did explore it just that primitive and we went through a period in our early decision exploration and if it is resource primitive was enough to capture all the requirements that we needed and what we determined if even with a resource primitive you still have the CSP problem because you don’t know how the resource will be used. And you have you still have some kind of static analyzability problem because now the resource is being used in dynamic code. So I think that direct relation between the module system which is how users interacts and how they gain access to resources and the usage of those resources, that is absolutely fundamental. And for modules in particular, that is how users get access to modules. So it is quite surprising to hear you say that you not how you get access to the module.
 
-RBN: I don’t think I had a fully understanding of the specifics around why the top level
-imports were a useful piece to this. And I think I do now, and I appreciate that. I still have a concern about the very somewhat complex mix of what is it a default import or when it is a namespace import and can it make space to have a named import but that does not feel that fits either or import binding and all of these weird requirements around what you can actually do with syntax, feel strange to have all of this disparity that makes it feel not like a great fit. So I think there – of all of the import phase modifiers and most of them seem to use defaults imports but I think still one is listed as using a namespace import and I don’t know why we need that disparity if you cannot of a import.
+RBN: I don’t think I had a fully understanding of the specifics around why the top level imports were a useful piece to this. And I think I do now, and I appreciate that. I still have a concern about the very somewhat complex mix of what is it a default import or when it is a namespace import and can it make space to have a named import but that does not feel that fits either or import binding and all of these weird requirements around what you can actually do with syntax, feel strange to have all of this disparity that makes it feel not like a great fit. So I think there – of all of the import phase modifiers and most of them seem to use defaults imports but I think still one is listed as using a namespace import and I don’t know why we need that disparity if you cannot of a import.
 
 LCA: There is a couple of reasons for this. And so for the first specifically destructuring is not possible because engines have told us they are not willing or able to support like binding getters, I guess they call them. Where the whole point of defer is that once you access a property of this namespace, does the module get evaluated, right? So destructuring does not make sense. What makes sense is *name space. This does not make sense to do default unless the defer would somehow be – unless the default value would be the name space, but then it would make it difficult to take an existing import which would be like import* as name space and defer to namespace because then you replace the star with defer and why doesn’t the defer use the same syntax that the regular import syntax does and the idea is to make it easy to go from one syntax to another and one module phase to another module phase specifically for defer. And for the asset and first phase, there is no destructuring because there is no module name phase destructured, and there is no star as namespace because there is no name for subject. So only default – there is only one bonding to be bounds which is default binding.
 
-RBN: I appreciate that information and when I was discussing with my team, a lot of people on
-the team was somewhat negative on the idea of import phase keyword following import. That is what type script having a type keyword following import. And one of the reasons is that had the idea of these import attributes been a thing prior to us looking for a way to say you want to import a type from a module, we might have said maybe import attribute makes sense instead. In which case, we were under the impression that was not idea to go down that route or the source attributes to go down that without or to go with – someone on my team said all of arguments of why it sudden not be with but the argument of why it should be with. It does not argue the case in that case.
+RBN: I appreciate that information and when I was discussing with my team, a lot of people on the team was somewhat negative on the idea of import phase keyword following import. That is what type script having a type keyword following import. And one of the reasons is that had the idea of these import attributes been a thing prior to us looking for a way to say you want to import a type from a module, we might have said maybe import attribute makes sense instead. In which case, we were under the impression that was not idea to go down that route or the source attributes to go down that without or to go with – someone on my team said all of arguments of why it sudden not be with but the argument of why it should be with. It does not argue the case in that case.
 
 GB: My experience with the type keyword, has that generally been well received with the ecosystem?
 
@@ -727,8 +695,7 @@ WH: You can’t disambiguate these things until you get to the end of the import
 
 GB: I think the intention would be for it to be default import because at least in our proposal, the identifier is not optional. So the source has to be – keyword `source` has to be followed by the source you are binding.
 
-???: I think the confusion if the dot, dot, dot is a string. And so if it is a source, it is a
-default source, and source binding at the default port. And from as the binding.
+???: I think the confusion if the dot, dot, dot is a string. And so if it is a source, it is a default source, and source binding at the default port. And from as the binding.
 
 WH: My point is as we extend the syntax of import statements’ from clauses, that can cause ambiguity.
 
@@ -756,9 +723,7 @@ LCA: So the sort of issue is around SES’s concern that all intrinsic is reacha
 
 MM : Let me respond. That is not adequate for our safety concern that the host is required. And the thing that is adequate for us from our safety concern from a very, very delicate on the edge of the cliff, is the fact that the new syntax that makes this accessible is syntax that can only appear in module and cannot appear in an evaluable string. And syntax in the value of a string. That makes this introduction safe with us but this should not be taken as a precedent. This delicate line is much more delicate than anything you should treat as precedent. And the precedent going forward should be no new language intrinsic even if the host has to be involved in creating it. And the language intrinsic not reachable by named evaluation from global this until you have `getIntrinsics` proposal that will make this entire problem go away. And once we have getIntrinsics we will get rid of taboo. The default answer should be no.
 
-LCA: The other thing here is abstract source, and prototype with the
-introduction of the module type approach. Any introduction of the Ecma-262 and
-these would be reachable.
+LCA: The other thing here is abstract source, and prototype with the introduction of the module type approach. Any introduction of the Ecma-262 and these would be reachable.
 
 ???: So this is exactly the time it becomes reachable from a syntax that is potentially dynamically evaluated with the global source is precisely the moment it goes away.
 
@@ -782,8 +747,7 @@ GB: I mean we can make the change if that is something that people would like to
 
 LCA: Yeah, um, I guess the question is that are people happy with the semantics here? I think the syntax is something – I don’t know how people feel about this, but we could consider seeing this goes to stage 3 conditional on syntax import.phase. And I would be fine with this and if we can move this ahead to stage 3, conditional of it being changed to import.phase. And does anybody strongly object this, we can come back next time?
 
-SYG: I am not okay with stage 3, if you want to record there is strong consensus for sa man
-text and open remaining is syntax. But for I do not wanted to keep alluding stage 3 to have it conditional on syntax which means we don’t know what to implement. But I recognize it is important to maintain momentum and that everything is done except this remaining syntax question, and so we have made up stage in the past like 2.5. It is okay to record the consensus but I am not okay making stage 3 that it has not been historically. We should have another stage that is implement.
+SYG: I am not okay with stage 3, if you want to record there is strong consensus for sa man text and open remaining is syntax. But for I do not wanted to keep alluding stage 3 to have it conditional on syntax which means we don’t know what to implement. But I recognize it is important to maintain momentum and that everything is done except this remaining syntax question, and so we have made up stage in the past like 2.5. It is okay to record the consensus but I am not okay making stage 3 that it has not been historically. We should have another stage that is implement.
 
 GB: I do not want to discourage people’s feedback. And if you create a system where you incentive the champion to overrule our feedback, that is not a good system. If we got stage 3, and had a hard stance not top open to change syntax, and we are trying to take on both syntax the feedback that was given and we should not be penalized not to go to stage 3 and that seems a bit unfair.
 

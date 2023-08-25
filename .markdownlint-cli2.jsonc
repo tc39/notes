@@ -1,0 +1,12 @@
+{
+  "globs": [
+    "**/*.md"
+  ],
+  "ignores": [
+    "node_modules/**",
+    "meetings/201*/*.md",
+    "meetings/202[0-2]*/*.md",
+    "meetings/2023-0[1-3]/*.md",
+    "scripts/test-samples/*"
+  ]
+}

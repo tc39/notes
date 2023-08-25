@@ -60,8 +60,7 @@ RPR: Yes. We have five mics around the room. [inaudible] we ask you to pull it n
 USA: And a quick overview TCQ. You go to the queue for the current item that showses the item, the topics who is speaking right now and add yourself to the queue using any of these buttons. They are [inaudible] a point of order, for example, when something . . . like an emergency or note-taking, clarifying question would be clarifying the existing topic than you can discuss the current topic, add yourself to the queue and add new topic. Here are the speakers here. It’s slightly different in that there’s a button that says I am done speaking. Please use this button whenever you’re done speaking. So we don’t have to manually do that. And last, we have a matrix chat for discussing [inaudible] you have been using the TC39 delegates chat for discussions and for all topic items you can feel free to chat about that. And there’s TC39 space that contains all of these, including a check [inaudible] but we have also a social chat for the people in person in Bergen, so that’s also in the space.
 Regarding the IPR policy, we are all either member delegates or invited experts. If you are an invited expert, and you have not signed the DG form, please do. There’s further details for everyone in the contributing in 262. But please make sure that aware of the IPR implications for participation.
 Then we have the notes right now we have the transcriptionist helping out with the notes. We require your assistance to fix up the notes while they are being typed up. So I guess let’s do a call for note-taker later.
-Quickly talking about the next meeting, which is also hybrid, and being hosted by Bloomberg in Tokyo. That’s exciting. Remote attendees that in Japan standard time. So exciting
-And okay. So now let’s move on with the housekeeping.
+Quickly talking about the next meeting, which is also hybrid, and being hosted by Bloomberg in Tokyo. That’s exciting. Remote attendees that in Japan standard time. So exciting And okay. So now let’s move on with the housekeeping.
 I think we can move on with the secretary’s report, if ready all right.
 
 RPR: Just to confirm... any objections to the past meeting’s notes being published? No. And any objections to current agenda? No again.
@@ -75,8 +74,7 @@ Presenter: Samina Husain (SHN)
 SHN: Thank you very much for the excellent organization to our host at the university. We already started off well. It’s a pleasure to meet everybody. I see the names online, this is my second meeting. So I am Samina Husain from the Secretariat. Together we will do a presentation today, and I think there are changes in how we do the presentation and information. And feedback. Let me go through this a bit to give you an overview and happy to have questions. All right. IS next to me and myself, we have a few changes to the agenda. There’s a bunch of information in the annex. Read it for the areas that you’re interested in. What I will do is go over the first few bullets, what I have not mentioned is some of the work that’s going on in the background with other mem bers that we are trying to develop more projects with, and look for new work items and this is where your feedback and input is important. And also, how we can support the TC39 team.
 
 SHN: So first an update on this slide. Next slide.
-So you see that the approval has taken place. We have the GA, the general assembly on the 27th – 26, 27th of June, two weeks ago in which the two standards listed below, ECMA-402 10th edition and ECMA-262, 14th edition were approved. Congratulations and thank you for your efforts. I believe that for ECMA-262, if there any changes, let us know as soon as possible to be adopted. We understand that is minor, but thank you
-For a new Ecma member, and I believe that Oramasearch is online, so welcome. We have a new member active in the group. They have signed the membership and release forms. They’re all available in the documents. There are a new company founded in 2023. They are also a part of this group.
+So you see that the approval has taken place. We have the GA, the general assembly on the 27th – 26, 27th of June, two weeks ago in which the two standards listed below, ECMA-402 10th edition and ECMA-262, 14th edition were approved. Congratulations and thank you for your efforts. I believe that for ECMA-262, if there any changes, let us know as soon as possible to be adopted. We understand that is minor, but thank you For a new Ecma member, and I believe that Oramasearch is online, so welcome. We have a new member active in the group. They have signed the membership and release forms. They’re all available in the documents. There are a new company founded in 2023. They are also a part of this group.
 
 SHN: This is a little bit of an update. I have talked to IS about putting the minutes together. One thing that is important are the short summarize. Each of you about present your topics in specific areas that are relevant. These topics many of on to stage 1, 2, 3 and 4. The minutes well-addressed. If you can, please do the summary and the conclusions at the end of your presentation, your topic discussion, it helps us to make sure we have accurate minutes. It’s been working well in the past, and I will do start to do this more myself. We were missing a few contributions and I can also produce accurate reports which is beneficial for you also
 
@@ -144,8 +142,7 @@ Summary: Ecma Secretariat presentation:
 
 The slides were reviewed, and suggested to read the documents of interest as noted in the Annex.
 Congratulations: Standards approved by GA 27 June and posted on website:
-ECMA-262 14th edition – ECMAScript® 2023 Language Specification
-ECMA-402 10th edition – ECMAScript® 2023 Internationalization API specification
+ECMA-262 14th edition – ECMAScript® 2023 Language Specification ECMA-402 10th edition – ECMAScript® 2023 Internationalization API specification
 
 -For any editorial changes to the two approved standards, please advise ASAP to the Ecma Secretariat (Samina Husain, Patrick Charolais, Allen Wirfs-Brock, Istvan Sebestyen).
 -New TC39 Member Oramasearch approved, announced and welcomed.
@@ -179,8 +176,7 @@ KG: Yeah. So concretely, the current body font is on the left. We will be switch
 If anyone objects to this, please let us know, but otherwise it will switch sometime soon
 
 KG: Okay. Then we have landed a surprisingly large number of normative changes since the previous meeting, including the `v`-mode regexes, well-formed Unicode strings, atomics.waitAsync, and a limit on the size of ArrayBuffers. Then this last thing was technically normative, but a bug fix, hasCallInTailPosition wasn’t defined for import calls, such that if you were returning an import that was considered a tail call, which obviously it wasn’t.
-So we didn’t come to the committee for consensus on that because it didn’t reflect committee intent, what was there previously
-And then I don’t think we have had notable changes to the upcoming work for a while. So I am not going to talk about it.
+So we didn’t come to the committee for consensus on that because it didn’t reflect committee intent, what was there previously And then I don’t think we have had notable changes to the upcoming work for a while. So I am not going to talk about it.
 I also have not captured here, but we are in addition to sort of generally increasing consistently in terminology, we are hoping sometime soon to start documenting those better. So some of the terminology is automatically enforced, but a lot of things are sort of just processed knowledge or institutional knowledge of how it’s done and it’s not written down yet, but hoping to soon and the last is to note that ES2023 was approved by the ECMA GA as mentioned previously.
 So that’s all we have for the editor update. Anything from the queue? It doesn’t look like it. So . . . okay. Thanks for your time
 
@@ -252,8 +248,7 @@ Yeah. It adds on support for sentence breaks suppressions which is a new extensi
 ### needs consensus: [ecma204#768](https://github.com/tc39/ecma402/pull/768) Normative: Reorder NF resolved option "roundingPriority"
 
 USA: Also, for review is this reorder of resolved options. So just a quick reminder, the constructors are the formatter and the one selector we have all taken a bunch of options. And then they have the resolved options method that would give you all the options of the existing object. It could pass around or use in another way.
-The result options are ordered. It’s an object with a number of properties. And rounding priority was added recently, as part of the number format 3 proposal. However, that – since I added towards the end, the rounding priority option is sort of a way from the other rounding options that make it a little bit harder to read or, you know, we bikeshedded on this a while and decided to move things around to make it easier for programmers. So this is by RGN. And yeah. This has been discussed by TG2 and we believe this is a good idea
-It still needs tests. So volunteers would be really helpful. But apart from that, this is a good change from our side.
+The result options are ordered. It’s an object with a number of properties. And rounding priority was added recently, as part of the number format 3 proposal. However, that – since I added towards the end, the rounding priority option is sort of a way from the other rounding options that make it a little bit harder to read or, you know, we bikeshedded on this a while and decided to move things around to make it easier for programmers. So this is by RGN. And yeah. This has been discussed by TG2 and we believe this is a good idea It still needs tests. So volunteers would be really helpful. But apart from that, this is a good change from our side.
 
 ### needs consensus: [ecma402#709](https://github.com/tc39/ecma402/pull/709) Read date-time options only once when creating DateTimeFormat objects
 
@@ -351,9 +346,7 @@ USA: Nothing on the queue yet, but I would like to second that. Please add expli
 ### Summary
 
 Import attributes had the following changes in response to feedback given during stage 3 reviews and implementation:
-Clearly separate the "read attributes" and "validate attributes" steps in dynamic import, rather than interleaving them
-Allow numbers as keys in import attributes in import declarations, for symmetry with other non-computed keys in the language
-Remove the `[no LineTerminator here]` restriction before `with` in static imports
+Clearly separate the "read attributes" and "validate attributes" steps in dynamic import, rather than interleaving them Allow numbers as keys in import attributes in import declarations, for symmetry with other non-computed keys in the language Remove the `[no LineTerminator here]` restriction before `with` in static imports
 
 There have been some discussion about implementation complexity due to the different `[no LineTerminator here]` restriction for `assert` and `with`, but the committee ended up still having consensus on removing the restriction (only for `with`) given that it's only used to prevent ambiguities in the rest of the language.
 
@@ -546,8 +539,7 @@ Presenter: Chris de Almeida (CDA)
 - https://www.ecma-international.org/task-groups/tc39-tg3/
 - [slides](https://drive.google.com/file/d/1MPHGzy4aH_vRnduuuuUucP7xq_clcrK2/)
 
-CDA: So TG3. Update and convenor confirmation hopefully. Next slide, please
-So as we discussed at the last meeting, TG3 has not been meeting due to lack of chair.
+CDA: So TG3. Update and convenor confirmation hopefully. Next slide, please So as we discussed at the last meeting, TG3 has not been meeting due to lack of chair.
 So we got together recently to discuss resuming meetings, what topics we were interested in covering to begin with, meeting schedule, and the proposed convenor group. So we are still ironing out details for the meeting schedule. The Secure ECMAScript meeting folks graciously offered to sacrifice one of their monthly meetings for this – they meet every week. We will use one of those meeting times every month for TG3. But we also wanted to have a more APAC-friendly time, so we will alternate between the current meeting time at 12 central and then alternate between that at a monthly or bi-weekly frequency. We are still working that out.
 
 CDA: One small detail. We had to tombstone the matrix room. Because we were unable to get hold of the sole admin. The new TG3 room is already created and can be found in the TC39 space.
@@ -578,8 +570,7 @@ Just a little bit of current state on source maps. The specification lives in a 
 JKP: This is the scope of the charter. I am not going it read it out loud, but the slides are linked in the agenda. I will pause for a second so people can read it. And then I did share out the slides for this.
 And then we also have our program for work, which I probably shouldn’t read the entire thing. But the main points. To focus on correctness, go through the specification, August the correctness issues and make sure that we have a very tight and well-defined specification for what is a conformant source map. After we have source map expressiveness that the community is adding and also want to make sure we work closely with other standards bodies such as W3C on the all work we are doing.
 
-JKP: Right now there’s a great list of participants. But we're looking for more support from people. Another slide I will covered the meeting we are doing but these are the folks participating so far
-We have some exciting proposals that we have started talking about. I wanted to cover 3 quick to poem Sundays the scope. So one is the definition of a column. So we have like source maps referring to line and column number. One is about the scope and variable names and debug IDs. So these are 3 things we have been doing a lot of discussion about and up – trying to work on coming up with better updates for the specification.
+JKP: Right now there’s a great list of participants. But we're looking for more support from people. Another slide I will covered the meeting we are doing but these are the folks participating so far We have some exciting proposals that we have started talking about. I wanted to cover 3 quick to poem Sundays the scope. So one is the definition of a column. So we have like source maps referring to line and column number. One is about the scope and variable names and debug IDs. So these are 3 things we have been doing a lot of discussion about and up – trying to work on coming up with better updates for the specification.
 
 JKP: One is column IDs. So we figured out that browsers all agree on line number, but disagree sometimes on the column number, whether the column is like a code unit or a code point, and what this would mean for formats like Wasm. A lot of discussion around here, Armin from Sentry brought information about unicode characters and what they return as far as column numbers and where they differ with browsers.
 
@@ -724,8 +715,7 @@ And in doing the PR against the main spec, some last-minute bug that is have com
 ### [PR120](https://github.com/tc39/proposal-resizablearraybuffer/pull/120) Move detach check after argument coercion in resize
 
 SYG: So first fix: this is an outstanding one that just dropped off the radar. It was reported by the Moddable folks a while back, but I missed it. Apologies for that. This is #120.
-The bug is that the resize method takes a single parameter named `newLength`. And there is a detached buffer check before the toIntegerOrInfinity we can all arbitrary user code. Which means that there also need to be a buffer detach check after it’s done. As annoying to do a check and then do a coercion and do an immediate check again. So my proposal fix here and my preferred fix here is to have a single detached buffer check that is after the coercion. This does – the general design principle to hold to of do receiver checks than coercion and check arguments in left to right order
-And the – this is an exception to that rule, but it’s an exception that behave made in the past specifically for detached checks, specifically to avoid this kind of double-checdlly still, do receiver checks and then argument coercions and checks left to right, except for detached checks, we can do it once in order to avoid necessary rechecking. There are alternatives. As shown in the discussion in number 120. Such as we could just completely switch the argument checking order. We could say we are going to check all arguments first and then validate the receiver.
+The bug is that the resize method takes a single parameter named `newLength`. And there is a detached buffer check before the toIntegerOrInfinity we can all arbitrary user code. Which means that there also need to be a buffer detach check after it’s done. As annoying to do a check and then do a coercion and do an immediate check again. So my proposal fix here and my preferred fix here is to have a single detached buffer check that is after the coercion. This does – the general design principle to hold to of do receiver checks than coercion and check arguments in left to right order And the – this is an exception to that rule, but it’s an exception that behave made in the past specifically for detached checks, specifically to avoid this kind of double-checdlly still, do receiver checks and then argument coercions and checks left to right, except for detached checks, we can do it once in order to avoid necessary rechecking. There are alternatives. As shown in the discussion in number 120. Such as we could just completely switch the argument checking order. We could say we are going to check all arguments first and then validate the receiver.
 
 SYG: The current proposed fix is more targeted than that. We still keep the relatively the same order, except if they are detached checks, we make the exception for the detached checks.
 And given that the precedent we have so far for another method, `transfer`. We did this kind of single detached check as late as possible already for `transfer`. So we propose to do the same for `resize`. Before moving on to the other topics, I would like to get consensus for this one or take any questions, if there are any.
@@ -848,59 +838,35 @@ MLS: Okay. That’s fine. Thank you.
 
 JHD: But assuming that that review does go well, then the only remaining issue would be the naming. And I don’t know if you want to pull [issue #57](https://github.com/tc39/proposal-array-grouping/issues/57) up for me
 
-JHD: I’ll do my best to summarize the issue, but, ACE, if you’re around, feel free to jump in
-if I miss anything. Essentially, that the concern addressed is that Object.group
-sounds a little like a map as opposed to building one: It operates on an argument and then,
-you know, it notes that Object.create and Object.fromEntries work -- they do not operate on an
-Object argument. They produce an object. But because of the word create and from, that these
-are, you know -- these are the exceptions and they, like, strongly convey what they’re doing.
-And so it sounds like some Bloomberg folks came up with some alternatives from grouping, by
-Grouping.from, and there’s been some back and forth. I pointed out that promise.all and the
-other dominators produce a promise and awry.from produces an array and so on. So my personal
-preference as well as JRL, so the champion’s preference is to stick with the name `groupBy`,
-but it’s, you know -- this isn’t -- for me at least, this isn’t something I’m strongly attached
-to. But the functionality is more important than the exact name. So if the committee has
-things that’s important enough -- thinks it’s important enough to change the name at this
-point, then we can do that. So I just wanted to open it to the room if anyone had alternative
-thoughts or a strong argument in either direction.
+JHD: I’ll do my best to summarize the issue, but, ACE, if you’re around, feel free to jump in if I miss anything. Essentially, that the concern addressed is that Object.group sounds a little like a map as opposed to building one: It operates on an argument and then,
+you know, it notes that Object.create and Object.fromEntries work -- they do not operate on an Object argument. They produce an object. But because of the word create and from, that these are, you know -- these are the exceptions and they, like, strongly convey what they’re doing.
+And so it sounds like some Bloomberg folks came up with some alternatives from grouping, by Grouping.from, and there’s been some back and forth. I pointed out that promise.all and the other dominators produce a promise and awry.from produces an array and so on. So my personal preference as well as JRL, so the champion’s preference is to stick with the name `groupBy`,
+but it’s, you know -- this isn’t -- for me at least, this isn’t something I’m strongly attached to. But the functionality is more important than the exact name. So if the committee has things that’s important enough -- thinks it’s important enough to change the name at this point, then we can do that. So I just wanted to open it to the room if anyone had alternative thoughts or a strong argument in either direction.
 
 RPR: Okay at the moment, there’s nothing on the queue. Which is surprising for a naming issue.
 Hopefully good. EAO has +1 to the current groupBy. And ACE?
 
-ACE: Yeah, I do stand by my original thing, but with all things considered, JRL, and your
-argument that the precedent for the name of this function being groupBy, convinces me that it’s
-the right thing overall, all things considered, yeah, so please consider it closed from my
-perspective. We did discuss this within Bloomberg and came to that conclusion.
+ACE: Yeah, I do stand by my original thing, but with all things considered, JRL, and your argument that the precedent for the name of this function being groupBy, convinces me that it’s the right thing overall, all things considered, yeah, so please consider it closed from my perspective. We did discuss this within Bloomberg and came to that conclusion.
 
-RPR: So +1 for groupBy from KG and CDA and CM and everyone at Agoric, and SYS
-says, sounds good to him.
+RPR: So +1 for groupBy from KG and CDA and CM and everyone at Agoric, and SYS says, sounds good to him.
 
-JHD: Okay. Well, that’s convenient for me certainly. All right, well, that’s great. So then I
-guess the next thing is Michael, I was going to ask for conditional Stage 3 on your -- you or
-someone on your team’ review before the end of the meeting, but if you prefer, I can wait to
-ask for that until after you’ve reviewed.
+JHD: Okay. Well, that’s convenient for me certainly. All right, well, that’s great. So then I guess the next thing is Michael, I was going to ask for conditional Stage 3 on your -- you or someone on your team’ review before the end of the meeting, but if you prefer, I can wait to ask for that until after you’ve reviewed.
 
 RPR: Yeah, let’s go conditional advancement request.
 
-JHD: Okay. Then I’ll ask the room. Can we go for conditional Stage 3 for this proposal? The
-condition being that Michael or someone on his team has been able to -- has successfully
-reviewed this and any issues brought up have been addressed?
+JHD: Okay. Then I’ll ask the room. Can we go for conditional Stage 3 for this proposal? The condition being that Michael or someone on his team has been able to -- has successfully reviewed this and any issues brought up have been addressed?
 
 RPR: All right, so this is a conditional question for advancement.
 
 DE: I support conditional advancement, if the only thing is missing reviews, given that we don’t have any issues that we know about.
 
-SYG: A question from Michael: I have reviewed this, and I would actually like to ship it fairly
-soon. There is some demand for this method. So given that it’s conditional and you haven’t
-yet reviewed it, would you like for some synchronization on our end before I ship it or are you
-also comfortable with just shipping it?
+SYG: A question from Michael: I have reviewed this, and I would actually like to ship it fairly soon. There is some demand for this method. So given that it’s conditional and you haven’t yet reviewed it, would you like for some synchronization on our end before I ship it or are you also comfortable with just shipping it?
 
 MLS: Well, remember, we shipped the prior thing and then unshipped it. I think we’re just at motivated as you. If it hasn’t been reviewed, I will review it tonight.
 
 JHD: Perfect, thank you.
 
-RPR: Excellent. So plus one to the conditional Stage 3 from MS, EAO and also Stage
-3 conditional support from CDA.
+RPR: Excellent. So plus one to the conditional Stage 3 from MS, EAO and also Stage 3 conditional support from CDA.
 
 JHD: Thanks, everyone.
 
@@ -909,8 +875,7 @@ JHD?
 
 JHD: No, that’s it. Thank you.
 
-RPR: Okay, that was very quick. All right. Let’s just see -- oh, yes, so could we have a
-summary for the note takers, please.
+RPR: Okay, that was very quick. All right. Let’s just see -- oh, yes, so could we have a summary for the note takers, please.
 
 ### Summary and conclusion
 
@@ -919,10 +884,7 @@ summary for the note takers, please.
 
 ## Public calendar continuation
 
-CDA: I just wanted to say with regard to determining if your meeting is
-going on the public calendar or not: just a reminder, nothing the permanent, so you don’t have
-to agonize on the decisions. If you wanted to include on the public calendar, you can take it
-off later. If you don’t want to include it now, you can always add it later. That’s all.
+CDA: I just wanted to say with regard to determining if your meeting is going on the public calendar or not: just a reminder, nothing the permanent, so you don’t have to agonize on the decisions. If you wanted to include on the public calendar, you can take it off later. If you don’t want to include it now, you can always add it later. That’s all.
 
 ## Deferred import evaluation
 
@@ -940,30 +902,12 @@ NRO: And this proposal, deferred import evaluation, tries to solve this, so impr
 
 NRO: So, what can be deferred?  Well, when we talk about modules, we’ve seen five phases, five phases of a single module. So we load the module, and these might be asynchronous because there might be a network request or it might happen sequentially, because if there are some systems, some platforms actually use synchronous operation modules. And then we have module parsing, which is needed to find all dependencies and log all of them. And finally, we have what this proposal does: try to defer module evaluation, so the last part, so we can do all the synchronous stuff ahead of time and do all the parsing needed to recur all interdependencies, because this can be a lot of the modules to do all of this and just the evaluation part. And this is like if you’re more familiar with how we presented the various phases of loading modules in other presentations related to the modules, this is basically the same, just that phases -- with those phases. So we’re not deferring everything. Like, that’s this -- does this still bring some significant improvements?
 
-NRO: I just went through the slides from the presentation proposal some months ago by GB. YSV
-originally did some analysis on Firefox internal code between JavaScript, and she found that
-almost half of the time is spent on loading and parsing the module, and the rest of the time is
-spent on the initial evaluation of this module. So this will basically save, like, in this
-specific case, half of the time. And there are other examples, like, for example, in Babel, we -- Babel is based on many things and for everything you need to compile you need a different
-package and you need to initialize the plugins and we need to set up some helpers and some
-things we do while logging the module, and this was very expensive, especially considering now
-people don’t compile every feature using Babel for (indiscernible). So many of the plugins
-were not used all time, and we found by lazily initializing all the start-up logic we could --
-we could improve certain times in many Babel set-ups, and there are also other examples, for
-example, Ingest years ago moved to lazily loading some dependencies, and so that they were only
-loading  when actually needed for the that’s that was running and they actually found some
-initial improvements.
+NRO: I just went through the slides from the presentation proposal some months ago by GB. YSV originally did some analysis on Firefox internal code between JavaScript, and she found that almost half of the time is spent on loading and parsing the module, and the rest of the time is spent on the initial evaluation of this module. So this will basically save, like, in this specific case, half of the time. And there are other examples, like, for example, in Babel, we -- Babel is based on many things and for everything you need to compile you need a different package and you need to initialize the plugins and we need to set up some helpers and some things we do while logging the module, and this was very expensive, especially considering now people don’t compile every feature using Babel for (indiscernible). So many of the plugins were not used all time, and we found by lazily initializing all the start-up logic we could --
+we could improve certain times in many Babel set-ups, and there are also other examples, for example, Ingest years ago moved to lazily loading some dependencies, and so that they were only loading  when actually needed for the that’s that was running and they actually found some initial improvements.
 
 NRO: And, okay, so how are we proposing to achieve this?  What is the API we are thinking of? Import statements would have the `import defer` and next space as the name syntax. This follows the syntax follows what has already been established by the  `import` space proposal where we have to modify the import key one. And this `import` statement  would load the module, log the dependencies and would not actually evaluate them until the  property on the name space object is read. So in this case, the value would trigger the evaluation of the model of the same value property access.
 
-NRO:  Okay. Okay, so I’m going to -- so it’s assessing parts, like, not named imports, because we
-don’t really want to have, like, just accessing a bundle to trigger effects. We want to
-constrain these to property accesses, so we’re constraining the API to only work with model
-bases, so we are always triggering properties from an object. And so, for example, if we have
-a module that imports A and B and B is deferred and we evaluate this module graph, A is not
-deferred so we see the console log and B is not evaluated because deferred, and we start
-evaluating the module, so we see right now our console and then we see A1 in our console. Then
-when we access the property from the main spaces of deferred module, these will trigger evaluation of B and we see B evaluated and finally we keep evaluating the top-level module. And so our initial example that we saw how today we can render to a factor to use dynamic import avoid the initial -- paying the initial start-up cost when it’s maybe not necessary, we can now use the defer space syntax.
+NRO:  Okay. Okay, so I’m going to -- so it’s assessing parts, like, not named imports, because we don’t really want to have, like, just accessing a bundle to trigger effects. We want to constrain these to property accesses, so we’re constraining the API to only work with model bases, so we are always triggering properties from an object. And so, for example, if we have a module that imports A and B and B is deferred and we evaluate this module graph, A is not deferred so we see the console log and B is not evaluated because deferred, and we start evaluating the module, so we see right now our console and then we see A1 in our console. Then when we access the property from the main spaces of deferred module, these will trigger evaluation of B and we see B evaluated and finally we keep evaluating the top-level module. And so our initial example that we saw how today we can render to a factor to use dynamic import avoid the initial -- paying the initial start-up cost when it’s maybe not necessary, we can now use the defer space syntax.
 
 NRO: There is a problem. And the problem is that modules are not always synchronous because we have top level `await`. And property access needs to be synchronous. So there are different solutions to this. One solution would be to just not support top level `await` and throw if there is a top level `await` anywhere. But we don’t really want to split the modules in model synchronous and modules that can be deferred, so what we’re proposing to do is to evaluate asynchronous modules  even if they’re part of the deferred subgraph.
 
@@ -972,163 +916,69 @@ NRO: Let’s say we have this module graph with our entry point at the top and y
 NRO: So this is the solution. Where `import defer` is used for a module with top level await, something must happen ahead of time. It’s deterministic, like, you know that only the asynchronous part happens ahead of time. But it still allows  you to defer the evaluation of all the synchronous parts.
 
 NRO: In the first slides I  mentioned how we have dynamic `import` to defer loading and parsing, and this proposal is just about deferring evaluation. And that’s the only guarantee we can make. There are some environments and platforms in which this proposal would unlock deferred -- well, deferred loading and parsing. And this is -- this can happen when in cases when loading modules are asynchronous such as environments, and where we can generate some metadata so that we know,
-like, ahead of time generate some metadata so we know which are synchronous, which modules have
-some errors, and which modules can actually be deferred, so, like, for example, there might be a
-built to generate the metadata and then at run time can just query the metadata and if a module
-can be fully deferred with the dependencies and can fully skip this module. And some examples are
-internal code browsers or loading the browsers and cached, there are several times where have a
-deployed comment or push commit where they already perform some ahead-of-time analysis of the
-deployed code. There is compiled CJS, which is what it does. There is CJS and the way we do
-our defers is actually defer the required codes and these would still match semantics of
-proposal or other examples of CJS used together.
+like, ahead of time generate some metadata so we know which are synchronous, which modules have some errors, and which modules can actually be deferred, so, like, for example, there might be a built to generate the metadata and then at run time can just query the metadata and if a module can be fully deferred with the dependencies and can fully skip this module. And some examples are internal code browsers or loading the browsers and cached, there are several times where have a deployed comment or push commit where they already perform some ahead-of-time analysis of the deployed code. There is compiled CJS, which is what it does. There is CJS and the way we do our defers is actually defer the required codes and these would still match semantics of proposal or other examples of CJS used together.
 
-NRO: So what are some current language properties and how is the proposal change them?  Right now models are guaranteed to execute after the
-dependencies if there are not cycles. And this proposal, well -  Okay, like, these properties will hold except obviously if the module  is explicitly marked as deferred. It’s already known that some dependencies of a model might have been evaluated before evaluating the module that imports them because they will be, like, imported from somewhere else. And this proposal, the way it handles the evaluation, it’s possible because already there is no guarantee about the order in which, like, a module and its dependencies are evaluated. However, like, I introduce, it makes it slightly more common to
-see this happening where dependencies have been evaluated in case you’re being deferred and
-your dependencies uses `await`.
+NRO: So what are some current language properties and how is the proposal change them?  Right now models are guaranteed to execute after the dependencies if there are not cycles. And this proposal, well -  Okay, like, these properties will hold except obviously if the module  is explicitly marked as deferred. It’s already known that some dependencies of a model might have been evaluated before evaluating the module that imports them because they will be, like, imported from somewhere else. And this proposal, the way it handles the evaluation, it’s possible because already there is no guarantee about the order in which, like, a module and its dependencies are evaluated. However, like, I introduce, it makes it slightly more common to see this happening where dependencies have been evaluated in case you’re being deferred and your dependencies uses `await`.
 
-NRO: And there is a property that we lose that is that right now, module code is always evaluated at
-the top level of an execution stack. In this example when CJS query, let’s say we have this
-query function that cannot be called during a code to the update function. And like update we
-receive a callback, so this not concurrent. Query must not be called to the callback. And
-this model is now safe because queries always call with a fresh stack, so it doesn’t need to
-check that it’s not being evaluated doing update. While if B -- if the evaluation of B can be
-triggered synchronously from somewhere else, we lose the property. So B will need the
-introduce checks to check code doing update, then do not call `query`. And thanks to the SES
-group for discovering this issue. Like, this can already happen in other cases, like, for
-example, in using CJS and our speculation is just because developers are not relying on this
-existing language property.
+NRO: And there is a property that we lose that is that right now, module code is always evaluated at the top level of an execution stack. In this example when CJS query, let’s say we have this query function that cannot be called during a code to the update function. And like update we receive a callback, so this not concurrent. Query must not be called to the callback. And this model is now safe because queries always call with a fresh stack, so it doesn’t need to check that it’s not being evaluated doing update. While if B -- if the evaluation of B can be triggered synchronously from somewhere else, we lose the property. So B will need the introduce checks to check code doing update, then do not call `query`. And thanks to the SES group for discovering this issue. Like, this can already happen in other cases, like, for example, in using CJS and our speculation is just because developers are not relying on this existing language property.
 
-NRO: So this proposal is now what I presented so far, but there are
-some possible extensions we’re thinking of -- about. And the most important one is about
-deferred reexports. And like the idea is that you could somehow have modules that have deferred
-export for the modules and those other models are only evaluated when actually needed. So in
-this example in the slides, the `ns.foo` access would only trigger access of A and B and not
-actually evaluate CC, or maybe even just with static imports, like, with named imports, so maybe
-this could evaluate ahead of time A and B, and completely skip evaluation of C. And like this
-is something that still is very much up in the air. There are no clear semantics yet, but
-something we’re thinking about.
+NRO: So this proposal is now what I presented so far, but there are some possible extensions we’re thinking of -- about. And the most important one is about deferred reexports. And like the idea is that you could somehow have modules that have deferred export for the modules and those other models are only evaluated when actually needed. So in this example in the slides, the `ns.foo` access would only trigger access of A and B and not actually evaluate CC, or maybe even just with static imports, like, with named imports, so maybe this could evaluate ahead of time A and B, and completely skip evaluation of C. And like this is something that still is very much up in the air. There are no clear semantics yet, but something we’re thinking about.
 
-NRO: Okay, so can you already try this somewhere?  Well, we have an
-experimental implementation. Like, if you can find a link to the slides and this link, there are some tests and you can see how this proposal works. And we are working already on experimental webpack implementation. The goal is not to ship something to web
-Browsers but to understand how complex it is to implement this proposal. And the proposal does
-not currently -- the implementation doesn’t currently exactly match the semantics, we’re work
-on it. And lastly, with we have a tool that follows step-by-step the module evaluation in the
-stack to see how the state of different models change when evaluating. And, like, it’s this --
-this very much helped me when I started to go through this because it’s a particular complex
-part of it. And -- well, and as I mentioned, we have a spec. So you can check it out if you’re interested. And, yeah, that’s all. Do you want to go to the queue?
+NRO: Okay, so can you already try this somewhere?  Well, we have an experimental implementation. Like, if you can find a link to the slides and this link, there are some tests and you can see how this proposal works. And we are working already on experimental webpack implementation. The goal is not to ship something to web Browsers but to understand how complex it is to implement this proposal. And the proposal does not currently -- the implementation doesn’t currently exactly match the semantics, we’re work on it. And lastly, with we have a tool that follows step-by-step the module evaluation in the stack to see how the state of different models change when evaluating. And, like, it’s this --
+this very much helped me when I started to go through this because it’s a particular complex part of it. And -- well, and as I mentioned, we have a spec. So you can check it out if you’re interested. And, yeah, that’s all. Do you want to go to the queue?
 
 CDA: Yeah, we have quite a large queue, so let’s get right into it. First up is Shu.
 
-SYG: Yeah, can I see the profile again? Okay, so the intention here is that the highlighted
-stuff there is about evaluating the top level?
+SYG: Yeah, can I see the profile again? Okay, so the intention here is that the highlighted stuff there is about evaluating the top level?
 
 NRO: So could you repeat it. The audio was not --
 
-SYG: It’s the intention of the slide to show how much time is spent evaluating a module top
-level?
+SYG: It’s the intention of the slide to show how much time is spent evaluating a module top level?
 
-NRO:  Yes, like, this was, like, some specific models internal to firefox that she used during
-her analysis, and these blue parts are parts that could potentially be deferred.
+NRO:  Yes, like, this was, like, some specific models internal to firefox that she used during her analysis, and these blue parts are parts that could potentially be deferred.
 
 SYG: Okay. Okay, I see. Okay, all right, I think that clears it up. Thanks.
 
-KG: Yeah, the top level `await` thing does seem like a problem. I agree with your decision to not
-make it throw. Mostly just because, like, you don’t expect to add in top-level `await` to a
-module to be a breaking change. But it seems quite costly that top-level `await`, though not necessarily a
-breaking change, does cause the graph to suddenly become eagerly evaluated when previously it
-would not have been. I don’t know -- I think that it limits the utility of this feature, like,
-pretty substantially. I don’t see an alternative. But it makes me less excited about the
-feature. A lot less excited about the feature.
+KG: Yeah, the top level `await` thing does seem like a problem. I agree with your decision to not make it throw. Mostly just because, like, you don’t expect to add in top-level `await` to a module to be a breaking change. But it seems quite costly that top-level `await`, though not necessarily a breaking change, does cause the graph to suddenly become eagerly evaluated when previously it would not have been. I don’t know -- I think that it limits the utility of this feature, like,
+pretty substantially. I don’t see an alternative. But it makes me less excited about the feature. A lot less excited about the feature.
 
-NRO: So note that top-level `await` doesn’t pollute the whole deferred graph, but it only forces the
-evaluation of the synchronous model itself together with its dependencies. In this example,
+NRO: So note that top-level `await` doesn’t pollute the whole deferred graph, but it only forces the evaluation of the synchronous model itself together with its dependencies. In this example,
 the module to red or brown can still be deferred even if it has a synchronous dependency.
 So, like, it’s not -- it’s not --
 
-KG: Sorry, I didn’t mean to imply otherwise. I agree with that, but, like, it does cause the module with top-level `await` to be eagerly evaluated, and its top level dependencies, and that makes the feature a lot less useful, because you get a lot
-less deferring, and it, I guess, is probably still worth it, but it makes it a lot closer to
-not being worth it for me.
+KG: Sorry, I didn’t mean to imply otherwise. I agree with that, but, like, it does cause the module with top-level `await` to be eagerly evaluated, and its top level dependencies, and that makes the feature a lot less useful, because you get a lot less deferring, and it, I guess, is probably still worth it, but it makes it a lot closer to not being worth it for me.
 
-EAO: Just very briefly this doesn’t mention anything around top-level await include the module
-more eager than that they currently are. They wouldn’t be able to be deferred as known
-top-level `await` content would be.
+EAO: Just very briefly this doesn’t mention anything around top-level await include the module more eager than that they currently are. They wouldn’t be able to be deferred as known top-level `await` content would be.
 
-KG: I agree. But the whole point of adding this feature is that we want to defer things, and we
-actually don’t get to defer things. We get to defer, like, some limited subset of things, and
-that’s just less good and makes the feature less valuable, because in fact we aren’t deferring
-the whole graph. We are deferring only potentially a small portion of the graph, so the
-feature is less useful
+KG: I agree. But the whole point of adding this feature is that we want to defer things, and we actually don’t get to defer things. We get to defer, like, some limited subset of things, and that’s just less good and makes the feature less valuable, because in fact we aren’t deferring the whole graph. We are deferring only potentially a small portion of the graph, so the feature is less useful
 
-RPR: So I think Kevin’s point is fair that this does reduce the amount of the graph that can be
-made lazy. In practice, in the system that we have in Bloomberg, we have supported the
-equivalent of top-level `await` for nearly 10 years, and the number of places it actually gets
-used is very, very small. It’s a power tool that you only reach for when you need to, because
-it does have these implications  on loading. I think we can see this in the log. We can
-see what happens in the wild, but so far, I’ve not seen evidence that TLA (top-level await) is everywhere, so on that balance of how much this reduces the feature’s value, I believe it’s likely to be a small
-loss, not a large loss.
+RPR: So I think Kevin’s point is fair that this does reduce the amount of the graph that can be made lazy. In practice, in the system that we have in Bloomberg, we have supported the equivalent of top-level `await` for nearly 10 years, and the number of places it actually gets used is very, very small. It’s a power tool that you only reach for when you need to, because it does have these implications  on loading. I think we can see this in the log. We can see what happens in the wild, but so far, I’ve not seen evidence that TLA (top-level await) is everywhere, so on that balance of how much this reduces the feature’s value, I believe it’s likely to be a small loss, not a large loss.
 
-DE: Going to that a little bit more, we’ve seen that top-level await in the few cases we see it
-is closer to the leaves of the model graph, which is the case that this algorithm graph does. All you
-have to make  eager is all those leaves. I think it’s important that we evaluate this thing
-about how can benefit empirically based on how it works in larger programs and we have seen that
-it’s very useful in larger programs, in many different environments. So I don’t think that’s
-going to be invalidated by those programs making tons of additional use of top-level `await` in a
-way that would block this. But maybe I’m missing something.
+DE: Going to that a little bit more, we’ve seen that top-level await in the few cases we see it is closer to the leaves of the model graph, which is the case that this algorithm graph does. All you have to make  eager is all those leaves. I think it’s important that we evaluate this thing about how can benefit empirically based on how it works in larger programs and we have seen that it’s very useful in larger programs, in many different environments. So I don’t think that’s going to be invalidated by those programs making tons of additional use of top-level `await` in a way that would block this. But maybe I’m missing something.
 
-SYG: Is there an -- well, incompatibilities, I said incompatibility in the queue, but maybe
-that’s not quite the right word. But given that the existing technique is dynamic import,
-which is async, which is viral, if you are currently trying to defer some stuff by making it
-async, by biting the bullet of “I’m going to color my functions” and actually have it virally
-propagate out and when this comes along, because of the top-level `await` restriction, if you
-have already made some stuff async, is this -- does this not compose as well as you might hope
-and then people can’t actually take advantage of the deferrals because they already made some
-stuff async in the current world?  Does that question make sense?
+SYG: Is there an -- well, incompatibilities, I said incompatibility in the queue, but maybe that’s not quite the right word. But given that the existing technique is dynamic import,
+which is async, which is viral, if you are currently trying to defer some stuff by making it async, by biting the bullet of “I’m going to color my functions” and actually have it virally propagate out and when this comes along, because of the top-level `await` restriction, if you have already made some stuff async, is this -- does this not compose as well as you might hope and then people can’t actually take advantage of the deferrals because they already made some stuff async in the current world?  Does that question make sense?
 
-RPR: I think that’s not what we’ve seen in Bloomberg, which is that when with you use dynamic
-import, that fully cuts off --yea separates out the chunks and the portions to be loaded. So it’s
-never a loss to compose this with the traditional dynamic import.
+RPR: I think that’s not what we’ve seen in Bloomberg, which is that when with you use dynamic import, that fully cuts off --yea separates out the chunks and the portions to be loaded. So it’s never a loss to compose this with the traditional dynamic import.
 
-SYG: What I’m saying is if you’re dynamically importing something that is currently synchronous
-all these dependencies are synchronous and you’re like I want to make some of the dependencies
-asynchronously so I could asynchronously use them in some contexts that asynchronous and deferral
-becomes the thing and you have to defer it to though you have convert those back to async to
-convert it back to a deferral?
+SYG: What I’m saying is if you’re dynamically importing something that is currently synchronous all these dependencies are synchronous and you’re like I want to make some of the dependencies asynchronously so I could asynchronously use them in some contexts that asynchronous and deferral becomes the thing and you have to defer it to though you have convert those back to async to convert it back to a deferral?
 
 DE: You never have to make the thing synchronous, obviously. I think LCA’s answer gets at the question you’re asking also. Oh, Luca had to go, sorry.
 
 RPR: Next we have SFC.
 
-SFC: Yeah, I just wanted to note that my understanding of the -- what was previously called the
-import reflection proposal with Wasm is one case that I believe we use async modules, and I’m
-a little concerned about the narrative that all async modules are a power user feature,
-because I don’t think -- that seems like a case that my understanding is that async modules are the state of the art for loading Wasm, and that’s definitely a case where being deferred where that would be
-desirable. So I had another topic later on in the queue as well about this, but I just wanted
-to flag that.
+SFC: Yeah, I just wanted to note that my understanding of the -- what was previously called the import reflection proposal with Wasm is one case that I believe we use async modules, and I’m a little concerned about the narrative that all async modules are a power user feature,
+because I don’t think -- that seems like a case that my understanding is that async modules are the state of the art for loading Wasm, and that’s definitely a case where being deferred where that would be desirable. So I had another topic later on in the queue as well about this, but I just wanted to flag that.
 
-NRO: So with the current imperfection proposal model, like, source imports of the modules are
-still synchronous, however, like, once when they will have the full integration between ESM
-and Wasm, they will be asynchronous. I don’t know if it’s possible for Wasm to provide some
-synchronous evaluation capabilities, but in that case, the integration could be built on top of
-that allowing to defer eventually Wasm modules too. With the way  Wasm is executed right now,
+NRO: So with the current imperfection proposal model, like, source imports of the modules are still synchronous, however, like, once when they will have the full integration between ESM and Wasm, they will be asynchronous. I don’t know if it’s possible for Wasm to provide some synchronous evaluation capabilities, but in that case, the integration could be built on top of that allowing to defer eventually Wasm modules too. With the way  Wasm is executed right now,
 yes, it’s asynchronous and the Wasm part would not be deferred.
 
-DE: So concretely, it really is possible to make synchronous Wasm evaluation. It’s already
-part of the Wasm API. We’ve made them asynchronous by default where it might take
-recompilation to reinstate a Wasm module. However, I think it is important to enable deferred
-loading for Wasm modules, so I think we can consider this -- work out how to make this work
-during Stage 2, this interaction. Yeah, the decision to make Wasm modules -- async was based
-on part of the implementation in JSC, which always used the baseline compiler and they added an
-interpreter. The baseline compiler coded in some knowledge about what baselines were used and
-where the interpreter doesn’t, so it may be possible to remove this restriction.
+DE: So concretely, it really is possible to make synchronous Wasm evaluation. It’s already part of the Wasm API. We’ve made them asynchronous by default where it might take recompilation to reinstate a Wasm module. However, I think it is important to enable deferred loading for Wasm modules, so I think we can consider this -- work out how to make this work during Stage 2, this interaction. Yeah, the decision to make Wasm modules -- async was based on part of the implementation in JSC, which always used the baseline compiler and they added an interpreter. The baseline compiler coded in some knowledge about what baselines were used and where the interpreter doesn’t, so it may be possible to remove this restriction.
 
 KG: In practice, WASM is not able to be loaded synchronously. Chrome limits it to 4kb.
-They are not lifted it indefinitely. I think the proposal is 8 megs. Yeah, Wasm in practice
-can’t do the asynchronous thing.
+They are not lifted it indefinitely. I think the proposal is 8 megs. Yeah, Wasm in practice can’t do the asynchronous thing.
 
-DE: KG, you’re confusing module compilation with module instantiation. Chrome’s limit is all
-about the compilation. You can’t synchronously compile larger than a certain amount. But it’s
-only a JSC thing.
+DE: KG, you’re confusing module compilation with module instantiation. Chrome’s limit is all about the compilation. You can’t synchronously compile larger than a certain amount. But it’s only a JSC thing.
 
 KG: I’ll take your word for it.
 
@@ -1137,127 +987,49 @@ not on the web at least.
 
 CDA: Okay. We have less than 15 minutes for this item, so please be --
 
-SYG: Can I interject. I was going to do a response, but I -- before we move on to the current
-topic.
+SYG: Can I interject. I was going to do a response, but I -- before we move on to the current topic.
 
 CDA: Please go ahead.
 
-SYG: On the -- so, DE, on the -- so the profile output that is in the slides show a line called
-script emit, which I assume is lazy compilation, and that was folded into top-level module
-evaluation time in the analysis, I presume. So, like, I’m not exactly sure how the champions
-are thinking about the performance characteristics here. Obviously more time is saved if you
-are doing lazy evaluation -- sorry, lazy compilation here, like, you’re just parsing, you’re
-saving the offsets and compiling it for the first time when you run it. The discussion around
-WASM makes that less clear to me. Like, what is the minimum amount of things that are deferred
-to make it worth it, if you’re expecting a module where you’re always going to pre-compile, then
-you’re just evaluating, that is smaller than what is currently touted as the potential speedups
-shown in profile.
+SYG: On the -- so, DE, on the -- so the profile output that is in the slides show a line called script emit, which I assume is lazy compilation, and that was folded into top-level module evaluation time in the analysis, I presume. So, like, I’m not exactly sure how the champions are thinking about the performance characteristics here. Obviously more time is saved if you are doing lazy evaluation -- sorry, lazy compilation here, like, you’re just parsing, you’re saving the offsets and compiling it for the first time when you run it. The discussion around WASM makes that less clear to me. Like, what is the minimum amount of things that are deferred to make it worth it, if you’re expecting a module where you’re always going to pre-compile, then you’re just evaluating, that is smaller than what is currently touted as the potential speedups shown in profile.
 
-NRO: Okay. Like, my answer in Wasm was based on the existing expect load graph for how Wasm is
-evaluated. But ideally engines would be deferred as much as can be synchronously deferred. An
-example of something that could happen is when you have a deferred import model, you still --
-For an adjusted model, you can still start compiling the module, generating by code in some Chrome
-Trend (?), and then once you actually trigger evaluation of the module, like, lock, wait until the
-file is compiled and can be executed. Or, like, it will also be possible to just defer the
-full compilation till later and, like, synchronous block a little bit more. Like, it’s a
-matter of how much, like, engines are comfortable with blocking to execute
-later.
+NRO: Okay. Like, my answer in Wasm was based on the existing expect load graph for how Wasm is evaluated. But ideally engines would be deferred as much as can be synchronously deferred. An example of something that could happen is when you have a deferred import model, you still --
+For an adjusted model, you can still start compiling the module, generating by code in some Chrome Trend (?), and then once you actually trigger evaluation of the module, like, lock, wait until the file is compiled and can be executed. Or, like, it will also be possible to just defer the full compilation till later and, like, synchronous block a little bit more. Like, it’s a matter of how much, like, engines are comfortable with blocking to execute later.
 
-SYG: Yeah, but that plays into, like -- the Wasm -- the reason the Wasm module compilation has
-this async requirement is because some -- I don’t personally necessarily agree with this, but
-that don’t block the main threshold (?). So, like, I don’t think it’s purely a choice of per
-engine. We probably want some coordination around this. Probably just don’t want really long
-pause times if you want to defer some Wasm modules.
+SYG: Yeah, but that plays into, like -- the Wasm -- the reason the Wasm module compilation has this async requirement is because some -- I don’t personally necessarily agree with this, but that don’t block the main threshold (?). So, like, I don’t think it’s purely a choice of per engine. We probably want some coordination around this. Probably just don’t want really long pause times if you want to defer some Wasm modules.
 
 DE: So, SYG, I think this is the same confusion that I was trying to address with Kevin’s point.
-Nobody’s proposing that compilation be changed in terms of how it’s done. The idea is that
-fetching and parsing remains an asynchronous operation that’s done blockingly before anything
-runs. This allows everything to run in parallel. As you know, it’s important for parsing to
-be able to run off the main thread as well, requiring the synchronicity to be suboptimal. But
-for JavaScript,  overall, we’ve seen, I think -- we don’t have, like, super strong numbers on
-this, so maybe that’s why it wasn’t in the presentation, but roughly there’s a split, maybe
-50/50, due to in the time saved due to fetching and lazy parsing in environments as NRO
-mentioned, which are able to avoid it, unlike the web. And for evaluating, which takes a
-significant amount of time. So in environments where you are parsing and compiling
-otherwise and eagerly, I would -- I don’t know whether this holds up, but it’s, you know, lazy
-parsing makes sense in the Wasm context, and it’s just the (inaudible) in the compiling
-operation. Yeah.
+Nobody’s proposing that compilation be changed in terms of how it’s done. The idea is that fetching and parsing remains an asynchronous operation that’s done blockingly before anything runs. This allows everything to run in parallel. As you know, it’s important for parsing to be able to run off the main thread as well, requiring the synchronicity to be suboptimal. But for JavaScript,  overall, we’ve seen, I think -- we don’t have, like, super strong numbers on this, so maybe that’s why it wasn’t in the presentation, but roughly there’s a split, maybe 50/50, due to in the time saved due to fetching and lazy parsing in environments as NRO mentioned, which are able to avoid it, unlike the web. And for evaluating, which takes a significant amount of time. So in environments where you are parsing and compiling otherwise and eagerly, I would -- I don’t know whether this holds up, but it’s, you know, lazy parsing makes sense in the Wasm context, and it’s just the (inaudible) in the compiling operation. Yeah.
 
-DLM: Yeah, I’ll be brief. I suppose it’s not very surprising given that Yulia was involved in the
-original proposal and there is Firefox in the slides, but this is something we would definitely be happy to see advance to Stage 2. In particular, we already support our own version of lazy module loading that’s used heavily in the front end of Firefox. I asked that team for feedback on this proposal and they were
-quite favorable. And there’s obviously other people that are using something similar, and I
-think that it would be great to see this advance and be able to coordinate on tooling and
-things like that in the future. Thank you.
+DLM: Yeah, I’ll be brief. I suppose it’s not very surprising given that Yulia was involved in the original proposal and there is Firefox in the slides, but this is something we would definitely be happy to see advance to Stage 2. In particular, we already support our own version of lazy module loading that’s used heavily in the front end of Firefox. I asked that team for feedback on this proposal and they were quite favorable. And there’s obviously other people that are using something similar, and I think that it would be great to see this advance and be able to coordinate on tooling and things like that in the future. Thank you.
 
 CDA: Thanks. We have a little under 10 minutes left. Next is ACE.
 
-ACE:  Yeah, so something else about our use at Bloomberg. So we have an implementation of
-this not, using the syntax but it is available in ESM, and the real amazing thing for us is
- this feature already exists in other module systems and for team’s already
-depending on it, e.g. if using Common JS. And one of the things that prevents them from using moving to ESM is a lack of this feature, because dynamic import won’t work with the current
-code. As we’ve discussed, it can be too big to go full async and color the graph that way. So
-it’s been, yeah, just great that we’re having this thing in ESM allowing code to move to ESM
-in a way, we’ve implemented this, but we’re trying to align the implementation and only
-gradually roll out this feature so we can keep aligning with this proposal hoping that it
-becomes standard. And I don’t think that’s specific to Bloomberg. Like, in the ecosystem,
-existing bundlers and runtimes already have features like this which allow you to synchronously
-import and they all have slightly different semantics, having this standardized in one way, I think,  will be a really big win.
+ACE:  Yeah, so something else about our use at Bloomberg. So we have an implementation of this not, using the syntax but it is available in ESM, and the real amazing thing for us is  this feature already exists in other module systems and for team’s already depending on it, e.g. if using Common JS. And one of the things that prevents them from using moving to ESM is a lack of this feature, because dynamic import won’t work with the current code. As we’ve discussed, it can be too big to go full async and color the graph that way. So it’s been, yeah, just great that we’re having this thing in ESM allowing code to move to ESM in a way, we’ve implemented this, but we’re trying to align the implementation and only gradually roll out this feature so we can keep aligning with this proposal hoping that it becomes standard. And I don’t think that’s specific to Bloomberg. Like, in the ecosystem,
+existing bundlers and runtimes already have features like this which allow you to synchronously import and they all have slightly different semantics, having this standardized in one way, I think,  will be a really big win.
 
 CDA: All right. RBN is next.
 
-RBN: Yeah, could you go back to the slide discussing top-level `await`, the two options. So the
-concern that I have here with the first option, this -- the option of throwing, is that if you
-limit import defer to only modules that do not have top-level await, there is no guarantee
-that any code that you write will continue to work when you do any type of
-package upgrade. Because any third-party package you might use could decide to start using
-top-level `await` in ESmodule and then all of your import defers start throwing. And while you
-hopefully would discover this during development, you could be in a writing package that is
-using a peer dependency with another package that gets installed, and anything in that
-dependency change could cause an issue. I think throwing is not really viable. If the idea is
-just to do a best-effort optimization or the idea is to try to optimize performance to not load
-things until you absolutely need them, then I think eager evaluation of async modules and that
-best effort for import defer is probably the only option that’s viable.
+RBN: Yeah, could you go back to the slide discussing top-level `await`, the two options. So the concern that I have here with the first option, this -- the option of throwing, is that if you limit import defer to only modules that do not have top-level await, there is no guarantee that any code that you write will continue to work when you do any type of package upgrade. Because any third-party package you might use could decide to start using top-level `await` in ESmodule and then all of your import defers start throwing. And while you hopefully would discover this during development, you could be in a writing package that is using a peer dependency with another package that gets installed, and anything in that dependency change could cause an issue. I think throwing is not really viable. If the idea is just to do a best-effort optimization or the idea is to try to optimize performance to not load things until you absolutely need them, then I think eager evaluation of async modules and that best effort for import defer is probably the only option that’s viable.
 
-JHD: I have a couple thoughts here. So one is that the -- like, I understand why you have to use `import *`, because it’s super weird and magic to have accessing a variable have effects. But one of the reasons -- like, `import *` is something that I’ve generally considered and found to be considered “gross”, for lack of a more precise word, sloppily and
-implicit and prevents a lot of static analysis. And, you know, it makes tree shaking more
-difficult things like that. And the original -- some of the original design goals of ESM were -- like, or a lot of them, seems to be “let’s make everything as static as possible”, so a
-lot of decisions were made that we might not have made if we had expected that eventually we
-were going to have dynamic import and deferred imports and so on and so forth. So it’s sort of -- it just kind of feels like it leaves us in an awkward position, and I’m not sure if anyone still shares those original design goals and wants things to be maximally static or if
-we’ve just decided that’s not important anymore. And then related is there was an attempt to
-make a proposal for conditional static imports, and it kind of seems like this import deferral
-would be a way to do that, where you do an import defer and then you just conditionally access
-to property or not. So, yeah, I don’t know, I’m just -- I just kind of wanted to bring this
-all up. This is not a straightforward, obvious win for me. It’s -- like, the benefit that is
-being sought is valuable, but I’m just not -- I’m not super convinced on the limitations,
-fitting in the syntax and, you know, combining it with the mental model of ESM. I just wanted
-to bring that up.
+JHD: I have a couple thoughts here. So one is that the -- like, I understand why you have to use `import *`, because it’s super weird and magic to have accessing a variable have effects. But one of the reasons -- like, `import *` is something that I’ve generally considered and found to be considered “gross”, for lack of a more precise word, sloppily and implicit and prevents a lot of static analysis. And, you know, it makes tree shaking more difficult things like that. And the original -- some of the original design goals of ESM were -- like, or a lot of them, seems to be “let’s make everything as static as possible”, so a lot of decisions were made that we might not have made if we had expected that eventually we were going to have dynamic import and deferred imports and so on and so forth. So it’s sort of -- it just kind of feels like it leaves us in an awkward position, and I’m not sure if anyone still shares those original design goals and wants things to be maximally static or if we’ve just decided that’s not important anymore. And then related is there was an attempt to make a proposal for conditional static imports, and it kind of seems like this import deferral would be a way to do that, where you do an import defer and then you just conditionally access to property or not. So, yeah, I don’t know, I’m just -- I just kind of wanted to bring this all up. This is not a straightforward, obvious win for me. It’s -- like, the benefit that is being sought is valuable, but I’m just not -- I’m not super convinced on the limitations,
+fitting in the syntax and, you know, combining it with the mental model of ESM. I just wanted to bring that up.
 
-NRO: So when it casts a static analysis, like, if you use, like, your name space object as name
-space.property, like, bundlers are already able to statically analyze that and tree shake that. The problem is when code starts passing the namespace object around or when you, like, do some, like, computed
-properties and it more dynamic things. Like, this proposal doesn’t encourage doing this more
-dynamic things. If what you need is just the imports, then all your usages of the namespace
-object would be just simple property accesses. And it’s similar to how dynamic import, yes,
-it’s dynamic. In many cases to scan static analysis, because in many cases we just pass a
-string to dynamic import.
+NRO: So when it casts a static analysis, like, if you use, like, your name space object as name space.property, like, bundlers are already able to statically analyze that and tree shake that. The problem is when code starts passing the namespace object around or when you, like, do some, like, computed properties and it more dynamic things. Like, this proposal doesn’t encourage doing this more dynamic things. If what you need is just the imports, then all your usages of the namespace object would be just simple property accesses. And it’s similar to how dynamic import, yes,
+it’s dynamic. In many cases to scan static analysis, because in many cases we just pass a string to dynamic import.
 
-KG: Just briefly. JHD, I agree this does make things a little more dynamic, but to me the
-most important property is that exports are not dynamic and that property continues to
-hold. As long as you don’t use computed properties to access things of on the name space
-object, it’s not like, less static in an important way as far as
-I’m concerned.
+KG: Just briefly. JHD, I agree this does make things a little more dynamic, but to me the most important property is that exports are not dynamic and that property continues to hold. As long as you don’t use computed properties to access things of on the name space object, it’s not like, less static in an important way as far as I’m concerned.
 
 JHD:  Yeah, I mean, I agree if you’re only using, like, dotted properties and you’re not passing  around the namespace object, then the dynamism is not really an issue.
 
 CDA: All right, finally JWK.
 
-JWK: In the webpack implementation, we only generate the namespace object if the
-namespace object is used in an unanalyzable way, for example, the computed property access. So,
+JWK: In the webpack implementation, we only generate the namespace object if the namespace object is used in an unanalyzable way, for example, the computed property access. So,
 yes, this doesn’t make the static analysis harder.
 
 JWK: Also, I want to share, we are already using this by the webpack implementation in our project and found the result is very good. We can easily defer the module that has heavy initialization costs. We also find the namespace restriction is a little bit not easy to use, but I’m okay if we have this restriction for now.
 
-NRO: Okay. Thank you. So if there is nothing else, I would like to ask if you have any
-objections to Stage 2.
+NRO: Okay. Thank you. So if there is nothing else, I would like to ask if you have any objections to Stage 2.
 
 CDA: Do we have support for Stage 2?  We have a +1 for Stage 2 from Mozilla. JWK supports Stage 2, and so does ACE and DE from Bloomberg.
 
@@ -1267,21 +1039,13 @@ CDA: Okay. We have a -- hang on. I’m behind in the queue slightly. We have a +
 
 JWK: Yeah. I found a lot of discussion is about top-level await and the WebAssembly, and I want to clarify that we don’t have experience in how this proposal interacts with top-level `await` or  WebAssembly. Actually, we banned top-level `await` in the current implementation because the semantics in this slide has not been there while I was implementing that.
 
-CDA:  All right. Bradford, did you want to speak?  You have plus one from Bradford, but with
-concerns.
+CDA:  All right. Bradford, did you want to speak?  You have plus one from Bradford, but with concerns.
 
-BSH: We’re over time, so I suppose -- I think some of my concerns at least are the same as
-Kevin’s.
+BSH: We’re over time, so I suppose -- I think some of my concerns at least are the same as Kevin’s.
 
 CDA: Okay, thank you. Shu, finally.
 
-SYG: Yeah, I’m not going to block Stage 2. I want to articulate I’ve been trying in the matrix
-Chat rings, I want to articulate what I want to explore during Stage 2. Which is, like, I don’t
-want to -- I think top-level thing is I would like to better understand are there performance
-footguns here because of the top-level `await` and Wasm story. Like, the performance story
-around deferring stuff today is to make it async, if a new performance story to
-defer things is to in fact not make it async, like, just as a first-order thing to say to
-developers that seems bad, and I want to better understand are there concerns there.
+SYG: Yeah, I’m not going to block Stage 2. I want to articulate I’ve been trying in the matrix Chat rings, I want to articulate what I want to explore during Stage 2. Which is, like, I don’t want to -- I think top-level thing is I would like to better understand are there performance footguns here because of the top-level `await` and Wasm story. Like, the performance story around deferring stuff today is to make it async, if a new performance story to defer things is to in fact not make it async, like, just as a first-order thing to say to developers that seems bad, and I want to better understand are there concerns there.
 
 CDA: All right. Thank you, everyone. We -- Nicolo, you have Stage 2.
 
@@ -1312,10 +1076,7 @@ MF: Iterator helpers is at Stage 3. We had some implementation feedback from ABL
 
 MF: Because of that similarity, though, we chose just to specify it using a single AO that they share, and the way we did that is for iterator.from to take any strings that it receives and make them objects, because that’s the difference between Iterator.from and flatMap. We didn’t realize at the time that, because of the way we wanted to specify it, that this causes an observable string object to be created, which you can observe  if you do something very strange. So ABL would like us to -- well, has given implementation feedback that we should instead specify it differently in a way that still has the same effects but does not make the string object. So that is what I have done in this pull request. If you want to see it you can go to #281 on the iterator helpers proposal repo. And that’s my full presentation. It’s a very small change that changes observability for very obscure code that’s basically looking for the string object, and just changes a string object to a string primitive.
 
-CDA: All right. We have a plus one from KG. No need to speak. We also have a plus one from
-DM, also no need to speak. Another plus one from DE. No need to speak. Any
-other comments or support for this change?  Okay. Thank you very much. We have consensus on
-the optimization.
+CDA: All right. We have a plus one from KG. No need to speak. We also have a plus one from DM, also no need to speak. Another plus one from DE. No need to speak. Any other comments or support for this change?  Okay. Thank you very much. We have consensus on the optimization.
 
 ### Conclusion
 
@@ -1328,50 +1089,24 @@ Presenter: Patrick Soquet (PST)
 - [proposal](https://github.com/tc39/proposal-integer-and-modulus-math)
 - [slides](https://drive.google.com/file/d/1_Fnqq8q47uHm7Um9dQD0Ti8zB5R0d0Hp/)
 
-PST: Thank you for your patience. So this proposal is adding a few static methods to
-the `Math` object. There are, like, two sides to it. The first one is toModulus operations,
-and  few new integer math operations in the spirit of the existing i-modulo operation. I think
-Peter presented that to the committee three years ago, two years ago. And so this is just to
-update the proposal based on the feedback we received and the experience we have using the
-feature in excess on the microcontroller. And if it makes sense to the committee, we would
-like to prepare for Stage 2 later this year and making spec and doing that kind of thing.
+PST: Thank you for your patience. So this proposal is adding a few static methods to the `Math` object. There are, like, two sides to it. The first one is toModulus operations,
+and  few new integer math operations in the spirit of the existing i-modulo operation. I think Peter presented that to the committee three years ago, two years ago. And so this is just to update the proposal based on the feedback we received and the experience we have using the feature in excess on the microcontroller. And if it makes sense to the committee, we would like to prepare for Stage 2 later this year and making spec and doing that kind of thing.
 
-PST: So why do we want to propose that?  The first thing is completeness. There are no true modulus
-operations provided by JavaScript. The modulo operator is in fact a remainder operation. And
-the other integer operations are common enough. I mean, everybody’s doing
-something like that. And are not directly expressible currently. The second reason is for the
-sake of performance:  Integer math can be faster, and of course, that’s especially the case for
-us on embedded hardware without a floating point unit. Third reason, ergonomics:  Using
-floating point operation is sometimes clumsy when integer operations are intended. Non-integer
-value can lead to unexpected results. I mean, the classical case is accessing an item in an
-array using multiplying the array length with Math.random. That -- I think it’s --
+PST: So why do we want to propose that?  The first thing is completeness. There are no true modulus operations provided by JavaScript. The modulo operator is in fact a remainder operation. And the other integer operations are common enough. I mean, everybody’s doing something like that. And are not directly expressible currently. The second reason is for the sake of performance:  Integer math can be faster, and of course, that’s especially the case for us on embedded hardware without a floating point unit. Third reason, ergonomics:  Using floating point operation is sometimes clumsy when integer operations are intended. Non-integer value can lead to unexpected results. I mean, the classical case is accessing an item in an array using multiplying the array length with Math.random. That -- I think it’s --
 
-PST: So let’s go to details. `Math.mod(x,y)`, would return the true IEEE754 module. And here are a few more integer operations. `Math.idiv`, which would do an integer 32-bit division. `Math.imuldiv` which
-will do `x` times `y` with `z` with an intermediate. `imod` would do the same thing with `mod` but the
-same thing with integer 32, and `irem`, that will do the same thing as the modular operator but
-with Int32. All those operations follows the model of the existing math.imul, meaning that the
-input arguments are converted to integer values using ToInt32 and the results fit into Int32.
-The -- one of the -- I mean, maybe not using the logic that we use for that is that, like, math
-Imul div with x, y and is should return the same thing as Math.imul and math.imul with y and x
-should do the same as idiv so it remains consistent.
+PST: So let’s go to details. `Math.mod(x,y)`, would return the true IEEE754 module. And here are a few more integer operations. `Math.idiv`, which would do an integer 32-bit division. `Math.imuldiv` which will do `x` times `y` with `z` with an intermediate. `imod` would do the same thing with `mod` but the same thing with integer 32, and `irem`, that will do the same thing as the modular operator but with Int32. All those operations follows the model of the existing math.imul, meaning that the input arguments are converted to integer values using ToInt32 and the results fit into Int32.
+The -- one of the -- I mean, maybe not using the logic that we use for that is that, like, math Imul div with x, y and is should return the same thing as Math.imul and math.imul with y and x should do the same as idiv so it remains consistent.
 
-PST: There’s a special case. I will not try to pronounce that number, be you know which one it is. Divided by minus 1 cannot be represented by Int32 because it requires 33 bits, and that impacts several of the math operations that we propose. Of course, especially idiv but also imuldiv and imod. So these
-are the results we propose. They seem to withstand the usage of the feature for y, but of course, it’s open to discussion.
+PST: There’s a special case. I will not try to pronounce that number, be you know which one it is. Divided by minus 1 cannot be represented by Int32 because it requires 33 bits, and that impacts several of the math operations that we propose. Of course, especially idiv but also imuldiv and imod. So these are the results we propose. They seem to withstand the usage of the feature for y, but of course, it’s open to discussion.
 
-PST: The last one is irandom, which is returning
-integer 32 value. There are three variations depending on the number of arguments. We’ve
-heard arguments it’s from 0 to that number. And we have -- one argument is between 0 and the
-past value minus 1 inclusive. And with x and y, it’s between x and y -1 inclusive. The
-implementation matches the behavior of the example on MDN get random Int and of course like
-Math.random, it’s not intended to be mathematically secure.
+PST: The last one is irandom, which is returning integer 32 value. There are three variations depending on the number of arguments. We’ve heard arguments it’s from 0 to that number. And we have -- one argument is between 0 and the past value minus 1 inclusive. And with x and y, it’s between x and y -1 inclusive. The implementation matches the behavior of the example on MDN get random Int and of course like Math.random, it’s not intended to be mathematically secure.
 
 PST: There are alternate -- one of them have been suggested by Tab Atkins (TAB). The -- the most -- mostly the idea is that the X and Y could be between -- instead of between -- instead of between Int32, it could be between min safe integer and max safe integer. It’s more general, but it differs from Int32 precedent that was set by Math.imul and of course it increases the implementation complexity a bit. There has been discussion about this proposal being, like, putting all kind of things together that were unrelated. So we can, of course, divide it into many parts: modulus could be one part, integer math could be another part, irandom could be another path and we could put the  different functions in the different paths. It’s -- that’s where the -- I mean, we don’t have,
 like, a strong opinion about that. I suppose that it’s a view for the committee that we are not  talking about months of work to implement this. It’s not like a big  proposal. So that’s why we tend to pack all of them into one proposal. And that’s it.
 
 PST: So, what we look is that the question for you is is the committee still interested  by that?  And should we proceed with preparing the proposal for Stage 2?  And in which modality?  Split into several ones, something removed and so on. Yeah, up to you.
 
-WH: Yeah, okay, it does seem like three separate proposals in one. I’m curious, for fixed
-precision, the unsigned versions tend to be more common and useful than the same precision signed ones. So why did you omit the unsigned division and remainder?
+WH: Yeah, okay, it does seem like three separate proposals in one. I’m curious, for fixed precision, the unsigned versions tend to be more common and useful than the same precision signed ones. So why did you omit the unsigned division and remainder?
 
 PST: The question is, like, there would be, like, also unsigned operation?
 
@@ -1383,16 +1118,13 @@ WH: Well, both have use cases. For `imul` it does not matter, signed and unsigne
 
 PST:  I take notes and then I send them to PH and he will reply to you, because, I mean, it’s really not my proposal. But thank you for the feedback.
 
-DLM: So, yeah, we discussed this a little bit internally. and we’re more interested in the items  that seem to be capabilities, so the true modulus and random seem interesting to us. We’re not  as sure about the motivation for the other ones, so maybe some more -- some evidence and some
-of, like, performance gains or something like that would help convince us, but it might also be
-beneficial to split into three proposals like you’re talking about.
+DLM: So, yeah, we discussed this a little bit internally. and we’re more interested in the items  that seem to be capabilities, so the true modulus and random seem interesting to us. We’re not  as sure about the motivation for the other ones, so maybe some more -- some evidence and some of, like, performance gains or something like that would help convince us, but it might also be beneficial to split into three proposals like you’re talking about.
 
 PST: Okay. Thank you.
 
 SYG:  So I would prefer it to be divided into three proposals, along the lines of modulus, which intuitively seems useful. Irandom, which to me intuitively seems usefeful, and I agree with DLM that I’m less convinced on the arithmetic methods and that should be explored in some proposal.
 
-PST: Okay. And when people are saying keeping the models, it’s both or just math mad?  I mean
-in, the three, it’s the first one or the second one?
+PST: Okay. And when people are saying keeping the models, it’s both or just math mad?  I mean in, the three, it’s the first one or the second one?
 
 SYG: What is `irem`?  That’s integer remainder?
 
@@ -1402,32 +1134,23 @@ SYG: Is there utility for that?  I’m convinced by mod and imod.
 
 SFC: Just a comment that Euclidean division and remainder is another operation that’s found in certain standard libraries, including Rust (https://doc.rust-lang.org/std/primitive.i64.html#method.div_euclid). I’ve been using it for calendar operations. That would be useful to include if you’re adding other convenience operations.
 
-SYG: Yeah, I’ll skip the utility thing we already talked about. It was not clear to me when
-reading this what of the proposed integer arithmetic methods cannot already be exactly
-expressed semantics with the `|0` trick, like from ‘asm.js’ where you do floating point or you or zero everything. And if some of them are already…
+SYG: Yeah, I’ll skip the utility thing we already talked about. It was not clear to me when reading this what of the proposed integer arithmetic methods cannot already be exactly expressed semantics with the `|0` trick, like from ‘asm.js’ where you do floating point or you or zero everything. And if some of them are already…
 
 PST: I think for the other -- the other operation is mostly because of performance based on microcontroller, we felt floating point unit, so in fact, that allows the code path completely avoid to use some floating point library for all those operations.
 
-SYG: But you can -- but that should be possible with `|0` trick as well. Like, that was the
-point of asm.js, it could just compile it down to integer arithmetic if you wrote --
+SYG: But you can -- but that should be possible with `|0` trick as well. Like, that was the point of asm.js, it could just compile it down to integer arithmetic if you wrote --
 
 PST: I will put that to PHE. I agree with you myself, so I will follow up.
 
-SYG: And the follow-up to that is that of course `|0` gives a signed Int32, and to
-echo WH's point, that points to perhaps unsigned things are in fact more useful because
-you cannot express them today.
+SYG: And the follow-up to that is that of course `|0` gives a signed Int32, and to echo WH's point, that points to perhaps unsigned things are in fact more useful because you cannot express them today.
 
 PST: Okay. Thank you.
 
-WH: In response to your question about how to split the three proposals, the first
-variant on the slide is what I was suggesting, `Math.mod` is independently useful, so that would be one
-proposal. The second proposal would be all the things which are specifically limited to Int32
-or Uint32. The third proposal would be the random number generators. And I wouldn’t limit the random number generators to Int32/Uint32.
+WH: In response to your question about how to split the three proposals, the first variant on the slide is what I was suggesting, `Math.mod` is independently useful, so that would be one proposal. The second proposal would be all the things which are specifically limited to Int32 or Uint32. The third proposal would be the random number generators. And I wouldn’t limit the random number generators to Int32/Uint32.
 
 PST: Okay.
 
-SFC: Yeah, I was just wondering why I32 is being proposed for all these functions and would it
-be useful to have the 64 bit versions of these?  Why 32?
+SFC: Yeah, I was just wondering why I32 is being proposed for all these functions and would it be useful to have the 64 bit versions of these?  Why 32?
 
 PST: Yeah. It would be.
 
@@ -1437,21 +1160,13 @@ EAO: Mostly this is an observation that up until a week ago, the only issue in t
 
 PST: Understood. The idea was to get feedback, and we got it. So thank you.
 
-WH: I don’t understand the previous question about the Int64, since you cannot represent
-64-bit integers exactly as Numbers.
+WH: I don’t understand the previous question about the Int64, since you cannot represent 64-bit integers exactly as Numbers.
 
-SFC: Yeah, -- other people sort of alluded to this, but it would be great to be more clear about which of these operations are being added here because they are actually more efficient to
-perform, is it actually more efficient than if you did the same operation in userland
-using the existing functionality that you can get from IEEE arithmetic, which we already
-support?  And maybe some of these operations are actually faster if the engine can, for example, take a Number and make it into an I32, make some operation and get a back and give back to the user, maybe that’s faster than if you kept it in floating point and did everything in floating point. But it’s not clear, like, whether that’s the case, and I think that would be, you know, better motivation, especially for certain operations, if you can show that this operation is two or three times faster than if you
-tried to do the same operation the current way. I think that would be very helpful context to
-have.
+SFC: Yeah, -- other people sort of alluded to this, but it would be great to be more clear about which of these operations are being added here because they are actually more efficient to perform, is it actually more efficient than if you did the same operation in userland using the existing functionality that you can get from IEEE arithmetic, which we already support?  And maybe some of these operations are actually faster if the engine can, for example, take a Number and make it into an I32, make some operation and get a back and give back to the user, maybe that’s faster than if you kept it in floating point and did everything in floating point. But it’s not clear, like, whether that’s the case, and I think that would be, you know, better motivation, especially for certain operations, if you can show that this operation is two or three times faster than if you tried to do the same operation the current way. I think that would be very helpful context to have.
 
 PFC: I’d like, if you proceed with the integer math part of the proposal, to explore during one of the early stages whether it’s possible to do the special case for `-(2**31)/-1` in a different way. Because I’m not a big fan of having a function silently return a result that’s not the arithmetically correct one. I think that makes sense for integer division in the CPU architectures, like you read in the readme, but I think my experience is JavaScript programmers generally don’t think at that level about integers. So I’d like us to explore if it could throw or do something else or return +2**31 as a regular number.
 
-WH: The answer to PFC’s question is that it does return the correct answer in that case, but it returns
-the answer `-(2**31)/-1 modulo 2**32`. Keep the in mind that all of these things already do
-modulo `2**32` on their arguments.
+WH: The answer to PFC’s question is that it does return the correct answer in that case, but it returns the answer `-(2**31)/-1 modulo 2**32`. Keep the in mind that all of these things already do modulo `2**32` on their arguments.
 
 PFC: Okay.
 
@@ -1468,126 +1183,49 @@ Presenter: Peter Klecha (PKA)
 - [proposal](https://github.com/tc39/proposal-promise-with-resolvers)
 - [slides](https://docs.google.com/presentation/d/1KFShqHVFhVBaqZ3anheUGOwtVDrPWCVeFvmaUpwk3AQ/)
 
-PKA: Okay, so hello. I’m Peter from Bloomberg and I’m presenting `Promise.withResolvers` for Stage
-3. Yeah, so the motivation for this proposal is that, you know, we have this promise
-constructor which works well for many use cases. We pass it a callback, which takes resolve
-and reject methods as arguments, and then in the body of in callback, we’re specifying when and if these methods should be called, then the constructor obviously returns the promise in question.
+PKA: Okay, so hello. I’m Peter from Bloomberg and I’m presenting `Promise.withResolvers` for Stage 3. Yeah, so the motivation for this proposal is that, you know, we have this promise constructor which works well for many use cases. We pass it a callback, which takes resolve and reject methods as arguments, and then in the body of in callback, we’re specifying when and if these methods should be called, then the constructor obviously returns the promise in question.
 
 PKA: But sometimes developers want to create a promise and get a handle on it before deciding how or when to call its resolvers. So doing this requires doing this bit of boilerplate that we have in the first line where we create some outer variables `resolve` and `reject` and then inside the promise constructor just sweep those out so that we can get our handle and then proceed to call these in whatever context we want.
 
-PKA: This is a wheel that gets reinvented a lot. We found a bunch of examples where this is either a utility function or where it’s repeated again and again inline. The proposal is a simple one. It just says let’s add a static method to the Promise class, which does this for us, which returns plain objects with
-the promise as well as the resolve and reject functions as properties.
+PKA: This is a wheel that gets reinvented a lot. We found a bunch of examples where this is either a utility function or where it’s repeated again and again inline. The proposal is a simple one. It just says let’s add a static method to the Promise class, which does this for us, which returns plain objects with the promise as well as the resolve and reject functions as properties.
 
-PKA: The one sort of  remaining open issue that was discussed last time was how subclassing and binding behavior should work. So what’s been resolved is that if we have a subclass, like, for example, Vow, and then we call `Vow.withResolvers`, that the promise property on that object that is returned
-by that method is in fact an instance of `Vow` and not `Promise`. And that is a related point -- a
-related point is that with other promise statics, if there isn’t a receiver when withResolvers is
-called, then we throw a type error. So that was sort of the behavior that was suggested at the
-last meeting. I think that received general support. It’s the way that other promise setters
-work, so nothing has suggested that we should move off of that, so affirming that behavior.
+PKA: The one sort of  remaining open issue that was discussed last time was how subclassing and binding behavior should work. So what’s been resolved is that if we have a subclass, like, for example, Vow, and then we call `Vow.withResolvers`, that the promise property on that object that is returned by that method is in fact an instance of `Vow` and not `Promise`. And that is a related point -- a related point is that with other promise statics, if there isn’t a receiver when withResolvers is called, then we throw a type error. So that was sort of the behavior that was suggested at the last meeting. I think that received general support. It’s the way that other promise setters work, so nothing has suggested that we should move off of that, so affirming that behavior.
 
-PKA: We have -- I should also mention that, you know, I settled on the name “withResolvers”. I
-haven’t heard -- there was some discussion, and as I acknowledged in the issue on the GitHub
-and previously in previous meetings, it’s maybe not the best possible name or rather I
-should say maybe our -- some issues with it, it is a bit verbose, but I never heard a better
-alternative, so proceeding with `withResolvers`. We have a spec. There it is. We have a
-polyfill. There it is. We have tests. Here they are, or rather here’s the PR for them. So,
+PKA: We have -- I should also mention that, you know, I settled on the name “withResolvers”. I haven’t heard -- there was some discussion, and as I acknowledged in the issue on the GitHub and previously in previous meetings, it’s maybe not the best possible name or rather I should say maybe our -- some issues with it, it is a bit verbose, but I never heard a better alternative, so proceeding with `withResolvers`. We have a spec. There it is. We have a polyfill. There it is. We have tests. Here they are, or rather here’s the PR for them. So,
 yeah, I’d like to open the floor for questions and comments at this point.
 
 CDA: There’s nothing in the queue so far. Now, Shu?
 
-SYG: We discussed this internally. A question that came up was, you know, this -- some
-of this has been covered in previous meetings as well. So in the original design of promises,
-it was litigated that we would not have this form, and one of the reasons was uncaught
-rejections -- sorry, uncaught exceptions you want to automatically reject the thing, which this
-would not -- which this would not do. So I agree with the fact that you will need this kind of
-capability to be able to exfiltrate the resolvers somehow, and that use case is not going away
-and that it is not an illegitimate use case by any means. But I’m wondering, what is the downside in not having this as a standardized method?  Given that it is fairly easily expressible in userland, are we saying as a committee we no longer buy the original motivation and we are litigating this?  Are we no
-longer worried about the footgun, or are we just saying that, like, just because it’s used
-everywhere, we should add things that are used everywhere?
+SYG: We discussed this internally. A question that came up was, you know, this -- some of this has been covered in previous meetings as well. So in the original design of promises,
+it was litigated that we would not have this form, and one of the reasons was uncaught rejections -- sorry, uncaught exceptions you want to automatically reject the thing, which this would not -- which this would not do. So I agree with the fact that you will need this kind of capability to be able to exfiltrate the resolvers somehow, and that use case is not going away and that it is not an illegitimate use case by any means. But I’m wondering, what is the downside in not having this as a standardized method?  Given that it is fairly easily expressible in userland, are we saying as a committee we no longer buy the original motivation and we are litigating this?  Are we no longer worried about the footgun, or are we just saying that, like, just because it’s used everywhere, we should add things that are used everywhere?
 
-PKA: Well, I guess in part, yes, that there’s proven out to be demand for this, and not adding the
-method just means we’re asking developers to continue to write this template and to
-do so in a way which, you know, also experiences the uncaught
-exception issue. So in part, yes, this is response to just a demand that appears to be there.
-Which we didn’t know about at the time of the original discussion. But also just I think
-that in general people are a little more comfortable with promises these days, that
-it wasn’t clear maybe how promises would be adopted or used in the ecosystem and what things
-would look like at this point, so, yeah, I suppose this is a --
+PKA: Well, I guess in part, yes, that there’s proven out to be demand for this, and not adding the method just means we’re asking developers to continue to write this template and to do so in a way which, you know, also experiences the uncaught exception issue. So in part, yes, this is response to just a demand that appears to be there.
+Which we didn’t know about at the time of the original discussion. But also just I think that in general people are a little more comfortable with promises these days, that it wasn’t clear maybe how promises would be adopted or used in the ecosystem and what things would look like at this point, so, yeah, I suppose this is a --
 
-DE: Yeah, I think there are two pieces to this. This one is yes, generally yes we should add
-things to the standard library that people have to implement over and over again. I think that
-should be a shared role of the committee, when it’s things at the JavaScript level. The other
-part is, how does this make sense given the previous design, which specifically avoided this,
-and I think it’s very legitimate to bring this up. I think we should consider this a
-decision based on experience that we are, you know, not making that particular design tradeoff
-that was previously made. When promises were first created, there was the expectation and I hope
-that people would feel comfortable using the promise constructor. This has proven to not be
-true -- well, somewhat. So use of this idiom -- well, at the very least, in
-the course of this proposal, when I’ve explained to people the original motivation and the fact
-that the exceptions are caught and turned into a rejection when it’s within the promise
-constructor and that’s why it’s excluded, most people have been surprised. And kind of baffled
-by the logic for exclusion in the first place. I think this has not received a large amount of
-kind of community buy-in, and that’s why it’s so common to bypass the whole mechanism in first
-place and use this particular idiom, so the path of excluding it hasn’t quite led to the thing
-that we want. The biggest risk that this whole thing was trying to avoid was
-that people would try to use functions that return promises, make them sometimes throw an
-exception eagerly and sometimes do a rejection. Where the hope was that everyone would use a
-rejection. I think the use of `async await` now, which wasn’t present when we made this original
-decision, not to include defer, has helped many people switch into this standard pattern of it’s
-just promise rejections. And, yeah, I’m kind of optimistic that the ecosystem will do the
-right thing with this, given that they generally already have been doing so.
+DE: Yeah, I think there are two pieces to this. This one is yes, generally yes we should add things to the standard library that people have to implement over and over again. I think that should be a shared role of the committee, when it’s things at the JavaScript level. The other part is, how does this make sense given the previous design, which specifically avoided this,
+and I think it’s very legitimate to bring this up. I think we should consider this a decision based on experience that we are, you know, not making that particular design tradeoff that was previously made. When promises were first created, there was the expectation and I hope that people would feel comfortable using the promise constructor. This has proven to not be true -- well, somewhat. So use of this idiom -- well, at the very least, in the course of this proposal, when I’ve explained to people the original motivation and the fact that the exceptions are caught and turned into a rejection when it’s within the promise constructor and that’s why it’s excluded, most people have been surprised. And kind of baffled by the logic for exclusion in the first place. I think this has not received a large amount of kind of community buy-in, and that’s why it’s so common to bypass the whole mechanism in first place and use this particular idiom, so the path of excluding it hasn’t quite led to the thing that we want. The biggest risk that this whole thing was trying to avoid was that people would try to use functions that return promises, make them sometimes throw an exception eagerly and sometimes do a rejection. Where the hope was that everyone would use a rejection. I think the use of `async await` now, which wasn’t present when we made this original decision, not to include defer, has helped many people switch into this standard pattern of it’s just promise rejections. And, yeah, I’m kind of optimistic that the ecosystem will do the right thing with this, given that they generally already have been doing so.
 
 CDA: All right, Kevin is next.
 
-KG:  On the promise rejection thing, basically what DE said, the thing where you catch a wrapped
-exception makes sense if you are returning a promise. But it only makes sense if you are only
-returning a promise. If you are doing anything else, you don’t want to catch exceptions in the
-constructor. Failing to schedule a task should be a synchronous error rather than an
-error for the person trying to consume the result of the task. So the promise constructor
-is fine for what it is, but this new function you use in cases that you’re not just returning
-the promise right away, and so it makes sense that in these cases, you actively don’t want to
-wrap up the exception.
+KG:  On the promise rejection thing, basically what DE said, the thing where you catch a wrapped exception makes sense if you are returning a promise. But it only makes sense if you are only returning a promise. If you are doing anything else, you don’t want to catch exceptions in the constructor. Failing to schedule a task should be a synchronous error rather than an error for the person trying to consume the result of the task. So the promise constructor is fine for what it is, but this new function you use in cases that you’re not just returning the promise right away, and so it makes sense that in these cases, you actively don’t want to wrap up the exception.
 
 CDA: Nicolo is next.
 
-SYG: Sorry, I have to run, but can I respond to KG real quick. It’s not -- so it’s not
-impossible to express the use case, right?  It’s about a standardizing the convenience. You
-are certainly able to get the resolvers out today I agree the use cases are going to continue
-to exist. You are not -- there’s some times you don’t want to catch the exception and turn it
-into a rejection. But we’re not talking about a new express. We’re talking about enshrining
-the convenience. And I’m somewhat convinced by what DE said, which is if -- I’d read a little
-bit into what DE said, he said `async`/`await` is the actual thing that helped people with the
-rejection footgun issue with `async`/`await` now in the language, promise constructor
-is probably an escape hatch anyway and it’s fine to no longer really try to build the right cowpaths into the API. Is that a fair characterization, DE?
+SYG: Sorry, I have to run, but can I respond to KG real quick. It’s not -- so it’s not impossible to express the use case, right?  It’s about a standardizing the convenience. You are certainly able to get the resolvers out today I agree the use cases are going to continue to exist. You are not -- there’s some times you don’t want to catch the exception and turn it into a rejection. But we’re not talking about a new express. We’re talking about enshrining the convenience. And I’m somewhat convinced by what DE said, which is if -- I’d read a little bit into what DE said, he said `async`/`await` is the actual thing that helped people with the rejection footgun issue with `async`/`await` now in the language, promise constructor is probably an escape hatch anyway and it’s fine to no longer really try to build the right cowpaths into the API. Is that a fair characterization, DE?
 
 DE: I think so. I didn’t fully catch that.
 
 SYG:  Okay. All right, I think that’s fine with me. Unfortunately, I have to run.
 
-NRO: Yes. So, like, when we first introduce promises, when I started using promises, I often
-needed the promise constructor because I was working with a lot of callback-based APIs and I needed
-to convert them to promises. And having this constructor that was, like, handy, because my callback code was pretty much set containing anyway and these adjust and move it inside the promise
-constructor function. Well, now, like, almost all the APIs are already promise-based, and the
-reason I now have to manually create promises not because I want to convert something that’s
-subcontained, but because my promise logic needs to be divided into different parts of my code. and
-so, like, while that was a minority case in the past, now the ecosystem evolved. For me
-personally, it’s the only use case for creating promises that I have now.
+NRO: Yes. So, like, when we first introduce promises, when I started using promises, I often needed the promise constructor because I was working with a lot of callback-based APIs and I needed to convert them to promises. And having this constructor that was, like, handy, because my callback code was pretty much set containing anyway and these adjust and move it inside the promise constructor function. Well, now, like, almost all the APIs are already promise-based, and the reason I now have to manually create promises not because I want to convert something that’s subcontained, but because my promise logic needs to be divided into different parts of my code. and so, like, while that was a minority case in the past, now the ecosystem evolved. For me personally, it’s the only use case for creating promises that I have now.
 
-EAO: I’d like to note appreciation for the long research into the history of the possible names
-for this, though it does look like at least “unsmoosh” was never considered. The resolution of
-the discussions on GitHub ending up “withResolvers” sounds like the right resolution, and we like this thing.
+EAO: I’d like to note appreciation for the long research into the history of the possible names for this, though it does look like at least “unsmoosh” was never considered. The resolution of the discussions on GitHub ending up “withResolvers” sounds like the right resolution, and we like this thing.
 
-CDA: Thanks. I would still prefer defer, which would be not compatible because some ES6
-polyfills will aggressively delete `defer`, but deferred I think would be still possible. But I
-think it’s fine as is and still would support “embiggen” as well.
+CDA: Thanks. I would still prefer defer, which would be not compatible because some ES6 polyfills will aggressively delete `defer`, but deferred I think would be still possible. But I think it’s fine as is and still would support “embiggen” as well.
 
 JHD: (from queue) “+1 for Stage 3 with the current name (or “deferred”) and current subclassing semantics”
 
-CM: One thing I like about this proposal is that it feels to me like a better fit to the
-user’s mental model of promises. When I first started using promises it was in the 1990s way before JavaScript had them, and I’ve been using them ever since then for various things, and when I first
-encountered the JavaScript Promise API, my first reaction was like, are you people all on drugs or
-something?  And I very much appreciate this proposal: it presents a better framework for explaining
-the API to people.
+CM: One thing I like about this proposal is that it feels to me like a better fit to the user’s mental model of promises. When I first started using promises it was in the 1990s way before JavaScript had them, and I’ve been using them ever since then for various things, and when I first encountered the JavaScript Promise API, my first reaction was like, are you people all on drugs or something?  And I very much appreciate this proposal: it presents a better framework for explaining the API to people.
 
 CDA: That is everyone in the queue.
 
@@ -1599,14 +1237,11 @@ DE: SYG previously expressed some concerns, but I think he concluded I think thi
 Maybe we should confirm with him when he comes back that he’s okay with Stage 3.
 
 CDA: We have plus one on the queue from Mozilla, plus 1 from IBM as well. I believe we had a
-+1 from JHD. Any other explicit support?  Christian, plus 1 from Zolari. And I think
-we can note -- sorry, Dan, were you saying something?
++1 from JHD. Any other explicit support?  Christian, plus 1 from Zolari. And I think we can note -- sorry, Dan, were you saying something?
 
-DE: I think we could say that this is conditional consensus, that we would confirm that SYG is
-okay with consensus before the end of the meeting.
+DE: I think we could say that this is conditional consensus, that we would confirm that SYG is okay with consensus before the end of the meeting.
 
-CDA: Sure. I think we can proceed -- yeah, I think we can proceed with Stage 3 on the condition
-that SYG would not block. We have also a plus 1 from MAH from Agoric. Any other comments?
+CDA: Sure. I think we can proceed -- yeah, I think we can proceed with Stage 3 on the condition that SYG would not block. We have also a plus 1 from MAH from Agoric. Any other comments?
 I’m hearing some mumblings from the room. +1 from CHU.
 Okay.
 
@@ -1627,56 +1262,35 @@ The committee approved this proposal for Stage 3.
 
 ## 2024 meeting planning
 
-??: All right. I don’t think we have enough time left to sneak in another item. Unless we have
-a nice little 10 minute something or other, which I’m not convinced we do.
+??: All right. I don’t think we have enough time left to sneak in another item. Unless we have a nice little 10 minute something or other, which I’m not convinced we do.
 
-??: I could do a quick admin point. Which is that it’s almost time to start planning for next
-year, and the -- and the venues or we might go for in-person TC39 meetings over 2024. So if
-you would like to volunteer to host a meeting, we will be looking for venues in the US,
-continental US, European time zone and APAC. That’s how we’ve divided things so far, so one in
-each. So if you would like to -- if you have facilities or ability to host, please come and
-speak to me at any time. I will also be posting this on the reflector as a formal call for
-hosts.
+??: I could do a quick admin point. Which is that it’s almost time to start planning for next year, and the -- and the venues or we might go for in-person TC39 meetings over 2024. So if you would like to volunteer to host a meeting, we will be looking for venues in the US,
+continental US, European time zone and APAC. That’s how we’ve divided things so far, so one in each. So if you would like to -- if you have facilities or ability to host, please come and speak to me at any time. I will also be posting this on the reflector as a formal call for hosts.
 
 ??: Do you have a draft of what meetings you want to be in different geographies?
 
-??: Not really. I don’t think there are any constraints at the moment other than we plan -- we
-continue to plan the same schedule as like there year, which is a total of six meetings,
+??: Not really. I don’t think there are any constraints at the moment other than we plan -- we continue to plan the same schedule as like there year, which is a total of six meetings,
 ideally once every other month.
 
 ??: Odd months.
 
-??: And I think it’s wise to keep the in-person meetings four months apart, if possible. But
-this is all down to the constraints and the basically whether we get people offering, because
-when people offer to host, sometimes they can’t offer any top month of the year. It’s down to
-availability of particular rooms and so on. But, yeah, any more questions like that, you can
-speak to me or we can also discuss in the reflector.
+??: And I think it’s wise to keep the in-person meetings four months apart, if possible. But this is all down to the constraints and the basically whether we get people offering, because when people offer to host, sometimes they can’t offer any top month of the year. It’s down to availability of particular rooms and so on. But, yeah, any more questions like that, you can speak to me or we can also discuss in the reflector.
 
-??: So one of the things we were mumbling about here is that not everybody’s name appears to be
-on the notes for today. So if you haven’t put your name in the notes at the header, please put
-your name, your abbreviation and your organization.
+??: So one of the things we were mumbling about here is that not everybody’s name appears to be on the notes for today. So if you haven’t put your name in the notes at the header, please put your name, your abbreviation and your organization.
 
-??: Just one more item on the upcoming meetings. The one that is, I guess, probably landing in
-February would be the centennial, number 100. So it would be nice to get maybe that one to be
-in-person, if possible.
+??: Just one more item on the upcoming meetings. The one that is, I guess, probably landing in February would be the centennial, number 100. So it would be nice to get maybe that one to be in-person, if possible.
 
-??: Yes, we should do something special for the 100th, so if you have the best venue in the
-world, please volunteer it.
+??: Yes, we should do something special for the 100th, so if you have the best venue in the world, please volunteer it.
 
 ??: It would naturally follow in January, but there’s a little bit of leeway.
 
-??: As I said, the main thing that limits us in hosting is who volunteers to host. That is
-something that, you know, not everyone has that ability. It’s -- it’s relatively rare. So
-that’s the reason for asking everyone here today.
+??: As I said, the main thing that limits us in hosting is who volunteers to host. That is something that, you know, not everyone has that ability. It’s -- it’s relatively rare. So that’s the reason for asking everyone here today.
 
-??: All right. I think we’re -- we have five minutes left. I don’t think we can sneak in data
-view methods within five minutes. Put JHD on the spot. Probably too short even for that
-one.
+??: All right. I think we’re -- we have five minutes left. I don’t think we can sneak in data view methods within five minutes. Put JHD on the spot. Probably too short even for that one.
 
 ??: Yeah, probably too short.
 
-??: Okay. All right, well we will give you a few minutes back extra, and we will see you all
-tomorrow.
+??: Okay. All right, well we will give you a few minutes back extra, and we will see you all tomorrow.
 
 ### Summary
 

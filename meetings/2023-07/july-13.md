@@ -27,8 +27,7 @@ Presenter: Shane F. Carr  (SFC)
 
 - [slides](https://docs.google.com/presentation/d/1MKceo1Pn1PvuMz1WkzGwIpbT5qRNZVZRxY3rgcPJOKI/)
 
-SFC:  Yes.  Perfect.  I will go ahead and get started then
-WASM models and as polyfill and libraries.  I am SFC.  Most of you know me, maybe not everyone.
+SFC:  Yes.  Perfect.  I will go ahead and get started then WASM models and as polyfill and libraries.  I am SFC.  Most of you know me, maybe not everyone.
 I work at Google on the engineer team and have been participating in TC39 for five years.  Yeah.  So I will give a presentation here about the – some of the problems that I saw as part of my work in this area.
 
 SFC: This is a little flowchart regarding the current state of what my team is working toward with regards to portable I18N, I followed by 18 letters followed by N at the end.  We have abbreviated this I18N.
@@ -73,8 +72,7 @@ You know, it’s not going to be as small as JavaScript ever is because like if 
 We have done a good job as reducing the binary size for ICU4X.  We are much smaller than IC compiled to WASM.  I have a graph.  But it’s like basically – it’s only 100 times smaller than ICU4X because of the focus we put on this.  It’s not going to ever get down to zero.  You know, as developers we like when things are O the standard libraries requirements want to be completely zero.
 So that is a challenge.
 
-SFC: Challenge 4, I have talked about before to this committee is async loading and modules.  So Wasm of course requires an async call to compile or instantiate a model.  Everything is needs is also async.  Normally with JavaScript, it depends on it, like if you write an item in the library in JavaScript only, like all the constructors, everything, they are regular JavaScript functions and sync.  They don’t need to be async.  But with Wasm everything is automatically like you have to use async.  So there’s – you sort of – when building the application with the Wasm library you have to pick between the lesser several evils of how to deal with.  One is to wrap the Wasm in async JS constructors.  That’s like if you want to create an format or like Intl number but created in WASM that is an async [cet]er.  You have to await the new number format.  That’s one way to do it
-The second way is you can use async modules which are fine and great.  They have problems that like many of the people this committee have talked about.  They kind of work and great to work better.  And they kind of solve the problem.  But they are also like once you have an async module in your module graph and you have to start thinking about async modules everywhere.  It’s an integration point.  I want to use this, oh, but if I do, I have an async module.  Maybe I don’t do it now.  Because they are hard to integrate.  That’s not a great situation to be in.
+SFC: Challenge 4, I have talked about before to this committee is async loading and modules.  So Wasm of course requires an async call to compile or instantiate a model.  Everything is needs is also async.  Normally with JavaScript, it depends on it, like if you write an item in the library in JavaScript only, like all the constructors, everything, they are regular JavaScript functions and sync.  They don’t need to be async.  But with Wasm everything is automatically like you have to use async.  So there’s – you sort of – when building the application with the Wasm library you have to pick between the lesser several evils of how to deal with.  One is to wrap the Wasm in async JS constructors.  That’s like if you want to create an format or like Intl number but created in WASM that is an async [cet]er.  You have to await the new number format.  That’s one way to do it The second way is you can use async modules which are fine and great.  They have problems that like many of the people this committee have talked about.  They kind of work and great to work better.  And they kind of solve the problem.  But they are also like once you have an async module in your module graph and you have to start thinking about async modules everywhere.  It’s an integration point.  I want to use this, oh, but if I do, I have an async module.  Maybe I don’t do it now.  Because they are hard to integrate.  That’s not a great situation to be in.
 
 SFC: A third solution is that you can use the non-async WebAssembly constructors which have big, red warnings in the spec that says don’t these in order to get the sync behaviour.  It’s not entirely clear to me.  Like, whether like if – at least if you have the WebAssembly module and wanted an instance, like how bad is that actually?  It’s not clear to me.
 Like, why we sort of recommend that as an async function.  Maybe we can get some more clarity during the discussion on that.
@@ -112,11 +110,9 @@ So I will tell you about what this interface is.  The maintaining thing that is 
 We can’t return values from Wasm unless integers.  But right now we can only return integers.  So like the function returns an integer which is like the pointer in is like the point never memory.  In this case, we pass in this buffer.  So then it puts all the return values into this buffer for us.
 And then, yeah.  We also pass in pointers to the data provider and the locale which are required argument that is we pass in.
 This `.underlying` is the pointer within the memory of this object.  You pass this two object pointers basically.  The data provider and the locale.
-I can talk more about what those arguments are, if people are interested.  They are pointer passed in
-So then we have `is_okay`.  This looks into the return value and there’s a flag, the first field of the return value is like a bouillon, if it’s a successful return or if it was an incomplete return.
+I can talk more about what those arguments are, if people are interested.  They are pointer passed in So then we have `is_okay`.  This looks into the return value and there’s a flag, the first field of the return value is like a bouillon, if it’s a successful return or if it was an incomplete return.
 So then if (`is_okay`) the other field of the diploma buffer is going to have the value of like the pointer that we need.  So then we go ahead and wrap it into an ICU4X fixed did he see malformatter.  Call the [cut] are constructor.  Pass in the underlying pointer we pulled out of the return buffer.
-And then like I deleted the code using `edges`.  They is how we about our other objects.  I deleted because it was getting too long.  I can show you the full code, if you want.  Yeah
-If it’s an owned object, mostly – usually owned, it has `true`, I believe is what we pass in here.
+And then like I deleted the code using `edges`.  They is how we about our other objects.  I deleted because it was getting too long.  I can show you the full code, if you want.  Yeah If it’s an owned object, mostly – usually owned, it has `true`, I believe is what we pass in here.
 Then we register it into the FinalizationRegistry.  Which is the destroy function.  When the GC runs, it calls the destroy function for us.
 If it was not – either way, if it was successful or not, we free the return buffer.  Which is the again value of the constructor.
 
@@ -619,8 +615,7 @@ DE: For collection normalization, a lot of us are interested in this.  Especiall
 
 MLS: (from queue) “We could remove "Sequence properties in Unicode property escapes" as it was subsumed by the RegExp V Flag proposal <EOM>”
 
-PKA:  I'd just like to highlight that, for the remaining proposals we haven't mentioned, if anybody does want to see the proposals continue, it might behoove you to volunteer to step
-in and take them over . . .  so cool.  Thank you, everybody
+PKA:  I'd just like to highlight that, for the remaining proposals we haven't mentioned, if anybody does want to see the proposals continue, it might behoove you to volunteer to step in and take them over . . .  so cool.  Thank you, everybody
 
 USA: I would like to request Champions of all the proposals be talked about today, to take some time and add summary for each of the discussions in the notes.
 And yeah.  Thank you, PKA for the short notice prep of this session.  Thank you, PFC for pointing that out.  Great.
@@ -802,78 +797,40 @@ SYG: Yeah.  I want to + 1 MF here.  It is true that things written after tests a
 
 RPR: Okay.  I will just say we have 4 minutes left on this topic.  And we have got very big queue.
 
-MLS: So I want to point out step serialization will slow things down.  Except for the very
-smallest proposals, we’ll probably require another plenary meeting before Stage 3, the current
-Stage 3, to Stage 3.  And as an implementer, I don’t think -- I think we would be less likely
-to implement something if we have -- if it’s not in the current Stage 3 where we rest or
-whatever.  I think this -- there’s already kind of an implicit -- mostly implicit ordering that
-we have tests before we implement.  Now, saying that, quite often, the test262 tests are quite
-inferior.  I recently implemented something where there was about, I don’t know, I’ll just say
-there’s maybe ten syntax tests.  When all is said and done, I had close to 200 syntax tests
-that I wrote before we shipped the feature.  So we have to be very careful that we may be
-slowing things down not only because of process, but also slowing things down because the test
-that we’re now implicitly requiring -- there’s the test written stage that implementers may
-slow down their implementation.
+MLS: So I want to point out step serialization will slow things down.  Except for the very smallest proposals, we’ll probably require another plenary meeting before Stage 3, the current Stage 3, to Stage 3.  And as an implementer, I don’t think -- I think we would be less likely to implement something if we have -- if it’s not in the current Stage 3 where we rest or whatever.  I think this -- there’s already kind of an implicit -- mostly implicit ordering that we have tests before we implement.  Now, saying that, quite often, the test262 tests are quite inferior.  I recently implemented something where there was about, I don’t know, I’ll just say there’s maybe ten syntax tests.  When all is said and done, I had close to 200 syntax tests that I wrote before we shipped the feature.  So we have to be very careful that we may be slowing things down not only because of process, but also slowing things down because the test that we’re now implicitly requiring -- there’s the test written stage that implementers may slow down their implementation.
 
-EAO: So if you look at this from the point of view of Stage 3, the thing that has changed, if
-this is accepted, is that the test262 tests are written earlier.  And everything else effectively stays the same after approval for Stage 3 has been reached.  So I get that.  That sounds like a good idea.  What I’m not really getting is why do we need a new stage explicitly for these tests, which, as presented here, are primarily an action driven by the champions.  And I see that you do cover this a little bit in the presentation, but the sense I get is that we’re doing this in order to make it easier for issues that arise from writing the tests to have an earlier impact on the spec text and on the implementation itself.  So I get that part.  But I don’t think that there’s necessarily enough of a reason to add a completely new stage in here rather than just moving the test262 coverage to be a requirement for Stage 3 advancement.
+EAO: So if you look at this from the point of view of Stage 3, the thing that has changed, if this is accepted, is that the test262 tests are written earlier.  And everything else effectively stays the same after approval for Stage 3 has been reached.  So I get that.  That sounds like a good idea.  What I’m not really getting is why do we need a new stage explicitly for these tests, which, as presented here, are primarily an action driven by the champions.  And I see that you do cover this a little bit in the presentation, but the sense I get is that we’re doing this in order to make it easier for issues that arise from writing the tests to have an earlier impact on the spec text and on the implementation itself.  So I get that part.  But I don’t think that there’s necessarily enough of a reason to add a completely new stage in here rather than just moving the test262 coverage to be a requirement for Stage 3 advancement.
 
-MF: So it is expensive to write tests.  I recently wrote iterator helper tests.  I wrote about
-350 to 400 tests.  It took me a couple of months, like two months of the time that I can spend on TC39 to write those tests.  But iterator helpers was at Stage 3 at that point, so I had the confidence that the work I was doing was not going to have to be redone.  For proposals of that size, I cannot make that kind of a commitment until the committee has committed to me that the design is what we want it to be.  So that’s the need for this stage.  Some people were calling it like the frozen stage.  That might help you better understand why we need it.
+MF: So it is expensive to write tests.  I recently wrote iterator helper tests.  I wrote about 350 to 400 tests.  It took me a couple of months, like two months of the time that I can spend on TC39 to write those tests.  But iterator helpers was at Stage 3 at that point, so I had the confidence that the work I was doing was not going to have to be redone.  For proposals of that size, I cannot make that kind of a commitment until the committee has committed to me that the design is what we want it to be.  So that’s the need for this stage.  Some people were calling it like the frozen stage.  That might help you better understand why we need it.
 
 RPR: So +1 from LCA
 
 LCA: I want to comments on that real quick.  Can you go back to the slide of -- yes, that one,
-exactly.  The -- so I think this makes sense under the assumption that at -- when you reach
-this new stage, you already have signoff from the committee that things are final.  And, like,
-if this is the case and I guess this goes back to the question of where do we do reviews.  If
-reviews happen before this stage, this makes sense.  If reviews happen later at Stage 3, then
-we’re not quite sure things are final yet, doing this test development.  So, like, I don’t
-know.  And then, like, do things that we uncover during writing these tests, would they have to
-be -- like, go through normative approval in the committee again prior to going to Stage 3 or
-is this something that can sort of be applied to the spec?
+exactly.  The -- so I think this makes sense under the assumption that at -- when you reach this new stage, you already have signoff from the committee that things are final.  And, like,
+if this is the case and I guess this goes back to the question of where do we do reviews.  If reviews happen before this stage, this makes sense.  If reviews happen later at Stage 3, then we’re not quite sure things are final yet, doing this test development.  So, like, I don’t know.  And then, like, do things that we uncover during writing these tests, would they have to be -- like, go through normative approval in the committee again prior to going to Stage 3 or is this something that can sort of be applied to the spec?
 
-MF: My thoughts was that similar to how it works today, when we find issues in Stage 3
-proposals through tests, we would bring them back as agenda items for committee approval
-each individually.
+MF: My thoughts was that similar to how it works today, when we find issues in Stage 3 proposals through tests, we would bring them back as agenda items for committee approval each individually.
 
 RPR: We are at time.  The queue is quite large.
 
 MF: Do we have time for an extension?
 
-RPR: We’d be going into the break.  The break must finish at 25 past, so we’ve got -- we’ve got
-20 minutes between now and then.  I think at most, we’ve got time for five more minutes, but
-that should include your summary.
+RPR: We’d be going into the break.  The break must finish at 25 past, so we’ve got -- we’ve got 20 minutes between now and then.  I think at most, we’ve got time for five more minutes, but that should include your summary.
 
 MF: Okay.  Let’s do two more minutes and I’ll try to summarize and do next steps.
 
 SYG:  I sense some confusion on what the proposal actually is.  My understanding of the proposal,
-correct me if I’m wrong, Michael, to be -- I’ll try to be as concrete and explicit as I
-can, take the current model.  The current model -- what’s proposed is that we take the current
-model as it is and in the current stage numbering, all this stuff, the reviews happen before
-Stage 3.  Test262 happens some time between Stage 3 and 4.  What is being asked is that the
-stages -- sorry, that the Stage 3 stuff, the reviews, that all still must happen, and then
-test262 happens, and then the implementation stuff happens, and then we rejigger the numbers.
+correct me if I’m wrong, Michael, to be -- I’ll try to be as concrete and explicit as I can, take the current model.  The current model -- what’s proposed is that we take the current model as it is and in the current stage numbering, all this stuff, the reviews happen before Stage 3.  Test262 happens some time between Stage 3 and 4.  What is being asked is that the stages -- sorry, that the Stage 3 stuff, the reviews, that all still must happen, and then test262 happens, and then the implementation stuff happens, and then we rejigger the numbers.
 The reviews are not going to be delayed.  Not till after the tests.  That doesn’t make sense.
-It’s -- I understand this proposal to be just about separating the two signals that are
-conflated into Stage 3 right now, which is one implement, and two, design is finalized.  That
-there is additional work that could help ease things if we give separately the signals, design
-is finalized and ready for implementation.  The most -- most of the Stage 3 stuff is about the
-design is finalized for us, for people in committee, the thing we care about is design is
-finalized.  So all that weight is shifted to the new stage.  It’s not going to be happening
-after tests are written, because, yeah, that would be nonsensical.
+It’s -- I understand this proposal to be just about separating the two signals that are conflated into Stage 3 right now, which is one implement, and two, design is finalized.  That there is additional work that could help ease things if we give separately the signals, design is finalized and ready for implementation.  The most -- most of the Stage 3 stuff is about the design is finalized for us, for people in committee, the thing we care about is design is finalized.  So all that weight is shifted to the new stage.  It’s not going to be happening after tests are written, because, yeah, that would be nonsensical.
 
 CDA: All right, we are at time., I will capture the queue.  Do you want to dictate a summary for the notes?
 
 ### Summary
 
-MF: Since the feedback was somewhat mixed, I feel it might be difficult to do that on the fly
-right now.  I would say -- my impression is that there’s generally positive feedback from the
-committee that this will help reduce costs effectively.  And I should continue to pursue this.
-I will bring it back again where we can discuss these.  Naming and numbering still hasn’t made
-any progress.  I would like for some more feedback on that offline or online, whatever,
-asynchronously, between now and the next time we talk about this.  Anything else I need to
-summarize.
+MF: Since the feedback was somewhat mixed, I feel it might be difficult to do that on the fly right now.  I would say -- my impression is that there’s generally positive feedback from the committee that this will help reduce costs effectively.  And I should continue to pursue this.
+I will bring it back again where we can discuss these.  Naming and numbering still hasn’t made any progress.  I would like for some more feedback on that offline or online, whatever,
+asynchronously, between now and the next time we talk about this.  Anything else I need to summarize.
 
 ## DataView get/set Uint8Clamped methods for stage 1 or 2 or 3
 
@@ -882,32 +839,20 @@ Presenter: Jordan Harband (JHD)
 - [proposal](https://ljharb.github.io/proposal-dataview-get-set-uint8c/)
 - no slides presented
 
-JHD: It would be great if someone was able to present.  Just the link to the proposal repo would
-be great.
+JHD: It would be great if someone was able to present.  Just the link to the proposal repo would be great.
 
 JHD: Thanks.  Cool, and then also if you could pull up the proposal repo.  Thank you.
 
-JHD: All right.  So I was writing some code.  I was trying to accept all kinds of TypedArrays and
-to dynamically dispatch on which kind of TypedArray it was, and I wanted the ability to set little and
-BigInt and I reached for the DataView get and set methods and noticed that one of them was
-missing.  I made a helpful little chart showing the inconsistency.  If you can scroll down now,
-Chris.  Yeah, so that’s it.  So basically seems like these were just missing and it would be
-nice to add them.  In particular -- in particular, the set method, because that includes the
-clamping behavior that -- so in the -- that in the absence of it, I have to manually
-reimplement.  The get method is exactly the same as the one for Uint 8 array, so it could even
-be an alias to it or something, but just for consistency, it seems nice to have them all.  `Uint8ClampedArray` is certainly weird and for canvas-based applications, but it’s certainly weird to have the omission.  You can go to the spec part now.  It’s very simple.  It’s just these four lines of spec text could be condensed to two, if you wanted to be really concise.  Just because of the -- you know, this
-is the way they’re all implemented, you just have to pass the spec internal type Uint 8 clamp.  I’d like to close the inconsistency and add some methods and there you go.  I see a queue topic from Michael.
+JHD: All right.  So I was writing some code.  I was trying to accept all kinds of TypedArrays and to dynamically dispatch on which kind of TypedArray it was, and I wanted the ability to set little and BigInt and I reached for the DataView get and set methods and noticed that one of them was missing.  I made a helpful little chart showing the inconsistency.  If you can scroll down now,
+Chris.  Yeah, so that’s it.  So basically seems like these were just missing and it would be nice to add them.  In particular -- in particular, the set method, because that includes the clamping behavior that -- so in the -- that in the absence of it, I have to manually reimplement.  The get method is exactly the same as the one for Uint 8 array, so it could even be an alias to it or something, but just for consistency, it seems nice to have them all.  `Uint8ClampedArray` is certainly weird and for canvas-based applications, but it’s certainly weird to have the omission.  You can go to the spec part now.  It’s very simple.  It’s just these four lines of spec text could be condensed to two, if you wanted to be really concise.  Just because of the -- you know, this is the way they’re all implemented, you just have to pass the spec internal type Uint 8 clamp.  I’d like to close the inconsistency and add some methods and there you go.  I see a queue topic from Michael.
 
 MF: I think that the getter just isn’t motivated, and I understand the desire for consistency, but I don’t think that’s strong enough motivation.  So I don’t think we should do the getter.  If we find some motivation later, we could do it in the future, so there’s nothing preventing us from doing that.  I’m okay with the setter going alone.  I think that should be fine.
 
-JHD: Yeah, I mean, I’m content -- well, I would say either -- even just adding the set method is
-still a consistency increase.  I would like it, so if that’s the case, so be it.  But if the --
-yeah, I guess I’m wondering what the cost is of adding the get method.  Especially if it’s an
-alias, so implementations wouldn’t even have to make a new function.
+JHD: Yeah, I mean, I’m content -- well, I would say either -- even just adding the set method is still a consistency increase.  I would like it, so if that’s the case, so be it.  But if the --
+yeah, I guess I’m wondering what the cost is of adding the get method.  Especially if it’s an alias, so implementations wouldn’t even have to make a new function.
 JHD: Michael, did you have any thoughts about that?
 
-MF: I don’t know if I’m qualified to answer that.  I imagine implementers might consider it to
-be a cost.  But --
+MF: I don’t know if I’m qualified to answer that.  I imagine implementers might consider it to be a cost.  But --
 
 JHD: What’s a cost for you, since you don’t think it’s sufficiently motivated, so I’m wondering,
 what’s the downside to having it, from your opinion?
@@ -916,13 +861,11 @@ MF: There would be a -- an additional method that, like, developers can see exis
 
 JHD: I mean, okay, I just explained why I need it.  I agree it may be very, very rare.  Okay.
 
-MF: Was your explanation for, like, programmatic access?  That’s what you mean, computed
-property access?
+MF: Was your explanation for, like, programmatic access?  That’s what you mean, computed property access?
 
 JHD: Mm-hmm, yes.  I don’t want to have a special case in my code for one TypedArray type.
 
-MF: Yeah, I’m still unconvinced by that.  Not that I’m opposed to adding it.  I just
-don’t think that’s sufficient yet.  If other people --
+MF: Yeah, I’m still unconvinced by that.  Not that I’m opposed to adding it.  I just don’t think that’s sufficient yet.  If other people --
 
 JHD: No, yeah, that’s fine.  I’m just trying to understand your position.  Thank you.
 
@@ -930,58 +873,37 @@ PFC: Is there anyone around from the time when DataView was originally added who
 
 RPR: I don’t think anyone’s answering on the history question.  So on to Dan Minor.
 
-DLM: So we discussed this internally, and it doesn’t seem super useful to us, but if we do
-agree that it fixes an inconsistency, so we would be ok with stages 1 or 2 for this one.
+DLM: So we discussed this internally, and it doesn’t seem super useful to us, but if we do agree that it fixes an inconsistency, so we would be ok with stages 1 or 2 for this one.
 
 RPR: Dan?
 
-DE: About the history, I wasn’t there, but it wasn’t considered a kind of meaningful thing to
-have the clamped operation on.  The -- I think the `Uint8ClampedArray` is kind of a hack and
-we shouldn’t really be building more things on it.  So I agree with MF’s point.  But I
-don’t understand the motivation for this yet.
+DE: About the history, I wasn’t there, but it wasn’t considered a kind of meaningful thing to have the clamped operation on.  The -- I think the `Uint8ClampedArray` is kind of a hack and we shouldn’t really be building more things on it.  So I agree with MF’s point.  But I don’t understand the motivation for this yet.
 
 RPR: And Michael Saboff?
 
-MLS: Jordan, you have checked to see what current engines do when you create such a view and then
-try to get a value?
+MLS: Jordan, you have checked to see what current engines do when you create such a view and then try to get a value?
 
-JHD: I’m not sure what you mean.  Like, the -- they all -- they all work fine.  It’s just that
-those two data view methods don’t exist, so they’re -- I can dynamically dispatch -- like, I
-can have a special case in my code, that’s what I have to do currently, that says if this is a
-`Uint8ClampedArray` for a get, do a U8 get instead, and I have a similar condition in the set
-path, but in the set path, I say if this is `Uint8ClampedArray`, I have to manually clamp the
-value and then I set Uint 8, because the DataView methods are the only way you can set or get a
-value with an NDS that is different from the underlying system.
+JHD: I’m not sure what you mean.  Like, the -- they all -- they all work fine.  It’s just that those two data view methods don’t exist, so they’re -- I can dynamically dispatch -- like, I can have a special case in my code, that’s what I have to do currently, that says if this is a
+`Uint8ClampedArray` for a get, do a U8 get instead, and I have a similar condition in the set path, but in the set path, I say if this is `Uint8ClampedArray`, I have to manually clamp the value and then I set Uint 8, because the DataView methods are the only way you can set or get a value with an NDS that is different from the underlying system.
 
 MLS: The reason I am ask, is because I’m looking at our code, I don’t know if it’s fully plumbed,
-but we have clamping functions in what we call our Uint8 clamped adapter that is used to make
-the view.  We’re doing it internally.
+but we have clamping functions in what we call our Uint8 clamped adapter that is used to make the view.  We’re doing it internally.
 
-JHD: Yeah, I mean, so because you can set a value directly into a `Uint8ClampedArray` with
-property, like, bracket zero equals, the clamping logic must already be in every engine to be
-compliant.  It’s just that it’s not connected directly exposed as a DataView method and to
-ability to specify the NDNS.
+JHD: Yeah, I mean, so because you can set a value directly into a `Uint8ClampedArray` with property, like, bracket zero equals, the clamping logic must already be in every engine to be compliant.  It’s just that it’s not connected directly exposed as a DataView method and to ability to specify the NDNS.
 
-MLS: I haven’t looked at the plumbing all the way through, but it shouldn’t be too difficult to
-add.
+MLS: I haven’t looked at the plumbing all the way through, but it shouldn’t be too difficult to add.
 
-JHD: That’s my expectations, so I’m glad that’s yours as well.  Dan, you had said something that
-you don’t understand my motivation.  Is there more that I can explain to help you understand?
+JHD: That’s my expectations, so I’m glad that’s yours as well.  Dan, you had said something that you don’t understand my motivation.  Is there more that I can explain to help you understand?
 
-DE: My understanding is that the motivation is about fixing the inconsistency, about filling out
-the grid and that any utilities you expose for TypedArrays and DataViews, that, you know, kind
-of map and be fully expressive.  I guess I would want to hear -- please correct me if I’m
-misunderstanding, I guess I’m wondering what the next step is.  Why would somebody want to call your library in a way where these methods are used?
+DE: My understanding is that the motivation is about fixing the inconsistency, about filling out the grid and that any utilities you expose for TypedArrays and DataViews, that, you know, kind of map and be fully expressive.  I guess I would want to hear -- please correct me if I’m misunderstanding, I guess I’m wondering what the next step is.  Why would somebody want to call your library in a way where these methods are used?
 
 JHD: Yeah, I honestly don’t have an answer to that question.
 
 DE: Okay.
 
-JHD: I certainly don’t use Uint8ClampedArray directly myself.  I’m simply wanting to make sure
-my utility supports all TypedArrays in its code path.
+JHD: I certainly don’t use Uint8ClampedArray directly myself.  I’m simply wanting to make sure my utility supports all TypedArrays in its code path.
 
-DE: So that -- that’s valid, I’m glad you’re being honest about this.  I think this is the kind
-of things that we should have answered before going to Stage 2.
+DE: So that -- that’s valid, I’m glad you’re being honest about this.  I think this is the kind of things that we should have answered before going to Stage 2.
 
 JHD: Okay.  For both the get and the set?
 
@@ -997,64 +919,45 @@ KG: Well, you have heard that no one objects to Stage 1.
 
 JHD: Right.
 
-KG: We have a relatively new requirement that we said we were going to try to do that to advance
-any proposal needs at least one explicit second.  So I would like at least one explicit second,
-that someone else is in favor of this advancing.  I’m not opposed.  But, like, if you are
-literally the only person who thinks this should -- who actively thinks this should advance, I
-think that is probably not enough.
+KG: We have a relatively new requirement that we said we were going to try to do that to advance any proposal needs at least one explicit second.  So I would like at least one explicit second,
+that someone else is in favor of this advancing.  I’m not opposed.  But, like, if you are literally the only person who thinks this should -- who actively thinks this should advance, I think that is probably not enough.
 
 RPR: Well, let’s check to -- let’s see what Chip says.
 
-CM: Yeah, I support this.  Just seeing those two red Xs in the big -- and green dots just makes
-me squirm.
+CM: Yeah, I support this.  Just seeing those two red Xs in the big -- and green dots just makes me squirm.
 
 MLS: And I support it because there’s a lot of graphic usages for something like this.
 
 DE: Could you elaborate.  What use do you see?
 
-MLS: (inaudible) for image processing, so, yeah, there’s a lot of -- you know, there’s 4 bit and
-stuff like that.  I don’t want to get into a SIMD discussion, but in clamp arithmetic, in
-clamp arrays makes sense.
+MLS: (inaudible) for image processing, so, yeah, there’s a lot of -- you know, there’s 4 bit and stuff like that.  I don’t want to get into a SIMD discussion, but in clamp arithmetic, in clamp arrays makes sense.
 
 WH: I also support this.
 
 RPR: All right.  Jordan, you have lots of support.
 
-MF: MLS, can I get a clarification.  So you’re supporting the setter, right?  You have
-explicit support for setter, but not necessarily the getter? I don’t know if you heard me.
+MF: MLS, can I get a clarification.  So you’re supporting the setter, right?  You have explicit support for setter, but not necessarily the getter? I don’t know if you heard me.
 
 MF: It’s the same thing as the unclamped one.
 
 MLS: Yeah, I don’t think we should, you know, leave that red check mark or X in there.  It’s --
-you know, a setter and getter on clamped -- clamped arrays, you know, I think both of them
-could be supported.
+you know, a setter and getter on clamped -- clamped arrays, you know, I think both of them could be supported.
 
-NRO: Yeah, I think it’s okay to serve this, but just to clarify that just already has arrays, and
-DataView methods are specifically when it comes to Uint8, it’s a single type, these methods
-are only used for when you have mixed type of data in a single array, and that doesn’t happen
-much when working with graphic stuff.
+NRO: Yeah, I think it’s okay to serve this, but just to clarify that just already has arrays, and DataView methods are specifically when it comes to Uint8, it’s a single type, these methods are only used for when you have mixed type of data in a single array, and that doesn’t happen much when working with graphic stuff.
 
 MLS: Agree.
 
-RPR: All right, we’ve got one minute left, so, Jordan, it’s probably worth explicitly asking for
-stage advancement.
+RPR: All right, we’ve got one minute left, so, Jordan, it’s probably worth explicitly asking for stage advancement.
 
-JHD: Okay.  So I’d like to explicitly ask for Stage 1, firstly.  I’ve heard some explicit
-support, so sounds like no one -- and no one said they want to block that.
+JHD: Okay.  So I’d like to explicitly ask for Stage 1, firstly.  I’ve heard some explicit support, so sounds like no one -- and no one said they want to block that.
 
 DE: Yes, to be explicit, I am not blocking Stage 1.
 
-JHD: Right.  So I’ve heard that.  And then it sounds like, just to consider this, like, the
-summary, so it sounds like I have Stage 1, and in order to get Stage 2, I was asked to provide
-explicit motivation for why somebody would be -- not why I need this in my utility code, but
-why somebody would be calling my utility code with a `Uint8ClampedArray` with this, and then the other
-thing, I need to provide is better motivation for the getter.
+JHD: Right.  So I’ve heard that.  And then it sounds like, just to consider this, like, the summary, so it sounds like I have Stage 1, and in order to get Stage 2, I was asked to provide explicit motivation for why somebody would be -- not why I need this in my utility code, but why somebody would be calling my utility code with a `Uint8ClampedArray` with this, and then the other thing, I need to provide is better motivation for the getter.
 
-JHD:  Does that sound like I’ve heard
-all the input?
+JHD:  Does that sound like I’ve heard all the input?
 
-DE: Yeah, that -- that sounds good.  I think on summary, you can also include the ideas about
-use cases and the main points of the discussion there.  It would be good.
+DE: Yeah, that -- that sounds good.  I think on summary, you can also include the ideas about use cases and the main points of the discussion there.  It would be good.
 
 JHD: Okay.
 
@@ -1066,8 +969,7 @@ RPR: Congratulations, you have Stage 1.
 
 JHD: Thank you.
 
-RPR: I’m all for the applause.  Please do remind us if we forget.  All right.  Next up is Kevin
-Gibbons, who wants us to stop coercing things.
+RPR: I’m all for the applause.  Please do remind us if we forget.  All right.  Next up is Kevin Gibbons, who wants us to stop coercing things.
 
 ## Stop Coercing Things
 
@@ -1075,201 +977,88 @@ Presenter: Kevin Gibbons (KG)
 
 - [slides](https://docs.google.com/presentation/d/1m5R5J98W6adegghgkAlbSuFgAYJDT52yyFVdAqLjm00/edit)
 
-KG: So I should say before we get started, this proposal -- well, it’s not
-a proposal per se.  It wouldn’t affect -- it wouldn’t add anything into the language.  I am
-just suggesting that we change the design principles that we have going forward.  I’m going to
-enumerate a number of distinct things that I think we should change, all on the same theme.
-For the purposes of organizing the discussion, I’m hoping to first get buy in on the general
-project, and then discuss the specific proposals in turn.  So I know that some of them will be
-more controversial than others, and I don’t want to spend all of our time on the controversial
-ones before we get time to talk through the earlier ones.  So this might require some jumping
-around in the queue.  Okay, that said, please contemplate this piece of code.  I claim it is
-confusing and bad.  If you don’t know, this gives you a, this gives you the first element of
-the array.  This would of course also give you the first element of the array if you passed the
-string “end” or an object literal or any other number of ridiculous things.  This is because the
-general philosophy in the language is to try to coerce arguments to the appropriate type and
-the type of the argument for at is integral number.  So the coercion works by taking the
-argument, coercing it to a number, of course that gives you NaN, and then coercing that to an
-integral number.  And if you coerce `NaN` to an integral number, you get zero.  This is just a
-fancy way of doing `.at(0)`.  I think this is bad.  We don’t have to keep doing this.  It is
-the precedent.  It is how we have always done things.  Precedent is extremely
-compelling, in general.  But for sufficiently bad ideas, we can break with precedent, and I --
-my position is that this is a sufficiently bad idea.  In particular, passing something of the
-wrong type is almost always going to be a bug, like, almost always.  When it’s not, it’s going
-to be confusing for readers.  And bugs should be loud, not quiet.  You should not get the wrong answer.  You should get an error.  Always, always
-you want this.
+KG: So I should say before we get started, this proposal -- well, it’s not a proposal per se.  It wouldn’t affect -- it wouldn’t add anything into the language.  I am just suggesting that we change the design principles that we have going forward.  I’m going to enumerate a number of distinct things that I think we should change, all on the same theme.
+For the purposes of organizing the discussion, I’m hoping to first get buy in on the general project, and then discuss the specific proposals in turn.  So I know that some of them will be more controversial than others, and I don’t want to spend all of our time on the controversial ones before we get time to talk through the earlier ones.  So this might require some jumping around in the queue.  Okay, that said, please contemplate this piece of code.  I claim it is confusing and bad.  If you don’t know, this gives you a, this gives you the first element of the array.  This would of course also give you the first element of the array if you passed the string “end” or an object literal or any other number of ridiculous things.  This is because the general philosophy in the language is to try to coerce arguments to the appropriate type and the type of the argument for at is integral number.  So the coercion works by taking the argument, coercing it to a number, of course that gives you NaN, and then coercing that to an integral number.  And if you coerce `NaN` to an integral number, you get zero.  This is just a fancy way of doing `.at(0)`.  I think this is bad.  We don’t have to keep doing this.  It is the precedent.  It is how we have always done things.  Precedent is extremely compelling, in general.  But for sufficiently bad ideas, we can break with precedent, and I --
+my position is that this is a sufficiently bad idea.  In particular, passing something of the wrong type is almost always going to be a bug, like, almost always.  When it’s not, it’s going to be confusing for readers.  And bugs should be loud, not quiet.  You should not get the wrong answer.  You should get an error.  Always, always you want this.
 
-KG: So I will have a number of concrete suggestions for what I mean by stop
-coercing things.  We don’t have to take any of them in particular.  I know that certainly some
-of them will be more controversial than over others, and I want to make sure that I’m not
-proposing these be hard and fast rules just that they be the starting point for the design for
-anything new.  And in particular, if you are making a new proposal and you want to deviate from
-something that we agree on in this presentation, that should be something that you come to the
-committee and you say here is why I think it makes sense to be different in that case.  In the
-past, the default has been to do coercion.  So someone would have need to come to the
-committee and say this is why I don’t think it makes sense to coerce, which has been the case,
-but I want the default to be not coercing, so when you want to do coercing, we should have to
-make that case explicitly to the committee.  I have a bunch of concrete proposals.  I think
-some of these are controversial, others are less.  I’m going to run through these fairly
-quickly and then open it up for discussion first of the general principle and then of each of
-these specific topics.  Hopefully in approximate order.  So I’m just going to dive into these
-sort of particular cases that I would like us to change.
+KG: So I will have a number of concrete suggestions for what I mean by stop coercing things.  We don’t have to take any of them in particular.  I know that certainly some of them will be more controversial than over others, and I want to make sure that I’m not proposing these be hard and fast rules just that they be the starting point for the design for anything new.  And in particular, if you are making a new proposal and you want to deviate from something that we agree on in this presentation, that should be something that you come to the committee and you say here is why I think it makes sense to be different in that case.  In the past, the default has been to do coercion.  So someone would have need to come to the committee and say this is why I don’t think it makes sense to coerce, which has been the case,
+but I want the default to be not coercing, so when you want to do coercing, we should have to make that case explicitly to the committee.  I have a bunch of concrete proposals.  I think some of these are controversial, others are less.  I’m going to run through these fairly quickly and then open it up for discussion first of the general principle and then of each of these specific topics.  Hopefully in approximate order.  So I’m just going to dive into these sort of particular cases that I would like us to change.
 
-KG: The first is stop treating NaN as zero.  This is, I think, ridiculous, and in particular, we have already started doing this.  So
-in iterator helpers, in the take and drop methods, in temporals duration method, and in the
-Stage 2 iterator.range proposal, we have made the decision to treat NaN and anything that
-coerces to NaN as a rangeError rather than coercing to zero, as it does for other integer places
-in the specification.  This slide has some examples of code in the language today that does do this coercion. Of course I am not proposing to change any of these.  I just think that all of these are
-ridiculous and I would like new code to not have the behavior of the code on scene, despite the
-Inconsistency.
+KG: The first is stop treating NaN as zero.  This is, I think, ridiculous, and in particular, we have already started doing this.  So in iterator helpers, in the take and drop methods, in temporals duration method, and in the Stage 2 iterator.range proposal, we have made the decision to treat NaN and anything that coerces to NaN as a rangeError rather than coercing to zero, as it does for other integer places in the specification.  This slide has some examples of code in the language today that does do this coercion. Of course I am not proposing to change any of these.  I just think that all of these are ridiculous and I would like new code to not have the behavior of the code on scene, despite the Inconsistency.
 
-KG: Second, don’t coerce undefined to anything else.  If there’s a required
-argument, and the type of that argument is not, like, something that you could reasonably pass
-undefined to, you should get a type error.  You shouldn’t coerce undefined to a string.  This
-is, like, 50% consistent with the web platform. Web IDL APIs throw if you pass them too few
-arguments.  But if you explicitly pass an `undefined`, they will generally coerce that `undefined`
-to a string or whatever.  So this isn’t 100% consistent with the web platform, we would be going
-stronger than the web platform, or at least stronger than existing APIs on the web platform.  My
-hope would be to change web IDL so in the future they would be consistent with this full
-principle, so as much undefined is treated as missing and both of those are errors.  Here are
-some examples of code today that, again, not proposing the change the behaviour of this code,
-but I think these are all silly.  If you call something with too few arguments or you pass the
-property of an object and that property happens to be missing, maybe you made a typo, you
-shouldn’t, like, get an answer.  If you call parseInt and you pass it undefined, it shouldn’t
-try to parse the string undefined as a number.  This is silly.
+KG: Second, don’t coerce undefined to anything else.  If there’s a required argument, and the type of that argument is not, like, something that you could reasonably pass undefined to, you should get a type error.  You shouldn’t coerce undefined to a string.  This is, like, 50% consistent with the web platform. Web IDL APIs throw if you pass them too few arguments.  But if you explicitly pass an `undefined`, they will generally coerce that `undefined`
+to a string or whatever.  So this isn’t 100% consistent with the web platform, we would be going stronger than the web platform, or at least stronger than existing APIs on the web platform.  My hope would be to change web IDL so in the future they would be consistent with this full principle, so as much undefined is treated as missing and both of those are errors.  Here are some examples of code today that, again, not proposing the change the behaviour of this code,
+but I think these are all silly.  If you call something with too few arguments or you pass the property of an object and that property happens to be missing, maybe you made a typo, you shouldn’t, like, get an answer.  If you call parseInt and you pass it undefined, it shouldn’t try to parse the string undefined as a number.  This is silly.
 
-KG: And a more general version of that is don’t coerce between primitive types in general.  If the user wants to pass a number and they have a string, they can coerce the number to a string themselves.  We shouldn’t do it for them.  Of course, with the exception that when you have an optional parameter that what has a sensible default value, then `undefined` is a reasonable thing to pass there, to mean I want
-the default value for the parameter, but that’s different than coercing.  Some examples today, if you call `parseInt()` and call a `null`, a literal null, it will attempt to pass that as a number in whatever base you specify.
+KG: And a more general version of that is don’t coerce between primitive types in general.  If the user wants to pass a number and they have a string, they can coerce the number to a string themselves.  We shouldn’t do it for them.  Of course, with the exception that when you have an optional parameter that what has a sensible default value, then `undefined` is a reasonable thing to pass there, to mean I want the default value for the parameter, but that’s different than coercing.  Some examples today, if you call `parseInt()` and call a `null`, a literal null, it will attempt to pass that as a number in whatever base you specify.
 
 KG: The `Math.max()` number is a little more subtle.
 It’s something that you might think is reasonable, but if you think about it a little more,
 getting a value out of math.max that is not the same as one of the values you put in is weird.
-Like, max is generally considered to be give me the -- one of these which is largest, but it
-doesn’t.  It coerces them to numbers and then gives you the largest number after coercion,
+Like, max is generally considered to be give me the -- one of these which is largest, but it doesn’t.  It coerces them to numbers and then gives you the largest number after coercion,
 which is just never going to be the thing you want, or at least never the thing I want.
 
-KG: Similarly, there’s APIs that take integral numbers and right now we round, or to be more
-precise, we truncate.  So that’s not true universally, but it’s true almost universally.  There
-are, to my knowledge, two places in the language right now that don’t do this, which is the
-array constructor and the magic length property on array instances.  In both of those instance,
-if you pass a non-integral number, you will get a range error.  But everywhere else, for
-example, all of these things, it will truncate.  So `Float64Array(1.5)`, the `Float64Array()`
-constructor differs from the array constructor and that the float 64 array constructor will
-truncate.  It will not give you, you know, a 12 byte array or whatever.  And I think a range
-error would be more appropriate in these cases.  The temporal duration constructor in Stage 3,
-also has this behavior of throwing on integral numbers, although in their case, it’s kind of
-necessary because 1.5 seconds is a totally reasonable unit and it should not give you a one
-second duration.
+KG: Similarly, there’s APIs that take integral numbers and right now we round, or to be more precise, we truncate.  So that’s not true universally, but it’s true almost universally.  There are, to my knowledge, two places in the language right now that don’t do this, which is the array constructor and the magic length property on array instances.  In both of those instance,
+if you pass a non-integral number, you will get a range error.  But everywhere else, for example, all of these things, it will truncate.  So `Float64Array(1.5)`, the `Float64Array()`
+constructor differs from the array constructor and that the float 64 array constructor will truncate.  It will not give you, you know, a 12 byte array or whatever.  And I think a range error would be more appropriate in these cases.  The temporal duration constructor in Stage 3,
+also has this behavior of throwing on integral numbers, although in their case, it’s kind of necessary because 1.5 seconds is a totally reasonable unit and it should not give you a one second duration.
 
-KG: Okay, and then the last two are perhaps the most controversial of all.  We
-could just not coerce objects.  We could just not invoke the toString or valueOf methods or
-the Symbol.toPrimitive methods.  Just stop doing it.  Like, if the user has, I don’t know, a
-URL object they want to pass to a string taking method, they can coerce it to a
-string.  It’s not hard.  It’s probably going to be clearer for readers.  Just do the explicit
-coercion if you want the coercion.  And then here's some examples I think are particularly silly.  If
-you know, try to join an array by an object, you will join with the famed [object Object].  If
-you try to pad a string with a function, it will start padding the string with characters from
-the stringification of that function, which, like, this just -- it’s just very silly.
+KG: Okay, and then the last two are perhaps the most controversial of all.  We could just not coerce objects.  We could just not invoke the toString or valueOf methods or the Symbol.toPrimitive methods.  Just stop doing it.  Like, if the user has, I don’t know, a URL object they want to pass to a string taking method, they can coerce it to a string.  It’s not hard.  It’s probably going to be clearer for readers.  Just do the explicit coercion if you want the coercion.  And then here's some examples I think are particularly silly.  If you know, try to join an array by an object, you will join with the famed [object Object].  If you try to pad a string with a function, it will start padding the string with characters from the stringification of that function, which, like, this just -- it’s just very silly.
 
-KG: And if we can’t do objects, at least we can do arrays.  I think we can agree that while there are some
-objects that have reasonable toString behaviors, arrays are not like objects in general.  They
-are, like, a very particular kind of object whose toString and valueOf are not generally
-supposed to be overridden and are not generally sensible things to use when passing to a string
-taking function.
+KG: And if we can’t do objects, at least we can do arrays.  I think we can agree that while there are some objects that have reasonable toString behaviors, arrays are not like objects in general.  They are, like, a very particular kind of object whose toString and valueOf are not generally supposed to be overridden and are not generally sensible things to use when passing to a string taking function.
 
-KG: The `Math.max([])`/`Math.max([12])` example are my favorite.  The first will give you zero, which you might think is
-reasonable, although the actual thing you would want is negative infinity.  Similarly, you can
-pass an array containing a single element to `Math.max()` and it will give you that element.  Of
-course, it breaks as soon as you pass an array containing two elements.  But it’s kind of
-subtle what’s going on there.  Similarly, like, if you try to construct an array buffer and you
-pass a single element array, it will create an array buffer, because it will pass that array to
-a number, which goes via casting toString and the stringification of that array is the string
-"12" and the numeric version of that is the number 12, and the array buffer expects the
-number, so now it’s making a length 12 array buffer.  I think while there’s at least some case
-for coercing objects, there’s no case for coercing arrays.
+KG: The `Math.max([])`/`Math.max([12])` example are my favorite.  The first will give you zero, which you might think is reasonable, although the actual thing you would want is negative infinity.  Similarly, you can pass an array containing a single element to `Math.max()` and it will give you that element.  Of course, it breaks as soon as you pass an array containing two elements.  But it’s kind of subtle what’s going on there.  Similarly, like, if you try to construct an array buffer and you pass a single element array, it will create an array buffer, because it will pass that array to a number, which goes via casting toString and the stringification of that array is the string
+"12" and the numeric version of that is the number 12, and the array buffer expects the number, so now it’s making a length 12 array buffer.  I think while there’s at least some case for coercing objects, there’s no case for coercing arrays.
 
-KG: There’s my not even a little bit
-modest proposal.  So I imagine, yes, we do have a bunch of stuff on the queue.  So like I said,
-I’d like to start with more general topics about coercion in general before we get to any of
-these concrete things.  So let’s get to it.  I guess Jesse is first.
+KG: There’s my not even a little bit modest proposal.  So I imagine, yes, we do have a bunch of stuff on the queue.  So like I said,
+I’d like to start with more general topics about coercion in general before we get to any of these concrete things.  So let’s get to it.  I guess Jesse is first.
 
-JMN:  I was just wondering whether we have any data about these coercions in the wild.  I mean, we
-sitting here in this room are more sensitive to these things, and I think they strike us as
-odd, but I wonder if these really show up out there.
+JMN:  I was just wondering whether we have any data about these coercions in the wild.  I mean, we sitting here in this room are more sensitive to these things, and I think they strike us as odd, but I wonder if these really show up out there.
 
-KG: I have no data.  I also don’t know what the value of that data would be.  Like, what would
-be -- what would we be trying to learn from that?
+KG: I have no data.  I also don’t know what the value of that data would be.  Like, what would be -- what would we be trying to learn from that?
 
-JMN: Right, I also don’t know what the value of that would be directly.  Just trying to make some
-kind of data driven decision here.
+JMN: Right, I also don’t know what the value of that would be directly.  Just trying to make some kind of data driven decision here.
 
-KG: The thing is that I can’t imagine an answer to that question that would actually inform a
-decision that I would make here.  If it’s happening a lot, that suggests that a lot of people
-have errors, so we should forbid it.  If it’s not happening a lot, that suggests that, like,
-it’s not a behavior that is worth relying on, so we should forbid it.  There’s no answer to
-that question which would affect what I want to do here.
+KG: The thing is that I can’t imagine an answer to that question that would actually inform a decision that I would make here.  If it’s happening a lot, that suggests that a lot of people have errors, so we should forbid it.  If it’s not happening a lot, that suggests that, like,
+it’s not a behavior that is worth relying on, so we should forbid it.  There’s no answer to that question which would affect what I want to do here.
 
 RPR: Shu?
 
 SYG: I don’t have metrics.  I think there’s anecdotes about some coercions being security issues.
-The object to primitives thing run user code, which is extremely surprising, and I don’t think
-anyone actively, like, legitimately uses that, but I have no data for that.  But I’m pretty
-sure there are exploits that, you know, it’s a fruitful avenue of exploration usually to see if
-the engine forget to revalidate stuff after some point because, you know, they forgot to
-check -- the itch.  Forgot that this can run arbitrary code because of value in a `toString`,
+The object to primitives thing run user code, which is extremely surprising, and I don’t think anyone actively, like, legitimately uses that, but I have no data for that.  But I’m pretty sure there are exploits that, you know, it’s a fruitful avenue of exploration usually to see if the engine forget to revalidate stuff after some point because, you know, they forgot to check -- the itch.  Forgot that this can run arbitrary code because of value in a `toString`,
 and that’s a problem.
 
 RPR: Chris?
 
-CDA: Yeah, you have a lot of examples here of some pretty obviously silly coercion results, but
-the one that I think goes a little too far is on coercion of primitives.  It
-seems heavy-handed if some primitives that satisfy loose equality we would throw.  So, for example, in your `.at` example with `[‘a’, ‘b’, ‘c’].at(‘start’)`, but it sounds like if I’m passing a string, which is an integer, you would want that to throw as well, and I
-think that that’s a little bit too much for me.
+CDA: Yeah, you have a lot of examples here of some pretty obviously silly coercion results, but the one that I think goes a little too far is on coercion of primitives.  It seems heavy-handed if some primitives that satisfy loose equality we would throw.  So, for example, in your `.at` example with `[‘a’, ‘b’, ‘c’].at(‘start’)`, but it sounds like if I’m passing a string, which is an integer, you would want that to throw as well, and I think that that’s a little bit too much for me.
 
 KG: Can you say more about why.  I just can’t imagine why you’d want that.
 
-CDA: Usually I see this in serialization layer, so, for example, we’re getting back some JSON
-where somebody is sending a string instead of a number.  Would be annoyed if I had to coerce
-that myself.
+CDA: Usually I see this in serialization layer, so, for example, we’re getting back some JSON where somebody is sending a string instead of a number.  Would be annoyed if I had to coerce that myself.
 
-KG: But, like, if I were reviewing this code, and I was like, oh, but the thing that this API
-return, this string, and you’re passing it to an API which takes a number, I’m going to be
-confused by the code that you run, so like as a person reading the code, I want you to do that
-coercion explicitly.
+KG: But, like, if I were reviewing this code, and I was like, oh, but the thing that this API return, this string, and you’re passing it to an API which takes a number, I’m going to be confused by the code that you run, so like as a person reading the code, I want you to do that coercion explicitly.
 
-CDA: Yeah, I mean, well, in -- I mean, in the example here - ['a','b','c'].at('2') - I’ve literally hard coded a string, but that would presumably be an object property.  Maybe we don’t have control of some aspects
-of it.  I don’t completely disagree with you, but I think it’s okay in this example to accept,
-you know, something that cleanly can be parsed
-as an integer I think should be okay.
+CDA: Yeah, I mean, well, in -- I mean, in the example here - ['a','b','c'].at('2') - I’ve literally hard coded a string, but that would presumably be an object property.  Maybe we don’t have control of some aspects of it.  I don’t completely disagree with you, but I think it’s okay in this example to accept,
+you know, something that cleanly can be parsed as an integer I think should be okay.
 
 KG:: How do you feel about true and false coercing to 1 and 0?
 
-CDA: Oh, I think that’s always a fun one.  We get in a lot of trouble with the truthiness
-coercion.  So, I don’t want to paint with too wide of a brush here,
-because, again, I think a lot of these cases are -- I agree with stop coercing in many of these
-cases.  But something a little more straightforward I think should be allowed.
+CDA: Oh, I think that’s always a fun one.  We get in a lot of trouble with the truthiness coercion.  So, I don’t want to paint with too wide of a brush here,
+because, again, I think a lot of these cases are -- I agree with stop coercing in many of these cases.  But something a little more straightforward I think should be allowed.
 
-KG: All right.  Well, I see we have more things on the general topic, so let’s come back to the
-concrete primitives after getting through some more general stuff.
+KG: All right.  Well, I see we have more things on the general topic, so let’s come back to the concrete primitives after getting through some more general stuff.
 
 RPR: Nicolo?
 
-NRO: Yes, Ken already asked this question, why would you want this to work, so let’s just skip
-it.
+NRO: Yes, Ken already asked this question, why would you want this to work, so let’s just skip it.
 
 RPR: And Daniel?
 
-DRR: Yeah.  I mean, there was a point about like sometimes you want the primitive coercion to
-work, and I don’t think string to numbers typically the one that I want, but typically what
-you’ll have is something like oh, this takes a certain unit, but really it’s like round tripped
-back as a string, right?  And so internally it becomes a string or something like that, but you
-might want to be able to just pass in a simple primitive and then just say, yeah, it turns into
-a string.  That said, for most API, I would prefer not to do that sort of coercion.
+DRR: Yeah.  I mean, there was a point about like sometimes you want the primitive coercion to work, and I don’t think string to numbers typically the one that I want, but typically what you’ll have is something like oh, this takes a certain unit, but really it’s like round tripped back as a string, right?  And so internally it becomes a string or something like that, but you might want to be able to just pass in a simple primitive and then just say, yeah, it turns into a string.  That said, for most API, I would prefer not to do that sort of coercion.
 
 RPR: Shane?
 
-KG: Actually, can we come back to this particular one late, because it sounds like it’s talking
-specifically about 5 or 5A and not the general topic of coercion.
+KG: Actually, can we come back to this particular one late, because it sounds like it’s talking specifically about 5 or 5A and not the general topic of coercion.
 
 RPR: You mean topic 5?
 
@@ -1277,46 +1066,19 @@ KG: No, I mean Shane’s item is, yeah, number 5 rather than coercion in general
 
 RPR: Is that okay, Shane?  Okay.  Michael?
 
-MLS: So if I was to design JavaScript from scratch, I would agree with every one of these rules
-that you have.  Unfortunately, we have history and developers do a bunch of different things.
-I’m wondering if at some point some APIs don’t have autocoercion, if that would confuse
-developers, because they have a full expectation of, yes, you can use a string that coerces to
-a number to do stuff.  And now, some of the examples you give, I totally agree, but others I
-could see that people would use it even if we in the room don’t think they would.
+MLS: So if I was to design JavaScript from scratch, I would agree with every one of these rules that you have.  Unfortunately, we have history and developers do a bunch of different things.
+I’m wondering if at some point some APIs don’t have autocoercion, if that would confuse developers, because they have a full expectation of, yes, you can use a string that coerces to a number to do stuff.  And now, some of the examples you give, I totally agree, but others I could see that people would use it even if we in the room don’t think they would.
 
-KG: Yeah, so I think this the strongest reason not to do this.  My position is that, yes, some
-people would definitely be confused.  Some fraction of developers have internalized that
-coercion is just going to happen for everything and will be surprised if they can no longer
-rely on it.  I think that’s actually going to be outweighed by all of the develop dollars don’t
-know coercion is happening or don’t understand its rules, and so upon encountering code written
-by a developer who is relying on coercion are going to be confused.  So I think that there is
-already confusion inherent in the current system.  It’s just that the thing that the language
-does is confusing and people relying on it is confusing, and so if we can move to a world in
-which people don’t rely on it, then there will be no confusion.  The developers who previously
-were relying on it will stop doing so.  They will be confused, perhaps, and have to learn that
-they need to stop doing so, but then they do sdo stop
-doing it, and then no one ever has to know that there’s this inconsistency, because if you just
-never do it, you don’t run into the inconsistency.
+KG: Yeah, so I think this the strongest reason not to do this.  My position is that, yes, some people would definitely be confused.  Some fraction of developers have internalized that coercion is just going to happen for everything and will be surprised if they can no longer rely on it.  I think that’s actually going to be outweighed by all of the develop dollars don’t know coercion is happening or don’t understand its rules, and so upon encountering code written by a developer who is relying on coercion are going to be confused.  So I think that there is already confusion inherent in the current system.  It’s just that the thing that the language does is confusing and people relying on it is confusing, and so if we can move to a world in which people don’t rely on it, then there will be no confusion.  The developers who previously were relying on it will stop doing so.  They will be confused, perhaps, and have to learn that they need to stop doing so, but then they do sdo stop doing it, and then no one ever has to know that there’s this inconsistency, because if you just never do it, you don’t run into the inconsistency.
 
 MLS: I think you would agree that we can’t do this to existing primitives, or existing APIs?
 
 KG:  Yes, absolutely.
 
-MLS: We have to grandfather a whole class of coercions that have been supported for eons and then
-we have new that don’t have it, and I think that that’s -- that will continue to be a confusing
-aspect of the language.
+MLS: We have to grandfather a whole class of coercions that have been supported for eons and then we have new that don’t have it, and I think that that’s -- that will continue to be a confusing aspect of the language.
 
-KG: I agree that that would continue to be confusing to the extent that people were learning
-that some things did coercion and then relying on it.  My hope is that people just wouldn’t,
-that people would learn, oh, this takes a thing of a particular type, and the only way they
-would run into it is if they had an error such that there is something that ought to
-have given them an error, according to one of these rules, and they didn’t get an error, and
-then they will be surprised by it.  But that’s already the case for developers who haven’t
-learned that everything does coercion, they are often surprised when they pass, you know, an
-object that has a missing property.  Like, they typo a property and an object and then they
-don’t get an error.  They are already surprised.  So I think the surprise is inherent and the
-inconsistency that we would be introducing doesn’t make it particularly worse.  Maybe it makes
-it a little worse, but makes it better in other ways that I consider to outweigh it.
+KG: I agree that that would continue to be confusing to the extent that people were learning that some things did coercion and then relying on it.  My hope is that people just wouldn’t,
+that people would learn, oh, this takes a thing of a particular type, and the only way they would run into it is if they had an error such that there is something that ought to have given them an error, according to one of these rules, and they didn’t get an error, and then they will be surprised by it.  But that’s already the case for developers who haven’t learned that everything does coercion, they are often surprised when they pass, you know, an object that has a missing property.  Like, they typo a property and an object and then they don’t get an error.  They are already surprised.  So I think the surprise is inherent and the inconsistency that we would be introducing doesn’t make it particularly worse.  Maybe it makes it a little worse, but makes it better in other ways that I consider to outweigh it.
 
 MLS: Okay, and I think that’s a judgment thing that the committee would have to decide.
 
@@ -1324,245 +1086,110 @@ KG: Absolutely.
 
 RPR: Shu?
 
-SYG: I agree that this is -- that is a concern, speaking as a supporter of general coercion, our
-sphere of influence is just 262, so not only would we grandfathering in our own historical
-APIs, what are your thoughts on, you know, web API stuff and web IDL and Node APIs?  Are we
-going to try to affect a larger change or are you content with if we can get this as a design
-principle for new 262 things that it will be enough impact that it’s worth the inconsistency,
-not just at a lock point in time for us, but also with possible future things for other
-standards bodies?
+SYG: I agree that this is -- that is a concern, speaking as a supporter of general coercion, our sphere of influence is just 262, so not only would we grandfathering in our own historical APIs, what are your thoughts on, you know, web API stuff and web IDL and Node APIs?  Are we going to try to affect a larger change or are you content with if we can get this as a design principle for new 262 things that it will be enough impact that it’s worth the inconsistency,
+not just at a lock point in time for us, but also with possible future things for other standards bodies?
 
-KG:  Yeah, so I am -- I would be content if we just did it in the language, but certainly my hope
-would be we do this elsewhere.  I know, for example, that DD said he would like web IDL to
-treat undefined and missing arguments identically.  Right now there’s this inconsistency between the web
-and JavaScript in that JavaScript treats missing arguments as being undefined and coerces
-undefined and web IDL throws on missing arguments and coerce is undefined.  So if we could -- my
-hope would be to move web IDL to also agree with these principles in general.  But, you know,
-maybe we wouldn’t precisely agree since we already don’t precisely agree, I wouldn’t regard
-that as fatal.
+KG:  Yeah, so I am -- I would be content if we just did it in the language, but certainly my hope would be we do this elsewhere.  I know, for example, that DD said he would like web IDL to treat undefined and missing arguments identically.  Right now there’s this inconsistency between the web and JavaScript in that JavaScript treats missing arguments as being undefined and coerces undefined and web IDL throws on missing arguments and coerce is undefined.  So if we could -- my hope would be to move web IDL to also agree with these principles in general.  But, you know,
+maybe we wouldn’t precisely agree since we already don’t precisely agree, I wouldn’t regard that as fatal.
 
-SYG: Yeah, agreed.  Happy to hear that it’s in scope for you.  Someone’s got to start it
-somewhere, so TC39 is as good as any.  I’d like to see that the scope be ambitious if we do
-this.  So thanks for taking this.
+SYG: Yeah, agreed.  Happy to hear that it’s in scope for you.  Someone’s got to start it somewhere, so TC39 is as good as any.  I’d like to see that the scope be ambitious if we do this.  So thanks for taking this.
 
 KG: For sure.
 
 RPR: Dan?
 
-DE: MLS made a very good point that we have this tradeoff about both existing versus future
-developer mental models, developer mental model’s already been developing, and different APIs
-having different conventions.  I think this will be the major thing for us to weigh, and that’s
-just going to be a process for us to make this judgment as we learn more about this space, so
-I’m glad that KG is bringing this as a specific topic rather than sort of making ad hoc
-Decisions on particular proposals, as he noted we’ve been doing so far.
+DE: MLS made a very good point that we have this tradeoff about both existing versus future developer mental models, developer mental model’s already been developing, and different APIs having different conventions.  I think this will be the major thing for us to weigh, and that’s just going to be a process for us to make this judgment as we learn more about this space, so I’m glad that KG is bringing this as a specific topic rather than sort of making ad hoc Decisions on particular proposals, as he noted we’ve been doing so far.
 
 RPR: Jordan?
 
-JHD: And I think I’ve seen node make a lot of changes away from coercion basically following the
-spirit of Kevin’s presentation here.  Yeah.  I have actually been -- I’ve run into it in a hard
-way where I was depending on a tool that was relying on the coercion and node 20 broke it, and
-so I have to, you know, get that tool to upgrade to no longer pass a coercible object into the
-node API.  And I think that although that’s annoying for me personally in this case, that’s
-spiritually the right move to make, because as Kevin indicates, I agree that coercion is almost
-always masking a bug.
+JHD: And I think I’ve seen node make a lot of changes away from coercion basically following the spirit of Kevin’s presentation here.  Yeah.  I have actually been -- I’ve run into it in a hard way where I was depending on a tool that was relying on the coercion and node 20 broke it, and so I have to, you know, get that tool to upgrade to no longer pass a coercible object into the node API.  And I think that although that’s annoying for me personally in this case, that’s spiritually the right move to make, because as Kevin indicates, I agree that coercion is almost always masking a bug.
 
 RPR: Shane?
 
-SFC: Just noting that, like, this is the type of thing that I certainly would hope that
-TypeScript can help find.  Like, you get compile errors when you’re building your code.  Any time
-there’s errors that happen in run time, it’s not really great.  It’s not a great developer
-experience.  It doesn’t, you know -- it requires having a code path or a test case, it actually
-evaluates that path in order to actually see the run time errors.  So, you know, like, although
-we could, like, try to make some changes in this area, it’s not clear that, like, it’s going to
-really be the best way to solve it and actually teach and prevent these issues from happening.
+SFC: Just noting that, like, this is the type of thing that I certainly would hope that TypeScript can help find.  Like, you get compile errors when you’re building your code.  Any time there’s errors that happen in run time, it’s not really great.  It’s not a great developer experience.  It doesn’t, you know -- it requires having a code path or a test case, it actually evaluates that path in order to actually see the run time errors.  So, you know, like, although we could, like, try to make some changes in this area, it’s not clear that, like, it’s going to really be the best way to solve it and actually teach and prevent these issues from happening.
 
-KG: I guess I have precisely the opposite intuition about the effects of TypeScript here.  To the
-extent that people are using TypeScript to catch errors at compile time, that’s great, and what
-that indicates is that the language ought to, like, not try to do something else in those cases
-that are, like, being explicitly excluded from the domain of valid programs by user TypeScript,
-the whole point is that this is supposed to be invalid if you are using TypeScript, and so I
-feel like for a TypeScript user, the thing that you would want would be for this to be invalid
-at run time as well as at compile time.  Of course if you’re not using TypeScript, it’s not
-going to trip you up.  I feel like in both these cases you want the run time error, not like
-there other cases.
+KG: I guess I have precisely the opposite intuition about the effects of TypeScript here.  To the extent that people are using TypeScript to catch errors at compile time, that’s great, and what that indicates is that the language ought to, like, not try to do something else in those cases that are, like, being explicitly excluded from the domain of valid programs by user TypeScript,
+the whole point is that this is supposed to be invalid if you are using TypeScript, and so I feel like for a TypeScript user, the thing that you would want would be for this to be invalid at run time as well as at compile time.  Of course if you’re not using TypeScript, it’s not going to trip you up.  I feel like in both these cases you want the run time error, not like there other cases.
 
 NRO: Like, this is the opposite.  TypeScript, like, thanks to TypeScript now the communities,
-like, ready for this change, because TypeScript -- like, static typing or just in general
-helped to change that.  You should not coerce things, and that coercion should be explicit.
-Whether it’s like an actual coercion or just as number, pretend it’s number, you’re still
-explicit form of coercion happenings, and, like, nobody I believe ever complained that TypeScript doesn’t allow you to pass a string to function
-that expects a number even if that function internally could coerce.
+like, ready for this change, because TypeScript -- like, static typing or just in general helped to change that.  You should not coerce things, and that coercion should be explicit.
+Whether it’s like an actual coercion or just as number, pretend it’s number, you’re still explicit form of coercion happenings, and, like, nobody I believe ever complained that TypeScript doesn’t allow you to pass a string to function that expects a number even if that function internally could coerce.
 
-DRR: So we have people complaining all the time about how, oh, TypeScript should allow me to pass
-in anything here because the spec just says that it gets coerced into a string anyway.  And
-this is an example of where TypeScript tries to follow the spirit of the API or at least our
-interpretation of the spirit of the API, rather than what actually happens at run time, and so
-in cases where, you know, we believe, yeah, this probably shouldn’t have taken anything other
-than a string or a number or whatever, we’d refer to it that way just so that things don’t get,
-you know, litigated on our terms, on our types, so it makes it a little bit clearer what -- not
-just our intent is, but what the API intent is as well.  What is the intent of the committee,
+DRR: So we have people complaining all the time about how, oh, TypeScript should allow me to pass in anything here because the spec just says that it gets coerced into a string anyway.  And this is an example of where TypeScript tries to follow the spirit of the API or at least our interpretation of the spirit of the API, rather than what actually happens at run time, and so in cases where, you know, we believe, yeah, this probably shouldn’t have taken anything other than a string or a number or whatever, we’d refer to it that way just so that things don’t get,
+you know, litigated on our terms, on our types, so it makes it a little bit clearer what -- not just our intent is, but what the API intent is as well.  What is the intent of the committee,
 and the platform.  So that’s my two cents on that.
 
-RPR: Hax says TypeScript at least can’t solve case 4, which is the one to stop rounding. end of
-message.
+RPR: Hax says TypeScript at least can’t solve case 4, which is the one to stop rounding. end of message.
 
 KG: Yeah, that’s an excellent point.
 
 RPR: Shane?
 
 SFC: Just to reply again to what Kevin said, like, if TypeScript helps at least in some cases,
-clearly not everywhere based from the comments that were just made, prevents these degenerate
-cases, what behavior we have in these degenerate cases, the important thing is it’s just a well
-defined behavior, and we can sort of, you know, argue over is it better to do coercion or is it
-better to throw errors?  Maybe it is better to throw errors.  I’m not saying it’s not.  But,
-like, as long as those edge case behaviors are well defined, the best use of our time is to
-not spend a lot of time arguing over them.
+clearly not everywhere based from the comments that were just made, prevents these degenerate cases, what behavior we have in these degenerate cases, the important thing is it’s just a well defined behavior, and we can sort of, you know, argue over is it better to do coercion or is it better to throw errors?  Maybe it is better to throw errors.  I’m not saying it’s not.  But,
+like, as long as those edge case behaviors are well defined, the best use of our time is to not spend a lot of time arguing over them.
 
-KG: So my position is that not everyone uses TypeScript, and TypeScript is also explicitly not
-trying to be sound.  So these definitely are things that do happen in real life, in real
-JavaScript programs, even TS programs.  And that it is worth trying to provide a good experience for users, not
-just trying to provide some behavior.
+KG: So my position is that not everyone uses TypeScript, and TypeScript is also explicitly not trying to be sound.  So these definitely are things that do happen in real life, in real JavaScript programs, even TS programs.  And that it is worth trying to provide a good experience for users, not just trying to provide some behavior.
 
-DE: I agree with everything Kevin just said and further, isn’t the goal of this committee to
-discuss and focus on all the random edge cases and just argue about them for a long time?
+DE: I agree with everything Kevin just said and further, isn’t the goal of this committee to discuss and focus on all the random edge cases and just argue about them for a long time?
 
 RPR: Philip?
 
-PFC: Okay.  Yeah, I’d recommend that whatever conclusion we get out of this, either to stop
-coercing things or not coercing thing, we continue following the precedent of older APIs that
-we make an explicit recommendation about that for new proposal authors, otherwise we’re going
-to continue to get ad hoc behavior, and I think nobody will be happy with that.  For example,
-when Temporal was in Stage 2, I think, like, all of the champions implicitly assumed that we ought
-to follow the precedent of older APIs, so we used `toInteger()` everywhere, and then it came up,
-you know, during Stage 3 with, you know, feedback from people trying out the proposal in the
-wild that, like, hey, here is a case where you passed a non-integral number in and it silently
-does the wrong thing, and this is really weird.  I’m sure we look back over the temporal
-presentations that we brought to committee, you can see that we’ve spent a lot of champion time
-and a lot of committee time talking about these weird, cases and ultimately deciding that we
-wanted to prohibit them.  So I think in order to save that time for other people working on
-other proposals, we need to have a very clear recommendation about whatever comes out of this
-discussion.
+PFC: Okay.  Yeah, I’d recommend that whatever conclusion we get out of this, either to stop coercing things or not coercing thing, we continue following the precedent of older APIs that we make an explicit recommendation about that for new proposal authors, otherwise we’re going to continue to get ad hoc behavior, and I think nobody will be happy with that.  For example,
+when Temporal was in Stage 2, I think, like, all of the champions implicitly assumed that we ought to follow the precedent of older APIs, so we used `toInteger()` everywhere, and then it came up,
+you know, during Stage 3 with, you know, feedback from people trying out the proposal in the wild that, like, hey, here is a case where you passed a non-integral number in and it silently does the wrong thing, and this is really weird.  I’m sure we look back over the temporal presentations that we brought to committee, you can see that we’ve spent a lot of champion time and a lot of committee time talking about these weird, cases and ultimately deciding that we wanted to prohibit them.  So I think in order to save that time for other people working on other proposals, we need to have a very clear recommendation about whatever comes out of this discussion.
 
 RPR: Michael?
 
-MF: So my topic mainly, I think, concerns number 3 on your list.  I think that there’s -- you
-know, in code that I see that’s not my code, it very commonly does, like, intentionally rely on
-some of those implicit coercions between primitives.  Like, I would be surprised not to see a case like the at where you were passing a numeric string that you showed.  That happens in code all the time where that value may be coming out of the DOM or something.  It’s the value of an input element.  And, you know, it would be -- it’s very, very uncommon for me to see that converted to a number explicitly.  My
-question is do the developers who are writing this code know, like, best practices for how to
-do this?  There’s a lot of ways to convert a string to a number currently.  There’s parseFloat, parseInt, there is the number constructor and unary plus and others I’m forgetting. Will we have an education problem for different people learning how to do the conversion and their slight differences, and is there
-risk for what patterns do become popular?  Maybe they have their own issues, the popular patterns have their own undesirable degenerate cases.  I’m not sure.
+MF: So my topic mainly, I think, concerns number 3 on your list.  I think that there’s -- you know, in code that I see that’s not my code, it very commonly does, like, intentionally rely on some of those implicit coercions between primitives.  Like, I would be surprised not to see a case like the at where you were passing a numeric string that you showed.  That happens in code all the time where that value may be coming out of the DOM or something.  It’s the value of an input element.  And, you know, it would be -- it’s very, very uncommon for me to see that converted to a number explicitly.  My question is do the developers who are writing this code know, like, best practices for how to do this?  There’s a lot of ways to convert a string to a number currently.  There’s parseFloat, parseInt, there is the number constructor and unary plus and others I’m forgetting. Will we have an education problem for different people learning how to do the conversion and their slight differences, and is there risk for what patterns do become popular?  Maybe they have their own issues, the popular patterns have their own undesirable degenerate cases.  I’m not sure.
 
-KG: So in a world before TypeScript, I might have been worried about that.  I think the modal JS
-developer now uses TypeScript, and as DRR was just saying, TypeScript doesn’t let you pass
-wrong typed things even if they’re going to get coerced, so I think people, to whatever extent
-this was a problem, people have had to learn how to do the coercion and I don’t think that has
-caused any problems.  So like we are already living in the world in which people have had to
-learn how to coerce things so they can get their type checker to pass, and it’s just been
-totally fine.  So I’m just not worried about that.
+KG: So in a world before TypeScript, I might have been worried about that.  I think the modal JS developer now uses TypeScript, and as DRR was just saying, TypeScript doesn’t let you pass wrong typed things even if they’re going to get coerced, so I think people, to whatever extent this was a problem, people have had to learn how to do the coercion and I don’t think that has caused any problems.  So like we are already living in the world in which people have had to learn how to coerce things so they can get their type checker to pass, and it’s just been totally fine.  So I’m just not worried about that.
 
 MF: Do you have data to support this claim about the modal --
 
-KG: Yeah.  I can pull up some surveys.  But I don’t think it’s a good use time.  I mean, you can
-Google them just as well as I can.
+KG: Yeah.  I can pull up some surveys.  But I don’t think it’s a good use time.  I mean, you can Google them just as well as I can.
 
-MF: Yeah, I think if that is the case, that would help me be more convinced.  I wasn’t of that
-belief.
+MF: Yeah, I think if that is the case, that would help me be more convinced.  I wasn’t of that belief.
 
-KG:  I think it’s in excess of 50%, at least of people who answer surveys, which of course is not
-everyone.  But certainly new developers are generally introduced to TypeScript pretty early
-these days.
+KG:  I think it’s in excess of 50%, at least of people who answer surveys, which of course is not everyone.  But certainly new developers are generally introduced to TypeScript pretty early these days.
 
 MF: Okay, otherwise I want to express my support for the rest of this proposal for sure.
 
 RPR: Shu?
 
-SYG: So I support this proposal, like I said before, but mainly I support it -- or largely I
-support it for number 5, because I want to go more into depth for the security issues.  Like,
-it is a problem for security, in the browser security sense, of violating assumptions in
-implementation of built-ins and tripping up assumptions in optimized JIT code that argument
-coercion calls arbitrary user code via a string of value of, most of the time.  We can probably
-go pretty far even with just saying we should stop coercing things for anything related to
-TypedArrays and array buffers, because most of it is around detached stuff and now that I’ve
-added resizable buffers, I’m sure there will be -- security bugs around reusable buffers as
-well, because you can trick -- because you can not trick, but construct arguments that does
-very surprising resizes and detaches.  And that is -- and that’s motivation itself, to me, to
-support this proposal.  Especially for number 5.  Some of the other ones are more judgment
-calls and could be decided less -- there’s less black and white there.  I think it’s very black
-and white for me that this is a security problem for object coercion and we should do something
-about it.  It would be nice if we stopped coercing.  We could do other things like change the
-coercion order, but that is, though, strictly inferior to this proposal.  And I wanted to close
-the comment with , you know, we should remember that this behavior exists probably because this -- the -- when JS was designed, the -- it was a good -- it was a better principle for user
-experience for your web browser and your scripting language to keep on trucking in case of
-errors.  Websites were smaller, interactions were much more limited and novel.  Now we are in
-the era of large, sophisticated web apps, and JS has clearly not -- like, we know that JS has
-not been up to the task to scale for those kind of -- for development of that kind of software
-and TypeScript has filled that niche because there was, you know, real, legitimate demand for
-scaling to that kind of software engineering, and we should own up to that instead of keep the
-keep on trucking motto, which I think no longer serves us.
+SYG: So I support this proposal, like I said before, but mainly I support it -- or largely I support it for number 5, because I want to go more into depth for the security issues.  Like,
+it is a problem for security, in the browser security sense, of violating assumptions in implementation of built-ins and tripping up assumptions in optimized JIT code that argument coercion calls arbitrary user code via a string of value of, most of the time.  We can probably go pretty far even with just saying we should stop coercing things for anything related to TypedArrays and array buffers, because most of it is around detached stuff and now that I’ve added resizable buffers, I’m sure there will be -- security bugs around reusable buffers as well, because you can trick -- because you can not trick, but construct arguments that does very surprising resizes and detaches.  And that is -- and that’s motivation itself, to me, to support this proposal.  Especially for number 5.  Some of the other ones are more judgment calls and could be decided less -- there’s less black and white there.  I think it’s very black and white for me that this is a security problem for object coercion and we should do something about it.  It would be nice if we stopped coercing.  We could do other things like change the coercion order, but that is, though, strictly inferior to this proposal.  And I wanted to close the comment with , you know, we should remember that this behavior exists probably because this -- the -- when JS was designed, the -- it was a good -- it was a better principle for user experience for your web browser and your scripting language to keep on trucking in case of errors.  Websites were smaller, interactions were much more limited and novel.  Now we are in the era of large, sophisticated web apps, and JS has clearly not -- like, we know that JS has not been up to the task to scale for those kind of -- for development of that kind of software and TypeScript has filled that niche because there was, you know, real, legitimate demand for scaling to that kind of software engineering, and we should own up to that instead of keep the keep on trucking motto, which I think no longer serves us.
 
 KG: I completely agree.
 
 RPR: Nicolo
 
-NRO: We should try to clear some built-in as much as possible, for new methods -- for methods we
-introduced recently, unless it’s possible with compatibles on a case-by-case basis if we can
-change it, for example, if apps or the array changes in the last two years, like, people
-already relying on weird coercion in those cases.
+NRO: We should try to clear some built-in as much as possible, for new methods -- for methods we introduced recently, unless it’s possible with compatibles on a case-by-case basis if we can change it, for example, if apps or the array changes in the last two years, like, people already relying on weird coercion in those cases.
 
-KG: Yeah, I agree, that’s probably true.  Although for the change by copy, I’m less interested
-just because they are direct copies of existing APIs, and I think when you are just adding a
-new thing in the place of something is that already existed, there’s a stronger argument
-for keeping with precedent.  I don’t really want engines to risk shipping breaking changes.  So
-I think for the Stage 3 things, definitely.  For things that already shipped, you’re probably
-right that we could get away with it, but I’m not sure it’s worth the cost of doing
-investigation.  But I’ll look at the things that are like brand new.  Maybe the detached --
+KG: Yeah, I agree, that’s probably true.  Although for the change by copy, I’m less interested just because they are direct copies of existing APIs, and I think when you are just adding a new thing in the place of something is that already existed, there’s a stronger argument for keeping with precedent.  I don’t really want engines to risk shipping breaking changes.  So I think for the Stage 3 things, definitely.  For things that already shipped, you’re probably right that we could get away with it, but I’m not sure it’s worth the cost of doing investigation.  But I’ll look at the things that are like brand new.  Maybe the detached --
 sorry, the resizable array buffers is a good candidate for that.
 
-PFC: The queue item I just put on is a handy [reference link to what web IDL does](https://webidl.spec.whatwg.org/#abstract-opdef-converttoint) for their
-coercion algorithms, which we actually used as inspiration when making these changes in
-Temporal.
+PFC: The queue item I just put on is a handy [reference link to what web IDL does](https://webidl.spec.whatwg.org/#abstract-opdef-converttoint) for their coercion algorithms, which we actually used as inspiration when making these changes in Temporal.
 
-PFC: Number 5, coercing objects to primitives, that actually brings a lot of extra tests in test262 as I found out.  Because it involves one or more calls into user code.  So in order to test this observable behavior, for every proposal that does it, you have to test that it happens.  You have to test if the function is
-called, you have to test if the function is called before or after some other user observable
-behavior.  And all this for behavior that is, as KG put it, is almost certainly a bug and
-nobody should ever be relying on.  So that seems like kind of a waste of money and time.
+PFC: Number 5, coercing objects to primitives, that actually brings a lot of extra tests in test262 as I found out.  Because it involves one or more calls into user code.  So in order to test this observable behavior, for every proposal that does it, you have to test that it happens.  You have to test if the function is called, you have to test if the function is called before or after some other user observable behavior.  And all this for behavior that is, as KG put it, is almost certainly a bug and nobody should ever be relying on.  So that seems like kind of a waste of money and time.
 
 KG: Yeah.  Definitely I have written lots of similar tests myself.
 
 SFC: Yeah, I have a few items here.  What PFC just said is actually somewhat compelling to me,
-because if the way to spend less time on this is to not test it, maybe that’s a good thing.  I
-will say that the slides that were presented here, like, focus on degenerate cases.  I think
-it’s also good to acknowledge that not all cases for coercion are good and it’s good to
-acknowledge that there can be in some cases good examples of coercion, and, like, we should
-look at them, like, sort of both, not just focus on the coercion is always bad.  If we want to
-move on to my next topic --
+because if the way to spend less time on this is to not test it, maybe that’s a good thing.  I will say that the slides that were presented here, like, focus on degenerate cases.  I think it’s also good to acknowledge that not all cases for coercion are good and it’s good to acknowledge that there can be in some cases good examples of coercion, and, like, we should look at them, like, sort of both, not just focus on the coercion is always bad.  If we want to move on to my next topic --
 
-KG: No.  I’d like to comment on that.  I agree with you that there are cases where the program
-that you are trying to write wants to rely on coercion.  I am much less convinced that implicit
-coercion is actually desirable, even in cases where you want coercion, I think for the benefit
-of your future readers, you should do -- make the coercion explicit.  And it’s not like it’s
-hard to make the coercion explicit.  While I agree that there are cases where coercion is the
-thing that you want, I’m not at all convinced that implicit coercion is ever actually the thing
-you want.  Okay, ever is too strong, but like 99.99%.
+KG: No.  I’d like to comment on that.  I agree with you that there are cases where the program that you are trying to write wants to rely on coercion.  I am much less convinced that implicit coercion is actually desirable, even in cases where you want coercion, I think for the benefit of your future readers, you should do -- make the coercion explicit.  And it’s not like it’s hard to make the coercion explicit.  While I agree that there are cases where coercion is the thing that you want, I’m not at all convinced that implicit coercion is ever actually the thing you want.  Okay, ever is too strong, but like 99.99%.
 
 RPR: NRO?
 
-NRO: Yeah, like, if there are some APIs, like, in which it makes sense to coerce, like, sure we
-can consider them on a case-by-case basis.  I think this presentation is here to set -- like,
-to set -- like, to define a way, like, a default way to move forward.  Some proposal by default
-don’t coerce, and then, sure, we can always make exceptions if it makes sense in very specific
-cases.
+NRO: Yeah, like, if there are some APIs, like, in which it makes sense to coerce, like, sure we can consider them on a case-by-case basis.  I think this presentation is here to set -- like,
+to set -- like, to define a way, like, a default way to move forward.  Some proposal by default don’t coerce, and then, sure, we can always make exceptions if it makes sense in very specific cases.
 
 RPR: So there’s 15 minutes remaining.  Back to Shane.
 
-KG: Yeah, once we get to 10 minutes remaining and we’re -- I’ll ask to go through these
-explicitly really quickly.  But, yeah, we’ve got time.
+KG: Yeah, once we get to 10 minutes remaining and we’re -- I’ll ask to go through these explicitly really quickly.  But, yeah, we’ve got time.
 
-SFC: So, yeah, there are definitely other programming languages, not just JavaScript that
-do coercion.  C++ is a really good example that comes to mind.  I’m not saying it’s always the
-right things to did, but you know a lot of C++ developers who love writing (inaudible) because
-it makes the resulting code less verbose and ends up happening is there’s a lot of implicit cob
-conversions happening.
+SFC: So, yeah, there are definitely other programming languages, not just JavaScript that do coercion.  C++ is a really good example that comes to mind.  I’m not saying it’s always the right things to did, but you know a lot of C++ developers who love writing (inaudible) because it makes the resulting code less verbose and ends up happening is there’s a lot of implicit cob conversions happening.
 
 KG: I agree that's a thing people write.
 
@@ -1571,89 +1198,43 @@ SFC: But it’s definitely a style that a lot of people use and like to work wit
 KG: I take precisely the opposite conclusion from C++.
 
 SYG: That is so opposite of what -- like, I cannot even process that statement.  Every single C++
-code base I have worked with have explicit rules, like, built into the commit queue, you can
-not commit code that has a single argument construct that is not marked explicit.  The fact
-that C++ made this as the default is, like, I have seen it being treated universally as
-considered the wrong default.
+code base I have worked with have explicit rules, like, built into the commit queue, you can not commit code that has a single argument construct that is not marked explicit.  The fact that C++ made this as the default is, like, I have seen it being treated universally as considered the wrong default.
 
-SFC: I’m not trying to make an argument that it’s right to do it.  I’m making an argument that
-there are developers out there who use JavaScript and other programming languages like C++ and
-this is how they learn to program and what they expect to write.  We’re not -- yeah.  I can
-also go on to my next topic.
+SFC: I’m not trying to make an argument that it’s right to do it.  I’m making an argument that there are developers out there who use JavaScript and other programming languages like C++ and this is how they learn to program and what they expect to write.  We’re not -- yeah.  I can also go on to my next topic.
 
-KG: Granted, people do this.  I agree this is a thing that happens.  My position is they
-shouldn’t and we should stop letting them.
+KG: Granted, people do this.  I agree this is a thing that happens.  My position is they shouldn’t and we should stop letting them.
 
 SFC: I agree they shouldn’t.  I don’t know if I agree so far that we should stop letting them.
 And I think that’s maybe the heart of the issue here.  But can go on to my next topic?
 
 KG: Yeah, go ahead.
 
-SFC: Yeah, so just an example of, like, where coercion has been somewhat helpful
-for us is in the number from my prototype format function, like, you know, has calls numeric on
-everything for ages, and this means if you pass in a string that has a number inside of it,
-like, we coerce that string to a number, which meant that we were sort of converting it down
-into, you know, floating point format.  And we were able to make a very small change with a
-very small API surface that, like, now we accept the string and, you know, consume all the
-digits of the string in a very clean way that is basically backwards and forwards compatible,
-which is quite nice, and I were able to do that only because we were coercing, if we hadn’t
-been coercing, it’s much harder for developers to write code that works backwards and forwards
-on the same function.  Another case in Intl from my proposal where we relied on similar
-behavior is in the used grouping setting, and you can go back and look at the slides on that.
-I believe we discussed that quite a bit, you and I, on exactly what the behavior should be
-there.  So I’m just giving like at least some evidence of, like, coercion is not always bad.
+SFC: Yeah, so just an example of, like, where coercion has been somewhat helpful for us is in the number from my prototype format function, like, you know, has calls numeric on everything for ages, and this means if you pass in a string that has a number inside of it,
+like, we coerce that string to a number, which meant that we were sort of converting it down into, you know, floating point format.  And we were able to make a very small change with a very small API surface that, like, now we accept the string and, you know, consume all the digits of the string in a very clean way that is basically backwards and forwards compatible,
+which is quite nice, and I were able to do that only because we were coercing, if we hadn’t been coercing, it’s much harder for developers to write code that works backwards and forwards on the same function.  Another case in Intl from my proposal where we relied on similar behavior is in the used grouping setting, and you can go back and look at the slides on that.
+I believe we discussed that quite a bit, you and I, on exactly what the behavior should be there.  So I’m just giving like at least some evidence of, like, coercion is not always bad.
 
-KG: So, again, I take exactly the opposite conclusion from these examples.  The -- you got away
-with changing the behavior of number format prototype toString -- sorry, number format
-prototype format to handle strings explicitly, but that meant that it was technically a
-breaking change.  Like, you started treating strings that were previously legal as, like,
-having different behavior, and I would have preferred, if the method had previously only
-accepted numbers, and then we would have later had room to pass strings and have them change
-behavior from an error to being something new. Now, in that particular case it worked out
-and it was okay to change the behavior.  But I think I don’t want to -- yeah, just in general,
+KG: So, again, I take exactly the opposite conclusion from these examples.  The -- you got away with changing the behavior of number format prototype toString -- sorry, number format prototype format to handle strings explicitly, but that meant that it was technically a breaking change.  Like, you started treating strings that were previously legal as, like,
+having different behavior, and I would have preferred, if the method had previously only accepted numbers, and then we would have later had room to pass strings and have them change behavior from an error to being something new. Now, in that particular case it worked out and it was okay to change the behavior.  But I think I don’t want to -- yeah, just in general,
 I think that the coercing makes those types of changes harder, not easier.
 
-NRO: This is not just KG’s opinion, it often happens for me when we say, let’s make it turn now so in
-the future we can more easily extend its behavior, because, like, we in general consider a good
-thing to stop throwing if we have a user, and that has always been considered much harder, not
-impossible, in case there was some already existing maybe weird, but not visible behavior.
+NRO: This is not just KG’s opinion, it often happens for me when we say, let’s make it turn now so in the future we can more easily extend its behavior, because, like, we in general consider a good thing to stop throwing if we have a user, and that has always been considered much harder, not impossible, in case there was some already existing maybe weird, but not visible behavior.
 
 RPR: All right.  Yeah, we’re coming up at the 10 minutes.  Let’s go to (inaudible).
 
-BSH: So I just wanted -- I feel like there’s some concern that SFC has that I’m not just quite
-getting.  All that we’re suggesting here is that in future, APIs will not coerce unless there’s
-some strong reason to do so instead of defaulting.  What is the bad thing that you’re afraid
-would happen if we made that change, SFC?
+BSH: So I just wanted -- I feel like there’s some concern that SFC has that I’m not just quite getting.  All that we’re suggesting here is that in future, APIs will not coerce unless there’s some strong reason to do so instead of defaulting.  What is the bad thing that you’re afraid would happen if we made that change, SFC?
 
-SFC: I think that’s a very loaded question.  At no point did I say that I think bad things would
-happen if we made such a change.
+SFC: I think that’s a very loaded question.  At no point did I say that I think bad things would happen if we made such a change.
 
-BSH: Sorry, it wasn’t intended to be loaded.  I feel like there’s some concern you have that I
-don’t understand.
+BSH: Sorry, it wasn’t intended to be loaded.  I feel like there’s some concern you have that I don’t understand.
 
-SFC: I’m saying that -- well, if we get to my very last queue item, which was my first queue item
-which I was asked to delay to later, I think probably the most useful one is coercion to
-string, but that’s not the queue we’re on right now.  I definitely think there are some cases
-where coercion is the right behavior.  I’m not saying they’re always the case, and it’s
-probably perfectly reasonable to take a default behavior to not coerce in some of those cases.
-Also, it’s sort of hard to take  the position which is, you know -- I think it’s important to express
-the opposite of the position of most of the people on the committee here, because I think it is
-important for us to take -- to get to the bottom of this.  And I think that, yeah, we should
-continue going through the queue.
+SFC: I’m saying that -- well, if we get to my very last queue item, which was my first queue item which I was asked to delay to later, I think probably the most useful one is coercion to string, but that’s not the queue we’re on right now.  I definitely think there are some cases where coercion is the right behavior.  I’m not saying they’re always the case, and it’s probably perfectly reasonable to take a default behavior to not coerce in some of those cases.
+Also, it’s sort of hard to take  the position which is, you know -- I think it’s important to express the opposite of the position of most of the people on the committee here, because I think it is important for us to take -- to get to the bottom of this.  And I think that, yeah, we should continue going through the queue.
 
 ### asking for consensus
 
-KG: Okay.  I actually want to not continue going through queue.  Shane, I know that means that
-we won’t get to your item - in fact I will briefly get to it.  But since we’re short on
-time, I want to make sure we have a chance to go through the less controversial ones of these.
-So I just want to go through each of these in turn and ask for explicit consensus on them and
-in some of the cases that I won’t ask, because we’ve heard objections and there’s not going to
-be time to go through all of the discussion of that.  But some of them we haven’t, so I want to
-hopefully get agreement on controversial ones.  So in particular, I would like to ask for
-committee consensus on the statement that is on the screen here.  It’s not a -- not as a
-universal rule, just as the default, that any in if you APIs that take integral numbers that
-take NaN and anything could treat NaN as a range error.  We’ve had general support, and unless
-anyone objects to these, I will treat that on consensus is.
+KG: Okay.  I actually want to not continue going through queue.  Shane, I know that means that we won’t get to your item - in fact I will briefly get to it.  But since we’re short on time, I want to make sure we have a chance to go through the less controversial ones of these.
+So I just want to go through each of these in turn and ask for explicit consensus on them and in some of the cases that I won’t ask, because we’ve heard objections and there’s not going to be time to go through all of the discussion of that.  But some of them we haven’t, so I want to hopefully get agreement on controversial ones.  So in particular, I would like to ask for committee consensus on the statement that is on the screen here.  It’s not a -- not as a universal rule, just as the default, that any in if you APIs that take integral numbers that take NaN and anything could treat NaN as a range error.  We’ve had general support, and unless anyone objects to these, I will treat that on consensus is.
 
 RPR: We’ve got explicit support from PFC, CDA, LCA, so, yeah, you have explicit support.
 And I’m not hearing any objections.
@@ -1661,25 +1242,16 @@ And I’m not hearing any objections.
 KG: Okay, thanks very much.  Next, don’t coerce undefined to other things.
 RPR: Hang on.  Sorry, Dan has a question.
 
-DE: No, no, sorry, it’s unclear to me what the scope is.  Are we making these hard decisions
-about all new APIs?
+DE: No, no, sorry, it’s unclear to me what the scope is.  Are we making these hard decisions about all new APIs?
 
-KG: No, very explicitly, these are just the defaults.  If you are coming back with a proposal in
-the future, if you want to deviate from these rules, you should tell the committee why.  If
-you’re designing something and there’s no particular reason to do it differently, you should do it
-this way.
+KG: No, very explicitly, these are just the defaults.  If you are coming back with a proposal in the future, if you want to deviate from these rules, you should tell the committee why.  If you’re designing something and there’s no particular reason to do it differently, you should do it this way.
 
 DE: Thanks.
 
-KG: Okay, next one.  Same thing, but with coercing missing arguments and undefined to anything
-else, so if this is a JS function which takes a string, don’t treat undefined as the string
-"undefined", etc.  I’d like to ask for explicit consensus on this.  I see we have a question
-from Shu.  Go ahead.
+KG: Okay, next one.  Same thing, but with coercing missing arguments and undefined to anything else, so if this is a JS function which takes a string, don’t treat undefined as the string
+"undefined", etc.  I’d like to ask for explicit consensus on this.  I see we have a question from Shu.  Go ahead.
 
-SYG: I have a question about this.  So this is the direction -- so if you don’t pass anything
-where it defaults to undefined, we don’t coerce that, or if you explicitly pass undefined, we
-coerce to that.  You’re not proposing anything in this case about the -- oh, okay, maybe I just
-misunderstood.  This is to cover both explicit and error mismatches.
+SYG: I have a question about this.  So this is the direction -- so if you don’t pass anything where it defaults to undefined, we don’t coerce that, or if you explicitly pass undefined, we coerce to that.  You’re not proposing anything in this case about the -- oh, okay, maybe I just misunderstood.  This is to cover both explicit and error mismatches.
 
 KG: Right now the language treats those the same and I want to continue treating them the same.
 The web platform doesn’t treat them the same, but JS does.  So, yes, to cover both cases.
@@ -1688,15 +1260,11 @@ RPR: And NRO has a question.
 
 NRO: Shu’s question answered, would this need to throw if there are more arguments than expected?
 
-KG: Yeah.  I am not proposing anything around that at this time.  Only about missing
-required arguments.
+KG: Yeah.  I am not proposing anything around that at this time.  Only about missing required arguments.
 
-SYG: And you’re also not proposing that if we’re -- if we’re -- if the proposal has a method with
-optional arguments to use, like, the not present language over the undefined language, just
-that by default, if you don’t do anything, it throws?
+SYG: And you’re also not proposing that if we’re -- if we’re -- if the proposal has a method with optional arguments to use, like, the not present language over the undefined language, just that by default, if you don’t do anything, it throws?
 
-KG: Correct.  So for things where there’s optional arguments, undefined and missing will be
-treated identically and will get the default.  It’s only in the case of required arguments.
+KG: Correct.  So for things where there’s optional arguments, undefined and missing will be treated identically and will get the default.  It’s only in the case of required arguments.
 Just don’t coerce undefined is the rule.
 
 RPR: Shane?
@@ -1709,78 +1277,44 @@ SFC: I see.
 
 RPR:  All right, so there remains two voices of support.  Any objection to this?  No objections.
 
-KG: Okay.  And then the more general one I’m not going to ask for consensus for, because we
-heard from Bradford that -- and other people, I think it was Bradford, anyway, we heard that
-there’s more use cases for this.  I still think it’s warranted, but we’re not going to have
-time to come to consensus on other types of coercion, so I’m not going to ask for consensus
-on this.  I will probably come back in a future meeting and continue this topic.
+KG: Okay.  And then the more general one I’m not going to ask for consensus for, because we heard from Bradford that -- and other people, I think it was Bradford, anyway, we heard that there’s more use cases for this.  I still think it’s warranted, but we’re not going to have time to come to consensus on other types of coercion, so I’m not going to ask for consensus on this.  I will probably come back in a future meeting and continue this topic.
 
-KG: Next, stop rounding on integral numbers, and this includes things that coerce to non-integral
-numbers.  If you pass something which coerces to the number 1.5 and that gets truncated to 1, my proposal would be that would be a range error.
+KG: Next, stop rounding on integral numbers, and this includes things that coerce to non-integral numbers.  If you pass something which coerces to the number 1.5 and that gets truncated to 1, my proposal would be that would be a range error.
 
 RPR: We have support from Dan, Nicolo, Philip, and Michael has made -- I’m sorry --
 
 SFC: (from queue) needs more discussion.
 
-KG: Okay.  I’m happy to take that as not consensus, although for future discussion, Shane, could
-you say what you don’t like about this.
+KG: Okay.  I’m happy to take that as not consensus, although for future discussion, Shane, could you say what you don’t like about this.
 
-SFC: There Intl APIs that take these and I need more time to review what the impact would
-be.
+SFC: There Intl APIs that take these and I need more time to review what the impact would be.
 
 KG: Sounds good.  I’ll also plan on bringing this one back in the future.
 
-KG: Stop coercing objects, we didn’t have a chance to get to Shane’s item about this, but, yes, granted it is
-occasionally useful.  I still think that this change is warranted, but since we’re not going to
-have time to talk about it in sufficient detail, I will not ask for consensus for this one
-at this time.  However, I would at least like to stop coercing arrays to primitives -
-actually, no, okay, I’m not going to ask
-for consensus at this time, because it would be subsumed by the other one, coercing objects to
-primitives, so at a future meeting we'll talk about coercing objects to primitives, and if we
-come to consensus we would like to continue to coerce objects to primitives in general, I will still ask about
-maybe making arrays an exception to that rule.  Since we haven’t had time to discuss coercing objects,
+KG: Stop coercing objects, we didn’t have a chance to get to Shane’s item about this, but, yes, granted it is occasionally useful.  I still think that this change is warranted, but since we’re not going to have time to talk about it in sufficient detail, I will not ask for consensus for this one at this time.  However, I would at least like to stop coercing arrays to primitives -
+actually, no, okay, I’m not going to ask for consensus at this time, because it would be subsumed by the other one, coercing objects to primitives, so at a future meeting we'll talk about coercing objects to primitives, and if we come to consensus we would like to continue to coerce objects to primitives in general, I will still ask about maybe making arrays an exception to that rule.  Since we haven’t had time to discuss coercing objects,
 I’m not going to ask for consensus on arrays at this time.
 
 ### next steps and summary
 
-KG: I do want to comment on the next steps.  I will review existing Stage 3 proposals and come back with normative changes where appropriate to have them follow these rules.  I’ll also glance at anything that’s Stage 4 that I think might be worth making these changes for.  And suggest making changes to those as well if there’s appetite.  I will also follow up with web IDL for the things we have just got consensus for and let them know of the ongoing discussions for other
-topics and propose clangs to web IDL, although it’s going to be like a massive pain just in
-terms of modifying all of the existing specifications.
+KG: I do want to comment on the next steps.  I will review existing Stage 3 proposals and come back with normative changes where appropriate to have them follow these rules.  I’ll also glance at anything that’s Stage 4 that I think might be worth making these changes for.  And suggest making changes to those as well if there’s appetite.  I will also follow up with web IDL for the things we have just got consensus for and let them know of the ongoing discussions for other topics and propose clangs to web IDL, although it’s going to be like a massive pain just in terms of modifying all of the existing specifications.
 
 RPR: One minute for the summary.
 
-KG: Okay, great.  To summarize, we have discussed the topic of reducing coercion in general and
-while acknowledging that this has potential for confusion for developers who have learned the
-expectation that things whether coercion, we as a whole think that doing less coercion is
-probably worth it.  Despite the break with precedent.  Concretely, we got consensus for no
-longer coercing NaN and things that coerce to NaN for integer taking APIs and got con sen fuss
-for not coercing up defined to any other thing, and this includes missing arguments, applies
-only to undefined, not to null or any other primitive, doesn’t apply to additional arguments or
-anything just when there’s an undefined or missing argument for a required argument that will
-no longer be coerced.  We did not get consensus, although not explicit lack on consensus on
-coercing primitive types to other primitive types.  We’ll continue that discussion later.  We
-did get consensus for -- no, those the are the only things we got consensus for.
+KG: Okay, great.  To summarize, we have discussed the topic of reducing coercion in general and while acknowledging that this has potential for confusion for developers who have learned the expectation that things whether coercion, we as a whole think that doing less coercion is probably worth it.  Despite the break with precedent.  Concretely, we got consensus for no longer coercing NaN and things that coerce to NaN for integer taking APIs and got con sen fuss for not coercing up defined to any other thing, and this includes missing arguments, applies only to undefined, not to null or any other primitive, doesn’t apply to additional arguments or anything just when there’s an undefined or missing argument for a required argument that will no longer be coerced.  We did not get consensus, although not explicit lack on consensus on coercing primitive types to other primitive types.  We’ll continue that discussion later.  We did get consensus for -- no, those the are the only things we got consensus for.
 
 RPR: Sorry, Shane has a slight disagreement with --
 
-SFC: So you said that we agree that we should not coerce despite developers sometimes expecting
-to be coerced.  I don’t think we agreed on, like, that policy as a committee.  We did agree
-that there’s definitely cases where it’s really bad.
+SFC: So you said that we agree that we should not coerce despite developers sometimes expecting to be coerced.  I don’t think we agreed on, like, that policy as a committee.  We did agree that there’s definitely cases where it’s really bad.
 
 KG: Okay, we agreed that the level of coercion that we are doing right now should be reduced.
 Can we say that?
 
 SFC:  Yes.
 
-KG: Okay, good.  So we didn’t get consensus on the other items discussed.  In particular, we did
-not get consensus for refraining for primitive types or stopping truncation of numbers or
-stopping coercion of objects to primitives in general.  But I will plan to come back to discuss
-those more later.  So let’s all look forward to that, I guess. And again, these are not to be
-taken as hard and fast rules, just as the defaults to follow in the absence of compelling
-reasons to do otherwise.
+KG: Okay, good.  So we didn’t get consensus on the other items discussed.  In particular, we did not get consensus for refraining for primitive types or stopping truncation of numbers or stopping coercion of objects to primitives in general.  But I will plan to come back to discuss those more later.  So let’s all look forward to that, I guess. And again, these are not to be taken as hard and fast rules, just as the defaults to follow in the absence of compelling reasons to do otherwise.
 
-RPR: Thank you, Kevin.  And so, Kevin and Shane, please do review the summary of this.  Thank
-you.
+RPR: Thank you, Kevin.  And so, Kevin and Shane, please do review the summary of this.  Thank you.
 
 ### Summary
 
@@ -1792,140 +1326,64 @@ Presenter: Michael Ficarra (MF)
 
 - [slides](https://docs.google.com/presentation/d/1V3Fg6HVC-VA41YCu0Yhqynvqhsu5kVj7tiWuVfp8S90/)
 
-RPR: Michael, do you want to -- okay, you’re already sharing?  Do you want to do any intro or
-should we just go straight to Philip on the queue?
+RPR: Michael, do you want to -- okay, you’re already sharing?  Do you want to do any intro or should we just go straight to Philip on the queue?
 
 MF: Let’s go to the queue.
 
 RPR: Philip?
 
-PFC: My experience with having written 262 tests, not just for temporal, but also in the capacity of having worked on the Google funded efforts to write tests for Stage 3 proposals, it is -- it is really important to have a clear signal of stability to write the test effectively, because if you are writing the test at the
-same time that champions are going back and redesigning things, it’s quite a lot of extra work.
-And I guess actually, this was a response to Eemeli saying why do we need an extra stage for
-this.  So my experience is that, yes, if we are going to require this then we should have an
-extra stage.
+PFC: My experience with having written 262 tests, not just for temporal, but also in the capacity of having worked on the Google funded efforts to write tests for Stage 3 proposals, it is -- it is really important to have a clear signal of stability to write the test effectively, because if you are writing the test at the same time that champions are going back and redesigning things, it’s quite a lot of extra work.
+And I guess actually, this was a response to Eemeli saying why do we need an extra stage for this.  So my experience is that, yes, if we are going to require this then we should have an extra stage.
 
-SFC: I’m just observing that educator feedback has also been normally one of the things that we
-accept as a sense of Stage 3, like, modification, and -- but it’s not listed here, it’s only
-listed implementer feedback.  My understanding is we’ve long understood educator feedback to
-also be a Stage 3 type.
+SFC: I’m just observing that educator feedback has also been normally one of the things that we accept as a sense of Stage 3, like, modification, and -- but it’s not listed here, it’s only listed implementer feedback.  My understanding is we’ve long understood educator feedback to also be a Stage 3 type.
 
-DE:  We should be collecting educator feedback before Stage 3–collecting this feedback earlier is why I set up the educator outreach group in the first place.  Educator-type feedback, feedback
-about the design, abstractly, we should do all the work that we can to collect that at this
-design stage, then we can feed that into what gets developed in tests and implementations.
-Frequently, educators don’t hear about things until thing are already Stage 3, and I think our
-efforts should be focused on outreach.  I understand this type of outreach before Stage 3 can
-make some committee members nervous because it maybe makes things too hyped, but on the other hand, this would save everyone the work of changing something later.  This is something I feel very
-strongly about.
+DE:  We should be collecting educator feedback before Stage 3–collecting this feedback earlier is why I set up the educator outreach group in the first place.  Educator-type feedback, feedback about the design, abstractly, we should do all the work that we can to collect that at this design stage, then we can feed that into what gets developed in tests and implementations.
+Frequently, educators don’t hear about things until thing are already Stage 3, and I think our efforts should be focused on outreach.  I understand this type of outreach before Stage 3 can make some committee members nervous because it maybe makes things too hyped, but on the other hand, this would save everyone the work of changing something later.  This is something I feel very strongly about.
 
-SYG: What is this?  Okay, I wrote this when the feedback was mostly positive.  I’m not sure
-that’s my current read.  I don’t remember.  It might be more mixed.  But I do have some ideas
-for concrete implementation details, namely, I’ve been a proponent of lowering the barrier of
-test writing for test262 to ease more correctors into it and to entice the implementers to
-write 262 tests instead of engine-specific test, and I think we also heard in chat from Ron
-Buckton on the that it’s not like a barrier to entry is curb currently that it’s not clear on
-windows or it’s hard on Windows to run the harness and test262.  So concrete implementation
-here, I think a big part of this would be to do even possibly even more work to lower barrier
-of entry for writing test262.  But at least not requiring anything more formal event staging, I
-think, for this new stage.  I think since Stage 4 already requires the staging test to be
-graduated out of staging into the main trunk for this new stage to be as -- to introduce as
-little friction as possible, I think we should limit it to requiring no more formal event
-staging.  I thought I had some other thoughts, but I don’t really remember.  So I’ll leave it
-at that.
+SYG: What is this?  Okay, I wrote this when the feedback was mostly positive.  I’m not sure that’s my current read.  I don’t remember.  It might be more mixed.  But I do have some ideas for concrete implementation details, namely, I’ve been a proponent of lowering the barrier of test writing for test262 to ease more correctors into it and to entice the implementers to write 262 tests instead of engine-specific test, and I think we also heard in chat from Ron Buckton on the that it’s not like a barrier to entry is curb currently that it’s not clear on windows or it’s hard on Windows to run the harness and test262.  So concrete implementation here, I think a big part of this would be to do even possibly even more work to lower barrier of entry for writing test262.  But at least not requiring anything more formal event staging, I think, for this new stage.  I think since Stage 4 already requires the staging test to be graduated out of staging into the main trunk for this new stage to be as -- to introduce as little friction as possible, I think we should limit it to requiring no more formal event staging.  I thought I had some other thoughts, but I don’t really remember.  So I’ll leave it at that.
 
 EAO: So regarding the mostly positive state of affairs, I think I agree with that.  Particularly what SYG said earlier ended up convincing me a this sounds like a very good idea.  I’d be happy for us to move on. I do have thoughts on bikeshedding about the name for this one, though.
 
 DE: So I completely agree with SYG’s comment that, if we are requiring tests to get to Stage 3, the requirements on those early tests should be looser than for the final Stage 4 tests.  In particular, there are lots of tests that are developed in the context implementing a feature in a JS engine, sometimes written in that engine’s test framework. I’m wondering what the appetite is from people working in tests in JavaScript implementations–there’s a lot of people in that group–in sharing those tests through the test262 staging directory. We could use web-platform-tests-style two way synchronization between each engine and the test262 staging directory, so all the JavaScript engines can share tests with each other.  This is something that’s done in web platform tests, and we have the opportunity with a lot of work to potentially do it with JavaScript as well.
 
-NRO: Yeah, I cannot -- like, I think we would be using this staging directly much less with this
-proposal.  Because, like, staging directories mostly used, like, when agents have to write all
-of their new tests for proposals, and in these cases, they would still write their own tests,
-but, like, a very big part of tests for the future would be the variable before the
-implementation starts.
+NRO: Yeah, I cannot -- like, I think we would be using this staging directly much less with this proposal.  Because, like, staging directories mostly used, like, when agents have to write all of their new tests for proposals, and in these cases, they would still write their own tests,
+but, like, a very big part of tests for the future would be the variable before the implementation starts.
 
-DE: I’m proposing radically greater use of the staging directly, and I’m interested in more
-feedback, but that’s not the current topic today. [Note from DE: sharing tests earlier might indeed result in fewer different versions being written which are testing the same thing, so I agree with NRO as well.]
+DE: I’m proposing radically greater use of the staging directly, and I’m interested in more feedback, but that’s not the current topic today. [Note from DE: sharing tests earlier might indeed result in fewer different versions being written which are testing the same thing, so I agree with NRO as well.]
 
 SYG: I agree with DE.  I’m proposing expanded use of staging for this new stage.
 
-SFC: So I think one thing that happens a lot with these proposals
-that reach later stages is that, like implementers give feedback and then, like, as a result of
-the implementer feedback, the proses churn a lot and then the implementers are scared, I don’t
-want to test this proposal again.  It’s changing too much.  Right?  And this how we get a lot
-of proposals that are in Stage 3 that are never implemented, because they get to Stage 3 and
-get to first round of feedback and then churn forever and never get implemented, right?  I was
-wondering if maybe an approach we should consider take here when a prose poll reaches Stage 3
-and gets implementer feedback it goes back to Stage 2 or 2 and three-quarters can and you
-resolve the feedback and atomically say here is my thing and implementers take a second look at it
-and maybe that happens three or four times.  I think for small protestor poses it happens once
-or twice, for temporal three or four times and that could be a very year check points, and
-otherwise we get into the problem where there’s a proposal that shouldn’t be a Stage 3 proposal
-because now there’s bigger design questions.
+SFC: So I think one thing that happens a lot with these proposals that reach later stages is that, like implementers give feedback and then, like, as a result of the implementer feedback, the proses churn a lot and then the implementers are scared, I don’t want to test this proposal again.  It’s changing too much.  Right?  And this how we get a lot of proposals that are in Stage 3 that are never implemented, because they get to Stage 3 and get to first round of feedback and then churn forever and never get implemented, right?  I was wondering if maybe an approach we should consider take here when a prose poll reaches Stage 3 and gets implementer feedback it goes back to Stage 2 or 2 and three-quarters can and you resolve the feedback and atomically say here is my thing and implementers take a second look at it and maybe that happens three or four times.  I think for small protestor poses it happens once or twice, for temporal three or four times and that could be a very year check points, and otherwise we get into the problem where there’s a proposal that shouldn’t be a Stage 3 proposal because now there’s bigger design questions.
 
-SYG: What are line of proposals get stuck in Stage 3?  I don’t think that’s an accurate
-description.
+SYG: What are line of proposals get stuck in Stage 3?  I don’t think that’s an accurate description.
 
 SFC: I’m looking at Intl Segmenter, Intl DurationFormat, and Temporal which have all had the problem of feedback from implementers that there are issues in Stage 3. That is a continuing concern which scares away implementers.
 
 SYG: I would exclude temporal.  The other two I can’t speak.  But temporal is just, to me, a proposal that just does not work in the staging model.  It is too big and too complex to ever fit into our staging model.
 
-DE: I’m not sure I agree with SFC’s assessment of what makes Stage 3 proposals churn–those particular cases had some late design-level feedback from implementers. To keep things from getting stuck in Stage 3, I think more check points could be good, as PKA has on the agenda this meeting–asking, “hey, how is this proposal doing?”. I feel like this is pretty orthogonal from the staging
-changes or testing changes. What are you proposing that we do?
+DE: I’m not sure I agree with SFC’s assessment of what makes Stage 3 proposals churn–those particular cases had some late design-level feedback from implementers. To keep things from getting stuck in Stage 3, I think more check points could be good, as PKA has on the agenda this meeting–asking, “hey, how is this proposal doing?”. I feel like this is pretty orthogonal from the staging changes or testing changes. What are you proposing that we do?
 
-SFC: I’m proposing concretely, if some definition of a critical mass of feedback comes in
-from implementers or elsewhere, when a proposal reaches Stage 3, that we actually formally
-move the thing back to Stage 2 or Stage 2 3/4 or whatever we call it.
+SFC: I’m proposing concretely, if some definition of a critical mass of feedback comes in from implementers or elsewhere, when a proposal reaches Stage 3, that we actually formally move the thing back to Stage 2 or Stage 2 3/4 or whatever we call it.
 
-DE: Yeah, I think we’ve been establishing this practice more frequently of moving proposals back to earlier stages. And if we add this new stage, presumably that will be another target stage to be
-considering.  Our practice is conservative–we require consensus whenever changing a proposal stage, whether up or down. Let’s keep reviewing proposals in committee, and reconsidering stages when appropriate.
+DE: Yeah, I think we’ve been establishing this practice more frequently of moving proposals back to earlier stages. And if we add this new stage, presumably that will be another target stage to be considering.  Our practice is conservative–we require consensus whenever changing a proposal stage, whether up or down. Let’s keep reviewing proposals in committee, and reconsidering stages when appropriate.
 
-MLS: So actually I’ll go ahead and speak.  I agree with SYG.  I don’t think that this back and
-forth is what’s stopping proposals from being implemented.  I do -- I personally believe that
-the stage that a proposal is at is the signal to implementers.  We have moved some proposals
-back to Stage 2 because there were some significant changes in syntax or naming or things like
-that.  And we take that to heart with what we do.  Often times we’ll just turn off the code if
-it’s already in and fix it.  But I don’t think that -- I don’t agree, Shane, that there’s this
-back and forth is what’s slowing us down.  And I’ll speak to Temporal.  Temporal is a huge
-proposal.  And there’s a lot of work to finish it to make that, you know, part of
-implementation.  We’re working on it, we’re working on it slowly.
+MLS: So actually I’ll go ahead and speak.  I agree with SYG.  I don’t think that this back and forth is what’s stopping proposals from being implemented.  I do -- I personally believe that the stage that a proposal is at is the signal to implementers.  We have moved some proposals back to Stage 2 because there were some significant changes in syntax or naming or things like that.  And we take that to heart with what we do.  Often times we’ll just turn off the code if it’s already in and fix it.  But I don’t think that -- I don’t agree, Shane, that there’s this back and forth is what’s slowing us down.  And I’ll speak to Temporal.  Temporal is a huge proposal.  And there’s a lot of work to finish it to make that, you know, part of implementation.  We’re working on it, we’re working on it slowly.
 
 PFC: I have to agree with SYG about temporal not fitting the staging model.
 
 SFC: So just thinking about DurationFormat as a sort of recent example of this, and to be clear,
-it’s not the only example of this.  Is, like, you know, it might be useful to sort of formalize
-or as part of this discussion, since we’re talking about stage processes, like, what criteria
-we should use to say that a proposal should be downgraded from Stage 3 back to Stage 2, because
-I think, you know, we’ve been talking a lot about the whole ready to ship signal.  And like I
-think what happens sometimes is that, you know, there’s a problem in Stage 3, for example,
-duration format, and I love that JSC is shipping duration format, but there’s still a couple
-normative changes we’re merging.  In an ideal world, all developers would wait until they’re
-merged and we can go back to Stage 3 and we can ship it again.  I feel like Stage 3 is a very
-good signal that this proposal is shippable.  I guess another thing I’m trying to say is maybe in
-ready to ship is, like, something that we want to codify as stage 3 ¾  and Stage 3
-is that thing, ready to thing, then, you know, that means if there’s a proposal that has
-normative changes of any substantial size, whatever that might be, whatever criteria that might
-be, then, like, we should be very explicit, okay, that’s red flagged by default it goes to
-Stage 2 and you have to reapply for Stage 3.
+it’s not the only example of this.  Is, like, you know, it might be useful to sort of formalize or as part of this discussion, since we’re talking about stage processes, like, what criteria we should use to say that a proposal should be downgraded from Stage 3 back to Stage 2, because I think, you know, we’ve been talking a lot about the whole ready to ship signal.  And like I think what happens sometimes is that, you know, there’s a problem in Stage 3, for example,
+duration format, and I love that JSC is shipping duration format, but there’s still a couple normative changes we’re merging.  In an ideal world, all developers would wait until they’re merged and we can go back to Stage 3 and we can ship it again.  I feel like Stage 3 is a very good signal that this proposal is shippable.  I guess another thing I’m trying to say is maybe in ready to ship is, like, something that we want to codify as stage 3 ¾  and Stage 3 is that thing, ready to thing, then, you know, that means if there’s a proposal that has normative changes of any substantial size, whatever that might be, whatever criteria that might be, then, like, we should be very explicit, okay, that’s red flagged by default it goes to Stage 2 and you have to reapply for Stage 3.
 
-MLS: This is a worthy discussion.  I’m not sure this is what MF had in mind when he prepared
-this.  We’ve been using Stage 3 to Stage 2 demotion recently.  I think we should maybe have
-some formal discussions about why we do that and what gets you back to Stage 3.
+MLS: This is a worthy discussion.  I’m not sure this is what MF had in mind when he prepared this.  We’ve been using Stage 3 to Stage 2 demotion recently.  I think we should maybe have some formal discussions about why we do that and what gets you back to Stage 3.
 
-DE: Yeah, I think we’ve been saying Stage 3 is time to implement native engines and everybody
-makes their own policies about when they want to ship things.  Anyway, I think we do have an
-emerging criterion here, which is that if the committee has consensus that we disagree with core parts
-of the design, then it’s not ready to implement in native engines and Stage 3 isn’t appropriate. I say ‘native engines’ because I really want to encourage polyfill and transpiler and engine262 implementations before Stage 3.
+DE: Yeah, I think we’ve been saying Stage 3 is time to implement native engines and everybody makes their own policies about when they want to ship things.  Anyway, I think we do have an emerging criterion here, which is that if the committee has consensus that we disagree with core parts of the design, then it’s not ready to implement in native engines and Stage 3 isn’t appropriate. I say ‘native engines’ because I really want to encourage polyfill and transpiler and engine262 implementations before Stage 3.
 
-RPR: WH asks: how do you write tests for things like syntax without an
-implementation?  We can not hear you, Waldemar, if you are speaking.  And we’ve got two minutes
-left.  Do you want -- I think really we should probably be summarizing.
+RPR: WH asks: how do you write tests for things like syntax without an implementation?  We can not hear you, Waldemar, if you are speaking.  And we’ve got two minutes left.  Do you want -- I think really we should probably be summarizing.
 
-MF:  I don’t think the -- I think my previous summary applies.  I’d rather use the time to hear
-about --
+MF:  I don’t think the -- I think my previous summary applies.  I’d rather use the time to hear about --
 
-DE: Yeah.  I mean, I think you write a test without an implementation the way you write an
-implementations without a test, which is in a way that is partly correct and also has some
-bugs.  So the spiral comment from Michael applies–you go back and forth.  This has been done repeatedly, like, ES6 tests before there were engines fully complete.  We’ve been trying to do this with proposals like Temporal: developing tests and polyfills before Stage 3. Even if we don’t adopt a new stage, it’d still be good to do this kind of work before Stage 3 as a best practice–we’d get benefit. But I do think adopting a new stage would be the more solid way of saying you know, we’ve experimented with this good practice and we want to, you know, codify it.
+DE: Yeah.  I mean, I think you write a test without an implementation the way you write an implementations without a test, which is in a way that is partly correct and also has some bugs.  So the spiral comment from Michael applies–you go back and forth.  This has been done repeatedly, like, ES6 tests before there were engines fully complete.  We’ve been trying to do this with proposals like Temporal: developing tests and polyfills before Stage 3. Even if we don’t adopt a new stage, it’d still be good to do this kind of work before Stage 3 as a best practice–we’d get benefit. But I do think adopting a new stage would be the more solid way of saying you know, we’ve experimented with this good practice and we want to, you know, codify it.
 
 RPR: Right.  Shu, do you want to have the last word about spiraling?
 
@@ -1937,22 +1395,7 @@ SYG: I would like to let Michael Ficarra decide on the queue which one he wants 
 
 MF: Go ahead, Shu.
 
-SYG: My spiel about spiraling is with -- since we talk about Temporal, I think something that’s
-become year to me over the years is that TC39’s working model in stark contrast with web
-incubation and how other features are developed in other languages and platforms is that we
-design up front that is explicitly how we work and that’s explicitly how we have worked, the
-design up front part is there’s friction there because that is in fact not how software in
-general is developed.  Software in general is developed in a spiral.  There is iteration, we
-find bugs, you ask users for feature, you come back and you iterate.  But TC39 works by always
-designing up front and throwing it over the wall.  And we are trying to make that -- we’re not
-trying to abandon that model because it a pluses for democratization and being on the same
-page, for more stability, et cetera, et cetera, but there’s down sides, and this is one of the
-down sides.  And I think this proposal is a good intermediate, incremental improvement to still
-keep the design up front model.  But at the same time, it’s pointed out that, you know, things
-like temporal -- I think the design up front model just doesn’t scale to the size of
-things like Temporal, that requires the usual software design model of iterating and spiraling
-and back and forth.  And a spinoff conversation we could have is if we want to tackle those
-huge things, what should we do.  Like, is something what uly proposed with ethics enough.
+SYG: My spiel about spiraling is with -- since we talk about Temporal, I think something that’s become year to me over the years is that TC39’s working model in stark contrast with web incubation and how other features are developed in other languages and platforms is that we design up front that is explicitly how we work and that’s explicitly how we have worked, the design up front part is there’s friction there because that is in fact not how software in general is developed.  Software in general is developed in a spiral.  There is iteration, we find bugs, you ask users for feature, you come back and you iterate.  But TC39 works by always designing up front and throwing it over the wall.  And we are trying to make that -- we’re not trying to abandon that model because it a pluses for democratization and being on the same page, for more stability, et cetera, et cetera, but there’s down sides, and this is one of the down sides.  And I think this proposal is a good intermediate, incremental improvement to still keep the design up front model.  But at the same time, it’s pointed out that, you know, things like temporal -- I think the design up front model just doesn’t scale to the size of things like Temporal, that requires the usual software design model of iterating and spiraling and back and forth.  And a spinoff conversation we could have is if we want to tackle those huge things, what should we do.  Like, is something what uly proposed with ethics enough.
 Should we take industry best practices that we know how to use software and go to incubation.
 That’s a conversation I’d like to have in the future.
 
@@ -1964,13 +1407,7 @@ DE: Michael Saboff had one pretty critical point.  Can we get to that?  Can we g
 
 RPR: Go ahead, MLS.
 
-MLS: I have grave concerns that this will actually not resolve in improvements intended.  I
-understand the desire of the reason we’re doing this, but I think if you add a new stage, you
-add new delay and my spiral discussion is more about that off times the implementation drives a
-test, and test drives implementations back and forth, I think that’s kind of the comment that
-WH wanted to make, is sometimes we start with tests and without implementation and vice
-versa.  So I think our current staging actually works, we just need to be more diligent about
-what we do during Stage 3, writing tests for implementations first or writing together.
+MLS: I have grave concerns that this will actually not resolve in improvements intended.  I understand the desire of the reason we’re doing this, but I think if you add a new stage, you add new delay and my spiral discussion is more about that off times the implementation drives a test, and test drives implementations back and forth, I think that’s kind of the comment that WH wanted to make, is sometimes we start with tests and without implementation and vice versa.  So I think our current staging actually works, we just need to be more diligent about what we do during Stage 3, writing tests for implementations first or writing together.
 
 RPR: All right.  Okay.  So is there anything more you wanted to say, Michael?
 
@@ -1986,22 +1423,13 @@ No change to the stage process is made.
 
 ## Closing
 
-RPR: Thank you very much.  All right, then, so we are done with our agenda.  I think we should
-have a round of applause for our hosts here at Bergen.  Mikhail and your assistants.  And, yeah,
-thank you to the observers and students that have participated.  I hope this has been fun and
-interesting.  And, good.  So the --
+RPR: Thank you very much.  All right, then, so we are done with our agenda.  I think we should have a round of applause for our hosts here at Bergen.  Mikhail and your assistants.  And, yeah,
+thank you to the observers and students that have participated.  I hope this has been fun and interesting.  And, good.  So the --
 
-RPR: Julie, thank you so much for your work.   And everybody who helped us with notes. And the note takers.  Obviously ACE has done a lot, as has JKP, CHU, I’m sure
-there’s more people in the room as well.  So, yeah, thank you so much for that.  I think this
-has been an excellent meeting.
+RPR: Julie, thank you so much for your work.   And everybody who helped us with notes. And the note takers.  Obviously ACE has done a lot, as has JKP, CHU, I’m sure there’s more people in the room as well.  So, yeah, thank you so much for that.  I think this has been an excellent meeting.
 
 SHN: I want to thank you all for taking the time to do the summaries.  Much appreciated.
 
-RPR: Yes.  So obviously we’ll do the usual posting of the notes.  Please do review the summaries
-and the transcripts.  And then also hope to see any of you that can make it at the next
-meeting.  That is in the end of September in Tokyo, being held at the Bloomberg offices, so all
-the details are on the reflector.  And I think we should probably also have a conversation
-about whether to mandate masks at that event or not.  So welcome to feedback on that.  All
-Right.
+RPR: Yes.  So obviously we’ll do the usual posting of the notes.  Please do review the summaries and the transcripts.  And then also hope to see any of you that can make it at the next meeting.  That is in the end of September in Tokyo, being held at the Bloomberg offices, so all the details are on the reflector.  And I think we should probably also have a conversation about whether to mandate masks at that event or not.  So welcome to feedback on that.  All Right.
 
 RPR: We are done.

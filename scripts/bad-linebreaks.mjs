@@ -1,90 +1,90 @@
 #!/usr/bin/env node
 
+import { marked } from 'marked';
 import fs from 'fs';
 import { glob } from 'glob';
 
-function getLine(txt, index) {
+// import attributes when?
+const mdlintConfig = JSON.parse(fs.readFileSync('.markdownlint-cli2.jsonc', 'utf8').toString());
 
-  let line = 1;
-
-  for (let i = 0; i < index; i++) {
-    if (txt[i] === '\n') {
-      line += 1;
-    }
-  }
-
-  return line;
-
-}
+const re = /(?<=[\w\d ])\n(?=[\w\d ])/g;
 
 export function findBadLinebreaks(file, fix = false) {
 
   let contents = fs.readFileSync(file, 'utf8').toString();
 
-  const re = /(?<=[\w\d ])\n(?=[\w\d])/g;
-  const matches = Array.from(contents.matchAll(re));
-  let badLinebreaks = matches.length;
+  const tokens = marked.lexer(contents, { ...marked.getDefaults(), })
 
-  if (matches.length > 0) {
+  const o = [];
+  let totalMatches = 0;
 
-    const lines = contents.split('\n');
+  for (let i = 0; i < tokens.length; i++) {
 
-    for (const m of matches) {
+    const t = tokens[i];
 
-      const lineNumber = getLine(contents, m.index);
+    if (t.type === 'paragraph') {
 
-      // we can't use quantifiers with lookbehind, so we must resort to this
-      // to skip code blocks where the linebreak is likely deliberate/desired
-      const previousLine = lines[lineNumber - 1];
-
-      if (previousLine.startsWith('`')) {
-        badLinebreaks -= 1;
-        continue;
-      }
+      const matches = Array.from(t.raw.matchAll(re));
+      totalMatches += matches.length;
 
       if (fix) {
-        contents = `${contents.slice(0, m.index).trimEnd()} ${contents.slice(m.index + 1)}`;
-      } else {
+        if (matches.length > 0) {
 
-        const start = Math.max(0, m.index - 33);
-        const end = Math.min(contents.length - 1, m.index + 33);
+          let fixedContent = t.raw;
 
-        console.log(`found erroneous linebreak at line ${lineNumber}:\n${contents.slice(start, end)}\n`);
+          for (const m of matches) {
+            fixedContent = `${fixedContent.slice(0, m.index)} ${fixedContent.slice(m.index + 1)}`;
+          }
 
+          o.push(fixedContent);
+
+        } else {
+          o.push(t.raw);
+        }
+      } else if (matches.length > 0) {
+        console.log(`${file}\nfound paragraph with ${matches.length} erroneous linebreak(s):\n${t.raw}\n`);
       }
 
+    } else if (fix) {
+      o.push(t.raw);
     }
 
   }
 
-  if (badLinebreaks > 0) {
-
-    if (fix) {
-      fs.writeFileSync(file, contents);
-      console.log(`fixed ${matches.length} erroneous linebreaks`);
-    } else {
-      process.exitCode = 1;
-    }
-
-  }
+  return {
+    fixed: o.join(''),
+    totalMatches,
+  };
 
 }
 
-// patterns match what is in package.json mdlint scripts
-const files = await glob(
-  '**/*.md',
-  {
-    ignore: [
-      'node_modules/**',
-      'meetings/201*/*.md',
-      'meetings/202[0-2]*/*.md',
-      'meetings/2023-0[1-3]/*.md',
-    ]
+export async function processFiles(fix) {
+
+  const files = await glob(
+    mdlintConfig.globs,
+    {
+      ignore: mdlintConfig.ignores
+    }
+  );
+
+  for (const f of files) {
+
+    const { fixed, totalMatches } = findBadLinebreaks(f, fix);
+
+    if (fix) {
+      fs.writeFileSync(f, fixed);
+    }
+
+    if (totalMatches > 0) {
+
+      if (fix) {
+        console.log(`fixed ${totalMatches} erroneous linebreaks in ${f}`);
+      } else {
+        process.exitCode = 1;
+      }
+
+    }
+
   }
-);
 
-const fix = process.argv?.[2] === 'fix';
-
-for (const f of files) {
-  findBadLinebreaks(f, fix);
 }

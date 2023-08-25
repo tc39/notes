@@ -1,22 +1,23 @@
 {
   "private": true,
   "scripts": {
-    "bad-linebreaks": "node ./scripts/bad-linebreaks.mjs",
-    "bad-linebreaks:fix": "npm run bad-linebreaks fix",
+    "bad-linebreaks": "node -e 'import(\"./scripts/bad-linebreaks.mjs\").then(bl => bl.processFiles(false))'",
+    "bad-linebreaks:fix": "node -e 'import(\"./scripts/bad-linebreaks.mjs\").then(bl => bl.processFiles(true))'",
+    "bad-linebreaks-test": "node ./scripts/bad-linebreaks-test.mjs",
     "check-delegates": "node -e 'import(\"./scripts/check-delegates.mjs\").then(cd => cd.checkDelegates())'",
     "check-delegates-test": "node ./scripts/check-delegates-test.mjs",
     "fix:all": "npm run lint:fix && npm run mdlint:fix && npm run bad-linebreaks:fix",
     "lint": "eslint . --ext .js,.mjs,.cjs",
     "lint:fix": "npm run lint -- --fix",
-    "//": "markdownlint commands ignore old files",
-    "mdlint": "markdownlint-cli2 '**/*.md' '!node_modules' '!meetings/201*/*.md' '!meetings/202[0-2]*/*.md' '!meetings/2023-0[1-3]/*.md'",
-    "mdlint:fix": "markdownlint-cli2-fix '**/*.md' '!node_modules' '!meetings/201*/*.md' '!meetings/202[0-2]*/*.md' '!meetings/2023-0[1-3]/*.md'",
+    "mdlint": "markdownlint-cli2",
+    "mdlint:fix": "markdownlint-cli2 --fix",
     "//": "markdownlint most likely to fail, so run that first",
-    "test": "npm run mdlint && npm run bad-linebreaks && npm run lint && npm run check-delegates-test && npm run check-delegates"
+    "test": "npm run mdlint && npm run bad-linebreaks-test && npm run bad-linebreaks && npm run lint && npm run check-delegates-test && npm run check-delegates"
   },
   "devDependencies": {
-    "eslint": "^8.41.0",
+    "eslint": "^8.47.0",
     "glob": "^10.3.3",
-    "markdownlint-cli2": "^0.7.1"
+    "markdownlint-cli2": "^0.9.0",
+    "marked": "^7.0.4"
   }
 }

@@ -12,7 +12,8 @@ module.exports = {
     "arrow-spacing": "error",
     "brace-style": ["error", "1tbs"],
     "keyword-spacing": "error",
-    "object-curly-spacing": ["error", "always"]
+    "object-curly-spacing": ["error", "always"],
+    "semi": ["error", "always"],
   },
   overrides: [
     {

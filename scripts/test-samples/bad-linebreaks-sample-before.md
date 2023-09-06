@@ -1,6 +1,6 @@
 # Ye Olde Meeting Notes
 
-this file has deliberate linting problems... do not fix.
+ this file has deliberate linting problems... do not fix.
 
 | ye   | olde | table |
 |------|------|-------|

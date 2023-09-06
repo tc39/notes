@@ -1,5 +1,5 @@
 import { strict as assert } from 'node:assert';
-import { findBadLinebreaks } from './bad-linebreaks.mjs';
+import { findBadStuff } from './bad-linebreaks.mjs';
 import fs from 'fs';
 import crypto from 'crypto';
 
@@ -7,8 +7,8 @@ const afterMD = './scripts/test-samples/bad-linebreaks-sample-after.md';
 const beforeMD = './scripts/test-samples/bad-linebreaks-sample-before.md';
 
 // verify hash values to detect file tampering
-const knownAfterHash = '5e03eeb87149ca238ab55d422913c0f8';
-const knownBeforeHash = '1f2c5d3956a9aceb29dd2b872c20a021';
+const knownAfterHash = 'c2b5b7cc30cf5d4ce28274848eeba743';
+const knownBeforeHash = 'c9cf57714ec19de2aeea68d45536b119';
 const afterHash = await getHashSlingingSlasher(afterMD);
 const beforeHash = await getHashSlingingSlasher(beforeMD);
 assert.strictEqual(afterHash, knownAfterHash);
@@ -16,16 +16,19 @@ assert.strictEqual(beforeHash, knownBeforeHash);
 
 let fixed, totalMatches;
 
-({ fixed, totalMatches } = findBadLinebreaks(beforeMD, true));
-assert.strictEqual(totalMatches, 12);
+({ fixed, totalMatches } = findBadStuff(beforeMD, true));
+assert.strictEqual(totalMatches.badLinebreaks, 12);
+assert.strictEqual(totalMatches.extraWhitespace, 28);
 assert.strictEqual(fixed, fs.readFileSync(afterMD, 'utf8').toString());
 
-({ fixed, totalMatches } = findBadLinebreaks(afterMD, true));
-assert.strictEqual(totalMatches, 0);
+({ fixed, totalMatches } = findBadStuff(afterMD, true));
+assert.strictEqual(totalMatches.badLinebreaks, 0);
+assert.strictEqual(totalMatches.extraWhitespace, 0);
 assert.strictEqual(fixed, fs.readFileSync(afterMD, 'utf8').toString());
 
-({ fixed, totalMatches } = findBadLinebreaks(beforeMD));
-assert.strictEqual(totalMatches, 12);
+({ fixed, totalMatches } = findBadStuff(beforeMD));
+assert.strictEqual(totalMatches.badLinebreaks, 12);
+assert.strictEqual(totalMatches.extraWhitespace, 28);
 
 function getHashSlingingSlasher(file) {  // 💀
   return new Promise((res, rej) => {

@@ -175,7 +175,7 @@ MF: Yeah. Yeah. Which is something I would be okay with
 
 KG: That is way we could get out of order. It’s a bit weird. And it’s unfortunate in that like if you do `.map`, `.filter`, et cetera and then switch to out of order versions of methods, the subsequent calls are out of order. But the earlier ones are ordered. There’s nothing you can do about that
 
- JRL: Yeah. I think what SYG and MF have talked about answers my question. If we rearrange the order of these, then we can allow the consumer to choose their own semantics. What is required though is just that we allow promise settlement to happen in any order and then you can add your own semantics after that in either of these cases by rearranging the way you call the methods.
+JRL: Yeah. I think what SYG and MF have talked about answers my question. If we rearrange the order of these, then we can allow the consumer to choose their own semantics. What is required though is just that we allow promise settlement to happen in any order and then you can add your own semantics after that in either of these cases by rearranging the way you call the methods.
 
 KG: You can do that with map, not with filter
 

@@ -1,0 +1,4 @@
+# prevent all files from being included in release archives
+* export-ignore
+meetings export-ignore
+scripts export-ignore

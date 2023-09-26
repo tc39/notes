@@ -1,0 +1,44 @@
+name: release
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - meetings/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - id: files
+        name: get changed files
+        uses: jitterbit/get-changed-files@v1
+        with:
+          format: 'json'
+      - run: |
+          readarray -t added_files <<<"$(jq -r '.[]' <<<'${{ steps.files.outputs.added }}')"
+
+          for added_file in "${added_files[@]}"; do
+            if [[ ${added_file} == meetings/* ]]
+            then
+              tag=$(echo "${added_file}" | grep -oP '(?<=meetings/)[^\./]+')
+              echo "tag=${tag}" >> "$GITHUB_ENV"  # set GH env var so other action can access it
+              echo tag set to "${tag}"
+              break
+            fi
+          done
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: release
+        run: |
+          git fetch --depth=1 --tags
+
+          if [[ $(git tag -l "${{env.tag}}") ]]
+          then
+            echo "release exists; skipping"
+          else
+            gh release create "${{env.tag}}"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

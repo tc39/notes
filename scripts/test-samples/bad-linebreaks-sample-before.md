@@ -44,6 +44,21 @@ let biscuits = "delicious";
 let biscuits = "delicious";
 ```
 
+100.     First     list    item 
+       -    First  nested  list  item 
+         -    Second     nested   list   item    
+
+1.  biscuits    are    
+1. extremely        delicious   
+1.   indeed 
+
+-       lists
+* are  
++  fun 
+  -  and 
+  *     one   more       
+  +     time  
+
 ## story time!
 
 True! nervous, very, very dreadfully nervous I had been and am; but why will you say that I am mad? The disease had sharpened my senses,  not destroyed, 

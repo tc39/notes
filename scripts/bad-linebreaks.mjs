@@ -7,8 +7,16 @@ import { glob } from 'glob';
 // import attributes when?
 const mdlintConfig = JSON.parse(fs.readFileSync('.markdownlint-cli2.jsonc', 'utf8').toString());
 
+// not exhaustive, just the types we care about
+const tokenTypeEnum = Object.freeze({
+  LIST: 'list',
+  PARAGRAPH: 'paragraph',
+  SPACE: 'space',
+});
+
 const reBadLinebreaks = /(?<=[\w\d ])\n(?=[\w\d ])/g;
-const reExtraWhitespace = /^ +| (?= )| +$/gm;
+const reExtraWhitespaceParagraph = /^ +| (?= )| +$/gm;
+const reExtraWhitespaceList = /(?<=^ {0,}[-*+] |\d+\. ) +|(?<=\w+ ) +| +$/gm;
 
 export function findBadStuff(file, fix = false) {
 
@@ -24,9 +32,16 @@ export function findBadStuff(file, fix = false) {
     const t = tokens[i];
     let tokenContent = t.raw;
 
-    if (t.type === 'paragraph') {
-      tokenContent = findBadLinebreaks(tokenContent, totalMatches, fix, file);
-      tokenContent = findExtraWhitespace(tokenContent, totalMatches, fix, file);
+    switch (t.type) {
+      case tokenTypeEnum.PARAGRAPH:
+        tokenContent = findBadLinebreaks(tokenContent, totalMatches, fix, file, t.type);
+        // falls through
+      case tokenTypeEnum.LIST:
+      case tokenTypeEnum.SPACE:
+        tokenContent = findExtraWhitespace(tokenContent, totalMatches, fix, file, t.type);
+        break;
+      default:
+        // do nothing
     }
 
     // we don't need to build this array if `fix` is `false`, but this keeps complexity down
@@ -41,7 +56,7 @@ export function findBadStuff(file, fix = false) {
 
 }
 
-function findBadLinebreaks(tokenContent, totalMatches, fix, file) {
+function findBadLinebreaks(tokenContent, totalMatches, fix, file, tokenType) {
 
   const matches = Array.from(tokenContent.matchAll(reBadLinebreaks));
   totalMatches.badLinebreaks += matches.length;
@@ -61,27 +76,41 @@ function findBadLinebreaks(tokenContent, totalMatches, fix, file) {
     }
 
   } else if (matches.length > 0) {
-    console.error(`${file}\nfound paragraph with ${matches.length} erroneous linebreak(s):\n${tokenContent}\n`);
+    console.error(`${file}\nfound ${tokenType} with ${matches.length} erroneous linebreak(s):\n${tokenContent}\n`);
   }
 
   return tokenContent;
 
 }
 
-function findExtraWhitespace(tokenContent, totalMatches, fix, file) {
+function findExtraWhitespace(tokenContent, totalMatches, fix, file, tokenType) {
 
-  const matches = Array.from(tokenContent.matchAll(reExtraWhitespace));
+  let re;
+
+  switch (tokenType) {
+    case tokenTypeEnum.PARAGRAPH:
+    case tokenTypeEnum.SPACE:
+      re = reExtraWhitespaceParagraph;
+      break;
+    case tokenTypeEnum.LIST:
+      re = reExtraWhitespaceList;
+      break;
+    default:
+      throw new TypeError(`unsupported token type: ${tokenType}`);
+  }
+
+  const matches = Array.from(tokenContent.matchAll(re));
   const extraWhitespaceCharacters = matches.join('').length;
   totalMatches.extraWhitespace += extraWhitespaceCharacters;
 
   if (fix) {
 
     if (matches.length > 0) {
-      return tokenContent.replace(reExtraWhitespace, '');
+      return tokenContent.replace(re, '');
     }
 
   } else if (matches.length > 0) {
-    console.error(`${file}\nfound paragraph with ${extraWhitespaceCharacters} extra whitespace character(s):\n${tokenContent}\n`);
+    console.error(`${file}\nfound ${tokenType} with ${extraWhitespaceCharacters} extra whitespace character(s):\n${tokenContent}\n`);
   }
 
   return tokenContent;

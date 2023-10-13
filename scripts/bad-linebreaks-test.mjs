@@ -7,8 +7,8 @@ const afterMD = './scripts/test-samples/bad-linebreaks-sample-after.md';
 const beforeMD = './scripts/test-samples/bad-linebreaks-sample-before.md';
 
 // verify hash values to detect file tampering
-const knownAfterHash = 'c2b5b7cc30cf5d4ce28274848eeba743';
-const knownBeforeHash = 'c9cf57714ec19de2aeea68d45536b119';
+const knownAfterHash = '5f29c1fb4abd747c2dd801e12c600ee3';
+const knownBeforeHash = '406e900af5cd9af66abbe5b3ab6bcf3e';
 const afterHash = await getHashSlingingSlasher(afterMD);
 const beforeHash = await getHashSlingingSlasher(beforeMD);
 assert.strictEqual(afterHash, knownAfterHash);
@@ -18,7 +18,7 @@ let fixed, totalMatches;
 
 ({ fixed, totalMatches } = findBadStuff(beforeMD, true));
 assert.strictEqual(totalMatches.badLinebreaks, 12);
-assert.strictEqual(totalMatches.extraWhitespace, 28);
+assert.strictEqual(totalMatches.extraWhitespace, 114);
 assert.strictEqual(fixed, fs.readFileSync(afterMD, 'utf8').toString());
 
 ({ fixed, totalMatches } = findBadStuff(afterMD, true));
@@ -28,7 +28,7 @@ assert.strictEqual(fixed, fs.readFileSync(afterMD, 'utf8').toString());
 
 ({ fixed, totalMatches } = findBadStuff(beforeMD));
 assert.strictEqual(totalMatches.badLinebreaks, 12);
-assert.strictEqual(totalMatches.extraWhitespace, 28);
+assert.strictEqual(totalMatches.extraWhitespace, 114);
 
 function getHashSlingingSlasher(file) {  // 💀
   return new Promise((res, rej) => {

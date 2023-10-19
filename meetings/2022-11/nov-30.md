@@ -4,8 +4,7 @@
 
 **Remote attendees:**
 
-
-```
+```text
 | Name                 | Abbreviation   | Organization       | Location  |
 | -------------------- | -------------- | ------------------ | --------- |
 | Frank Yung-Fong Tang | FYT            | Google             | Remote    |
@@ -46,15 +45,13 @@
 | Istvan Sebestyen     | IS             | Ecma               | Remote    |
 ```
 
-
-
 ## Intl Enumeration for Stage 4
 
 Presenter: Frank Yung-Fong Tang (FYT)
 
-- [proposal]()
+- proposal
 
-- [slides]()
+- slides
 
 FYT: Okay. hi everyone. My name is Frank, I work for Google on V8 internationalisation and also last year also spend a lot of time there are working on Temporal and today, I'm going to talk about two different proposals. The first ones are asking for stage four advancement. This one is called Intl Enumeration API for stage 4. So the charter of this API is Is to let Intl, which already exists for about 10 years to able to return to the caller the list of supported values of certain option that's already pre-existing. this in ecma402 API. including calendar, collators, currency, numbering systems time zone and unit.
 
@@ -84,19 +81,17 @@ FYT: So if there are no other questions or feedback as well like to formally ask
 
 BT: Right. Frank is asking for stage four, and do we have any any objections? I hear a lot of explicit support. All right, I hear no objection. So I think that is stage 4 granted Congratulations.
 
-
 ### Conclusion/Resolution
 
-* Stage 4
-
+- Stage 4
 
 ## Intl Locale Info stage 3 update
 
 Presenter: FYT
 
-- [proposal]()
+- proposal
 
-- [slides]()
+- slides
 
 FYT: So the next was Intl Locale Info API. Originally when tomb, I think probably one have month ago when I put on agenda. This particular API. I was thinking about asking for state or advancement but about a month ago I think we find a tissue so we are not asking for stage 1 of the assessment today. but we do need your advice abouthow to resolve Issue together.
 
@@ -106,7 +101,7 @@ FYT: So again, the history, we advanced to stage 1. in to September 2020 and Jan
 
 FYT: Basically, in this API would be adding seven getters to the Intl Locale object. here is one of the issue we try to get your help from that. Currently those things are getters and we - let me talk about the recent change. So one of the recent change, which I think we got resolved, we handed over while is when we try to return what the particular locale when (?) localization is co our billable for that locale. We return a list, an array. We used to say that array is stored in the order of the preference usage of that collation in the Locale. And I think Andre has pointed out, They're actually currently do not have such information the CLDR data, we actually available to us or do not have the preference. There are order, but the order is not guaranteed to be. preference order with a locale. So after a lot of discussion at the the committee we reached agreement, that we make a change to. I think we can come back here last night, about advice for General picture And I think the agreement is that in that particular case it will sorted in alphabetical order for that. So, we make that change and that got resolved in pull request 63, that's one of the reason original widest Gap kind of extend for quite a long time.
 
-FYT: But then very recently we find another issue which I think is a blocking issue, the issue is this. so we currently that's seven function, we currently implement as a getter. The problem is that the return value are array, or object of object, okay? And so every time it gets called, we create this object. but it got pointed out that actually we don't cache that object, everything go time. those are getter, there are not function. function. And it will create new object return, right? Those shouldn't be changed. So the issues that got filed, you can look at issues 62 the issues that we believe that maybe some issue there. I'm not 100% sure how important is that issue. I feel that could be important. So I think I don't want to rush it. Seems like they are two solutions, one is I'm not sure that to are good. One solution is that instead of of a getter we change  to a function. So he every time I will create an object and return, a different object the other solution will just freeze it. So every time we create this object with freeze it so nobody can change it. but that things like not enough, right? So you you're still real current different objects, would freeze it. And, another part of that is, could be maybe internally with your cache is always always return, the same thing and never got change because it’s frozen, but that is something I really don’t want to do because that means the engine have to be able to remember that. already created thing in a cache, which will waste memory for something that really you don't need to use it, right? So I really try to avoid that thing. I don't have a good solution, So I do want tc39 to give advice first. Is that that issue 62 reasonable. to address, or is a getter which returns a new object okay? Right, there's the first issue I want to ask advice.
+FYT: But then very recently we find another issue which I think is a blocking issue, the issue is this. so we currently that's seven function, we currently implement as a getter. The problem is that the return value are array, or object of object, okay? And so every time it gets called, we create this object. but it got pointed out that actually we don't cache that object, everything go time. those are getter, there are not function. function. And it will create new object return, right? Those shouldn't be changed. So the issues that got filed, you can look at issues 62 the issues that we believe that maybe some issue there. I'm not 100% sure how important is that issue. I feel that could be important. So I think I don't want to rush it. Seems like they are two solutions, one is I'm not sure that to are good. One solution is that instead of of a getter we change to a function. So he every time I will create an object and return, a different object the other solution will just freeze it. So every time we create this object with freeze it so nobody can change it. but that things like not enough, right? So you you're still real current different objects, would freeze it. And, another part of that is, could be maybe internally with your cache is always always return, the same thing and never got change because it’s frozen, but that is something I really don’t want to do because that means the engine have to be able to remember that. already created thing in a cache, which will waste memory for something that really you don't need to use it, right? So I really try to avoid that thing. I don't have a good solution, So I do want tc39 to give advice first. Is that that issue 62 reasonable. to address, or is a getter which returns a new object okay? Right, there's the first issue I want to ask advice.
 
 FYT: The second thing is that if that's not a stat of a, we need to change it. Which route is better? Is that we talk about TG2 and the conclusions that we should bring in here to ask what we feel is better to have TC39 to give us a guidance. That is so so there are two options so far. maybe there are other option, but two option is we know about is, first, to change all all the getter to just function to every time. caught it returned to create the object returned it. Although, every time you're going to say anything, but you don't need to remember it and the user cannot expect That will be exactly same object, you can expect content not to change, but not the same object. The second thing is that you freeze it and return, which I have a pull request but I don't really think that is self solve the issue. I suspect that will be a showstopper for going to stage 4 because that mandates days. Maybe a surgical move for this thing in a limited way, but I want to ask for feedback.
 
@@ -142,7 +137,7 @@ FYT: All right, that's my mistake. Have you found a stoic? I didn't realize that
 
 BT: Dan has another item on this topic as well.
 
-DE: Yeah. When I went to speak to both of those questions that Matthew raised. On the first one, why use a getter instead of just having a property that's secretly  lazy. I think such an implementation would work better in some engines than others, at least historically. I think people can correct me if I'm wrong. SpiderMonkey I think had to make a decision for such secretly lazy properties, and V8 kind of didn't tend to do that. That particular thing. At least not in cases like this. so, we want something that's going to be efficiently implementable across engines. So that's a reason to avoid expecting that engines will make a property secretly lazy. About the lazy allocation of these properties. I think there's two different kinds of memory usage that we should analyze a little bit differently from each other. One kind is the memory usage of like ten words of storage or so that are initially, all undefined for these. for these things, it seems really important to me to lazily allocate the actual arrays that holds the information, because that's a whole lot of allocations. But on the other hand, oversizing the allocated object a bit to hold these initially null pointers, I think that's a lot cheaper and I think that that is the kind of thing that we could afford. So, I'm not sure if we have to be, you know, completely optimized with respect to that. So finally, Frank mentioned that getter should only return Primitives and not objects And this is a - I'm not convinced that we should adopt this invariant in general. I think in you know we have a pretty small standard libraries right now. So there aren't a lot of gators that we can look at for reference but in the web platform, there's lots of usage of getters that return objects. and I think that's a - I think that's a useful pattern
+DE: Yeah. When I went to speak to both of those questions that Matthew raised. On the first one, why use a getter instead of just having a property that's secretly lazy. I think such an implementation would work better in some engines than others, at least historically. I think people can correct me if I'm wrong. SpiderMonkey I think had to make a decision for such secretly lazy properties, and V8 kind of didn't tend to do that. That particular thing. At least not in cases like this. so, we want something that's going to be efficiently implementable across engines. So that's a reason to avoid expecting that engines will make a property secretly lazy. About the lazy allocation of these properties. I think there's two different kinds of memory usage that we should analyze a little bit differently from each other. One kind is the memory usage of like ten words of storage or so that are initially, all undefined for these. for these things, it seems really important to me to lazily allocate the actual arrays that holds the information, because that's a whole lot of allocations. But on the other hand, oversizing the allocated object a bit to hold these initially null pointers, I think that's a lot cheaper and I think that that is the kind of thing that we could afford. So, I'm not sure if we have to be, you know, completely optimized with respect to that. So finally, Frank mentioned that getter should only return Primitives and not objects And this is a - I'm not convinced that we should adopt this invariant in general. I think in you know we have a pretty small standard libraries right now. So there aren't a lot of gators that we can look at for reference but in the web platform, there's lots of usage of getters that return objects. and I think that's a - I think that's a useful pattern
 
 FYT: I do want to clarify, I'm not suggesting what that that I just think currently I don't see any, at least I cannot find anything it to Susan to and forward to doing that. And I think that it have some Kind of additional issue, for example, just got raised. Comparing to you've gathered to return primitive type And I saying that, can I do it? I just think that's something you. I can't lack of Precedence to follow.
 
@@ -156,13 +151,7 @@ MAH: I would rather keep simple spec steps and maybe have editors notes clarifyi
 
 DE: Yeah, I don't think that getters are especially complex, I think they're a great pattern to use and make sense here. sense here.
 
-
-
 ?: sorry, I didn't see the queue. Anyone still on the queue?
-
-
-
-
 
 BT: Yeah, there's a couple folks on the Queue still. We got EAO.
 
@@ -186,7 +175,7 @@ PFC (from queue): no need to speak strong preference for function.
 
 BT: And that exhausts the queue.
 
-FYT: Okay. So let me propose this way. So I'll proposing to the everybody seems like a lot of people express function and then they are. I think Daniel mentioned both are ok, so I go to change it, trunk, Adder to function, for all those maps that would anyone object me to do that?  Okay. thank you for your device. That's exactly what I need from you guys. I’ll go make a pull request. I'll ask couple people to review it but basically you're just changing from getter to function now.
+FYT: Okay. So let me propose this way. So I'll proposing to the everybody seems like a lot of people express function and then they are. I think Daniel mentioned both are ok, so I go to change it, trunk, Adder to function, for all those maps that would anyone object me to do that? Okay. thank you for your device. That's exactly what I need from you guys. I’ll go make a pull request. I'll ask couple people to review it but basically you're just changing from getter to function now.
 
 FYT: Still, I want you to go through this for whatever. the state 3 activity, So currently around March 2022, which is half a year ago, Chrome 99 and Edge and Opera and Safari all ship it. Of course now we have the change a little bit from from getter to function that they have the change. Mozilla has a bug open, we haven't see clearly what is holding them back. So old like as Mozilla see, is there anything else a blocking function thing we need to help them in order to reach that. So I would like to figure out from that. And then MDN has been edited. test 262 to have the feature for that already. already. Here are some of the tests 262 sure. show. Sorry, this isn't this. The MDN showing that basically just Firefox have an environment that yet have a launched it yet. And this is the to put together, but this little function (?) There are no single place I kind of do sound Photoshop to put. I think all different colors together but they are there to have, will have passed but that you can click on the test 262 to see that I think it will be nice if I extend more of a testing there.
 
@@ -216,14 +205,10 @@ YSV: I think you can find a clarification about his concern about issue 30 in th
 
 BT: All right. Thank you, YSV. Thank you. Awesome. Thank you, Frank.
 
-
 ### Conclusion/Resolution
 
-
-
-* Getters to become functions
-* DLM to follow about with Andre offline about remaining blockers for Mozilla
-
+- Getters to become functions
+- DLM to follow about with Andre offline about remaining blockers for Mozilla
 
 ## Records and Tuples
 
@@ -255,7 +240,7 @@ RRD: Yeah, YSV, I wanted to give you a short answer. so it's mostly multiple asp
 
 PDL: So we started talking about this a couple years back before Robin introduced the problem. The problems I was encountering was that I was really looking for a structured primitive. So, something that I can request as a parameter to a function that I know that no matter where it goes after that, the function would never mutate. Because we were doing a lot of copying as part of passing things, into a function as parameter because there was never a guarantee, that the Callback that we're calling with that data, wouldn't alter that data. So you know, hey, I was writing in a library. I was getting a client call and I was returning data in a callback and I wouldn't have no guarantee that that wouldn't be altered. So I would have to do a copy every time because my big data tree shouldn't be at risk from a user of my library altering, it. So that was the problem that I was trying to solve but and that goes further because it's the same problem as returning multiple data points from a getter. Yeah, I can do that by combining it in a string, right? But now I have to parse that string again, right? So to me it was the structured primitive aspect that was relevant. and structured primitive when you think about it leads to consequences, So immutability is a consequence of structured primitives. All our Primitives are immutable, right? It leads to accurate triple equals because all our primitives work with accurate triple equals. And, you know, it doesn't matter whether it's deep or not, because we don't have any Peak restructured, growing tips, So those were sort of the core goals. to avoid. action at a distance. An easy way to avoid actions of this. That was the immediate need that I was trying to fill a Kentucky.
 
-BT:  To Robin's point, I just want to break in real quick. Sorry. Yeah. I To make sure. that ACE you’re watching your time box here. And if you feel like that if this discussion is going to come up later in the presentation, then let's definitely prefer to go through the presentation. So feel free to aggressively postpone the discussion items until we're through the slides.
+BT: To Robin's point, I just want to break in real quick. Sorry. Yeah. I To make sure. that ACE you’re watching your time box here. And if you feel like that if this discussion is going to come up later in the presentation, then let's definitely prefer to go through the presentation. So feel free to aggressively postpone the discussion items until we're through the slides.
 
 ACE: Yeah, yeah, let's do that. Thanks BT.
 
@@ -269,7 +254,7 @@ ACE: so, When? we talk about equality, these are kind of some of the attributes 
 
 ACE: And then, do they have side effects? So you know if this if you have an equality operation that's going to trigger proxy hooks or getters then that's an equality that could potentially have side effects.
 
-ACE: and then also does an equality operation preserve encapsulation, So if this equals operation was saying that these two things weren't equal not because they're two different objects and it's doing referential comparison. But if it's somehow, seeing that the private field is a 1 and then a 2 and for that reason, we're seeing these things are not equal then this equality operation doesn't preserve encapsulation.  and then, is it terminating. So again, if it's going to trigger getters or proxy hooks or things like that, then potentially it's going to be trying to we know, it's comparing iterators. Like maybe it's going to compare So in this infinite. so it would never terminate.
+ACE: and then also does an equality operation preserve encapsulation, So if this equals operation was saying that these two things weren't equal not because they're two different objects and it's doing referential comparison. But if it's somehow, seeing that the private field is a 1 and then a 2 and for that reason, we're seeing these things are not equal then this equality operation doesn't preserve encapsulation. and then, is it terminating. So again, if it's going to trigger getters or proxy hooks or things like that, then potentially it's going to be trying to we know, it's comparing iterators. Like maybe it's going to compare So in this infinite. so it would never terminate.
 
 ACE: and then, when we, look at what we would imagine, like a if you want, can I come in background two maps and sets, if you want your maps and set to be kind of well behaved? and what we would imagine what you'd want from the kind of the default way, that a map or a set would work, is that you would want an operation that it is consistent over time? that is symmetric doesn't have side preserves encapsulation and then terminates. then that's kind of why that when we being designing the quality in this proposal, we've really focused on an operation that has those attributes. And then like, in addition then overload the existing ones because those things aligned with those operators, So it kind of gives you those benefits. I mentioned earlier of working with the existing, Ecosystem. system uses those. operators. One way, I kind of like to think that this proposal is that there's kind of two ways you can go. You could either say because of how immutable these things are. Now that gives us this great opportunity. to also Define their equality in this way. All we're kind of defining something that has this consistent high quality. and then because of that, they need to be immutable to the (?)
 
@@ -295,7 +280,7 @@ ACE: so, we're kind of in this place of week. bro where that while we were kind 
 
 ACE: so, yeah, so that's the slides and now hopefully I've left time that we can actually chat about this proposal.
 
-MLS:  JSC has the same complexity concerns as the other browser engines.
+MLS: JSC has the same complexity concerns as the other browser engines.
 
 BT: All right. Thank you.
 
@@ -341,25 +326,19 @@ DE: WH, I completely agree with you here. The idea is that this design is becaus
 
 BT: I think thank you, DE. I want to point out that the time box is running relatively short here, based on the length of the queue is growing. I think, concision is important, but also I think the champions would probably get more value out of a breadth-first exploration of the topics then depth first. I am willing to help but I think probably the champions are in a better place to time box to individual topics. So yes, just to say, feel free to move the discussion along to another topic and I can advance the queue when you when you think it's appropriate to do. So and we can Circle back. Also if there's time.
 
-
-
 ?: Maybe Shu if you can make your point quickly because it's answering to them.
-
-
-
-
 
 SYG: Right there. is in response to DE saying, deep immutability and deep equality are linked I believe the link is one that there's an implication for one way which is if you really want to give you equality then yes you do want deep immutability but. I don't see the link to the other way. That's all.
 
 DE: I agree.
 
-MAH: This was originally. motivated by something you lie. I said for equality there's really two different places where equality matters one is in mapping sets where we could imagine ways. of making that work with if slightly expanded API for mapping sets. However as ACE pointed at in presentation, that requires the use of the creator of the map and set it's added to to be able to adapt their implementation, so it wouldn't be compatible with existing. libraries. if we want triple equal to work that's a slightly different problem. And there it's more of the creator of the value that needs to do something to make triple equal work, not the consumer, and I again it goes back to to the goal here. What do we want? Do we want seamless ===, do we want seamless usage in maps and sets for these values. and, and I guess I just wanted to tell you that a concern, That's what we need to solve here is that we won't solve or not any (?) cancel that  problem. which does require immutability maybe there is a smaller proposal.
+MAH: This was originally. motivated by something you lie. I said for equality there's really two different places where equality matters one is in mapping sets where we could imagine ways. of making that work with if slightly expanded API for mapping sets. However as ACE pointed at in presentation, that requires the use of the creator of the map and set it's added to to be able to adapt their implementation, so it wouldn't be compatible with existing. libraries. if we want triple equal to work that's a slightly different problem. And there it's more of the creator of the value that needs to do something to make triple equal work, not the consumer, and I again it goes back to to the goal here. What do we want? Do we want seamless ===, do we want seamless usage in maps and sets for these values. and, and I guess I just wanted to tell you that a concern, That's what we need to solve here is that we won't solve or not any (?) cancel that problem. which does require immutability maybe there is a smaller proposal.
 
 ACE: Yeah. I know you're on the queue Robin. I would really like to come to Shane Shan has been on the queue for a really long time.
 
 RRD: Yeah, I know. Just wanted to add something here, === also matters for libraries as ACE made in the presentation and the analysis that is important to us.
 
-SFC: Structured map keys are a really big use case that come up a lot in internationalization, especially dealing with things like language identifiers, and many other structured identifiers, that can serve as cache keys or data look up, various things like that comes up. You know, very, very frequently. In terms of triple equals like, it's better than having to call an equals function, but there are less-ergonomic workarounds. But I think that Structured Map is a very big thing that this proposal uniquely solves. and, you know, the other one is, you know. is immutability. And in terms of the aspect of you know, you have data that you need to reach that you need To return out. And you don't want to have clients have to be able to mutate that because you want to be able to share that among many clients of a particular class. Like, I think is another aspect that this proposal uniquely solves. I definitely think that the direction that this proposal has gone  since it's been at stage 2 I support the shape of the proposal at stage 2 but if we're, but if we must go back to the fundamentals, I think that these are sort of the biggest things. At least from my perspective that make me really the most excited about it.
+SFC: Structured map keys are a really big use case that come up a lot in internationalization, especially dealing with things like language identifiers, and many other structured identifiers, that can serve as cache keys or data look up, various things like that comes up. You know, very, very frequently. In terms of triple equals like, it's better than having to call an equals function, but there are less-ergonomic workarounds. But I think that Structured Map is a very big thing that this proposal uniquely solves. and, you know, the other one is, you know. is immutability. And in terms of the aspect of you know, you have data that you need to reach that you need To return out. And you don't want to have clients have to be able to mutate that because you want to be able to share that among many clients of a particular class. Like, I think is another aspect that this proposal uniquely solves. I definitely think that the direction that this proposal has gone since it's been at stage 2 I support the shape of the proposal at stage 2 but if we're, but if we must go back to the fundamentals, I think that these are sort of the biggest things. At least from my perspective that make me really the most excited about it.
 
 BT: All right. thank you, Shane. In the interest of breadth, would you mind if we went to romulo First?
 
@@ -379,7 +358,7 @@ MLS: Well, I will quickly respond for JSC value types is the main driver for a c
 
 SYG: That is also V8’s position. I'm asking is if comes if the ready implementers excluded, say that value types is the value, would that be hard blocks from you all?
 
-MS: Well, if it's in the standard, we should implement it.  We know we can do it. It's just a lot of work and we're not sure it's worth it.  It is a question of ROI.
+MS: Well, if it's in the standard, we should implement it. We know we can do it. It's just a lot of work and we're not sure it's worth it. It is a question of ROI.
 
 SYG: None of us as implementers are sure. It's going to pay off. Like, we're kind of skeptical that it is and you know, it's up to us I think to really give a go or no go on the stage 3 here. If value types are the direction. So I think we should should ask that question internally. and get some get a more definitive answer?
 
@@ -403,11 +382,9 @@ Remaining queue items:
 
 3 (SFC) (reply to DE) A Map that runs JS during lookup raises questions about the underlying map impl (HashMap vs BTreeMap) that value types can avoid
 
-
 ### Conclusion/Resolution
 
-* Implementers and champions to further discuss tradeoffs
-
+- Implementers and champions to further discuss tradeoffs
 
 ## Module and ModuleSource Constructors
 
@@ -469,7 +446,7 @@ LCA. what do you suggest? Yeah. no more than 10 to 15 certainly.
 
 RPR: All right, We'll finish. this at quarter to the hour. so CP. This is please manage to discussion and figure out if you want to ask for stage 2. and and do. So at with at least two minutes remaining, thanks, so that so, can't guarantee I was giving guidance. that it's up to you to manage the remaining time box, you can tell us which items in the queue you want to address but if you're going to ask for stage 2, you will need to do it at least by 13:42. Is that clear?
 
-CP: Yeah. Okay.  So we talked about Source, strings, Some replies there. There's only three more new topics. The second argument discussion, we can talk about that. It’s one for you, one from Yulia as well about the modules or something extreme Exposé. So security
+CP: Yeah. Okay. So we talked about Source, strings, Some replies there. There's only three more new topics. The second argument discussion, we can talk about that. It’s one for you, one from Yulia as well about the modules or something extreme Exposé. So security
 
 DE: Why don't you go ahead and call on somebody?
 
@@ -489,9 +466,9 @@ CP: Correct. SYG?
 
 SYG: My topic now. Okay, what? So I want to better understand the motivation, I can suspect the motivation for the hooks is virtualization. I'm wondering if there's a multi-part question but the first part is do the hooks solve other use cases and problems other than virtualization.
 
-CP: Yeah. fact that the me one is now because they shouldn't like to think about one colors. You want to load a humongous amount of code in one, one single file. you probably will be using module declarations or module expressions there and you have to connect the dots between the end. So the developer experience is the same as if they were separate modules that are linked it. They have dependencies between them. there is not a  rewrite of the original source of the actual module, you get the actual source delivering one, one single file and then you have to have a way to connect during the linkage process these different instances that you already have. And the only way you have to do that is by having a hook that allow you to, for each of the instances that you might create, be able to resolve the source that instance will provide.
+CP: Yeah. fact that the me one is now because they shouldn't like to think about one colors. You want to load a humongous amount of code in one, one single file. you probably will be using module declarations or module expressions there and you have to connect the dots between the end. So the developer experience is the same as if they were separate modules that are linked it. They have dependencies between them. there is not a rewrite of the original source of the actual module, you get the actual source delivering one, one single file and then you have to have a way to connect during the linkage process these different instances that you already have. And the only way you have to do that is by having a hook that allow you to, for each of the instances that you might create, be able to resolve the source that instance will provide.
 
-SYG:  so, so I guess that that then that helps them to the second part of my question is my concern. is ultimately, about performance but it's really about about so, I have performance concerns here because one, it's exposing something to user code, or letting user code hook into a place where it cannot hook into before. And that just, without looking really deeply at how this is implemented, not just in V8, but because this has such a host involvement in the web engine as well, I feel like calling arbitrary JS here, it's probably going to be a different performance characteristic than the default use case, where there is no hook. and that gives me concern is that if the use cases here are designed around DX, that puts us in a hard place of recommending something for people to use that could be drastically slower. And then that makes us not want to recommend that for people to use. I don't know if you have any thoughts on how we can reconcile that, like I don't want a situation where, you know, one of the advantages of bundling now is that, funnily enough, it sidesteps the ESM loading process sometimes and that makes it like much faster. If you re introduce the ESM loading process here and let the user code hook in that, you know, people might not use that at all, because it would just be much slower. But I'm also concerned about things like, I'm going to say, like, cosmetic Frameworks but I don't know exactly what I mean by that but it's something like 44. where the behavior they're trying to get with import hooks, like Auto appending suffixes or something like that, like, it's not worth the performance cost. and I feel like the hooks could incentivize this the wrong way in producing in folks. Making Frameworks that do these cosmetic effects that are might be nice for the X but drastically altered. Improve the performance.
+SYG: so, so I guess that that then that helps them to the second part of my question is my concern. is ultimately, about performance but it's really about about so, I have performance concerns here because one, it's exposing something to user code, or letting user code hook into a place where it cannot hook into before. And that just, without looking really deeply at how this is implemented, not just in V8, but because this has such a host involvement in the web engine as well, I feel like calling arbitrary JS here, it's probably going to be a different performance characteristic than the default use case, where there is no hook. and that gives me concern is that if the use cases here are designed around DX, that puts us in a hard place of recommending something for people to use that could be drastically slower. And then that makes us not want to recommend that for people to use. I don't know if you have any thoughts on how we can reconcile that, like I don't want a situation where, you know, one of the advantages of bundling now is that, funnily enough, it sidesteps the ESM loading process sometimes and that makes it like much faster. If you re introduce the ESM loading process here and let the user code hook in that, you know, people might not use that at all, because it would just be much slower. But I'm also concerned about things like, I'm going to say, like, cosmetic Frameworks but I don't know exactly what I mean by that but it's something like 44. where the behavior they're trying to get with import hooks, like Auto appending suffixes or something like that, like, it's not worth the performance cost. and I feel like the hooks could incentivize this the wrong way in producing in folks. Making Frameworks that do these cosmetic effects that are might be nice for the X but drastically altered. Improve the performance.
 
 CP: Yeah, quick comments. it's on that, The first one is that. the chorus effect is based on the spec refactor from NRO. introduced with the memorization process and so on for specify the second comment is is more interesting. I believe, which is that you only you don't have a way – I think we talked about that before – We don't have a way to go back to this resolution through hooks, you ever go into the default Behavior. So if you enter one of the sub-trees of the module graph, if you enter into the default behavior of browsers, and engines in general, you have no way to have a hook in that subtree. So that eliminates the possibility of today having a particular module graph. That will in the future have extra step that goes into user land. Executing code on a hook. So it's only when you choose to use the hook that you get the hook to be evaluated and the performance of it is described by The refactor from NRO. So it's going to be called only one per specifier. but if you choose to have one dependency that have the default Behavior. Then at that point, point, that subtree is automatically out of the calls to the hook.
 
@@ -511,10 +488,7 @@ USA: I'm sorry, folks, we're out of time again. So we'll have to move this discu
 
 CP: Yeah. just to test the water. I think there's some pushback from KG and SYG, we will follow up.
 
-
 ![alt_text](images/image57.png "image_tooltip")
-
-
 
 ## String.dedent for Stage 3
 
@@ -524,7 +498,7 @@ Presenter: Justin Ridgewell (JRL)
 
 - [slides](https://docs.google.com/presentation/d/1zq5uG-ckUxOlOdxP5X1lSfwKAzgyyTyonQgVjezQ5KE/)
 
-JRL: All right. So this is String.dedent for stage 3, to recap essentially String.dedent allows you to write pretty source code and receive pretty output code. In this case here we have a Content block from lines, four through seven, it is indented inline with our source code. It looks and feels like this is an actual part of the source code. But when we output it through console.log, we don't have any of that leading indentation, it has been removed so that the output looks like it was written specifically for an output text while being pretty as source code. The only noticeable changes that we made at stage 2 was the decision to treat escape characters that cook into whitespace, we're no longer treating those as indentation characters for dedenting. So now instead of removing this `\x20`, which is an escaped space character, it will leave that character in the output. So our cooked output in this case would contain two spaces, the escaped Space character which cooked into a real space character followed by a real space space character. And this also affects the new lines. so if you have an escaped newline as we do in this case, that will not be treated as a literal line that we need to dedent, it'll just be treated as the same continuation of a line that is currently on. So the changes here, you can see the cooked changes here. it. Now it mirrors what the source text actually is. The raw output remains the same, it's only the cooked strings that have changed. Essentially, it's just instead of cooking and then  de-denting, we dedent and then cook it.
+JRL: All right. So this is String.dedent for stage 3, to recap essentially String.dedent allows you to write pretty source code and receive pretty output code. In this case here we have a Content block from lines, four through seven, it is indented inline with our source code. It looks and feels like this is an actual part of the source code. But when we output it through console.log, we don't have any of that leading indentation, it has been removed so that the output looks like it was written specifically for an output text while being pretty as source code. The only noticeable changes that we made at stage 2 was the decision to treat escape characters that cook into whitespace, we're no longer treating those as indentation characters for dedenting. So now instead of removing this `\x20`, which is an escaped space character, it will leave that character in the output. So our cooked output in this case would contain two spaces, the escaped Space character which cooked into a real space character followed by a real space space character. And this also affects the new lines. so if you have an escaped newline as we do in this case, that will not be treated as a literal line that we need to dedent, it'll just be treated as the same continuation of a line that is currently on. So the changes here, you can see the cooked changes here. it. Now it mirrors what the source text actually is. The raw output remains the same, it's only the cooked strings that have changed. Essentially, it's just instead of cooking and then de-denting, we dedent and then cook it.
 
 JRL: so, if we to recap just what the the common indentation rules are without going through all the individual terminology for it. we find the most common leading indentation that matches on every single line that contains text. So, in this case, lines four through seven contain actual text. Line 3 is an empty line, It's ignored. Line 8 is a whitespace-only line. It is actually turned into an empty line in the output. So line 17. So the first non-whitespace character, which happens on line 4. Also the template expression, which occurs on line six stops the leading indentation at the dollar sign. The escape character, which we just discussed, on line 7, also stops leading indentation. and so the leading indentation is examples just four spaces and any of those three lines would have stopped the common indentation. and any other indentation excessive of that, so line 5 here, continues to have that extra whitespace.Template expressions are not dedented. So even though third here contains white space, that white space will never get removed because it's a part of the expression and not the literal static text of the template expression. And as I explained the cooking of an escape character never affects dedenting. So we have this this output
 
@@ -538,15 +512,15 @@ JRL: So the issue here, as described in the issue thread. Babel, when you're doi
 
 KG: I don't think we should worry that much about Babel’s loose mode transform for ES6 features. That's going to see less and less usage over time and this API will exist forever. And, I don't know, not getting the thing in the cache because you were using a loose mode seems like the sort of thing that you should expect when you are using loose mode. It's like - you have opted into getting the wrong semantics. This is like an edge case that you should not be surprised to run into if you are still in the position of needing to use Babel for template strings. I'm just not that worried about it.
 
-USA: Next up is SYG  \
- \
-SYG: That's exactly it, I don't understand why we care about something that breaks semantics in the name.  \
- \
+USA: Next up is SYG \
+\
+SYG: That's exactly it, I don't understand why we care about something that breaks semantics in the name. \
+\
 JRL: because it's widely used. I mean, it's as we just stated in the last proposal, ESM is not used extensively in production, and so people are still transforming with Babel constantly. Unfortunately, loose mode is extremely popular. So if we do propose a breaking change here where we're not preserving the expected caching semantics means people will unexpectedly get the wrong result constantly. if they're using something like lit-html. They're going to be constantly wiping away the DOM tree and then reinitializing, it gets the brand-new template strings every time. If they're, I don't have good examples of other template tag template strings, at the moment, but essentially it's considerably more expensive for the user to do this. I don't think we should not preserve caching semantics, if we want to change the behavior here, I'd much rather we throw in this case.
 
 SYG: a stupid question. Why can't the lose transform Not be loose in this case.
 
- \
+\
 JRL: it would require the dev to understand what is actually happening. If it's transparently working for them, but it's working badly, they may not notice the issue, so they'll just get incorrect caching semantics, and they're going to be doing a lot more expensive work without understanding why it's happening.
 
 SYG: No, I mean, why can't the Babel loose transform use frozen arrays.
@@ -572,30 +546,24 @@ SYG: why would caching trigger the extremely expensive case, wouldn't it just be
 JRL: Caching is the current behavior that Kevin just mentioned but it's the incorrect Behavior because it gives you this incorrect output, a surprising result, but at least the surprising result will show you that you have a bug.
 
 SYG: That's not that's not the extreme just clarifying that that incorrect result is like something that incorrect string is displayed. Not that it's extremely slow. and, apparently, \
- \
-JRL:  yes, that is the current is KG is suggesting that we we change this so that it's not caching for immutable array. which means you will get the correct result but it'll be extremely expensive for you,because whatever tag you’re wrapping will perform its initialization logic for a new template strings array. Because it can’t find a cached result that’s already done that work.
+\
+JRL: yes, that is the current is KG is suggesting that we we change this so that it's not caching for immutable array. which means you will get the correct result but it'll be extremely expensive for you,because whatever tag you’re wrapping will perform its initialization logic for a new template strings array. Because it can’t find a cached result that’s already done that work.
 
 SYG: I am so confused. Okay, I thought what was happening was? it what KG said was? ideally, he would prefer, we only freeze Frozen arrays, it's not frequently cache Frozen arrays. Yes. arrays. Yes. But He would prefer. After that, in order first is only cache Frozen. second is cache, everything. The current behavior and last is throw prevent. Yes. Yes. Is that correct?
 
-KG: That is my preference ordering.  \
- \
+KG: That is my preference ordering. \
+\
 SYG: So that sounds like the compromises. cache everything which is the current behavior.
 
 JRL: I'm okay. with that.
 
 USA: Next up, we have two more items in the queue but note that you don't have much time left.
 
-
-
 ??: Okay.
-
-
-
-
 
 USA: next up, there's WH.
 
- \
+\
 WH: I agree that we don't want the outcome of caching disappearing and the user not being aware of caching disappearing.
 
 JRL: Okay. so I think that rules out option one here, where we’re not caching an unfrozen array, which I agree with. I think that is the incorrect choice to make here.
@@ -614,12 +582,11 @@ KG: Yeah. I marginally preferred not throwing but I don't really have that stron
 
 JRL: Okay. I'm happy leaving it as is, where we have the caching behavior in all cases.
 
-BSH: I would not be happy with that, that's why I'm on the queue, but it's really bad. Do you whirring liquid or vendors?  \
- \
+BSH: I would not be happy with that, that's why I'm on the queue, but it's really bad. Do you whirring liquid or vendors? \
+\
 USA: You were on the queue but we don't have time left. Unfortunately,
 
 JRL: okay, let's take this to the issue and I'll bring this back at the next meeting. So, this is issue #75 on the proposal repo.
-
 
 ## Set Methods
 
@@ -671,8 +638,8 @@ SYG: I see given that, then I still fully support stage 3 because that's explici
 
 KG: Sure.
 
-USA: Next up, we have WH.  \
- \
+USA: Next up, we have WH. \
+\
 WH: For intersection, you said that you construct the result first and then you sort it according to insertion order in the receiver. What happens if somebody has deleted some result entries from the receiver by the time you do the sort?
 
 KG: Excellent question. In this case you keep the relative order but move them to the end. So the assumption is that you're doing a stable sort that treats keys missing in the receiver as basically mapping to infinity.
@@ -681,55 +648,54 @@ WH: Okay, thank you.
 
 USA: YSV is next in the queue.
 
-YSV: Yeah, I was just checking our notes. We did notice the question for implementers but didn't have a chance to get to it. So, I need to double check that with my team, but beyond that, for the shape of the proposal, as it is now, we support this.  \
- \
+YSV: Yeah, I was just checking our notes. We did notice the question for implementers but didn't have a chance to get to it. So, I need to double check that with my team, but beyond that, for the shape of the proposal, as it is now, we support this. \
+\
 KG: Great. Okay. Well, I'd like to formally ask for stage 3 with the understanding that there is this open question about whether the specified semantics are actually implementable, that you will only find out when implementations go to implement.
 
- \
+\
 USA: That sounds like stage 3.
-
 
 ### Conclusion/Resolution
 
-* Stage 3
+- Stage 3
 
-* During stage 3, need to ascertain if resulting order of intersection as currently specced is possible by implementers, and for champions to keep work in sync with each other on this matter
-
+- During stage 3, need to ascertain if resulting order of intersection as currently specced is possible by implementers, and for champions to keep work in sync with each other on this matter
 
 ## String.isWellFormed \
-Presenter: Michael Ficarra (MF)  \
- \
+
+Presenter: Michael Ficarra (MF) \
+\
+
 - [proposal](https://github.com/tc39/proposal-is-usv-string)
 
 - [slides](https://docs.google.com/presentation/d/1YXHuZ46ZwzR2zZs1V2FdT1oEGH13b6E6bpfX0w9i1EA) \
 
-
 MF: Okay. so this is the well-formed Unicode strings proposal. I say update in the slide title, but this is looking for stage 3. This is the whole proposal. So as a reminder, the goal was to determine if a string is well formed. This had a lot of use cases, Everywhere you need to interact with anything that will have alternatives string encoding or you know requires well-formed strings. All sorts of things like file system interfaces, network interfaces, etc. So the proposal, as presented last time, was just the first method there: isWellFormed. And during that presentation, I presented as well an open PR to add toWellFormed, which everyone seems to like so we incorporated that as well into the proposal. So toWellFormed takes a string that is not well-formed. Oh and to remind people what a well-formed string is: a well-formed string does not have lone surrogates, including out of order surrogates. So all surrogate pairs are in the correct order. So, going back to what toWellFormed does. It takes a string and, if it is not well-formed, replaces any of those lone or out of order surrogates with a replacement character U+FFFD. This is a very common operation. This is the same operation used within the HTML spec and very many other places This is the recommended character that is defined for this purpose. So that's the whole proposal. It has had stage two reviewers. I think it was JHD and JRL. I have to look into the – \
- \
-JRL: Yep, I approved.  \
- \
+\
+JRL: Yep, I approved. \
+\
 MF: Okay. so that's the whole proposal and I would like stage 3. \
- \
+\
 USA: Is JHD on the queue?
 
 JHD: I want to say I strongly support it. I've already implemented polyfills, and I wrote the PR for test262 tests, so I'm extremely confident in the spec text.
 
 USA: Next up we have DLM. \
- \
-DLM: Yes. SpiderMonkey team. Also strongly support society makes a lot of sense to be included in the action.  \
- \
-USA: Next, we have KG, who says he also supports the proposal. Right.  \
- \
-MF: All right. Well, thank you everyone for the explicit support and it sounds like we have no objections.  \
- \
+\
+DLM: Yes. SpiderMonkey team. Also strongly support society makes a lot of sense to be included in the action. \
+\
+USA: Next, we have KG, who says he also supports the proposal. Right. \
+\
+MF: All right. Well, thank you everyone for the explicit support and it sounds like we have no objections. \
+\
 USA: Yeah. Congratulations on stage 3.
 
 MF: All right. Thank you. \
- \
+\
+
 ### Conclusion/Resolution
 
-* Stage 3
-
+- Stage 3
 
 ## Import Reflection
 
@@ -739,7 +705,7 @@ Presenter: Luca Casonato (LCA)
 
 - [slides](https://docs.google.com/presentation/d/1TjS7tXSffAUsSwPEN6AWE4a4Ax4-4ssQKvEitJdoxJo/)
 
-LCA:  Okay. Yeah. Yeah. yeah. So I'm LCA I'm going to be giving update on the import reflection proposal that's currently at stage 2. GB may join us here. Yes. So what is import reflection? So import reflection is a new syntax or a new feature for JavaScript that we propose to add to JavaScript. that allows you to import a reified representation of a compiled source of a module, if a host provides such representation. This allows you to import, for example, with webassembly modules, you could import the underlying compiled but unlinked and uninstantiated webassembly module to be instantiated later, for JavaScript you could import a module Source object like was discussed in the previous presentation with CP. This is also supported in dynamic import with through an options bag on the dynamic import with a currently proposed a ‘reflect’ key that takes a module string. But we may be open to changing that if there's feedback. the primary motivation here is to allow importing webassembly modules into ecmascript without actually instantiating the modules as part of the module graph. So the current best approach we have is to not use the ESM module system at all and to instead instead fetch webassembly, for example, with fetch(). For example, with Node, you'd have to read it from disk. Or in Dino you'd have to do the same thing. So this is not very portable. It requires special handling on a bunch of different platforms, not all platforms can fetch all protocols. So some platforms need special handling there, it's not the library statically analyzable As you can see, this is a expression and it's a relatively complicated one at that. It can be broken out into into many different. pieces like this fetch could be assigned to a binding, the URL could be assigned to a binding. It's difficult for bundlers to statically analyze this to be able to move the wasm around for example. Especially with this. special casing that some platforms required because they don't support fetch() makes this much harder. It essentially means that a lot of tooling has to hardcode the output from a bunch of wasm tooling in their parsers to be able to understand drill to statically Analyze This. For end users this is very easy to get wrong. If you forget the new URL, for example, with the hooting provider URL, your portability is gone. So this is using new URL() but the browsers, for example, support, import.meta data resolved now. I don't think that's tiptoe. Oh that's a different thing that needs to be. Penalized if he's a Fed. Trapper that could break the whole thing. All in all, not very portable.
+LCA: Okay. Yeah. Yeah. yeah. So I'm LCA I'm going to be giving update on the import reflection proposal that's currently at stage 2. GB may join us here. Yes. So what is import reflection? So import reflection is a new syntax or a new feature for JavaScript that we propose to add to JavaScript. that allows you to import a reified representation of a compiled source of a module, if a host provides such representation. This allows you to import, for example, with webassembly modules, you could import the underlying compiled but unlinked and uninstantiated webassembly module to be instantiated later, for JavaScript you could import a module Source object like was discussed in the previous presentation with CP. This is also supported in dynamic import with through an options bag on the dynamic import with a currently proposed a ‘reflect’ key that takes a module string. But we may be open to changing that if there's feedback. the primary motivation here is to allow importing webassembly modules into ecmascript without actually instantiating the modules as part of the module graph. So the current best approach we have is to not use the ESM module system at all and to instead instead fetch webassembly, for example, with fetch(). For example, with Node, you'd have to read it from disk. Or in Dino you'd have to do the same thing. So this is not very portable. It requires special handling on a bunch of different platforms, not all platforms can fetch all protocols. So some platforms need special handling there, it's not the library statically analyzable As you can see, this is a expression and it's a relatively complicated one at that. It can be broken out into into many different. pieces like this fetch could be assigned to a binding, the URL could be assigned to a binding. It's difficult for bundlers to statically analyze this to be able to move the wasm around for example. Especially with this. special casing that some platforms required because they don't support fetch() makes this much harder. It essentially means that a lot of tooling has to hardcode the output from a bunch of wasm tooling in their parsers to be able to understand drill to statically Analyze This. For end users this is very easy to get wrong. If you forget the new URL, for example, with the hooting provider URL, your portability is gone. So this is using new URL() but the browsers, for example, support, import.meta data resolved now. I don't think that's tiptoe. Oh that's a different thing that needs to be. Penalized if he's a Fed. Trapper that could break the whole thing. All in all, not very portable.
 
 LCA: One solution that people came up here is to do the WASM and JS integration directly which essentially allows you to import WebAssembly.Module instances. So instantiated and linked webassembly webassembly modules. But this doesn't solve all use cases. First of all, a lot of webassembly imports. They are specifiers with what we would call them. So if you want to import them portably from within a library, you would need to specify a global import map. So your end users if they import a Imports. The webassembly. library which assembly module that uses raspberries, they have to specify an import map to remap this bear specifiers. Also, if you want to do multiple instantiation, which is relatively common for webassembly because there's a lot of webassembly out there. That is a single essentially single pass, it's like CLI tooling that's very difficult to do here. You can't send webassembly modules between workers if you can't get access to the wasm module Object, which you can't do with the web and GSM articulation. And if you want to express it, if you want to pass memory to the webassembly modules, you cannot do that Using the welding ASM educational. Either you need to do manual. Instantiation are which you need the webassembly that module object for so, with our proposal, this would be solved by allowing you to import the WebAssembly.Module instance directly using static syntax the module, keyword here, would differentiate this import from a regular static import. This is now very easily statically analyzable, tooling can the with a very simple. for. Well, not that simple, But with a single pass parts of the JavaScript tasty can now find all references to webassembly Imports. It can now move them around which is very ergonomic for users. Makes it the tooling much nicer, and it has security benefits as well. Namely that we don't need to do a dynamic fish anymore, which is can make it the CSP policies simpler for importing, webassembly much better. If you have a strict CSP policy, I'm not going to go into too much detail here. you have questions about that. Please, do not like you and I can elaborate elaborate
 
@@ -748,7 +714,7 @@ LCA: Another motivation is allowing JS module reflection, so with the previous p
 LCA: To clarify the scope of the proposal, the proposal currently adds the module keyword on the import declaration syntax and the reflect option in the dynamic import options bag, and the spec mechanisms to return the right. the module Source object. the reflected representation of the imported modules. when either of these is specified. It does not specifically add the module or Module Constructors. Nor does it add any WebAssembly-specific integration to ECMA-262, those are all host-defined behaviors. Well, the module and module which ones aren't but those are those can be done in a separate proposal. So this proposal by itself, actually does essentially nothing it adds. a keyword and an option in an important in this options bag and the actual wasm integration needs to happen in the wasm ESM integration specification. The spectacular spec text for this is now ready. It's built on top of NRO’s excellent ECMA-262 module loading refactor, which changed loading to only use a single post-import hook. I don't know what the pure number is for that view. Yeah. I'm fine. it, it's not quite emerged yet, but I think it's getting pretty close. The, you can find this back here. There's a couple. things I wanted to bring up namely that we're not adding any new host hooks Instead, the module Source object. So that's the reflected representation of a module is a new internal slot on the module record as this can be populated by either ECMA-262, for example, for JavaScript, for built in modules to this could be set to the module source. or it could be set by hosts for things like the webassembly integration. There are also module records that do not have a source representation, for example, JSON, or modules that are host-internal, for example, in Node, the fs module, These, if you would try to import them would throw a TypeError because there is no object in the module Source object internal spot. This is useful for the modules that don't have a representation ever, and it also works for modules that do not have representation yet without breaking existing code if we add a representation in the future, so you could imagine that JSON modules may have a module Source representation in the future. and yeah, the default is to throw unless there's a specific host implementation because this module Source object, slot is empty by default. The reflective Imports are not recursive, so importing a module source does not actually attempt to load any of its dependencies. and as such the ordering of loading and also the order of evaluation can be slightly different between import or from between a regular import statement and an import statement with a reflective import statement. this sort of illustrates that if you import a module with the view of reflective import of a module, this does not load any of the dependencies so you can see here that initially modulate is loaded but what do a Imports? Module B? This is not directly loaded yet because reflective Imports are not recursive, same for B and when you put C see Imports of G so G is recursively loaded by C. Then we import A, which itself was already loaded by the reflective import here, but now we're actually recursively importing it. So we also need to load the dependency of a which is e. so you see he is now loaded refer to with A but A is not loaded again because he was already loaded by the in this one, puts him him in here. and then, D is loaded. and A is loaded recursively by D, but you can see that For example, f is never loaded because we never recursively load to be. if there was await. import be at the bottom here, then F would be loaded.
 
 LCA: The idempotence. of imports are unchanged. so, importing. if let me see how to phrase this correctly, if two modules, or if you import a module from a specifier and that specifier resolves to the same module instance internally for two different specifiers. Is that guarantee is also preserved for reflective modules over the module Source object. If you import two modules where that do not resolve, that you're not resolved to the same module instance, they may also not return the same module Source. It is possible that for two objects, which resolved to two separate module instances, they do return the same source And one example of this is this #1 here, which is something you can do the browser, you can add a hash to a specifier to create a new specifier and then it instance of the module, but it won't actually load the source again. so here the module Source may be the same. across two different specifies, even though the instance is not the same, But all cases, where we currently guarantee that the instance is the same, the source is also the same. \
- \
+\
 LCA: There’s a bunch of layering happening with other proposals. one with compartments layer 0. So that's the for the like data integration returning, the module Source instance, or returning module sources. When you import when you reflectively import JavaScript and being able to instantiate those. using the module Constructor, a layering with the module Expressions because module Expressions, also return module instances from compartments layer 0, Module Harmony layer 0, it's been renamed. which is kind of interesting. It essentially means that a dynamic import. it reflective Dynamic, import of a module expression is equal to the module expression for getting the source of the module expression, which answer makes sense. There's some layering with lazy loading, the main difference being that lazy loading is deep, whereas module reflection is not deep. It's shallow. So there's no recursive load going on. This proposal is not really meant for lazy loading because it does not do recursive load. GB is going to go into this a little bit more in the next presentation. presentation. There's some layering with the export default from proposal. which has been inactive for a little bit but this proposal add Syntax for for exporting the default. From a module. Sort of mirroring from the input statement. current If This Were to land. there would also be an argument made that there should be a reflective default exports as well. Yeah, that's not going to be the case. So this only touches imports and exports. there's the obvious layering with the wasm ESM integration, which I covered earlier. And then, layering with web components. I don't know, is GB here now? Yes, you are. an awesome going to talk about that for a bit.
 
 GB: I can mention it briefly. In webassembly, we require all webassembly instantiations to be done explicitly through the imperative webassembly instantiation API, and this is kind of a standard technique where you provide the direct import bindings for the webassembly module. And in this way, webassembly modules, the way that they're used it's often a little bit more like passing function parameters, than exactly aligning with the host import resolution model. So maybe something a little bit more like module expression bundles as the model of WebAssembly linkage. And the webassembly component, module Builds on some of these ideas. I do, actually hope to, in a future meeting, give a little bit more of an in-depth introduction to where some of that work is going, but to briefly just discuss that in the in the scope of the reflection proposal, webassembly components want to be able to get access access to uninstantiated webassembly.module objects, so that they can perform their own linking just like you would for a module expression in a bundle or module declaration in a bundle. And so, by having this integrated into the module system, we would be able to achieve that goal. when you want to integrate directly interest resolution, which is where we want to get eventually. And that's that's kind Of a long road to get there. But that's a very brief discussion on for now and feel free to bring up anything that. if I haven't. explained it, that clearly. Yeah. That's all are mentioned. Excellent.
@@ -769,7 +735,7 @@ NRO: Just to clarify what LCA said earlier, I'm one of the people who are pushin
 
 LCA: Yeah, sorry, I should have clarified that it did not be linked but the module resolution Hook is used in that module is the one from you. Oh, stroke. So the modules that would get loaded by that module after load cannot be adjusted. through a customer. of different instruments. Next topic is from YSV.
 
-YSV:  it was covered a bit in chat and it's feedback. I brought up before but I'm still unconvinced about import module as a syntax because it you know, Developers. what have they been doing with the import keyword this whole time, other than importing modules. So I think it'll be confusing and I think we want to choose a Dresses.
+YSV: it was covered a bit in chat and it's feedback. I brought up before but I'm still unconvinced about import module as a syntax because it you know, Developers. what have they been doing with the import keyword this whole time, other than importing modules. So I think it'll be confusing and I think we want to choose a Dresses.
 
 LCA: yeah, that is a valid point, I think. this is probably part of a larger discussion around whether module instances should be called modules or module instances. Because I agree that it is confusing.
 
@@ -789,25 +755,25 @@ DE: I mean, like, I take it. BRN might have been referring to the inverse proble
 
 RBN: the specific concern. We had was around things like some of the performance related things that some bundlers like esbuild due to hoist exports, or to hoist Imports that are used internally to which avoids, some of the lookups that have to be performed. So this is one of those modules then becomes an actual module block or module expression, that hoisting becomes unusable
 
-DE: My impression is that this proposal should be very readily statically analyzable. So I have a hard time understanding what the concern is.  \
- \
+DE: My impression is that this proposal should be very readily statically analyzable. So I have a hard time understanding what the concern is. \
+\
 RBN: just a measure of the complexity that would add to bundlers of bundlers. or a significant percentage of bundlers were signed on to the signed up for this complexity and are aware of it and are fine with it. Then I don't have any specific concerns. It's just to make sure that that's being that away. This is being raised with it that Community as well. \
- \
+\
 LCA: So, for time, sake, I think, let's take this to an issue on the way home. \
- \
+\
 USA: yeah, :LCA and GB, you have less than one minute. What would you like to do? do? What? would you like to do? \
- \
-LCA: I'd love to hear from. the and about the incident resources of thing.  \
- \
+\
+LCA: I'd love to hear from. the and about the incident resources of thing. \
+\
 USA: DE could you be really quick? \
- \
+\
 DE: Yeah. so I feel strongly that module expressions and reflective modules are fundamentally getting at the same kind of run-time construct. This could be a module instance, or it could be a module source with like a base path attached to it for a relative. module specification. Ultimately, these can, these are equivalently expressive because you can use the if we have a module Constructor and a source getter(?), then there they can be expressed in terms of one or the other. So I'm skeptical of the idea of using different runtime representations for the two of them. If we want to hedge our bets. against wasm integration never really happening. I think we could, we could say, like, well for the wisdom integration, the module can just Not. contain not not be importable And the only thing you could do is get its first So yeah, I'd like to like to discuss this more with with GB in the committee but that's, that's my feeling feeling there.
 
 USA: Yeah, unfortunately we're on time But would you like for us to capture lightning?
 
 LCA: Yeah, that'd be great.
 
-NRO: I just have an answer to DE.  ModuleSource and Module are not equivalent in expressiveness, because you cannot easily build a Module from a ModuleSource, unless you pass a hook in a way that matches the behavior of the host. So you can easily get the ModuleSource from the Module, but the other way is harder.
+NRO: I just have an answer to DE. ModuleSource and Module are not equivalent in expressiveness, because you cannot easily build a Module from a ModuleSource, unless you pass a hook in a way that matches the behavior of the host. So you can easily get the ModuleSource from the Module, but the other way is harder.
 
 USA: All right. Yeah, thanks.
 
@@ -815,10 +781,10 @@ DE: Oh, that's a further argument for going with module for for both of these.
 
 USA: right? I suppose. you could continue this. offline. Next up, we have GE and YSV for effort importing valve.
 
-LCA: If I may just ask for more item on the agenda. So while we're still on import reflection is if anyone has any specific specific concerns. For reflection. for for considering where the current specification is for stage 3 review. if they can bring up those points now, so that we don't hit it in the next meeting, that would help with your mouth, Serve anyone wants to speak up.  \
- \
- \
- \
+LCA: If I may just ask for more item on the agenda. So while we're still on import reflection is if anyone has any specific specific concerns. For reflection. for for considering where the current specification is for stage 3 review. if they can bring up those points now, so that we don't hit it in the next meeting, that would help with your mouth, Serve anyone wants to speak up. \
+\
+\
+\
 JRL: Would you like me to do that in matrix chat, or on the issue tracker?
 
 GB: But you can take a minute now. If you like Justin
@@ -830,27 +796,27 @@ DE: So that the history here is that I was working with other people on on a pro
 JRL: it's going to be blocked, either way. we're in a deadlock here
 
 DE: So I hope those people who objected previously could engage in this discussion. \
- \
+\
 GB: Thanks Justin. It helps the like to hear that. Hopefully we can continue. That discussion will find and it's like that. We've got everyone on the same page in these discussions of this point, at least in terms of understanding where the question marks are that we need to work through.
 
 CP: It might be interesting to get more people into the module harmony calls which are biweekly. organized by Chu and YSV. So if you have any interest or any opinions on this, please join us
 
-GB: yeah, that certainly would be recommended because there's there's a lot of cross-cutting concerns that were able to bring up in those meetings. So, that would be a great venue to the discussion.  \
- \
-JRL: I can start attending it. Thank you.  \
- \
+GB: yeah, that certainly would be recommended because there's there's a lot of cross-cutting concerns that were able to bring up in those meetings. So, that would be a great venue to the discussion. \
+\
+JRL: I can start attending it. Thank you. \
+\
 
 ![alt_text](images/image58.png "image_tooltip")
- \
- \
+\
+\
+
 ### Conclusion/Resolution
 
-* List
+- List
 
-* of
+- of
 
-* things
-
+- things
 
 ## Deferred Module Evaluation
 
@@ -860,9 +826,9 @@ Presenter: Guy Bedford (GB)
 
 - [slides](https://docs.google.com/presentation/d/10cn4SfVY20no6JmtWL72JLD6rmJ-dnafIfh8XmmC7mA)
 
- \
- \
-GB: Oryx that the third module evaluation. sir. I'm picking this up from you earlier today. and YSV originally presented this little while ago. little while ago. and it's kind of a simplification of YSV’s original proposal to try and get something that we can find agreement on in committee. So to just reiterate, the use case that's being solved here, is that module performance is important and it's something that we're tackling in a number of ways. And with all of this module stuff going on, we mustn't forget modules’ performance is the most important thing at the end of the day for users. And so we must keep focusing on these kind of use cases. So what is the problem that this proposal is looking at, is that we're looking at large code bases, we've got a lot of module code that's executing on initialization, of merchants(?) a large bundle. but kind of when you're looking at module, later modules and you've applied, Applied all loading optimizations. So once all pre-loading water for optimizations, bundling when necessary, and so many banks run for, bringing that up that, you know, bundling continues to remain an important optimization in modules were close. Once, you've done all these things, and you've got this optimized module graph, there Still Remains the synchronous blocking top-level execution, cost of the initialization. So that's a problem that we're looking at. And we want to try and solve this without being forced to  ‘async-ify’, the entire code base.
+\
+\
+GB: Oryx that the third module evaluation. sir. I'm picking this up from you earlier today. and YSV originally presented this little while ago. little while ago. and it's kind of a simplification of YSV’s original proposal to try and get something that we can find agreement on in committee. So to just reiterate, the use case that's being solved here, is that module performance is important and it's something that we're tackling in a number of ways. And with all of this module stuff going on, we mustn't forget modules’ performance is the most important thing at the end of the day for users. And so we must keep focusing on these kind of use cases. So what is the problem that this proposal is looking at, is that we're looking at large code bases, we've got a lot of module code that's executing on initialization, of merchants(?) a large bundle. but kind of when you're looking at module, later modules and you've applied, Applied all loading optimizations. So once all pre-loading water for optimizations, bundling when necessary, and so many banks run for, bringing that up that, you know, bundling continues to remain an important optimization in modules were close. Once, you've done all these things, and you've got this optimized module graph, there Still Remains the synchronous blocking top-level execution, cost of the initialization. So that's a problem that we're looking at. And we want to try and solve this without being forced to ‘async-ify’, the entire code base.
 
 GB: So YSV earlier was able to bring some numbers to those from some Firefox use cases, I don't know the exact details of these tests but in these in these benchmarks, it's looking at performance. characteristics. where 45% of the time is spent on loading and parsing and 54% of the time is spent just executing that top level graph initialization, which has to be done synchronously, which has to block the event Loop when it happens, Can't be of threaded sort of thing. and if you have a large graph and you hit this problem, there's not a lot of things you can do. you basically have one option which is to start. I think things out in. Dynamic Imports. And so you find functions that call things that aren't needed during the initial execution that they're only used during the sort of running. lifetime of the application. maybe a few seconds after the initial page load. and you ‘asyncify’ those functions, so that it will easily import the dependency that it was trying to execute on that conditional branch. And when you do that, you then need to ‘asyncify’ everything up through the parent function stack? And so the question is, is that really what we want to be encouraging people to do as their only option? and then even further, dynamic import doesn't actually solve the entire problem, because dynamic import still needs network optimization. Just have a dynamic import you've now actually created a performance problem because you're now going to have a waterfall problem which you then need to separately preload, and and water parks. - there's a static analysis difficulty for bundlers. If you've got highly dynamic, dynamic Imports. And so it's not necessarily the best solution, but it's the only solution. So the idea is you can have any primitive that can improve that startup performance without sacrificing that API, So you can still write nice modular looking code. And what was specifically brought up last time around Union's proposal Was some of the magic around how bindings were being handled and how evaluation is being handled that it was actually becoming a new kind of binding primitive and so the original proposal was that you could have this kind of lazy initialization. In this proposal we switch between the with syntax and the sort of reflective syntax that we've been using as well, equivalently because we haven't settled on a direction for this proposal, so please don't judge that too harshly. And with the original API that she proposed you could have the full grammar of normally s module Imports. and then you would add this lazy initialization. which on access you would you would execute those findings. And what we're proposing is a simplification where you only get these lazy namespace objects or deferred module namespace objects, which in that example we have got a method that's only used rarely on a dynamic path that that's after their initial initialization of the app you can turn that import into a lazy import and then you access the exports as you would on any namespace. space. But that access becomes a getter. So the getter becomes the evaluation part. And so the import is loaded all the way up. The dependencies are loaded. All the network stuff is done and it's ready to execute synchronously, but that synchronous execution only happens when you when you apply the getter so that to the defer Quantrill namespace, Any get our will execute the entire module and it will only execute once and you're then able to call the function so that you're getting it deferred as needed, and the initial initialization of the application can cut out that execution work entirely. So on your module graph when you add is, what you're getting is, you're creating It's almost like a new kind of top level separation, where that lazy graph is a new sort of top level graph that as if you were top level Dynamic importing it. And if graphs overlap you can, you can race execution, just like you can with normal modules and it can work recursively as well, just like recursive dynamic import and then are some small issues for example with top-level await, we can't do all the network. Sorry we can't do get everything synchronously ready because the the execution might actually be asynchronous itself. And the way we deal with that is, we would either need some kind of special handling where it's not allowed entirely. So, when you do this lazy or deferred import, it would throw right away. Or alternatively. swirl before top level 2. we could even legally handle asynchronous. evaluation. down to the synchronous. direct. Synchronous. supper on, which is, well, defined concept. And that remaining synchronous of graph, could then be evaluated, as the Deferred evaluation of quick different module name space. And then just to go over the I/O benefits. I'm not sure what I'm supposed to go Brown. The slide. and then yeah. The other thing that was brought up was the potential for some kind of stack injection, error injection. So, when when the because of the fact that this this execution is being done as that getter on the deferred module, kind of a new way of running that top level asynchronous evaluation. as opposed to Dynamic import or static. Imports being the only way to do that today. And so if, for example, if there's an error that error is going to potentially be cached in the module graph, if we stick with Eric, aisling, and that means that you the stack of that error would come from the place. Where was evaluated? So there's some discussion around the fact that that could expose the the place where that deferred evaluations happening because it belongs to the execution stack and and also that data(?) becomes the calling position. whereas with dynamic import would do this asynchronously, it becomes a part of the synchronous. evaluation evaluation point. so, the top level await and this kind of injection, or something, the mean, Harry things to work through, but apart from that, it's used to be relatively well, defined. So what we were just looking to find out today is what people think about this reframing of The Proposal, we could still extend the proposal back to some of the most Mark things with bindings and Future. But if we just try and get agreement on this kind of a primitive, an agreement on solving this use case and discuss it while we're discussing all the modules things so that we can make sure that we're handling all the use cases that we need to have. So are there any questions?
 
@@ -877,7 +843,7 @@ YSV: Yeah, I just want to emphasize that the important change here is that we ar
 USA: before that RPR has a reply to that.
 
 RPR: I think this changes the proposal. I understand why it's been made and am generally in favor. Anything that pushes this proposal forwords is amazing. The main thing is it's a small loss of ergonomics because one of the principles of this proposal is that it's something where you can make a surgical change to the performance characteristics of loading. Ideally it's an optimization that you sprinkle in. And the whole reason is that this is much easier than going through and making all your code's callstack async, which is a very non-ergonomic and rippling workaround. Whereas with this change (the loss of named imports) this means developers will have more work to do compared to just adding a keyword, because you'll then have to go through all of the usage sites and prefix them with a namespace (`ns.identifier`). So it slightly moves the proposal away from that goal. But it's definitely not a showstopper.
- \
+\
 YSV: Yeah, I just want to respond to that Rob. So as some of you know, I've actually built this loader for Firefox. to load our client code. So, previously we had a handwritten custom loader for JavaScript that behave completely differently from the ESM system. Similarly, you can think of it as similar to the CommonJS system before they realize that Order for it to be specified. That they cannot do synchronous loading. So our old version continued to synchronous loading and as we moved to using ESM, we actually ended up for other reasons. being forced to introduce a lazy namespace. So this design now actually reflects the reality in the Firefox codebase. I agree that ideally we wouldn't have to do this but I also respect that we've currently got an invariant in the language where the module bindings are always what you import and never being replaced in the way that I was suggesting. So I do accept that. and I will say our developers did complain when we made this change. It wasn't ideal. They didn't like the fact that they needed to use a namespace. But with linting, we were able to get this across pretty easily.
 
 USA: Next up it’s YSV again.
@@ -914,20 +880,20 @@ JHD: I think "consensus" may be too strong. I think it's too early to know if we
 
 GB: We will certainly bring it back with a longer presentation in one of the committee meetings. but thanks everyone.
 
-DE: I wanted to briefly clarify with the discussion about top-level await that I guess that means preflighting it, fetching all the dependencies and running the top-level awaits eagerly. In the Bloomberg context. I think the the way that some of our applications that would incorporate this work, is that they would use some static analysis to make it cheaper to fetch some of these things or understand which subgraphs have such  top-level awaits It at runtime. It's only about evaluating less but also fetching in parsing less is also important. In the web we don't really have a way past fetching less but in tools that optimize things you know, in build systems that use these semantics, our evaluation has been that you can actually parse less at runtime if you calculate a little bit of metadata about how things would fit together. So anyway, that's all just to say. I think this is a great proposal that the changes that you've made now are really good and I support you now I'm optimistic about this eventually moving to stage two.  \
- \
-USA: Great. We are on time. I hope you got the conclusion that you needed.  \
- \
+DE: I wanted to briefly clarify with the discussion about top-level await that I guess that means preflighting it, fetching all the dependencies and running the top-level awaits eagerly. In the Bloomberg context. I think the the way that some of our applications that would incorporate this work, is that they would use some static analysis to make it cheaper to fetch some of these things or understand which subgraphs have such top-level awaits It at runtime. It's only about evaluating less but also fetching in parsing less is also important. In the web we don't really have a way past fetching less but in tools that optimize things you know, in build systems that use these semantics, our evaluation has been that you can actually parse less at runtime if you calculate a little bit of metadata about how things would fit together. So anyway, that's all just to say. I think this is a great proposal that the changes that you've made now are really good and I support you now I'm optimistic about this eventually moving to stage two. \
+\
+USA: Great. We are on time. I hope you got the conclusion that you needed. \
+\
+
 ### Conclusion/Resolution
 
-* List
+- List
 
-* of
+- of
 
-* things
+- things
 
-
-##  An introduction to the LibJS JavaScript engine
+## An introduction to the LibJS JavaScript engine
 
 Presenter: Linus Groh (LGH)
 
@@ -939,7 +905,7 @@ LGH: As I mentioned already, we have SerenityOS, which is strongly related to th
 
 LGH: All right, so let's quickly address the name because it’s a bit ambiguous, LibJS, JavaScript library, but it's very simple to explain it. So because everything in that SerenityOS operating system is made from scratch we don't need to invent names that stand out or are catchy, like products will try to find a good name for that. So everything has a very descriptive name. We have applications like browser and calculator, and file manager and PDF viewer, and so on. And they are called that both in the code internally and in the user interface. The same is true for libraries. So we have LibGL, LibGfx, LibDNS, LibHTML, [some more listed]. You can guess from all these names, what they do. And all sort of encapsulate one thing. Then we have around 60 of them, and in there is everything you would you need for an operating system. And so very naturally “LibJS” was chosen. It was no real discussion. That only happened later on when we decided to pull out the web engine and everything around it into a cross platform browser project because we no longer wanted to limit to that niche hobby operating system. So that's now called ladybird browser and entails everything from the web engine, CSS parsing, webassembly engine, JavaScript engine, and so on. So both “SerenityOS JS engine” and “Ladybird JS engine” is fine, depends on the context a little bit.
 
-LGH: Let's look at some characteristics. So as I mentioned it’s completely developed from scratch, and that’s not really because we don't think that all external code is not suitable, it's just sort of just a principle because we get really good integration. And once you develop everything from the kernel to the last user space application and like they all share the same standard library. Like you've got the same string type everywhere, the same vector type, and we really don't want to introduce anything from the outside into that because then it falls apart. It's implemented in a way where we started quite late, like two decades behind some engines. Which results in a weird order of implementing stuff. So, at times, we had very modern bleeding edge JavaScript features implemented way before some obscure legacy thing that every other browser has got. One example is the ‘with’ statement. Yes, no one wants to use it, but you kind of still need it, but that came later on. The historical timeline is a bit distorted and it's all mixed. One thing we find very important is staying very close to the spec. I'll get into that in a bit, but its source code just looks very similar to what you would see in the ECMAScript specification and the proposals, and that helps a lot with staying correct and also being able to find stuff from the spec in our engine and then see how that integrated into other things. Additionally optimizations and everything not in the specs is marked as such. I mean, we still got parts that are not in the spec at all, garbage collection, for example. Also we have no roadmap because it's all volunteers, it’s just an open source project. Contributors don’t really make any promises about what they will work on or will not work on. So, the easiest way to make something happen is to make it yourself, we usually say, but that doesn't mean that we won't implement something at all. We usually try to stay up to date with all the latest proposals and stuff. But there is no official "yes, we will do this at point x in time". And as I also mentioned earlier, we regularly get recordings of engine development, recorded and published on YouTube, and also once a month, we make a summary video that contains all the changes both on the operating system side and on the web engine side.  Some people use that to stay up to date with the project. Here’s one example of how that coding style looks. So, for example, the GetMethod operation, it's just four simple steps but turns into way more code than just four lines because we mark everything with those comments, which also makes it very easy to review, and makes it very easy to check for correctness. You can also see, we don't always use the exact same name. So “func” from the spec gets turned into “function” for example, and we have additional helpers as well. It's not a literal translation, but it tries to stay very close.
+LGH: Let's look at some characteristics. So as I mentioned it’s completely developed from scratch, and that’s not really because we don't think that all external code is not suitable, it's just sort of just a principle because we get really good integration. And once you develop everything from the kernel to the last user space application and like they all share the same standard library. Like you've got the same string type everywhere, the same vector type, and we really don't want to introduce anything from the outside into that because then it falls apart. It's implemented in a way where we started quite late, like two decades behind some engines. Which results in a weird order of implementing stuff. So, at times, we had very modern bleeding edge JavaScript features implemented way before some obscure legacy thing that every other browser has got. One example is the ‘with’ statement. Yes, no one wants to use it, but you kind of still need it, but that came later on. The historical timeline is a bit distorted and it's all mixed. One thing we find very important is staying very close to the spec. I'll get into that in a bit, but its source code just looks very similar to what you would see in the ECMAScript specification and the proposals, and that helps a lot with staying correct and also being able to find stuff from the spec in our engine and then see how that integrated into other things. Additionally optimizations and everything not in the specs is marked as such. I mean, we still got parts that are not in the spec at all, garbage collection, for example. Also we have no roadmap because it's all volunteers, it’s just an open source project. Contributors don’t really make any promises about what they will work on or will not work on. So, the easiest way to make something happen is to make it yourself, we usually say, but that doesn't mean that we won't implement something at all. We usually try to stay up to date with all the latest proposals and stuff. But there is no official "yes, we will do this at point x in time". And as I also mentioned earlier, we regularly get recordings of engine development, recorded and published on YouTube, and also once a month, we make a summary video that contains all the changes both on the operating system side and on the web engine side. Some people use that to stay up to date with the project. Here’s one example of how that coding style looks. So, for example, the GetMethod operation, it's just four simple steps but turns into way more code than just four lines because we mark everything with those comments, which also makes it very easy to review, and makes it very easy to check for correctness. You can also see, we don't always use the exact same name. So “func” from the spec gets turned into “function” for example, and we have additional helpers as well. It's not a literal translation, but it tries to stay very close.
 
 LGH: What's in scope? As I mentioned earlier, it's basically everything. We target the latest specification draft, so we don't even stick to the 2022 or 2023 yearly release. We just use whatever is currently on the main branch, both in 262 and 402. New proposals are usually considered from stage 3 onwards. We don't always have the capacity to make stage two prototypes and then do all the changes from there, but past stage three we are usually very happy to implement them. Annex B as well, it's just part of the core engine. We provide all the hosts hooks that are in the spec, and host-defined slots for any host that wants to embed the engine to customize behavior as they expect. And that is obviously the case in the browser, stuff like how you load modules. Or [[HostDefined]] slots to hold custom data and next to the VM. But it's also important to mention that it’s a pure ECMAScript engine. Concepts that are defined elsewhere, we don't really want to put into the engine. So while some engines will choose to ship WebAssembly as part of JavaScript, in our case it’s a separate library and the web engine provides the JavaScript bindings for WebAssembly, it's not part of LibJS itself. Here's a list of implemented proposals. A bunch of stuff in there like array grouping, change array by copy, import assertions, JSON modules, ShadowRealm, Temporal, Symbols as WeakMap keys. On the Intl side as well, but that's not a lot of stuff I work on. DurationFormat, the enumeration API, and Locale Info, for example.
 
@@ -951,7 +917,7 @@ LGH: So it doesn't really make sense to make a JS engine if no one is using it. 
 
 LGH: It's not been without problems. So over the years we've had probably three big issues, which I have listed here. The biggest one is initially not using the spec as the main source of truth. In hindsight that sounds very silly. But you know, you got a bunch of people just being excited about the new thing and they jump onto it. They're probably not as careful as they should be. So people would go and implement stuff from memory, or implement stuff based on MDN descriptions, or implement stuff based on other browsers’ observed behavior, and you just get a bunch of edge cases that will not work, we had so many inconsistencies. For example, evaluation order of individual steps was not right, or mismatched compared to all the other engines. Also things like duplicate ToString or numberconversions. Yeah, it was a bit of a mess. Our solution to that was just imposing a very strict coding style, which I showed earlier, where we literally take the entire spec, copy it into the source code one line of spec, one or more lines of source code, and then you can very easily compare that. And it also makes sure that the person who implemented that actually looked at the spec instead of just going ahead and doing it from scratch. That's extreme but it solved the problem. Then we also did not get some fundamentals right from the beginning, one example being objects. So you probably are familiar with internal object operations. Which proxies hook into, for example. And unless you specifically provide those entry points it’s very hard to make a fully compliant object implementation, we had one that worked in 90% of the cases and getting the last 10% right was incredibly difficult because you would just get so many edge cases and special handling, it’s turning into a mess of spaghetti code. To fix that, we did it again from scratch, which is unfortunate. And the same with Realms. So early on, we just didn’t have the concept of Realms. Intrinsics lived on the global object, which was fine. It gets you ahead for a bit, but then after a while, especially once you start integrating it into the browser and stuff like iframes, cross realm correctness just falls apart. And then we had an almost 10,000 line change in a single PR, we ripped out all the old stuff and replaced it. Also not testing at a large scale, test262 is not complete coverage, but you can get very far. And so had we run that consistently earlier, we would have noticed all these issues from the beginning. Like “oh, I just implemented this function and I expected it to work. Why are half of the tests still failing?”.
 
-LGH:  We have currently 87 individual contributors, counted by commits that focus on the engine itself. If you take everything around it like BigInts, or regex, it’s much more. But it's still only a very small core team. So we have eight people which made over 90% of contributions. But we still to this day, encourage newcomers, it's not as easy as it was in the early days where you could go and Implement if statements because no one has done that yet, all the low-hanging fruits are gone. But we still encourage people to join and try something. And maybe they'll like it and they stick around. One example of that is editorial changes. We try to keep up with those even though it's not necessarily required to do it. But that could be as simple as changing a few words, you can get a good feeling of how the whole process works. Inspired by the graph showing Igalia as being the number two chromium contributor that got shared recently I made one for ourselves, the penguin avatar is myself but we got a few more people there, many of them focus on some specific things. You also might have seen them online on GitHub filing issues in proposal repositories or for test262. It's a great team. I’m very proud of all the work they have done.
+LGH: We have currently 87 individual contributors, counted by commits that focus on the engine itself. If you take everything around it like BigInts, or regex, it’s much more. But it's still only a very small core team. So we have eight people which made over 90% of contributions. But we still to this day, encourage newcomers, it's not as easy as it was in the early days where you could go and Implement if statements because no one has done that yet, all the low-hanging fruits are gone. But we still encourage people to join and try something. And maybe they'll like it and they stick around. One example of that is editorial changes. We try to keep up with those even though it's not necessarily required to do it. But that could be as simple as changing a few words, you can get a good feeling of how the whole process works. Inspired by the graph showing Igalia as being the number two chromium contributor that got shared recently I made one for ourselves, the penguin avatar is myself but we got a few more people there, many of them focus on some specific things. You also might have seen them online on GitHub filing issues in proposal repositories or for test262. It's a great team. I’m very proud of all the work they have done.
 
 LGH: Now you might wonder, how can you try it? So obviously, it's still part of the Serenity operating system, which runs into QEMU. So, we've made it very easy to run, it’s basically just one command to run after installing a few toolchain dependencies. It also runs natively on Linux and macOS. We’re not providing binaries right now because we don't think it's quite ready for that yet. We want people who provide feedback to be at least able to build it. We have integration in esvu and eshost, thanks to Idan who did that a little while ago. Also Ladybird as I showed in these pictures earlier. And as of one or two weeks ago, we have a WebAssembly build of the entire C++ engine. So, you can actually try in the browser right now. Which is thanks to Ali, who also made our WebAssembly engine. That’s it, if anyone has any questions I’m happy to answer them now, but I'm not sure how much time is left. We are already over the time.
 

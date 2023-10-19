@@ -1,4 +1,5 @@
 # 14 July, 2021 Meeting Notes
+
 -----
 
 **Remote attendees:**
@@ -14,8 +15,8 @@
 | Philip Chimento      | PFC            | Igalia             |
 | Jamie Kyle           | JK             | Rome               |
 
-
 ## Ergonomic Brand Checks for Stage 4
+
 Presenter: Jordan Harband (JHD)
 
 - [proposal](https://github.com/tc39/proposal-private-fields-in-in/)
@@ -32,15 +33,15 @@ WH: I approve of this.
 JHD: Awesome. Thank you, everybody.
 
 ### Conclusion/Resolution
+
 Stage 4
 
-
 ## Accessible Object hasOwnProperty update
+
 Presenter: Jamie Kyle (JK)
 
 - [proposal](https://github.com/tc39/proposal-accessible-object-hasownproperty)
 - [slides](https://docs.google.com/presentation/d/1UbbNOjNB6XpMGo1GGwl0b8lVsNoCPPPLBByPYc7i5IY/edit#slide=id.p)
-
 
 JK: This is just a stage three update with the accessible Object.prototype.hasOwnProperty.call, Otherwise known as Object.hasOwn. A super-fast explainer: hasOwnProperty is not reliably accessible due to things like Object.create(null), so stuff like Object.prototype.hasOwnProperty.call is common, but also requires lots of understanding of what would the concepts all at once for new users. So with that in mind, there's a lot of libraries that popped up like, has and low has that make hasOwnProperty easier to use and they have billions of NPM downloads. Object.hasOwn with an object and a key mirrors hasOwnProperty.call with a key to make it accessible. and they are identical and besides one minor flip of the ordering of ToObject and ToPropertyKey steps fixing what was supported for legacy in hasOwnProperty.
 
@@ -51,10 +52,11 @@ SYG: V8 in Chrome has actually already shipped it. It's just riding the trains r
 BT: Any other questions or comments? `[silence]` All right, I guess we're all happy with the progress. Awesome.
 
 ### Conclusion/Resolution
+
 No changes sought or made
 
-
 ## Import assertions update
+
 Presenter: Dan Clark (DDC)
 
 - [proposal](https://github.com/tc39/proposal-import-assertions/)
@@ -62,9 +64,9 @@ Presenter: Dan Clark (DDC)
 
 DDC: proposal is allows information aside from a module specifier to be passed in a module Imports via this new assert syntax and the purpose of these asserts are not really to affect the host interpretation of the module, but just for the host to decide whether or not to fail the import via some additional checks. And that's like the flagship use case for this is with JSON modules, where hosts like the web might import resources externally but they don't have control over the contents of the resource and they don't want any surprises where they think they're importing JSON content JS where that's sort of a privilege escalation. And so we want them to be allowed to allow them to assert the type of a module so that it doesn't change surprisingly.
 
-DDC:  and one question that has come up with this is what to do with unsupported module types, like a module type that the host doesn't know what to do with, like, note the typo ("jsonn") in this example. Hosts have free reign to decide what to do with this. Whether it's a fail, it to ignore it or something else. HTML, the web is always going to fail the module graph if there's an unknown type of solution present, basically, for security reasons, around aforementioned like Escalation of privilege type issues. And so there was a question of whether we should standardize that behavior of failing on unrecognized module types, because that would drive further alignment among hosts. For example, it might be nice if a typo, like the one in this example, would always fail rather than, like, being ignored in some hosts and not others. And so one suggestion of how this might be done is like we could just have hosts provide a static list of the types that they support and ecmascript on the ecmascript side will enforce failure if there's some type assertion present that isn't in like this list of types provided by the host that is supports. And so, this seems to work pretty well for the web because like the web is going to have a static list of types that like we might add to it over the time over time via spec changes but like there's no loader hooks where types can be added dynamically. So it seems pretty straightforward to just ban unknown types. However, the problem with this that came up last time, this was discussed, and during an intermediate SES call, is that this type of (?) restrictions are problematic for hosts like Node.js, for example that have lie loader hooks where a Node author can come in and Define, new module types, and define transformations, between module types. So the list of types supported by the host can change at runtime, kind of arbitrarily in such an environment. It's hard to really say, what an unrecognized type even means because like host might support some default set of types, but at the point where user authored JavaScript can change that. It's hard to have such a restriction on what types are supported and what aren't is kind of hard to be it be a limitation on what those hopes were capable of. And there were concerns about that limitation. And so it's not clear to me. I don't really see a path forward with introducing a restriction like this without breaking these kind of scenarios for these hosts. My preference is kind of just leave the proposal as it stands which is the hosts are just up to able to do whatever they like with module types that they don't support. There are some alternatives we could consider, which is like maybe we could try something in prose, that could be a strong enough statement to be useful, but doesn't force problematic restrictions on hosts like node. I've seen other suggestions in the thread along the lines of like environment specific types, where an import would have an additional key that specifies the environment, and there's a set of types that goes along with environment, but I feel like environment specific types kind of gets us further from that goal of having having code that works in multiple environments, to the extent possible, which I think was one of the original goals of introducing such a restriction, like this. And maybe there are - maybe others have ideas for other ways to restrict behavior of unknown types without placing undue limitations on environments with dynamic types of module type systems. But I don't really have anything to suggest there, so leaves me wanting to eventually ask	 for consensus that we leave, the proposal just as is currently but I suspect that like there may be concerns with that.
+DDC: and one question that has come up with this is what to do with unsupported module types, like a module type that the host doesn't know what to do with, like, note the typo ("jsonn") in this example. Hosts have free reign to decide what to do with this. Whether it's a fail, it to ignore it or something else. HTML, the web is always going to fail the module graph if there's an unknown type of solution present, basically, for security reasons, around aforementioned like Escalation of privilege type issues. And so there was a question of whether we should standardize that behavior of failing on unrecognized module types, because that would drive further alignment among hosts. For example, it might be nice if a typo, like the one in this example, would always fail rather than, like, being ignored in some hosts and not others. And so one suggestion of how this might be done is like we could just have hosts provide a static list of the types that they support and ecmascript on the ecmascript side will enforce failure if there's some type assertion present that isn't in like this list of types provided by the host that is supports. And so, this seems to work pretty well for the web because like the web is going to have a static list of types that like we might add to it over the time over time via spec changes but like there's no loader hooks where types can be added dynamically. So it seems pretty straightforward to just ban unknown types. However, the problem with this that came up last time, this was discussed, and during an intermediate SES call, is that this type of (?) restrictions are problematic for hosts like Node.js, for example that have lie loader hooks where a Node author can come in and Define, new module types, and define transformations, between module types. So the list of types supported by the host can change at runtime, kind of arbitrarily in such an environment. It's hard to really say, what an unrecognized type even means because like host might support some default set of types, but at the point where user authored JavaScript can change that. It's hard to have such a restriction on what types are supported and what aren't is kind of hard to be it be a limitation on what those hopes were capable of. And there were concerns about that limitation. And so it's not clear to me. I don't really see a path forward with introducing a restriction like this without breaking these kind of scenarios for these hosts. My preference is kind of just leave the proposal as it stands which is the hosts are just up to able to do whatever they like with module types that they don't support. There are some alternatives we could consider, which is like maybe we could try something in prose, that could be a strong enough statement to be useful, but doesn't force problematic restrictions on hosts like node. I've seen other suggestions in the thread along the lines of like environment specific types, where an import would have an additional key that specifies the environment, and there's a set of types that goes along with environment, but I feel like environment specific types kind of gets us further from that goal of having having code that works in multiple environments, to the extent possible, which I think was one of the original goals of introducing such a restriction, like this. And maybe there are - maybe others have ideas for other ways to restrict behavior of unknown types without placing undue limitations on environments with dynamic types of module type systems. But I don't really have anything to suggest there, so leaves me wanting to eventually ask for consensus that we leave, the proposal just as is currently but I suspect that like there may be concerns with that.
 
-DDC: So I think I'd like to go to the queue at this point and get thoughts. Like are there other ideas for having  some kind of useful limitation here or is this something that we're okay with? Just going to dropping after learning about these concerns from other hosts.
+DDC: So I think I'd like to go to the queue at this point and get thoughts. Like are there other ideas for having some kind of useful limitation here or is this something that we're okay with? Just going to dropping after learning about these concerns from other hosts.
 
 GCL: So from, from the requirements that node has, as long as the spec doesn't say something like an implementation must declaratively know what types it supports, you know, something like where you're like putting it at the limitation on the specific way that the implementation determining whether or not it understands what a type is, you could have something that says the host should throw. I don't know exactly what the text for that would look like, but I don't think this is inherently like something that node - like I think it's reasonable to say that within any like VM context you could add new types but also unknown types could still throw. I think we could get to text that does that, but I'm also fine with leaving the proposal as if I just wanted to mention that.
 
@@ -125,10 +127,11 @@ JHD: So My personal intuition here, and obviously I could be wrong, is that if a
 BT: All right, the queue is empty.
 
 ### Conclusion/Resolution
+
 No changes sought or made, general agreement on the status quo
 
-
 ## Decorators update
+
 Presenter: Kristen Hewell Garrett (KHG)
 
 - [proposal](https://github.com/tc39/proposal-decorators)
@@ -168,7 +171,7 @@ DDC: Yeah, I think it needs to be (?). For every symbol that gets defined on the
 
 DDC: So moving on, next up are decorator modifiers. So like I said before, modifiers are the ability to prepend a keyword to the Decorator itself in order to give an additional capability. And this was really the way that we figured out how to solve a common use case, which is the ability to add initializers to class elements and classes themselves. Actually initializers be at in a keyword adds the ability to add initializers to the elements and those initializers run for any.
 
- I'm sorry to interrupted, I think Mark had a question about previous slide. And since you're taking questions in the middle, I might just do the queue now. I know Jordans on the queue as well.
+I'm sorry to interrupted, I think Mark had a question about previous slide. And since you're taking questions in the middle, I might just do the queue now. I know Jordans on the queue as well.
 
 DDC: That's fine. I'm okay with that answering questions.
 
@@ -206,7 +209,7 @@ IID: all right, so there's a common source of bugs in engines where we add the a
 
 DDC: I think there are places where user code would execute that it previously was not the case. So, for instance, In the bound decorator case, Let's say you were doing this to a class field the class field would be fully defined and then at defined on the instance and then the initializers would run immediately after that, which gives the user, the ability to do things for instance, like make the field change to readable, or rather, not writable or not configurable, stuff like that which they would not be able to do previously. So I think that would be a new place. Does that sound correct?
 
-IID:  That seems plausible. I'd have to look at a little more closely. Would it be possible for the proposal to sort of figure out what the list of places, where new things are happening, just so that it's possible for engines to - this isn't a pressing concern because it's not going to be particularly relevant until we implement. But yeah I think it's an important thing to think about.
+IID: That seems plausible. I'd have to look at a little more closely. Would it be possible for the proposal to sort of figure out what the list of places, where new things are happening, just so that it's possible for engines to - this isn't a pressing concern because it's not going to be particularly relevant until we implement. But yeah I think it's an important thing to think about.
 
 DDC: Absolutely. It is I guess, implicitly there in the spec we can also add an explicit list and I also think it is - actually, if we have static blocks, I don't know if - no because static blocks only run during the class. Okay. Yeah. The short answer is yes. Yes, we can.
 
@@ -273,12 +276,11 @@ DDC: Can everybody who's saying that they're happy to review comments on Github?
 KG: It will be in the notes.
 
 ### Conclusion/Resolution
+
 Stage 3 reviewers: Richard Gibson, Shu-yu Guo, Jordan Harband, Leo Balter
 
-
-
-
 ## Array find-from-last
+
 Presenter: Wenlu Wang (KWL)
 
 - [proposal](https://github.com/tc39/proposal-array-find-from-last)
@@ -330,18 +332,15 @@ MM: congratulations.
 
 BT: Yeah, this is awesome. Excellent.
 
-
 ### Conclusion/Resolution
+
 Proposal achieves stage 3
 
-
-
-
 ## Guidance for nested namespaces
+
 Presenter: Philip Chimento (PFC)
 
 - [slides](https://ptomato.github.io/talks/tc39-2021-07/index.html)
-
 
 PFC: This is a short last-minute agenda item that SYG suggested that I add. Coincidentally enough from the context of the previous discussion, this is a request for plenary to give guidance and set a precedent for the situation that we have in a proposal, so that future proposals will be consistent with it. Namespace objects, I think nobody disagrees that they should start with a capital letter. We have Math with a capital M since 1995 probably; and Temporal with a T. In the plenary about a year ago we decided that namespace objects should have a @@toStringTag property at least for top level namespace objects, which are the only namespace objects that we have so far that I'm aware of. The Temporal proposal is going to add a nested namespace object, `Temporal.now`, which until now has been spelled with a lowercase n probably because nobody actually thought about it, and it started out life as a function. So we got a request to change this to a capital N. And you know, this also raises the question, should it have a @@toStringTag property and if so, what should that be? Should it be `"now"` or should it be `"Temporal.now"`? It seems like this is something that we should provide explicit guidance about so that we don't make an ad hoc decision that's done differently by different proposals. It seems from the thread that was started, that people think in general that nested namespaces should be capitalized. My proposal here that I'm going to ask for a consensus on is, is that, plus having a @@toStringTag property equal to the fully qualified name. So, in the case of `Temporal.Now`, it would be Now with a capital N, and the @@toStringTag property, would have a value of `"Temporal.Now"`. So, after whatever discussion we have, I'd like to ask for consensus on a guidance and consensus on making this change in any current proposals. Temporal is the only one that I'm aware of that is affected by this, but there may be others. So discuss away.
 
@@ -412,19 +411,17 @@ MM: I'm glad you brought up the C++ example because that really helps understand
 SYG: The concrete definition that I put towards this, as a refinement of KG's, is that you have an object, that you create, that has a collection of properties, that is not a constructor, where the identity of this namespace object does not matter for the semantics of anything. [bot mangled] that it has this concept exists at the top level. The salient bit to me, the namespace objects that we have, it's not that they're top level, but the thing I just said, and that's why I feel they already are nestable, that it's not a stretch to nest them. We already have this concept that we treat these objects differently.
 
 ### Conclusion/Resolution
+
 No conclusion, will revisit later this meeting if there is time
 
-
-
-
 ## Restricting callables to only be able to return normal and throw completions
+
 Presenter: Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/tc39/ecma262/pull/2448)
 - [slides](https://docs.google.com/presentation/d/1BYX6iJqYJSNL0pR-De074hhQceXqNzGHTVyS9UesGZQ/edit?usp=sharing)
 
-
-SYG: when doing a review of the resizable buffers proposal, Mike Pennisi noticed that we don't really strictly restrict the completion types that can be returned from host hooks. So as a quick recap of the completion types that we have. The completion records have this type field that describes how control should continue. If the type is normally it's just a value. If the  type is throw. We start unwinding stack as with exceptions, if it's break, we're breaking out of the current Loop, with continue we're continuing to the next iteration of the loop, if it's return. We're doing return. We use completions to describe control. I think this is just true. They should only be able to return normal, or throw a complete It's like they should never be able to break you out of the loop. They should never return you from the call site. Basically, it's they should alter control. control they should be, they should act like functions. Does anyone have concerned with this? This is not normatively said right now, I propose that we add a normative restriction but also close tooks must return either normally, or with throw completion.
+SYG: when doing a review of the resizable buffers proposal, Mike Pennisi noticed that we don't really strictly restrict the completion types that can be returned from host hooks. So as a quick recap of the completion types that we have. The completion records have this type field that describes how control should continue. If the type is normally it's just a value. If the type is throw. We start unwinding stack as with exceptions, if it's break, we're breaking out of the current Loop, with continue we're continuing to the next iteration of the loop, if it's return. We're doing return. We use completions to describe control. I think this is just true. They should only be able to return normal, or throw a complete It's like they should never be able to break you out of the loop. They should never return you from the call site. Basically, it's they should alter control. control they should be, they should act like functions. Does anyone have concerned with this? This is not normatively said right now, I propose that we add a normative restriction but also close tooks must return either normally, or with throw completion.
 
 MM: I enthusiastically support this.
 
@@ -450,16 +447,15 @@ SYG: Right. So until somebody proposes call/cc or delimited stuff, we're good to
 
 WH: There are two things going on here. One is you want host callables to not be able to do return, break, or continue. That is a normative spec change. Once you've done that, you can then also write the invariant. But until you actually specify that host things cannot do this, you do not have an invariant.
 
-SYG: I guess it depends on if you think the invariant is - you can have an invariant that is true of everything within ecma 262 and maybe also 402, if that's what you mean by invariant. We can't have the environment but if what you mean by invariant is both Ecma 402 and all upstream specs, then you are correct. Then we  cannot have it as an invariant until the host also has this restriction.
+SYG: I guess it depends on if you think the invariant is - you can have an invariant that is true of everything within ecma 262 and maybe also 402, if that's what you mean by invariant. We can't have the environment but if what you mean by invariant is both Ecma 402 and all upstream specs, then you are correct. Then we cannot have it as an invariant until the host also has this restriction.
 
 BT: Queue is empty.
 
 SYG: Let the record show that there's consensus to adopt these two normative PRs.
 
 ### Conclusion/Resolution
+
 Consensus on both PRs
-
-
 
 ## Guidance for nested namespaces again
 
@@ -494,13 +490,12 @@ MM, WH: Yeah, I'm fine with that as well.
 BT: Are there any objections using the fully qualified name in the to string tag? `[silence]` Sounds like you can go forward with that.
 
 ### Conclusion/Resolution
+
 Consensus to use fully qualified name in `@@toStringTag`
 No outcome on capitalization, we may or may not revisit at this meeting, status quo holds unless revisited
 
-
-
-
 ## Renaming Strawperson to Concept or something better
+
 Presenter: Hemanth HM (HHM)
 
 - [slides](https://docs.google.com/presentation/d/11PBKeQOGVj3r3F9xBJIKpgftfyeW5lGHHAJrI7Misgc/edit?usp=sharing)
@@ -575,7 +570,7 @@ SYG: I want this to be narrowly about removing the name column from the process 
 
 AKI: Okay, so I'm seeing the strongest feelings about just getting rid of the column. There are some people who are unconvinced. There's some people who are indifferent. Those of you who are unconvinced, do you think that we should not get rid of that column and instead should spend some time bikeshedding what we call things, or - I would like to be done with this actually, I would like to know what people who are unconvinced, how strongly you feel. `[silence]` I think we have consensus to remove the column, that is what it sounds like to me. No one has spoken up to stop that. I will give everybody one brief opportunity to speak up and otherwise let's just get rid of it and move on and we can all use whatever phrasing we want when we're educating people because use the language that matches your audience.
 
-LEO: I am sorry. I just got late to this topic because it was putting my kid to sleep. I totally just saw the slides already mentioned part of my point of view. I'm getting late to this train, just I have like there are many problematics with Straw Men, straw person or anything that derives from these terms, like my biggest pet peeve is any wording that derives from that. And also like the original one comes in from like very problematic	. I just want to mention like for someone who does have English as a second language even like Straw Men was problematic so many perspectives, not only like by, there's one, there is a most of anyone but like, just a perspective, it doesn't mean anything else, like, for technical for a technical naming - In concept was actually like, dictionary based naming for that, but there's another discussion here that see on removing that column. Sorry. I just wanted to give this perspective as like, if I see a column, if there is anything that we call for stage zero, I'd rather have it with something that it's easier for me to translate. And it's also like legit to what it means. That's that's like the point of view why I support this. There are many other problematics that I also support this change as well but I'm just giving a perspective that that I don't believe everyone shares the same point view and I hope you understand that Thank you Leo for that perspective.
+LEO: I am sorry. I just got late to this topic because it was putting my kid to sleep. I totally just saw the slides already mentioned part of my point of view. I'm getting late to this train, just I have like there are many problematics with Straw Men, straw person or anything that derives from these terms, like my biggest pet peeve is any wording that derives from that. And also like the original one comes in from like very problematic . I just want to mention like for someone who does have English as a second language even like Straw Men was problematic so many perspectives, not only like by, there's one, there is a most of anyone but like, just a perspective, it doesn't mean anything else, like, for technical for a technical naming - In concept was actually like, dictionary based naming for that, but there's another discussion here that see on removing that column. Sorry. I just wanted to give this perspective as like, if I see a column, if there is anything that we call for stage zero, I'd rather have it with something that it's easier for me to translate. And it's also like legit to what it means. That's that's like the point of view why I support this. There are many other problematics that I also support this change as well but I'm just giving a perspective that that I don't believe everyone shares the same point view and I hope you understand that Thank you Leo for that perspective.
 
 SFC: Yeah, I think the mental model is useful, but now that I've thought through this a little more, I think the column called "Acceptance Signifies" is actually more useful than like the single word stage names. That already forms a very good mental model, because, as others have said, trying to use a single word for this is problematic; there are lots of issues with that. So I'll withdraw my negative vote, and move it to a weak positive (for removing the single-word names altogether).
 
@@ -584,12 +579,11 @@ AKI: I think we just go ahead and remove the column and if we decide we want to 
 HHM: Thank you, everybody.
 
 ### Conclusion/Resolution
+
 Remove "name" column from process document
 
-
-
-
 ## ArrayBuffer to/from Base64
+
 Presenter: Kevin Gibbons (KG)
 
 - [proposal](https://github.com/bakkot/proposal-arraybuffer-base64)
@@ -605,7 +599,7 @@ KG: Should we also support hex, the other common method of encoding arbitrary, b
 
 KG: If we are doing base64, of course there are different variants of base64. There is the URL safe alphabet rather than the default alphabet. I think that we should default to the regular alphabet and provide an options bag option to pick the base64url alphabet instead. And a bunch of others. Should we deal with shared array buffers? Probably. How should we handle padding? This proved to be unexpectedly controversial, so I will come back to it. Should we support just doing a part of the array buffer or a part of the base64 string? I think no. Should we support taking a base64 string and writing it to an existing array buffer? Again I think no. The last two are easy enough to do in user land. They might incur a copy but a copy is pretty fast so I'm not going to worry about it.
 
-KG:  Now padding is controversial. The RFC for base64 does not say that decoders are required to verify that the string that they are decoding is correctly padded, it gives them the option of doing so. Almost all base 64 decoders do not enforce that the string that they are given is correctly padded. Note here that I'm speaking of both kinds of padding, the equals signs on the end and the additional bits that might be in the last character. If you don't know what those are, don't worry about it. Just for those who are aware, I want to emphasize I'm talking about both kinds of padding. The fact that decoders don't typically verify means that you end up in the situation where base64 is not actually a canonical encoding. I think that this surprises many people, it surprised me when I learned about it. I have a nice collection of screenshots of it surprising other people. And because people are not aware of this, it is very easy to write code which is subtly incorrect, possibly in a way that causes a security vulnerability, that relies on the assumption that it is canonical. For example, you might be checking membership in a list of revoked keys by comparing the base64 encoding of some values and that simply does not work if your decoding is not canonical, meaning to say, if your decoding does not enforce that padding is correct and reject strings that are incorrectly padded. So it is my opinion that we should verify padding by default and have an option that allows you to not verify padding. However, there's disagreement about this point. I don't want to fight that out before stage 1, but do want to fight that out before stage 2. So I also would be interested in hearing opinions on that topic, if people think that the proposal as a whole is reasonable, so that I have something to be going with towards advancing this in the future. So let's go to the queue.
+KG: Now padding is controversial. The RFC for base64 does not say that decoders are required to verify that the string that they are decoding is correctly padded, it gives them the option of doing so. Almost all base 64 decoders do not enforce that the string that they are given is correctly padded. Note here that I'm speaking of both kinds of padding, the equals signs on the end and the additional bits that might be in the last character. If you don't know what those are, don't worry about it. Just for those who are aware, I want to emphasize I'm talking about both kinds of padding. The fact that decoders don't typically verify means that you end up in the situation where base64 is not actually a canonical encoding. I think that this surprises many people, it surprised me when I learned about it. I have a nice collection of screenshots of it surprising other people. And because people are not aware of this, it is very easy to write code which is subtly incorrect, possibly in a way that causes a security vulnerability, that relies on the assumption that it is canonical. For example, you might be checking membership in a list of revoked keys by comparing the base64 encoding of some values and that simply does not work if your decoding is not canonical, meaning to say, if your decoding does not enforce that padding is correct and reject strings that are incorrectly padded. So it is my opinion that we should verify padding by default and have an option that allows you to not verify padding. However, there's disagreement about this point. I don't want to fight that out before stage 1, but do want to fight that out before stage 2. So I also would be interested in hearing opinions on that topic, if people think that the proposal as a whole is reasonable, so that I have something to be going with towards advancing this in the future. So let's go to the queue.
 
 WH: What do you mean by canonical?
 
@@ -619,7 +613,7 @@ WH: Okay.
 
 GCL: Yeah, I love this proposal. I think it's great. Something I'd like to express: I noticed for one thing that utf-8 is not mentioned at all here and I assume it is not an accident. That's not mentioned here but I feel like this is something that should be in scope for a proposal like this.
 
-KG:  I pretty strongly disagree. This proposal is about the serialization and deserialization of arbitrary binary data. It has nothing at all to do with text and utf-8 is strictly a way of encoding text. It's not particularly related to binary data.
+KG: I pretty strongly disagree. This proposal is about the serialization and deserialization of arbitrary binary data. It has nothing at all to do with text and utf-8 is strictly a way of encoding text. It's not particularly related to binary data.
 
 GCL: I think maybe utf-8 was a poor way to say just like raw strings because I don't think we need to enforce the like well-formedness of Unicode data, but besides hex and base 64. I feel like that would be a very useful thing. That's a thing I run into all the time at least and I'm sure other people do.
 
@@ -717,7 +711,7 @@ JWK: Okay, I'm speaking for septs. They think they prefer the Node style. It use
 
 KG: my intention is for this proposal to cover base64 and hex, those two and no others. But not to rule out others in the future just for those to be the scope of this particular proposal.
 
-WH:  I just re-read the spec. The forgiving spec removes whitespace from the string before parsing. On GitHub KG wrote that the only differences between the forgiving and the strict versions are the padding and the overflow bits. So does this mean that the strict version will also ignore whitespace?
+WH: I just re-read the spec. The forgiving spec removes whitespace from the string before parsing. On GitHub KG wrote that the only differences between the forgiving and the strict versions are the padding and the overflow bits. So does this mean that the strict version will also ignore whitespace?
 
 KG: My comment on GitHub was mistaken. I had missed the white space difference,
 
@@ -750,16 +744,19 @@ AKI: if you think will need to be addressed it's also a great reminder for every
 KG: So with Peter's reservations noted, can we ask for stage 1?
 
 WH: I support stage 1.
+
 ### Conclusion/Resolution
-* consensus on Stage 1 with stated reservations from PHE
+
+- consensus on Stage 1 with stated reservations from PHE
 
 ## Module fragments
+
 Presenter: Daniel Ehrenberg (DE)
 
 - [proposal](https://github.com/tc39-transfer/proposal-module-fragments)
 - [slides](https://docs.google.com/presentation/d/1t5i4bpQ1-Dh7-PaRDgkaZUjxeI5P7YyPsX_1Gy1RMEY/edit#slide=id.p)
 
-DE: So I wanted to present on module fragments. We talked about this a few months ago and since the last we discussed it based on feedback especially from Gus and issue. Number five, I've made some changes to the proposal and I wanted to discuss those. So for a little review, module fragments are inline JavaScript modules, in another module, the idea is that they are named so that they can be targeted by either import statements, this makes them different from module fragments, which are anonymous and can only be used in Dynamic import and things that take module specifiers as a runtime value. Whereas module fragments exist  as kind of keys in the module map - Not just as keys in module map but things that can be sort of statically named.
+DE: So I wanted to present on module fragments. We talked about this a few months ago and since the last we discussed it based on feedback especially from Gus and issue. Number five, I've made some changes to the proposal and I wanted to discuss those. So for a little review, module fragments are inline JavaScript modules, in another module, the idea is that they are named so that they can be targeted by either import statements, this makes them different from module fragments, which are anonymous and can only be used in Dynamic import and things that take module specifiers as a runtime value. Whereas module fragments exist as kind of keys in the module map - Not just as keys in module map but things that can be sort of statically named.
 
 DE: So the motivation is that module fragments allow bundling multiple modules in a single file. At first, I thought that we could handle bundling just by general-purpose resource bundles that contain multiple different file types. I still think we should have general-purpose resource bundles, but my understanding is that resource bundles that operate at the network level are just going to be too slow for the huge number of Javascript modules that we have so we probably also want a complimentary JavaScript only bundling format and that's what module fragments can accomplish. So for this basic bundling example, if you declare these modules `countBlock` and uppercase block, then you could declare another module that imports from them and you can see that none of these have quotes around them. So this is kind of the difference. Another aspect of this proposal is that these module fragments are only exported if they have the `export` keyword, so you can import from this private local module fragment and that's possible in the same file and then if something else imports this, then it can also import that export here
 
@@ -835,7 +832,7 @@ GCL: yeah, that's a fair point.
 
 DRR: hey, so I think from the typescript perspective there's really two things that I just want to call out the first is what you've already mentioned, in your with the module and namespace sort of Collision there, right? We've really pushed the community to move off of the `module` keyword to proper namespaces just because that's general parlance what they represent. But we really have never pulled the rug out from underneath someone on this on syntax. That's something I think we'll have to speak a little bit more broadly as a team about, so I'll bring that back. The other thing there is something that I've raised in the inline modules proposal discussion, which is just whether or not the tooling can support the sort of scenarios that you have in mind. While bundling is a fine scenario, I don't know how well this can model something like a worker that is in another project context, for example. That has all to do with being able to nest multiple global environments within the same project. That's something that we're not exactly wired up to do. And we don't really have a good sense of how to capture that today. Well today. So that is technically an implementation concern but it's something that I need to be up front with you about now because it's still something that we're not really clear on how we would achieve that. So we don't want you to have a feature that has a crappy developer experience but it is something that will continue to investigate.
 
-DE: Yeah. Thanks for bringing up that second point. I mean, we've been discussing that point pretty -  kind of on and off, over the recent months, and  understanding is that there's already lots of developer excitement about solving this pre-existing problem of getting a better developer experience for those cases. Because juggling multiple projects, even if there are multiple files, is not really fun for anybody. So so, you know, seems like the same opportunity for improving things.
+DE: Yeah. Thanks for bringing up that second point. I mean, we've been discussing that point pretty - kind of on and off, over the recent months, and understanding is that there's already lots of developer excitement about solving this pre-existing problem of getting a better developer experience for those cases. Because juggling multiple projects, even if there are multiple files, is not really fun for anybody. So so, you know, seems like the same opportunity for improving things.
 
 DDR: Yeah, just being forthright with you.
 
@@ -886,18 +883,19 @@ DE: I'm definitely not asking for consensus for everything. Can we have an overf
 AKI: Yes. Thank you all.
 
 ### Conclusion/Resolution
-* More discussion later
 
+- More discussion later
 
 ## Array filtering / grouping for stage 2
+
 Presenter: ​​Justin Ridgewell (JRL)
 
 - [proposal](https://github.com/tc39/proposal-array-filtering)
 - [slides](https://docs.google.com/presentation/d/1fY_jsD8bVZ8P95Mr7cEr3WdCbhMLdEQ7OS5hhLCbfJ4/edit)
 
-JRL: So I'm talking about array filtering and also grouping and I'll get to why that is in a minute. To begin with, let's just talk about array filtering. I brought a proposal a year ago about trying to solve the issues I have with the way I think about filtering. To recap,  filter selects the items which we return true and it puts those items into the output array. And what I've come to understand is that a lot of people think about this as the way filtering works. This is their point of view on filtering. But I and a few others think about filter the opposite way. And to give you an example that was actually brought up before: think about a coffee filter. It's completely valid for you to look at a coffee filter and think the filter acts on the liquid, it allows the liquid to go through. But for people like me that think like I do, we see a coffee filter and think of it as acting on the grounds, it prevents the grounds from going through and this causes a lot of confusion whenever we're trying to use the filter method in JavaScript because it's the opposite. My proposal is to add a filtering out method, a method that operates the same way as I intuit that filter works, it would reject the items which return true the same way my coffee filter rejects the grounds when it's acting on them. The goal isn't primarily to make a negation easier as everything is currently possible with the filter method, you can just add a not in your predicate or you can negate it with a higher order function or something. So everything is already technically expressible. Instead I see the primary goal of this as helping with people who have the same mental model that I do. We can place our intuition onto the filtering out method and that helps us better understand both filtering out and filtering. To give you concrete terms, I'm proposing a filterReject method. This has changed from the previous time I talked about this because there was criticism about calling it filterOut. I think filterReject correctly describes what the method does so that everyone who's reading it can understand without confusion about what is being operated on and what the output will be. filterReject rejects items that return true. Giving it a name like filterReject, helps me put my intuition of filtering on to it. I can now think about rejection as my coffee filter does. And this also allows me to better understand the regular filter, because it'll be the opposite pairing. Having both helps people like me understand both methods better. And as long filterReject is named appropriately for people who think it the other way, the selection way, I don't think it's going to cause any confusion for people who think that way. So it should just help the people who are like me. To give you the code example, filter operates as the selection. filterReject operates as the rejection, and you get the arrays that you want.
+JRL: So I'm talking about array filtering and also grouping and I'll get to why that is in a minute. To begin with, let's just talk about array filtering. I brought a proposal a year ago about trying to solve the issues I have with the way I think about filtering. To recap, filter selects the items which we return true and it puts those items into the output array. And what I've come to understand is that a lot of people think about this as the way filtering works. This is their point of view on filtering. But I and a few others think about filter the opposite way. And to give you an example that was actually brought up before: think about a coffee filter. It's completely valid for you to look at a coffee filter and think the filter acts on the liquid, it allows the liquid to go through. But for people like me that think like I do, we see a coffee filter and think of it as acting on the grounds, it prevents the grounds from going through and this causes a lot of confusion whenever we're trying to use the filter method in JavaScript because it's the opposite. My proposal is to add a filtering out method, a method that operates the same way as I intuit that filter works, it would reject the items which return true the same way my coffee filter rejects the grounds when it's acting on them. The goal isn't primarily to make a negation easier as everything is currently possible with the filter method, you can just add a not in your predicate or you can negate it with a higher order function or something. So everything is already technically expressible. Instead I see the primary goal of this as helping with people who have the same mental model that I do. We can place our intuition onto the filtering out method and that helps us better understand both filtering out and filtering. To give you concrete terms, I'm proposing a filterReject method. This has changed from the previous time I talked about this because there was criticism about calling it filterOut. I think filterReject correctly describes what the method does so that everyone who's reading it can understand without confusion about what is being operated on and what the output will be. filterReject rejects items that return true. Giving it a name like filterReject, helps me put my intuition of filtering on to it. I can now think about rejection as my coffee filter does. And this also allows me to better understand the regular filter, because it'll be the opposite pairing. Having both helps people like me understand both methods better. And as long filterReject is named appropriately for people who think it the other way, the selection way, I don't think it's going to cause any confusion for people who think that way. So it should just help the people who are like me. To give you the code example, filter operates as the selection. filterReject operates as the rejection, and you get the arrays that you want.
 
-JRL: The second part of this proposal is about array grouping. In the first time I presented array filtering, it was requested that I don't focus specifically on just the filterReject method but instead expand it into different forms of filtering and grouping/partitioning. One possibility here is a partition method, so if you call partition, it returns an array filled with two sub arrays, the first being the things that the predicate returns true for and the second being the things the predicate returns false for. This gives you a way of getting both the selections and the rejections. It's filtering except you get both things back. But there are a couple of issues with a partition that I can see. For instance, is the return value trues then falses or falses then trues? My initial guess is just assuming false is loosely equal to 0, so I kind of assumed falses should be the first subarray but that's not the way functional languages like Haskell work. All the functional languages that have partition always produce trues subarray first. I think it's a little confusing but it's not a huge issue. However, there's a better option that exists in lodash and underscore, there's a method called groupBy.  groupBy is just a more generic form of partition, instead of having your keys be 0 & 1 for trues and falses, you return the key that you want to group into. So by calling groupBy, and then using the same true/false predicate, I can get back a key called false and a key called true and each will have an array populated with the items that returned that key. And it can be expanded out into really complex examples. This is actually something I had the code in Babel a couple of months ago because node 8 doesn't doesn't support stable sorting. So to go through the code quickly, just as an overview, I'm grouping each of the keys on an integer priority. I'm sorting the integer keys and then, concatting based on the output of that. And essentially, I have this giant chunk of before code.If we had a groupBy method I could have just written the latter code. Just bucket with groupBy on the priority and concatenate the priority buckets together to get the output. So this is to give you an example of where I have actually written this exact thing out, and I think it could be generically useful for everyone else.
+JRL: The second part of this proposal is about array grouping. In the first time I presented array filtering, it was requested that I don't focus specifically on just the filterReject method but instead expand it into different forms of filtering and grouping/partitioning. One possibility here is a partition method, so if you call partition, it returns an array filled with two sub arrays, the first being the things that the predicate returns true for and the second being the things the predicate returns false for. This gives you a way of getting both the selections and the rejections. It's filtering except you get both things back. But there are a couple of issues with a partition that I can see. For instance, is the return value trues then falses or falses then trues? My initial guess is just assuming false is loosely equal to 0, so I kind of assumed falses should be the first subarray but that's not the way functional languages like Haskell work. All the functional languages that have partition always produce trues subarray first. I think it's a little confusing but it's not a huge issue. However, there's a better option that exists in lodash and underscore, there's a method called groupBy. groupBy is just a more generic form of partition, instead of having your keys be 0 & 1 for trues and falses, you return the key that you want to group into. So by calling groupBy, and then using the same true/false predicate, I can get back a key called false and a key called true and each will have an array populated with the items that returned that key. And it can be expanded out into really complex examples. This is actually something I had the code in Babel a couple of months ago because node 8 doesn't doesn't support stable sorting. So to go through the code quickly, just as an overview, I'm grouping each of the keys on an integer priority. I'm sorting the integer keys and then, concatting based on the output of that. And essentially, I have this giant chunk of before code.If we had a groupBy method I could have just written the latter code. Just bucket with groupBy on the priority and concatenate the priority buckets together to get the output. So this is to give you an example of where I have actually written this exact thing out, and I think it could be generically useful for everyone else.
 
 JRL: There are a few open questions that we have about grouping. The first is what should be the return value. groupBy in the ecosystem, meaning primarily lodash or underscore that I'm familiar with, return just regular objects. But if we're returning an object, that means it could have weird prototype inheritance bugs. So if my callback function returned a toString key name, you could have a conflict. Especially if you didn't return a toString key in this particular input array, the toString would be the inherited one. We could avoid all the inheritance issues by creating a prototype-less object. And the third option that I can think of, is that instead of returning an object, we would return a Map. The keys would obviously whatever you returned. This would actually allow you to return things like complex objects for your keys and have a group on those. All of these are possible. I would prefer to follow the ecosystem here and just use a normal object. But I am willing to discuss all of them.
 
@@ -917,7 +915,7 @@ JHD: Okay.
 
 WH: I’m weakly unconvinced about `filterReject`. I just don't see much of a use case for it, and if we do have it, we should call it `reject`.
 
-WH: I'm much more interested in `groupBy`. It seems like a useful thing for grouping things. My concern is about making things which work 99 percent of the time and have weird edge cases like the inheritance problems you mentioned. People will want to use this for database-like things where you get a bunch of results and group them by some part of a key. When that happens, I don't want to have to look up what happens if somebody uses “__proto__” for that key. Or if somebody puts both the value `true` and the string `"true"` in there. So my preference would be to have Maps because that's the most well-behaved kind of output.
+WH: I'm much more interested in `groupBy`. It seems like a useful thing for grouping things. My concern is about making things which work 99 percent of the time and have weird edge cases like the inheritance problems you mentioned. People will want to use this for database-like things where you get a bunch of results and group them by some part of a key. When that happens, I don't want to have to look up what happens if somebody uses `__proto__` for that key. Or if somebody puts both the value `true` and the string `"true"` in there. So my preference would be to have Maps because that's the most well-behaved kind of output.
 
 JRL: I could agree to that. I don't feel strongly enough about any of the three options to force anything here. I think all three options are valuable and the only reason prefer the regular object is just because of the ecosystem precedent.
 
@@ -967,7 +965,7 @@ JRL: Thank you. I actually had that same opinion brought up when I was calling i
 
 ???: ??
 
-JRL: I don't think it's appropriate to ask for stage 2 on groupBy. So I'll ask for that separately. I am looking for stage two on  filterReject.
+JRL: I don't think it's appropriate to ask for stage 2 on groupBy. So I'll ask for that separately. I am looking for stage two on filterReject.
 
 MF: I would not support stage 2 on filterReject until we've done further research on whether groupBy solved the originally stated problem here because I feel that if we have grouped by and it is a solution to your originally stated problem that we do not need filterReject.
 
@@ -989,7 +987,7 @@ MF: Great. I don't want to be difficult here, but like Aki was saying earlier, s
 
 MM: Okay, groupBy solves a much bigger range of problems. So I would certainly. So maybe there's some writing that needs to happen before we can do this. But I would be willing to say that the problems that groupBy solves are well enough understood that I'm willing to say let's go to stage 1 on that set of problems with groupBy being the example approach for addressing those problems.
 
-MF:  I'm fine with that. Please Justin in your description in your repository, address the problem and not just the solution.
+MF: I'm fine with that. Please Justin in your description in your repository, address the problem and not just the solution.
 
 WH: I take a different procedural position and I would say that, in my opinion, the `groupBy` proposal is almost at stage 2. We already have spec text for it, with the only modulo being that I would want the prototype gone from the produced objects and possibly a Map version.
 
@@ -1001,7 +999,7 @@ JRL: I agree.
 
 AKI: Do we have a conclusion to record here?
 
-JRL:  I'm hoping the conclusion is groupBy reaches stage one.
+JRL: I'm hoping the conclusion is groupBy reaches stage one.
 
 JHD: Can we come up with a name for the problem that groupBy solves and perhaps grouping with its own repo. Okay. And then that addresses Michael's point and then filter rejected be discussed separately.
 
@@ -1020,8 +1018,6 @@ MM: So what am I agreeing to? If I were to agree to stage two, I'm sorry I keep 
 MF: I would not like `filterReject` to advance to stage 2 until `groupBy` has had further progress, so it should not advance to stage 2 today. I don't think we need to go into process discussion right now.
 
 ### Conclusion/Resolution
-* array grouping gets stage 1
-* filterReject does **not** get Stage 2
 
-
-
+- array grouping gets stage 1
+- filterReject does **not** get Stage 2

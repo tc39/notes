@@ -1,7 +1,8 @@
 # 28 October, 2021 Meeting Notes
+
 -----
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Sergey Rubanov       | SRV            | Invited Expert     |
@@ -19,27 +20,28 @@
 | Jordan Harband       | JHD            | Coinbase           |
 
 ## Records & Tuples update
+
 Presenter: Nicolò Ribaudo (NRO)
 
 - [proposal](https://github.com/tc39/proposal-record-tuple/)
 - [slides](https://drive.google.com/file/d/1cExHCNFxl8x5tvF63Vt9THnQICBJqlan/view)
 
-NRO: Okay, So this Stage-2 status update is because we want to hear the Committee's opinion about some problems. Just a quick refresher about records and tuples: they are compound primitives, similar to objects and arrays, and they can only contain other primitives. So they're deeply immutable and also they are compared by value recursively. Records and Tuples have different behavior than the other objects because `Object.is` and `===` can be different. And this is when they deeply contain negatives zero: they use SameValueZero semantics, so also for NaN. 
+NRO: Okay, So this Stage-2 status update is because we want to hear the Committee's opinion about some problems. Just a quick refresher about records and tuples: they are compound primitives, similar to objects and arrays, and they can only contain other primitives. So they're deeply immutable and also they are compared by value recursively. Records and Tuples have different behavior than the other objects because `Object.is` and `===` can be different. And this is when they deeply contain negatives zero: they use SameValueZero semantics, so also for NaN.
 
 NRO: The problem we have is that they do not integrate well with the rest of the language, because JavaScript is full of objects. So we need a way to be able to somehow associate objects to records and tuples. We introduced something that from now on I'm going to call ObjectPlaceholder, just for the sake of this presentation. ObjectPlaceholders are something that represents an object; they are an opaque value that represents the object. They are immutable, and can be put in records and tuples. They're primitives and two object placeholders are equal if they represent the same object. And as I was saying, this is just a placeholder for the final name. We do not have a good name yet for this: the current proposal uses ‘box’, but this has two problems. One is that it clashes with existing boxed primitives concept, when you wrap up a primitive in an object, and we initially didn't consider this. But we found that this is a very big problem every time we talk about boxes. Second, it gives the impression that it should be a generic container. Or maybe it should be a generic container, so that it can also contain primitives and it can be generically used outside of Records and tuples structures? We've heard a few people asking for this, for example to replace a Maybe monad or to mark a value as trusted. And [if you have any idea for a good name, we have an issue where we are discussing this](https://github.com/tc39/proposal-record-tuple/issues/259). And we would love to hear your opinion.
 
-NRO: So with this object placeholder, there are a few security considerations that we discovered while talking with the SES group. One is that ObjectPlaceholders should not provide direct access to objects across shadowrealm boundaries,because ShadowRealms are meant to isolate object graphs and you can only pass primitives across the boundary. ObjectPlaceholders would be primitive, but they need to not be able to expose the objects that they contain when they come from a different Realm. And in order to not break existing iframe-based membranes, used for some security purposes, they should also not give access to objects across iframes (realms created using platform-specific functions). And also, in order to be able to use them in compartments (which is a different isolation level which lives inside the same realm), the function to get the contents of an object should not live on the prototype. 
-A possible solution that we came up with is to throw when unboxed if they reference an object created in a different realm. So that for example, in this case it throws because we are trying to get the content of the placeholder created in the different Realm. And this would also be the same when using iframe-based realms. However, this has a problem, a drawback and the drawback: this would be the only API, or at least the only API that we found, that doesn't work cross realm. We also tried looking for API outside of ECMAScript, for example, in the HTML spec, but we couldn't really find them. And well, it's not controversial that they should not work across Shadow realms because they would break the purpose for shadow Realms. However, this can be an unwanted limitation when using iframes. So, when using iframes users could work around this limitation by installing inside the iframe the ObjectPlaceholder from the parent realm, so that they all share the same ObjectPlaceholder constructor. And from both from the inside and from the outside points of view, they're always like placeholders created and dereferenced in the parent realm, and so they always work. 
+NRO: So with this object placeholder, there are a few security considerations that we discovered while talking with the SES group. One is that ObjectPlaceholders should not provide direct access to objects across shadowrealm boundaries,because ShadowRealms are meant to isolate object graphs and you can only pass primitives across the boundary. ObjectPlaceholders would be primitive, but they need to not be able to expose the objects that they contain when they come from a different Realm. And in order to not break existing iframe-based membranes, used for some security purposes, they should also not give access to objects across iframes (realms created using platform-specific functions). And also, in order to be able to use them in compartments (which is a different isolation level which lives inside the same realm), the function to get the contents of an object should not live on the prototype.
+A possible solution that we came up with is to throw when unboxed if they reference an object created in a different realm. So that for example, in this case it throws because we are trying to get the content of the placeholder created in the different Realm. And this would also be the same when using iframe-based realms. However, this has a problem, a drawback and the drawback: this would be the only API, or at least the only API that we found, that doesn't work cross realm. We also tried looking for API outside of ECMAScript, for example, in the HTML spec, but we couldn't really find them. And well, it's not controversial that they should not work across Shadow realms because they would break the purpose for shadow Realms. However, this can be an unwanted limitation when using iframes. So, when using iframes users could work around this limitation by installing inside the iframe the ObjectPlaceholder from the parent realm, so that they all share the same ObjectPlaceholder constructor. And from both from the inside and from the outside points of view, they're always like placeholders created and dereferenced in the parent realm, and so they always work.
 
-NRO: Also other than this manual workaround there, there are two possible alternatives. Alternatives one is to allow objects, placeholders to be dereferenced across Realms but throw, when passing an object placeholder across a shadow realm boundary, and this makes it harder to create membranes around ShadowRealm boundaries because you have to first clone on one side. It has to traverse records twice, replacing object placeholders with something and storing those associations; then pass everything to the other side of the membrane. And then reconstruct the whole thing on the new side. However, this introduces a security vulnerability in existing iframe-based membranes because currently they assume that primitives are safe to be passed and they do not give access to objects. A second alternative is to make the error host-defined behavior, and I know that we try to minimize the things that are supposed host defined, But we could do something like this, so HTML can use a new content security policy to allow or disallow dereferencing across the iframes, so that we can keep existing iframe-based membrane secure. 
+NRO: Also other than this manual workaround there, there are two possible alternatives. Alternatives one is to allow objects, placeholders to be dereferenced across Realms but throw, when passing an object placeholder across a shadow realm boundary, and this makes it harder to create membranes around ShadowRealm boundaries because you have to first clone on one side. It has to traverse records twice, replacing object placeholders with something and storing those associations; then pass everything to the other side of the membrane. And then reconstruct the whole thing on the new side. However, this introduces a security vulnerability in existing iframe-based membranes because currently they assume that primitives are safe to be passed and they do not give access to objects. A second alternative is to make the error host-defined behavior, and I know that we try to minimize the things that are supposed host defined, But we could do something like this, so HTML can use a new content security policy to allow or disallow dereferencing across the iframes, so that we can keep existing iframe-based membrane secure.
 
 NRO: Even if host defined behavior might not be considered a good thing, we must remember that iframes can already be created only using custom host functions. So it wouldn't affect the possibility.
 
-NRO: And so, this is the design space we are exploring right now, and we would love to hear your opinions about this ObjectPlaceholder and how to make it interact with realms. 
+NRO: And so, this is the design space we are exploring right now, and we would love to hear your opinions about this ObjectPlaceholder and how to make it interact with realms.
 
 WH: This seems really complicated for a basic feature of the language. I just struggle to figure how somebody would teach newcomers to the language abouts records and tuples, in particular the object storage restrictions on them. So, I'm unsure whether we should be doing this at all. I'd rather keep records and tuples simple and if we get to this kind of complexity I’m not sure it's worth it.
 
-NRO: So I don't think that newcomers would realistically see this complexity around iframes mostly because like, I don't think newcomers interact with different realms. 
+NRO: So I don't think that newcomers would realistically see this complexity around iframes mostly because like, I don't think newcomers interact with different realms.
 
 WH: Newcomers will want to use records and tuples because they’re a nice new feature for value types. They will also want to store objects in them. So far this doesn't seem like the right answer for storing objects inside records and tuples.
 
@@ -51,13 +53,13 @@ RRD: So, can I ask another clarifying question? So I mean no, it's more of a sta
 
 WH: You could just stick objects inside records and tuples.
 
-NRO:  sorry, could you repeat your last sentence
+NRO: sorry, could you repeat your last sentence
 
 WH: Without realms you could just stick the objects inside records and tuples.
 
-NRO: Well, no. Our goal with this proposal is to give the stability that you do not accidentally access mutable parts of your tree and that the equality semantics can be easily understood. So like before introducing this object placeholder concept, the proposal just did not support containing objects. 
+NRO: Well, no. Our goal with this proposal is to give the stability that you do not accidentally access mutable parts of your tree and that the equality semantics can be easily understood. So like before introducing this object placeholder concept, the proposal just did not support containing objects.
 
-WH:  I'm really unhappy with the complexity of supporting objects inside records and tuples. It may be better not to do it.
+WH: I'm really unhappy with the complexity of supporting objects inside records and tuples. It may be better not to do it.
 
 RRD: So we had multiple discussions on this multiple dates. We, this is something that has been requested by the community around us, and also that we have been discussing in length in SES meetings. I think, at this point, we do not want to get into the debate of whether we want object placeholders to exist or not. We can Work towards having them as a possibility and the main question that we're trying to field right now is interaction with realms and membranes and mostly the conference. So if there is an objection against object placeholder, I'm wondering exactly what it is except for the complexity one because this has been discussed.
 
@@ -69,19 +71,19 @@ RPR: Okay. Thank you. KG?
 
 KG: Yeah, sorry. Can you just remind me what the purpose of object placeholders is? I might have known at some point but no longer.
 
-NRO: So, what is the purpose of putting objects in at all or just, why do we have to wrap up objects?  
+NRO: So, what is the purpose of putting objects in at all or just, why do we have to wrap up objects?
 
 KG: The question is, given that you want the ability to put objects in records. What additional benefit is there from wrapping them?
 
 NRO: Okay, so we would like to prevent people from accidentally going into a mutable part of their records and tuples structure so that we can give stronger immutability guarantees by default. And this also makes equality easier to explain because you can just say that the equality is recursive and I mean in general, it feels Like, it makes it safer to work with those immutable structures because you can trust their immutability more.
 
-KG:  It does not seem to me like it lets you trust their immutability more, and the other benefits that you listed seem not commensurate with the level of complexity they are otherwise entailing.
+KG: It does not seem to me like it lets you trust their immutability more, and the other benefits that you listed seem not commensurate with the level of complexity they are otherwise entailing.
 
 RRD: Okay, so I guess we can. Okay. I can try to summarize this again. So essentially we went through multiple possibilities here that are not discussed in this slide. So that's why I don't want to take too much time discussing this because this is not the main question at hand that we have the main to do. The three main possibilities that we explored so far is either a record into goes, could contain. and as NRO just explained, this is kind of a risk for people using the data structure to accidentally mutate something. ObjectPlaceholders make it explicit whenever we want to look up an object. We think that's a good feature and by discussing and with the community interested or on the record and tuples, there is now kind of an agreement on that. But otherwise we would be to have Symbols as Weakmap keys because we could, instead of having object placeholders, we could use symbols and look them up in a WeakMap, and the other alternative is object placeholders, which makes it possible for us to still keep records and tuples compound Primitives that have that do not have identity, but that they can still contain the object through the ObjectPlaceholder, and therefore, giving them in a way, an identity, but this is only controlled through explicitly having an object placeholder in there. So that's why we had this design. We've been told by the community essentially that if that doesn't exist, someone would come up with something similar using symbols or numbers incrementing, or some things like this, it would get into userland most likely. So we're just trying to address this at the feature level instead of having multiple competing implementations of this system.
 
 JRL: So what I might use cases for, ignoring the changes. Now, if we had a box that allowed us to wrap user data, essentially we could have a graph like imagine a div and inside that div. You have a placeholder that points to some userdata to a parameter to a function or something. So, you have a component that returns a div and inside that div, You have a more data allowing you to box the Parameter allows you to mark explicit exit out of the div that you wrote in source code into a mutable or immutable area that was represented as the user's data to a parameter. It could be like a string, it could be more records, or it could be anything else. The ability to Mark the exit point out of real source code and into Data allows you to attach security guarantees on to what you actually render into a DOM tree. Allowing you to skip things like us, the XSS rendering directly into inner HTML and opening up an xss vulnerability where you accidentally treated user data as something you actually want to render into the inner HTML. That was my original use case that I wanted for it. It's very different now that it's just an object placeholder instead of a box. but I think it's still a useful basic primitive. The representing the data.
 
-RRD: So, I wanted to add on that. It really should be useful. This is effectively not quite the object placeholder is for the and the moment it was designed for that. But that being said I agree that would be useful. There's something that we could be considering to experiment with in userland and probably another proposal later. but again, this is not object placeholders, which is, non mutable in itself. Once you put an object in it, You cannot change your reference to that object. So before, if you think about this user data use case, you wouldn't be able to swap out what's inside. That's just what I wanted to clarify here. 
+RRD: So, I wanted to add on that. It really should be useful. This is effectively not quite the object placeholder is for the and the moment it was designed for that. But that being said I agree that would be useful. There's something that we could be considering to experiment with in userland and probably another proposal later. but again, this is not object placeholders, which is, non mutable in itself. Once you put an object in it, You cannot change your reference to that object. So before, if you think about this user data use case, you wouldn't be able to swap out what's inside. That's just what I wanted to clarify here.
 
 MAH: Yeah, just to follow up quickly on being able to put any value Inside the Box. We recently showed in discussions that it's still possible to do that with an ObjectWrapper in a userland library that holds the value inside it because it can only contain an object so that kind of use case is still supported by this restriction.
 
@@ -89,7 +91,7 @@ JHX: Yeah, my question is, it seems, if One Direction is the box or maybe we now
 
 NRO: Undefined would be handled as the other Primitives are handled. There is a thinking of allowing something like ObjectPlaceholder created with undefined would return undefined, rather than objectPlaceholder. So that you can select as a leader to use it with external changes.
 
-JHX: Oh, yeah, I think I could follow. This is probably in the group policy. 
+JHX: Oh, yeah, I think I could follow. This is probably in the group policy.
 
 YSV: I wanted to talk about the alternatives if we do choose to go this way, so I believe it was alternative 1. Alternative one is the one that introduces a potential security issue with older iframes. We are not too comfortable with that. But alternative 2 and alternative 3 are fine for us. So I just wanted to mention that otherwise, a lot of our concerns that we raised previously for this proposal have been addressed.
 
@@ -107,13 +109,13 @@ ACE: There is another thing with symbols as weakmap keys would allow user name t
 
 MAH: Really quick. I would actually say that object placeholder solves the leaking problems of symbols as WeakMap keys. You can create a unique object and put it in a box, and then use that as a WeakMap key. And which is basically an all intents and purposes like this equivalent to a user created symbols without the leaking problem of well-known or registered symbols as for. I just wanted to ask, like, an issue you mentioned is that this is complicated. I'd like to understand why you think object placeholders are complicated or any more complicated than something as simple as that with my keys.
 
-SYG: Symbols as weakmap keys are less complicated. in this sense that it leverages existing concepts. This is more complicated in the sense that it seeks to introduce a Whole New Concept. That you now have to understand to really understand records and tuples. I think, was the point several other delegates have brought up before. 
+SYG: Symbols as weakmap keys are less complicated. in this sense that it leverages existing concepts. This is more complicated in the sense that it seeks to introduce a Whole New Concept. That you now have to understand to really understand records and tuples. I think, was the point several other delegates have brought up before.
 
 RRD: you will have that issue as soon as you do equality operations on records and tuples, do so, I guess I think that if that's the complexity that they’re talking about, it's already baked into the proposal. I have trouble understanding this whole complexity point, to be honest.
 
-NRO: Yeah, it is a complexity issue. A question of being able to know that you can actually put immutable or linking mutable data from immutable structure link, immutables data from immutable structure. 
+NRO: Yeah, it is a complexity issue. A question of being able to know that you can actually put immutable or linking mutable data from immutable structure link, immutables data from immutable structure.
 
-SYG: I won't speak for other delegates. That's part of the complication for me that the userland thing would sidestep. You can argue that in userland, the user of the records and tuples, if they want to have exit points, have to deal with that fundamental complexity. And for that, I agree, but is it the case that every record and tuple user needs mutable exit points? 
+SYG: I won't speak for other delegates. That's part of the complication for me that the userland thing would sidestep. You can argue that in userland, the user of the records and tuples, if they want to have exit points, have to deal with that fundamental complexity. And for that, I agree, but is it the case that every record and tuple user needs mutable exit points?
 
 RPR: We are at the end of the time box. We do have extra time on the schedule. So you could propose an extension and we can see if the Committee wants.
 
@@ -137,7 +139,7 @@ NRO: alternative 3 I think is what we were currently proposing, which is to like
 
 YSV: I can quickly jump in and say that when we looked at this alternative one, sorry alternative two because it's just throws it has relatively simple behavior that can be expanded upon later into alternative 3. If necessary.
 
-WH: What is alternative 3? I don't see it in the slide show. 
+WH: What is alternative 3? I don't see it in the slide show.
 
 NRO: Yeah, I think let's call these alternatives to these alternative 1, and the one above drawing, referencing from the realms is alternative 0, just to make sure that we understand what you're talking about. Because I did not have an alternative 3, but at this point we have this solution and two alternatives.
 
@@ -152,10 +154,13 @@ WH: What I would like to see is an example of how you would teach users a simple
 NRO: We will check that the current explainer that we have is up to date. So we can, we can then share it.
 
 NRO: OK, Yes, we weren't asking for concessions on anything. So that's okay.
+
 ### Conclusion/Resolution
-* 
+
+-
 
 ## RegExp `\R` Escape for Stage 1
+
 Presenter: Ron Buckton (RBN)
 
 - [proposal](https://github.com/rbuckton/proposal-RegExp-r-escape)
@@ -175,13 +180,13 @@ RBN: I don't believe that's true. That's the purpose of the mode has expanded si
 
 WH: I believe we rejected that option the last time we discussed it.
 
-RBN:  If that's the case, then that's fine. My primary goal is to align with whatever is supported within `v` mode, and the feedback that I received early on after the last meeting was that the plan was to use mode to support CRLF as a single character. If that's changed I'll align with whatever the direction is.
+RBN: If that's the case, then that's fine. My primary goal is to align with whatever is supported within `v` mode, and the feedback that I received early on after the last meeting was that the plan was to use mode to support CRLF as a single character. If that's changed I'll align with whatever the direction is.
 
 WH: I have not heard anything about trying to represent a carriage return line feed sequence as though it were a single unicode character. That would be really weird.
 
-RBN:  So I can find there's an issue, this repo something that came up elsewhere. can probably then post the link to the Matrix for the issue from the larger RegExp features proposal from last meeting that I plan to move over to the new repo for this that specifically calls out the interest in, having it not match between crlf and match Behavior. I'm perfectly fine with not matching, as long as the goal is consistency with whatever the flags are. So again, I'll back a slide here. The goal is that we are essentially treating things consistently when in Unicode or in `u` or `v` mode so that we’re aligning with whatever the anchor characters perform.
+RBN: So I can find there's an issue, this repo something that came up elsewhere. can probably then post the link to the Matrix for the issue from the larger RegExp features proposal from last meeting that I plan to move over to the new repo for this that specifically calls out the interest in, having it not match between crlf and match Behavior. I'm perfectly fine with not matching, as long as the goal is consistency with whatever the flags are. So again, I'll back a slide here. The goal is that we are essentially treating things consistently when in Unicode or in `u` or `v` mode so that we’re aligning with whatever the anchor characters perform.
 
-RGN:  Yeah, just to clarify, the Unicode sets proposal was hoping to get a CRLF handling / Unicode in multi-line mode, but that is currently out of the proposal.
+RGN: Yeah, just to clarify, the Unicode sets proposal was hoping to get a CRLF handling / Unicode in multi-line mode, but that is currently out of the proposal.
 
 MLS: Before I get to my issue, I agree with WH. That it seems weird to have you and BMO treat a `^` line feed [?] as a predicate [?]. I just want to clarify. My question is outside of `u` or `v` mode, `\R` is syntax here. Is that correct?
 
@@ -202,9 +207,13 @@ MLS: I'm fine with but agree with WH.
 WH: The proposed `v` mode semantics are really bizarre, matching or not matching a line feed depending on what's in the string prior to where you started matching. We don't have anything else like that.
 
 RPR: I'm only hearing support. So, if there are no objections, then congratulations. You have Stage 1. Thank you very much.
+
 ### Conclusion/Resolution
-* Stage 1
+
+- Stage 1
+
 ## RegExp Buffer Boundaries (\A, \z, \Z) for Stage 1
+
 Presenter: Ron Buckton (RBN)
 
 - [proposal](https://github.com/rbuckton/proposal-RegExp-buffer-boundaries)
@@ -218,27 +227,27 @@ RBN: Some other existing, some other examples here, show mixing both using buffe
 
 RBN: And the final example shows the trailing buffer boundary would match an optional newline then `/r` sequence. So it matches any Unicode line terminator following the end of the input. And this again was added after the agenda cut off, but I am seeking Stage 1. So there's currently no one that I see on the queue. I'll give it a moment for anyone if they have questions or would like to add any commentary. And then I can ask for Stage 1.
 
-JRL:  Yeah, the `\z` that allows any newlines, but still matches if it's the end of the string - is that actually regular? The way I imagined this is implemented in my head is that a forward look ahead for an arbitrary number of newline characters afterwards, which can't be implemented as regular, which makes me think it's not a good fit for adding to a regular Expressions.
+JRL: Yeah, the `\z` that allows any newlines, but still matches if it's the end of the string - is that actually regular? The way I imagined this is implemented in my head is that a forward look ahead for an arbitrary number of newline characters afterwards, which can't be implemented as regular, which makes me think it's not a good fit for adding to a regular Expressions.
 
 RBN: It's not an arbitrary number. It is a single newline at the end of the input. So it checks the current position. And if the current position is a newline, it looks at the following position and checks to see if that's the end of the buffer.
 
 JRL: Can it just be implemented as a union then? Like a dollar and then a newline and then a `\Z`.
 
-RBN: This isn't looking for a newline or the end of the buffer. This is looking for the end of the buffer. That may have an optional newline. So it's not a union. If it was a union it would be a union of `\z` or `\R\z`. Yes, because it's always looking for the end of the buffer. buffer. 
+RBN: This isn't looking for a newline or the end of the buffer. This is looking for the end of the buffer. That may have an optional newline. So it's not a union. If it was a union it would be a union of `\z` or `\R\z`. Yes, because it's always looking for the end of the buffer. buffer.
 
 JRL: Yeah, that's what I mean. So, I'm just curious why we need the special case that has a slightly different meaning. It allows a newline if we could implement it. If we just had a `\Z`.
 
 RBN: The primary case for this is specifically for the `\Z` is consistency. Many of the other languages that support these buffer boundaries have this capability for matching the trailing line terminator, And it's sometimes the case or fairly often the case, depending on codebase really and your lint rules as to whether or not line terminator is required at the end of file. file. So it can often be the case where you're looking for something, that's the end of the end of the buffer. In a regular session pattern, but you're having to also check to see if the trailing newline. I know that a lot of engines that, for tooling, use sourcemaps, looking for sourcemap comments at the end of the buffer. There's a number of different use cases that would leverage the ability to check for this and having a convenient syntax would be valuable as opposed to having to remember that. I need to write out something like the zero width assertion that I provide is the equivalence here. Because again, part of the goal for the `\R` originally was there mentioned was to provide a convenience mechanism for something that is easy to get wrong, especially when working with unicode.
 
-JRL: Okay, then I have a second point, but WH actually is going to talk about it so we can just go to WH. 
+JRL: Okay, then I have a second point, but WH actually is going to talk about it so we can just go to WH.
 
 WH: It's a little jarring that in order to get the simplest semantics you need to use `\A` and `\z`. I assume that's because `\a` is taken already?
 
-RBN: I believe that's possibly part of the case. It's also the end of the buffer with trailing lime. Terminator, is a fairly common case when parsing files from the file system. you'll tend to see a as of, at least in some of the examples, in references that I've seen that use this, where they'll use `\A `and `\Z` in many cases when parsing files.
+RBN: I believe that's possibly part of the case. It's also the end of the buffer with trailing lime. Terminator, is a fairly common case when parsing files from the file system. you'll tend to see a as of, at least in some of the examples, in references that I've seen that use this, where they'll use `\A`and `\Z` in many cases when parsing files.
 
-WH: I think that having the same characters as Perl and the other regular expression engine trumps any consideration about inconsistency of upper and lowercase `\A` and `\z`. 
+WH: I think that having the same characters as Perl and the other regular expression engine trumps any consideration about inconsistency of upper and lowercase `\A` and `\z`.
 
-RBN: Yes. There's the only difference that I found is – and I would have to look at the feature site that I put together that does a comparison of RegExp features – that I think there's one engine where the `\Z` matches any number of trailing line terminators before is e [?], which is not the common case and is the specifically that the general case it was being pointed out as being not truly a regular grammar, but predominant use case is Is looking for a single line terminator. 
+RBN: Yes. There's the only difference that I found is – and I would have to look at the feature site that I put together that does a comparison of RegExp features – that I think there's one engine where the `\Z` matches any number of trailing line terminators before is e [?], which is not the common case and is the specifically that the general case it was being pointed out as being not truly a regular grammar, but predominant use case is Is looking for a single line terminator.
 
 WH: Yeah, I'm happy with it as long as it matches exactly what Perl is doing.
 
@@ -250,16 +259,20 @@ RPR: Okay, so this was after the agenda of but that just gives people the right 
 
 WH: I support this.
 
-JRL: +1; have wanted this multiple :snare-drum: times. 
+JRL: +1; have wanted this multiple :snare-drum: times.
 
-RPR: Okay, I'm only hearing support, no objections. 
+RPR: Okay, I'm only hearing support, no objections.
 
 RBN: Thank you very much.
 
 RPR: You have Stage 1.
+
 ### Conclusion/Resolution
-* Stage 1
+
+- Stage 1
+
 ## RegExp atomic operations
+
 Presenter: Ron Buckton (RBN)
 
 - [proposal](https://github.com/rbuckton/proposal-RegExp-atomic-operators)
@@ -269,11 +282,11 @@ RBN: This one I imagine will be more controversial. The final proposal I'm prese
 
 WH: It is possible to write regular expressions with exponential runtime. This is not one of them. This is linear.
 
-RBN: I've tested this with possessive quantifiers and the growth might be linear, but with a possessive quantifier, at least the actual performance cost is or the actual runtime cost is almost imperceptible. 
+RBN: I've tested this with possessive quantifiers and the growth might be linear, but with a possessive quantifier, at least the actual performance cost is or the actual runtime cost is almost imperceptible.
 
 WH: This is a linear match both in forward tracking and backtracking.
 
-RBN: Yes. What you're now, you're set in the same position, but you're retrying it for every possible failure case. So you're trying this a hundred thousand times in the case, where, you know that we know as part of writing the regular expression. That's why we're looking for the end of the buffer. So if we see anything, that's the end, the buffer we should stop trying. We shouldn't try this a hundred thousand times because we never see anything that is in a sequence. Characters that turn into [?] line feeds will never see the end of the buffer. If we see something that is not a carriage return line feed. So the degenerate case is anything that is a significant length of newlines, which is what results in the denial of service. 
+RBN: Yes. What you're now, you're set in the same position, but you're retrying it for every possible failure case. So you're trying this a hundred thousand times in the case, where, you know that we know as part of writing the regular expression. That's why we're looking for the end of the buffer. So if we see anything, that's the end, the buffer we should stop trying. We shouldn't try this a hundred thousand times because we never see anything that is in a sequence. Characters that turn into [?] line feeds will never see the end of the buffer. If we see something that is not a carriage return line feed. So the degenerate case is anything that is a significant length of newlines, which is what results in the denial of service.
 
 WH: It's still linear in either case.
 
@@ -287,7 +300,7 @@ MM: Good. Thank you.
 
 RGN: I appreciate the simple example, but I wonder in this case if it is too simple. In particular, does current spec text require a long run time to process it or is this a question of implementation choice?
 
-RBN: I can't speak to the implementations within, say, V8 or SpiderMonkey and what they're using them for underlying support for the regular-expression engine. The specification doesn't say that this has to be long, but there is an issue with the way the specification text is written is that it's expecting backtracking to be essentially, in these cases, to be a repeated operation. There's no type of heuristic that's used to determine that. The match couldn't possibly be successful to avoid these types of degenerate cases And even if there could, there’s still corner cases where you could formulate a regular expression that would be able to break any of these systems, because the fact that grammar is the regular-expression grammar allows so much flexibility when it comes to optionals so, I'm not sure that optionals, alternatives, repeating – there's any solid answer to whether or not this is a suboptimal implementation. One of the goals with providing possessive quantifiers, is that it gives the developer or the provider of the regular expression control over matching behavior when they know that certain things shouldn't be possible and then can control backtracking behavior because of it. I think there's a clarifying question, but I think it's more of an answer from JRL that it's a suboptimal implementation, but not possible to support all features without using a suboptimal implementation. 
+RBN: I can't speak to the implementations within, say, V8 or SpiderMonkey and what they're using them for underlying support for the regular-expression engine. The specification doesn't say that this has to be long, but there is an issue with the way the specification text is written is that it's expecting backtracking to be essentially, in these cases, to be a repeated operation. There's no type of heuristic that's used to determine that. The match couldn't possibly be successful to avoid these types of degenerate cases And even if there could, there’s still corner cases where you could formulate a regular expression that would be able to break any of these systems, because the fact that grammar is the regular-expression grammar allows so much flexibility when it comes to optionals so, I'm not sure that optionals, alternatives, repeating – there's any solid answer to whether or not this is a suboptimal implementation. One of the goals with providing possessive quantifiers, is that it gives the developer or the provider of the regular expression control over matching behavior when they know that certain things shouldn't be possible and then can control backtracking behavior because of it. I think there's a clarifying question, but I think it's more of an answer from JRL that it's a suboptimal implementation, but not possible to support all features without using a suboptimal implementation.
 
 JRL: Yeah, it's specifically certain features of regular expressions as we know them are not actually regular and it's not possible to implement those features without using a backtracking implementation. Lookbehind, lookahead, backreferences. And so everything essentially uses a backtracking implementation in JavaScript. It's possible if you were to analyze the regular expression beforehand and guarantee that none of those features were used, because it's syntax, you could switch to a linear implementation, but no one does it currently and that's disappointing.
 
@@ -317,7 +330,7 @@ RBN: So it does cut a significant part of what happened. So that is one of the a
 
 RPR: Seven minutes remaining.
 
-RBN: I'd like to go through the rest of the slides and we can come back to this discussion if that's fine. So, again, the matching is similar to how greedy quantifiers match in that it will first attempt to match everything in a repeated list. If it fails to match, however, it does not perform any type of backtracking and the goal for this is again improved back performance when backtracking isn't necessary. This is something that does not conflict with existing syntax. So it does not require a special mode to use. This would currently be illegal syntax in a regular expression and is again used by a number of existing implementations. And here are some of the examples that I wanted to point out of greedy versus lazy. So a greedy quantifier will try each of these operations. First, probably take the most characters first before failing to find something and backtracking and then take the next set of characters and try. In the case of the lazy quantifier, it will try the least number of characters before it tries to match and then and then grow. Sorry, for the possessive quantifiers. We would see that first. tries all 4 "a"s and then fails and stops the match at that point. 
+RBN: I'd like to go through the rest of the slides and we can come back to this discussion if that's fine. So, again, the matching is similar to how greedy quantifiers match in that it will first attempt to match everything in a repeated list. If it fails to match, however, it does not perform any type of backtracking and the goal for this is again improved back performance when backtracking isn't necessary. This is something that does not conflict with existing syntax. So it does not require a special mode to use. This would currently be illegal syntax in a regular expression and is again used by a number of existing implementations. And here are some of the examples that I wanted to point out of greedy versus lazy. So a greedy quantifier will try each of these operations. First, probably take the most characters first before failing to find something and backtracking and then take the next set of characters and try. In the case of the lazy quantifier, it will try the least number of characters before it tries to match and then and then grow. Sorry, for the possessive quantifiers. We would see that first. tries all 4 "a"s and then fails and stops the match at that point.
 
 RBN: So the point I was making before about that CVE in the example is the existing code was incorrect. If you change that to add a new `+` and work to utilize this feature the exact same pattern with a hundred thousand newlines followed by a non [?] not the end of the buffer, takes less than one millisecond on this. Same older generation processor.
 
@@ -335,7 +348,7 @@ KG: Yes, so I appreciate the motivation for this proposal, but in line with my c
 
 RBN: My counterpoint to that. Is that for this example specifically, without having a possessive quantifier, there is no solution within a regular expression that could avoid this performance cost.
 
-KG: I have the same comment as I had on conditional groups, which is that that doesn't seem so bad. 
+KG: I have the same comment as I had on conditional groups, which is that that doesn't seem so bad.
 
 RBN: As someone who has used a significant number of regular expressions in software, engineering within the JavaScript platform, and knowing the number of people within the community that use regular expressions, the number of times that this has become a problem…It's one of the most common things you see in npm and GitHub audit reports for JavaScript projects, are these RegExps denials of service? It does feel like it's a valuable pattern to implement. It is a niche case, it's not going to be something that is used all the time. It is something that if you are familiar with it, you can be aware of when doing matching. But again, if it's something that isn't in the language, then there are no no Alternatives and still be able to use a regular expression. The only alternative is flattening out the regular expression into user code which is sometimes much more complex to match the same behavior as with a regular expression. So not having this is There's no current solution within regular expressions and having it is a boon to those who do use regular expressions and use them heavily. It might be the case. Yes, that it's something that you add on when you realize that there is a performance issue with a regular expression, and that's not much different than if someone adds a question to the end of the regular expression because what they're getting is what they expected. And so they want to try a lazy quantifier but not having it just because it seems complicated when there is no alternative doesn't feel to me like a good reason not to have it, especially since the syntax here is relatively terse.
 
@@ -345,11 +358,11 @@ RBN: This feels not so complex to me.
 
 RPR: So I think we don't really have time. We don't want to go in the queue. I don't know if those things in the queue are blocking. Could anyone say if they have a blocking item in the queue?
 
-WH: Mine is. I'm not opposed to this feature, but your description of the behavior of this feature and of how it behaves in this example contradict each other. So I do not understand what it is we are proposing. I would be more comfortable if we could take some time to get a better explanation of what exactly is being proposed here, in particular about which backtracking does and does not happen. 
+WH: Mine is. I'm not opposed to this feature, but your description of the behavior of this feature and of how it behaves in this example contradict each other. So I do not understand what it is we are proposing. I would be more comfortable if we could take some time to get a better explanation of what exactly is being proposed here, in particular about which backtracking does and does not happen.
 
-RPR: Okay, so we will leave the time box now, I think Ron and WH I'd ask to to work this out off-line. Is that okay? Aadd more information to the explainer to try to present at a future meeting. 
+RPR: Okay, so we will leave the time box now, I think Ron and WH I'd ask to to work this out off-line. Is that okay? Aadd more information to the explainer to try to present at a future meeting.
 
-MLS: Okay, we have something else before the break. 
+MLS: Okay, we have something else before the break.
 
 RPR: We do. Yes, I really want the full time. And then MLS I do note you have an item on the Queue. Could the notetakers please capture Michael's comments from the queue.
 
@@ -358,9 +371,13 @@ RPR: We do. Yes, I really want the full time. And then MLS I do note you have an
 JHX: Same feeling [as KG], but if you consider at large scale (10+ years), I hope people can finally get it.
 
 MLS: This introduces a 3rd middle counting type. Seems like the semantics may be difficult to reason about.
+
 ### Conclusion/Resolution
-* Not Stage 1​​ (does not advance)
+
+- Not Stage 1​​ (does not advance)
+
 ## Evaluator Attributes
+
 Presenter: Guy Bedford (GB)
 
 - [proposal](https://github.com/lucacasonato/proposal-evaluator-attributes)
@@ -368,7 +385,7 @@ Presenter: Guy Bedford (GB)
 
 GB: So this one was actually, it was brought up by Luca Casonatto, who is here as an observer today from Deno. And the proposal is for evaluator attributes, primarily justified for these WebAssembly importing scenarios.
 
-GB: So to try and give some background with an incredibly readable wall of text: when importing WebAssembly through the ES module integration that we currently only have as a specification for WebAssembly imports. There are various conventions that current WebAssembly loading patterns need to translate into the WASM integration patterns. So for example, how to interpret the meanings of the specifiers that are imported in the WebAssembly binaries, like module imports? What the export interfaces are. So, the namespaces, and the actual runtime conventions around that to get a functional application, which are all things that are being developed and are also in flux and changing. And this is in contrast to JS where there's a very clear execution model that we specified, that is a single kind of graphic solution model that we have full kind of convention and community consensus around. 
+GB: So to try and give some background with an incredibly readable wall of text: when importing WebAssembly through the ES module integration that we currently only have as a specification for WebAssembly imports. There are various conventions that current WebAssembly loading patterns need to translate into the WASM integration patterns. So for example, how to interpret the meanings of the specifiers that are imported in the WebAssembly binaries, like module imports? What the export interfaces are. So, the namespaces, and the actual runtime conventions around that to get a functional application, which are all things that are being developed and are also in flux and changing. And this is in contrast to JS where there's a very clear execution model that we specified, that is a single kind of graphic solution model that we have full kind of convention and community consensus around.
 
 GB: To give some examples. Many WebAssembly modules have things like an end import that is kind of like just an object that they hook all the standard library functions on in WASI. It's called WASI preview 1. So if you import a WASI module, it's going to have an import of this bare specifier that in the WebAssembly module be seen as a very specified [?] and if you wanted to then get correct WASI execution. You would need to individually map that for every single WASI module in your application, and you would want to. Then the fact is that they share memories or shared between these modules. if you want a different instance, you would want to map it to a different version of the standard library for each one. So you could get a different memory being shared with each one. So there's these difficult… [unable to transcribe]. I don't know how far it is along the specification process, but given the ability for what is happening right now in all this JS, glue code to be brought down into WebAssembly in a way that's going to be compatible with not necessarily requiring a GC integration. And one of the things that this module linking specifies. Is basically like you would in the current mechanism instantiate WebAssembly as a module instance and posting the imported object programmatically basically gives it the way to do that. Using a WebAssembly module imports the actual WebAssembly itself. So use this pattern inside of WebAssembly to get you [?] on the module, it needs to be able to import the module, as an uninstantiated module. So you have two types of imports. You've got a kind of a module import type and instance, import type.
 
@@ -402,7 +419,7 @@ MM: But what do you buy? What context was that? Can you please clarify?
 
 GB: Any relative URLs are relative to the URL that the block was defined in.
 
-MM:  I think the linkage context, the same static module record can be linked multiple times in different contexts. So, to start module record, really should be no more specific than the source code that was compiled into it as a separately compilable in a way that supports separate compilation. so, I think that I think they should be independent, because of the URL context and that way that I'm not sure about. I agree with you about the cycles, though. That's certainly a difference that we need to wrestle with. Yet, there's there's a lot of cross-cutting concerns. 
+MM: I think the linkage context, the same static module record can be linked multiple times in different contexts. So, to start module record, really should be no more specific than the source code that was compiled into it as a separately compilable in a way that supports separate compilation. so, I think that I think they should be independent, because of the URL context and that way that I'm not sure about. I agree with you about the cycles, though. That's certainly a difference that we need to wrestle with. Yet, there's there's a lot of cross-cutting concerns.
 
 GB: So, I think having those discussions is key to making sure these things work together. Well, I'll definitely do some more reading compartments. Yep.
 
@@ -410,13 +427,13 @@ MAH: Yeah, just quickly. I believe that the relative URL part and how resolution
 
 YSV: I wanted to raise an issue that I put on the repository, which is when I read through this, I noticed that there are a couple of overlaps with the goals of different module evaluation, specifically splitting, the loading of modules into two parts. In deferred module evaluation we do the fetch, compilation and linking eagerly, whereas this only does compilation eagerly if I understood correctly. However, they are similar in that they both evaluate at a later step. So, I've been working on the side on this proposal a little bit and one thing that come across is that in fact to really Bridge the compatibility gap between userland libraries that implement modules and es6 modules, is there are implemented in browsers, would be exposing the module loader system itself and allowing people to write loaders. This is tricky and GB pointed this out on the issue and I am very interested in seeing if we can find a common abstraction that would work for both cases. That could be this static record representation that then users could decide how to represent. For example the way that we do it in spidermonkey is we replace the placeholder name space and what we could do if with a custom loader is take a module record that's kept by the static loader, a module loaded by the custom loader and replace the placeholder. So if there's common abstractions that we can share because we do have a known pain point in JavaScript modules right now. I would be really interested in seeing how this proposal can evolve.
 
-YSV: Additionally, GB you made a great suggestion that maybe we could use evaluator attributes for deferred modules. Think that's also a direction that that proposal can go and if we don't want to give so much freedom. 
+YSV: Additionally, GB you made a great suggestion that maybe we could use evaluator attributes for deferred modules. Think that's also a direction that that proposal can go and if we don't want to give so much freedom.
 
 GB: Yeah, there's certainly not a shortage of things to consider and that is what makes this stuff difficult with these wide design spaces, but, certainly, there are a lot of crossovers and in having these discussions. Yeah, seeing these concepts of things like having a deferred module attribute kind of come out of the discussions that we've been having has been really interesting to see what could be there. Because of the fact that in this model, it's these different representations of a module. You're getting a kind of a higher-order representation of a module, and there could be, you know, different types of higher-order representations of a module that you could then link into our graph. One concern with the loader hook, smog [?] model, as I mentioned in that issue is you get down to that kind of fine-grained linkage that we see with Node.js [?] VM Source, text module record, which exposed and right now there are some users who are using that quite extensively and it's difficult for users to get the usage exactly right. It requires a lot of understanding of module linking and concepts to be able to use those source text APIs and get cycles right. And things like that. So there is a balance to be found between the perfect abstraction and the most usable abstractions as well.
 
 DRR: Yeah, I think that, you know, I'm probably not the only one here that feels this way. I think I have a hard time understanding the use case fully. I see some syntax. I have some ideas of what I should do. I mean I can kind of piece things together based on some of the slides. It sounds like there's some sort of representation of a module that can be instantiated with Maybe some parameterization, right? I don't know if I interpreted that correctly, but it is. It is hard for me to understand, you know. The direction here. And, you know, I'm willing to give a little slack and say, well for Stage 1, like maybe others have a better understanding here, but, you know, it is one of those things where it's like, adding syntax to modules and that already feels like a very high cognitive overload place for people.
 
-GB: Thanks for bringing that up. I completely agree. It should be crystal clear. I can try and go through this example. Again, if it would help. and So currently in the ES module integration when you import from WebAssembly you are executing the graph like any other module. You're executing the dependencies first, then you're executing the WebAssembly module. And then you're getting back the exports and in doing that, you're also resolving the imports of the WebAssembly module using the same host resolver, including very expressive higher resolution, relative resolution, and one of the issues with the WebAssembly integration for that. is that these conventions in WebAssembly binaries often simply don't match up with the conventions that we have in the JS world. And instead what you see in WebAssembly usage is the direct programmatic calling of these WebAssembly modules, where they base it your, which is basically just the the WebAssembly to instantiate code where you can pass it, the WebAssembly module and then the the second object is the map of the imported specifier names to the modules that they that implement. These effectively, the module name spaces for its imports. So you're parsing the imports to the WebAssembly module when you're instantiating it and executing it in the same step here and having fine-grained control over, setting the imports. Whoever assembles the module in a way that doesn't require to perfectly align with the host module system conventions. Where in JS, we assume it's all URLs, and relative URLs end up being useful for WASI, for example. Because WASI often represents the process model of having something? That is like a traditional binary. And when you run that WASI start, it's going to sort of run the binary from start to end and go, by saying you, it's the time that starts. as if the binary is done on its work already, whereas if you're importing a moment show, you don't necessarily want that execution during initialization. And so it's basically just defining the default export when importing as WASM module to be that compiled WebAssembly.module. so that you can do this this more kind of fine-grained instantiation using the existing WebAssembly APIs and paving the path that current WebAssembly execution already takes, which is the standard instantiate custom programmatically instantiate calls and that encapsulates the extra wrapping that the web is coming in. 
+GB: Thanks for bringing that up. I completely agree. It should be crystal clear. I can try and go through this example. Again, if it would help. and So currently in the ES module integration when you import from WebAssembly you are executing the graph like any other module. You're executing the dependencies first, then you're executing the WebAssembly module. And then you're getting back the exports and in doing that, you're also resolving the imports of the WebAssembly module using the same host resolver, including very expressive higher resolution, relative resolution, and one of the issues with the WebAssembly integration for that. is that these conventions in WebAssembly binaries often simply don't match up with the conventions that we have in the JS world. And instead what you see in WebAssembly usage is the direct programmatic calling of these WebAssembly modules, where they base it your, which is basically just the the WebAssembly to instantiate code where you can pass it, the WebAssembly module and then the the second object is the map of the imported specifier names to the modules that they that implement. These effectively, the module name spaces for its imports. So you're parsing the imports to the WebAssembly module when you're instantiating it and executing it in the same step here and having fine-grained control over, setting the imports. Whoever assembles the module in a way that doesn't require to perfectly align with the host module system conventions. Where in JS, we assume it's all URLs, and relative URLs end up being useful for WASI, for example. Because WASI often represents the process model of having something? That is like a traditional binary. And when you run that WASI start, it's going to sort of run the binary from start to end and go, by saying you, it's the time that starts. as if the binary is done on its work already, whereas if you're importing a moment show, you don't necessarily want that execution during initialization. And so it's basically just defining the default export when importing as WASM module to be that compiled WebAssembly.module. so that you can do this this more kind of fine-grained instantiation using the existing WebAssembly APIs and paving the path that current WebAssembly execution already takes, which is the standard instantiate custom programmatically instantiate calls and that encapsulates the extra wrapping that the web is coming in.
 
 DRR: Okay. That gives me some context. Okay. Thank you very much.
 
@@ -424,7 +441,7 @@ SYG: The last time this came around, you know, the reason we have assertions at 
 
 GB: Yeah, and possibly BFS, I believe I did discuss it briefly. I'm not sure. I'm sorry. I don't want to assume but yeah, so the fact that it's not altering the underlying execution, semantics the resource that is being targeted. It's not altering the way that the execution model runs. It's just either reflecting that execution model at a higher level or altering. the way that it's represented through the namespace, exports, possibly. but before, what would be worth checking,
 
-SYG: Yeah, it's satisfactory to me, but I really didn't have too much of a concern anyway, but I just realized maybe those folks aren't actually in the room due to timezones. So I would support this for Stage 1, but, in the interest of not putting extra work on you, if there's just categorical objection, I would like that resolved. Certainly before Stage 2, but hopefully before the end of the meeting if those folks show up. 
+SYG: Yeah, it's satisfactory to me, but I really didn't have too much of a concern anyway, but I just realized maybe those folks aren't actually in the room due to timezones. So I would support this for Stage 1, but, in the interest of not putting extra work on you, if there's just categorical objection, I would like that resolved. Certainly before Stage 2, but hopefully before the end of the meeting if those folks show up.
 
 MM: SYG, if I understand your question, I'm one of those people that did object and would object to something that changes the interpretation. That's why I don't like this framing of the API, but I think that the actual goal of the API is that the interpretation isn't changing. What's different is that you're taking the interpreted artifact and catching it in an earlier stage. You're catching it at the stage before, it gets linked and initialized. As opposed to saying the same text could be seen as a source code in one language or another language. That would be a change of interpretation, which would be a security nightmare. That's not what's going on here. And I hope the proposal changes. So it doesn't doesn't seem like that's what's going on here.
 
@@ -432,15 +449,15 @@ SYG: I see. Thank you, MM. I was mentally framing it as…This comes back to my 
 
 MM: Yes.
 
-SYG: I'm okay with either if they solve the use case at hand. But yes, thanks for your feedback. I'm glad that this kind of solves it for you. 
+SYG: I'm okay with either if they solve the use case at hand. But yes, thanks for your feedback. I'm glad that this kind of solves it for you.
 
 RPR: Yeah, three minutes left and only JRL on the queue.
 
-JRL: So, I'm concerned about how you teach this to users who are trying to use WASM. I remember from conversations, when we were discussing assert, that a user would be able to specify import, whatever from [unable to transcribe] assert type equals WASM and that would give them a WASM binary. And I don't understand how we can teach people that they would get it. Great. Why is [unable to transcribe] things by specifying this an evaluator or what? And even evaluator could be here for anything besides WASM, so I'm not sure why need both evaluator and assertion and maybe it's just the way that it's presented in this API currently. Maybe this is exactly what Mark is talking about. I just don't understand what's going on. 
+JRL: So, I'm concerned about how you teach this to users who are trying to use WASM. I remember from conversations, when we were discussing assert, that a user would be able to specify import, whatever from [unable to transcribe] assert type equals WASM and that would give them a WASM binary. And I don't understand how we can teach people that they would get it. Great. Why is [unable to transcribe] things by specifying this an evaluator or what? And even evaluator could be here for anything besides WASM, so I'm not sure why need both evaluator and assertion and maybe it's just the way that it's presented in this API currently. Maybe this is exactly what Mark is talking about. I just don't understand what's going on.
 
 GB: Yeah, it is. Unfortunately, verbose in that would be import X from specifier asserts type wise. We could potentially call it, you know, as well as a module if we could unify on a generic, you know, kind of module definition of what it means to have as module it could be "as module", if we could more strictly define that. But for now, we're calling it a module. So yeah, you would say import action, specify a certain type of WASM as WASM module to be able to get this kind of compiled. But linked on instantiated module form that would basically just be the, you know, the spell to cast to load some WebAssembly and it would effectively become a standard pattern for that. Because it has these benefits over fetch and compile streaming with CSP. And the import assertions potentially have some, I mean, we still need to decide if – there's some interesting CSP questions that are kind of unrelated so I don't want to get into that now.
 
-JRL: Okay, I can bring it on GitHub. Instead. We could have a better discussion for sure. 
+JRL: Okay, I can bring it on GitHub. Instead. We could have a better discussion for sure.
 
 GB: Thank you. Please do.
 
@@ -467,16 +484,18 @@ YSV: I also support Stage 1.
 RPR: All right, we've had no objections. So congratulations. You have Stage 1. Thanks so much. All right. Thank you, everyone.
 
 ### Conclusion/Resolution
-* Stage 1
+
+- Stage 1
 
 ## Agenda deadline rule clarifications
+
 Presenter: Rob Palmer (RPR)
 
 RPR: So about a week or so ago. There was a question on adding topics to the agenda for these meetings. So meta-process thing. And as part of that, the question came up, I think, from Ron, about the meaning of what it means to submit something to the agenda, as in, have you made the cutoff in time or not? And originally the language I think was not entirely clear what it means to get something onto the agenda. The key question is, is it okay to Just get the PR open, to raise the PR in time, or does it actually need to be merged by the deadline? and at the moment JHD clarified that both, we both talked about on the TC39 delegates Matrix Channel, and it was clarified to say that an [un-merged PR still counts for the purposes of being added](https://github.com/tc39/agendas/commit/d2ef80976759f763eaf621b851479753e29b081c#diff-0b87e2fc7748588525a23909f36542c8244da7bf86fe1e93ee9715e549f7944b). You can see the wording there, The wording explicitly says, "Note: an unmerged PR counts as added for the purposes of this requirement". So we're raising it here for awareness. And so people have the opportunity to discuss or to object. If you think instead that we should say, "no people must have merged by the deadline". I think as part of the explanation for this. Normally PRs on the repo, to get submitted to the agenda, gets merged fairly quickly. I would say, normally, within 24 hours and as we approach the deadline there is even more attention on it. So things generally get merged within a few hours. So I think that under all practical purposes, any PR that was open but not merged at the deadline, would ordinarily get merged within that. The next 12 hours. And so if anyone has any questions – I see that there's SYG on the queue.
 
 SYG: Yeah, this can’t all delegates already push to master? Why not just do that? Like who's the PR workflow for?
 
-RPR: I think it's mostly just to protect the integrity of the document. So people don't make accidental mistakes and people obviously are putting things on it in an order. So it is  appropriate for someone to check that things go order
+RPR: I think it's mostly just to protect the integrity of the document. So people don't make accidental mistakes and people obviously are putting things on it in an order. So it is appropriate for someone to check that things go order
 
 JHD: So, I can speak to that please. The reason that we've retained ability to push directly to master is because folks like the convenience of it and the reason that we have, I don't know if it's required or preferred, pull requests for some kinds of changes is because it notifies people in a way that pushing a commit does not. So generally speaking, if you're adding something to the agenda after the deadline, that's the point. When people may have looked at it for the last time, the convention we followed is to use a pull request for anything like adding a new item or, you know, changing whether you're asking for stage advancement, things like that so that people are aware of it. Having the PR merged is not a requirement for people to be aware of it. That was the point of the deadline - so that people are aware of it in time to be able to review it. So the way we've always treated it in the past - the actual precedent followed - is that as long as people are notified before the deadline, then the requirement, spiritually at least, is satisfied. So that was why I went ahead and updated the requirement in the agenda to note that the PR doesn't have to be merged. So you're correct that someone could just merge their own PR, but sometimes there's merge conflicts and as Rob said, sometimes there's a few of them open within 12 hours and they all usually get landed. Does that answer your question?
 
@@ -499,12 +518,13 @@ JHD: So, the challenge at that is, I mean we all have a personal preferences of 
 RPR: Okay, I don't think we need to talk more about the details here. I think we've achieved awareness. MF said he thought it's painfully obvious that a PR was already sufficient. So, we've made sure that this is formally recognized, but of course, with all of this, if anyone has more suggestions will always be welcome to talk about this and in future, I think. So. Thank you for your time today.
 
 ## Function Helpers
+
 Presenter: J. S. Choi (JSC)
 
 - [proposal](https://github.com/js-choi/proposal-function-helpers)
 - [slides](https://docs.google.com/presentation/d/1MShu-uA_gz1LDpmlckQ9Wgsb0ZLylYV0QWZBnsTAOGk/edit?usp=sharing)
 
-JSC: I’m going to go through the slides quickly. Everyone can read the details that they want. There's also an explainer. 
+JSC: I’m going to go through the slides quickly. Everyone can read the details that they want. There's also an explainer.
 
 JSC: This is a proposal for Stage 1. The concept is that there are a lot of common useful helper functions that are defined a lot, used a lot, downloaded from npm a lot. We should standardize at least some of them. So I'm seeking consensus for Stage 1 that standardizing at least some of the helpers I'm going to list here is at least worth investigating. It is not a proposal seeking to standardize every imaginable helper function, just some selected frequently used ones. Choosing *which* ones out of the bag that I'm going to present, I consider to be bikeshedding for before Stage 2. Stage 1 would be “worth investigating” and we would decide which ones and whether to make them static methods or methods to the Function.prototype.
 
@@ -512,11 +532,11 @@ JSC: Yeah, some people might have philosophical questions. Like: why bother with
 
 JSC: Everyone needs to manipulate callbacks. This isn't a matter of like, oh, we're trying to make things better for hard core functional programmers. I think that everyone needs to manipulate callbacks and these are pretty simple affordances for doing them.
 
-JSC: Why can't they just define them on their own? It's a matter of ergonomics. When we standardize it, we can readily use it in the context of the developer console or a script instead of pasting a definition, or as a lot of people actually do: download or bring in an external dependency that has this little function. 
+JSC: Why can't they just define them on their own? It's a matter of ergonomics. When we standardize it, we can readily use it in the context of the developer console or a script instead of pasting a definition, or as a lot of people actually do: download or bring in an external dependency that has this little function.
 
-JSC: I'd also argue that it would improve code clarity. A lot of these functions have all sorts of different names. Standardizing one name would be great. And—even for simple functions like identity/constant, whatever—a lot of people, myself included, think that a standardized name would be simpler than an inline function Definition like having one word versus having three tokens or whatever. 
+JSC: I'd also argue that it would improve code clarity. A lot of these functions have all sorts of different names. Standardizing one name would be great. And—even for simple functions like identity/constant, whatever—a lot of people, myself included, think that a standardized name would be simpler than an inline function Definition like having one word versus having three tokens or whatever.
 
-JSC: And unlike new syntax, these are all API. This is all pretty lightweight stuff, lightweight ways to improve the experience of all developers. So like that picture there. I think that all of these are cowpaths and at least some of them deserve being paved. This isn't syntax. It's all API. They are all possibilities. And like I said earlier, choosing which ones to bring forward in this proposal would be, bikeshedding before Stage 2. we could punt some of them to separate proposals, if they are really controversial, whatever I'm asking for Stage 1, whether it's worth considering standardizing a bunch them. I'm going to go through these possibilities really quickly. Remember they’re possibilities. 
+JSC: And unlike new syntax, these are all API. This is all pretty lightweight stuff, lightweight ways to improve the experience of all developers. So like that picture there. I think that all of these are cowpaths and at least some of them deserve being paved. This isn't syntax. It's all API. They are all possibilities. And like I said earlier, choosing which ones to bring forward in this proposal would be, bikeshedding before Stage 2. we could punt some of them to separate proposals, if they are really controversial, whatever I'm asking for Stage 1, whether it's worth considering standardizing a bunch them. I'm going to go through these possibilities really quickly. Remember they’re possibilities.
 
 JSC: For instance, this is a function composition thing. You'd put it as a property on the Function global object. It'd probably be a static method. Lots of people use this. There's plenty of real-world examples on the explainer. All of these have real-world examples that I've looked for and found in the wild. And in this case, this would compose functions. So that you give this function a list of functions and it creates a function that applies, whatever argument it gets to the first function, then the result of that to the second function, X, et cetera. Yes. And there's also, there also could be an async version that would support promises and always return a promise. The reason why this proposal calls it flow is because this composes from left to right, which seems to be the preference of most JavaScript developers rather than the right to left compose operations that you see in like hardcore functional languages that resemble mathematics. We can quibble on the name. TAB floated the idea of having a pipe function too. Yes, there is a pipe operator. This is different. I am one of the champions of the pipe operator proposal. As many of, you know, there's been a lot of community feedback from developers who have desired standardized, unary function application and are unhappy with the topic syntax the placeholder syntax that the operator that move forward to Stage 2 at the text style pipe operator. They seem to be made happier by the presence of a standardized pipe function. I don't really have much of an opinion whether to include both flow and pipe is flow, except that its first argument is the input to the things. So pipe is an application. Well, flow creates a function, but either way, you're also including a list of function callbacks and then sequentially applying them to something. It's just a matter of whether you're doing it now or later.
 
@@ -528,7 +548,7 @@ JSC: Once. This creates a function from a callback that makes sure the callback 
 
 JSC: Debounce/throttle. Very popular too. Lots of lots of end user-facing HTML. Your HTML-manipulating code uses this to manipulate how often a function actually gets called based on some event or something like that. They're both useful. There have been plenty of articles written about why both are useful. I think we should consider adding them to the core language.
 
-JSC: There's something called `aside` or `tap`. It's just something that creates a function from another function, that that makes it like, it runs it as a side effect. And then it returns the original input and that can be useful for debugging or it's like interposing some sort of side effect like printing to the console or something in the middle of the nested statement or a long chain or something like that. 
+JSC: There's something called `aside` or `tap`. It's just something that creates a function from another function, that that makes it like, it runs it as a side effect. And then it returns the original input and that can be useful for debugging or it's like interposing some sort of side effect like printing to the console or something in the middle of the nested statement or a long chain or something like that.
 
 JSC: And there's also unThis. People also call this uncurryThis, callBind, whatever. It's just basically converting a function that uses the `this` binding into a function that doesn't. The first argument of the new function would be plugged into the original callback’s `this` receiver. Again, these are all just possibilities. I'm asking for Stage 1.
 
@@ -542,7 +562,7 @@ JSC: Okay. Thank you. you. Next up, CZW.
 
 CZW: Yeah, I'm just saying that I found many of them. There are two helpers that can be replaced by arrow functions with less characters to type. I don't find building these into the language would help ergonomics. but that's the type of question about what functions to be included in the proposal right now?
 
-JSC: I'm arguing that including which functions to include that question would be bikeshedding for before Stage 2 and Stage 1 would be that: It's worth investigating like just adding helper functions function. Like some of these are one-liners, some of them aren't for the ones whether to include the ones that are, I would say, I'm arguing right now is a pre-stage-two concern, but as for your observation that it's actually shorter, some of these are actually shorter if you use Arrow functions. While that's true, when it comes to length, I argue in the code Clarity, heading on this on the side N Slide I'm showing right now that that a lot of people, myself included think that it can be clear if, if we Just use one word rather than three words to create it. So yeah, like The Arrow function might be visually shorter, but me, it's  actually conceptually longer so to speak. It's more words rather than just one word or or to it. And as for constant, like, for instance, it makes it clear, you're creating a constant function for instance, but we can bikeshed over that in the future.
+JSC: I'm arguing that including which functions to include that question would be bikeshedding for before Stage 2 and Stage 1 would be that: It's worth investigating like just adding helper functions function. Like some of these are one-liners, some of them aren't for the ones whether to include the ones that are, I would say, I'm arguing right now is a pre-stage-two concern, but as for your observation that it's actually shorter, some of these are actually shorter if you use Arrow functions. While that's true, when it comes to length, I argue in the code Clarity, heading on this on the side N Slide I'm showing right now that that a lot of people, myself included think that it can be clear if, if we Just use one word rather than three words to create it. So yeah, like The Arrow function might be visually shorter, but me, it's actually conceptually longer so to speak. It's more words rather than just one word or or to it. And as for constant, like, for instance, it makes it clear, you're creating a constant function for instance, but we can bikeshed over that in the future.
 
 WH: Everytime you use `x=>x` you get a new function. Whereas there is only one `Function.identity` function.
 
@@ -552,7 +572,7 @@ WH: I'm saying that's a reason to use `Function.identity` instead of `x => x`.
 
 JSC: Oh, yes. That is also true. It also avoids allocating our creating a new function every time that is also true.
 
-YSV:  I'll be quite direct here. I will block this from Stage 1 because it does not have a problem statement. So the statement that there are lots of libraries that are popular and those functions are common isn't enough on its own to satisfy the problem statement requirement of Stage 1. There are even from what you've presented there are some groups that are worth investigating, for example, flow async and flow and maybe even pipe and pipe async. Those can be seen as sort of belonging to the same category of problem. However, they're very different from constant and identity which are very different from other parts, from other helpers that you've proposed here. The reason why I believe it's very important to tighten the problem statement here is because later on when we're reflecting on this proposal and you know, things can change. To make sure that we don't lose track of which problem statement we are trying to figure out - which has happened with proposals - I think it's very important that we are clear about what we're solving for users. So I'm not against the idea of introducing function helpers, but this should be split up into tighter proposals.
+YSV: I'll be quite direct here. I will block this from Stage 1 because it does not have a problem statement. So the statement that there are lots of libraries that are popular and those functions are common isn't enough on its own to satisfy the problem statement requirement of Stage 1. There are even from what you've presented there are some groups that are worth investigating, for example, flow async and flow and maybe even pipe and pipe async. Those can be seen as sort of belonging to the same category of problem. However, they're very different from constant and identity which are very different from other parts, from other helpers that you've proposed here. The reason why I believe it's very important to tighten the problem statement here is because later on when we're reflecting on this proposal and you know, things can change. To make sure that we don't lose track of which problem statement we are trying to figure out - which has happened with proposals - I think it's very important that we are clear about what we're solving for users. So I'm not against the idea of introducing function helpers, but this should be split up into tighter proposals.
 
 JSC: Okay, that's super fair. I am committing to splitting this proposal up. I'll keep this at Stage 0 like and archive it in the TC39 organization, but I will re-present, probably one at a time several tighter proposals probably in the future. Probably flow and flowAsync will be first. Does that satisfy you YSV?
 
@@ -572,7 +592,7 @@ JSC: I will remark that once. So, although this is bike-shedding, once, bounce, 
 
 JHX: It's just a simple question about why it's just `uncurryThis` that's a prototype method.
 
-JSC: Are you asking about `unThis`, and `debounce` and `throttle`. Also? 
+JSC: Are you asking about `unThis`, and `debounce` and `throttle`. Also?
 
 JHX: Yeah, so yeah, I'm not sure. What's the rule behind that is.
 
@@ -582,15 +602,15 @@ JHX: Okay, we can discuss that in the issues.
 
 JWK: Debounce and throttle cannot be specified in language, unless we add a host hook for it, but the idea was explicitly rejected by the engine when I tried to propose Promise.delay. Maybe you should remove those time related functions.
 
-JSC: All right. So since those will get separate, those two will get set up separate proposals. We can examine that there when I do that. I really would appreciate it. If you could, I'll check it out too. When you try to propose, promise that delay, if that's a hard block from the engines, then that would be great to know them. Looks like SYG giving a plus one. All right. 
+JSC: All right. So since those will get separate, those two will get set up separate proposals. We can examine that there when I do that. I really would appreciate it. If you could, I'll check it out too. When you try to propose, promise that delay, if that's a hard block from the engines, then that would be great to know them. Looks like SYG giving a plus one. All right.
 
 SYG: Yeah, I would save you some time.
 
-JWK: I have some more concern about adding time to the language, it might violate SES requirements that allow the program to observe time. 
+JWK: I have some more concern about adding time to the language, it might violate SES requirements that allow the program to observe time.
 
 JSC: All right. That's yeah. Okay, good to know. We'll take a look at that. But since SYG was giving pretty good, pretty strong signals that he would block debounce and throttle in the core language. We'll probably prioritize that way low compared to everything else I’m bringing up now. I'll look into this more.
 
-JWK: When I write code in TypeScript, I want to make sure my code exhausts all possibilities of a variable and if every type possibility is exhausted, the variable will become type `never`. I wrote this function in my code base manytimes. If I add a new possibility of this variable, And it will no longer become type  `never` and have a compile error.
+JWK: When I write code in TypeScript, I want to make sure my code exhausts all possibilities of a variable and if every type possibility is exhausted, the variable will become type `never`. I wrote this function in my code base manytimes. If I add a new possibility of this variable, And it will no longer become type `never` and have a compile error.
 
 ```ts
 let x: 1 | 2 = 2
@@ -618,9 +638,9 @@ JSC: [If unreachable is a new function, we can talk about it on a new issue](htt
 
 SYG: Looked at web compat risk?
 
-JSC: The answer is, no, I haven't looked too hard at the names yet. And whether there's web compact risk with the names I chose. 
+JSC: The answer is, no, I haven't looked too hard at the names yet. And whether there's web compact risk with the names I chose.
 
-SYG: Given that these are kind of directly motivated by being very popular NPM packages. At least we have a starting point there to see how they install these methods to see if there is a risk. 
+SYG: Given that these are kind of directly motivated by being very popular NPM packages. At least we have a starting point there to see how they install these methods to see if there is a risk.
 
 JSC: As far as I can tell, none of them monkey patch any intrinsic prototypes; they're all on like the jQuery wrapper objects or the jQuery global or they're on like Lodash's `_` or they're imported from a module. I have not found any intrinsic monkey patching in the real world examples that I brought into the explainer. I can tell you that.
 
@@ -631,10 +651,13 @@ CM: So one of our meta concerns is always about adding complexity into the langu
 JSC: All right. Your point is appreciated. Thank you CM. I will just say that there is a meta level philosophical level thing whether developer ergonomics is reversed adversity and the burden of like, adding a function to the core API. Like, how much, how much is this? Or that? How much is the benefit to developer ergonomics like or two or being able to For this thing, easily versus having, having to remember that the name, the standard name, for instance, of this thing versus directly defining an arrow function. Not that including this into language will force everyone to not use the arrow function version, but a lot, a lot of people do think, and myself included, think that a lot of these make the code clearer, like having a single word. So I think it would be great if we could reach for them without defining them ourselves or bringing in external dependencies, but that is a meta level thing. It applies to only some of them and not others and I am committing to splitting up this proposal.
 
 JSC: All right, it looks like CZW gave a +1. Queue is empty. I'm already committing to withdrawing this proposal and bringing it back split up. I plan to bring pipe and flow functions first. Does anyone else have any comments before I end the presentation? [silence] Yeah. All right. Sounds good. Yeah, I'm splitting up the proposals and I will see you all next time. All right. Thank you very much.
+
 ### Conclusion/Resolution
-* JSC to split into multiple proposals and bring back
+
+- JSC to split into multiple proposals and bring back
 
 ## Temporal (overflow)
+
 Presenter: Justin Grant (JGT)
 
 - [proposal](https://github.com/tc39/proposal-temporal)
@@ -642,23 +665,23 @@ Presenter: Justin Grant (JGT)
 
 JGT: So we left off here yesterday and we tacked on a few more slides and PFC should/can chime in if needed. Hopefully he made it awake this morning, but I'll just get going regardless. So of course I've had sequels on my mind. So this is our sequel today and our Overflow and my bad Photoshop skills. And so the first is actually, before we continue what we did yesterday, while we were meeting, FYT found another spec bug. So I figured I'd bring it in here again, like the other bugs that we discovered after the deadline. If folks are interested in delaying this, to take more time to look at it, that's ok. I'll describe it real quickly in that when you convert an input to a ZonedDateTime, one of the steps in that conversion is to compare the offset and the IANA time zone name. And to make sure that they're compatible. And so, a good example is this string in the code sample, here. We'll compare the minus 7. From GMT to Europe/London and realized that that's wrong. Although I wish it weren't wrong so that I wouldn't be so tired, that's the current. And you can also in addition to passing a string, you can pass a property-bag with the same values. And in this case, if they're valid values like plus 1 for the offset then it will work fine. And so the spec as it's written today, will tolerate an invalid not because there's no logic in this back to deal with the offset, but simply because there's a missing line in the spec to read the offset in the first place from the user's input. And so Frank found this and submitted a PR for this yesterday and at the beginning of these slides we're going to ask for consensus on this change.
 
-JGT: Next is a continuation from the discussion yesterday around what should we do when there are no required options submitted to the round method. And just from mining the chats in the delegates channel, it looks like there are three choices here, three options options. One is, call round and return the identity if an empty object is passed, but then have round throw or both of them could return identity or both of them can throw. And so, the current Temporal Stage 3 proposal chose that both of them throw case first. Because it's a no-op. And almost certainly a bug on the programmers part and also to defend against misspelling a required property, like in this case, `smallestUnit`, because this would be interpreted as an empty object by bicycle [?]. So obviously this doesn't catch every bug, right? You can still misname an optional property and we wouldn't catch it. But from our perspective catching some bugs is better than catching no bugs. And so that's how we ended up where we are. So the question for folks is, is there a compelling reason to change the current behavior we have today? And at that all was handed over to feedback. I'm not looking at the queue, so I'm screwed. 
+JGT: Next is a continuation from the discussion yesterday around what should we do when there are no required options submitted to the round method. And just from mining the chats in the delegates channel, it looks like there are three choices here, three options options. One is, call round and return the identity if an empty object is passed, but then have round throw or both of them could return identity or both of them can throw. And so, the current Temporal Stage 3 proposal chose that both of them throw case first. Because it's a no-op. And almost certainly a bug on the programmers part and also to defend against misspelling a required property, like in this case, `smallestUnit`, because this would be interpreted as an empty object by bicycle [?]. So obviously this doesn't catch every bug, right? You can still misname an optional property and we wouldn't catch it. But from our perspective catching some bugs is better than catching no bugs. And so that's how we ended up where we are. So the question for folks is, is there a compelling reason to change the current behavior we have today? And at that all was handed over to feedback. I'm not looking at the queue, so I'm screwed.
 
 WH: Strongly prefer choice 1. To address the case of name typos, most people will just be using the string version of it instead of an option bag so they won't have to spell the property name. Choice 1 lets you reuse the same options bag for multiple kinds of calls and that I see as a compelling reason.
 
-JWK: I agree to change behavior if it’s the right thing to do. We still have a chance to fix the design instead of shipping it to the users.. 
+JWK: I agree to change behavior if it’s the right thing to do. We still have a chance to fix the design instead of shipping it to the users..
 
 MAH: Yeah, I mean for the three options I would say two or three if it's needed but in general an empty object or no object for config should be equivalent. In my opinion.
 
-USA: JGT, or WH. Would you like to respond to that? We have nothing else in the queue? 
+USA: JGT, or WH. Would you like to respond to that? We have nothing else in the queue?
 
 WH: Yes, the issue is that the first argument is overloaded. It's going to be either an object or a string. I might agree with you if it weren't for the overload, but the overload makes a difference here.
 
 USA: JGT, do you want to go ahead?
 
-JGT: Yeah, I don't have a strong opinion either way. My inclination is, if there's a consensus on the Committee to do one of these things then we'll do one of these things, but I don't I don't know enough about the process to understand how we would measure whether that consensus exists, 
+JGT: Yeah, I don't have a strong opinion either way. My inclination is, if there's a consensus on the Committee to do one of these things then we'll do one of these things, but I don't I don't know enough about the process to understand how we would measure whether that consensus exists,
 
-USA: What you can do is you can propose an option, and you can ask for a consensus on that. 
+USA: What you can do is you can propose an option, and you can ask for a consensus on that.
 
 JGT: Certainly from the proposal champions perspective, we would prefer what we already have because it's already been approved, and from our perspective would need a pretty strong consensus to change that. So I would certainly propose consensus for number 3 and see if that goes. But again I sort of want to defer to folks who are more familiar with the process and I am,
 
@@ -690,15 +713,15 @@ WH: Yes, I would like to propose option 1. I consider this a bug fix. The whole 
 
 JGT: Just to clarify, we're not— I think our goal is, we want something that there is consensus for. We're not saying, oh, number one is awful. But rather, you know, that there is a status quo, if we are going to change it, it should be something that there is consensus on the Committee for and that we're not in a position, we're not pushing for number one, but we will accept it if that's the consensus. We'll accept number two, and we'll accept number three. We just want the Committee to make that choice.
 
-USA: So, we could ask for consensus on option one being the decision right away or we could do a temperature check or something like that if you prefer that. 
+USA: So, we could ask for consensus on option one being the decision right away or we could do a temperature check or something like that if you prefer that.
 
 JGT: I'm fine with whatever makes sense. Okay, then maybe WH, would you like to explicitly ask for consensus, for option one being the choice?
 
 WH: So, I would like to ask for consensus for option one.
 
-USA: Let's see, if somebody objects. It doesn't seem so. So I think, yeah, nobody objects to option one. Justin, you have your choice? 
+USA: Let's see, if somebody objects. It doesn't seem so. So I think, yeah, nobody objects to option one. Justin, you have your choice?
 
-SYG: I still have a clarifying question. I remember yesterday's presentation, the weirdness for round, was with Duration.round(). Is this for Duration.round() or for all round() methods? 
+SYG: I still have a clarifying question. I remember yesterday's presentation, the weirdness for round, was with Duration.round(). Is this for Duration.round() or for all round() methods?
 
 WH: This will be for all `round` methods.
 
@@ -708,15 +731,15 @@ WH: Would you prefer option 2?
 
 JHD: I think option 2 or 3 are more consistent. I think that for the other round() methods option three is the only one that makes sense because they have one required thing. And if that required thing isn't there, it makes sense to throw. And yeah, I hear the argument that, let's just have return identity when the required thing isn't there, which means it's no longer required. But then, in that case, the function has a length of zero because zero required items and then calling it with no arguments must not throw. But yeah, I just talked myself into thinking that option one doesn't really ever make sense because having a required argument that's an empty object doesn't make any sense to me.
 
-WH: The misconception is that `round` always needs to round to something. I would imagine the code being structured as somebody passing in some options, which gets distributed to a bunch of Temporal functions. If you're writing generic code, it's a real hassle to call `round` or not depending on whether somebody wants rounding behavior or not. It's much easier to just pass around some options bag you get from your caller, and this lets the caller control if you're rounding or not. 
+WH: The misconception is that `round` always needs to round to something. I would imagine the code being structured as somebody passing in some options, which gets distributed to a bunch of Temporal functions. If you're writing generic code, it's a real hassle to call `round` or not depending on whether somebody wants rounding behavior or not. It's much easier to just pass around some options bag you get from your caller, and this lets the caller control if you're rounding or not.
 
 JHD: I hear that, but I think that we're weighing the convenience of writing generic code around this method, which I think is going to be very rare. That sort of generic code is already very rare against the likelihood of bugs, but also I think unrelated to the semantics of round(). The function's length, this describes the number of required arguments and in option one, it would have to have a length of 1 because it throws if you give it less than one argument, but for that one required argument to be an empty object, that just makes no sense to me. I think that the intuition that was stated earlier about— I forget by whom— about an empty object and nothing being equivalent, I think that needs to hold. With option 2 the length could be 0, it doesn't require any arguments, and then it makes perfect sense that if you pass an empty options bag, it is the same as nothing and it could be identity.
 
 WH: I don't understand that argument. It's just like saying that the functions which take objects should throw if they get empty objects. An empty object is a valid object.
 
-JHD: Sorry, to be clear, functions that take an options bag, empty object, an object here. It's totally fine. If they take an empty object because typically most or all of those properties are optional and so, if the properties are all optional and empty object is fine, but then so is no object at all, and all of those are equivalent. So I think that if it's an empty object, like options bags are kind of like named arguments conceptually and an empty object is providing no named arguments conceptually. We don't have to keep going in circles around it. I'm happy to keep explaining it, but every time we go in a circle. 
+JHD: Sorry, to be clear, functions that take an options bag, empty object, an object here. It's totally fine. If they take an empty object because typically most or all of those properties are optional and so, if the properties are all optional and empty object is fine, but then so is no object at all, and all of those are equivalent. So I think that if it's an empty object, like options bags are kind of like named arguments conceptually and an empty object is providing no named arguments conceptually. We don't have to keep going in circles around it. I'm happy to keep explaining it, but every time we go in a circle.
 
-USA: Okay, so this seems to be coming close to time JGT, you mentioned at the beginning that you don't necessarily need to come to agreement within plenary. So, do you think it's a good idea to take this offline and WH JHD and the champions could discuss this? 
+USA: Okay, so this seems to be coming close to time JGT, you mentioned at the beginning that you don't necessarily need to come to agreement within plenary. So, do you think it's a good idea to take this offline and WH JHD and the champions could discuss this?
 
 JGT: I'm fine with it. Again, our perspective is, this is sort of a relatively uncommon corner case for the API, it won't destroy anything regardless of which choice is made. We just want there to be a choice that doesn't come around again. So we're fine with taking it offline. If there does turn out to be a consensus for changing it, we're happy to deploy that consensus. And in the meantime, we will stick with the status quo.
 
@@ -726,12 +749,16 @@ USA: You could discuss this in more detail on the issue tracker and come to some
 
 WH: I'm not sure what there is more to say about this. We’ve been going around in circles.
 
-USA: You need to come to an agreement with JHD in some way, right? I am not exactly sure about what the process says, but in case of disagreement, I think the status quo unfortunately for you is going to remain for now. Let's continue this offline. Thank you JGT. 
+USA: You need to come to an agreement with JHD in some way, right? I am not exactly sure about what the process says, but in case of disagreement, I think the status quo unfortunately for you is going to remain for now. Let's continue this offline. Thank you JGT.
 
 JGT: One quick thing is I did want to ask for consensus, for FYT's bug fix. Can I get consensus for this bug fix here? Any objections? All right. I'm not hearing any so we're done.
+
 ### Conclusion/Resolution
-* consensus only on mentioned bugfix
+
+- consensus only on mentioned bugfix
+
 ## Evaluator Attributes (continued)
+
 Presenter: Guy Bedford (GB)
 
 - [proposal](https://github.com/lucacasonato/proposal-evaluator-attributes)
@@ -747,11 +774,11 @@ JHD: Yeah, I can just talk for a minute. So I am looking at slide 2. So what I w
 
 GB: Yeah. So this was something Daniel brought up earlier as well and was just really good at getting a clearer idea of that exact use case. I did go through it quite carefully, but with the WebAssembly integration that provides exactly that model. But the argument being that there are multiple conventions that have to kind of line up for that to give you the exact right execution. You often have to assume that the resolve is going to resolve these things correctly, that runtime execution model is going to work correctly and with WebAssembly we also have the fact that you've got to make sure that you're using the right memories and and getting all these things to line up the example just to show the slide. Is this a WASI example, where you have to pipe through a lot of context in order to get that start to end execution. Yeah this does that. Answer the question without trying to dig it up too much.
 
-JHD: I mean, why can't you pass the specifier instead of the foo module here? 
+JHD: I mean, why can't you pass the specifier instead of the foo module here?
 
 GB: You mean into `WebAssembly.instantiate`.
 
-JHD:  Like, theoretically, could there be an API that takes the specifier and import.meta URL or something similar? Why does the JavaScript module need to import the foo module in order to do this?
+JHD: Like, theoretically, could there be an API that takes the specifier and import.meta URL or something similar? Why does the JavaScript module need to import the foo module in order to do this?
 
 GB: There's a bunch of reasons. I would be doing it an injustice to be able to clarify that too simply. But basically one of the biggest benefits is, in theory, we lay the groundwork for CSP integration because you have this declarative mechanism. It's also better for bundlers, potentially.
 
@@ -759,41 +786,41 @@ JHD: So, I guess. Are you envisioning any? So just a quick side note. I think th
 
 GB: So to be clear, the name isn't final, but you are specifically in this ten-minute slot. I just wanted to verify those previous concerns around the reinterpretation and specifically you mentioned that with import assertions. There were some unexpected results. Of that reinterpretation, question and just just to see that, that isn't related to what we're doing here. Or see if we can make sure that those aren't those concerns aren’t coming up again.
 
-JHD: So let me summarize that real quick. Even if I have to import lines one after another, whether they're static or dynamic, they pull in the same specifier. I should not be just like I cannot use the in assertion to get two different conceptual things. All I can do is get it twice or get an error out of the assertion one. Similarly, I would expect with these attributes that I would get the same conceptual thing. It seems like you're only proposing the value of the WASM module right now. 
+JHD: So let me summarize that real quick. Even if I have to import lines one after another, whether they're static or dynamic, they pull in the same specifier. I should not be just like I cannot use the in assertion to get two different conceptual things. All I can do is get it twice or get an error out of the assertion one. Similarly, I would expect with these attributes that I would get the same conceptual thing. It seems like you're only proposing the value of the WASM module right now.
 
 SYG: Sorry to interrupt but it may help to give MM’s framing of this, which I found helpful. So MM has framed this not as different interpretations, but as letting you choose the representation that you want at which stage of the module processing pipeline. So in this case, importing it as a WASM module, instead of a WASM instance, gives you the representation before linking and instantiation. So the representation is always WASM throughout the whole pipeline. That doesn't change. You cannot opt into a different interpretation, but you can choose where in the pipeline you want the import to happen and then
 
 JHD: That is helpful. How does this interact with module blocks?
 
-MM:  That's exactly the issue that I was bringing up, which is I think that the staging issue applies to JavaScript well, as well as it applies to all the things we might want to bring it to you to bring into the module graph and able to import each other the static module records and module blocks are already both the static equivalent for JavaScript. They only contain their own pre-compiled modules of XS. All of these have just the compiled information from a single Source text without any linkage information. And what it's saying: it's not choosing a representation. It's not choosing a different interpretation is just, reifying in early as show us reifying, an earlier stage of the processing pipeline. So, what you have is something that still needs to be linked and initialized. So the remaining stages in the processing pipeline still need to happen before you have a module instance. 
+MM: That's exactly the issue that I was bringing up, which is I think that the staging issue applies to JavaScript well, as well as it applies to all the things we might want to bring it to you to bring into the module graph and able to import each other the static module records and module blocks are already both the static equivalent for JavaScript. They only contain their own pre-compiled modules of XS. All of these have just the compiled information from a single Source text without any linkage information. And what it's saying: it's not choosing a representation. It's not choosing a different interpretation is just, reifying in early as show us reifying, an earlier stage of the processing pipeline. So, what you have is something that still needs to be linked and initialized. So the remaining stages in the processing pipeline still need to happen before you have a module instance.
 
 JHD: Okay, so too, let's imagine. We're in a world where there is an evaluator attribute that applies to JavaScript modules, like source, once you type it out.
 
 MM: Part of my point is that it needs to be. We did not frame as an evaluator [?] after that.
 
-JHD:  I understand. I'm just trying to understand this proposal. Okay. It's something that applies to JavaScript modules. Obviously, in my parent and child example from earlier, if I have a console log statement, both [?] and I import them. Normally, I will get the console logs in child first and then parent. The employee [?] seems obvious here? If I use something that has similar semantics as these waves [?], a module thing that I wouldn't see any console log statements because none of the runtime code is evaluated just jump in and correct me if that's wrong. 
+JHD: I understand. I'm just trying to understand this proposal. Okay. It's something that applies to JavaScript modules. Obviously, in my parent and child example from earlier, if I have a console log statement, both [?] and I import them. Normally, I will get the console logs in child first and then parent. The employee [?] seems obvious here? If I use something that has similar semantics as these waves [?], a module thing that I wouldn't see any console log statements because none of the runtime code is evaluated just jump in and correct me if that's wrong.
 
-MM: Yeah, but then the modules themselves, don't know how to link the modules themselves. Know what their linkage demands are. But it's up to the linkage context in which you're linking them to provide the import namespace. 
+MM: Yeah, but then the modules themselves, don't know how to link the modules themselves. Know what their linkage demands are. But it's up to the linkage context in which you're linking them to provide the import namespace.
 
 JHD: So what happens when I get a syntax error in child and then I try to get this as a module style representation of parent, And then I'm importing parent into my program. If there's a syntax error in the child, and I just normally import the parent, it will crap out because of the syntax error. What happens if I import parent as an unlinked module?
 
-MM: What you get is a static module record, you don't, the information that is derived from the source text of the parent. There is no implied linkage to the child. The parent might have in it an import declaration from the child, but that's not that by itself not an association with particular modules, and we have only got it. It's only within a linkage context that it comes to become that, it comes to be associated by the context with some particular child. 
+MM: What you get is a static module record, you don't, the information that is derived from the source text of the parent. There is no implied linkage to the child. The parent might have in it an import declaration from the child, but that's not that by itself not an association with particular modules, and we have only got it. It's only within a linkage context that it comes to become that, it comes to be associated by the context with some particular child.
 
 JHD: And so then later I can run something that completes the process on parent and I would get a runtime SyntaxError exception. Then we have just added a major capability to the language which is the ability to, without eval put in a parsing error and determine later conditionally if it parses or not – is that something we want to do?
 
 GB: So, just to clarify: in that case, it's about what is specific in this, why the scenario when you import the child as a module, you're still doing the compilation. So you would get compilation errors during the import and those compilation errors would effectively be stored in the module registry in a way that they would retrigger for subsequent importers like other error records, even though these records are sitting almost in a parallel module map. Because you've got these two separate phases, So it's you would get compilation errors on when importing something that's That's that is in form. You're getting it in a compiled module form. You would get your runtime errors only when you perform the execution. So yeah, so syntax error. If we were extending this analogy to JavaScript syntax error would happen at that import time, Whereas your execution errors you would get at runtime, but again, we haven't specified anything here for JavaScript and it's like, it's in wide?/WASM? space so I wouldn't want to assume either you can assume what that would look like. So, I just the thing that I find appealing about, this in the context of it being unified across, WASM
 
-JHD:  Is that a synchronous or an asynchronous mechanism?
+JHD: Is that a synchronous or an asynchronous mechanism?
 
-GB: Asynchronous. Okay, and it would have to be for JavaScript modules as well. Yes, most likely. 
+GB: Asynchronous. Okay, and it would have to be for JavaScript modules as well. Yes, most likely.
 
-JHD: Okay, then in that case, it would be the same as dynamic import, so it's not actually adding a capability - I was just talking that out. Yeah, so I guess I mean it seems fine as Stage 1. It’s pretty weird to block Stage 1 for, you know, for most things. Anyway, I'm on board with that, but I wanted to be very... I think it's very important that before it goes to Stage 2 that it has use cases that applies to JavaScript and also that there's no way for it to change the conceptual representation of the module that it's just as MM has said and SYG's paraphrase of that. It's here's the, there's like multiple modules steps and it's just a, the first chunk of those steps and it just delays but does not change the remainder of the steps you do. That, that seems like a very critical thing to preserve and obviously we can and probably will rename the proposal to match that. 
+JHD: Okay, then in that case, it would be the same as dynamic import, so it's not actually adding a capability - I was just talking that out. Yeah, so I guess I mean it seems fine as Stage 1. It’s pretty weird to block Stage 1 for, you know, for most things. Anyway, I'm on board with that, but I wanted to be very... I think it's very important that before it goes to Stage 2 that it has use cases that applies to JavaScript and also that there's no way for it to change the conceptual representation of the module that it's just as MM has said and SYG's paraphrase of that. It's here's the, there's like multiple modules steps and it's just a, the first chunk of those steps and it just delays but does not change the remainder of the steps you do. That, that seems like a very critical thing to preserve and obviously we can and probably will rename the proposal to match that.
 
 GB: Yeah, that requirement I think is a fundamental part of this framing and kind of the sort of novel aspect that kind of brought it back around from, from being something that seemed like, it could have certain risks associated with it. I would be careful assuming that we can find perfect generalizations to JavaScript and we did discuss this a bit further. I think there are a lot of conversations to have here and I would love to find a great unified approach. My concern is that we maintain the use cases and the best solutions to those use cases and I'm very clear in this proposal that the driving use case is WebAssembly that it could extend to things like JavaScript unlinked imports. I am hesitant to tie the future of the proposal to ensuring those things. work out even though I hope that there could be progress on that front. Yeah
 
 JHD: Just a real be real clear to interject. Real quick. Sorry let's say that both this and module blocks advance. Would it make sense to have something like a module block?
 
-GB: There are still a huge amount of questions. I think we wouldn't if we get into the conversations quickly realize that there are lots of subtle semantics that we probably would have to discuss in quite a bit of detail. I guess the first question is, is it useful, right? So, can you do it? Probably? Do you want to do it? it? Well, that's the important thing to discuss first and foremost, but yeah, it could be expected to do what you want. 
+GB: There are still a huge amount of questions. I think we wouldn't if we get into the conversations quickly realize that there are lots of subtle semantics that we probably would have to discuss in quite a bit of detail. I guess the first question is, is it useful, right? So, can you do it? Probably? Do you want to do it? it? Well, that's the important thing to discuss first and foremost, but yeah, it could be expected to do what you want.
 
 JHD: I mean, I would assume it's the same rate, like, you can create a worker with a specifier, but you could also theoretically, you know, maybe you can create one with the module block and it would be the same use case. Here is where you wanted to do the declaratively and help lenders, bundlers and stuff. So, but yeah, it's that just seems like sort of cross-cutting concerns that needs to be worked out with in Stage 1.
 
@@ -804,9 +831,13 @@ SYG: This is a response to earlier. These petition texts are the timing thing. I
 USA: Great, so guy, is that it then?
 
 GB: Yes, that's all the clarification we needed. Yeah. Thank you. Great. Thank you.
+
 ### Conclusion/Resolution
-* Stage 1 holds
+
+- Stage 1 holds
+
 ## CoC Update
+
 Presenter: Jordan Harband (JHD)
 
 JHD: Yeah, so this is high-level both because JBN isn't here to present whatever she'd prepared and also because I'm tired. Since the last plenary, there was a lot of activity on the pipeline repo, in particular, I think two users have been banned as a result. Per our normal process, both bans are temporary. But some of the actions of one of the users after being banned, may extend that the.
@@ -816,7 +847,9 @@ JHD: We've had some light discussions about considering maybe adding the "mainta
 WH: To clarify, were the banned people Ecma members, or were they outside folks?
 
 JHD: No, as of yet I don't believe we've banned anyone who is an active member or invited expert or a delegate. Like ever, not just recently. I think that's the update.
+
 ## Incubator Call Solicitation
+
 Presenter: Shu-yu Guo (SYG)
 
 SYG: As per normal. We call for volunteers proposals were General topics to be added to the list of incubator calls that we try to do between in between plenaries last time there was one about proxy performance that Leo had requested but ended up not really getting any participants on the It also, that was cancelled in case, there are still interested parties who want to discuss Proxy performance, we can bring that back, but I just want to throw that out there before asking for new set of proposals because I think there are several very interesting early stage proposals that could use some -- what's What's the word -- faster feedback loop.
@@ -825,7 +858,7 @@ SYG: Any interest in proxy performance? I tried to ping several times last time 
 
 SYG: Okay, new topics. So we'll go forward. I'll go for volunteers first. Any champion groups of new proposals who would like to resolve some of the possibly controversial issues over an hour, call in, between this meeting at the next?
 
-JHD: If there's anyone outside the Pattern Matching Champion group who would actually show up. We'd love to have a session. But the last time we did, at the incubator call nobody showed up outside the champion group. So I don't know if there's anyone in the meeting who is not in the champion group and is willing to actually commit and follow through with attending. 
+JHD: If there's anyone outside the Pattern Matching Champion group who would actually show up. We'd love to have a session. But the last time we did, at the incubator call nobody showed up outside the champion group. So I don't know if there's anyone in the meeting who is not in the champion group and is willing to actually commit and follow through with attending.
 
 SYG: Okay, I'll push pattern matching onto the queue, but given, yeah, JHD what you said last time. We'll see how the doodle gorgos anything else before I start to call out people in Matrix.
 
@@ -833,11 +866,11 @@ JSC: Okay. Yeah. I have a couple of others who want to talk about bikeshedding t
 
 SYG: To be clear, incubator calls follow the same IP our stuff as TC39. So it's open to delegates and invited experts. I know pipe has a lot of interest from the community just to be clear that you are interested in discussing within TC39 groups.
 
-JSC: That's right. Although there is one Community member who has been really involved in the proposal, who is not a TC39 delegate, whom we were wondering if we could bring in. 
+JSC: That's right. Although there is one Community member who has been really involved in the proposal, who is not a TC39 delegate, whom we were wondering if we could bring in.
 
 USA: So I think the way you can go about it is to have that person on as an invited expert; that way they would sign all the IPR agreements and everything. So if it would be okay. Them to attend.
 
-JSC:  Alright, we’ll look it up. 
+JSC: Alright, we’ll look it up.
 
 SYG: Yeah, there's a form that you can have them fill out. I think we try to make the friction there less over time. Let us know how your experience goes.
 
@@ -859,7 +892,7 @@ MLS: It's December, 14th 15th.
 
 SYG: Okay, so that probably gives us maybe two or three slots and I had in mind that the function helper grab bag that is typically to be split up. JSC’s proposal. Seems like there were a lot of opinions flying around. That could be hashed out if we sat in a VC and just talked to each other, so I'm wondering if Folks, be interested to attend the motivation hash out, I guess to see which people, which of the helpers folks feel strongly that should be or should not be included.
 
-JSC:  I'm up for that. My current plan is to make repositories devoted first to flow/pipe on one hand, and uncurryThis. But I am also totally up to a general helper-function incubator call to hear opinions from anyone about helper functions in general.
+JSC: I'm up for that. My current plan is to make repositories devoted first to flow/pipe on one hand, and uncurryThis. But I am also totally up to a general helper-function incubator call to hear opinions from anyone about helper functions in general.
 
 SYG: If there are no objections to that, but I guess I'm looking for something a little stronger than no objections would.
 
@@ -867,7 +900,7 @@ MF: I would attend.
 
 JHD: Okay, I would attend this one.
 
-SYG: Great I will add that on, maybe we'll have time for it, but we'll see by the doodle. I understand the Q4 is usually a quieter time for some folks. Especially European folks, who have better vacation policies than we do. 
+SYG: Great I will add that on, maybe we'll have time for it, but we'll see by the doodle. I understand the Q4 is usually a quieter time for some folks. Especially European folks, who have better vacation policies than we do.
 
 JSC: I was wondering if it might be worth having that against the BigInt Math incubators call. Since there's been a little contention regarding some things, like sqrt.
 

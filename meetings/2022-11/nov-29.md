@@ -4,8 +4,7 @@
 
 **Remote and in person attendees:**
 
-
-```
+```text
 | Name                 | Abbreviation   | Organization       | Location  |
 | -------------------- | -------------- | ------------------ | --------- |
 | Waldemar Horwat      | WH             | Google             | Remote    |
@@ -49,8 +48,6 @@
 | Istvan Sebestyen     | IS             | Ecma               | Remote    |
 ```
 
-
-
 ## Intro
 
 USA: [standard housekeeping stuff]
@@ -59,12 +56,9 @@ USA: So first up we need to approve the last meetings minutes assuming that you'
 
 USA: Next up we need to adopt the current agenda. Please let us know if you have any objections to the current agenda. [no objections] Perfect.
 
-
 ## Secretary's Report
 
 Presenter: Istvan Sebestyen (IS)
-
-- [proposal]()
 
 - [slides](https://github.com/tc39/agendas/blob/HEAD/2022/tc39-2022-046.pdf)
 
@@ -78,14 +72,13 @@ IS: Okay. The next point here is, what kind of movements regarding TC39 membersh
 
 IS: Okay. now TC39 meetings participation: This is a continuous table. I started with July 1990 and now we are here the last one it was the September 2022 meeting. It was a remote only meeting because in Japan we couldn't have it because of the Japanese Visa specialties, etc. We had to decide to have a remote meeting. Now you can see that after the approval of ES 2022 and this is also normal the participation it was lower. So 44 there was zero local participants, remote participants were everybody from 20 companies. So a little bit lower than it was at the July San Francisco meeting which was already a mixed meeting. So those local participants you can see that are there were much higher. so this is still a good participation and I would not be worried at all about the lower participation we had. By the way here you can see what we had a year ago, and then you can see the October 2021 remote participation it was also 54 - so 10 less now. So these are about the meeting participation.
 
-IS: Now regarding the ECMA standards downloads. I can already say you know that nothing has changed in terms of the tendency. So the latest status is 16th November and at this point in time we had a download of 75,000 for all Ecma standards and these are below the TC39 download statistics and I have calculated that 56% of all of the downloads are coming from TC39. So still TC39 is the absolute champion in terms of downloads statistics, and obviously the ECMA 262 is here the champion. JSON has dramatically improved over the years. So now it is second here with 11000 and and this is good and here ECMA-402 is much less and then the ECMA specifications which we have transferred also for fast track to JTC1. ECMA-414: this is rather important on the ISO side and we have to actually renew it next year within the 5 years reconfirmation procedure. So we have to be very careful that this actually gets a reconfirmation next year in ISO because that's the way how we are presenting our self  to ISO. Now the next one is here the usually the html access statistics. I would say that here the last three years’ figures are which I would consider that this are true figures and not made by bots. So here the latest one at the moment is 34,000 and and 12th edition 50,000 Etc. So these are here the last three. is is is 31,000.
+IS: Now regarding the ECMA standards downloads. I can already say you know that nothing has changed in terms of the tendency. So the latest status is 16th November and at this point in time we had a download of 75,000 for all Ecma standards and these are below the TC39 download statistics and I have calculated that 56% of all of the downloads are coming from TC39. So still TC39 is the absolute champion in terms of downloads statistics, and obviously the ECMA 262 is here the champion. JSON has dramatically improved over the years. So now it is second here with 11000 and and this is good and here ECMA-402 is much less and then the ECMA specifications which we have transferred also for fast track to JTC1. ECMA-414: this is rather important on the ISO side and we have to actually renew it next year within the 5 years reconfirmation procedure. So we have to be very careful that this actually gets a reconfirmation next year in ISO because that's the way how we are presenting our self to ISO. Now the next one is here the usually the html access statistics. I would say that here the last three years’ figures are which I would consider that this are true figures and not made by bots. So here the latest one at the moment is 34,000 and and 12th edition 50,000 Etc. So these are here the last three. is is is 31,000.
 
 This is what was mentioned earlier we have the TC39 meeting schedule for 2023. So here you can just copied it from the TC39 GitHub Etc.
 
-Just for reading at home: There is a requirement that every five years there is a periodic review of the faster extent that takes place and and this involves us. Two important standards: one is the JSON standard and then here you find the number for iso a number for the JSON and the other one which comes up next year, and this is the ECMA-414 Ecmascript suite. So we have to be very careful that the JTC1 SC22 P member national member bodies approve it. So if you have any chance to influence your National member bodies that they give a positive reconfirmation vote for both the JSON standard, which is up until next march (2023) and then we will have a similar one for the ECMA-414 and reconfirmation of that would be very very important. One point is for the Ecma-404, which is the JSON standard, which is very stable to get in ISO the “stabilized” status. Rex Jaeschke - out SC22 liaison -  has pointed out this possibility and I fully agree with him and which means that it will after that it can never be changed in JTC1. ECMA-414, this is just a preparation for next year. it contains automatically all the “undated” (latest) normative references to ECMA-262 and 402. So that's the reason why this exercise is very important, unfortunately we cannot influence that JTC1 here from TC39, you have to do it within your National SC22 Body. As I see it SC22 does not have a working group dealing directly with the ECMA standards and this is a little bit dangerous in my opinion. So we have to make it sure that the fast-tracked TC39 standards get reconfirmed.
+Just for reading at home: There is a requirement that every five years there is a periodic review of the faster extent that takes place and and this involves us. Two important standards: one is the JSON standard and then here you find the number for iso a number for the JSON and the other one which comes up next year, and this is the ECMA-414 Ecmascript suite. So we have to be very careful that the JTC1 SC22 P member national member bodies approve it. So if you have any chance to influence your National member bodies that they give a positive reconfirmation vote for both the JSON standard, which is up until next march (2023) and then we will have a similar one for the ECMA-414 and reconfirmation of that would be very very important. One point is for the Ecma-404, which is the JSON standard, which is very stable to get in ISO the “stabilized” status. Rex Jaeschke - out SC22 liaison - has pointed out this possibility and I fully agree with him and which means that it will after that it can never be changed in JTC1. ECMA-414, this is just a preparation for next year. it contains automatically all the “undated” (latest) normative references to ECMA-262 and 402. So that's the reason why this exercise is very important, unfortunately we cannot influence that JTC1 here from TC39, you have to do it within your National SC22 Body. As I see it SC22 does not have a working group dealing directly with the ECMA standards and this is a little bit dangerous in my opinion. So we have to make it sure that the fast-tracked TC39 standards get reconfirmed.
 
 IS: now here the GA venues and dates They have not changed. The ExeCom meeting venues and dates have also not changed. and I think now I am just over my time, so please just read my remaining slides.
-
 
 ## Ecma262 Update
 
@@ -103,7 +96,6 @@ KG: Yeah; this refers to a couple of things. One of them is that a few of the al
 
 WH: Thank you.
 
-
 ## Ecma 402 Status Update
 
 Presenter: Ujjwal Sharma (USA)
@@ -112,7 +104,7 @@ Presenter: Ujjwal Sharma (USA)
 
 USA: Hello. and welcome to the Ecma 402 status update. There is a number of normative changes that I'll quickly go over. not to take too much period of time. first up we just know we talked about a new version of Unicode this has deeper implications for Intl, specifically there's new numbering systems that have been added. so Andre made up a request based on ICU 72 and has been approved by the TG2, but it adds these new numbering systems to the spec at the moment. We're working on a long term solution to periodically do this automatically so that the lists are updated because since this is uncontroversial and needs to be done periodically anyway. But at the moment this is an individual, normative pull request.
 
-USA: next one we have 715 this pull request is by RCA. It updates the fractional seconds digits in date-time format in preparation for Temporal. So at the moment date-time format accepts only zero till three in order to format sub second values  when formatting. Temporal allows greater precision, so this PR would allow the formatter to accept values from 4 till 9 fractional digits, which is the end of the limit when it comes to Temporal. But at the moment it behaves like those additional digits were all set to zero. This is also been approved by TG2.
+USA: next one we have 715 this pull request is by RCA. It updates the fractional seconds digits in date-time format in preparation for Temporal. So at the moment date-time format accepts only zero till three in order to format sub second values when formatting. Temporal allows greater precision, so this PR would allow the formatter to accept values from 4 till 9 fractional digits, which is the end of the limit when it comes to Temporal. But at the moment it behaves like those additional digits were all set to zero. This is also been approved by TG2.
 
 USA: Next we have. a PR by ABL this is canonicalizing GMT to UTC. at the moment UTC. / GMT is canonicalized to UTC in the 402 spec. After the new edition in the TZ data now one of the other possible values is GMT. So we're essentially expanding that behavior to both of them since they're semantically equivalent. This is also been approved by the TG2.
 
@@ -124,8 +116,8 @@ FYT: Yes, I have to point out PR 715 have never reached consensus is clearly sta
 
 USA: All right. I’ll take it that you objected to this particular PR.
 
-FYT: Yes.  \
- \
+FYT: Yes. \
+\
 USA: All right. Okay. is there anything else on the queue? [no] All right, so that's all in the queue. I take it that 715 does not have consensus within this group. So I would like to ask for consensus on the rest of the PRs: 714, 724, 729. Any objections to those?
 
 DE: the explanations you gave all will make sense to me and I support. support consensus on these changes.
@@ -140,10 +132,7 @@ USA: Oh, yeah. well this would. this would be presented to TG2 to but I take it 
 
 DE: I like the way that you've been giving summaries explaining why the PRs make sense? and so it'll be great if you can give that next meeting.
 
-
-
 ?: you know the ordering of it goes to TG2 TG2 and then it goes to TG1. I like that better.
-
 
 <p id="gdcalert57" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: Definition term(s) &uarr;&uarr; missing definition? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert58">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
@@ -155,37 +144,26 @@ FYT: I support 714 and 724.
 
 RPR: We have two two active supporters. Are there any objectors for those? No. okay, then those two PRs have consensus then. Thank you very much. I think you SFC as well on the the queue. Right. Does that conclude the 402 status update?
 
-
 ### Conclusion/Decision
 
-
-
-*  Consensus on 714 and 724
-* No consensus on 729 at this point
-
+- Consensus on 714 and 724
+- No consensus on 729 at this point
 
 ## ECMA-404 status update
 
 Presenter: Chip Morningstar (CM)
 
-- [proposal]()
-
-- [slides]()
-
 CM: The status of ECMA-404 remains very boring, which is exactly how we like it.
-
 
 ## Test262 status update
 
-Presenter:  Ujjwal Sharma (USA)
+Presenter: Ujjwal Sharma (USA)
 
 USA: Hello. the test 262 maintainers unfortunately weren't able to attend this call, but they have sent us a summary. So I'll quickly read that:
 
-
-
-* The ESMeta team approached us about integrating their tools with test262's continuous integration. (As a reminder, ESMeta is the ECMAScript interpreter generated directly from the specification.) We had a productive discussion and identified some next steps towards running new tests with the ESMeta interpreter in CI. We also identified some difficulties around integrating the text of Stage 3 proposals into ESMeta.
-* There's an RFC (our first, as a trial of the new process) about adding some facilities to test262 for improving the experience of writing asynchronous tests. We'd love to have some feedback from the perspective of implementers maintaining a test262 runner, and from (potential) test writers.
-* There are now tests for several more stage 3 proposals: change Array by copy, Symbols as WeakMap keys, RegExp duplicate named capture groups.
+- The ESMeta team approached us about integrating their tools with test262's continuous integration. (As a reminder, ESMeta is the ECMAScript interpreter generated directly from the specification.) We had a productive discussion and identified some next steps towards running new tests with the ESMeta interpreter in CI. We also identified some difficulties around integrating the text of Stage 3 proposals into ESMeta.
+- There's an RFC (our first, as a trial of the new process) about adding some facilities to test262 for improving the experience of writing asynchronous tests. We'd love to have some feedback from the perspective of implementers maintaining a test262 runner, and from (potential) test writers.
+- There are now tests for several more stage 3 proposals: change Array by copy, Symbols as WeakMap keys, RegExp duplicate named capture groups.
 
 SYG: What were you looking for feedback on from implementors? I missed it.
 
@@ -202,26 +180,20 @@ RPR: and then Dan has a comment.
 DE: I think that governance model for test262 been a bit too conservative. it looks like that RFC is for comments on a small support Library that would be used to write tests that it wouldn't take changes by test all by just getting better by implementers to use. Then I see a lot of negative comments from somebody there. there kind of. on not liking the form of that I think people who write tests should be. encouraged to commit tests and also commit support files without this kind of without this kind of gatekeeping and I worry that the RFC process and the governance discussions have led to a kind of impasse here that's not helpful.
 
 USA: I'm not sure if I can answer that question. Maybe you can raise this to the maintenance directly in Matrix \
- \
+\
 DE: Sorry. I'll follow up with them and get up. \
- \
+\
 USA: Thank you. That's all. Right
-
 
 ## Updates on Code of Conduct committee
 
 Presenter: Firstname Lastname (FLE)
 
-- [proposal]()
-
-- [slides]()
-
 RPR: next we have JHD. with updates from the code of conduct committee. JHD are you online? Maybe not. Is there anyone? else from the code of conduct committee that would like to give an update? Okay. looks not.
 
-RPR: I will say. related to this topic and something that istvan mentioned in his section. is that we still have the NVC funding requests. So that's non-violent communication training, and that is an active request from TC39. that has been discussed at execom. I think most recently at the well and first in well I said this this dates back about something like 2018. I think the original request came up, but it was discussed more recently this year. The current status is that we have feedback from execon that they wanted us to investigate more about the reasons and like the fundamentals of why this is needed. as well as also like reviewing the CoC as itself see it that could be improved. at the moment, I think that the chairs are looking for who can champion this. CoC side originally it was the inclusion group that were pushing this forwards the most. but I know that obviously not everyone has everyone has the time for that at the moment. So if you would like to be the champion for this and help us to  kind of do it do the full due-diligence on this please say. Otherwise, I think that this request has kind of been in a stasis for quite some time now, for years, so if we don't get an active champion by February time, I think that we will probably withdraw this request. so yeah if you would like to help out with NVC funding, please contact the chair group.
+RPR: I will say. related to this topic and something that istvan mentioned in his section. is that we still have the NVC funding requests. So that's non-violent communication training, and that is an active request from TC39. that has been discussed at execom. I think most recently at the well and first in well I said this this dates back about something like 2018. I think the original request came up, but it was discussed more recently this year. The current status is that we have feedback from execon that they wanted us to investigate more about the reasons and like the fundamentals of why this is needed. as well as also like reviewing the CoC as itself see it that could be improved. at the moment, I think that the chairs are looking for who can champion this. CoC side originally it was the inclusion group that were pushing this forwards the most. but I know that obviously not everyone has everyone has the time for that at the moment. So if you would like to be the champion for this and help us to kind of do it do the full due-diligence on this please say. Otherwise, I think that this request has kind of been in a stasis for quite some time now, for years, so if we don't get an active champion by February time, I think that we will probably withdraw this request. so yeah if you would like to help out with NVC funding, please contact the chair group.
 
 RPR: Okay. that is the COC update.
-
 
 ## Speccing liveness of template objects
 
@@ -262,8 +234,8 @@ SYG: Yes. and this directly defines that. like right now we don't really talk ab
 MAH: If the parse node is unreachable -
 
 SYG: but what is unreachable mean? That's just a note, right. \
- \
-MAH:  Yeah, if the program is never going to execute that template literal tag, the program is never going to be able to observe the Frozen array.
+\
+MAH: Yeah, if the program is never going to execute that template literal tag, the program is never going to be able to observe the Frozen array.
 
 SYG: That's right. But if for example you're implementation implementation does something like bytecode flushing and it blows away the compiled byte code on memory pressure because it can reparse the source code that suddenly affects that implementation choice on certain interpretations of what that note means can affect. the lifetime of these template objects.
 
@@ -271,7 +243,7 @@ DE: So I’m on the queue next. I have to agree with MAH actually thinking about
 
 SYG: so why is that clear to you if it gets re-parsed ?because it talks about parse nodes not the parse nodes corresponding to a site.
 
-DE: in some way. It would be a Fool's errand to start tracking all sorts of different spec internal constructs.  because there are lots of them and we could think about liveness for lots of them. But it's a question of whether there's an execution path that can lead to what should return the same frozen array. and it clearly should cross the operation of you know, clearing out the byte code and then reparsing it. because it's the same it's the same considered the same parse node.
+DE: in some way. It would be a Fool's errand to start tracking all sorts of different spec internal constructs. because there are lots of them and we could think about liveness for lots of them. But it's a question of whether there's an execution path that can lead to what should return the same frozen array. and it clearly should cross the operation of you know, clearing out the byte code and then reparsing it. because it's the same it's the same considered the same parse node.
 
 SYG: Where in the spec does it do you draw that conclusion, I guess like I agree. That's yeah, but that was that's exactly the confusion
 
@@ -281,23 +253,23 @@ SYG: I don't know if I agree right now a strict reading of the current spec as i
 
 DE: Yeah, I think it's an editorial decision whether we make this change or not. The note is clearly incorrect because it is observable via via WeakRefs but I think the current spec implies the same the same semantics
 
-SYG: Okay. it's clear to you WH.  \
- \
+SYG: Okay. it's clear to you WH. \
+\
 WH: I disagree with the DE’s conclusion that this change is not observable. Consider what happens if you use template objects as keys in a WeakMap — depending on what we decide here, these keys may or may not cease to be live, which means that the values of that WeakMap may or may not be garbage collected.
 
 DE: Could you clarify what you? mean? I'm not sure if any of us are disagreeing about what the semantics actually should be.
 
 WH: What I'm saying is that this is not a transparent change. Whether we garbage collect parse nodes or not is observable. \
- \
+\
 DE: can you walk through that a little more concretely?
 
 WH: Yes. Let's say you build yourself a weak map with template objects as keys. And then use weak references to see if any of the bindings in the weak map ever get garbage collected. If they did then you know that a template object has gone away.
 
-DE: I don't think we're disagreeing about whether the template objects go away or like when they should go away. but just about whether the current  spec text implies the same thing. At least that's what MAH and SYG and I were talking about. can you elaborate on what you mean?
+DE: I don't think we're disagreeing about whether the template objects go away or like when they should go away. but just about whether the current spec text implies the same thing. At least that's what MAH and SYG and I were talking about. can you elaborate on what you mean?
 
 WH: Yes, and I disagree with the conclusion you made that this is just an editorial change — whether we do this change or not is not observable. I produced a counterexample to that conclusion.
 
- \
+\
 DE: Hmm I don't understand yet. Sorry. SYG. I guess this was addressed you. Do you have any thoughts here?
 
 SYG: I think we already disagree DE. I disagree with you, DE and MAH about a strict reading is the collection of parse nodes that we the intended collection of partners that we all agree on Is that covered by the strict reading of its back and I already disagree because I don't really see. that for reasons I said I already understand. I still don't really understand why why you think it is. covered by the strict reading so I'm I mean like I think this is normative which is why I put it on here.
@@ -310,7 +282,7 @@ MAH: Yeah. I just want to clarify there is already a note Note 5 in the liveness
 
 SYG: That talks about language values. Parse nodes are not language values.
 
-MAH: But it's an internal concept. That is not observed anywhere, and I think it's a level of indirection to the template object. To answer WH, yes, you can observe that the template objects might be collected through WeakRef or finalization registry. So, yes, we do need to remove that current note because  it's not correct anymore. However I don't think we need to do anything further than clarifying when those can be collected because that parseNode is never evaluated anymore.
+MAH: But it's an internal concept. That is not observed anywhere, and I think it's a level of indirection to the template object. To answer WH, yes, you can observe that the template objects might be collected through WeakRef or finalization registry. So, yes, we do need to remove that current note because it's not correct anymore. However I don't think we need to do anything further than clarifying when those can be collected because that parseNode is never evaluated anymore.
 
 SYG: My understanding of your disagreement MAH and where I disagree, is that on a strict reading of the liveness section it talks about objects that can be referenced to weak refs. parseNodes are not language values and cannot be referenced to weak refs. It is very natural to read a generalization of the liveness section to cover parse notes. Which are strictly speaking is not what it says currently is my contention. therefore it's a normative change that we need to extend it to cover parse nodes in this scoped way. Does that make sense or you disagree with that characterization?
 
@@ -325,11 +297,11 @@ SYG: What? it is observable.
 DE: I want to see if we could draw a - like I think MAH and I agree with you on what the semantics should be and we're just disagreeing editorially how to State it. So I think here in in plenary what we need to draw strong consensus on is what the semantics should be and then we can work out the editorial details offline about how how to merge that into the specification Is that is that a fair Yeah happy. way to go forward?
 
 SYG: Yeah, I guess \
- \
+\
 MAH: Happy to work on this offline.
 
 BFS: I was I think on the same vein. I was just gonna I was just gonna sort of Wonder aloud if this would if it would help anything to just clearly state that the the guarantee is supposed to be that every time a template literal a specific template literal is executed the the array the static array that is passed to the tag function must be exactly the same one as every other time. That's that's the intended behavior and maybe we could maybe it's enough to just say what that observable Behavior must be and you don't have to get too much into the details of exactly how that is made to work. Just a suggestion. \
- \
+\
 YSV: So my question is, I tried to test this behavior on Firefox with what I could understand was the STR [steps to reproduce] from the bug using the lit framework with the repeat directive and calling that multiple times under different circumstances, but I'm not 100% sure that I got the STR correctly. I'm wondering does V8 have - I didn't notice it in the bug - does V8 have a test related to this that other implementations could use to verify their behavior.
 
 SYG: Not a reliable reproducible one because it like as far as I understand It depends on memory pressure. and the triggers for that area different from engine to engine.
@@ -342,16 +314,14 @@ YSV: Um, there are a couple of diffs on the V8 that demonstrate the behavior, bu
 
 SYG: Not that I'm aware of for non-V8 runtimes. \
 
-
 YSV: Okay. So for now I guess the status on our side is that we haven't been able to reproduce behavior in our engine. and I'm checking with our GC folks if they think that this might also exist as a misunderstanding within Firefox because that might be interesting in terms of if other implementers misunderstood the specification here as well. \
-
 
 SYG: Yeah. I think check. your life check the lifetime of the keys to this actual map.
 
 YSV: I’ll pass that on.
 
 BFS: I think YSV covered everything. I was just concerned. whether this is anything that is known to happen and other engines or you just happened to discover that this happened in v8 and it don't know if it happens anywhere else. Maybe I was just gonna suggest more communication to other engines might be needed than just fixing the spec. That's all. \
- \
+\
 SYG: Well, I mean I hope like right now is the communication to other engines.
 
 JRL: Earlier you mentioned that the confusion came from bytecode flushing and trying to determine if that kept the template object alive. I'm not sure how the proposed change actually fixes that because we don't mention that a particular site maps to a parse node (or maybe we do and I'm not aware of it).
@@ -366,11 +336,11 @@ USA: We have two minutes left and two items in the queue.
 
 WH: I agree with SYG’s intent, but the formalism here is broken, specifically there are issues about what “a valid future execution” actually means. I can come up with examples where a parse node keeps itself alive, or a parse node keeps other objects alive which then keep the parse node alive. The property I would want with garbage collection is that if there are cycles of objects which keep themselves alive but you can't get to the cycle then you can collect all of them. The “valid future execution” kind of definition doesn't currently work if template objects are part of such a cycle.
 
-SYG: I think I see where you're getting at. Um, this is why we ended up with a  non-maximal set of things for the current definition of liveness. and to yeah, Okay. Yeah, but I don't quite see I think I see where you intend to cycle to be. But there seems to be resistance to having formalism here more formalism here. anyway, but I want to I guess okay, so let's clear the queue and then I want to have some. next steps.
+SYG: I think I see where you're getting at. Um, this is why we ended up with a non-maximal set of things for the current definition of liveness. and to yeah, Okay. Yeah, but I don't quite see I think I see where you intend to cycle to be. But there seems to be resistance to having formalism here more formalism here. anyway, but I want to I guess okay, so let's clear the queue and then I want to have some. next steps.
 
 JHX: Okay. so, could we have a note to describe the high high level? intention of the templates array objects, I mean it's it's a frozen array and from the developer. perspective I'm not sure. if they have other use case but it seems the only use case of it is to use it as a key. to cache the cache for the results of the tag function. So I think I think if we can have a note to make it a much clearer it might help as my helpful for the incrementer too. not only implementors but also developers to understand what it's for and what what the desired behavior and also are I mention this because actually I don't see many tags using this use it as you use the cache. that the for example the the Dedent proposal also We also have a topic about the dedent. cache problem and actually all the all the dedent implementations I have seen never use the cache. Maybe it's not important important in the dedent case because it do not it do not have a big performances but I really hope the spec could have a note to clear. say what what it's for.
 
-SYG:  Thank you for your thoughts. I take it there is disagreement what it is collectible designed the for. So the current the disagreement both is increments and is whether it is editorial or normative, but I guess that particular question is moved because we agree on what the semantics are supposed to be but we the disagreement with MAH and DE and myself and WH is whether it falls out from the current definition and we will work offline to resolve that and find a wording. I guess. Does that sound accurate?
+SYG: Thank you for your thoughts. I take it there is disagreement what it is collectible designed the for. So the current the disagreement both is increments and is whether it is editorial or normative, but I guess that particular question is moved because we agree on what the semantics are supposed to be but we the disagreement with MAH and DE and myself and WH is whether it falls out from the current definition and we will work offline to resolve that and find a wording. I guess. Does that sound accurate?
 
 WH: Yeah, I wonder if, rather than trying to make parse nodes be live or not live, there is instead a way to change the way that we access those template objects such that GC falls out of traditional object GC semantics.
 
@@ -380,14 +350,10 @@ WH: I'm hand-waving a lot here, and this might not work, but suppose each parse 
 
 SYG: Yeah, I like what that direction's going. I might kill two birds with one stone to clear up Justin's. thing earlier too on like what exactly is the lifetime of parse nodes is it you know is is reparsing allowed that kind of thing. So Okay. That's enough concrete next steps for me. Thank you everybody.
 
-
 ### Conclusion/Decision
 
-
-
-* Normative semantics have agreement (can’t collect template objects if the code which produced them might get evaluated)
-* Discussion of how to specify normative semantics to continue offline
-
+- Normative semantics have agreement (can’t collect template objects if the code which produced them might get evaluated)
+- Discussion of how to specify normative semantics to continue offline
 
 ## Array grouping WebCompat issue
 
@@ -439,12 +405,12 @@ JRL: Yah, any possible renaming. it just kind of like a smiley face or a frown f
 
 YSV: there arguments in favor of the static methods. Do you want to hear those first?
 
-JRL: Sure, Sorry. I didn't realize, is there something else in tcq?  \
- \
-EAO: If we go with static methods we end up doing the same thing that we're already doing with Object.fromEntries and Array.from, so there is consistency there that we would be matching.  \
- \
-RPY: I did actually yes. so I think because and object helpers don't live on the Prototype whereas array ones do I think that's a slight difference. so help us for a raise typically live on the array prototype, right like  \
- \
+JRL: Sure, Sorry. I didn't realize, is there something else in tcq? \
+\
+EAO: If we go with static methods we end up doing the same thing that we're already doing with Object.fromEntries and Array.from, so there is consistency there that we would be matching. \
+\
+RPY: I did actually yes. so I think because and object helpers don't live on the Prototype whereas array ones do I think that's a slight difference. so help us for a raise typically live on the array prototype, right like \
+\
 EAO: But those prototype helper methods modify that instance, while here we're creating new instances.
 
 SYG: I was swayed when we discussed this internally to the consistency thing for the same reason that was previously.. I'm in favor of the static methods for the same reason that was just mentioned.
@@ -453,19 +419,19 @@ YSV: I prefer static methods to groupByToMap on the prototype. I think it's actu
 
 JRL: I guess, can we do a temperature. Check with three options and I can come back. next time with either a rename or formalize spec for the static methods?
 
-USA: So you mean the temperature check on naming not naming whether or not we choose renaming or the static method. method. Unfortunately that's that's too wide perhaps you could limit it to something more specific, okay? Could we get a temperature check on, just the static methods,  \
- \
+USA: So you mean the temperature check on naming not naming whether or not we choose renaming or the static method. method. Unfortunately that's that's too wide perhaps you could limit it to something more specific, okay? Could we get a temperature check on, just the static methods, \
+\
 JRL: All right? So I suppose we will do a temperature check on static methods versus instance. Okay.
 
 [discussion of how temperature check should work]
 
-JRL: I mean it's there's only Option 2 and 3 now.  I think we’ve ruled out Option 1 to begin with. So there's only 2 and 3, another rename or static method. I think the way that we phrase this will give us the same result anyway. If you're positive on using static methods, then I would come back with a definition for static methods. if you're unconvinced by static methods I would come back next time with a rename. Or if you're indifferent then I would choose what happens, I guess. Whatever has more positive results or negative results. So the question, the temperature check question is, are we happy with a static method definition? \
- \
+JRL: I mean it's there's only Option 2 and 3 now. I think we’ve ruled out Option 1 to begin with. So there's only 2 and 3, another rename or static method. I think the way that we phrase this will give us the same result anyway. If you're positive on using static methods, then I would come back with a definition for static methods. if you're unconvinced by static methods I would come back next time with a rename. Or if you're indifferent then I would choose what happens, I guess. Whatever has more positive results or negative results. So the question, the temperature check question is, are we happy with a static method definition? \
+\
 Strong Positive: 3 \
 Positive: 11 \
 Indifferent: 7 \
 Unconvinced: 5 \
- \
+\
 JRL: Because we only have a 15-minute time box, I’m going to call it here. It looks like we're mostly positive on using a static method and only a couple people who would like to see a rename.
 
 YSV: I think also given that we aren't 100% one way or the other, it may make sense for us to give this some time to bake ith the community. So that they also can give input, and let it socialize for a period of time before going ahead with the decision,
@@ -475,7 +441,7 @@ JRL: Do you think we should go back to Stage 2 since I'm going to be vastly chan
 YSV: So, stage 2 to stage 3 the advancement means that we agree with the shape of the proposal and the problem space, that is solving problems based on is valid. It's the solution shape, that is changing. I still think that this is a strong proposal so I'm not opposed to the staying in stage 3, but I can move into Stage 2 given what the stage two to three transition means is also valid.
 
 JRL: I was so specifically if this would allow time to bake with the community. If we signal that going back to stage two, that we have to rethink the solution because the naming doesn't work out. Well, maybe that would - I don't know. I can't think very well, it’s too early. Maybe that would allow us more time to bake instead of stage 3, essentially their next meeting or the following to see if this would be implemented already in browsers. And if we could Advance the stage for I guess if we go back to stage two than just means more time that we'd have to wait before if this actually lands in browsers. \
- \
+\
 USA: You. have a queue but you're on time. I request you to be quick. if we have Daniel.
 
 DE: I, think we should in general avoid demoting, things to stages, especially if it's something so minor as a naming issue, as long as we're clear in documenting that this isn't ready to ship until we have we allowed this time to bake as YSV said.
@@ -489,33 +455,28 @@ SYG: Okay.
 JRL: Especially because I haven’t specced the static Methods at all. I don't know how they'll actually work or what the semantics would be. The confusion about whether this was array.groupBy or object.groupBy was because I haven't through through it fully - but I can just come back next meeting with a formalized spec, but not actually ask for advancements until we get community feedback.
 
 SYG: Okay, I'll wait for Bradford's saying, I guess I was the massively was - like is the spirit of the behavior normatively changing? Because now the more things are in play. \
- \
+\
 YSV: Yeah, my thinking is just thinking a little bit more about the stage to think. First, we don't know yet for sure that the API is changing. We want to give it time with the community to sort of see how people react. It might be that they really push us towards a prototype method in spite of what we internally think is best there might be a large discussion there. Secondly, this came up as implementer feedback due to web compatibility concerns and if we need to test this then that needs to be done. Probably as an implementation. We probably won't be able to touch that outside of this. Unless we do, for example, a big data query. and even that it's not entirely clear of will get exactly the information that we need in order to make good decisions. So I think it's, I think what might make sense is like have a back pocket proposal which is the static methods that if we come to the Inclusion that yes, this is the corrected shape of the proposal. Then we advance that to stage three and move ahead with that rather than doing a demotion right now, okay?
 
 JRL: Okay. that's fine to me.
 
 JHX: Yeah, I think if we do renaming, I think there's no need to go back to stage two, But if we change to the static method, I support go back to Stage 2, because we've not only it's actually not, not only. instant methods, for example, we may have Record groupBy so yes \
 
-
 BSH: Just briefly one of the in favor of static methods is if is a static method, then the argument can be any iterable, not just an array, which seems like a more generally useful structure so that might be feature creep for this proposal. I realize, but it could be with this
 
-JRL: Because iterables could be infinite, they’re a bit different. Here you're only taking a fixed amount, the behavior will collates all keys. I would say like if you have a span of 1, 2,1,1 those all 1s get grouped into the same key. But in an iterable,  if you have 1, 2, 1,1 you have 3 separate groups, [1], [2], [1, 1]. The behavior for iterator groupBy has to return itself an iterator which does not have all keys  collated together, only contiguous runs collated.
+JRL: Because iterables could be infinite, they’re a bit different. Here you're only taking a fixed amount, the behavior will collates all keys. I would say like if you have a span of 1, 2,1,1 those all 1s get grouped into the same key. But in an iterable, if you have 1, 2, 1,1 you have 3 separate groups, [1], [2], [1, 1]. The behavior for iterator groupBy has to return itself an iterator which does not have all keys collated together, only contiguous runs collated.
 
 BSH: Okay, thanks.
 
 USA: All right. That concludes this topic. I would like to reaffirm that this proposal stays stays at stage 3.
 
- \
+\
 JRL: Yeah. so I would like to remain at stage 3. I'm going to come back next meeting with a formalized spec for static methods and we can agree on that point if we want to approach, if we want to switch to the static method approach, we could either demote to stage two and let it bake with the community at state stage 3.
-
 
 ### Conclusion/Decision
 
-
-
-* Proposal stays at stage 3
-* Tentatively going for static methods on Object/Map
-
+- Proposal stays at stage 3
+- Tentatively going for static methods on Object/Map
 
 ## Should we set a lower bound on the resolution of timers
 
@@ -525,24 +486,24 @@ Presenter: Shu-yu Guo (SYG)
 
 SYG: OK. This is a pedantic thing that I don't think has any real world impact one way or another currently, but it'd be good to to get clarified in the spec. So RGN here filed an issue a while back currently. `Atomics.wait` is one of those things where we hand wave some stuff about what time actually is and the way that it does the blocking. It is a blocking call that suspends the thread of execution until it is notified. This cannot be called on the main thread because it blocks execution. And the way it does this, it can have a timeout that goes to this AO called SuspendAgent, and it just says like, wait for that time. The issue is that we don't really put any normative guidance around what exactly that ‘wait for that time’ means. Does it mean a compliant implementation must wait exactly that time? Does it mean it can wait at a coarser granularity of time? We don't say. So I think we should say something about that. Specifically, RGN brings up the point of fractional milliseconds, and you observe different things on different implementations. As he shows in this. example here. So, what should we do?
 
-SYG: My preference here - So, the choices here, I think are: one, we say something like when the spec says wait for n milliseconds implementations can be considered compliant and wait for any finite length of time. That is greater than N milliseconds. Meaning it can coarsen. the timer resolution as much as it wants. This is basically what HTML does. So when you do a set timeout for example it says wait that amount of time and then there's another step that says then wait and implementation defined amount of time. So if for whatever reason, the host or the implementation, Besides, that needs to course and timers do to Enter security. implementation. constraints or anything. It can choose to do. So and still be considered compliant. or we can say in the JavaScript spec that compliant implementations must have some granularity. some resolution Like if we say Ms you cannot question Beyond milliseconds. Beyond whole milliseconds or something. I don't think I think that's the thing that we can say but that is I contend that it's not a thing we should say because it binds Implementations hands too much both current and future. So, That's basically it. My preference is +1 from DLM. What's the last? The question. What exactly it means and I think my preference is something like this, it basically means that if someone calls atomics that weight X for any finite X, the implementation can choose any possibly different actual point of the time and still be considered compliant. so long as the weights at least X. The. have done on the queue.  \
- \
-DLM: We have discussed this internally SpiderMonkey team. and we explicitly support option. One. Six. up,  \
- \
-MAH:  Yeah, how is that? I didn't really go through this. How, how is the time observed. Is it just a simple Date look up?
+SYG: My preference here - So, the choices here, I think are: one, we say something like when the spec says wait for n milliseconds implementations can be considered compliant and wait for any finite length of time. That is greater than N milliseconds. Meaning it can coarsen. the timer resolution as much as it wants. This is basically what HTML does. So when you do a set timeout for example it says wait that amount of time and then there's another step that says then wait and implementation defined amount of time. So if for whatever reason, the host or the implementation, Besides, that needs to course and timers do to Enter security. implementation. constraints or anything. It can choose to do. So and still be considered compliant. or we can say in the JavaScript spec that compliant implementations must have some granularity. some resolution Like if we say Ms you cannot question Beyond milliseconds. Beyond whole milliseconds or something. I don't think I think that's the thing that we can say but that is I contend that it's not a thing we should say because it binds Implementations hands too much both current and future. So, That's basically it. My preference is +1 from DLM. What's the last? The question. What exactly it means and I think my preference is something like this, it basically means that if someone calls atomics that weight X for any finite X, the implementation can choose any possibly different actual point of the time and still be considered compliant. so long as the weights at least X. The. have done on the queue. \
+\
+DLM: We have discussed this internally SpiderMonkey team. and we explicitly support option. One. Six. up, \
+\
+MAH: Yeah, how is that? I didn't really go through this. How, how is the time observed. Is it just a simple Date look up?
 
 SYG: In the current spec?
 
 MAH: How would a program observe the time that was actually spent waiting? As far as I know, the only way to do that with Ecma 262 defined operations is through Date.
 
 SYG: With 262, Yes. the host can of course, choose to inject other things, like monotonic clocks or something. \
- \
+\
 MM: I think I'm just confused. number two, what I thought I understood you to say. was that the number two suggestion, which is would be that you would imply that you can't before sin Beyond milliseconds but course but But what it would mean to course in Beyond Ms, would simply be that the wake up happened sometime later. sometime more later than you asked for. and it's already the case that the the You know that? there's there's no there's no upper bound on the time that anything in the language takes So in the absence of an upper bound on, when you can see that an atomic woke up, how can it mean anything to constrain and implementation from further coarsening?: \
- \
+\
 SYG: So, I agree but I think so that that is exactly what I seek to clear up pedantically. I think because the current language is so imprecise. It just says, like wait for n ms. One could naively read that to constrain implementations in this unrealistic way, but I agree in general with you. \
- \
-MM: Okay, good.  \
- \
+\
+MM: Okay, good. \
+\
 USA: That's all. of the queue.
 
 SYG: Cool. Thanks. All right. Sounds like we have consensus for option one. and, so, I guess that means - Is this an issue or a PR? just an issue. So then I need to write a PR and then but we have consensus and that just needs editorial review.
@@ -551,13 +512,9 @@ DE (on queue): Looks good.
 
 SYG: All right. that's it.
 
-
 ### Conclusion/Decision
 
-
-
-* Consensus to allow any finite amount of waiting which is longer than the specified time
-
+- Consensus to allow any finite amount of waiting which is longer than the specified time
 
 ## IPR Clarification for past commits
 
@@ -577,35 +534,31 @@ DE: SYG. Do you express? concern in the admin and business repo? Do you have any
 
 SYG: Let me page it back in. I think my concerns were, I don't want any delegate to be in the business of tracking down. exact employment dates of past employees of any company.
 
-DE: Well if you don't want to do that, that's okay. But I think, as a committee we have to put in this effort because the past employment dates imply, whether the contribution was licensed under the IPR are agreements. so, you know there's some current googlers and some former googlers on the IPR exceptions list. So someone will have to track down whether their contributions were under the agreement. Did you have any idea how we could avoid that? that?  \
- \
-SYG: I do not.  \
- \
-DE: Okay, So what is it like is it is that is that supposed to be be public info? You know. really editors shouldn't merge Patches from people who they aren't sure. our licensing. Their things According to I, the IPR paintings. So what I was what I was vice chair, I was checking for this stuff all the time and then I expressed to other people that they should check for this stuff. Now, we generated in exceptions list over time. because it wasn't being checked for. So I want to I want to go back and fix the situation. Like someone. so one of these items here is, maybe we should make lighter weight processes for noting the status of people. but in the w3c there's all these Bots and tools that the W3C produces to enforce exactly this thing. Just because we don't have that infrastructure in place fully doesn't mean that the motivation for it doesn't apply to us.  \
- \
+DE: Well if you don't want to do that, that's okay. But I think, as a committee we have to put in this effort because the past employment dates imply, whether the contribution was licensed under the IPR are agreements. so, you know there's some current googlers and some former googlers on the IPR exceptions list. So someone will have to track down whether their contributions were under the agreement. Did you have any idea how we could avoid that? that? \
+\
+SYG: I do not. \
+\
+DE: Okay, So what is it like is it is that is that supposed to be be public info? You know. really editors shouldn't merge Patches from people who they aren't sure. our licensing. Their things According to I, the IPR paintings. So what I was what I was vice chair, I was checking for this stuff all the time and then I expressed to other people that they should check for this stuff. Now, we generated in exceptions list over time. because it wasn't being checked for. So I want to I want to go back and fix the situation. Like someone. so one of these items here is, maybe we should make lighter weight processes for noting the status of people. but in the w3c there's all these Bots and tools that the W3C produces to enforce exactly this thing. Just because we don't have that infrastructure in place fully doesn't mean that the motivation for it doesn't apply to us. \
+\
 SYG: Well, I'm confused. My concern is about I thought we were talking about past contributors trying to attribute and trying to see if IPR cover them for crew for emerging current contributions. That is not in question, right?
 
-DE: The hole we have for current contributions around proposal repos where we're not really checking that these only come from Members or people who signed the forms. For past contributors, many patches were merged where we haven't yet traced, what the, what The agreement status is. But those are equally important, I think. you know, these are recent past contributions. They're like in the past five years  \
- \
+DE: The hole we have for current contributions around proposal repos where we're not really checking that these only come from Members or people who signed the forms. For past contributors, many patches were merged where we haven't yet traced, what the, what The agreement status is. But those are equally important, I think. you know, these are recent past contributions. They're like in the past five years \
+\
 USA: One thing that I wanted to note was that was quickly scanning through the list. I found out that a number of names on the list I could recognize as node.js contributors, if you like this idea I could post on their internal GitHub Discussions list. I guess is the is the thing, but get a movement
 
 DE: Yes it would be really great if you did encourage those people. to go and sign the form. then we can remove them from the exceptions list. Also, I believe that a number of the people on the exceptions list are employed or were employed by member organizations. And so if you can take the time to look and kind of note those people, then we can you know, including in the, in the issue. That's linked from the the Agenda item. then we can put them in the appropriate category either delegate or or Emeritus, We might want to improve processes for this. And so that's kind of a work item here listed. That would be really helpful. Arguably nobody should be responsible for this, like whose job is it? But well, we have to make sure it gets done.
 
-SFC: It looks like I'm next on the queue. I'll just note that the Unicode Consortium we went through a fairly large revamp of all of our IP policies involving specs and especially our libraries this summer. The thing that we largely landed on was just using the Apache CLA and using the CLA assistant for all of all contributions to Unicode repositories. It's been a fairly smooth roll overall. Just speaking from, you know, some other experience working with the standards body, that's what they landed on. So I don't know if that's relevant or not but I thought I'd point that out since their topic is here.  \
- \
+SFC: It looks like I'm next on the queue. I'll just note that the Unicode Consortium we went through a fairly large revamp of all of our IP policies involving specs and especially our libraries this summer. The thing that we largely landed on was just using the Apache CLA and using the CLA assistant for all of all contributions to Unicode repositories. It's been a fairly smooth roll overall. Just speaking from, you know, some other experience working with the standards body, that's what they landed on. So I don't know if that's relevant or not but I thought I'd point that out since their topic is here. \
+\
 DE: Yeah, I think it's an interesting idea. Yes, CLAs are very complicated. Yeah, if someone wants to work on instituting a CLA then let's be in touch. but I guess they don't see an exact need for one right now. Please get in touch about some parts of this topic or offline with me, like on Matrix. If you're interested in this topic, I would really appreciate your help.
 
-
 ### Conclusion/Decision
-
 
 ## Motivating use cases for Module Harmony proposals
 
 Presenter: Kris Kowal (`KKL)`
 
-- [proposal]()
-
-- [slides]()
+- slides
 
 KKL: All right. so today I wanted to give a brief update on module Harmony and it's motivating use cases. This is largely the same presentation I gave last time I spoke except transposed to emphasize the motivating use cases and then tracing them back to the layers and other proposals regarding modules. By the end of this presentation I'm hoping that you will have an a better appreciation for the coherence of all of the proposals that are involved in this and and be better prepared to understand the the four proposals touching on modules presented this week, so this is highly abbreviated and emphasizes the use cases.
 
@@ -615,7 +568,7 @@ KKL: Hot module replacement, like bundling, benefits from a lot of the same the 
 
 KKL: That's that's a good place to start. Let's go on. We can also do non-JavaScript modules as long as they're host-provided, like JSON and Wasm but this puts hosts in a position where they get to gatekeep what languages are supported, for a coherent with the language ecosystem. So what if we wanted to do non-host-defined or non-JavaScript modules and some of the examples of this would be JSON when the host doesn't provide it (which presumably won't be long for any of them), but there are holdouts. Wasm when it's not host defined. and then the biggest win of having a solution for non host defined non-JavaScript modules also provides us an opportunity to solve the assets and modules in the ecosystem and without adding other things that to the language. we that we can't And then of course. anticipate today the largely and then also I specifically say scoped experiments because I think it's also important to note that these kind what what kinds of modules and are involved in a module graph can be very application-specific and need not be generalized to the host.
 
-KKL: And yes in order to do this you need a minimal virtual module source protocol, as opposed to a maximal on. I'm striking a distinction here between what's easy and what's difficult. Easy that unlocks most  use cases and difficult one that unlocks everything up to and including virtualization of JavaScript itself.
+KKL: And yes in order to do this you need a minimal virtual module source protocol, as opposed to a maximal on. I'm striking a distinction here between what's easy and what's difficult. Easy that unlocks most use cases and difficult one that unlocks everything up to and including virtualization of JavaScript itself.
 
 KKL: CommonJS: one of the motivating use cases for module proposals to improve the participation of CommonJS and these and module and there are a number of ways to do this and I'm expecting them to evolve in our heuristics to evolve, and in fact for those heuristics the necessarily be application specific in some cases. I do not believe that CommonJS participation in esm generalizes well enough that it will ever make it to 262. I don't wish to try.
 
@@ -633,14 +586,11 @@ SYG: Seems like this is just an overview. So thank you for that KKL. Unsurprisin
 
 RPR: All right. nothing more in the queue. so, we shall advance.
 
-
 ## Is ECMA402 allowed to extend ECMA262 prototypes?
 
 Presenter: Richard Gibson (RGN)
 
-- [proposal]()
-
-- [slides]()
+- slides
 
 RGN: So, what we are looking at is an issue that came up in the context of Temporal. Just a little bit of background for it. There are a number of properties on the prototypes of various Temporal classes such as PlainDateTime and ZonedDateTime and YearMonth that are necessary for the ISO 8601 calendar: things like `year`, `month`, `monthCode`, `daysInYear`, and so on. Temporal also defines non-ISO 8601 calendars in ECMA-402, some of which have aspects to them that lack analogs in the 8601 calendar. And in particular, some of those calendars have the concept of eras. The most familiar example to people is probably going to be the Gregorian calendar, where you might have learned about BC and AD or BCE and CE. You know, how are years counted before year one? And because such calendars are required for an ECMA-402 implementation, the current state of the Temporal proposal is that property accessors for that data are defined in 402 rather than 262. An issue was raised regarding whether or not that is acceptable. In general, ECMA-402 extensions take the form of a subgraph of properties and objects that are accessible from the Intl object, or of methods that are explicitly called out into 262 as being overridden in 402 such as toLocaleString. So, even though hosts in general are allowed this kind of arbitrary extension, it's not something that currently exists inside of our specification cluster itself. And this being unusual, an issue was raised in Temporal, it was discussed a little bit in TG2 and a decision was made to bring it to TG1 plenary, which is why I'm here today.
 
@@ -686,7 +636,7 @@ MM: So whether the 262 spec itself currently allows this in some sense, we're th
 
 WH: I see this kind of thing as just factoring the spec into parts which are internationalization-related and parts which form the core of the language, and sometimes those parts interact in a way where it is useful for Ecma 402 to be able to stick properties onto objects defined in Ecma 262. I see nothing wrong with that. It's just another abstraction mechanism, and we can coordinate in the committee to make sure that our two TGs are not working against each other. So I see nothing wrong with allowing this.
 
-DE: Yeah, I guess I want to agree, sort of, ad MF was saying that the important thing isn't what we can or can't do, but we want to do. In a lot of ways I just sort of disagree with the way that ES6 was was specified in terms of what host and implementations can do, with some ideas that implicitly you could extend the syntax and everyone would kind of have to do that for certain cases. I think we move more towards a model of a complete description of where you have an embedding API. That's the whole state, and I'm happy with that Evolution path. even within that we can still decide how much we expose embedding API. We want to encourage adding to existing APIs, like in web APIs where IDL permits ways of adding to existing APIs, but this is mostly used to add to globals or maybe sometimes to add to specific other things.  So yeah we could decide what kind of balance we want. in multiple ways.
+DE: Yeah, I guess I want to agree, sort of, ad MF was saying that the important thing isn't what we can or can't do, but we want to do. In a lot of ways I just sort of disagree with the way that ES6 was was specified in terms of what host and implementations can do, with some ideas that implicitly you could extend the syntax and everyone would kind of have to do that for certain cases. I think we move more towards a model of a complete description of where you have an embedding API. That's the whole state, and I'm happy with that Evolution path. even within that we can still decide how much we expose embedding API. We want to encourage adding to existing APIs, like in web APIs where IDL permits ways of adding to existing APIs, but this is mostly used to add to globals or maybe sometimes to add to specific other things. So yeah we could decide what kind of balance we want. in multiple ways.
 
 PDL: Hello. just to clarify my understanding, because I think this there's a misleading thing here about implementations versus hosts vs. Whatever. Because to my mind and extension is not an extension of a host or an extension of its implementation, within extension of a specification. So, if an implementation decides to implement 262, that's great, and if it also implements the extension 402, for internationalization, and that's also great, but that the 402 is an extension to the specification. So the real question is: where is it written down? Is it written down in the core specification that everybody has to implement? Or is it written down in an extension that's also subject to the quote, unquote terms and conditions of this committee, right and it is part of this committee, and it is an extension to the specification. So, it's literally a question of, where do we write it down? And in that case, and that's why I'm actually contrary on a strong yes. Because I don't want a 262 specification or an implementation that intends to implement 262 to be obliged to implement a whole bunch of properties on built-in globals, because it knows it will never need because it decided not to implement 402. I'm imagining here and embedded like Moddable: why would it ever want to implement the getters, Even if they do nothing, and if they do nothing, what would they do? Return undefined probably, I don't know. Why would we want to force them to implement that by forcing it to be specified in 262 when we have a quite logical place is 402, which is also under the purview of this committee. So to me this is you know, I was even asking when we came up when or when we hit this I was even asking should we even put this onto the agenda? Because to me the answer seemed to logical or so obvious. I guess I was wrong on that one, but I'm still of the same opinion that the answer should be obvious.
 
@@ -718,25 +668,19 @@ RGN: Very much.
 
 Remaining TCQ items:
 
-
-
-* (HAX) It's possible an impl only support some calendars.
-
+- (HAX) It's possible an impl only support some calendars.
 
 ### Conclusion/Decision
 
-
-
-* Consensus for the "narrow yes" solution.
-
+- Consensus for the "narrow yes" solution.
 
 ## Intl NumberFormat v3
 
 Presenter: Shane F. Carr (SFC)
 
-- [proposal]()
+- proposal
 
-- [slides]()
+- slides
 
 SFC: I'm not going to give a full detailed overview of the proposal. I'm just going to give an update on the parts that have changed. So, since the last proposal we have, made the following change to the roofing, you numb to the use grouping option, based on feedback from Kevin Gibbons, among others. We converged on special casing, the strings, true and false, and then throwing an exception on anything that is not one of these explicit choices that's shown here in the table. That PR landed, and that's one change that has been made.
 
@@ -760,23 +704,19 @@ SFC: Yes. a good question. The removal of the ordering was already presented in 
 
 SYG: I see. Okay, that's that sounds good to me. I just want to make sure what the motivation was.
 
-
 ### Conclusion/Decision
 
-
-
-* Consensus for the presented PRs
-
+- Consensus for the presented PRs
 
 ## eraDisplay option for Intl.DateTimeFormat
 
 Presenter: Shane F. Carr (SFC)
 
-- [proposal]()
+- proposal
 
-- [slides]()
+- slides
 
-SFC:  Okay. So in intl-related proposal. What's the problem? So, the problem that we're trying to solve is this. What I showed here on the screen, this is code, I'd ran this code in Chrome and Firefox and other browsers do the same thing. I can put into completely different dates and I get the same output. Oh my goodness, there's something broken here. What's broken? What's broken? Is that the date on the top is, you know, is A positive date and the one on the bottom is a negative date. So it's like 2021 years before Year One in the Gregorian calendar, this is in the Gregorian calendar output. Yet ecma 402 does not currently permit implementations to add that. The bottom one is actually BC or BCE. So the eraDisplay fixes that. So how does it fix it? It adds a new option to Intl.DateTImeFormat. with three choices. First, we have always to always show the era, in this case, being DC or AD. we have never, which is always hide the era. I don't know why you'd want to do that before. But perhaps, if there's enough context Elsewhere on the page, you might want to hide the era. And then the third one is auto, which is to show the era if and only if it is different from the reference era - the reference era being defined in the specification as the era of the current dates. Temporal that now or whatever. So, that's the environment reference era. So currently of course, you know, you just saw that the default is basically never, because we don't show the era. So the change with this proposal is to have the default behavior be auto. So it's a change to the current behavior as well. In addition to giving an option that you can fiddle around with and change to your pleasing. So what makes this proposal interesting?
+SFC: Okay. So in intl-related proposal. What's the problem? So, the problem that we're trying to solve is this. What I showed here on the screen, this is code, I'd ran this code in Chrome and Firefox and other browsers do the same thing. I can put into completely different dates and I get the same output. Oh my goodness, there's something broken here. What's broken? What's broken? Is that the date on the top is, you know, is A positive date and the one on the bottom is a negative date. So it's like 2021 years before Year One in the Gregorian calendar, this is in the Gregorian calendar output. Yet ecma 402 does not currently permit implementations to add that. The bottom one is actually BC or BCE. So the eraDisplay fixes that. So how does it fix it? It adds a new option to Intl.DateTImeFormat. with three choices. First, we have always to always show the era, in this case, being DC or AD. we have never, which is always hide the era. I don't know why you'd want to do that before. But perhaps, if there's enough context Elsewhere on the page, you might want to hide the era. And then the third one is auto, which is to show the era if and only if it is different from the reference era - the reference era being defined in the specification as the era of the current dates. Temporal that now or whatever. So, that's the environment reference era. So currently of course, you know, you just saw that the default is basically never, because we don't show the era. So the change with this proposal is to have the default behavior be auto. So it's a change to the current behavior as well. In addition to giving an option that you can fiddle around with and change to your pleasing. So what makes this proposal interesting?
 
 SFC: It seems like a fairly obvious proposal but it's a little bit interesting because it has runtime pattern selection. So to do run what I mean by runtime pattern selection is that since all date-time format needs to be able to choose based on the input date which pattern to use to do the internationalisation of the date. In this case, is there an era field or not? And the error could, you know show up before and after these localized patterns. And unlike things like our cycle, we actually have to be able to choose the pattern at runtime, like, we can't choose it in the constructor, using the format method. There's some precedents for doing this. DateFormatRange, which this committee approved for stage for a couple of years ago now, is the first proposal that did this where it actually the way that we implemented it was that in sold a time format gains an additional internal slots one for the like default pattern and then add additional internal slot for the extra pattern for range formatting. Temporal is is doing this again to supports formatting of the different Temporal types, like PlainDate and PlainDateTIme and ZonedDateTime those are all getting their own internal slot. So our fault, we're following the same pattern set forth in those in those examples by adding an additional internal slot. So here's what the suspect looks like a little bit, the stuff toward the bottom is a added. So we add a new pattern era field that contains the era-specific pattern. And then this is the code for how we selected at runtime. The spec text for how we selected at runtime shown here.
 
@@ -784,30 +724,26 @@ SFC: So, the status of the proposal. So the stage 2 entry requirements. Are you 
 
 SFC: So yes, I'm asking now for, I'd like to ask for TG1 consensus on moving forward with this proposal at stage 2.
 
-RPR:  There is no one on the queue. No one's asking me any questions today. I like when people ask me questions, obviously, as we do at any stage of constant, which were also asking, anyone in support, support. We? have a plus one from USA. Thank you.
+RPR: There is no one on the queue. No one's asking me any questions today. I like when people ask me questions, obviously, as we do at any stage of constant, which were also asking, anyone in support, support. We? have a plus one from USA. Thank you.
 
-SFC: I also want to ask for stage three reviewers stage, three reviewers you know? I think maybe this proposal can go for stage 3 in a couple meetings from now. So I'm also looking for maybe stage three reviewers if you're interested. In. learning more about  204and the Ecma ecma 402, you can be a stage three. Reviewer would be nice to get a couple people to vocally. sign up for that. Luke. now, objections.
+SFC: I also want to ask for stage three reviewers stage, three reviewers you know? I think maybe this proposal can go for stage 3 in a couple meetings from now. So I'm also looking for maybe stage three reviewers if you're interested. In. learning more about 204and the Ecma ecma 402, you can be a stage three. Reviewer would be nice to get a couple people to vocally. sign up for that. Luke. now, objections.
 
 RPR: So I think we can we can say that this has stage two. and then, Joe question of stage three reviewers did anyone anyone put their hand up? Oh, here we go. EAO has said, they can review.
 
-
 ### Conclusion/Decision
 
-
-
-* Advancement to stage 2
-* Stage 3 Reviewers:
-    * EAO
-    * DLM
-
+- Advancement to stage 2
+- Stage 3 Reviewers:
+  - EAO
+  - DLM
 
 ## Resizable buffers bug fixes (#104, #106, #108) and transfer future proofing
 
 Presenter: Shu-yu Guo (SYG)
 
-- [proposal]()
+- proposal
 
-- [slides]()
+- slides
 
 SYG: So table of contents for this agenda item is there are a few bugs that I want to quickly go through. That are bugs, so they are normative to get consensus on those bug fixes and then a design question about the transfer method, I like to spend most of the 30-minute time slot on. So there are three bugs. that are that need to be fixed in the suspect pointed out by constellation, who is a who works for Apple JavaScriptCore to my understanding. So thank you very much to Apple folks for sussing out some remaining spec bugs here.
 
@@ -819,18 +755,18 @@ SYG: All right. Fix number. two. Is the screen updated to fix number to locate a
 
 (queue is empty)
 
-SYG:  And the final one, which I merged already because it was super wrong, before getting consensus here, which I hope is uncontroversial. So there are two arrays in the spec that assigns values from one typedarray into another TypedArray. This is my typedarray: I got set. and, this just reads the modified copy of that TypedArray and initializes TypedArray from the library. So there is type the right that set which kind of sets the values, which splices the values of one type of array into another type of the right, and there's initialize decoration type array, which is maybe make a TypedArray and you pass another TypedArray to its constructor and ask for values of that into the new time period, both of these arrays are similar and and they were incorrect in the draft spec on, similar ways along the two bullet points. I list basically one is that if the source type through a that you're copying from is out of bounds, they should be treated like they were detached. Plus throw instead of setting the length,???. That I honestly don't remember what exactly happened here. And there is a more mechanical bug in set TypedArray the way from TypedArray where because the source type is in fact now resizable, it should not be reading as you're going to be resizable, it could be length tracking of resizable, buffer is should not be reading the array length field directly. Instead, the issue is that you calling an AO that computes the length if its length, which is what this PR fixes. Okay. I see nothing on the queue. So I hope that is also uncontroversial.
+SYG: And the final one, which I merged already because it was super wrong, before getting consensus here, which I hope is uncontroversial. So there are two arrays in the spec that assigns values from one typedarray into another TypedArray. This is my typedarray: I got set. and, this just reads the modified copy of that TypedArray and initializes TypedArray from the library. So there is type the right that set which kind of sets the values, which splices the values of one type of array into another type of the right, and there's initialize decoration type array, which is maybe make a TypedArray and you pass another TypedArray to its constructor and ask for values of that into the new time period, both of these arrays are similar and and they were incorrect in the draft spec on, similar ways along the two bullet points. I list basically one is that if the source type through a that you're copying from is out of bounds, they should be treated like they were detached. Plus throw instead of setting the length,???. That I honestly don't remember what exactly happened here. And there is a more mechanical bug in set TypedArray the way from TypedArray where because the source type is in fact now resizable, it should not be reading as you're going to be resizable, it could be length tracking of resizable, buffer is should not be reading the array length field directly. Instead, the issue is that you calling an AO that computes the length if its length, which is what this PR fixes. Okay. I see nothing on the queue. So I hope that is also uncontroversial.
 
 SYG: Which were direct implementation feedback from j.c. So again, thank you very much to JSC now.
 
 DLM: So I just wanted to say let those bug fixes look very reasonable, we explicitly support them.
 
-SYG: Of course, thank you. All. right, now into the meat of this agenda item that I want to talk about. So it was brought up recently. now that we're getting ready to ship in Chrome. trying to tidy up some loose ends. Namely: HTML integration, and how this could be used in other web specs like streams. And one of the questions that came up is how this interacts with the transfer function. The transfer method is kind of orthogonal to the rest of the proposal. the proposal at its core is about resizing buffers and allowing typed arrays to track these responsible beverage in the transfer method was something that that kind of fitted in the same space that went in and I put it in the same proposal and what it does is it gives you an API to transfer your buffers. It detaches the source buffer, and it returns you a new buffer of the same contents or basically same contents with a length that you specify and transfer. And this can be implemented as a realloc, or zero-copy. And the idea of the transfer originally as originally motivated was basically realloc when needed, or zero-copy when they could. This proposal is originally proposed and got to stage 3 with the transfer semantics currently our that when you transfer an array buffer, transport does not preserve resize ability. The original use case that I posited, was that you would have resizable buffer, and what you want to do is you would transfer it after you'd like finish your work load, that no longer needs to resize it. You will transfer it to a new length or to the final length. and that would fix it into a new fixed length of our career. In a way that the implementation can optimize as a zero cost move, and then you can free up. The virtual memory space that you allocated ahead of time for the It's come up from the HTML folks, and the streams folks that would have a more natural use of transfer is basically an API to do what you currently do with transfer and structuredCloning, and then postMessage, and they're the most natural thing is not to do these fixed semantics where transfer always produces a fixed length buffer. But you would have transfer preserve the resizability and return a new buffer with the same responsibilities as the source buffer. The reason I bring this up now is that now that we're getting ready to ship, if we ship, the current behavior as specified, that kind of closes that. That’s not future-proof if It turns out there the majority use case in the future should be to preserve resizability. So we should make this decision now before we ship transfer. And, the API design questions here are (1) how to talk transfer what kind of array buffer to return? How do we tell it to return a resizable one or how to cook Ware reports, we turn a fixed length 1 and (2) should transfer preserve and restore the behavior? that we should give up its receiver by default and if so How do you override that default behavior? One way of thinking. of is you can mirror the constructor and admin options bag that specifies the next byte length which tells you, whether the result array buffer ought to be resizable or not, but this kind of has interactions with (2) about what the default which are the building should be what the behavior be. Should it preserve the resizability? If you take the default option, meaning when the options bag is not passed to mean that it should get its value from the receiver, preserve resizability. Then there's really no way to tell it exactly that you should produce a fixed length of something. So, if this preservation semantics, is in fact, that most natural one and judging from the new use cases that come up, and kind of convinced me that most people think the preservation semantics is the most natural one. Then we can't have this behavior, which means that the current specified behavior is not future-proof. I think there are few choices moving forward. (A) is to stick with the current design of transfer, ie always return fixed-length buffers, when we extend transferring the future to produce resizable buffers as a follow-on proposal. This explicit options bag must always be passed. It does not preserve resizability. We have another option, where we make transfer preserve resizability, but this means is that we cannot transfer from your size into fixed length. and we need a new method. Perhaps, trying to follow proposal. We have another option option where there's a, you can consider transfer to have a special overload, if it's not worry, if neither. parameters, not the options back, nor the initial length one or two new lines are cast but then you consider that a special overloading and you preserve your behavior, and otherwise you produce a fixed length or resizable buffer depending on whether the options bag was present, if there's at least one parameter present. That's feels a little bit weird, I guess. But I think these are the options going forward. But before we dive into that and I want to see your folks’ opinions on this. I'm going to just preempt this saying that since transfer is barely orthogonal, what I'm proposing. is the first things you get consensus on is to split out transfer from the resizable buffers proposal and not ship it with resizable buffers,  demote the transfer thing to stage 2. And depending on the result of the discussion, here, I come back at a future meeting. with a separate program proposal for just transferred to try to advance the stage 3. Does anyone have concerns about that? I know, moddable was to the first implementor  to do resizable buffers.
+SYG: Of course, thank you. All. right, now into the meat of this agenda item that I want to talk about. So it was brought up recently. now that we're getting ready to ship in Chrome. trying to tidy up some loose ends. Namely: HTML integration, and how this could be used in other web specs like streams. And one of the questions that came up is how this interacts with the transfer function. The transfer method is kind of orthogonal to the rest of the proposal. the proposal at its core is about resizing buffers and allowing typed arrays to track these responsible beverage in the transfer method was something that that kind of fitted in the same space that went in and I put it in the same proposal and what it does is it gives you an API to transfer your buffers. It detaches the source buffer, and it returns you a new buffer of the same contents or basically same contents with a length that you specify and transfer. And this can be implemented as a realloc, or zero-copy. And the idea of the transfer originally as originally motivated was basically realloc when needed, or zero-copy when they could. This proposal is originally proposed and got to stage 3 with the transfer semantics currently our that when you transfer an array buffer, transport does not preserve resize ability. The original use case that I posited, was that you would have resizable buffer, and what you want to do is you would transfer it after you'd like finish your work load, that no longer needs to resize it. You will transfer it to a new length or to the final length. and that would fix it into a new fixed length of our career. In a way that the implementation can optimize as a zero cost move, and then you can free up. The virtual memory space that you allocated ahead of time for the It's come up from the HTML folks, and the streams folks that would have a more natural use of transfer is basically an API to do what you currently do with transfer and structuredCloning, and then postMessage, and they're the most natural thing is not to do these fixed semantics where transfer always produces a fixed length buffer. But you would have transfer preserve the resizability and return a new buffer with the same responsibilities as the source buffer. The reason I bring this up now is that now that we're getting ready to ship, if we ship, the current behavior as specified, that kind of closes that. That’s not future-proof if It turns out there the majority use case in the future should be to preserve resizability. So we should make this decision now before we ship transfer. And, the API design questions here are (1) how to talk transfer what kind of array buffer to return? How do we tell it to return a resizable one or how to cook Ware reports, we turn a fixed length 1 and (2) should transfer preserve and restore the behavior? that we should give up its receiver by default and if so How do you override that default behavior? One way of thinking. of is you can mirror the constructor and admin options bag that specifies the next byte length which tells you, whether the result array buffer ought to be resizable or not, but this kind of has interactions with (2) about what the default which are the building should be what the behavior be. Should it preserve the resizability? If you take the default option, meaning when the options bag is not passed to mean that it should get its value from the receiver, preserve resizability. Then there's really no way to tell it exactly that you should produce a fixed length of something. So, if this preservation semantics, is in fact, that most natural one and judging from the new use cases that come up, and kind of convinced me that most people think the preservation semantics is the most natural one. Then we can't have this behavior, which means that the current specified behavior is not future-proof. I think there are few choices moving forward. (A) is to stick with the current design of transfer, ie always return fixed-length buffers, when we extend transferring the future to produce resizable buffers as a follow-on proposal. This explicit options bag must always be passed. It does not preserve resizability. We have another option, where we make transfer preserve resizability, but this means is that we cannot transfer from your size into fixed length. and we need a new method. Perhaps, trying to follow proposal. We have another option option where there's a, you can consider transfer to have a special overload, if it's not worry, if neither. parameters, not the options back, nor the initial length one or two new lines are cast but then you consider that a special overloading and you preserve your behavior, and otherwise you produce a fixed length or resizable buffer depending on whether the options bag was present, if there's at least one parameter present. That's feels a little bit weird, I guess. But I think these are the options going forward. But before we dive into that and I want to see your folks’ opinions on this. I'm going to just preempt this saying that since transfer is barely orthogonal, what I'm proposing. is the first things you get consensus on is to split out transfer from the resizable buffers proposal and not ship it with resizable buffers, demote the transfer thing to stage 2. And depending on the result of the discussion, here, I come back at a future meeting. with a separate program proposal for just transferred to try to advance the stage 3. Does anyone have concerns about that? I know, moddable was to the first implementor to do resizable buffers.
 
 RPR: At the moment there no one on the queue.
 
 ABO: Yeah. so, I was wondering whether the idea was that that transfer would work the same as structuredClone, when transferring an array buffer. So if there, if we had the options to make it resizable, to set the possible sizes and so on, like is the idea to also change the HTML spec to add those options to structuredClone and postMessage? \
- \
+\
 SYG: Not exactly. I think the only sensible behavior for structuredClone serialization and deserialization is to preserve the resizable buffer and indeed that is some folks’ mental model that it should mirror structuredClone and therefore transfer should also by default preserve resizability. What structuredClone cannot do is to say, I want to serialize this array buffer but with a new length, which is part of what transfer gives you the ability to give you a new line array buffer so you can like shrink it. but you don't have to copy it in the implementation because it gives you that information. Does that make sense?
 
 ABO: Yeah thanks.
@@ -881,22 +817,18 @@ MLS: and we just did a simple copy. We didn't copy-on-write.
 
 SYG: Okay. think we just just like, get a realloc and depends on what realloc wants to be. Okay. Yeah. okay, and I invite Matthew and other folks who expressed opinions here. I'll try to help make a after binary. Make it make a new proposal. Repose a split this up, you can collaborate there.
 
-
 ### Conclusion/Decision
 
-
-
-* Proposal split, .transfer goes to stage 2
-* No objections to any normative bugs
-
+- Proposal split, .transfer goes to stage 2
+- No objections to any normative bugs
 
 ## Intl MessageResource for Stage 1
 
 Presenter: Eemeli Aro (EAO)
 
-- [proposal]()
+- proposal
 
-- [slides]()
+- slides
 
 EAO: So yeah, effectively this is is what I'm looking to. do is split the existing in pulled out, messageformat stage one, proposal into two separate stage one proposals. for clarity in this context. The. meaning of a couple of terms ought to be clarified, because of course, we use the same words for many things. So what I'm saying, message here, that really means it's a message that's meant for human consumption, rather than a message going between computer systems of various descriptions. And when a resource is in this context, it's a collection of related messages which might have internal hierarchy to it as well. Now, the idea here is that separate the concerns that we have around single message formatting versus the formatting a whole resource a set of related messages at the same time and also to reflect the fact that as this foundational work is ongoing in the Unicode Consortium. Their resource work has been separated from the signal message work, and it makes sense for these two also match in this sort of structural way in what we are doing in global JavaScript. There is a difference in the advancement of language where these are, which these are so the single message, message format to specification is at the level where ICU72 includes a technical preview for the ICU4J. And there is a existing polyfill for the JavaScript implementation for the same. A message. Part of the whole a specification, but the resource is much more under development at this time. And also because these are effectively separate changes, it would be nice for these to be atomic. So, you know, we don't end up with a huge one thing when we could have one thing and then a second thing building on top of that. Now what does this actually mean? I'm now going through some slides with code. Please feel free to look at the slides. afterwards, but if this proposal of spitting is accepted, then effectively was left in the in pulled out message for my proposal is this sort of a structure where we can build a single instance of an Intl.MessageFormat around a single message, and then resolve that and then work with it at that level. The code for interacting with this API looks as you see on the screen, roughly with therefore the source this is another format to syntax. I'll show a little bit more of that later. And what sort of a message, when resolved and for method, does that look like and and really, how do you read the end quite often? How do you get a string out of that with the formatted values? And now, the proposal that I'm asking for here is that this parse resource would effectively, which was or already in what was earlier presented and accepted for stage 1, as a part of one big a proposal is to have this ability of having a static method parseResource which is able to take a string representation of an entire resource of messages and to build from this was is actually a JavaScript map object that might have hierarchical levels within it ending up with MessageFormat instances within. The way that you would end up using this sort of interface, is that you have the source such as the two messages arrive and depart they're just as examples and when you pass this source to the the forest, Resource method, you would end up with a map effectively and from this, you can get the actual messages that you have in there and then resolve and format them. Now, a very valid question at this point to ask is why do we need a new format for this in the first place? And unfortunately, there are actual proper answers to this the main of the main three of them are mentioned here. One is that we really need a format that establishes a good way and a solid formal way of communicating between developers and translators, who explicitly are not developers themselves. We need something like comments and metadata that we can attach to these messages and pass them on to the translators who need that context to do their work. And actually, if you start looking at the specifications, it's interesting to note that really almost none of the existing specifications for configuration file formats, for instance, really do not define how comments and metadata attach to specific messages or nodes of or values. In any case here explicitly, we want to format where this is well defined. Secondly we want that format supports organizing messages to some level. And fairly, given that we are specifically needing to to have a format for message format to messages, which have a certain kind of a structure and a shape that is a little bit different from what strings in general or messages in existing other formats, or look like in particular that they end up often it's being multi-line. And having an interesting shape. but that's beyond the discussion.
 
@@ -906,7 +838,7 @@ EAO: So the syntax that the very much work in progress syntax for what does some
 
 EAO: And then there's a bunch of links to where this is progressing. and that's it for my presentation. And yes. I am asking for stage 1 advancement for the MessageResource proposal here.
 
-SFC: Yeah, thank you EAO for the presentation. I definitely support having two proposals for this, for reasons we've discussed previously. I think that it's going to be a lot better to focus the main MessageFormat stage 1 proposal on message strings, and it also corresponds to the output of the MessageFormat working group. So I support at the splitting, the proposals. One question, I wanted to bring up to the group because I thought, maybe this group would have some thoughts on it. is regarding whether a TC39 is the right body to for the bundle side of the proposal. I think that's you know, like, for example, you know, one way that, you know, bundled message models have been described to me in the past is like it's sort of like a CSS format, where it's like if it's a file format. And maybe I'm maybe I'm outdated in that perception, but you know, is TC39 the right sort  body? Iis ecma402 to the right place to put the definition of the of that syntax in the parser for that syntax? you know and does this fit better in some other place? like you know in the in tag or something like that? So, yeah. But yeah, I provide support the proposal so I definitely supported going to stage 1 because it gives us room to explore these questions.
+SFC: Yeah, thank you EAO for the presentation. I definitely support having two proposals for this, for reasons we've discussed previously. I think that it's going to be a lot better to focus the main MessageFormat stage 1 proposal on message strings, and it also corresponds to the output of the MessageFormat working group. So I support at the splitting, the proposals. One question, I wanted to bring up to the group because I thought, maybe this group would have some thoughts on it. is regarding whether a TC39 is the right body to for the bundle side of the proposal. I think that's you know, like, for example, you know, one way that, you know, bundled message models have been described to me in the past is like it's sort of like a CSS format, where it's like if it's a file format. And maybe I'm maybe I'm outdated in that perception, but you know, is TC39 the right sort body? Iis ecma402 to the right place to put the definition of the of that syntax in the parser for that syntax? you know and does this fit better in some other place? like you know in the in tag or something like that? So, yeah. But yeah, I provide support the proposal so I definitely supported going to stage 1 because it gives us room to explore these questions.
 
 KG: I'm not necessarily opposed to this going to stage 1, but I know that the sort of upstream proposal is itself only stage 1, and is not likely to advance in the near future. And I don't see much motivation to be worrying about the exact surface of what goes in what proposal right now given that all stage 1 represents is the identification of a problem which in this case is sorting out some method for handling multiple language resources. And like that is all we have committed to, by getting MessageFormat to stage 1, and this seems like - if we had advanced MessageFormat to stage 2 with a particular API in mind, then a follow-on proposal might then make sense. But we do not have anything like a commitment to an API shape for MessageFormat it right now. So I'm not sure it makes sense to be trying to add follow on proposals, at this stage. Like I said, I'm not opposed, I just think that this seems a little bit premature, given the very early stage of all of this.
 
@@ -942,10 +874,7 @@ EAO: Excellent, thanks.
 
 ### Conclusion/Decision
 
-
-
-* Stage 1 for MessageResource
-
+- Stage 1 for MessageResource
 
 ## Temporal status overview and normative changes
 
@@ -993,7 +922,7 @@ RKG: Yeah, if we want to not worry about time zones syncing we can make use of t
 
 YSV: Sounds like we're good to move on.
 
-USA: I just wanted to talk a bit about the time calendars. I think it would be a mistake to disregard PlainTime calendars. In order to speed up work and not get distracted we decided to split this out of the current proposal and defer this until later. But well, first of all, what we talk about here, when we talk about time calendars, in the general calendaring spaces as time scales. So, these do exist even outside of fun examples we talked about (Mars time and stuff) -  there's atomic time, there's mean solar time, GM1 and so on. So it is okay not supporting them at the moment. But I'd be against removing future the pathways we could add them in the future or add support for time scales in the future.
+USA: I just wanted to talk a bit about the time calendars. I think it would be a mistake to disregard PlainTime calendars. In order to speed up work and not get distracted we decided to split this out of the current proposal and defer this until later. But well, first of all, what we talk about here, when we talk about time calendars, in the general calendaring spaces as time scales. So, these do exist even outside of fun examples we talked about (Mars time and stuff) - there's atomic time, there's mean solar time, GM1 and so on. So it is okay not supporting them at the moment. But I'd be against removing future the pathways we could add them in the future or add support for time scales in the future.
 
 PFC: Okay, that's good data.
 
@@ -1013,17 +942,17 @@ DE: Yeah, it's fair to you to disagree potentially, with the concepts that that 
 
 PFC: Well, I see the ready-to-ship agenda item has been bumped to the next meeting. Sorry, I didn't know about that.
 
-DE:  Anyway very happy about all this progress. This is great.
+DE: Anyway very happy about all this progress. This is great.
 
 SYG: This may not be directly related. This might go into the ready to ship this question as well, but V8's experience, I want to back up FYT here. I think it's not exaggerating to say that we have not had a good time implementing this proposal. And I think it's not really the fault of the proposal pushing against the limits of the staging process and how well it works. For smaller more bite-sized things, at stage 3, we have much higher chances of getting to a point of stability on stage 3 entrance. For something of this size we just can't do that. You need to have a back(?) will be established with you actually try to implement it. To get the things, the bugs, the issues that will result in this high volume of normative changes that seem to keep going. So I would appreciate that we as a committee do some post mortem here eventually. How do we approach proposals of this size in the future? I think the current working mode has not been the most productive that it could be.
 
 FYT: Yes, I agree with the point. I think I mentioned earlier the issue with this proposal. One of the reasons is because of the size, which I totally agree with, but I think the other issue is actually... I want to bring this up because I know in the future there will be people making proposals this way. I do think a lot of issues in retrospect are because it was originally based on a JavaScript polyfill, as prototype. In that approach, there's a lot of things that cannot be surfaced. When you write a spec text, which is the ???, right? I'm not against working via a polyfill, but I do want to point out that with that approach there are issues very difficult to spot if that is the reference from beginning. So I would encourage people who want to try to do some things you propose, to be careful of that. I mean, honestly, it's not a wrong thing to do. I'm just saying there are things you cannot do that way.
 
-USA:  FYT I'm afraid what we're talking about here might be a cyclical problem. You might be correct that a lot of problems might have stemmed from the fact that the source of truth for some time was a JavaScript proof of concept, but at the same time that approach was chosen by the champions group because of the size. Because it was such a large amount of spec work to be done, without really many pathways to verify that. Maybe in the future with better tooling we wouldn't need that, but at the moment it was the only way to write such a huge proposal.
+USA: FYT I'm afraid what we're talking about here might be a cyclical problem. You might be correct that a lot of problems might have stemmed from the fact that the source of truth for some time was a JavaScript proof of concept, but at the same time that approach was chosen by the champions group because of the size. Because it was such a large amount of spec work to be done, without really many pathways to verify that. Maybe in the future with better tooling we wouldn't need that, but at the moment it was the only way to write such a huge proposal.
 
 PFC: I think we've been going for 40 minutes. I can't see the queue. How many things are left on it?
 
-YSV:  We have one item left on the queue, but that may be better handled separately, as we're already getting into the topic of the post-mortem on a large proposal, like records and tuples. If it's all right, I'd be happy to allow you to move on with your slides.
+YSV: We have one item left on the queue, but that may be better handled separately, as we're already getting into the topic of the post-mortem on a large proposal, like records and tuples. If it's all right, I'd be happy to allow you to move on with your slides.
 
 PFC: Okay, let's do that. (Slide 19) I'll quickly present the normative PRs that we have for this time, and ask for questions on those and then ask for consensus. (Slide 20) All right. We have a change to how we handle non-numeric inputs to APIs that expect numbers. So the problem that we are trying to solve, you can see here, where you try to construct a Temporal.Duration, or Temporal.PlainTime, or any number of other APIs that expect numbers here, with things like NaN, a string, a regular expression, or the Temporal object. All these would silently convert to zeros, so that you would get a zero-length duration or midnight time. That seems like it's not good for programmers. What we've done in this PR is to align the conversion better with Web IDL conversions for doubles and for [EnforceRange] long long types, which are two of the four types that Web IDL recommends new APIs use. I did an informal poll in Matrix about a change like this, a few months ago and there seemed to be enough positive support. I know that previously for APIs on Array.prototype we've chosen not to do this, but at the same time we've been happy to do this for new APIs that are not on an existing prototype in the language. So that's what this change would do: it would align with Web IDL conversions by throwing RangeError for all these non-numeric inputs, where a number is expected. And then treating arguments with a default value by first assigning the default value to cover up any undefined that you pass it.
 
@@ -1057,7 +986,7 @@ SYG: It seems like a reasonable reason to me, thanks.
 
 SFC: I think PFC went into fairly good detail on this. If I had to summarize, preventing foot guns based on educator feedback is something that we've previously discussed in other proposals at stage 3, about valid feedback for addressing in stage 3. Implementer feedback is definitely one, and then educator feedback because we don't get that feedback before proposals reach stage 3, and preventing foot guns is totally in the ballpark. And we we definitely took a scalpel change, as PFC just just said, we could have done this in a much bigger way. We we took a scalpel in order to cut out the foot gun, and I think that's totally in scope for a stage 3 change.
 
-YSV:  Just one quick note on the time we are getting into the last five minutes on this topic. And we have one item on the queue from DE. Please go ahead.
+YSV: Just one quick note on the time we are getting into the last five minutes on this topic. And we have one item on the queue from DE. Please go ahead.
 
 DE: Overall, I think the changes that are happening in that are proposed today are well-motivated. I'm in favor of them. It is unfortunate that changes of this size are still occurring, but I think the roadmap that PFC set out at the beginning of the presentation shows that hopefully these are drawing to a conclusion. I was worried for a while that the changes were just kind of an endless flow, But it seems like these are well scoped. About what kinds of changes make sense. Regarding being at stage 3, I do think it's regrettable to have educator feedback only coming at stage 3. In the future I hope that we can encourage more educator feedback in earlier stages and I think the work that the work that RCA is is doing in terms of building a more active educator group should hopefully bring this to happen. As far as which things procedurally make sense to be in scope to happen at this stage: remember that the committee can come to consensus on normative changes for even the final specification, for things that are at stage 4. So the committee can agree on a semantic change for something that's at stage 4 as well. But it is held to a high bar. The default is that we wouldn't add anything. I do think that we should remember that stage 3 does mean that we all made our best efforts to fully design this and it's really just because of the magnitude of this proposal that the things worked out a little bit differently. I think it makes sense to keep things stage 3 and not propose a demotion as we were discussing with with groupBy, because in the past such demotions have have just inhibited progress, and not recognized that things are still incrementally moving forward, and increasingly solid and complete. So, I'm happy with this state of progress, even if it's complicated to conceptualize and talk about.
 
@@ -1069,21 +998,17 @@ PFC: Yeah, thanks. I understand. I think that stage 3 is the compromise between 
 
 YSV: Do we have any explicit statements of support other than DE and DLM? Anyone objects to the changes that have just been presented getting consensus? It sounds like consensus.
 
-
 ### Conclusion/Decision
 
-
-
-* No objections to any normative changes (and explicit support for DE and DLM)
-
+- No objections to any normative changes (and explicit support for DE and DLM)
 
 ## Is ECMA402 allowed to extend ECMA262 prototypes? - What does "narrow yes" mean?
 
 Presenter: Shane F Carr (SFC)
 
-- [proposal]()
+- proposal
 
-- [slides]()
+- slides
 
 SFC: What does "narrow yes" actually mean? We should write that down in the notes. Okay. Our understanding of it is that we as a committee commit to not make such extensions without a note in 262, or other text into 262, describing that 402 is specifying what they are.
 
@@ -1093,14 +1018,11 @@ SYG: Is it going to be exactly like toLocaleString because toLocaleString is, is
 
 SFC: Yeah, that that allegedly understanding is want to make sure that that was what we agree on. a point of order. Can we have a queue item?
 
-FYT:  So so my question is that with that conclusion, does it means that the era and eraYear need to be defined or not need to be defined in the first 14 chapter of Temporal? I just try to understand that If.
+FYT: So so my question is that with that conclusion, does it means that the era and eraYear need to be defined or not need to be defined in the first 14 chapter of Temporal? I just try to understand that If.
 
 RGN: We did not ask that question and we did not answer that question.
 
-
 ### Conclusion/Decision
 
-
-
-* We as a committee do not allow such extensions by specifications under our control except where indicated in the text of ECMA-262.
-* The form has not been defined yet (note vs spec text)
+- We as a committee do not allow such extensions by specifications under our control except where indicated in the text of ECMA-262.
+- The form has not been defined yet (note vs spec text)

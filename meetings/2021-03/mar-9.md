@@ -1,7 +1,8 @@
 # 9 March, 2021 Meeting Notes
+
 -----
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Ross Kirsling        | RKG            | Sony (PlayStation) |
@@ -36,14 +37,13 @@
 | John Hax             | JHX            | 360                |
 | Aki Rose Braun       | AKI            | PayPal             |
 
-
 ## Editors Update
+
 Presenter: Kevin Gibbons (KG)
 
 - [slides](https://docs.google.com/presentation/d/1AI-r8JDTIGD4Sg-DvazQcfchGJQ3Q21XOW9HnddsXRk/)
 
-
-KG:   There have been no major changes to the specification since our last meeting less than two months ago. We have landed a few normative things. These are all things we had consensus for. 
+KG: There have been no major changes to the specification since our last meeting less than two months ago. We have landed a few normative things. These are all things we had consensus for.
 
 KG: #2216, the relevant change is that a derived class that uses a default super constructor will no longer use the current value of array.prototype symbol.iterator. It will do the iteration in a way which is not over-writable. It will invoke its super constructor without relying on whatever the current value of Array.prototype symbol.iterator.
 
@@ -51,7 +51,7 @@ KG: #2221: explicit methods for typed arrays. This is just an under specificatio
 
 KG: #2256: this is a grammar issue Waldemar raised ages ago, which we have finally merged. The grammar allowed both a for-of loop with a variable named async and a regular for loop, so like a c-style for loop, that had an async arrow with a binding identifier named "of" as the parameter. So `for ( async of`, that sequence of four tokens could start both kinds of loops. You wouldn't know which production you were parsing at that time. And this is an ambiguity that we try to avoid. So the solution was to just ban for-of loops with a variable named async because it's just not a thing that you would particularly want to do. `async` is an odd choice for a variable name.
 
-KG: #1585: this is a from Matthias and others making array.prototype sort more specific. Again, one of those things has been open for a long time. But we finally got - we were waiting for more data to make sure everyone could implement it and they could so it's landed. 
+KG: #1585: this is a from Matthias and others making array.prototype sort more specific. Again, one of those things has been open for a long time. But we finally got - we were waiting for more data to make sure everyone could implement it and they could so it's landed.
 
 KG: #2116: the order of the "length" and "name" properties on functions is observable. It did not previously have a defined order. Now it does. That's mostly a prerequisite for other changes, other editorial changes we would like to make.
 
@@ -59,32 +59,34 @@ KG: OK, and we have a very similar list of upcoming work. I'm not going to recap
 
 KG: A reminder–there's a project board where we track the major stuff that we're planning on doing or have started doing.
 
-KG: And the most important thing in this presentation is: there is a candidate for the ES2021 spec ready. It's just cut from the main branch as of, I believe, Sunday evening or Monday morning. This is something that needs to be presented to begin the formal two-month period where everyone can have their company's lawyers review the candidate to make sure there's no IP that they care about or any other things that they care about that would prevent this from being released as a standard. So we would like to start the opt-out period now. I would like to ask for unanimous consent for the 2021 candidate, which will begin the IPR out that period towards putting this as a formal standard. 
+KG: And the most important thing in this presentation is: there is a candidate for the ES2021 spec ready. It's just cut from the main branch as of, I believe, Sunday evening or Monday morning. This is something that needs to be presented to begin the formal two-month period where everyone can have their company's lawyers review the candidate to make sure there's no IP that they care about or any other things that they care about that would prevent this from being released as a standard. So we would like to start the opt-out period now. I would like to ask for unanimous consent for the 2021 candidate, which will begin the IPR out that period towards putting this as a formal standard.
 
 MM: Sounds good to me.
 
-DE: I support this as well. 
+DE: I support this as well.
 
-YSV: I also support this. 
+YSV: I also support this.
 
 IS: So it will take maybe one or two days or until it is officially published, you know on the Ecma documents Etc. So we can take it as it is practically today but publication of this takes one or two days. (IS Note outside the meeting: It has been done already on March 10, 2021. End: May 10, 2021)
 
-JHD: It's on the reflector and it's also a public release on the GitHub repo. 
+JHD: It's on the reflector and it's also a public release on the GitHub repo.
 
-IS: We have two channels, for the official Ecma Channel, you know with the Ecma documentation and etc. And then we have our own in TC39. So I will immediately write to Patrick Ch. that he should put it out and then later it will be put out tomorrow, so it's almost the same. 
+IS: We have two channels, for the official Ecma Channel, you know with the Ecma documentation and etc. And then we have our own in TC39. So I will immediately write to Patrick Ch. that he should put it out and then later it will be put out tomorrow, so it's almost the same.
 
 ### Conclusion/Resolution
-* Unanimous consent for 2021 Candidate
-* Opt out period until May 10th, 2021.
+
+- Unanimous consent for 2021 Candidate
+- Opt out period until May 10th, 2021.
 
 ## ECMA 402
+
 Presenter: Leo Balter (LEO)
 
 LEO: For ECMA 402 There is a very interesting part here. In the repo for the wiki pages we have a reasonably maintain proposal in PR progress tracking and it's a good one for everyone to make sure like, what are the merged PRs and also to keep track of what is already in the 2020 Edition, but what is coming for the 2021 Edition. This is a good way to see and keep track of what we have for the 2021, including Intl.list format. intl.display names, the date-time format from a date-style and time-style, and also format range. We have intl.Segmentor for possibly for stage 4 in this meeting, but this is not part of that 2021 edition.
 
-LEO: I would just like to highlight right before our release candidate cut and André Bargull  did at the pretty impressive review of the specs and I think this has been really /interesting. There is a lot of things here to take a look at it if you're interested. That's mostly it. As a quick highlight as well, I think I fixed the GitHub actions workflows. We recently migrated from Travis to GitHub. But now we've got a good working deploy process as well using GitHub actions and it's really faster and it runs very smoothly.
+LEO: I would just like to highlight right before our release candidate cut and André Bargull did at the pretty impressive review of the specs and I think this has been really /interesting. There is a lot of things here to take a look at it if you're interested. That's mostly it. As a quick highlight as well, I think I fixed the GitHub actions workflows. We recently migrated from Travis to GitHub. But now we've got a good working deploy process as well using GitHub actions and it's really faster and it runs very smoothly.
 
-LEO: We also have the release candidate. So if you jump to https://tc39.es/ecma402/2021/. You should be able to see it, but there is also a pdf version with numbered pages in the same reflector thread that JHD posted for. yes, 2021 and I think for formalities I should be asking for the same consensus for this release candidate itself and therefore other reviews. I'm pretty sure @anba has captured most of the corner cases around the Ecma 402 specs and I’m really thankful. 
+LEO: We also have the release candidate. So if you jump to https://tc39.es/ecma402/2021/. You should be able to see it, but there is also a pdf version with numbered pages in the same reflector thread that JHD posted for. yes, 2021 and I think for formalities I should be asking for the same consensus for this release candidate itself and therefore other reviews. I'm pretty sure @anba has captured most of the corner cases around the Ecma 402 specs and I’m really thankful.
 
 IS: So also the same two-month period for opt out. It starts that we say from tomorrow, so it would be May 10 that it finishes. Is that correct?
 
@@ -92,60 +94,69 @@ AKI: I believe so.
 
 IS: Okay go. Thank you. So both for boot specification ECMA-262 ECMA-402 and it also means that both are now frozen. Frozen means that obviously we will find editorial changes and mistakes and whatever, so those are possible, but substantive changes etc are not. So this is what “Frozen” means which is not from the editorial point of view. It is still so that we still can make “editorial” changes (but not substantive ones). Okay, thank you. So, I think I understood.
 
-AKI: All right. Excellent. Congratulations to 2021 us. 
+AKI: All right. Excellent. Congratulations to 2021 us.
+
 ### Conclusion/Resolution
-* Unanimous consent for 2021 Candidate
-* Opt out period until May 10th.
+
+- Unanimous consent for 2021 Candidate
+- Opt out period until May 10th.
+
 ## Introducing: Make B.1.{1,2} (octal literals & escapes) normative for sloppy code
+
 Presenter: Kevin Gibbons (KG)
 
 - [proposal](https://github.com/tc39/ecma262/pull/1867)
 
 KG: So this is a project that we began quite a long time ago. We got consensus on basically getting rid of annex B in the sense of merging it into the main specification with similar requirements around when it is normative and when it is not. However since then there has been some pushback around parts of it, so we are doing it in a more piecemeal way. You may remember at a meeting or two ago, we talked about moving the `__proto__` syntax and accessor into the main specification. This is another part of that.
 
-KG: So annex b.1.1 B.1.2 are octal escapes, legacy octal integer literals. This is like 034, or whatever. We would be moving them into the main specification, still only legal in sloppy mode code. So the only change as far as normativeness is that this would no longer be optional for non web browsers. Every implementation would be required to have it as in practice -- like if you want to run code that's out there, you probably need to have this anyway, whether or not you are a web browser. Yeah, so that's the change that: upstreaming b.1.1 and b.1.2 into the main specification with the same strictness requirements as is there currently, but without the optionality implied by Annex B. I would like to ask for consensus. 
+KG: So annex b.1.1 B.1.2 are octal escapes, legacy octal integer literals. This is like 034, or whatever. We would be moving them into the main specification, still only legal in sloppy mode code. So the only change as far as normativeness is that this would no longer be optional for non web browsers. Every implementation would be required to have it as in practice -- like if you want to run code that's out there, you probably need to have this anyway, whether or not you are a web browser. Yeah, so that's the change that: upstreaming b.1.1 and b.1.2 into the main specification with the same strictness requirements as is there currently, but without the optionality implied by Annex B. I would like to ask for consensus.
 
 MM: Yes.
 
-DE: Yes. 
+DE: Yes.
 
-AKI: All right, that sounds consensus-y to me. Great. 
+AKI: All right, that sounds consensus-y to me. Great.
 
 ### Conclusion/Resolution
-* Consensus
+
+- Consensus
 
 ## Normative: specify creation order for capturing group properties
+
 Presenter: Kevin Gibbons (KG)
 
 - [proposal](https://github.com/tc39/ecma262/pull/2329)
 
 KG: All right, so you may recall that the order in which non-numeric properties are created on an object is normative because it is observable using object.keys. So for example, if you use named capturing groups in regular expressions, as you should, you get this `groups` object that has capturing groups on it. Those are created by this loop that just iterates over all of the capturing groups and then says, if this is a named group then create a named property. And it did not say - it said for each of these integers that is a capturing group you should create a property, but it did not say to do it in any particular order. You have one two, three, four, five six, seven, eight nine ten, but it didn't have to do them in that order. So the change is just to say do it in ascending order. Again this is observable via object.keys. As far as I am aware everyone does this anyway, I can't imagine doing it any other way. Well, I can imagine it, but there are also test262 tests which expect this - which was slightly wrong because this didn't actually define an order so would like to add a consensus to add "in ascending order" to this step.
 
-DE:  Makes sense to me. 
+DE: Makes sense to me.
 
-??: Yes, please. 
+??: Yes, please.
 
-MM: Yes good. 
+MM: Yes good.
 
 DE: Tangent–Since we are discussing things about capture groups. There's this prohibition against named capture groups that are duplicates, but sometimes that's very useful in a disjunction or even a repetition. So if anybody thinks this should be relaxed, as many people do, and wants to champion a proposal: Please get in touch with me. I'd be happy to work with you on that. Thank you so much Kevin for fixing up the loose ends loose ends for capture groups.
 
-
 AKI: Thank you, Daniel.
+
 ### Conclusion/Resolution
-* Consensus
+
+- Consensus
+
 ## Backup incumbent tracking for FinalizationRegistry jobs
+
 Presenter: Shu-yu Guo (SYG)
 
 - [slides](https://docs.google.com/presentation/d/1w8b_kPc5UccV4Y_k3WEsSnQLMoHWDqMdkhQ2MIJ-OBk/edit#slide=id.p)
-- [proposal](https://github.com/tc39/ecma262/pull/2316) 
+- [proposal](https://github.com/tc39/ecma262/pull/2316)
 
-SYG: Alright, so basically I'm not going to recap what back up the incumbent settings object tracking thing is. It's like HTML Arcana, but remember I did explain this a couple of meetings ago for promises specifically to to add these hosts defined host hooks called make host make job callback and host called job call back for these callbacks that You pass on to the host to run like promise-like promise handers the idea is that then the host like HTML can add whatever state they need to it and pull it back out when they call it in this case. They would track the backup and convent object thing. So we did this for promises and this should be uniformly done for all callbacks that go to the host and we forgot to do this for finalization registry callbacks when we merge finalization registering the main spec. So, this PR is basically to add those two callbacks to the finalization registry. So those two host defined abstract operations that these supposed to host hook calls to the finalization registry machinery and this behavior is we're doing this to consistency with promise callback behavior. It will unblock the HTML integration PR for finalization registry and weak refs get the HTML integration stuff merge, which is good because it's already stage 4. Firefox is the only one who implements this incumbent tracking behavior per spec for both promises and finalization registry is my understanding, please correct me if I'm wrong Yulia. 
+SYG: Alright, so basically I'm not going to recap what back up the incumbent settings object tracking thing is. It's like HTML Arcana, but remember I did explain this a couple of meetings ago for promises specifically to to add these hosts defined host hooks called make host make job callback and host called job call back for these callbacks that You pass on to the host to run like promise-like promise handers the idea is that then the host like HTML can add whatever state they need to it and pull it back out when they call it in this case. They would track the backup and convent object thing. So we did this for promises and this should be uniformly done for all callbacks that go to the host and we forgot to do this for finalization registry callbacks when we merge finalization registering the main spec. So, this PR is basically to add those two callbacks to the finalization registry. So those two host defined abstract operations that these supposed to host hook calls to the finalization registry machinery and this behavior is we're doing this to consistency with promise callback behavior. It will unblock the HTML integration PR for finalization registry and weak refs get the HTML integration stuff merge, which is good because it's already stage 4. Firefox is the only one who implements this incumbent tracking behavior per spec for both promises and finalization registry is my understanding, please correct me if I'm wrong Yulia.
 
 YSV: (silent confirmation)
 
 SYG: And chrome is interested in aligning here, but here, but it's like - threading through the incumbent object correctly everywhere in blink and V8 is I think going to be some work and we're not prioritizing it very highly currently, but if the eventually to plan is to eventually align on this behavior, and if you look at the HTML spec, in fact, there be a little side icon saying this behavior is currently only implemented Firefox. So that's it. Any issues with getting consensus for this? Is there anything on the Queue?
 
-MM:  My question is, for the incumbent thing, when we introduced that for promises, did we make some big qualification, at least with a non normative note, hopefully something more normative, that this is only for web browsers rather than a general host hook that should get that hosts should feel free to use. 
+MM: My question is, for the incumbent thing, when we introduced that for promises, did we make some big qualification, at least with a non normative note, hopefully something more normative, that this is only for web browsers rather than a general host hook that should get that hosts should feel free to use.
 
 SYG: We certainly did. Let me okay. I think you don't mean incumbents. I think you actually mean the host hooks host called job callback and host make job callback. And the normative - it's not even a non normative, if you look up those AOs on the spec actually, maybe I can just share. But Basically if you look up those AOs on the spec, there's a default implementation, which is basically for host job call back. Just does the plain call and for the HostMakeJob call back just make a wrapper that does nothing, the notes that says ecmascript hosts that are not web browsers must use the default implementation,
 
@@ -161,16 +172,20 @@ MM: It's fine with me.
 
 YSV: You have consensus from my side Shu, and what you said was correct for Firefox.
 
-SYG: Okay great. Thanks for confirming. 
+SYG: Okay great. Thanks for confirming.
+
 ### Conclusion/Resolution
-* Consensus
+
+- Consensus
+
 ## Class Static Initialization Blocks
+
 Presenter: Ron Buckton (RBN)
 
 - [proposal](https://github.com/tc39/proposal-class-static-block)
 - [slides](https://1drv.ms/p/s!AjgWTO11Fk-TkfhG_gVnKlNwMT-MyA?e=owLLRf)
 
-RBN: I will keep this short. I put 15 minutes on the agenda. I just want to provide a brief update on the class static initialization block proposal that we discussed in the last meeting. We've already gone over the motivations, so I'm not going to spend too much time talking about that. What I do want to point out is where we ended up with proposed semantics. What we discussed is the proposed semantics for stage 3, which was that we would allow for multiple static initialization blocks per class. Which was a change from only 120 more as of PR 38, which was what we discussed as part of the conditional consensus for stage 3. We would evaluate these static initialization blocks interleaved with static field initializers as part of the layering of this proposal on top of the static Fields proposal. That has been addressed. 
+RBN: I will keep this short. I put 15 minutes on the agenda. I just want to provide a brief update on the class static initialization block proposal that we discussed in the last meeting. We've already gone over the motivations, so I'm not going to spend too much time talking about that. What I do want to point out is where we ended up with proposed semantics. What we discussed is the proposed semantics for stage 3, which was that we would allow for multiple static initialization blocks per class. Which was a change from only 120 more as of PR 38, which was what we discussed as part of the conditional consensus for stage 3. We would evaluate these static initialization blocks interleaved with static field initializers as part of the layering of this proposal on top of the static Fields proposal. That has been addressed.
 
 RBN: We still currently don't support decorators on static blocks, which is we don't know what that exactly would mean yet, but if that's something we eventually do want to do that will probably happen or be discussed as part of the decorators proposal or later. There was another issue that we were concerned about which was whether or not or how to handle new.target inside of a static block. At the time was not did not feel very clearly specified in static fields, that was because I was looking at an older version of the proposal spec text rather than the version that is the one is the diff from the actual ecma262 spec. So this has been updated and is now consistent in that new.target will return undefined just like it does in methods and in static fields.
 
@@ -178,7 +193,7 @@ RBN: The semantics we also discussed, these have not changed, is a static initia
 
 RBN: So in the last meeting in January, we conditionally advanced to stage three pending the changes that were that we just discussed. Those were approved and merged. So assuming no other concerns that theoretically means that we are now at stage 3 with this proposal since that was the only blocking issue for stage 3. That's pretty much all I have for this if anyone has any comments that they'd like to add.
 
-DE: Great job on this proposal. I'm very happy about how responsive you were to all the concerns and patient with my review. And so, thanks. I support this being considered stage 3, which I agree it kind of already is. 
+DE: Great job on this proposal. I'm very happy about how responsive you were to all the concerns and patient with my review. And so, thanks. I support this being considered stage 3, which I agree it kind of already is.
 
 RBN: All right since this since we have the conditional approval, I'm not specifically asking for stage advancements since this is essentially now stage 3. I am interested in getting some feedback from implementers that would be interested in investigating this feature for what we need as our requirements for stage 4 and I'll probably be filing issues on various issue trackers and in the near future starting to work on the stage for process.
 
@@ -186,26 +201,27 @@ YSV: It's already tracked on Firefox.
 
 RBN: Wonderful if there are publicly available issue links for these if you could add either contact me directly just add something to the issue tracker so I can track those issues. I would be helpful.
 
-SYG: V8 has implemented as a flagged feature and I plan to send the intent to ship soon. Probably Friday. 
+SYG: V8 has implemented as a flagged feature and I plan to send the intent to ship soon. Probably Friday.
 
-RBN: And we have a community contributor that's already working on putting together a down level implementation for typescript right now. And that's all I have. So, thank you. 
+RBN: And we have a community contributor that's already working on putting together a down level implementation for typescript right now. And that's all I have. So, thank you.
 
 ### Conclusion/Resolution
-* Still stage 3
 
+- Still stage 3
 
 ## Records and Tuples update
+
 Presenter: Robin Ricard (RRD)
 
 - [slides](https://docs.google.com/presentation/d/15ggPmSVt-cI9asKaoolZkvjvV62Xh3I9LSD7R5nXQ8A/edit)
 
 RRD: This is a really quick update so I don't want to take much everyone staying here because this need to questions that we intend to ask to the committee. This is not a decision where we're taking here. So no stage advancement or anything like this today on record and tuple.
 
-RRD: So this is basically about coming back to what (we discussed?) in the stage 1 slides in October 2019, which is that code that you would write for record and tuple should also work with objects and arrays and execute mostly the same especially while accessing them. Right and we found out recently by triaging things and making sure that everything was coherent that Array.prototype doesn't have all of the methods that we added to record prototype and we quickly thought about it and we are thinking of potentially adding them to the array prototype. And so that include the `popped` which removes and elements and gives you basically a copy of the Tuple but with the element popped, `pushed`, `reversed`,  `shifted`, `sorted`, `spliced`, `shifted`, and `with` which lets you change the value given an index and a new value that for replace it. And as it is not noted here, but if we were to add them to Array.prototype, we would add them in such a way that each returns an array nautical and we actually found out that this could be useful without recording Tuple that even if tuples can do exist. 
+RRD: So this is basically about coming back to what (we discussed?) in the stage 1 slides in October 2019, which is that code that you would write for record and tuple should also work with objects and arrays and execute mostly the same especially while accessing them. Right and we found out recently by triaging things and making sure that everything was coherent that Array.prototype doesn't have all of the methods that we added to record prototype and we quickly thought about it and we are thinking of potentially adding them to the array prototype. And so that include the `popped` which removes and elements and gives you basically a copy of the Tuple but with the element popped, `pushed`, `reversed`, `shifted`, `sorted`, `spliced`, `shifted`, and `with` which lets you change the value given an index and a new value that for replace it. And as it is not noted here, but if we were to add them to Array.prototype, we would add them in such a way that each returns an array nautical and we actually found out that this could be useful without recording Tuple that even if tuples can do exist.
 
 WH: I couldn't hear you. You said it returned an array, not what?
 
-RRD: Yes. It would return an array not a tuple. Because originally those come from the Tuple that prototype so we wouldn't be copying the exact same spec text word for word to array prototype and essentially this they would be similar but wouldn't be the same so they would return an array for Array.prototype, right? Is that clear? 
+RRD: Yes. It would return an array not a tuple. Because originally those come from the Tuple that prototype so we wouldn't be copying the exact same spec text word for word to array prototype and essentially this they would be similar but wouldn't be the same so they would return an array for Array.prototype, right? Is that clear?
 
 WH: So they would always return an array even if you use them on a Tuple?
 
@@ -215,17 +231,17 @@ WH: Okay, so you get back with whatever the kind of object you called them.
 
 RRD: Yes, so in the case of arrays you would get arrays.
 
-RRD: And yes, we found out that we could see benefits without even considering the existence of tuples in JavaScript. For example, the possibility to reverse without having to make a copy or sort without having to make a copy beforehand is actually quite useful. So it over to us that it might be a good idea so we would like to get general, you know temperature in their room here and finally and I already start to see the queue and essentially led to as the committee whether we should pursue this as a separate proposal or as part of a bigger than tuples and that's all I have for that presentation. 
+RRD: And yes, we found out that we could see benefits without even considering the existence of tuples in JavaScript. For example, the possibility to reverse without having to make a copy or sort without having to make a copy beforehand is actually quite useful. So it over to us that it might be a good idea so we would like to get general, you know temperature in their room here and finally and I already start to see the queue and essentially led to as the committee whether we should pursue this as a separate proposal or as part of a bigger than tuples and that's all I have for that presentation.
 
 KG: Yeah, this seems great. I support doing it as a separate proposal. We have done things before where, if we think that these things are only useful in the context of record and tuple, which I do not to be clear, I think they're independently useful, but even if we did think that, we have done these sort of linked proposals before where we say this only advances if this other thing advances. So I think there's no problem there even if we do want to gate this on record and tuple, although again, I think it is independently useful.
 
-RRD: Okay noted. 
+RRD: Okay noted.
 
 MM: So first of all question, which is - is the fact that (lets say) `pushed` returns either and the pushed on a tuple returns a tuple and pushed on a real returns an array, is that because of the methods are different or is that because it's based on what kind of a thing the `this` is? so to put it another way if you set Array.prototype got pushed to do not call on a tuple or rice or vice versa. What would you get?
 
 TAB: I can answer this they would be different methods so it would probably fail because the array prototype pushed would not. Oh, well if it's a rate up ??? pushed it would probably work because array dot prototype that push working at you re like, but if we did we'd give you an array back not to do cool.
 
-MM: Ok, good. Just to verify the array methods would generic just like the original just like the existing array methods are but they would always return an array just like the existing array methods do. 
+MM: Ok, good. Just to verify the array methods would generic just like the original just like the existing array methods are but they would always return an array just like the existing array methods do.
 
 RRD:I mean, yeah that this is like this is not defined at the moment.
 
@@ -235,13 +251,13 @@ MM: OK thank you. That's what was very clear. To answer your question. I would a
 
 RRD: All right. I don't think we have time to discuss that specific last part, but we would like to talk with you, MM, as a later point about this last frame.
 
-SYG: Wasn’t Waldemar in the queue before me? 
+SYG: Wasn’t Waldemar in the queue before me?
 
 WH: I had a question very similar to MM’s. It was addressed.
 
-SYG: So before I go into my topic to quickly address what DE said, I would like us to be open to the possibility that new things don't have species even if we don't remove the old ones. But we don't need to go into that here. I would like to be us to be open to that possibility. I would like to urge the records and tuples champions - I wish you luck with the names. We have had tremendous difficulty historically to add new things to array dot prototype. This is adding a lot of things to read that prototype and I understand you would like to do it for consistency with Tuple dot prototype. So while I strongly agree that this should be a separate proposal that is not sequenced before or after records and tuples if you are you if you want to do this and you want the same names, you should probably come up with a plan because it's possible that you might not get the same names between the tuple dot prototype and array dot prototype. 
+SYG: So before I go into my topic to quickly address what DE said, I would like us to be open to the possibility that new things don't have species even if we don't remove the old ones. But we don't need to go into that here. I would like to be us to be open to that possibility. I would like to urge the records and tuples champions - I wish you luck with the names. We have had tremendous difficulty historically to add new things to array dot prototype. This is adding a lot of things to read that prototype and I understand you would like to do it for consistency with Tuple dot prototype. So while I strongly agree that this should be a separate proposal that is not sequenced before or after records and tuples if you are you if you want to do this and you want the same names, you should probably come up with a plan because it's possible that you might not get the same names between the tuple dot prototype and array dot prototype.
 
-RRD: Yeah, it does. That's essentially why we are taking this as early as as we can because we understand that or read a prototype is more difficult to change then the new thing we're proposing with tuples. 
+RRD: Yeah, it does. That's essentially why we are taking this as early as as we can because we understand that or read a prototype is more difficult to change then the new thing we're proposing with tuples.
 
 SYG: That's all right. All right.
 
@@ -253,24 +269,27 @@ RRD: the idea is to get a new array that has the items. Right, so it's very simi
 
 DE: So to maybe elaborate on that - `spliced` is a kind of similar situation to `popped`. These may be simpler where you know Array.prototype.pop returns the last element and gets rid of the Array and gets rid of it from the Array. Tuple.prototype.popped just returns the Array and it doesn't give you the last element. `spliced` operates similarly you I think it makes sense because you already could access the last element through other methods and for splice you already could access these things through other ways. So You know, you can query it first and then call this method to do the mutation. So it makes sense that you only get the, you know, quote unquote mutated sequence and not the and not both things I'm waiting for a response. No response. Okay, Daniel. you're next.
 
-DRR: Just wanted to say that I think when we solve this on our team, we probably got to prefer this or I mean we like this approach because you're you're basically giving a way for existing data structures to be to take that sort of, you know, immutable approach for mutable data structures, right? So you can leverage a lot of the same techniques that you can use anyway. You just don't have to go through indirect slices or indirect helper functions. They're just both in. We definitely like to see that also lets you avoid some of the confusion of like push on one creates a new copy push another action mutates. I will also say, you know, there's this thing about reverse versus reversed which might be a little bit strange. 
+DRR: Just wanted to say that I think when we solve this on our team, we probably got to prefer this or I mean we like this approach because you're you're basically giving a way for existing data structures to be to take that sort of, you know, immutable approach for mutable data structures, right? So you can leverage a lot of the same techniques that you can use anyway. You just don't have to go through indirect slices or indirect helper functions. They're just both in. We definitely like to see that also lets you avoid some of the confusion of like push on one creates a new copy push another action mutates. I will also say, you know, there's this thing about reverse versus reversed which might be a little bit strange.
 
-RRD: Yeah, it's definitely complementary approach to what we got into bullies is putting in and if we manage to make those things go here and we think it's going to be a net benefits both arrays and regards tuples. All right, if we don't have any more questions, I'm happy to leave it there your time 
+RRD: Yeah, it's definitely complementary approach to what we got into bullies is putting in and if we manage to make those things go here and we think it's going to be a net benefits both arrays and regards tuples. All right, if we don't have any more questions, I'm happy to leave it there your time
 
 ### Conclusion/Resolution
-* New proposal suggested
-* Has independent value from R&T
+
+- New proposal suggested
+- Has independent value from R&T
+
 ## Async Do update towards stage 2
+
 Presenter: Kevin Gibbons (KG)
 
 - [proposal](https://tc39.es/proposal-do-expressions/)
 -[slides](https://docs.google.com/presentation/d/1GXk1UwhaXijT0Rcn3_I4HmVGsdxM9cpYqcRvVjdzIoA/)
 
-KG: Okay, right. Do Expressions have been presented before I'm not going to keep giving a full summary of them every time but briefly they are just a way to use a block of statements in expression position giving you the value the completion value as would be observed by for example `eval`, as the completion the value of the blocks. Okay this do expression assigns x to temp * temp, but temp does escape this expression. Completion values are already in the spec. I'm not proposing to make any changes to them at this point. 
+KG: Okay, right. Do Expressions have been presented before I'm not going to keep giving a full summary of them every time but briefly they are just a way to use a block of statements in expression position giving you the value the completion value as would be observed by for example `eval`, as the completion the value of the blocks. Okay this do expression assigns x to temp * temp, but temp does escape this expression. Completion values are already in the spec. I'm not proposing to make any changes to them at this point.
 
-KG: There is spec text. This has changed very slightly since I presented it. Or, rather, the screenshot here has changed very slightly since I presented it last time. An overwhelming majority of the spec text is specifying restrictions on which things you can write in a do expression, which is not in the screenshot. Those restrictions have changed slightly since last time. The first thing is when last time I said that I didn't want to allow break continue or return to cross the boundary of the do and that was mostly a sort of a style thing, a question of what code ought to be legal rather than a question of what code is possible. However when I presented it, I got some strong pushback on that restriction from WH, in particular, and I did a sort of a survey of delegates, an informal - just I wanted to know what people thought through a Google form and of the 30 or so responses I got a pretty strong majority that was in favor of allowing break continue and return to cross the boundary of the do expression. So I have made that change to the proposal. I am now proposing to allow you to use `break`, `continue` and `return` in do expressions where you are in a context where it makes sense to use these operations. With the exception that you can't use `break` or `continue` in an expression in a loop head like even if you're in a nested loop, because there is this ambiguity about what those things do and also like please don't try to write that code. 
+KG: There is spec text. This has changed very slightly since I presented it. Or, rather, the screenshot here has changed very slightly since I presented it last time. An overwhelming majority of the spec text is specifying restrictions on which things you can write in a do expression, which is not in the screenshot. Those restrictions have changed slightly since last time. The first thing is when last time I said that I didn't want to allow break continue or return to cross the boundary of the do and that was mostly a sort of a style thing, a question of what code ought to be legal rather than a question of what code is possible. However when I presented it, I got some strong pushback on that restriction from WH, in particular, and I did a sort of a survey of delegates, an informal - just I wanted to know what people thought through a Google form and of the 30 or so responses I got a pretty strong majority that was in favor of allowing break continue and return to cross the boundary of the do expression. So I have made that change to the proposal. I am now proposing to allow you to use `break`, `continue` and `return` in do expressions where you are in a context where it makes sense to use these operations. With the exception that you can't use `break` or `continue` in an expression in a loop head like even if you're in a nested loop, because there is this ambiguity about what those things do and also like please don't try to write that code.
 
-KG: The second change, this is a much smaller change, is that if you have an if without an else as the last statement in the do expression I have also made that illegal because there's this uncertainty about whether you would get the previous line, the line that comes before the if, or undefined. So now this is disallowed you have to explicitly put an else block. If you want to get undefined it can just be empty and then it very clearly gives you undefined. Right. 
+KG: The second change, this is a much smaller change, is that if you have an if without an else as the last statement in the do expression I have also made that illegal because there's this uncertainty about whether you would get the previous line, the line that comes before the if, or undefined. So now this is disallowed you have to explicitly put an else block. If you want to get undefined it can just be empty and then it very clearly gives you undefined. Right.
 
 KG: So those are the changes. I was going to ask for stage 2 at this meeting. But YSV raised (and a couple of other delegates also pointed out) that it is not necessarily going to be obvious to readers of do-expressions what all of these things do. So for example, someone might have an intuition that `return` within a do expression would return from the do expression somehow. We can never do things that everyone will understand a hundred percent of the time, but we should try to avoid doing things which everyone will think does something other than what it says. Or at least if we end up in a situation where everyone thinks it does one thing except perhaps for the programming language nerds who think about it in a different way that's bad. So in an effort to avoid this I'm going to try to do a small, very limited scope user study where I would have a brief introduction to do expressions and then a few snippets of code and have a multiple choice for each snippet: "do you think this does this, that, the other, or possibly something else." And if it comes back that in fact there is a very strong consensus view from users that some piece of code does something other than what I am proposing for it to do here then I will change or withdraw the proposal. If there is not a strong outcome, then I will go with what we usually do–using our best judgement.
 
@@ -278,11 +297,11 @@ KG: Yeah, so that's where do expressions are at. That's why I'm not asking for s
 
 JHD: I just want to make sure it is on the record. I think this proposal is very useful even without break, continue and return. Linters will likely have rules against this.
 
-MM:  I very much appreciate the idea of the user study. I don’t think that you need to block on stage 2 for this.
+MM: I very much appreciate the idea of the user study. I don’t think that you need to block on stage 2 for this.
 
-KG: I am also excited about advancing the proposals. I think the questions about break, return or continue are allowed is a major semantic question. In particular since there was a blocking concern to having this proposal without break, return, or continue. I don't want that question to be unsettled when this goes to stage 2, I want us to have already made up our minds for it, and since part of the point of the user study is to see if users understand that semantics, I don't want to ask for stage two before the user study. So that's my thinking. 
+KG: I am also excited about advancing the proposals. I think the questions about break, return or continue are allowed is a major semantic question. In particular since there was a blocking concern to having this proposal without break, return, or continue. I don't want that question to be unsettled when this goes to stage 2, I want us to have already made up our minds for it, and since part of the point of the user study is to see if users understand that semantics, I don't want to ask for stage two before the user study. So that's my thinking.
 
-MM: Okay. Thank you. That's all reasonable. 
+MM: Okay. Thank you. That's all reasonable.
 
 PFC: I'm sad that this is not going to stage 2 yet, but I think a user study is a good way to resolve this question. I think making a decision based on what programmers in the JavaScript ecosystem think about the syntax is much better than speculating ourselves, so +1.
 
@@ -290,7 +309,7 @@ KG: I should say, I think a pretty likely outcome of the user study is that ther
 
 DE: I was a little skeptical when I first heard about this waiting on a user study before stage 2 idea. But I mean, I really like the design of this study and I think it he will get at the relevant questions. If this study were asking people for example, look you can do a return in a normal do expression shouldn't you be able to do it in an async do expression and ask people to say yes, or whether they had that intuition. I mean it's easy to trick people into saying that something that's different from the semantics we can provide but it sounds like this study will focus instead on more important qualities, like if people misinterpret the return statement with the new do expression to change the value of the do expression itself, which would be pretty serious if almost everybody interpreted it that way, so I'm happy about this design and thanks for the good work you're doing.
 
-YSV: We will be working with Felienne to make sure that the questions are well formed from a scientific perspective before sending it into the wild so we'll make sure that we're not preparing people to answer in a specific way one way or the other. Like Kevin said we might not end up with a clear yes or no answer. That's pretty common when doing these kinds of studies, but I think what Kevin said is if 50% of people or more are getting it wrong consistently, then we might want to revisit our decisions here and talk about that. That's a pretty big number. But if it's less - I came to Kevin about this and I would also feel comfortable with our previous decision  if most people are getting the right intuition from it. I would be comfortable with it going forward as it is. Otherwise, we may want to adjust and think about it again. I just want to make sure we're not undermining unintentionally how users understand the code that they write by introducing this ability to use - especially `return` might be problematic. But yeah, that's it.
+YSV: We will be working with Felienne to make sure that the questions are well formed from a scientific perspective before sending it into the wild so we'll make sure that we're not preparing people to answer in a specific way one way or the other. Like Kevin said we might not end up with a clear yes or no answer. That's pretty common when doing these kinds of studies, but I think what Kevin said is if 50% of people or more are getting it wrong consistently, then we might want to revisit our decisions here and talk about that. That's a pretty big number. But if it's less - I came to Kevin about this and I would also feel comfortable with our previous decision if most people are getting the right intuition from it. I would be comfortable with it going forward as it is. Otherwise, we may want to adjust and think about it again. I just want to make sure we're not undermining unintentionally how users understand the code that they write by introducing this ability to use - especially `return` might be problematic. But yeah, that's it.
 
 JRL: So I wanted to offer the counterpoint to Jordan. I agree with Waldemar here if there is no control flow, I don't see the point of this over an IIFE besides saving the four characters to create the IIFE. It just doesn't seem like there's a whole lot of point.
 
@@ -298,36 +317,36 @@ YSV: Just a quick response to that. We're not discussing - the discussion we've 
 
 WH: A lot of discussion has been about the confusion about `return` statements. I think the behavior of `return` is pretty clear, but there's a much bigger source of confusion here, which is where iteration statements are allowed or not. Let me give some examples:
 
-```
+```js
 a = do {
   lbl: {
-	while (f()) g();
-	break lbl;
-	44;
+ while (f()) g();
+ break lbl;
+ 44;
   }
 };
 
 a = do {
   lbl: {
-	while (f()) g();
-	{break lbl;}
-	44;
+ while (f()) g();
+ {break lbl;}
+ 44;
   }
 };
 
 a = do {
   lbl: {
-	while (f()) g();
-	if (x) break lbl;
-	44;
+ while (f()) g();
+ if (x) break lbl;
+ 44;
   }
 };
 
 a = do {
   lbl: {
-	while (f())
-  	break lbl;
-	44;
+ while (f())
+   break lbl;
+ 44;
   }
 };
 ```
@@ -340,7 +359,7 @@ WH: You wrote the proposal so I know you know, but I don't think anybody else in
 
 KG: I have a response to this as well.
 
-AKI: Are we waiting for over 50 people to answer though? 
+AKI: Are we waiting for over 50 people to answer though?
 
 WH: I'd like to give folks a chance to at least read and think about it for a moment. Anybody willing to hazard a guess?
 
@@ -354,15 +373,15 @@ DE: Yep, I want to add I don't think it's essential that everyone be able to pre
 
 WH: There's a lot of spec text to forbid these weird cases, and I'm just wondering whether it's worth it to forbid those.
 
-KG: I heard some pretty strong sentiment that it should be disallowed, that loops in particular should be disallowed. I also feel strongly that declarations should be disallowed as the final statement. And figuring out what "final statement" means for a declaration is only very slightly easier than figuring out what it means for a loop. So I think if we have agreement that declarations should be forbidden as the final statement, we already get almost all of that complexity. And that is a restriction I am unwilling to give up. 
+KG: I heard some pretty strong sentiment that it should be disallowed, that loops in particular should be disallowed. I also feel strongly that declarations should be disallowed as the final statement. And figuring out what "final statement" means for a declaration is only very slightly easier than figuring out what it means for a loop. So I think if we have agreement that declarations should be forbidden as the final statement, we already get almost all of that complexity. And that is a restriction I am unwilling to give up.
 
 WH: Yeah, you want to prohibit those even in these weird cases?
 
 KG: Yes.
 
-WH: Because you're hoping to change the semantics of how declarations work, or some other reason? 
+WH: Because you're hoping to change the semantics of how declarations work, or some other reason?
 
-KG: Mostly that, yes. 
+KG: Mostly that, yes.
 
 WH: OK. Yeah, that makes sense.
 
@@ -371,16 +390,18 @@ AKI: We're at time. You have 20 minutes later but we'll have to come back to it 
 KG: I personally don't think that we should spend more time on this topic at this meeting because I'm not trying to advance it at this meeting. If the people on the queue really want to get their points, then talk to the chairs and we can try to find more time at this meeting. But otherwise I yield my 20 minutes.
 
 ### Conclusion/Resolution
-* Not asking for advancement; Kevin to proceed with study design
+
+- Not asking for advancement; Kevin to proceed with study design
 
 ## Top-level await status update
+
 Presenter: Yulia Startsev (YSV)
 
 - [proposal](https://github.com/tc39/proposal-top-level-await)
 
 Displaying PR https://github.com/tc39/proposal-top-level-await/pull/161
 
-YSV: Hi everyone. This is an update for top-level await, which I'm hoping to get to stage 4 in the next meeting. We have been working pretty hard on getting through the remaining issues. In particular Guy Bedford has been a hero in responding to some of the bigger issues. The first one that I want to bring up is a bug fix which will describe very quickly. It was reported by Sokra (Tobias Koppers) who is working on webpack. They noticed that with the current spec of top-level the invariant that the children in a module graph complete before the parent completes has been broken. The behavior that they noticed it's detailed here (shows issue). What you would expect is to go through the children of the tree in the correct order. So you would first have `a` run which is importing a module which has an async node. The async node runs because it's the second in the order. It has a top level await, so it should wait and then the next resolving module should print C1 followed by X and the result is as follows. This isn't only in V8, but is due to a spec bug. Guy fixed it in the spec and the contents of the change have been merged. So you'll see this if you open the proposal now, we have a new field, which is the cycle-root. It holds a cyclic module record, and we've made a few changes. So instead of calling getAsyncCycleroot. We just access this root as a field. So there's that. I just want to check are there any concerns about this? 
+YSV: Hi everyone. This is an update for top-level await, which I'm hoping to get to stage 4 in the next meeting. We have been working pretty hard on getting through the remaining issues. In particular Guy Bedford has been a hero in responding to some of the bigger issues. The first one that I want to bring up is a bug fix which will describe very quickly. It was reported by Sokra (Tobias Koppers) who is working on webpack. They noticed that with the current spec of top-level the invariant that the children in a module graph complete before the parent completes has been broken. The behavior that they noticed it's detailed here (shows issue). What you would expect is to go through the children of the tree in the correct order. So you would first have `a` run which is importing a module which has an async node. The async node runs because it's the second in the order. It has a top level await, so it should wait and then the next resolving module should print C1 followed by X and the result is as follows. This isn't only in V8, but is due to a spec bug. Guy fixed it in the spec and the contents of the change have been merged. So you'll see this if you open the proposal now, we have a new field, which is the cycle-root. It holds a cyclic module record, and we've made a few changes. So instead of calling getAsyncCycleroot. We just access this root as a field. So there's that. I just want to check are there any concerns about this?
 
 (silence)
 
@@ -388,7 +409,7 @@ YSV: Okay, so this has been merged, it is a normative change and a bug that need
 
 YSV: What happens instead is that we end up swapping `X` and `B` because `B` needs to evaluate - `X` has this set of children and it just evaluates first. That's a little bit surprising and in particular if this last module that is shared, this leaf module that's shared by all three of these, is not async, then the order will be like this. So it can be argued that this is an oversight. It doesn't change the behavior of module loading that we agreed to, which is the promise dot all semantics, but it is a much more significant change than the cycle-root update which was a bug fix that we saw earlier.
 
-YSV: (showing spec change) Here is the change and I think the most significant of the best way to look at this is down in - async module fulfilled is a good place to start reading this. We've removed some of the work that's happening in the async module execution fulfilled and moved it into another function, namely it is called gather async parent completions. We also have an execution list. The execution list consists of which parents are ready to complete. The other important point here is we then sort the list of parents according to their post order. This is detailed in the spec text in particular: "Note the order in which modules transition to async evaluating is significant". Additionally, the other change here is that non async modules which have async children are now also included in the async evaluating set, so they also have their async evaluating Flag set to true. So that's another change. The bulk of the work that happens here happens in the gather async parents completion parent completion method. And yes, that is it. This is a much more substantial change to the spec than the other one, but it is an important one because it would adhere more closely to user expectations. That's all I've got to share. 
+YSV: (showing spec change) Here is the change and I think the most significant of the best way to look at this is down in - async module fulfilled is a good place to start reading this. We've removed some of the work that's happening in the async module execution fulfilled and moved it into another function, namely it is called gather async parent completions. We also have an execution list. The execution list consists of which parents are ready to complete. The other important point here is we then sort the list of parents according to their post order. This is detailed in the spec text in particular: "Note the order in which modules transition to async evaluating is significant". Additionally, the other change here is that non async modules which have async children are now also included in the async evaluating set, so they also have their async evaluating Flag set to true. So that's another change. The bulk of the work that happens here happens in the gather async parents completion parent completion method. And yes, that is it. This is a much more substantial change to the spec than the other one, but it is an important one because it would adhere more closely to user expectations. That's all I've got to share.
 
 YSV: I'm asking for the committee's feedback on this normative change because if we get consensus on this, I will merge.
 
@@ -404,7 +425,7 @@ DE: I have to say, I've had a lot of trouble trying to understand. This is PR. I
 
 SYG: I don't even really disagree that due to a relative lack of uptake of native esm deployment on the web. It's probably not a compat issue. I don't want this to drag on. Among other things, part of it is for the release thing, part of it is that I want us to very strongly adhere to the norm that we do not change semantics after stage 3 if we can help it, even if we think we made the wrong choice.
 
-DE: So just respond to that. I think I see it as we need consensus on a change after stage 3. So I do want us to close on this issue promptly like this meeting or next meeting at the latest.  I think we're always open to changes, like we make normative changes to things that are in the main specification such as your proposal to remove subclassing built-ins, and we could think of a change like this as such a normative change even though this proposal is stable in some sense.
+DE: So just respond to that. I think I see it as we need consensus on a change after stage 3. So I do want us to close on this issue promptly like this meeting or next meeting at the latest. I think we're always open to changes, like we make normative changes to things that are in the main specification such as your proposal to remove subclassing built-ins, and we could think of a change like this as such a normative change even though this proposal is stable in some sense.
 
 KM: I think the thing I'm going to talk about is somewhat of a bug fix that is independent of the if we don't take this change because it doesn't work. We should probably figure out something to do with the bug fixes. I think incidentally happens here, but I could also misread the aspect. It's very hard to read, not necessarily the fault of the people right inspectors because it's complicated, just generally sure. Okay.
 
@@ -427,9 +448,13 @@ YSV: Additionally. It was breaking an important invariant. Without this change w
 YSV: Please take a look if you have any questions. I'm very happy to clarify anything or you through the spec. It is hard to read. I did need to implement it to fully understand it myself. So please get in touch.
 
 ## ECMA Recognition Awards
+
 ### Conclusion/Resolution
+
 Consensus on 3 nominations
+
 ## Module Fragments (For Stage 1)
+
 Presenter: Daniel Ehrenberg (DE)
 
 - [proposal](https://github.com/littledan/proposal-module-fragments)
@@ -462,7 +487,7 @@ DE: So a big part of this is about the semantics of modules. The semantics of mo
 
 DE: I think the import meta URL should be the URL of the enclosing module then hash from the fragment. That's the whole point of using fragments and it talked about the shadowing semantics would probably want it really are if you use a duplicate name that could be defined process environment or host-specific don't have a strong opinion. So this isn't a new idea. Inline modules have been discussed in the es6 cycle before even I joined the committee. I don't know if people talked about the idea of using fragments before but that might not be a good idea. Anyway, that's not really the core of it. The core is that we should have a concept of inline modules with really statically specified names that can have static Imports applied to them. And I think they're complimentary to Resource bundles that can virtualize Network level resources just because there's this two order of magnitude difference in the scale and there's a huge - you could think of it as a two order of magnitude difference in the breadth of the semantics, the network of the web platform is quite broad and module loading is quite narrow compared to that. So I think they're pretty complimentary. I want to ask the committee: should we add module fragments to JavaScript? I want to propose that when I'm asking for stage 1 I'm really asking about inline modules that are somehow in the module map and I'm not asking for committee buy in on the details of this. I also want to ask if anyone wants to work with me on the proposal, I would be very happy to have co-champions involved. So please get in touch with me offline. Questions?
 
-MM: I want to verify first that module fragments only create initialized linked module instances. Unlike module blocks, of module fragments do not lead to any notion of a static unlinked uninitialized module record that can be multiple initialized in (?), is that correct? 
+MM: I want to verify first that module fragments only create initialized linked module instances. Unlike module blocks, of module fragments do not lead to any notion of a static unlinked uninitialized module record that can be multiple initialized in (?), is that correct?
 
 DE: Well You know, there's no way to get it a first-class uninitialized unlinked module record. I want to be careful when you talk about these things are always linked. So when you parse a module that has several module fragments in it. I don't think we should eagerly import and link each one of those modules fragments that it contains. I think you may want to later dynamically import some of those which will then fetch those dependencies and lead them to be linked. So in HTML semantics, the module map can represent modules that are fetched and linked but not yet have their dependencies fetched and linked and I think that's the thing that makes sense across environments, at least for environments that dynamically fetch JavaScript modules, which is not all environments. I think that's what I think that's kind of the natural semantics for dynamic fetch these module environments.
 
@@ -502,7 +527,7 @@ DE: Right, that's exactly the kind of idea. The idea more broadly. Is that resou
 
 KM: I think I have a strong opinion than Dan which is if we don't think that bundlers are going to use this and we don't have like strong feedback from at least one, Preferably many,. I don't know if there's actually many, but that they're going to use this then we potentially just should we should make sure they're going to use it before we ship it because it feels like we should not repeat the mistakes that we did with modules.
 
-DE:  That's what I've been trying to do. Parcel has been extremely positive about this and others have been somewhat positive but not to the point where I feel comfortable name dropping them.
+DE: That's what I've been trying to do. Parcel has been extremely positive about this and others have been somewhat positive but not to the point where I feel comfortable name dropping them.
 
 SYG: Yeah, that'll make sense to me. Thanks for the explanation. I do think that. Yeah, given all of that I think I'm completely in support of stage 1 I do share the same concerns as Bradley about reusing URL fragment in space here. But yeah, you can figure that out later. Just want to make sure everything works together in the ecosystem.
 
@@ -516,10 +541,12 @@ DE: Please let me know offline if you want to be a co-champion.
 
 MM: I would like to be a co-champion.
 
-
 ### Conclusion/Resolution
-* Stage 1
+
+- Stage 1
+
 ## Collection normalization methods
+
 Presenter: (BFS)
 
 - [proposal](https://github.com/tc39/proposal-collection-normalization)
@@ -530,7 +557,7 @@ MM: I heard your entire presentation and I don't get it. I don't get what the di
 
 BFS: It's not just that the coercer is named. It's also that if you do have some sort of naming to the coercer, it implies some it is being renamed for reusability purposes and doing so for reusability purposes is a little difficult. You have two data points in a map and one data point in a set. There was a demand that we not use value to identify the items contained within a set and also a demand that we do use values for the items contained in a Set. So those don't work together. There was a separate proposal that, what if we allow either/or but not both, but in that case the argument was that then you can't reuse the normalizer from a map which could contain both.
 
-MM:  so my overall reaction to this controversy is I would rather settle on a resolution of this naming issue that I might not think is ideal rather than split those set off of this proposal. I think this proposal really needs to go forward with both set and mapped together. I would be perfectly happy with regard to the particular issue. I would be perfectly happy with map being coercedKey and coerceValue and set being coerceElement.
+MM: so my overall reaction to this controversy is I would rather settle on a resolution of this naming issue that I might not think is ideal rather than split those set off of this proposal. I think this proposal really needs to go forward with both set and mapped together. I would be perfectly happy with regard to the particular issue. I would be perfectly happy with map being coercedKey and coerceValue and set being coerceElement.
 
 BFS: we did have that a couple presentations back, but there was a demand that it be key at the time. We could revisit if coerceElement would be acceptable after this duration of trying to get another name.
 
@@ -555,7 +582,7 @@ WH: Yeah, so if that's the case then this should not advance.
 BFS: Mark suggested, perhaps we could use a different name, and you're saying they must be the same name.
 
 WH: That is my only constraint. The name of the address should be the same across Set and Map. I don't care what it's called as long as it's the same.
- 
+
 BFS: Yes, then it is unresolvable, which is why I would like to split this.
 
 WH: I find the notion that this is unresolvable to be unreasonable.
@@ -582,7 +609,7 @@ WH: I just find this position unreasonable.
 
 BFS: I believe both of us, do.
 
-BFS: Maybe we can continue the queue. 
+BFS: Maybe we can continue the queue.
 
 AKI: Yes. Let's YSV. You're up next.
 
@@ -647,7 +674,7 @@ PFC: This agenda item is about Temporal. My name is Philip Chimento. I work at I
 
 PFC: Here's an overview of what I'll be talking about during this presentation. There will be a short recap for people who have not seen earlier presentations, about what Temporal is and what it does; a summary of the changes that we've made in response to delegate reviews; and a summary of what is still open. There will be time reserved for discussion, and then at the end we plan to ask for advancement to Stage 3.
 
-PFC: But first just to address any questions about the time box and questions were raised about that. As I said, we are planning to ask for a stage advancement at the end of the presentation. During the last two weeks or so, we noticed delegates starting to get into more details of the proposal during the reviews. The editors recommended us to reserve plenty of time so that if people had concerns about details during this plenary, we wouldn't end up at the end of the plenary without having time to address all of the concerns and get to the stage advancement. I'm hoping that we won't have to use the whole time box. 
+PFC: But first just to address any questions about the time box and questions were raised about that. As I said, we are planning to ask for a stage advancement at the end of the presentation. During the last two weeks or so, we noticed delegates starting to get into more details of the proposal during the reviews. The editors recommended us to reserve plenty of time so that if people had concerns about details during this plenary, we wouldn't end up at the end of the plenary without having time to address all of the concerns and get to the stage advancement. I'm hoping that we won't have to use the whole time box.
 
 PFC: So the recap: various Temporal champions have presented it at several of the meetings before this one, but I'm sure there must be some new delegates this time. So here's a short recap. The purpose of Temporal is to be a modern replacement for the much maligned Date object in JavaScript, while incorporating lessons learned from other popular date libraries such as Moment. In fact the proposal I believe was first championed by maintainers from Moment. This group of champions is one of the largest ones for any TC39 proposal certainly in the year that I've been a delegate, and it includes invited experts, delegates from Bloomberg, Google, Microsoft, Igalia where I work, and I think the large number of champions is probably fitting since the proposal is also one of the largest of proposals that I have been aware of in the year that I've been a delegate.
 
@@ -669,7 +696,7 @@ PFC: A similar item that's being standardized elsewhere in Intl and Temporal in 
 
 PFC: Again, similarly to the previous two items, we have a string format for month codes. That's currently shared between temporal and ICU4X. There are different codes for leap months such as this “M05L” example in the second bullet point and there are still different ones for combined months. These "special" months are not present in the ISO 8601 calendar and therefore nothing changes in the Temporal specification itself, because everything not in the ISO calendar is implementation defined. Nonetheless, this is something where we don't currently expect any changes, but since it is being discussed with external groups, we do want to make sure that we are using the same format as whatever is aligned on with these external groups. About these previous three items, just to sum up our expectations around parallel standardization processes: to be clear, we think these formats are far along enough in their respective processes that we don't expect further changes. However, should any of these other processes mandate a well-motivated change to the one of these formats, then we expect to ask for consensus to make the associated change to make Temporal match it.
 
-PFC: Here I have a list of normative changes proposed by delegates during the review period that we need to investigate but didn't have time to complete before the plenary started. We believe that advancement to stage 3 can be conditional on these. There are links if you want to open the slide webpage and click through. Similarly, here is a list of editorial issues that we believe are okay to finish or iterate on during stage 3. Once again all these are clickable if you want to check out the details of each GitHub ticket. 
+PFC: Here I have a list of normative changes proposed by delegates during the review period that we need to investigate but didn't have time to complete before the plenary started. We believe that advancement to stage 3 can be conditional on these. There are links if you want to open the slide webpage and click through. Similarly, here is a list of editorial issues that we believe are okay to finish or iterate on during stage 3. Once again all these are clickable if you want to check out the details of each GitHub ticket.
 
 PFC: And a note about implementer feedback in stage 3. As I'm sure most people know, part of the reason stage 3 exists is for implementers to be able to implement a stationary target, but still be able to give feedback if there are concerns that only become apparent during implementation. We expect that concerns might come up during stage 3 and we will address them. So by asking for stage 3 we're giving implementers the go ahead to start implementing and raising these concerns so that they can be addressed. If I can take off my Temporal champions hat for a moment and put on my Igalia hat: at Igalia, we do plan to work on an implementation now if this reaches stage 3, so we'll be helping to provide this feedback. Okay, Temporal hat back on. We do expect that not only implementers might find bugs in the date and time algorithms, but also get bug reports from people using Temporal in polyfill form. One of these was opened just a few days ago, and we haven't had a chance to address it yet. I'm assuming that the process is that this kind of fix should require consensus at a plenary as well, which we will be happy to ask for as it comes up. So that is my slide material. And as I said at the beginning I was advised that there would be a lot of discussion time necessary. So I think we have 45 minutes for the rest of today for discussion and then some more time from tomorrow.
 
@@ -693,15 +720,15 @@ MM: And with regard to the time zone issue, does that vary dynamically after a p
 
 PFC: We have something in the spec text that says that it must not.
 
-MM: Okay. 
+MM: Okay.
 
-PFC: I can go into details on that, if it's relevant 
+PFC: I can go into details on that, if it's relevant
 
 MM: Since you're asking for stage 3, I would say it is relevant.
 
 PFC: According to the specification: The timezone data, once retrieved for a particular time zone, cannot change during the lifetime of the surrounding agent.
 
-MM: Given that, is there anything in Temporal, other than Temporal.now, if you leave aside Temporal.now, or when you hypothetically removed it. Is there anything remaining in Temporal that might change dynamically during the running of a single program? 
+MM: Given that, is there anything in Temporal, other than Temporal.now, if you leave aside Temporal.now, or when you hypothetically removed it. Is there anything remaining in Temporal that might change dynamically during the running of a single program?
 
 PFC: I don't believe so.
 
@@ -717,7 +744,7 @@ SYG: Let's take the calendar as a concrete example. Do you have, in the screen t
 
 PFC: Let's see. We'd have to look where this operation is called from. I'll show [ToTemporalCalendar](https://tc39.es/proposal-temporal/#sec-temporal-totemporalcalendar) which is called here.
 
-SYG: So step three there, that one takes the built-in `Temporal.Calendar` and then calls `from()` on it. So if I subclass `Temporal.Calendar`, how do these other classes use my subclass? 
+SYG: So step three there, that one takes the built-in `Temporal.Calendar` and then calls `from()` on it. So if I subclass `Temporal.Calendar`, how do these other classes use my subclass?
 
 PFC: You can pass the instance of your subclass into the constructor of these other classes. Let's see if I can show you an example of that. Let's look at the [PlainDate constructor](https://tc39.es/proposal-temporal/#sec-temporal.plaindate). You are passing the instance of your class here, as this calendarLike parameter that's passed here to [ToOptionalTemporalCalendar](https://tc39.es/proposal-temporal/#sec-temporal-tooptionaltemporalcalendar), which is passed to [ToTemporalCalendar](https://tc39.es/proposal-temporal/#sec-temporal-totemporalcalendar). And since it's an object, then it's returned as it is. And that's the calendar that this PlainDate instance will use. So what you can't do is patch `from()` so that you could pass in the string identifier of your calendar subclass here and end up with an instance of your subclass.
 
@@ -731,17 +758,17 @@ PDL: Yes, the intention is that everything else is as unsurprising with respect 
 
 PFC: I imagine if the remove-built-in-subclassing proposal is presented again, it could be part of advancing that to ask for consensus on a patch to Temporal to remove that stuff.
 
-SYG: I would imagine so. Of course, I would very much like that to happen before stage 3, but like I said, I am actually on the side of not holding up Temporal for this undecided question. So if anything I would like this to be a catalyst for us to have that discussion and if we cannot remove species, that this be the last built-in that we add with species, or something like that. 
+SYG: I would imagine so. Of course, I would very much like that to happen before stage 3, but like I said, I am actually on the side of not holding up Temporal for this undecided question. So if anything I would like this to be a catalyst for us to have that discussion and if we cannot remove species, that this be the last built-in that we add with species, or something like that.
 
-JHD: The language doesn't have a consistent subclassing strategy. Even setting `species` completely aside, I made a quick list of the built-ins and it's a big mix. For example, Promise has `then` as its interoperability protocol or you can shadow it from a subclass, but it all falls back to slots like a proper subclass. Similarly, regular expressions - we all know it has a ton of interoperable protocols. But it also falls back to slots, raises and the same is true all the way through. Even in Maps and Sets, the constructor will call `set()` or `add()` which can be overridden by a subclass, but you still have to have a proper subclass with slots for all the base methods to work. 
+JHD: The language doesn't have a consistent subclassing strategy. Even setting `species` completely aside, I made a quick list of the built-ins and it's a big mix. For example, Promise has `then` as its interoperability protocol or you can shadow it from a subclass, but it all falls back to slots like a proper subclass. Similarly, regular expressions - we all know it has a ton of interoperable protocols. But it also falls back to slots, raises and the same is true all the way through. Even in Maps and Sets, the constructor will call `set()` or `add()` which can be overridden by a subclass, but you still have to have a proper subclass with slots for all the base methods to work.
 
 JHD: I agree that we shouldn't necessarily block any one proposal on resolving the question of what is the actual thing we want in the language for how to subclass stuff, or how extend stuff or whatever we want to call it. That said, the pattern that BFS’s proposals if we want to, but they were talking about about coerce key and coerce value separate from the actual controversy. We were discussing about that. I actually really like that pattern of passing hooks during construction time, because it means that new built-in methods could be added and they would still work. Similarly, there wouldn't need to be any observable calls to shadowed methods for all of those current cases. If that pattern had been followed in Map or Set, for example, you wouldn't need to look up the `set()` or the `add()` method because it would either have been constructed with a hook or not. So I'm kind of that and then species as well. (?) I wonder if there's some things that would make sense to remove from Temporal, like species, or the expectation of subclassing, and so on, temporarily, so that the bulk of the proposal could be unblocked in a way that would still allow us to answer that broader question, without locking us in. SYG, you said maybe this would be the last thing with species. Well if that's even a possibility, maybe this should be the first thing without it, right? Because we can always add it later.
 
-SYG: It's "just" resourcing, right? I mean, somebody needs to put in the time to figure out the extent of the web compat, somebody needs to put in the time to figure out what extension points are needed for Temporal. Speaking personally as a delegate, I don't feel that it's fair for me to ask the Temporal delegates to do that at this time, which is why maybe I’m on the other side. But if they are open to it, I certainly would be happy about that situation. 
+SYG: It's "just" resourcing, right? I mean, somebody needs to put in the time to figure out the extent of the web compat, somebody needs to put in the time to figure out what extension points are needed for Temporal. Speaking personally as a delegate, I don't feel that it's fair for me to ask the Temporal delegates to do that at this time, which is why maybe I’m on the other side. But if they are open to it, I certainly would be happy about that situation.
 
-JHD: The summary of it is that I think that it would be really critical for lots of proposals to this language that we answer that question of how do you subclass, or extend, or whatever, built-ins and what's the way we want to do that even if we're constrained by existing patterns on existing built-ins. So I hope that we can address that. 
+JHD: The summary of it is that I think that it would be really critical for lots of proposals to this language that we answer that question of how do you subclass, or extend, or whatever, built-ins and what's the way we want to do that even if we're constrained by existing patterns on existing built-ins. So I hope that we can address that.
 
-DE: I'm confused by JHD's characterization of how things work now. I mean, I tried to explain this at my presentation last meeting where I really think there's a consistent pattern of, you have some things which just call methods and then you have those— you could think of them as protocols, or maybe protocol's the wrong word, but then there's other things where you're just an implementation of it where we use internal slots. If Temporal sticks quite consistently to this pattern. It seems like there's quite a large set of people in TC39 who disagree quite strongly with the patterns that ES6 set in terms of the way that classes and subclassing work, and subclassing built-ins. I think it'd be worth it for us to get together and consider this in a side meeting, so that we can come up with a concrete design to propose that the committee adopt, because I really think there is quite a clear pattern that the language follows today. I think it's pretty unfair to put it on the proponents of the Temporal proposal that they navigate all this. The people who want to change the the object-oriented convention should come up with a proposal for that. I'm a bit concerned that the different subclassing things could have performance impacts in ways that are perhaps different in Temporal compared to the ones that we found already for other classes. I think that's something that, as PFC was saying, we could really examine better in the context of a particular implementation. So I think there are multiple things that would make sense to do after stage 3. We could advance proposals, like the remove subclassible built-ins proposal that retroactively removes the use of species both in arrays and in stage 3 proposals, if Temporal is in stage 3. And we could also try implementing the calendar and time zone APIs, see if they end up being too slow, and investigate changes and how optimizable they would be. Reconsidering conventions is very separate from Temporal and it's not that Temporal needs the conventions; it just tries to stick to the current conventions. So people who don't like the current conventions, it's up to them to really make a proposal to change them. Then the other thing is about the performance overhead of this and that's something that we can speculate about, but it's much better to investigate in the context of an actual implementation. So overall, I think these object-oriented concerns, while significant and we may want to propose changes, shouldn't hold back Temporal for stage 3. 
+DE: I'm confused by JHD's characterization of how things work now. I mean, I tried to explain this at my presentation last meeting where I really think there's a consistent pattern of, you have some things which just call methods and then you have those— you could think of them as protocols, or maybe protocol's the wrong word, but then there's other things where you're just an implementation of it where we use internal slots. If Temporal sticks quite consistently to this pattern. It seems like there's quite a large set of people in TC39 who disagree quite strongly with the patterns that ES6 set in terms of the way that classes and subclassing work, and subclassing built-ins. I think it'd be worth it for us to get together and consider this in a side meeting, so that we can come up with a concrete design to propose that the committee adopt, because I really think there is quite a clear pattern that the language follows today. I think it's pretty unfair to put it on the proponents of the Temporal proposal that they navigate all this. The people who want to change the the object-oriented convention should come up with a proposal for that. I'm a bit concerned that the different subclassing things could have performance impacts in ways that are perhaps different in Temporal compared to the ones that we found already for other classes. I think that's something that, as PFC was saying, we could really examine better in the context of a particular implementation. So I think there are multiple things that would make sense to do after stage 3. We could advance proposals, like the remove subclassible built-ins proposal that retroactively removes the use of species both in arrays and in stage 3 proposals, if Temporal is in stage 3. And we could also try implementing the calendar and time zone APIs, see if they end up being too slow, and investigate changes and how optimizable they would be. Reconsidering conventions is very separate from Temporal and it's not that Temporal needs the conventions; it just tries to stick to the current conventions. So people who don't like the current conventions, it's up to them to really make a proposal to change them. Then the other thing is about the performance overhead of this and that's something that we can speculate about, but it's much better to investigate in the context of an actual implementation. So overall, I think these object-oriented concerns, while significant and we may want to propose changes, shouldn't hold back Temporal for stage 3.
 
 KG: Not exactly contrary to DE's point, but sort of sidestepping it: I think there's a pretty good case to be made for Temporal not falling cleanly into the pre-existing conventions, and in particular... I should lay out my thesis first, which is I think that we should drop all subclassing or at least all explicit support for subclassing from Temporal. So all of the species stuff and all of the figuring out how to make a new instance that isn't just using the relevant intrinsic. The case for this is that, unlike, as far as I am aware, everything else in the language, this isn't just one class. This is a whole bunch of classes which interrelate in this particular way. That is, you can project from instances of one class onto instances of another. There's methods like `toPlainYearMonth()` on PlainDate or whatever, that gives you a new instance of PlainYearMonth from a PlainDate. And because you're making a related thing rather than making the same thing, there's no way to do the species song-and-dance where you figure out what class the user was hoping to get. You just can't, there's no protocol for that. So if you project, e.g., from your subclass of PlainDate to a subclass of a ZonedDate and then back to a PlainDate, you don't end up with an instance of the subclass, and there is no practical way for the language to help a subclass to do that. You really have to override all of these methods on all of the classes. And if you're going to do that anyway, it's just not that much additional advantage for the language holding your hand for the few cases where species is relevant. So, concretely there is something different about Temporal that makes it less suited for the language-assisted subclassing than the other things in the language, irrespective of the question of what we should do for things like Map and Set. I would like to suggest just dropping subclassing outright on the basis of that. No one has argued that they really want it for Temporal outside of consistency with the language, and I think that the argument from consistency is not that strong given that there is this unique group of classes that makes the subclassing support not as clean.
 
@@ -765,7 +792,7 @@ RGN: I was going to say, I'm not in favor of anything that would break `extends`
 
 RGN: Yes, not a syntax error, but but a runtime error. [new topic] I'm interested in documenting what happens if Temporal does advance today, implementations ship, and then the syntax changes through the IETF process.
 
-USA: I can answer this. The timeline that we have in mind for IETF puts the tentative date for putting this into an RFC around July, and I don't feel realistically that implementations can ship before that. Also, I think that this back pressure works both both directions, if Temporal goes to stage 3. That's more pressure for IETF to accept the syntax, as this just put in a good amount of design work into coming up with that format. But of course you know people could still have concerns with that. We mentioned it, but I don't feel that any any changes to that design would be groundbreaking in any way. But another thing that I wanted to offer is that in case IETF, by the time it's an RFC, goes to to change the format to something else, we could come back to the committee and talk about it. Because I think there's general consensus around using whatever the IETF standard ends up being. 
+USA: I can answer this. The timeline that we have in mind for IETF puts the tentative date for putting this into an RFC around July, and I don't feel realistically that implementations can ship before that. Also, I think that this back pressure works both both directions, if Temporal goes to stage 3. That's more pressure for IETF to accept the syntax, as this just put in a good amount of design work into coming up with that format. But of course you know people could still have concerns with that. We mentioned it, but I don't feel that any any changes to that design would be groundbreaking in any way. But another thing that I wanted to offer is that in case IETF, by the time it's an RFC, goes to to change the format to something else, we could come back to the committee and talk about it. Because I think there's general consensus around using whatever the IETF standard ends up being.
 
 RGN: My concern is that advancing to stage 3 is a signal for implementations to ship, and we're then putting ourselves in a race condition where if they do ship and developers start counting on syntax that ultimately looks different when an RFC is published, that we'll be stuck with it. You know, there will be the standard, and then there will be the stuff that was proposed as a standard by ECMAScript, and and I'm not clear on how to prevent that, but I think that preventing that is critical.
 
@@ -787,18 +814,18 @@ SYG: I wanted to ask— I'd like the context of the IETF process here and the sp
 
 USA: The timeline that we have in the charter right now is July 2021 for submitting this to the ISG. By July by submitting, I mean at that point IETF would have a quick turnaround and decide, we will change it or we will not change it.
 
-Bron Gondwana: I would probably say are we happy with the content of it. Our other problems are with the extensibility points and what it includes already, rather than the syntax, hopefully. But you can't guarantee anything with the IETF, it does not do deadlines. 
+Bron Gondwana: I would probably say are we happy with the content of it. Our other problems are with the extensibility points and what it includes already, rather than the syntax, hopefully. But you can't guarantee anything with the IETF, it does not do deadlines.
 
-RGN: The resolution that made sense to me is that there is an explicit instruction to to not ship unflagged, and then at some future point things will advance far enough in IETF, and maybe that point is an actual RFC, is reached where the restriction on shipping unflagged is removed because at that point the format is stable. I'm not saying specifically July, I'm saying specifically just that there's instructions not to ship unflagged that will only be removed once the once the external process matured sufficiently. 
+RGN: The resolution that made sense to me is that there is an explicit instruction to to not ship unflagged, and then at some future point things will advance far enough in IETF, and maybe that point is an actual RFC, is reached where the restriction on shipping unflagged is removed because at that point the format is stable. I'm not saying specifically July, I'm saying specifically just that there's instructions not to ship unflagged that will only be removed once the once the external process matured sufficiently.
 
 SYG: I'm happy with that. I like that you and the other champions are taking the stage 3 signal seriously. I assume of course, that all the places do you expect possible change due to upstream things like this are to be explicitly communicated.
 
 KG: I do want to talk about some more of the in-the-weeds details. I should preface this with, I'm in general very supportive of the Temporal proposal and almost all of the decisions that were made for the Temporal proposal. I apologize for not raising these more detailed issues at an earlier stage. There's just been a lot of stuff happening with the Temporal proposal and I couldn't keep up with it. So I didn't get a chance to do this very detailed review until when it was settled this past meeting or recently. Anyway, with that said, there was another issue that I raised on the issue tracker that didn't didn't make it into the slides that I did want to discuss briefly, especially since JHD is here and I believe he took a different opinion in earlier discussions. The issue was that there is this `compare()` method on Temporal objects that is presumably intended to be used for sorting, as with `Array.prototype.sort()`. And the current specification says that if you have two dates which represent the same point in time, so for example they are both January 5th or whatever, but they have different associated calendars, this means that they are not equal in the sense that the `equals()` method will not return `true` for them because they have this additional data, but they also don't compare as equal by the `compare()` method that’s on the screen now, because the calendar is taken into account as the last thing once you've looked at all of the other fields. If all of the other fields agree, then the calendar is used for ordering these things, and I think that's wrong. I think that two dates which represent the same day should not be arbitrarily ordered by the lexicographic ID of their calendar. Since `Array.prototype.sort()` is now stable, if you had two of these things in an array, the sort should leave them in the order that they were, as a stable sort will, if and only if the calendar is not taken into account. I think leaving them in the same order is the right thing. So, I think that the calendar ought not be taken into account and in particular, I think it's okay for the `compare()` method to return zero for two objects, even if the objects have an `equals()` method that says they are not equal, because they do represent the same point as far as sort order is concerned. These are points on the timeline and they represent the same point in time, so they shouldn't be treated as unequal for sorting purposes. It's okay for them to be unequal according to `equals()` because `equals()` is not concerned just for the position on the timeline.
 
-PFC: I can respond quickly and then we could pick up the discussion here tomorrow. My personal preference would have also been for what you're saying, but as with many of these things they are the way they are because we had extensive discussions about them the champions group, and that's what we were able to reach consensus on. So I'm kind of hesitant to overturn that. But maybe there's some new information that you could bring to the discussion, which is what happened in the monkeypatching discussion. 
+PFC: I can respond quickly and then we could pick up the discussion here tomorrow. My personal preference would have also been for what you're saying, but as with many of these things they are the way they are because we had extensive discussions about them the champions group, and that's what we were able to reach consensus on. So I'm kind of hesitant to overturn that. But maybe there's some new information that you could bring to the discussion, which is what happened in the monkeypatching discussion.
 
 KG: The reason I think it merits revisiting is because, from reading those issues — and I was not present for the discussions outside of the issues — but from reading the issues it looked like the discussion was based around a false premise, which is that `compare()` returning zero for two things must mean those things are conceptually equal, and that's just not true. That's not a contract in, for example, Java, which has built-ins that violate it for its own `Comparable` type. It's not a thing which really makes sense as a requirement specifically because we have made `Array.prototype.sort()` stable, which is a thing that is only sensible to do when you have two things that are unequal but compare as zero. That's why I wanted to revisit it. It's because I think there was a false premise in the discussion.
 
 PFC: Should we save the queue including this item and pick up here tomorrow?
 
-**yes**
+**yes.**

@@ -1,9 +1,10 @@
 # 31 August, 2021 Meeting Notes
+
 -----
 
 **In-person attendees:** None
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Robin Ricard         | RRD            | Bloomberg          |
@@ -28,17 +29,17 @@
 
 ## Opening
 
-AKI: Good morning, everyone. Welcome to New York, New York. It’s a hell of a town. I think that’s where we are. Right? That’s where we are. In case you haven’t met me before, I’m Aki, I am co-chair along with Brian Terlson and Rob Palmer. We will be facilitating your day today. 
+AKI: Good morning, everyone. Welcome to New York, New York. It’s a hell of a town. I think that’s where we are. Right? That’s where we are. In case you haven’t met me before, I’m Aki, I am co-chair along with Brian Terlson and Rob Palmer. We will be facilitating your day today.
 
-AKI: I’m just going to assume that everyone has signed the form because you’re here. If you have not, please do so. We use that information because it’s required by the Bylaws. It’s not optional. I ask that you all please take a moment to read the code of conduct. It’s available on the website, TC39.es. 
+AKI: I’m just going to assume that everyone has signed the form because you’re here. If you have not, please do so. We use that information because it’s required by the Bylaws. It’s not optional. I ask that you all please take a moment to read the code of conduct. It’s available on the website, TC39.es.
 
-AKI: We expect you to behave in a manner that aligns with the code of conduct. So it’s probably a good idea to familiarize yourself with it. 
+AKI: We expect you to behave in a manner that aligns with the code of conduct. So it’s probably a good idea to familiarize yourself with it.
 
 AKI: Our communication tools are: TCQ, which you can find a link to in the reflector or on the schedule. If you are unfamiliar with how TCQ works, please send myself or one of the other co-chairs a message and we’ll talk you through it. We also have a chat on Matrix, which is the thing that is going to replace IRC. Apparently, I mean, finally, there’s a chance that something is going to replace IRC for the first time in 20 years.
 
 AKI: You can find our [Matrix] Space which—think like Discord server, Slack team. It’s TC39. We have a bunch of channels. Obviously, there is a TC39 general channel. There is also a delegates channel. It is logged. It is public, but only registered delegates can speak. We also have Temporal Dead Zone, our backchannel. Feel free to join that and and sass your sass; do not have any technical conversation there because it is not formally part of the technical committee.
 
-AKI: We have a hallway track because we haven’t seen each other’s faces in forever and it gives us a chance to chat. You can find it in Mozilla Hubs; if your computer is struggling with rendering, try setting it to 800 by 600. That really does make a difference. 
+AKI: We have a hallway track because we haven’t seen each other’s faces in forever and it gives us a chance to chat. You can find it in Mozilla Hubs; if your computer is struggling with rendering, try setting it to 800 by 600. That really does make a difference.
 
 AKI: Alright, next on to our IP policy, intellectual-property rights. The very-short version is: In order to participate in TC39, you have to represent an Ecma member as their delegate, or you have to be an invited expert, invited by the secretary-general, or you have to—Nope, that’s it. Just those. And if you’re an invited expert, you need to make sure you sign the RFTG agreement, the royalty-free task-group agreement. The basic concept just means you’re licensing the rights to your IP over to Ecma, so that ECMA can publish the standard at the end of the first quarter.
 
@@ -46,30 +47,30 @@ AKI: Our next meeting will be in London. It’ll be four days. It’s in October
 
 AKI: Let’s get moving on to the boring housekeeping stuff. Motion to approve last meeting’s minutes—everyone’s seen the notes, right? Great. I’m going to take that as yes. Already had a chance to see the current agenda goodness? I hope so. All right, motion to adopt the current agenda. Great.
 
-
 ## 262 Editor's Report
+
 Presenter: Kevin Gibbons (KG)
 
 - [slides](https://docs.google.com/presentation/d/1Hu_fPWqQtKuXGvvifGM_v7nEfqDiwR9h1nRTCS9chE4/edit)
 
-KG:  (presents slides)
+KG: (presents slides)
 
 AKI: Any questions? Queue is empty.
 
-
 ## 402 Editor's Report
+
 Presenter: USA
 
 USA: No update.
 
-
 ## 404 Editor's Report
+
 Presenter: Chip Morningstar (CM)
 
 CM: No update.
 
-
 ## Mark `with` as legacy
+
 Presenter: Jordan Harband (JHD)
 
 - [PR](https://github.com/tc39/ecma262/pull/2441)
@@ -97,9 +98,11 @@ JHD: That should already exist. The word legacy is a link in the column next to 
 AKI: Sounds like we have consensus.
 
 ### Conclusion/Resolution
-* Consensus
+
+- Consensus
 
 ## Relative indexing .at() method for Stage 4
+
 Presenter: Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/tc39/proposal-relative-indexing-method)
@@ -114,14 +117,15 @@ SYG: Both Google and Apple folks, and maybe some Mozilla folks as well.
 AKI: All right. I think we have consensus. Queue is empty. Great, great. Thank you very much, congratulations. Thank you both.
 
 ### Conclusion/Resolution
-* Consensus
+
+- Consensus
 
 ## Accessible Object hasOwnProperty for Stage 4
+
 Presenter: Jamie Kyle (JK)
 
 - [proposal](https://github.com/tc39/proposal-accessible-object-hasownproperty)
 - [slides](https://docs.google.com/presentation/d/177vM52Cd6Dij-ta6vmw4Wi1sCKrzbCKjavSBpbdz9fM/edit?usp=sharing)
-
 
 JK: This is accessible `hasOwnProperty`. Super-fast explainer: `Object.create(null)` makes `hasOwnProperty` kind of unreliable. To use it reliably you have to manually call `Object.prototype.hasOwnProperty.call()` some object with a key, which is densely packed with concepts for beginners…just to check if a property is there. So `Object.hasOwn()`, it makes it simpler. The background there: a couple of libraries that have like, millions of downloads just dedicated to checking. We’re making `hasOwnProperty` more accessible.
 The spec is very simple. It is basically the same as `hasOwnProperty` except with steps one and two flipped. Previously `hasOwnProperty` had them flipped for legacy reasons. But it only changes when there are errors thrown.
@@ -136,28 +140,28 @@ AKI: Yeah. All right. Well, the queue is empty. So if you’re asking for consen
 
 JK: And thanks to everyone who has helped out along the way and implemented it and such. Thank you.
 
-
-
 ### Conclusion/Resolution
-* Consensus
+
+- Consensus
 
 ## Class static initialization blocks for Stage 4
+
 Presenter: Ron Buckton (RBN)
 
 - [proposal](https://github.com/tc39/proposal-class-static-block)
 
-
 RBN: So, class static initialization blocks. We’ve been talking about this for a while. We currently have test262 tests written and merged. We have two implementations: one is in SpiderMonkey currently shipping behind a flag in Firefox 92 and intending to ship unflagged in Firefox 93. It’s also shipping in V8 checked as V8 94146 in the current public release for Chrome, and there is a signed off pull request for this feature in the ecma262 repo. Additionally, Babel has had this feature. It is planning to mark it as enabled by default as soon as we have a Stage 4 acceptance. So to go along with everybody who is quickly moving through, I would like to ask for consensus moving class static initialization blocks to Stage 4.
 
-AKI: Cool, the queue is empty. So if that’s a request for consensus, I do believe you have it. 
+AKI: Cool, the queue is empty. So if that’s a request for consensus, I do believe you have it.
 
 RBN: In that case, thank you very much.
 
-
 ### Conclusion/Resolution
-* Consensus
+
+- Consensus
 
 ## Change Array by Copy
+
 Presenter: Ashley Claymore (ACE)
 
 - [proposal](https://github.com/tc39/proposal-change-array-by-copy)
@@ -189,7 +193,7 @@ ACE: There’s a little bit of a kind of awkwardness here that we realized while
 
 ACE: We also have a `withAt` which again kind of has come over from the tuples proposal. It’s almost certainly not going to be that name. You want to go with that there is now. We’ve got at that Stage 4, which isn’t a mutating method. So when it kind of came from the top of the proposal, the `withAt` was more of a replacement for index assignment. So that one again is one that’s maybe we’ll drop or just completely change its name. It’s less clear where that one fits in.
 
-ACE: [slide 7] Why are we trying to do this, more than just having a kind of nice symmetry? So we think it is actually useful having these methods from an ergonomic point of view. Take `sort` right now. You can do things like spread the array or call `slice` to get a copy and then sort though. The downside of that is that, as soon as you spread, you’re saying, “I’m spreading into an *array*”. So it doesn’t work if you want that to be generic with tuples or `TypedArray`s. 
+ACE: [slide 7] Why are we trying to do this, more than just having a kind of nice symmetry? So we think it is actually useful having these methods from an ergonomic point of view. Take `sort` right now. You can do things like spread the array or call `slice` to get a copy and then sort though. The downside of that is that, as soon as you spread, you’re saying, “I’m spreading into an *array*”. So it doesn’t work if you want that to be generic with tuples or `TypedArray`s.
 
 ACE: You also—for things like assignment, you kind of can’t [use it] in a kind of a chained way, like you can with the methods. So having these as methods, even though you can do them already, we think is nice, because you have kind of a method chaining syntax. So you can immediately say what you’re trying to do, [instead of?] breaking things up across multiple statements. And, again, you have this advantage of it being a generic method lookup.
 
@@ -227,9 +231,9 @@ ACE: Yeah. No, I agree with that one. So that was one that’s come across from 
 
 PFC: In `Temporal`, `with` copies and mutates, and `to` transforms the type, like `toString`. So there’s a possibility for correspondence here.
 
-ACE: I think that’s why we’ve currently got the `with` and the `to` as possible prefixes because there’s already some convention for those already. Whereas prefixes like `copy`, that would be a kind of a brand new kind of idea of naming to explore. As you say, I think the naming of these will be hard to get right. See, mutate as convention for something like `to`, as you say to is most commonly used to change the type of something and it’s only, I think it’s only “toUppercase” and “toLowerCase” where it’s not being used to change the type though. Potentially “with” is better for them,  maybe “with” is left more confusing for people because we’re not actually combining it with another type; we’re combining it with an operation. It’s good to call out that the `Temporal` does have this `with` idea already.
+ACE: I think that’s why we’ve currently got the `with` and the `to` as possible prefixes because there’s already some convention for those already. Whereas prefixes like `copy`, that would be a kind of a brand new kind of idea of naming to explore. As you say, I think the naming of these will be hard to get right. See, mutate as convention for something like `to`, as you say to is most commonly used to change the type of something and it’s only, I think it’s only “toUppercase” and “toLowerCase” where it’s not being used to change the type though. Potentially “with” is better for them, maybe “with” is left more confusing for people because we’re not actually combining it with another type; we’re combining it with an operation. It’s good to call out that the `Temporal` does have this `with` idea already.
 
-AKI:  Okay. We are at the end of the queue.
+AKI: Okay. We are at the end of the queue.
 
 CCU: Yeah, the SpiderMonkey team has discussed the justification for this proposal. We believe it’s easily polyfillable and we have concerns about adding more things to the `Array` object. So, where we’ve just had discussions about the justification for this proposal.
 
@@ -305,7 +309,7 @@ SYG: I kind of support Kevin. I don’t think we need to have an exact list that
 
 AKI: We won’t be able to come back to it. We have four hours too much content. So we’ll have to come back to this in October. Thank you very much. Ashley and Robin. And so, there we go. No, we did not [?] up.
 
-KG: I said I do not block. 
+KG: I said I do not block.
 
 AKI: You do not block, but we don’t have consensus. We don’t have time to call for it. Again. We have to say that this day to our time boxes. So we’ll come back and discuss this again in October.
 
@@ -315,9 +319,10 @@ AKI: We don’t have consensus because we didn’t even get through the queue. A
 
 ### Conclusion/Resolution
 
-* Consensus for Stage 2
+- Consensus for Stage 2
 
 ## DurationFormat Update
+
 Presenter: Ujjwal Sharma (USA)
 
 - [proposal](https://github.com/tc39/proposal-intl-duration-format)
@@ -372,9 +377,11 @@ SFC: I just wanted to express support for this proposal—and thanks, USA, for w
 USA: Thank you, and thank you, everyone. All right. Thanks everyone.
 
 ### Conclusion/Resolution
-* Was not seeking changes
+
+- Was not seeking changes
 
 ## Realms Renaming Bikeshedding Thread
+
 Presenter: Leo Balter (LEO)
 
 - [GitHub issue](https://github.com/tc39/proposal-realms/issues/321#issuecomment-900523250)
@@ -410,10 +417,14 @@ SYG: I would like to interject here. Sorry, I didn’t get on the queue, and the
 
 LEO: And just one more clarification. We are excluding even names that are private personal preferences for specific champions of this. Cool. This is not my main personal preference. I think this is the most pragmatic suggestion. Like my personal preference gives more challenges in the other aspects that I mentioned in the list.
 
-AKI: All right, isn’t that the definition of compromise? Nobody’s truly happy. Do we have consensus? Sounds like a yes to me. ShadowRealms it is. 
+AKI: All right, isn’t that the definition of compromise? Nobody’s truly happy. Do we have consensus? Sounds like a yes to me. ShadowRealms it is.
+
 ### Conclusion/Resolution
-* Consensus for the ShadowRealm name
+
+- Consensus for the ShadowRealm name
+
 ## Pipeline operator for Stage 2
+
 Presenter: Tab Atkins (TAB), J. S. Choi (JSC)
 
 - [proposal](https://github.com/js-choi/proposal-hack-pipes/)
@@ -428,19 +439,19 @@ TAB: [slide 3] Which one JavaScript language gets…There’s a whole bunch of s
 
 TAB: The dev community is still pretty split around what they prefer, but there seems to be a pretty overwhelming consensus that people want a pipe of *some* kind. And for most people, it seems that the precise version that we go for isn’t as important as getting one of them out there at *all*. As I argued last time, if you remember from a couple of months ago all the pipeline variations are pretty close to each other. Any way you can do it in one, you can do in the other, with maybe a small bit of [difference in] syntax. It’s not very significant. So our hope is that this should work out for everybody.
 
-TAB: [slide 4] As another reminder,  the pipe operator in the State of JS 2020 survey was the number-four most-requested feature there, right behind static typing, better standard library, and the pattern-matching proposal, which I think we’re going to be talking about here as well. So this is clearly a pretty important thing for all of JavaScript.
+TAB: [slide 4] As another reminder, the pipe operator in the State of JS 2020 survey was the number-four most-requested feature there, right behind static typing, better standard library, and the pattern-matching proposal, which I think we’re going to be talking about here as well. So this is clearly a pretty important thing for all of JavaScript.
 
-TAB: [slide 5] So the explainer was written by JSC: link over here. There’s a ton of examples in the explainer. It’s very, very well written with stuff taken from real world code, not constructed examples, showing how they can be simplified and made more easy to read by using pipeline. He’s also put together a full draft spec text. It’s still under flux and will be going through precise details, but it looks pretty good for now. I’ll get into some of the problems. As we have with that in a little bit. 
+TAB: [slide 5] So the explainer was written by JSC: link over here. There’s a ton of examples in the explainer. It’s very, very well written with stuff taken from real world code, not constructed examples, showing how they can be simplified and made more easy to read by using pipeline. He’s also put together a full draft spec text. It’s still under flux and will be going through precise details, but it looks pretty good for now. I’ll get into some of the problems. As we have with that in a little bit.
 
 TAB: [slide 6] So I’m not going to go into a big thing for all this, but I want to add a couple of points real quick just to head off any potential basic questions, and I’m happy to hit anything more advanced in the queue afterwards. So the most basic issue is, is nesting really that big of a problem. Do we really need to linearize code; is this important enough to be justifying a new operator? Obviously I think the answer is yes. I’ve got a couple of examples here showing off why.
 
 TAB: This is the first one. Obviously it is a constructed example of function chaining and function nesting, but it’s not an unrealistic constructed example. I just needed it to be short enough to show off enough structure. I find this very difficult to read, I cannot tell at a quick moment whether the method call what what the dot method calls been called on either count, parentheses to be able to tell that the foo function has not yet closed and that’s the method call must be on the result of the bar function. That’s hard to figure out. This sort of thing happens.
 
-TAB: [slide 7] All the code where you could structure things carefully to make sure it is readable—while if you can pull it apart into a pipeline, everything becomes as far as I can tell. Immediately clear, you know: you’re going to start with an `x` value, pass it to `baz`,  extract the first item from it, pass that over to `bar` and call `method` on it, and finally pass it to `foo`. Code flows, nice and linear. This was [common?] under jQuery methods, you could replace that pipe with a period `.` and you’d have exactly this code basically and people really liked that sort of code. It’s very readable for a reason.
+TAB: [slide 7] All the code where you could structure things carefully to make sure it is readable—while if you can pull it apart into a pipeline, everything becomes as far as I can tell. Immediately clear, you know: you’re going to start with an `x` value, pass it to `baz`, extract the first item from it, pass that over to `bar` and call `method` on it, and finally pass it to `foo`. Code flows, nice and linear. This was [common?] under jQuery methods, you could replace that pipe with a period `.` and you’d have exactly this code basically and people really liked that sort of code. It’s very readable for a reason.
 
 TAB: Second. This is a realistic example of async. The Fetch API returns promises. And whenever you get any of the values from the response body, they also return promises because they might be a potentially large amount of text to decode. So, to actually get at something, the value of something at a particular URL, you’ve got to double stack your `await`s. Unfortunately, this involves some extra parenthesis and stacking up the beginning of expressions, because of the particular operators we chose in JavaScript. Rust has a slightly easier time of it, for example, because their `await` looks like an attribute access.
 
-TAB: [slide 8] So it just chains more easily…and we can get similar benefits using pipeline, it lets us remove the extra stacking here. You can just deal with each of the operations one by one. With each single `await` where it needs to be. And of course, you can slice these operations up however you want, if you really wanted the `fetch` to show up first, because that’s an important thing. You want to dedicate some brain share [?] to right at the beginning. beginning, you can just pull that `await` off into its own pipeline chunk and deal with the `fetch` on its own. 
+TAB: [slide 8] So it just chains more easily…and we can get similar benefits using pipeline, it lets us remove the extra stacking here. You can just deal with each of the operations one by one. With each single `await` where it needs to be. And of course, you can slice these operations up however you want, if you really wanted the `fetch` to show up first, because that’s an important thing. You want to dedicate some brain share [?] to right at the beginning. beginning, you can just pull that `await` off into its own pipeline chunk and deal with the `fetch` on its own.
 
 TAB: [slide 9] Finally, a very common thing that happens all across JavaScript is dealing with static methods, dealing with constructors, anything that converts from one object to another involves heavy nesting. This code is taken from a realistic example. Somebody came to the what web chat room with an even longer string of code that was doing this with some more steps in the middle and was asking about adding `object.fromEntries` to the object prototype, because they were annoyed with how the nesting made it hard to read this expression and preferred a method. Chaining that lets them produce an object. At the end of this, we explain why that couldn’t happen. There’d be too many problems with adding new things to `Object.prototype`, But of course, these problems are solved if we can just use pipeline to linearize them again: get the `entries.map` over them, turn them back into an object. Nice, linear code flow. You don’t have to go back to the beginning, the expression, wrap the whole thing.
 
@@ -487,14 +498,16 @@ WH: Okay, so it’s not like `this` where you can’t use it inside nested funct
 TAB: Yeah, and I think that also then would address your second topic (`x = 3%4; a |> %== y; b |> x+%== y;`). Both of those your other one also appears to be about the `%==` operator attempt at parsing.
 
 RW: So value piped into a—just to be clear, this is not a modulo operator. It’s the remainder operator; let’s use the right words—value piped into a remainder operation that ballad. I’m going over there because that’s where it is.
+
 ```js
 a |> % % %
 ```
+
 Sorry, is that valid? Sorry, I just wrote percent.
 
 TAB: Yes. Yeah.
 
-RW: Okay. Nobody here in this committee has any issues with this? I think that’s wild. 
+RW: Okay. Nobody here in this committee has any issues with this? I think that’s wild.
 
 JSC: I wouldn’t say that’s *good* code but it’s allowed.
 
@@ -552,17 +565,16 @@ AKI: Okay, we are officially at time and we do not have anything blocking consen
 
 TAB: Thank everyone. Yulia, more than happy to discuss this with you offline. Thanks, excellent.
 
-
-
 ### Conclusion/Resolution
-* Consensus for Stage 2.
-* The champions will follow up offline with people who have concerns
+
+- Consensus for Stage 2.
+- The champions will follow up offline with people who have concerns
 
 ## Iterator Helpers
+
 Presenter: Yulia Startsev (YSV)
 
 - [proposal](https://github.com/tc39/proposal-iterator-helpers)
-
 
 YSV: [showing proposal explainer] Hello, everyone. Welcome to iterator helpers, which we haven’t heard from in about a year. What we’ve done is we’ve updated the README to cover all of the new methods. So if you’re unfamiliar with the methods, you should now be able to find everything with examples in the readme.
 
@@ -570,7 +582,7 @@ YSV: In addition, I will be addressing the last comments that have been brought 
 
 YSV: There have been a couple of other discussions, for example, `slice` instead of `take` or `drop`. I am thinking rather not to go in this direction. So not replacing `take` and `drop` instead of `slice`, largely because we have the problem of accepting negative values into `slice`, and there’s no good way of doing with those right now. We can always introduce that later, right?
 
-YSV: Okay, and [now for the main issue](https://github.com/tc39/proposal-iterator-helpers/issues/122), which I want to raise to the committee to get feedback on. Right now we pass the protocol to all of these new methods, and I would like to point out that these methods are things like `map`, `filter`, `reduce`, `take`, etc. And for a number of these, the protocol, which allows you to `.return`, allows you to `.throw`, etc. doesn’t actually make sense, because we are not expecting to have communicating generators in these contexts. And there’s a long discussion here about the rationale or purpose of passing the protocol that we had with conartist6 [Conrad Buck]…where gradually, Jason and myself, we became convinced that it may be better to drop passing the protocol and make this proposal more restricted…so that you cannot have the full power of iterators—sorry, of generators—when you are applying iterator helpers on them. So this issue is one that Jason is preparing a PR for, but I would like to call for feedback from the committee about this because this will be a substantial change and will require us changing our implementation. However, we do think that this is the right way to go. So I wanted to raise that to everybody, and that’s it. That’s it. That’s the update.  Any questions; any comments?
+YSV: Okay, and [now for the main issue](https://github.com/tc39/proposal-iterator-helpers/issues/122), which I want to raise to the committee to get feedback on. Right now we pass the protocol to all of these new methods, and I would like to point out that these methods are things like `map`, `filter`, `reduce`, `take`, etc. And for a number of these, the protocol, which allows you to `.return`, allows you to `.throw`, etc. doesn’t actually make sense, because we are not expecting to have communicating generators in these contexts. And there’s a long discussion here about the rationale or purpose of passing the protocol that we had with conartist6 [Conrad Buck]…where gradually, Jason and myself, we became convinced that it may be better to drop passing the protocol and make this proposal more restricted…so that you cannot have the full power of iterators—sorry, of generators—when you are applying iterator helpers on them. So this issue is one that Jason is preparing a PR for, but I would like to call for feedback from the committee about this because this will be a substantial change and will require us changing our implementation. However, we do think that this is the right way to go. So I wanted to raise that to everybody, and that’s it. That’s it. That’s the update. Any questions; any comments?
 
 SYG: [from queue] I hate generator `.return`—so sounds good to me.
 
@@ -578,11 +590,11 @@ YSV: Perfect. Okay, that’s really good feedback to have, because we think it�
 
 SYG: I don’t want to give consensus for dropping because I haven’t seen actual details if that’s what you’re asking.
 
-YSV: You can feel free to review the proposal. This is something that we can take our time on. I just want to make sure people are aware that this is something we’re considering and working on a pull request for. 
+YSV: You can feel free to review the proposal. This is something that we can take our time on. I just want to make sure people are aware that this is something we’re considering and working on a pull request for.
 
-SYG: Okay, great, but I want to confirm this part: By removing the extra expressivity of the protocol, you’re done with your exploration here. Is that? Making sure not excluding use cases that you had in mind. 
+SYG: Okay, great, but I want to confirm this part: By removing the extra expressivity of the protocol, you’re done with your exploration here. Is that? Making sure not excluding use cases that you had in mind.
 
-YSV: So, at the moment, we don’t have any use cases in mind that would need this protocol. That’s why we’re suggesting we remove it—and then later on either reintroduce it for specific cases where they’re clearly needed—or to introduce a new set of methods that allow communicating generators to talk to each other in this way. But we would need to defend this with a use case rather than applying it by default. 
+YSV: So, at the moment, we don’t have any use cases in mind that would need this protocol. That’s why we’re suggesting we remove it—and then later on either reintroduce it for specific cases where they’re clearly needed—or to introduce a new set of methods that allow communicating generators to talk to each other in this way. But we would need to defend this with a use case rather than applying it by default.
 
 SYG: A definite +1 for me. Thanks.
 
@@ -594,10 +606,12 @@ JHX: This affects the double ended generator proposal.
 
 YSV: We can discuss it; this definitely something that we can add on later, but removing this functionality would be more difficult than creating it from the get-go.
 
-
 ### Conclusion/Resolution
+
 Update given
+
 ## Temporal
+
 Presenter: Ujjwal Sharma (USA), Philip Chimento (PFC)
 
 - [proposal](https://github.com/tc39/proposal-temporal)
@@ -613,15 +627,15 @@ USA: [slide 3] To give the progress report on that, I have been working closely 
 
 USA: [slide 4] It stands for Serializing Extended Data About Time and Events. That’s SEDATE. We ended up having a productive discussion within this working group in IETF 111, which was a couple of months ago. And my draft, which was sort of a personal draft, my individual draft, so far has now been adopted. So now instead of it being “draft-ryzokuken-datetime-extended”, it’s now “draft-ietf-sedate-datetime-extended”. It’s sort of a major step forward, because this means that it’s now not a personal document; it’s formally adopted by the working group, and the working group has made a commitment to finishing it in publishing shortly within the working group. We have a schedule where we plan to make progress on this end and submit it for publication with the ISO [?] within this year. So that’s the timeline that we’re thinking of; we’ve been building consensus and setting up liaison agreements with the ISO team. These things can take time because standards bodies, but the idea is that, hopefully, we’ll set up some sort of agreement where, you know, people involved in the whole process including people in IETF and TC39 can get access to documents like ISO 8601—which I mean, if you don’t have theirs, it’s a bit difficult. I feel we [?] should be able to review this particular facet of the Temporal proposal. So I think that would be helpful for review if you want to.
 
-USA: There are two changes that are requested to the syntax of the serialization as presented today. So we had previously this, the syntax where you could include, you know, the Z with the offset. And in the bracket you could have the bracketed form of [?] a time zone, and PFC is going to mention shortly the changes to this. There’s also the removal of sub-minute timezone offsets. They have not yet been integrated into this change to the format. Not yet been incorporated into the proposal. So it will be presented in October. Just to give a little context on this one. The idea is that the standard in IETF RFC [?], TC39 which [?] does not include support for sub-minute time offsets. So any explicit time offset can only have up to minutes. They cannot have fractional minutes, which is seconds in force. Temporal did include support for that, and we decided that the use cases are just not there to warrant us having long discussions about this within another working group, which we are not as familiar with. So, we’re dropping this one discussion. 
+USA: There are two changes that are requested to the syntax of the serialization as presented today. So we had previously this, the syntax where you could include, you know, the Z with the offset. And in the bracket you could have the bracketed form of [?] a time zone, and PFC is going to mention shortly the changes to this. There’s also the removal of sub-minute timezone offsets. They have not yet been integrated into this change to the format. Not yet been incorporated into the proposal. So it will be presented in October. Just to give a little context on this one. The idea is that the standard in IETF RFC [?], TC39 which [?] does not include support for sub-minute time offsets. So any explicit time offset can only have up to minutes. They cannot have fractional minutes, which is seconds in force. Temporal did include support for that, and we decided that the use cases are just not there to warrant us having long discussions about this within another working group, which we are not as familiar with. So, we’re dropping this one discussion.
 
-USA: There might be a minor change in syntax about the calendar key. So we’ve already kicked off this discussion. SFC from the committee is also involved in this entire discussion—just to give a quick rundown. The question is if it is all about if the key for calendars would be renamed from `u-ca`, which is what we have right now incorporated in Temporal, to just `ca`. So, apart from that there’s no changes that I see on the horizon. There is agreement within the working group that, you know: these are sort of the concerns that people have, and this is why I’m very optimistic. I think this is something that we can quickly overcome to move forward, hopefully very soon, and everything is on schedule. So given my estimations after talking to different implementers, I think implementers again can be satisfied and be assured that this is going forward, it’s moving forward at the expected pace, and that it will be in an acceptable position moving forward. 
+USA: There might be a minor change in syntax about the calendar key. So we’ve already kicked off this discussion. SFC from the committee is also involved in this entire discussion—just to give a quick rundown. The question is if it is all about if the key for calendars would be renamed from `u-ca`, which is what we have right now incorporated in Temporal, to just `ca`. So, apart from that there’s no changes that I see on the horizon. There is agreement within the working group that, you know: these are sort of the concerns that people have, and this is why I’m very optimistic. I think this is something that we can quickly overcome to move forward, hopefully very soon, and everything is on schedule. So given my estimations after talking to different implementers, I think implementers again can be satisfied and be assured that this is going forward, it’s moving forward at the expected pace, and that it will be in an acceptable position moving forward.
 
-PFC: [slide 5] This part of the presentation is going to be about the thirty or so normative pull requests that we have for the Temporal proposal. The reason we have so many it’s because it happily has been started to be implemented by engines. In such a large proposal, there are undoubtedly a number of bugs lurking, and implementers have found a bunch of them. So thanks especially to FYT who’s been finding these for V8, to RKG and Yusuke [Suzuki], who have been finding these while implementing it in JavaScriptCore, and Andre [Bargull] who’s been finding these while implementing it for SpiderMonkey. I mentioned in the beginning I'd divide these into 'adjustments', which are actual semantics changes (or otherwise functionality changes that we’re making because implementers recommended them)—and 'bugs', which are just mistakes in the spec text that or things that we overlooked that could not be resolved without a normative change. Since we are short on time, I will go quickly through the adjustments, but I will try to go even more quickly through the bugs. I’m hoping that everyone who had a potential discussion about one of these was able to take a look at the pull request beforehand. I put the slides on ten days ago and had all the pull requests linked from here. Hopefully we’re not going to have to spend a lot of time explaining what each pull request is for. 
+PFC: [slide 5] This part of the presentation is going to be about the thirty or so normative pull requests that we have for the Temporal proposal. The reason we have so many it’s because it happily has been started to be implemented by engines. In such a large proposal, there are undoubtedly a number of bugs lurking, and implementers have found a bunch of them. So thanks especially to FYT who’s been finding these for V8, to RKG and Yusuke [Suzuki], who have been finding these while implementing it in JavaScriptCore, and Andre [Bargull] who’s been finding these while implementing it for SpiderMonkey. I mentioned in the beginning I'd divide these into 'adjustments', which are actual semantics changes (or otherwise functionality changes that we’re making because implementers recommended them)—and 'bugs', which are just mistakes in the spec text that or things that we overlooked that could not be resolved without a normative change. Since we are short on time, I will go quickly through the adjustments, but I will try to go even more quickly through the bugs. I’m hoping that everyone who had a potential discussion about one of these was able to take a look at the pull request beforehand. I put the slides on ten days ago and had all the pull requests linked from here. Hopefully we’re not going to have to spend a lot of time explaining what each pull request is for.
 
-PFC: [slide 6] First one is a change to guard against garbage sent to the `Temporal.Calendar.prototype.fields()` method. It expects an iterable as an argument. And, previously, it was possible to make it go into an infinite loop by sending an infinite iterable. Now we are making this change to accept only certain values and limit them to these ten [slide 7] so that infinite `while` doesn’t cause an infinite loop. Here’s an example of what that looks like. 
+PFC: [slide 6] First one is a change to guard against garbage sent to the `Temporal.Calendar.prototype.fields()` method. It expects an iterable as an argument. And, previously, it was possible to make it go into an infinite loop by sending an infinite iterable. Now we are making this change to accept only certain values and limit them to these ten [slide 7] so that infinite `while` doesn’t cause an infinite loop. Here’s an example of what that looks like.
 
-PFC: [slide 8] The next adjustment is to make adding a Duration to a PlainDate work the same as using the appropriate method on the Temporal.Calendar. There was a discrepancy with this, and we want to make them consistent. [slide 9] On this slide, there’s also an example of how that works. And what would change? Previously 24 hours was balanced to one day when adding it to a PlainDate and not when using the `dateAdd()` method on the Calendar. These are changed to be consistent now. 
+PFC: [slide 8] The next adjustment is to make adding a Duration to a PlainDate work the same as using the appropriate method on the Temporal.Calendar. There was a discrepancy with this, and we want to make them consistent. [slide 9] On this slide, there’s also an example of how that works. And what would change? Previously 24 hours was balanced to one day when adding it to a PlainDate and not when using the `dateAdd()` method on the Calendar. These are changed to be consistent now.
 
 PFC: [slide 10] Next adjustment is changing the order of observable operations in the `Temporal.PlainMonthDay.prototype.toPlainDate()` method. The order of operations in order to be consistent with PlainYearMonth. Here again is a code sample of what changed.
 
@@ -633,7 +647,7 @@ PFC: [slide 34] I ran through all of those, let’s have the discussion now. The
 
 JHD: Yeah, all the changes seem good to me. But given that there’s been so many of them continually it seems like it might be nice if the implementers in the room continued their sort-of-tacit agreement to ship behind a flag yet until we’ve had some period of time where none of these changes are discovered. I don’t know how long that should be. Maybe just between meetings. But given that there’s been so many, I’m growing concerned about somebody shipping it, and then we discover another thirty of these things and then because of web compatibility, we wouldn’t be able to fix them.
 
-USA: JHD you when you say another thirty of these, you mean bugs and not adjustments. 
+USA: JHD you when you say another thirty of these, you mean bugs and not adjustments.
 
 JHD: I’m primarily concerned about bugs: like could have been implemented but didn’t match the intention and thus may be prevented from fixing it to match the intention. There’s always, of course, the smaller thing about, like, actual design type changes, which still may occur. So I can, but just in general, give it—I’m just saying that this proposal has had a lot of spec turbulence since reaching Stage 3 and so I have like it seems like a good bet that there is going to be more, and it seems like it would be useful to sort of buy us all some time to wait for a quiet period, before locking in whatever semantics everyone’s implemented, if that makes sense.
 
@@ -647,14 +661,18 @@ SFC: To reiterate what PFC and USA just said, I’ve been where I’ve been sort
 
 CJT: More of the same to echo those points, just by the time an implementation is ready to consider shipping then, because it is complete, it would hopefully have uncovered the last of these bugs, which would have had to go through another plenary. And so, I don’t think there’s any risk that they would uncover more of these bugs. We’ll have to prepare PRs to get consensus and it wouldn’t be shipped unflagged before that. So, I think JHD, there’s some natural waiting. Anyway, I don’t think unflagging would happen before a plenary in which the final ones were approved and we could bring it up then. I don’t think there’s really any need to discuss it at this stage.
 
-SYG: I just wouldn’t worry about it. 
+SYG: I just wouldn’t worry about it.
 
 PFC: Okay. Thanks. So should I call for consensus on these normative changes to the proposal?
 
 RPR: Are there any objections to the normative changes that come in? I Haven’t heard anything? No objection. You have consensus.
+
 ### Conclusion/Resolution
+
 No objection to changes
+
 ## RegExp set notation + properties of strings
+
 Presenter: Mathias Bynens (MB)
 
 - [proposal](https://github.com/tc39/proposal-regexp-set-notation)
@@ -662,7 +680,7 @@ Presenter: Mathias Bynens (MB)
 
 MB: This is just an update on current open issues and some recent changes issues that we’ve resolved, and we’re just going to walk through them. So I’m not gonna spend too much time reiterating things that haven’t changed. [slide 2] What was the main proposal about? It’s about RegExp set notation, operations, and [?] impacts on semantics [?] for those. [slide 3] We decided to do this behind a new flag, which we’re gonna call `v`: it would be the new `u` in a way. And it enables this new syntax for difference, subtraction, and nested character classes, and we can also enable the use of properties of strings. So using the familiar `\p{}` syntax, it would now also be able to use properties of strings as opposed to just the character classes, which goes very well together with the set operations. So, none of this means we choose the [unable to transcribe].
 
-MB: [slide 4] So yeah, let’s talk a little bit about the expanded scope and some recent changes. Markus: Do you want to go over this summary before we dive into each of these? 
+MB: [slide 4] So yeah, let’s talk a little bit about the expanded scope and some recent changes. Markus: Do you want to go over this summary before we dive into each of these?
 
 MWS: Sure. Yeah, so when we merged the two proposals into one, the question that came up was, should we do more? And where would it end? And so we actually had a comparison done between the regular expression features in ECMAScript as well as what would happen after this proposal so far and comparing that with the Unicode regular expression standard. And the things that it recommends or requires and, thanks to Mark Davis and Richard Gibson, that created a nice spreadsheet with a point-by-point comparison.
 
@@ -670,7 +688,7 @@ MWS: We identified a few things and we think it makes sense, if the committee ag
 
 MWS: What we are suggesting and what we are asking for a thumbs up / thumbs down for here are things where ECMAScript is still behind on Unicode, regular expressions, and where fixing that gap requires a new flag because it’s incompatible. And, since we are talking about a new flag here, already for the set notation and the properties of strings, now would be a really good time to deal with those gaps that require a new flag. And, so, we are suggesting to expand the scope so that the total would be the set notation plus the strings, as well as aligning `\sdwb` with Unicode and fixing a couple of line boundary things.
 
-MWS: There is one thing that also falls in this category, but we think that goes probably a little bit too far for now. So we are not suggesting to actually add the full default Unicode case-folding matching into the proposal at this time. So that, if that wanted to be implemented later, that would require a new flag. 
+MWS: There is one thing that also falls in this category, but we think that goes probably a little bit too far for now. So we are not suggesting to actually add the full default Unicode case-folding matching into the proposal at this time. So that, if that wanted to be implemented later, that would require a new flag.
 
 MWS: [slide 5] okay, so `\s` looks like it wants to be the same as whitespace. Each property has 25 characters in it, but they each differ by one. And so 24 of the 25 characters are the same but `\s`, I think for historical reasons, contains what’s known as the Byte Order Mark (formerly the Zero Width No Break Space, which is not a space character at all). It’s the former (BOM) and its purpose really is mostly just byte-order mark, since its other original use was taken over by some other characters some twenty years ago. `\s` is missing a clear white-space control, which is the C1 control Next Line, that is of course a white space in Unicode and `\p{White_Space}` has it. So, there is this odd difference between these two properties, that should really be the same, and Unicode Regular Expressions recommend them to be the same. So we propose that, under the new flag, they are the same and so `\s` would be the same as `White_Space`.
 
@@ -678,7 +696,7 @@ MB: [slide 6] Then, this is something that MB has asked relatively early in that
 
 MB: [slide 7] And then we have one more. Line boundaries. The Unicode Regular Expression standard suggests that there shouldn’t be a line boundary within CRLF. It’s one line boundary. But also there is this Next Line character and there should be a line boundary after that, just like after a Line Feed. If it’s accepted, this affects some operators that deal with long line boundaries. I think that’s the last one that we’re suggesting to add.
 
-MB: [slide 8] Yeah, that’s right. We do have some slides for the other currently open issues, and we’re very open to hearing everyone’s feedback on that. If there’s no time in this meeting, then the link to the issue is always at the bottom of slides. We also host a weekly meeting about this proposal every Thursday. It’s on the TC39 calendar. And if people have opinions or are interested, you know, please join that meeting and speak up because it really helps us get everyone’s input. 
+MB: [slide 8] Yeah, that’s right. We do have some slides for the other currently open issues, and we’re very open to hearing everyone’s feedback on that. If there’s no time in this meeting, then the link to the issue is always at the bottom of slides. We also host a weekly meeting about this proposal every Thursday. It’s on the TC39 calendar. And if people have opinions or are interested, you know, please join that meeting and speak up because it really helps us get everyone’s input.
 
 MWS: Yeah, so if we have a little more time, I would like to see if we could get a thumbs up / thumbs down on that expansion of scope that we presented. I would also like to get a thumbs up / thumbs down or at least [?] people on the open issues, which are the next three or four slides.
 
@@ -692,7 +710,7 @@ MB: We currently believe that, actually, option three (`uv` invalid) is the simp
 
 MWS: [slide 11] Sure, so we’ve looked at an open question in our proposed draft spec changes, on whether to do anything about IgnoreCase when we do complementing or building up a character class from nested classes and properties. And this is particularly interesting, because ECMAScript IgnoreCase matching has this strange feature of taking a character class that has the complement, this the circumflex, and it’s not actually computing the complement and then doing a case-insensitive match. It’s doing the case insensitive match first on the uncomplemented set, then negating the output based on the presence of the circumflex, which is somewhat strange behavior. Apparently, that’s the behavior that experienced regex people expect, but it’s strangely different. If you have the double negation of the complement of a property and a complement from the circumflex on the right side, compared with just the property on its own, which logically should behave the same day, they behave very differently in current regular Expressions.
 
-MWS: So under the `u` flag or no flag at all, these two expressions that you would expect to be the same are very different. And that inspired us to come up with a solution that is in some ways also implemented in the ICU expression engine: to do a deep early-case closure, very early on, from when we build up the set—and computing the simple complement on the spot—for something like the example here, where we have the character class. For circumflex, we get the same result as before, but by doing it consistently for character classes and properties, we can make the `\p{Ll}` [lowercase] behave the same actually consistently, and then have a good consistent story throughout on what happens with nested classes. So we think that’s the right solution going forward. It does mean that behavior changes with the expression on the left side. But we think it’s a very good thing that it then finally behaves like the expression on the right side. 
+MWS: So under the `u` flag or no flag at all, these two expressions that you would expect to be the same are very different. And that inspired us to come up with a solution that is in some ways also implemented in the ICU expression engine: to do a deep early-case closure, very early on, from when we build up the set—and computing the simple complement on the spot—for something like the example here, where we have the character class. For circumflex, we get the same result as before, but by doing it consistently for character classes and properties, we can make the `\p{Ll}` [lowercase] behave the same actually consistently, and then have a good consistent story throughout on what happens with nested classes. So we think that’s the right solution going forward. It does mean that behavior changes with the expression on the left side. But we think it’s a very good thing that it then finally behaves like the expression on the right side.
 
 SFC: [slide 12] Yeah, sure. So this is another issue that was raised regarding the experience of practitioners, in RGN’s terminology, regarding the behavior of escape sequences, and how escaping rules are different in different areas of the regular expression, as seen in the top line here. In particular, `a*` is the same outside and inside parentheses, but outside a bracket means something different than `a*` in parentheses if it’s inside brackets. There are several ways to address this regarding different rules for escaping, and my proposed follow-up for this issue… Since the main premise of this whole issue is that this could cause unexpected behavior by practitioners writing regular expressions, and given that, that’s the main premise of this issue—I have proposed to do further research, and I’ve put this on the agenda for the TC39 research call next week on September 9th. So if you’re interested in this subject, please join that meeting and I’m hoping that we can put together some sort of survey, so we can get some actual data on this.
 
@@ -700,7 +718,7 @@ MB: [slide 13] Right [unable to transcribe]. And then there is one more issue th
 
 MB: And yeah, other than that, we have some settled issues that we’ve already covered before. So I’m not gonna go over those slides until maybe discussion happens after this. [slideshow paused at slide 14]
 
-WH: I’m deeply scared about the changes you’ve made to this proposal since the last meeting, especially the changes to how negation works and the changes to the semantics of fundamental things like `\d`. I like the regularization of character classes, but I want to be able to use it without breaking `\d` or breaking how negation works and it sounds like you’re not going to give me a choice. The problem with things like `\d` is that they’re often used for machine parsing and such. Silently changing `\d` to allow other unicode decimals will introduce a lot of bugs.  My preferred solution for that is, if for whatever reason you want something which matches all unicode decimal digits, use something other than `\d`—introduce new syntax, a new letter, or something like that. And similarly I don’t want subtle changes to how negation works, which break some really simple existing regular expressions. The proposal for complement is trying to alter the behavior of complicated regular expressions to work the way you want, but that breaks simple regular expressions. I gave some examples at past meetings.
+WH: I’m deeply scared about the changes you’ve made to this proposal since the last meeting, especially the changes to how negation works and the changes to the semantics of fundamental things like `\d`. I like the regularization of character classes, but I want to be able to use it without breaking `\d` or breaking how negation works and it sounds like you’re not going to give me a choice. The problem with things like `\d` is that they’re often used for machine parsing and such. Silently changing `\d` to allow other unicode decimals will introduce a lot of bugs. My preferred solution for that is, if for whatever reason you want something which matches all unicode decimal digits, use something other than `\d`—introduce new syntax, a new letter, or something like that. And similarly I don’t want subtle changes to how negation works, which break some really simple existing regular expressions. The proposal for complement is trying to alter the behavior of complicated regular expressions to work the way you want, but that breaks simple regular expressions. I gave some examples at past meetings.
 
 MB: I don’t know what things we are actually breaking.
 
@@ -708,25 +726,25 @@ WH: I don’t want to dwell on this because we don’t have a lot of time. But t
 
 MB: I don’t think we’re actually changing behavior of character classes with an initial circumflex.
 
-WH: Anyway, I am certainly not in favor of merging the regularization of a square bracket syntax proposal, which I think is a very good one, with things which alter existing functionality like negation or `\d` in obscure ways. 
+WH: Anyway, I am certainly not in favor of merging the regularization of a square bracket syntax proposal, which I think is a very good one, with things which alter existing functionality like negation or `\d` in obscure ways.
 
 KG: Yeah, I don’t want to use a strong of a term as break, but I agree with WH that changing the semantics of other stuff is kind of scary. Changing `\d` amounts to making a whole new mode instead of just changing semantics for some edge cases that you weren’t going to use, like `&&` or whatever. I see where you’re coming from with wanting this, but I share WH’s concern about changing the semantics of a bunch of stuff.
 
 JRL: Also voicing support, I would not change these shorthands.
 
-BFS: So, I’m in the opposite boat. I think changing shorthands is actually okay because we have an opt-in flag. But if these are considered problematic, particularly if people are copy-pasting regular expressions across different places…We were talking about how there’s a Unicode recommendation on how regular expressions work if our regular expressions don’t work the same as other places that are using the shorthand. One route we could do to resolve this—and I slightly prefer it—is if we just don’t support the problematic short hands. `\d` would be really ugly though, I think, if we don’t have that because I don’t know how realistic it would be for people to actually Implement that themselves. But I mean, if `\d` has different meanings, and that’s the problem with the Unicode recommendation and what JavaScript does—[we] could just not allow `/d` in this mode? Because it seems like there’s a conflict there. 
+BFS: So, I’m in the opposite boat. I think changing shorthands is actually okay because we have an opt-in flag. But if these are considered problematic, particularly if people are copy-pasting regular expressions across different places…We were talking about how there’s a Unicode recommendation on how regular expressions work if our regular expressions don’t work the same as other places that are using the shorthand. One route we could do to resolve this—and I slightly prefer it—is if we just don’t support the problematic short hands. `\d` would be really ugly though, I think, if we don’t have that because I don’t know how realistic it would be for people to actually Implement that themselves. But I mean, if `\d` has different meanings, and that’s the problem with the Unicode recommendation and what JavaScript does—[we] could just not allow `/d` in this mode? Because it seems like there’s a conflict there.
 
-WH: It seems like we would be breaking a lot more people by dropping `/d` instead of adding some other new syntax for those who do want to match Unicode decimal digits. 
+WH: It seems like we would be breaking a lot more people by dropping `/d` instead of adding some other new syntax for those who do want to match Unicode decimal digits.
 
 BFS: I don’t have strong opinions. I don’t actually think this is breakage due to requiring an opt-in flag and then allowing linting seems fine to me personally…That doesn’t seem to be a consensus amongst everybody.
 
-WH: Those are not the only choices. We can leave `\d` alone and introduce a new thing which matches Unicode digits. 
+WH: Those are not the only choices. We can leave `\d` alone and introduce a new thing which matches Unicode digits.
 
 BFS: This kind of bleeds into the previous one as well. So, I do think the proposed shorthands, whatever their functionality is, do simplify some common workflows. So I do like those workflows being supported in an easier way. It seems like there’s disagreement on it, but I think if we make a stance about what’s considered “breaking”… When you generally copy/paste across different modes of regex, they’re not expected to work the same. If we could just get some clarity on if shorthands can never change across the modes, that would be helpful for this proposal. That’s it.
 
 RBN: I don’t know if we’re going to actually have time during this meeting to get to the proposal that I put together around regular-expression feature parity, given the time constraints—but one of the things that I planned on presenting and proposing was inline flag modifiers that would allow you to exit a certain mode. So if we did want to go forward with `/d` in this mode meaning all digits, and you wanted to switch out of that mode and into regular `u` Unicode mode, then you could use inline modifiers to switch your mode settings if necessary.
 
-MED: There are a couple of possibilities that the problem currently is that people expect `\w` to work with words, but it only works with ASCII words, and so people, you know…It’s fine if all you ever use is ASCII and that works just fine, but when you start to use Cyrillic [?] or whatever, because that’s the target that you’re working with, then you get bad breakages with when you leave these things as they were. So the suggestion is to modify them when you have this flag on so that they work properly. Now an alternative would be to have modifiers on each one of those so that I could have a `\d{u}` or something, `\w` and, you know, `\b{u}`, and so on. And that would at least provide the functionality; people would still have to learn that they have to use that syntax for it to work, right, but you really do need this syntax if you’re going to work with regular Expressions, if you’re not working with English. 
+MED: There are a couple of possibilities that the problem currently is that people expect `\w` to work with words, but it only works with ASCII words, and so people, you know…It’s fine if all you ever use is ASCII and that works just fine, but when you start to use Cyrillic [?] or whatever, because that’s the target that you’re working with, then you get bad breakages with when you leave these things as they were. So the suggestion is to modify them when you have this flag on so that they work properly. Now an alternative would be to have modifiers on each one of those so that I could have a `\d{u}` or something, `\w` and, you know, `\b{u}`, and so on. And that would at least provide the functionality; people would still have to learn that they have to use that syntax for it to work, right, but you really do need this syntax if you’re going to work with regular Expressions, if you’re not working with English.
 
 MB: Can I quickly respond to that as well? So people have been using the example of `\d` but that’s really the simplest one out of these three here, because there is already a fairly straightforward workaround with `\p{gc=Decimal_Number}`. `\w` is actually a better example, because if you have to roll that by yourself, even with the current support for property escapes, it’s still a bunch of different Unicode properties to combine: `\p{Alpha}\p{gc=Mark}\p{digit}\p{gc=Connector_Punctuation}\p{Join_Control}`—it’s much less obvious, much less ergonomic. Perhaps we could add a Unicode-level property called something like `Word` that combines all these into a single property, so that people can do `\p{Word}` if they want the Unicode-aware `\w`. But then still we’d need a solution for `\b` that aligns with that.
 
@@ -734,7 +752,7 @@ MED: Well, I think the problem with that is that we agree about `\d` is that the
 
 RPR: 14 minutes left on this topic and on this agenda item.
 
-SYG: It sounds like maybe WH’s next topic will answer what I asked. I want to add some more detail on what WH thought as breakages…Since it is a separate mode as BFS has said, is it the same copy/paste concern that BFS raised? 
+SYG: It sounds like maybe WH’s next topic will answer what I asked. I want to add some more detail on what WH thought as breakages…Since it is a separate mode as BFS has said, is it the same copy/paste concern that BFS raised?
 
 WH: I think the presenters are assuming that there will no longer be any need or use for ASCII `\d`, always replacing it with the Unicode one. Having fixed dozens if not hundreds of bugs in other languages caused by this change, I think this is false. The issue I have is I want to be able to use the new mode for the nice new character-class syntax in general. But for doing things like parsing and validating inputs it is essential that `\d` still work using ASCII digits. The argument that this is a new mode doesn’t solve the problem of still needing the functionality of `\d` matching ASCII digits while being able to use the new syntax for set unions and intersections.
 
@@ -754,25 +772,25 @@ MED: What about if we had alternatives for the `\d` curly? `{u}` and so on, with
 
 WH: That seems fine.
 
-MED: Maybe we can talk about the other issue that WH raised, which was IgnoreCase. Or something would be better off taken offline. 
+MED: Maybe we can talk about the other issue that WH raised, which was IgnoreCase. Or something would be better off taken offline.
 
 MWS: I think I think we need probably a meeting with WH and whoever else is interested, sort of separately.
 
-WH: The case that breaks is `/[^x]/i`. 
+WH: The case that breaks is `/[^x]/i`.
 
 MWS: I don’t think what we are suggesting changes that behavior.
 
 WH: Yes, it does.
 
-MED: Yeah, I think there’s a misunderstanding here, because that’s not our—that’s not what’s part of this proposal. And perhaps the wording we’re using is not making that clear. 
+MED: Yeah, I think there’s a misunderstanding here, because that’s not our—that’s not what’s part of this proposal. And perhaps the wording we’re using is not making that clear.
 
 WH: I went through the proposed semantics and it breaks that one.
 
 MB: I would like to remind people that we do have a weekly meeting for this every Thursday. It’s on the TC calendar. It’s open to everyone. So, like just feel free to and yeah, we’re happy to have these kinds of discussions with anyone who’s interested also on the GitHub issue tracker. We’d appreciate your comments and input there.
 
-KG:  Can you repeat what the change to `\s` is? 
+KG: Can you repeat what the change to `\s` is?
 
-MWS: Yes, `\s` and `\p{White_Space}` differ, but they are the same in 24 characters. They differ in one each. And we are proposing to make `/s` be the same as `/p{White_Space}`. And that means `\p` would lose the Byte Order Mark, and it would gain the Next Line control. 
+MWS: Yes, `\s` and `\p{White_Space}` differ, but they are the same in 24 characters. They differ in one each. And we are proposing to make `/s` be the same as `/p{White_Space}`. And that means `\p` would lose the Byte Order Mark, and it would gain the Next Line control.
 
 MB: …And all of this, only in the new `v` mode.
 
@@ -782,13 +800,14 @@ BFS: I’m getting really uncomfortable with calling modes affecting all [?] sil
 
 WH: If you had a mode whose main effect was changing only the behavior of `\d`, `\s`, etc., that would not be a silent change. But here you get those things riding along as a side effect of a much larger syntax change to a completely different part of regular expressions. The rationale for calling this a silent change is that the `v` mode reforms the syntax of how you do character classes. Having it also introduce other little and obscure side effects, such as how you do line breaks or what’s white space, is an unexpected change.
 
-BFS: I appreciate the attempt to comfort me, but I think it has had the opposite effect. 
+BFS: I appreciate the attempt to comfort me, but I think it has had the opposite effect.
 
 ### Conclusion/Resolution
-* Status Update – comments received
 
+- Status Update – comments received
 
 ## String is USV String
+
 Presenter: Guy Bedford (GB)
 
 - [proposal](https://github.com/guybedford/proposal-is-usv-string)
@@ -808,7 +827,7 @@ DE: I’d like to hear if people need to check in their application code to dist
 
 GB: Just posted one instance in the chat of a [unable to transcribe] issue, dealing with exactly this topic. So why isn’t [unable to transcribe]? When you’re dealing with interfacing between WebAssembly and JS, they obviously need to do this check.
 
-BFS: So I come across this every so often. I’m interacting with various things where I want to serialize Strings. Actually, in the nightmare world of JSON, you can actually have lone surrogates as well. Their [unable to transcribe] is basically in the same situation as JavaScript. You can slice strings’ lone surrogates [?] like that. I opened an issue against a heap dump in V8 because they were slicing things with lone surrogates in them. And that meant that I couldn’t parse them in various ways because I would get replacement characters. Various APIs and host environments, like TextEncoder, will automatically replace lone surrogates with replacement characters. So if you round trip through them, you can’t actually compare that something is the same, because it’s not the same. It’s been encoded in the round trip. So you actually need to kind of see if something is going to be lossy when you round trip it for these cases. So anytime you send something through UTF-8 and back, you really want to check if you’re going to have a lossy transform happen, and you need something like this to do it. So, UTF-8. There are plenty of things to do like writing to disk, commonly sending it over the network, commonly all of this—if you don’t have it and you get split on one of these lone surrogates, you get weird things happening. This happens all the time with streams. Streams are the worst for this because sometimes you get a network chunk in that split on a lone surrogate because of backpressure, and JavaScript has decided to use string.slice. For whatever reason, this shows up in Node.js. I don’t really have too many more off the top of my head. I could probably think of more. Yeah, that’s it. 
+BFS: So I come across this every so often. I’m interacting with various things where I want to serialize Strings. Actually, in the nightmare world of JSON, you can actually have lone surrogates as well. Their [unable to transcribe] is basically in the same situation as JavaScript. You can slice strings’ lone surrogates [?] like that. I opened an issue against a heap dump in V8 because they were slicing things with lone surrogates in them. And that meant that I couldn’t parse them in various ways because I would get replacement characters. Various APIs and host environments, like TextEncoder, will automatically replace lone surrogates with replacement characters. So if you round trip through them, you can’t actually compare that something is the same, because it’s not the same. It’s been encoded in the round trip. So you actually need to kind of see if something is going to be lossy when you round trip it for these cases. So anytime you send something through UTF-8 and back, you really want to check if you’re going to have a lossy transform happen, and you need something like this to do it. So, UTF-8. There are plenty of things to do like writing to disk, commonly sending it over the network, commonly all of this—if you don’t have it and you get split on one of these lone surrogates, you get weird things happening. This happens all the time with streams. Streams are the worst for this because sometimes you get a network chunk in that split on a lone surrogate because of backpressure, and JavaScript has decided to use string.slice. For whatever reason, this shows up in Node.js. I don’t really have too many more off the top of my head. I could probably think of more. Yeah, that’s it.
 
 DE: Yes, those use cases sound really relevant, and I’m glad to hear about [unable to transcribe] Stage 1 for this proposal.
 
@@ -816,31 +835,34 @@ MB: I like this proposal and am supportive of Stage 1. I already posted on the i
 
 BFS: We should be really careful here. You don’t want to accidentally compare a string that already has a replacement character with something that doesn’t yet have the replacement character and treat them as equal. Yeah, that it is lossy if they are combined as well.
 
-MF: I guess my original topic here was what do consumers do with this, but I guess what I’m understanding is that, whenever you test for well-formedness, it’s so that you can then ensure that you have a well-formed string. Is there a reason to do the test and not do a replacement? You’re going to use some replacement character or what else are people doing with it after the test? And I guess I have to test the API at all. 
+MF: I guess my original topic here was what do consumers do with this, but I guess what I’m understanding is that, whenever you test for well-formedness, it’s so that you can then ensure that you have a well-formed string. Is there a reason to do the test and not do a replacement? You’re going to use some replacement character or what else are people doing with it after the test? And I guess I have to test the API at all.
 
-BFS: I can answer that someone directly. We could bikeshed the API a bit. So you don’t always want to introduce a replacement character because replacement characters actually can be lossy too. So say I had two different emojis. I’ve got example sites with this in the wild: emojis often end up with lone surrogates. If you split them down the middle, one could be the fire emoji and another could be a heart emoji. And if I split them just right, and then I use replacement characters, they are now equivalent. So we don’t want to always use a replacement character. Sometimes we want to trim off the end. That in my reality is the more common case for safety reasons, but if you are forced to round trip through Unicode, you are going to be wanting to do something with replacement characters. 
+BFS: I can answer that someone directly. We could bikeshed the API a bit. So you don’t always want to introduce a replacement character because replacement characters actually can be lossy too. So say I had two different emojis. I’ve got example sites with this in the wild: emojis often end up with lone surrogates. If you split them down the middle, one could be the fire emoji and another could be a heart emoji. And if I split them just right, and then I use replacement characters, they are now equivalent. So we don’t want to always use a replacement character. Sometimes we want to trim off the end. That in my reality is the more common case for safety reasons, but if you are forced to round trip through Unicode, you are going to be wanting to do something with replacement characters.
 
 MF: Is that all? That’s a transform that’s just like a function of the lone surrogate. That’s there though. Is there anything about that?
 
 BFS: So, the lone surrogate, the high surrogate, is often shared amongst these emojis. So there’s nothing to differentiate it. So it is generally just a transform of the high surrogate, and they can be equivalent. Even though the total emoji, if you were to get all the strings combined, would have a different low surrogate.
 
-MF: I guess I’m not understanding. You slice the first half of those, get the [?] pair, and they have the same high surrogate. And you don’t want those to compare this thing. You don’t want those streams to compare the same. I’m not sure what that has to do with the replacement character. 
+MF: I guess I’m not understanding. You slice the first half of those, get the [?] pair, and they have the same high surrogate. And you don’t want those to compare this thing. You don’t want those streams to compare the same. I’m not sure what that has to do with the replacement character.
 
 BFS: Then those strings are the same high surrogate that point for that case. Yes, but if you have something that already has a replacement character generally, you don’t want to compare. It is with something with a high surrogate, at least in my experience, if you want to do some kind of more lengthy test. You could be waiting for more to see if there is a proper low surrogate. You could be trimming it. You could want to do the replacement character. The problem is there are multiple options depending on the workflow you’re currently doing.
 
 MF: Okay, I see. Yeah, this is sufficient justification for me from you for us to have both of those methods in the Stage 1.
 
-GB: To try and dig a little bit deeper into the validation use case, for the most part, if you’re working with an API that expects valid [?] Unicode while [?] providing invalid Unicode, that’s something you want to normally cache during the development phase of the application. So being able to hide errors for that, that you can turn into a user-level [unable to transcribe]. Are you taking an unstructured, string input? Actually would be desirable in many cases, because if you don’t have a valid Unicode to all [?] with your program. Some of this is really well-defined [unable to transcribe]. 
+GB: To try and dig a little bit deeper into the validation use case, for the most part, if you’re working with an API that expects valid [?] Unicode while [?] providing invalid Unicode, that’s something you want to normally cache during the development phase of the application. So being able to hide errors for that, that you can turn into a user-level [unable to transcribe]. Are you taking an unstructured, string input? Actually would be desirable in many cases, because if you don’t have a valid Unicode to all [?] with your program. Some of this is really well-defined [unable to transcribe].
 
 RPR: Thank you. So GB. You want to ask for Stage 1?
 
-GB: I would like to ask for Stage 1. Yes. 
+GB: I would like to ask for Stage 1. Yes.
 
-RPR: Any objections to Stage 1? Congratulations, you have Stage 1. He does have a point here about that [unable to transcribe] should be captured. So, please do clarify that with him offline. On the cues [?]. Excellent. Thank you very much. 
+RPR: Any objections to Stage 1? Congratulations, you have Stage 1. He does have a point here about that [unable to transcribe] should be captured. So, please do clarify that with him offline. On the cues [?]. Excellent. Thank you very much.
 
 ### Conclusion/Resolution
-* Stage 1 achieved
+
+- Stage 1 achieved
+
 ## Array.fromAsync
+
 Presenter: J. S. Choi (JSC)
 
 - [proposal](https://github.com/js-choi/proposal-array-from-async)
@@ -848,7 +870,7 @@ Presenter: J. S. Choi (JSC)
 
 JSC: [slide 1] Hi everyone. My name is J. S. Choi. Joshua S. Choi. I’m a physician. I’m with Indiana University. I am a physician of medicine, but I also work in biomedical informatics. So I do a lot of data analytics, application design, and that’s why I’m here. We might go shorter depending on how many questions everyone has.
 
-JSC: [slide 2] I’m assuming everyone is probably familiar with `Array.from`, the static method on `Array`. It’s used a lot; people use it to turn iterable things into arrays. This proposal is for a companion method for async iterables to arrays: `Array.fromAsync`. 
+JSC: [slide 2] I’m assuming everyone is probably familiar with `Array.from`, the static method on `Array`. It’s used a lot; people use it to turn iterable things into arrays. This proposal is for a companion method for async iterables to arrays: `Array.fromAsync`.
 
 JSC: [slide 3] I run into this a lot. It’s not like it's very difficult to do: flattening an async iterable into an array. You can just use a `for await` loop, but I actually do it quite a bit and quite a few libraries do it, too—for debugging: If you want to see what an async iterable looks like, you of course can’t print it out to the console. You have to flatten it into an array. So there’s that.
 
@@ -866,13 +888,13 @@ JSC: [slide 6] I’m going for Stage 1. That of course means that not every sing
 
 JSC: There is a question of naming. DD brought up that `async` after `from` matches existing patterns more than `from` then `async`. There’s a couple methods in `Atomic` and the Web GPU API that already match `.fooAsync`.
 
-JSC: There’s also the question whether this is redundant with the iterator-helpers proposal, which I’m very excited about too. It already has specified a `toArray` method. However, I think that this arguably—If we’re going to choose one, I think that it should be in the `Array` class in order to parallel what already exists, `Array.from`. And apparently duplication of functionality between the `Array` class methods and iterator helpers is fine, since `toArray` also is redundant with `Array.from` synchronously too. I don’t think that should block anything. I think that they can coexist, and, if we have to choose one, we should choose what parallels what already exists, which is an `Array` static method. 
+JSC: There’s also the question whether this is redundant with the iterator-helpers proposal, which I’m very excited about too. It already has specified a `toArray` method. However, I think that this arguably—If we’re going to choose one, I think that it should be in the `Array` class in order to parallel what already exists, `Array.from`. And apparently duplication of functionality between the `Array` class methods and iterator helpers is fine, since `toArray` also is redundant with `Array.from` synchronously too. I don’t think that should block anything. I think that they can coexist, and, if we have to choose one, we should choose what parallels what already exists, which is an `Array` static method.
 
-JSC: Seeing strong support for this from JHD: “Should have been a requirement.” 
+JSC: Seeing strong support for this from JHD: “Should have been a requirement.”
 
 JHD: Yeah, I mean, it’s largely in the topic. But yeah, I feel like it’s been a huge pain to not have. Like, I use `Array.from` all the time, though `for of` exists, and it’s been a huge pain to not have an equivalent version of it for async iterators. As soon as I saw this proposal, my reaction was, “Why did we not insist that this be part of `for await` in the first place?” So I think it was great—like the spec text is already written. I’d like it even to be Stage 2, though that’s not being asked for.
 
-JSC: Yeah, so I could ask for Stage 2 if nobody objects to one. 
+JSC: Yeah, so I could ask for Stage 2 if nobody objects to one.
 
 YSV: I would want more time to look at before Stage 2, because it’s not just an exploration at that point. Whether it should be in the language. And I have a few questions around that because we do have the redundancy with the iterator `toArray` method. And something we want to ask is how do we want to approach that in addition to objects and sets. I think there’s still some open questions there. So I would want to take this a little slower and make sure that we understand exactly what we want to get out of this. So Stage 1 will be fine, but I’m not sure yet about Stage 2.
 
@@ -880,7 +902,7 @@ JSC: No problem. I’ll ask for Stage 1 only.
 
 RBN: One of the concerns that I have…I generally support this feature and and I agree with JHD’s interest, that we should have had some support like this, some of the complexities that we have in there. But one thing that I worry about is that, it would be very easy to start trying to create an array from a data source that might have to wait a long time for results. If you’re pulling from the web or if it might possibly be infinite and will just constantly allocate more memory in the background while other tasks are processing…and it does make me wonder if we need to bring back cancellation.
 
-RBN: We now have AbortController and AbortSignal: both in pretty much every major browser. And also in Node. But no way to manage it from within the ECMAScript language itself. And we did have a discussion a couple years back on the possibility of introducing a symbol-based protocol for cancellation that could be adopted as part of AbortController and AbortSignal. I don’t want to block—and I saw this in the chat: I don’t want to gate this, but I am wondering if it’s something we might want to consider adding in the future. Because you can promise-race from async. It’ll still keep running in the background, even if you stop early. 
+RBN: We now have AbortController and AbortSignal: both in pretty much every major browser. And also in Node. But no way to manage it from within the ECMAScript language itself. And we did have a discussion a couple years back on the possibility of introducing a symbol-based protocol for cancellation that could be adopted as part of AbortController and AbortSignal. I don’t want to block—and I saw this in the chat: I don’t want to gate this, but I am wondering if it’s something we might want to consider adding in the future. Because you can promise-race from async. It’ll still keep running in the background, even if you stop early.
 
 JSC: Yes, thank you. Your point is well taken. This does make it easier to write bad code that might block a long time. But it’s already easy in the first place. I would say this is a convenience function more than anything.
 
@@ -892,55 +914,56 @@ BT: Interesting to note that the reason why we don’t actually have a method—
 
 SYG: No concerns with Stage 1, certainly. Could you please go back to the spec slide? I had missed what you had planned to do with @@species. If it’s updated, I cannot see. Maybe you can just directly speak to what you were planning with @@species. Does it async from it right now?
 
-JSC: As I recall, `asyncFrom` doesn’t even mention @@species. It does not address species. I don’t remember `Array.from` even mentioning @@species either. 
+JSC: As I recall, `asyncFrom` doesn’t even mention @@species. It does not address species. I don’t remember `Array.from` even mentioning @@species either.
 
-SYG: Oh, sorry. This is a static thing. Yeah. Okay. Yeah. It’s a transferable factory method, right? Okay. Yeah. I retract my question; never mind. 
+SYG: Oh, sorry. This is a static thing. Yeah. Okay. Yeah. It’s a transferable factory method, right? Okay. Yeah. I retract my question; never mind.
 
 YSV: Yeah, so I’m just thinking a lot about this and one thing that I think works well in iterator helpers is we can effectively scope the number of async elements that are being taken. So this can allow people to say take five elements out of a certain stream and just operate on those, giving you a snapshot of what you’re working with. So that might actually address the size complaint—and it makes me actually lean towards iterator helpers here as being the right solution…but I think that this is just something we want to spend a bit more time with, and really understand what we want to get out of this API. How it should communicate to developers how it should be used. And maybe we can find some good common ground there later on. Because I feel like…One thing that I’m a little worried about with iterator helpers is people who are unfamiliar with working with iterators and generators. They might not be expecting all of the different kinds of behavior you can end up with. So just thinking aloud.
 
 JSC: Yes. Thank you for raising those points. Please, feel free to open an issue on the repository, or I could do it and ping you, and we could talk more about its relationship to this proposal with iterator helpers and ramifications for teaching.
 
-YSV: Yeah. Yeah, just something to think a little bit about. I mean, I’m hoping to take iterator helpers to Stage 3 in the next meeting. So probably we want to do that sooner rather than later. Maybe, what we’ll do is we take `toArray` and pause it. I don’t know, Michael [MF?], what your thoughts are there. But yeah, just down here down here for sure. 
+YSV: Yeah. Yeah, just something to think a little bit about. I mean, I’m hoping to take iterator helpers to Stage 3 in the next meeting. So probably we want to do that sooner rather than later. Maybe, what we’ll do is we take `toArray` and pause it. I don’t know, Michael [MF?], what your thoughts are there. But yeah, just down here down here for sure.
 
-JSC: From my perspective, having both `toArray` and `array.fromAsync` isn’t a big deal, because `Array.from` already exists, but we can definitely hash this out more. 
+JSC: From my perspective, having both `toArray` and `array.fromAsync` isn’t a big deal, because `Array.from` already exists, but we can definitely hash this out more.
 
-YSV: Yeah. I think I’m also leaning towards we should have both to be honest. Yeah. 
+YSV: Yeah. I think I’m also leaning towards we should have both to be honest. Yeah.
 
-MF [?]: Yeah, I agree. I don’t think it’s a problem to have both. 
+MF [?]: Yeah, I agree. I don’t think it’s a problem to have both.
 
 JSC: Yes. Asking for Stage 1.
 
 RPR: Any objections to Stage 1? Any support for Stage 1? We like to ask for support. All right. Congratulations. You have Stage 1. Thank you very much, everyone.
 
 ### Conclusion/Resolution
-* Stage 1 achieved
 
+- Stage 1 achieved
 
 ## continue labels should not pass through blocks
+
 Presenter: Kevin Gibbons (KG)
 
 - [proposal](https://github.com/tc39/ecma262/pull/2482)
-
 
 KG: All right, so someone pointed out recently that, the way the spec is written, if you have a labeled block whose sole statement is an iteration statement, and the body of the iteration statement contains a `continue` which has the same label as the label for the block, the spec says this is legal. And it has said that since ES2015. I don't think that was intentional; implementations don't actually do this, except ChakraCore does something weird. It is not a hundred percent clear to me what the actual semantics are. I think the semantics are that the `continue` completion propagates up to the top of the script where it causes the script to stop executing, but I'm genuinely not sure. So I would like to have consensus for making this syntax illegal. It's a normative change, because the current spec is in some sense coherent, but it is a change to match web reality.
 
 YSV: It sounds good.
 
-WH: I agree. 
+WH: I agree.
 
 KG: That's my item. Okay, excellent.
 
-RPR: Have consensus will change. 
+RPR: Have consensus will change.
 
 ### Conclusion/Resolution
-* Change is approved
+
+- Change is approved
 
 ## The Realm for the error when tail-calling a revoked Proxy
+
 Presenter: Kevin Gibbons (KG)
 
 - [proposal](https://github.com/tc39/ecma262/pull/2495)
 - [slides](https://docs.google.com/presentation/d/1txbE6t69AAufBlKsCF20Gzyq2pUDBxK2Az7XQwljZC0/edit#slide=id.g106f4536d9_0_109)
-
 
 KG: [slides 2–3] Sorry about this. I did not want to take the committee's time on it. I have a different goal that I am trying to accomplish which requires this change and it is a normative change.
 
@@ -956,15 +979,15 @@ BFS: Just for some clarity, if you are faking a revoked Proxy, you couldn't give
 
 KG: You can't either way. It is impossible with a fake revoked Proxy, to create the TypeError, in either the realm of the caller of F or in the realm of F itself. That's just not data which is available to you.
 
-BFS: So, the only way you can do that is if that's what JavaScriptCore does. 
+BFS: So, the only way you can do that is if that's what JavaScriptCore does.
 
-KG: That's right, but I don't want to have that change on the table. 
+KG: That's right, but I don't want to have that change on the table.
 
 BFS: I need a moment to think about this, sorry.
 
 KG: Concretely, I want to exclude that because that would imply changes to other engines. Like that would be relevant even for engines which don't implement tail calls. I don't right now want to consider changes that would affect engines which don't implement tail calls.
 
-BFS: Yeah, I think it's fine. I had to take a moment, sorry. 
+BFS: Yeah, I think it's fine. I had to take a moment, sorry.
 
 KG: All right, so I would like to ask for consensus for this change that is on the screen right now.
 
@@ -972,14 +995,12 @@ YSV: Do we have Apple on the call and some Moddable folks?
 
 PHE: I'm here. XS only has one realm so that's why you couldn't figure it out because it's not there. Yeah, so no problem.
 
-MLS: I think we’re fine with this. 
+MLS: I think we’re fine with this.
 
 KG: OK, so Moddable and Apple are ok with this.
 
-RPR: I think we've had no objections and positive sentiment. So congratulations. 
+RPR: I think we've had no objections and positive sentiment. So congratulations.
 
 ### Conclusion/Resolution
-* Change is approved
 
- 
-
+- Change is approved

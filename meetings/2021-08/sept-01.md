@@ -1,9 +1,10 @@
 # 1 September, 2021 Meeting Notes
+
 -----
 
 **In-person attendees:** None
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Waldemar Horwat      | WH             | Google             |
@@ -20,8 +21,8 @@
 | Philip Chimento      | PFC            | Igalia S.L.        |
 | J. S. Choi           | JSC            | Indiana University |
 
-
 ## BigInt Math for Stage 1
+
 Presenter: J. S. Choi (JSC)
 
 - [proposal](https://github.com/tc39/proposal-bigint-math)
@@ -43,7 +44,7 @@ JSC: There’s some gray zones. Like, I don’t know about `imul`, I don’t kno
 
 JSC: [slide 6] The bigger problem is with variadic functions. There are three variadic functions, `min`, `max`, and `hypot`, and `min` and `max` especially are extremely common, but they currently have a definition when you give them no arguments. Imagine if you’re giving `max` an array of BigInts and it possibly could be empty. And when it’s empty, it unexpectedly gives you a Number value. Not a BigInt value. To me, that is effectively an unexpected and implicit type conversion from an array of BigInts to a Number. So hopefully we can all agree that that’s a problem and something to be avoided since our invariant is no implicit type conversion.
 
-JSC: [slide 7] So, right now there is a solution to spec has is having three separate methods for each of the three number variadic methods. This might not be popular with you. It is certainly ugly to me. This is less bad than having `min` implicitly return Numbers sometimes when you might give it an array of BigInts. But perhaps we could put them on the BigInt constructor instead. I don’t know: That raises other questions. Like, do we put everything else on BigInt’s constructor? I don’t know. This kind of bikeshedding shouldn’t block Stage 1. Stage 1 is for exploring stuff: whether Math stuff for BigInts  is worth it and should be explored, whether we put everything on the `BigInt` constructor, whether we continue putting stuff in `Math` and have it determine whatever. It’s those questions that hopefully you can hash out with me in the issues on the repository. But the variadic thing is my biggest question but right now it shouldn’t block Stage 1
+JSC: [slide 7] So, right now there is a solution to spec has is having three separate methods for each of the three number variadic methods. This might not be popular with you. It is certainly ugly to me. This is less bad than having `min` implicitly return Numbers sometimes when you might give it an array of BigInts. But perhaps we could put them on the BigInt constructor instead. I don’t know: That raises other questions. Like, do we put everything else on BigInt’s constructor? I don’t know. This kind of bikeshedding shouldn’t block Stage 1. Stage 1 is for exploring stuff: whether Math stuff for BigInts is worth it and should be explored, whether we put everything on the `BigInt` constructor, whether we continue putting stuff in `Math` and have it determine whatever. It’s those questions that hopefully you can hash out with me in the issues on the repository. But the variadic thing is my biggest question but right now it shouldn’t block Stage 1
 
 JSC: [slide 8] The specification right now does overload the `Math` operations. It uses the same machinery that was written up by the hard work of everyone who worked on BigInt. There are abstract numeric-type operations already. They’re already used for things like the exponentiation operator. So we reuse that machinery; we extend it for a bunch of other stuff. And so and then we just change the original `Math` function properties to use those abstract numeric operations.
 
@@ -73,7 +74,7 @@ WH: I would not want `exp`. That requires you to have e to arbitrary precision i
 
 JSC: All right, I will plan to drop that.
 
-JHD: I think the general concept is safe. Strong support for. I think it’s just bizarre that intuitive stuff doesn’t work as far as `max`/`min`. You can greater than `>` or less than `<` a BigInt. And Number mixing is only a problem when there’s precision loss and that doesn’t apply to comparisons. So it just seems absurd to me that `Math.max` doesn’t just accept BigInts. And I haven’t gone through and audited `Math` methods, but I suspect that there’s a few where it just should work simply because there’s *no* good reason why it *shouldn’t*. And then there’s a bunch where it shouldn’t work because there *are* good reasons why it shouldn’t. And I think Stage 1 is absolutely the time to explore that.
+JHD: I think the general concept is safe. Strong support for. I think it’s just bizarre that intuitive stuff doesn’t work as far as `max`/`min`. You can greater than `>` or less than `<` a BigInt. And Number mixing is only a problem when there’s precision loss and that doesn’t apply to comparisons. So it just seems absurd to me that `Math.max` doesn’t just accept BigInts. And I haven’t gone through and audited `Math` methods, but I suspect that there’s a few where it just should work simply because there’s _no_ good reason why it _shouldn’t_. And then there’s a bunch where it shouldn’t work because there _are_ good reasons why it shouldn’t. And I think Stage 1 is absolutely the time to explore that.
 
 JSC: I would like to second JHD’s thing: I would like all the help that I can get, when it comes to auditing each function, from engine implementers. And from anyone: anyone who knows any mathematicians, engineers, scientists, with regards to what their needs are and what the cost would be. I would err on the side of dropping early. All the transcendentals I will drop in the next week. As for `max` and `min` we yeah, so like the problem being when you have zero arguments—someone or me can open an issue on that and we can bikeshed it there. But yeah, that’s hopefully for Stage 1.
 
@@ -99,11 +100,11 @@ JSC: So, with regards to—are you talking specifically about possible functions
 
 YSV: Yeah, for example.
 
-JSC: Okay, so that’s what I was getting into when I was talking about, like, formal guarantees: like guaranteeing monotonicity, for instance, or guaranteeing that, for some values, if there’s an integer mathematical value for them, then return them. That’s only for the case for functions that could return irrationals like square root, if we did. So for instance, if we input `101n`, presumably that would be implementation approximated. But should we guarantee that it couldn’t be the same as `100n`? And should *that* be guaranteed to be `10n`? Things like that, those are issues that labelled cross-cutting concerns.
+JSC: Okay, so that’s what I was getting into when I was talking about, like, formal guarantees: like guaranteeing monotonicity, for instance, or guaranteeing that, for some values, if there’s an integer mathematical value for them, then return them. That’s only for the case for functions that could return irrationals like square root, if we did. So for instance, if we input `101n`, presumably that would be implementation approximated. But should we guarantee that it couldn’t be the same as `100n`? And should _that_ be guaranteed to be `10n`? Things like that, those are issues that labelled cross-cutting concerns.
 
-JSC: I mentioned that’s *if* square root ends up in the list. I think there probably are use cases. I don’t have them myself. If there’s a lot of input implementation complexity and like even square root, I’d be happy to drop them. But otherwise we could hash this out in the repository. I consider implementer complexity to be a very high priority in the absence of clear use cases. 
+JSC: I mentioned that’s _if_ square root ends up in the list. I think there probably are use cases. I don’t have them myself. If there’s a lot of input implementation complexity and like even square root, I’d be happy to drop them. But otherwise we could hash this out in the repository. I consider implementer complexity to be a very high priority in the absence of clear use cases.
 
-YSV: In the absence of clear use cases I have some concerns. And I would like to see—like we can always add methods later. But introducing spec text that behaves one way for something that doesn’t have a clear use case…people may start to rely on it and we won’t be able to roll it back. 
+YSV: In the absence of clear use cases I have some concerns. And I would like to see—like we can always add methods later. But introducing spec text that behaves one way for something that doesn’t have a clear use case…people may start to rely on it and we won’t be able to roll it back.
 
 JSC: We can search for the cases we can find. I would be happy to drop whatever methods whose cases we cannot find and defer them to later. We could do this piecemeal.
 
@@ -134,14 +135,14 @@ SFC: Seems like a worthwhile problem.
 BT: That’s consensus for Stage 1. So thank you for that. And great job managing your own queue.
 
 ### Conclusion/Resolution
+
 Stage 1 for a more limited set of math functions than originally proposed
 
 ## Get Intrinsic for Stage 1
+
 Presenter: Jordan Harband (JHD)
 
 - [proposal](https://github.com/ljharb/proposal-get-intrinsic)
-
-
 
 JHD [showing proposal explainer]: I’d originally hoped to ask for Stage 2 but realized that I have some unanswered open questions, that really would be inappropriate to wait until Stage 2 to resolve. So I will only be asking for Stage 1 today.
 
@@ -165,9 +166,9 @@ SYG: I’ll start with the implementation concerns. So there was a bit you said 
 
 SYG: And last time there was a solution that was proposed that required architecture: which is, you know, [that] probably V8 should move to some kind of lazy-loading thing. Anyway, instead of trying to have everything on the global to begin with. And that’s still probably the best chance going forward to recoup the memory costs—to not punish, you know, every every context. The thing I would like to caution is that this approach means that this might not get implemented in a timely fashion, because the re-architecture is significant. But, that is to say, the implementation concerns still exist. Independently [the] lazy-loading thing is probably good anyway for the codebase to do, but I can’t promise any kind of timelines there. I know this is just Stage 1, but, right, I just wanted to set expectations.
 
-JHD: And I’ll just say that if the, if implementations as a group are confident they can eventually ship it and they plan to and that they have no, you know, and as long as some implementations or implementations can ship it obviously because of the requirements for advancing stage for I’m comfortable with the personally, because once it’s part of the specification, I can build a polyfill and then that thing can just fall out of usage naturally over time. So I’m  thinking about, you know, the next ten years. Not the next you know, ten months. So it’s totally fine to me if there’s a delay, but thank you for sharing that concern.
+JHD: And I’ll just say that if the, if implementations as a group are confident they can eventually ship it and they plan to and that they have no, you know, and as long as some implementations or implementations can ship it obviously because of the requirements for advancing stage for I’m comfortable with the personally, because once it’s part of the specification, I can build a polyfill and then that thing can just fall out of usage naturally over time. So I’m thinking about, you know, the next ten years. Not the next you know, ten months. So it’s totally fine to me if there’s a delay, but thank you for sharing that concern.
 
-JWK: So, I have a question for an engine like XS. They need to be small. I think `getIntrinsic` is good. But it seems like we need to add too many strings into the engine because those intrinsics are created by the strings like `%ArrayPrototype%.slice`. I guess that might add too much size to the XS. Maybe we can only add intrinsics that can only be reached by syntax to get the list smaller. 
+JWK: So, I have a question for an engine like XS. They need to be small. I think `getIntrinsic` is good. But it seems like we need to add too many strings into the engine because those intrinsics are created by the strings like `%ArrayPrototype%.slice`. I guess that might add too much size to the XS. Maybe we can only add intrinsics that can only be reached by syntax to get the list smaller.
 
 JHD: I mean, so there’s a few things to respond to there. So as far as the excess concern, certainly, I’d love to hear from those implementers and confirm. But the individual parts of the dotted string all already exist in the engine. It’s just a question of, you know. I don’t know if that cancels out the concerns. They would have to speak to that.
 
@@ -179,9 +180,9 @@ KKL: From SES and the lockdown perspective, this is great and it would be wonder
 
 JHD: So that’s an interesting thing worth exploring. My understanding Is that the current only-syntax-reachable intrinsics are considered by some delegates to be a mistake, and that they have explicitly said that they will work hard to prevent any new ones from being added. So it seems like it’s a finite set that will not grow in the future. So I’m not sure if an enumeration approach is necessary, but it’s certainly something worth looking into.
 
-KKL: No, I agree. Either invariant needs to be preserved, or this feature needs to exist. 
+KKL: No, I agree. Either invariant needs to be preserved, or this feature needs to exist.
 
-JHD: Sure. 
+JHD: Sure.
 
 MM: Yeah, I just want to say that there’s something between the only-reachable-by-syntax and all the intrinsics, which for most of the intrinsics just (you know, most by total numbers) they can be reached by dotted path enumeration using get, you know, getOwnPropertyNames or starting from the Object, the ones that can’t be reached by dotted path enumeration, but are also not, but also can be reached by means other than syntax are the ones that can only reached procedurally. There is no generic way to discover them. So if you don’t know, the procedural magic formula, like “create a map and then create an iterator of the map to get the iterator prototype” and things like that. So having an enumeration that covers all of the intrinsics that cannot be reached through a generic procedure, like dotted-path enumeration, is still very important.
 
@@ -209,9 +210,9 @@ JHD: So where you say `uncurryThis`, I call it `callBind`. And I have a package 
 
 KKL: Yeah, agree with this point [?].
 
-DE: Yeah, so it’d be great to see this kind of package of proposals laid out. So we can see a broader vision for how integrity can be exposed. 
+DE: Yeah, so it’d be great to see this kind of package of proposals laid out. So we can see a broader vision for how integrity can be exposed.
 
-PFC: This is really important for other software that embeds a JavaScript engine for scripting for the purposes of people writing plugins. A big example of this that I’m involved with is GNOME. People write plugins for the GNOME desktop in JavaScript, and I can say from my experience that this sort of defensive programming where you have to grab the intrinsics beforehand is just not a concern for people writing these plugins—although it should be!  Because you can easily crash your GNOME desktop by deleting built-ins off of prototypes. I think if we had a facility for this built into the language, that would bring it to the attention of people who don’t usually think about what happens if you delete an intrinsic off of a prototype. The fact that this facility exists makes it easier for them to think about it. I have a feeling that they’ll use it if it exists, and if it doesn’t, they just won’t realize it’s a problem. 
+PFC: This is really important for other software that embeds a JavaScript engine for scripting for the purposes of people writing plugins. A big example of this that I’m involved with is GNOME. People write plugins for the GNOME desktop in JavaScript, and I can say from my experience that this sort of defensive programming where you have to grab the intrinsics beforehand is just not a concern for people writing these plugins—although it should be! Because you can easily crash your GNOME desktop by deleting built-ins off of prototypes. I think if we had a facility for this built into the language, that would bring it to the attention of people who don’t usually think about what happens if you delete an intrinsic off of a prototype. The fact that this facility exists makes it easier for them to think about it. I have a feeling that they’ll use it if it exists, and if it doesn’t, they just won’t realize it’s a problem.
 
 JHD: Thank you. And as KKL mentioned as well, Node does this. They have a primordial pattern which is basically: they pre-create call-bound versions of all the intrinsic functions, and then they laboriously write all their code to use them. Not all of it, but much of it. And that’s because they don’t want the platform to crash if someone types `delete Function.prototype.call`. Thank you for that support. Onto immutability of `getIntrinsic` return values?
 
@@ -231,20 +232,22 @@ SYG: Okay, I think it might still be the case I want to say this in. And it’s 
 
 JHD: So I completely agree, but I think more users will be impacted by this than ever are affected by Atomics, for example, which is also a very niche use case, even on the Web Platform. I mean, I’m not, I’m not hearing to be hostile with that, but I just think that like, the amount of transitive code that depends on this pattern is very large.
 
-SYG: I think the point I’m trying to make is, I guess, the same point that I made earlier: that if a large part of this is so large, part of this is ergonomic. You want to cache one thing instead of _n_ things. I get that and I hear you there. The other cost is you don’t want to ship this heavyweight Library around, while you might not get around that cost. Anyway, even though you push it to the engine, and that is a thing, I would like a better handle on if it, in fact, has [?] effects on loading time. That might not be acceptable if it’s just a memory and we want to re-architect around that; maybe that’s okay. Thanks. 
+SYG: I think the point I’m trying to make is, I guess, the same point that I made earlier: that if a large part of this is so large, part of this is ergonomic. You want to cache one thing instead of _n_ things. I get that and I hear you there. The other cost is you don’t want to ship this heavyweight Library around, while you might not get around that cost. Anyway, even though you push it to the engine, and that is a thing, I would like a better handle on if it, in fact, has [?] effects on loading time. That might not be acceptable if it’s just a memory and we want to re-architect around that; maybe that’s okay. Thanks.
 
-JHD: That’s very well understood. 
+JHD: That’s very well understood.
 
-JWK: I suppose it to Stage 1. It’s a worth problem to solve. 
+JWK: I suppose it to Stage 1. It’s a worth problem to solve.
 
 JHD: All right. Do you have any objections to Stage 1 here?
 
 BT: I don’t hear any objections. That sounds like Stage 1. Thank you, JHD. Thank you everybody.
 
 ### Conclusion/Resolution
-Stage 1 
+
+Stage 1
 
 ## RegExp Feature Parity
+
 Presenter: Ron Buckton (RBN)
 
 - [proposal](https://github.com/rbuckton/proposal-regexp-features)
@@ -258,21 +261,21 @@ RBN: [slide 4] Part of the reason to investigate is support for things like Text
 
 RBN: [slide 5] Some of the features that we’ve been investigating include things like the explicit-capture mode. This is a feature that’s available in Perl, PRCE, and .NET among the engines that I’ve currently been investigating. This affects capturing behavior, such that normal capture groups such as just those with parentheses are treated as non capturing groups and only named captured groups are returned as part of the match result. For cases where your project is primarily using named capture groups, this helps reduce memory overhead and reduces the complexity of a regular expression by dropping the `?:` that’s used for what is normally a non capture group.
 
-RBN: Another flag that we’ve been investigating is extended mode, which is the `x` mode. This allows you to treat unescaped white space within a regular expression as insignificant. So all white space either needs to use the `\s` or `\ ` to escape a space. This is useful for introducing comments and for creating multi-line regular expressions with the RegExp constructor. There’s a couple notes here, in that Perl has the `x` flag, but it did not treat white spaces in a character class as insignificant in Perl 5.26. They added the `xx` flag, which does not enable multiline regular expression literals. The only way that you could support multiple line regular expressions currently would be to use a template literal within the regular expression constructor, for example. And this is something that’s available in Perl, PCRE, and pretty much every engine I’ve observed, with the exception of ECMAScript.
+RBN: Another flag that we’ve been investigating is extended mode, which is the `x` mode. This allows you to treat unescaped white space within a regular expression as insignificant. So all white space either needs to use the `\s` or `\` to escape a space. This is useful for introducing comments and for creating multi-line regular expressions with the RegExp constructor. There’s a couple notes here, in that Perl has the `x` flag, but it did not treat white spaces in a character class as insignificant in Perl 5.26. They added the `xx` flag, which does not enable multiline regular expression literals. The only way that you could support multiple line regular expressions currently would be to use a template literal within the regular expression constructor, for example. And this is something that’s available in Perl, PCRE, and pretty much every engine I’ve observed, with the exception of ECMAScript.
 
-RBN: [slide 6] Other features that have already been investigated are things like possessive quantifiers, which are similar to regular or greedy quantifiers, but prevent backtracking if capture fails. This is useful for performance because of how poorly performing certain regular expressions can be. Especially those that might have a significant amount of backtracking. If you look at the discussion on the repository linked below, you can see some examples of a relatively small regular expression that takes exponential amounts of time based on how many characters are within the pattern, or within the text that you’re trying to match. One of the advantages of this is that those that are looking to achieve better performance in regular expressions would have the ability to control this behavior. This could be used in current regular expressions regardless of flag as it’s already introducing the plus character as part of a possessive quantifier, which doesn’t conflict with any existing syntax. And again, this is a feature available in almost every single regular expression engine that I’ve investigated. 
+RBN: [slide 6] Other features that have already been investigated are things like possessive quantifiers, which are similar to regular or greedy quantifiers, but prevent backtracking if capture fails. This is useful for performance because of how poorly performing certain regular expressions can be. Especially those that might have a significant amount of backtracking. If you look at the discussion on the repository linked below, you can see some examples of a relatively small regular expression that takes exponential amounts of time based on how many characters are within the pattern, or within the text that you’re trying to match. One of the advantages of this is that those that are looking to achieve better performance in regular expressions would have the ability to control this behavior. This could be used in current regular expressions regardless of flag as it’s already introducing the plus character as part of a possessive quantifier, which doesn’t conflict with any existing syntax. And again, this is a feature available in almost every single regular expression engine that I’ve investigated.
 
 RBN: [slide 7] Another feature that we’re looking into is atomic groups. These are non-capturing groups that are matched independent of neighboring patterns, so it prevents backtracking similar to possessive quantifiers and that allows you to again write regular Expressions that have better performance in specific cases. This again, has no conflict with existing syntax because `?>` is currently considered illegal within a regular expression as it’s not a valid group.
 
 RBN: [slide 8] Some other features we’ve been looking at are buffer boundaries. These are similar to the `^` and `$` anchors, but in this case, they’re not affected by the multi-line flag. In most engines that support this the `\A` matches start of input, `\Z` matches end of input. Actually, I should say that all engines that have this that I’ve seen, support `\z`, this `\Z` assertion differs in at least one engine where it supports any number of optional new lines at the end of input. But most engines currently support only a single trailing new line.
 
-RBN:  [slide 9] Line-ending escapes. This is an escape character sequence that is not supported with a new character class, but it’s supported outside of character class, and it’s designed to match any line ending escape character. So it matches CR+LF, Carriage Return or Line Feed on its own, as well as Unicode line terminators. There is a PR against the repository recently, discussing whether or not this should also indicate that this should match the UTS #18 specification for `\r` within a character class. This just would be an escape for the capital R. That’s usually the case in every engine that’s been tested. This is a feature that, if we considered investigating, would require something like the Unicode `u` flag, as it would be breaking for existing regular expressions.
+RBN: [slide 9] Line-ending escapes. This is an escape character sequence that is not supported with a new character class, but it’s supported outside of character class, and it’s designed to match any line ending escape character. So it matches CR+LF, Carriage Return or Line Feed on its own, as well as Unicode line terminators. There is a PR against the repository recently, discussing whether or not this should also indicate that this should match the UTS #18 specification for `\r` within a character class. This just would be an escape for the capital R. That’s usually the case in every engine that’s been tested. This is a feature that, if we considered investigating, would require something like the Unicode `u` flag, as it would be breaking for existing regular expressions.
 
 RBN: [slide 10] One feature that I’ve definitely been interested in introducing is modifiers. As I mentioned earlier in the motivations, one of the motivating use cases is the ability to support syntax colorization and TextMate grammars within the browser. TextMate grammars use string-based regular expressions, since they’re primarily written either in YAML or JSON and the PList format that’s also used. All three of these don’t actually support a literal regular expression, so you can’t actually provide regular expression flags to control behavior, such as whether there’s case insensitivity, multi-line, etc. Every single regular-expression engine that I have surveyed, with the exception of ECMAScript, has this capability. So it’s definitely one that I think is useful and powerful. And again, it’s heavily used within TextMate grammars today. So, some of the examples of this are being able to set, which is `?` and then a series of flags; and then unset, which is a `-` and then one or more of those flags. That turns those flags on or off for that pattern until the closing parenthesis. So that happens for all alternatives within the pattern or the end of the regular expression itself. There’s also a variation of this that supports specifying it with a colon that uses then a sub expression. This has no conflict with existing syntax. Certain flags would not be supported with it. You would not be able to control certain flags in regular expressions, such as global sticky or the has-indices modifier.
 
 RBN: I do want to address a couple comments I’ve seen going through here, what I’m looking for as part of this proposal. It is not specifically wholesale adoption of all of these. It’s an investigation into the individual features that we’re discussing and that I’m bringing up as showing disparity and whether we can take some of these—as I believe BT coined it when I was talking with him—as RegExp Buffet v2. Some, we may break out into individual proposals. Some, we may choose not to advance at all. But primarily what I want to do is open up discussion on all of these possibilities and features that are common so that we can determine which ones we want to move forward with.
 
-RBN: [slide 11] Getting back into the presentation, another feature that it’s been very useful I found in other engines and other languages is the ability to introduce comments into regular expressions. Regular expressions by nature are very terse and opaque to many users. The syntax is extremely complex and as a result, it can be very difficult to understand exactly what’s going on within a regular expression at times, especially complex ones. Comments, at least in this specific feature, are designed around introducing a comment in line with a regular expression, in that the `(?#` symbol indicates that this is the beginning of a comment group and it ends at the next `)` and allows you to write text that is not considered part of the pattern. This can be used in a regular expression literal or it can be used within the RegExp constructor using a multi-line template literal. Again, this is supported in every single regular expression engine that I’ve tested or investigated with the exception of ECMAScript up to this point. This also would have no conflict with existing syntax. 
+RBN: [slide 11] Getting back into the presentation, another feature that it’s been very useful I found in other engines and other languages is the ability to introduce comments into regular expressions. Regular expressions by nature are very terse and opaque to many users. The syntax is extremely complex and as a result, it can be very difficult to understand exactly what’s going on within a regular expression at times, especially complex ones. Comments, at least in this specific feature, are designed around introducing a comment in line with a regular expression, in that the `(?#` symbol indicates that this is the beginning of a comment group and it ends at the next `)` and allows you to write text that is not considered part of the pattern. This can be used in a regular expression literal or it can be used within the RegExp constructor using a multi-line template literal. Again, this is supported in every single regular expression engine that I’ve tested or investigated with the exception of ECMAScript up to this point. This also would have no conflict with existing syntax.
 
 RBN: [slide 12] Another interesting feature are line comments. This is something that is supported within all engines that support the `x` mode flag. It’s not supported within a regular expression literal. Well, it would be, but essentially the rest of the regular expression literal would be considered a comment, because you again can’t can’t have multiple lines. It would be best used with something like a template literal, especially if you’re using String.raw, so that you don’t have to double escape your character escapes, but it does significantly improve readability for complicated expressions. When X mode is on within that regular expression, again, all whitespace is treated as insignificant and the hash character is considered the beginning of a comment when outside of the character class, which means inside of `x` mode the hash character would need to be escaped.
 
@@ -288,7 +291,7 @@ RBN: [slide 17] One of the other capabilities of subroutines is they allow recur
 
 RBN: [slide 18] What I’m looking to do is request Stage 1 for investigating the feasibility. I had considered an approach with some others about the possibility of creating a RegExp-specific TG. At the time, it seemed like there wasn’t enough interest in that from the folks that I was talking with. What I decided to do was put together some interesting features that I think we should pursue or investigate, based on the research that I’ve had. I expect that some of these features won’t be adopted for Stage 2. Some features might require syntax changes and some things that we haven’t listed we might consider adding. I also believe we may eventually break this down into more individual features or more individual proposals. But quite a number of these proposals have specific tie-ins to each other, such as conditionals having cross-cutting concerns with subroutines. The goal with presenting them all together was to ensure that we had the ability to see how they work cohesively. And again, a lot of these features are heavily motivated by the TextMate grammar use case, which was where I started with the RegExp match Indices. Trying to reach a point where editors like VSCode or other code colorizers or parsers in general that use regular expressions have more flexibility and more capabilities that are currently available in other engines, so that they don’t have to fall back to native bindings or Wasm builds of native engines, like Oniguruma.
 
-RBN: [slide 19] At this point, I will go back to the queue and we can discuss any questions that people have. 
+RBN: [slide 19] At this point, I will go back to the queue and we can discuss any questions that people have.
 
 WH: There are a lot of things here. Some of these I think are fairly reasonable. Some are really experimental. Some of the places where you said that these would not break existing grammar, that’s inaccurate in that they would, and I can give some examples. Some of these are really unmotivated. I don’t see much of a motivation to support multi-line regular expressions if you can’t do it for literals, and there are good reasons why you can’t do it for literals.
 
@@ -322,7 +325,7 @@ RBN: But again, what I’m looking for for Stage 1 is investigating these featur
 
 MF: Okay, I think it’s a possibly slightly inappropriate use of the Stage process here. I agree with you that this probably as a whole would never advance past Stage 1, but I do see as your overarching goal saying we will—typical Stage-1 thing—we will commit committee resources to investigate that. I think that is appropriate. Whether we actually call that a proposal or not—is up to the chairs.
 
-RBN: I have had offline conversations with a number of individuals about whether or not we should consider chartering a technical group to specifically focus on the regular expression sublanguage. Most of the feedback that I received was, I would say, either disinterested or negative about that. But if the committee is more interested in having a specific TG chartered for this, I’m not sure what the process is to do that, but I can also investigate that as well. 
+RBN: I have had offline conversations with a number of individuals about whether or not we should consider chartering a technical group to specifically focus on the regular expression sublanguage. Most of the feedback that I received was, I would say, either disinterested or negative about that. But if the committee is more interested in having a specific TG chartered for this, I’m not sure what the process is to do that, but I can also investigate that as well.
 
 DE: I want to make a process suggestion. I think a formal TG would be a little bit too heavyweight because this is an effort that we’re ramping up, then it will eventually reach a point that we’re happy with—rather than having a standing set of responsibilities forever. What if we made a regular call on the TC39 calendar? We could think of it as an ad-hoc subgroup of TC39 people who are interested in regular expression features. Then this group can propose things for Stage 1. I agree with Michael that this is a little bit of a funny—It’s more like a work area than a proposal. Maybe we could record, in the proposal’s repository, the kind of calls and work areas that we have.
 
@@ -338,7 +341,7 @@ DE: Okay, one one last point. The goal would be to work towards parity, and I do
 
 RBN: I can agree with that again. My goal isn’t specifically 100% parity. It’s a parity that I’m looking for on common features. There are things that I have researched and [here is a website](https://rbuckton.github.io/regexp-features/) that I’ve been putting together for a while. This originally started as an Excel spreadsheet and it was a comparison of common features between engines, the differences that each engine maintains. It’s not 100% accurate. I’ve been going in and filling in what I can, and I have probably about twelve more engines on my list to eventually go through and add in a lot of these features that I’ve been looking at. For example, there’s features like call-outs which I’m definitely not proposing. That’s the ability to execute code in the middle of a regular expression, backtracking control verbs.
 
-RBN: There’s a lot of these features that I’m not looking for that are in a number of engines, but I’m definitely looking for features that have support across a significant number of engines and are commonly used in practice and would definitely improve developers’ lives. So again, not looking for 100% parity, but I am looking for improving the support we have within our regular expression language so that we can get the same types of, in some cases,  brevity, or in some cases, additional power that a lot of other engines employ and are commonly used in the motivating use cases I had around: specifically things like TextMate grammar support, balanced bracket parsing, and improving documentation and readability. And improving performance.
+RBN: There’s a lot of these features that I’m not looking for that are in a number of engines, but I’m definitely looking for features that have support across a significant number of engines and are commonly used in practice and would definitely improve developers’ lives. So again, not looking for 100% parity, but I am looking for improving the support we have within our regular expression language so that we can get the same types of, in some cases, brevity, or in some cases, additional power that a lot of other engines employ and are commonly used in the motivating use cases I had around: specifically things like TextMate grammar support, balanced bracket parsing, and improving documentation and readability. And improving performance.
 
 RBN: I’ll make a quick note that recently on TypeScript, one of my co-workers has a peer from university that had built a tool to analyze the complexity of regular expressions. We were using it on our engine source code to find patterns we had that were poorly performing. As a result we have been making changes and fixes. A lot of these issues that we found would have been addressed through things like possessive quantifiers because backtracking was a significant performance problem. And instead because these don’t exist, we’ve had to rewrite regular expressions and change how we parse a number of things in the compiler to improve performance.
 
@@ -350,23 +353,23 @@ CM: First of all, what I’m about to say might sound snarky and I want to apolo
 
 BSH: So first sort of opposite reasons for what CM said, I think a TG might be a good idea. I think mainly because I think there’s not a lot of clarity on what is the bar for—what should—what do we want to change? Make [?] just a regular expression language [?], which I think we need. It’d be good to have some sort of a consensus, from interested parties on what kind of features are we interested in adding, and which ones are we not? I think [there’s?] this sort of a consensus on the whole language—but regular expressions, not so much. And yeah, I agree with what was said, earlier, almost made the same statement—I don’t think parity with other languages isn’t a tractable design goal, but we don’t have any clear design goals. So, defining those would be great.
 
-WH: We already have a subgroup working on regular expressions. Thus I am baffled by the calls to create a subgroup which already exists. The problem with the existing subgroup is that it meets so frequently. It meets every week, which makes it hard to follow. 
+WH: We already have a subgroup working on regular expressions. Thus I am baffled by the calls to create a subgroup which already exists. The problem with the existing subgroup is that it meets so frequently. It meets every week, which makes it hard to follow.
 
-RBN: I wasn’t aware there was an existing subgroup discussing regular expressions outside of the group discussing the RegExp Set Notation proposal. 
+RBN: I wasn’t aware there was an existing subgroup discussing regular expressions outside of the group discussing the RegExp Set Notation proposal.
 
 WH: Yeah, that’s what I was referring to.
 
 RBN: I looked at that as more of a specific feature—as a matter of fact, I had been planning, in researching this and planning, to put something on the agenda. Once I’d finished the majority of the research that I was doing right around the time, then that proposal was added. And I’ve looked at that more as being a very specific feature and scoped proposal, and again if we were considering breaking these down into more specific and scoped proposals, then it feels like that, that group would wind up expanding in its charter. Or even if it’s not really chartered, but expanding in its scope, which might not be in the interest of the champions of that. I’d have to let them speak to that.
 
-WH: They do interact very strongly. Some of the examples you gave in the slideshow would break under the proposed modernized Unicode semantics. 
+WH: They do interact very strongly. Some of the examples you gave in the slideshow would break under the proposed modernized Unicode semantics.
 
-MLS: So there’s the other languages and the “if they build it, they will come” kind of thing. I think we need to consider the syntax for regular expressions like we consider the syntax for the language itself, and that we syntax must pay for or the feature must pay for the syntax that uses regular expressions that are no longer regular. They haven’t been for a long time. They’re approaching Turing completeness. 
+MLS: So there’s the other languages and the “if they build it, they will come” kind of thing. I think we need to consider the syntax for regular expressions like we consider the syntax for the language itself, and that we syntax must pay for or the feature must pay for the syntax that uses regular expressions that are no longer regular. They haven’t been for a long time. They’re approaching Turing completeness.
 
 MLS: I think this should be driven by developer desire. And you see this in some other languages, where they’ve added features to regular expression, then they deprecated—and other features when they weren’t, when they’re broken, when the original ones are broken or not useful. So I think we need to be very careful and drive this based upon developer demand.
 
-RBN: And I definitely agree my motivations again, are based on where—the majority of what was presented in these slides—the motivations are based on needs that I’ve seen with in things like the Visual Studio Code editor, or Atom or any of the other editors that use Electron, that have web-based editors that currently rely on TextMate-style grammars that use syntax that JavaScript regular expressions can’t parse. And these are based on—while a lot of these are based on the common denominator between what the engine that’s being used is—in most cases that’s Oniguruma—a lot of these features are very heavily used in other languages, and I found myself constantly having to work around the fact that they don’t exist in regular expressions. And I know I don’t have a precise set of numbers of individuals with specific developer asks, but I know that a number of these features are very useful within day-to-day things. Like atomic groups and possessive quantifiers aren’t going to be used by the majority of developers, but they’re going to be used by the people that need them and have no other option. Things like conditional expressions and modifiers are extremely powerful features. Not having them means that many expressions become more complicated, which means that certain expressions can’t be implemented as a regular expression: they have to be implemented as three or four regular expressions with a lot of complicated logic around them. So the goal of any language is to improve productivity and be terse. I mean there’s multiple other goals. So a lot of these are heavily based on features that are heavily used in other languages that we don’t have. 
+RBN: And I definitely agree my motivations again, are based on where—the majority of what was presented in these slides—the motivations are based on needs that I’ve seen with in things like the Visual Studio Code editor, or Atom or any of the other editors that use Electron, that have web-based editors that currently rely on TextMate-style grammars that use syntax that JavaScript regular expressions can’t parse. And these are based on—while a lot of these are based on the common denominator between what the engine that’s being used is—in most cases that’s Oniguruma—a lot of these features are very heavily used in other languages, and I found myself constantly having to work around the fact that they don’t exist in regular expressions. And I know I don’t have a precise set of numbers of individuals with specific developer asks, but I know that a number of these features are very useful within day-to-day things. Like atomic groups and possessive quantifiers aren’t going to be used by the majority of developers, but they’re going to be used by the people that need them and have no other option. Things like conditional expressions and modifiers are extremely powerful features. Not having them means that many expressions become more complicated, which means that certain expressions can’t be implemented as a regular expression: they have to be implemented as three or four regular expressions with a lot of complicated logic around them. So the goal of any language is to improve productivity and be terse. I mean there’s multiple other goals. So a lot of these are heavily based on features that are heavily used in other languages that we don’t have.
 
-RBN: But I definitely agree that we should focus specifically on the features that are useful. The line-ending escape one is one that I’ve seen come up quite a bit and was the first thing that somebody had a PR to improve documentation around, because they wanted to make sure it was UTS #18 compatible. Of all of the things I presented here, the one that I find the least useful, that might not make the cut, but is also the simplest, is things like buffer boundaries. I definitely agree that we want to make sure that whatever we’re building is based on things that developers need and not just everybody. 
+RBN: But I definitely agree that we should focus specifically on the features that are useful. The line-ending escape one is one that I’ve seen come up quite a bit and was the first thing that somebody had a PR to improve documentation around, because they wanted to make sure it was UTS #18 compatible. Of all of the things I presented here, the one that I find the least useful, that might not make the cut, but is also the simplest, is things like buffer boundaries. I definitely agree that we want to make sure that whatever we’re building is based on things that developers need and not just everybody.
 
 MLS: Well. I also think it’s based upon the fact that we can always find somebody that wants something, but we’re introducing complexity to regular expressions in the language. Performance. We’re also introducing complications on regular expression processing in a lot of cases. Regular expressions, there are regular expressions in applications that are used all the time. There are other regular expressions that are used infrequently. So the parsing time of the regular expression itself. These we figured out that figured into the performance of that particular expression since it’s used once or very few times. And so, even adding syntax, even though it doesn’t complexity and execution of the regular expression, needs to be figured in. And as we saw with the, the indices proposal that we didn’t think there’d be some performance implications and there were, and had to go back and modify it. Many of these, I have concerns that we will impact the performance of the existing applications that are using the current features.
 
@@ -376,7 +379,7 @@ RBN: So I’m bringing up TextMate as a common use case because it’s not a sta
 
 RBN: But these features aren’t specifically geared towards TextMate support. It’s just that it is a very common use case that I see them in. A lot of these other features are very powerful features for doing other types of regular-expression parsing that just again we can’t do today. TypeScript itself doesn’t worry about TextMate. We have a TextMate grammar for VS Code, but we also heavily used regular expressions in a number of cases and again, we suffer from poor performance in regular expressions because of excess backtracking and have had to deep dive into what we’ve we’ve written to find better ways of doing this, given that we don’t have these capabilities in the language.
 
-RBN: So, all of these features are designed for more use cases than just the TextMate case. It’s just the easy go-to because it’s one that I see very often and, well, most developers don’t look at the TextMate grammars. The text developers that I’ve talked to are usually very passionate about the themes that they use in their editors and having support for this in the language that doesn’t require essentially shelling out to another language, because we can’t can’t support these features. At least for the common denominator, features like modifiers and conditionals would be extremely useful. 
+RBN: So, all of these features are designed for more use cases than just the TextMate case. It’s just the easy go-to because it’s one that I see very often and, well, most developers don’t look at the TextMate grammars. The text developers that I’ve talked to are usually very passionate about the themes that they use in their editors and having support for this in the language that doesn’t require essentially shelling out to another language, because we can’t can’t support these features. At least for the common denominator, features like modifiers and conditionals would be extremely useful.
 
 SYG: So I’m not saying that I discount the use case of people who want syntax highlighting. I understand that perfectly. Well, what I’m just asking is the usual PM-ey question of how much of this is a problem with TextMate, if that is what remains the main motivating use case. I also believe that these features are very well designed to be amenable to more use cases, but I want this to be use-case driven, like MLS is saying, and if the use case remains TextMate, is it the problem? Not the “problem”, I guess…but is it more productive or easier to change TextMate? I mean we’re a standards body. TextMate is a de-facto standard, that’s something else to work with. But anyway, I think you’ve adequately answered my question. Thank you.
 
@@ -393,10 +396,13 @@ WH: At some point you will want to make decisions. And the question is which gro
 RPR: Would you like to start by talking to the Set Notation folk? And then see what between you that you think is the most appropriate: either start your own group or expand that group?
 
 RBN: I can do that. And at the very least the repo will live where it is and, if necessary, I’ll break this down into others [?]. And this is more of a personal reason for presenting this all at once: not having to maintain fifteen individual proposal repositories. I think I’ll leave it there, and I’ll talk with some folks offline in the Segmentation group, and if anyone else is interested, they can provide feedback on the repository where it’s at.
+
 ### Conclusion/Resolution
-* more discussion offline
+
+- more discussion offline
 
 ## Fixed layout objects
+
 Presenter: Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/syg/proposal-structs/)
@@ -412,7 +418,7 @@ SYG: Maybe we want to pack memory layout better, because we want more guarantees
 
 SYG: Maybe it’ll give you better predictable performance because we no longer have to have the engine have to learn continuously as the program executes. What the layout of these objects are as you add and remove properties from them. It may help userland data types, like Complex and other stuff maybe together with operators.
 
-SYG: This is a big scope that is possible to explore, but the interest of this proposal is limited to considering the first two use cases, which I already considered to be quite large. But in particular, this proposal considers the first two to be requirements and at the same time seeks to not preclude the other use cases that folks might be interested in. And for this reason, as you’ll see, when I actually get to the presentation of the actual technical parts, this proposal is intended to be pretty minimal, with a bunch of future-proofing added in. Hopefully so that we can move incrementally to enable some new expressivity sooner than later and build on it as a building block. 
+SYG: This is a big scope that is possible to explore, but the interest of this proposal is limited to considering the first two use cases, which I already considered to be quite large. But in particular, this proposal considers the first two to be requirements and at the same time seeks to not preclude the other use cases that folks might be interested in. And for this reason, as you’ll see, when I actually get to the presentation of the actual technical parts, this proposal is intended to be pretty minimal, with a bunch of future-proofing added in. Hopefully so that we can move incrementally to enable some new expressivity sooner than later and build on it as a building block.
 
 SYG: [slide 3] So, to motivate it better. The first one is shared memory concurrency, and I’ve given a vision talk in the past about why that is important to me, and hopefully to the ecosystem. So the basic idea is as always: Let’s use more cores, but why should we do it via shared memory versus something more principled that doesn’t have data races by construction. For example, well, the mega-apps—like GSuite, MS Office, maybe the TypeScript compiler—are running into a performance wall today. And a possible way out could be to give them concurrency sooner than later. These mega-apps and experts will need the expressivity of shared memory, even with something with more guardrails built in. I think this fits with our general approach, with our beginning, to JavaScript language’s general approach to concurrency.
 
@@ -458,9 +464,9 @@ SYG: [slide 21] The stuff that’s going to be hard is obviously the garbage col
 
 SYG: [slide 22] The stuff that’s really hard are strings. All the engines have these very complex menageries of string types and string optimizations, such that the string representations mutate in place depending on when things happen. When you flatten ropes, for example, when you concat strings, they get into these rope structures where you don’t actually just copy them, you hook them up into a DAG—but sometimes you need to access the character buffer and when you do, you flatten them. What happens when you flatten these ropes [?] transitions in place to a flat string? Sometimes you cannot apply them, AKA intern, where to duplicate them [?] so that you can compare strings that are duplicated by pointer equality. This gets inserted to a table; that table now needs to be thread-safe when that representation happens in place. Sometimes you even externalize strings, where you move the ownership of the character buffer out of the JS engine into the host, like the HTML engine or something. It’s pretty hard to make these thread-safe and performant. It’s a major challenge. I’ve been working on it for a few months. It’s kind of fun, but it’s actually really hard. This is just to call that out.
 
-SYG: [slides 23–24] And yeah, that’s basically it for the motivation and very rough idea of what the technical solution might look like. And I would like to go through the queue and then ask for Stage 1 with details of what exactly I’m asking for on the right-hand side here. 
+SYG: [slides 23–24] And yeah, that’s basically it for the motivation and very rough idea of what the technical solution might look like. And I would like to go through the queue and then ask for Stage 1 with details of what exactly I’m asking for on the right-hand side here.
 
-KM: I’m still still on board with this. Don’t know what happened. But yet he didn’t get back to you in time. But yeah, now it’s I still I’m a fan of the idea. And I’m happy to co-champion. 
+KM: I’m still still on board with this. Don’t know what happened. But yet he didn’t get back to you in time. But yeah, now it’s I still I’m a fan of the idea. And I’m happy to co-champion.
 
 SYG: Awesome. Thank you.
 
@@ -470,20 +476,20 @@ ATA: Yeah, it is concerning. So in two slides, there was a slide about what’s 
 
 YSV: Yeah, that does more or less answer it. Now I can’t speak for our Wasm team, they have very limited time in terms of giving this proposal the amount of time that it needs. So they haven’t been able to come back to me with regards to any further specific issues they have here. But what I would like to say is I’m perfectly fine with going to Stage 1. I want to spend some time working with a few people not only on the direct Wasm team, but also adjacent to it. So ATA would be one person, but I also want to speak with Luke Wagner and a couple of other folks to get a bit more feedback here before we would look at something like Stage 2. The WebAssembly team on Mozilla’s side, on SpiderMonkey, is a little uncomfortable with how quickly this is moving forward. And I will try to get some information soon, but I can’t promise how soon that will be. So if you’re looking to move this quickly to Stage 2, I would ask that we work closely together on the pacing of it.
 
-SYG: I hear you and I intend to work closely with you. To the urgency question and the speed that I’m envisioning. This slide [slide 22, about strings] is I think the actual thing that might block implementations for a significant amount of time, and that is what I’m working on, and that is not blocked by, you know, standards progress. I think I want to get the ball rolling here. There are many interested parties and let’s try to nail down some design. That is amenable to everybody while this part which I think is the hard part is happening. 
+SYG: I hear you and I intend to work closely with you. To the urgency question and the speed that I’m envisioning. This slide [slide 22, about strings] is I think the actual thing that might block implementations for a significant amount of time, and that is what I’m working on, and that is not blocked by, you know, standards progress. I think I want to get the ball rolling here. There are many interested parties and let’s try to nail down some design. That is amenable to everybody while this part which I think is the hard part is happening.
 
 YSV: Yeah, for sure. For this, I’m going to have our GC folks take a look and work with you on that once they’ve got some cycles to do that.
 
-JWK: Currently on the web, the concurrent programming model is based on post messages instead of memory sharing. Adding a high-level abstraction of shared structs… That means we are encouraging the concurrent programming model based on memory sharing. 
+JWK: Currently on the web, the concurrent programming model is based on post messages instead of memory sharing. Adding a high-level abstraction of shared structs… That means we are encouraging the concurrent programming model based on memory sharing.
 
 SYG: I will say no, so one answer there is that SharedArrayBuffers exist. So we already have shared memory and the other part of the answer is that—
 
-JWK: SharedArrayBuffer is a low-level API and it’s hard to use. 
+JWK: SharedArrayBuffer is a low-level API and it’s hard to use.
 
 SYG: I think, at least right now, this is also fairly hard to use even with all the bells and whistles. I imagine that will need here for these to be more ergonomic for power users like function sharing. Opting into this kind of programming is just hard to get right. I’m not seeing the encouragement where, if the encouragement from their syntax were, “Now you can make these objects,” they will run into issues pretty quickly. It is a risk that we might be encouraging a dangerous style of programming, but escape hatches exist. I remain very convinced and I feel strongly about this: escape hatches for these kinds of power app experts [partners?]. Pressure will remain on that front, and this is for them. If you can refer back to the [vision talk I gave about concurrency in general a year ago](https://github.com/tc39/notes/blob/master/meetings/2020-11/nov-16.md#concurrent-js-a-js-vision)—I think the future of concurrency on the web is we need to own up to having just these two concurrency models. This message passing thing, that’s mostly done by race-free construction and shared memory. And it happens. We’re doing shared memory first, but the longer-term vision I have is not this being the primary way to get concurrency on the web where the GSM [?] system, but it is a building where I imagine that we can explain other kinds of objects that can be shared among threads in a safer manner.
 
 JWK: Okay, I think it’s fair too. JS should be able to support multiple patterns (like FP and OOP).
- 
+
 MM: I’m very, very skeptical of this entire direction. The non-shared ones, the struct classes: those actually look very nice for reasons that you didn’t go into at all and seem to be completely outside of your motivations. They actually share a lot with what I was trying to accomplish with defensible classes, and I think you’re succeeding where I wasn’t able to figure out how to succeed because you actually got more restrictive than occurred to me, like the fact that they can only inherit from struct classes and that they're initialized all at once. There’s no partially initialized state that’s visible. So, that’s all great.
 
 MM: On the concurrency, on the shared things: I think that this is really about the soul of JavaScript, as a character of the language, and what makes it something that lots of regular application developers are able to use successfully, including using JavaScript’s concurrency successfully. The concurrency, like JWK was mentioning, is the message passing concurrency.
@@ -496,11 +502,11 @@ MM: There’s no good solutions to those things. Shared-memory multi-threading i
 
 MM: And the argument that experts will use this, and regular users can choose not to, just doesn’t hold once there’s an ecosystem. And people are trying to use some high-performance libraries that were constructed by experts to use these features. There is a contagiousness of complexity on the code that just tries to make use of those libraries. So none of this is an argument against Stage 1, you know. Certainly as for Stage 1, I’m fine. But I want to make it very, very, very clear: I really hope we don’t introduce this level of hazard and footgun into the JavaScript language that will really destroy the character of the JavaScript application program.
 
-SYG: Thank you, Mark, for your perspective. It’s somewhat of a philosophical disagreement. We’re perhaps less misaligned than you might think. I think I want the same future you want. Except I don’t see a way around escape hatches. and we can discuss that offline to see how we can further restrict these. I’m operating also under the design principle that shared memory stuff must be very explicitly opted into. And this contagion, I share that same concern but this contagion I also feel will be here in an even worse pattern If we do not get ahead of this, in the sense that we did with SharedArrayBuffers by WasmGC. 
+SYG: Thank you, Mark, for your perspective. It’s somewhat of a philosophical disagreement. We’re perhaps less misaligned than you might think. I think I want the same future you want. Except I don’t see a way around escape hatches. and we can discuss that offline to see how we can further restrict these. I’m operating also under the design principle that shared memory stuff must be very explicitly opted into. And this contagion, I share that same concern but this contagion I also feel will be here in an even worse pattern If we do not get ahead of this, in the sense that we did with SharedArrayBuffers by WasmGC.
 
 MM: I was reluctant to approve SharedArrayBuffers. And the reason I approved it is that the pressure from games made it seem like it was inevitable that whether TC39 approved it or not. All the browsers were going to implement it and games were going to use it. And then far, the reason that we’re still in a good place is basically because SharedArrayBuffers has been a resounding adoption disaster. People don’t use it. And hopefully they will continue to be an adoption disaster and anything that makes shared memory multithreading usable will make it more adoptable, which will be a strict backward motion from the current state where people could use it and destroy safety properties, in theory. But right now, at least they’re not.
 
-JWK: One of the primary use cases for shared memory and shared structs are for WebAssembly, WebAssembly needs a shared struct because they need to handle the code compiled from C++ or some other languages. I think it’s acceptable to keep the shared struct inside multiple Wasm threads, but not let them leaked into the JavaScript side. Multiple Wasm threads can program by the shared memory and if they want to send the results to JavaScript, they need to go through the message passing. I think that is better to have. 
+JWK: One of the primary use cases for shared memory and shared structs are for WebAssembly, WebAssembly needs a shared struct because they need to handle the code compiled from C++ or some other languages. I think it’s acceptable to keep the shared struct inside multiple Wasm threads, but not let them leaked into the JavaScript side. Multiple Wasm threads can program by the shared memory and if they want to send the results to JavaScript, they need to go through the message passing. I think that is better to have.
 
 SYG: I disagree and I think real products would as well.
 
@@ -510,13 +516,13 @@ SYG: We’re out of time: two minutes. Unfortunately, the memory model question,
 
 WH: I’d like to ask a question: In your slides when you access that `x` field, are all of those accesses atomic or not?
 
-SYG: Do you mean sequentially consistent? Or do you mean memory ordering? 
+SYG: Do you mean sequentially consistent? Or do you mean memory ordering?
 
-WH: Memory ordering. 
+WH: Memory ordering.
 
 SYG: Yes, they are atomic in that they won’t tear, but they are unordered. The current intention is to also extend atomics in this way. I didn’t show this level. If you need GC access, you can do this.
 
-WH:  Okay, in this case, I do not believe that this is safe.
+WH: Okay, in this case, I do not believe that this is safe.
 
 SYG: I think it is, but let’s check.
 
@@ -530,32 +536,34 @@ SYG: Okay. Sorry, [where was?] I? Let’s continue this chat. This needs to be w
 
 JWK: I like the non-shared parts, but the shared parts are skeptical. I think Stage 1 is okay though.
 
-WH: Yeah, I do not believe this can be implemented efficiently for the reasons I stated, but you’re welcome to explore it. 
+WH: Yeah, I do not believe this can be implemented efficiently for the reasons I stated, but you’re welcome to explore it.
 
 MM: Yeah, I reluctantly do not object.
 
 RPR: Okay, I did hear one positive from DE there and another positive from LEO and a few skeptics that are not blocking. So I’ll conclude that we have Stage 1, congratulations.
-### Conclusion/Resolution
-* Stage 1
 
+### Conclusion/Resolution
+
+- Stage 1
 
 ## Resizable buffers
+
 Presenter: Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/tc39/proposal-resizablearraybuffer/issues/68)
 
 SYG: It's just an FYI of a normative bug that we fixed in the Resizable Buffers proposal that my teammate Mario found during implementation. Resizable buffers allowed the buffers to be resized. So It is possible that you resize the buffers such that the typed array view on top becomes exactly at the bounds that you resize it to.
 
-SYG: So the normative issue we found is that, when you resize and underlying buffers, such that the view becomes zero length, where the bounds of the view on top kind of CIS [?], exactly at the bounds of the underlying buffer, this the spec draft was throwing out of bounds. For a variety of reasons you can read on the issue here, this didn't make as much sense as I had thought. We already allowed zero length. Like the race to begin with. So this is a this is a very small change to basically change a “≥” sign to be a ">" sign such that these kinds of these particular, kinds of typed arrays considered in bounds, even though they have a length of 0 and they don't throw when you should have access them. Because the current idea is that out of bounds raised on top of resizable buffers behave like typed arrays with detached buffers and making these kinds of zero-length typed arrays behave like detached buffers is undesirable. Any concerns with this change? 
+SYG: So the normative issue we found is that, when you resize and underlying buffers, such that the view becomes zero length, where the bounds of the view on top kind of CIS [?], exactly at the bounds of the underlying buffer, this the spec draft was throwing out of bounds. For a variety of reasons you can read on the issue here, this didn't make as much sense as I had thought. We already allowed zero length. Like the race to begin with. So this is a this is a very small change to basically change a “≥” sign to be a ">" sign such that these kinds of these particular, kinds of typed arrays considered in bounds, even though they have a length of 0 and they don't throw when you should have access them. Because the current idea is that out of bounds raised on top of resizable buffers behave like typed arrays with detached buffers and making these kinds of zero-length typed arrays behave like detached buffers is undesirable. Any concerns with this change?
 
 RPR: You have consensus.
 
 ### Conclusion/Resolution
-* Consensus reached
 
-
+- Consensus reached
 
 ## Incubation call chartering
+
 Presenter: Shu-yu Guo (SYG)
 
 SYG: We actually worked through the backlog of chartered incubation calls from meetings, that we have an empty charter right now. So before I nominate some early stage proposals, does anyone with an early stage proposal want to have an incubator call? For the newcomers, incubator calls are our calls that happen bi-weekly at different times, depending on their scheduled time according to the stakeholders, where we try to get a faster feedback loop between the champions and stakeholders within TC39. We have these calls, where the champions preferably ask for feedback on specific items about the designer concerns of the proposal, and you hash them out in a high-bandwidth setting in a call outside of plenary. The idea is we give some sanctioned time so we free up plenary time for more important stuff. Any interested parties?
@@ -570,11 +578,12 @@ SYG: Sounds like a good topic. And the one I was planning to call out, if GB and
 
 GB: I can speak briefly to that. Could certainly be worthwhile if there’s things that can be fleshed out. I'd certainly be open to that, and also to DE's point for the WebAssembly-and-JavaScript API. We’d be really grateful to you.
 
-SYG: Thanks GB. I think given our faster cadence we usually have realistically just time for two calls—so with proxy performance and Wasm–JS interaction—that should fill out the time until the next plenary, in which case we can put strings or the well-formedness of strings [?]. If you’ve got a rat [?] interested. Thank you. Look out for the new charter [?] and sticky [?] stuff from the Reflector, scheduling the calls. 
+SYG: Thanks GB. I think given our faster cadence we usually have realistically just time for two calls—so with proxy performance and Wasm–JS interaction—that should fill out the time until the next plenary, in which case we can put strings or the well-formedness of strings [?]. If you’ve got a rat [?] interested. Thank you. Look out for the new charter [?] and sticky [?] stuff from the Reflector, scheduling the calls.
 
 RPR: Thank you for running these incubation calls. I think they’ve been very successful at lightening the load on the plenary, which has been really good this year.
 
 ## Conclusion
+
 RPR: We are complete. We got through more items than we originally had planned. Thank you to everyone who got through things earlier than their time box. It’s the end of the meeting.
 
 [chat]
@@ -582,4 +591,3 @@ RPR: We are complete. We got through more items than we originally had planned. 
 RPR: I will also apologize that I was due to provide an update on scheduling next year. I didn’t get time to prepare the slides on that. I will say that we’ve taken the feedback into account and the one thing I say we are looking to do for next year’s schedule is to reduce our eight meetings to six meetings. You can see the feedback on that is all in the spreadsheet.
 
 [chat]
-

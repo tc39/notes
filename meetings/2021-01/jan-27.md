@@ -1,8 +1,8 @@
 # 27 January, 2021 Meeting Notes
+
 -----
 
-
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Ross Kirsling        | RKG            | Sony               |
@@ -43,14 +43,14 @@
 | Yulia Startsev       | YSV            | Mozilla            |
 | Chengzhong Wu        | CZW            | Alibaba            |
 
----
+-----
 
 ## Temporal
+
 Presenter: Ujjwal Sharma (USA)
 
 - [proposal](https://github.com/tc39/proposal-temporal)
 - [slides](https://docs.google.com/presentation/d/1HMt7ytn3SOzYk2TUSdXHejkIDpL8Cy5KvZ9Yrz0JdBU)
-
 
 USA: Hello everyone. I'm Ujjwal and on behalf of the Temporal Champions group, allow me to give you the Temporal update. Temporal is a proposal that is trying to add a modern ergonomic date-time API to JavaScript. We've been working on a load of exciting functionality all the way from a reusable API basically to stuff like that. There's been work from people at Igalia, Bloomberg, Google, and a host of invited experts and more. And then you'd probably ask me what we've been doing for the last two months. Well, not much actually. As we discussed in the previous meeting the proposal has basically been done. We've changed a few things here and there. So, let me get into the details: we iterated on the month representation of in the data structure the data model. This is mostly based on Manish [Goregaokar]'s analysis of non-Gregorian calendars as well as the implementation work that's been going on in the CLDR. If you're using the Gregorian calendar, you're probably not having to do anything. But if you're using any of the calendars that have a rather creative leap month, of like the Hindu calendar (?) We've been doing a bunch of minor changes around type coercion and validation to make the API more stable, and a bunch of editorial changes. Of course, the documentation has been improving and I hope it's been helpful in your review so far. We've also started working on HTML integration. There is a pull request that is linked to in the slide. We can find these files on the GitHub. One of the big things that has been on our mind, and my mind in particular, has been been standardizing this format as we discussed in the last meeting. We've worked hard on adding support for non-Gregorian calendars and we want to have a way to represent that in the string representation across the wire. So, of course we had to come up with a persistent format for ZonedDateTime. But we also didn't want to invent a new non-standard format. As you know, tools like Java and Linux already use a non-standard format that appends a new time zone suffix to the existing standard, and we didn't want to build onto that and make the space even more problematic. So the missing piece here was of course the representation of the time zone and the calendar in this format and also a few other artifacts that were just outdated in our design. We have a draft out right now that extends RFC 3339 that is being discussed by by the IETF CalConnect mailing list and the Calendar working group and the idea is to bring it to IETF in early March and get it in the standard as soon as possible so that it can be normatively referenced from the spec.
 
@@ -66,19 +66,16 @@ USA: Yes. They are on Thursdays every week.
 
 YSV: Thank you. It looks like we don't have any comments or questions. Thank you so much for the presentation and if people are interested in getting a bit more information about Temporal, if people are maybe implementing it, please go to the Temporal meeting.
 
-
 ### Conclusion/Resolution
 
 Proposal is camera-ready, will go for Stage 3 in March.
 
-
-
-
 ## Async do expressions
+
 Presenter: Kevin Gibbons (KG)
 
-- [proposal]()
-- [slides]()
+- proposal
+- slides
 
 KG: This is a follow-up to my earlier presentation on do Expressions, but it is not the same proposal. So there's a repository for this, which is not yet on the tc39 org, but it has very initial spec text and a readme and so on that you can read. So the problem statement, since this is going for stage 1, is that introducing an async context requires defining and invoking a new function - specifically a new async function, either an "async function" function or a async arrow function, and that's conceptually and syntactically quite heavy for what is a relatively common operation. I would like to make it easier. So my proposal for how to do that is an async do expression, which is a variant of the do expressions that we discussed earlier.
 
@@ -90,13 +87,13 @@ MM: So I think I understand the answer, but I want to make sure: if you want to 
 
 KG: I would say that there's a couple of other important differences. One is that you're not always in a function context. I think the ability to introduce an async context at the top level of the script is quite valuable for code that I write. And the other is this example with promise.all where, you're right, I could just write these as do expressions that contain an await. But as you said that would pause the execution of the outer function, so these two things in this example on screen would not be happening in parallel and for something like promise.all the intent is generally to, just as you say, fork execution.
 
-MM: Okay, so none of that was an objection. I just wanted to sure I understood the motivation. Thanks. 
+MM: Okay, so none of that was an objection. I just wanted to sure I understood the motivation. Thanks.
 
 KG: Yes, that is the motivation.
 
 WH: I guess mine is a similar question. If you're inside an async function, what's the difference between `do` and `async do`?
 
-KG:  inside of an async function? I don't think there would be any differences - actually, no, that's not true. The difference is that an async do the return value of the async do would be a promise rather than a regular value so you have to await to get the value out. I don't think it would be particularly useful to use an async do inside of an async function except in contexts like this where you want to do two things in parallel. The primary thing is that the inside of the async do does not pause the execution of the outer function.
+KG: inside of an async function? I don't think there would be any differences - actually, no, that's not true. The difference is that an async do the return value of the async do would be a promise rather than a regular value so you have to await to get the value out. I don't think it would be particularly useful to use an async do inside of an async function except in contexts like this where you want to do two things in parallel. The primary thing is that the inside of the async do does not pause the execution of the outer function.
 
 MM: Okay. I'm confused by the qualifier in that answer. It seems to me that it's just as useful in an async function, in that cases come up where you want the outer function to proceed with the promise and you want to fork the flow of control.
 
@@ -126,11 +123,11 @@ KG: It would still result in a promise. It would be as if you had done promise d
 
 MM: No, it should should also reify thrown exceptions into rejected promises because that's what -
 
-KG:  you're quite right. It would be as if you had a do expression with a try catch that had the promise constructor that resolved in the try branch and the reject in the catch branch. You're right.
+KG: you're quite right. It would be as if you had a do expression with a try catch that had the promise constructor that resolved in the try branch and the reject in the catch branch. You're right.
 
 MM: Good.
 
-DE: Yeah, so I'm skeptical of focusing too much on this performance aspect that SYG and YSV raised. I think if we're thinking about programmers' mental model or folk wisdom, maybe it is more accurately put that there's the meme that promises are heavy and closures are heavy. These ideas both are sort of out there with people micro optimizing for them a little too much maybe. My suspicions are to agree with KG that in most realistic cases you're going to be using this for an actual reason, and the closure overhead won't be dominating. I think it also would not be so hard to explain that the `async do` is like a little `async function`. I think this is a great proposal. It's very useful to encourage the kinds of async programming patterns will be more optimal for doing things in parallel. So I'm in favor of it. 
+DE: Yeah, so I'm skeptical of focusing too much on this performance aspect that SYG and YSV raised. I think if we're thinking about programmers' mental model or folk wisdom, maybe it is more accurately put that there's the meme that promises are heavy and closures are heavy. These ideas both are sort of out there with people micro optimizing for them a little too much maybe. My suspicions are to agree with KG that in most realistic cases you're going to be using this for an actual reason, and the closure overhead won't be dominating. I think it also would not be so hard to explain that the `async do` is like a little `async function`. I think this is a great proposal. It's very useful to encourage the kinds of async programming patterns will be more optimal for doing things in parallel. So I'm in favor of it.
 
 SYG: I agree with DE that and KG that I'm not too worried about the actual performance issues. I was more worried about the memory implications in terms of debugging leaks.
 
@@ -150,9 +147,9 @@ DE: if anything would be permitted in sync do expressions, I mean if we wanted t
 
 KG: My intention is to allow await and yield to be inherited from the outer context in regular do expressions. I think that's a big part of the proposal, is that it's just like any other expression and has the same capabilities as any other expression. Anyway, I don't want -
 
-DE:  That seems perfectly consistent to me. Sorry for adding confusion.
+DE: That seems perfectly consistent to me. Sorry for adding confusion.
 
-TAB: I mean given that the await keyword already has a distinct meaning, but obviously required meaning in async to I also think that's fine to have yield as well. I'm not confused about yield, return would confuse me. 
+TAB: I mean given that the await keyword already has a distinct meaning, but obviously required meaning in async to I also think that's fine to have yield as well. I'm not confused about yield, return would confuse me.
 
 WH: By this argument you should ban `yield` from sync do expressions as well. There’s also similar confusion about what `this` might refer to.
 
@@ -164,20 +161,24 @@ KG: Okay, understood.
 
 YSV: Please Kevin go ahead and ask for stage 1.
 
-KG:  I'd like to ask for stage 1 for this general problem of introducing an async context in a syntactically and conceptually lighter way, with the specific proposed solution of async do in mind but open to exploring other solutions if async do proves not to be viable.
+KG: I'd like to ask for stage 1 for this general problem of introducing an async context in a syntactically and conceptually lighter way, with the specific proposed solution of async do in mind but open to exploring other solutions if async do proves not to be viable.
 
 YSV: any objections?
 
 WH: Sounds good!
 
 YSV: Sounds good to me too. It looks like you have stage 1, congratulations.
+
 ### Conclusion/Resolution
+
 - Stage 1
+
 ## Class Brand Checks
+
 Presenter: John Hax (HAX)
 
-- [proposal]()
-- [slides]() 
+- proposal
+- slides
 
 JHX:. So this is the class brand check proposal. This proposal actually come from the discussion of another proposal: ergonomic brand checks for private fields. Specially issue number 13. I think the dcleao raised this issue and I think he have a very strong opinion here here. This also inspired me to re-examine the actual use case from the beginning.
 
@@ -235,7 +236,7 @@ WH: I agree with JHD.
 
 SYG: Agree with JHD that this doesn’t obviate `#x in obj`.
 
-CZW: I'm wondering about the arguments that the private fields are different from duck typing. Private fields are unique to the class  So how could private Fields be duck typing typing in the case?
+CZW: I'm wondering about the arguments that the private fields are different from duck typing. Private fields are unique to the class So how could private Fields be duck typing typing in the case?
 
 JHD: That's a fair question. I think that the phrase “duck typing” is probably not the most accurate term here. I'm more thinking that the reason that I check a public property on a thing before I access it is because I want to know that it's there before I access it, and that this is the same motivation: the reason that I would want to do that on a private field. The meaning of duck typing is, “does it quack like a duck, therefore it's a duck”, right? I'm not trying to do that with private fields. I'm just trying to be explicit in my code where I reference the thing I've already checked is there.
 
@@ -292,17 +293,19 @@ YSV: Stage 1?
 [yes]
 
 ### Conclusion/Resolution
+
 - Stage 1, with the explicit understanding that it will not be a replacement for Ergonomic Brand Checks
+
 ## Ergonomic Brand Checks
+
 Presenter: Jordan Harband (JHD)
 
-- [proposal]()
-- [slides]() 
-
+- proposal
+- slides
 
 JHD: The proposal is the same as it was back in June when I first asked for stage 3. There have been a series of objections that have been explored between meetings, and in 1 or 2 different incubator calls, and on GitHub. I believe all of the objections have been addressed and that the last point was, would the previous presentation of the class brand checks proposal be a replacement? I continue to believe it would not be a replacement; that it would be a great addition; they would complement each other. So essentially that's where I'm at. The proposal is fully reviewed still because it hasn't changed since all the editors and reviewers last reviewed it; there continues to be a need for it; and I would like to ask for stage 3.
 
-MM: I support stage 3. 
+MM: I support stage 3.
 
 WH: I support stage 3.
 
@@ -338,7 +341,7 @@ JWK: I'm curious. Does it generally mean if a class is partially initialized, fo
 
 BFS: There's nothing abnormal about it.
 
-CZW: I'm still concerned in the partial initialization case that how could probably in the partial instance?  Private in can only detect the partial instance but not - there is no way to recover from it. So it has to be a fatal error in the case.
+CZW: I'm still concerned in the partial initialization case that how could probably in the partial instance? Private in can only detect the partial instance but not - there is no way to recover from it. So it has to be a fatal error in the case.
 
 BFS: Sure, so, let's go back to the example with addEventListener. So one thing you can do is if you're concerned that your class may be partially initialized for some reason, inside of your side effects. You can perform a check to see how far initialization occurred and remove things such as the own event listener that exists on it. So we can't make partial initialization impossible, nor can we make it recoverable - the key is we want to make it detectable. So that's what this is allowing us to do without causing errors by trying to access things that don't exist.
 
@@ -350,7 +353,7 @@ BFS: We don't actually have those semantics ironed out so I'm going to say no.
 
 SYG: I think one of my got deleted; I had two. so I'll go through the first one which was I think on technical merits I am strongly in favor of designing building block features, which I see as a sign of composability, to express higher level intentions. That there may be opinions that it's not tailor fit for a higher level intention. I want to strongly disagree that that is a sign of a feature that is not that is a negative sign of the future. I don't think that it's a negative sign with a feature that it is low level. So that's the first point and I think Bradley cover covered very well the difference in use case. and how both are useful. And my second point is that I thought we had just agreed several delegates had just agreed to stage one kind of contingent on, that the class dot has instance of proposal is not a replacement for this one. And now it seems like there are blocking concerns on this one because the other one exists, something seems off to me here with the process.
 
-BFS: Yes, I'd agree. It feels like you get more capabilities from this proposal than has instance. So I would prefer it if it comes down to one or the other. 
+BFS: Yes, I'd agree. It feels like you get more capabilities from this proposal than has instance. So I would prefer it if it comes down to one or the other.
 
 JHX: it's just one thought I want to say it becomes a political issue. Can we focus on the technical?
 
@@ -434,19 +437,20 @@ YSV: Final Call.
 
 [silence]
 
-YSV: Okay. Now I will say that we have stage 3. Thank you everybody. Thank you everyone for your patience with that. 
+YSV: Okay. Now I will say that we have stage 3. Thank you everybody. Thank you everyone for your patience with that.
 
 ### Conclusion/Resolution
+
 - Stage 3
 
 ## Extend TimeZoneName Option Proposal for stage 1
+
 Presenter: Frank Yung-Fong Tang (FYT)
 
 - [proposal](https://github.com/FrankYFTang/proposal-intl-extend-timezonename/)
 - [slides](https://docs.google.com/presentation/d/1CABEQP_U-vCUxGKXbJmaZKvJZHEdFZZtAHGAOnRbrCY/edit?usp=sharing)
 
-
-FYT: Okay. Hi everyone. My name is Frank Town Walk by Google on the be a internationalisation team and today we'll talk talk about a proposal extend the Ecma for to to this plane and sorry. Until I can afford to save time format so sorry. Could someone mute? Yeah. Thank you the motivation of proposed. So is that we tried to extend the option in the Intl data format for better better support of time option. Sorry. There's someone still have a lot of noise that was typing to give me a little down. Could you you meet please? Thank you. So currently and until data format format. We have different style for time zone name: long or short. This proposal Basically just adding four other new options - short GMT,  long GMT, short wall, and long wall. But what does that mean? so if I run a very simple script that the show is so just for looped into this six different option and either the Intl data format, or you can actually called the dates to Locale time string with that. You will see currently the English Locale the short will show PST  the long will show Pacific Time send client, but they are time people. You may want to see a GMT offset or something we call wall time. the PT is an abbreviation for specific time (?). So real use case on the web right now, I think this is probably server-side rendering for example, this example show you the NPR news. They were using ET instead of EST, right or EDT because they simply just want to say this is eastern time or MT, mountain time. Sometimes whenever for example the right hand side we have this financial result release. They just want to say eastern time. This is what we call a long wall. So instead of the Eastern Standard Time it was Eastern. This is another example of what will happen if this display in Chinese, this this is a traditional Chinese. So the current the first two is whatever currently already offer in a coma for two and the lower floor was showing you the what my look like in the traditional Chinese Locale. So for example GMT in some other locale maybe will be localized or have a wrapping pattern around that, but it will show the reference related to GMT.
+FYT: Okay. Hi everyone. My name is Frank Town Walk by Google on the be a internationalisation team and today we'll talk talk about a proposal extend the Ecma for to to this plane and sorry. Until I can afford to save time format so sorry. Could someone mute? Yeah. Thank you the motivation of proposed. So is that we tried to extend the option in the Intl data format for better better support of time option. Sorry. There's someone still have a lot of noise that was typing to give me a little down. Could you you meet please? Thank you. So currently and until data format format. We have different style for time zone name: long or short. This proposal Basically just adding four other new options - short GMT, long GMT, short wall, and long wall. But what does that mean? so if I run a very simple script that the show is so just for looped into this six different option and either the Intl data format, or you can actually called the dates to Locale time string with that. You will see currently the English Locale the short will show PST the long will show Pacific Time send client, but they are time people. You may want to see a GMT offset or something we call wall time. the PT is an abbreviation for specific time (?). So real use case on the web right now, I think this is probably server-side rendering for example, this example show you the NPR news. They were using ET instead of EST, right or EDT because they simply just want to say this is eastern time or MT, mountain time. Sometimes whenever for example the right hand side we have this financial result release. They just want to say eastern time. This is what we call a long wall. So instead of the Eastern Standard Time it was Eastern. This is another example of what will happen if this display in Chinese, this this is a traditional Chinese. So the current the first two is whatever currently already offer in a coma for two and the lower floor was showing you the what my look like in the traditional Chinese Locale. So for example GMT in some other locale maybe will be localized or have a wrapping pattern around that, but it will show the reference related to GMT.
 
 FYT: so during the stage 0 remember, this is - we're asking to advance to stage one. Okay, so it's not to stage two, but during ecma 402 discussion working group discussion. They are actually originally couple other additional options that were proposed but Mozilla had some concern about payload size. If we have options. We may need to increase more data to be included. The browser so we do some study therefore after that. We actually remove some of the original possible values that cldr data actually provides, but we think that could be a little bit too much. But for what we currently have proposed, for options for the short GMT and long GMT for each Locale.
 
@@ -463,12 +467,15 @@ SFC: I support stage 1.
 RPR: Thank you, Shane. Okay, so we've had one message of support. So we just do a final check - any objections to stage one? [pause] No objections. Congratulations Frank you have stage 1. Thank you.
 
 ### Conclusion/Resolution
+
 - Stage 1
+
 ## Brand checking
+
 Presenter: Daniel Ehrenberg (DE)
 
 - [proposal](https://es.discourse.group/t/strong-brand-checking-in-javascript/557)
-- [slides](https://docs.google.com/presentation/d/1-zhONcg-vHS2klj9O9r7JWzeip-OqSIXnzDnXB7iGXE/edit) 
+- [slides](https://docs.google.com/presentation/d/1-zhONcg-vHS2klj9O9r7JWzeip-OqSIXnzDnXB7iGXE/edit)
 
 DE: Okay. So brand checking in JavaScript, this is a short presentation for an informal discussion. I don't have a big concrete proposal to make. So what is brand checking? We were using this term in earlier presentations this meeting. Brand checking is just a piece of TC39 jargon to be checking whether an object has an internal slot, which is the same thing really as a built-in private field. So internal slots are used to store the state of JavaScript objects that are built into the language or platform. So when do brand checks occur? They mostly occur right before using that internal slot. So before reading or writing one of these pieces of internal state, if you have an arbitrary object, you need to check that that exists and throw the appropriate exception if it doesn't exist. So why do brand checks exist? Most of the time that brand checks are used to check that this internal state can be used safely. So this is in contrast to a fully object-oriented design. These are the equivalent of private fields not public fields, so that means that the class or the language standard in this case is able maintain invariants about them making them safer to use. So there's many many different functions and methods in the JavaScript standard that do these brand checks. It's not at all rare, so lots of functions that are on prototypes so like Date.prototype.getFullYear() or Map.prototype.get(), these all at their first step check that they're working on what they what they think they are, that this value is has a particular brand or a particular Internal slot. It's also used on arguments to functions. For example, the TypedArray constructors, if you call it on a TypedArray or an ArrayBuffer then it will have a certain behavior. And that's done by checking the internal Slots of the argument. If you do JSON.stringify on a Number wrapper or a String wrapper those will be unwrapped due to this particular slot. Promise.resolve does so in a kind of an optimization way; if you pass in a real promise, then it won't create an extra layer of indirection. Array.isArray is a brand check but a special kind of brand check that I'll talk about later. And one example from web platform is postMessage: when you postMessage or do anything that uses the HTML serialization algorithm, such as write into IndexedDB, then there are certain classes that are built into the platform that are brand checked for, and serialized in a predictable way, such as Maps.
 
@@ -512,7 +519,7 @@ MM: I was against it, but I didn't block consensus because overall JHD’s accou
 
 JHD: One thing that I regret is that I didn't come up until much later with us an alternative suggestion of making `Symbol.toStringTag` properties be brand-checking accessors, which would have resolved those concerns, but now we’re in a different place.
 
-DE: I have my opinion, I guess I made it clear earlier in this presentation, but I don't know. I mean that's that's water under the bridge now. I guess people probably depend on the extensibility of `Symbol.toStringTag` at this point. I'm not happy about that. But yeah, so I think because brand checking is useful and because we've been consistently providing it for new classes that were added. And I think we should just make a direct API for it. and is the idea for this proposals long been called *Type*.is*Type*. and I have the *type* in italics to make it clear that that's not part of the name. So for example Map.isMap would be a static method that takes an object and tells you whether it has a map data internal slot. Actually this obviously isn't the final spec text because it doesn't handle the non object case. But the idea would be that rather than having ad hoc ways to test the brand, we have a built-in way that is easy to use.
+DE: I have my opinion, I guess I made it clear earlier in this presentation, but I don't know. I mean that's that's water under the bridge now. I guess people probably depend on the extensibility of `Symbol.toStringTag` at this point. I'm not happy about that. But yeah, so I think because brand checking is useful and because we've been consistently providing it for new classes that were added. And I think we should just make a direct API for it. and is the idea for this proposals long been called _Type_.is*Type*. and I have the _type_ in italics to make it clear that that's not part of the name. So for example Map.isMap would be a static method that takes an object and tells you whether it has a map data internal slot. Actually this obviously isn't the final spec text because it doesn't handle the non object case. But the idea would be that rather than having ad hoc ways to test the brand, we have a built-in way that is easy to use.
 
 DE: That's it. Discussion? Should we make a stage one proposal? Does anyone want to champion this?
 
@@ -526,7 +533,7 @@ DE: I want to make a note about Type.isType. At some point when James Snell brou
 
 JHD: I agree but I also would be happy to have that discussion within stage 1 on github.
 
-MM: I think that Dan's discussion of membranes really created a lot of confusion that I would like to clear up. When you say map dot isMap of M, and M is a proxy or a membrane and Map is your own local Map constructor -  in your proposal, the membrane has no opportunity to intervene and any intervention it did would fail the job. So going back, the thing about this is not that the membrane mechanism makes a special case for `this`, it's that there's nothing it can do with regard to the other parameters that helps because map.isMap is not invoking isMap on the membrane. I'm invoking it on a proxy from the member and invoking it on your own local static.
+MM: I think that Dan's discussion of membranes really created a lot of confusion that I would like to clear up. When you say map dot isMap of M, and M is a proxy or a membrane and Map is your own local Map constructor - in your proposal, the membrane has no opportunity to intervene and any intervention it did would fail the job. So going back, the thing about this is not that the membrane mechanism makes a special case for `this`, it's that there's nothing it can do with regard to the other parameters that helps because map.isMap is not invoking isMap on the membrane. I'm invoking it on a proxy from the member and invoking it on your own local static.
 
 DE: Sorry for my error here. I think this could be addressed by the membrane system overwriting your local Map.isMap to unwrap the membrane. We do a lot to maintain this patchability, and support for membranes specifically.
 
@@ -544,7 +551,7 @@ DE: Mark and I will follow up in the SES call about this.
 
 SYG: This is more of a clarifying question. the `Type.isType` strawperson - currently you are saying it does not behave like `Array.isArray` with proxy forwarding, right?
 
-DE: Exactly. 
+DE: Exactly.
 
 BFS: This seems to have some kind of public/private relation with `class.hasInstance`. Maybe these should be combined in some way as my initial thoughts. If we don't think it can be combined this does seem like a useful feature that we could try to move forward with. I could help if needed.
 
@@ -579,12 +586,15 @@ DE: Okay, Thanks. Yeah, I'll be happy to talk to you more so we could figure out
 DE: I want to repeat the call for champions or collaborators. I think JHD expressed interest offline, but anybody else who wants to work together on this, it would be great.
 
 ### Conclusion/Resolution
+
 - Did not seek advancement; JHD/BFS and others will bring a proposal in the future seeking stage 1.
+
 ## Relative indexing method
+
 Presenter: Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/tc39/proposal-relative-indexing-method)
-- [slides](https://docs.google.com/presentation/d/1UQGlq8t1zfAFa6TPvPpO9j6Pyk4EOv62MFQoC2NshKk/edit?usp=sharing) 
+- [slides](https://docs.google.com/presentation/d/1UQGlq8t1zfAFa6TPvPpO9j6Pyk4EOv62MFQoC2NshKk/edit?usp=sharing)
 
 SYG: This is not going for stage 4, despite the agenda item title, because when I added it I was not yet aware of the web compat issue.
 
@@ -602,7 +612,7 @@ SYG: That is correct. And that's my understanding. I'm fairly confident that I d
 
 JHK: Yeah, I want to mention that to the sugar library have an "at" method on the array prototype and from the first version and to to 1.3 0.9. they will have an issue. If any websites use sugar JS at method, and use the feature like the provide like the loop mood or get multiple items because their "at" method supported, so it will be break on the if we land like that. Kevin has has a reply.
 
- Yeah, sorry. It's not enough for them to just have the method to cause breakage because if they're installing the method the way one would normally install a method by doing array.prototype.a equals function that code will continue to work fine for no break. If so, what are they doing in the Chrome Canary which already have the at the code well have different Behavior.
+Yeah, sorry. It's not enough for them to just have the method to cause breakage because if they're installing the method the way one would normally install a method by doing array.prototype.a equals function that code will continue to work fine for no break. If so, what are they doing in the Chrome Canary which already have the at the code well have different Behavior.
 
 KG: So do you know how they're setting the method such that it's breaking?
 
@@ -612,16 +622,16 @@ SYG: Thanks for speaking about the sugar JS thing. I don't know that Library. I 
 
 SYG: I will report back next meeting to see if there's any updates on the fixes and what we should do if there's more compat issues.
 
-
 ### Conclusion/Resolution
+
 - Not advancing, waiting on outreach to bricklink.
+
 ## EraDisplay for Stage 1
+
 Presenter: Shane Carr (SFC)
 
-- [proposal]()
-- [slides]() 
-
-
+- proposal
+- slides
 
 SFC: So I'll be giving this presentation about eraDisplay for stage 1. I want to give special thanks to Louis-Aime for helping me with this presentation. He's an invited expert who's been contributing to our Ecma 402 discussions. Much of the content is from him. So thank you very much for that.
 
@@ -657,31 +667,32 @@ RPR: Any objections?
 
 RPR: There are none. Congratulations. You have stage 1. Thank you.
 
-
 ### Conclusion/Resolution
+
 - Stage 1
+
 ## Alleviating the cost of spec complexity
+
 Presenter: SFC and ZB
 
-- [proposal]()
-- [slides](https://docs.google.com/presentation/d/142N-BWVV4zWkNogciRMsJk3LAs_EZjnKJDH6CIjD6fg/edit#slide=id.p) 
+- proposal
+- [slides](https://docs.google.com/presentation/d/142N-BWVV4zWkNogciRMsJk3LAs_EZjnKJDH6CIjD6fg/edit#slide=id.p)
 
-
-SFC: So alleviating the cost of growth. This is an open-ended discussion topic, but the structure of this presentation is we're going to first lay out a problem that we're trying to solve in ecma 402 in TC39 task group two and ZB will lay out the problem and then we're going to go over our proposed solution to that problem and discuss how it might relate to other standards bodies including this standards body, how it might affect task group one of TC39. But the first part of this presentation is going to be focused on ecma 402 and then we can discuss the implications of this elsewhere. So that’s my little introduction and now I'll turn it over to ZB to go over the problem statement. 
+SFC: So alleviating the cost of growth. This is an open-ended discussion topic, but the structure of this presentation is we're going to first lay out a problem that we're trying to solve in ecma 402 in TC39 task group two and ZB will lay out the problem and then we're going to go over our proposed solution to that problem and discuss how it might relate to other standards bodies including this standards body, how it might affect task group one of TC39. But the first part of this presentation is going to be focused on ecma 402 and then we can discuss the implications of this elsewhere. So that’s my little introduction and now I'll turn it over to ZB to go over the problem statement.
 
 ZB: Thank you, Shane. Okay, so just as a reminder and to get you all in our universe: Ecma 402 is a specific subgroup of TC39 with the specific goal of lowering the cost of making JavaScript-based apps work worldwide—so lowering the cost of internationalization. This is another interesting area for our group: we are trying to build APIs in a way that empowers non internationalization experts to write well internationalizable code without much hassle. So without having to learn to be internationalization experts. So those two goals are the core of what we're doing and also the strategy of what we use most of the time is that we are trying to provide lower level building blocks for user user lab components rather. And Building end-to-end Solutions, like how some libraries may approach their API design. So those are the three objectives for 402 proposals.
 
-ZB: So, what's the problem? (next slide please) The problem is that we feel like there is an increased tug of war right now between community-driven feature proposals that expand the scope and the long-term costs of growth of the standard. We see it more and more as one of the things that happen is that over last year ECMA-402 was very successful. So we provided all the foundational building blocks, which means that a lot of users who previously would just use client-side libraries for older internationalisation needs now rely on ECMA-402 to for the foundational pieces, and then come to us and say, you know, if you only add this one or two things then I basically will have all my needs fulfilled–and those one or two two additional things. There’s a long tail, of course. 
+ZB: So, what's the problem? (next slide please) The problem is that we feel like there is an increased tug of war right now between community-driven feature proposals that expand the scope and the long-term costs of growth of the standard. We see it more and more as one of the things that happen is that over last year ECMA-402 was very successful. So we provided all the foundational building blocks, which means that a lot of users who previously would just use client-side libraries for older internationalisation needs now rely on ECMA-402 to for the foundational pieces, and then come to us and say, you know, if you only add this one or two things then I basically will have all my needs fulfilled–and those one or two two additional things. There’s a long tail, of course.
 
 ZB: We spent some time trying to analyze like what is the coast of growth? Like what is the reason why we wouldn't want to just add all the possible features that anyone ever requests and this is I think shared this is General shared with the whole TC39, but we identify the API surface anything we add to ecmascript has to be maintained forever API quality as we make mistakes, they accumulate over time and lower the the quality of the specification and in particular one variant of this API quality deterioration is that we can make an optimal decision and time T1 but it will come in a conflict with the optimal decision at time T2 leading to an inconsistency in the spec. A good example is trying to standardize something around errors or calendars and then you know two years from now when Temporal is stabilized, maybe this there's going to be a better API design to be done. So If we don't extend APIs cook now we will be in a better position to extend it better later. But of course that's unpredictable at all that. That may never happen. So it's really hard to evaluate then there is a cost of deployment as we increase this spec size. We are increasing the amount of data and algorithms that have to be carried by all implementers and potentially. We also raised the barrier to entry the larger the API surface is the lower the likelihood of someone coming up with a new implementation or adding a new implementation (developing a new implementation) costs more, not just maintenance.
 
 ZB: So the payload thing is an interesting consideration for ECMA 402 in particular because compared to most of the TC39 specification API proposals, most of our proposals come with the payload because one of the values we are bringing is lowering the payload for a website. So the amount of data is a number of data tables that we're going to ship. So do we have a table for number formatting for date formatting, or plurals or something, multiplied by the number of locales. So facing a trade-off between JS engine size and the Ecma for to compatibility implementers may cut the number of locals which would hurt the internationalisation or selectively pick pieces of ECMA 402 and say “we are not going to implement some timezone formatting” or some relative time format because we want to keep our implementation small and that leads to fragmentation of the ecosystem. Both approaches may also increase fingerprint-ability because they make it easier to detect that you're on a mobile Chrome versus desktop Chrome because they ship a different number of locales on mobile versus desktop.
 
-ZB: We also categorized like two types of growth that we see one is a classic API extension, which is usually just a new Option argument toggle something like error display that changes presented. This is sure between TG1 and TG2 because those extensions carry the cost and risk of a new API, but usually if there is motivation to add it, we are in an unambiguous, fairly good, position to make a decision whether we want to add this feature. What is more interesting are the new APIs that usually bring weight and this is fairly unique to ECMA-402, that the API increases the size of the implementation that every implementer has to to carry. 
+ZB: We also categorized like two types of growth that we see one is a classic API extension, which is usually just a new Option argument toggle something like error display that changes presented. This is sure between TG1 and TG2 because those extensions carry the cost and risk of a new API, but usually if there is motivation to add it, we are in an unambiguous, fairly good, position to make a decision whether we want to add this feature. What is more interesting are the new APIs that usually bring weight and this is fairly unique to ECMA-402, that the API increases the size of the implementation that every implementer has to to carry.
 
-ZB: So this is this is basically the problem scope as we see it right now, and we started looking into how we can solve it in within ECMA-402 so that our decisions are not, you know, don't differ depending on who is vocal at a given meeting and who is there the person making the final decision we were trying to make it a little bit more objective. So here's the framework that we thought about it.  Shane, the microphone is yours.
+ZB: So this is this is basically the problem scope as we see it right now, and we started looking into how we can solve it in within ECMA-402 so that our decisions are not, you know, don't differ depending on who is vocal at a given meeting and who is there the person making the final decision we were trying to make it a little bit more objective. So here's the framework that we thought about it. Shane, the microphone is yours.
 
-SFC: Okay, thank you. So I'll talk about what I mean when I say high barrier to stage two and three with new entrance criteria. I'll go over the additional criteria that we have started to apply to ECMA 402 proposals within the Ecma 402 task groups. So this applies only to TC39 task group two, but the hope is that we can apply these when we have new proposals come through. Through a test group two we can shape the discussion around these requirements. So the First new requirement is for prior art. In Ecma 402 we see our job as bringing features i18n experts have already solved to JavaScript developers, not to invent new solutions to those problems. We often referenced CLDR and ICU and unicode as prior art the data and algorithms specified sealed your and unicode are of Variable quality and in order to be adopted by ECMA 402 the prior art must be considered best i18n practice by consensus of the ECMA 402 standards committee. So what this means is I think it is pretty straightforward. I think that this is a concern that is probably more ECMA 402 specific. There may be certain aspects of this that are also relevant to TC39 but in terms of ECMA-402 we see ourselves less as inventing new solutions and more as curating them for users on the web. 
+SFC: Okay, thank you. So I'll talk about what I mean when I say high barrier to stage two and three with new entrance criteria. I'll go over the additional criteria that we have started to apply to ECMA 402 proposals within the Ecma 402 task groups. So this applies only to TC39 task group two, but the hope is that we can apply these when we have new proposals come through. Through a test group two we can shape the discussion around these requirements. So the First new requirement is for prior art. In Ecma 402 we see our job as bringing features i18n experts have already solved to JavaScript developers, not to invent new solutions to those problems. We often referenced CLDR and ICU and unicode as prior art the data and algorithms specified sealed your and unicode are of Variable quality and in order to be adopted by ECMA 402 the prior art must be considered best i18n practice by consensus of the ECMA 402 standards committee. So what this means is I think it is pretty straightforward. I think that this is a concern that is probably more ECMA 402 specific. There may be certain aspects of this that are also relevant to TC39 but in terms of ECMA-402 we see ourselves less as inventing new solutions and more as curating them for users on the web.
 
 SFC: The second entrance criterion is that the functionality is difficult to implement in user land. And what the criterion says is that features in Intl must bring something to the table that a third party library wouldn't be able to do with the same level of efficiency and performance. So the champion can cite a heavy Locale data dependency and complex algorithms satisfy this criterion. What this means here is we don't see our job as providing a very large surface of APIs that do something that clients can do. We already see ourselves as providing–this goes into the providing building blocks that ZB was talking about earlier–We want to empower third-party libraries and applications to use ECMA-402 to perform the internationalisation of their components, but we don't want to be heavily opinionated on how they do that.
 
@@ -703,13 +714,13 @@ SFC: Yes, and that's what the second paragraph here is. So this is the second re
 
 WH: Yeah. I just want to make sure that the presumption is clear. You don't presume something to be best practice just because it is in ICU/CLDR/Unicode.
 
-ZB: Yes, and definitely in particular with ICU, which is a really really heavily battle-tested ibrary,  we sometimes take lesson from ICU is to not do this the way ICU did. But I take it as an action item on us to clarify a little bit further the answer that I gave to your question, and it should be in our contribution guide.
+ZB: Yes, and definitely in particular with ICU, which is a really really heavily battle-tested ibrary, we sometimes take lesson from ICU is to not do this the way ICU did. But I take it as an action item on us to clarify a little bit further the answer that I gave to your question, and it should be in our contribution guide.
 
 WH: Yes. I think we agree that it's just that, but I could see other people reading the text and interpreting it in other ways.
 
 ZB: right, and I want to point out that as far as I understand no matter how hard we tried this is going to be a bit vague and a little bit up to the human interpretation at the end of the road. There always is a possibility for two people to disagree whether something is sufficiently justified to become part of the standard.
 
-WH: Yeah, I know. 
+WH: Yeah, I know.
 
 FYT: Yeah. I do want to mention that - I would like to mention that 402 is not only client side, Javascript is server side too.
 
@@ -721,7 +732,7 @@ YSV: Hi, so actually this is a great segue into what I wanted to talk about. I t
 
 SFC: Yeah, thanks for bringing that up Yulia, and I want to I agree - I think this broad appeal slide is the criterion that's most applicable in general. When you say that there's you know proposals that are required because they have a high impact on a very small number of users and are critical for invariants, that's the that's sort of what's reflected in the second paragraph of this of this criterion, which is in our case we say “critical for a multilingual web” and in TC39's case if they wanted to adopt a similar set of criteria would be - you know, you can figure out how you want to phrase that, "critical to enforce invariants on the web platform" or something like that, right? So that's sort of this spirit here. I also want to talk about broad appeal as - I think this is kind of maybe one area where our goals and ECMA 402 are differing a bit from the goals in test group one because for example, I what I think of, you know, some of the the new features that are proposed for putting on the array prototype or other like convenience functions and even to a lesser extent Temporal do not necessarily satisfy this criterion. I guess it’s more like number two, difficult to implement in user land, like Temporal I think would qualify by these criteria, because temporal is a large enough surface that it is difficult to implement in user land. But we also have moment.js for example, but it has a large payload people don't like including it because it increases their application size. I think that's a really good justification that Temporal would qualify under these requirements, but I do feel that we sometimes discuss proposals in task group one that don't necessarily satisfy these two bullet points: “difficult to implement in user land” and “broad appeal.” One thing I want to clarify from this group is, if this group thinks that these are good requirements. Maybe these are not good criteria. And you know, I think they are, ZB thinks they are but I think it's important for us to be clear that we are applying these to proposals within our task group.
 
-SFC: Do you have anything to add to that ZB? 
+SFC: Do you have anything to add to that ZB?
 
 ZB: Nope, I am looking forward to hearing positions from TC39 on what we're trying to do and how does this sound from the parent group?
 
@@ -731,19 +742,19 @@ SFC: I'd say the first. We're trying to codify and actually write down some of t
 
 SYG: Okay, that sounds good to me. I agree with what YSV was saying before. Some of these are less relevant for TG1. If nothing else some of the metrics are very difficult to apply to just the general base language design. There's you know, there's no locale data to include, and the binary/code size increases from new features are like unnecessary tax that there is really no way to get around it. So I feel like stuff like broad appeal, those are criteria that we already do apply in judging proposals in TG1, though I guess more ad hoc. I think what I would like to see here is - I don't know, more thoughts on the actual metrics that you want to propose because other than that, it's just like we discuss some more and then you say how you feel. How else would you apply this?
 
-SFC:  Yeah, I think that this is a step in the right direction. It's hard to get a very exact quantitative measurement on broad appeal, because if you do come up with some concrete set of metrics to measure broad appeal, there's going to be some proposals where the spirit of them should actually satisfy, but they don't. For example If you look at number of npm module downloads or something, you're going to get some features that maybe have a lot of downloads, but don't have the broad appeal the way that we mean, in the spirit of that requirement, and you're going to have some features that maybe don't have the npm downloads, but do have broad appeal in the spirit we mean. So I see this as as evolving and we may iterate, I expect that we will iterate on these bullet points to quantify them in every way we can, but I think that saying that it has to be completely quantifiable is just going to be really hard to enforce and might be counter to the spirit of what we're trying to achieve.
+SFC: Yeah, I think that this is a step in the right direction. It's hard to get a very exact quantitative measurement on broad appeal, because if you do come up with some concrete set of metrics to measure broad appeal, there's going to be some proposals where the spirit of them should actually satisfy, but they don't. For example If you look at number of npm module downloads or something, you're going to get some features that maybe have a lot of downloads, but don't have the broad appeal the way that we mean, in the spirit of that requirement, and you're going to have some features that maybe don't have the npm downloads, but do have broad appeal in the spirit we mean. So I see this as as evolving and we may iterate, I expect that we will iterate on these bullet points to quantify them in every way we can, but I think that saying that it has to be completely quantifiable is just going to be really hard to enforce and might be counter to the spirit of what we're trying to achieve.
 
 SYG: Oh, yes. I was saying the opposite of “it should be quantified”. I was very worried that it would be Quantified for the same will be hard Quantified and be like the this hard entrance Criterion for the same same reason that you said, where some of these proxy metrics are in fact, they could be misleading and could be used to tell a different story than what actually the proposal is about. So I was saying in the beginning of this presentation, you said something about coming up with metrics as well, and I was wondering - it seems like the most practical way to apply this is as a checklist of like topics that we made sure to discuss in the context of the proposal in question before we we could go to stage advancement, less than like, “please produce some numbers and see if you pass the bar.”
 
-ZB:  I share this sentiment; I don't have a good answer to how to remove the personal motivation out of it. In my ideal world I would like us to establish a framework almost like a scientists conducting an experiment, you know be unbiased, assume you're wrong, everything is unproven until proven. And in our case it will be like unless you cannot be successful without extending the API, then you have to extend the API. I would like all the champions to take a side of let's try not to, and the goal of exploration is to find a way to that avoids extending an API, but it seems to me like the culture of the community right now is the opposite, and I don't know how to to approach that.
+ZB: I share this sentiment; I don't have a good answer to how to remove the personal motivation out of it. In my ideal world I would like us to establish a framework almost like a scientists conducting an experiment, you know be unbiased, assume you're wrong, everything is unproven until proven. And in our case it will be like unless you cannot be successful without extending the API, then you have to extend the API. I would like all the champions to take a side of let's try not to, and the goal of exploration is to find a way to that avoids extending an API, but it seems to me like the culture of the community right now is the opposite, and I don't know how to to approach that.
 
-SYG: I have a response to that I think but it could result in quite a lengthy discussion. I want to do a check on time if I'm safe to raise it or if I should just go on. 
+SYG: I have a response to that I think but it could result in quite a lengthy discussion. I want to do a check on time if I'm safe to raise it or if I should just go on.
 
 RPR: We do have time. We've got another nine minutes.
 
 SYG: So I want to preface this by timeboxing what I'm about to bring up for discussion to maybe just like no more than 10 or 15 minutes. One of the interesting things in the web standard space, if you look at how TC39 operates versus how other web standards bodies operate, some people of course have different opinions on how well we work versus how well other web standards bodies work, something that's very unique to TC39 is we do all our design design up front. That we get together in a room. We don't really prototype unless the champion is motivated enough to do some very early stage prototyping ahead of time during stage 1 or stage 2. We don't really produce any artifacts ahead of stage 3. There's some notable exceptions like the playground stuff with records and tuples. That seems pretty awesome. But that certainly is the exception not the rule. And I think one fallout of how we work, by designing everything up front and then going to stage three and then everybody implementing it, it's really difficult to take a scientific approach as ZB wants for any number of these metrics because our time horizon is like two years. We ship it and then we have to instrument the browser or whatever, and see the uptake, see the how they're used and abused and so on. Other web standards bodies sometimes do things a little bit differently where they don't design everything up front. They incubate and they rapidly iterate in The Upfront stages by doing these origin trial things, for example what Chrome does. We might have different opinions about that that maybe that is not a good way to do things, but that is a way to get more feedback. From your stakeholders and your partners that might care about your a feature rather than just kind of debate things in the room and cite examples of “here some use cases” and “here's the maps of who might use it” and then like six months later implement it and see what happens right like we could significantly change are working more. I'm not suggesting we do that, just presenting a data point. Any thoughts on that?
 
- YSV: I have thoughts on that. I agree with how you characterized how we do our design that we do a lot of the work up front. I think I disagree with the idea that we can't get a better sense of how a feature might do ahead of time without shipping, and I think that's really what the research group is about. So Maybe that's something that can fit in with this, actually utilizing the research group as a part of the suggestions made here. We do have a scientist working with us who's helping us design surveys. I think there is room for that. 
+YSV: I have thoughts on that. I agree with how you characterized how we do our design that we do a lot of the work up front. I think I disagree with the idea that we can't get a better sense of how a feature might do ahead of time without shipping, and I think that's really what the research group is about. So Maybe that's something that can fit in with this, actually utilizing the research group as a part of the suggestions made here. We do have a scientist working with us who's helping us design surveys. I think there is room for that.
 
 SYG: Yes, I think there is room for improvement without the full “Let's get an implementation and put in the metrics” kind of burden, and then certainly I wouldn't want to impose that extra burden. for stage two or three. There's a serious reason we work this way, which is it takes in the beginning staffing and resources to implement all the new features.
 
@@ -753,22 +764,23 @@ SFC: Yeah, thank you for raising that Yulia. I'll definitely make sure that all 
 
 DE:The presentation that Shane and ZB gave was great, and I'm happy to be talking explicitly about these things. At the risk of kind of continuing with it, I want to defend our current development process a little bit. I don't think it's accurate to say that we don't tend to implement during development. For a lot of features that we design in TC39, a polyfill or transpiler implementation is the best, most accessible way to prototype and get real developer feedback, for something like optional chaining and its Babel implementation. You can get all the feedback you need from that, and the native browser implementation doesn't make a big change. With this rapid iteration and prototyping, with origin trials, there remains a risk, especially if it happens in an opaque way with the feedback all controlled by a single vendor and without any standards committee work before shipping that feedback of just certain groups, which you could call partners is emphasized over the feedback of the other stakeholders. I'm happy that we have high-level discussion here and that we include different different people even if they're not they're not enfranchised according to kind of opaque processes of just one company and I think that's how we should continue doing things. Gathering feedback is difficult any way you cut it. Let's do more prototyping of things as well!
 
-ZB: So I want to add to this, the thing that Yulia said. I often find myself on the side right now on ecma 402 where I am more pushing against additions of new APIs and extension of APIs. It's not a role I ever want to serve.  It doesn't make me happy, but two criterias that I'm always trying to evaluate against is, how core is it to the domain of internationalization? How core is this proposal versus how edge case it is, like how like if this is something that you know one problem I love apps is going to use then maybe doesn't belong in the core spec and not every browser and engine should carry it. And it is a hard evaluation to make, I don't think we can apply really hard numbers to that. But this is something that that I'm doing and especially the if the API is bringing data, then I'm trying to imagine like where the data should be located in a perfect world from the logistical perspective, should it be part of the app that you're loading over the wire, or should it be part of the environment and every browser every user should have it on their computer all the time? So this is one consideration that I think is Ecma 402 specific. The other that I am doing and Shane mentioned that it's also maybe not so user specific is this concept of, is it possible to implement it in the userland. Will this Library be somehow inferior? Because it's a library rather than part of the standard API. I'm trying to apply that, and I can give you an example (just food for thought, because I think we're running out of time) but something I think a lot about in the context of the second criteria that I mentioned is there is a request right now to add language negotiation. And it's a hairy domain there are some open interesting questions about whether there is one algorithm for language negotiation, or there are multiple depending on the need, but the question also is can you have a user library in npm that is providing language negotiation. Is it hard? No it's not, it's a fairly small algorithm. It's a couple loops. So should it be in the standard library now? The appeal can be broad, you can claim that language negotiation is something that is often done wrong. So if we expose as we kind of help people use the right algorithm rather than being experts. But if we pointed out a good library that does it we would achieve the same goal. So does it belong in the standard or should we push it away because it can be implemented in the standard Library without any data? And we can expose the data that is needed and like low level building blocks and I can see the response being, “well, language negotiation is one of the core internationalisation operations, so a good standard Library should have it.” I don't know how to resolve that. But I think that this is a good example of considerations that I'm trying to use as a litmus test against the criteria that we are setting like what are the criteria are actually helping us make a decision here or is it still like, you know, opinion versus opinion? 
+ZB: So I want to add to this, the thing that Yulia said. I often find myself on the side right now on ecma 402 where I am more pushing against additions of new APIs and extension of APIs. It's not a role I ever want to serve. It doesn't make me happy, but two criterias that I'm always trying to evaluate against is, how core is it to the domain of internationalization? How core is this proposal versus how edge case it is, like how like if this is something that you know one problem I love apps is going to use then maybe doesn't belong in the core spec and not every browser and engine should carry it. And it is a hard evaluation to make, I don't think we can apply really hard numbers to that. But this is something that that I'm doing and especially the if the API is bringing data, then I'm trying to imagine like where the data should be located in a perfect world from the logistical perspective, should it be part of the app that you're loading over the wire, or should it be part of the environment and every browser every user should have it on their computer all the time? So this is one consideration that I think is Ecma 402 specific. The other that I am doing and Shane mentioned that it's also maybe not so user specific is this concept of, is it possible to implement it in the userland. Will this Library be somehow inferior? Because it's a library rather than part of the standard API. I'm trying to apply that, and I can give you an example (just food for thought, because I think we're running out of time) but something I think a lot about in the context of the second criteria that I mentioned is there is a request right now to add language negotiation. And it's a hairy domain there are some open interesting questions about whether there is one algorithm for language negotiation, or there are multiple depending on the need, but the question also is can you have a user library in npm that is providing language negotiation. Is it hard? No it's not, it's a fairly small algorithm. It's a couple loops. So should it be in the standard library now? The appeal can be broad, you can claim that language negotiation is something that is often done wrong. So if we expose as we kind of help people use the right algorithm rather than being experts. But if we pointed out a good library that does it we would achieve the same goal. So does it belong in the standard or should we push it away because it can be implemented in the standard Library without any data? And we can expose the data that is needed and like low level building blocks and I can see the response being, “well, language negotiation is one of the core internationalisation operations, so a good standard Library should have it.” I don't know how to resolve that. But I think that this is a good example of considerations that I'm trying to use as a litmus test against the criteria that we are setting like what are the criteria are actually helping us make a decision here or is it still like, you know, opinion versus opinion?
 
-RPR: Is there any closing statement or summary of where you're at? 
+RPR: Is there any closing statement or summary of where you're at?
 
 SFC: Yeah, I think we had an effective discussion on these bullet points. I appreciate that. Thank you for bringing up other standards bodies. Thank you for the feedback from all the delegates. Now I'll leave it up to this body. The chairs, the editors, or whoever wants to, if there's anyone from this body who wants to take up the mantle on adding these requirements to task group one stage advancement criteria. I think this is more of a public service announcement that we're doing this in TG2 and I'm happy to continue this discussion offline if there's interest in codifying this elsewhere. So thank you everyone very much.
 
-
 RPR: Okay, thank you, Shane and ZB. Okay, good. So we'll move to DE, who has a small announcement. Just following on on from the JSON modules yesterday, I think.
+
 ### Conclusion/Resolution
+
 - Topic remains open for discussion.
 
 ## JSON Modules Revisit
+
 Presenter: Dan Ehrenberg
 
 - [proposal](https://github.com/tc39/proposal-json-modules)
-
 
 DE: I'm not sure if we had editor reviews or appointed reviewers for JSON modules. I think we should consider it conditionally advance to stage three pending those reviews and I want to call for reviewers. So, any reviewers? Non-editor reviewers? Or do we want to say the editor review is sufficient? I think we can come to consensus on anything, but it would be kind of unusual to not have not have delegate reviews.
 
@@ -786,21 +798,19 @@ KG: I'm sorry. We didn't have an issue where we track that, but I certainly revi
 
 BSH: I was one of the main dissenters which is why I think I should do it at one point. Yeah, so I think it's still good, but we can review it from last I didn't do it officially. I think for a small proposals, one reviewer I think we've done that in the past. I've some memory of doing it in the past. past. So I think so. So do we have consensus on considering this conditionally Advanced to stage three pending Bradley's review
 
-YSV: I could also volunteer as a second reviewer. I've been looking at this. You can put me down. 
+YSV: I could also volunteer as a second reviewer. I've been looking at this. You can put me down.
 
 AKI: You had consensus without having this conversation. Is that correct? The earlier the earlier conversation we concluded consensus.
 
 DE: Yeah, apparently all of us forgot about delegate reviews. Thanks for being flexible about considering this conditional advancement anyway.
 
-RPR: Okay, good. So we have consensus and thank you to Brad and Yulia for volunteering to be the delegate reviewers for JSON modules. 
-
+RPR: Okay, good. So we have consensus and thank you to Brad and Yulia for volunteering to be the delegate reviewers for JSON modules.
 
 ### Conclusion/Resolution
+
 - JSON modules is conditionally stage 3 pending reviews from BFS and YSV.
 
-
 ## PSA about Blink's new "developer signals" requirement
-
 
 SYG: more than 3 minutes as part of the blink shipping process one of the recent changes. Is that with every new feature jet that ships in the intent to ship for those that may not not know when we ship a new We send out an intent to ship a new feature and this is done for both JS features and web features and other browser vendors do this as well for their engines one of the new requirements in the blink side is that each content including for JS features be accompanied by some of evidence for developer signal. This could be a practitioner saying “I like this,” this could be a practitioner saying “I don't like this,” or “I wouldn't use this” and so on. Selfishly, it would be easier for me if we kind of of remember to discuss these signals during the proposals themselves as an entrance criteria to stage three. I'm not proposing a change. I think we already talked about how developers would feel about these things, but this is a PSA that you will be good for us as a group to remember to touch on the developer signal part of a proposal at some point before stage 3.
 
@@ -812,7 +822,7 @@ YSK: That sounds like a great suggestion. Let's talk about it offline. I'll expl
 
 SYG: Sounds good.
 
-DE: One thing we could do in committee is we can note in our stage three conclusions, because we have many developers here, some quotes from developers in the committee how they feel about the feature and then you could link to that from your intent. 
+DE: One thing we could do in committee is we can note in our stage three conclusions, because we have many developers here, some quotes from developers in the committee how they feel about the feature and then you could link to that from your intent.
 
 SYG: That would be awesome. That would be you doing my work for me and I would deeply deeply appreciate that.
 
@@ -828,8 +838,8 @@ YSV: like–please.
 
 JHD: The point of getting stage 3 is to get to stage 4, and in the language; we can't get to stage 4 unless it’s implemented; we can't implement it unless we meet whatever engines’ criteria happen to be. So if there's new criteria, I don't think we even need to update the process document - if we're interested in actually getting it shipped then it seems like that's a criteria we should be bending over backwards to try to satisfy, and adding the stuff we've already thought about, hopefully, which is “developer interest” to the notes - it seems like a simple solution.
 
-SYG: I don't want to suggest that this is a hard line, that if there's no positive developer sentiment we will not ship something. It is another input to the shipping process. These will always be traded off in a holistic way for the entire proposal. All right, that was it for me. 
+SYG: I don't want to suggest that this is a hard line, that if there's no positive developer sentiment we will not ship something. It is another input to the shipping process. These will always be traded off in a holistic way for the entire proposal. All right, that was it for me.
 
 ### Conclusion/Resolution
-- No official conclusion.
 
+- No official conclusion.

@@ -1,4 +1,5 @@
 # February 6, 2020 Meeting Notes
+
 -----
 
 **In-person attendees:** Aki Braun (AKI), Andrew Paprocki (API), Rob Palmer (RPR), Waldemar Horwat (WH), Chip Morningstar (CM), Shane F Carr (SFC), Shu-yu Guo (SYG), Jordan Harband (JHD), Michael Saboff (MLS), Keith Miller (KM), Michael Ficarra (MF), Jonathan Keslin (JKN), Kevin Gibbons (KG), Richard Gibson (RGN), Justin Ridgewell (JRL), Zibi Braniecki (ZB), Myles Borins (MBS), Bradford C. Smith (BCS) Rick Button (RBU), Mary Marchini (MAR), Guilherme Hermeto (GHO)
@@ -24,46 +25,43 @@ MM: Now I will take questions.
 
 DE: You talked about host hooks. Where can I learn more about host hooks?
 
-MM: There are 2 incomplete lists of host hooks.  Host hooks are, at this point in time, a neglected part of this effort.  We need to get back to it.  There was a much earlier version in which we had an API specified for a small number of host hooks.  Since then, there was a gathering of things that look like host hooks. There was an issue posted on the Realms proposal. I did a separate gathering on one of the pages in the SES proposal repo, not in the READMEs, summarizes my attempt to gather host hooks.  I only became aware of the other list on the repo this morning, but I think they are in agreement.  Most host hooks will transform to APIs relatively easily, but we need your help.
+MM: There are 2 incomplete lists of host hooks. Host hooks are, at this point in time, a neglected part of this effort. We need to get back to it. There was a much earlier version in which we had an API specified for a small number of host hooks. Since then, there was a gathering of things that look like host hooks. There was an issue posted on the Realms proposal. I did a separate gathering on one of the pages in the SES proposal repo, not in the READMEs, summarizes my attempt to gather host hooks. I only became aware of the other list on the repo this morning, but I think they are in agreement. Most host hooks will transform to APIs relatively easily, but we need your help.
 
 DE: I’m curious about modules. The module host hooks are not laid in a way that corresponds to a way you might implement it. We might want to refactor.
 
-MM: Suggestions certainly welcome. Just need to keep in mind all the simultaneous needs we need to satisfy.  The important thing, which may not be obvious, is the staging separation, which is what I tried to emphasize in explaining the MMU.  Things that are already loaded, you are just doing instantiation and linking.  So in terms of a full module loading API, there are a lot of things that are not relevant. It was interesting to untangle that from what you want to do during runtime.
+MM: Suggestions certainly welcome. Just need to keep in mind all the simultaneous needs we need to satisfy. The important thing, which may not be obvious, is the staging separation, which is what I tried to emphasize in explaining the MMU. Things that are already loaded, you are just doing instantiation and linking. So in terms of a full module loading API, there are a lot of things that are not relevant. It was interesting to untangle that from what you want to do during runtime.
 
 DE: Are you saying that you don't want these virtualized environments to have the same capabilities as the more general module graph case?
 
-MM: I’m saying that I want them separated, so that in a TC53 configuration, the loading abilities might be absent, whereas the instantiation and linking abilities might be present. In a full web context, the loading will still be there. Loading is source files in directories loaded with IO to static module records. I want the Compartment API to go from that phase (static module records) to linked module instances. Those two things are really conceptually different. TC53 brought home the huge payoff of separating them in the API. So what I'm presenting here with the compartment API is only the second phase for that.  I'm expecting a separate loading API that can provide arguments to the compartment API.
+MM: I’m saying that I want them separated, so that in a TC53 configuration, the loading abilities might be absent, whereas the instantiation and linking abilities might be present. In a full web context, the loading will still be there. Loading is source files in directories loaded with IO to static module records. I want the Compartment API to go from that phase (static module records) to linked module instances. Those two things are really conceptually different. TC53 brought home the huge payoff of separating them in the API. So what I'm presenting here with the compartment API is only the second phase for that. I'm expecting a separate loading API that can provide arguments to the compartment API.
 
 DE: Thanks for explaining.
 
-
-
-JRL: Can you go back to the endowments slide?  So you were saying that the endowments object are things that are copied to the new global object.  Wouldn't that leak the outside state?  Doesn't that give the compartment access to the parent?
+JRL: Can you go back to the endowments slide? So you were saying that the endowments object are things that are copied to the new global object. Wouldn't that leak the outside state? Doesn't that give the compartment access to the parent?
 
 MM: Yes. That is the intention. One of the reason we separated Realms and Compartments, is that we found it much harder to prevent leakage over a realm boundary than we expected. It is hard to do controlled sharing of what you intend across a realm boundary without leaking other objects from the realm that you did not intend. When you are within one set of shared frozen primordials, we found that not to be a danger. The things you share via endowments are the things you are sharing on purpose.
 
-GHO: Thanks Mark.  When you have code being evaluated in a compartment, and the code has a handle rejection, what happens?
+GHO: Thanks Mark. When you have code being evaluated in a compartment, and the code has a handle rejection, what happens?
 
-MM: So you and I talked last night.  For the rejections that are about turn boundaries, about what happens at top of turn --- such the motivating case is the Node unhandled rejection, where you have a Promise that entered a rejected state and no one was listening for it --- since it's about the turn, is on most grounds not the right ergonomics, division of concerns, to put a hook on that, neither at the realm nor compartment level.  What the turn is really about is the agent.  And just like we're taking the spec concept of a realm record and turning it into a reified Compartment, and taking the spec concept of the intrinsics record and reifying it into a Realm, what we decided last night was to create a proposal repo about the agent API where we can put host hooks that are per-agent. That is about installing the error diagnostics that are about turn boundaries as well as host hooks for defining scheduling policy.
+MM: So you and I talked last night. For the rejections that are about turn boundaries, about what happens at top of turn --- such the motivating case is the Node unhandled rejection, where you have a Promise that entered a rejected state and no one was listening for it --- since it's about the turn, is on most grounds not the right ergonomics, division of concerns, to put a hook on that, neither at the realm nor compartment level. What the turn is really about is the agent. And just like we're taking the spec concept of a realm record and turning it into a reified Compartment, and taking the spec concept of the intrinsics record and reifying it into a Realm, what we decided last night was to create a proposal repo about the agent API where we can put host hooks that are per-agent. That is about installing the error diagnostics that are about turn boundaries as well as host hooks for defining scheduling policy.
 
 BFS: I just wanted to say that at least with unhandled rejections, it would be pertinent to move this to the older proposal called Zones.
 
-MM: There is one option for how you could put it into this Compartment proposal.  I don't remember who suggested it.  You could associate with the realm that created the rejected promise.  You still couldn’t invoke this hook until the turn boundary. But on the turn boundary, the invoked hook could be the one associated with the promise’s realm of origin.
+MM: There is one option for how you could put it into this Compartment proposal. I don't remember who suggested it. You could associate with the realm that created the rejected promise. You still couldn’t invoke this hook until the turn boundary. But on the turn boundary, the invoked hook could be the one associated with the promise’s realm of origin.
 
 DE: When we were talking about realms and interaction with modules. It sounds like a realm can create a compartment inside of it, with its own module map. Is there any way that realms can use modules without SES compartments?
 
-MM: The realms proposal is now delegating many things to the compartments proposal.  The original motivation for compartments proposal was for SES, and in SES is where you get a lot of nice properties for why it's organized this way.  But the compartment API I presented could be made available as a standard API whether or not you are in SES.  Although you don't have frozen primordials, it still lets you have separate global objects, host hooks, etc.  So although it doesn't provide separation, it gives you the ability to customize an execution context.
+MM: The realms proposal is now delegating many things to the compartments proposal. The original motivation for compartments proposal was for SES, and in SES is where you get a lot of nice properties for why it's organized this way. But the compartment API I presented could be made available as a standard API whether or not you are in SES. Although you don't have frozen primordials, it still lets you have separate global objects, host hooks, etc. So although it doesn't provide separation, it gives you the ability to customize an execution context.
 
 DE: Are you set on realms not having access to the parent realm’s module graph?
 
-MM: Quite the opposite. This was a late realization. (slide on frozen intrinsics). The start compartment has not lost it’s host objects, the powers associated with being in the initial evaluation. There is a separation between it and the intrinsics, the fact that the document is available here is interesting and surprising. The start compartment is in complete control on how it passes forward the powers it has. By the same token, the start compartment can have as its same namespace, in its loading behavior, provided by the host compartment.  The import map provided by the browser is fixed before code starts running in that frame.  So it's a fixed mapping provided essentially to that start compartment, and then the start compartment can create new compartments, either providing mappings to names it has, or giving a separate loading mechanism, e.g., loading things from a packed set of modules (you don't completely ignore the host-given modules, like built-in modules), and then you provide to the child compartment mappings only to those, insulating them from host-granted powers.  So this is less than an abrupt transition from how JavaScript runs on hosts now than we were expecting.
+MM: Quite the opposite. This was a late realization. (slide on frozen intrinsics). The start compartment has not lost it’s host objects, the powers associated with being in the initial evaluation. There is a separation between it and the intrinsics, the fact that the document is available here is interesting and surprising. The start compartment is in complete control on how it passes forward the powers it has. By the same token, the start compartment can have as its same namespace, in its loading behavior, provided by the host compartment. The import map provided by the browser is fixed before code starts running in that frame. So it's a fixed mapping provided essentially to that start compartment, and then the start compartment can create new compartments, either providing mappings to names it has, or giving a separate loading mechanism, e.g., loading things from a packed set of modules (you don't completely ignore the host-given modules, like built-in modules), and then you provide to the child compartment mappings only to those, insulating them from host-granted powers. So this is less than an abrupt transition from how JavaScript runs on hosts now than we were expecting.
 
 DE: It sounds like you are saying that with the combination of the compartments, host hooks, there should be flexibility among the uses of the API to grant host capabilities. In the near term there would be no way to grant host abilities?
 
 MM: I’m going to provisionally say that no, what is a start compartment immediately has the global namespace, and that the compartment map provides an ability to grant subsets, and given that there is some loading behavior.
 
 ### Conclusion
-
 
 Update without stage advancement
 
@@ -78,7 +76,7 @@ YMD: (presents slides)
 
 SFC: I just wanted to provide some context. We’ve been discussing this in TG2, ECMA402 that we have monthly. This is a longstanding feature request. The fact that Temporal.Duration is coming gives this some urgency, but this is a longstanding request. We’ve discussed some ins and outs of this API, this is only a stage 1 proposal, before stage 2 there are still some open questions on the repo. I encourage you to look there for additional feedback.
 
-JRL: Throughout the presentation it said "1 hours".  That's supposed to be "1 hour", right?
+JRL: Throughout the presentation it said "1 hours". That's supposed to be "1 hour", right?
 
 YMD: Yeah, that's a typo.
 
@@ -108,7 +106,6 @@ WH: But you just said there is a proposal for formatting feet/inches?
 
 SFC: An open issue we want to address in 2020, but not part of a currently active proposal.
 
-
 YMD: Asking for Stage 1.
 
 RPR: Any objections?
@@ -119,9 +116,7 @@ RPR: Any objections?
 
 Consensus reached for stage 1
 
-
 ## Request for reviewers for Logical Assignment
-
 
 JRL: I need stage 3 reviewers for logical assignment.
 
@@ -130,7 +125,6 @@ Kevin, Daniel. KG and DRR
 ## WeakRefs status update, continued
 
 Presenter: Daniel Ehrenberg (DE)
-
 
 - [proposal](https://github.com/tc39/proposal-weakrefs)
 - [slides](https://docs.google.com/presentation/d/1a4hrdlEcpyKmBj6VtAVYDkokeW_HLFXcg11xIxhwlWM/edit#slide=id.p)
@@ -144,7 +138,7 @@ DE: I’m confused by the question. Either the object refers to the storage or t
 
 MAH: With a WeakRef, I suppose, And if it doesn’t that means the store isn’t collected anyway.
 
-DE: I don't see why you would use a WeakRef there.  Can you explain?
+DE: I don't see why you would use a WeakRef there. Can you explain?
 
 MAH: If you don’t use a WeakRef, that means your object has a strong reference to a backend store.
 
@@ -152,13 +146,13 @@ DE: That is what I think would make sense for the cases I can think of. If you h
 
 MAH: No, we can use that one. I just don’t understand the advantage of letting the group die if the backing store isn’t collected.
 
-SYG: I think, MAH, you can imagine for the WASM case that the things you hand out are WeakRefs, and you manually dispose the memory somehow from the main linear memory.  you would not need to run the finalizers anymore.
+SYG: I think, MAH, you can imagine for the WASM case that the things you hand out are WeakRefs, and you manually dispose the memory somehow from the main linear memory. you would not need to run the finalizers anymore.
 
 MAH: Right, so that is what I am saying. The live object would have a weakref to the backing store. Which means when the object tries to access the backing store it would blow up.
 
 DE: This just seems independent--whether or not the instance holds the WASM memory, you’re already buying into this blowing up design decision—and opt-into doing the finalizer work.
 
-SYG: Imagine your API was that you attach the finalizer per WeakRef.  In that API, I think it is unsurprising that if the WeakRef died before the finalizer died, then the finalier would not die.  But now with a FinalizationGroup as an aggregation, it seems like the same behaviour would happen.  The idea with things like fetch() is that you fire away an operation that may be completed, and you just don't have that with GC.
+SYG: Imagine your API was that you attach the finalizer per WeakRef. In that API, I think it is unsurprising that if the WeakRef died before the finalizer died, then the finalier would not die. But now with a FinalizationGroup as an aggregation, it seems like the same behaviour would happen. The idea with things like fetch() is that you fire away an operation that may be completed, and you just don't have that with GC.
 
 DE: I think the practical effect of not having independent lifetimes, would be that the object has a reference to the backing store. If not, you can just hold the reference yourself.
 
@@ -168,11 +162,11 @@ DE: I agree we need to follow up with improvements to the documentation.
 
 KM: We should consider if there is a better way to name things, to make it clear that it is not going to behave the same way.
 
-DE: I like that idea.  Do you have ideas for a name?
+DE: I like that idea. Do you have ideas for a name?
 
 KM: I don’t have any right now, but I’m happy to brainstorm.
 
-WH: I'd like to re-raise the issue I raised yesterday.  What is a WeakRef oblivious execution?  I read the document and it says that all WeakRefs pointing to a specific object are null and whether the object is reachable.
+WH: I'd like to re-raise the issue I raised yesterday. What is a WeakRef oblivious execution? I read the document and it says that all WeakRefs pointing to a specific object are null and whether the object is reachable.
 
 SYG: Not reachable, but if the identity is observed.
 
@@ -182,9 +176,9 @@ SYG: That means that if you continue with the evaluation, with the extra rule th
 
 WH: What does “identity gets observed” mean?
 
-MM: A `===` observes an identity.  A map lookup on a key observes the identity.  The idea is that two objects that are otherwise identical will act in otherwise the same ways; they can still differ in identity. For example, executing a function does not observe identity, because you can have two functions with the same execution with different identity.
+MM: A `===` observes an identity. A map lookup on a key observes the identity. The idea is that two objects that are otherwise identical will act in otherwise the same ways; they can still differ in identity. For example, executing a function does not observe identity, because you can have two functions with the same execution with different identity.
 
-WH: I have an empty object, and a WeakRef pointing to the empty object.  What observes the identity of that object?
+WH: I have an empty object, and a WeakRef pointing to the empty object. What observes the identity of that object?
 
 MM:Triple equals, using it as a key in a map, etc.
 
@@ -194,7 +188,7 @@ MM: That’s correct.
 
 WH: In that case, the definition of liveness is completely broken. If you have a cycle of objects with weak references pointing to more than one member of that cycle, you can't collect that cycle given the definition you just stated.
 
-SYG: People found this issue yesterday.  Issue #179 On GitHub
+SYG: People found this issue yesterday. Issue #179 On GitHub
 
 KG: I have a proposed fix on GitHub.
 
@@ -202,7 +196,7 @@ WH: Ok.
 
 DE: Any thoughts on the name FinalizationHandler or FinalizationRegistry?
 
-SYG: Do people feel that if the handler to handle something dies, the thing that it is supposed to handle doesn't happen?  Does that make more sense than if a FinalizationGroup dies?
+SYG: Do people feel that if the handler to handle something dies, the thing that it is supposed to handle doesn't happen? Does that make more sense than if a FinalizationGroup dies?
 
 JHD: It seems to me that it is a FinalizationGroup but it does not group finalizers.
 
@@ -216,12 +210,11 @@ DE: Any concerns with moving forward with FinalizationRegistry? Not pushing for 
 
 KM: It sounds better.
 
-JHD: I'm not sure I like FinalizationRegistry.  I'll post more on GitHub.
+JHD: I'm not sure I like FinalizationRegistry. I'll post more on GitHub.
 
 ### Conclusions
 
-Retained consensus for independent lifetimes
-Contingent consensus on FinalizationRegistry, meaning barring feedback from folks on the exact name of FinalizationRegistry, implementations reserve the right to ship WeakRefs with the FinalizationRegistry name before the next meeting. Please give feedback on #180.
+Retained consensus for independent lifetimes Contingent consensus on FinalizationRegistry, meaning barring feedback from folks on the exact name of FinalizationRegistry, implementations reserve the right to ship WeakRefs with the FinalizationRegistry name before the next meeting. Please give feedback on #180.
 
 ## Syntax for Explicitly this argument for Stage 1
 
@@ -248,7 +241,7 @@ BF: Even though we have .length, there are some bugs around default values in ce
 
 BF: I do like a lot of the motivations of this proposal, of trying to solve different kinds of cases. I don’t think that putting it on the syntax of this is the best way, but if all we are trying to do is solve for motivating use cases. Things like marking functions as methods rather than something constructable, and likewise things to be constructed and not called. Furthermore this proposal adds a lot of complexity to the syntax, and can be solved by adding a statement.
 
-WH: You raised the issue of `Promise.reject` as a motivation for this feature. I agree `Promise.reject` is a nasty gotcha. However, this feature fails to do anything to solve that problem, so I don’t know why that is in the presentation. The problem that this proposal does solve is that there is only one way to refer to `this` in ECMAScript.  Now we’d have two.  And now we can rename `this` and change its value by assigning to it. I have yet to see a good motivation for doing this.
+WH: You raised the issue of `Promise.reject` as a motivation for this feature. I agree `Promise.reject` is a nasty gotcha. However, this feature fails to do anything to solve that problem, so I don’t know why that is in the presentation. The problem that this proposal does solve is that there is only one way to refer to `this` in ECMAScript. Now we’d have two. And now we can rename `this` and change its value by assigning to it. I have yet to see a good motivation for doing this.
 
 JHX: The issue of Promise.reject is in the second part, the next proposal.
 
@@ -258,7 +251,7 @@ JHX: Why don't I finish the second part and then we can discuss.
 
 JWK: Allowing destructuring on this binding might be new problems if a property is a method, you would lose the this binding.
 
-JHX: It's possible, but you already can do it now.  So I don't think it's adding any new requirements.
+JHX: It's possible, but you already can do it now. So I don't think it's adding any new requirements.
 
 SYG: I agree with WH, it does not meet the bar for new syntax.
 
@@ -272,9 +265,8 @@ JHX: Ok.
 
 RPR: Thank you.
 
-
-
 ## Remote plenaries and SLTG/incubator calls
+
 Presenters: Shu-yu Guo (SYG) and Dan Ehrenberg (DE)
 
 - [proposal](https://github.com/tc39/Reflector/issues/264#issuecomment-577316380)
@@ -284,16 +276,15 @@ SYG & DE: (presents slides)
 
 JHD: When I’ve been on calls where quorum is an issue, typically its X members on a team, and there are some required number of members on the team, we count them. In the past, whether delegates or members, I don’t remember counting for quorum. Have we ever done that in the past? How would it be structured?
 
-DE: I'm not aware of that kind of counting.  I suggest that the calls be treated just like the in-person meetings.
+DE: I'm not aware of that kind of counting. I suggest that the calls be treated just like the in-person meetings.
 
 MBS: In theory, quorum here, could be the subset of people with interest in a topic. We can say, for this topic, who are the delegates who want to participate, that group can become the group quorum is based around?
 
-DE: I disagree with that proposal.  This is plenary.  This is not a way to set up smaller groups.  SYG's half of the presentation is about that.  So everyone who is interested in the consensus process is expected to join these calls.
+DE: I disagree with that proposal. This is plenary. This is not a way to set up smaller groups. SYG's half of the presentation is about that. So everyone who is interested in the consensus process is expected to join these calls.
 
 IS: There is a need for a quorum among Ordinary Members the GA (see Bylaws 8.5), but in a TC there is no quorum, independently from the number of participants, every decision has to be a simple majority.
 
 WH: You do have rules about notice for what decisions are up for a meeting.
-
 
 DE: About ECMA having a 3 week deadline, TC39 uses a 10 day deadline, IS and I were talking about this. Given that we have been making decisions using a 10 day deadline, it makes sense to change the bylaws. I’m not proposing to weaken that.
 
@@ -301,13 +292,13 @@ IS: On the paper it is 3 weeks, 10 days in practice for TC it is ok, in my opini
 
 JHD: The reason I am asking is with 6 opportunities a year, there are 6 times I have to call in to impact a decision.
 
-IS: Regarding the proposal for remote GAs my feeling is that we have to find out first what is practical and what not.  First, we have to find out whether for 40-60 people, the conference call may work or not work.  And how long it should be.  The proposal had 2-3 hours in mind, which is tiring, but if we look at the timing of it, according to what other bodies do, that might be okay.  But if we have participants from all the different major time zones (US East, US West, Europe, Asia Far East), someone is always suffering.  So what I see in other organizations what they are doing is quite different. Then they are rotating from meeting to meeting. So these are the things, before making a final time zone decision, we have to hash out a little bit.
+IS: Regarding the proposal for remote GAs my feeling is that we have to find out first what is practical and what not. First, we have to find out whether for 40-60 people, the conference call may work or not work. And how long it should be. The proposal had 2-3 hours in mind, which is tiring, but if we look at the timing of it, according to what other bodies do, that might be okay. But if we have participants from all the different major time zones (US East, US West, Europe, Asia Far East), someone is always suffering. So what I see in other organizations what they are doing is quite different. Then they are rotating from meeting to meeting. So these are the things, before making a final time zone decision, we have to hash out a little bit.
 
 JHD: With 6 opportunities a year, that is how many times I have to make myself available. If there are 14-16 times a year that I have to make myself available, or risk making myself not available, then that has consequences of my not being available to push one way or another on proposals. The general concern I have is that people interested in these topics will miss them.
 
 DE: This seems tied to the baking period.
 
-JHD: Sometimes in the past, proposals have jumped multiple stages in one meeting. Often, people have expressed concern about high velocity advancement. They would prefer to wait for the next meeting for the next stage. Because we have 2 months between meetings, we have a default imposed buffer, where people have time to discuss issues on GitHub, etc.  If we have the potential for advancement every 2 weeks, in the span of 2 months, the current period between meeting, there are more opportunities for advancement.  You could push a proposal from stage 0 to stage 4 in that time!
+JHD: Sometimes in the past, proposals have jumped multiple stages in one meeting. Often, people have expressed concern about high velocity advancement. They would prefer to wait for the next meeting for the next stage. Because we have 2 months between meetings, we have a default imposed buffer, where people have time to discuss issues on GitHub, etc. If we have the potential for advancement every 2 weeks, in the span of 2 months, the current period between meeting, there are more opportunities for advancement. You could push a proposal from stage 0 to stage 4 in that time!
 
 DE: It might allow things to be more fluid, if we want to talk about proposals for limits then that would be interesting.
 
@@ -315,7 +306,7 @@ SYG: I think allowing for a higher velocity is a good thing. There are proposals
 
 AKI: Nothing is going to make its way to Stage 4 in two months given that they need implementations.
 
-JHD: Given that an npm package could be considered an implementation?  And even getting to Stage 3 in that time is too fast.
+JHD: Given that an npm package could be considered an implementation? And even getting to Stage 3 in that time is too fast.
 
 DE: There is a lot we do leading up to stage 3 where we want to be sufficiently open to feedback.
 
@@ -327,7 +318,7 @@ JRL: Is that ok with ECMA?
 
 SYG: That is a great question. That stuff can be streamlined.
 
-IS: I think we would have to basically …….  They don’t have to go to the meeting, unless it is a crisis situation. Certainly it gives a lot more flexibility. (Note: not said at the meeting. About 4-5 years ago we had already the complaint at the TC39 meeting that we take up too much time with process and administrative tasks. For many participants that is annoying. So, we have generally decided to have minimal process and administration related discussions in the F2F TC39 meeting, but push those items to the GitHub Reflector. I think we have to go back to that situation).
+IS: I think we would have to basically ……. They don’t have to go to the meeting, unless it is a crisis situation. Certainly it gives a lot more flexibility. (Note: not said at the meeting. About 4-5 years ago we had already the complaint at the TC39 meeting that we take up too much time with process and administrative tasks. For many participants that is annoying. So, we have generally decided to have minimal process and administration related discussions in the F2F TC39 meeting, but push those items to the GitHub Reflector. I think we have to go back to that situation).
 
 JRL: Ok
 
@@ -341,7 +332,7 @@ WH: Let’s go through the comments first.
 
 SYG: Sure.
 
-MLS: 1 hour meeting - 1 item meeting, I’m not going to show up if I don’t care about it. Even if we have a 3-hour meeting, it's a 3-topic or 4-topic meeting, and I'm not going to attend if I'm not interested in the topics.  I think it's important that all delegates have an understanding of what's going on.  Do I like to travel? No. I think there is something to be said about getting together for several days, including side conversations.
+MLS: 1 hour meeting - 1 item meeting, I’m not going to show up if I don’t care about it. Even if we have a 3-hour meeting, it's a 3-topic or 4-topic meeting, and I'm not going to attend if I'm not interested in the topics. I think it's important that all delegates have an understanding of what's going on. Do I like to travel? No. I think there is something to be said about getting together for several days, including side conversations.
 
 SYG: It is not going to eliminate that.
 
@@ -349,7 +340,7 @@ MLS: well, we will still have 4, I’m concerned how this would work. I think th
 
 DE: Would you recommend that we limit the scope of what we discuss in these calls?
 
-MLS: I have the same concern as JHD, having to be present for many calls in the year. It’s a catch-22. I don’t want the greater frequency/less time,  I think it is important for all delegates to participate.
+MLS: I have the same concern as JHD, having to be present for many calls in the year. It’s a catch-22. I don’t want the greater frequency/less time, I think it is important for all delegates to participate.
 
 SFC: I agree with MLS.
 
@@ -369,7 +360,7 @@ WH: The rule needs to be, we will not add last-minute agenda items, instead of t
 
 SYG: I agree with that. Part of the reason is that the next chance we have is in two months, if we have more calls, the burden is lifted.
 
-YSV: From my perspective, it would be better to have longer, less-frequent meetings, because I schedule review periods for my team.  If they were more frequent, it would be harder to schedule review periods.  It would be a much higher burden to handle that going forward.  I would propose 5 (?) calls that are 5 hours long.
+YSV: From my perspective, it would be better to have longer, less-frequent meetings, because I schedule review periods for my team. If they were more frequent, it would be harder to schedule review periods. It would be a much higher burden to handle that going forward. I would propose 5 (?) calls that are 5 hours long.
 
 GHO: This opens the door for companies that are in the bay area to attend the remote plenary in together.
 
@@ -385,7 +376,7 @@ SYG: It doesn’t seem forbidden, if you can show up to someone’s office at 9A
 
 MBS: I think this is a yes-and situation, considering co-located plenaries. I know how much work it is. If we have hubs for NY, SF, and Europe, maybe we can run co-located plenaries for them. It would limit the amount of travel required. I don’t think this would be perfect, but it would be less disruptive.
 
-JHD: The downside is that if a meeting is not 100% remote, the inevitable outcome is that the remote experience degrades, whereas if the experience is equal to everyone, people have an incentive to make sure the A/V works, etc.  If we have a remote plenary it would be a better experience if everyone is remote.
+JHD: The downside is that if a meeting is not 100% remote, the inevitable outcome is that the remote experience degrades, whereas if the experience is equal to everyone, people have an incentive to make sure the A/V works, etc. If we have a remote plenary it would be a better experience if everyone is remote.
 
 API: In my mind it couldn’t work if there were hub, because one region is always going to be out. If you shift to accommodate Europe, Asia is out.
 
@@ -403,10 +394,9 @@ API: I have a suggestion, it’s my queue item.
 
 MF: We could do these remote meetings at the same time as the in person, but not have stage advancement, have commitment from everyone on the call for stage advancement, but do the stage advancement at the next meeting, so that it doesn’t immediately start out moving the ability to attend.
 
-SYG: I disagree with starting off with calls without stage advancement.  The feedback thing could be handled in the context of the SLTG, which I haven't presented yet. If the trial run is to see if people can show up for a call, I hope people can do that.
+SYG: I disagree with starting off with calls without stage advancement. The feedback thing could be handled in the context of the SLTG, which I haven't presented yet. If the trial run is to see if people can show up for a call, I hope people can do that.
 
 KM: +1
-
 
 YSV: +1
 
@@ -426,7 +416,7 @@ CM: I’m uncomfortable with getting squeezed by the timebox. I’m sympathetic 
 
 YSV: We do still have the other 4 meetings. Many delegates don’t go to all six. By reducing the number, we might increase the number of delegates that go to the same meeting.
 
-CM: If there are only 4 meetings, that makes it more likely that delegates attend all four?  That's plausible.  I’m just very concerned about any time you have delicate social dynamics disturbing it is risky.
+CM: If there are only 4 meetings, that makes it more likely that delegates attend all four? That's plausible. I’m just very concerned about any time you have delicate social dynamics disturbing it is risky.
 
 SFC: I echo CM and MLS and WH. In general I am supportive of the idea of incubator calls. I also feel that alone solves a lot of the goals of remote plenaries, identifying the issues being raised. Even starting with just incubator calls, and seeing if it makes in person plenaries more efficient, I don’t see why you don’t need both. If it does make it more efficient, we could go to 4 in-person plenaries per year and not have remote plenaries.
 
@@ -491,7 +481,7 @@ BF: It seems like this would need to affect any host provided API, not just thro
 
 JHX: that would be discussed later. it is not very hard to define this argument. e.g. most methods on prototype should be true and all constructors it should be null.
 
-BF:  I do not believe that is the case, but we can discuss that later.
+BF: I do not believe that is the case, but we can discuss that later.
 
 BF: This proposal is leading towards a much more rich code expectation/reflection, I don’t think it should be limited to the usage of this. You can’t tell if a thing is intended to be constructed. You can sometimes tell via prototype, but not 100%, this should be generalized.
 
@@ -502,7 +492,6 @@ RPR: 5 minutes left.
 JHD: The question I put on the queue is Array.of, thisArgumentExpected => false, does not tell you if it can take one. thisArgumentExpected => true doesn’t tell you it is required, because you can omit it. For Stage 1, what problem is this solving. I see some use, .length,.name are properties. They are difficult to otherwise infer. Whether it uses this or not, it is similar to .length. I’m not clear on what this is solving. If the value is not going to help prevent errors, what is the problem we are going to be exploring in stage 1?
 
 JHX: The feature is to mark the intention of api. Frameworks/libraries and language can use it for defensive programming, depends on author of library how it should use this information.
-
 
 JHD: You are intending use cases where someone receives a function and dynamically decides whether to give it a receiver based on this data property?
 
@@ -538,7 +527,7 @@ JHX: Yes
 
 SYG: This is similar to the other proposal I asked to be rebranded (ArrayBuffer.fillRandom). In order to get stage 1, we have ignored the presentation, which is mostly about solution. The only part we are getting to stage 1. I am completely uncomfortable without paring down the proposal. If people look at the proposal list and see thisArgumentExpected, that is not at all what reached stage 1.
 
-MF: That's a common theme, with delegates overworking their Stage 1 request.  And it's useful for the committee to see the solution they have in their mind, but I agree that from a marketing perspective, we need to be clear.
+MF: That's a common theme, with delegates overworking their Stage 1 request. And it's useful for the committee to see the solution they have in their mind, but I agree that from a marketing perspective, we need to be clear.
 
 SYG: When people discuss this when they want to participate, if the explainer discusses this, I don’t think we should encourage the particular shape.
 
@@ -566,7 +555,6 @@ JHX: Yes. I would like to ask for stage 1?
 
 RPR: Any objections to stage 1?
 
-
 (several objections)
 
 RPR: Will they be provided?
@@ -577,7 +565,6 @@ WH: This does not solve any problem and introduces a new way of saying `this` in
 
 RPR: Thank you for your presentation JHX.
 
-
 ### Conclusion
 
 - `thisArgumentExpected` proposal not advanced to stage 1, waiting for additional clarification of intent of proposal and renaming explainer.
@@ -586,7 +573,6 @@ RPR: Thank you for your presentation JHX.
 ## Module attributes status update
 
 Presenter: Myles Borins (MBS)
-
 
 - [proposal](https://github.com/tc39/proposal-module-attributes)
 - [slides](https://docs.google.com/presentation/d/1m6J33TeFHnkFOKXqBnkhS6RqBVsJV4n70X_j5ALI47g/edit)
@@ -597,13 +583,13 @@ MBS: We are not looking for stage advancement, but are looking for stage advance
 
 BFS: I’m not comfortable to ship the unkeyed form. Using two keywords instead of one is vital. Having as type instead of as seems important for a variety of reasons. We don’t know if other environments are going to use this. It remains specific to web concerns. I would want to hear from other environments. If we do ship an unkeyed form, and need to upgrade to a keyed form. I am totally OK with it being a following for the keyed form.
 
-DE: I thought that for one, going backwards, with the keyed/unkeyed form, I thought environments could be responsible for taking a string and considering it equivalent to the object.  So I wonder if it would be okay to have both the string and the object literal being accepted.
+DE: I thought that for one, going backwards, with the keyed/unkeyed form, I thought environments could be responsible for taking a string and considering it equivalent to the object. So I wonder if it would be okay to have both the string and the object literal being accepted.
 
-BFS: I am not okay with that.  It is a major interoperability concern.
+BFS: I am not okay with that. It is a major interoperability concern.
 
 DE: I care alot about interop. We can discuss this further. You are characterizing this as web specific, but this applies to any environment where you load modules based on mime type.
 
-BFS: The type check I have no problems with.  I don't like the framing of your security concerns.  For example, I've talked with the WASI folks, and normally WASM should have no side-effects, but now that's no longer true with this proposal.
+BFS: The type check I have no problems with. I don't like the framing of your security concerns. For example, I've talked with the WASI folks, and normally WASM should have no side-effects, but now that's no longer true with this proposal.
 
 DE: I don’t know who claimed that. The WASM stuff is about it being equivalently powerful to JS. We’ve left whether WASM should be marked as an open question.
 
@@ -619,7 +605,7 @@ BFS: But they want web compatibility.
 
 MBS: With that in mind, if we want to have, in the case you mentioned, if the web is unable to support this without this mechanism.
 
-BFS: That's not true, because there are out-of-band solutions.  We can discuss offline.
+BFS: That's not true, because there are out-of-band solutions. We can discuss offline.
 
 MBS: Ok.
 
@@ -635,7 +621,7 @@ GCL: Like CommonJS has done that for years.
 
 DE: Ok, but in that case you would change the file extension.
 
-GCL: Yeah, but the consumer doesn't necessarily type in the file extension.  If the host didn't want to subscribe to the thing about not branding a module when you import/export it, how do you deal with this?
+GCL: Yeah, but the consumer doesn't necessarily type in the file extension. If the host didn't want to subscribe to the thing about not branding a module when you import/export it, how do you deal with this?
 
 DE: I think if you want to use modules that would also work on the web, you would use a module with a JS mime type, and would have a module that redirects one to another.
 
@@ -651,7 +637,7 @@ MF: I would like to see this proposal.
 
 MLS: Since we have a generalized constant form, we need a better keyword than as.
 
-DE: Myles and I were debating whether to show the keyword bikeshedding slide.  We agree and aren't sure what keyword to use.
+DE: Myles and I were debating whether to show the keyword bikeshedding slide. We agree and aren't sure what keyword to use.
 
 KM: With would make more sense.
 
@@ -678,7 +664,6 @@ Not asking for stage advancement, will follow up with MF, BFS, GCL, RGN.
 ## Strings or symbols for Temporal.Calendar protocol
 
 Presenter: Shane F. Carr (SFC)
-
 
 - [proposal](https://github.com/tc39/proposal-temporal/issues/310)
 - [slides](https://docs.google.com/presentation/d/1nx3Gq2orWoKYbjeQJuJQFEIh1Rk_bqf9Rb4o-D8I3x0/edit)
@@ -716,7 +701,6 @@ MM: I’m not understanding some depth here. My reaction is that this is normal 
 
 SFC: Similarity to?
 
-
 MM: Similarity to symbol usage in the cancel token proposal.
 
 SFC: I’m not familiar with that.
@@ -732,4 +716,3 @@ SFC: In general we have support for strings. We will follow up on the 1 symbol a
 SFC will follow up with RBN regarding using a similar pattern to cancellation tokens, where one symbol is used, returning this.
 
 General feeling to using strings in meeting.
-

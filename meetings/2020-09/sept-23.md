@@ -1,4 +1,5 @@
 # September 23, 2020 Meeting Notes
+
 -----
 
 **In-person attendees:**
@@ -36,8 +37,8 @@
 | Shu-yu Guo           | SYG            | Google             |
 | Hemanth HM           | HHM            | PayPal             |
 
-
 ## Status update for class fields, private methods, static class features
+
 Presenter: Ujjwal Sharma (USA)
 
 - [proposal](https://github.com/tc39/proposal-class-fields)
@@ -61,8 +62,8 @@ USA: Maybe we can address this in the chat, or in issues.
 
 LZJ: Ok no problem.
 
-
 ## Ergonomic brand checks for private fields for stage 3
+
 Presenter: Jordan Harband (JHD)
 
 - [proposal](https://github.com/tc39/proposal-private-fields-in-in)
@@ -116,7 +117,8 @@ YK: I just want to say positive things. JHD did a good job of presenting the men
 We will want to see how reification interacts with other proposals anyway, and there is no reason for us to wait on this for that to shake out.
 
 MM: The reified thing is a separate reflective level which is a much more specialized use, and we don’t know what the demand is. For the same rationale I don’t want to add syntax for other features. If there isn’t special syntax for it, how hard is it to do it yourselves? I pasted code in chat, that is a few lines of code that does this. If you have to do this all the time it will be a pain, but if you need to do it rarely you can roll it yourself. If we find that people end up doing this a lot even if it is 3 lines, then we have established a need.
-```
+
+```js
 ({
   has: obj => #x in obj,
   get: obj => obj.#x,
@@ -175,14 +177,12 @@ JHD: Can we squeeze in a couple of minutes later?
 
 AKI: Before or after lunch.
 
-
-
-
-
 ### Conclusion/Resolution
 
 Decision deferred until JHX can review notes.
+
 ## Decorators: A new proposal iteration
+
 Presenter: Kristen Hewell Garrett (KHG)
 
 - [proposal](https://github.com/tc39/proposal-decorators/)
@@ -306,6 +306,7 @@ DE: Do people have concerns on the high level, thanks for feedback.
 (ends)
 
 ## String.dedent for Stage 1
+
 Presenter: Hemanth HM (HHM)
 
 - [proposal](https://github.com/mmkal/proposal-multi-backtick-templates)
@@ -313,7 +314,7 @@ Presenter: Hemanth HM (HHM)
 
 HHM: (presents slides)
 
-DRR: (asks on queue: I understand ``` ``` is not necessarily the syntax, but that code is valid today)
+DRR: (asks on queue: I understand `````` is not necessarily the syntax, but that code is valid today)
 
 DRR: Weirdly enough, ``` followed by ``` is 2 tagged lit invocation, it is a runtime error, it has no problem with static syntax, it can be a syntax error. I don’t know if it’s worth changing in parser. Just wanted to mention that.
 
@@ -327,8 +328,7 @@ JRL: If we `String.dedent` at the tag we can maintain semantics with syntax, and
 
 SYG: it seems there should be an opportunity for optimization?
 
-
-JRL:  In syntax, yes. But the API form will not be able to do that, since the engine will maintain the underlying strings array and dedent will have to maintain its own cached version of that.
+JRL: In syntax, yes. But the API form will not be able to do that, since the engine will maintain the underlying strings array and dedent will have to maintain its own cached version of that.
 
 SYG: That answered my question and if that is the main con I also prefer the function over syntax here.
 
@@ -405,17 +405,17 @@ HHM: We will lean more towards the function form.
 JRL: There are fewer issues with the function form, but I personally prefer the syntax form. There is a risk with web compat here with syntax, but the API form has those memory issues. Would be happy with either.
 
 SYG: Now that I understand the actual con there I do have semi-significant impl concerns, but they're certainly not Stage 1 concerns.
+
 ### Conclusion/Resolution
+
 Stage 1
 
-
-
 ## Temporal Stage 2 Update
+
 Presenter: Ujjwal Sharma (USA)
 
 - [proposal](https://github.com/tc39/proposal-temporal/)
 - [slides](https://docs.google.com/presentation/d/1wkufbATeIxKvYZmd_hlM80x9zJC-C6pTHVwDFtUSqfM/edit?usp=sharing)
-
 
 USA: (presents slides)
 
@@ -455,10 +455,10 @@ JHD: The own properties are only immutable if Temporal makes them immutable, and
 
 DE: What people have been saying about time for reviews is true, but a misunderstanding about the time to do that. I like the idea of a call to go over the tutorial with reviewers, the polyfill can help people trying, I also want reviews from web developers and we’ll be accepting feedback. People should raise issues if there are issues with the 3 months review.
 
-PDL: On a side note, there will be a workshop  at NodeConf.EU this year to gather some feedback.
-
+PDL: On a side note, there will be a workshop at NodeConf.EU this year to gather some feedback.
 
 ## Intl.DisplayNames V2 for Stage 1
+
 Presenter: Frank Yung-Fong Tang (FYT)
 
 - [proposal](https://github.com/FrankYFTang/intl-displaynames-v2/)
@@ -481,10 +481,13 @@ PDL: Strong support for this.
 RPR: The queue is empty.
 
 FYT: Asking for Stage 1.
+
 ### Conclusion/Resolution
 
 Stage 1
+
 ## Intl Locale Info for stage 1
+
 Presenter: Frank Yung-Fong Tang (FYT)
 
 - [proposal](https://github.com/FrankYFTang/proposal-intl-locale-info)
@@ -501,10 +504,13 @@ PDL: +1. This is really important, I am responsible for some of those hacky libr
 RPR: The queue is clear.
 
 FYT: Asking for stage 1.
+
 ### Conclusion/Resolution
+
 Stage 1
 
 ## Conformance for enumerable options in 262 and 402
+
 Presenter: Shane F. Carr (SFC)
 
 - [ecma402 PR](https://github.com/tc39/ecma402/issues/467)
@@ -540,7 +546,7 @@ JHD: It's potentially a breaking change… people are more likely to pass an obj
 
 JHD: With the latest timeStyle/dateStyle change, I had 3 or 4 reports of users passing date value in their option bags because the new version of chrome throws when passing on an unknown but did not before. Every time we decide to start throwing we potentially break people’s code.
 
-SFC: I just wanted to be clear that I agree about “unknown properties” in options bags.  We ignore them, which is the same approach we take in 402 and Temporal. The specific question I mentioned here is the case of unknown values to known arguments. Should we allow Chrome to accept “fortnight” as a unit and format it instead of throwing?
+SFC: I just wanted to be clear that I agree about “unknown properties” in options bags. We ignore them, which is the same approach we take in 402 and Temporal. The specific question I mentioned here is the case of unknown values to known arguments. Should we allow Chrome to accept “fortnight” as a unit and format it instead of throwing?
 
 JHD: if there is a way to feature detect then it becomes easier to deal with throws which is better than to deal with try/catch.
 
@@ -555,8 +561,7 @@ PDL: you ignore it, because anything else would break.
 SFC: In case of the unknown unit fortnight, if the browser doesn’t have that data it, what is the fallback behavior? What do you do if you just ignore unknown string options?
 
 PDL: right. This is a big reason why options bags have a lot of issues (despite of the pros). An unknown value needs to be ignored.
-If it’s unknown and requires something, it is actually the new implementation that needs to deal with that
-Throwing is breaking the web essentially.
+If it’s unknown and requires something, it is actually the new implementation that needs to deal with that Throwing is breaking the web essentially.
 
 MM: We've been leaning toward ignoring unknowns rather than throwing. The dilemma between the two is addressable. You can feature test. However, it's difficult to feature test for what options a given procedure supports, and what enum options it supports, but good for calling code to detect and address the problem.
 

@@ -1,11 +1,11 @@
 # July 22, 2020 Meeting Notes
+
 -----
 Delegates: re-use your existing abbreviations! If you’re a new delegate and don’t already have an abbreviation, choose any three-letter combination that is not already in use, and send a PR to add it upstream.
 
+**In-person attendees:**
 
-**In-person attendees:**  
-
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Yulia Startsev       | YSV            | Mozilla            |
@@ -25,7 +25,7 @@ Delegates: re-use your existing abbreviations! If you’re a new delegate and do
 | Daniel Ehrenberg     | DE             | Igalia             |
 | Nicolò Ribaudo       | NRO            | Babel - Invited Expert |
 | Hemanth HM           | HHM            | PayPal             |
-| Ben Newman           | BN	        | Meteor/Apollo      |
+| Ben Newman           | BN         | Meteor/Apollo      |
 | Jordan Harband       | JHD            | Invited Expert     |
 | Bradley Farias       | BFS            | GoDaddy            |
 | Mattijs Hoitink      | MHK            | Apple              |
@@ -37,6 +37,7 @@ Delegates: re-use your existing abbreviations! If you’re a new delegate and do
 | Rob Palmer           | RPR            | Bloomberg          |
 
 ## Ergonomic brand checks for private fields for stage 3
+
 (Jordan Harband, JHD)
 
 * https://github.com/tc39/proposal-private-fields-in-in/issues/7
@@ -71,10 +72,11 @@ JHX: I don't have the confidence that the current syntax would work without it. 
 BT: We are overtime. Maybe you two can discuss this offline and then update the notes.
 
 ### Conclusion/Resolution
+
 * Will be discussed offline
 
-
 ## Upsert (now renamed emplace) updates ~& for Stage 3~
+
 Presenter: Bradley Farias (BFS)
 
 BFS: (presents slides)
@@ -110,7 +112,7 @@ BFS: [interrupts]
 WH: I don’t want to debate this here. We have a long queue; let’s let others speak.
 
 MM: Generally with options bags, the choice to provide parameters with an options bag is driven by a certain expectation of supporting introduction of new options over time.
-Code written for later versions that recognise new options would still work in older versions, where these options would just be ignored. I don't think that kind of evolution expectation is an issue with regard to this operation. I also want to draw a hard distinction between option bags and handles.  Maybe proxy handlers should have been an option bag with eager sampling, but the key thing there is the `this` binding. The fact that it's always looked up on demand is (???) the handle object is an API. I think it's important to keep those psychologically very different from each other. So I agree with WH that the option bag in this case is overkill.
+Code written for later versions that recognise new options would still work in older versions, where these options would just be ignored. I don't think that kind of evolution expectation is an issue with regard to this operation. I also want to draw a hard distinction between option bags and handles. Maybe proxy handlers should have been an option bag with eager sampling, but the key thing there is the `this` binding. The fact that it's always looked up on demand is (???) the handle object is an API. I think it's important to keep those psychologically very different from each other. So I agree with WH that the option bag in this case is overkill.
 
 BFS: We have a comment in the repo about using what we call this param, let’s say a “handler”, as the "this" value in order to achieve a specific use case. We didn't initially put it in the spec text, and this is where we got the comment that people wanted it.
 
@@ -183,9 +185,11 @@ BFS: So we have a lot of conflicts about people wanting specific behaviors or no
 We have to agree either to solve problems with different priorities, or just to abandon it.
 
 ### Conclusion/Resolution
+
 Follow up on conflicts on the repo.
 
 ## Number.range for Stage 2
+
 Presenter: Jack Works (JWK)
 
 * [proposal](https://github.com/tc39/proposal-Number.range)
@@ -242,13 +246,14 @@ BT: We are out of time.
 SFC: Do we have consensus?
 
 WH: No; we still have several items in the queue. There is a completely different issue no one has mentioned yet that I wanted to discuss.
+
 ### Conclusion/Resolution
+
 * No consensus for Stage 2
 * Needs more discussion that didn't fit the timebox.
 
-
-
 ## await operations for Stage 1
+
 Presenter: Jack Works (JWK)
 
 * [proposal](https://jack-works.github.io/proposal-await.ops/)
@@ -306,10 +311,12 @@ BT: Stage 1?
 [no objections]
 
 ### Conclusion/Resolution
+
 * Approved for Stage 1
 * Follow up in a possible incubator call
 
 ## Array.prototype.unique() proposal for Stage 1
+
 Presenter: Jack Works (JWK)
 
 * [proposal](https://github.com/TechQuery/array-unique-proposal)
@@ -358,11 +365,12 @@ BT: JWK is asking for Stage 1. Any objections?
 [silence]
 
 ### Conclusion/Resolution
+
 * Stage 1
 * The name might not be web compatible
 
-
 ## Record and Tuple for Stage 2
+
 (Robin Ricard (RRD) , Nicolò Ribaudo (NRO) and Rick Button (RBU) present)
 
 * [proposal](https://github.com/tc39/proposal-record-tuple)
@@ -380,7 +388,7 @@ RRD: Yes
 
 WH: I like how you dealt with ±0. It’s very important to not silently alter values stored into records and tuples, and this proposal avoids that. The proposal diverges from existing practice by making a record containing `NaN` equal to itself. While different, I see the rationale for it and I don’t think it will cause significant problems.
 
-WH: I see that element order is significant in the Record equality algorithm and you sort elements by their property names when creating the Record.  As long as the property names are strings, you can always sort them, so that works. Do you have any plans for allowing record property names that are something other than strings, like symbols?
+WH: I see that element order is significant in the Record equality algorithm and you sort elements by their property names when creating the Record. As long as the property names are strings, you can always sort them, so that works. Do you have any plans for allowing record property names that are something other than strings, like symbols?
 
 RRD: Good point. Two things. First, last meeting, it's not in the slides, but you can't use symbols as keys in records. Second thing is, the way records are created when we create those literals is that they're stored as a sorted list of keys. You can create them in any order, and in the spec, we sort the keys before creating the structure.
 
@@ -420,23 +428,23 @@ MM: I don’t feel I should do an example now, but there is a side channel, I wi
 
 DE: You have provided the example, but the actual communication is missing. [We can discuss with offline as well]
 
-MM: The example is communication.  I agree this is a post-stage-2 concern.
+MM: The example is communication. I agree this is a post-stage-2 concern.
 
 DRR: Concerns with cognitive overhead of deciding between objects and records. I think as we've look at this, there is a little bit of potential decision fatigue if you have to decide if you're passing objects or records. Maybe that's not as much of a user concern. But if you are using a static type checker, then you need to be able to predict whether or not you're going to pass an object, record, or potentially both. Maybe from the type system perspective, that's not something where you'll have to find a good workaround. But it is something that might end up frustrating users quite a bit. I hope that we can find something there.
 
-RBN: Your concern is valid, that Robin mentioned, but I am interested to know more about TypeScript. RRD said at the top of the presentation that records and tuples are intended to be parallel with objects and arrays in terms of prototypes, methods, etc.  I would like more feedback from TypeScript about how this interacts with type systems.
+RBN: Your concern is valid, that Robin mentioned, but I am interested to know more about TypeScript. RRD said at the top of the presentation that records and tuples are intended to be parallel with objects and arrays in terms of prototypes, methods, etc. I would like more feedback from TypeScript about how this interacts with type systems.
 
 RRD: I see a record as a subset of what an object could do (?). We can go over this at another moment.
 
 DE: I think RRD and RBN are articulating an interesting hypothesis. We heard from FHS about doing research to investigate these hypotheses. I think that this is a mental model that jibes with people would be tested. I also think we need to investigate type systems. If some type system is interested.
 
-DRR: If we aren’t shipping at stage-3. It is fine to wait to stage-3.  We can also collaborate more with the proposal.
+DRR: If we aren’t shipping at stage-3. It is fine to wait to stage-3. We can also collaborate more with the proposal.
 
 RRD: That's very good for us.
 
 DRR: We would entertain a pull request, for example, and then discuss as we have implementation. Either way would work.
 
-SYG: I'd like to say that we will review; V8 is neutral on the implementability of it. We need to do more research here. V8 will research and comment on the implementability before stage 3. I think getting implementer sign-off is important before going to Stage 3. 
+SYG: I'd like to say that we will review; V8 is neutral on the implementability of it. We need to do more research here. V8 will research and comment on the implementability before stage 3. I think getting implementer sign-off is important before going to Stage 3.
 
 DRR: Yes, thank you, we will work with you.
 
@@ -455,11 +463,14 @@ RBU: It would be during implementation phase feedback.
 WH: Yes, I don’t know if we’ll run into implementation concerns. We will cross that bridge if we run into problems, but I’m hoping we won’t need to cross any further bridges.
 
 RBU: Yes, we too.
+
 ### Conclusion/Resolution
+
 * Approved for Stage 2!
 * Reviewers: BN, SYG, ??
 
 ## Symbols as WeakMap keys for stage 2
+
 Presenter: Daniel Ehrenberg (DE)
 
 * [proposal](https://github.com/tc39/proposal-symbols-as-weakmap-keys)
@@ -491,7 +502,7 @@ MM: Moddable is a single-realm JS implementation (for memory overhead reasons). 
 
 BFS: Looking back at the composite keys proposal, there is a workflow you can use to store the data on objects rather than on the realm. Interested parties should follow up offline w/ me.
 
-YSV: We're now accepting symbols through Symbol.for().  I know MM was a strong proponent for not having permanent entries in the weakmap.  I would like to hear what the argument that convinced him on this is, beyond wanting to avoid having long-lived keys in a WeakMap.
+YSV: We're now accepting symbols through Symbol.for(). I know MM was a strong proponent for not having permanent entries in the weakmap. I would like to hear what the argument that convinced him on this is, beyond wanting to avoid having long-lived keys in a WeakMap.
 
 MM: I don't like registered symbols being weakmap keys, initially against that. The usability of trying to distinguish what can be done w/ a symbol regarding being registered or not causes bad surprises. There is a fundamental cross-Realm memory leak problem here, with a primitive (the registered symbol) that is immune from GC while the weakmap exists. Tradeoff is eating the cost of the memory leak.
 
@@ -517,7 +528,7 @@ WH: A tiny point of order: Link to this spec on the agenda is broken. It produce
 
 DE: Yes. We’ve been having problems with diffs. [Gives alternate instructions on how to get to the spec.]
 
-YSV: For me, what's important is *what* we intend to get to Stage 2. Because stage 2 signifies we have a problem that we want to solve, it’s important to know what problem we’re solving here. Need more investigation into problems this would solve. But I don't feel super comfortable saying that this should go forward on its own merit yet. That's why I want to clarify what the motivation is exactly.
+YSV: For me, what's important is _what_ we intend to get to Stage 2. Because stage 2 signifies we have a problem that we want to solve, it’s important to know what problem we’re solving here. Need more investigation into problems this would solve. But I don't feel super comfortable saying that this should go forward on its own merit yet. That's why I want to clarify what the motivation is exactly.
 
 DE: Other delegates have said we shouldn’t let this advance past R&T. I'm in no rush for this proposal; I'm fine making it dependent on R&T. I believe the R&T proposal stands on its own merit but I am happy to keep these proposals in lock-step.
 
@@ -530,7 +541,9 @@ RGN: Records and Tuples definitely can move independently of symbols-in-weakmaps
 DE: Can you elaborate on why?
 
 BT: No, because we are out of time.=
+
 ### Conclusion/Resolution
+
 * No Stage 2 advancement
 * Work to make the motivation more clear
 * Follow up more on use cases / motivation on the proposal repository
@@ -540,8 +553,7 @@ BT: No, because we are out of time.=
 * [proposal](https://tc39.es/proposal-json-parse-with-source/)
 * [slides](https://docs.google.com/presentation/d/1MGJhUvrWl4dE4otjUm8jXDrhaZLh9g7dnasnfK-VyZg/edit?usp=sharing)
 
-RG: presents slides
-MM: I don't understand the motivation for the serialization slide, the enhanced replacer. If there is a reason to allow it to generate JSON. What is the motivation on the replacer side?
+RG: presents slides MM: I don't understand the motivation for the serialization slide, the enhanced replacer. If there is a reason to allow it to generate JSON. What is the motivation on the replacer side?
 
 RG: Motivation hovers around BigInt , the JSON I received I would like to generate values of the same fidelity.
 
@@ -593,7 +605,7 @@ WH: Just like MM, I would very much prefer to keep the proposals together, since
 
 JRL: I'm confused what serialization solves for this proposal. For stage 3, we need much better examples of what serialization is actually trying to do.
 
-RG: In that example, we’re trying to preserve the precision of a BigInt being serialized. Without this facility, you would either see a 1 followed by a bunch of zeros, or a string with quotes inside it. 
+RG: In that example, we’re trying to preserve the precision of a BigInt being serialized. Without this facility, you would either see a 1 followed by a bunch of zeros, or a string with quotes inside it.
 
 MF: This could be represented in other ways than a number in JSON. You can use a 2-layer approach where you describe the type of everything you're encoding using a wrapper.
 
@@ -623,9 +635,9 @@ BFS: The spec text doesn't mention UTF-8. I mentioned it to ensure that it's com
 RGN: The concept within Unicode that we’re looking for is “well-formed Unicode.” That covers all forms of Unicode (UTF-16, UTF-8, etc.). Also, I agree this proposal can manifest as a PR.
 
 ### Conclusion/Resolution
+
 * This can be presented as a "Needs consensus" PR
 * Will need to be approved in a future committee meeting
-
 
 ## Host hooks for Job callbacks (consensus-seeking continuation from day 1)
 
@@ -633,9 +645,10 @@ RGN: The concept within Unicode that we’re looking for is “well-formed Unico
 * [slides](https://docs.google.com/presentation/d/19S97ZqhibJABqzeP5ZU6Flk6TVgWzXuvJWFbNTTfpWs/edit?usp=sharing)
 
 SYG: Addressed concerns with concerned parties. The two new host hooks that I am proposing will be browser only. The prose now says that hosts that are not browser must follow the default behavior. I also added a note that any host cannot override behavior that ECMA262 specifies. The concern here was from mark that this would allow dynamic scoping. With that, I would like to ask consensus again for adding these two host hooks for adding callbacks that are passed by apis asynchronously. That is promises and finalization registry. Any objections?
-### Conclusion/Resolution
-* Host hooks for job callbacks has Consensus 
 
+### Conclusion/Resolution
+
+* Host hooks for job callbacks has Consensus
 
 ## Function toString for builtins (consensus-seeking continuation from day 1)
 
@@ -647,11 +660,11 @@ GCL: What was discussed last time was to explicitly allow the `get` and `set` in
 
 WH: What would the output be?
 
-GCL: the keyword `function` followed by the keyword `get` or `set`, followed by the usual output. 
+GCL: the keyword `function` followed by the keyword `get` or `set`, followed by the usual output.
 
 RGN: Having it specified like this results in the observable difference between user code and native code?
 
-GCL: That is also my opinion but that wasn’t the goal here. The goal here is to align with implementations. 
+GCL: That is also my opinion but that wasn’t the goal here. The goal here is to align with implementations.
 
 RGN: Does this do that?
 
@@ -663,12 +676,12 @@ JHD: I agree with WH. We should land this now, but it is important to do the fol
 
 GCL: Does anybody object?
 
-Robert: No objections, you actually have consensus this time. 
-
+Robert: No objections, you actually have consensus this time.
 
 GCL: Whoo!
 
 [no objections]
 
 ### Conclusion/Resolution
+
 * Consensus to merge the PR

@@ -1,9 +1,10 @@
 # September 21, 2020 Meeting Notes
+
 -----
 
-**In-person attendees:**  
+**In-person attendees:**
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Waldemar Horwat      | WH             | Google             |
@@ -33,25 +34,27 @@
 | Istvan Sebestyen     | IS             | Ecma International |
 | Shu-yu Guo           | SYG            | Google             |
 
-
 ## Opening, welcome, housekeeping
+
 Presenter: Aki Braun (AKI)
 
 AKI: (presents slides)
+
 ## Secretary’s Report
+
 Presenter: Istvan Sebestyen (IS)
 
 - [slides](https://github.com/tc39/Reflector/files/5246401/tc39-2020-041.pdf)
 
-IS: (presents slides). The usual information, about TC39 standards access and download, status of meeting planning and news in Ecma, etc. The only relevant news are that formal liaison with CalConnect not dot done yet due to the incompatibility of the two patent policies (Ecma TC39  = RF and CalConnect = RAND). Suggestion was discussed with CalConnect that CalConnect should establish an “experimental RF patent policy” (takes of course some time), until then CalConnect experts should participate in TC39 work as invited experts in personal capacity accepting the TC39 RF patent policy. 
+IS: (presents slides). The usual information, about TC39 standards access and download, status of meeting planning and news in Ecma, etc. The only relevant news are that formal liaison with CalConnect not dot done yet due to the incompatibility of the two patent policies (Ecma TC39 = RF and CalConnect = RAND). Suggestion was discussed with CalConnect that CalConnect should establish an “experimental RF patent policy” (takes of course some time), until then CalConnect experts should participate in TC39 work as invited experts in personal capacity accepting the TC39 RF patent policy.
 
 ## ECMA262 Status Updates
+
 Presenter: Jordan Harband (JHD), Kevin Gibbons (KG)
 
 - [slides](https://j.mp/262editor202009)
 
 JHD: (presents slides)
-
 
 (Re. normative PR slide)
 
@@ -77,24 +80,22 @@ KG: Thank you for pointing it out! This uncovered a number of places where imple
 
 MF: (presents slides, “GitHub Project: Major Editorial Work”)
 
-
-
 ## ECMA402 Status Updates
+
 Presenter: Shane F. Carr (SFC)
 
 - [slides](https://docs.google.com/presentation/d/1FeyW-QdZqAQ0xvrPacI347gYRuBtZ8NR6lV6n0bca4M/edit?usp=sharing)
 
 SFC: (presents slides)
 
-
 ## ECMA404 Status Updates
-Presenter: CM
 
+Presenter: CM
 
 CM: ECMA404 sleeps happily, let’s try not to wake it up.
 
-
 ## ECMA TC53 Liaison Report
+
 Presenter: Peter Hoddie (PHE)
 
 - [slides](https://www.icloud.com/keynote/0_6IXVVSlbeV1Dm2OdEJt-5kQ#tc53_liaison_tc39_-_september_2020)
@@ -102,12 +103,13 @@ Presenter: Peter Hoddie (PHE)
 PHE: (presents slides)
 
 ## Updates from the CoC Committee
-Presenter: Jordan Harband (JHD)
 
+Presenter: Jordan Harband (JHD)
 
 JHD: (presents CoC updates)
 
 ## The last 5 years of Test262, a brief review
+
 Presenter: LEO
 
 LEO: (presents slides)
@@ -117,6 +119,7 @@ RKG: Bravo. Let’s give applause.
 (many people give virtual applause over webcam)
 
 ## Explicitly specify order of operations in MakeTime
+
 Presenter: Kevin Gibbons (KG)
 
 - [pull request](https://github.com/tc39/ecma262/pull/2120)
@@ -133,7 +136,8 @@ KG: I will take that as consensus.
 
 Consensus Reached.
 
-## Move __proto__ out of Annex B
+## Move `__proto__` out of Annex B
+
 Presenter: Gus Caplan (GCL)
 
 - [pull request](https://github.com/tc39/ecma262/pull/2125)
@@ -144,7 +148,7 @@ JHD: Annex B represents two things. 1 is web browsers need to do this thing, but
 
 GCL: To clarify, your concern is about the spec sending a message to non-implementers, people who use JavaScript?
 
-JHD: Yes, not to implementers, but to practitioners.  
+JHD: Yes, not to implementers, but to practitioners.
 
 GCL: I don’t know if we care about that, but it is interesting.
 
@@ -175,17 +179,17 @@ BFS: There was something interesting I noted, we discussed if it is something re
 
 BT: PHE wants to clarify on this topic, if no objections I’d like to let him skip.
 
-PHE: On the specific point raised by BFS, he is absolutely correct that XS does implement these functions. The reason why is important. We never needed them until we wanted to pass certain tests in test262.  There is an unexpected dependency in test262 on Annex B. We would be thrilled to take it out.
+PHE: On the specific point raised by BFS, he is absolutely correct that XS does implement these functions. The reason why is important. We never needed them until we wanted to pass certain tests in test262. There is an unexpected dependency in test262 on Annex B. We would be thrilled to take it out.
 
 GCL: You actively want them to be optional?
 
 PHE: Yes. I have no problem with them being normative optional, but I don’t think that devices should be required to carry them around.
 
-JWK: Why do you need to implement in engine if you can manually define in userland? Deno does not implement this, and if we are using a library and it’s broken, I manually define __proto__ to fix the lib.
+JWK: Why do you need to implement in engine if you can manually define in userland? Deno does not implement this, and if we are using a library and it’s broken, I manually define `__proto__` to fix the lib.
 
-BFS: Deno does ship with __proto__, but they delete it on purpose.
+BFS: Deno does ship with `__proto__`, but they delete it on purpose.
 
-GCL: For what it's worth, that's the normative optional part here. I don't think that conflicts with anything. It's very clear you do not need to implement __proto__ to be a ??? engine.
+GCL: For what it's worth, that's the normative optional part here. I don't think that conflicts with anything. It's very clear you do not need to implement `__proto__` to be a ??? engine.
 
 SYG: For `__proto__`, it is uncontroversial, everyone thinks it ought to be discouraged. I know we had a lot of discussion about ASI, and remain neutral in the spec language. If we're to set a precedent here, if we go with an "icky" note, this would be the first thing in ECMA-262 that we say is deprecated and discouraged. I’m trying to clarify what we would be agreeing to. It sounds like case-by-case, we would discourage things in the main body, we would need to get consensus that it is a thing that we want to discourage?
 
@@ -193,11 +197,11 @@ JHD: That matches what I'm asking for.
 
 MM: I would certainly that the “icky” designation should require consensus. ASI did not acheive consensus.
 
-GCL: Can we skip past the ickyness and switch directly to the __proto__ business?
+GCL: Can we skip past the ickyness and switch directly to the `__proto__` business?
 
 BT: 15 minutes left, up to you GCL.
 
-KG: Which __proto__?
+KG: Which `__proto__`?
 
 GCL: All the methods and syntax.
 
@@ -209,7 +213,7 @@ GCL: The syntax is also moved. It is not normative optional.
 
 KG: The only normative change is making syntax mandatory?
 
-GCL: __proto__ is normative optional. __defineGetter__ etc is not optional. The syntax is moved into the main body, it is not optional.
+GCL: `__proto__` is normative optional. `__defineGetter__` etc is not optional. The syntax is moved into the main body, it is not optional.
 
 MM: That seems right to me.
 
@@ -217,11 +221,11 @@ JHD: My topic isn’t ickyness, but I can skip the ickyness part.
 
 BT: Take it away.
 
-JHD: BFS made the point that "icky" and "optional" are different things. Should we make everything required except what we can't? Or should we make everything optional except what we have to make required? __proto__ has to be required, but the _defineGetter__ stuff, I’m asking the general question.
+JHD: BFS made the point that "icky" and "optional" are different things. Should we make everything required except what we can't? Or should we make everything optional except what we have to make required? `__proto__` has to be required, but the _defineGetter__ stuff, I’m asking the general question.
 
 MM: I think it’s complicated. My original presentation on moving things out of Annex B goes into some of the tradeoffs. I don’t think there is a single answer; it depends on why we think something may be optional.
 
-GCL My goal is to have as much as possible be required. The only reason __proto__ is not required is because implementations actively get rid of it. Node has an option. deno gets rid of it. I think we should aim for one JS as much as possible.
+GCL My goal is to have as much as possible be required. The only reason `__proto__` is not required is because implementations actively get rid of it. Node has an option. deno gets rid of it. I think we should aim for one JS as much as possible.
 
 WH: I don’t think we have consensus on that. That (make as much as possible be required) is an opinion and we have different opinions on that in the committee.
 
@@ -245,7 +249,7 @@ PHE: I want to make sure where we landed. I don’t want to summarize, I don’t
 
 KG: We have not agreed to anything yet.
 
-MM: Somebody said that __proto__ should be normative optional because of a security concern. That one is surprising to me because we do have Object.setPrototypeOf and Reflect.setPrototypeOf, both of which are required, which provide all the capabilities of __proto__ through other means. I don’t see what security concern __proto__ would raise.
+MM: Somebody said that `__proto__` should be normative optional because of a security concern. That one is surprising to me because we do have Object.setPrototypeOf and Reflect.setPrototypeOf, both of which are required, which provide all the capabilities of `__proto__` through other means. I don’t see what security concern `__proto__` would raise.
 
 GCL Its not setting the prototype, it’s that it is a property of objects. Lodash had a bug, an interaction with JSON.parse, it would overwrite the prototype if you weren’t careful. It isn’t setting the prototype itself but a domain problem.
 
@@ -255,11 +259,11 @@ BFS: You can look up papers on prototype pollution.
 
 MM: This is not prototype pollution.
 
-BFS: The easiest way is what GCL said. The difference is between method call and assignment, when you do a JSON.parse, and has a __proto__ property, people will do that as a dynamic access using that as a key. Deep cloing libraries will naively use that __proto__ key and assign something to an object. This replaces the object’s prototype. For example, Node introduced a flag to disable the proto getter and setter, because there are so many notifications of these bugs, because there are so many find, that they are prohibitive to actually fixing the bug.
+BFS: The easiest way is what GCL said. The difference is between method call and assignment, when you do a JSON.parse, and has a `__proto__` property, people will do that as a dynamic access using that as a key. Deep cloing libraries will naively use that `__proto__` key and assign something to an object. This replaces the object’s prototype. For example, Node introduced a flag to disable the proto getter and setter, because there are so many notifications of these bugs, because there are so many find, that they are prohibitive to actually fixing the bug.
 
 MM: Thank you, I have a sense of it now.
 
-BFS: As a personal preference, we should move the syntax for __proto__ that is in Annex B into the main body regardless of the methods. You can have two JS source texts that execute differently based on their environments. Because there is wide enough usage it is problematic that we maintain this divergence. There are inconsistencies with JSON.parse. I think that’s fine. I like moving the syntax into the main spec.
+BFS: As a personal preference, we should move the syntax for `__proto__` that is in Annex B into the main body regardless of the methods. You can have two JS source texts that execute differently based on their environments. Because there is wide enough usage it is problematic that we maintain this divergence. There are inconsistencies with JSON.parse. I think that’s fine. I like moving the syntax into the main spec.
 
 KG: Agree on not marking “icky”.
 
@@ -269,7 +273,7 @@ BFS: Sounds good that’s all.
 
 KG: Can you list all of the things that we are asking for consensus on?
 
-GCL: The __proto__ accessor, to be normative optional.
+GCL: The `__proto__` accessor, to be normative optional.
 
 KG: Is it also being marked as icky?
 
@@ -277,7 +281,7 @@ GCL: Do we need consensus on that here?
 
 MM: We need consensus on anything in the main spec that is marked as “icky”. We should not assume in migrating things from Annex B into the main spec that Annex B assumes that it is "icky". It does not.
 
-GCL: I’m just gonna list this off. __proto__ accessor will be normative optional and icky, the __define and __lookup {Getter/Setter} methods will be non-optional and “icky”. Do we have consensus on them being optional?
+GCL: I’m just gonna list this off. `__proto__` accessor will be normative optional and icky, the __define and__lookup {Getter/Setter} methods will be non-optional and “icky”. Do we have consensus on them being optional?
 
 JWK: I agree.
 
@@ -285,7 +289,7 @@ JHD: Is there anyone that wants the define/lookup methods to be required?
 
 GCL: That's what I'm asking. (silence) Seems like no.
 
-GCL: the syntax for __proto__ will be required and will not be icky.
+GCL: the syntax for `__proto__` will be required and will not be icky.
 
 MM: All of that sounds exactly right to me.
 
@@ -299,13 +303,13 @@ GCL: Seems like we have consensus for optional. Let’s move forward with that?
 
 KG: Can I recap? To make sure we all know what we agree to?
 
-- The __proto__ syntax will be required and not marked as discouraged
-- The __proto__ accessor will be optional and marked as discouraged.
-- The __defineGetter__, __defineSetter__, __lookupGetter__, and __lookupSetter__ will be optional and discouraged.
+- The `__proto__` syntax will be required and not marked as discouraged
+- The `__proto__` accessor will be optional and marked as discouraged.
+- The `__defineGetter__`, `__defineSetter__`, `__lookupGetter__`, and `__lookupSetter__` will be optional and discouraged.
 
 Note: icky means discouraged
 
-SYG: Given that this is the first time that we are marking these things as “icky”, I would like some acknowledgement that the editor group be given some independence over  ???
+SYG: Given that this is the first time that we are marking these things as “icky”, I would like some acknowledgement that the editor group be given some independence over ???
 Vs. if you are bootstrapping a greenfield ecosystem you are discouraged from implementing this.
 
 JHD: SYG, this is not the first time we’re marking things as “icky”. There is precedence for that, for example Annex B itself (quotes the beginning of Annex B on the definition of "discouraged") That said, I agree with your request for editorial leeway. I just wanted to clarify.
@@ -319,12 +323,13 @@ WH: MM, read the beginning of Annex B. It currently states that everything in th
 MM: Ok.
 
 ### Conclusion/Resolution
-- The __proto__ syntax will be required and not marked as discouraged
-- The __proto__ accessor will be optional and marked as discouraged.
-- The __defineGetter__, __defineSetter__, __lookupGetter__, and __lookupSetter__ will be optional and discouraged.
 
+- The `__proto__` syntax will be required and not marked as discouraged
+- The `__proto__` accessor will be optional and marked as discouraged.
+- The `__defineGetter__`, `__defineSetter__`, `__lookupGetter__`, and `__lookupSetter__` will be optional and discouraged.
 
 ## Align detached buffer semantics with web reality
+
 Presenter: Ross Kirsling (RKG)
 
 - [pull request](https://github.com/tc39/ecma262/pull/2164)
@@ -333,7 +338,7 @@ RKG: (presents PR)
 
 PHE: I don't have a strong position. I remember the GitHub issue. There are 2 issues that pass this: Two implementations, Moddable and ???, both get this right, conforming to the spec. I completely agree that the spec should address web reality. I appreciate the work you and others have done to pin that down. A different way to look at this is that this web reality is another Annex B behavior. The web is looser with enforcing some of the requirements in the spec than the language would prefer. These differences could be put into Annex B as required for web browsers. It would maintain the intent of the specification better.
 
-RKG: That makes sense. My understanding (which may be imperfect) is this has been pretty  consistent in browser-hosted implementations all along; that TC39 inherited the spec’ing out of ArrayBuffer et al. from Khronos during the ES6 era and wanted to make these cases more stringent, but the ship had already sailed in engines. It's just taken this long to be an official web compat issue.
+RKG: That makes sense. My understanding (which may be imperfect) is this has been pretty consistent in browser-hosted implementations all along; that TC39 inherited the spec’ing out of ArrayBuffer et al. from Khronos during the ES6 era and wanted to make these cases more stringent, but the ship had already sailed in engines. It's just taken this long to be an official web compat issue.
 
 GCN: This should not be in Annex B especially for node because there is ton of code to handle it. It would be more appropriate to do the “icky thing” but I think it should not be added to Annex B.
 
@@ -363,7 +368,7 @@ RKG: I will say that I’ve already been planning on correcting JSC’s behavior
 
 KM: I don't think it would be a problem.
 
-SYG: I think it the issue that turning an error to a non-error has minimal compat risk. 
+SYG: I think it the issue that turning an error to a non-error has minimal compat risk.
 I am willing to add Chrome to be the first do that change.
 
 KM: Compat risk is always a problem.
@@ -377,7 +382,9 @@ RKG: Seems like everyone is onboard?
 ### Conclusion
 
 PR Approved.
+
 ## Specify order of name and length for built-in functions
+
 Presenter: Kevin Gibbons (KG)
 
 - [pull request](https://github.com/tc39/ecma262/pull/2116)
@@ -408,14 +415,15 @@ KG: I might come back with a prototype in a future meeting.
 
 Consensus.
 
-## 	Arbitrary Strings as export/import names
+## Arbitrary Strings as export/import names
+
 Presenter: Bradley Farias (BFS)
 
 - [pull request](https://github.com/tc39/ecma262/pull/2154)
 
 BFS: (presents slides)
 
-WH: Is this the first place in the spec where you check for “valid unicode”? 
+WH: Is this the first place in the spec where you check for “valid unicode”?
 
 BFS: To my knowledge, yes, but there is iteration of code points for a specific operation. The spec doesn't check for isValidUnicode anywhere, but it does iterate code points.
 
@@ -459,16 +467,16 @@ JHD: MM, there are plenty of references to the UTF-8 concept in the spec: valid 
 
 MM: I didn’t know that; thanks!
 
-BFS: We can also change it in some way that we - I don’t like the idea of phrasing it, that it doesn’t contain any lone surrogates explicitly, although to the most technical letter what it is doing. If we name it specifically that, it won’t get updated to valid problems in the future, 
+BFS: We can also change it in some way that we - I don’t like the idea of phrasing it, that it doesn’t contain any lone surrogates explicitly, although to the most technical letter what it is doing. If we name it specifically that, it won’t get updated to valid problems in the future,
 If there is a problem found with this method, that basically asserts that it does return code points that are complete, then we wouldn't get that if it states "doesn't contain lone surrogates".
 
 MM: I have no objection to either way of phrasing it, I prefer the lone surrogate but if you prefer UTF-8, I am ok with this.
 
-YSV: There is no objection from our side, but to JHD’s point, We’d like to prefer UTF-16 wherever possible unless there is a conscious decision. In this case UTF-8 does make sense due to the WASM case. 
+YSV: There is no objection from our side, but to JHD’s point, We’d like to prefer UTF-16 wherever possible unless there is a conscious decision. In this case UTF-8 does make sense due to the WASM case.
 
 DE: I think we’ve been talking about UTF8/16 for a while, we should focus on editorial issues on the PR. I don’t think we should focus on UTF8/16, I like the feature and it makes sense. I'm the champion on the WebAssembly side of the ESM integration. I think it's good that we have this field in. It makes sense that we only import or export valid Unicode code point strings, as this does.
 
-AKI: Queue empty. BFS? 
+AKI: Queue empty. BFS?
 
 BFS: I would like to ask for consensus, remaining editorial issues to be discussed with people on it.
 
@@ -493,6 +501,7 @@ GCL: Engine262 has this implemented already.
 Approved, pending the Test262 and implementations.
 
 ## Numeric literal suffixes update: separate namespace version
+
 Presenter: Daniel Ehrenberg (DE)
 
 - [proposal](https://github.com/tc39/proposal-extended-numeric-literals)
@@ -562,7 +571,7 @@ DE: more about engines to be able to keep their structures. Literals should also
 
 MM: Any developer who wants to understand their code should stick to strict mode.
 
-DE:  I see two options: (1) making a separate namespace, with no prefix, or (2) making the underscore an explicit separation. I don’t think we can make it so that it only refers to the lexical scope with no prefix like `_`. I was laying motivations for why those were the two options.
+DE: I see two options: (1) making a separate namespace, with no prefix, or (2) making the underscore an explicit separation. I don’t think we can make it so that it only refers to the lexical scope with no prefix like `_`. I was laying motivations for why those were the two options.
 
 MM: I very much prefer the polyfillable principle: that whatever new suffixes for built-in types going forward, the things you can do at the user level can look like that. It's a good design principle that the mechanisms available to language designers, as much as that power can be given to the user can be good, that doesn’t mean bare m can’t be the suffix could be ??? instead of _m. So, as this discussion has proceeded, I'm leaning toward the underbar, even though I wasn't used to. That way, we solve the need for the separate namespace without creating a separate namespace mechanism. I'd say that new builtins after BigInt all have the same preceding underbar.
 
@@ -602,9 +611,10 @@ WH: A couple quick observations: Excluding a bunch of different letters `a`, `b`
 
 DE: I don’t know who made the claim. There would be problems even with an underscore.
 
-WH: Second observation: I do very much like the separate namespace. For example, a good use case of this would be representing complex numbers, `3+4i` shouldn't conflict with an index variable `i`.  I think of the `i` in the number more as syntax than a variable name, just like I don’t think of the `e` in `3e-4` as a variable.
+WH: Second observation: I do very much like the separate namespace. For example, a good use case of this would be representing complex numbers, `3+4i` shouldn't conflict with an index variable `i`. I think of the `i` in the number more as syntax than a variable name, just like I don’t think of the `e` in `3e-4` as a variable.
 
 ## Need another stage 3 reviewer for iterator helpers
+
 Presenter: Michael Ficarra (MF)
 
 No slides
@@ -630,6 +640,7 @@ JHD: in general authors reviewing what they wrote can be a problem but here it i
 YSV/JTO will review
 
 ## Withdrawing TypedArray stride
+
 Presenter: Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/tc39/proposal-typedarray-stride)
@@ -638,18 +649,18 @@ SYG: The feedback from engines is that this would slow down the index operator, 
 
 AKI: You already answered my question, is this still a problem to be solved? The answer seems to be yes.
 
-SYG: Archive the proposal repo? 
+SYG: Archive the proposal repo?
 
 AKI: Archive and remove it from the proposals listing.
 
 JHD: Already got that.
+
 ### Conclusion/Resolution
 
 Proposal will be withdrawn
 
-
-
 ## F.p.bind with infinite-length functions
+
 Presenter: Kevin Gibbons (KG)
 
 - [proposal](https://github.com/tc39/ecma262/issues/2170)
@@ -679,7 +690,7 @@ That is the only case you need to deal with here (showing up spec patch).
 
 MM: I have mild distaste for adding another branch to the spec. I was hoping that you had phrasing in mind that would not add a separate condition.
 
-KG: Unfortunately no; everywhere toInteger is used, it must check for infinity. I have renamed it to ToIntegerOrInfinity to take up on that case. 
+KG: Unfortunately no; everywhere toInteger is used, it must check for infinity. I have renamed it to ToIntegerOrInfinity to take up on that case.
 
 MM: Ok, yes
 
@@ -694,6 +705,7 @@ KG: I would like to ask for a consensus for infinity as a correct answer to this
 Consensus. We will use Infinity.
 
 ## Date arithmetic
+
 Presenter: Kevin Gibbons (KG)
 
 - [slides](https://docs.google.com/presentation/d/1gePsNmlP2u0pYXm0LWO3d7eM4Q_y5Ozx0qXN1zWOv58/)
@@ -756,6 +768,7 @@ Consensus on part 1: IEEE arithmetic in Dates
 No consensus on part 2 on grounds of late addition to the agenda.
 
 ## Move outreach groups to the TC39 org, like incubator calls?
+
 Presenter: Daniel Ehrenberg (DE)
 
 - [outreach groups](https://github.com/js-outreach/js-outreach-groups/)

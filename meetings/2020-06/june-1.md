@@ -1,9 +1,10 @@
 # June 01, 2020 Meeting Notes
+
 -----
 
-**In-person attendees:**  (none)
+**In-person attendees:** (none)
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Yulia Startsev       | YSV            | Mozilla            |
@@ -56,15 +57,18 @@
 | Rick Waldron         | RW             | Bocoup             |
 | Daniel Ehrenberg     | DE             | Igalia             |
 
-
 ## Housekeeping
+
 ### Adoption of the agenda
+
 Adopted
 
 ### Approval of minutes
+
 Approved
 
 ### Volunteers for note taking
+
 * Robin Ricard (RRD)
 * Mark Cohen (MPC)
 * Shane Carr (SFC)
@@ -72,6 +76,7 @@ Approved
 * Ilias Tsangaris (IT)
 
 ## Next meeting host and logistics
+
 [Slides](https://docs.google.com/presentation/d/1NyD7mS7qFXUPVWtUhCsR7gPGEZJKCRwznx4a6efz9yU)
 
 RPR: (presents slides)
@@ -81,6 +86,7 @@ RPR: no questions at the moment, please give feedback to the chair group via ref
 RPR: chair group will have final say
 
 ## Secretary’s report
+
 Presenter: Istvan Sebestyen (IS)
 
 * [slides](https://github.com/tc39/agendas/blob/master/2020/06.tc39-2020-06-slides_Istvan.pdf)
@@ -88,9 +94,11 @@ Presenter: Istvan Sebestyen (IS)
 IS: (presents slides) It is published as TC39/2020/026. In general very quiet since the April TC39 meeting, which is a good sign at this phase of the year. The two drafts (ECMA-262 and ECMA-402 2020 editions) have been published within Ecma. The RF “Opt-out” has been launched on April 2, 2020 and closes tomorrow on June 2, 2020. So far we have received nothing, which is good. I think the ES2020 on June 16-17 by the Ecma GA will go without problems. Thanks for the hard work.
 
 ## ECMA404 Status Update
+
 CM: No news is good news.
 
 ## ECMA262 Status Update
+
 [Slides](https://docs.google.com/presentation/d/1PxrkXXrtgnTgE14k8WnuKtjjyNDJ9ce15ZL_uvl-P9U/)
 
 JHD and KG: (present slides)
@@ -99,7 +107,7 @@ SYG: agenda item later - we’d like to settle how we layer with other specs - l
 
 BSH: BigInt spec issues - any effect expected on JS engine behavior? Are they inconsistent as a result?
 
-KG: mostly editorial - assuming I have the right idea, it’s just the arithmetic in the spec that is badly defined but everyone is already the right thing. In some cases the thing the spec says not even defined.  In other cases there are arguably wrong things that show up with arbitrarily large numbers in counters, etc.
+KG: mostly editorial - assuming I have the right idea, it’s just the arithmetic in the spec that is badly defined but everyone is already the right thing. In some cases the thing the spec says not even defined. In other cases there are arguably wrong things that show up with arbitrarily large numbers in counters, etc.
 
 BSH: But you’re not expecting your work to result in engine teams having to go change things?
 
@@ -107,9 +115,9 @@ JHD: No, but the things in 262’s release candidate are worth paying attention 
 
 BSH: So the tests tested the correct thing, even though the spec said the wrong thing?
 
-MF: The spec was updated to the wrong thing about a year ago - engines have been doing the shift op correctly for many years 
+MF: The spec was updated to the wrong thing about a year ago - engines have been doing the shift op correctly for many years
 
-WH: Regarding your last point.  There were lots of spec bugs that were introduced involving abstract numbers. Those are being addressed.
+WH: Regarding your last point. There were lots of spec bugs that were introduced involving abstract numbers. Those are being addressed.
 
 WH: On the topic of Syntax-Directed Operations, whichever way you gather them, I’d like there to be links to them from the other place. If you gather all the productions for an SDO in one place, I’d like there to be a link from the grammar production to the SDOs that they affect. It would make it much easier to read the spec.
 
@@ -118,19 +126,22 @@ KG: I can make that happen automatically in ecmarkup probably so thank you for t
 WH: If you're reading a production and you want to know everything about what a grammar production does, this will help. Thank you.
 
 MF: please leave a comment on the issue
+
 ## ECMA402 Status Update
+
 * [slides](https://docs.google.com/presentation/d/1leorSs4oYKFh7WYxoR5H2YtYANM8YgYpGQuEW1jMFBc)
 
 SFC: (presents slides)
 
 Items seeking consensus:
+
 * ecma402#430: https://github.com/tc39/ecma402/pull/430
 * ecma402#438: https://github.com/tc39/ecma402/pull/438
 * ecma402#444: https://github.com/tc39/ecma402/pull/444 - not had the chance to discuss that PR yet
 
 SFC: No one on the queue - if there are no comments by end of presentation, we can record a tc39 consensus on those PRs
 
-LEO: A note about the new Editorship. Thank you for this work. SFC hugely facilitated that work. Very thankful and will help Richard Gibson. Thanks to everyone in ECMA402! 
+LEO: A note about the new Editorship. Thank you for this work. SFC hugely facilitated that work. Very thankful and will help Richard Gibson. Thanks to everyone in ECMA402!
 
 AKI: Clapping!
 
@@ -139,16 +150,19 @@ RG: Thanks to Leo for assistance!
 ### Conclusion
 
 Consensus on:
+
 * ecma402#430: https://github.com/tc39/ecma402/pull/430
 * ecma402#438: https://github.com/tc39/ecma402/pull/438
 * ecma402#444: https://github.com/tc39/ecma402/pull/444
 
 ## Test262
+
 Presenter: Leo Balter (LEO)
 
 LEO: (presents active proposals in stage 3) everything is good so far. I ask the champions to frequently review the Stage 3 proposals table at the tc39/proposals repo as it guides us on what needs to be tested.
 
 ## Updates from CoC committee
+
 Presenter: Aki (AKI)
 
 * [CoC](https://tc39.es/code-of-conduct)
@@ -156,13 +170,16 @@ Presenter: Aki (AKI)
 AKI: the coc committee met twice since the last meeting, fortnightly meeting, we did get 1 report in the past 2 months, was discussed it, all parties involved are satisfied. Importantly, reminding that the code of conduct exists, I should remind better but please review and understand what it asks of you and be prepared to bring that sense of respect to each others to every meeting… It has been a bit of a distracting world in the last few days. Each of us is trying to find ways to communicate better. We had a budget for training but couldn’t use it due to situation but are going to look for a communication training online. That requires time though so please stay in timeboxes. If you have been optimistic about them, please tell the chairs. Now requiring more note takers
 
 Additional notetakers:
+
 * Kris Kowal (KKL)
 * Mark Cohen (MPC)
 * Robin Ricard
 * Shane Carr (SFC)
 * Ujjwal Sharma (USA)
 * Ilias Tsangaris (IT)
-## Promise.{all,allSettled,race} should check "resolve" before iterating	
+
+## Promise.{all,allSettled,race} should check "resolve" before iterating
+
 https://github.com/tc39/ecma262/pull/1912
 
 KM: (discusses PR)
@@ -175,7 +192,7 @@ RPR: There is no-one on the queue.
 
 KM: I will take that no-body has joined the queue and that there are no objections.
 
-LEO: We need to coordinate someone to write a test for it.  We have tests for the behavior you want to change.
+LEO: We need to coordinate someone to write a test for it. We have tests for the behavior you want to change.
 
 KM: yea we need but I did not bother doing that without consensus but I will do that
 
@@ -211,21 +228,21 @@ RPR: Congratulations on Stage 2
 
 ### Conclusion
 
-Stage 2
-Reviewers: WH, KG, and SYG.
+Stage 2 Reviewers: WH, KG, and SYG.
 
 ## Logical assignment status update
+
 Presenter: Justin Ridgewell (JRL)
 
 * [proposal](https://github.com/tc39/proposal-logical-assignment)
-* [slides]()
+* slides
 
 * [issue for impl status traking](https://github.com/tc39/proposal-logical-assignment/issues/25)
 * [main issue today](https://github.com/tc39/proposal-logical-assignment/issues/23)
 
-JRL: Currently spidermonkey has this behind a flag, JSC has a flag, V8 has a flag. Spidermonkey is waiting for resolution before they unflag. We have implementations in Engine262 … Babel has had this forever. We are just waiting for unflagged implementations to move on to stage 4.Onto [the main topic](https://github.com/tc39/proposal-logical-assignment/issues/23) We realized a gotcha during implementation in Babel around the  transform. When we assign foo with a logical assignment to an anonymous function, what do we expect the name after assignment?
+JRL: Currently spidermonkey has this behind a flag, JSC has a flag, V8 has a flag. Spidermonkey is waiting for resolution before they unflag. We have implementations in Engine262 … Babel has had this forever. We are just waiting for unflagged implementations to move on to stage 4.Onto [the main topic](https://github.com/tc39/proposal-logical-assignment/issues/23) We realized a gotcha during implementation in Babel around the transform. When we assign foo with a logical assignment to an anonymous function, what do we expect the name after assignment?
 
-The transform that all of the implementations Babel and TS do is transform foo to a logical operator and on  the RHS foo = anonymous function  actually assigns a name to the function. After this the foo function will have the name foo. The easy workaround is to use a sequence expression (0, fn) to skip the named evaluation of the function. The topic is whether we should use named evaluation for this case. It would make named evaluation easier. Asking the committee to help decide.
+The transform that all of the implementations Babel and TS do is transform foo to a logical operator and on the RHS foo = anonymous function actually assigns a name to the function. After this the foo function will have the name foo. The easy workaround is to use a sequence expression (0, fn) to skip the named evaluation of the function. The topic is whether we should use named evaluation for this case. It would make named evaluation easier. Asking the committee to help decide.
 
 WH: Does somebody know under which conditions an anonymous function gets its name? Especially related to parentheses, comma expressions, and the like?
 
@@ -251,7 +268,7 @@ WH: The analogous code for `??=` would be `foo = foo ?? someFunction()`. What ha
 
 Named evaluation does not carry through to the function in that case.
 
-```
+```js
 foo = function(){} || true
 foo = foo ?? function() {}
 assert(foo.name === “”)
@@ -267,7 +284,7 @@ Perhaps we should discuss this with code samples.
 
 KG: I have a response for that: we decided... The desugaring suggests named evaluation.
 
-JRL: (writing on issue)  https://github.com/tc39/proposal-logical-assignment/issues/23
+JRL: (writing on issue) https://github.com/tc39/proposal-logical-assignment/issues/23
 
 WH: I haven’t had time to think about this.
 
@@ -298,10 +315,11 @@ MLS: Those of us on JSC would need to talk about it internally to make sure it�
 JTO : SM will implement
 
 ### Conclusion/Resolution
+
 * Tentatively ok to go forward w/ named evaluation
 
-
 ## Iterator Helpers
+
 Presenter: Jason Orendorff [Mozilla] (JTO)
 
 * [proposal](https://github.com/tc39/proposal-iterator-helpers)
@@ -309,12 +327,11 @@ Presenter: Jason Orendorff [Mozilla] (JTO)
 
 JTO: (presents slides)
 
-
 JHD: regarding opt 1, those iterators should not be generators in any way. They need to all be consistent incl. Strings iterator methods, don’t know if the existing onex could be iterator methods
 
-JTO: it would be a change 
+JTO: it would be a change
 
-RPR: Point of order, note taking is lagging... 
+RPR: Point of order, note taking is lagging...
 
 JHD: will fill in my own comments later
 
@@ -337,7 +354,7 @@ BSH: ok
 
 JHD: would we want `return` and/or `throw` to only be present on the iterator object when they’re present on the iterator object?
 
-BSH the object always call through the iterator 
+BSH the object always call through the iterator
 
 GCL: return and throw is more than just passing but ensuring it is used correctly, if you are in a loop it is not just about calling but about the life-cycles, so the path of directly mimicking them. So for example, option 3, if you call .return on the map wrapper, it doesn’t directly call .return on the iterator that is mapped, but .return is called because of the way generators work. So it’s a balance.
 
@@ -349,7 +366,7 @@ https://gist.github.com/jorendorff/35504c2553170be98fc2810ccf60c608
 
 JTO: This is untested code, just a sketch really.
 
-YSV: I do have a working version of this if anyone wants to play around with it. 
+YSV: I do have a working version of this if anyone wants to play around with it.
 
 JTO: It may be surprising that option 3 is about 68loc but that is the result of the spec just having a little bit more control over looking at completion values and seeing what they are, and being able to separate them out into algorithms as needed, it’s a little bit harder to do that in JavaScript the language.
 
@@ -398,6 +415,7 @@ JTO: thank you for your time
 Feedback given; no approach has consensus yet. Please see this [issue](https://github.com/tc39/proposal-iterator-helpers/issues/97)
 
 ## Do expressions for stage 2
+
 Presenter: Kevin Gibbons (KG)
 
 * [proposal](https://github.com/tc39/proposal-do-expressions/)
@@ -447,7 +465,6 @@ MPC: Would it be possible to add some sort of keyword, effectively a return for 
 
 KG: In principle, but I would prefer not to do that. It makes do expressions less like current statements. Main advantage is that the body is like any other collection of statements. If there is this new statement specifically for do expressions there is less value in them, so yes it would be possible but my preference is to not do that.
 
-
 SYG: Strongly agree that we should not apply any Annex B hoisting behavior to do expressions.
 
 WH: I agree with SYG.
@@ -467,7 +484,6 @@ KG: I continue to be opposed to these. I don’t think that letting expressions 
 DRO: I don’t see how this provides a benefit over an anonymous IIFE. I think it’s going to create a lot of footguns and require people to understand a lot more about the language. For example ??? is something developers will definitely run into.
 
 KG: They won’t be able to write that.
-
 
 DRO: Right, they’re going to try that and it won’t work, and they’ll be confused.
 
@@ -516,6 +532,7 @@ BSH: I would like this best if it worked like an inline function, so you have to
 * Pattern Matching group will include discussions on the interactions with do expressions
 
 ## Record & Tuple (status update)
+
 Robin Ricard (RRD) (Bloomberg)
 
 * [proposal](https://github.com/tc39/proposal-record-tuple)
@@ -557,7 +574,7 @@ DE: I suppose for a protocol that wasn't methods but instead data properties, th
 
 JHD: Is there value for allowing Records to participate in protocols, with Symbol-keyed properties containing methods? Or would that break equality semantics?
 
-DE:  [Records cannot have objects (e.g., functions) as Symbol-keyed properties of Records because it wouldn’t interact with membranes well. A membrane typically wraps an object such that property accesses have their results themselves membrane-wrapped. Primitives, such as Records, cannot be wrapped this way, so there would be no way to membrane-wrap the function reached from it.] We can't pierce membranes. We have this split between primitives and objects. It gets complicated with proxies. I don't think it would make sense to have objects hanging off of records via symbol keys.
+DE: [Records cannot have objects (e.g., functions) as Symbol-keyed properties of Records because it wouldn’t interact with membranes well. A membrane typically wraps an object such that property accesses have their results themselves membrane-wrapped. Primitives, such as Records, cannot be wrapped this way, so there would be no way to membrane-wrap the function reached from it.] We can't pierce membranes. We have this split between primitives and objects. It gets complicated with proxies. I don't think it would make sense to have objects hanging off of records via symbol keys.
 
 DE: The champion group presented a preference for strict equality semantics, where we don't recurse deeply. A tuple containing -0 wouldn't be equal to a tuple containing +0. Do people have concerns with this semantic direction? In terms of, would people be okay with going for this as the initial direction for stage 2?
 

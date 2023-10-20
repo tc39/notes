@@ -1,9 +1,10 @@
 # September 24, 2020 Meeting Notes
+
 -----
 
-**In-person attendees:**  
+**In-person attendees:**
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Waldemar Horwat      | WH             | Google             |
@@ -29,16 +30,16 @@
 | Shu-yu Guo           | SYG            | Google             |
 | Ross Kirsling        | RKG            | Sony               |
 
-
 ## Revisit Ergonomic Brand Checks for Private Fields
+
 Presenter: Jordan Harband (JHD)
 
 - [proposal](https://github.com/tc39/proposal-private-fields-in-in)
 - [issue](https://github.com/tc39/proposal-private-fields-in-in/issues/7)
 
-JHD: The request I made last time was, can this reach Stage 3?  I wanted JHX to have time to respond.
+JHD: The request I made last time was, can this reach Stage 3? I wanted JHX to have time to respond.
 
-JHX: Thank you, JHD.  Thanks everyone for the patience. Last meeting, I was the only one who thought this was not OK. Thank you everyone for giving me a chance to comment, especially JHD and DE. Before the meeting I created an issue in the repo that summarizes my reasons for blocking the proposal. Basically, there are 3 problems. (1) conflict with reification; (2) syntax issue; (3) process. I think I have read the notes and the most important part is… I got new information. I want to summarize them.
+JHX: Thank you, JHD. Thanks everyone for the patience. Last meeting, I was the only one who thought this was not OK. Thank you everyone for giving me a chance to comment, especially JHD and DE. Before the meeting I created an issue in the repo that summarizes my reasons for blocking the proposal. Basically, there are 3 problems. (1) conflict with reification; (2) syntax issue; (3) process. I think I have read the notes and the most important part is… I got new information. I want to summarize them.
 
 The first is about reification. In the last meeting, I said I was unclear on the future of reification. In this meeting, I think that at least I figured out some opinions of other delegates about reification. One important point was that if there is reification, it shouldn’t use `#x` syntax. I understand that based on two reasons.
 
@@ -46,7 +47,7 @@ First, the potential confusion of `#x` and `this.#x` that may return a different
 
 Second, reification is another level. You will not need that in most cases, so if there is reification, it should not use different syntax. I think I agree that… I think… it seems there may still be delegates who want reification in the `#x` syntax. I'm not sure about it. I can probably pass this part. The first reason I think it could be seen as solved.
 
-The second thing is about the syntax: it is likely to have reification.  I have to say, it's still not clear what the future of reification is. But I'll skip that because I think the reification problem can be accepted by me. On the second point, the syntax, I still feel the syntax is a problem. I think JHD said that private fields don't use the symbol semantics intentionally. I can't say whether this is a good idea. I prefer symbol semantics. The point is, I think that the current syntax, overloading `in`, actually violates this goal, and increases the mismatch of the syntax and semantics. I understand that most delegates think it is not so harmful. It seems it will not cause bugs in practice. I get this. It's hard to say how harmful it is. I think in the last meeting, there were some suggestions that we should discuss whether we want…
+The second thing is about the syntax: it is likely to have reification. I have to say, it's still not clear what the future of reification is. But I'll skip that because I think the reification problem can be accepted by me. On the second point, the syntax, I still feel the syntax is a problem. I think JHD said that private fields don't use the symbol semantics intentionally. I can't say whether this is a good idea. I prefer symbol semantics. The point is, I think that the current syntax, overloading `in`, actually violates this goal, and increases the mismatch of the syntax and semantics. I understand that most delegates think it is not so harmful. It seems it will not cause bugs in practice. I get this. It's hard to say how harmful it is. I think in the last meeting, there were some suggestions that we should discuss whether we want…
 
 BT: We're over our timebox. JHX, can you summarize?
 
@@ -61,6 +62,7 @@ JHD: At this point, I think JHX is the only one who hasn't provided consensus fo
 Proposal does not yet have consensus.
 
 ## Resizable and growable ArrayBuffers for Stage 2
+
 Presenter: Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/tc39/proposal-resizablearraybuffer/)
@@ -69,7 +71,7 @@ Presenter: Shu-yu Guo (SYG)
 
 SYG: (presents slides)
 
-JHD: On slide "Auto-length TypedArrays", when you said that when any part of the array goes out of bounds, then the whole array is out of bounds (?). So If i don't interact with a typed array if the ??? goes out of bounds, does the whole array goes out of bounds. 
+JHD: On slide "Auto-length TypedArrays", when you said that when any part of the array goes out of bounds, then the whole array is out of bounds (?). So If i don't interact with a typed array if the ??? goes out of bounds, does the whole array goes out of bounds.
 
 SYG: The way I wrote the spec, then that case is fine. If you never observed it going out of bounds, then it's ok.
 
@@ -91,7 +93,7 @@ MM: So if we're talking just about JavaScript interacting with these abstraction
 
 SYG: Correct. If we implement it badly we will have vulns for these new types and these new types only. But if we upgrade the existing paths, we will have vulnerabilities not only of the new types, but also of the existing types.
 
-MM: You're assuming the users of the broken abstraction are the victims. I was thinking that you were worried about cases where the users of the broken abstraction were the attackers. If you introduce a broken abstraction that can be used for attack that's no less vulnerable than changing the old abstraction so that it's vulnerable to the attack. The attackers will go where the attack is possible. 
+MM: You're assuming the users of the broken abstraction are the victims. I was thinking that you were worried about cases where the users of the broken abstraction were the attackers. If you introduce a broken abstraction that can be used for attack that's no less vulnerable than changing the old abstraction so that it's vulnerable to the attack. The attackers will go where the attack is possible.
 
 SYG: I don't quite understand. For example, GoogleMaps uses typed arrays. If we screw this up due to implementation bugs, we break Google Maps. But if we implement a new type, Google Maps will not be affected, because they will not migrate to resizable array buffers.
 
@@ -103,7 +105,7 @@ MM: That's a case where there's a host using the buffer as well. That's why when
 
 Once you involve hosts as potential victims, sharing the same abstraction with a potential attacker in JavaScript, then the distinction makes sense.
 
-DE: I can understand this concern about web audio more easily than the Google Maps concern. I want to suggest a parallel concern exists in JavaScript. Previously, if you have an ArrayBuffer, you don't have the ability to change its length. But with RAB, now you have that capability. So that can have sort of downstream effects on other users. I was personally surprised about the initial version of this and making existing array buffers resizable. I'm pleased to see this restriction to be only resizable types. Tying down—not removing existing invariants about existing types. I am in support of the design that SYG has made. 
+DE: I can understand this concern about web audio more easily than the Google Maps concern. I want to suggest a parallel concern exists in JavaScript. Previously, if you have an ArrayBuffer, you don't have the ability to change its length. But with RAB, now you have that capability. So that can have sort of downstream effects on other users. I was personally surprised about the initial version of this and making existing array buffers resizable. I'm pleased to see this restriction to be only resizable types. Tying down—not removing existing invariants about existing types. I am in support of the design that SYG has made.
 
 MM: Having gone through this I'm in favor of it too. The WebAudio where there's a host victim and a JS attacker does make clear the need.
 
@@ -131,8 +133,7 @@ SYG: If there were a clear predicate, I don't have too strong feelings one way o
 
 SFC: This question of should we have one type with a slot that determines its behavior etc. has come up over and over again in Temporal, and the approach we’ve taken is multiple types, for discoverability, education, it works better with type systems like TypeScript, vs. methods that throw in odd situations. I think it makes sense to have separate types with separate behaviors here too.
 
-SYG: I do find that compelling. You would need a sophisticated system if all array buffers were resizable for example out of bounds accesses. 
-
+SYG: I do find that compelling. You would need a sophisticated system if all array buffers were resizable for example out of bounds accesses.
 
 JWK: I think the maximum size does not make sense to me. Users will set it to a very big number so he won’t get [an out of memory error], this make the limit useless.
 
@@ -152,7 +153,7 @@ SYG: That is a real worry. I agree there.
 
 WH: I see this settling one of two ways. Either every implementation will allow 2⁵³-1 and go on their merry way, or implementations with much lower limits will have compatibility issues, or we will have to provide guidance for what people should put in that number. Expecting web authors to get this right is too optimistic.
 
-SYG: I share the concern. I have three sub-answers to that. (1) as pointed out by MLS, this is the problem of, let me reserve a very large number, has been seen in WASM memory.  I'm hoping to engage with the WASM and Chrome team to see how they deal with it. If it's a problem that exists for them today, then we can learn something there.
+SYG: I share the concern. I have three sub-answers to that. (1) as pointed out by MLS, this is the problem of, let me reserve a very large number, has been seen in WASM memory. I'm hoping to engage with the WASM and Chrome team to see how they deal with it. If it's a problem that exists for them today, then we can learn something there.
 
 MLS: I think I made that comment at the last meeting. Typically WASM allocates way more than they need, they just allocate the full 32-bit address space. At some point, you have a bunch of WASM web pages and you run out of memory on the system. You don't have enough memory to back it up on small systems.
 
@@ -174,7 +175,7 @@ SYG: I do feel that as practically speaking if it is small, you shouldn't use a 
 
 WH: If they only test on popular browsers which are permissive, there might be issues with other browsers or less popular implementations where it only fails on those platforms.
 
-SYG: That  brings me to (3), I have left a lot of latitude for implementations to throw here, if they can't reserve the new page. I can imagine a system that throws for what feels like unreasonable max sizes. I suppose memory issues are in general not interop but I hope to work with Safari in particular to come up with something that's reasonable as a heuristic. I hope that is sufficient for now. I definitely agree that it is a problem. We need to figure out without letting people exhaust their own virtual memory. 
+SYG: That brings me to (3), I have left a lot of latitude for implementations to throw here, if they can't reserve the new page. I can imagine a system that throws for what feels like unreasonable max sizes. I suppose memory issues are in general not interop but I hope to work with Safari in particular to come up with something that's reasonable as a heuristic. I hope that is sufficient for now. I definitely agree that it is a problem. We need to figure out without letting people exhaust their own virtual memory.
 
 WH: I'd like to either see guidance on this when we reach Stage 3, or assume all implementations will accept 2⁵³-1 and deal with it.
 
@@ -198,7 +199,7 @@ SYG: I do think having JS dereferencing the typed arrays will be a common use ca
 
 JTO: You don't anticipate that this would affect the- … even in the IC-driven, non-optimizing tier, you don't expect this to affect the performance of existing tiers not backed by resizable array buffers?
 
-SYG: Because these are new types and the ones that are backed by resizable buffers you would give them a different shape and a different hidden class . That doesn't mean there won’t be a slowdown. 
+SYG: Because these are new types and the ones that are backed by resizable buffers you would give them a different shape and a different hidden class . That doesn't mean there won’t be a slowdown.
 
 Where there's a slowdown is, if you have a program that mixes use of TAs that are backed by both fixed-size and resizable buffers in the same callsite, that will become polymorphic where currently they are monomorphic. That's a worry we will have to benchmark.
 
@@ -216,7 +217,6 @@ JTO: I'll ask our team to look into it.
 
 KM: I can review if you want another browser person.
 
-
 ### Conclusion
 
 Stage 2. Reviewer companies:
@@ -226,6 +226,7 @@ Stage 2. Reviewer companies:
 - Apple
 
 ## Builtin Modules for Stage 2
+
 Presenter: Michael Saboff (MLS)
 
 - [proposal](https://github.com/tc39/proposal-built-in-modules)
@@ -238,7 +239,7 @@ WH: You mentioned the `BuiltInModule` (BIM) API is for built-ins only. But in th
 
 MLS: Actually you can add any user-defined module you want with a prefix you select and it would work. `BuiltInModule` can store user modules as built-in ones. I can export `Apple:Foo` and into the system so it can accept `Apple:Foo`, no issues. So yes, you're right, but we think this is a way that developers can provide their own modules at start-up.
 
-GCL: To me, this proposal seems strictly worse than just introducing a new `ES` global object that we put built-ins under.  I think BIMs are cool, and designing JS from scratch, of course I'd use them, but given all the constraints we have to fulfil with our standard library and all the API we are adding here and all the weird behavior we are running into, we have already solved it using globals. I get the namespace is busy but it seems to be that adding a new object solves better than what is being proposed. 
+GCL: To me, this proposal seems strictly worse than just introducing a new `ES` global object that we put built-ins under. I think BIMs are cool, and designing JS from scratch, of course I'd use them, but given all the constraints we have to fulfil with our standard library and all the API we are adding here and all the weird behavior we are running into, we have already solved it using globals. I get the namespace is busy but it seems to be that adding a new object solves better than what is being proposed.
 
 MLS: How does that deal with the memory implications?
 
@@ -246,9 +247,9 @@ GCL: Explain?
 
 MLS: That you don't pay the cost of the library that you don't use.
 
-GCL: Implementations already lazily load all sorts of values and stuff. 
+GCL: Implementations already lazily load all sorts of values and stuff.
 
-MLS: Implementations typically store only text. You are paying the price in text space, but worse than that you are going to incur some memory overhead before you lazily load features. So you're going to be paying a penalty for that. 
+MLS: Implementations typically store only text. You are paying the price in text space, but worse than that you are going to incur some memory overhead before you lazily load features. So you're going to be paying a penalty for that.
 
 GCL: Whatever magic happens to provide the API when you call the synchronous script API can also happen when you access a property on the global object.
 
@@ -264,11 +265,11 @@ KG: Reload the agenda to get the latest slides. The link changed an hour ago.
 
 KG: I want to get more into the memory issue. I don't understand exactly where the benefit for memory in implementations come from. Is there a reason modules are significantly different here?
 
-MLS: In WebKit, we link in all the code. If something is lazilly added to the global object…  The reason we are doing this is because. The global object takes a long time to initialize.
+MLS: In WebKit, we link in all the code. If something is lazilly added to the global object… The reason we are doing this is because. The global object takes a long time to initialize.
 
 MLS: Primarily, our lazy loading is due to startup time for the global object. Which means that we’re paying the price for part of the memory cost of the objects. When you activate an object--when it’s used--you pay more memory cost to create the object, but you pay some anyway.
 
-KG: The thing I had in the queue was, there are APIs in the web platform that aren't synchronously available. You have to await a Promise. It seems that would solve the memory issue if a big complicated library is async available and you wait for the library to resolve. The only cost you are paying is for the library to load up at the start up. 
+KG: The thing I had in the queue was, there are APIs in the web platform that aren't synchronously available. You have to await a Promise. It seems that would solve the memory issue if a big complicated library is async available and you wait for the library to resolve. The only cost you are paying is for the library to load up at the start up.
 
 MLS: The existing import function fits that, right?
 
@@ -278,7 +279,7 @@ MLS: We already have modules we can bring in from the network. You don't see an 
 
 KG: The advantage of those is that it allows users to organize their code in a particular way. But engines don’t have the constraints as users-- Engines can organize their code behind the scenes in ways that are not available to users.
 
-MLS: But users they are declaring their need for a particular module. they are going to load their module with an existing need they have. 
+MLS: But users they are declaring their need for a particular module. they are going to load their module with an existing need they have.
 
 KG: Sure, yes
 
@@ -286,27 +287,27 @@ MLS: And, why don't we want to extend that to the local implementation?
 
 KG: Because you have to introduce a whole bunch of APIs.
 
-MLS:  I am talking about introducing 5 APIs.
+MLS: I am talking about introducing 5 APIs.
 
 KG: They aren't trivial APIs. I’m not saying it’s a huge problem to add them; I just don’t see any advantage. I understand the memory issue with adding new synchronous complicated APIs to the global, just making the asynchronous. And then we don’t make everyone learn to virtualize things in a new way.
 
 BFS: In order to shim things, it must be done eagerly and synchronously. One of the concerns we brought up was loading and parsing source text. Somewhat on the tail end of KG, in order to avoid having shims always load source text, or any built-in that may not be present, we would have to wrap it in a Promise somehow. So, that means anything of sufficient size… the only way to avoid eagerly loading source text would be to have the promise be wrapped in an API, does not have to be a promise, could be something else. So it seems, if the expectation that BIMs are expensive to load, size, computation, etc., how are we expected to eagerly shim these without incurring that cost?
 
-MLS: The synchronous nature of shimming was a requirement for Jordan’s Stage 2 blocker back in Berlin, that it needed to be synchronous, for the classic scripts--they can use Promises, but you need to be able to do your shimming before the rest of the application runs. Unlike a network module, the module is part of the implementation. It may be on the filesystem or some other storage. It could be already compiled as part of a native dynamic library. So I don’t know if we could if we have to think that there’s always going to be a notable time access built in time because it can be optimized by implementation beyond source text. 
+MLS: The synchronous nature of shimming was a requirement for Jordan’s Stage 2 blocker back in Berlin, that it needed to be synchronous, for the classic scripts--they can use Promises, but you need to be able to do your shimming before the rest of the application runs. Unlike a network module, the module is part of the implementation. It may be on the filesystem or some other storage. It could be already compiled as part of a native dynamic library. So I don’t know if we could if we have to think that there’s always going to be a notable time access built in time because it can be optimized by implementation beyond source text.
 
 BFS: Are we talking about users shimming it ? I can believe that, for host implementations, they always have it available ambiently, somehow. For shimming, they (???)
 
 MLS: If, shim or polyfill, if that comes across the network, you have the latency coming across the network. That no different whether its a built in module or global. There is no benefit in BIMs of something that needs to be shimmed. It shouldn't be any longer than it is now. Does that answer the question?
 
-BFS: I think it does . it seems it is an accepted downside. 
+BFS: I think it does . it seems it is an accepted downside.
 
 GCL: If these builtins must be available synchronously, where does the load async benefit come from?
 
-MLS: You do an async import of a BIM. That Promise… I expect the implementation would return the promise already resolved. I think thats more of allowing a programming model of someone wants to use than a performance issue. If someone wants to use modules whether BIM or network, I mean sure. 
+MLS: You do an async import of a BIM. That Promise… I expect the implementation would return the promise already resolved. I think thats more of allowing a programming model of someone wants to use than a performance issue. If someone wants to use modules whether BIM or network, I mean sure.
 
 GCL: So if you're an implementation that wants to take advantage of loading these async, how do you do that while also providing them sync? You said an implementation can load these modules async, but at the same time, the modules must be available synchrnously for scripts.
 
-MLS: If I had an API that added two numbers and provided a sync version and async version, they take the same time. One returns a value one returns a promise. So, loading the BIM async, it's going to be resolved and loaded, and you get back a Promise. It's a developers choice whether they want to optimize over the network or module. There is no need to restrict async vs sync. 
+MLS: If I had an API that added two numbers and provided a sync version and async version, they take the same time. One returns a value one returns a promise. So, loading the BIM async, it's going to be resolved and loaded, and you get back a Promise. It's a developers choice whether they want to optimize over the network or module. There is no need to restrict async vs sync.
 
 GCL: So there's no benefit on the implementation on the engine side of the async option?
 
@@ -322,51 +323,51 @@ MLS: On the lazy load code slide, if the application already accessed the module
 
 MM: I didn't hear; can you repeat?
 
-MLS: JWK was basically asking, do you polyfill the code first, or do you access it? If you polyfill, when you go to lazy load what do you get. Let's suppose you polyfill lazy load, the property on complex is no longer going to be the property you defined. Its going to be the actual thing you polyfilled. 
+MLS: JWK was basically asking, do you polyfill the code first, or do you access it? If you polyfill, when you go to lazy load what do you get. Let's suppose you polyfill lazy load, the property on complex is no longer going to be the property you defined. Its going to be the actual thing you polyfilled.
 
 JWK: I'm not mentioning about the global variable. My concern is about, what if the partial polyfill is loaded, but it's not actually used anywhere else? Only the polyfill is importing the module to see if it needs to be polyfilled. It's not used anywhere else, but the import cost is raised.
 
-MLS: Yea you pay the cost but the app has to have the disciple to only polyfill the things its going to use. If you don’t use this feature on the web page of application and you never use the module, in that case you polyfilled and brought it in later, that's just the way the application is written. 
+MLS: Yea you pay the cost but the app has to have the disciple to only polyfill the things its going to use. If you don’t use this feature on the web page of application and you never use the module, in that case you polyfilled and brought it in later, that's just the way the application is written.
 
-SYG: We’ve been talking a lot about the technical parts about polyfilling, sync/async, etc. From Chrome's position, and while I roughly agree with the position, I did verify this position up my chain, so don't shoot the messenger… from Chrome's position, let's separate the semantics of the BIMs and, once we have BIMs, are we going to use it for the ecosystem. 
-To me, that has two sub-questions: Are we going to use this for the web at large (outside of TC39), things that users don’t necessarily know to not be part of the core language--streams, fetch, data blobs, etc. And (2), are we going to use this for the JS standard library in TC39 itself? This is the ecosystem divergence problem. We currently have globals, people disagree on how well they work, but Chrome's position is that they work fine. So given that, if we suddenly have BIMs, users would have to understand, is this thing a BIM or is it a global, and how do I get at it? The thinking from the Chrome web platform leadership is that this is harmful. We should not diverge from standardized platform features to be available in two different ways. Chrome would not use BIM currently for new web APIs standardized outside of TC39. They will continue to use globals.  And (2), this is a weaker no, but should we use BIMs in TC39 itself? Chrome's position is a weaker no. I could reopen this question, but the thinking is that the same problem applies to JS features.
-From the web platform’s point of view, there is not a clear cut line that is beneficial to web devs between things that were standardardized. For that reason, it is very unlikely that if we were to get BIMs, that Chrome would ship the ability to import them as BIMs. So if Temporal were to be spec'd as a BIM and shipped under js:Temporal, the current thinking is that that wouldn't be made available. Personally speaking I think there is tremendous value in having a built in module machinery for other ecosystems that are not the web. I understand that it is not current champions group desires, so its not a value add for them.  But personally speaking, I think it's worth discussing the machinery separately from the ecosystem question. But on the ecosystem question, I think we are unlikely to ship new features as BIMs. If there were a sync capability that made it look like globals, the thinking is that we would ship those. The new BIM would only be available only via global like mechanism if available. 
+SYG: We’ve been talking a lot about the technical parts about polyfilling, sync/async, etc. From Chrome's position, and while I roughly agree with the position, I did verify this position up my chain, so don't shoot the messenger… from Chrome's position, let's separate the semantics of the BIMs and, once we have BIMs, are we going to use it for the ecosystem.
+To me, that has two sub-questions: Are we going to use this for the web at large (outside of TC39), things that users don’t necessarily know to not be part of the core language--streams, fetch, data blobs, etc. And (2), are we going to use this for the JS standard library in TC39 itself? This is the ecosystem divergence problem. We currently have globals, people disagree on how well they work, but Chrome's position is that they work fine. So given that, if we suddenly have BIMs, users would have to understand, is this thing a BIM or is it a global, and how do I get at it? The thinking from the Chrome web platform leadership is that this is harmful. We should not diverge from standardized platform features to be available in two different ways. Chrome would not use BIM currently for new web APIs standardized outside of TC39. They will continue to use globals. And (2), this is a weaker no, but should we use BIMs in TC39 itself? Chrome's position is a weaker no. I could reopen this question, but the thinking is that the same problem applies to JS features.
+From the web platform’s point of view, there is not a clear cut line that is beneficial to web devs between things that were standardardized. For that reason, it is very unlikely that if we were to get BIMs, that Chrome would ship the ability to import them as BIMs. So if Temporal were to be spec'd as a BIM and shipped under js:Temporal, the current thinking is that that wouldn't be made available. Personally speaking I think there is tremendous value in having a built in module machinery for other ecosystems that are not the web. I understand that it is not current champions group desires, so its not a value add for them. But personally speaking, I think it's worth discussing the machinery separately from the ecosystem question. But on the ecosystem question, I think we are unlikely to ship new features as BIMs. If there were a sync capability that made it look like globals, the thinking is that we would ship those. The new BIM would only be available only via global like mechanism if available.
 
-MLS: How do you see that TC39 would spec BIMs if one of the major browsers would not deploy it? Is it a normative optional feature that would be useful for TC53 or NodeJS?  How do we spec this?
+MLS: How do you see that TC39 would spec BIMs if one of the major browsers would not deploy it? Is it a normative optional feature that would be useful for TC53 or NodeJS? How do we spec this?
 
 SYG: I think that the BIM, for the sake of argument, suppose that we agree to ship BIM global that you have proposed here. Suppose it was this thing like you have on the slide, where you have a magic globalThis.Temporal. We would ship that, but you can't get importjs:temporal. I am not sure(?)
 
 The contents of Temporal would need to be normative, but the way it were made available to users were flexible, globals or BIMs, the module part would have to be the normative optional. But thats a tech spec thing. I don't mean to imply in this position that, for example, the entire contents of js:Temporal would be normative-optional. I think that would be a bad outcome.
 
-JTO: Mozilla's position is similar. The fact that there's little interest from web standards bodies in migrating from globals to BIMs means that it would be harmful for JS standards itself to do that. It would  result in splitting the ecosystem. I want to emphasize that I am not opposed to the building blocks. Having a BIM system that could unify how BIMs work across other environments would be valuable even if the JS standard library doesn't go that route.
+JTO: Mozilla's position is similar. The fact that there's little interest from web standards bodies in migrating from globals to BIMs means that it would be harmful for JS standards itself to do that. It would result in splitting the ecosystem. I want to emphasize that I am not opposed to the building blocks. Having a BIM system that could unify how BIMs work across other environments would be valuable even if the JS standard library doesn't go that route.
 
 MLS: My comment that I made is that I don't see that as providing one 1JS - which I think is the unspoken motto of TC39 - one JS. It is not a browser language or whatever. It is language. And so, to me, it seems like if something's in the spec, and we want to support and implement it, it seems incongruous to me that we would spec a feature that we never intend to use in the ecosystem even if we liked the feature. Why spec something we think is cool but we are not gonna use it?
 
 JTO: Mozilla would not be the target audience for that feature. We have no objection to the APIs being added and used by other hosts.
 
-MLS: The other comment is that Apple that participates in web standards would like to implement those [web standards] as modules, not just in TC39. 
+MLS: The other comment is that Apple that participates in web standards would like to implement those [web standards] as modules, not just in TC39.
 
-JWK: The requirements of “the shim code must be run before the main application” requires a big change in the module execution order. That requires some code be more prior to the other codes. I think this is not look good to me. 
+JWK: The requirements of “the shim code must be run before the main application” requires a big change in the module execution order. That requires some code be more prior to the other codes. I think this is not look good to me.
 
-MLS: This is a requirement on classic scripts. Classic scripts must do shimming before the script runs. That is a req for classic scripts, and JHD can provide details there. 
+MLS: This is a requirement on classic scripts. Classic scripts must do shimming before the script runs. That is a req for classic scripts, and JHD can provide details there.
 
 JWK: I think it might be possible to work around this problem by providing a new syntax-level block to indicate it is shimming some module, but don't execute the block until the module is first being accessed.
 
-MLS: I'm not sure how you'd spec that. It seems like you'd have a task you queue up that's dependent on the module. And there you would do the shimming on the first use. 
+MLS: I'm not sure how you'd spec that. It seems like you'd have a task you queue up that's dependent on the module. And there you would do the shimming on the first use.
 
-BFS: Polyfilling globals must run before your main app code. There is some complex nuances to that. We have made it much more complicated to use top level await.  Top-level await causes interesting behaviors in sibling modules. There's a double-wrapping thing. It's not like this requirement doesn't exist already, so I don't know if we need to do anything about it, because you already have to deal with it.
+BFS: Polyfilling globals must run before your main app code. There is some complex nuances to that. We have made it much more complicated to use top level await. Top-level await causes interesting behaviors in sibling modules. There's a double-wrapping thing. It's not like this requirement doesn't exist already, so I don't know if we need to do anything about it, because you already have to deal with it.
 
-MLS: Yeah. CJS I think you need to do it in the engine. 
+MLS: Yeah. CJS I think you need to do it in the engine.
 
-WH: People were asking about how you lazily shim modules. Would a closure work? What do you mean by “some shims would need engine support”? 
+WH: People were asking about how you lazily shim modules. Would a closure work? What do you mean by “some shims would need engine support”?
 
 MLS: You could probably do it all in JS, but if someone needs to do it in the engine itself, we may not export enough APIs.
 
-In the example on the slide, this is conceptually what you would do. But you need to do more to make the property defined here. It is JS 80% eq of what you would do. The engine would have to know the internal object. 
+In the example on the slide, this is conceptually what you would do. But you need to do more to make the property defined here. It is JS 80% eq of what you would do. The engine would have to know the internal object.
 
 WH: The thing I was thinking of was, you could have a `BuiltInModule` export API that, instead of exporting a module directly, takes a function that it would call to define the module the first time someone imported it.
 
-MLS: okay so, on import kind of thing? 
+MLS: okay so, on import kind of thing?
 
 WH: Yeah.
 
@@ -376,11 +377,11 @@ DE: I like the idea of an API that takes a closure for lazy polyfilling. There's
 
 MLS: You made that as a follow-on or separate proposal, right?
 
-DE: I am very much in support of this proposal as is. 
+DE: I am very much in support of this proposal as is.
 
 MLS: For async shimming, you were thinking a separate proposal?
 
-DE: I think it could be part of this or separate proposal. People were talking about the benefit. I feel like this benefit, of reducing the polyfill loading overhead from JS implementations in general that already have the BIM, is a big technical benefit to consider. But do you think it layers on top of the base that you have in a clear way. I can understand the problem of ecosystem split raised by Chrome and Mozilla but I don't understand the alternative raise of specifying something in TC39 for BIM that is not for the web. I think hosts already have the machinery they need to do this. In TC39, we'd be specifying something that's already there in code and common. I don't want us to get into - maybe we can make a task group, I would really like us to be unified. 
+DE: I think it could be part of this or separate proposal. People were talking about the benefit. I feel like this benefit, of reducing the polyfill loading overhead from JS implementations in general that already have the BIM, is a big technical benefit to consider. But do you think it layers on top of the base that you have in a clear way. I can understand the problem of ecosystem split raised by Chrome and Mozilla but I don't understand the alternative raise of specifying something in TC39 for BIM that is not for the web. I think hosts already have the machinery they need to do this. In TC39, we'd be specifying something that's already there in code and common. I don't want us to get into - maybe we can make a task group, I would really like us to be unified.
 
 JWK: Check out #67 on the repo.
 
@@ -392,22 +393,22 @@ SYG: Since 1JS is a priority, the suggestion I had made is not coherent. So it's
 
 MLS: So what does the rest of the committee think about adding this as a mechanism knowing that multiple implementations won't use it?
 
-DE: I think we are here to make a standard we all agree on somehow. 
+DE: I think we are here to make a standard we all agree on somehow.
 
 AKI: I feel not positive about it.
 
 WH: What is TC53’s position on this? Would they use it?
 
-AKI: We are at time. Let's come back and discuss this more. 
+AKI: We are at time. Let's come back and discuss this more.
 
-MLS: Google and Mozilla are on the record for blocking this. 
+MLS: Google and Mozilla are on the record for blocking this.
 
 ### Conclusion
 
 The proposal will not advance.
 
-
 ## Error Cause for Stage 1
+
 Presenter: Chengzhong Wu (CZW)
 
 - [proposal](https://github.com/legendecas/proposal-error-cause)
@@ -417,9 +418,9 @@ CZW: (presents slides)
 
 CZW: Asking for stage 1.
 
-JHD: (in queue: why is this better than expandos, or an AggregateError, where the "errors" can be any values explaining the cause? ) Why is this better than one of a few alternatives, like expandos properties, or an Aggregate Error or a UserLand library? You also told us devtools could handle it. At the moment your example spec text allows it to be any value. 
+JHD: (in queue: why is this better than expandos, or an AggregateError, where the "errors" can be any values explaining the cause? ) Why is this better than one of a few alternatives, like expandos properties, or an Aggregate Error or a UserLand library? You also told us devtools could handle it. At the moment your example spec text allows it to be any value.
 
-CZW: any value can be thrown so we are not limiting, so we can have any caught error as the cause even though js values don’t have much info, this is different from the stack. The cause is why this error happened so we can augment. For users if this array is thrown from deep internal, this might help to ?? these exceptions. The diagnosis will be more pleasant and easy to conduct. And why this should be in the spec, this way users  can confidently rely on the error (?) If this is in the spec, the user can safely just construct this property with this argument. We can attach to the error instance and we can analyze it for you and this argument and all is done here is no additional contract between the user and the devtools.
+CZW: any value can be thrown so we are not limiting, so we can have any caught error as the cause even though js values don’t have much info, this is different from the stack. The cause is why this error happened so we can augment. For users if this array is thrown from deep internal, this might help to ?? these exceptions. The diagnosis will be more pleasant and easy to conduct. And why this should be in the spec, this way users can confidently rely on the error (?) If this is in the spec, the user can safely just construct this property with this argument. We can attach to the error instance and we can analyze it for you and this argument and all is done here is no additional contract between the user and the devtools.
 
 JHD: To make sure I understood correctly, you're saying that even if this was just a convention, by putting it in the language, that encourages interop between languages and tools?
 
@@ -450,19 +451,21 @@ JRL: (via queue message) Would love this for AMP. We currently mutate the error 
 CZW: Can this advance to Stage 1?
 
 (silence)
+
 ### Conclusion/Resolution
 
 Stage 1
+
 ## Double-Ended Iterator and Destructuring for Stage 1
-Presenter: John Hax  (JHX)
+
+Presenter: John Hax (JHX)
 
 - [proposal](https://github.com/hax/proposal-deiter)
 - [slides](https://johnhax.net/2020/tc39-sept-deiter/slide#0)
 
 JHX: (presents slides)
 
-MM: (from queue: destructuring better motivated than double iterator) I like the ideas about the better destructuring and having rest in the middle. Doing it both for destructuring and for parameters feels right. Parameters might be more complicated because of all the other semantics on parameters, but at least for destructuring. However, I don’t find that desire worth it for double iterators. I understand the scaling point but in my experience, the destructuring patterns and parameter patterns are not used at the scale where scaling is relevant. It is not worth adding a second iteration and taking it up apart in the iterator match
-I think it's a fine way to implement it that doesn't imply any iterator change.
+MM: (from queue: destructuring better motivated than double iterator) I like the ideas about the better destructuring and having rest in the middle. Doing it both for destructuring and for parameters feels right. Parameters might be more complicated because of all the other semantics on parameters, but at least for destructuring. However, I don’t find that desire worth it for double iterators. I understand the scaling point but in my experience, the destructuring patterns and parameter patterns are not used at the scale where scaling is relevant. It is not worth adding a second iteration and taking it up apart in the iterator match I think it's a fine way to implement it that doesn't imply any iterator change.
 
 JHX: There are two reasons. One is the scale issue, and the other is how you can double write the iterator in userland.
 
@@ -474,7 +477,7 @@ MM: Thank you.
 
 KM: I agree it’s probably not a good idea, a footgun to (not??) have a double iterator.
 
-JWK: The performance is ??? 
+JWK: The performance is ???
 
 KM: If you have any kind of custom iterator, you'd have to run the whole thing. There is no way to optimise other than looping the whole thing. You can probably optimize but it would be complicated.
 
@@ -501,10 +504,13 @@ WH: I'm reluctant about the utility of some of this. That's all I will say.
 JHX: Asking for stage 1.
 
 (silence)
+
 ### Conclusion/Resolution
+
 Stage 1
 
 ## Standardized Debug for Stage 1
+
 Presenter: Gus Caplan (GCN)
 
 - [proposal](https://github.com/devsnek/proposal-standardized-debug)
@@ -512,7 +518,7 @@ Presenter: Gus Caplan (GCN)
 
 GCN: (presents slides)
 
-JWK: It's possible to make debugger an expression that prints and returns the value. 
+JWK: It's possible to make debugger an expression that prints and returns the value.
 
 GCN: Not entirely sure what you’re suggesting.
 
@@ -565,7 +571,7 @@ WH: The syntax I was objecting to was things like adding a new `!` operator. If 
 
 MM: Great!
 
-JWK: (via queue) - https://github.com/devsnek/proposal-standardized-debug/issues/3 
+JWK: (via queue) - https://github.com/devsnek/proposal-standardized-debug/issues/3
 
 RBN: `debugger` being an expression in 2017-2018: We discussed the possibility of `debugger` being an expression back in 2017 or 18, when we were talking about throw expressions. At the time it seemed like an obvious "why wouldn't we do this?" If debugger was just debugger expression without any operands and there is almost no change to semantics it’s just syntax. I would consider using debugger.meta properties. There's a use case for debugger meta-properties that I was thinking about. VS Code shipped a new feature in their debugger for Node, that lets you evaluate an exprsesion in the debugger to give you information about the expression you have in your watch window. (??) I could see a possible use case of debugger. extensions something like debugger.typeProxy and watch it in another window. Or extensions that say I should step over this whenever I encounter it, for example. There's a number of interesting cases I could see that combine debugger metaproperties and decorators. This seems interesting for more use cases, and the idea is good but the syntax should be discussed.
 
@@ -576,10 +582,13 @@ GCL: If the proposal were to go in the direction of moving console into the spec
 GCL: Does anyone object to Stage 1?
 
 (silence)
+
 ### Conclusion/Resolution
-* Stage 1 reached.
+
+- Stage 1 reached.
 
 ## Unused Function Parameters for Stage 1
+
 Presenter: Gus Caplan (GCL)
 
 - [proposal](https://github.com/devsnek/proposal-unused-function-parameters)
@@ -596,7 +605,8 @@ GCL: there are definitely some thoughts to be put into this, I'm not proposing a
 WH: Syntactic support for `?` and `*` both seem really scary, for different reasons.
 
 RBN: I'm concerned about `?`. It conflicts with the partial application proposal which I still plan to advance at some point. It would lead to an extremely complex cover grammar to make that work. We already had to deal with complexity with arrow functions. Generally I prefer the elision mechanism (,, id) because it's similar to what we already do for elision in arrays. I’m also worried about star, it could be confusing just looking at documentation. Examples already legal since ES2015:
-```
+
+```js
 function f(...[, , x]) {
 }
 const g = (...[, , x]) => {}
@@ -628,11 +638,11 @@ GCL: Just to clarify, underscore is one of the options here.
 
 YSV: I mean explicitly naming, that is underscore plus the variable name.
 
-MM: I very much agree with YSV, I have used bare _ in other languages. I found it unpleasant when I came to JS and couldn't repeat the single underscore. In JS not having this, I found it irritating, but using linters and tools we have today led me into the _name pattern. I rapidly came to realize it's actually better than what I wanted to do. I think this proposal is solving a problem that is better addressed by adopting new habits to name unused parameters. The gain is small enough that adding new syntax (even elisions) is not worth it.
+MM: I very much agree with YSV, I have used bare _in other languages. I found it unpleasant when I came to JS and couldn't repeat the single underscore. In JS not having this, I found it irritating, but using linters and tools we have today led me into the_name pattern. I rapidly came to realize it's actually better than what I wanted to do. I think this proposal is solving a problem that is better addressed by adopting new habits to name unused parameters. The gain is small enough that adding new syntax (even elisions) is not worth it.
 
 DRR: Technically it's possible to ignore something with an empty binding pattern. It looks pretty horrible but it is possible.
 
-JHD: It doesn’t work as it  throws on null.
+JHD: It doesn’t work as it throws on null.
 
 JHX: [] doesn't work.
 
@@ -663,9 +673,13 @@ JHX: if a proposal is still Stage 0, can it have a user babel plugin to test?
 RPR: Babel is not bound by the TC39 stage process. Anyone can add a plugin.
 
 JRL: I can speak to Babel. We don't allow people to do syntax plugins. If you want to do a normal transform such as a comment or something you could, but it would be a little bit weird.
+
 ### Conclusion/Resolution
+
 Not advancing
+
 ## Modulus and Additional Integer Math for Stage 1
+
 Presenter: Peter Hoddie (PHE)
 
 - [proposal](https://github.com/phoddie/integer-and-modulus-math-proposal)
@@ -673,12 +687,11 @@ Presenter: Peter Hoddie (PHE)
 
 PHE: (presents slides)
 
-SYG: to make sure I understand: is the suggested semantics as `(x operator y) | 0`? 
+SYG: to make sure I understand: is the suggested semantics as `(x operator y) | 0`?
 
 PHE: I'm not certain about some of the edge cases of that.
 
-SYG: I would like to know the answer because asm.js (??) is a thing now
-That said, I do generally support your proposal and these methods. Even though asm.js is a thing now, I don’t assume engines will continue to special-case asm.js syntax going forward.
+SYG: I would like to know the answer because asm.js (??) is a thing now That said, I do generally support your proposal and these methods. Even though asm.js is a thing now, I don’t assume engines will continue to special-case asm.js syntax going forward.
 
 WH: To answer SYG, if you’re proving int32 inputs, the answer is yes for some of the operations and no for some of the operations.
 
@@ -727,16 +740,17 @@ PHE: Consensus for Stage 1?
 GCL: I’d almost say it could go for Stage 2.
 
 WH: I support this proposal. I’d like to see the semantics before this progresses to Stage 2.
-### Conclusion/Resolution
-* Stage 1!
 
+### Conclusion/Resolution
+
+- Stage 1!
 
 ## Incubation call chartering
 
 - No notes
 
-
 ## Mechanisms to lighten the load on note takers
+
 Presenter: Philip Chimento (PFC), Mark Miller (MM)
 
 - [issue](https://github.com/tc39/Reflector/issues/227#issuecomment-691092343)

@@ -21,7 +21,7 @@ Ecma Technical Committee 39 held a four day meeting hosted remotely on July 20th
 
 ## Advancing Proposals
 
-### No Stage 
+### No Stage
 
 - Arbitrary Module Namespace Identifiers: [proposal](https://github.com/bmeck/proposal-arbitrary-module-namespace-identifiers). Consensus, but this is becoming an immediate PR to ECMA-262 without full proposal process due to its size.
 
@@ -85,5 +85,3 @@ Mainstream browsers were shipping `eval?.(str)` as a direct eval, using the func
 Link: tc39/ecma262#2090
 
 The numeric separators are forbidden in legacy (_Annex B_) number notations, like non-octals `081`. Although, TC39 will not disallow separators in the exponential parts and fraction parts of these legacy numbers due to current implementations support and excessive tailoring of the spec text. This means `08.1_0` and `08e1_0` are allowed and will remain allowed by the specs. Non octals are only possible in non-strict mode anyway.
-
-

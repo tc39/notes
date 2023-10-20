@@ -1,4 +1,5 @@
 # March 31, 2020 Meeting Notes
+
 -----
 
 **In-person attendees:**
@@ -6,9 +7,8 @@
 **Remote attendees:** Yulia Startsev (YSV), Mark Cohen (MPC), Jeff Long (JHL), Bradley Farias (BFS), Rick Button (RBU), Michael Ficarra (MF), Mathias Bynens (MB), Myles Borins (MBS), Caio Lima (CLA), Dave Poole (DMP), Jason Williams (JWS), Kevin Gibbons (KG), Chip Morningstar (CM), Philip Chimento (PFC), Mary Marchini (MAR), Rob Palmer (RPR), Ross Kirsling (RKG), Waldemar Horwat (WH), Pieter Ouwerkerk (POK), Bradford C. Smith (BCS), Ujjwal Sharma (USA), Richard Gibson (RGN), Felienne Hermans (FHS), Nicolò Ribaudo (NRO), Shane F Carr (SFC), Justin Ridgewell (JRL), Jack Works (JWK), Philipp Dunkel (PDL), Robin Ricard (RRD), Ben Newman (BN), Sergey Rubanov (SRV), Jordan Harband (JHD), Guilherme Hermeto (GHO), Robert Pamely (RPY), Edgar Barragan (EB), Mark Miller (MM), Hemanth HM (HHM), Aki (AKI), Daniel Rosenwasser (DRR)
 Not present, but reviewed the notes: Istvan Sebestyen (IS)
 
-
-
 ## Housekeeping
+
 ### Adoption of the agenda
 
 Adopted by consensus.
@@ -22,6 +22,7 @@ Adopted by consensus.
 AKI: The meeting at PayPal in early June will be canceled, unfortunately. The meeting will be held remotely. The chairs will continue to work on managing remote plenaries going forward. There will be more discussion later in this meeting.
 
 ## Secretary’s Report
+
 Presenter: Rob Palmer (RPR) in place of Istvan
 
 - [slides](https://drive.google.com/open?id=1Orrdz7YMZIVmmy5IjKpDKLLk0egYFU9X)
@@ -175,7 +176,6 @@ RW: (presents without slides)
 
 RW: Any questions?
 
-
 (silence)
 
 ## Updates from Coc Committee
@@ -300,6 +300,7 @@ RW: So there is this hypothetical scenario where you have a piece of code; If I 
 SYG: From the codegen point of view, there’s no reason to require separate codegen here, whereas for wait it’s just not .?? That was Thomas’ motivation.
 
 RW: Works for me.
+
 ### Conclusion/Resolution
 
 - No objections, consensus on the PR.
@@ -323,7 +324,7 @@ Presenter: Kevin Gibbons (KG)
 
 KG: (presents slides)
 
-WH: You mentioned that the spec contains some missing production.  Can you be more specific?
+WH: You mentioned that the spec contains some missing production. Can you be more specific?
 
 KG: Specifically says that it is an early error if the SV of the capture group is not an identifier or not IdentifierStart, It refers to the SV of this capturing group name production, but that operation is not defined. It's linked in the PR.
 
@@ -333,9 +334,9 @@ KG: All of the grammar productions exist. There's a reference to a syntax-direct
 
 WH: I can take a good guess as to why it’s there. It’s the same in the identifier grammar. The idea is to prevent creating identifiers that contain things like spaces or nulls.
 
-MPC: Is the spec coherent about the other two ways about writing the code point?  Is it incoherent about all three, or just the surrogate pairs?
+MPC: Is the spec coherent about the other two ways about writing the code point? Is it incoherent about all three, or just the surrogate pairs?
 
-KG: It is incoherent about all of them. The reason why I am presenting this as the only place: This is the place where unicode regexes disagree with identifiers on how things work.  In Unicode regexes, the two surrogate pairs are equal to the long form all of the time.
+KG: It is incoherent about all of them. The reason why I am presenting this as the only place: This is the place where unicode regexes disagree with identifiers on how things work. In Unicode regexes, the two surrogate pairs are equal to the long form all of the time.
 The two surrogate halves is the place where it seems like the intent was not clear.
 
 MF: Why do we care that they are identifier names?
@@ -429,7 +430,6 @@ KG: Yes, although we have heard people say they dislike the inconsistency with t
 WH: I don’t see what you gain by disallowing the `\u` surrogates. They are allowed everywhere else in a non-unicode regular expression.
 
 KG: They do expect unicode regular expressions.
-
 
 MB: What you gain is symmetry between `match.groups.whatever` and the capture group name.
 
@@ -526,7 +526,9 @@ WH: This is blocking the 2020 release. We need time to draft the resolution and 
 DE: I agree that the 2020 release is high priority, but we can continue to resolve this for 2021.
 
 KG: Let’s come back in an hour and follow up with SFC in the meantime.
+
 ### Conclusion/Resolution
+
 - Return to this discussion later.
 - This is blocking ES2020.
 
@@ -631,6 +633,7 @@ SYG: Are there any objections to strictly optional? Again it’s just for the SA
 PHE: I wanted to add a voice in support of making this optional: MM said the blockchain case, but in embedded JavaScript there are plenty of scenarios where SABs don't make any sense. Making it optional is great for us in terms of code size and complexity.
 
 ### Conclusion/Resolution
+
 - Consensus is to make the global property SharedArrayBuffer strictly optional for the host, without contingencies.
 
 ## Add support for 'OptionalChain'.PrivateIdentifier in class features proposals
@@ -676,7 +679,7 @@ MM: Class C, you said to see the proposal for the semantics, please state the se
 
 JHD: This is relevant to my queue topic. The semantics of o?.anything, if o is non-nullish, return the rest of the chain.
 
-MM: Maybe I’m confused about the semantics of optional chaining, what is the semantics of  o?.c.f;
+MM: Maybe I’m confused about the semantics of optional chaining, what is the semantics of o?.c.f;
 
 JHD: If o is nullish, undefined, otherwise it returns o.c.#f.
 
@@ -703,9 +706,12 @@ MM: With the second bullet semantics?
 CLA: Yes.
 
 (silence)
+
 ### Conclusion/Resolution
+
 - Consensus for both syntax forms
 - `o?.#f` still throws if `o` is a non-null/undefined object and`#f` is not present.
+
 ## Process: require public repo for stage 1
 
 Presenter: Jordan Harband (JHD)
@@ -776,6 +782,7 @@ JHD: Do we have a consensus to make a repo somewhere on GH a requirement? And th
 (silence)
 
 ### Conclusion/Resolution
+
 - Consensus reached to require public repos for stage 1 proposals.
 
 ## TypedArray stride parameter for Stage 2
@@ -805,7 +812,7 @@ YSV: There's another use case brought up by the graphics team, which is interlea
 
 SYG: That sounds good. I will review those issues and work through those. As for the JIT concerns, what exactly are Firefox’s JIT concerns here? That you would need to track the exact instance of the TypedArray to get the stride out to it?
 
-YSV: The stride parameter will have influence on the JIT because accessing an index of a TypedArray currently calculates index * byte size where (index & bite size ???). With this proposal, it would need to become index * stride * typedArray.byteSize. We would not be able to use the constant as it exists now.
+YSV: The stride parameter will have influence on the JIT because accessing an index of a TypedArray currently calculates index *byte size where (index & bite size ???). With this proposal, it would need to become index* stride * typedArray.byteSize. We would not be able to use the constant as it exists now.
 
 SYG: You already need to save the offset of the TypeArray somewhere.
 
@@ -889,13 +896,14 @@ SYG: I see. That is a good data point.
 RPR: The queue is empty.
 
 SYG: My take-away is that there is suspicion and concern around the graphics use-case. If it’s not a sufficiently expressive API to address many common graphics use-cases, is it still useful enough? There seems to be arguments for both sides. As for the implementability, the operative question is the one that KM raised; a lot of work needs to go into it to make it performance-neutral with user code, what's the price we're willing to pay for the convenience of it being built in? It sounds like we don't have consensus for Stage 2 today. It sounds like it’s not useful enough for the simple stride case.
+
 ### Conclusion/Resolution
+
 - Not asking for Stage 2.
 
 ## import.meta for stage 4
 
 Presenter: Gus Caplan (GCL) and Myles Borins (MBS)
-
 
 - [PR](https://github.com/tc39/ecma262/pull/1892)
 - [slides](https://docs.google.com/presentation/d/1dXono-H8VjmihAM9bel1RuPvHoSFOqRZ-WprVWUQ3EI/edit#slide=id.p)
@@ -915,7 +923,6 @@ DE: It would not be reasonable to reify the current host hooks we have, and woul
 MF: That’s fair.
 
 MM: First, I agree that one host hook rather than two, if it covers what we need to cover is an improvement. If one is more powerful than the other, is there any reason we need the more powerful one, because the less powerful one has stronger guarantees?. I'd be in favour of reducing it to the less powerful one if it covers the actual need. The big question - the request that I have is that I think this is a simple enough proposal that I would like the presenter to actually summarize the proposal itself, because as presented it mixes what’s being proposed and what’s in various uses of this. For example the URL is not actually part of the ES proposal, but exists in the use of it in both the browser and node. I make the request that the presenter actually describe the proposal.
-
 
 GCL: The reason that there are two hooks is ~3 years old at this point, so I'm going to call it historical. There was this idea that the object returned from import.meta should be a plain object with a null prototype. Then hosts would just add properties to it, not change the prototype or do anything weird. But then later, the second hook HostFinalizeImportMeta was added - so when the host wants to finalize the prototype they can’t make it an ordinary object but they can add other things to it. So we ended up with two.
 
@@ -1031,11 +1038,11 @@ MM: It sounded like anyone who would be fine with both host hooks should be fine
 MBS: We have more time tomorrow. Let’s put a 15 minute time box for tomorrow at the end of the day.
 
 ### Conclusion/Resolution
+
 - Will continue discussion [tomorrow](https://github.com/tc39/notes/blob/master/meetings/2020-03/april-1.md#importmeta-for-stage-4-continued-from-previous-day) in a 15 minute timebox.
 
 New Topic: Do we need to worry about this prior to Compartments actually exposing hooks?
-Jordan Harband
-New Topic: I would prefer a stronger argument to preclude hosts from doing things because we can happen to enumerate use cases today
+Jordan Harband New Topic: I would prefer a stronger argument to preclude hosts from doing things because we can happen to enumerate use cases today
 
 ## Decimal update
 
@@ -1084,12 +1091,11 @@ DE: Yeah, and I agree with you.
 
 KM: MM, in what way would having special engine hooks for all the various operator overloading - how do you envision that being incompatible with a future operator overloading proposal? All of the work we do for add - hooking into an add would be pretty intuitive. Why is it so important that we have the actual operator overloading proposal before we add quote-unquote magic here?
 
-MM: The object or primitive is an example of this, but in general the operator overloading thing, took a long time for DE to convince me that it was a good proposal. Decimal could very well on edge cases do  something different on those subtle issues. In particular, if user written rationals and complex numbers, matrices, suffer from the === problem because they are objects and not values, then decimal should also suffer from the problem. There’s lots of other subtle issues where the only way to get them right is to see where operator overloading lands to make sure that all the edge cases land the same way.
+MM: The object or primitive is an example of this, but in general the operator overloading thing, took a long time for DE to convince me that it was a good proposal. Decimal could very well on edge cases do something different on those subtle issues. In particular, if user written rationals and complex numbers, matrices, suffer from the === problem because they are objects and not values, then decimal should also suffer from the problem. There’s lots of other subtle issues where the only way to get them right is to see where operator overloading lands to make sure that all the edge cases land the same way.
 
 DE: That's one possible goal for language design, but you talk about solving a lot of problems; I think decimal itself would solve a lot of problems for programmers.
 
-MM: I’m not saying that we should never have decimal, but it should be made consistent with
-user written complex/rational/matrix etc.
+MM: I’m not saying that we should never have decimal, but it should be made consistent with user written complex/rational/matrix etc.
 
 RPR: We’ve got 8 minutes left on this topic.
 
@@ -1124,7 +1130,6 @@ Remainder of the queue:
 3 Reply: Regardless of what you think of IEEE, have to mention it + history - Andrew Paprocki (Bloomberg L.P.)
 4 New Topic: Given reservation around operator overloading, could BigDecimal decisions influence operator overloading instead of the other way around? - Shu-yu Guo (@google)
 
-
 ## LogicalAssignment for stage 3
 
 Presenter: Justin Ridgewell (JRL)
@@ -1151,6 +1156,7 @@ WH: LGTM!
 ??: Awesome stuff.
 
 ### Conclusion/Resolution
+
 - Stage 3.
 
 ## Pattern Matching Update
@@ -1179,7 +1185,7 @@ KG: We have had people uncomfortable with making the current spec the 2020 candi
 
 JHD: The other option is that since this was an issue in 2018 and 2019, we cut the draft now.
 
-WH: I'm uncomfortable shipping a standard with known bugs.  It's one thing if we don't know about the bug, but it's another thing if we know about it.
+WH: I'm uncomfortable shipping a standard with known bugs. It's one thing if we don't know about the bug, but it's another thing if we know about it.
 
 JHD: The challenge here is that we have the 2-month opt-out period, and we have 2 weeks until that must start, and we have to agree in a plenary.
 
@@ -1193,15 +1199,15 @@ WH: We should have a longer timebox than that.
 
 MBS: The spec does have known bugs. A: Do we think we are going to get through this, B: If we can’t reach a consensus does that block the 2020 spec?
 
-WH: We shouldn't talk about talking about things.  It's not a productive use of time.
+WH: We shouldn't talk about talking about things. It's not a productive use of time.
 
 MBS: I’m not talking about hypotheticals. I’m asking very literally, should we cut it now?
 
-MF: At the same time, I'm not comfortable making a change I haven't fully thought through.  I don't think there's going to be enough time.
+MF: At the same time, I'm not comfortable making a change I haven't fully thought through. I don't think there's going to be enough time.
 
 MBS: Would it be safe to say that if we pick a time box tomorrow, and if it doesn’t reach consensus by the end of the time box, it doesn’t make it into the ES2020 spec.
 
-WH: If you make the timebox something reasonable, like 30 minutes, we'll see what happens.  I don't want to just say yes to what MBS said because it may encourage people to block consensus.
+WH: If you make the timebox something reasonable, like 30 minutes, we'll see what happens. I don't want to just say yes to what MBS said because it may encourage people to block consensus.
 
 MLS: WH, If we say 30 minute time box, and we don’t reach consensus, are you ok with not making it into 2020, and revisit for 2021?
 
@@ -1213,7 +1219,7 @@ WH: I don't know what you mean.
 
 KG: The proposal is to pick a semantics even though not everyone agrees with it and come to a consensus later.
 
-KM: We normally allow forward changes with exceptions.  It won't prohibit improving the semantics in the future if the committee decides to do that.
+KM: We normally allow forward changes with exceptions. It won't prohibit improving the semantics in the future if the committee decides to do that.
 
 WH: There are a couple cases that are ok, 0-3, or 0,2,3 from the IRC discussion.
 
@@ -1231,7 +1237,7 @@ WH: I don’t want to ship a standard that breaks ASCII-fiers, they are possible
 
 MF: Does that include tagged template rules? I doubt that.
 
-WH: I want ASCII-fiers to be possible with regular expressions.  I can't see anyone writing this code on their own.
+WH: I want ASCII-fiers to be possible with regular expressions. I can't see anyone writing this code on their own.
 
 KG: We do not have agreement on the semantics. We need to cut the specification with some answer, either no answer or an answer someone is not happy with.
 

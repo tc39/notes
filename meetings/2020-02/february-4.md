@@ -1,4 +1,5 @@
 # February 4, 2020 Meeting Notes
+
 -----
 
 **In-person attendees:** Aki Braun (AKI), Andrew Paprocki (API), Rob Palmer (RPR), Waldemar Horwat (WH), Chip Morningstar (CM), Shane F Carr (SFC), Shu-yu Guo (SYG), Jordan Harband (JHD), Michael Saboff (MLS), Keith Miller (KM), Michael Ficarra (MF), Jonathan Keslin (JKN), Kevin Gibbons (KG), Andrew Paprocki (API), Richard Gibson (RGN), Justin Ridgewell (JRL), Zibi Braniecki (ZB), Myles Borins (MBS), Bradley Farias (BFS), Bradford C. Smith (BCS) Rick Button (RBU)
@@ -6,6 +7,7 @@
 **Remote attendees:** Dan Ehrenberg (DE), Brian Terlson (BT), David Rudin (DRN), Jason Nutter (JAN), Ron Buckton (RBN), Pieter Ouwerkerk (POK), István Sebestyén (IS), Min Qi Wu(WMQ), Leo Balter (LEO), Valerie Young (VYG), Jack Works (JWK), Mathieu Hofman (MAH), John Hax (JHX), Caridy Patino (CP), Sergey Rubanov (SRV), Rajiv Batra (!!!), Yulia Startsev (YSV), Caio Lima (CLA)
 
 ## Housekeeping
+
 ### Adoption of the agenda
 
 Adopted by consensus.
@@ -17,22 +19,24 @@ Adopted by consensus.
 ### Next meeting
 
 Cupertino, CA hosted by Apple. Will be at the Infinite Loop campus. Host requests that folks register via Doodle ASAP so Apple Security can review.
+
 ## Process changes to accommodate US members and US delegates
+
 Presenter: Michael Ficarra (MF), Myles Borins (MBS)
 
 - [Slides](https://docs.google.com/presentation/d/1Om59leOYIgGBbQtVRKpC4dnhljhGUD5cTSI1Q876PDQ/edit)
 
-MBS: There has been a lot of discussion around export controls in ECMA. We’ve discussed with a number of councils and our suggestions are based on that, and this is not legal advice.  One other thing is that while we are making a number of suggestions, these suggestions were made by enumerating over the spaces in which we collaborate.  It does not mean that these need to land in the way we present them.  But as we go through each of the items, we have clear reasons for why we are making these decisions.
+MBS: There has been a lot of discussion around export controls in ECMA. We’ve discussed with a number of councils and our suggestions are based on that, and this is not legal advice. One other thing is that while we are making a number of suggestions, these suggestions were made by enumerating over the spaces in which we collaborate. It does not mean that these need to land in the way we present them. But as we go through each of the items, we have clear reasons for why we are making these decisions.
 
 MF: None of this is legal advice.
 
-MF: We have a 2-part proposal.  First, the goal of this proposal is to publish…
+MF: We have a 2-part proposal. First, the goal of this proposal is to publish…
 
 CM: What is the problem we're trying to solve?
 
 MF: We are trying to make US delegates feel more comfortable.
 
-MBS: The export control guidance as they were put out by the BIS (Bureau of Industry and Security, part of the US Department of Commerce) are ambiguous about how to collaborate.  A member of ECMA is on the export control list.  Counsel who have reviewed the guidelines have a variety of risk tolerance.  The purpose of these proposals is for risk reductions for US delegates.
+MBS: The export control guidance as they were put out by the BIS (Bureau of Industry and Security, part of the US Department of Commerce) are ambiguous about how to collaborate. A member of ECMA is on the export control list. Counsel who have reviewed the guidelines have a variety of risk tolerance. The purpose of these proposals is for risk reductions for US delegates.
 
 CM: No, I feel like there is some fundamental context I am missing or not understanding.
 
@@ -48,22 +52,21 @@ MF: (presents slide "Proposal 1") Yeah, so the first proposal is to issue a comm
 
 MBS: ECMA itself is not concerned with TC39 operating openly. What we are trying to do is find cases where we can improve our existing properties of being open.
 
-MF: We want to clarify what is an existing channel for communication in TC39. We’ve identified some private channels, the TC39 IRC channels, have logs published. All of the channels that are currently private, (#tc39-delegates), those should be changed to moderated, which would allow anyone to join, but only delegates can contribute. We would still log those channels. The discourse has a delegates forum, which we will need to make publicly visible.  And the chairs will need to move technical discussions from the Reflector to a public repo.
+MF: We want to clarify what is an existing channel for communication in TC39. We’ve identified some private channels, the TC39 IRC channels, have logs published. All of the channels that are currently private, (#tc39-delegates), those should be changed to moderated, which would allow anyone to join, but only delegates can contribute. We would still log those channels. The discourse has a delegates forum, which we will need to make publicly visible. And the chairs will need to move technical discussions from the Reflector to a public repo.
 
 MBS: This is specifically related to technical discussion. Things in the reflector, for example “where is the room”, there is no concern about that. Issues that are primarily administrative or non-technical do not need to be published. Any communications that are non technical can remain non-disclosed.
 
-MF: The next step is to live-stream meetings?  We should take detailed notes on whether we decide to do that or not.
+MF: The next step is to live-stream meetings? We should take detailed notes on whether we decide to do that or not.
 
 MBS: Where all of this is coming from, is specifically the word public in the export control guidance. The word public is really ambiguous. It is really unclear what constitutes as public and what constitutes as private. This intends to minimize the amount of things that fall into that ambiguous territory.
 
-MF: (presents slide "Proposal 2") For cases when it's not possible to make technical discussion public, we should have a plan in place.  I know there are some discussions we've had that are sensitive, like embargoed or export-controlled topics.  Sometimes these are time-sensitive.  The proposal we have is to create a limited-membership TG.  We can define what is in the scope of that TG for handling those scenarios.
+MF: (presents slide "Proposal 2") For cases when it's not possible to make technical discussion public, we should have a plan in place. I know there are some discussions we've had that are sensitive, like embargoed or export-controlled topics. Sometimes these are time-sensitive. The proposal we have is to create a limited-membership TG. We can define what is in the scope of that TG for handling those scenarios.
 
 MBS: One of the really good examples here is disclosure of security vulnerabilities. Enumerating these spaces can improve our process, independent of the situation we find ourselves in. Currently there is no way for someone to report a security vulnerability to the committee.In the NodeJS project, we have a lot of collaborators, but there are only 10 people that receive security vulnerability reports.
 
-MF: (presents slide "Appendix: terms")  We have some official guidance from the government on the terms, and we also have a working definition of "private".
+MF: (presents slide "Appendix: terms") We have some official guidance from the government on the terms, and we also have a working definition of "private".
 
 BT: Invited our attorney that has been working on this issue, DRN.
-
 
 DRN: Hi, I can help answer questions.
 
@@ -75,7 +78,7 @@ AKI: That's a really good point.
 
 MF: That's the only reason I can see to have the delegates channel currently.
 
-AKI: Yeah, to discuss things that don't really have a comments thread.  I'm convinced.
+AKI: Yeah, to discuss things that don't really have a comments thread. I'm convinced.
 
 MLS: You talked about taking reflector issues, and at some point the chair group will publish them in a public forum. Does publishing after the fact preclude discussion on them as part of what we are doing, or do we need to move all technical discussion into a public forum?
 
@@ -93,10 +96,9 @@ MF: That has to be worked out, we have not discussed it with them yet.
 
 IS: The limited membership task group would mean, I don’t think that is easily possible. ECMA has accepted members and currently there is no way to exclude them from technical work in the TC they are allowed to participate (Note: Not said in the meeting, but SPC and NFP members can per definition only participate in one TC. But if they selected e.g. TC39, then you can not say in a special TG of TC39 you can not participate). Some accepted members not being able to participate is not compatible with the current Ecma Bylaws and Rules. This is only my personal view. You should discuss it with the current management of ECMA.
 
-MBS: If the limitation of the TG is that there was a limited number of participants, if it was just a subset of the group, maybe that would be okay.  If no Huawei members participated in that TG, then it is okay, and if we accept the Huawei delegate by their own merits into the TG, then US delegates can choose not to participate.
+MBS: If the limitation of the TG is that there was a limited number of participants, if it was just a subset of the group, maybe that would be okay. If no Huawei members participated in that TG, then it is okay, and if we accept the Huawei delegate by their own merits into the TG, then US delegates can choose not to participate.
 
 IS: Limited membership task group is, a group of 5 people and no more? Is it something like that?
-
 
 MBS: Yeah something like that.
 
@@ -104,7 +106,7 @@ IS: ??? (Note: I am not sure what I said under ???, but certainly I missed some 
 
 MBS: I think we are trying to be extra careful.
 
-IS: The import control and export control belongs to certain government policies.  It is not international.  It is critical for an international organization to not put these policies into our charter.  I'm okay with having the size of TGs be limited, where only the best experts would participate.  But it should not have restrictions on membership from embargoed organizations. I have seen one concrete example of this type in my long standardization work, the solled “Okubo Group” in the ITU that defined in 1988-1992 the first modern video codec that became ITU-T H261. In order to have effective and speedy standardization each participating ITU State Member was allowed to send max. 2 experts in the group. So e.g. in Germany my company Siemens had no room among the two from our national Administration. But no Administration that wanted to participate in the work was refused.
+IS: The import control and export control belongs to certain government policies. It is not international. It is critical for an international organization to not put these policies into our charter. I'm okay with having the size of TGs be limited, where only the best experts would participate. But it should not have restrictions on membership from embargoed organizations. I have seen one concrete example of this type in my long standardization work, the solled “Okubo Group” in the ITU that defined in 1988-1992 the first modern video codec that became ITU-T H261. In order to have effective and speedy standardization each participating ITU State Member was allowed to send max. 2 experts in the group. So e.g. in Germany my company Siemens had no room among the two from our national Administration. But no Administration that wanted to participate in the work was refused.
 
 MBS: If we removed export control, and clarified that security embargo means not disclosed publicly yet, that would alleviate your concerns correct?
 
@@ -112,21 +114,21 @@ IS: For me, this entire first bullet point (the first sub-bullet of item 1 on Pr
 
 AKI: Would you feel better if we came up with a specific framework for what this TG is responsible for and why? It seems you are concerned with the import/export control.
 
-MBS: I think we gathered the correct feedback to adjust Proposal 2.  I don't think more time to discuss Proposal 2 is a good use of time.
+MBS: I think we gathered the correct feedback to adjust Proposal 2. I don't think more time to discuss Proposal 2 is a good use of time.
 
 MF: The acceptance I’m looking for is not of any specific detail of this proposal, but instead that we should have a solution prepared for these scenarios.
 
-IS: About the private IRC channels, I cannot say anything, you know much better than I know. We are, in TC39, rather open. ECMA as an organization is membership based, so anyone can be a member who qualifies for it. If they qualify, then they can become members. Depending on the topic, we are opening up our communication to the external world. TC39 is an excellent example of collaborating with the open source community, web standards, etc. My feeling is that in principle we do this.  For public live-streaming the meeting, I don't know if that level of openness is necessary.  Member organizations can join ECMA and get access to internal documents and the de-facto internal live-streaming of TC39 if they have registered in the TC39 RFTC.
+IS: About the private IRC channels, I cannot say anything, you know much better than I know. We are, in TC39, rather open. ECMA as an organization is membership based, so anyone can be a member who qualifies for it. If they qualify, then they can become members. Depending on the topic, we are opening up our communication to the external world. TC39 is an excellent example of collaborating with the open source community, web standards, etc. My feeling is that in principle we do this. For public live-streaming the meeting, I don't know if that level of openness is necessary. Member organizations can join ECMA and get access to internal documents and the de-facto internal live-streaming of TC39 if they have registered in the TC39 RFTC.
 
 AKI: Now that we’ve discussed the ECMA stance on proposal 2, why don’t we move on to the next item in the queue.
 
 IS: If someone has undesired features, I won't keep my mouth shut. (Note: I am not sure if I said this and if so in what context?)
 
-WH: I’m very uncomfortable with the idea of live streaming meetings. We can satisfy the requirements of export controls by publishing notes. But live-streaming is just an invitation for harassment, considering past events such as "smooshgate".  I would not want people setting up Twitter mobs because of something someone said at the meeting 20 minutes ago.  I think live-streaming is going overboard.
+WH: I’m very uncomfortable with the idea of live streaming meetings. We can satisfy the requirements of export controls by publishing notes. But live-streaming is just an invitation for harassment, considering past events such as "smooshgate". I would not want people setting up Twitter mobs because of something someone said at the meeting 20 minutes ago. I think live-streaming is going overboard.
 
 MBS: I think that is really reasonable. As someone who has been a host, adding that requirement to the host is not a good requirement to put on people. Is there anyone here that wants live streaming, or do we have consensus that we don’t want it.
 
-AKI: I agree with WH's concern.  The two details being harassment, and the host burden.  I am affected by both of those things and agree with them.
+AKI: I agree with WH's concern. The two details being harassment, and the host burden. I am affected by both of those things and agree with them.
 
 KM: It seems like in order for US trade law, these meetings are already public, as we don’t expose ourselves to ant-trust law because we publish notes. So I would assume that by the same logic, and maybe it's a different law, that would also apply to export-control-related things.
 
@@ -134,11 +136,11 @@ WH: Export control is specific.
 
 AKI: Let’s let the lawyer answer that one.
 
-DRN: I think it's fair to say that we're trying to interpret vague language.  We (Microsoft) would consider a process to create publicly available material to be a public meeting under the regulations.  But some companies don't share that view.  We think we're currently in the clear for what we're doing here, but other companies might not share that interpretation.
+DRN: I think it's fair to say that we're trying to interpret vague language. We (Microsoft) would consider a process to create publicly available material to be a public meeting under the regulations. But some companies don't share that view. We think we're currently in the clear for what we're doing here, but other companies might not share that interpretation.
 
 API: I do think that it creates a host burden, not only from the video conferencing side, if its open to anyone in the world, or if there is some limit. There might need waivers to be involved if there are employees walking by or other tenants. It makes it very difficult to pull off in a safe way.
 
-DE: I'm really happy about the work that was put into this presentation.  On Proposal 1, it looks great to me.  I think it's good to build on our property of being open.  On point 2, I'm really strongly in favor of that.  On point 3, livestreaming meetings, that seems good to me, too.  I understand the harassment concern, but if people were able to see our meetings, they would understand better how we work, and that might address some of those concerns. (something about people watching meetings causing those people to not want to attend meetings)  (audible laughter.)
+DE: I'm really happy about the work that was put into this presentation. On Proposal 1, it looks great to me. I think it's good to build on our property of being open. On point 2, I'm really strongly in favor of that. On point 3, livestreaming meetings, that seems good to me, too. I understand the harassment concern, but if people were able to see our meetings, they would understand better how we work, and that might address some of those concerns. (something about people watching meetings causing those people to not want to attend meetings) (audible laughter.)
 
 WH: Regarding livestreaming meetings, I’m not worried about the people who sit through the entire meeting. But what would happen is that someone posts 10-second soundbites where someone says something awkward, and those would go viral — most people would see them out of context.
 
@@ -148,9 +150,9 @@ JHD: I think it's critical not just for meetings but also on IRC and reflector t
 
 MBS: Thinking to that, I agree with the point you are raising with having a, I’m not sure if these need to be officially sanctioned TC39 spaces or not. We should be able to have discussions in official TC39 spaces. With this proposal and 2, are there specific spaces you have in mind. This probably comes up to the TC39 IRC channel. Could you clarify?
 
-JHD: I'm primarily interested in meetings and the delegates IRC channel.  That's where we don't censor ourselves as much as when we make a GitHub post.  But I think we should also have the reflector as a place to have technical discussions before we bring them public. If we don’t have a sanctioned place, this will result in an unsanctioned space, which can be exclusionary.
+JHD: I'm primarily interested in meetings and the delegates IRC channel. That's where we don't censor ourselves as much as when we make a GitHub post. But I think we should also have the reflector as a place to have technical discussions before we bring them public. If we don’t have a sanctioned place, this will result in an unsanctioned space, which can be exclusionary.
 
-MBS: If we wanted to keep the delegates channel closed, we could (1) have someone go through the logs, turns them into notes, and publish those, which seems like a ton of labor, or (2) maintain logs of the private channel, and maintain them on ECMA servers.  Part of the guidance is that anyone can join ECMA, and anyone can join and access that data.  It's also keeping a record of propriety so that we can go back and make sure that nothing went wrong.
+MBS: If we wanted to keep the delegates channel closed, we could (1) have someone go through the logs, turns them into notes, and publish those, which seems like a ton of labor, or (2) maintain logs of the private channel, and maintain them on ECMA servers. Part of the guidance is that anyone can join ECMA, and anyone can join and access that data. It's also keeping a record of propriety so that we can go back and make sure that nothing went wrong.
 
 JHD: I would be fine with logs of these spaces that are not intended to be public, and are auditable. If we wanted to record meetings, that should be fine, as ECMA members are available to view them. I'm concerned about widely publishing off-the-cuff comments that delegates might not have self-censored properly.
 
@@ -160,36 +162,35 @@ AKI: The distinction between whether we are conversing in public or what we prod
 
 **Rajiv Batra**: I just wanted to emphasize the standard I would love US companies to meet. Less about being open, but instead being public. Everything is public by default in proposal 1, and if there needs to be a space where not every word is published, then that becomes the subject of proposal 2, a second subgroup with limited participation is created. That is what helps meet the standard.
 
-MBS: One thing I want to throw out there.  Just a thought.  We could always choose to take a more conservative approach, which is applying these restrictions for two months.  Then we can understand whether these rules would limit participation by other members.  And none of these changes need to be permanent.  And then we can re-evaluate in a few months whether these changes work.  I would rather we err on the side of allowing all members to participate.
+MBS: One thing I want to throw out there. Just a thought. We could always choose to take a more conservative approach, which is applying these restrictions for two months. Then we can understand whether these rules would limit participation by other members. And none of these changes need to be permanent. And then we can re-evaluate in a few months whether these changes work. I would rather we err on the side of allowing all members to participate.
 
 MLS: We are talking about being public, but ECMA is a membership organization. You can’t participate in discussion or other forums without being a member. Is the result being public, or the discussion itself?
 
-DRN: I think, if we're talking about the language of the regulations, (indecipherable).  It's not clear what "public" is.  Companies differ.  From our perspective, a standards organization that is open to any companies is public, and meetings are public, even if those meetings are not open to non-members.
+DRN: I think, if we're talking about the language of the regulations, (indecipherable). It's not clear what "public" is. Companies differ. From our perspective, a standards organization that is open to any companies is public, and meetings are public, even if those meetings are not open to non-members.
 
 MBS: The one thing that would distinguish this meeting from the public IRC channel, is that this meeting has notes that are published, where the IRC channel is a black box. The problem that we run into is a disagreement about how to interpret that guidance.
 
-
-SYG: To clarify, what are you asking here?  These changes are not motivated by making our work more efficient. They're motivated by our desire to reduce legal risk.  And that's not something that we can answer.  Is this what your company counsel is recommending?
+SYG: To clarify, what are you asking here? These changes are not motivated by making our work more efficient. They're motivated by our desire to reduce legal risk. And that's not something that we can answer. Is this what your company counsel is recommending?
 
 MF: Proposal 1 without the live streaming meetings is OK with us. Proposal 2 is a measure that we would really like to be in place so that we don’t have to scramble if the situation arises. It also lowers the risk for this process to be used. Proposal 2 is a like to have, Proposal 1 except for point 3 is a must have.
 
-IS: In Proposal 1, "publish all technical discussion", organizations like ISO, ITU, etc. DO NOT publish everything.  There is no formal SDO that does that, to my knowledge. (Note: Did not say in the meeting but we have a conflict here: TC39 has a RF patent policy which includes creating a “walled garden” and members have to register to be inside of that “garden” committing themselves to RF policies. We opened the garden to the public already as much as possible, where also parties - maybe only in a listening mode - are sitting with no patent licensing commitments at all, which can be a danger for a RF project). In TC39, we've had an excellent practice.  So we can change it a little, but why do we have to change it completely?  Did we get signals from US authorities that we have to change?  Or is it only an internal interpretation?
+IS: In Proposal 1, "publish all technical discussion", organizations like ISO, ITU, etc. DO NOT publish everything. There is no formal SDO that does that, to my knowledge. (Note: Did not say in the meeting but we have a conflict here: TC39 has a RF patent policy which includes creating a “walled garden” and members have to register to be inside of that “garden” committing themselves to RF policies. We opened the garden to the public already as much as possible, where also parties - maybe only in a listening mode - are sitting with no patent licensing commitments at all, which can be a danger for a RF project). In TC39, we've had an excellent practice. So we can change it a little, but why do we have to change it completely? Did we get signals from US authorities that we have to change? Or is it only an internal interpretation?
 
 MBS: I think it’s less about the authorities and more about that the counsels will not allow delegates to continue participating without these changes.
 
-IS: 40 years ago, I was in Austria involved in a much more sensitive process.  That was when we had East and West.  We did set up the first computer network connections between East and West.  What we did was we talked with the involved governments, security guys, technical guys on both sides to have a common understanding what you can do in sucha project.  I have the feeling we are talking only to ourselves. ECMAScript is a web scripting language specification.  It's not a security product, just a tool for many purposes.
+IS: 40 years ago, I was in Austria involved in a much more sensitive process. That was when we had East and West. We did set up the first computer network connections between East and West. What we did was we talked with the involved governments, security guys, technical guys on both sides to have a common understanding what you can do in sucha project. I have the feeling we are talking only to ourselves. ECMAScript is a web scripting language specification. It's not a security product, just a tool for many purposes.
 
 MBS: There are council on this call that have done a ton of research. Would anyone like to share their opinion?
 
-DRN: What this comes down to is that each company needs to arrive at their own decision.  We came up with an interpretation that allows our delegates to continue participating in TC39 as it currently stands.  I can't point to past precedents because this hasn't happened before in this way.
+DRN: What this comes down to is that each company needs to arrive at their own decision. We came up with an interpretation that allows our delegates to continue participating in TC39 as it currently stands. I can't point to past precedents because this hasn't happened before in this way.
 
 *Rajiv*: To clarify, are we interpreting this in a vacuum. Always, but also we are responding to specific published guidance from a US regulator that sets standards. They are probably thinking of certain more sensitive technology. The regular published this. There is a question about how risk averse the council is. Some people would not be able to participate because of this. The history is useful but this is real.
 
-DRN: I don't think there's specific guidance on what standards bodies can and cannot do.  There's no official guidance.
+DRN: I don't think there's specific guidance on what standards bodies can and cannot do. There's no official guidance.
 
 *Rajiv*: There is always ambiguity.
 
-DRN: I think the issue is that many companies are having good minds that can differ.  So the goal is how we can find the lowest common denominator where all organizations can participate.
+DRN: I think the issue is that many companies are having good minds that can differ. So the goal is how we can find the lowest common denominator where all organizations can participate.
 
 MF: Our goal here is not to give advice to companies. I was very open about what my company is comfortable with. I want to see if those changes are OK and to see if there are other changes that will make companies more comfortable.
 
@@ -213,7 +214,7 @@ AKI: A lot of these things are regarding ECMA, which we can’t speak for. I don
 
 API: One thing that came up, individual members asked the BIS for guidance, that would not necessarily be acceptable to other members. If the end result is that the notes and logs are published and they came back with guidance, the only risk is that you might not like the answer they give. Why are we not just asking ECMA to ask BIS.
 
-DRN: (indecipherable) People are asking not for point-by-point guidance but more general guidance.  They may release additional guidance.
+DRN: (indecipherable) People are asking not for point-by-point guidance but more general guidance. They may release additional guidance.
 
 MBS: With ECMA being a European org, is it appropriate for them to ask BIS for guidance?
 
@@ -227,13 +228,13 @@ AKI: It’s the part of the US government that handles …. Regarding exports.
 
 KM: Could we in order to move forward, by applying this for this meeting, or instead not use private channels for the duration of this meeting, that way the problem is sidestepped for the next three days.
 
-MF: We don't want any of the changes we're requesting to rely on delegates acting in good faith.  If you're asking delegates not to use private channels, you're relying on them not to do that.
+MF: We don't want any of the changes we're requesting to rely on delegates acting in good faith. If you're asking delegates not to use private channels, you're relying on them not to do that.
 
 KM: We could just close the IRC channel for the duration of the meeting.
 
 MBS: We could agree on these more conservative approaches today, and move forward with discussing these other topics.
 
-KM: We say that from this moment to the end of the meeting, we publish the IRC logs.  That would enable us to have a productive meeting.
+KM: We say that from this moment to the end of the meeting, we publish the IRC logs. That would enable us to have a productive meeting.
 
 API: Wouldn’t that only be a concern if they (Huawei) are actually here?
 
@@ -253,13 +254,13 @@ MBS: We should get through this, lunch is in 8 minutes.
 
 API: We have a pass for this meeting because they haven’t been added yet.
 
-DRR: I think there's a meta-question here.  Even if we say, let's shut down the channel for the duration of the meeting, there are more questions we can ask.  If someone makes a new channel, if we have conversations in the hallway, are those things we need to publish as well?  There's a weird inability to make a distinction between a TC39 channel and "Daniel's BFF" channel.
+DRR: I think there's a meta-question here. Even if we say, let's shut down the channel for the duration of the meeting, there are more questions we can ask. If someone makes a new channel, if we have conversations in the hallway, are those things we need to publish as well? There's a weird inability to make a distinction between a TC39 channel and "Daniel's BFF" channel.
 
 MBS: Not a lawyer. But that we clearly enumerate the sanctioned channels. Members can communicate in other channels, but they are not official. This is about an enumeration of these channels.
 
 DRR: You could imagine that there was discussion on a non-official channel as well.
 
-MBS: JHD brought that up, having the undesired effect of creating many back-channels, which is exactly the kind of thing we want to avoid.  I think for the sake of this particular conversation, we should scope it to the list of channels here.
+MBS: JHD brought that up, having the undesired effect of creating many back-channels, which is exactly the kind of thing we want to avoid. I think for the sake of this particular conversation, we should scope it to the list of channels here.
 
 MBS: What’s next on the queue?
 
@@ -269,12 +270,11 @@ MF: Is it OK if we look for consensus on individual points?
 
 MLS: Is this permanent or this meeting?
 
-
 AKI: We could call it going forward.
 
 MLS: Permanent, until we change it.
 
-MBS: In our next meeting and the following meeting, we will discuss in a timebox the effects of these changes.  Can we reserve a timebox in both of the next two meetings to discuss this again?
+MBS: In our next meeting and the following meeting, we will discuss in a timebox the effects of these changes. Can we reserve a timebox in both of the next two meetings to discuss this again?
 
 (No objections)
 
@@ -284,7 +284,7 @@ MF: Is there opposition to TC39 creating a communication about these public chan
 
 AKI: Yeah, we can do that. I hear no opposition, so we’re good.
 
-BT: Sounds like consensus to write documentation.  We'll do that.
+BT: Sounds like consensus to write documentation. We'll do that.
 
 MF: For the IRC channels.
 
@@ -302,7 +302,7 @@ WH: #tc39-delegates is not public.
 
 MBS: First I would like to propose that we maintain public logs for all currently public channels.
 
-JHD: We already do that.  The logs are in the subject line of #tc39.
+JHD: We already do that. The logs are in the subject line of #tc39.
 
 MBS: We should commit to it going forward.
 
@@ -378,7 +378,7 @@ AKI: For (2d) [in the slides], we have consensus?
 
 MLS: I have some concerns about names being used.
 
-AKI: This is only for going forward.  When have we actually had a technical discussion on the Reflector?
+AKI: This is only for going forward. When have we actually had a technical discussion on the Reflector?
 
 MBS: Can I make a suggestion that can allow us to move forward. Would you be comfortable with this for at least this meeting, and we can come back with a proposal for publishing summaries, and see if that is acceptable.
 
@@ -459,9 +459,6 @@ API: We can submit a PR that includes this as well.
 
 DE: We can also discuss this.
 
-
-
-
 ## Conclusion
 
 - "TC39 issues a public communication on its existing property of being open" is approved
@@ -476,8 +473,8 @@ DE: We can also discuss this.
 - Chairs will document TC39's implementation of Ecma's invited expert policy, as it's put in practice in TC39.
 - We will work on a proposal for limited participation technical groups for discussion of technical topics that cannot be disclosed publicly in a reasonable timeframe.
 
-
 ## Test262 Report
+
 Presenter: Leo Balter (LEO)
 
 - [Test-262 repo](https://github.com/tc39/test262)
@@ -490,7 +487,9 @@ LEO: Any questions?
 (silence)
 
 AKI: I'm impressed by the number of contributions you're responsible for.
+
 ## Elections at TC39: Introducing a process
+
 Presenter: Yulia Startsev (YSV)
 
 [Slides](https://docs.google.com/presentation/d/1u435-e43kQNWfYONE89CdzpPitCKLItXLObeuvdhRr4/edit#slide=id.p)
@@ -499,31 +498,31 @@ YSV: (presents slides)
 
 AKI: It’s a simple majority, from ECMA.
 
-YSV: There's still some discussion going on.  I just wanted to bring this to the room to discuss it.
+YSV: There's still some discussion going on. I just wanted to bring this to the room to discuss it.
 
-IS: We would need a bylaws change if voting were not a simple majority.  It could be done but for now it's not done, so we would only be able to do a simple majority.  But there are bylaws changes relatively often.  The overriding Swiss law is quite specific that it is a simple majority, which is currently what we use.
+IS: We would need a bylaws change if voting were not a simple majority. It could be done but for now it's not done, so we would only be able to do a simple majority. But there are bylaws changes relatively often. The overriding Swiss law is quite specific that it is a simple majority, which is currently what we use.
 
 YSV: I think that’s a good information position to have.
 
-JHD: In 2018, at one point, KS and I told the committee that we wanted to be co-editors and skip the hassle of an election.  Then we were sent out of the room for an hour and a half.  Two months ago, deciding that we all had enough time and commitment from our organizations, we wanted to run as a slate, but unannounced to us, the committee decided to vote on us individually.  I find it bad that process decisions are made while delegates are out of the room. It’s disturbing to me that multiple years in a row, the preferences of the candidates has been disregarded for the editor elections. I’m really glad that Yulia has put this together. I would expect that delegates, even if they are running for a position, get a say in how that election is conducted.
+JHD: In 2018, at one point, KS and I told the committee that we wanted to be co-editors and skip the hassle of an election. Then we were sent out of the room for an hour and a half. Two months ago, deciding that we all had enough time and commitment from our organizations, we wanted to run as a slate, but unannounced to us, the committee decided to vote on us individually. I find it bad that process decisions are made while delegates are out of the room. It’s disturbing to me that multiple years in a row, the preferences of the candidates has been disregarded for the editor elections. I’m really glad that Yulia has put this together. I would expect that delegates, even if they are running for a position, get a say in how that election is conducted.
 
-YSV: Your second topic is addressed by the presentation.  On the first topic, it would be helpful for the candidates to give a presentation on what they intend to be doing.  It wasn't clear that there was a plan of work that would be happening over the year.  Another issue is that we could get into a situation where someone nominates themselves to the chair group, and then all the chairs should feel they should go all-in or nothing, and someone could be brought into that role by social pressure rather than qualifications.  I want to impose specific goals about how to discuss candidates. If it happens that we have an unsuccessful election, I think we could work through it in this way.
+YSV: Your second topic is addressed by the presentation. On the first topic, it would be helpful for the candidates to give a presentation on what they intend to be doing. It wasn't clear that there was a plan of work that would be happening over the year. Another issue is that we could get into a situation where someone nominates themselves to the chair group, and then all the chairs should feel they should go all-in or nothing, and someone could be brought into that role by social pressure rather than qualifications. I want to impose specific goals about how to discuss candidates. If it happens that we have an unsuccessful election, I think we could work through it in this way.
 
-KG: I wanted to confirm, you showed a picture of a ballot.  For both editor and chair group, we've previously said that we are looking for a specific number.  But this would mean that everyone who reaches a majority would be able to be added to the group?
+KG: I wanted to confirm, you showed a picture of a ballot. For both editor and chair group, we've previously said that we are looking for a specific number. But this would mean that everyone who reaches a majority would be able to be added to the group?
 
 YSV: Yes that is correct.
 
-CM: I somewhat concur with JHD’s reservations, particularly the editorship. If you have a group of more than 1 person who has a concept that they're going to divvy up responsibilities in some way and present themselves as a slate, we should allow for that.  And requiring that we vote individually seems unjustified.  I think that if people want to run a group, they should be able to run as a group.
+CM: I somewhat concur with JHD’s reservations, particularly the editorship. If you have a group of more than 1 person who has a concept that they're going to divvy up responsibilities in some way and present themselves as a slate, we should allow for that. And requiring that we vote individually seems unjustified. I think that if people want to run a group, they should be able to run as a group.
 
-YSV: I agree it could be disturbing if you want to make plans.  I think it could help for the candidates to give a presentation on their plans if elected together.
+YSV: I agree it could be disturbing if you want to make plans. I think it could help for the candidates to give a presentation on their plans if elected together.
 
 AKI: Where does that leave us on this proposal?
 
-YSV: I would propose that we do this iteratively.  If it comes to the point that this process creates problems, then we can fix it later.  For now, maybe we can adopt what I’ve suggested and use that for the chair elections in this meeting.
+YSV: I would propose that we do this iteratively. If it comes to the point that this process creates problems, then we can fix it later. For now, maybe we can adopt what I’ve suggested and use that for the chair elections in this meeting.
 
 JHD: Feedback is great. In my job, the way I get feedback is not people talking in a room, instead by my manager collecting private feedback from colleagues, and then organizing it, and then providing it to me. I would feel this way even if I wasn’t someone this applied to. It really sucks to have to leave the room for an hour, and have people potentially talk negatively about me. I would really prefer a process where this feedback is delivered in a more polite setting than discussed openly in this room. I don’t think that someone leaving a room and having people talk about them is fair.
 
-KG: I share some of your feelings about the social dynamics of the thing, but especially for chairs, I think it is important that if someone has something they are concerned about, that might interfere with someone's ability to serve as an effective chair that they bring that up with the rest of the group before the rest of the group votes.  That affects the entire committee. It is certainly something I would want to know about before voting. For editors, less so, because the editor role is more technical.  Editors have to coordinate with members of the public and committee in a somewhat similar way.  So I don't think performance reviews are the right analogy to draw here.
+KG: I share some of your feelings about the social dynamics of the thing, but especially for chairs, I think it is important that if someone has something they are concerned about, that might interfere with someone's ability to serve as an effective chair that they bring that up with the rest of the group before the rest of the group votes. That affects the entire committee. It is certainly something I would want to know about before voting. For editors, less so, because the editor role is more technical. Editors have to coordinate with members of the public and committee in a somewhat similar way. So I don't think performance reviews are the right analogy to draw here.
 
 JHD: I agree with you that if there is something that impacts the ability to do the job, that should be brought up. It seems like it is “alright, they are out of the room, what can we say about them”.
 
@@ -563,7 +562,7 @@ MLS: Who is the host?
 
 AKI: IBM in Budapest in November
 
-DE: There was a plurality of IBM at Budapest, there were comments on the reflector about a 3rd place for a runoff, but it would be hard to get everyone to fill out the form again. Ultimately it seemed like the best option with advanced notice. There's an issue, which is that we want to preserve the confidentiality of the vote. I hope this can be a way to gather feedback from the committee.  I agree with AKI that, I mean, I want to learn more about MLS's concerns here so if we do this again, we know what the problems were.
+DE: There was a plurality of IBM at Budapest, there were comments on the reflector about a 3rd place for a runoff, but it would be hard to get everyone to fill out the form again. Ultimately it seemed like the best option with advanced notice. There's an issue, which is that we want to preserve the confidentiality of the vote. I hope this can be a way to gather feedback from the committee. I agree with AKI that, I mean, I want to learn more about MLS's concerns here so if we do this again, we know what the problems were.
 
 MLS: This is the first time that I heard that the official meeting was in Budapest.
 
@@ -581,8 +580,7 @@ YSV: Do we go to elections, or do we want time to think?
 
 AKI: I don’t know the answer to that question.
 
-
-YSV: If we follow the process I suggested, we're a bit behind.  We have a presentation for the chair group.  Should we follow up with that?
+YSV: If we follow the process I suggested, we're a bit behind. We have a presentation for the chair group. Should we follow up with that?
 
 AKI: I certainly would like to get that out of the way. The schedule is in a hilarious mess.
 
@@ -664,13 +662,11 @@ YSV: Everyone who is volunteering to take on this role please leave the room.
 
 (candidates leave the room)
 
-## Conclusion
+### Conclusion
 
 KG: Ya’ll are chairs. (Note: the Chair Team 2020 (all four in a “package”) has been elected by consensus by TC39.)
 
-
 ## Editor’s Report (ECMA262)
-
 
 Presenter: Jordan Harband (JHD)
 
@@ -694,7 +690,6 @@ DE: We can follow up offline. I mentioned earlier that I prefer if we got implem
 
 Presenter: Istvan Sebestyen (IS)
 
-
 - [Slides](https://github.com/tc39/agendas/blob/master/2020/02.GA-2020-12_R1.pdf)
 
 IS: (presents slides) will focus on new / value add items. Many points in the slides were already discussed in the earlier discussions, so he is only bringing those topics which are additional.
@@ -707,14 +702,13 @@ IS: This is new to me. I thought he was doing it voluntarily :-).
 
 MBS: The way in which I frame it may not be totally accurate.
 
-
 IS: Indeed it was for the JS foundation, not yet during the Bocoup membership..He did a brilliant job.
 
-MBS: So one thing that I think we can look at, and I don't think it fills all the gaps, I think support from ECMA would be good here so we have consistency, but that we are floating at OpenJSF, about trying to see if there are people from our foundation that we could sponsor to come.  For what it's worth, I don't think that would be sufficient to call this "solved", but I think it would be a good way to bring in new community members.  But I still think we need to follow up with ECMA and Istvan.
+MBS: So one thing that I think we can look at, and I don't think it fills all the gaps, I think support from ECMA would be good here so we have consistency, but that we are floating at OpenJSF, about trying to see if there are people from our foundation that we could sponsor to come. For what it's worth, I don't think that would be sufficient to call this "solved", but I think it would be a good way to bring in new community members. But I still think we need to follow up with ECMA and Istvan.
 
 IS: That would be great. I always accept any sort of help and appreciate anybody that did work.
 
-MBS: The big thing to me is that we have something identifiable and scalable.  I think it would be good to set it up in such a way that there isn't a single point of failure.
+MBS: The big thing to me is that we have something identifiable and scalable. I think it would be good to set it up in such a way that there isn't a single point of failure.
 
 IS: I could also imagine that it is not one person, but it really should be someone in the meeting room, or remotely participating. Aki has asked if we can publish the last ECMA TC39 minutes, but in these minutes we have the technical notes and it starts with “you cannot publish” this..., So we cannot publish it publicly with that notice. Obviously Ecma internally it is published as a TC39 and GA document. But TC39 wants full public transparency.
 
@@ -761,13 +755,11 @@ MBS: Does anyone have objections to delaying the coffee break?
 
 MBS: Thank you IS
 
-
 ## ECMA-402 Update
 
 Presenter: Valerie Young (VYG)
 
 - [Slides](https://docs.google.com/presentation/d/19w-MiEmxsrGEp8F4LR6DfLWadimt8fW1wgwSE33FCK8/edit?usp=sharing)
-
 
 VYG: (presents slides)
 
@@ -789,14 +781,11 @@ MBS: My understanding regarding public vs private, there are no plans or need fo
 
 (scheduled break)
 
-
-
 ## ToInteger normalizes -0 to +0
 
 Presenter: Jordan Harband (JHD)
 
 - [PR](https://github.com/tc39/ecma262/pull/1827)
-
 
 JHD: (Presents PR)
 
@@ -842,9 +831,7 @@ JHD: Are there any objections for proceeding with this change? This also needs t
 
 (silence)
 
-
 MM: This is great!
-
 
 ### Conclusion
 
@@ -852,14 +839,13 @@ consensus reached
 
 ## Async initialization for stage 1
 
-
 Presenter: Bradley Farias (BFS)
 
 - [Slides](https://docs.google.com/presentation/d/1DsjZAzBjn2gCrr4l0uZzCymPIWZTKM8KzcnMBF31HAg/edit?usp=sharing)
 
 BFS: (presents slides)
 
-JHD: `new Promise` _does_ catch exceptions.
+JHD: `new Promise` *does* catch exceptions.
 
 MM: It causes the promise to become a rejected promise.
 
@@ -899,7 +885,7 @@ JHD: I understand why returning a promise in the super-class constructor would b
 
 BFS: It will still not install the fields on anything but the promise.
 
-JHD: The super class would define a then method on the prototype.  You can’t wait in a constructor, your subclass can have a then method that calls super.then. What can you not do with those sorts of patterns that you need async constructor for?
+JHD: The super class would define a then method on the prototype. You can’t wait in a constructor, your subclass can have a then method that calls super.then. What can you not do with those sorts of patterns that you need async constructor for?
 
 BFS: You can’t really coordinate in a way that prevents people from touching your class before it’s initialized. You would be trusting your subclasses to not do anything to your fields before it’s initialized
 
@@ -907,7 +893,7 @@ JHD: And when you say fields, you mean setters in particular?
 
 BFS: No, anything. If a subclass were to change the length property, and then it gets initialized later in the superclass async initialization it would be bad. The problem is just a coordination problem.
 
-KG: Usually with classes, you don't want to expose your class in a partially constructed state.  The way you normally do that is hide data until you are initialized yet.  With this proposal, you get an instance, it just isn't "ready yet".
+KG: Usually with classes, you don't want to expose your class in a partially constructed state. The way you normally do that is hide data until you are initialized yet. With this proposal, you get an instance, it just isn't "ready yet".
 
 JHD:I can understand why you don’t want a partially-constructed instance out there. But in the async constructor approach, how are you preventing someone from synchronously receiving something that’s not ready?
 
@@ -921,7 +907,7 @@ JHD: So, to paraphrase, with just async constructor alone, you're saying that th
 
 BFS: Correct, that is the idea
 
-MM: In the baseline design here, and you do an await.super call instead of a super call, so that you have what is effectively a normal construction process that is simply spread out over multiple turns, where you are always coordinating with awaits and asyncs, I would argue that the consistency of that design extends into that you need `await.new` not `await new`; with the space, it is not adequate.  By the time you continue, you need to have the instance.  Just like you can't do a normal super chain, you shouldn't be able to do a promise chain.
+MM: In the baseline design here, and you do an await.super call instead of a super call, so that you have what is effectively a normal construction process that is simply spread out over multiple turns, where you are always coordinating with awaits and asyncs, I would argue that the consistency of that design extends into that you need `await.new` not `await new`; with the space, it is not adequate. By the time you continue, you need to have the instance. Just like you can't do a normal super chain, you shouldn't be able to do a promise chain.
 
 BFS: I am neutral. I’m just trying to make this easy. That seems fine to discuss at stage 1 or 2
 
@@ -941,24 +927,23 @@ BFS: If we were trying to make a subclass X of Y, there is no way to coordinate 
 
 BCS: I’m proposing that it just be a normal class. You wouldn’t have the constructor return anything.
 
-BFS: I don't understand how it would work.  Let's discuss offline.
+BFS: I don't understand how it would work. Let's discuss offline.
 
-JKN: I would argue that this makes APIs less consistent.  It seems like if we can have a language feature that makes this more straightforward, we can say, sometimes this returns a promise, sometimes a value, but at least it's a more consistent and familiar interface.
+JKN: I would argue that this makes APIs less consistent. It seems like if we can have a language feature that makes this more straightforward, we can say, sometimes this returns a promise, sometimes a value, but at least it's a more consistent and familiar interface.
 
 BCS: So, you're saying the idea is for building apis, to be consistent. But then you would need the entire API to be built using async classes otherwise it wouldn’t be consistent.
 
 JKN: You already have classes where some methods are async and others are sync
 
-BCS: You could say that you just always call methods to create objects.  Don't worry about the constructor.
+BCS: You could say that you just always call methods to create objects. Don't worry about the constructor.
 
-JKN: With precedence for some classes that have async and sync methods on it.  Look at Node `fs`, for example, which has some Promise methods.  Sometimes when I’m writing code some data is sync and some is async.
+JKN: With precedence for some classes that have async and sync methods on it. Look at Node `fs`, for example, which has some Promise methods. Sometimes when I’m writing code some data is sync and some is async.
 
 BCS: We are talking about methods, not constructors.
 
-BFS: Just to clarify, this proposal is about developers having a better experience in JavaScript.  I'm not arguing that you can't make async stuff work.  I'm saying that it's hard to do it properly and we should make it easier.
+BFS: Just to clarify, this proposal is about developers having a better experience in JavaScript. I'm not arguing that you can't make async stuff work. I'm saying that it's hard to do it properly and we should make it easier.
 
 KG: I’m in favor of this, not any particular solution, but that is a post stage 1 concern. I am strongly in favor of stage 1. This is not a stage 1 concern, but I want to mention it. An advantage of putting the async keyword on the class instead of the constructor, would allow you to use await in initializers for fields.
-
 
 MM: Yeah.
 
@@ -966,7 +951,7 @@ JHX: At first it seems useful, but I don't know how it would work. I really hope
 
 BFS: C# does not, but for other languages we can certainly investigate.
 
-DRR: This is probably a later-stage concern, but there are some questions about the axes of whether asynchronous classes can extend a non-async class and vice-versa.  My assumption is that you can have both types of classes extend the opposite type. But I think there will be some confusion around that.  How do you have a sync side of an async class extend another type?  Because of similar considerations, like where to the prototype methods get installed and the like, would be hard to think about as well.  I have teams at Microsoft who ask me about async initializers (?), but I’m not sure how deep a person gets before this gets confusing. I’m concerned that while we may fix some problems, we may make some things harder as well.
+DRR: This is probably a later-stage concern, but there are some questions about the axes of whether asynchronous classes can extend a non-async class and vice-versa. My assumption is that you can have both types of classes extend the opposite type. But I think there will be some confusion around that. How do you have a sync side of an async class extend another type? Because of similar considerations, like where to the prototype methods get installed and the like, would be hard to think about as well. I have teams at Microsoft who ask me about async initializers (?), but I’m not sure how deep a person gets before this gets confusing. I’m concerned that while we may fix some problems, we may make some things harder as well.
 
 BFS: My inkling is on how this is going to go, is that we make this somewhat a limited feature. I would not expect that you are able to mix these kinds of classes.
 
@@ -974,12 +959,11 @@ BFS: Can we reach consensus for stage 1?
 
 JWK: I'm wondering if this kind of async class works with high-level class (clz => class A extends clz {}) that the subclass doesn't know who the parent class is. Does it throw when a normal class extends a async class, if not, how to call the super in the subclass?
 
-BFS: I would look at this in a later stage. I don’t have concrete semantics. My inkling is that it would throw.  I don't expect mixing an abstract subclass or superclass to work if it does not understand the initialization timing.
+BFS: I would look at this in a later stage. I don’t have concrete semantics. My inkling is that it would throw. I don't expect mixing an abstract subclass or superclass to work if it does not understand the initialization timing.
 
 RPR: No objections?
 
 (silence)
-
 
 ### Conclusion
 
@@ -1002,19 +986,19 @@ DE: (continues to present slides)
 
 DE: Questions?
 
-WH: The trouble with tribbles and precision, is that they multiply. I've had a number of conversations with DE about this.  I'm strongly in the `Decimal128` camp for a few reasons. (1) `BigDecimal` is hard to use. The precision can get away from you if you are not careful, getting into the hundreds of thousands of digits.  You will be forced to have functions which do arithmetic on decimals also take a precision parameter.  Unfortunately that doesn't work well either, except in simple cases.  For example, if you have a function that computes the harmonic mean of N numbers (take the reciprocal of every number, take the mean, and take the reciprocal again) and just take a precision parameter for the intermediate divisions, you’ll get the correct value `1.6m` if you take the harmonic mean of `1m` and `4m` with a precision of two digits after the decimal point, but this will blow up if you take the harmonic mean of `1000000m` and `4000000m`.  You end up with nonsensical results with only a single precision argument.
+WH: The trouble with tribbles and precision, is that they multiply. I've had a number of conversations with DE about this. I'm strongly in the `Decimal128` camp for a few reasons. (1) `BigDecimal` is hard to use. The precision can get away from you if you are not careful, getting into the hundreds of thousands of digits. You will be forced to have functions which do arithmetic on decimals also take a precision parameter. Unfortunately that doesn't work well either, except in simple cases. For example, if you have a function that computes the harmonic mean of N numbers (take the reciprocal of every number, take the mean, and take the reciprocal again) and just take a precision parameter for the intermediate divisions, you’ll get the correct value `1.6m` if you take the harmonic mean of `1m` and `4m` with a precision of two digits after the decimal point, but this will blow up if you take the harmonic mean of `1000000m` and `4000000m`. You end up with nonsensical results with only a single precision argument.
 
-DE:  I don’t know if you saw, the rounding parameter had two modes for significant digits as well as maximum decimal places.
+DE: I don’t know if you saw, the rounding parameter had two modes for significant digits as well as maximum decimal places.
 
 WH: Yes. It’s used like that in financial calculations, which brings us to the next topic. I don’t think it’s ok to say that we’ll never support things like sqrt, exp and so on on decimals. I don’t think it’s ok to say that you need to implement those as a user library.
 
-DE: I didn't say never.  I said as a follow-on proposal, but I want to hear more feedback about if it should be included in this one.
+DE: I didn't say never. I said as a follow-on proposal, but I want to hear more feedback about if it should be included in this one.
 
 WH: You said as a follow on proposal but there is an enormous gap between the complexity of supporting those in BigDecimal vs. Decimal 128. If we’re doing Decimal128, we can just get those from the standard library and be done. If we go with BigDecimal, we’d need to compute those to arbitrary precision, and I don't want to include Mathematica in every copy of the language (audible chuckles). Just the complexity difference is large if you want to get the value pi. In Decimal128 it’s just a constant — we know the value of pi to 34 decimal digits. In BigDecimal, pi would take a precision argument, and you know that people will ask for the first million decimal places of pi. This puts me firmly in the position of supporting `Decimal128`. Doing math will be much harder to implement if we choose `BigDecimal`. Furthermore, `BigDecimal` is much harder to *use* because of the proliferation of precision arguments.
 
 WH: The next question is, what happens when you convert a Number to a Decimal, regardless of the variant of Decimal we pick. If it is an exact number, OK, but what happens if you do 1/10 using regular Numbers, and then ask to convert to Decimal. “You can’t do that” is a fine answer. Another answer is that you get whatever mathematical value you had but in a Decimal format, which happens to be `0.1000000000000000055511151231257827m` for Decimal128 or `0.1000000000000000055511151231257827021181583404541015625m` for BigDecimal.
 
-DE: We have an open issue about this question.  The QuickJS author implemented BigDecimal, and he raised this particular question.  You're right: there are multiple possible answers, and I'm not sure what the best possible answer is.
+DE: We have an open issue about this question. The QuickJS author implemented BigDecimal, and he raised this particular question. You're right: there are multiple possible answers, and I'm not sure what the best possible answer is.
 
 WH: Either you don’t do that, or you give an exact value. Are you including a precision/rounding parameter in the conversion? What I would not be OK with is, if you do this then you convert a Number to a String, and then to a Decimal.
 
@@ -1022,7 +1006,7 @@ DE: There are some people on the issue tracker that have supported that specific
 
 WH: ok
 
-SFC: Regarding conversion from numbers to decimals, the other way that I understand is well-defined is basically to take the number with the fewest significant digits that round-trips when converting back and forth to the double.  See [double-conversion ToShortest](https://github.com/google/double-conversion/blob/master/double-conversion/double-to-string.h#L142). That’s the conversion that ICU and V8 uses. But again, this is not a stage 1 blocker, so I am in favor of stage 1 for the proposal.
+SFC: Regarding conversion from numbers to decimals, the other way that I understand is well-defined is basically to take the number with the fewest significant digits that round-trips when converting back and forth to the double. See [double-conversion ToShortest](https://github.com/google/double-conversion/blob/master/double-conversion/double-to-string.h#L142). That’s the conversion that ICU and V8 uses. But again, this is not a stage 1 blocker, so I am in favor of stage 1 for the proposal.
 
 API: I posted a link in IRC for the C++ implementation of this stuff. We use a parameter or a standard conversion.
 
@@ -1052,7 +1036,7 @@ DE: The current operator overloading proposal does permit operator overloading o
 
 MM: I am. I put the extended literal syntax in the same category as operator overloading. I would really like to see the prelude for the existing numeric types as well as Decimal. My inclination would be that once we have operator overloading and extended literals. After that we don’t need new values types.
 
-DE: The cross-realm registry was the part I couldn't piece out.  Is that what you were thinking about, too?
+DE: The cross-realm registry was the part I couldn't piece out. Is that what you were thinking about, too?
 
 MM: Yeah, that is the main one. I actually do have something in mind, but it is not the kind of thing I would take to the committee for stage advancement.
 
@@ -1060,11 +1044,9 @@ DE: Please get in touch if you have further feedback.
 
 (thumbs up/silence)
 
-
-## Conclusion
+### Conclusion
 
 Stage 1 reached
-
 
 ## Preserve Host Virtualizability
 
@@ -1080,25 +1062,24 @@ MM: Could you give me an example of the kind of thing you're worried about?
 
 MF: I’m not worried about a particular thing. Can I get an idea of where you would like to draw this line on how much virtualizability you would like?
 
-MM: What I would like to see is that the criterion is host-virtualizability, and the syntactic issues are the user-provided machine instruction set, that the virtualizability does not change the instruction set.  But I would want it ideally to be flawless. Through this research we will discover what we can't virtualize, and enumerate/grandfather them. The ideal is that when JS runs on any host, JS can act as any other host.
+MM: What I would like to see is that the criterion is host-virtualizability, and the syntactic issues are the user-provided machine instruction set, that the virtualizability does not change the instruction set. But I would want it ideally to be flawless. Through this research we will discover what we can't virtualize, and enumerate/grandfather them. The ideal is that when JS runs on any host, JS can act as any other host.
 
 KM: Can you go back to your slide on peek/poke? You don’t require enumerability. How do you find them if they are not enumerable?
 
-MM: We introduced in ES5 exactly for this purpose `Object.getOwnPropertyNames`.  This is the reason we introduced that.  In ES3, the primordial objects had a dangerous amount of crap on them.  We consulted with the browser vendors and were able to determine that that method and `Object.getPrototypeOf` make it safe to walk the prototype chain and not miss any dangerous properties.
+MM: We introduced in ES5 exactly for this purpose `Object.getOwnPropertyNames`. This is the reason we introduced that. In ES3, the primordial objects had a dangerous amount of crap on them. We consulted with the browser vendors and were able to determine that that method and `Object.getPrototypeOf` make it safe to walk the prototype chain and not miss any dangerous properties.
 
 SYG: If the threat to virutalizability is not in theory but in practice. If we tighten the spec language, that the host shouldn’t do this, what teeth do we have? It might not be malicious. If I want to provide peek/poke for my users or my runtime.
 
-MM: That the decision by the host is to provide peek/poke and be virtualizable?  The committee would take the stance that any implementation, unless it gets an exception, would be a non-conformant implementation.
+MM: That the decision by the host is to provide peek/poke and be virtualizable? The committee would take the stance that any implementation, unless it gets an exception, would be a non-conformant implementation.
 
 SYG: If you point out that the threat is in practice, not in theory...
 
-MM: Right now, we're safe in practice because we've succeeded at getting rid of all this dangerous crap.  But the spec does not state that these things should be deletable.
+MM: Right now, we're safe in practice because we've succeeded at getting rid of all this dangerous crap. But the spec does not state that these things should be deletable.
 
 MM: For example, on Firefox, the legacy RegExp statics are not deletable. Was that decided because users wanted it to be non-deletable, or was it an accident? I want to make it clear that there is a way for JS to provide a host for JS.
 
-SYG: In general,  I am for this research. In general, I am wary of restricting the host that we don’t know…. What changes are you asking for?
+SYG: In general, I am for this research. In general, I am wary of restricting the host that we don’t know…. What changes are you asking for?
 
-MM: That's what I'm going to do the research on.  I will try to determine which invariants I'm asking for.  Before, there was a lot of crazy stuff hosts did.  There was a re-write of WebIDL so that it could only specify behaviors that obey the object invariants, and which can be faithfully emulated by proxies. With two exceptions, document.all and the browser WindowProxy (which, btw, is not a proxy). And WindowProxy is now very close.
+MM: That's what I'm going to do the research on. I will try to determine which invariants I'm asking for. Before, there was a lot of crazy stuff hosts did. There was a re-write of WebIDL so that it could only specify behaviors that obey the object invariants, and which can be faithfully emulated by proxies. With two exceptions, document.all and the browser WindowProxy (which, btw, is not a proxy). And WindowProxy is now very close.
 
 MBS: We're at time for the day, so we'll continue tomorrow.
-

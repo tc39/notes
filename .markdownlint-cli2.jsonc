@@ -5,7 +5,6 @@
   "ignores": [
     "node_modules/**",
     "meetings/201*/*.md",
-    "meetings/2020*/*.md",
     "scripts/test-samples/*"
   ]
 }

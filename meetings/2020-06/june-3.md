@@ -1,10 +1,10 @@
 # June 03, 2020 Meeting Notes
+
 -----
 
+**In-person attendees:** (none)
 
-**In-person attendees:**  (none)
-
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Robin Ricard         | RRD            | Bloomberg          |
@@ -48,8 +48,8 @@
 | Jordan Harband       | JHD            | Invited Expert     |
 | Daniel Ehrenberg     | DE             | Igalia             |
 
-
 ## Module Attributes for Stage 2
+
 Presenters: Sven Sauleau (SSA), Daniel Ehrenberg (DE), Myles Borins (MBS), Dan Clark (DDC)
 
 - [proposal](https://github.com/tc39/proposal-module-attributes)
@@ -57,11 +57,11 @@ Presenters: Sven Sauleau (SSA), Daniel Ehrenberg (DE), Myles Borins (MBS), Dan C
 
 DE: (presents slides)
 
-DE: Asking  for Stage 2
+DE: Asking for Stage 2
 
 JHD: the name of the proposal is “module attributes”. regardless of the name, to me the current proposal is not defining attributes of a module, it’s defining attributes of an import, because it’s being used at the import site. It's like an assertion, checking the module. It's up to the provider of the module to decide what kind of module it is. So I don’t have any mismatch around that, but around a lot of the possible attributes that can be added, they seem like they’re defining attributes about the module or they're affecting its evaluation as opposed to merely checking or halting it. I'm concerned about that conceptual mismatch. I feel it’s a mismatch to me.
 
-DE: there are many proposals people have raised on the issue tracker that I don’t personally like either. [That doesn't invalidate the whole proposal; I'm not championing their attributes.] 
+DE: there are many proposals people have raised on the issue tracker that I don’t personally like either. [That doesn't invalidate the whole proposal; I'm not championing their attributes.]
 I want to have this basic concept validated. If there’s no way we can have inline module attributes at all, that’s a useful signal to have from the committee. We're only proposing one attribute, "type", in a way that makes it possible to add new attributes in the future.
 
 JHD: Right, and that’s totally fair - leaving syntactic extensibility is wise in most proposals. What concerns me about that though is because of the current lack of host invariance or the current situation around them, there won't be anything preventing individual hosts adding semantics that won’t be creating the mismatch that I’m talking about. That also concerns me.
@@ -72,8 +72,7 @@ JHD: Right and I think specifiers are under the control of hosts meaning they ca
 
 DE: So you know, going back to this I think it would be a bad thing if we had hosts adding more syntax within their module specifiers. Generally they are complex things, urls & paths already have complex grammars. So that’s why I think it would be cleaner for us to have separate syntax for module attributes that really separates out these other things, we can see in the history of security issues that different syntax for strings is a frequent source of security bugs.
 
-RBN: I wanted to comment on JHD's statement that it must check but not define but
-For a module to be able to inform the host on how to handle an import absent an adequate extension or MIME type. I’m curious if you’re restricting this ??? - if I wanted to be able to have the module attribute be of type JSON and have it treat the module differently and modify the Accepts header so there is multiple types of a resource so that I receive the JSON vs the HTML version of the resource, that seems like that is part of the point of this.
+RBN: I wanted to comment on JHD's statement that it must check but not define but For a module to be able to inform the host on how to handle an import absent an adequate extension or MIME type. I’m curious if you’re restricting this ??? - if I wanted to be able to have the module attribute be of type JSON and have it treat the module differently and modify the Accepts header so there is multiple types of a resource so that I receive the JSON vs the HTML version of the resource, that seems like that is part of the point of this.
 
 DE: Yes, that’s what I presented on in this slide.
 
@@ -119,7 +118,7 @@ BFS: my recommendation for stage 3 and it is to split evaluator attributes and c
 
 DE: We’re only proposing a check attribute for now. What are you proposing?
 
-BFS: I  would be more comfortable if we had a carve-out saying you should not do evaluator attrs currently.
+BFS: I would be more comfortable if we had a carve-out saying you should not do evaluator attrs currently.
 
 DE: I’d be comfortable with that, and that would solve this particular thing about making a separate copy. You’d never have to make a separate copy if you only had check attributes. However, many people have proposed evaluator attributes, so it's worth investigating them before rejecting them.
 
@@ -138,14 +137,11 @@ But then the corollary to that is that the motivating use case for that, as I un
 Assuming that my understanding of the motivation is correct, then all you need is some privilege that says 'this thing can execute,' or to fit well with the default of everything can execute, to say “
 “this thing can’t execute”. And it seems like it’s adding a lot of complexity to add type because the potential module types are very large. But if they will all fall into full perms or cannot execute; or if we envision additional privileges then it seems like it would be better to talk about that category, to have this proposal deal with ways to designate the privileges of the module, and not the type of the module.
 
-DE: SYG proposed that last year and proposed to use `noexecute` but people in thread found that type or as was more like what they expected. The earlier form of this proposal left all the attributes up to the host, which allows them to go with the no execute option. I think we’ve heard a similar concern already that just restricting this proposal to being one single bit would not fit with the extensibility goals that other people had. 
+DE: SYG proposed that last year and proposed to use `noexecute` but people in thread found that type or as was more like what they expected. The earlier form of this proposal left all the attributes up to the host, which allows them to go with the no execute option. I think we’ve heard a similar concern already that just restricting this proposal to being one single bit would not fit with the extensibility goals that other people had.
 
 JHD: We can preserve the syntactic / object like nature & put a boolean in there...
 
 DE: Is this something that we could discuss within Stage 2? The possibility to switch from `type` to a `noexecute` boolean?
-
-
-
 
 JHD: If additional attributes would require future proposals then yes, the nature of the thing that determines whether to execute or not seems fine to iterate on within stage 2.
 
@@ -216,8 +212,6 @@ JHD: I doubt we'll come up with a resolution in the next few minutes.
 
 DE: I’m comfortable adopting this checker restriction. Concretely we did come to the committee last meeting with this single-attribute version, and that was met with the exact opposite concern that it should be extensible. So I would be comfortable going to Stage 2 conditionally requiring that the module attributes be this check attribute. Could we do that? I’d be uncomfortable going to stage 2 with a repudiation of the feedback from last meeting.
 
-
-
 JHD: In spirit what you're saying is OK, but I don’t think it’s reasonable to apply pressure on me or on folks that want extensibility to resolve this in a few minutes.
 
 DE: We’ve been discussing this for months, in committee and offline, so I don’t think this is unreasonable pressure. You’re raising this blocker, I’m saying let’s go with much of what you're saying.
@@ -231,32 +225,33 @@ The text is already there for `type`, we would just raise it to all module attri
 RPR: Our timebox has been exceeded, since there is no immediate consensus, please talk offline today so we can bring that back tomorrow.
 
 ### Conclusion/Resolution
+
 - No consensus on stage 2, but people will talk offline to potentially revisit tomorrow.
 
 ## Built in modules Update Towards Stage 2
+
 Presenter: Michael Saboff (MLS)
 
-* [proposal](https://github.com/tc39/proposal-built-in-modules)
-* [slides](https://github.com/msaboff/tc39/blob/master/Built%20In%20Modules%20TC39%20June%202020.pdf)
+- [proposal](https://github.com/tc39/proposal-built-in-modules)
+- [slides](https://github.com/msaboff/tc39/blob/master/Built%20In%20Modules%20TC39%20June%202020.pdf)
 
 MLS: (presents slides)
 
 WH: You’re proposing adding a `BuiltInModule` object that lets you shim and then import built-in modules via `BuiltInModule.import`. I couldn’t tell from the presentation: Is that the only way to import a built-in module?
 
-MLS: I should have stated that. Both the import declaration and import() function work with built-in modules.  What is described here is a Built In Module specific API.
+MLS: I should have stated that. Both the import declaration and import() function work with built-in modules. What is described here is a Built In Module specific API.
 
 The `BuiltInModule.import` would not allow you to import anything else, it would throw on a module specifier that doesn’t match a built-in module, and it would probably throw on anything else.
 
 WH: How would shimming work if you used an import declaration?
 
 MLS: If you don't have the module in the module map you do a different kind of shimming.
-If you do have the module, then you’re not going to provide an initial implementation.  I expect that shimming code will do something like:
-    if (!BuiltInModule.hasModule(“js:Foo”)) {
-      … // provide shim for js:Foo
-      BuiltInModule.export(“js:Foo”, myFooExports);
-  }
+If you do have the module, then you’re not going to provide an initial implementation. I expect that shimming code will do something like:
+if (!BuiltInModule.hasModule(“js:Foo”)) {
+… // provide shim for js:Foo BuiltInModule.export(“js:Foo”, myFooExports);
+}
 
-  //  Any shimming to be applied to the base js:Foo
+// Any shimming to be applied to the base js:Foo
 
 WH: Would the import declaration take effect first?
 
@@ -284,8 +279,7 @@ BFS: I just want to clarify that a script tag is not the only work-around, you c
 
 KG: MLS, first thanks for moving this forward. I especially like this design, it seems like it does a good job of making things shimmable in ways the web relies on. Can you go into what you see the advantages of this design are over sticking more stuff on the global object?
 
-MLS: There has been lots of discussion on why we’d grow a global object
-To me it seems like there are a couple advantages, people may contend with this, but I believe that an implementation, if it provides an implementation of a builtin module on the fs instead of in memory It makes it a bit easier, someone would say you would use something on the global object, you can do that in the global object if you intercept the first reference. I think yes you can do that, but having built in modules in the file system is a little easier on implementations. So you would save startup memory and things like that.
+MLS: There has been lots of discussion on why we’d grow a global object To me it seems like there are a couple advantages, people may contend with this, but I believe that an implementation, if it provides an implementation of a builtin module on the fs instead of in memory It makes it a bit easier, someone would say you would use something on the global object, you can do that in the global object if you intercept the first reference. I think yes you can do that, but having built in modules in the file system is a little easier on implementations. So you would save startup memory and things like that.
 If you think about it, a built-in module map would map moduleSpecifier keys to some notion of a location in a file system, that’s going to use a lot less memory than having code that will bring in the module’s implementation.
 
 It’s also a good way to organize things, that you have modules that are self contained, that can be implemented as contained modules. It’s standard software practice to build things on libraries or other modules, and this is more in line with that from that perspective.
@@ -296,7 +290,7 @@ BFS: I had a question about the lifecycle of builtinmodule and import. If we imp
 
 MLS: The export is going to change the built in module map. Any subsequent import will get the updated map. I’m not sure I understand the question.
 
-BFS: So say we have the primordial form of a module and a shim form. 
+BFS: So say we have the primordial form of a module and a shim form.
 If we import the primordial form and then we shim it, when we import the same specifier, we would see the shimmed module namespace and not the primordial form, correct?
 When we import the same specifier we’d see the shimmed module namespace, not the original one?
 
@@ -306,21 +300,18 @@ BFS: OK that’s all I wanted to know.
 
 TLY: It seems one of the advantages that built-in modules was going to have is that you can trust them to be more intact than random keys on the global.
 
-Once the application runs, one thing that we would always want is to make sure that the other things they import dont shim it
-It would make more sense to have a separate phase for shimming rather than a workaround with a script tag that does it.
+Once the application runs, one thing that we would always want is to make sure that the other things they import dont shim it It would make more sense to have a separate phase for shimming rather than a workaround with a script tag that does it.
 
-
-MLS: We’ve discussed this, yes the design is that you have to call freezeModules(). It was discussed that shimming was only possible in the first script tag, but that isn’t how all shimming code works, so that isn’t acceptable.  If you don’t call `freezeModules` the application code would change things itself.
+MLS: We’ve discussed this, yes the design is that you have to call freezeModules(). It was discussed that shimming was only possible in the first script tag, but that isn’t how all shimming code works, so that isn’t acceptable. If you don’t call `freezeModules` the application code would change things itself.
 
 Given that we need to allow shimming that builds upon other shimming, we need to allow modules to generally not be frozen and leave it up to the application's discretion of if / when the modules get frozen.
 
-JHD: To answer TLY’s question. Currently if you want to lock things down you need to call a freeze or do an SES.lockdown or something like that
-And most apps just don’t do that, like there’s even a technique from MetaMask that will freeze things like that but only in tests, so that you can verify that you’re not modifying things later on but then you don’t actually freeze them in production. So while if everybody needs to lock things down, it becomes an ergonomics cost. It’s already the case that most apps don’t do that. In other words I’m not worried about that ergonomics cost.
+JHD: To answer TLY’s question. Currently if you want to lock things down you need to call a freeze or do an SES.lockdown or something like that And most apps just don’t do that, like there’s even a technique from MetaMask that will freeze things like that but only in tests, so that you can verify that you’re not modifying things later on but then you don’t actually freeze them in production. So while if everybody needs to lock things down, it becomes an ergonomics cost. It’s already the case that most apps don’t do that. In other words I’m not worried about that ergonomics cost.
 
 RGN: I noticed that for module specifiers you have ASCII letters and then a colon, and I’m curious what the relationship between those and URI schemes (which are registered) will be.
 
 MLS: Originally we wanted the specifier of built-in modules to have an IANA registered prefix.
-There was pushback, we want them in the form of a URI to match other module specifiers, but there currently isn’t an intent to register one.  We are open to registering “js:”.
+There was pushback, we want them in the form of a URI to match other module specifiers, but there currently isn’t an intent to register one. We are open to registering “js:”.
 
 RGN: Does that mean you can never use http: inside of them?
 
@@ -382,7 +373,7 @@ SYG: So you are actually proposing not integration with modules maps but to a se
 
 Then I will modify my comment. This is not stage 2 blocker, but you probably need buy-in from import maps folks. I'll try to build bridges there. If you’re not using them, then you’re proposing something else that could be complementary. I think we need some conciliation there.
 
-MLS: I'll give you a little background. When we last discussed, we talked about building a JS version in import maps. When we started thinking about it, we determined that the built in module shimming feature is actually a self-contained problem and didn’t require integration with import maps.  if you bound the problem to just builtin modules then you can do it synchronously and eliminate the problem.  Import maps operate above the built in module map and the API’s we are proposing.
+MLS: I'll give you a little background. When we last discussed, we talked about building a JS version in import maps. When we started thinking about it, we determined that the built in module shimming feature is actually a self-contained problem and didn’t require integration with import maps. if you bound the problem to just builtin modules then you can do it synchronously and eliminate the problem. Import maps operate above the built in module map and the API’s we are proposing.
 
 So that’s why we want this to be a self-contained solution.
 
@@ -390,7 +381,7 @@ SYG: That clarifies for me. I am looking forward to reading the full semantics t
 
 JWK: if we have a BuiltinModules object, why do we need to have a “builtin module” when we could just use the BuiltinModules global object to get them?
 
-MLS: Yes, but  in a module centric world where every script is also a module you would probably want to use the declarative form as a statement because that is more familiar with a module developer. So that’s why that method would be available as well.
+MLS: Yes, but in a module centric world where every script is also a module you would probably want to use the declarative form as a statement because that is more familiar with a module developer. So that’s why that method would be available as well.
 
 JWK: I have another question. Now the proposal is proposing a special prefix “js:”. Today the module specifier has no meaning and the meaning is left to the host. If we make this change, the specifier will have a meaning. If we could move it to the module attributes Like “with “std”: “js””…
 
@@ -400,7 +391,7 @@ Adding it as a module attribute, I don’t want to make it dependent upon anothe
 
 TLY: I think you can avoid all of this ambiguity by making it not a URI. Have something that is not valid syntactic URI syntax.
 
-MLS: We've done lots of bikeshedding on this. In other module loading schemes, they use a @ or other characters  We thought it would make sense to be a URI. Using “js:” is compatible with the mostly de-facto URI scheme of ModuleSpecifiers.
+MLS: We've done lots of bikeshedding on this. In other module loading schemes, they use a @ or other characters We thought it would make sense to be a URI. Using “js:” is compatible with the mostly de-facto URI scheme of ModuleSpecifiers.
 
 TLY: If you want it to look like a URI, it should be a valid registered IANA URI, I believe.
 
@@ -414,7 +405,8 @@ SFC: Being involved with existing global object standard libraries like Intl and
 
 MLS: I’m also troubled by that, but the language should have had a built-in module or library scheme many years ago.
 
-I don't think we will take new features and make them both new globals and new builtins. New built in module features should be contained and not impact the engine internals. Proposals typically implementable completely as JS would be builtin modules.  Other things like new language syntax and language features their API’s would appear as part of the global object. That’s my opinion of how the committee would move forward.
+I don't think we will take new features and make them both new globals and new builtins. New built in module features should be contained and not impact the engine internals. Proposals typically implementable completely as JS would be builtin modules. Other things like new language syntax and language features their API’s would appear as part of the global object. That’s my opinion of how the committee would move forward.
+
 ## Deep path properties
 
 Presenter: Rick Button (RBU)
@@ -459,19 +451,19 @@ WH: If the first item (`counters` in the example) is a computed prop name, how w
 RBU: Instead of the counter's identifier you would use the computer property’s identifier name?
 It would work the same way in that you would have the computed property—if the computed property evaluated to counter, the If you change it further it would update inside of counters.
 
-WH: One last question: How do you delete a property this way? 
+WH: One last question: How do you delete a property this way?
 
 RBU: Good question, came up in calls, we don’t know—this is a missing part of this proposal and a missing part of shallow spread. I’m interested in investigating how that would be possible.
 
 WH: OK. Thank you.
 
-DE: To respond to those questions, you were saying it would be inefficient to do the repeated updates.  There’s no way to observe the intermediate values of the record. So even though logically one thing happens after the other. Although there’s no structural sharing in the record and tuple proposal, the record and tuple proposal is made so engines can do structural sharing that could mitigate that impact.
+DE: To respond to those questions, you were saying it would be inefficient to do the repeated updates. There’s no way to observe the intermediate values of the record. So even though logically one thing happens after the other. Although there’s no structural sharing in the record and tuple proposal, the record and tuple proposal is made so engines can do structural sharing that could mitigate that impact.
 
 For deleting a property, I think this would logically be a part of destructuring [which we explained is omitted, but could be added later].
 
 …
 
-I don’t know if I’m convinced we need a delete syntax, You could also do that by calling Object.entries, manipulating it procedurally, and  I don’t know if we need a syntax for every single thing you could do.
+I don’t know if I’m convinced we need a delete syntax, You could also do that by calling Object.entries, manipulating it procedurally, and I don’t know if we need a syntax for every single thing you could do.
 
 WH: DE, your first point is not true, it is possible to observe intermediate mutations. If you have the mutations `[foo]: bar, counters[0].value: 2`, then the first mutation is observable when making the second one. The second one will do different things depending on whether `foo` is "counters" or not.
 
@@ -489,7 +481,7 @@ I don’t know of other dynamic languages that have this.
 
 Normally the way you optimise this is that you observe that you are the only person looking at this tuple and you can just mutate the underlying object. This is very hard for us to do in JS core, we only do that analysis in the most optimizing compiler, so you’d have very bad interpreter performance. Hard to get right.
 
-RBU: I sympathize. My argument is not against but I believe this is already a used pattern with nested spreads 
+RBU: I sympathize. My argument is not against but I believe this is already a used pattern with nested spreads
 
 I believe that this pattern, I mentioned, people are already doing this but still doing nested spreads. This is still a thing because of nested spreads with worse performance because you can do it already.
 
@@ -503,7 +495,6 @@ TLY: It’s an idiom, not a library feature.
 
 KM: Sure, it’s an idiom but you’re not getting it from the language itself.
 
-
 KG: I like exploring the problem space, but given that it’s focused on records and tuples, I don't want to advance past stage 1 until records and tuples advance.
 
 RBU: I would 100% agree with that if this proposal only applied to records, which I don’t imagine it would.
@@ -516,13 +507,14 @@ RBU: Not familiar with the syntax, please open an issue on the repo.
 
 MF: I appreciate early stage proposals bringing examples that explain what a solution could look like. But I want to make sure we’re not committing to a solution like this. I have other ideas for what a solution would look like. I want to ask the champions to look into an API based solution, something like lenses, because I think that it might not be worth the syntactic space.
 
-RBU: 100% agree,  The overall goal of the proposal is to solve the problem of providing an ergonomic way of providing this computation, and ideally not breaking the performance ideals of record/tuple, i.e. not block optimizing compilers from doing good work. So as long as we stay as close to that as possible. If this results in a library, I think it’s perfectly valid.
+RBU: 100% agree, The overall goal of the proposal is to solve the problem of providing an ergonomic way of providing this computation, and ideally not breaking the performance ideals of record/tuple, i.e. not block optimizing compilers from doing good work. So as long as we stay as close to that as possible. If this results in a library, I think it’s perfectly valid.
 
 MF: I think that would be exactly what we should have as the conclusion in the notes. (notetaker: spooky meta)
 
 AKI: do we have stage 1? (silence) Sounds like consensus to me?
 
 RBU: thank you very much!
+
 ### Conclusion/Resolution
 
 Consensus on Stage 1
@@ -538,9 +530,8 @@ YSV: (presents slides)
 
 YSV: asking for stage 1, staging process to track research
 
-KG: I wanted to say that I am in support of this. I wanted to mention an additional type of complexity that this brings that YSV kind of mentioned, and I wanted to emphasize it - it’s not just new builtins but proposals to add methods to Set.prototype and Map.prototype
-Stalled in part because I brought up what we would need to do about Symbol.species.
-If I were designing a language with no concern for runtime performance, then the purist in me is like “well, it’s nice to make things pluggable and subclassable”, but that’s not what we’re doing. The decisions that we make on performance affects billions of  people. So I’m strongly in support of removing this despite the language purist in me being slightly sad.
+KG: I wanted to say that I am in support of this. I wanted to mention an additional type of complexity that this brings that YSV kind of mentioned, and I wanted to emphasize it - it’s not just new builtins but proposals to add methods to Set.prototype and Map.prototype Stalled in part because I brought up what we would need to do about Symbol.species.
+If I were designing a language with no concern for runtime performance, then the purist in me is like “well, it’s nice to make things pluggable and subclassable”, but that’s not what we’re doing. The decisions that we make on performance affects billions of people. So I’m strongly in support of removing this despite the language purist in me being slightly sad.
 
 JHD: I think I might know the answer but I wanted to hear your explanation for why we would need to remove the static methods, because they can just look up the receiver? If the receiver is MyArray then Array.from makes MyArray.
 
@@ -587,7 +578,7 @@ If I really wanted to have map return an A but I dont have the instance creation
 
 YSV: Thank you for that comment, that’s a very interesting thing that you bring up. One thing we’ve been looking at a lot, in a bit of disbelief, is that with symbol species, one thing that’s kind of amazing is that we haven't really seen it being used in user code that we've examined. We haven’t looked at the entire web of course so we don’t really know if it is being used. If you know of a case where this is being done ,and would love to take a look at what they are doing in the code base. Maybe we can take a look at that, that’d be interesting too.
 
-DE: Question for RBN, would you be okay with type 1? Where you’re saying you construct this subclass and inject logic to determine the class bieng constructed in the middle, is that essential functionality to you? 
+DE: Question for RBN, would you be okay with type 1? Where you’re saying you construct this subclass and inject logic to determine the class bieng constructed in the middle, is that essential functionality to you?
 
 RBN: What i was trying to point out (using the type 2 slides), but the issue with Type 1 -
 
@@ -597,18 +588,16 @@ RBN: So if we don’t use Symbol.species and instead use `this.constructor`, I h
 
 DE: I agree [that there is this implication and difficulty with Type II]. I was just asking are you okay with that option where you have to override the map thing [Type I]?
 
-BFS: We have a crawler at work that we’ve been rewriting to do audits of what the actual usage type of species is in the browser. It would be good if anyone with specific hooks or traps they want to see usage amounts for or if they have lists of sites they’re concerned with 
-I think we need to be very careful there. I think a lot of what we’ve seen from the crawler is false positives. It is absolutely stunning how many false positives there are. Also things are never using @@species properly, when they do use it. Which is interesting, ANother topic which we can discuss elsewhere. The problem is that people are assigning values to @@species, and not delegating it like ???, which ??? the `this` value, and then that kills subclassing, and people are subclassing their subclass & it’s broken. So, this is not just about performance. There is nobody using species correctly except for that one library by Feross & he removed support for it. It would be good to know what statistics people want to see, because there are so many noisy statistics going on.
+BFS: We have a crawler at work that we’ve been rewriting to do audits of what the actual usage type of species is in the browser. It would be good if anyone with specific hooks or traps they want to see usage amounts for or if they have lists of sites they’re concerned with I think we need to be very careful there. I think a lot of what we’ve seen from the crawler is false positives. It is absolutely stunning how many false positives there are. Also things are never using @@species properly, when they do use it. Which is interesting, ANother topic which we can discuss elsewhere. The problem is that people are assigning values to @@species, and not delegating it like ???, which ??? the `this` value, and then that kills subclassing, and people are subclassing their subclass & it’s broken. So, this is not just about performance. There is nobody using species correctly except for that one library by Feross & he removed support for it. It would be good to know what statistics people want to see, because there are so many noisy statistics going on.
 
-RW: So you were asking for examples of Type III.  In Test262, we use Type III extensively for testing the behavior of built-ins across realms. We are heavily reliant on setting the species with a cross realm copy of the constructor to make sure the lookup chain of the constructor is preserved correctly. To make sure that the lookup chain is preserved correctly. If you look at it, I don’t want to rathole into that, we can look at it together offline. But that’s a pretty substantial example of where it’s being used in the wild. And I don’t know how else we would test cross realm behavior which is important to the language cause we have access to multiple realms in any given runtime. So I just wanted to put that on the board and say let’s chat about it offline.
+RW: So you were asking for examples of Type III. In Test262, we use Type III extensively for testing the behavior of built-ins across realms. We are heavily reliant on setting the species with a cross realm copy of the constructor to make sure the lookup chain of the constructor is preserved correctly. To make sure that the lookup chain is preserved correctly. If you look at it, I don’t want to rathole into that, we can look at it together offline. But that’s a pretty substantial example of where it’s being used in the wild. And I don’t know how else we would test cross realm behavior which is important to the language cause we have access to multiple realms in any given runtime. So I just wanted to put that on the board and say let’s chat about it offline.
 
 YSV: Sounds great.
 
 WH: I also have concerns about how you would remove type 3 without also removing type 2. If you remove both of them, when you subclass Array to make MyArray, then .map will create Array instances. If you just remove type 3 without type 2, then there is no way to make it return Array instances instead of MyArray [slide link needed] — that’s currently done by setting a null species. I don’t consider replacing all of the array methods a good solution.
 
 SYG: I think that is correct, I think it is not realistic. I don’t think we are proposing removing 3 without removing 2. I want to add more data points, I wasn’t around for this, but when this was discussed in ES6 era, the species machinery wasn’t around, and they used ??? And microsoft actually shipped that and found it to be incompatible, and had to un-ship it, and the species machinery kind of came out of that data point.
-I don’t think it is realistic to remove 3 without 2. Also from the original motivation of decreasing complexity 
-Removing 3 without removing 2 is not worth the tradeoff anyway. Like if you just remove 3, you remove maybe 1 branch. But the complexity comes from that you'd look up a property at all in this case ??  and then you’d look up species. And because you look up a dynamic property by constructor, that adds all of the complexity and maintenance headaches. 4 can be split out, but 3 and 2 are a package deal. But I thought it was useful to highlight the slight difference in expressivity.
+I don’t think it is realistic to remove 3 without 2. Also from the original motivation of decreasing complexity Removing 3 without removing 2 is not worth the tradeoff anyway. Like if you just remove 3, you remove maybe 1 branch. But the complexity comes from that you'd look up a property at all in this case ?? and then you’d look up species. And because you look up a dynamic property by constructor, that adds all of the complexity and maintenance headaches. 4 can be split out, but 3 and 2 are a package deal. But I thought it was useful to highlight the slight difference in expressivity.
 
 WH: I agree with what you said but what you said contradicts what’s on the final slides of the presentation.
 
@@ -616,14 +605,14 @@ YSV: I agree with everything that SYG just said, and in fact - I wasn’t entire
 
 WH: If you just remove species, then the scenario that I pointed out arises, in that there’s no way to not delegate to a subclass, which you can currently do by setting species to null.
 
-KM: KM: I’m just curious, how did symbol.species, IE just shipped ?? 
+KM: KM: I’m just curious, how did symbol.species, IE just shipped ??
 How did species fix that problem? Because species is just a getter that returns whatever you called it with.
 
 WH: Species can be used to turn off the getting of the constructor.
 
 KM: I understand that, my understanding was that IE, before species shipped, they changed all the Array prototypes to use this.constructor.
 
-SYG: I think it was something like, I’m speculating here, I looked at some code, I think there is ES5 era code, due to mixin pattern override the constructor with their own constructor. 
+SYG: I think it was something like, I’m speculating here, I looked at some code, I think there is ES5 era code, due to mixin pattern override the constructor with their own constructor.
 And that constructor function doesn’t have a species.
 
 KM: Oh and because when a species doesn’t get found, you default to [crosstalk]
@@ -655,14 +644,15 @@ YSV: Yes, asking for stage 1.
 RPR: Congratulations, you have stage 1.
 
 ### Conclusion/Resolution
+
 Stage 1
- 
+
 Remaining queue items + elaboration:
 I believe that core-js and other shims contribute a significant amount of false positives to measuring web compat data - specifically, I’m convinced that all use of Symbol.match on a non-regex object is core-js doing a feature detection. If browser telemetry can account for these false positives, that would be very helpful for lots of other potential spec cleanups in the future.
-RW: https://github.com/tc39/notes/blob/master/meetings/2014-11/nov-18.md#46-zepto-broken-by-new-thisconstruct-usage-in-some-arrayprototype-methods
-RW: use of Symbol.species when testing cross realm behavior of built-ins (will follow up)
+RW: https://github.com/tc39/notes/blob/master/meetings/2014-11/nov-18.md#46-zepto-broken-by-new-thisconstruct-usage-in-some-arrayprototype-methods RW: use of Symbol.species when testing cross realm behavior of built-ins (will follow up)
 
 ## Async Context
+
 Presenter: Chengzhong Wu (CZW)
 
 - [proposal](https://github.com/legendecas/proposal-async-context)
@@ -702,14 +692,11 @@ I agree that the problem that motivates this proposal — in particular nested e
 
 I don’t think this proposal gets us there. I think this just looks like a bug farm to me. Taking a step back and tracking causality (say, along the promise graph), there may be real value to be had in that.
 
-CZW: regarding cancelation discussion, as far as I can tell there is already an in-progress discussion in the NodeJS community. So 	if the cancelation design is going to be designed in the async context model are there major issues regarding cancelation?
-
-
-
+CZW: regarding cancelation discussion, as far as I can tell there is already an in-progress discussion in the NodeJS community. So if the cancelation design is going to be designed in the async context model are there major issues regarding cancelation?
 
 CM: I'm not talking about there being an issue relative to cancellation, I'm talking about they’re having most of the same problems. This requires the same machinery as cancellation. If it’s done right they should share about 90% of their underlying machinery.
 
-RBN: Just wanted to say that I’m not entirely sure that I agree with that notion about cancellation, mostly because I’m still coming from the perspective that cancellation comes from a token that gets passed along, so what actually happens when you cancel is very explicit. Though there have been suggestions. There have been requests to implicitly pass along a cancellation token along the stack. An async local store could provide some capabilities for  level of complexity that async tasks & locals do.
+RBN: Just wanted to say that I’m not entirely sure that I agree with that notion about cancellation, mostly because I’m still coming from the perspective that cancellation comes from a token that gets passed along, so what actually happens when you cancel is very explicit. Though there have been suggestions. There have been requests to implicitly pass along a cancellation token along the stack. An async local store could provide some capabilities for level of complexity that async tasks & locals do.
 
 CM: RBN was talking about where you’re explicitly passing a token - I think that’s exactly the sort of thing that’s called for here, which is why I say it shares a lot of mechanism in common with cancellation.
 
@@ -723,7 +710,6 @@ SYG: I think my topic is basically the same as JRL’s, slightly more concrete, 
 One of those is something that exposes the lifetimes of tasks. I am not sure if that is desirable. So there are a bunch of different use cases like async local storage, but also being able to hook into async tasks. That just seems like a different use case to me & I’m concerned about a subset of those much more than others.
 
 BFS: I just want clarification - SYG, do you still have those concerns with async local storage if we allow WeakRefs on async local storage? You were concerned about exposing the lifetime of tasks, but if we can expose a finalizer on the duration of the task (?), do you have the same concerns?
-
 
 SYG: I hadn't thought of that, I'll have to think it through. I was talking about the hooks like async tasks like before it runs pre/post async hooks
 
@@ -742,9 +728,8 @@ RPR: Would someone like to summarize the objection?
 CM: I would say from my perspective that the problem domain is compelling but this solution is sufficiently tangled up that it’s not ready. If CZW does further exploration of the problem space I’d be open to new solutions, but anything that has the whiff of dynamic scope is a non-starter for me.
 
 ### Conclusion/Resolution
+
 Stage 1 not achieved.
-
-
 
 ## Intl Enumeration API for Stage 1
 
@@ -775,7 +760,6 @@ RW: By choice or by requirement? I ask that because when I was doing the initial
 
 WH: Who is “us”?
 
-
 RW: Us was Toby Lenjel(?) and myself, and the editors that came and went afterwards as well. You can think about how there can be potential for figuring out ambient light patterns in a room in a browser. Comes down to slipping permission door-hangers on everything.
 
 WH: In the context of things that we do in TC39, whose job is it to limit the fingerprinting surface?
@@ -802,8 +786,7 @@ RPR: Who’s that question to WH?
 
 FYT: You mentioned the fingerprinting budget - is that part of a standard or part of a feature in Chrome?
 
-JRL: It’s intended to be implemented as a part of the DOM or HTML, something in WHATWG 
-As an actual specification for multiple browsers to implement. So it’s not something that JavaScript specifically needs to concern itself with, but something that browser implementations of JavaScript need to concern themselves with.
+JRL: It’s intended to be implemented as a part of the DOM or HTML, something in WHATWG As an actual specification for multiple browsers to implement. So it’s not something that JavaScript specifically needs to concern itself with, but something that browser implementations of JavaScript need to concern themselves with.
 
 FYT: So is that in… what committee is talking about that?
 
@@ -820,4 +803,5 @@ FYT: I would like to ask for stage 1 advancement. And we can resolve the issue d
 RPR: Congratulations on achieving stage 1.
 
 ### Conclusion/Resolution
+
 Stage 1 achieved.

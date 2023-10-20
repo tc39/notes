@@ -1,7 +1,8 @@
 # June 02, 2020 Meeting Notes
+
 -----
 
-**In-person attendees:**  (none)
+**In-person attendees:** (none)
 
 **Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
@@ -57,6 +58,7 @@
 | Ron Buckton          | RBN            | Microsoft          |
 
 ## Hallway track update
+
 YSV: Online towns did not really work, there was another alternative, shane are you in the call? We can try that alternative or Mozilla Hubs today
 
 SFC: A couple alternatives are posted on the GitHub issue on the Reflector.
@@ -68,6 +70,7 @@ MPC: The alternative was spatial.chat.
 YSV: I'll get a link set up for that before lunch.
 
 ## String.prototype.replaceAll for Stage 4
+
 Presenter: Mathias Bynens (MB)
 
 * [proposal](https://github.com/tc39/proposal-string-replace-all)
@@ -82,6 +85,7 @@ MB: Does anyone have any objections moving this to Stage 4?
 AKI: Sounds like consensus to me
 
 ### Conclusion
+
 Consensus for Stage 4!
 
 ## `AggregateError` `errors` update
@@ -132,13 +136,16 @@ YSV: Any objections to that?
 MB: In that case we can merge #64, and move onto the next topic.
 
 ### Conclusion
-- Consensus on PR 64.
-- Need to resolve the SES concern on PR 59; no consensus on this general constraint.
+
+* Consensus on PR 64.
+* Need to resolve the SES concern on PR 59; no consensus on this general constraint.
 
 ## `AggregateError` constructor update
+
 Presenter: Shu-yu Guo [Google] (SYG)
-- [Proposal](https://github.com/tc39/proposal-promise-any)
-- [Slides](https://docs.google.com/presentation/d/1juwk662pDATPCPqPxlE8M9rBGeA9zAp0_sJBoxu3eMc/edit)
+
+* [Proposal](https://github.com/tc39/proposal-promise-any)
+* [Slides](https://docs.google.com/presentation/d/1juwk662pDATPCPqPxlE8M9rBGeA9zAp0_sJBoxu3eMc/edit)
 
 SYG: (presents slides)
 
@@ -168,7 +175,7 @@ SYG: I can give some background on the order. There is a long GitHub discussion 
 
 KG main reason for pushing - aggregate err obj should not treat error prop as optional same for message but there are other prop as opt. Optional should come always after required arguments. I also want to mention that there are some types on the web platform that take an optional argument first, and a non-optional argument second. But those have already been shipped.
 
-KKL: counter arg already recorded, super class constructor should be  a … I do agree …??? Would make sense for messages to be required in spirit.
+KKL: counter arg already recorded, super class constructor should be a … I do agree …??? Would make sense for messages to be required in spirit.
 
 DE: About WebIDL, we are not currently following WebIDL conventions, I don’t feel like I have enough interest in the complexity it would entail that I am not currently pursuing it. So I don't think WebIDL should be considered a reason for adopting any particular conventions currently in JS.
 
@@ -177,9 +184,11 @@ SYG: queue empty, asking for consensus for slide about #59, should be trivial to
 (Silence)
 
 ### Conclusion
-- New semantics for AggregateError constructor received consensus
+
+* New semantics for AggregateError constructor received consensus
 
 ## Temporal Update
+
 Presenter: Philip Chimento (PFC)
 
 * [proposal](https://github.com/tc39/proposal-temporal)
@@ -279,7 +288,7 @@ TAB: Okay, so it’s always like +/- 24 hours, so adding a day cannot change the
 
 SFC: The way that the spec is written is that adding a civil day is equivalent to incrementing the day counter by 1, which may or may not be 24 hours.
 
-DE: Temporal is about  having datetimes in different logical manipulation spaces. So it’s not like moment.js, where you have one type that represents a date and time with a timezone. With Temporal, if you’re presenting a DateTime and you add a day, then you’re just adding a day. If you do DST calculations it will happen when you switch to a timezone [with the .inTimeZone method].
+DE: Temporal is about having datetimes in different logical manipulation spaces. So it’s not like moment.js, where you have one type that represents a date and time with a timezone. With Temporal, if you’re presenting a DateTime and you add a day, then you’re just adding a day. If you do DST calculations it will happen when you switch to a timezone [with the .inTimeZone method].
 
 JHD: Is the concept that DST changes are not calendar-dependent because they only deal with the date and the day, whereas timezones deal with the clock?
 
@@ -290,7 +299,9 @@ JHD: I’m just trying to understand because it seems like the concepts of timez
 PFC: I would be happy to go into that somewhere else. We are almost out of time and it looks like SFC has another remark.
 
 SFC: I’ve spent a great deal of time, as have other champions, on developing options for the Calendar system, specifically for the default calendar. It would be great to have more reviews on that and comparing and contrasting all the different options. We do feel we understand what all the different pros and cons are, but we need more voices on what’s best for end developers both from an ergonomic point of view and from an i18n correctness point of view. So any time committee members have to look at the documentation would be much appreciated.
+
 ## Introducing: Unicode support
+
 Presenter: Michael Ficarra (MF)
 
 * [discussion](https://github.com/tc39/ecma262/pull/1896#issuecomment-628271681)
@@ -339,7 +350,7 @@ MF: The difference is in eventual inclusion of those properties.
 
 MB: We don’t currently guarantee eventual inclusion, and I don’t think we want to given what I said earlier.
 
-DE: This comes back to the other thing MB was saying before, where we don’t include - for the key-value properties, we don’t include all of them. So we may have a property that comes along in a future unicode release that we don’t want to support. If we allow this to be expanded by different implementations then we would be cutting ourselves off from that path.  We'd be assuming that everything that gets into the Unicode standard will eventually be making it in.
+DE: This comes back to the other thing MB was saying before, where we don’t include - for the key-value properties, we don’t include all of them. So we may have a property that comes along in a future unicode release that we don’t want to support. If we allow this to be expanded by different implementations then we would be cutting ourselves off from that path. We'd be assuming that everything that gets into the Unicode standard will eventually be making it in.
 
 MB: Exactly.
 
@@ -358,6 +369,7 @@ MB: What do you think about the idea of doing what you were planning on doing, b
 MF: I would be fine with that. Thank you. Think we’re done with this topic.
 
 ## Decorators update
+
 Presenter: Kristen Hewell Garrett (KHG)
 
 * [proposal](https://github.com/tc39/proposal-decorators)
@@ -365,8 +377,7 @@ Presenter: Kristen Hewell Garrett (KHG)
 
 KHG: (presents slides)
 
-KHG: Decorators Design Space Analysis - https://docs.google.com/document/d/1DSuLlEbAjBImDutX_rhjnA6821EUyj9rANzDVJS3QV0
-Decorator Use Case Analysis - https://docs.google.com/spreadsheets/d/1QP0hfXkkkAXTktGrI7qrt-RUqKp2KtsVKuPo4yuoZZI/edit?ouid=115900510010132195082&usp=sheets_home&ths=true
+KHG: Decorators Design Space Analysis - https://docs.google.com/document/d/1DSuLlEbAjBImDutX_rhjnA6821EUyj9rANzDVJS3QV0 Decorator Use Case Analysis - https://docs.google.com/spreadsheets/d/1QP0hfXkkkAXTktGrI7qrt-RUqKp2KtsVKuPo4yuoZZI/edit?ouid=115900510010132195082&usp=sheets_home&ths=true
 
 RPR: Empty queue, which is weird for decorators.
 
@@ -374,9 +385,8 @@ AKI: I am stunned that the queue is empty.
 
 SYG: Thanks for taking implementer feedback to this level of seriousness.
 
-
-
 ## Function Implementation Hiding for stage 3
+
 Presenter: Michael Ficarra (MF)
 
 * [proposal](https://github.com/tc39/proposal-function-implementation-hiding)
@@ -428,8 +438,7 @@ MF: We could ask for confirmation between implementing and shipping.
 
 JHD: Ok, cool.
 
-YSV: We reviewed it again this month and the feedback was much more negative this time. Basically the opinion is that there isn’t enough of a justification for this proposal by itself. We’re talking about introducing potentially just one directive, and that hide implementation by itself is better than sensitive, ???. In our opinion, both of them not being done would be better
-But now we’re getting into smaller and smaller use cases and the implication of moving forward with this proposal is to add a new directive which is something we said we wouldn’t do, and I think there should be a high bar for introducing a new directive.
+YSV: We reviewed it again this month and the feedback was much more negative this time. Basically the opinion is that there isn’t enough of a justification for this proposal by itself. We’re talking about introducing potentially just one directive, and that hide implementation by itself is better than sensitive, ???. In our opinion, both of them not being done would be better But now we’re getting into smaller and smaller use cases and the implication of moving forward with this proposal is to add a new directive which is something we said we wouldn’t do, and I think there should be a high bar for introducing a new directive.
 I looked at the issue from React where this was raised as a use case, and that use case can be achieved much better through developer tools. Black-boxing is much easier from developer tools than it is from the engine. So we are not convinced that this proposal is worth the precedent of adding a new directive.
 
 DRO: I’d second all that, from Safari Web Inspector.
@@ -499,9 +508,8 @@ LEO: Yep, I understand, I just want to remove the ambiguity.
 
 ### Conclusion/Resolution
 
-- “hide source” Blocked from advancement for stage 3
-- “sensitive” raised concerns from implementers
-
+* “hide source” Blocked from advancement for stage 3
+* “sensitive” raised concerns from implementers
 
 ## Intl.NumberFormat V3 for stage 2
 
@@ -572,15 +580,18 @@ LEO: It’s definitely something where we can get reviewers from TG2, because no
 SFC: Ok sounds good, I will reach out later in the summer when ready for stage 3 review. So for now there’s no work for those reviewers.
 
 RPR: So for the notes, this has achieved stage 2. Congratulations, SFC.
+
 ### Conclusion/Resolution
-- Stage 2
-- Stage 3 reviewers:
-  - DE working with USA
-  - YSV; will shadow JSW (via IRC)
-  - WH, only for the decimal portion
-  - SRV (via IRC)
+
+* Stage 2
+* Stage 3 reviewers:
+  * DE working with USA
+  * YSV; will shadow JSW (via IRC)
+  * WH, only for the decimal portion
+  * SRV (via IRC)
 
 ## Intl.DurationFormat for Stage 2
+
 Presenter: Younies Mahmoud (YMD)
 
 * [proposal](https://github.com/tc39/proposal-intl-duration-format)
@@ -649,14 +660,17 @@ RPR: The queue is empty.
 
 YMD: So we are asking for stage 2.
 
-RPR:  No objections to stage 2?
+RPR: No objections to stage 2?
+
 ### Conclusion/Resolution
+
 * Stage 2
 * Stage 3 Reviewers:
   * MF (via IRC)
   * RBN
 
 ## Symbols as WeakMap keys for Stage 1
+
 Presenter: Daniel Ehrenberg (DE)
 
 * [proposal](https://github.com/rricard/proposal-symbols-as-weakmap-keys)
@@ -721,9 +735,10 @@ BFS: Didn’t we have a request in the comments here to not move it past Record 
 DE: Right. I think it would make sense for us to do both the things where people say don’t move it past, and move it past, where the plan would be to advance both this and records & tuples. So I think we could hopefully advance both for the next meeting. Do we have consensus for Stage 1?
 
 AKI: Sounds like consensus to me. I’m going to call it consensus—congrats on stage 1!
-### Conclusion/Resolution
-* Stage 1!
 
+### Conclusion/Resolution
+
+* Stage 1!
 
 ## Arbitrary Module Namespace Names
 

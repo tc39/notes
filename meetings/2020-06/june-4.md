@@ -1,22 +1,22 @@
 # June 04, 2020 Meeting Notes
+
 -----
 
+**In-person attendees:** (none)
 
-**In-person attendees:**  (none)
-
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Robin Ricard         | RRD            | Bloomberg          |
 | Yulia Startsev       | YSV            | Mozilla            |
 | Jack Works           | JWK            | Sujitech           |
 | Rick Waldron         | RW             | Bocoup             |
-| Caridy Patiño		   | CP             | Salesforce         |
+| Caridy Patiño     | CP             | Salesforce         |
 | Ross Kirsling        | RKG            | Sony               |
 | Sergey Rubanov       | SRV            |                    |
 | Rick  Button         | RBU            | Bloomberg          |
-| Sven Sauleau         | SSA            | Babel 			 |
-| Istvan Sebestyen     | IS             | Ecma 			     |
+| Sven Sauleau         | SSA            | Babel     |
+| Istvan Sebestyen     | IS             | Ecma         |
 | Keith Miller         | KM             | Apple              |
 | Michael Saboff       | MLS            | Apple              |
 | Waldemar Horwat      | WH             | Google             |
@@ -24,7 +24,7 @@
 | Bradford C. Smith    | BSH            | Google             |
 | Mark Cohen           | MPC            | PayPal             |
 | Chip Morningstar     | CM             | Agoric             |
-| Jason Williams       | JWS            | Bloomberg		     |
+| Jason Williams       | JWS            | Bloomberg       |
 | Felienne Hermans     | FHS            | Leiden University  |
 | Richard Gibson       | RGN            | OpenJS Foundation  |
 | Ukyo Pu              | PSY            | Alibaba            |
@@ -44,8 +44,8 @@
 | Michael Ficarra      | MF             | F5 Networks        |
 | Justin Ridgewell     | JRL            | Google             |
 
-
 ## Iterator helpers update
+
 Presenter: Jason Orendorff (JTO)
 
 JTO: Iterator helpers: want to make sure that the proposal champions/spec authors - compromised approach, want to briefly present that
@@ -59,6 +59,7 @@ JHD/KG: ok
 KM: Why have one function object? Answered in IRC please report here
 
 ## Realms, Stage 2 update
+
 Presenter: Caridy Patiño (CP)
 
 - [proposal](https://github.com/tc39/proposal-realms)
@@ -66,7 +67,7 @@ Presenter: Caridy Patiño (CP)
 
 CP: (presents slides)
 
-GCL: Clarifying question: import() on realm vs compartment - 
+GCL: Clarifying question: import() on realm vs compartment -
 
 CP: I think that they are analogous. When you import inside a realm, you are running the realm itself with the intrinsics of the realm and the module graph of the realm, versus in a compartment, when you run import, you are importing in the existing module graph, where you incubate the compartment, does that answer your question?
 
@@ -101,19 +102,16 @@ CP (continues presenting slides)
 SYG: Thank you for taking feedback to heart, I heard you were getting a TAG review as well.
 I think speaking purely as an engine implementer, I think realms are not very problematic, the concern here is more integration with the web platform, and it seems like there is a path forward there maybe, given the use cases you have presented which I found very useful, I was missing that from the explainer. There is one thing from the template use case - it seems like you have some performance expectations around how realms are implemented. I don’t use lodash tpls, don’t know how they work, And you are saying that with realms, for each template, it would create a new realm? Or it would create a new realm - I can’t imagine it would create a new realm given that the point is to not reuse globals.
 
-CP: we have JDD in the call, he created Lodash so he can provide some feedback
-I think the point is that you want this generated code to run in an environment that is as clean as possible, and that way the code that you’re running there, which in this case is a template which is compiling to a function, ???
+CP: we have JDD in the call, he created Lodash so he can provide some feedback I think the point is that you want this generated code to run in an environment that is as clean as possible, and that way the code that you’re running there, which in this case is a template which is compiling to a function, ???
 You could set the `_.template` to reuse the same Realm as you can freeze the Global object from it, so you don't need a new Realm for each usage.
 
 You could do this in an iframe today, you’d need to keep it connected, which leaks access into the iframe’s global object, plus the iframe is a lot heavier.
 
 SYG: So there could be different expectations around how lightweight realms are. V8 in particular - this is not a blocker or even really a concern - but currently V8 does not lazily load any globals, including the intrinsics, it has made the tradeoff that instead of lazy-loading stuff it would eagerly do everything to save on latency later. So if we have realms as a way that folks think are a lighter weight solution to creating this stuff (because iframes are currently very heavy-weight), that might force changes I guess, it's a implementation concern but its not really a problem with the design, it could force architecture changes and that might be a bigger ask then than what it seems like right now. I just wanted to put that out there, it’s not really an issue for stage 2. I’m happy with this for stage 3 in the future, I’d like to see acceptance from the web platform with the HTML folks and the TAG review.
 
-
-
 JWK: [slide 15](https://docs.google.com/presentation/d/1TfVtfolisUrxAPflzm8wIhBBv_7ij3KLeqkfpdvpFiQ/edit?ts=5ed5d3e7#slide=id.g86384024ee_3_0) In this slide, it imports the plugin API from the main realm, and expose it to the subrealm, so it’s possible to get the main realm’s Object constructor from the subrealm. Is this another concern of the realms API? or another of the SES proposal?
 
-CP: As I mentioned when I stopped by this particular example, if you really want to have a clear separation between the two sides you could use a membrane, at Salesforce we do use a membrane there, that way the identity of the objects coming through the membrane are fixed,  so that you don't leak constructors as a way to access globals from the other sides. At this point we have very advanced membranes. We think a membrane there would work just fine. This hazard is not something new, this hazard exists today when you go to load the VM module in node, when you go to create a new Context to evaluate code. By piping new globals into the new realm. And in many cases you don’t really care because the code that you’re going to evaluate there, you’re not worried about it doing its own thing, because it’s not about security it’s about boundaries, but if you really want to have the separation  you can still do it with some fancy code, like a membrane in this case will just do the job.
+CP: As I mentioned when I stopped by this particular example, if you really want to have a clear separation between the two sides you could use a membrane, at Salesforce we do use a membrane there, that way the identity of the objects coming through the membrane are fixed, so that you don't leak constructors as a way to access globals from the other sides. At this point we have very advanced membranes. We think a membrane there would work just fine. This hazard is not something new, this hazard exists today when you go to load the VM module in node, when you go to create a new Context to evaluate code. By piping new globals into the new realm. And in many cases you don’t really care because the code that you’re going to evaluate there, you’re not worried about it doing its own thing, because it’s not about security it’s about boundaries, but if you really want to have the separation you can still do it with some fancy code, like a membrane in this case will just do the job.
 
 JWK: So is the membrane included in the SES proposal?
 
@@ -141,13 +139,12 @@ LEO: I actually have a question for the group, just want to make sure, I’m goi
 
 YSV: mention that we agree a lot with what SYG mentioned, there is skepticism on our side regarding how this fits in with the broader web architecture and we have some concerns there, but we’ve been in touch with the champion group and will continue to do so.
 
-
-
-
 ### Conclusion/Resolution
-* Capture thumbs up reviews from the HTML and W3C TAG groups before Stage 3 advancement
+
+- Capture thumbs up reviews from the HTML and W3C TAG groups before Stage 3 advancement
 
 ## Smart Unit Preferences in Intl.NumberFormat for Stage 1
+
 Presenter: Younies Mahmoud (YMD)
 
 - [proposal](https://github.com/younies/proposal-intl-number-format-usage)
@@ -183,7 +180,7 @@ YMD: Do you mean like for knowing where the user is or what is their preference 
 
 RRD: Yes. Using all of that preference system to actually uniquely identify that user.
 
-SFC: What I was just talking about in terms of user preferences, that’s specific to the user preferences proposal, and fingerprinting is going to be one of the top things to discuss. When it comes to the proposals that are only dependent on CLDR data for reasons i've mentioned before…ss This CLDR data is based only on the browser version. The browser chooses which version of CLDR to ship, so we’re not exposing a new fingerprinting vector. 
+SFC: What I was just talking about in terms of user preferences, that’s specific to the user preferences proposal, and fingerprinting is going to be one of the top things to discuss. When it comes to the proposals that are only dependent on CLDR data for reasons i've mentioned before…ss This CLDR data is based only on the browser version. The browser chooses which version of CLDR to ship, so we’re not exposing a new fingerprinting vector.
 
 RRD: that absolutely answered my question
 
@@ -193,12 +190,11 @@ MPC: back to RRD question, not sure SFC answered, idk if the individual preferen
 
 the attack I'm envisioning is you check for edge cases to find a combination of preferences that uniquely identify the user.
 
-
 SFC: I think DE can speak a bit to this as well. I think there’s 2 places where user preferences can originate from. The one source is CLDR data which is deterministic based on the browser version, the other source is the user preferences, which is currently not available on the web platform. Currently in the web platform, the only available locale information are language, region, and scripts. There's no other way to access the user preferences. That vector simply doesn't exist. Supporting additional preferences, such as preferred units or first day of week, is what the user preferences proposal is hoping to add. We want to champion that proposal because this is one of the top feature requests that we get. It's a separate proposal - currently the scope of that proposal is to add a new property called navigator.locales, and navigator.locales would fully encompass all user preferences. So in terms of crawling the API for edge cases in user preferences, those would only come from two sources, CLDR or navigator.locales, the latter of which does not exist yet but will be proposed.
 
 MPC: It sounds like this proposal doesn't add any fingerprinting possibilities, but the user preferences proposal might.
 
-SFC: The attack is potentially relevant to the user preferences proposal. On the one hand user preferences is a feature request that we get over and over again, but on the other hand it's a fingerprinting vector. We want to support user preferences while balancing the new fingerprinting vector. So, not for this proposal. 
+SFC: The attack is potentially relevant to the user preferences proposal. On the one hand user preferences is a feature request that we get over and over again, but on the other hand it's a fingerprinting vector. We want to support user preferences while balancing the new fingerprinting vector. So, not for this proposal.
 
 DE: This proposal exposes non-preferenced locale user data. These are separate things that are both valuable. If you pick through a server environment, it would never make sense to expose user preferences to a server environment. Instead, you'd thread through preferences from some other source, such as saved user preferences or, maybe in the future, HTTP headers.
 
@@ -230,14 +226,16 @@ RPR: Congratulations, you have stage 1.
 YMD: Thanks to my colleague Hugo as well.
 
 ### Conclusion/Resolution
+
 - Stage 1
 
 ## Intl.Segmenter for Stage 3
+
 Presenter: Richard Gibson (RGN)
 
-* [proposal](https://github.com/tc39/proposal-intl-segmenter)
-* [slides](https://docs.google.com/presentation/d/1Pe9eVhgK93cgB3KCufTQvzqCjIYj3RRxJaOeNIbWN_A)
-* [spec text](https://tc39.es/proposal-intl-segmenter/)
+- [proposal](https://github.com/tc39/proposal-intl-segmenter)
+- [slides](https://docs.google.com/presentation/d/1Pe9eVhgK93cgB3KCufTQvzqCjIYj3RRxJaOeNIbWN_A)
+- [spec text](https://tc39.es/proposal-intl-segmenter/)
 
 RGN: (presents slides)
 
@@ -280,7 +278,7 @@ DE: Why are getters different from other things that access internal slots?
 
 RGN: Because if you're accessing an internal slot directly as an own-data property, the proxy gets to intercept that. The getter bypasses the proxy. There’s no handler that’s invoked when I call the getter and pass the proxy as the receiver.
 
-DE: But that's what a membrane is  the membrane wraps the object and proxies it what it gets,
+DE: But that's what a membrane is the membrane wraps the object and proxies it what it gets,
 I still don’t understand what’s different between getters and other methods that access internal slots. Just because getters have a way of getting around it, doesn't mean that you have to have a different membrane unwrapping.
 
 RGN: There is no opportunity to intercept anything if I invoke the getter with the proxy as a receiver.
@@ -305,7 +303,7 @@ DE: Why are we suddenly talking about internal slots being exotic?
 
 RGN: That is vocabulary from MM, I’m also a little concerned as to why it’s being called exotic, but it doesn’t change the nature of the issue
 
-JRL(KM?): I thought that was what we just called objects that have internal slots per the spec. 
+JRL(KM?): I thought that was what we just called objects that have internal slots per the spec.
 
 SYG: Exotic objects are not those with internal slots. Any object can have those.
 Exotic means the object has special behavior.
@@ -318,11 +316,10 @@ You mentioned this precedent from AggregateError. I mentioned in that discussion
 
 RGN: I think that is a good idea and I am willing to table that in pursuit of; in order to not make a regrettable mistake here.
 
-So there are 4 options for ways to sidestep the issue: 
+So there are 4 options for ways to sidestep the issue:
 Change from accessor properties to own data properties, the same as we did for AggregateError;
 Change from an accessor property to a method that returns a fresh segmenter;
-Strip off the segmenter property altogether; or
-Strip off all properties (“segmenter” and “string”)
+Strip off the segmenter property altogether; or Strip off all properties (“segmenter” and “string”)
 
 DE: My current feeling is that we do none of these, and I’d like to discuss this more in the context of the internal slot hazard.
 
@@ -362,8 +359,7 @@ RGN: There's no code like that, I can never pass a closure as an argument.
 
 WH: I don’t think you understand what a closure is.
 
-JHD: First of all, to clarify terminology, the issue is not objects in internal slots. Tons of internal slots already hold objects. The issue is things that expose objects held in internal slots 
-Closures do not do this because the code that is in the function already has all that access, it’s just preserving that access. What this means is that if I’m holding a closure I cannot get access to the variables it can see unless it returns them, and that can be wrapped by membrane-like patterns. The separate thing is, the fact that most, but not all, internal slots that are exposed to users are primitives, does not change the fact that… there actually is an internal slot, [TypedArray.prototype.buffer](https://tc39.es/ecma262/#sec-get-%typedarray%.prototype.buffer).
+JHD: First of all, to clarify terminology, the issue is not objects in internal slots. Tons of internal slots already hold objects. The issue is things that expose objects held in internal slots Closures do not do this because the code that is in the function already has all that access, it’s just preserving that access. What this means is that if I’m holding a closure I cannot get access to the variables it can see unless it returns them, and that can be wrapped by membrane-like patterns. The separate thing is, the fact that most, but not all, internal slots that are exposed to users are primitives, does not change the fact that… there actually is an internal slot, [TypedArray.prototype.buffer](https://tc39.es/ecma262/#sec-get-%typedarray%.prototype.buffer).
 The other question is, there was some conversation earlier about the throwing behavior, everything except Array and Error methods have prototype ???
 
 So that is a decision or flaw in the design of Proxy that is not relevant at all, and I think we should leave it to MM or maybe KKL to present arguments about communication channels around that.
@@ -381,12 +377,15 @@ RPR: On the subject of tabling, we’re at the end of the timebox. RGN do you wa
 
 RGN: Obviously we need to bring this up as a distinct issue for conversation at the next meeting. In the meantime, I would appreciate input on the preferred means of bypassing it for Intl.Segmenter. https://github.com/tc39/proposal-intl-segmenter/issues/96
 
-KKL: If I may, I can volunteer MM to give a presentation on this at the next meeting. 
+KKL: If I may, I can volunteer MM to give a presentation on this at the next meeting.
+
 ### Remaining items in the queue
 
 1. New Topic: Presentation on hazard (KKL)
 2. New Topic: Please move the SES discussion offline, and we can discuss API changes in TG2 (SFC)
+
 ## Announcements
+
 YSV: I intended to announce a research call that is happening. If you have questions about collecting data or the psychology of the programmer feel free to join. The first one is going to be June 25th at 5:45pm CEST.
 
 JHD: Istvan posted on the Reflector that the opt out period for ES2020 is over. That will then be going to the Ecma GA to be the final version of ES2020. So just a heads up for the group.
@@ -396,10 +395,11 @@ MLS: Did we vote on this contingent on the opt-out period?
 JHD: Yes, at the last meeting.
 
 ## Generic Comparison
+
 Presenter: Hemanth HM (HHM)
 
-* [proposal](https://github.com/hemanth/generic-comparison)
-* [slides](https://docs.google.com/presentation/d/1OO3QwtP4S0SOXGW9m4pdgG_CHo2eCz0sA6u3NXAgb9M)
+- [proposal](https://github.com/hemanth/generic-comparison)
+- [slides](https://docs.google.com/presentation/d/1OO3QwtP4S0SOXGW9m4pdgG_CHo2eCz0sA6u3NXAgb9M)
 
 HHM: (presents slides)
 
@@ -409,13 +409,12 @@ JHD: Given that we’re going for stage 1, we’re proposing that we continue to
 
 WH: “Exploring the problem of generically comparing values” is too vague.
 
-JHD: I phrased it that way  because stage 1 is about addressign a problem. spaceship operator is what I would like as a solution. The point of stage 1 is to address a problem. If we showed up with a problem and no idea for a solution, I agree that would be too vagueThat’s what we hope we can all explore during stage one
+JHD: I phrased it that way because stage 1 is about addressign a problem. spaceship operator is what I would like as a solution. The point of stage 1 is to address a problem. If we showed up with a problem and no idea for a solution, I agree that would be too vagueThat’s what we hope we can all explore during stage one
 
 WH: Okay. I’m still not satisfied with that answer because Array.prototype.compare and the spaceship operator are two very different things with two very different use cases.
 
 JHD: the intention would be that if we had the op object.compare could still exist and would delegate to the operator.
-It would take 1 arg and return this spaceship argument and delegate to the protocol for the operator
-That’s what we have in mind but no spec text is written or whatnot.
+It would take 1 arg and return this spaceship argument and delegate to the protocol for the operator That’s what we have in mind but no spec text is written or whatnot.
 
 WH: Okay, so you want to explore adding the spaceship operator to the language?
 
@@ -423,12 +422,7 @@ JHD: Yes. The intention for the slide show was to discuss the process that HHM a
 
 WH: Is the intention of the proposal that <=> be consistent with <, <=, >, >=, ==, and !=?
 
-JHD: that question came up in the hallway track
-it would be weird if they didn't agree
-I'm nervous about suggesting that we change the way < > work
-1 one is allow them to disagree
-2 change the way < > work
-3 if  return result doesn't agree, then throw
+JHD: that question came up in the hallway track it would be weird if they didn't agree I'm nervous about suggesting that we change the way < > work 1 one is allow them to disagree 2 change the way < > work 3 if return result doesn't agree, then throw
 
 Very personally nervous of changing how the less-than and greater-than operators work.
 
@@ -442,20 +436,19 @@ WH: Supporting incomparable is not an edge case.
 
 JHD: Sorry, let me rephrase. All the cases with -0, NaN, infinities, and so on, we would have to answer those (before stage 2?)
 
-
-If the result does not agree with less and greater it  should fail
+If the result does not agree with less and greater it should fail
 
 all of the core cases around special values (nan etc) we would address but aren't prepared to do that now.
 
 WH: What would the result be for `3 <=> NaN`?
 
-JHD: I don't know. We would think about that and come back to the community with an answer.  Unless the discussion is that you think it’s impossible for us to come up an answer to that, which would tank the whole proposal, in which case let’s discuss it now.
+JHD: I don't know. We would think about that and come back to the community with an answer. Unless the discussion is that you think it’s impossible for us to come up an answer to that, which would tank the whole proposal, in which case let’s discuss it now.
 
 WH: Yes I do. For other languages four possible <=> results (less-than, equal, greater-than, or incomparable) are sufficient to match the behavior of <, <=, >, >=, ==, and !=. In ECMAScript they’re not. There are cases that don’t fall into any of the {less-than, equal, greater-than, or incomparable} buckets.
 
 JHD: Given that ???. perhaps when <=> used with NaN it would return NaN
 
-In js you can’t take the result of ??? 
+In js you can’t take the result of ???
 
 WH: In ECMAScript that’s not sufficient. In addition to NaN, there are comparisons among primitives for which there is nothing sensible the spaceship operator can give.
 
@@ -486,8 +479,7 @@ SYG: I mean yes, you could supply a comparator, that would be a more scoped solu
 
 JHD: If we only - the primary use case is arrays, like you said, if we had a ??? that took an optional comparator function, certainly that would work. The user has to handle recursion in there a little bit. And separately there is no way for userland types to generically participate in comparison. You’d have to, as the author of the comparator function, know how to compare every kind of value, and you may not have an opinion on everything, and if you don’t, it’s nice to delegate to the implementation.
 
-SYG: to be more concrete, the can of worms of all languages is not worth the time right now when array comparison is what we’re looking for right now, I’m ok to explore that
-then that seems fine to me. If the stage 1 is “let’s figure out how to generically compare anything in JavaScript”, I’m not comfortable with that.
+SYG: to be more concrete, the can of worms of all languages is not worth the time right now when array comparison is what we’re looking for right now, I’m ok to explore that then that seems fine to me. If the stage 1 is “let’s figure out how to generically compare anything in JavaScript”, I’m not comfortable with that.
 
 RBN: I’m going to focus more on the symbol than the operator. I’m not convinced on the operator at the moment, but I have for some time now been discussing interest in investigating equality in certain other cases. We've talked about things like wanting to provide Map keys that allow using a complex object as a key but allow you to have another complex object that uses that key but has a different reference identity. They are very different ???
 one thing I'm interested in is adding symbols for equals and comparison not related to the operators. That are not related to the operators, but merely a means of defining a protocol for a common API that library authors and developers could use to say, if you want to determine if I am equal to something else that is not necessarily satisfied by ===, then you could use these symbols, and it would be useful in cases in a map or a set for determining equality.
@@ -505,7 +497,7 @@ WH: Subtraction doesn’t work, it doesn’t always give you the correct result 
 
 JHD: for finite numbers perhaps
 
-WH: For finite numbers it works but if you include infinities it doesn’t.  For finite numbers, you might get an overflow. However, `+Infinity == +Infinity` is true, but `+Infinity - +Infinity` gives you a NaN.
+WH: For finite numbers it works but if you include infinities it doesn’t. For finite numbers, you might get an overflow. However, `+Infinity == +Infinity` is true, but `+Infinity - +Infinity` gives you a NaN.
 
 JHD: So yeah, we’d have to handle the infinities and the NaNs, just like all the Math operations in the spec, but the rest of it would be mostly subtraction and that’s the sort of thing we’d have to handle in stage 2.
 
@@ -513,11 +505,9 @@ RPR: Queue is empty
 
 JHD: Sounds like there is pretty strong opposition to spend committee time exploring generic comparison, but people are roughly okay with addressing the problem of comparing arrays. I am unclear how we can compare arrays without requiring a comparator without also addressing generic comparison of values. But either way it seems like this problem space has even more to talk about even though we’ve been given strong feedback on which parts to focus on and which parts to avoid. So it seems worthy of exploring further in stage 1. Can we have stage 1 for the proposal given that all the strong feedback we’ve received would be weighted highly?
 
-
 TLY: The original pb was how do you compare equality of arrays rather than comparing any value. I think it’s a lot easier to talk about a new way of determining equality than it is to try to give a total ordering to all values in JavaScript, or even a partial ordering.
 
-JHD: Okay. So you’re just saying that the spaceship operator doesn’t give an ordering (?) but if we’re trying to - you’re talking about the first problem we focused on, ordering arrays, which would recurse into arrays, but then not knowing which is bigger than the other
-Would they spaceship to zero or not is that you want to explore right?
+JHD: Okay. So you’re just saying that the spaceship operator doesn’t give an ordering (?) but if we’re trying to - you’re talking about the first problem we focused on, ordering arrays, which would recurse into arrays, but then not knowing which is bigger than the other Would they spaceship to zero or not is that you want to explore right?
 
 TLY: I wouldn’t phrase it that way but yes.
 
@@ -527,10 +517,9 @@ SYG: not comfortable to go to stage 1 with “we will take your feedback strongl
 
 WH: I find the framing of defining array equality by invoking <=> on the elements and checking if it returns 0 or not to be very strange. In other languages the concept of equality generally does not depend on the existence of any ordering defined between unequal elements. Array equality should depend only on element equality.
 
-KKL: Briefly echoing WHs point, take care not to consider equality equivalent to <=> returning zero,  because zero has the meaning of incomparability so it’s not a bijection
+KKL: Briefly echoing WHs point, take care not to consider equality equivalent to <=> returning zero, because zero has the meaning of incomparability so it’s not a bijection
 
-HHM: So to confirm again are we going to pause the 3 way comparison operator for now? Or rephrase the proposal
-And probably if there is support for three-way we can take it as a different proposal in the future.
+HHM: So to confirm again are we going to pause the 3 way comparison operator for now? Or rephrase the proposal And probably if there is support for three-way we can take it as a different proposal in the future.
 
 JHD: But we are very aware that in order to bring it back to the future we have to take in account all of that feedback. Would not want to waste committee time until we can persuade all people that have given feedback.
 
@@ -538,7 +527,7 @@ DE: Can I ask that before this is moved into the tc39 org that there’s an expl
 
 JHD: What we will likely do is call this proposal withdrawn or rejected, and make a brand new one with array equality pieces of this one and say that is stage 1. And then there’s no confusion about what you just talked about. We'll put a note on this one to point to the new one. Does that seem like an ok approach?
 
-DE: Yeah that sounds like a  great way to clarify publicly, glad you’re being careful about that.
+DE: Yeah that sounds like a great way to clarify publicly, glad you’re being careful about that.
 
 JHD: I think the title of proposals, particularly early proposals, should reflect the problem space. So if we’re agreeing on array equality, then that’s what we should title it.
 
@@ -547,20 +536,19 @@ DE: In general I’m happy with an early proposal proposing a concrete straw-per
 JHD: Do we have consensus for stage 1 for array equality, and we will consider this other thing withdrawn?
 
 ### Conclusion/Resolution
+
 - Stage 1 with reframing to array equality
 
 ## .item() for Stage 1
+
 Presenter: Shu-yu Guo (SYG)
 
-* [proposal](https://github.com/tabatkins/proposal-item-method)
-* [slides](https://docs.google.com/presentation/d/1vRjhR1Vl9GeOeXno-s8DkQppeZFE3xx59Od91HG6db4/edit)
-
+- [proposal](https://github.com/tabatkins/proposal-item-method)
+- [slides](https://docs.google.com/presentation/d/1vRjhR1Vl9GeOeXno-s8DkQppeZFE3xx59Od91HG6db4/edit)
 
 SYG: (presents slides)
 
-
 Just to make note taking easier please use the queue for everything & please not to talk over each other. Harder to capture cross talk in a remote format.
-
 
 MF: Prefacing this, I am totally on board with this proposal. Are you considering arguments exotic objects to be indexable, and do they ... ?
 
@@ -572,47 +560,42 @@ SYG: It seems like probably not, I don’t have a good answer for you.
 
 MF: I’d love for them to be able to get it but I don’t see a technical way for how to do it.
 
-SYG: I’m not sure we want to start saying like all remote exotic objects get their own copy of an item method? That seems to be undesirable if they don’t have a prototype right now. It seems okay to me right now that you’d have to cast it to an array to get that, but - 
+SYG: I’m not sure we want to start saying like all remote exotic objects get their own copy of an item method? That seems to be undesirable if they don’t have a prototype right now. It seems okay to me right now that you’d have to cast it to an array to get that, but -
 
 MF: We could put an own-property on arguments exotic objects with the value of a shared intrinsic.
 
 SYG: That’s kinda weird and magical, thanks for raising it, I hadn’t thought about it.
 
-RBN: I noticed you mentioned WebIdl for concern. But ActiveX/COM has similar concerns, it exposes collection indexers as `item` to javascript and it also exposes it as `.Item` with a capital `I` to languages that are not javascript. 
+RBN: I noticed you mentioned WebIdl for concern. But ActiveX/COM has similar concerns, it exposes collection indexers as `item` to javascript and it also exposes it as `.Item` with a capital `I` to languages that are not javascript.
 
 I think most of the times when it works with JS, it expects the 'i' in item to be lowercase.
-I don't think it would be an issue with Array.prototype, though there might be some possibly issues with activeX objects using the DOM
-But then I haven’t looked at how or whether there are any differences in how Chakra handles ActiveX anymore, but I think that applied to IE/old Edge, so I’m not sure if that still applies with Chromium Edge.
+I don't think it would be an issue with Array.prototype, though there might be some possibly issues with activeX objects using the DOM But then I haven’t looked at how or whether there are any differences in how Chakra handles ActiveX anymore, but I think that applied to IE/old Edge, so I’m not sure if that still applies with Chromium Edge.
 
 SYG: Fortunately, I know nothing about exposing ActiveX and COM to JS.
 
 RBN: they get a - in old IE you would get an ActiveX object that looks like a JS object. the API was complicated it's hard to explain.
-[...?] with methods that were exposed from the ActiveX or COM object
-And it’s hard to explain how that works, the APi was somewhat complicated and it was treated as an object, but it’s also where we’ve run into issues in the past with things like Document.all, and things like that.
+[...?] with methods that were exposed from the ActiveX or COM object And it’s hard to explain how that works, the APi was somewhat complicated and it was treated as an object, but it’s also where we’ve run into issues in the past with things like Document.all, and things like that.
 
 SYG: Ok, thanks for the heads up.
 
 DE: So I think it’s great that this proposal is coming along, indexing from end of the array comes up all the time & you have to type `length`
-And also simplifying something with the web is good. I want to raise a related proposal that could be potentially taken on which is to get the last element of the array, if we just add this `item` we’re going to have a lot of code that uses item(-1) & I think that’s ugly just to use this sentinel to get the last item
-And I think it would be nice to have a method just to get the last element. We’ve had investigations in having a method getter for the last element, but that’s kind of poisoned by ???.
+And also simplifying something with the web is good. I want to raise a related proposal that could be potentially taken on which is to get the last element of the array, if we just add this `item` we’re going to have a lot of code that uses item(-1) & I think that’s ugly just to use this sentinel to get the last item And I think it would be nice to have a method just to get the last element. We’ve had investigations in having a method getter for the last element, but that’s kind of poisoned by ???.
 If someone wanted to champion an array.prototype.lastElement that would be good.
 That could be a nice thing that could be more ergonomic than item(-1). Or maybe we do just want people to do .item(-1). I don't want to expand the scope of this proposal, but it comes up because item(-1) idiom would result from this. This could set that idiom, that’s what raises it mentally for me.
 
 SYG: I see, I think for that I would like to… Technically I don’t see having it in addition to .item()
 I am not sure if list[-1] in the python ecosystem is considered a usability issue
 
-DE: don’t think it is an issue there but I don’t think it is a javascript idiom though
-Bringing that in where we didn’t previously have it, I don’t think that’s bad I don’t think that should slow down this proposal but I would like if someone made progress on the last element proposal cause I think it could be independently valuable.
+DE: don’t think it is an issue there but I don’t think it is a javascript idiom though Bringing that in where we didn’t previously have it, I don’t think that’s bad I don’t think that should slow down this proposal but I would like if someone made progress on the last element proposal cause I think it could be independently valuable.
 
 RBN: I was interested in the proposal for last() when it came up before.
 more interested in changing the name at the time. library issues prevented "last"
-I was interested in "peek" as a parallel to "push" and "pop". 
+I was interested in "peek" as a parallel to "push" and "pop".
 having "item" and "peek" or "lastitem" might make sense. we have methods that can index from the front of the array and from the end of the array.
 peek/pop/shift/unshift
 
 JHD: in response to DE, passing -1 in arrays or slices is a very common idiom. The workaround that people are already using for `.last()` is `.slice(-1)[0]`.
-I pasted a link in irc
-Rails has a .forty_two method on arrays as a joke. The cheekiness aside it raises the question about why one of those methods is special. There's a slippery slope argument: if we have "last' do we need "first", "second" etc. We could still add a last but it seems like an improvement to have it.(?)
+I pasted a link in irc Rails has a .forty_two method on arrays as a joke. The cheekiness aside it raises the question about why one of those methods is special. There's a slippery slope argument: if we have "last' do we need "first", "second" etc. We could still add a last but it seems like an improvement to have it.(?)
 
 TLY: JHD covered my question
 
@@ -636,18 +619,17 @@ SYG: Again, asking stage 1
 
 RPR: Okay, no objections to stage 1. Congratulations on stage 1.
 
-
 ### Conclusion/Resolution
+
 - Stage 1
 
-
 ## Incubation call chartering
+
 Presenter: Shu-yu Guo (SYG)
 
 SYG: introducing incubation calls again
 
-Every 2 week hourly call
-there is an every 2 week hour call in which we call out proposals that could benefit from video call feedback. in order to come back to committee with a better understanding of what probable issues may be.
+Every 2 week hourly call there is an every 2 week hour call in which we call out proposals that could benefit from video call feedback. in order to come back to committee with a better understanding of what probable issues may be.
 
 With the champions and other stakeholders, so as to come back to committee with a more polished picture or a better understanding of what possible issues may be. So the chartering process here is that I’m going to ask for participation for the earlier proposals here at this plenary and proposals that may have gone stagnant for a while. And see if the stakeholders and the champions are willing to be on the lookout for a schedule for the incubator call where we discuss these in between plenaries. Does that all make sense?
 
@@ -656,14 +638,10 @@ There is a "how the incubation call works" to explain how it works. in the refle
 For the previous set of proposals, check the Reflector. Previously, we talked about realms, we talked about the this reflection proposal, and then we talked about module attributes as well. And I think largely other than some scheduling mishaps, it was a net benefit and it was hopefully useful especially to the realms folks to get more time to hear the feedback.
 
 So this time I’m calling out the following 3 proposals:
-UUID
-some concerns there around webcrypto
-BC has agreed to participate in an incubation call about the UUID proposal, so if you are interested in that space, be on the lookout for that.
+UUID some concerns there around webcrypto BC has agreed to participate in an incubation call about the UUID proposal, so if you are interested in that space, be on the lookout for that.
 
-.item
-I was going to put `.item` on it, but given that it didn’t seem very controversial, it doesn’t seem like there’s a need for high-bandwidth feedback from delegates, so I will strike that one.
-Generic Comparison
-The other was generic comparison, given there is contention around the problem space to be explored. Especially for the champions who still are interested in generic comparison. Are the champions of UUID and generic comparison open to incubation call participation?
+.item I was going to put `.item` on it, but given that it didn’t seem very controversial, it doesn’t seem like there’s a need for high-bandwidth feedback from delegates, so I will strike that one.
+Generic Comparison The other was generic comparison, given there is contention around the problem space to be explored. Especially for the champions who still are interested in generic comparison. Are the champions of UUID and generic comparison open to incubation call participation?
 
 JHD: For comparison, certainly.
 
@@ -680,11 +658,9 @@ SYG: there may be other folks who feel strongly in the opposite direction. I thi
 YSV: OK I would like to offer one other thing, we discussed our approach to security in the chat as something we should nail down.
 not as a proposal, but I think it’s worth discussing.
 
-In parallel to that discussed to people in mozilla and there have been eyes on UUID
-It would be really cool to have a holistic view on that, so that’s another option.
+In parallel to that discussed to people in mozilla and there have been eyes on UUID It would be really cool to have a holistic view on that, so that’s another option.
 
-SYG: for UUID item it could be expended in scope
-Because there is a desire to move it to another venue, but to talk about the crypto space in general, which I think BCE would be very open to discussing as well, plus perhaps another item discussing our approach to security in general. Given the light list of proposals I would accept both for folks who have an interest in the security model of js for which we as a committee want to design our language around. I could see that being very contentious, so it would be good to have a lot of high-bandwidth discussion before coming to committee.
+SYG: for UUID item it could be expended in scope Because there is a desire to move it to another venue, but to talk about the crypto space in general, which I think BCE would be very open to discussing as well, plus perhaps another item discussing our approach to security in general. Given the light list of proposals I would accept both for folks who have an interest in the security model of js for which we as a committee want to design our language around. I could see that being very contentious, so it would be good to have a lot of high-bandwidth discussion before coming to committee.
 
 YSV: We might want to limit it more but that’s all I’ll say.
 
@@ -703,6 +679,7 @@ YSV: Aware of that, will respond in chat
 RBU: we would want to bring up deep path properties and specifically how it interacts with objects
 
 SYG: Ah yes, of course. Thank you for bringing that up, I completely forgot, in fact I talked to some folks and that was on the original list. So to recap:
+
 - UUID
 (cut off)
 
@@ -716,16 +693,18 @@ SYG: Sure? I don’t have anything against that. The original intent of the call
 
 DE: I agree with that prioritization.
 
-LEO: As SYG said, it applies for any discussion if anything already have a regular meeting then it is not needed to go in incubator calls since they can’t really benefit from the incubation more than smaller proposals. __Note: I made this horrible choice of calling "smaller proposals". I don't mean smaller, but any proposals without frequent meetings that need to solve specific challenges before stage advancement.__
+LEO: As SYG said, it applies for any discussion if anything already have a regular meeting then it is not needed to go in incubator calls since they can’t really benefit from the incubation more than smaller proposals. **Note: I made this horrible choice of calling "smaller proposals". I don't mean smaller, but any proposals without frequent meetings that need to solve specific challenges before stage advancement.**
 
 ### Conclusion / Resolution
 
 SYG: Thanks. To sum up, the five topics we have identified are UUID, security at large, generic comparison, deep path properties, and Temporal. If you are a stakeholder in any of these topics, please look out for Reflector threads for these issues including the scheduling and video calls. The scheduling is done ad-hoc, because constraints vary proposal to proposal, and we want to accommodate timezone needs of champions and stakeholders.
+
 ## (Continuation) Module attributes for Stage 2
+
 Presenter: Daniel Ehrenberg (DE); Sven Sauleau, Myles Borins, Dan Clark
 
-* [proposal](https://github.com/tc39/proposal-module-attributes)
-* [slides](https://docs.google.com/presentation/d/1MOVBh0gw7-tqEx-maEvS2HsgwXd5X5pcwL80V67xCIg/edit#slide=id.g8634fc5940_28_0)
+- [proposal](https://github.com/tc39/proposal-module-attributes)
+- [slides](https://docs.google.com/presentation/d/1MOVBh0gw7-tqEx-maEvS2HsgwXd5X5pcwL80V67xCIg/edit#slide=id.g8634fc5940_28_0)
 [PR](https://github.com/tc39/proposal-module-attributes/pull/66)
 
 DE: (presents slides)
@@ -741,14 +720,14 @@ AKI: That seems like consensus to me. Congratulations on stage 2 and on compromi
 DE: Thank you.
 
 ### Conclusion/Resolution
-* Reached consensus for Stage 2.
 
-
+- Reached consensus for Stage 2.
 
 ## Editorial Direction
+
 Presenter: Shu-yu Guo (SYG)
 
-* [slides](https://docs.google.com/presentation/d/14NsIoRhr-z7HvRG0laq_F2c4iNPHF-Ld17-Yibshdo0/edit?usp=sharing)
+- [slides](https://docs.google.com/presentation/d/14NsIoRhr-z7HvRG0laq_F2c4iNPHF-Ld17-Yibshdo0/edit?usp=sharing)
 
 SYG: (presents slides up to “Normatively, they all mean the same thing” slide and asks if this is contentious)
 
@@ -792,7 +771,7 @@ SYG: It is useful to the readers of the spec to see, for example, job scheduling
 
 We conflate what is a host and what is an implementation. A host to the HTML folks is what is specified by HTML whereas an implementation is a particular browser. It would be good to record that intention.
 
-WH: I am concerned about recording that implementation-defined is too much of a catch-all. 
+WH: I am concerned about recording that implementation-defined is too much of a catch-all.
 
 Implementation-defined means that it has a number of options that are equally good.
 
@@ -816,7 +795,6 @@ WH: Yes.
 
 SYG: I take your point is that OOMs are observable, therefore would all points be implementation-defined?
 
-
 WH: Yes, if implementation-defined were the only choice of wording.
 
 SYG: Currently we say nothing.
@@ -833,7 +811,7 @@ SYG: Completely agree.
 
 DE: I think this is a great clarification. I think it is useful for layering with HTML, which benefits us because it is a part of many TC39 proposals, how it makes it to many JS users. The idea of host hooks makes things clearer both for the web and for other places where JavaScript is used, engines often have APIs that don’t correspond exactly to host hooks, but there is often some kind of layering that relies on the spec. We have a coherent thing we are looking at. Separating host hooks from implementation-defined things solidifies that a bit. It’s a net positive for our definition of the language. Even though this is editorial it is a significant clarification. I want to thank the editorial group.
 
-CM: I think the distinction you are calling out is useful in clarifying, simply saying we are going to be more explicit is a good thing. You gave the example of the embedded people hypothetically wanting to nail down something that would cause something to change from being impl defined to host defined.  I want to make sure that it is not regarded as purely an editorial choice, it would be a normative change that should run through TC39.
+CM: I think the distinction you are calling out is useful in clarifying, simply saying we are going to be more explicit is a good thing. You gave the example of the embedded people hypothetically wanting to nail down something that would cause something to change from being impl defined to host defined. I want to make sure that it is not regarded as purely an editorial choice, it would be a normative change that should run through TC39.
 
 SYG: My question to you, CM, is to say that it’s a normative change, my understanding of a normative change is that it does not change the behaviour. I’m not sure how changing something from implementation-defined to host-defined would change the behaviour.
 
@@ -844,8 +822,6 @@ SYG: I see. That’s a different sense of normative than I’m used to. The thin
 CM: This is a case where the committee as a whole is deferring to the judgement of the editors. It strikes me that we don’t arbitrarily move something from one category to the other. There has to be motivation behind it. It seems like if we are making a shift, changing the relationship between the spec and an outside body with which the spec interacts.
 
 SYG: OK, noted.
-
-
 
 KM: What qualifies as a host here? If I have like “Keith’s dope spec” and I come to TC39 and I want it to be host defined, is that sufficient?
 
@@ -863,14 +839,13 @@ KM: I see. Is there plan or record for when something requests such a change, I 
 
 SYG: I wanted to leave that to the editor group to make a judgement, and that is a case by case basis. It doesn't sound like we have agreement for that, though. I guess you’re asking what is required to add a host hook [??] to a place that is currently implementation defined
 
-
 YSV: make sure that I understand fully where we’re going here.
 
 The goal here will be to make it clear what parts will be further detailed by ECMA 262 spec and which ones are going to be sort of static, I understood from the issue. Like the things that are implementation-defined would eventually change from the TC39-defined implementation. Did I understand that correctly?
 
 SYG: I don’t understand the question. Both host & impl defined stuff will both be deliberated upon within TC39.
 
-YSV: Yes we would still decide which parts are going to be host defined and impl defined, but if I understood impl defined specifically means if someone from HTML sees the spec and they see “host” defined they would be able to say this is something that I can understand as “our” area  and things that are specific might change like array.sort
+YSV: Yes we would still decide which parts are going to be host defined and impl defined, but if I understood impl defined specifically means if someone from HTML sees the spec and they see “host” defined they would be able to say this is something that I can understand as “our” area and things that are specific might change like array.sort
 
 SYG: That’s the intention, yes.
 
@@ -883,7 +858,7 @@ JHD: It sounds like WH, that you’re not concerned about differentiating betwee
 
 WH: I also have the same concerns about implementation-defined vs. host-defined that were stated by other people, so I am not going to repeat those. The implementation-defined vs. host-defined distinction is unclear for some cases. My main point here is there’s a big difference between implementation-defined and implementation-dependent.
 
-JHD: So could we call a third answer “implementation-approximated”? 
+JHD: So could we call a third answer “implementation-approximated”?
 
 WH: We could. I’m also not saying all existing usages of implementation-dependent are correct. A lot of international stuff falls into that category for example, which may be better written as implementation-defined or host-defined.
 
@@ -915,9 +890,9 @@ WH: “Thing we were going to do” is not taking into account the distinction b
 
 KG: Can I make a proposal? The main thing the Editors want is clarity about when each of the terms are used and the list of the terms to use. I would be happy enough to write down the definition WH used, that
 
-* “Implementation-defined” means that the spec does not have a notion of the objectively best behavior and implementations are free to choose within whatever constraints the spec puts on them without preference between them.
-* “Implementation-dependent” means there is a best possible behaviour that implementations should strive for as best they can, but there's no normative requirement on how much they should strive.
-* “Host-defined” is what Shu has in the slides and would, to Chip's point, only change with discussion in plenary.
+- “Implementation-defined” means that the spec does not have a notion of the objectively best behavior and implementations are free to choose within whatever constraints the spec puts on them without preference between them.
+- “Implementation-dependent” means there is a best possible behaviour that implementations should strive for as best they can, but there's no normative requirement on how much they should strive.
+- “Host-defined” is what Shu has in the slides and would, to Chip's point, only change with discussion in plenary.
 
 Editors would fix up the spec to ensure the terms are used consistent with those definitions. I would be happy with that outcome since that gives us a way to proceed on this kind of question.
 

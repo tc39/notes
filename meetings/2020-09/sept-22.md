@@ -1,9 +1,10 @@
 # September 22, 2020 Meeting Notes
+
 -----
 
-**In-person attendees:**  
+**In-person attendees:**
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Waldemar Horwat      | WH             | Google             |
@@ -28,7 +29,7 @@
 | Michael Saboff       | MLS            | Apple              |
 | Keith Miller         | KM             | Apple              |
 | Bradford C. Smith    | BSH            | Google             |
-| Jem Young    		   | JZY            | Netflix            |
+| Jem Young         | JZY            | Netflix            |
 | Philip Chimento      | PFC            | Igalia             |
 | Richard Gibson       | RGN            | OpenJS Foundation  |
 | Robin Ricard         | RRD            | Bloomberg          |
@@ -39,11 +40,8 @@
 | Pieter Ouwerkerk     | POK            | RunKit             |
 | Shu-yu Guo           | SYG            | Google             |
 
-
-
-
-
 ## Intl.DisplayNames for Stage 4
+
 Presenter: Frank Yung-Fong Tang (FYT)
 
 - [proposal](https://github.com/tc39/proposal-intl-displaynames)
@@ -63,10 +61,11 @@ FYT: Can we reach consensus?
 MBS: I’m not hearing any objections, so congratulations on stage 4!
 
 ### Conclusion/Resolution
+
 - Stage 4!
 
-
 ## .item() for Stage 3
+
 Presenter: Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/tc39/proposal-item-method)
@@ -108,7 +107,6 @@ WH: But, there has to be a way to index over strings.
 
 KG: That’s the iteration that strings have, they are by code points.
 
-
 JTO: The committee already addressed this: the iteration on strings is by code point, not code unit. I was actually persuaded to not to String.p.item by SYG’s slide. The team consensus was that everyone would be confused by what we do. But the benefit - I don’t understand what the benefit is of doing this. We should not be in the business of facilitating bugs because users already don’t understand.
 
 SYG: In the interest of time, can we drop the code point vs code unit thing? I am presenting either code units or no String.prototype.item.
@@ -148,10 +146,11 @@ SYG: It isn’t a unanimous glowing consensus, but it sounds like we have consen
 MBS: I’m not hearing any blocks so I think we can call this stage 3.
 
 ### Conclusion/Resolution
+
 - Stage 3 including String.prototype.item with code unit indexing.
 
-
 ## Numeric literal suffixes - continued
+
 Presenter: Daniel Ehrenberg (DE)
 
 - [proposal](https://github.com/tc39/proposal-extended-numeric-literals)
@@ -160,18 +159,10 @@ Presenter: Daniel Ehrenberg (DE)
 DE: (presents last slide, “Summary of feedback”)
 
 Should we have this syntax at all?
-Waldemar: Yes, a requirement for Decimal
-Michael F: Better to use template strings
-Should we use a separate namespace, or lexical scope with _?
-Waldemar: Separate namespace seems fine
-Mark: Lexical scope with _ preferred, but the separate namespace is well-formed
-Some others: Separate namespace is not acceptable
-Is it important to have this feature generalized for user definition?
-Mark: Yes, a requirement for Decimal
-Yulia: Asking if the value is sufficient
-Is it acceptable to omit so many identifier start characters?
-Waldemar: This might be too restrictive and bad for future-proofing
-Chip: Permit more identifiers if you're not in a hex literal?
+Waldemar: Yes, a requirement for Decimal Michael F: Better to use template strings Should we use a separate namespace, or lexical scope with _?
+Waldemar: Separate namespace seems fine Mark: Lexical scope with_ preferred, but the separate namespace is well-formed Some others: Separate namespace is not acceptable Is it important to have this feature generalized for user definition?
+Mark: Yes, a requirement for Decimal Yulia: Asking if the value is sufficient Is it acceptable to omit so many identifier start characters?
+Waldemar: This might be too restrictive and bad for future-proofing Chip: Permit more identifiers if you're not in a hex literal?
 My feeling: Decimal is sufficiently important for JS developers that we should work through these issues one way or the other
 
 WH: This is a tough design area. You recorded my position as “being fine” with a separate namespace, but it’s actually stronger than that. I think that a separate namespace is pretty much essential, otherwise you get too many conflicts with accidentally captured variable names, especially if you want to use commonly-used index names like `i`, `n`, or `in` which is a keyword. Consistency with existing names of units and such also makes it bothersome to forbid various identifier start characters. I feel that a separate namespace is pretty much essential here.
@@ -181,7 +172,9 @@ DE: Is it fair to say that we have these conflicting requirements from TC39 memb
 WH: Yes. And the slide you’re showing is a great summary of them.
 
 DE: Thank you everybody for giving this consideration and extra time.
+
 ## Import Assertions for Stage 3
+
 Presenters: Sven Sauleau (SSA), Dan Clark (DDC)
 
 - [proposal](https://github.com/tc39/proposal-import-assertions)
@@ -227,7 +220,7 @@ This came up in a recent framework outreach call. Someone said that they want to
 
 GCL: Sure, I’m not trying to solve HTML, I’m just trying to expand my understanding. So within the same source text, the same module with two different assertions, can lead to two different modules?
 
-DE: If you use an assertion that is not recognized, that is what it would do. [Note: after revisiting the PR, it is clear that the HTML PR does *not* do this. The debate is between ignoring unrecognized assertions (not keying off of them) and erroring on them. Unrecognized attributes will not cause duplication in HTML.]
+DE: If you use an assertion that is not recognized, that is what it would do. [Note: after revisiting the PR, it is clear that the HTML PR does _not_ do this. The debate is between ignoring unrecognized assertions (not keying off of them) and erroring on them. Unrecognized attributes will not cause duplication in HTML.]
 
 GCL: Ok, thank you.
 
@@ -263,9 +256,11 @@ SYG: I feel somewhat strongly that I like the current status quo of the spec tex
 AKI: Alright, let’s call that stage 3! Congratulations!
 
 ### Conclusion/Resolution
+
 - Stage 3 for the status quo spec.
 
 ## JSON Modules update
+
 Presenter: Daniel Clark (DDC)
 
 - [proposal](https://github.com/tc39/proposal-json-modules)
@@ -303,8 +298,7 @@ SYG: GCL was worried that as a general principle, it seems like a bad idea for u
 
 CM: I see. So the concern is that well you said JSON, but we know better than you and we’re going to give you some other thing.
 
-GCL: Maybe an example -- it’s not the JSON part, it’s using the name type in the domain of a host boundary, maybe the host wants to use the type
-And now all of the sudden we are taking up a string value from them. It’s not about the JSON part, it’s - 
+GCL: Maybe an example -- it’s not the JSON part, it’s using the name type in the domain of a host boundary, maybe the host wants to use the type And now all of the sudden we are taking up a string value from them. It’s not about the JSON part, it’s -
 
 CM: It’s like having a reserved word.
 
@@ -314,7 +308,7 @@ DE: I think the idea of this - obviously we’re not talking about changing what
 I think it’s really important that you be able to import JSON modules in the same way. We could require ??? syntax in different environments, but it wouldn’t allow those things to be ??? in practice.
 I think this is a path we could take with future features, either through assertions or evaluator attributes, and this is called out in the Import Assertions explainer, that we could define these in the future, just like we declare globals, and we would just have to pragmatically deal with this potential namespace collision. I think that’s what’s going on here and it’s reasonable.
 
-GCL: So maybe the problem there was my understanding of how hosts should ??? something would be bad form of doing that. 
+GCL: So maybe the problem there was my understanding of how hosts should ??? something would be bad form of doing that.
 
 DE: No, space is definitely free for hosts to use. It’s like globals, where hosts and JavaScript share the namespace and we work through the compatibility issues pragmatically as we need to.
 
@@ -327,7 +321,7 @@ JTO: I think the issue is that JSON.parse is a function; you call it once, it re
 RBU: Slight favor of immutability. While JSON.parse does return a mutable object, the string that you put into JSON.parse is immutable. When you import a JSON module, you have no way of getting the equivalent of the input string to recreate that mutable(?) structure, so I don’t think this is quite the same as a simple JSON.parse.
 
 MBS: I want to remind folks about the history of where this proposal came from, and its relationship to Import Assertions. Many moons ago/about a year ago, some folks including DE worked on standardizing JSON modules. And part of the philosophy behind it was that there are a number of different module types that we’d like to see, including but not limited to JSON, CSS, HTML, and WASM, but that behavior was concerned as far as scope. And JSON was one of the ones that was rather straightforward. We have differing opinions with mutability, but there were at least a limited number of walls of the bikeshed to paint. After last TPAC(?), there was a security concern and we reversed it [TODO: what’s “it”?]. But we still need to allow JSON modules in the language. In node, you’re able to require JSON. Many people use this as a way to bootstrap applications. Configuration files, metadata, tiny replacement for databases -- there are so many uses for JSON in an application. And there’s value in asynchronously parsing jSON, which we don’t have right now.
-Which is a whole other thing to get into. I will stop proselytizing for a second. But the thing is that when we look into import assertions and all the generic ways to use it, that proposal grew out of this one need to enable JSON modules.  We’re getting to a point where we can have more consistency—but I think it’s just really good for us to step back and realize why we got here, what we’re trying to build, and maybe step back from some of the specifics. One thing I think about is enabling programming patterns that people are using today, and making it more consistent across the ecosystem.
+Which is a whole other thing to get into. I will stop proselytizing for a second. But the thing is that when we look into import assertions and all the generic ways to use it, that proposal grew out of this one need to enable JSON modules. We’re getting to a point where we can have more consistency—but I think it’s just really good for us to step back and realize why we got here, what we’re trying to build, and maybe step back from some of the specifics. One thing I think about is enabling programming patterns that people are using today, and making it more consistent across the ecosystem.
 
 JRL: The mutable vs immutable discussion: first I want to say that I’m not going to block over this. Immutability isn’t in the language - nothing is immutable by default. If we had records already, maybe we can have this discussion. If you import something from node, it will be mutable. If you import from a module, it will be mutable. Surprising behavior should not be the default, and I think immutability would be surprising.
 
@@ -358,15 +352,17 @@ JRL: I can review it.
 AKI: Thanks JRL. Well that’s two reviewers, more are welcome but two is the minimum.
 
 ### Conclusion / resolution
+
 - Further discussion on immutability vs mutability to occur on proposal repo
 - RGN and JRL to review for stage 3
 
 ## GetOption in ECMA-262
+
 Presenter: Philip Chimento (PFC)
 
 - [issue](https://github.com/tc39/ecma402/issues/480)
 - [PR](https://github.com/tc39/ecma402/pull/493)
-- [explanatory code sample](https://gist.github.com/ptomato/7f13d17f092ab30872f5b5fe663ca507) 
+- [explanatory code sample](https://gist.github.com/ptomato/7f13d17f092ab30872f5b5fe663ca507)
 
 PFC: (presents explanatory code sample)
 
@@ -395,6 +391,7 @@ DE: I’d be happy to consider this to be a separate decoupled change. I think w
 MM: I think null should be taken as an intentional null and not as a default.
 
 ## Intl Enumeration API for Stage 2
+
 Presenter: Frank Yung-Fong Tang (FYT)
 
 - [proposal](https://github.com/tc39/proposal-intl-enumeration)
@@ -441,7 +438,9 @@ FYT: I want to request TC39 to advance to stage 2, any objections?
 ### Conclusion
 
 Consensus on Stage 2!
+
 ## Records & Tuples
+
 Presenter: Rick Button (RBU)
 
 - [proposal](https://github.com/tc39/proposal-record-tuple/)
@@ -451,7 +450,7 @@ RBU: (presents slides)
 
 WH: The difference between primitives and identity-less objects is subtle. Is the idea that if you go for the object approach, that these things would be objects, but that you're trying to avoid exposing any way of comparing their identities?
 
-RBU: Yes, the current invariant around identity would maintain ??? 
+RBU: Yes, the current invariant around identity would maintain ???
 
 WH: How would you specify something like that? We had a problem like that with NaN. How would you spec that these objects would have separate identities but there is no way to compare them? That's a negative assertion — you’re trying to assert that something is impossible in the spec.
 
@@ -466,7 +465,7 @@ WH: Why the need for boxing instead of just directly storing arbitrary values in
 RBU: That’s a great question. We should address this in the context of this proposal. The main reason we wanted to add boxes is ergonomics. The driving force behind immutable data structures is that they're deeply immutable. There's no way to silently escape the immutable world. We talked about things like integrity domains. An integrity domain is a space over which we want to hold an invariant. For example, we think of Records as having an integrity domain of “string properties”, in that you can trust the string properties of the record to lead to immutable things. The trick with Box is that it forces you to verify the box on the way in and the way out. In order to put an object into a record, you need to box it. In order to use the object in a record, you need to unbox it. There's no chance that you accidentally escape immutability. That ergonomic idea is the main reason.
 
 RRD: You can assert whether there is a box or not in the R&T structure. If it doesn’t contains a box you can tell it’s immutable. If you see that there is no box in there, you know that you don't need to do a deep copy of the R&T. That could be done whenever someone passes an R&T to a function.
- 
+
 WH: Does a box have to contain an object or can it contain a primitive?
 
 RBU: It's an open question. Do you have an opinion?
@@ -483,7 +482,7 @@ MM: ???
 
 JHD: ???
 
-JWK:  I don’t like the idea of identity-less objects. I agree with Jordan in the issue. If it was an object, I think it should work with Proxy.
+JWK: I don’t like the idea of identity-less objects. I agree with Jordan in the issue. If it was an object, I think it should work with Proxy.
 
 RBU: On the first point, I think we should dive in to whether the axiom is useful, whether the bifurcation between primitive and objects works, ??? We should continue discussion on the issue.
 
@@ -529,7 +528,7 @@ BSH: OK, sorry I didn't catch that, sounds good!
 
 JHD: So the concept of identity is already confusing. Before ES6, it was objects. Now it's objects and symbols. This was already hard to explain and teach. One of the primary differences between symbols and objects is that objects have identity and symbols(?) do not.
 
-RRD:  I share your concerns about explaining the proposal  we would have the same semantics we have so far it's mainly on how we explain things to people. We could even continue to explain things in terms of primitives or at least as a similar concept. I agree this is a step back in terms of explainability though so we have work to do here.
+RRD: I share your concerns about explaining the proposal we would have the same semantics we have so far it's mainly on how we explain things to people. We could even continue to explain things in terms of primitives or at least as a similar concept. I agree this is a step back in terms of explainability though so we have work to do here.
 
 RBU: I think we should continue this discussion offline
 
@@ -548,6 +547,7 @@ RRD: That would be very very interesting to have this type of optimization. Happ
 PDL: SYG, get in touch because I have an example.
 
 ## Class static initialization block for Stage 2
+
 Presenter: Ron Buckton (RBN)
 
 - [proposal](https://github.com/tc39/proposal-class-static-block)
@@ -574,13 +574,14 @@ DE: Me!
 PFC: Me!
 
 ### Conclusion/Resolution
+
 Stage 2
 
 Reviewers:
-DE
-PFC
+DE PFC
 
 ## Process document clarifications
+
 Presenter: Yulia Startsev (YSV)
 
 - [pull-request](https://github.com/tc39/process-document/pull/29)
@@ -620,14 +621,13 @@ WH: I agree with MM.
 
 YSV: I'll bring it back in November then.
 
-
 ## Class Access Expressions for Stage 2
+
 Presenter: Ron Buckton (RBN)
 
 - [proposal](https://github.com/tc39/proposal-class-access-expressions)
 - [slides](https://docs.google.com/presentation/d/1ATxFyZUYv9WvmLMFPDIuJ5QSpoVTIdqM0ThH2JPpzFw/edit?usp=sharing)
 - [spec](https://tc39.es/proposal-class-access-expressions/)
-
 
 RBN: (presents slides)
 
@@ -663,7 +663,7 @@ JHD: I'm very much in support of this proposal. One of the benefits of object de
 
 RBN: I'd like to point out that a lot of my prior experience is with C#, which doesn't let you override a static method (you need to shadow), but it also doesn't allow class name dot for fields. It’s one thing we were discussing for ?? There is no common form or dotless form that you can use to access these fields. ???
 
-YSV: Feels like a papercut. Does it need a solution? I agree with MM's comments that this doesn't seem to carry its own weight. I've only seen this pattern once while programming. The factory class was named "Foo" and it was hard for someone reading the code to figure out what the class did -- this was a place where this could have been used. But if there had been no name there, it would have been even more for comprehension of the code base.  In this case, giving a name may make the code more clear than using a keyword. So I'm pretty -1 on this on the Apache Scale.
+YSV: Feels like a papercut. Does it need a solution? I agree with MM's comments that this doesn't seem to carry its own weight. I've only seen this pattern once while programming. The factory class was named "Foo" and it was hard for someone reading the code to figure out what the class did -- this was a place where this could have been used. But if there had been no name there, it would have been even more for comprehension of the code base. In this case, giving a name may make the code more clear than using a keyword. So I'm pretty -1 on this on the Apache Scale.
 
 SYG: I argued for private static being not so bad -- naming your classes is indeed a small cost IMO, agree with MM. Agree with this sentiment. Previously I was arguing private static to be not so bad. I don’t think the C# comparison to be that valid. In C# there is no way to refer to the instance of the class isn’t it?
 

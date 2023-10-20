@@ -1,4 +1,5 @@
 # July 21, 2020 Meeting Notes
+
 -----
 
 **In-person attendees:**
@@ -40,6 +41,7 @@ None :(
 | Rob Palmer           | RPR            | Bloomberg          |
 
 ## Promise.any & AggregateError for stage 4
+
 Presenter: Mathias Bynens (MB)
 
 - [proposal](https://github.com/tc39/proposal-promise-any)
@@ -53,9 +55,13 @@ MB: Any objections to stage 4?
 [silence]
 
 RPR: You have consensus, congratulations.
+
 ### Conclusion/Resolution
+
 - Stage 4!
+
 ## Strictness check for object's SetMutableBinding
+
 Presenter: Leo Balter (LEO)
 
 - [PR](https://github.com/tc39/ecma262/pull/2094)
@@ -104,7 +110,7 @@ KG: Safari might not.
 
 SYG: Ok.
 
-KG: But it would be - the `has`  trap would be triggered at least twice, once in the initial lookup and once in the assignment. Yes. I should also point out that there are a lot of cases where the reference type, which is sort of what’s involved in this, doesn’t match engine behavior. It’s one of the oldest web reality issues on 262, and this fixes it in one particular case. So yes, engines would have work to do, but engines already have a bunch of work to do if they want to be correct about all the edge cases for references.
+KG: But it would be - the `has` trap would be triggered at least twice, once in the initial lookup and once in the assignment. Yes. I should also point out that there are a lot of cases where the reference type, which is sort of what’s involved in this, doesn’t match engine behavior. It’s one of the oldest web reality issues on 262, and this fixes it in one particular case. So yes, engines would have work to do, but engines already have a bunch of work to do if they want to be correct about all the edge cases for references.
 
 SYG: To confirm again, this is for the object environment records, which are only `with` scopes and not global scopes?
 
@@ -151,9 +157,13 @@ LEO: Any objections? I am still asking for consensus.
 LEO: I believe this is consensus.
 
 RPR: Yes, consensus on this PR.
+
 ### Conclusion/resolution
+
 - Consensus on the PR.
+
 ## Intl.ListFormat for Stage 4
+
 Presenter: Zibi Braniecki (ZB)
 
 - [proposal](https://github.com/tc39/proposal-intl-list-format)
@@ -166,9 +176,13 @@ ZB: Stage 4?
 [silence]
 
 RPR: You have stage 4.
+
 ### Conclusion/resolution
+
 - Stage 4!
+
 ## Intl.DateTimeFormat dateStyle/timeStyle for Stage 4
+
 Presenter: Zibi Braniecki (ZB)
 
 - [proposal](https://github.com/tc39/proposal-intl-datetime-style)
@@ -201,9 +215,11 @@ RPR: Any objections to Stage 4?
 RPR: Congratulations, you have stage 4.
 
 ### Conclusion/resolution
+
 - Stage 4!
 
 ## Fix Function.toString for builtins
+
 Presenters: Gus Caplan (GCL), Jordan Harband: (JHD)
 
 - [PR](https://github.com/tc39/ecma262/pull/1948)
@@ -274,7 +290,7 @@ KM: there’s definitely a web compatibility risk, I agree. But it seems like th
 
 GCL: I agree.
 
-SYG: Relaying a point from a colleague: if we get rid of the get and set keywords now, the higher level question is - who are we trying to serve with "toString"? If it's round-tripping through an "eval" that's not possible anyway. If it's diagnostics, ??? If you get rid of `get ` and `set`, I imagine it’s common for getters and setters to share the same name, so if you print it out and there's no `get` or `set` in the name, how do you know which is which? I think that’s an argument for whatever we do here should probably keep `get` or `set` in the name.
+SYG: Relaying a point from a colleague: if we get rid of the get and set keywords now, the higher level question is - who are we trying to serve with "toString"? If it's round-tripping through an "eval" that's not possible anyway. If it's diagnostics, ??? If you get rid of `get` and `set`, I imagine it’s common for getters and setters to share the same name, so if you print it out and there's no `get` or `set` in the name, how do you know which is which? I think that’s an argument for whatever we do here should probably keep `get` or `set` in the name.
 
 GCL: I’d be fine with consensus on removing `function` or even keeping `get` as it is right now, I just don’t know what the effects of that would be.
 
@@ -358,6 +374,7 @@ RPR: Are you happy with that?
 GCL: Yeah.
 
 ## WeakRefs for Stage 4 / CleanupSome for Stage 2/3
+
 Presenters: Daniel Ehrenberg (DE), Yulia Startsev (YSV)
 
 - [WeakRefs proposal](https://github.com/tc39/proposal-weakrefs/)
@@ -438,10 +455,12 @@ AKI: Consensus?
 AKI: I’m going to call that yes.
 
 ### Conclusion/Resolution
+
 - Stage 2 for cleanupSome
 - Stage 4 for WeakRefs + FinalizationRegistry
 
 ## Logical Assignment for Stage 4
+
 Presenter: Justin Ridgewell (JRL)
 
 - [proposal](https://github.com/tc39/proposal-logical-assignment)
@@ -469,9 +488,11 @@ AKI: Consensus for stage 4?
 AKI: Congratulations! Another one! Yay!
 
 ### Conclusion/Resolution
+
 - Stage 4!
 
 ## Decorators status update
+
 Presenter: Kristen Hewell Garrett (KHG)
 
 - [proposal](https://github.com/tc39/proposal-decorators/)
@@ -520,6 +541,7 @@ DE: A lot of people are talking about tooling solutions, as KHG mentioned in the
 KHG: DE summed it up very well and we’d like to continue in that direction and the group will continue to work that way
 
 ## NumericLiteralSeparator for Stage 4
+
 Presenter: Rick Waldron (RW)
 
 - [proposal](https://github.com/tc39/proposal-numeric-separator)
@@ -559,9 +581,11 @@ RW: So do I have stage 4?
 RPR: Congratulations, you have stage 4.
 
 ### Conclusion / Resolution
+
 - Stage 4!
 
 ## Slice notation for Stage 2
+
 Presenter: Sathya Gunasekaran (SGN)
 
 - [proposal](https://github.com/tc39/proposal-slice-notation)
@@ -620,7 +644,7 @@ And those are likely to be different sets. And then I see that we’re discussin
 
 LEO: (queue reply: This improves Developer Experience)
 
-DRR: To further WH’s point, the fact that slice already exists as a method and has the semantics I intend means that this is a nice-to-have for me. With this syntax, when I show it to people, they’re like “oh cool, I can get the last element of an array”, but then it was weird, because everyone would realize that, oh wait, I still have to re-index with 0 to get the last element. Maybe this leads into SYG’s topic, but the fact that you can’t do a negative index on these things makes it a little confusing. I know that there is a related proposal that we'll discuss about later, but  I think that that is something to consider.
+DRR: To further WH’s point, the fact that slice already exists as a method and has the semantics I intend means that this is a nice-to-have for me. With this syntax, when I show it to people, they’re like “oh cool, I can get the last element of an array”, but then it was weird, because everyone would realize that, oh wait, I still have to re-index with 0 to get the last element. Maybe this leads into SYG’s topic, but the fact that you can’t do a negative index on these things makes it a little confusing. I know that there is a related proposal that we'll discuss about later, but I think that that is something to consider.
 
 SGN: Can you repeat more concisely the problem?
 
@@ -643,10 +667,12 @@ WH: I and YSV were not the only people who expressed concerns. There were others
 SGN: I will talk with the others as well. If anyone else has strong opinions, please contact me.
 
 ### Conclusion / Resolution
+
 - Remains at Stage 1
 - SGN to follow up with people who have concerns
 
 ## Temporal stage 2 update
+
 Presenter: Philip Chimento (PFC)
 
 - [proposal](https://tc39.es/proposal-temporal/)
@@ -659,6 +685,7 @@ YSV: Thanks, one thing I’d like to suggest is to translate the survey so that 
 PFC: That's a really great idea, thanks.
 
 ## Import Conditions for Stage 3
+
 Presenters: Daniel Ehrenberg (DE), Sven Sauleau (SSA), Dan Clark (DDC), Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/tc39/proposal-import-conditions)
@@ -803,13 +830,10 @@ DE: Okay, thank you very much.
 
 ### Conclusion / Resolution
 
-Land patches for s/if/assert/ and permitting quotes around condition keys
-Split JSON modules into a separate Stage 2 proposal
-Land weakening of the host constraint, iterating on the wording in cooperation with SYG and BFS
-SYG, BFS, and WH to review before Stage 3
-Proposal remains at Stage 2
+Land patches for s/if/assert/ and permitting quotes around condition keys Split JSON modules into a separate Stage 2 proposal Land weakening of the host constraint, iterating on the wording in cooperation with SYG and BFS SYG, BFS, and WH to review before Stage 3 Proposal remains at Stage 2
 
 ## Intl.Segmenter for Stage 3
+
 Presenter: Richard Gibson (RGN)
 
 - [proposal](https://github.com/tc39/proposal-intl-segmenter)
@@ -836,9 +860,11 @@ YSV: I’d like to explicitly say I support stage 3 and congratulations.
 AKI: Congratulations!
 
 ### Conclusion/Resolution
+
 - Stage 3!
 
 ## Iterator Helpers update
+
 Presenter: Adam Vandolder (AVR)
 
 - [proposal](https://github.com/tc39/proposal-iterator-helpers)
@@ -865,9 +891,11 @@ AKI: Do we need a third stage 3 reviewer?
 MF: I think two should be sufficient.
 
 ### Conclusion
-* RGN and MPC are reviewers
+
+- RGN and MPC are reviewers
 
 ## .item() for Stage 2
+
 Presenters: Shu-yu Guo (SYG), Tab Atkins (TAB)
 
 - [proposal](https://github.com/tabatkins/proposal-item-method)
@@ -908,5 +936,6 @@ MLS: These corner cases are for stage 2 right? So before stage 3?
 JHD: Correct.
 
 ### Conclusion/Resolution
+
 - Stage 2!
 - RGN, KM, LEO to review for stage 3

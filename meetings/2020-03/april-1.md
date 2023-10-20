@@ -1,10 +1,10 @@
 # April 01, 2020 Meeting Notes
+
 -----
 
 **In-person attendees:**
 
 **Remote attendees:** Yulia Startsev (YSV), Mark Cohen (MPC), Jeff Long (JHL), Bradley Farias (BFS), Rick Button (RBU), Michael Ficarra (MF), Mathias Bynens (MB), Myles Borins (MBS), Caio Lima (CLA), Dave Poole (DMP), Jason Williams (JWS), Kevin Gibbons (KG), Chip Morningstar (CM), Philip Chimento (PFC), Mary Marchini (MAR), Rob Palmer (RPR), Ross Kirsling (RKG), Waldemar Horwat (WH), Pieter Ouwerkerk (POK), Bradford C. Smith (BCS), Ujjwal Sharma (USA), Richard Gibson (RGN), Felienne Hermans (FHS), Nicolò Ribaudo (NRO), Shane F Carr (SFC), Justin Ridgewell (JRL), Jack Works (JWK), Philipp Dunkel (PDL), Robin Ricard (RRD), Ben Newman (BN), Sergey Rubanov (SRV), Jordan Harband (JHD), Guilherme Hermeto (GHO), Robert Pamely (RPY), Edgar Barragan (EB), Mark Miller (MM), Hemanth HM (HHM), Aki (AKI), HE Shi-Jun (John Hax) [JHX], Daniel Rosenwasser (DRR)
-
 
 ## Record and Tuple Update
 
@@ -34,7 +34,7 @@ RBU: Yes.
 
 RBU: (returns to slides)
 
-MM: There is a way to delete.  I presume you're doing the natural extension of this for pattern matching. (Note: I clarified below that I meant destructuring.)  If you pattern match against the pattern `#{foo, ...rest}` then `rest` is the thing you've pattern-patched against without `”foo”`.  Pattern-match removes properties from things. So your deep update proposal is very nice - I also want to ask have you thought about providing the same kind of deepness on pattern matching? And does the deepness on both the expression and matching side - is that also an extension we should apply to regular objects?
+MM: There is a way to delete. I presume you're doing the natural extension of this for pattern matching. (Note: I clarified below that I meant destructuring.) If you pattern match against the pattern `#{foo, ...rest}` then `rest` is the thing you've pattern-patched against without `”foo”`. Pattern-match removes properties from things. So your deep update proposal is very nice - I also want to ask have you thought about providing the same kind of deepness on pattern matching? And does the deepness on both the expression and matching side - is that also an extension we should apply to regular objects?
 
 RBU: The first statement about deleting in a pattern match: that sounds reasonable. I'm not super familiar with the pattern matching proposal but I think that makes sense. There has been discussion about what to do about a record that it spread and destructured produces an object or a record - right now we’re just making it a record, but there’s active discussion on Github.
 
@@ -86,8 +86,7 @@ RRD: Same here. And to pre-empt one question, we have pure userland solutions th
 
 BFS: I want to state that there are various semantics for RefCollection, we can discuss it elsewhere and it can mostly be done in userland.
 
-1 Reply: Userland can do RefCollection - Bradley Farias
-2 Reply: Userland cannot do RefCollection with JS as it is. This proposal is an attempt to support "boxing" objects as many people have requested - Daniel Ehrenberg (Igalia)
+1 Reply: Userland can do RefCollection - Bradley Farias 2 Reply: Userland cannot do RefCollection with JS as it is. This proposal is an attempt to support "boxing" objects as many people have requested - Daniel Ehrenberg (Igalia)
 
 SFC: To override a field deep in the structure, can we have a Record.assign() like Object.assign()?
 
@@ -117,13 +116,13 @@ GCL: I’ll follow up on Github.
 
 RBU: Issues 20 or 65 that I mentioned in the slides.
 
-WH: I like the clean solution for equality, with one caveat: I'm curious about the interaction between this proposal and value types, which was mentioned as a way to implement complex numbers by MM in yesterday’s discussion. Would we need something that's similar but different for value types, or could we re-use records and tuples for complex value types?  The dilemma being that for complex numbers, if you want IEEE complex numbers, they need the IEEE notion of equality across the real and imaginary parts.
+WH: I like the clean solution for equality, with one caveat: I'm curious about the interaction between this proposal and value types, which was mentioned as a way to implement complex numbers by MM in yesterday’s discussion. Would we need something that's similar but different for value types, or could we re-use records and tuples for complex value types? The dilemma being that for complex numbers, if you want IEEE complex numbers, they need the IEEE notion of equality across the real and imaginary parts.
 
 RBU: I’m not as deeply familiar with value types as DE, so I'll defer to him on that.
 
 DE: Record and Tuple is sort of a more programmer-friendly name for value types. Records and Tuples are kind of a data model for value types. The idea of IEEE semantics for complex numbers is an interesting one. We could start with more NaN-like equality, and later on introduce equality for complex numbers. But for now we could say that these object-like things and array-like things don’t support these things and later on expose something supporting that. Value types will require many additional capabilities, that Records and Tuples don't provide, but will build on the same data model.
 
-WH: It seems like a reasonable evolutionary path.  I want to see something in the proposal to remind us about that direction.
+WH: It seems like a reasonable evolutionary path. I want to see something in the proposal to remind us about that direction.
 
 RBU: I think there’s a small snippet but we could expand it.
 
@@ -131,7 +130,7 @@ DE: Yeah, I would be happy to discuss this in greater detail. I was planning to 
 
 BN: It feels like there's a lot in this proposal right now. Some people will say that syntax is expensive. I wonder if the runtime part (i.e. the record and tuple functions, which I think are totally adequate for getting the sort of immutable triple equals objects you want) . Might be something that we can prioritize as a proposal in itself. Then a follow-up proposal to add the shorthand hash syntax, or do we need to include everything that's eventually going to be in the proposal up front?
 
-RBU: From the champions group perspective, I think there’s always  a fine line you have to draw between how fine-grained and how large you want these proposals to be. We're trying to strike that balance by splitting out RefCollections, removing with syntax, etc. I still think the syntax is very valuable for two reasons: 1) you don't just repeat the word Record or Tuple over and over again. 2) We already have significant runtime experience with this, with libraries that implement immutable data structures in userland. So the goal with record and tuple is to not only provide an alternative to those, but to provide something with a very terse syntax integrated into the language so you use it as much as possible. The addition of the shorthand syntax adds a lot of value to the proposal.
+RBU: From the champions group perspective, I think there’s always a fine line you have to draw between how fine-grained and how large you want these proposals to be. We're trying to strike that balance by splitting out RefCollections, removing with syntax, etc. I still think the syntax is very valuable for two reasons: 1) you don't just repeat the word Record or Tuple over and over again. 2) We already have significant runtime experience with this, with libraries that implement immutable data structures in userland. So the goal with record and tuple is to not only provide an alternative to those, but to provide something with a very terse syntax integrated into the language so you use it as much as possible. The addition of the shorthand syntax adds a lot of value to the proposal.
 
 BN: I agree and I like this syntax, but it’s important to mention that it’s completely separable.
 
@@ -148,6 +147,7 @@ JRL: I just wanted to voice strong support for RefCollection. The ability to pla
 Chair: Champions group, please ensure that the remaining comments about RefCollection are discussed.
 
 ### Conclusion/Resolution
+
 - https://github.com/rricard/proposal-refcollection/
 - https://github.com/rickbutton/proposal-deep-path-properties-for-record
 
@@ -161,13 +161,14 @@ Presenter: Jack Works (JWK)
 JWK: (presents slides)
 
 WH: [Discussing the “Wait for discussions” slide]:
-* Decreasing ranges seem fine.
-* `Number.range(0, 10, -5)` should yield nothing.
-* I wouldn’t worry about preventing infinite loops such as `Number.range(42, 100, 1e-323)`; there are lots of ways to get an infinite loop, including the obvious `Number.range(0, Infinity)`.
-*  `BigInt.range(0, Infinity)` seems useful, so we should allow an `Infinity` limit when making BigInt ranges.
-* I wouldn’t bother with `includes`.
 
-SFC: [Regarding issue #17](https://github.com/Jack-Works/proposal-Number.range/issues/17), when you have a Number.range(), does it return an iterator that has the next() method directly, so it's consumable once? Richard wrote that one way to think about Number.range() is that it’s an iterator factory - you  call it and it gives you an iterator that’s consumable. The other model is that you call it and it gives you a Number.range first class object that’s not an iterator, but has a `[Symbol.iterator]` method that gives the iterator. The advantage of it returning an immutable is you can take it and use it in other places, e.g. with a NumberRangeFormatter or as an argument to a function. Generally, you may want to reuse it. I think both approaches have clear advantages and disadvantages.
+- Decreasing ranges seem fine.
+- `Number.range(0, 10, -5)` should yield nothing.
+- I wouldn’t worry about preventing infinite loops such as `Number.range(42, 100, 1e-323)`; there are lots of ways to get an infinite loop, including the obvious `Number.range(0, Infinity)`.
+- `BigInt.range(0, Infinity)` seems useful, so we should allow an `Infinity` limit when making BigInt ranges.
+- I wouldn’t bother with `includes`.
+
+SFC: [Regarding issue #17](https://github.com/Jack-Works/proposal-Number.range/issues/17), when you have a Number.range(), does it return an iterator that has the next() method directly, so it's consumable once? Richard wrote that one way to think about Number.range() is that it’s an iterator factory - you call it and it gives you an iterator that’s consumable. The other model is that you call it and it gives you a Number.range first class object that’s not an iterator, but has a `[Symbol.iterator]` method that gives the iterator. The advantage of it returning an immutable is you can take it and use it in other places, e.g. with a NumberRangeFormatter or as an argument to a function. Generally, you may want to reuse it. I think both approaches have clear advantages and disadvantages.
 
 GCL: I think reuse via iterable as you’ve described it is actually a downside, because you end up having implicit reuse instead of say, passing around a function, where you call it each time and it’s explicit that you would get a fresh iterator each time. I think reuse is good but I don’t understand why you’d want it implicit.
 
@@ -192,6 +193,7 @@ RBN: I’m not willing to block stage 1, but I think we should consider explorin
 No other objections.
 
 ### Conclusion/Resolution
+
 - Number.range and BigInt.range advances to Stage 1.
 
 ## Introducing: `this` argument reflection functions for stage 1
@@ -255,7 +257,7 @@ JHD: That was regarding making sure we have a repository. Materials were not agr
 
 AKI: At least if there’s a repository we can get more information.
 
-SYG: I'm not sold on the motivation from last time, and it seems like the motivation remains the same from last time this was presented. The only difference I can tell is that the APIs are different. As far as I can see the motivation is for better error  handling when it’s used by user code. I think we can say something pretty narrow about function ???  I don't think we can use this in the way the proposal is motivated, which is for throwing better errors. Are we going to be mandating that something like this is provided for ?? methods? For other things? We can say something narrow like “this binding is in user code”, but that doesn't’ make sense for a method provided as a native thing on the platform. And if this were in the language, how would we adopt it to do what it’s designed to do? Would you need to monkey patch all platform code to check for this? I'm confused how this would actually be used. If it's only for solving user code, I'm not sure why you cannot check this in user code today.
+SYG: I'm not sold on the motivation from last time, and it seems like the motivation remains the same from last time this was presented. The only difference I can tell is that the APIs are different. As far as I can see the motivation is for better error handling when it’s used by user code. I think we can say something pretty narrow about function ??? I don't think we can use this in the way the proposal is motivated, which is for throwing better errors. Are we going to be mandating that something like this is provided for ?? methods? For other things? We can say something narrow like “this binding is in user code”, but that doesn't’ make sense for a method provided as a native thing on the platform. And if this were in the language, how would we adopt it to do what it’s designed to do? Would you need to monkey patch all platform code to check for this? I'm confused how this would actually be used. If it's only for solving user code, I'm not sure why you cannot check this in user code today.
 
 JHX: THe problem here is that currently we do not have the mechanism. THere’s no way frameworks and libraries can give the better error message, and not only that but to allow them to throw other errors in earlier stages. Currently it only triggers a reference error at runtime in a very late stage. For example, only when you click it and the code runs to the callsite, only then will it be a reference error. It's hard for users to find their bug in the first place. And about the platform and native things, I think it could also - it should be provided, this feature. Currently, the native APIs have the behavior, for example the constructors never expect a this argument. Arrow functions never expect this argument. No API tool exposes this information.
 
@@ -279,16 +281,15 @@ SYG: Happy to discuss offline.
 
 AKI: Use IRC to set up a time to clarify. I’ll save the queue.
 
-1: Reply: fundamentally undecidable
-Gus Caplan (@nodejs @tc39 @WebAssembly @OpenJS-Foundation)
+1: Reply: fundamentally undecidable Gus Caplan (@nodejs @tc39 @WebAssembly @OpenJS-Foundation)
 
-2: New Topic: function proxies are interesting
-Mark S. Miller (@Agoric )
+2: New Topic: function proxies are interesting Mark S. Miller (@Agoric )
 
 3: New Topic: `if (this !== undefined) throw 'did not expect this'`
 Gus Caplan (@nodejs @tc39 @WebAssembly @OpenJS-Foundation)
 
 ### Conclusion/Resolution
+
 - Not proposed for Stage 1, will discuss offline JHX/SYG
 
 ## Relax hashbang syntax for Stage 1
@@ -327,35 +328,31 @@ KM: If I had ???... before it was at the global scope
 AKI: We are at time and the queue is full. We can try to come back tomorrow, but I don’t think a 15 minute time box was enough.
 
 ### Conclusion/Resolution
+
 - Not proposed for stage advancement
 
 Remaining queue:
 1 New Topic: the context (an inline include, eg) is required information when authoring `test.js`
 Jordan Harband
 
-2 New Topic: I'm in favor of tolerating initial whitespace. But not other places
-Mark S. Miller (@Agoric )
+2 New Topic: I'm in favor of tolerating initial whitespace. But not other places Mark S. Miller (@Agoric )
 
 3 New Topic: why should we cater to simplistic/brittle code transform tools?
 Jordan Harband
 
-4 New Topic: Should not do this
-Waldemar Horwat
+4 New Topic: Should not do this Waldemar Horwat
 
-5 New Topic: We should not set a precedent that simple concatenation preserves semantics
-Shu-yu Guo (@google)
+5 New Topic: We should not set a precedent that simple concatenation preserves semantics Shu-yu Guo (@google)
 
 6 New Topic: Are there examples in other languages that don't use # for comments, but ignore hashbangs?
 Philip Chimento
 
-7 New Topic: There's already some precedent with `sourceURL` and `sourceMappingURL`, which only have an effect once
-Devin Rousso
+7 New Topic: There's already some precedent with `sourceURL` and `sourceMappingURL`, which only have an effect once Devin Rousso
 
 8 New Topic: Hashbang starting with a space is not a valid hashbang on Linux (and probably other UNIX systems)
 Mary Marchini (@Netflix)
 
-9 New Topic: Even simple ASCIIfiers need to understand JS semantics
-Justin Ridgewell (@google -> @ampproject )
+9 New Topic: Even simple ASCIIfiers need to understand JS semantics Justin Ridgewell (@google -> @ampproject )
 
 ## WeakRefs FinalizationRegistry API change
 
@@ -370,18 +367,18 @@ DE: Consensus on removing the FinalizationRegistry iterators?
 
 MM: There was some terminology about microtask checkpoints in the materials.
 
-DE: I've done my best to eliminate references to microtask checkpoints.  If there are any remaining, let's work offline to remove it.
+DE: I've done my best to eliminate references to microtask checkpoints. If there are any remaining, let's work offline to remove it.
 
 MM: OK, so the issue is not to remove it, but what is it you’re trying to explain? I don’t know the details of the web scheduling semantics and how that translates to JavaScript.
 
 DE: So, in the WeakRef proposal, I want to apologize for any layering errors, the spec doesn’t refer to microtask checkpoints, but the documentation does refer to the web embedding. In particular, the WeakRef spec deferst to the host in how to to handle the finalization callbacks.
-The way the web does it, and all the embedders such as Node.js, is that these don't interrupt a chain of Promise resolutions. Promise jobs are treated as higher priority than WeakRef cleanup jobs. The spec leaves it open to JS hosts to treat them at the same priority. My understanding is that Moddable wants to treat them at the same priority.  I don't see a problem with that.  But the web, it’s motivated by wanting to not allow observability of the GC at higher granularity to prevent compatibility issues.
+The way the web does it, and all the embedders such as Node.js, is that these don't interrupt a chain of Promise resolutions. Promise jobs are treated as higher priority than WeakRef cleanup jobs. The spec leaves it open to JS hosts to treat them at the same priority. My understanding is that Moddable wants to treat them at the same priority. I don't see a problem with that. But the web, it’s motivated by wanting to not allow observability of the GC at higher granularity to prevent compatibility issues.
 
-MM: So, I want to make sure that this particular invariance is preserved—the host given more freedom. The host cannot schedule a callback other than at a turn/job boundary.  It cannot do the callback in the middle of an existing job.
+MM: So, I want to make sure that this particular invariance is preserved—the host given more freedom. The host cannot schedule a callback other than at a turn/job boundary. It cannot do the callback in the middle of an existing job.
 
 DE: That’s correct. I don’t know if we’ve ever had language to prevent code from interrupting for any reason. It would be interesting to investigate adding such a language to the specification. When I read the spec, I always think in terms of that invariant being preserved.
 
-MM: So first of all, I agree that we should tighten the spec, but I think it's urgent on this one especially.  For this one, the callback happens spontaneously in a way that is unrelated with what the user code is doing at that moment.,  Because garbage collection happens interleaved at fine grain with what the user is doing.  So if the language in the spec is phrased such that the host has to choose the order, as jobs, they can only be scheduled among jobs. That language would not imply that the host can do it during a job.
+MM: So first of all, I agree that we should tighten the spec, but I think it's urgent on this one especially. For this one, the callback happens spontaneously in a way that is unrelated with what the user code is doing at that moment., Because garbage collection happens interleaved at fine grain with what the user is doing. So if the language in the spec is phrased such that the host has to choose the order, as jobs, they can only be scheduled among jobs. That language would not imply that the host can do it during a job.
 
 DE: The plan for this is to respect that JavaScript works in the framework that we have established. I think we should review that language offline and see if we need to add any clarification that jobs are not to run in parallel. Let’s follow up about this offline. I have not rebased WeakRefs to the new thing that has landed for Promises. As a part of the rebase we should handle that.
 
@@ -391,7 +388,7 @@ SYG: To your earlier concern about the current language in the spec text, specif
 
 MM: Ok. It does. If you don’t have a good answer to KM about motivating cleanupSome I can do that.
 
-YSV: The proposal to use an iterator comes from the Mozilla side.  We've been talking about this in depth.  We totally support moving this to a per-item callback.  We are waiting to hear back from one person, but this won’t change that, so we can go ahead with this.
+YSV: The proposal to use an iterator comes from the Mozilla side. We've been talking about this in depth. We totally support moving this to a per-item callback. We are waiting to hear back from one person, but this won’t change that, so we can go ahead with this.
 
 DE: Thank you.
 
@@ -399,7 +396,7 @@ SYG: The test262 PR does exist, if we have consensus on this it should be ready 
 
 KM: I was trying to figure out the use case for cleanupSome.
 
-MM: When we were first doing the WeakRef proposal, there were two use cases that needed cleanupSome, but we didn’t have cleanupSome. We invented cleanupSome for those two use cases: the two use cases are similar. One is long running WASM computations that never return to the event loop. The other is, in a worker, a long running JS computation that simply doesn’t use the JS event queue, instead some internal control structure. That might arise when the JS code is transpiled form some other language that doesn't have loop event loop semantics.  Any such long-running program would know based on its semantics where the safe points are.  It should be able to say, here are the safe points.
+MM: When we were first doing the WeakRef proposal, there were two use cases that needed cleanupSome, but we didn’t have cleanupSome. We invented cleanupSome for those two use cases: the two use cases are similar. One is long running WASM computations that never return to the event loop. The other is, in a worker, a long running JS computation that simply doesn’t use the JS event queue, instead some internal control structure. That might arise when the JS code is transpiled form some other language that doesn't have loop event loop semantics. Any such long-running program would know based on its semantics where the safe points are. It should be able to say, here are the safe points.
 
 DE: In JS workers as well as WASM threads, you can use SAB i.e WASM shared memory for computation that is long running And might communicate with shared memory with Atomics in other threads.
 
@@ -418,7 +415,7 @@ MM: An individual worker computation can be quite specialized. What are the func
 
 KM: The postMessage ones are already… you can't even initialize a shared memory without using postMessage first.
 
-DE: Once you initialize it and start the computation, then you could use this API.  I'm wondering how we should proceed from here.  You've raised this concern some time ago, and we've addressed it as the champions group.
+DE: Once you initialize it and start the computation, then you could use this API. I'm wondering how we should proceed from here. You've raised this concern some time ago, and we've addressed it as the champions group.
 
 KM: I’m very concerned about this API on the main thread for sure in the web. It feels like a big compatibility risk. I expect my thing to be cleaned up because I called cleanupSome after a GC. The main place you would care about this, at least on the web, but certainly other platforms, Where the main use case for this is probably things like "I have some giant existing code base which cares nothing about how to make a good ux on the web, and I want to just open a socket on that page and then draw something on a canvas on that page".
 I don’t want to enable APIs that enable that to be easier.
@@ -439,13 +436,13 @@ WH: It says that, but it also says that implementations must empty weakrefs in a
 
 DE: But that’s if they choose that larger set. They could also choose [that smaller set?]
 
-WH: Ok.  So the choice is that's the part that's missing from the wording.
+WH: Ok. So the choice is that's the part that's missing from the wording.
 
 DE: Right, so…
 
 SYG: Implementations do not have the obligation to choose the maximal set.
 
-DE: I'd like to follow up offline to refine the wording.  I don't understand exactly what.
+DE: I'd like to follow up offline to refine the wording. I don't understand exactly what.
 
 WH: I will file an issue on that.
 
@@ -453,11 +450,11 @@ DE: Perfect
 
 SYG: Can we come back to KM’s question on cleanupSome given that this has been stage 3 for a while, and we have made many late stage changes based on implementation feedback? For cleanupSome, the consensus is that in general we agree cleanupSome is useful. I hear some performance concerns that it might be abused to degrade main thread performance in a web setting. I think that concern is not something we should change about cleanupSome. Concretely I want to ask KM, because I would like to ship WeakREf soon to get real world feedback, do you feel strongly about cleanupSome to ask for a change in the API?
 
-KM: I'm torn on this.  On one hand, I think this is an API we may regret for compatibility reasons.  It's a concern as a historically smaller marketshare engine… Chrome does one thing, Safari does another, then you have to hack your website to clean up an object that's still live. (???)
+KM: I'm torn on this. On one hand, I think this is an API we may regret for compatibility reasons. It's a concern as a historically smaller marketshare engine… Chrome does one thing, Safari does another, then you have to hack your website to clean up an object that's still live. (???)
 
 SYG: It’s not my understanding that removing cleanupSome would have consensus. If you are asking for a change it would be asking for something on the main thread?
 
-KM: I haven't thought about that yet.  I should speak to the architecture people on WebKit about it.  I think they're currently unhappy with potential compatibility risks for the tradeoff of value proposition because  the main use case they envisioned were the things I pointed out.  That's why it came up so late.  But I don't have an answer for you right now.
+KM: I haven't thought about that yet. I should speak to the architecture people on WebKit about it. I think they're currently unhappy with potential compatibility risks for the tradeoff of value proposition because the main use case they envisioned were the things I pointed out. That's why it came up so late. But I don't have an answer for you right now.
 
 RPR: we’ve come to the end of the time box.
 
@@ -473,15 +470,12 @@ RPR: Is that the conclusion?
 
 DE: I’d say we have consensus to remove the cleanup iterators and pass values directly.
 
-
-1
-Clarifying Question: Cleanup some doesn't mean "please perform cleanup", it means "do you have anything I can clean"
+1 Clarifying Question: Cleanup some doesn't mean "please perform cleanup", it means "do you have anything I can clean"
 Mathieu Hofman (@stripe)
-2
-New Topic: Hosts can choose to have cleanuoSome be empty on main thread
-Mark S. Miller (@Agoric )
+2 New Topic: Hosts can choose to have cleanuoSome be empty on main thread Mark S. Miller (@Agoric )
 
 ### Conclusion/Resolution
+
 - consensus to remove FinalizationRegistry cleanup iterators and pass values directly
 - SYG will follow up with KM on cleanupSome before the end of this meeting ([link](https://github.com/tc39/notes/blob/master/meetings/2020-03/april-2.md#revisit-weakrefs-finalizationregistry-api-change)).
 
@@ -502,7 +496,7 @@ USA: Yes, it returns a new fresh date with a different Calendar at this time.
 
 USA, JWS: (returns to slides)
 
-MM: This is not a blocker; I'm curious.  With the operations being named things like "plus", I'm wondering: If we already had DE's operator overloading proposal in the language, would it make sense to have dates overload some arithmetic operators so you could express date arithmetic?
+MM: This is not a blocker; I'm curious. With the operations being named things like "plus", I'm wondering: If we already had DE's operator overloading proposal in the language, would it make sense to have dates overload some arithmetic operators so you could express date arithmetic?
 
 USA: I just wanted to point out that according to my understanding right now, operator overloading works when adding two objects of the same type.
 
@@ -550,10 +544,9 @@ DE: It's not like all the champions have the same point of view on this.
 
 SFC: I don’t mean to say all champions have the same point of view, I’m sorry for saying that. It’s a meta question. I encourage people to participate more on these Github threads, especially this one.
 
-----
+-----
 
 MBS: I’d like to update on the current plan for voting on the 2020 specification as well on the plan around surrogate pairs in regular expressions. We have the return of surrogate pairs in regular expression capture groups, it has 30 minutes available at the end of the day today, having talked to a few folks discussing this matter, it seems hopeful to reach consensus on this discussion. After that discussion, the plan is for the editor group to make a PDF of the spec that we would be voting on, and we have the vote on the agenda for tomorrow later in the day. If anyone has concerns about this specific plan of action please reach out to me or other chairs. I want to make sure we are all aware and can comment on it.
-
 
 ## Ergonomic brand checks for Private Fields for Stage 1
 
@@ -662,7 +655,7 @@ BFS: These have use cases without security concerns.
 
 SYG: For stage 1 that's perfectly sufficient.
 
-MM:  The Moddable implementation of Compartments is in a single Realm, so it does not have a reified Realms API, so Compartments really is independent of Realms.
+MM: The Moddable implementation of Compartments is in a single Realm, so it does not have a reified Realms API, so Compartments really is independent of Realms.
 
 MF: Yesterday, we were talking about host hooks in the import.meta discussion, and DE brought up a good point that we shouldn’t just directly expose the host hooks we have in the spec today.
 When we proceed with this proposal, we should actually intentionally design how we want to expose the functionality that the host hooks provide. I just wanted to make that suggestion.
@@ -696,7 +689,6 @@ GCL: I’m against the importNow thing. In reality hosts don’t do this sync bu
 MAR: My question is more on how we decide which hooks we’re going to have? Could we have hooks for promises, to help monitor async operations? V8 today has a hook for embedders to allow us to do this which provides amazing diagnostics. If we had that on JS it would be amazing. If we could have that in node environments it would be amazing for the language.
 
 BFS: I agree there is some historical complaint on the web side about exposing such a hook. We could reevaluate that if we go discuss it, but it would have to be a coordinated discussion about whether we want it in the language because it would be disabled in a number of environments.
-
 
 MAR: Sure but if it was less constrained on the compartment it would be a less contentious contentious thing?
 
@@ -733,7 +725,7 @@ GCL: I just wanted to be very careful because BFS said something about layering,
 
 BFS: The concern with layering is about what we would make to make an import map extension to ecma262. If we tried to remove it from ECMA262 it would be ??? for TC53 in such a way that it doesn’t ??? our use for promise values.
 
-SYG: This is not a stage 1 blocker, but as it moves forward I think the implementability of it is not entirely clear on a hook-by-hook basis. If the current implementation is implemented in such a way that it's not easy to invoke a host hook, then...  You are asking to make a bunch of things that are not observable now observable if you make compartments.
+SYG: This is not a stage 1 blocker, but as it moves forward I think the implementability of it is not entirely clear on a hook-by-hook basis. If the current implementation is implemented in such a way that it's not easy to invoke a host hook, then... You are asking to make a bunch of things that are not observable now observable if you make compartments.
 
 BFS: That’s not necessarily true. I think that’s true of this rough draft design. Some of these may actually be static values where we expose the ability to ??? at runtime.
 
@@ -760,7 +752,9 @@ SYG: I’d be happy to answer questions but I don’t have the cycles to proacti
 BFS: That’s perfect, thank you.
 
 ### Conclusion/Resolution
--  Consensus reached for Compartments to Stage 1.
+
+- Consensus reached for Compartments to Stage 1.
+
 ## Intl.NumberFormat v3 for Stage 1
 
 Presenter: Shane F. Carr (SFC)
@@ -787,7 +781,8 @@ AKI: I’m over here marveling on IRC because every time anything from Intl come
 RPR: No objections. You have stage 1.
 
 ### Conclusion/Resolution
--  Consensus reached for Intl.NumberFormat V3 for Stage 1.
+
+- Consensus reached for Intl.NumberFormat V3 for Stage 1.
 
 ## import.meta for Stage 4 ([continued from previous day](https://github.com/tc39/notes/blob/master/meetings/2020-03/march-31.md#importmeta-for-stage-4))
 
@@ -879,6 +874,7 @@ DRR: I just want to know because for our compiler, and we have ES versions we ca
 MBS: The chair team and the editor team have been talking about this process, and the hope would be after we get through this meeting and the 2020 spec we would make better documentation about this process to ensure that we have clear times and clear process about when the spec can be relied on. This has been tribal knowledge, and that’s part of why things were delayed this year, so we wanted to make sure that it’s clearly documented and followed with good intent in future iterations of the spec.
 
 DRR: Thanks.
+
 ### Conclusion/Resolution
 
 - Consensus to move import.meta to Stage 4, as is currently in the PR.
@@ -908,7 +904,7 @@ WH: I concur with KG’s choices. The tooling argument dominates. Symmetry also 
 
 MPC: While all of those examples are true, I think it's subjective that consistency within regexp is more important. Intuitively, at a base level, I would expect this thing to behave like an identifier. It is reasonable to expect that this `/(?<\u…\u.../>.)/` thing behaves like an identifier.
 
-WH: I stand by my position.  In the interest of time I don't want to digress to debating the relative importances of symmetries.  If we want to fix the symmetry between regexes, strings, and identifiers, we could expand identifier token escape syntax to allow surrogate pairs, but that would be a different proposal.
+WH: I stand by my position. In the interest of time I don't want to digress to debating the relative importances of symmetries. If we want to fix the symmetry between regexes, strings, and identifiers, we could expand identifier token escape syntax to allow surrogate pairs, but that would be a different proposal.
 
 KG: Before we get more into this particular topic, I don’t want to resolve the question of which kind of symmetry is more important. My hope is that the other arguments outweigh the symmetry goals.
 
@@ -952,15 +948,14 @@ BFS: I have a slight preference for allowing `/(?<\u{...}>./` because it seems l
 
 KG: Ok. I am leaning towards this is legal too. Unless anyone has strong feelings.
 
-
 RGN: Strong opinions against making it legal.
 
 SFC: I have preferences for allowing it, wearing my unicode hat.
 
 KG: I’m asking for consensus on making all of these [see ‘Open questions’ slide] legal, despite concerns from RGN.
 
-
 ### Conclusion/Resolution
+
 - Consensus that both kinds of escape sequences in both kinds of regular expression, as well as unescaped identifier characters even outside BMP, will be legal and will be included in the 2020 cut of the spec.
 - `/(?<\ud835\udc9c>.)/` will be legal
 - `/(?<\ud835\udc9c>.)/u` will be legal

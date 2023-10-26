@@ -1,38 +1,5 @@
-NOTICE: These meeting notes are to be kept private until after the review grace period, at which time they will be submitted to Ecma and published on https://github.com/tc39/notes. 
-DO NOT PUBLICIZE LINKS TO THIS DOCUMENT
-Short URL: https://mths.be/tc39day2 
-DO NOT APPEND TO THE END OF THIS DOCUMENT - THAT IS A RED ZONE RESERVED FOR THE AUTOMATED DICTATION SERVICE TO ADD TO
+
 This meeting has an accompanying comment-by-comment written record prepared by IR Broadcast Captioning and TC39 participants. The intention is to capture the various points of view of the committee members, which helps all members evolve proposals based on feedback received and understand the rationale of decisions taken. TC39 participants are encouraged to edit this transcript for accuracy (where the goal is to accurately reflect the intention of the point being made, rather than word-for-word transcription), and to delete comments of theirs which they do not want to be recorded (e.g., due to risk of misunderstanding, inclusion of personal information, or any other reason). Edits may be made during the meeting by editing the Google Doc as it is composed, or afterwards for a period of at least two weeks until the notes are published. If a participant makes a comment in the committee meeting and does not remove it from the notes, they are consenting for it to be published. Participants may ask in the future that their personal data be removed from the published notes.
-Cursor Park (feel free to add an animal):
-
-
-  🦊           🦔       🐄         🦥                 🦆    👣   🦍   🦉🐁  
-               🐘           🐾      🦒                 👣                    
-       🦅             🦒               🦔                    👣        ৵( °͜  °৵)     
-              🦠         🐣                   🐪              👣    🦖                 
-         🦆    🐍            🦄         🐷              🐜       👣            
-
-
-
-=== BEGIN AGENDA ITEM TEMPLATE ===
-
-## Topic
-Presenter: Firstname Lastname (FLE)
-
-- [proposal]()
-- [slides]()
-
-### Speaker's Summary of Key Points
-* List
-* of 
-* things
-
-### Conclusion
-* List
-* of 
-* things
-
-=== END AGENDA ITEM TEMPLATE ===
 
 
 

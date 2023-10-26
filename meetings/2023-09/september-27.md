@@ -194,7 +194,7 @@ someone wants to pick it up, we’re willing to volunteer support, but don’t h
 CP: Certainly, if anyone is available for helping on this, please reach out.
 
 DLM: So if the queue is empty, I’d like to ask for consensus on the demotion to Stage 2.
-### Speaker's Summary of Key Points
+### Summary of Key Points
 * ShadowRealms is a proposal at Stage 3 offering somewhat isolated contexts for JavaScript code to run in. ShadowRealms let JS execute in a fresh global context, including all of the ECMA-262 built-ins, as well as, optionally, APIs that the embedder provides. Prior to reaching Stage 3, the champions made a concrete proposal for which web APIs would be provided for ShadowRealms, and although this integration received high-level signoff from browsers, it did not come backed with thorough-enough web-platform-tests or a thorough audit of the implications of all of the APIs which it proposed adding. Mozilla has found this gap to mean that the proposal is not yet implementable, and the proposal has been at a stalemate for years since it reached this point, with the champions not yet filling in the gaps.
 * V8 and JSC agree that ShadowRealms should provide certain web APIs inside of ShadowRealms, so the host hook/html integration is a precondition for shipping. This implies that keeping the proposal at Stage 3 is not a viable solution.
 * For advancement back to Stage 3 we’ll look for explicit support from at least two implementations that the testing and list of APIs to be exposed to ShadowRealms are sufficient.
@@ -268,7 +268,7 @@ ABO: However, task attribution, the work that is currently done in Chromium to p
 DE: Right. It’s all about making a new node in the attribution tree for event. So `AsyncContext.Snapshot.prototype.run` should still be almost free, but `AsyncContext.Variable.prototype.run` has some costs that will be optimized.
 
 DLM: We’ve started evaluating this in terms of implementability in SpiderMonkey, and unfortunately that’s not ready for this meeting, but I hope the next time this comes up, we can provide our feedback in more detail.
-#### Summary
+### Summary
 
 * AsyncContext is an API enabling propagating variables across asynchronous control flows, almost like thread-local storage for JavaScript. It is useful for cases like tracking the current OpenTelemetry span ID, which would be impractical to pass around as a parameter everywhere.
 * The development of AsyncContext continues, working out details of the specification, prototyping in V8, developing tests and benchmarking.
@@ -278,7 +278,7 @@ DLM: We’ve started evaluating this in terms of implementability in SpiderMonke
 * The V8 SetContinuationPreservedEmbedderData API can change, and its existence should not be taken to mean that there is zero performance overhead for the mechanism underlying AsyncContext (there is some constant memory usage).
 * The champion group continues to investigate the appropriate AsyncContext inheritance for running HTML events and other callbacks.
 * Firefox is going to evaluate the implementability of AsyncContext.
-#### Conclusion
+### Conclusion
 
 AsyncContext remains at Stage 2; development will continue
 
@@ -315,8 +315,7 @@ JWK: But if you remove intrinsics, the old code will break.
 
 JHD: In what way?  You could still call the singular method and get it regardless. It’s just the 
 enumeration regard. That’s my understanding, at any rate. Is that it’s -- it would disappear from the iterator, but not stop being accessible from the singular 
-method. All intrinsics would still be accessible that way. But if that’s -- yeah, that’s my 
-understanding.
+method. All intrinsics would still be accessible that way. But that’s my understanding.
 
 SYG: Just clarifying, I didn’t understand the distinction. The distinction is there’s the 
 enumerator -- sorry, the iterator that enumerates all the hidden intrinsics or some set of 
@@ -391,7 +390,7 @@ certainly something we can still discuss.
 DLM: I take it that you’re no longer asking for Stage 2, but I wanted to echo DE’s point. We had a very difficult time reviewing this proposal in our internal review meeting because, you know, it wasn’t clear exactly what the two shapes or paths would be. And the README itself was a little bit difficult for us to follow in terms of motivation and that kind of thing, so I’d encourage you next time you bring in to committee to prepare a little presentation with that kind of information. Not trying to complain, but we review many proposals prior to a TC39, so making that job easier for us would be appreciated. Thank you.
 
 JHD: Thank you for the feedback.
-### Speaker's Summary of Key Points
+### Summary of Key Points
 * A new Reflect.getIntrinsic API is proposed which returns the original value of a built-in operation, before polyfilling. This proposal is motivated by enabling the authoring of high-integrity code.
 * To control the memory overhead, JHD presented an alternative, which includes *only* the APIs which are not reachable via properties from the global object.
 * This proposal is likely to have significant memory overhead for V8, making that team skeptical of it, possibly even with the “only hidden” mitigation.
@@ -575,7 +574,7 @@ MF: Yield an iterator. This is not promises.
 MF: Given the feedback, it sounds like it’s possible that we could ask for Stage 1. I would like to ask for Stage 1.
 
 +1 from WH, KG, DE, GCL, CHU; no objections
-### Speaker's Summary of Key Points
+### Summary of Key Points
 * Iterator sequencing refers to the “concatenation” of multiple iterators
 * Iterator sequencing is common and should be convenient and ergonomic
 * A survey of iterator sequencing possibilities shows a few patterns around naming and semantics in prior art which we can choose between
@@ -719,7 +718,7 @@ JWK: You just mentioned you need to check the shape. But I thought it’s just l
 
 SYG: You check the shape on the deduplication. If you want this registered behaviour to have the autocorrelation, you only want to auto correlate straight structs that in fact have the same shape and the same shape here means order and names of fields and thread localness of the prototype. 
 
-JWK: What if let’s say what if the shared struct instance is not registered and sent across different workers. For example, in slide 13, you received a shared object from another worker. And you set the prototype . . . is this page registered?  
+JWK: What if let’s say what if the shared struct instance is not registered and sent across different workers. For example, in slide 13, you received a shared object from another worker. And you set the prototype, is this page registered?  
 
 SYG: This P is not registered. No. 
 
@@ -800,15 +799,11 @@ You can't make a constructor, make some non registered shared struct instances, 
 RGN: You have loose things that happen to have the same shape, but don’t get the data attached because they were sent over before evaluation?  
 
 SYG: No. By the time you are able to create instances, you already know whether those instances – have a shape that is registered or not. You cannot express a program that has already created some non registered – instances with non registered heap and register their shape after the fact because there is no programmatic API to register a shape. It is a syntax thing
->> Syntax itself can be deferred by things like dynamic import eval
->> It is in the declaration that creates the constructor. How do you get instances to the same constructor
->> Instance that is created – if it had been evaluated – 
->> How did it get evaluated – if you triggered the same script with different contents?  
->> No. You had it coming over a post message. So the same shape – 
+Syntax itself can be deferred by things like dynamic import eval. It is in the declaration that creates the constructor. How do you get instances to the same constructor. Instance that is created if it had been evaluated. How did it get evaluated, if you triggered the same script with different contents? No. You had it coming over a post message. So the same shape. 
 
 SYG:  The source location thing. Those would just be uncorrelated. You can’t correlate them anymore. 
 
-RGN: Great. Okay. All right. We’re skeptical in general and the slides – content on GitHub looked like it had action at a distance. In which case we would be strongly opposed.
+RGN: Great. Okay. All right. We’re skeptical in general and the slides content on GitHub looked like it had action at a distance. In which case we would be strongly opposed.
 As for communication channel, that’s best taken off-line. But it is a concern and thing we look at as well
 
 SYG: We recognize it as a constraint. We would like to work with you to ensure you don’t oppose it. We need to strike the balance between D and non nonglobal communication channel and bundler concerns. Those are all known constraints going into here. I would like there to be a possible solution. But we recognize your concerns
@@ -838,7 +833,7 @@ SYG: You would love to see my TDZ talk later and see how things throw before the
 DE: It seems different, since it’s a property access rather than a variable read. 
 
 SYG: Thank you for your time
-### Speaker's Summary of Key Points
+### Summary of Key Points
 * Shared structs is a proposal for a limited form of JavaScript objects which can be shared between multiple JavaScript agents
 * Identified ability to attach behavior a crucial requirement for adoption of proposal, based on dev trial feedback from multiple partners
 * Presented solution to use thread-local prototypes + auto-correlation global registry by source position + syntax for defining shared struct classes
@@ -1116,12 +1111,12 @@ DE: I was a little surprised when I saw how large the syntax was, that the TypeS
 
 KG: Yeah. This is mostly a response to something DE said earlier about CSS and JavaScript 
 moving to not needing tools to author, but, like, the whole point of this proposal is that you 
-still need a tool. I -- I appreciate the goal of wanting to copy/paste stuff from your editor 
+still need a tool. I appreciate the goal of wanting to copy/paste stuff from your editor 
 into the console and run it. The goal of not wanting to have a tool seems like it’s obviously 
 out. So the question is just, like, given that you already have TypeScript running somewhere, 
 how much additional burden is it to have to specifically run a tool to strip types before 
 loading it into the browser as a file, because we could solve the console separately, and given 
-the -- like, amount of benefit that brings for the costs of not actually doing all of 
+the amount of benefit that brings for the costs of not actually doing all of 
 TypeScript because there will be these edge cases, the empirical prediction that we will end up 
 in a world where you don’t have to do that step I don’t know, I’m not convinced of that 
 prediction. Given the tradeoffs here.
@@ -1133,7 +1128,7 @@ assembling the build pipeline for every single one of those becomes not always t
 
 KG: Like, there’s two. Either you’re copy/pasting stuff out of you your editor or you’re 
 running files. I’m not aware of another way of running JavaScript. If you’re copy/pasting 
-stuff --
+stuff.
 
 DE: There’s a lot of ways of running files.
 
@@ -1265,14 +1260,14 @@ DE: My intention wasn’t to say that we wanted to be tool-free. There’s benef
 JWK: If your code is for browsers, you won’t ship thousands of files, then you must use bundlers. If you are on the server, you have Deno or ts-node. I don’t think running the code unmodified is really a problem. 
 ### Summary
 
-    - The champion group presented some more details about the progress of the type annotations proposal.
-    - The committee had significant concerns around the complexity of the grammar, and wondered whether it could be simpler.
-    - Committee members asked for more information about the motivation of the proposal, especially in understanding how this benefits developers given that separate type checking tools will still be needed.
+- The champion group presented some more details about the progress of the type annotations proposal.
+- The committee had significant concerns around the complexity of the grammar, and wondered whether it could be simpler.
+- Committee members asked for more information about the motivation of the proposal, especially in understanding how this benefits developers given that separate type checking tools will still be needed.
 ### Conclusion
 
-    - The proposal remains at Stage 1 and is expected to be discussed in future committee meetings, as well as in open community calls.
-    - Future investigation by the champion group will be around possible syntax simplifications.
-    - The champion group will think about the motivation and come back to the committee with potentially more information there
+- The proposal remains at Stage 1 and is expected to be discussed in future committee meetings, as well as in open community calls.
+- Future investigation by the champion group will be around possible syntax simplifications.
+- The champion group will think about the motivation and come back to the committee with potentially more information there
 ## Decimal: Stage 1 update and discussion
 
 Presenter: Jesse Alama
@@ -1364,9 +1359,9 @@ DE: We put libraries into the spec. We were talking about adding chains into the
 
 JHD: Sure. 
 
-DE: What do you mean…
+DE: What do you mean?
 
-JHD: I am trying to – to me, numbers are such a fundamental thing. That we shouldn’t be putting them in the language unless they can be maximally ergonomic and usable. In this form, I fail to see, I hope, what the benefit would be without ergonomics. Without being primitives and having operator overloading, I don’t see any ergonomic usage. 
+JHD: I am trying, numbers are such a fundamental thing. That we shouldn’t be putting them in the language unless they can be maximally ergonomic and usable. In this form, I fail to see, I hope, what the benefit would be without ergonomics. Without being primitives and having operator overloading, I don’t see any ergonomic usage. 
 
 JMN: Admittedly, these are less than ideal. Those (code samples) could be trimmed down quite a bit if these were literals and the operators there. You’re right. You would, I think it’s a bit of a negative way to put it to say that it embeds a standard library into the language. And I take DE’s point that itself is not invalid. Right?
 
@@ -1480,7 +1475,7 @@ CDA: We have less than 10 minutes left. JMN:, can you see the queue or as it was
 
 JMN: Yes. 
 
-CDA: You want to . . . prioritize any of the remaining topics or go to the next one?  
+CDA: You want to prioritize any of the remaining topics or go to the next one?  
 
 JMN:  Yes. Give me a moment to catch up. 
 
@@ -1524,7 +1519,7 @@ CDA: There is nothing else in the queue. We have 1 minute left. Any final though
 
 JMN: Yeah. We – I will give a summary.
 
-### Speaker's Summary of Key Points
+### Summary of Key Points
 * The champion gave an update about the current status of the proposal.
     * Decimal is based on IEEE 754 Decimal128 semantics, with an API based on a class and object instances, with no literal syntax.
     * This design is based on feedback from V8 and SpiderMonkey that they strongly disprefer operator support for decimals, which was reaffirmed during the meeting.
@@ -1605,7 +1600,7 @@ MF: Do we have consensus on Stage 1?
 USA: I think so. We only heard support.
 
 (several thumbs-ups in the room)
-### Speaker's Summary of Key Points
+### Summary of Key Points
 * Joint iteration is the ability to “zip” two iterators, possibly mapping over them at the same time.
 * This need comes up all the time, and is proposed as a quick follow-on to iterator helpers, based on a detailed cross-language comparison.
 ### Conclusion
@@ -1842,10 +1837,9 @@ over lexical bindings inside inner functions.
 
 MM: I think that – I think you can do better. I think I could do better. I think that the – when the variables at the very top of the block then if the function definition is hoisted but the function – there’s no use of the function name until after – you know, until after that variable is declared at the top of the block, I don’t see how it can escape before the variable is initialized.
 
-SYG: Yes, there is – there are sub cases here where we can do better. I don’t think that
-precludes that –
+SYG: Yes, there is, there are sub cases here where we can do better. I don’t think that
+precludes that.
 
-MM: I think if you –
 
 SYG: That cannot be – go ahead.
 
@@ -1910,12 +1904,12 @@ SYG: Thanks for your time. There’s no official thing I’m asking for here. Th
 
 [To be continued later in this meeting]
 ### Summary
-    * Years after ES6, let and const still commonly cause performance regressions vs var, and transpilers  do not implement TDZ. The result is that let and const are avoided in shipped JS code.
-    * Generally, if the committee cares about its features being adoptable, these sorts of 5+-year retrospectives will be important.
-    * SYG proposes treating some or all cases of TDZ as simply evaluating to undefined, as var does.
-    * Most of the committee agreed with the goal of ensuring that features like this are adoptable in practice, but there was no consensus on whether semantics changes to support that are needed.
+* Years after ES6, let and const still commonly cause performance regressions vs var, and transpilers  do not implement TDZ. The result is that let and const are avoided in shipped JS code.
+* Generally, if the committee cares about its features being adoptable, these sorts of 5+-year retrospectives will be important.
+* SYG proposes treating some or all cases of TDZ as simply evaluating to undefined, as var does.
+* Most of the committee agreed with the goal of ensuring that features like this are adoptable in practice, but there was no consensus on whether semantics changes to support that are needed.
 ### Conclusion
-    * A proposal may be formed on this topic in the future
+* A proposal may be formed on this topic in the future
 ​​## Stable Formatting for Stage 1
 
 Presenter: Eemeli Aro (EAO)
@@ -1975,7 +1969,7 @@ MF: I think I just don't fully understand solution 1 and I feel like I oppose so
 
 RGN: I mean, it’s also worth noting – if you look on the slide here, not all of this is about parsing formatted strings. You know, segmentation and collation, these are also domains where you might want stability but it doesn’t involve taking in a formatted string and outputting something that reads the parts of it.
 
-MF: For those ones I don’t understand how it is done in a language independent way. Maybe that needs to be explained. Do you have – can you clarify how that’s language independent?
+MF: For those ones I don’t understand how it is done in a language independent way. Maybe that needs to be explained. Can you clarify how that’s language independent?
 
 EAO: So, for example, I’m not deeply familiar myself with collator and segmenter, but what I understand indeed for segmentation in particular, the edge cases that are locale dependent are very, very, very specific. For the vast majority of cases and uses of tear segmenter you can apply an algorithm that will give you a good result without knowing the locale of the content that you’re processing.
 
@@ -2013,8 +2007,8 @@ USA: That is perfect. Exactly on time. Thank you everyone. We made a lot of time
 
 ### Summary
 
-    * Many JS programs rely on Intl algorithms maintaining stable output, but data in CLDR which backs these algorithms is not typically updated with such requirements in mind. This proposal adds a particular API which is guaranteed to give stable output.
-    * We do not consider any use case where this stable output is later processed into its components by a machine to be valid.
+* Many JS programs rely on Intl algorithms maintaining stable output, but data in CLDR which backs these algorithms is not typically updated with such requirements in mind. This proposal adds a particular API which is guaranteed to give stable output.
+* We do not consider any use case where this stable output is later processed into its components by a machine to be valid.
 ### Conclusion
 
-    * The proposal advances to Stage 1
+* The proposal advances to Stage 1

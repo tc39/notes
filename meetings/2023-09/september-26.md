@@ -1,4 +1,4 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      NOTICE: These meeting notes are to be kept private until after the review grace period, at which time they will be submitted to Ecma and published on https://github.com/tc39/notes. 
+NOTICE: These meeting notes are to be kept private until after the review grace period, at which time they will be submitted to Ecma and published on https://github.com/tc39/notes. 
 DO NOT PUBLICIZE LINKS TO THIS DOCUMENT
 Short URL: https://mths.be/tc39day1 
 DO NOT APPEND TO THE END OF THIS DOCUMENT – THAT IS A RED ZONE RESERVED FOR THE AUTOMATED DICTATION SERVICE TO ADD TO
@@ -75,7 +75,7 @@ You can find Abbreviations in delegates.txt
 | Ron Buckton          | RBN          | Microsoft         |
 | Kevin Gibbson        | KB           | F5                |
 
->> If you do want to get, like, a plastic card, you can get them either at the Ginza or Ueno 
+??: If you do want to get, like, a plastic card, you can get them either at the Ginza or Ueno 
 stations at the ticket office. You won’t be able to get them from the machines. But you show 
 your passport, you’ll be able to get them at the ticket office.
 
@@ -128,7 +128,7 @@ arrange this meeting, and then we also have, I apologize, I don’t remember the
 have been introduced yesterday. We have AV support team as well. So hopefully it should be a 
 great experience.
 
-RPR: We use TCQ as our agenda -- our main agenda driver, as well as also our way of list ordering 
+RPR: We use TCQ as our agenda, main agenda driver, as well as also our way of list ordering 
 the discussions. You can find this on the reflector posting. This is the main view when we 
 have a topic running, and you got those buttons there if you wish to contribute to the linear 
 discussion. So start off with normally your default, if you want to talk about the current 
@@ -247,7 +247,7 @@ invited expert, it’s to the end of the year, my intention is that we manage it
 
 SHN: The nominations as I mentioned, so the nominations are open. Any ECMA member and all of you 
 who represent a member can nominate a candidate. We are looking for nomination for the 
-president, vice-president, treasurer and looking for members from -- the ordinary members to be 
+president, vice-president, treasurer and looking for members from the ordinary members to be 
 part of the ExeCom. In order to do this, if you have ideas, for example, currently Daniel is 
 our vice-president, Daniel can run for another term. If you would like to nominate a different 
 candidate, do so. If you want to nominate Daniel, please do so. There are some deadlines that 
@@ -360,6 +360,7 @@ A list of the latest Ecma TC39 and GA documents was shared.  Status of the TC39 
    - ECMA-262 ECMAScript Language Specification
    - ECMA-404 The JSON Data Interchange Format
    - ECMA-419 ECMAScript® embedded systems API
+
 As noted above, the download and access statistics remain high, the newly approved versions already show continued interest with the standards documents.
 The next TC39, GA and ExeCom meeting date were noted.  It was highlighted that the 100th EcmaScript TC39 meeting is upcoming in February 2024, the first in-person meeting in 2024, to be hosted by ServiceNow in the US.  There will be celebratory activities to recognize this important milestone for the committee.
 There was a call for help: for any contacts regarding Evernote, acquired by Bending Spoons.  We want the participation from Bending Spoons to continue. 
@@ -368,8 +369,10 @@ Regarding the process suggestions for achieving a PDF version, it was agreed tha
 An alternate option discussed for the PDF version process could be a university project, but was not considered an ideal solution.
 With respect to the TC39 technical/meeting notes, Samina will discuss with Rob Palmer and Daniel Ehrenberg on the process which can be managed better.  Samina will work with Ashley Claymore to better understand.
 
-RPR: >> Nothing on the queue. I think we’re good. Thank you, Samina. 
+RPR: Nothing on the queue. I think we’re good. Thank you, Samina. 
+
 # ECMA262 Project Editors’ Reports
+
 Presenters: Kevin Gibbons and Michael Ficcara
 -[slides](https://docs.google.com/presentation/d/14EMR7dyp5Fe7bZITKNP9upeV4OGo-wwtzWbPsC4cvk0/edit#slide=id.gc6f73a04f_0_0)
 
@@ -424,8 +427,10 @@ breaking changes, but the integration is very nice now, so thank you.
 
 RGN: Thank you as well.
 
-### Summary/Conclusion
+### Summary
 
+
+### Conclusion
 
 
 ## ECMA-404 update
@@ -508,7 +513,7 @@ early the chip vendors engaged chrome and maybe also Firefox, I don’t actually
 terms of embargoed information beforehand, if the committee were dealing with specter on like a 
 speculation level without being privy to the embargoed information from chip vendors at the same time, I’m not sure how much that would have helped anyway.
 
-DE: Yeah, my point was more general than that.
+DE:  my point was more general than that.
 
 MLS: As far as Spectre, that’s really a hardware vulnerability. I’m not sure that TC39 or TG3 would be the right place for that. How do you see this being compared to the existing CVE process that certainly all the browser implementations of JavaScript already are very involved in?
 
@@ -523,8 +528,7 @@ I’m not aware of any construct in the language that would allow that to happen
 MLS: So do we know of any examples where the spec had what we consider a security error?  Not an 
 implementation that had a bug, but the spec had a security error?
 
-MF: Yes, there was at least one that we discussed in TG3. JHD, do you remember?  
-I’m not recalling off the top of my head.
+MF: Yes, there was at least one that we discussed in TG3. JHD, do you remember? I’m not recalling off the top of my head.
 
 JHD: Yeah, I don’t know off the top of my head either. I think one, a theme we’re having in 
 these TG3 discussions is trying to make sure we design around potential things as well, even if 
@@ -587,7 +591,8 @@ TC39-TG4, the new source maps task group, has continued to make good progress to
 ## Code of conduct updates
 Presenter: Jordan Harband
 
-JHD:. We have no incidents to report. There’s certainly things we keep an eye on. Please let us know if you have anything to report. And although we have closed the issue for a call for new members, we always would welcome new members. And more people to help. So please reach out, if you are interested. Thank you. 
+JHD:. We have no incidents to report. There’s certainly things we keep an eye on. Please let us know if you have anything to report. And although we have closed the issue for a call for new members, we always would welcome new members. And more people to help. So please reach out, if you are interested. Thank you.
+
 ## Normative updates to ECMA-402
 Presenter: Ben Allen
 
@@ -679,7 +684,7 @@ RPR: yes. Europeans have the worst TimeZone for this meeting. So thank you to ev
 ### Summary
 
 ### Conclusion
-    - Consensus on this normative change with explicit support from Dan Minor
+Consensus on this normative change with explicit support from Dan Minor
 ## Update GetSubstitution to match reality
 Presenter: RGN
 https://github.com/tc39/ecma262/pull/3157
@@ -855,7 +860,7 @@ Presenter: Jordan Harband (JHD)
 
 JHD: Just a status update. The array grouping proposal will be in chrome version 117, out this month. It may have already come out. I don’t know. It is implemented in serenity and es-shims. Firefox will ship in v119 in October. My expectation is at the next meeting, assuming no issues with the implementations, that we will be able to come back and ask for Stage 4. 
 
-#### Summary
+### Summary
 
 Array grouping is at Stage 3 and gradually shipping in browsers
 ## Array Buffer transfer update
@@ -881,7 +886,7 @@ RPR: All right. Is that all for this update?   Yeah, thank you.
 
 JHD: Thank you.
 
-#### Summary
+### Summary
 
 `ArrayBuffer.prototype.transfer` ad friends are at stage 3 and gradually shipping in browsers.
 ## Symbol predicates update
@@ -892,7 +897,7 @@ There remains one issue open, which is Shu’s question about the utility of the
 
 RBR: All right. Any questions for JHD on symbol predicates?  No questions?  Okay.
 
-#### Summary
+### Summary
 
 Symbol predicates remain at stage 1; still looking for more arguments for the isWellKnownSymbol predicate that would convince those with concerns.
 ## Pattern matching updates
@@ -908,10 +913,10 @@ JHD: Yes. We had hoped to be able to do that. But the champion group has gotten 
 
 RPR: All right. Any other questions on pattern matching?  No. None for now?  Dan, is it worth putting up notes?  Are there any topics we would benefit from going through the key points and just documenting what we have already done?  
 
-#### Summary
+### Summary
 Pattern matching has gained momentum again, but there are still some things to be solved in the group of champions and once those are settled, there will be a presentation about the changed proposal relying on implementer feedback.
 ## JSON.parse source text access update
-Presenter: RGN
+Presenter: Richard Gibson RGN
 
 - [proposal](https://github.com/tc39/proposal-json-parse-with-source)
 -[slides](https://docs.google.com/presentation/d/1pg1gnNeMIcAbwq-CdQE7vlSldlNZ5q2hC5OA-U8ScI8/edit?usp=sharing)
@@ -983,11 +988,11 @@ RGN: No. Thank you.
 
 CDA: All right.
 
-###  Summary of Key Points
+###  Summary
 The proposal is ready for implementation, and a test262 PR will be up this week.
 
 ### Conclusion
-    * Having not received implementer feedback to the contrary, open issues regarding design questions will be closed.
+Having not received implementer feedback to the contrary, open issues regarding design questions will be closed.
 
 ## Iterator helper web incompat
 Presenter: Shu-yu Guo (SYG)
@@ -1243,7 +1248,9 @@ CDA: Hearing no objections, okay.
 ### Summary of Key Points
 
 ### Conclusion
-    - We'll wait until the next meeting to see if Transcend can upgrade their customers. If so, Chrome will attempt to re-ship the proposal as-is. If not, we'll discuss options at that meeting.
+
+We'll wait until the next meeting to see if Transcend can upgrade their customers. If so, Chrome will attempt to re-ship the proposal as-is. If not, we'll discuss options at that meeting.
+
 ## Resizable buffers for Stage 4 
 Presenter: Shu-yu Guo (SYG)
 
@@ -1281,8 +1288,8 @@ SYG: This will be good. I think this will unblock the wasm integration side to g
 integrated into the JS WASM side because they don’t normally reference non-Stage 4 things. So 
 let’s get it merged into the PR and then, yeah, then WASEM can use it. All right. Thanks.
 ### Conclusion
-    - Consensus for Stage 4
-    - Once merged into ecma262, Wasm/JS integration will be unblocked
+Consensus for Stage 4
+Once merged into ecma262, Wasm/JS integration will be unblocked
 
 ## Stage 3 update of Intl Locale Info API
 Presenter: Frank Yung-Fong Tang (FYT)
@@ -1616,11 +1623,11 @@ CDA: There’s nothing else in the queue.
 KG: Okay. Well, I didn’t have anything to come to consensus on so I am done. Thanks very much. 
 
 ### Summary of Key Points
-    - There are a bunch of open questions we're working through.
-    - Please come participate on Github.
+There are a bunch of open questions we're working through.
+Please come participate on Github.
 
 ### Conclusion
-    - Work continues.
+Work continues.
 
 ## Throw Expressions for Stage 3
 
@@ -2001,8 +2008,8 @@ USA: Perfect. So that was all for this topic.
 
 ### Conclusion
 
-    - General approval for the proposal’s progress. 
-    - Some of the API details will need further discussion in an incubator call.
+- General approval for the proposal’s progress.
+- Some of the API details will need further discussion in an incubator call.
 ## RegExp.escape for stage 2
 Presenter: Jordan Harband (JHD)
 - [proposal](https://github.com/tc39/proposal-regex-escaping)
@@ -2054,10 +2061,11 @@ JHD: I’d like to ask for consensus for Stage 2 for `RegExp.escape`
 
 USA: Nobody opposes. You have consensus. Congratulations.
 ### Summary
-    * Based on KG’s analysis of what escapes are necessary for RegExps, in the most conservative, context-insensitive way, JHD proposes adding a simple `RegExp.escape` function.
-    * A key concern is whether it is sufficiently future-proof to do only this fixed kind of escaping. KG and JHD argued that it was sufficient, as we should avoid adding new tokens that would not fit within this scheme anyway.
+* Based on KG’s analysis of what escapes are necessary for RegExps, in the most conservative, context-insensitive way, JHD proposes adding a simple `RegExp.escape` function.
+* A key concern is whether it is sufficiently future-proof to do only this fixed kind of escaping. KG and JHD argued that it was sufficient, as we should avoid adding new tokens that would not fit within this scheme anyway.
+
 ### Conclusion
-    * `RegExp.escape` reaches Stage 2
+* `RegExp.escape` reaches Stage 2
 ## Reviving export default from; for stage 2? (JHD)
 Presenter: Jordan Harband (JHD)
 
@@ -2514,9 +2522,11 @@ I don’t think consensus is never doing something is like really is useful for 
 
 MLS [on queue]: Agree with NRO
 ### Summary
-    - Some aspects of the TC39 process need to be clarified.
+- Some aspects of the TC39 process need to be clarified.
+
 ### Conclusion
-    - Symbol.thenable is withdrawn.
+- Symbol.thenable is withdrawn.
+
 ## Approval of minutes
 
 SHN: We may not have approved the minutes of the last TC39 meeting.

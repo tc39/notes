@@ -210,16 +210,16 @@ it’s not that one is, you know, sadly out of date.  These things are co-existi
 DE: Okay, thanks for explaining.  Did you give a concrete example of a use case that doesn’t 
 match the semantics in this proposal?  Just because I’m new to this area, I don’t know which flags end up being important.
 
-PHE: Right.  The problem is that -- I mean, you can -- as a one-shot, you could eventually 
+PHE: Right.  The problem is that, you can as a one-shot, you could eventually 
 support anything by having enough options in the options bag. That’s for sure 
 the case.  But what is being put forward by KG and LCA is that one could implement 
-streaming using the one shot, and that’s simply not the case, because --
+streaming using the one shot, and that’s simply not the case, because
 
 DE: Peter, I’m asking a more basic question.  Given that this proposal doesn’t include all the options in the world, like, what’s an example of an option that’s missing?  Leaving aside streaming, just the one shot API, you said that there is more modes that get added over time, presumably there’s some missing feature that would just be useful now.  So I’d like an example of that, because I don’t understand the area thoroughly.
 
-PHE: Yeah, I guess -- sorry, I didn’t come prepared to answer that precise a question.
+PHE: Yeah, sorry, I didn’t come prepared to answer that precise a question.
 
-KG: I can -- maybe I can give some illustration of the kinds of options.  The ones that I am 
+KG: Maybe I can give some illustration of the kinds of options.  The ones that I am 
 aware of - one of the ways in which Base64 encoders and decoders differ is the choice of 
 alphabet, specifically whether you’re using the web-safe variant or not.  Then there’s the handling 
 of whitespace, as PHE mentioned, the mime base64 spec says things about white space has to 
@@ -566,19 +566,19 @@ that. I genuinely do not understand what the objection to advancing that item is
 
 KG: There’s just an update to say, we have the GitHub comment from PHE that if in fact the one-shot APIs are sufficient to implement streaming with reasonable efficiency and without future compatibility concerns, he will withdraw his objection. So I am intending to work towards demonstrating that and flushing out the spec text and writing up with all the ROCs and labour and so on. I believe it is possible to do a streaming implementation that is fine. So conditional on that. I will come back later, if that is not going to satisfy anyone else in the room, please let me know before I do all of this work. Thanks very much.    
 ### Summary
-    - KG raised the question, once again: Should the ArrayBuffer base64 proposal have built-in support for streaming?
-    - The committee generally agreed that the single-shot API is quite useful and should become part of the JS standard
-    - PHE raised additional concerns about other options or flags being relevant to base64, but neither he nor KG were aware of any missing details. They will research this before the next meeting.
-    - DLM would prefer including only the single-shot API because the iteration of the streaming API shows it needs more time to bake
-    - DE expects the streaming API to be significantly less useful than the single-shot one, but is OK with or without adding it, since it doesn’t add much complexity.
-    - LCA opposed the streaming API because it lacks the optimize-ability of HTML streams by forcing all data to go through JS.
-    - WH opposed the streaming API because it is currently designed in a confusing way
-    - PHE argued that streaming was essential for embedded platforms, and this proposal should not advance without it.
-    - SYG and KG remarked that, if this is blocked in TC39, it will be standardized in WHATWG instead.
+- KG raised the question, once again: Should the ArrayBuffer base64 proposal have built-in support for streaming?
+- The committee generally agreed that the single-shot API is quite useful and should become part of the JS standard
+- PHE raised additional concerns about other options or flags being relevant to base64, but neither he nor KG were aware of any missing details. They will research this before the next meeting.
+- DLM would prefer including only the single-shot API because the iteration of the streaming API shows it needs more time to bake
+- DE expects the streaming API to be significantly less useful than the single-shot one, but is OK with or without adding it, since it doesn’t add much complexity.
+- LCA opposed the streaming API because it lacks the optimize-ability of HTML streams by forcing all data to go through JS.
+- WH opposed the streaming API because it is currently designed in a confusing way
+- PHE argued that streaming was essential for embedded platforms, and this proposal should not advance without it.
+- SYG and KG remarked that, if this is blocked in TC39, it will be standardized in WHATWG instead.
 ### Conclusion
-    - PHE blocked the proposal from advancing to Stage 3 because, in embedded platforms such as Moddable, some use cases require a streaming approach to base64 encoding, and this proposal does not provide that built-in
-    - The appropriateness of this block was contested by multiple committee members.
-    - Further discussion in a future meeting of TC39 is expected given the follow-on in https://github.com/tc39/proposal-arraybuffer-base64/issues/13
+- PHE blocked the proposal from advancing to Stage 3 because, in embedded platforms such as Moddable, some use cases require a streaming approach to base64 encoding, and this proposal does not provide that built-in
+- The appropriateness of this block was contested by multiple committee members.
+- Further discussion in a future meeting of TC39 is expected given the follow-on in https://github.com/tc39/proposal-arraybuffer-base64/issues/13
 
 ## Negated in and instanceof operators for Stage 1
 Presenter: Pablo Gorostiaga Belio (PGO)
@@ -731,26 +731,26 @@ WH: My comment was incorrect.
 CDA: I am looking for people to explicitly support this for Stage 1 for consensus.  
 
 Explicit support for stage 1 from:
-JWK
-JRL
-CZW
-Hax
-JHD
-DLM
-DRO
-RKG
-DE
-EAO
+JWK, 
+JRL,
+CZW,
+Hax,
+JHD,
+DLM,
+DRO,
+RKG,
+DE,
+EAO,
 
 ### Speaker's Summary of Key Points
-    * Proposal was presented for Stage 1
-    * This proposal adds `!in` and `!instanceof` operators to avoid the confusion of an extra set of parentheses in this common case
-    * Split preference between `!` and `not`. 
-    * Some committee members argued that the syntax should use `not` instead of `!`, for an analogy with pattern matching
-    * It was pointed out that `!` could cause compatibility issues with TypeScript’s non-null assertion, and would be difficult to address from TypeScript’s side.
-    * DRR expressed skepticism about the value of adding such an operator
+* Proposal was presented for Stage 1
+* This proposal adds `!in` and `!instanceof` operators to avoid the confusion of an extra set of parentheses in this common case
+* Split preference between `!` and `not`. 
+* Some committee members argued that the syntax should use `not` instead of `!`, for an analogy with pattern matching
+* It was pointed out that `!` could cause compatibility issues with TypeScript’s non-null assertion, and would be difficult to address from TypeScript’s side.
+* DRR expressed skepticism about the value of adding such an operator
 ### Conclusion
-    * Proposal achieves Stage 1 with widespread committee support
+* Proposal achieves Stage 1 with widespread committee support
 
 
 ## Locale Extensions for Stage 1
@@ -960,7 +960,7 @@ DE: +1
 
 CDA: Support from SFC. And from DE and sounded like no objections but last call for any objections. Okay. You have Stage 1. Congratulations.  
 ### Summary
-    - To 
+- To 
 
 ### Conclusion
 
@@ -1040,13 +1040,13 @@ DE: I feel like we have consensus on withdrawing the proposal.
 CDA: Okay, folks. Any objections to withdrawing cleanupSome? All right.  3, 2, 1.  Enjoy lunch.
 
 ### Summary
-    - The FinalizationRegistry.prototype.cleanupSome API was created to enable long Wasm tasks to observe garbage collection without yielding to the web’s event loop. 
-    - This need is now satisfied by Wasm JSPI, and browsers are not pushing to ship this API right now.
-    - Given a shared goal in the committee on minimizing observability of garbage collection and avoiding long tasks, this proposal is withdrawn.
-    - The committee was in complete agreement, and discussion was just around clarifications of what that means.
+- The FinalizationRegistry.prototype.cleanupSome API was created to enable long Wasm tasks to observe garbage collection without yielding to the web’s event loop. 
+- This need is now satisfied by Wasm JSPI, and browsers are not pushing to ship this API right now.
+- Given a shared goal in the committee on minimizing observability of garbage collection and avoiding long tasks, this proposal is withdrawn.
+- The committee was in complete agreement, and discussion was just around clarifications of what that means.
 ### Conclusion
 
-    - cleanupSome is withdrawn
+- cleanupSome is withdrawn
 ## Stop coercing things pt 2
 
 Presenter: Kevin Gibbons (KG)
@@ -1890,11 +1890,10 @@ JHD: At one point in the past there were names.
 
 CDA: It’s in the – sorry.  I am going to interrupt because somebody posted https://github.com/tc39/process-document/pull/31 in the delegates room in Matrix. The names were: strawperson, proposal, draft, candidate, and finished.
 
-JHD?: Thank you. Yes, they were there and removed from the process document 2 or 3 years ago.  I stamped the PR, apparently. The names used to be there and we removed them because nobody uses them.  
+JHD: Thank you. Yes, they were there and removed from the process document 2 or 3 years ago.  I stamped the PR, apparently. The names used to be there and we removed them because nobody uses them.  
 
->> It does seem like the names were not the kinds of names that I am listing here.  The names I am listing here are supposed to be self-descriptive, whereas the names you can’t really figure out, what this stages meant.  
->> Fair
->> Just from the name.  There’s the slight difference.  
+It does seem like the names were not the kinds of names that I am listing here.  The names I am listing here are supposed to be self-descriptive, whereas the names you can’t really figure out, what this stages meant.  
+Fair. Just from the name.  There’s the slight difference.  
 
 JHD: I think either way my point stands. I am fine adding names, if we like. People will continue to refer by number, and it seems prudent to find a new number.
 
@@ -1971,13 +1970,13 @@ JHD: The issue here is and this is something I know you personally differ with m
 
 JHD: It’s okay to disagree with that, you would like to believe they shouldn’t think that. That’s a discussion we don’t need to have today. But objectively, they do. They have already learned that. We will not teach them that something different is the case. And so if stage 3 is there in any way, my belief is that it will signal you can use this - because Stage 3 already signals that.
 
-MLS: Less say we call it 3A.  There’s no limitation they can use.  So . . .  
+MLS: Lets say we call it 3A.  There’s no limitation they can use.
 
 JHD: 3A feels like a subset of 3. I can do the same thing as Stage 3, I can use it
 
 MLS: You can’t because there’s no implementation
 
-DE: You can through polyfills and transpilers and engines that ship things before Stage 4.  Such as – 
+DE: You can through polyfills and transpilers and engines that ship things before Stage 4.  Such as 
 
 DE: [inaudible]
 
@@ -2025,9 +2024,9 @@ EAO: Given we have gone over with some objecting to any references ToNumber 2 an
 
 MF: First, Stage E sounds like Stage 3.  Sorry.  Second, if we are going to be using names, use a descriptive name.  Most people will not consider its numeric value.  They're going to consider it to be a letter and it may as well be a word which has self-descriptive properties.  It’s no better than the alternatives.  No, we should not do that.  
 
-RPR: Shane?  We have got a few agreements with EAO from Michael Ficarra, from SFC, from William.  And then – 
->> To clarify there was no agreement with Michael Ficarra there, but from the others there.  
->> Sorry.  Sorry.
+RPR: Shane?  We have got a few agreements with EAO from Michael Ficarra, from SFC, from William.  And then 
+To clarify there was no agreement with Michael Ficarra there, but from the others there.  
+Sorry.
 RPR: There was an yes to the objection.  Sorry.  Sorry.
 CDA?
 

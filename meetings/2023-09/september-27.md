@@ -825,7 +825,7 @@ DE: We held a community call on September 20th and got a bunch of interesting fe
 DE: The ongoing technical work is around the grammar: there is nothing to do with runtime semantics because it’s type erasure! It’s just as if they were comments. We’re studying the implications of the flexible grammar. WH gave some feedback about the "token soup" approach, where in the context of a type (e.g. after a `:` sometimes) you could just have any “soup of tokens” within those parentheses/brackets, matching the nesting, and that would be treated as part of the type. We’ve been identifying and fixing technical problems with the grammar. There are some ambiguities raised previously, some more ambiguities that we found later. And we’re making progress on a more concrete grammar variant.
 
 NRO: Some major things were, for example, type parameters in function calls, because TS uses this `f<T>()` operator that, like, just is very much ambiguous with the javascript syntax 
-due of comparison operators. And a solution to the proposal is probably going to use `f::<T>()`. This is not necessary in every case, such as in functional declarations, but it’s necessary in some cases in function calls, in some cases like arrow function expressions it might be needed. We’re still 
+due of comparison operators. And a solution to the proposal is probably going to use `f::<T>()`. This is not necessary in every case, such as in function declarations, but it’s necessary in some cases in function calls, in some cases like arrow function expressions it might be needed. We’re still 
 going through all the possible cases to see where we can avoid changing the operator when it’s 
 not necessary. That was an example of a solution for an ambiguity. There are other examples where we might likely need to change the syntax going on or introduce more cover grammars. We know that cover grammars are not ideal, so one goal is to try to keep the grammar as simple as possible. 
 
@@ -868,18 +868,18 @@ WH: The more basic question is why are we trying to create something which
 is different from both ECMAScript and TypeScript.
 
 DE: By definition, this would be ECMAScript. That wouldn’t be a separate mode. We’re not 
-proposal a different top level syntactic goal. Maybe DRR can clarify the relationship between the results of this proposal and TypeScript.
+proposing a different top level syntactic goal. Maybe DRR can clarify the relationship between the results of this proposal and TypeScript.
 
 WH: Well, not quite — this would not be ECMAScript because ECMAScript does not 
 define any semantics of this.
 
-DE: Yeah, just like ECMAScript doesn’t define semantics of comments. We’re allowed to add more syntax that doesn’t have runtime semantics. This is to not to add a new top level goal. Do you think that’s a bad idea, and if so, why?
+DE: Yes, just like ECMAScript doesn’t define the semantics of comments. We’re allowed to add more syntax that doesn’t have runtime semantics. This is to not to add a new top level goal. Do you think that’s a bad idea, and if so, why?
 
 WH: I am uncomfortable with being put on the spot here. I hadn’t added myself to the queue.
 
 MLS: I’m trying to figure out what the use case is, we’re going to delete them away, we’re going 
 to erase them. If tooling is going to use it, can’t the tooling delete the type annotations 
-before -- just like what we’re doing, but with Flow and TypeScript and other things do right 
+before -- just like what we’re doing, but what Flow and TypeScript and other things do right 
 now?  I just don’t see why we want to parse this. We’re going to increase the payload size and 
 the parsing time. And I don’t understand that the devs or engines get out of it.
 
@@ -894,12 +894,12 @@ preprocessing step. The work around that TypeScript has done is to actually pars
 understand and give error messages in violation of types in jsdoc comments. We try to do a 
 good job there, but it’s not as ergonomic and it’s kind of a pain in a lot of cases, and it 
 sure would be nice if there were more first class syntaxes to express some of the things that 
-you might want to do, right, to express the types that you have, to express that something not-null, things along those lines. So it becomes very cumbersome. Now, the question of can’t the 
-tools just do this is a valid perspective.
+you might want to do, right, to express the types that you have, to express that something not-null, things along those lines. So it becomes very cumbersome. Now, the question of "can’t the 
+tools just do this?" is a valid perspective.
 
 MLS: They’re doing it now, right?
 
-DRR: Yeah, they are, they are, right?  But, you know, like I said, there a gap in certain runtimes. Node doesn’t have that built in. You could say Node could build it in, but then the browsers don’t have it built in and then you could say a dev tool built into the browser could do, that but there’s still always this lit extra little gap, right?  So if there are ways to alleviate this more and further, then we can also talk about that as alternatives. But as a whole, we’ve also seen that being able to have design-time syntax is extremely valuable and could just make the overall barrier entry for new jobs for developers a lot lower, a lot more approachable. So that’s what we’re trying to explore. And then whenever we bring this to committee, we are interested in hearing, you know, about that, you know, perspective, if it’s valid, if the tools currently serve the needs correctly, things like that. But we also do want to be conscious of the fact that tooling has grown quite a bit in the last few years. Maybe are we’re seeing consolidation and you have a linter and type checker and that and that, can we simplify it a little bit. That’s one of things that we’re hoping to see here.
+DRR: Yeah, they are, they are, right?  But, you know, like I said, there is a gap in certain runtimes. Node doesn’t have that built in. You could say Node could build it in, but then the browsers don’t have it built in and then you could say a dev tool built into the browser could do, that but there’s still always this lit extra little gap, right?  So if there are ways to alleviate this more and further, then we can also talk about that as alternatives. But as a whole, we’ve also seen that being able to have design-time syntax is extremely valuable and could just make the overall barrier entry for new jobs for developers a lot lower, a lot more approachable. So that’s what we’re trying to explore. And then whenever we bring this to committee, we are interested in hearing, you know, about that, you know, perspective, if it’s valid, if the tools currently serve the needs correctly, things like that. But we also do want to be conscious of the fact that tooling has grown quite a bit in the last few years. Maybe we’re seeing consolidation and you have a linter and type checker and that and that, can we simplify it a little bit. That’s one of things that we’re hoping to see here.
 
 MLS: But let’s suppose somebody uses a console or they -- you know, they have a local development 
 environment where they’re -- they have a type annotation. They’ll get no benefit because 
@@ -927,7 +927,7 @@ working through more details of the gaps with flow in the grammar in the reposit
 
 MLS: I registered my concerns.
 
-TAB: Just wanted to say my support for runtime valid syntax. Being able to run the code locally without requiring the build step cycle is extremely valuable for just usability. It’s no different than you’re going to ship a minfied version and you’re going to write your code with nice white space. This is essentially the same deal there. It would be very annoying if it was required that you executed only minifiedJavaScript. So no comment on the exact syntax we’re doing, but on the idea of runtime valid type stuff, it’s very, very convenient for authoring.
+TAB: Just wanted to say my support for runtime valid syntax. Being able to run the code locally without requiring the build step cycle is extremely valuable for just usability. It’s no different than when you’re going to ship a minified version and you’re going to write your code with nice white space. This is essentially the same deal there. It would be very annoying if it was required that you executed only minified JavaScript. So no comment on the exact syntax we’re doing, but on the idea of runtime valid type stuff, it’s very, very convenient for authoring.
 
 MLS: But minification is a transformation from an ECMAScript compliant code to an ECMAScript 
 compliant code. So I don’t think that’s a valid argument.
@@ -935,8 +935,8 @@ compliant code. So I don’t think that’s a valid argument.
 TAB: That’s exactly what’s going on here with purely erasure semantics for the types. You start 
 from valid code to exactly identical runtime behavior valid code. It’s just shorter.
 
-DE: The idea of the proposal is that we would define types as part of the ECMAScript-compliant standard. We’re not defining a new TypeScript or something like that. I want to mention something that 
-TAB and I had discussed recently. JS and CSS are having this parallel evolution, whereas as of five years ago, ten years ago, had to do so much via tooling. Tooling is still very useful for both languages but not essential as far as the authoring experience goes. Increasingly, it’s not essential, you know, it’s still essential for CSS for scopes, for JavaScript for types, but now we’re working on this. Instead, tooling can be more about optimization, more about checking, and less about adding tons of syntax.
+DE: The idea of the proposal is that we would define type syntax as part of the ECMAScript-compliant standard. We’re not defining a new TypeScript or something like that. I want to mention something that 
+TAB and I had discussed recently. JS and CSS are having this parallel evolution. As of five years ago, ten years ago, they had to do so much via tooling. Tooling is still very useful for both languages but not essential as far as the authoring experience goes. Increasingly it’s not essential. It’s still essential for CSS for scopes, for JavaScript for types, but now we’re working on this. Instead, tooling can be more about optimization, more about checking, and less about adding tons of syntax.
 
 DRR: it’s interesting to hear a lot of different perspectives on ECMAScript. We’re trying to bring things into ECMAScript. I don’t quite understand where a lot of the conversation is around, like, the standard thing versus the non-standard thing. This is a Stage 1 proposal, right, and we’re trying to see whether we can bring something into ECMAScript and make it part of the standard. Let’s all keep that in mind.
 

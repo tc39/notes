@@ -151,8 +151,7 @@ USA: All right. Thank you to our secretaries. That’s all for this item.
 
 ### Summary
 
-The slides were reviewed, and suggested to read the documents of interest as noted in the Annex.
-Congratulations: Standards approved by GA 27 June and posted on website:
+The slides were reviewed, and suggested to read the documents of interest as noted in the Annex. Congratulations: Standards approved by GA 27 June and posted on website:
 
 - ECMA-262 14th edition – ECMAScript® 2023 Language Specification
 - ECMA-402 10th edition – ECMAScript® 2023 Internationalization API specification
@@ -311,8 +310,7 @@ Four PRs needing consensus were presented based on TG2 work and findings.
 
 Consensus on #709, #768, #786 and intl-numberformat-v3#130.
 
-TC39 Plenary decided the following:
-Consensus on #709, #768, #786 and intl-numberformat-v3#130.
+TC39 Plenary decided the following: Consensus on #709, #768, #786 and intl-numberformat-v3#130.
 
 '#709': when we pass an options object to the DateTimeFormat constructor, the property reads are user-visible yet irregular. This PR makes it so every property is read only once.
 

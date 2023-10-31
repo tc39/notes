@@ -41,10 +41,7 @@ USA: Next up is something very important, our IPR policy. Please remember that t
 
 CDA: Well, just a reminder on the last item that we’ve been asking folks to -- at the end of presentations to do a quick summary in the notes. That’s been very helpful. And it’s kind of on all us to remember to do that. Sometimes we forget. So please speak up, you know, use point of order if we haven’t addressed it and make sure we’re doing the end of presentation summaries.
 
-DE: I also want to note that these notes are not intended to contain personal information, and they’re available to be edited now or later in the Google Docs,
-so everyone in the committee has access to those. If you feel like a comment of yours has been inaccurately described or want to rephrase it to make it more clear, you’re really encouraged to do so.
-And further, any information deleted, you can do so yourself or you can ask the chairs or the secretary to do so. So there will be a written notice of this posted as well.
-There already has been a notice posted, so you can just refer to that.
+DE: I also want to note that these notes are not intended to contain personal information, and they’re available to be edited now or later in the Google Docs, so everyone in the committee has access to those. If you feel like a comment of yours has been inaccurately described or want to rephrase it to make it more clear, you’re really encouraged to do so. And further, any information deleted, you can do so yourself or you can ask the chairs or the secretary to do so. So there will be a written notice of this posted as well. There already has been a notice posted, so you can just refer to that.
 
 USA: Moving on, let us go through our housekeeping. So, okay, the approval of last meeting’s minute and adoption of the current agenda. Let’s spend a few seconds to see if anybody has any objections. Please speak up if you have any objections with the last meeting’s minutes, which should have been published, as well as the current agenda for this meeting.
 
@@ -96,15 +93,13 @@ USA: Thank you very much, and we appreciate it.
 
 SHN: Thank you.
 
-USA: All right. Since there is nothing else in the queue, I suppose we can move on to the next item,
-which is 262 status updates..
+USA: All right. Since there is nothing else in the queue, I suppose we can move on to the next item, which is 262 status updates..
 
 ## ECMA-262 Status Updates
 
 Presenter: Kevin Gibbons (KG)
 
-KG: Okay, this will be an extremely brief update. There were no editorial changes and no normative changes. We have the same list of upcoming and planned work. Also, the spec was cut last meeting.
-There will be a formal vote later and not as part of this presentation. That’s it. Thanks.
+KG: Okay, this will be an extremely brief update. There were no editorial changes and no normative changes. We have the same list of upcoming and planned work. Also, the spec was cut last meeting. There will be a formal vote later and not as part of this presentation. That’s it. Thanks.
 
 KG: We did do a bunch of small editorial tweaks. It’s not like we just stopped working for last two months. It’s just that not much was particularly worth calling to the attention of the delegates.
 
@@ -261,7 +256,8 @@ DE: If this makes sense, I will review it briefly, thanks. This is a good exampl
 CDA: There is also a +1 from JHD.
 
 USA: And that is it. So I think you have a lot of support. Would you like to conclude?
-MF : No I think that is all, thank you everyone.
+
+MF: No I think that is all, thank you everyone.
 
 USA: I guess we can spend a couple of minutes summarizing. How do we do this, and pull up the notes and do it collaboratively or?
 
@@ -289,8 +285,7 @@ Presenter: Micheal Ficarra (MF)
 
 MF: This is the entire text for the well-formed strings proposal. The proposal adds isWellFormed and toWellFormed. We did not iterate on this too much since this was uncontroversial through its whole life.
 
-MF: As far as implementation status we have two shipping, Safari and Chrome since March,
-Firefox has recently implemented this proposal, and we have polyfills in core-js and also these methods are polyfilled individually.
+MF: As far as implementation status we have two shipping, Safari and Chrome since March, Firefox has recently implemented this proposal, and we have polyfills in core-js and also these methods are polyfilled individually.
 
 MF: We have tests from JHD, he wrote tests a while back and they were merged a while back. And we have a PR for 262 that has been approved by the other editors. So in summary, we have I believe met all criteria for stage 4. And that is all for stage 4.
 
@@ -612,8 +607,7 @@ RBN: I have not had a chance to speak. And my point is a little bit broader than
 
 GB: To clarify, you say that is also for the static case and not just the dynamic case. How would the metaproperty solve the problems that static source imports solve which we have been describing for the the last few weeks?
 
-RBN: That was the question I had, so an import resolve call or even import source at the top level that isn’t a condition is still statically analyzable and still be a part of the module graph,
-does not depends on you actually saying that I will write a top level import declaration but a call – except for possibly an exception you would normally have purchased, if you don’t –
+RBN: That was the question I had, so an import resolve call or even import source at the top level that isn’t a condition is still statically analyzable and still be a part of the module graph, does not depends on you actually saying that I will write a top level import declaration but a call – except for possibly an exception you would normally have purchased, if you don’t –
 
 GB: The problem with dynamic code if you don’t know whether it will run or not, you cannot treat it as part of static build optimization. That is just parts of import system and we know that the top level execution of this module will require this JavaScript module source or web assembly module source to be in a compared form and furthermore not be evaluated, and from a security perspective that is a difficult property to import. Something similar to what you are describing is resource imports which we do describe in the same phase module where you can retain a handle on the resource through import system. And we did explore it just that primitive and we went through a period in our early decision exploration and if it is resource primitive was enough to capture all the requirements that we needed and what we determined if even with a resource primitive you still have the CSP problem because you don’t know how the resource will be used. And you have you still have some kind of static analyzability problem because now the resource is being used in dynamic code. So I think that direct relation between the module system which is how users interacts and how they gain access to resources and the usage of those resources, that is absolutely fundamental. And for modules in particular, that is how users get access to modules. So it is quite surprising to hear you say that you not how you get access to the module.
 

@@ -167,9 +167,7 @@ USA: Thank you, Shane.
 
 ### Summary and conclusion
 
-The purpose of this presentation is to layout a user building of Wasm library, and highlight the challenges and road blocks encountered. Various, five to seven, proposals are noted in the slide deck.
-One of the purpose is to draw a big picture for how these tie together to solve a real use case. We talked about all in isolation. It is good to see how they tie together to solve a real problem that has big implications of deploy libraries written in any language to the web platform.
-A detailed discussion was had by everyone.
+The purpose of this presentation is to layout a user building of Wasm library, and highlight the challenges and road blocks encountered. Various, five to seven, proposals are noted in the slide deck. One of the purpose is to draw a big picture for how these tie together to solve a real use case. We talked about all in isolation. It is good to see how they tie together to solve a real problem that has big implications of deploy libraries written in any language to the web platform. A detailed discussion was had by everyone.
 
 ## Optional chaining in assignment LHS for stage 1 or 2
 

@@ -90,8 +90,7 @@ RPR: Within the 60-day period, yes.
 
 ### Conclusion
 
-TC39 has approved ES2023 (ECMA-262 + ECMA-402) by acclamation.
-Subject to no objections being raised during the 60-day opt-out, this will be proposed to the Ecma GA for formal approval in June 2023.
+TC39 has approved ES2023 (ECMA-262 + ECMA-402) by acclamation. Subject to no objections being raised during the 60-day opt-out, this will be proposed to the Ecma GA for formal approval in June 2023.
 
 ## Intl.ZonedDateTimeFormat for Stage 1
 
@@ -249,7 +248,6 @@ CZW: So OpenTelemetry instruments user interaction, and we read APIs to create t
 CZW: And similarly, the resource timings has the similar problem. It cannot tell the initiated -- the -- cannot tell the initiator from the resource timing entries, and currently without resource timing initiator info, the telemetry just iterates the entry list to find the matching spans and associated that found entry with span to record the network event. And if the web platforms can attach in the chasing spans to the performance entries or if we cap just the async context, it will be very straightforward for OpenTelemetry to associate the network event with the fetch -- with the request expanse. Apart from the user monitoring, web platforms can also take advantage of the async context to propagate task attributions like execution priority or fetch priority or privacy protection meta data, et cetera. And that’s all of the -- of today’s use case recap. And next will be the normative changes we made in the past months. The first is that we are splitting the async context class the two class. One async snapshot and async local class. The normative change is still pending and being discussed in the PR number 55. The first async local class is the async context instance message renamed as asynclocal. And the asynclocal’s value is implicit through co-stacks like the previous async context instance. And the values are preserved across async boundaries. And notably, this change is still pending, and the name is still open to suggestions. Like, we have another suggestion as the I think variable.
 
 CZW: Next is the async snapshot. The previous AsyncContext.wrap becomes an AsyncSnapshot class. AsyncSnapshot captures the account state of the async context, and can be reviewed for multiple callbacks, so it can be made automatically to extend the async snapshot to be like the recurring and run the query in the async snapshot multiple times.
-Writer change*
 
 CZW: Also, there are suggestions to group the AsyncLocal and AsyncContext classes in a common namespace. There are precedents in the language. Like Temporal, and Intl. Of the 3 changes are still pending in the PR55. If there is any preference, comment in the PR so we can continue the change. And second normative change is constructor extensions. We add the AsyncLocal constructor can accept option and about option bag. There are two properties. The first is the name. It is mostly for debugging in Dev-tools. We can display the name. We can display the group of storage data mapping with AsyncLocal name and any can help for to distinguish each AsyncLocal instances with this descriptive name. And the second is default values. It is returned when there is no – when the get operation not enclosed in a AsyncLocal operate wrong code. So that, it can be convenient for setting debug cross-scheme for the AsyncLocal instances.
 
@@ -816,8 +814,8 @@ LCA: In the dynamic import form where you get returned the source directly. It�
 
 JHD: I see.
 
-LCA: And then the other point about the dot in the static syntax, I don’t think we have any other syntax right now that has dots in it like this, where it’s like declaration that has dots in it.
-Maybe, but I don’t know. I don’t really like it. I prefer this.
+LCA: And then the other point about the dot in the static syntax, I don’t think we have any other syntax right now that has dots in it like this, where it’s like declaration that has dots in it. Maybe, but I don’t know. I don’t really like it. I prefer this.
+
 GB: Yeah. The dot would be a way around that ambiguity. But there’s no precedent for declarative dots in the language. That would be a new convention and again there’s like a – you don’t want to cause the confusion about what it’s doing.
 
 JHD: `import.source` for dynamic import doesn’t have precedent. I believe.
@@ -922,8 +920,7 @@ RPR: Michael?
 
 MM: Yeah. I had to jump in the queue. Mark thinks we agreed on – I don’t see we have come to that same conclusion. MM,, I don’t think it’s weird to ban binding named `from` in this position. We already ban let and some other conditionally like `yield` or something. Yeah. Yield. And a few other bindings from the declarations. I think it’s strictly a positive here
 
-MM: `let` and `yield` were listed as key words in strict mode starting in ES5. And I think they were already considered reserved before ES5.
-It’s only – they only come up as issue – well, let only comes up as an issue because it wasn’t reserved and not reserved in sloppy mode. And I don’t care about sloppy mode and I don’t think anybody should.
+MM: `let` and `yield` were listed as key words in strict mode starting in ES5. And I think they were already considered reserved before ES5. It’s only – they only come up as issue – well, let only comes up as an issue because it wasn’t reserved and not reserved in sloppy mode. And I don’t care about sloppy mode and I don’t think anybody should.
 
 MLS: This is the other Michael. I had problems with banning this here. It’s a possibility for developers . . . they will get a weird syntax error and not going to know why. They have to look it up. And they have to look it up in the spec. It just seems kind of weird.
 
@@ -931,9 +928,7 @@ MF: MLS, which do you think is more common that will happen? That somebody accid
 
 MLS: Sure. I agree with that. But that’s – there’s still the other case where we don’t want – we are effectively disallowing a certain variable. And it’s – it’s not intuitive.
 
-GB: From what it’s worth, I don’t think there’s a complete form where from is misallocated. From a user perspective. It’s only if they repeat the key word from in the wrong position. Sorry, I guess I am trying to think of how someone would import the from binding by mistake or end up in a situation by mistake.
-For what it’s worth, you can already import from, from in the language.
-So I am not aware what the user concern here is.
+GB: From what it’s worth, I don’t think there’s a complete form where from is misallocated. From a user perspective. It’s only if they repeat the key word from in the wrong position. Sorry, I guess I am trying to think of how someone would import the from binding by mistake or end up in a situation by mistake. For what it’s worth, you can already import from, from in the language. So I am not aware what the user concern here is.
 
 WH: The concern is the third line on the slide. [titled “from” binding syntax error]
 

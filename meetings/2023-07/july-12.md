@@ -119,9 +119,7 @@ RPR: And it sounds like SHN is doing the detail of each point. That would be som
 
 ### Summary and conclusion
 
-The discussion summary and conclusions needs to include the salient points, agreements reached and next steps.
-The summary should not be as short as: “this was discussed, we agree to go to Stage 3.” It should highlight the most essential items so not to lose track of what is ongoing.
-The summary should indicate the issues discussed and important points and provide clear indication of what to consider when anyone reviews the summary in future.
+The discussion summary and conclusions needs to include the salient points, agreements reached and next steps. The summary should not be as short as: “this was discussed, we agree to go to Stage 3.” It should highlight the most essential items so not to lose track of what is ongoing. The summary should indicate the issues discussed and important points and provide clear indication of what to consider when anyone reviews the summary in future.
 
 ## Stage 3 update of Intl Locale Info API
 
@@ -258,9 +256,7 @@ FYT: I don’t know how to do that. Let me see
 
 Consensus was not reached for the proposal Intl Locale Info API, [PR#70](https://github.com/tc39/proposal-intl-locale-info/pull/70). This item needs to be addressed TG2 for discussion, if taking/using the number 1 to 7 as the input, the option bag, and also as a return value for the first day of week.
 
-Summary:
-The key arguments is that:
-Temporal already have defined 1 to 7, away from the dates, so we should not have a third way to do the weekday representation.
+Summary: The key arguments is that: Temporal already have defined 1 to 7, away from the dates, so we should not have a third way to do the weekday representation.
 
 Currently in Stage 3, already for a while, including the current issue there are three more issues and will be discussed, Issue 30, issue 71. Issue 73, in the coming TG2 and hopefully reach Stage 4 by November. Noting both Chrome and Safari have shipped this version, but not Mozilla.
 
@@ -494,18 +490,13 @@ KG: Okay. Thanks. I will do that.
 
 ### Summary
 
-A method for writing to an existing buffer as part of the streaming API, was presented, which had a couple of open questions including whether to have offset parameters. The committee was split on having offset parameters, but expressed no disagreement with my positions on the other open questions namely:
-the decision to have separate methods for writing to an existing buffer the naming question, proposal to use `toChunked`.
-Committee is not universally convinced to do streaming as part of this proposal.
-There is no agreement on the use of the offset parameters.
+A method for writing to an existing buffer as part of the streaming API, was presented, which had a couple of open questions including whether to have offset parameters. The committee was split on having offset parameters, but expressed no disagreement with my positions on the other open questions namely: the decision to have separate methods for writing to an existing buffer the naming question, proposal to use `toChunked`. Committee is not universally convinced to do streaming as part of this proposal. There is no agreement on the use of the offset parameters.
 
 ### Conclusions
 
 No universal agreement, whether the streaming API should be part of the proposal
 
-Have more discussions and then present a proposal with spec text for both the streaming and one-shot versions, so the committee can make a decision on the streaming versions.
-Anticipate Stage 3 for one-shot or streaming version.
-Await implementation feedback on if the offset parameters are necessary for performance
+Have more discussions and then present a proposal with spec text for both the streaming and one-shot versions, so the committee can make a decision on the streaming versions. Anticipate Stage 3 for one-shot or streaming version. Await implementation feedback on if the offset parameters are necessary for performance
 
 ## Explicit Resource Management (continuation)
 

@@ -150,8 +150,7 @@ KG: So I think if you don’t use the helper and you don’t like manually call 
 
 SYG: Sorry. I retract my original suggestion. I don’t think it’s important that the buffer ahead itself, that that particular method call is the thing that opts you into out of order. But the out-of-order opt-in makes sense as a buffering call. Like buffer ahead, you have `bufferAhead` as in order, but have `ooBufferAhead` or something. The unit – yeah.
 
-KG: That makes sense. Unfortunately, you can’t split them up. Whether things settle out of order has to be a property of the mapper. Not of the consumer of the mapper. If `.map` is constrained to give you things in order, or `.filter` is a better example, then you can add a buffering helper and the buffering helper like, can’t do anything about the fact that the things that its buffering settle in order.
-It could, you know, vend them in a different order if it really wanted to. But if the underlying thing is settling things in order, preserving sequence order, then they are going to be in the buffer in order and you can’t start going out of order in a useful way, inside of the buffer.
+KG: That makes sense. Unfortunately, you can’t split them up. Whether things settle out of order has to be a property of the mapper. Not of the consumer of the mapper. If `.map` is constrained to give you things in order, or `.filter` is a better example, then you can add a buffering helper and the buffering helper like, can’t do anything about the fact that the things that its buffering settle in order. It could, you know, vend them in a different order if it really wanted to. But if the underlying thing is settling things in order, preserving sequence order, then they are going to be in the buffer in order and you can’t start going out of order in a useful way, inside of the buffer.
 
 SYG: I think I see. Okay. That’s unfortunate.
 
@@ -211,8 +210,7 @@ SYG: My understanding is that this enables some parallelism: if you get a host-v
 
 KG: Yeah. I am not imagining that engines would implement any parallelism. Like, CPU-level parallelism. Only network etc.
 
-KG: Okay. So we are past time. Thank you for the discussion. I think the order one definitely we are going to need to talk about prior to everything else . . . that discussion will have to happen first.
-I did want to check; it sounded like no one voiced objections where values get lost. MF didn’t like that we have this ordering constraint. But I am going to assume that no one thinks this problem of values disappearing into the void in the case of exceptions is a big deal. And assuming we do ultimately settle on this order preserving property, that we will probably keep this consistency property in the face of values getting lost. And we haven’t talked about flatMap, but I wanted to raise it and depending on how the discussion of ordering goes, we can – if people have thought about how to address these please open an issue or ping me.
+KG: Okay. So we are past time. Thank you for the discussion. I think the order one definitely we are going to need to talk about prior to everything else . . . that discussion will have to happen first. I did want to check; it sounded like no one voiced objections where values get lost. MF didn’t like that we have this ordering constraint. But I am going to assume that no one thinks this problem of values disappearing into the void in the case of exceptions is a big deal. And assuming we do ultimately settle on this order preserving property, that we will probably keep this consistency property in the face of values getting lost. And we haven’t talked about flatMap, but I wanted to raise it and depending on how the discussion of ordering goes, we can – if people have thought about how to address these please open an issue or ping me.
 
 ### Speaker's Summary of Key Points
 
@@ -464,6 +462,7 @@ MLS: That’s doable. The other thing is that, since you’re making this on Obj
 JHD: That’s how it’s specified in this request. That’s a change. These currently take any arbitrary iterable.
 
 JRL: JHD, can you show the groupBy abstract operation? There’s going to be calls to GetIterator and we are doing iterator to close, IteratorNext. All of regular iterator stuff this. Was done to match `Array.from`, I believe.
+
 JHD: The only part that wouldn’t match `Array.from` is the arraylike fall back that `Array.from` has.
 
 KG: It also matches `Object.fromEntries` et cetera. We generally consume iterables, everywhere except in `Array.prototype` methods.
@@ -529,9 +528,7 @@ Presenter: Kevin Gibbons (KG)
 - [proposal](https://github.com/tc39/proposal-decorator-metadata)
 - [spec](https://github.com/pzuraq/ecma262/pull/10)
 
-KG: There were a couple of changes proposed during the presentation. And so there hadn’t been time for spec text to be written and reviewed. And the spec text has now been written and reviewed. And it implements the thing that we discussed during the meeting. I can pull it up on screen, if you would like.
-I guess I will do that either way. I have had the chance to review it and it looks good to me.
-So formally asking for Stage 3 for decorator metadata with the semantics discussed earlier at the meeting. And in particular, the relevant thing is that the decision about whether to set the metadata at all on the class depends on whether there are any decorators, the decision about whether to look up the decorator from the parent depends on whether there is a syntactic parent, and finally, there is a non-configurable and non-writable null, `Symbol.decorator` property on Function.prototype.
+KG: There were a couple of changes proposed during the presentation. And so there hadn’t been time for spec text to be written and reviewed. And the spec text has now been written and reviewed. And it implements the thing that we discussed during the meeting. I can pull it up on screen, if you would like. I guess I will do that either way. I have had the chance to review it and it looks good to me. So formally asking for Stage 3 for decorator metadata with the semantics discussed earlier at the meeting. And in particular, the relevant thing is that the decision about whether to set the metadata at all on the class depends on whether there are any decorators, the decision about whether to look up the decorator from the parent depends on whether there is a syntactic parent, and finally, there is a non-configurable and non-writable null, `Symbol.decorator` property on Function.prototype.
 
 [on the queue] Support from DE, RBN, SYG
 

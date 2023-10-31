@@ -59,6 +59,36 @@ let biscuits = "delicious";
   *     one   more       
   +     time  
 
+RPR: thanks especially to Roderigo for helping out to arrange that meeting. We can see you 
+in the room, Roderigo. Thank you. All right. So on to the usual items. So let’s start, 
+let’s see if we have approval for last -- actually, I don’t think we fully committed them yet, 
+so we should probably -- let’s return to that perhaps later in the meeting once we’ve got that. 
+All right, what about the current agenda?  Are there any objections to the current agenda?  And 
+I will say because I’m working on a laptop, I cannot see the element room right now. If any of 
+the other chairs do see anything, please just interrupt. I’m going to take silence as 
+approval. I will say with today’s current agenda, or this week’s current agenda, it is packed. 
+It is oversubscribed. You’ll see that we have many really good items in the overflow slot at 
+the moment. We’re going to work you know, we’re going to do our best to claw some back. 
+Maybe some people will consider deprioritizing items. I know I’ve already heard some some 
+candidates there that we may do. But the main thing is we need to really work hard to keep -- 
+to do food time keeping and stick to our time boxes. And with that, I think I can hand over to 
+Samina.
+
+RPR: thanks especially to Roderigo for helping out to arrange that meeting. We can see you
+in the room, Roderigo. Thank you. All right. So on to the usual items. So let’s start,
+let’s see if we have approval for last -- actually, I don’t think we fully committed them yet,
+so we should probably -- let’s return to that perhaps later in the meeting once we’ve got that.
+All right, what about the current agenda?  Are there any objections to the current agenda?  And
+I will say because I’m working on a laptop, I cannot see the element room right now. If any of
+the other chairs do see anything, please just interrupt. I’m going to take silence as
+approval. I will say with today’s current agenda, or this week’s current agenda, it is packed.
+It is oversubscribed. You’ll see that we have many really good items in the overflow slot at
+the moment. We’re going to work you know, we’re going to do our best to claw some back.
+Maybe some people will consider deprioritizing items. I know I’ve already heard some some
+candidates there that we may do. But the main thing is we need to really work hard to keep --
+to do food time keeping and stick to our time boxes. And with that, I think I can hand over to
+Samina.
+
 ## story time!
 
 True! nervous, very, very dreadfully nervous I had been and am; but why will you say that I am mad? The disease had sharpened my senses,  not destroyed, 

@@ -14,7 +14,7 @@ const tokenTypeEnum = Object.freeze({
   SPACE: 'space',
 });
 
-const reBadLinebreaks = /(?<=[\w\d ])\n(?=[\w\d ])/g;
+const reBadLinebreaks = /(?<=[\w\d \p{P}])\n(?=[\w\d ])/gu;
 const reExtraWhitespaceParagraph = /^ +| (?= )| +$/gm;
 const reExtraWhitespaceList = /(?<=^ {0,}[-*+] |\d+\. ) +|(?<=\w+ ) +| +$/gm;
 

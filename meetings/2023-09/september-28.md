@@ -55,35 +55,24 @@ JHD: Yeah, so you may have just said this, but I basically -- I was just trying 
 
 KG: I would be ok with pulling it out, although I personally am unlikely to pursue the streaming part myself because the single shot is the use case that I care most about. Perhaps, I don’t know, PHE might be able to say more.
 
-PHE: Sure. So I mean, it kind of comes down to the need for any of this from our perspective. I mean, please recall that when this was a Stage 0 proposal, my recommendation was that the committee not adopt it, not move it to Stage 1. I think the -- and I think the reasons for that still hold, which is it’s fairly low value. This Base64 has been around for all eternity,
-JavaScript has been around for less of eternity, and somehow we’ve gotten this far. Maybe it just doesn’t need to be in the language. And further, Base64 is not as simple as I think the current draft of this proposal makes it look, when you dive through the RFCs and the different places where Base64 is used, it’s pretty complex. So I mean, of course we can, as KG is doing, we can start with a subset of that and see how it evolves. That’s perfectly reasonable.
-.
-PHE: But, you know, everyone has Base64 support somehow somewhere that they -- if they really need it they use, and in the embedded space, you know, in the Moddable universe, we do. We in fact took the expedient approach. It’s a non-streaming API and we needed a streaming API for some time, if we’re going to go through the work, to do standardization and bring this in, we think that the standard should support all, you know, runtimes, all use cases, and embedded where resources are limited, where we can’t -- we don’t have unlimited buffer sizes is very real, and so if we’re going to do this at all, then it’s our position, and it has been since the start,
-that we need to do it in a way that is generally valuable -- generally useful and valuable.
-And not just this kind of one very focused case. And from there, it’s worth talking about the example code that KG cited from LCA. That code, from our -- great that LCA did it. I appreciate it. It helps bring some things into focus, and one of the things that it brings into focus is that taking such an approach as he proposes doesn’t guarantee forward compatibility. As the Base64 options increase in time, which is reasonable to expect, the way that things are set up, it’s likely that one won’t be able to continue to do what LCA has done. We already saw one example where he had missed something in the handling of that requires some changes in the spec or code that are inefficient, and that’s all well and good, but it’s an example of the fact that it’s not -- that it doesn’t have good forward compatibility.
+PHE: Sure. So I mean, it kind of comes down to the need for any of this from our perspective. I mean, please recall that when this was a Stage 0 proposal, my recommendation was that the committee not adopt it, not move it to Stage 1. I think the -- and I think the reasons for that still hold, which is it’s fairly low value. This Base64 has been around for all eternity, JavaScript has been around for less of eternity, and somehow we’ve gotten this far. Maybe it just doesn’t need to be in the language. And further, Base64 is not as simple as I think the current draft of this proposal makes it look, when you dive through the RFCs and the different places where Base64 is used, it’s pretty complex. So I mean, of course we can, as KG is doing, we can start with a subset of that and see how it evolves. That’s perfectly reasonable.
+. PHE: But, you know, everyone has Base64 support somehow somewhere that they -- if they really need it they use, and in the embedded space, you know, in the Moddable universe, we do. We in fact took the expedient approach. It’s a non-streaming API and we needed a streaming API for some time, if we’re going to go through the work, to do standardization and bring this in, we think that the standard should support all, you know, runtimes, all use cases, and embedded where resources are limited, where we can’t -- we don’t have unlimited buffer sizes is very real, and so if we’re going to do this at all, then it’s our position, and it has been since the start, that we need to do it in a way that is generally valuable -- generally useful and valuable. And not just this kind of one very focused case. And from there, it’s worth talking about the example code that KG cited from LCA. That code, from our -- great that LCA did it. I appreciate it. It helps bring some things into focus, and one of the things that it brings into focus is that taking such an approach as he proposes doesn’t guarantee forward compatibility. As the Base64 options increase in time, which is reasonable to expect, the way that things are set up, it’s likely that one won’t be able to continue to do what LCA has done. We already saw one example where he had missed something in the handling of that requires some changes in the spec or code that are inefficient, and that’s all well and good, but it’s an example of the fact that it’s not -- that it doesn’t have good forward compatibility.
 
 PHE: The usual way to get to a one shot API is to take a streaming a and I do that and use it. So we’d like to see that. The other thing I’m surprised at, and sorry I’m going long, but I seem to be a lonely voice here, you know, this API has morphed quite a few times, and the most recent change is something that is pretty bizarre, to me anyway, which is that it’s now attached to the Uint8Array object, which is I think it is the first time that this language will have different support on the different TypedArrays like that. And I mean, it’s not -- I mean, I get that maybe Uint8Array is a convenient place to have it, but it’s not the only place, and I think it -- I think we would be better served to keep the Base64 support as its own thing and not a feature of Uint8Array, which just feels awkward and I mean -- and wrong, frankly.
 
-PHE: So, sorry, that’s a long statement, and I appreciate your patience in hearing it. But, I mean,
-to answer your question, Jordan, in short, if we don’t do streaming support, I don’t think this proposal brings much to the table, and if we pretend that streaming support can be provided with -- can be implemented as a wrap around the one shot, I think we’re doing naive in terms of how this is most likely to evolve.
+PHE: So, sorry, that’s a long statement, and I appreciate your patience in hearing it. But, I mean, to answer your question, Jordan, in short, if we don’t do streaming support, I don’t think this proposal brings much to the table, and if we pretend that streaming support can be provided with -- can be implemented as a wrap around the one shot, I think we’re doing naive in terms of how this is most likely to evolve.
 
 JHG: Okay. Thanks. I -- the queue is down so I wasn’t able to add my response. But I appreciate the explanation. I think we have different perspectives on what is focused versus general. To me, I find the streaming thing to be esoteric and niche and the one shot to be the thing that is actually quite common. But it’s okay that we have different perspectives there.
 
-KG: The change to Uint8Array was like three meetings ago. I’m happy to discuss that elsewhere,
-but I want to keep the discussion as to whether we should do streaming as part of this proposal and whether we should do this proposal at all. Conditional on the outcome of the first question, I think the details of where exactly it lives are less important than those questions. I agree with JHG, though, 100%. Like, streaming is useful, I agree. But I have needed the one shot version, like, 99 times in the last couple of years. And I have needed streaming once, if I’m being generous. I just don’t see why it needs to be part of this proposal. Like, I get that there are different domains where the streaming is the important part, but the specific claim that I am making is that the one shot version is useful on its own.
+KG: The change to Uint8Array was like three meetings ago. I’m happy to discuss that elsewhere, but I want to keep the discussion as to whether we should do streaming as part of this proposal and whether we should do this proposal at all. Conditional on the outcome of the first question, I think the details of where exactly it lives are less important than those questions. I agree with JHG, though, 100%. Like, streaming is useful, I agree. But I have needed the one shot version, like, 99 times in the last couple of years. And I have needed streaming once, if I’m being generous. I just don’t see why it needs to be part of this proposal. Like, I get that there are different domains where the streaming is the important part, but the specific claim that I am making is that the one shot version is useful on its own.
 
 DE: I wanted to understand PHE’s feedback better, but not the part about streaming: You mentioned evolution of base64, maybe this proposal lacks additional options, as well as error handling. Could you elaborate on that?
 
-PHE: Base64 has been around since forever,
-right and, it’s used in many different places, and there are, as a result, a bunch of different -- a bunch of different variations in terms of padding, in terms of alphabet, in terms of white space handling, and this affects both encoding and decoding. I spent some time earlier this week just scanning through the different RFCs related to this, and I won’t say I have a thorough understanding of it, but it’s fairly baffling. And then you -- I mean, you have things -- you also have details like whether a decoder is permissive or strict and what it accepts and what the does with unrecognized characters. And so all of those things, you know,
-eventually potentially come into the scope of this API. You know, obviously not all initially,
-but over time. It’s easy enough to imagine that. So, you know, it’s very -- I mean, basically it’s impossible in the general case to achieve an efficient implementation of a streaming for all those features if you’re relying on the one-shot API. And so I mean, that’s very -- yeah,
-and so that’s a concern. Does that answer your question, Daniel, sorry?
+PHE: Base64 has been around since forever, right and, it’s used in many different places, and there are, as a result, a bunch of different -- a bunch of different variations in terms of padding, in terms of alphabet, in terms of white space handling, and this affects both encoding and decoding. I spent some time earlier this week just scanning through the different RFCs related to this, and I won’t say I have a thorough understanding of it, but it’s fairly baffling. And then you -- I mean, you have things -- you also have details like whether a decoder is permissive or strict and what it accepts and what the does with unrecognized characters. And so all of those things, you know, eventually potentially come into the scope of this API. You know, obviously not all initially, but over time. It’s easy enough to imagine that. So, you know, it’s very -- I mean, basically it’s impossible in the general case to achieve an efficient implementation of a streaming for all those features if you’re relying on the one-shot API. And so I mean, that’s very -- yeah, and so that’s a concern. Does that answer your question, Daniel, sorry?
 
 DE: I just want to continue the thread of clarifying a little bit more. Sometimes when there’s multiple RFCs, one of them is outdated and one of them is current, even in the absence of formal deprecation. In your experience, in Moddable, have you needed to expose APIs or implement things for other options besides the ones implicitly adopted here?
 
-PHE: I mean, we certainly have some Base64 behaviors which are different. But there’s things we just haven’t done yet, which we need. You know, I think in the RFC case, specifically to your point, I don’t think I’m looking at obsolete RFCs, I think what you’ll find if are to do the survey, if you have, I don’t mean to suggest otherwise, but what I found is that the variations were in different domains that use Base64. So it’s not that it evolved over time. It’s that,
-you know, the miming coding here thing uses it differently than this other thing over there, so it’s not that one is, you know, sadly out of date. These things are co-existing today.
+PHE: I mean, we certainly have some Base64 behaviors which are different. But there’s things we just haven’t done yet, which we need. You know, I think in the RFC case, specifically to your point, I don’t think I’m looking at obsolete RFCs, I think what you’ll find if are to do the survey, if you have, I don’t mean to suggest otherwise, but what I found is that the variations were in different domains that use Base64. So it’s not that it evolved over time. It’s that, you know, the miming coding here thing uses it differently than this other thing over there, so it’s not that one is, you know, sadly out of date. These things are co-existing today.
 
 DE: Okay, thanks for explaining. Did you give a concrete example of a use case that doesn’t match the semantics in this proposal? Just because I’m new to this area, I don’t know which flags end up being important.
 
@@ -93,8 +82,7 @@ DE: Peter, I’m asking a more basic question. Given that this proposal doesn’
 
 PHE: Yeah, sorry, I didn’t come prepared to answer that precise a question.
 
-KG: Maybe I can give some illustration of the kinds of options. The ones that I am aware of - one of the ways in which Base64 encoders and decoders differ is the choice of alphabet, specifically whether you’re using the web-safe variant or not. Then there’s the handling of whitespace, as PHE mentioned, the mime base64 spec says things about white space has to be stripped. Other things say white space has to be an error, and there’s handling of padding.
-There’s in fact two different axes on which handling the padding can vary. There’s whether you require, allow, or forbid the presence of the trailing equal signs, and then there’s the 2-4 additional bits in the last character for certain strings, which should, according to the RFC, be enforced to be zero, but no one actually enforces that there’s zero. I’m not aware of any variations other than that, but it’s certainly conceivable that there’s some out there. Those are the kinds of variations that exist, though. Hopefully that’s illustrative.
+KG: Maybe I can give some illustration of the kinds of options. The ones that I am aware of - one of the ways in which Base64 encoders and decoders differ is the choice of alphabet, specifically whether you’re using the web-safe variant or not. Then there’s the handling of whitespace, as PHE mentioned, the mime base64 spec says things about white space has to be stripped. Other things say white space has to be an error, and there’s handling of padding. There’s in fact two different axes on which handling the padding can vary. There’s whether you require, allow, or forbid the presence of the trailing equal signs, and then there’s the 2-4 additional bits in the last character for certain strings, which should, according to the RFC, be enforced to be zero, but no one actually enforces that there’s zero. I’m not aware of any variations other than that, but it’s certainly conceivable that there’s some out there. Those are the kinds of variations that exist, though. Hopefully that’s illustrative.
 
 DE: Yeah, thanks. Could you briefly go over those which you make hookable and which additions you might expect?
 
@@ -102,8 +90,7 @@ KG: Because the proposal isn’t settled, I’m not completely settled on all of
 
 DE: Okay, are you aware of any future-proofing risk for these sort of options with respect to the stateless streaming API that you have?
 
-KG: There is some complexity around handling of streaming and padding, but it’s, like,
-doable. LCA has done it. The white space, again, if you have very strict rules about where the white space must appear, then streaming is more complicated in handling those, although, I don’t think anyone actually enforces those. Otherwise, no, not aware of any issues.
+KG: There is some complexity around handling of streaming and padding, but it’s, like, doable. LCA has done it. The white space, again, if you have very strict rules about where the white space must appear, then streaming is more complicated in handling those, although, I don’t think anyone actually enforces those. Otherwise, no, not aware of any issues.
 
 DE: Okay, are we aware of any brewing proposed extensions for base64 that could affect this in?
 
@@ -143,36 +130,26 @@ SYG: I don’t understand what the downside is.
 
 PHE: If we’re going to go through the work of standardizing something, I think we should do it in a way that’s generally useful. And streaming of Base64 is generally useful. I understand it’s not -- it’s in the minority, but we’re designing a language to be generally useful, not kind of cherry picking the most prominent use cases. And so --
 
-SYG: Okay. I mean, I think single shot is generally useful. It may not be universally useful.
-I think it is -- I think we have pretty good intuition that it is generally useful in a way that is more so than streaming. I haven’t heard arguments that it is not generally useful. I don’t quite understand why bundling -- like, I don’t understand the negative implication that because streaming is -- because streaming is also claimed to be generally useful, it must be bundled into the same proposal for the whole -- for the one-shot to also be worth it. Like,
-that’s -- I just don’t understand that argument.
+SYG: Okay. I mean, I think single shot is generally useful. It may not be universally useful. I think it is -- I think we have pretty good intuition that it is generally useful in a way that is more so than streaming. I haven’t heard arguments that it is not generally useful. I don’t quite understand why bundling -- like, I don’t understand the negative implication that because streaming is -- because streaming is also claimed to be generally useful, it must be bundled into the same proposal for the whole -- for the one-shot to also be worth it. Like, that’s -- I just don’t understand that argument.
 
 PHE: I mean, I think I don’t like the framing of the argument, sorry, SYG. I think the question is if this committee is going to do Base64 support, it should take on the scope of that, which is used throughout the language and not just picking the most prominent case of that. I think kind of framing it as a -- you know, single shot is useful, so I mean, we could pick apart lots of proposals and break them into parts and stage them that way, but we don’t because we’re trying to deliver a set of functionality that’s useful. And here one shot is convenient, but streaming -- so, great, we should have that, but streaming is the thing that lets you handle the broader set of cases. So streaming is foundational. You can always implement a one shot from streaming, but not the other way around.
 
-SYG: I think we disagree on that, but we can leave that disagreement, I think. But as a matter of process, this committee literally does pick apart things and advance them separately. Like,
-that’s how we have operated.
+SYG: I think we disagree on that, but we can leave that disagreement, I think. But as a matter of process, this committee literally does pick apart things and advance them separately. Like, that’s how we have operated.
 
-LCA: Yeah, so I want to start with that ultimately, I would be okay with shipping in proposal with either streaming or not streaming. I would prefer we do not ship it with streaming. I think utility of single shot encoding is well understood. And it has, like, implications in many runtimes. I can also see the argument for why we should -- where there should be some way do streaming. I think is a much smaller subset of people that would use this, be I agree that there are use cases. What I am more concerned about is that on the web where the majority of streaming applications are going to happen and where, like, streaming is particularly useful because you’re on devices with little memory, you are -- you have network streams, slow networks, so streaming can be useful there, in those scenarios, you want to have a streaming API which is very efficient, and web -- and the web platform provides a streaming API for this,
-and web streams, which are highly optimizable by engines because they can by pass JavaScript while doing transforms for natively implemented streams. And this API in 262 where we shuttle around the extra bytes manually does not fit into that. It means that every project will have to write a wrapper transferring stream around -- yeah, around these extra bytes, and I have an example of that in the repo, I think.
-.
-LCA: But, yeah, it’s not great. So really, for the web platform, what we need is a streaming API,
-which is based directly on public streams. And yeah, we can ship in 262, but that makes the utility of the streaming API in 262 even smaller. Like, now the use case is, like, anything that does not implement what wick streams and cannot use the single shot API, which 1% of 1% of 1%. And I don’t -- like, I just don’t see the value of shipping this in the language. And,
-like, implementation complexity that comes with it for such a small subset of users. I would prefer that those users can just import a helper that wraps around the single shot API.
+LCA: Yeah, so I want to start with that ultimately, I would be okay with shipping in proposal with either streaming or not streaming. I would prefer we do not ship it with streaming. I think utility of single shot encoding is well understood. And it has, like, implications in many runtimes. I can also see the argument for why we should -- where there should be some way do streaming. I think is a much smaller subset of people that would use this, be I agree that there are use cases. What I am more concerned about is that on the web where the majority of streaming applications are going to happen and where, like, streaming is particularly useful because you’re on devices with little memory, you are -- you have network streams, slow networks, so streaming can be useful there, in those scenarios, you want to have a streaming API which is very efficient, and web -- and the web platform provides a streaming API for this, and web streams, which are highly optimizable by engines because they can by pass JavaScript while doing transforms for natively implemented streams. And this API in 262 where we shuttle around the extra bytes manually does not fit into that. It means that every project will have to write a wrapper transferring stream around -- yeah, around these extra bytes, and I have an example of that in the repo, I think.
+. LCA: But, yeah, it’s not great. So really, for the web platform, what we need is a streaming API, which is based directly on public streams. And yeah, we can ship in 262, but that makes the utility of the streaming API in 262 even smaller. Like, now the use case is, like, anything that does not implement what wick streams and cannot use the single shot API, which 1% of 1% of 1%. And I don’t -- like, I just don’t see the value of shipping this in the language. And, like, implementation complexity that comes with it for such a small subset of users. I would prefer that those users can just import a helper that wraps around the single shot API.
 
 PHE: Sure, thanks. LCA, I mean, on one point, we agree strongly, which is I’m not wild about the way that the streaming API returns the state. You know, in earlier discussion on this, we had explored briefly options where an instance would manage that state, and it could be quite a bit more efficient. But that was -- that direction didn’t seem to have traction, so that led to what we have now. But there I agree with you, we could do better. I think we could have an API that was easier to use and more efficient if we could have gotten past some of those objections.
 
 LCA: Okay. Yeah, I just want to mention that even if we were to go with API, manually implementing web stream would incur at least two native JavaScript to native native to JavaScript copies that are involved.
 
-KG: So concretely, the only optimizable thing on the web platform is a web stream, so I think if the web platform decides that streaming is worth doing,
-even if we have the thing in JavaScript, I expect what would ship a streaming one, like, the only reason they haven’t because I told them I was going to do this proposal and they wanted to make sure that the design would line up. But you need the WHATWG streaming one to be efficient on the web.
+KG: So concretely, the only optimizable thing on the web platform is a web stream, so I think if the web platform decides that streaming is worth doing, even if we have the thing in JavaScript, I expect what would ship a streaming one, like, the only reason they haven’t because I told them I was going to do this proposal and they wanted to make sure that the design would line up. But you need the WHATWG streaming one to be efficient on the web.
 
-PHE: I mean, I think it’s great. We should actually take into requirements the implementation limitations of the web and how it optimizes, just as we take into account other environments.
-I have no problem with that.
+PHE: I mean, I think it’s great. We should actually take into requirements the implementation limitations of the web and how it optimizes, just as we take into account other environments. I have no problem with that.
 
 LCA: I guess I just want to clear up, like, there is no possible API we can design TC39 that will be as efficient as web streams. It is -- any API we design in TC39 will require bytes to go through JavaScript that with the web stream implementation do not have to go through JavaScript, and that is inherently slower. That’s end of my comment.
 
-DLM: We discussed this internally in the SpiderMonkey team and we are completely convinced about the utility of the one shot variant. We are definitely not as convinced about the streaming. I feel like the number of iterations that we’ve seen on different streaming APIs sort of demonstrates that it’s not fully baked. And so I think we would be very happy to see it this proposal advance with just the one-shot version. And, yeah,
-I think that’s all I have to say. Thanks.
+DLM: We discussed this internally in the SpiderMonkey team and we are completely convinced about the utility of the one shot variant. We are definitely not as convinced about the streaming. I feel like the number of iterations that we’ve seen on different streaming APIs sort of demonstrates that it’s not fully baked. And so I think we would be very happy to see it this proposal advance with just the one-shot version. And, yeah, I think that’s all I have to say. Thanks.
 
 NRO: This was more reply to -- the reply to original -- JHD’s comments. It was mentioned that the reason we need the streaming API in this proposal, like, now is so that if in the future we have more options to the one shot API, this -- like, it might not be possible to polyfill the a user land. It’s been done in the exam. Could we add the streaming API once we add those options to Michael impossible to reproduce in user land?
 
@@ -182,8 +159,7 @@ NRO: I mean, the code would have to be updated to use the new options of the rec
 
 KG: It wouldn’t break anything. It would only -- if you wanted to decode this, like, new kind of Base64, you would have to update your library to support the new kind of Base64 and use that in terms of the updated underlying primitive. But, like --
 
-PHE: I mean, that’s -- I mean, that’s slightly -- I mean, that’s -- I wouldn’t agree with that.
-Like, if what you believe as a user of code is that you’re using a streaming version of the Base64 API that’s the language, and then the language updates, you wouldn’t necessarily assume that the code you’ve been using to stream would be broken.
+PHE: I mean, that’s -- I mean, that’s slightly -- I mean, that’s -- I wouldn’t agree with that. Like, if what you believe as a user of code is that you’re using a streaming version of the Base64 API that’s the language, and then the language updates, you wouldn’t necessarily assume that the code you’ve been using to stream would be broken.
 
 PHE: I mean, if you had implemented it, you might, but if were just using some code from somebody, you wouldn’t.
 
@@ -203,11 +179,9 @@ JHD: I’ll jump in. Peter, I’ve shipped hundreds of polyfills that have had n
 
 PHE: Yeah, I mean, we -- anyway, I -- I will take your word on it, JHD:. I really don’t see it that way. But thank you.
 
-SFC: Yeah, all I have to say here is that use cases that I’ve encountered, especially when shepherding data around between different clients is that, like, JSON streaming API, JSON parsing streaming API would be quite useful and this seems like it would go very well with that. I just, you know, wanted to throw that out there in case maybe there’s interest in sort of pursuing Base64 that’s own proposal and having another proposal that’s all streaming parsing including JSON and other things that might also be useful in the context of the web platform.
-That’s all.
+SFC: Yeah, all I have to say here is that use cases that I’ve encountered, especially when shepherding data around between different clients is that, like, JSON streaming API, JSON parsing streaming API would be quite useful and this seems like it would go very well with that. I just, you know, wanted to throw that out there in case maybe there’s interest in sort of pursuing Base64 that’s own proposal and having another proposal that’s all streaming parsing including JSON and other things that might also be useful in the context of the web platform. That’s all.
 
-KG: Okay, great. So we’ve heard from several people, including browsers, that they don’t believe it’s worth doing these streaming API and we’ve heard from a number of people, myself included, that the single shot API would be incredibly useful. And while there’s a philosophical disagreement about whether a proposal needs to expand to meet, like, the fully general form, several people, myself included, think that it doesn’t need to meet the fully general form to be useful, at least if the more restricted form is not, like, going to be only a subset of the bigger form. If the single shot form would be worth doing even in a world with streaming, then we can just do the single shot version. So I would really like to go forward with just the single shot version.
-so I guess I’d like to ask for that, ask for consensus to restrict the scope of this proposal to the single shot version.
+KG: Okay, great. So we’ve heard from several people, including browsers, that they don’t believe it’s worth doing these streaming API and we’ve heard from a number of people, myself included, that the single shot API would be incredibly useful. And while there’s a philosophical disagreement about whether a proposal needs to expand to meet, like, the fully general form, several people, myself included, think that it doesn’t need to meet the fully general form to be useful, at least if the more restricted form is not, like, going to be only a subset of the bigger form. If the single shot form would be worth doing even in a world with streaming, then we can just do the single shot version. So I would really like to go forward with just the single shot version. so I guess I’d like to ask for that, ask for consensus to restrict the scope of this proposal to the single shot version.
 
 [+1 from LCA, NRO, JHD, DLM, Christian, MF, DE]
 
@@ -219,20 +193,15 @@ KG: Okay. I’ll go do this in WHATWG, I guess. Thanks for the feedback.
 
 PHE: I mean, KG, I think we should have a conversation about this and see if we can find some way forward. I think.
 
-KG: I’ve spent two years on this. I don’t think there’s a way forward. Like, did you hear the discussion that we just had? People in the room do not want a streaming version. Some people are okay with it, some people are opposed. We can’t have a streaming version that’s as efficient as a web stream anyway. The single shot version is independently useful. The single shot version, like, is 99.9% of my use case, I know that’s true for others.
-I just -- I don’t think there’s a path forward here. And I would like to be able to do Base64 encoding in node and on the web, and I just don’t see a way to make that happen with this proposal anymore.
+KG: I’ve spent two years on this. I don’t think there’s a way forward. Like, did you hear the discussion that we just had? People in the room do not want a streaming version. Some people are okay with it, some people are opposed. We can’t have a streaming version that’s as efficient as a web stream anyway. The single shot version is independently useful. The single shot version, like, is 99.9% of my use case, I know that’s true for others. I just -- I don’t think there’s a path forward here. And I would like to be able to do Base64 encoding in node and on the web, and I just don’t see a way to make that happen with this proposal anymore.
 
-SYG: Can I make a comment? So, like, for people many the room to observe what is happening,
-which is that the alternative is not that this doesn’t happen, the alternative is that this happens in a different standards body. We’re not the gatekeeper of APIs. We’re gate keeps of the syntax. If there’s a new API that has sufficient demand, it probably finds a way, despite objections from people in the room, so keep that in mind.
+SYG: Can I make a comment? So, like, for people many the room to observe what is happening, which is that the alternative is not that this doesn’t happen, the alternative is that this happens in a different standards body. We’re not the gatekeeper of APIs. We’re gate keeps of the syntax. If there’s a new API that has sufficient demand, it probably finds a way, despite objections from people in the room, so keep that in mind.
 
-DE: I want to agree, so we had the UUID proposal here and it ended up moving to a web platform API. I would really like TC39 to be a good place where we can add standard library features.
-And in this case, we should maybe even reconsider our process with respect to, you know, the single lone objector being a determinant. I think it depends on the nature of the particular objection to whether it should be blocking. In this case, we just haven’t heard an argument where others can understand the weight of it. So I think if this goes to other standards bodies, we know that those other standards bodies are places where most of us have more trouble participating in a way that has the equal weight that we have in TC39. So that would be, you know, potentially a worse result. So we should consider whether our decision-making methods in TC39 are conducive to what our shared committee goals are of developing a standard library.
+DE: I want to agree, so we had the UUID proposal here and it ended up moving to a web platform API. I would really like TC39 to be a good place where we can add standard library features. And in this case, we should maybe even reconsider our process with respect to, you know, the single lone objector being a determinant. I think it depends on the nature of the particular objection to whether it should be blocking. In this case, we just haven’t heard an argument where others can understand the weight of it. So I think if this goes to other standards bodies, we know that those other standards bodies are places where most of us have more trouble participating in a way that has the equal weight that we have in TC39. So that would be, you know, potentially a worse result. So we should consider whether our decision-making methods in TC39 are conducive to what our shared committee goals are of developing a standard library.
 
-MLS: So I’d like to weigh in here. TC39 does not have a consensus process. We have a lone dissenter blocking process. And I’ve been subject to that in the past. We have one member of the committee that is making the point that the API -- the standalone API is not useful, but a streaming API is. They are part of the larger JavaScript community, not a browser, not Node.
-I think -- I don’t see why we’re not willing to allow a streaming API, even though it’s not the most efficient, we’re not willing to allow this as a give and take in the deliberation process so that we can reach consensus.
+MLS: So I’d like to weigh in here. TC39 does not have a consensus process. We have a lone dissenter blocking process. And I’ve been subject to that in the past. We have one member of the committee that is making the point that the API -- the standalone API is not useful, but a streaming API is. They are part of the larger JavaScript community, not a browser, not Node. I think -- I don’t see why we’re not willing to allow a streaming API, even though it’s not the most efficient, we’re not willing to allow this as a give and take in the deliberation process so that we can reach consensus.
 
-KG: So I would feel better about that if in fact the claim had been that the single shot API wasn’t useful. But, as far as I can tell, everyone thinks the one shot API is useful.
-And if we can’t advance that, I just don’t see it being worth participating in the process here. Like, we have a thing that everyone likes. Everyone agrees it’s useful.
+KG: So I would feel better about that if in fact the claim had been that the single shot API wasn’t useful. But, as far as I can tell, everyone thinks the one shot API is useful. And if we can’t advance that, I just don’t see it being worth participating in the process here. Like, we have a thing that everyone likes. Everyone agrees it’s useful.
 
 MLS: But you would agree that Base64, since it, the decoding of future letters in a sequence are based upon the context of prior letters, that a streaming API actually does make sense?
 
@@ -285,10 +254,8 @@ Presenter: Pablo Gorostiaga Belio (PGO)
 - [proposal](https://github.com/gorosgobe/proposal-negated-in-instanceof)
 - slides
 
-PGO: All right. My name is Pablo. I’m a new delegate from Bloomberg and today I’m going to present my proposal, negated in and instanceof operators for Stage 1. So currently, if you have an in or instanceof expression and you need to negate those, you need to wrap the whole expression in parentheses with the grouping operator and then you need to negate that with the logical operator, the exclamation mark. Now, this has several issues.
-The first issue with negating in and instanceof expressions this way is you may forget to parenthesise the expression. As a result, if you apply the not operator on the left-hand side operand of the expression, that expression, except for some niche cases, will evaluate to false. So for the code on the screen there, the body of those if statements will not execute. And the correct usage is obviously to parenthesise that properly.
-.
-PGO: There are tools that detect these, this scenario, so TypeScript does produce errors, as you can see there on the left-hand side. There’s also an ESlint rule that is called no-unsafe-negation that would detect this pattern statically. However, we wanted to find out whether that was enough and see if code in the wild had these sorts of problems. And in particular, we wanted to sort of answer two questions here. So are in and instanceof ever used in negated expressions in the first place, and if so, are there any bugs in these negated expressions. And we looked at open source code through Sourcegraph. We found for in and, we found 7 thousand negated expressions through Sourcegraph, 10,000 for instanceof. And we also looked at those expressions that had the bug where the left-hand side had the not operator as opposed to the entire expression. And for in, we found 2,000 hits. For instanceof, 19,000, so those queries are there on the right if you want to run them.
+PGO: All right. My name is Pablo. I’m a new delegate from Bloomberg and today I’m going to present my proposal, negated in and instanceof operators for Stage 1. So currently, if you have an in or instanceof expression and you need to negate those, you need to wrap the whole expression in parentheses with the grouping operator and then you need to negate that with the logical operator, the exclamation mark. Now, this has several issues. The first issue with negating in and instanceof expressions this way is you may forget to parenthesise the expression. As a result, if you apply the not operator on the left-hand side operand of the expression, that expression, except for some niche cases, will evaluate to false. So for the code on the screen there, the body of those if statements will not execute. And the correct usage is obviously to parenthesise that properly.
+. PGO: There are tools that detect these, this scenario, so TypeScript does produce errors, as you can see there on the left-hand side. There’s also an ESlint rule that is called no-unsafe-negation that would detect this pattern statically. However, we wanted to find out whether that was enough and see if code in the wild had these sorts of problems. And in particular, we wanted to sort of answer two questions here. So are in and instanceof ever used in negated expressions in the first place, and if so, are there any bugs in these negated expressions. And we looked at open source code through Sourcegraph. We found for in and, we found 7 thousand negated expressions through Sourcegraph, 10,000 for instanceof. And we also looked at those expressions that had the bug where the left-hand side had the not operator as opposed to the entire expression. And for in, we found 2,000 hits. For instanceof, 19,000, so those queries are there on the right if you want to run them.
 
 PGO: We also looked at some examples within those queries to see what sort of code was affected by these bugs. And the reality is that we found a lot of high traffic, well-known repositories had these bugs. So on the left-hand side, you see a list of 15 examples of repositories with bugs in negated in expressions and on the right-hand side, you see another 15 examples of bugs in negated instanceof expressions. Separately from the open source analysis, we also run our own internally at Bloomberg. We looked at the AST of a large set of internal projects and we found that around one in seven in expressions are negated. For instanceof around one in eight. Out of those negated expressions, 1% of negated in had bugs of the form that I described earlier and 6% for instanceof had bugs. This is out of the total of negated expressions.
 
@@ -391,17 +358,7 @@ WH: My comment was incorrect.
 
 CDA: I am looking for people to explicitly support this for Stage 1 for consensus.
 
-Explicit support for stage 1 from:
-JWK,
-JRL,
-CZW,
-Hax,
-JHD,
-DLM,
-DRO,
-RKG,
-DE,
-EAO,
+Explicit support for stage 1 from: JWK, JRL, CZW, Hax, JHD, DLM, DRO, RKG, DE, EAO,
 
 ### Speaker's Summary of Key Points
 
@@ -443,8 +400,7 @@ BAN: And the third problem is, sometimes like for this one, this problem is solv
 
 BAN: These are all things that would be useful to have. These are things that would make the ambient experience of the web better. There is a problem within the problem. This is a problem that is sort of pervasive across internationalization. If we were to directly expose, for example, the user’s operating system preferences directly as servers, this would make users with nondefault settings especially users with idiosyncratic settings identifiable. This is sort of like a particular problem in the the condition [T*EBS] of internationalization because when you’re asking for localization customization ace, you are saying deep about who you are.
 
-BAN: So, for example, if you’re requesting, you could, by requesting, indicate you’re part of a politically disadvantaged minority or something like that. It’s a case where fingerprinting reduces the person’s anonymity to a small level that they are identifiable by servers is a serious problem.
-So the goal is to let users express their consent fully as possible. It’s something we want to be tremendously careful with. While prioritizing tailorings that might seriously impact the content of illegal if ignored. We want people to be able to get content that’s intelligible to them with little effort adds possible leaving a small fingerprinting surface as possible.
+BAN: So, for example, if you’re requesting, you could, by requesting, indicate you’re part of a politically disadvantaged minority or something like that. It’s a case where fingerprinting reduces the person’s anonymity to a small level that they are identifiable by servers is a serious problem. So the goal is to let users express their consent fully as possible. It’s something we want to be tremendously careful with. While prioritizing tailorings that might seriously impact the content of illegal if ignored. We want people to be able to get content that’s intelligible to them with little effort adds possible leaving a small fingerprinting surface as possible.
 
 BAN: And the goal that I have set for this is, the fingerprinting surface established through whatever mechanism we choose, should be actually smaller than the surface offered by one entry and accept language. Also all fingerprinting that happens must be detectable.
 
@@ -724,30 +680,22 @@ Presenter: Kevin Gibbons (KG)
 
 KG: Hello. Welcome, thanks for coming to my TED talk. Okay, stop coercing things. So we talked about this previously. We got through some of the items. I want to get through more. So just to briefly recap what we’re talking about, passing something of the wrong type is almost always a bug and it is my opinion that bugs should generally be loud and not quiet. Which is to say it is almost always better to get an exception rather than silently having the wrong behavior. And, you know, concretely, we recently had added this new API that several people have observed you can request `arr.at('start')`, and this will in fact successfully give you the first item of the array through a series of mishaps and type coercion.
 
-KG: We don’t have to keep doing this. Like, this is what we have been doing for the entire existence of the language, but we don’t have to. Precedent is good, but for sufficiently bad ideas, it’s worth breaking with precedent, and I think that this willingness to coerce arbitrary values to arbitrary other types is a precedent that it is worth breaking with. And,
-in fact, last time we talked about this, we got agreement on some of those, so concretely, we got agreement to not coerce NaN to zero and instead throw a RangeError and also when there is a required argument where undefined is not a valid value for that argument, do not coerce undefined to whatever type is expected here. So, you know, dot at `.at` with no arguments would throw an exception because the argument to `.at` is required.
+KG: We don’t have to keep doing this. Like, this is what we have been doing for the entire existence of the language, but we don’t have to. Precedent is good, but for sufficiently bad ideas, it’s worth breaking with precedent, and I think that this willingness to coerce arbitrary values to arbitrary other types is a precedent that it is worth breaking with. And, in fact, last time we talked about this, we got agreement on some of those, so concretely, we got agreement to not coerce NaN to zero and instead throw a RangeError and also when there is a required argument where undefined is not a valid value for that argument, do not coerce undefined to whatever type is expected here. So, you know, dot at `.at` with no arguments would throw an exception because the argument to `.at` is required.
 
 KG: Also, I want to emphasize these are not hard and fast rules. If you want to come to the committee and say “in my proposal we are not following the rules that we’ve talked about in this
-[stop coercing things] presentation”, you should have a concrete reason to do so. That reason might be as simple as, "this API is basically a clone of an existing one and I want to make it work like the existing API".
-That’s fine. It just needs to be a reason.
+[stop coercing things] presentation”, you should have a concrete reason to do so. That reason might be as simple as, "this API is basically a clone of an existing one and I want to make it work like the existing API". That’s fine. It just needs to be a reason.
 
 KG: I have a pull request up with these two rules. Today I want to talk about three other things. I’m going to go through these in order and unlike last time, I want to get to discussion of each of these in order, before moving on. So I have ordered these carefully and hopefully not controversial such that I consider important and then those I consider less important and maybe less controversial.
 
-KG: So I want to start with this first one. I would like us to stop rounding non-integral numbers. If you expect an integer, then if someone gives you something that is not an integer,
-we should throw. Fun observation, the array constructor actually does this. It is the only place currently in the language that does this. When Temporal lands, it will have more.
-Temporal has very good reason, which is that, for example, if you are making a Duration and you say `seconds: 1.5`, that should certainly not give you a Duration of 1 second or 2 seconds. So in Duration’s case, it was like really, really clearly necessary that you should throw a RangeError, but I think in almost all cases you should throw a range error.
+KG: So I want to start with this first one. I would like us to stop rounding non-integral numbers. If you expect an integer, then if someone gives you something that is not an integer, we should throw. Fun observation, the array constructor actually does this. It is the only place currently in the language that does this. When Temporal lands, it will have more. Temporal has very good reason, which is that, for example, if you are making a Duration and you say `seconds: 1.5`, that should certainly not give you a Duration of 1 second or 2 seconds. So in Duration’s case, it was like really, really clearly necessary that you should throw a RangeError, but I think in almost all cases you should throw a range error.
 
 KG: These are some examples of current silliness. Notably the TypedArray constructors, TypedArrays are usually more strict than arrays but they are less strict in this particular case, they will round arguments. You can ask for a length 1.5 Float64Array and it will not give you a Float64Array that is backed by 12 bytes. It will give you an array that is backed by 8 bytes. Why should we let you do this? We should not let you do this. Does anyone have thoughts on this?
 
 CDA: There is Shane.
 
-SFC: Yeah, so for example, when looking at indexes into arrays, it makes a lot of sense, because there is no possible situation where a non-integral number would make sense at that position.
-In the case of Temporal.Duration, Temporal made the choice that fractional digits and fractional second digits should instead be represented as integral numbers of milliseconds/microseconds/nanoseconds, so the Temporal champions chose integral numbers. There could, however, be other cases, and I believe I raised some of these at the last time, that this was on the floor at one of previous meetings, where requiring integral numbers not necessarily because the context in which they are used necessarily always requires an integral number, but because there is still design space yet to be solved in accepting fractional digits.
-One example of this coming up is, for example, in the Intl.DurationFormat proposal, you know, there may be a desire to, for example, at some point support formatting of fractional hours and fractional minutes, which is not currently supported in the integral format duration proposal but is not necessarily because of some external variance or requirement that those be integral numbers. And I tried to make the argument last time that having that, you know, at least integral formatting we try to take the angle on all of these cases as being, as coming from the angle of doing a best effort and, you know, having a best effort, that we can in the future relax to make better is not necessarily a bad position to be in.
-So I’m fine with the idea of saying that, like, when the integral number is used in a situation where there is an external variant enforcing that this is always going to definitely be an integral number, that we can stop coercing and do what KG describes here. But I think it’s important to have that qualification instead of making a blanket everywhere.
+SFC: Yeah, so for example, when looking at indexes into arrays, it makes a lot of sense, because there is no possible situation where a non-integral number would make sense at that position. In the case of Temporal.Duration, Temporal made the choice that fractional digits and fractional second digits should instead be represented as integral numbers of milliseconds/microseconds/nanoseconds, so the Temporal champions chose integral numbers. There could, however, be other cases, and I believe I raised some of these at the last time, that this was on the floor at one of previous meetings, where requiring integral numbers not necessarily because the context in which they are used necessarily always requires an integral number, but because there is still design space yet to be solved in accepting fractional digits. One example of this coming up is, for example, in the Intl.DurationFormat proposal, you know, there may be a desire to, for example, at some point support formatting of fractional hours and fractional minutes, which is not currently supported in the integral format duration proposal but is not necessarily because of some external variance or requirement that those be integral numbers. And I tried to make the argument last time that having that, you know, at least integral formatting we try to take the angle on all of these cases as being, as coming from the angle of doing a best effort and, you know, having a best effort, that we can in the future relax to make better is not necessarily a bad position to be in. So I’m fine with the idea of saying that, like, when the integral number is used in a situation where there is an external variant enforcing that this is always going to definitely be an integral number, that we can stop coercing and do what KG describes here. But I think it’s important to have that qualification instead of making a blanket everywhere.
 
-KG: Okay. I think two things. First, I think that that argument is a reasonable argument to make for why to make an exception to this rule for a particular API. Like I was saying, you should have a reason to make an exception, but if the reason is, like, you are concretely trying to make a best effort and we might change the behavior later, that’s fine.
-I guess I had three things. It sounds like duration format doesn’t require you to pass an integer. It’s a reasonable thing to do, to pass a non-integer value, so a rule I have written down about only taking integral numbers just wouldn’t apply if in fact you intentionally want to operate on non-integral numbers. But then also separately, like I think if you’re intending to change the behavior for non-integral numbers later, it is probably a better idea to throw. Like, I’m not going to tell you what to do, but usually we find that people start relying on behavior fairly quickly, and so if you want to leave space for treating certain inputs differently later, it’s generally best to reject them, not to make a best effort. But I guess that’s not always how 402 APIs work. I hear you and I think that does work with this. When you want to accept non-integral numbers, you should say why you’re doing so.
+KG: Okay. I think two things. First, I think that that argument is a reasonable argument to make for why to make an exception to this rule for a particular API. Like I was saying, you should have a reason to make an exception, but if the reason is, like, you are concretely trying to make a best effort and we might change the behavior later, that’s fine. I guess I had three things. It sounds like duration format doesn’t require you to pass an integer. It’s a reasonable thing to do, to pass a non-integer value, so a rule I have written down about only taking integral numbers just wouldn’t apply if in fact you intentionally want to operate on non-integral numbers. But then also separately, like I think if you’re intending to change the behavior for non-integral numbers later, it is probably a better idea to throw. Like, I’m not going to tell you what to do, but usually we find that people start relying on behavior fairly quickly, and so if you want to leave space for treating certain inputs differently later, it’s generally best to reject them, not to make a best effort. But I guess that’s not always how 402 APIs work. I hear you and I think that does work with this. When you want to accept non-integral numbers, you should say why you’re doing so.
 
 CDA: Okay, I think I’m next. And maybe you already covered this, but it’s probably worth pointing out for completion. I remember this from last time, and I’m not putting words in your mouth, so please feel free to clarify, but I recall that the goal of what you’re proposing here is just to change the default treatment for new APIs, and there can still be exceptions where you might want to not follow the guidance on what you’re proposing if there’s a good reason to do it. But it’s not to say that we can never do coercion in situations where it makes sense.
 
@@ -758,20 +706,12 @@ CDA: SYG?
 SYG: Yeah, I wanted to -- first I wanted to respond to Shane. I want to better understand what -- because the gestures of what I understood was you would like to have the option to put accept non-integral stuff later. If that is the case, we can go from throw to no throw, so what is the down I’d to throwing today and then change it to no throwing once you add non-integral support?
 
 SFC: A few things here. I’ll respond. I’ll start by responding to Kevin can then respond to Shu. So one thing I don’t completely -- I’m not completely clear on here is we already have mixed precedent in the standard for this as Kevin has pointed out. That the array constructor has different behavior than certain other APIs. So it’s not clear to me necessarily -- so necessarily that we’re changing precedent. In fact, we’re actually creating a new rule that didn’t exist before. It’s not necessarily clear why we’re creating that rule. Then to respond to the question about, well, can we relax exceptions later, the -- there’s the different perspectives that can be taken on this question, and, you know, I’m not going to derail this discussion right now to have that discussion about, like, you know, situations where relaxing exceptions is better, but there’s also definitely cases where, you know, we can have best effort behavior now, and then another -- and then, you know, continue improving on that best effort behavior in the future. That’s exactly how locales work. That’s exactly how user preferences work. When we have more information and we are able to accept more information, we can improve the behavior.
-.
-SFC: And it’s often easier for -- I don’t want to necessarily have a debate about this right here,
-but one advantage of having a behavior that continually improves, especially in the Intl space is that users can -- or developers can deploy code that runs on both older and newer systems and has, you know, the improved behavior on newer systems and has fallback behavior on older systems. And that just works and solves their problems. We can have a debate about is the case I described with formatting of fractional minutes, if that gets added in the future, is that a place we should -- you know, where which behavior is better or not. We can have that discussion. It could be the case that we want to inform users loudly in that particular case.
-But I think that as general rule, you know, we should leave open the option for proposals to take that other position of, you know, of having best effort behavior.
-.
-SFC: Yeah, and KG has another item on the queue.
-.
-SYG: I want to respond. Well, I want to respond to that. So I think perhaps locales -- not locales per se, but the internalization API space has a different like impolice contract from over aist, because I have the counts -- I have the opposite intuition that general rule should be that we do not have APIs whose behavior changes over time, because as Kevin said the pattern that we have seen very often is people depend on behavior today very quickly. So perhaps the internationalization is a special enough space that there’s an expectation that behavior does vary over time and they’ll write their code today with that in mind, but that does not match my intuition for the rest of language APIs. And I think the general rule ought to be for APIs that do not already have the understanding today that their behavior is likely to vary over time, that they do throw. Like, that seems the right general thing to me, and if we need to carve out a different precedent for internationalization because the social contract around how people code internationalization stuff is just different, that seems warranted. But that’s not my expertise.
-.
-KG: Yeah, so two things. First, I do want to explicitly affirm that I’m intending to leave room for proposals to say that in some particular case, it makes sense to round non-integers. So if you want to make that argument on any proposal, like, absolutely. I explicitly want to leave room for that. The second thing you said you weren’t clear on, why do we need a rule given there’s already precedent. Empirically it is the case that that the new APIs we have been adding round integers and I’m trying to change what we do in the future. My proposal is: let’s do a different thing in the future. It doesn’t need to be a rule per se, but, like, that seems like the way to go. Guideline, not a rule. Okay.
-.
-KG: I think we’re done with this queue item, then. Let’s go through the rest of the queue. Shu?
-.
-SYG: Just, yeah, sounds great. The current exception that we just discussed notwithstanding, I strongly support this as a general thing for future APIs.
+. SFC: And it’s often easier for -- I don’t want to necessarily have a debate about this right here, but one advantage of having a behavior that continually improves, especially in the Intl space is that users can -- or developers can deploy code that runs on both older and newer systems and has, you know, the improved behavior on newer systems and has fallback behavior on older systems. And that just works and solves their problems. We can have a debate about is the case I described with formatting of fractional minutes, if that gets added in the future, is that a place we should -- you know, where which behavior is better or not. We can have that discussion. It could be the case that we want to inform users loudly in that particular case. But I think that as general rule, you know, we should leave open the option for proposals to take that other position of, you know, of having best effort behavior.
+. SFC: Yeah, and KG has another item on the queue.
+. SYG: I want to respond. Well, I want to respond to that. So I think perhaps locales -- not locales per se, but the internalization API space has a different like impolice contract from over aist, because I have the counts -- I have the opposite intuition that general rule should be that we do not have APIs whose behavior changes over time, because as Kevin said the pattern that we have seen very often is people depend on behavior today very quickly. So perhaps the internationalization is a special enough space that there’s an expectation that behavior does vary over time and they’ll write their code today with that in mind, but that does not match my intuition for the rest of language APIs. And I think the general rule ought to be for APIs that do not already have the understanding today that their behavior is likely to vary over time, that they do throw. Like, that seems the right general thing to me, and if we need to carve out a different precedent for internationalization because the social contract around how people code internationalization stuff is just different, that seems warranted. But that’s not my expertise.
+. KG: Yeah, so two things. First, I do want to explicitly affirm that I’m intending to leave room for proposals to say that in some particular case, it makes sense to round non-integers. So if you want to make that argument on any proposal, like, absolutely. I explicitly want to leave room for that. The second thing you said you weren’t clear on, why do we need a rule given there’s already precedent. Empirically it is the case that that the new APIs we have been adding round integers and I’m trying to change what we do in the future. My proposal is: let’s do a different thing in the future. It doesn’t need to be a rule per se, but, like, that seems like the way to go. Guideline, not a rule. Okay.
+. KG: I think we’re done with this queue item, then. Let’s go through the rest of the queue. Shu?
+. SYG: Just, yeah, sounds great. The current exception that we just discussed notwithstanding, I strongly support this as a general thing for future APIs.
 
 KG: Okay. LCA?
 
@@ -790,78 +730,40 @@ KG: Sure, yeah, I’ll try to workshop something in there. And, yes, intentional
 WH: Things that currently do truncations include ToUint32 and to ToInt32. In addition to truncation to an integer, they do modulo 2**32. What is your recommendation regarding those?
 
 KG: Yeah, that's a good question. I kind of intentionally didn’t cover them because I wasn’t sure that I was going to be able to get agreement on them. What I am currently proposing is that for an API that would do ToUint32, you would do toNumber, though see later about that, and throw if the result is not integral, and then do ToUint32. I think there’s room to also make a rule that says these things should restrict the domain of their input and throw for anything that they would do a non-trivial modulus for. Didn’t suggest that because you didn’t expect us to come to agreement on it and I thought the integer one we were more likely to agree to.
-.
-WH: Okay.
-.
-KG: Now that it’s been brought up, does anyone have opinions about whether things that currently do ToUint32 ought to throw for things outside of their domain rather than performing modulo?
-.
-WH: My opinion is it depends on the context. There are things which do ToUint32 or ToInt32 for which we’re interested in the mathematical value of the number and we should not be doing modulo. On the other hand, there are things that do ToUint32 or ToInt32 that treat integers as bit maps for which the modular behavior is pretty much essential.
-.
-KG: Yeah.
-.
-WH: It depends on whether you’re interested in the number as a bit pattern or whether you’re interested in a number for its numeric value.
-.
-KG: So I think I’m not going to propose any new rules regarding ToUint32, but suggest to the committee that in the future, if you are designing an API which would in the current world do ToUint32, you should think hard about whether it makes sense to perform Modulo. But I’m not going to propose a rule around that. Okay, great.
-.
-KG: Before moving on, I would like to ask for explicit consensus for this thing up here with the caveat that it’s only intended to be a guideline, not actually a hard and fast rule and I’ll try to workshop some wording around SFC’s concrete case for when Intl APIs may want to go against this guideline.
-.
-CDA: Before we ask for consensus, there is one more question from Andreu.
-.
-API: You called out explicitly NaN to zero, but negative zero and undefined, I assume you would want those to three as well.
-.
-KG: Negative zero is an excellent question. I think not negative zero. I think most places that accept zero should accept negative zero. You generally don’t want to regard those as different. And undefined is a separate question that last time we got agreement not to coerce undefined to anything.
-.
-RPR: CDA?
-.
-CDA: Sorry, I just was seeking clarification on you were asking for consensus for your -- you referred to something, Peter. I was confused, is there something different than.
-.
-KG: This is what you were plus-one-ing. I have heard a great deal of support for it. I’m formally calling for consensus on a new guideline, which I realize is a weird thing to call for consensus for.
-.
-KG: Okay, having heard a great deal of support and no objections, I will take this as consensus and update the pull request later.
-.
-RPR: And explicit support from EAO.
-.
-RPR: I explicitly support.
-.
-KG: Okay, moving on to an almost certainly more controversial one, I would like us to stop coercing objects to primitives. If your API takes a string and someone gives an object or a function, you should throw. They have given you the wrong thing. You should not invoke user code in the middle of your execution of this function; that’s not the right thing to do. If the user wants to do coercion, they can just do the coercion. Also, I have to point out that this would remove one of the largest sources of side effects in the language and a ridiculously large class of engine bugs because user code can have side effects and the violate invariants, and it’s just generally bad. I think that usually,
-when you have passed a function to something that doesn’t expect a function, that’s a bug, or like an object to something that expects a string. That’s a bug. You know, you shouldn’t be able to join an array of an empty object. Like, "a[object Object]b" is just not the outcome that you wanted here. If you are passing a date to Math.max, probably you were expecting to get a date out, not a number. If you are padding a string with number `'x'.padStart(4, Number)`, I don’t know what you were expecting, but you weren’t expecting the letters “fun”. That’s not fun.
+. WH: Okay.
+. KG: Now that it’s been brought up, does anyone have opinions about whether things that currently do ToUint32 ought to throw for things outside of their domain rather than performing modulo?
+. WH: My opinion is it depends on the context. There are things which do ToUint32 or ToInt32 for which we’re interested in the mathematical value of the number and we should not be doing modulo. On the other hand, there are things that do ToUint32 or ToInt32 that treat integers as bit maps for which the modular behavior is pretty much essential.
+. KG: Yeah.
+. WH: It depends on whether you’re interested in the number as a bit pattern or whether you’re interested in a number for its numeric value.
+. KG: So I think I’m not going to propose any new rules regarding ToUint32, but suggest to the committee that in the future, if you are designing an API which would in the current world do ToUint32, you should think hard about whether it makes sense to perform Modulo. But I’m not going to propose a rule around that. Okay, great.
+. KG: Before moving on, I would like to ask for explicit consensus for this thing up here with the caveat that it’s only intended to be a guideline, not actually a hard and fast rule and I’ll try to workshop some wording around SFC’s concrete case for when Intl APIs may want to go against this guideline.
+. CDA: Before we ask for consensus, there is one more question from Andreu.
+. API: You called out explicitly NaN to zero, but negative zero and undefined, I assume you would want those to three as well.
+. KG: Negative zero is an excellent question. I think not negative zero. I think most places that accept zero should accept negative zero. You generally don’t want to regard those as different. And undefined is a separate question that last time we got agreement not to coerce undefined to anything.
+. RPR: CDA?
+. CDA: Sorry, I just was seeking clarification on you were asking for consensus for your -- you referred to something, Peter. I was confused, is there something different than.
+. KG: This is what you were plus-one-ing. I have heard a great deal of support for it. I’m formally calling for consensus on a new guideline, which I realize is a weird thing to call for consensus for.
+. KG: Okay, having heard a great deal of support and no objections, I will take this as consensus and update the pull request later.
+. RPR: And explicit support from EAO.
+. RPR: I explicitly support.
+. KG: Okay, moving on to an almost certainly more controversial one, I would like us to stop coercing objects to primitives. If your API takes a string and someone gives an object or a function, you should throw. They have given you the wrong thing. You should not invoke user code in the middle of your execution of this function; that’s not the right thing to do. If the user wants to do coercion, they can just do the coercion. Also, I have to point out that this would remove one of the largest sources of side effects in the language and a ridiculously large class of engine bugs because user code can have side effects and the violate invariants, and it’s just generally bad. I think that usually, when you have passed a function to something that doesn’t expect a function, that’s a bug, or like an object to something that expects a string. That’s a bug. You know, you shouldn’t be able to join an array of an empty object. Like, "a[object Object]b" is just not the outcome that you wanted here. If you are passing a date to Math.max, probably you were expecting to get a date out, not a number. If you are padding a string with number `'x'.padStart(4, Number)`, I don’t know what you were expecting, but you weren’t expecting the letters “fun”. That’s not fun.
 
 KG: We should stop doing this. Now, I recognize there are significantly more reasonable reasons to want this. But I do think that use cases for it would universally be better served by explicitly doing the coercion yourself. Coercing to string is trivial. Coercing to number is trivial. It’s just
 `''+x` or just `+x`. Boolean is `!!`, I’m less certain about coercing to Boolean, if someone wants to make an argument that this should only apply to things other than Boolean, I’m open to that argument, but, yeah, we should stop doing this. Thoughts?
-.
-SYG: So I’m -- unsurprisingly, I like the idea and I support it. But my intuition is that I think the economic cost is more than just engine bugs. Even though that is certainly a large class. Both performance bugs and, well, performance issues, I suppose, and security bugs.
-Security bugs are by far worse when unexpecting user code runs. But even for performance stuff, this happens often because if, as part of argument coercion, it -- you change thing that invalidates a fast path that you’re currently on, you just now have fallen off the fast path.
-So that’s bad. Also, I think everybody in this room spends a lot of collective time writing tests for these corners, like, an inordinate amount of time for these corners. That does not seem like a good use of our time. It would be good if we stopped doing that. I think on every level of the JS ecosystem, I think there’s some economic cost attached to this. It would be nice if we could stop doing this for new APIs. Also, just going to my next topic, which is I’m wondering what TypeScript does as a non-typeScript writer. If you pass objects to something that expects a primitive, does it warn by default, error by default?
-.
-KG: Yeah, TypeScript doesn’t have warnings. That’s just a violation.
-.
-SYG: Okay, thanks.
-.
-MF: Can I get further clarification to that answer? Is that because the TypeScript types for these APIs are more restrictive than reality?
-.
-KG: Yes.
-.
-MF: Okay, thank you.
-.
-KG: And I believe the TypeScript team has previously expressed that they tried to keep to the spirit of APIs and, like, get annoyed by bug reports about people passing the wrong thing.
-.
-RPR: We can hear more about the spirit from DRR himself.
-.
-KG: Excellent.
-.
-DRR: Yeah, it’s exactly this. Like, for all intents and purposes, you really did want to say this should be a number, this should be a string, and then people say, oh, well, technically it hasn’t -- anything that has a `toString` and, really, I don’t think most people on this committee -- maybe I shouldn’t say that, but I mean, this is the points of the presentation,
-right? Like, it was really never the intent, right? And hopefully you’re not running into code that does that sort of thing either. So if we have more cases where we can just say, no,
-this is is what the actual behavior is, that aligns better, I think, what most type checkers would want, including ourselves.
-.
-RPR: GCL has a plus one. And message. On to EAO.
-.
-EAO: Yeah, so I support this, but also the first thing I’m going to do is kind of look for an exception for it. In that the Intl message format proposal I’m championing, there is, I think,
-a valid use case for wrapped primitive values in the compound -- to deal with compound values,
-but I think I would -- when championing this and explaining it, I think it is up to me to explain why do we need to allow for this weird thing rather than being able to assume by default this is okay.
-.
-KG: So I want to ask, would your use case be that, for example, this first thing on the screen ought to invoke the `toString` method on your message format objects or that you would have a new API which would accept things and then do coercion?
-.
-EAO: So it would be a new API where the new API -- for example, when formatting a number, would in most cases expect there to be just a number, but would be okay with, for instance, a `new Number(...)` instance with an options bag attached to that and for stuff to happen with this. But specifically, I am expecting that in order to get that to pass, I need to explain myself and why this particular thing needs to be done.
+. SYG: So I’m -- unsurprisingly, I like the idea and I support it. But my intuition is that I think the economic cost is more than just engine bugs. Even though that is certainly a large class. Both performance bugs and, well, performance issues, I suppose, and security bugs. Security bugs are by far worse when unexpecting user code runs. But even for performance stuff, this happens often because if, as part of argument coercion, it -- you change thing that invalidates a fast path that you’re currently on, you just now have fallen off the fast path. So that’s bad. Also, I think everybody in this room spends a lot of collective time writing tests for these corners, like, an inordinate amount of time for these corners. That does not seem like a good use of our time. It would be good if we stopped doing that. I think on every level of the JS ecosystem, I think there’s some economic cost attached to this. It would be nice if we could stop doing this for new APIs. Also, just going to my next topic, which is I’m wondering what TypeScript does as a non-typeScript writer. If you pass objects to something that expects a primitive, does it warn by default, error by default?
+. KG: Yeah, TypeScript doesn’t have warnings. That’s just a violation.
+. SYG: Okay, thanks.
+. MF: Can I get further clarification to that answer? Is that because the TypeScript types for these APIs are more restrictive than reality?
+. KG: Yes.
+. MF: Okay, thank you.
+. KG: And I believe the TypeScript team has previously expressed that they tried to keep to the spirit of APIs and, like, get annoyed by bug reports about people passing the wrong thing.
+. RPR: We can hear more about the spirit from DRR himself.
+. KG: Excellent.
+. DRR: Yeah, it’s exactly this. Like, for all intents and purposes, you really did want to say this should be a number, this should be a string, and then people say, oh, well, technically it hasn’t -- anything that has a `toString` and, really, I don’t think most people on this committee -- maybe I shouldn’t say that, but I mean, this is the points of the presentation, right? Like, it was really never the intent, right? And hopefully you’re not running into code that does that sort of thing either. So if we have more cases where we can just say, no, this is is what the actual behavior is, that aligns better, I think, what most type checkers would want, including ourselves.
+. RPR: GCL has a plus one. And message. On to EAO.
+. EAO: Yeah, so I support this, but also the first thing I’m going to do is kind of look for an exception for it. In that the Intl message format proposal I’m championing, there is, I think, a valid use case for wrapped primitive values in the compound -- to deal with compound values, but I think I would -- when championing this and explaining it, I think it is up to me to explain why do we need to allow for this weird thing rather than being able to assume by default this is okay.
+. KG: So I want to ask, would your use case be that, for example, this first thing on the screen ought to invoke the `toString` method on your message format objects or that you would have a new API which would accept things and then do coercion?
+. EAO: So it would be a new API where the new API -- for example, when formatting a number, would in most cases expect there to be just a number, but would be okay with, for instance, a `new Number(...)` instance with an options bag attached to that and for stuff to happen with this. But specifically, I am expecting that in order to get that to pass, I need to explain myself and why this particular thing needs to be done.
 
 KG: That sounds great. And just as with the previous item, yes, I think that when there are exceptions, that’s fine. We just need to have a good reason.
 
@@ -872,8 +774,7 @@ DE: I’m +1 on this proposal in general. About the particular MessageFormat use
 KG: Yes, that’s a good call-out. I do intend this to be a typeof check, just like you would write in user code, and of course typeof a boxed primitive does not, like -- `typeof new Number` does not give you “number”. It’s an object, so my intention is to reject those along with everything else.
 
 DE: That sounds good to me. I kind of want to ask JHD because you expressed interest in coercion performing unwrapping of boxed primitives in the past.
-.
-JHD: I would say that I will be thinking about it as these cases come up. But I still think that a general default of don’t coerce stuff is the right place to start. And so even though I didn’t put myself on the queue, but I support everything that Kevin is saying here. But I am -- I will -- you know, how can I say this without sounding antagonistic? I reserve the right to brings up boxed primitives in the future, but I can’t at the moment conceive of when I would have a strong opinion about it.
+. JHD: I would say that I will be thinking about it as these cases come up. But I still think that a general default of don’t coerce stuff is the right place to start. And so even though I didn’t put myself on the queue, but I support everything that Kevin is saying here. But I am -- I will -- you know, how can I say this without sounding antagonistic? I reserve the right to brings up boxed primitives in the future, but I can’t at the moment conceive of when I would have a strong opinion about it.
 
 DE: Okay, that’s great. So boxed primitives, we might enable them for certain proposals, but you’d be okay with the blanket general rule being default be, we don’t support boxed primitives?
 
@@ -905,8 +806,7 @@ PFC: KG already said what I was going to say.
 
 RPR: Got it, yeah, does not call user code. TAB?
 
-KG: Sorry, I was reminded of one more thing on this front, which is that we have in the past run into cases where we had an API which took a boolean and we then wanted to expand it and we couldn’t, which leads to one of my favorite sentences in all of our specifications in ECMA 402, that is like 'for historical reasons, the string value “false” is treated as `true`',
-which, like… I gues we will continue to have issues with expanding APIs from Booleans to a larger domain of types. But, yeah, it’s plausible worth it.
+KG: Sorry, I was reminded of one more thing on this front, which is that we have in the past run into cases where we had an API which took a boolean and we then wanted to expand it and we couldn’t, which leads to one of my favorite sentences in all of our specifications in ECMA 402, that is like 'for historical reasons, the string value “false” is treated as `true`', which, like… I gues we will continue to have issues with expanding APIs from Booleans to a larger domain of types. But, yeah, it’s plausible worth it.
 
 TAB [on the queue]: plus 1 to everything. Maybe keep allow bools, but `!!obj` is fine.
 
@@ -918,42 +818,22 @@ RKG: Yeah, I think I would -- I would favor allowing boolean coercion.
 
 KG: Cool.
 
-SFC: Yeah, I have the next two items. I want to switch the order of them and do the second one first. So GetOption is the -- is an abstract operation used very widely in Intl, in Temporal,
-in 262. And like, this is -- seems like the biggest case that, like, this change would impact.
-And I think that the -- you know, the status quo of GetOption behavior is definitely, I think,
-something that developers are accustomed to, that spec authors like myself and others, are accustomed to. And I don’t necessarily think we’re in a position right now to basically say,
-like, oh, we’re going to make GetOptionV2, which has a different type of behavior. I think we have GetOption and GetOption works the way it works, and we should keep using GetOption.
-.
-KG: You can say more about why we can’t just make GetOption strict? That’s the explicitly the thing I’m asking for. I really don’t want to coerce values from options bags where you look up the value and it’s an object and you coerce that to a number. That is explicitly what I want us to not do. Why can’t we just stop doing that in new things?
-.
-SFC: I think that -- would you consider it to be an -- a reasonable exception that, like, all other options in this options bag do GetOption V1, we add a new option to the option bag and continue the use GetOption V1, is that a case of --
-.
-KG: Yes, I think when you already have an existing API that coerces, you know, five of its arguments and you’re adding a sixth, also coercing that one is fine. That is a reasonable exception.
-.
-SFC: Okay. Yeah, another thing here is like, GetOption and options bag is quite a different beast than, like, you know, coercing arguments or coercing the callee. I think those are quite different things, because options bags are by their nature, like, something that, you know, has certain types of rules. So I guess what I’m trying to argue -- what I’m trying to say is that the mental model that goes -- that is behind basically named arguments and options bags is fundamentally different than the mental model that goes into positional arguments. For example, if you’re writing, like, a named argument, you have to name the argument in your call site. And then, like, you know, it’s really -- it’s much easier when reading and reviewing code that, like, this thing is expected to be a string, I’m passing anything that’s not a string, it’s going to be coerced to a string. That’s much more clear.
-Now, positional arguments, I think there’s definitely a very strong argument from the side of readability.
-.
-KG: I guess I just don’t share that intuition. I think that if I end up constructing an options bag and, like I do, you know, measurement unit V and I have accidentally messed things up such that V is holding an object, I would prefer to get an exception rather than calling to ToString on that. I just don’t have the intuition that, like, you want to do coercion for arguments and options bags.
-.
-SYG: Yeah, I think I’m next on the queue. I agree with KG here. I also don’t -- I think it is true that options bags have different rules. Namely they have names. But I think it would be harmful to explicitly say that name parameters ought to coerce by default but positional arguments do not. I think the -- the engine costs and the test stuff, like, I think all of those arguments also directly apply to named arguments and options bags. I don’t quite understand what the categorical difference is with respect to coercion, so I would strongly prefer that we do not coerce.
-.
-CDA: Shane?
-.
-SFC: I mean, I just wrote a little example code. Like, that’s fine to coerce, string to number in that case. Like --
-.
-KG: Yeah, the coercing string to number is the next item. Right now we’re only talking about coercing object to number.
-.
-SFC: Okay.
-.
-SYG: Yes, specifically the cost around invoking user hook points like value of and ToString.
-.
-KG: There’s less value there, because GetOption does a property lookup, which is hookable.
-.
-SFC: Okay, so let’s go ahead to my other agenda item, then, which is the one that’s currently says it’s topic. 15 minutes remain. So we have Symbol.toStringTag and Symbol.toPrimitive.
-Like, the -- I mean, we’ve referenced that user code earlier in this conversation, but isn’t the whole point of having that user code specifically so that, you know, library developers can design objects that coerce into a way that makes sense for those objects? Like --
+SFC: Yeah, I have the next two items. I want to switch the order of them and do the second one first. So GetOption is the -- is an abstract operation used very widely in Intl, in Temporal, in 262. And like, this is -- seems like the biggest case that, like, this change would impact. And I think that the -- you know, the status quo of GetOption behavior is definitely, I think, something that developers are accustomed to, that spec authors like myself and others, are accustomed to. And I don’t necessarily think we’re in a position right now to basically say, like, oh, we’re going to make GetOptionV2, which has a different type of behavior. I think we have GetOption and GetOption works the way it works, and we should keep using GetOption.
+. KG: You can say more about why we can’t just make GetOption strict? That’s the explicitly the thing I’m asking for. I really don’t want to coerce values from options bags where you look up the value and it’s an object and you coerce that to a number. That is explicitly what I want us to not do. Why can’t we just stop doing that in new things?
+. SFC: I think that -- would you consider it to be an -- a reasonable exception that, like, all other options in this options bag do GetOption V1, we add a new option to the option bag and continue the use GetOption V1, is that a case of --
+. KG: Yes, I think when you already have an existing API that coerces, you know, five of its arguments and you’re adding a sixth, also coercing that one is fine. That is a reasonable exception.
+. SFC: Okay. Yeah, another thing here is like, GetOption and options bag is quite a different beast than, like, you know, coercing arguments or coercing the callee. I think those are quite different things, because options bags are by their nature, like, something that, you know, has certain types of rules. So I guess what I’m trying to argue -- what I’m trying to say is that the mental model that goes -- that is behind basically named arguments and options bags is fundamentally different than the mental model that goes into positional arguments. For example, if you’re writing, like, a named argument, you have to name the argument in your call site. And then, like, you know, it’s really -- it’s much easier when reading and reviewing code that, like, this thing is expected to be a string, I’m passing anything that’s not a string, it’s going to be coerced to a string. That’s much more clear. Now, positional arguments, I think there’s definitely a very strong argument from the side of readability.
+. KG: I guess I just don’t share that intuition. I think that if I end up constructing an options bag and, like I do, you know, measurement unit V and I have accidentally messed things up such that V is holding an object, I would prefer to get an exception rather than calling to ToString on that. I just don’t have the intuition that, like, you want to do coercion for arguments and options bags.
+. SYG: Yeah, I think I’m next on the queue. I agree with KG here. I also don’t -- I think it is true that options bags have different rules. Namely they have names. But I think it would be harmful to explicitly say that name parameters ought to coerce by default but positional arguments do not. I think the -- the engine costs and the test stuff, like, I think all of those arguments also directly apply to named arguments and options bags. I don’t quite understand what the categorical difference is with respect to coercion, so I would strongly prefer that we do not coerce.
+. CDA: Shane?
+. SFC: I mean, I just wrote a little example code. Like, that’s fine to coerce, string to number in that case. Like --
+. KG: Yeah, the coercing string to number is the next item. Right now we’re only talking about coercing object to number.
+. SFC: Okay.
+. SYG: Yes, specifically the cost around invoking user hook points like value of and ToString.
+. KG: There’s less value there, because GetOption does a property lookup, which is hookable.
+. SFC: Okay, so let’s go ahead to my other agenda item, then, which is the one that’s currently says it’s topic. 15 minutes remain. So we have Symbol.toStringTag and Symbol.toPrimitive. Like, the -- I mean, we’ve referenced that user code earlier in this conversation, but isn’t the whole point of having that user code specifically so that, you know, library developers can design objects that coerce into a way that makes sense for those objects? Like --
 
-KG: Yeah. Well, no, actually, as far as I am aware, the only reason that `Symbol.toStringTag` --
-well, toStringTag is kind of irrelevant, because toStringTag is only used for Object.prototype.toString. But `Symbol.toPrimitive`, yes. The reason for that is it was thought to be good idea to let library code customize how they would coerce to primitives. My understanding is this was part of a larger effort in ES6 to explain the behavior of existing things in the language in terms of user definable hook points and in particular, Date happens to have different toPrimitive behavior from everything else. I don’t particularly share that rationale, and this is explicitly a rejection of the goal of allowing people to, like, make things that coerce to primitives in interesting ways.
+KG: Yeah. Well, no, actually, as far as I am aware, the only reason that `Symbol.toStringTag` -- well, toStringTag is kind of irrelevant, because toStringTag is only used for Object.prototype.toString. But `Symbol.toPrimitive`, yes. The reason for that is it was thought to be good idea to let library code customize how they would coerce to primitives. My understanding is this was part of a larger effort in ES6 to explain the behavior of existing things in the language in terms of user definable hook points and in particular, Date happens to have different toPrimitive behavior from everything else. I don’t particularly share that rationale, and this is explicitly a rejection of the goal of allowing people to, like, make things that coerce to primitives in interesting ways.
 
 JHD: I just want to clarify, this change wouldn’t affect that goal, this just says that if you want to make things coerced in interesting ways, the users will just have to do the coercion before they pass it into an API.
 
@@ -963,20 +843,17 @@ JHD: Yeah, they can plus it or String it.
 
 KG: There’s a way to coerce to a particular type of primitive. But that’s also toString and valueOf. The thing that toPrimitive adds on top of toString and valueOf is if you are just coercing to primitive without specifying either string or value.
 
-JHD: It takes a hint. So it always is doing one of the two and there a default hint, but it’s --
-those are the two mechanisms. You’re always either coercing to string or to number, so if you want to do that as a user.
+JHD: It takes a hint. So it always is doing one of the two and there a default hint, but it’s -- those are the two mechanisms. You’re always either coercing to string or to number, so if you want to do that as a user.
 
 KG: Yes.
 
-JHD: Or Boolean or whatever. But those are the two hints you’re providing, so you can still --
-this change that you’re advocating for, KG’s will not affect the ability to define to custom behavior and when users do the coercion themselves instead of doing it inside API, that same customization will apply, so moving where the magic conversion happens.
+JHD: Or Boolean or whatever. But those are the two hints you’re providing, so you can still -- this change that you’re advocating for, KG’s will not affect the ability to define to custom behavior and when users do the coercion themselves instead of doing it inside API, that same customization will apply, so moving where the magic conversion happens.
 
 KG: That’s exactly right. If the user wants to coerce the values that a library gave them, they should coerce the values before passing them somewhere and expecting the language to do the coercion.
 
 SFC: Yeah I guess as a general rule for objects, since objects are things that library authors can customize the coercion behavior of already, it’s just not clear to me that, you know -- and also the fact that these objects are already, you know -- can already have the custom coercion behavior in all other existing APIs. It’s just not clear to me that it’s necessarily a wise choice to sort of make APIs that were defined before 2023 use the custom -- the library author’s custom coercion functions and APIs introduced after 2023 need the explicit coercion code at the call site. And I’m just not convinced about that.
 
-KG: So we heard from engine authors that this would help a lot with eliminating bugs and engines. We heard from test authors that this would save a huge amount of efforts for tests.
-Is your belief that this is useful enough to outweigh that? I feel like eliminating a large source of bugs is very, very valuable, and even acknowledging that there is value in this for some cases, it just doesn’t seem remotely close to comparable in value.
+KG: So we heard from engine authors that this would help a lot with eliminating bugs and engines. We heard from test authors that this would save a huge amount of efforts for tests. Is your belief that this is useful enough to outweigh that? I feel like eliminating a large source of bugs is very, very valuable, and even acknowledging that there is value in this for some cases, it just doesn’t seem remotely close to comparable in value.
 
 SYG: I would find that counterargument more persuasive if we had empirical evidence today of library authors taking advantage of the power given how long it’s been around. I haven’t seen much of it. But happy to be persuaded otherwise. I mainly see it abused as an attack vector.
 
@@ -984,8 +861,7 @@ RPR: Ten minutes remaining. SFC?
 
 SFC: In terms of, you know, order of constituencies, you know, my understanding is that we usually respect or users more than engines more than tests, so if this affects engines and tests but harms users that’s not really an argument that --
 
-KG: Users then developers then implementation complexity then test. Users is the users of websites and they are directly harmed when there’s an exploitable vector in an engine.
-Eliminating a source of engine bugs that leads to Chrome having a zero day is of direct benefit to users, who are a higher priority than the developers.
+KG: Users then developers then implementation complexity then test. Users is the users of websites and they are directly harmed when there’s an exploitable vector in an engine. Eliminating a source of engine bugs that leads to Chrome having a zero day is of direct benefit to users, who are a higher priority than the developers.
 
 SFC: Sure. To respond to SYG’s point, I’m not the person who proposed this and I haven’t actually gathered the data.
 
@@ -998,35 +874,24 @@ WH: SFC’s point brings up the larger point that behavior of similarly-looking 
 KG: TypeScript, yes, TypeScript is the solution. I agree, I actually have that concern and that’s why I have this parenthetical about close cousins of existing APIs. For example when we added findLastIndex, that is close enough to findIndex that it makes sense to copy it exactly, "bug-for-bug compat" as we sometimes say. But also, I think a thing we did in ES6 was add some new array methods that treat holes as undefined. And this has occasionally been confusing but I think worthwhile. So, yeah, it’s definitely a concern, but also I think separately, TypeScript makes it so that most of the time, you’re not doing this if you are using TypeScript. TypeScript isn’t completely sound, so most of the time that you do end up doing this in TypeScript, it’s a bug, and I think users will be happier if we can catch that bug at runtime in at least some cases, even though we can’t in older APIs.
 
 TAB: Yeah, I’ll be quick. As a program author, in Python, which is real relatively strict about not allowing coercions, I usually find this a benefit to me, to I do have to be explicit about
-“turn this into a string for me, turn this into a number for me” because it avoids bugs in my own code, so plus 1 as an author helper for this. As opposed to it being an occasional convenience that I’d be losing. Then related to that, on the topic of the inflection points of shifting author behavior, in addition to TypeScript probably being useful there, just the fact that we have -- we will begin to have increasing numbers of APIs that don’t coerce will change author behavior all on its own and have them start leaning towards eagerly coercing when necessary,
-even in APIs that don’t require it. So I think in general, this -- the amount of -- as strictness goes up, author behavior itself will shift to accommodating that strictness.
-That’s it for me.
+“turn this into a string for me, turn this into a number for me” because it avoids bugs in my own code, so plus 1 as an author helper for this. As opposed to it being an occasional convenience that I’d be losing. Then related to that, on the topic of the inflection points of shifting author behavior, in addition to TypeScript probably being useful there, just the fact that we have -- we will begin to have increasing numbers of APIs that don’t coerce will change author behavior all on its own and have them start leaning towards eagerly coercing when necessary, even in APIs that don’t require it. So I think in general, this -- the amount of -- as strictness goes up, author behavior itself will shift to accommodating that strictness. That’s it for me.
 
-SFC: So there’s been other comments just in this week’s meeting where talk about TypeScript, and what we often say in these situations, and I can name them if you want me to, “we’re not standardizing TypeScript, we’re standardizing ECMAScript” which has constraints that are different than TypeScript. I do agree that TypeScript can really help with, you know, making it so that, like, library authors maybe don’t take advantage of ECMAScript language coercion.
-But there are ways to get it sorted in; it can be written in TypeScript definitions. Like, you know, TypeScript has some flexibility in it. We don’t need to typically belabor that point. But I definitely take the points that TypeScript helps here; it's just that I don’t take the point that TypeScript is the panacea for the problem.
+SFC: So there’s been other comments just in this week’s meeting where talk about TypeScript, and what we often say in these situations, and I can name them if you want me to, “we’re not standardizing TypeScript, we’re standardizing ECMAScript” which has constraints that are different than TypeScript. I do agree that TypeScript can really help with, you know, making it so that, like, library authors maybe don’t take advantage of ECMAScript language coercion. But there are ways to get it sorted in; it can be written in TypeScript definitions. Like, you know, TypeScript has some flexibility in it. We don’t need to typically belabor that point. But I definitely take the points that TypeScript helps here; it's just that I don’t take the point that TypeScript is the panacea for the problem.
 
 JHD: So I would be the last person to say that we should use TypeScript as evidence to do a thing in TC39, but what I would say is what it does do here is indicate that in fact users simply don’t use this feature. Period. Because there have been -- I am probably one of the few people that have ever filed a TypeScript bug for the types not accepting coercible things.
 
 KG: It happens more than it should.
 
-JHD: Sorry, the -- people pass things and -- in that need -- that get implicitly coerced a lot.
-What I mean is when users are forced to do the coercion, they simply do the coercion because that’s how a type TypeScript user would solve things: “oh, I put in a string that isn’t a string,
-I’ll make it into a string”, problem solved. I think that serves as ample evidence it’s not going to hurt anyone to give them this warning in the language instead of just in TypeScript,
-and I think it’s much more valuable to provide this strictness in the language than to do it for the subset of language users that use TypeScript no matter how large or small that subset is.
+JHD: Sorry, the -- people pass things and -- in that need -- that get implicitly coerced a lot. What I mean is when users are forced to do the coercion, they simply do the coercion because that’s how a type TypeScript user would solve things: “oh, I put in a string that isn’t a string, I’ll make it into a string”, problem solved. I think that serves as ample evidence it’s not going to hurt anyone to give them this warning in the language instead of just in TypeScript, and I think it’s much more valuable to provide this strictness in the language than to do it for the subset of language users that use TypeScript no matter how large or small that subset is.
 
 LCA: Yeah, a comments on this, I thought of this because of the comment you made, JHD, based on the TypeScript issues. A lot of web API -- web APIs generally do this object to primitive coercion, and whereas it is much more strict about things like accepting integers or clamping or sort of doing -- being more strict around those things, it is very loose about coercion of objects to primitives. And this would sort of desync us from WebIDL, which maybe is okay, but I wanted to bring up that this is something that will definitely happen.
 
 KG: Yeah, we don’t specify WebIDL but my intention is to follow up there and concretely my intention is to introduce a legacy web attribute and add it to every API and then change the behavior for things that lack that attribute so they don’t coerce. Remains to be seen if that’s something that web and W3C will be on board with although I brought it up and have not gotten shut down out of hand. So definitely agreed. Plan is to do that.
-.
-LCA: Okay, happy to hear that.
-.
-SYG: It is not pre--- we didn’t coordinate this with KG, but if you need any help, I’d be happy to provide any assistance, organizational, that kind of thing, inside to try to make that happen. Because I think it would be good for all browsers. I was going to -- we can talk offline about user hook points, but I think in the interest of time, maybe you want to ask for consensus.
-.
-KG: I would like to ask for consensus for - not quite this thing up here. It is specifically things which take primitives other than boolean, so bigint, symbol - I don’t think anything explicitly takes null - should throw a TypeError rather than invoking toPrimitive or toString or valueOf. Same caveats as last time, if you want that in a new proposal, it’s perfectly reasonable to make a new case for it if you have a reason to. I’ve heard several bits of support. Any objections?
-.
-WH: What about coercion functions?
-.
-KG: I think coercion functions are a clear case where you want to do coercion.
+. LCA: Okay, happy to hear that.
+. SYG: It is not pre--- we didn’t coordinate this with KG, but if you need any help, I’d be happy to provide any assistance, organizational, that kind of thing, inside to try to make that happen. Because I think it would be good for all browsers. I was going to -- we can talk offline about user hook points, but I think in the interest of time, maybe you want to ask for consensus.
+. KG: I would like to ask for consensus for - not quite this thing up here. It is specifically things which take primitives other than boolean, so bigint, symbol - I don’t think anything explicitly takes null - should throw a TypeError rather than invoking toPrimitive or toString or valueOf. Same caveats as last time, if you want that in a new proposal, it’s perfectly reasonable to make a new case for it if you have a reason to. I’ve heard several bits of support. Any objections?
+. WH: What about coercion functions?
+. KG: I think coercion functions are a clear case where you want to do coercion.
 
 RPR: SFC?
 
@@ -1040,8 +905,7 @@ SFC: I would find it compelling if – one thing I heard SYG mention, for exampl
 
 SYG: Hard evidence, users are unequivocally harmed by this. We can work with Project Zero to pull up stuff that has come up in the past. We have paid out thousands of hundreds of dollars to things like user code, detaching or ArrayBuffers in built-ins that did not expect argument coercion to Deattach an ArrayBuffer. Object hurts this because it offers a surprising attack vector; you can see implementers are forgetting to really check. If you want hard-cash numbers, we can work to get that. I feel confident saying, they are most harmed
 
-KG: We are at time. We can come back with this next meeting. Deciding this now doesn’t affect anything. I want to briefly mention, I didn’t get to the third thing, which is fine, which is that I do want to discuss maybe we stop coercing string to number and conversely. Be prepared for that next time.
-And I reduce the scope of this particular item to not encompass Booleans. Not asking for consensus because Shane has objected. And I would like more discussion, which I am happy to have. Look for this item to come back. Thanks, all
+KG: We are at time. We can come back with this next meeting. Deciding this now doesn’t affect anything. I want to briefly mention, I didn’t get to the third thing, which is fine, which is that I do want to discuss maybe we stop coercing string to number and conversely. Be prepared for that next time. And I reduce the scope of this particular item to not encompass Booleans. Not asking for consensus because Shane has objected. And I would like more discussion, which I am happy to have. Look for this item to come back. Thanks, all
 
 RPR: Thank you. We have support from RGN and EAO.
 
@@ -1282,8 +1146,7 @@ CDA: It’s in the – sorry. I am going to interrupt because somebody posted ht
 
 JHD: Thank you. Yes, they were there and removed from the process document 2 or 3 years ago. I stamped the PR, apparently. The names used to be there and we removed them because nobody uses them.
 
-It does seem like the names were not the kinds of names that I am listing here. The names I am listing here are supposed to be self-descriptive, whereas the names you can’t really figure out, what this stages meant.
-Fair. Just from the name. There’s the slight difference.
+It does seem like the names were not the kinds of names that I am listing here. The names I am listing here are supposed to be self-descriptive, whereas the names you can’t really figure out, what this stages meant. Fair. Just from the name. There’s the slight difference.
 
 JHD: I think either way my point stands. I am fine adding names, if we like. People will continue to refer by number, and it seems prudent to find a new number.
 
@@ -1351,8 +1214,7 @@ MLS: Buying that, I actually like your 2A proposal, which is you have a short on
 
 MLS: But you are teaching them something new. If we want do that, then why would you make that proposal of 2A?
 
-MF: Yeah. I should – that’s fine. I should clarify what I meant by we cannot teach the community.
-We did not teach the community these stage numbers in the first place. Our internal process naming leaked to the community and spread naturally. We don't have the power to control it intentionally.
+MF: Yeah. I should – that’s fine. I should clarify what I meant by we cannot teach the community. We did not teach the community these stage numbers in the first place. Our internal process naming leaked to the community and spread naturally. We don't have the power to control it intentionally.
 
 MLS: We can communicate in various venues including our staging document having – it has to be rewritten with this. It seems to me that it will leak out, though we have new stage names or numbers whatever
 
@@ -1398,13 +1260,11 @@ RPR: Shu has a comment on teaching.
 
 SYG: Like okay. Just leave logic at the door. Think of this as implementation detail foroutlining the committee operating. Parts of the committee process has leaked. We can try to teach people that the stuff that leaked has changed. But it seems just so much easier to teach ourselves. So I don't understand the effort here. Even if you are logically correct, and I agree you are logically correct, it’s easier to each ourselves because that’s a set of double digit set of people and we all engaged and like pretty good at learning things of how we ourselves operate. So just like pure practically speaking, it seems we should just do that.
 
-RPR: JHD?
-JHD: Yes. So MLS was talking about teaching the community. Let’s just say something “surprising” happens and we are unable to teach people something, and they learn nothing. I would want them to not confuse 3 and 3A and unless they learn something, that they will in fact be confused by those things. I am hoping that my irony can conveyed that we *will* fail to teach people things.
+RPR: JHD? JHD: Yes. So MLS was talking about teaching the community. Let’s just say something “surprising” happens and we are unable to teach people something, and they learn nothing. I would want them to not confuse 3 and 3A and unless they learn something, that they will in fact be confused by those things. I am hoping that my irony can conveyed that we *will* fail to teach people things.
 
 RPR: Shane?
 
-SFC: Yeah. So Stage 3 communicates multiple different things. And we have been talking a lot about communicates "ready to use this thing." But that’s not the only thing it communicates to developers.
-I think something that has been valuable a lot with Stage 3, it gets the attention of more developers. People take it seriously and submit more tutorials and polyfills of their own. Those are things that are beneficial at the new stage.
+SFC: Yeah. So Stage 3 communicates multiple different things. And we have been talking a lot about communicates "ready to use this thing." But that’s not the only thing it communicates to developers. I think something that has been valuable a lot with Stage 3, it gets the attention of more developers. People take it seriously and submit more tutorials and polyfills of their own. Those are things that are beneficial at the new stage.
 
 SFC: Like, anything that gets the community to sort of take this more seriously and do the work with it, even not using in production is totally fine to retain.
 
@@ -1414,10 +1274,7 @@ EAO: Given we have gone over with some objecting to any references ToNumber 2 an
 
 MF: First, Stage E sounds like Stage 3. Sorry. Second, if we are going to be using names, use a descriptive name. Most people will not consider its numeric value. They're going to consider it to be a letter and it may as well be a word which has self-descriptive properties. It’s no better than the alternatives. No, we should not do that.
 
-RPR: Shane? We have got a few agreements with EAO from Michael Ficarra, from SFC, from William. And then To clarify there was no agreement with Michael Ficarra there, but from the others there.
-Sorry.
-RPR: There was an yes to the objection. Sorry. Sorry.
-CDA?
+RPR: Shane? We have got a few agreements with EAO from Michael Ficarra, from SFC, from William. And then To clarify there was no agreement with Michael Ficarra there, but from the others there. Sorry. RPR: There was an yes to the objection. Sorry. Sorry. CDA?
 
 CDA: I think MLS captured the point. I think without prior knowledge of what it represents, it’s not going to be clear to somebody where E is going to fit in, in the stage process, and ideally you can figure out, for example, currently Stage 0, 1, 2, 3, 4, besides the direction. (We count up, but sometimes stage gates count down). But throwing E in the mix, you don’t know intuitively where that fits without prior knowledge.
 
@@ -1531,8 +1388,7 @@ RBN: The difference is that the developer community has had a long time to get u
 
 WH: We survived adding function expressions and I think we would – we could survive adding throw expressions with the same restriction as function expressions have that an expression statement cannot start with a function expression or a throw expression.
 
-RBN: Yeah, this already has at the statement level – the grammar already forbids throw in the expression as function expression so it isn’t at odds with what we have been discussing.
-Specifically meet those requirements for the demand related to avoiding that ambiguity, again, the whole point of this is to essentially adopt what a linter might otherwise adopt to avoid those –
+RBN: Yeah, this already has at the statement level – the grammar already forbids throw in the expression as function expression so it isn’t at odds with what we have been discussing. Specifically meet those requirements for the demand related to avoiding that ambiguity, again, the whole point of this is to essentially adopt what a linter might otherwise adopt to avoid those –
 
 KG: The comma at the beginning of the last line - I think that will just make it clearer.
 
@@ -1568,8 +1424,7 @@ WH: I agree.
 
 RPR: To Kevin on the queue waiting for quite a while.
 
-KG: So Waldemar, I agree that we should be concerned with the experience of developers.
-However, I really, really do not think that the experience of developers is solely determined by the simplicity of the rules. I think simple rules can have unintuitive outcomes and in particular, `throw A ? B : C` throwing A is so unintuitive that even though it follows from simple rules it is worse to have that experience than to make the rules more complicated as an either alternative one or alternative two. Sometimes simple rules are not the best developer experience and I think this case is very overwhelmingly such a case.
+KG: So Waldemar, I agree that we should be concerned with the experience of developers. However, I really, really do not think that the experience of developers is solely determined by the simplicity of the rules. I think simple rules can have unintuitive outcomes and in particular, `throw A ? B : C` throwing A is so unintuitive that even though it follows from simple rules it is worse to have that experience than to make the rules more complicated as an either alternative one or alternative two. Sometimes simple rules are not the best developer experience and I think this case is very overwhelmingly such a case.
 
 WH: Okay. I already presented an example of simple rules which solve this case. Let’s go to —
 
@@ -1585,8 +1440,7 @@ WH: `(throw expr)`
 
 MM: Okay.
 
-KG: You’re correct that neither alternatives satisfy it as stated, but they satisfy a weaker property that is most important part of the property, which is that in legal programs, the meaning will be the same. I think it’s okay if some additional cases are illegal in expression position because you will write that and then you will get an error and you will be a little bit annoyed that you now have to add some parentheses. But you will get a nice error message that tells you you have to add some parentheses. You will go on with your life. All future readers of the code will not be confused. That’s the most important property to preserve.
-Both of these alternatives preserve that property.
+KG: You’re correct that neither alternatives satisfy it as stated, but they satisfy a weaker property that is most important part of the property, which is that in legal programs, the meaning will be the same. I think it’s okay if some additional cases are illegal in expression position because you will write that and then you will get an error and you will be a little bit annoyed that you now have to add some parentheses. But you will get a nice error message that tells you you have to add some parentheses. You will go on with your life. All future readers of the code will not be confused. That’s the most important property to preserve. Both of these alternatives preserve that property.
 
 MM: I agree with Kevin on that with regard to the intent of having raised this property, yes.
 
@@ -1680,15 +1534,13 @@ RBN: Yeah. At this point, it seems like the main concern that I saw from several
 
 ## Incubator Call
 
-RPR: Okay. Thank you RBN. All right. So final agenda item is incubation call chartering. So Shu is no longer running these meetings. If people want to volunteer their proposals for setting up their own calls, do folk have suggestions for calls that they would like to propose?
-EAO has one. Intl messageformat. And a second as well stable formatting. Any other suggestions that champions would like to put forward? If not, I’ll pause there.
+RPR: Okay. Thank you RBN. All right. So final agenda item is incubation call chartering. So Shu is no longer running these meetings. If people want to volunteer their proposals for setting up their own calls, do folk have suggestions for calls that they would like to propose? EAO has one. Intl messageformat. And a second as well stable formatting. Any other suggestions that champions would like to put forward? If not, I’ll pause there.
 
 SYG: Eemeli weren’t there two?
 
 EAO: Yes, I have two requests. Intl messageformat is one and stable formatting is the second one. I don’t think there’s a third one.
 
-DE: Sometime between this meeting and next meeting a group of people that I’m working with – we aim to have a signal proposal to share with the committee and so maybe that would be, you know,
-not sooner than a month from now. If people want to be incubator call beforehand with that group, then I would organize that.
+DE: Sometime between this meeting and next meeting a group of people that I’m working with – we aim to have a signal proposal to share with the committee and so maybe that would be, you know, not sooner than a month from now. If people want to be incubator call beforehand with that group, then I would organize that.
 
 RPR: So DE is talking about an upcoming proposal about signals and please reach out to him if you would like to be involved in the early calls. Shane is volunteering, locale extensions.
 
@@ -1712,5 +1564,4 @@ RPR: Yes. I will make sure you get that tomorrow.
 
 WH: Okay.
 
-RPR: All right. Then I think we have reached the end of the meeting. So I think particularly for this meeting we’ve been supported by AV team and our local events manager.
-That I think, that has been helpful and top quality throughout. And they also supplied the J pop that’s been excellent. So with that, I think we shall close up. Thank you everyone for an excellent meeting in Tokyo. Hopefully we will return here sometime in the future. All right. Bye for now.
+RPR: All right. Then I think we have reached the end of the meeting. So I think particularly for this meeting we’ve been supported by AV team and our local events manager. That I think, that has been helpful and top quality throughout. And they also supplied the J pop that’s been excellent. So with that, I think we shall close up. Thank you everyone for an excellent meeting in Tokyo. Hopefully we will return here sometime in the future. All right. Bye for now.

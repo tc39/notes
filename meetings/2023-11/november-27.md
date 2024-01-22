@@ -44,14 +44,16 @@ RPR: So We have a code of conduct. It’s on our main website. So please make su
 So for anyone that’s new here, from the reflect post, you’ll be able to get to TCQ. TCQ is our primary tool for controlling the conversation and for making sure that we have -- we stick to our agenda. We do have a very packed agenda. We always do. But let’s respect the queue in times of orderly conversation. You can switch to the active topic by clicking that queue button up top, and that will then take us to the active agenda item, like testing out TCQ. Whenever we have an agenda item, we always have a current topic, and so if you wish to talk about something new, you want to normally click the new topic button. So always prefer those buttons towards the left, the blue, and only use the ones to the right when needed, because they will increasingly interrupt the flow of the conversation. If you want to add something extra, a reply to the current topic, then we are discussing current topic, let’s see, at the moment, there’s no one on the queue. I’m just checking it myself. Likewise, if we’re not sure about something that’s been said, we can ask a clarifying question. Just to check our understanding. And then finally, if something outrage serious happening, if something is disrupting the meeting, such as we don’t have note takers or we can’t hear something, then please use a point of order as. That’s the most urgent way to get through. All right, when you’re speaking, you will have an extra button all I’m done speaking. Please to your best to make use of this as it’s a good way of yielding control and making sure everyone know it’s time to move on. We also have our equivalent of Internet relay chat. We have our chat room, the Matrix. And within that, the main rooms that you’ll be interested in, for this meeting at least, is the TC39 delegates. That’s the privileged room where only delegates can speak. If you’re in the in there, then please see the TC39 business repo and you can make sure your details are registered there or contact one of the chairs. And then there’s also Temporal dead zone. Please use that for anything off topic, so rather than the conversation descending in the main delegates chat, it descends into the Temporal dead zone. All right. We have an IPR policy. So everyone that’s here is generally expected to either be an ECMA member delegate, in which case your organization has already signed up the relevant IP policy, or an invited expert that has gone through our process, and likewise, there, signed the invited expert form. For everyone else, please make sure you have signed the contributing agreement, and anyone who is not in those categories and has not signed the form, you’re expected to purely be an observer, so please do not speak, and you can also obviously contact the chairs or the ECMA secretary here to find out more about ways to get involved. And, yes, we do welcome observers.
 
 Moving on, so notes, so note taking is a critical part of the meeting. We have, I think, a transcriptionist, is the transcriptionist here?
-    >> Yes.
-    >> Excellent. So -- and we’re very grateful to them for taking all our notes, but they do need help, so there is the job of the notes chaperon, the notes editor to fix up the notes. We will be asking for volunteers. I think perhaps now is a good time to do so. We’ve got a thumbs up immediately from Ashley, long-time contributor to the notes, and also Ben Allen. Thank you very much. Instantly we get two people. That’s a very good start. Chris is happy. And obviously there is, you know -- just there’s the IP notice that is above there. You’ll see just so that you know that note taking is happening and all your words are being down, and you have the opportunity to correct them afterwards.
+     Yes.
+     Excellent. So -- and we’re very grateful to them for taking all our notes, but they do need help, so there is the job of the notes chaperon, the notes editor to fix up the notes. We will be asking for volunteers. I think perhaps now is a good time to do so. We’ve got a thumbs up immediately from Ashley, long-time contributor to the notes, and also Ben Allen. Thank you very much. Instantly we get two people. That’s a very good start. Chris is happy. And obviously there is, you know -- just there’s the IP notice that is above there. You’ll see just so that you know that note taking is happening and all your words are being down, and you have the opportunity to correct them afterwards.
  As we encourage.
-       The next meeting coming up will be in San Diego, hosted by service now. So looking forward to that. The invites with all the details for that should be going up very shortly. Just finalizing that now. And I will say thank you to everyone who has contributed to the interest survey. It looks like we’re going to have a very healthy attendance there. So I’m looking forward to it. There is also going to be something extra. I don’t want the give away the surprise, but Samina is working on something that could be exciting for people. So, yeah, that’s coming up in a little over two months. So finally, let’s get on to the regular stuff. Oh, clarifying question. Here we go. Ashley asks on TCQ, Ashley, would you like to speak. Is pointing of that in the Google names, they don’t have -- don’t always have the company. Right, yes. If you’re not -- if you’re using a Google account, then it will just show your natural or your -- where the name you’ve used with that.
+       The next meeting coming up will be in San Diego, hosted by service now. So looking forward to that. The invites with all the details for that should be going up very shortly. Just finalizing that now. And I will say thank you to everyone who has contributed to the interest survey. It looks like we’re going to have a very healthy attendance there. So I’m looking forward to it. There is also going to be something extra. I don’t want the give away the surprise, but Samina is working on something that could be exciting for people. So that’s coming up in a little over two months. So finally, let’s get on to the regular stuff. Oh, clarifying question. Here we go. Ashley asks on TCQ, Ashley, would you like to speak. Is pointing of that in the Google names, they don’t have -- don’t always have the company. Right, yes. If you’re not -- if you’re using a Google account, then it will just show your natural or your -- where the name you’ve used with that.
 
-    If you use -- if you use incognito mode, then you get to specify whatever name you would like. I think at this point, Chris, I don’t think we will ask people to rejoin.
-    CDA: Yeah, no, there’s no -- Google meet doesn’t have a display name. You can’t just change like you can in Zoom, so we will have to just proceed thusly. But it’s a good reminder to encourage people, please add yourself in the attendee list in the notes doc if you have not already done so. I will paste the link in the Google meet chat so it’s handy.
-    >> And I guess if anyone appears in the participants where we don’t know the affiliation, we may just have to ask.
+If you use incognito mode, then you get to specify whatever name you would like. I think at this point, Chris, I don’t think we will ask people to rejoin.
+    
+CDA: Yeah, no, there’s no -- Google meet doesn’t have a display name. You can’t just change like you can in Zoom, so we will have to just proceed thusly. But it’s a good reminder to encourage people, please add yourself in the attendee list in the notes doc if you have not already done so. I will paste the link in the Google meet chat so it’s handy.
+
+And I guess if anyone appears in the participants where we don’t know the affiliation, we may just have to ask.
 
 RPR: Okay. So on our housekeeping items, so the first thing is do we have approval of the previous meeting’s minutes? I will take silence to mean that, yes, we do have approval. Okay, approved. And on to this meeting, so the current agenda, we have there the packed agenda. Is everyone happy with that?  No complaints?  Hopefully we will get through it swiftly and be able to fit in the overflow items.
 
@@ -66,8 +68,7 @@ JHD: Theoretically, there’s at least one person or each ECMA member who consid
 RPR: Perfect. Thank you. All right. And the other thing I will just say about today’s agenda, or
  this week’s agenda, is that the chairs generally try to reach out to people via Matrix, via direct
  messages or in the chat in order to bring items forward and back and so on, so please be on the lookout.
- That helps us -- that helps us get everything in.
-      All right. And all right, it looks like, actually, we’re on track to fit everything in, because
+ That helps us -- that helps us get everything in. All right. And all right, it looks like, actually, we’re on track to fit everything in, because
  some people have updated their time boxes, so thank you so whoever gave up a little bit of their time.
  So, yeah, we should be in for a good meeting. So then thank you for sitting through this opening. Next
  up is secretary’s report.
@@ -75,7 +76,7 @@ RPR: Perfect. Thank you. All right. And the other thing I will just say about to
 ## Secretary Report
 Presenter: Samina Husain (SHN)
 
-- [slides]() (TODO: need link)
+- [slides](https://github.com/tc39/agendas/blob/main/2023/tc39-2023-048.pdf)
 
 
 SHN: Very good. Welcome everybody to the meeting. San Francisco time, so for some people, earlier and later for others. You said international orange for the bridge, hmm, maybe ECMA is also international orange, I’m going to have to investigate.
@@ -106,7 +107,7 @@ you.
 
 KG: Will do.
 
-SHN: Thank you very much for that. I’ll go to the next slide, we are on meeting 99 and meeting 100 is coming up, so I have a bit of a challenge for the entire committee. If you so choose to take the challenge, I -- when I was at the last meeting in Tokyo, I saw this wonderful baseball cap that SHU was wearing, and I understand that you were the designer of this. I think it’s great. So I have a challenge to the whole committee. It’s up to you to decide how you’d like to do it. I would be more than happy to have a new set of baseball caps or beanies or tell me what you’d prefer, for the 100th meeting, to commemorate that milestone. Just request that there is a logo of TC39 and logo of ECMA on that baseball cap or beanie, or socks. I would like to have TC39 socked and.
+SHN: Thank you very much for that. I’ll go to the next slide, we are on meeting 99 and meeting 100 is coming up, so I have a bit of a challenge for the entire committee. If you so choose to take the challenge, When I was at the last meeting in Tokyo, I saw this wonderful baseball cap that SHU was wearing, and I understand that you were the designer of this. I think it’s great. So I have a challenge to the whole committee. It’s up to you to decide how you’d like to do it. I would be more than happy to have a new set of baseball caps or beanies or tell me what you’d prefer, for the 100th meeting, to commemorate that milestone. Just request that there is a logo of TC39 and logo of ECMA on that baseball cap or beanie, or socks. I would like to have TC39 socked and.
 
 If those are two items that you would be happy with and would like, if you are interested, I leave you the challenge to come back to me with an idea of what could be the design on the cap. If you can give me your ideas by the end, the 18th of December, I will take the initiative and have them prepared and made so they can be ready to share at our 100th meeting coming up in San Diego. Along with a few other things, but that I can manage on my own, but I would love your support and ideas on the baseball cap or beanie or whatever you like. I’ll wait for your feedback on that. And I think that is my last slide. So are there any questions?
 
@@ -122,7 +123,7 @@ Presenter: Kevin Gibbons (KG)
 - [slides](https://docs.google.com/presentation/d/14oO9ACSx66ChJK-5-dxhuKYmmh5XFaE1uC_4MS6tcEw/)
 
 
-KG: So editors update, we have landed a couple of normative changes. The first one is the resizable array buffers proposal. The second one is this long-standing web reality issue where the GetSubstitution, which is what is used for doing the replacement strings in string.prototype.replace, was specified to have
+KG: Editors update, we have landed a couple of normative changes. The first one is the resizable array buffers proposal. The second one is this long-standing web reality issue where the GetSubstitution, which is what is used for doing the replacement strings in string.prototype.replace, was specified to have
  slightly different semantics than it in fact had, and we have corrected that so that the behavior matches the behavior in real life. Also, a couple of editorial changes. The first one that is something we’ve been
  working on for a long time, or rather working towards for a long time, it completes a bit of work, where
  the RegExp semantics now work exactly the same way as the rest of the specification.
@@ -208,9 +209,7 @@ RPR: Thank you. So ECMA 404 doing well.
 ## Test262 Update
 Presenter: Philip Chimento (PFC)
 
-PFC: I can keep this very short as well. From the last meeting of the test262 maintainers, the message that we want to deliver is that we are working on the clearing the backlog of PRs that need maintainer review. So thanks, everybody, for your patience, and if you’re a proposal champion and you see something in the test262 review queue that is about your proposal, we’d also appreciate your help on reviewing it. That’s all.
-    .
-    >> All right. And nothing on the queue. So we shall move on. Chris, are you ready with TG3?
+PFC: I can keep this very short as well. From the last meeting of the test262 maintainers, the message that we want to deliver is that we are working on the clearing the backlog of PRs that need maintainer review. So thanks, everybody, for your patience, and if you’re a proposal champion and you see something in the test262 review queue that is about your proposal, we’d also appreciate your help on reviewing it. That’s all. All right. And nothing on the queue. So we shall move on. Chris, are you ready with TG3?
 
 Presenter's Summary: We are working on clearing the backlog of PRs that need maintainer review.
 ## TG3: Security Updates
@@ -292,7 +291,7 @@ MF: Yes. That’s what -- that’s the process I’m hoping for. Of course, if t
 
 DE: +1. I agree with what NRO said of working things out, and excluding things from the FAQ when there’s disagreement. At the same time, documenting these different points of view and different disagreements that exist is also a very useful project. It has a different audience, though. It’s more like for us or for advanced JavaScript users than, you know, people who are trying to look for a quick answer. And this would fit in really nicely to what YSV has proposed previously about documenting invariants. I would very much encourage people to work on that in parallel with having the FAQ being for non-controversial stuff.
 
-RPR: That’s all the questions. O, and SYG?
+RPR: That’s all the questions. O?, and SYG?
 
 SYG: I have a quick question. So is the expectation that delegates monitor this for possible
  disagreement that may come up when someone proposes a new FAQ item?
@@ -396,8 +395,7 @@ RPR: All right. Thanks, lots of celebration images flying by right now. People a
 
 MBH: Thank you.
 
-RPR: Are there any questions for him on this effort?  Sounds like this will be very good at popularizing and educating more people, the committee and the process. So thank you for this.
->> Thank you.
+RPR: Are there any questions for him on this effort?  Sounds like this will be very good at popularizing and educating more people, the committee and the process. So thank you for this. Thank you.
 
 ## Array Grouping for Stage 4
 Presenter: Jordan Harband (JHD)
@@ -422,9 +420,7 @@ JHD: Thank you, everybody. And thanks to Justin, who championed the majority of 
 RPR: So yeah, we thank Justin as well. Okay, good.
 
 ### Speaker's Summary of Key Points
-* List
-* of
-* things
+
 
 ### Conclusion
 * Achieved Stage 4
@@ -435,11 +431,11 @@ Presenter: Peter Klecha (PKA)
 - [slides](https://docs.google.com/presentation/d/1UvJSnt5B6tsXs-5A0zgg01cdFCtk6X2rAok6Z4Wp4Mo)
 
 
-PKA: Yeah. So this is the Promise.withResolvers. Shipping in Chrome. Implemented in FireFox. And also in the Safari technology preview, as far as I can tell. There are tests merged and the spec is approved by the editors. So I, too, am asking for Stage 4.
+PKA: So this is the Promise.withResolvers. Shipping in Chrome. Implemented in FireFox. And also in the Safari technology preview, as far as I can tell. There are tests merged and the spec is approved by the editors. So I, too, am asking for Stage 4.
 
-USA:  All right. There’s support on the queue. First up we have Daniel Minor
+USA: There’s support on the queue. First up we have Daniel Minor
 
-DLM:  Looks good. Thanks.
+DLM: Looks good. Thanks.
 
 USA: Thanks, Dan. Next we have CDA on the queue with support as well. And that’s pretty much it. Let’s wait for a second. Nothing else on the queue. Congratulations, Peter. You have Stage 4
 
@@ -459,7 +455,7 @@ Presenter: Leo Balter (LEO)
 - [proposal](https://github.com/tc39/proposal-shadowrealm)
 - [slides]() - TODO get link to slides
 
-LEO: Yes. Hi. Thanks, everyone. Just for the very, very recent news, I just returned to – to become – I am finally now the product owner for the team working with ShadowRealm, internally at Salesforce. This is two workdays news. So this is very recent for me. But it means I will be more active here with TC39 within this proposal. As we want to move it ahead. Updates as we work on Stage 2. This is not a request for Stage 2 advancement. Please don’t expect this to happen. Thank you. We continue the work, we are sponsoring the work to meet the requirements needed to return to Stage 3. And this is like the very high-level summary of this, overview of the implementation done – that was done, we have some small improvements to the ECMAScript proposal spec. Most of the work resides within the HTML and WebKit implementation. Right now for this V8 implementation of the overview, this is a few weeks out. ShadowRealm is complete as far as the V8 goes. Of course, there are small changes here and there being discussed. We are waiting right now on the blink integration and how the APIs should be included in the global for the ShadowRealm global. The exposed is being used right now. And blink has made some progress in completing the snapshot for ShadowRealm.
+LEO: Thanks, everyone. Just for the very recent news, I am finally now the product owner for the team working with ShadowRealm, internally at Salesforce. This is two workdays news. So this is very recent for me. But it means I will be more active here with TC39 within this proposal. As we want to move it ahead. Updates as we work on Stage 2. This is not a request for Stage 2 advancement. Please don’t expect this to happen. Thank you. We continue the work, we are sponsoring the work to meet the requirements needed to return to Stage 3. And this is like the very high-level summary of this, overview of the implementation done – that was done, we have some small improvements to the ECMAScript proposal spec. Most of the work resides within the HTML and WebKit implementation. Right now for this V8 implementation of the overview, this is a few weeks out. ShadowRealm is complete as far as the V8 goes. Of course, there are small changes here and there being discussed. We are waiting right now on the blink integration and how the APIs should be included in the global for the ShadowRealm global. The exposed is being used right now. And blink has made some progress in completing the snapshot for ShadowRealm.
 This is a big chunk of our work. HTML integration. There was a huge PR rebase. Thanks to Igalia, we got that done. And we are keeping it renewed, as the changes keep coming to HTML. There is also work to align with the new modules integration. There is an approach discussed with Nicolo, Dan Ehernberger and being applied to what we have with the HTML integration of ShadowRealm. We have some preliminary editorial changes to the HTML specification. We have been going to SES discussions, for the host integration changes for the CSP unsafe-eval protection. And a separate discussion, disciplinary for the host ensure can compile strings change. As far as I understand, there’s been a pre-discussion with the editors, and there’s a separate discussion at plenary. It’s a longer one and I am not going into details right now. Yes, please join in, if interested in ShadowRealms.
 
 LEO: For the WebKit implementation, we have updates on the – yeah. We still have updates done with web platform tests, which we went into – want to continue with quality work, testing the current implementations, current branch against WPT in Test262. Continuing to look at coverage review. There has been like a few requests that needed updates. It’s keeping everything renewed and good to learn when ready.
@@ -497,7 +493,7 @@ Presenter: Ron Buckton (RBN)
 
 RBN: All right. So RegExp modifiers was discussed several sessions ago, when there was a review of Stage 3 proposals and Stage 2 proposals that were not updated. I wanted to circle back. There have been a few updates to the proposal since that time.
 
-RBN: Before I get into that, though, just a brief summary of what this proposal is for those who haven’t looked at it in a while: the idea is to be able to within a regular expression introduce new modifiers, which are a subset of the RegExp flags available and remove existing modifiers so you may for a specific portion of a regular expression pattern set specific flags for that pattern. The flags that are supported are currently limited to only the IgnoreCase, multiple line and DotAll modifiers.
+RBN: Before I get into that, just a brief summary of what this proposal is for those who haven’t looked at it in a while: the idea is to be able to within a regular expression introduce new modifiers, which are a subset of the RegExp flags available and remove existing modifiers so you may for a specific portion of a regular expression pattern set specific flags for that pattern. The flags that are supported are currently limited to only the IgnoreCase, multiple line and DotAll modifiers.
 So updates with the proposal repros and the specification text: it’s been updated to match the latest version of ECMA262, including the changes that Kevin mentioned, and the recent changes related to the addition of the RegExp “v” flag. A new Record now captures what was previously ambiguously closed-over input and what flags were currently set, so now we are now using the new RegularExpressionRecord in place of the Modifiers record, which served the same purpose. In addition, because this RegularExpressionRecord has been threaded through the AOs for regular expression semantics, I can now use those to dramatically reduce the size of the spec text necessary for this feature. There is a pull request to the ECMA262 proposal and a pull request for Test262. I would like to note that, prior to 5 minutes ago this link was incorrect and was pointing to the wrong test PR. The slides have been updated. There is currently an implementation pull request to engine262, but I am seeking additional implementations. If there are any engines that are currently looking at the possibility of adding this, please reach out to me after the session, either via GitHub or Matrix, to discuss which issues have been filed to track this proposal so I can follow any progress updates.
 And that’s all I really have to share. Thank you.
 
@@ -563,7 +559,7 @@ SYG: All things being equal, I guess my preference would be that you would have 
 
 NRO: Yes. That is correct.
 
-SYG: Okay. Could you go into a bit about why your preference is the current shape of the proposal instead of just passing whatever?  Which indicates a string would be a string.
+SYG: Could you go into a bit about why your preference is the current shape of the proposal instead of just passing whatever?  Which indicates a string would be a string.
 
 NRO: Yes. Because right now, for – if you pass an object without that, immediately before calling the host hook. And Trusted Types, you call the host hook and then – first check if it is allowed to execute some code. And then return. And so it changes the order. So we are starting with this minimum version that doesn’t have any changes to current semantics.
 
@@ -583,12 +579,12 @@ NRO: That would work. For now, we can start with passing the string, and if some
 
 DE: Well, I hope we can have this communication about Trusted Types so it can move forward because this isn’t asking for very much. The design space is small. Let’s try to go through it.
 
-RPR: All right. That’s the end of the queue. And Nicolo?
+RPR: That’s the end of the queue. And Nicolo?
 
 NRO: Let’s separate the `eval()` and `new Function()` parts. For `eval()`, I want to ask if we do have consensus on passing the string to the host. And alongside with that, a way like also passing some enum, to distinguish between direct and indirect eval given the concerns with direct eval. This is just passing the string to avoid changing the order in which operations currently happen in eval. In the future, if you want to potentially change the order, we can also pass the object. And this is just for `eval()`, and not `new Function()`, for now.
 So is there any concern with passing this info to the host?
 
-SYG: Responding to the enum, is there a use case from the CSP side or the trusted type side to use that eval. Does anything –
+SYG: Responding to the enum, is there a use case from the CSP side or the trusted type side to use that eval. Does anything??
 
 NRO: There have been some ideas about potentially having something in direct eval because it’s much easier to validate security properties of indirect eval than of direct eval. But it’s not a concrete proposal yet. It’s mostly discussions going on and RegExp and having to avoid coming back here again, asking for this change, given that it’s very minimal and doesn’t affect how things currently work.
 
@@ -640,23 +636,17 @@ Presenter: Kevin Gibbons (KG)
 
 KG:  So I put this on the agenda originally as potentially going
 for Stage 3. Please ignore that. I am definitely not going for Stage 3. This is just an
-update which a request for feedback on some things. So recap, proposal is on GitHub. There's a playground,
+update which ia a request for feedback on some things. So recap, proposal is on GitHub. There's a playground,
 there’s spec text, but some of that is in flux, so don’t expect too much from it. So
 fundamentally, the thesis is I think it’s worth having a built-in mechanism converting to and
 from Base64. And that's the purpose of this proposal. There's a basic API, which hasn't changed very much, although none of this has changed recently. Some of it has changed since the first iteration of the proposal. Basically, a prototype method for turning a Uint8 array into a Base64 string or a hex string, and conversely methods, static methods, on Uint8 array for taking a Base64 or hex string and giving you a Uint8 array instance.
 There's a lot more details which we'll get into. I do want to explicitly call attention to the fact that this is only in the current iteration of this proposal, this is only on Uint8Array, so this is the first time you would have something that is specific to one typed array and not present on all of them. So we could instead put it on ArrayBuffer, for example, although that's annoying because UintDataArrays are views and so putting it on UintDataArray means that you are able to encode only a portion of the buffer. In the first version of this proposal it was on ArrayBuffer but I moved it to Uint8Array by request. An alternative is to have a new global, like a Base64 global, that would have toBase64 and fromBase64 and so on. If someone feels strongly that this would be a better path, please get on the queue. Right now I personally prefer the placement on Uint8Array. And we can discuss things either, you know, interrupting or at the end whenever people want to talk about stuff.
 
-KG: Also, there’s an options bag argument. The second argument to/from Base64, the
-first argument to toBase64, allows you to specify an alphabet. Currently the only two alphabets
-are “Base64” and “Base64URL”. Default is “Base64”. There has been a request for the ability to
-write to an existing buffer. We may or may not want to leave that for a separate proposal or a
-separate API. But it’s within scope for this proposal, I think, so something to think about.
-I’ll come back to that topic later.
+KG: Also, there’s an options bag argument. The second argument to/from Base64, the first argument to toBase64, allows you to specify an alphabet. Currently the only two alphabets are “Base64” and “Base64URL”. Default is “Base64”. There has been a request for the ability to
+write to an existing buffer. We may or may not want to leave that for a separate proposal or a separate API. But it’s within scope for this proposal, something to think about. I’ll come back to that topic later.
 
 KG: Among ways that Base64 and coders and decoders across
-languages differ is in their handling of characters that are outside the space of a legal
-characters in the alphabet and outside of whitespace as well; whitespace is handled
-differently. Some APIs unconditionally reject evening outside of the alphabet. Some allow you to
+languages differ is in their handling of characters that are outside the space of a legal characters in the alphabet and outside of whitespace as well; whitespace is handled differently. Some APIs unconditionally reject evening outside of the alphabet. Some allow you to
 accept the whitespace, usually by default. Some allow you to accept any character outside of
 the alphabet and just ignore it, the same way they ignore white space. My current plan is to
 make it an error to get anything that is not whitespace and for default to be -- to accept
@@ -706,37 +696,32 @@ recover by looking at that property.
 
 KG: A nice consequence of this is that it would allow you to build a performant streaming decode in the userland. The error recovery information that I’m suggesting in previous slides is sufficient to give you decoding in user land, and by performant, what I mean is specifically it doesn’t require an iteration over the entire string in user land. You can just slice at the relevant point or decode the relevant characters. And get that information out of the API.
 
-KG: Okay. So that was a few topics. I guess we should go to
-the queue..
+KG: That was a few topics. We should go to the queue.
 
 WH: I support the decision not to allow and ignore other characters since this
 could go badly wrong if somebody has, for example, a Base64 string interspersed with comments.
 If you ignore the character which starts a comment and start parsing the comment as Base64, you
 can cause all kinds of mayhem.
 
-KG: Yeah, okay. Also, it’s awkward if you specify the wrong alphabet if you say it’s a Base64
+KG: Also, it’s awkward if you specify the wrong alphabet if you say it’s a Base64
 string, but the string is in fact Base64 URL there’s a similar problem there. Okay, so noted.
 I will continue on with my plan to reject them unless someone speaks up to the contrary.
 
-LCA: Yeah, I like the direction. I like the idea that we would have sort of one encoding API, one
+LCA: I like the direction. I like the idea that we would have sort of one encoding API, one
 decoding API, and then additionally the decode-into API. I think this solves the streaming case,
-this solves, as you mentioned, the return extra bytes or the APX (?) use case, and, yeah, people
-would be -- like, people that already know how to do sort of streaming without a streaming
+this solves, as you mentioned, the return extra bytes or the APX (?) use case, and people that already know how to do sort of streaming without a streaming
 primitive, like web streams, would already know how to use this because it’s a more text
 encoder stream. It’s good.
 
-KG: You’re supporting specifically variation 4, or any of these
-variations?
+KG: You’re supporting specifically variation 4, or any of these variations?
 
-LCA: Yeah, specifically variation 4.
+LCA: specifically variation 4.
 
 KG: Okay.
 
 LCA: From Base64 into and then additionally with that flag.
 
-SYG: So I have the -- I requested BYOB as a thing to work on here. I want to preface this with
-saying I have no quarrel with having this as a follow-on API if that’s what people would like,
-I think the standalone API, the one-shot API does standalone and does not need to be held up on
+SYG: I requested BYOB as a thing to work on here. I want to preface this with saying I have no quarrel with having this as a follow-on API if that’s what people would like. I think the standalone API, the one-shot API does standalone and does not need to be held up on
 BYOB use case. KG, when you and I were chatting about this, there’s a half  (?) idea that
 we have an in-and-out param. Why am I requesting BYOB, because there are use cases on the
 web platform where you really want to maximize the performance you get with a question decoding API, month so much for Base64, but we’re also thinking about an even more performance
@@ -757,8 +742,8 @@ maybe you just it right now. But basically something like that. So it kind of --
 decidedly a less ergonomic API, but I hope it is uncontroversial that BYOB chunking -- either
 the BYOB use case or the chunking use case and the streaming use case are advanced more in
 these use cases that can literally live with a tradeoff of having a less ergonomic API for
-maximal efficiency. And something like this is more efficient than having an intermediate-style API that is somewhat ergonomic, like returning a result object with read and written. So
-while I can live with variant 4, though with the caveat of having -- of requiring an output
+maximal efficiency. And something like this is more efficient than having an intermediate-style API that is somewhat ergonomic, like returning a result object with read and written.
+While I can live with variant 4, though with the caveat of having -- of requiring an output
 offset in the input as well, I would actually be much happy were something like variation 4B.
 So for people supportive to have BYOB use case, I would appreciate your thoughts on this, if
 you could take a minute to read the slide and read this API.
@@ -915,7 +900,7 @@ will probably look slightly different. I don’t think I’m going to have a Boo
 three state “how should I handle the final chunk?”. But the intent would be to support offsets. I
 don’t see any reason not to.
 
-SYG: Okay, then --
+SYG: Okay
 
 KG: I’ll bring that up real quick.
 
@@ -950,16 +935,14 @@ global. RGN in an offline email had-pointed out an example of a language where
 there’s basically encoding, so it could be encoding could contain Base64 and hex and other
 things. Which might make it a little more general.
 
-PHE: The -- so the question to SYG , sorry, coming back around, SYG, you mentioned in passing a
-future proposal about more efficient UTF8 encoding and it wasn’t year to me when you said that
-whether that was a proposal intended for this committee or another body, and I just wanted to
+PHE: The question to SYG, coming back around, SYG, you mentioned in passing a future proposal about more efficient UTF8 encoding and it wasn’t year to me when you said that whether that was a proposal intended for this committee or another body, and I just wanted to
 understand that, because it might have some bearing on the separate global topic.
 
 SYG: It’s not entirely clear to me either. I think probably this body, but I think there are
 also good arguments to be made that the more efficient thing ought to extend encoder/decoder,
 and this case we want for the proponents use case we want will probably look significantly
 different, so we consider it also possible to propose it here in TC39. That said, I don’t have
-strong feelings on…
+strong feelings.
 
 SYG: Wait, hold on. I just lost my network connection, but I also just heard Peter’s response to
 me. So you can still hear me?
@@ -1051,7 +1034,7 @@ you’re not, let me know. And I look forward to coming back next meeting with s
 everyone can live with.
 ### Speaker's Summary of Key Points
 
-KG: So we heard a mild support from Waldemar and Luca for putting these on the prototype rather
+KG: We heard mild support from Waldemar and Luca for putting these on the prototype rather
 than a new global. Peter still prefers to have a new global. We also heard that something
 like my variation 4 that I presented where you have a fromBase64Into method, it returns an
 object with a read and write property, would be acceptable to everyone, as long as, per SYG, it

@@ -1,6 +1,7 @@
-100th TC39 Meeting
-6th Feb 2024
+# 6th Feb 2024 100th TC39 Meeting
+
 -----
+
 Delegates: re-use your existing abbreviations! If you’re a new delegate and don’t already have an abbreviation, choose any three-letter combination that is not already in use, and send a PR to add it upstream.
 
 You can find Abbreviations in delegates.txt
@@ -46,7 +47,6 @@ You can find Abbreviations in delegates.txt
 | Rodrigo Fernandez      | ROF          | ServiceNow        |
 | Samina Husain          | SHN          | Ecma              |
 
-
 RPR: San Diego is America's finest city.
 
 RPR: we will start with approval of the last meeting’s minutes. The 99th meeting. Are there any observations to considering those approved? Not hearing anything in the room. And nothing on line we will consider that approved.
@@ -54,25 +54,20 @@ RPR: we will start with approval of the last meeting’s minutes. The 99th meeti
 RPR: We also have this week’s agenda. So I believe that ready to adopt. Any objections? We shall adopt the agenda.
 
 ## Secretary's Report
+
 Presenter: Samina Husain (SHN)
 
-- [slides]()
+- Slides: See Agenda
 
 SHN: So welcome to the 100th meeting. Thank you very much ServiceNow for hosting it. Thank you very much Rodrigo and also Reny who has been supportive to me.
 
-Fantastic venue, the weather hopefully is getting better each day.
-My report, I will keep it short. We have a busy agenda. So let me do the usual update of the things we want to do.
+Fantastic venue, the weather hopefully is getting better each day. My report, I will keep it short. We have a busy agenda. So let me do the usual update of the things we want to do.
 
 SHN: I want to recognize the appointments that we have for ECMA management, the last time we had a meeting we had voted on the 2024 management. So we will talk about that. I also want to recognize the different members of TC39 the chairs and editors. If I have made a mistake on the slide, correct me. We have new projects that we have, exciting, our statistics, and then the usual annex of our latest documents. At any time you can ask me a question or meet me anywhere, I will be here for the next 3 days and clarify.
 
-SHN: For our management, our management line has not changed as you are familiar with for 2023. Jochen Friedrich from IBM will remain the president. The Vice-president will be DE from Bloomberg. And treasurer Luoming Zhang from Huawei. The executive team, Michael Saboff, will be the chair as he was previously. We do have a vacant position in the current executive committee. If you are interested, you may nominate yourself or you think somebody else would be interested, and you want to nominate, please do let me know.
-From the ordinary members. Thank you for the clarification. And the non-ordinary members, we will have from EPFL. And PHE from Moddable. It’s also on the website it’s clearly noted. Let me know if you want to volunteer and be nominated. I want to recognize the chairs and editors.
-Thank you for the chair’s, CDA, for your work. I understand you will continue to be chair for the next year.
-Thank you very much for everything you have done and all of the reports you published. It’s done timely. For the editors, also thank you for your efforts. I have listed the editors as I understood them through going through GitHub. Please correct me if I have any errors. Thank you, all of your efforts are appreciated and I assume you will continue on for 2024.
-If I have missed somebody, do let me know. I don’t know who the editors are for 414 and the TRs or if there are editors right now or any activity going on. But you may let me know that off-line.
+SHN: For our management, our management line has not changed as you are familiar with for 2023. Jochen Friedrich from IBM will remain the president. The Vice-president will be DE from Bloomberg. And treasurer Luoming Zhang from Huawei. The executive team, Michael Saboff, will be the chair as he was previously. We do have a vacant position in the current executive committee. If you are interested, you may nominate yourself or you think somebody else would be interested, and you want to nominate, please do let me know. From the ordinary members. Thank you for the clarification. And the non-ordinary members, we will have from EPFL. And PHE from Moddable. It’s also on the website it’s clearly noted. Let me know if you want to volunteer and be nominated. I want to recognize the chairs and editors. Thank you for the chair’s, CDA, for your work. I understand you will continue to be chair for the next year. Thank you very much for everything you have done and all of the reports you published. It’s done timely. For the editors, also thank you for your efforts. I have listed the editors as I understood them through going through GitHub. Please correct me if I have any errors. Thank you, all of your efforts are appreciated and I assume you will continue on for 2024. If I have missed somebody, do let me know. I don’t know who the editors are for 414 and the TRs or if there are editors right now or any activity going on. But you may let me know that off-line.
 
-SHN:  Very important coming up, the approval process, as you are all working extremely hard and have an addition in the June time frame. Our deadlines are the executive meeting on the 24th and 25th of April. By that point we want to of course propose to the committee the new edition you will be edition 15 of 262 and the 11th edition of 402. You do remember we have a 60-days opt-out period for the RF policy and 60-day review period. We start this in advance of the 60-days review period. So they are not completely overlapping, in case there’s any issues we have a bit extra buffer to handle it.
-So again, the suggestion is that late March, early April you are ready to propose the edition 15 and 11. If you chose to – short notice and you need more time, do approvals on postal ballot and that can happen. We do the in person review twice a year.
+SHN: Very important coming up, the approval process, as you are all working extremely hard and have an addition in the June time frame. Our deadlines are the executive meeting on the 24th and 25th of April. By that point we want to of course propose to the committee the new edition you will be edition 15 of 262 and the 11th edition of 402. You do remember we have a 60-days opt-out period for the RF policy and 60-day review period. We start this in advance of the 60-days review period. So they are not completely overlapping, in case there’s any issues we have a bit extra buffer to handle it. So again, the suggestion is that late March, early April you are ready to propose the edition 15 and 11. If you chose to – short notice and you need more time, do approvals on postal ballot and that can happen. We do the in person review twice a year.
 
 SHN: Some new projects going on which is really very nice for ECMA and I want to thank everybody. There are a number of people in this committee that have supported to make some of the projects happen and continue to support in making future projects happen so I want to highlight some things. TC54 "software and systems transparency", which is CycloneDX, has had its third meeting. We meet every 2 weeks. We’re getting organized. It’s a good committee. 5 different members there. So if you or your organizations are interested, learn more about the details on the website. Come talk to me for more information.
 
@@ -84,47 +79,43 @@ SHN: Some new members. Very good and thank you for the support of this committee
 
 SHN: There is an ad hoc that I spoke about the last time we were in the meeting. It will continue through 2024, which is the governance and now we work, better engage new projects, better engage new communities. So this is ongoing. I don’t have any specific updates to bring at this time. Of course, any input you would like to share or think we should bring to our governance, I am always open for that information.
 
-SHN: I want to highlight a couple of things. We did some workshops at the end of the year. It was very good. We had a number of participants. We had very good presentations. And I think it generates good conversations for how TC53 will continue with the technical work and new inputs.
-We tried to do another one, a workshop on data and cloud standardization. We postponed it. It’s hard to get people to participate. But it may have been timing. My point to bring these two slides up is if you have thoughts on other topics that you think would be interesting, let us know. We will put something together. These are all hybrid or mostly virtual. It enables us to bring in new ideas, some new members, and new projects.
+SHN: I want to highlight a couple of things. We did some workshops at the end of the year. It was very good. We had a number of participants. We had very good presentations. And I think it generates good conversations for how TC53 will continue with the technical work and new inputs. We tried to do another one, a workshop on data and cloud standardization. We postponed it. It’s hard to get people to participate. But it may have been timing. My point to bring these two slides up is if you have thoughts on other topics that you think would be interesting, let us know. We will put something together. These are all hybrid or mostly virtual. It enables us to bring in new ideas, some new members, and new projects.
 
-SHN: Some statistics. This is the year-end statistics of the access of 262. So still, there was a peak in 2015. It’s difficult to judge why. This was some time ago. If I look at last year, we’re consistent. A bit of a decline, but consistent and strong interest. It’s a good indication of what to expect with the next editions that will be coming.
-This is the statistics on the download. And also, a little bit of a decline but not terribly bad in. In the yellow, that’s the percentage based on all downloads at ECMA. ECMAScript remains a very strong – very strong committee at ECMA international.
+SHN: Some statistics. This is the year-end statistics of the access of 262. So still, there was a peak in 2015. It’s difficult to judge why. This was some time ago. If I look at last year, we’re consistent. A bit of a decline, but consistent and strong interest. It’s a good indication of what to expect with the next editions that will be coming. This is the statistics on the download. And also, a little bit of a decline but not terribly bad in. In the yellow, that’s the percentage based on all downloads at ECMA. ECMAScript remains a very strong – very strong committee at ECMA international.
 
-SHN: I have just come to my very last slide and I am going to look over to KG,I don’t know if you have any feedback that you would like to share regarding the PDF, if you do, I would be happy to share some now. Thank you. 
+SHN: I have just come to my very last slide and I am going to look over to KG,I don’t know if you have any feedback that you would like to share regarding the PDF, if you do, I would be happy to share some now. Thank you.
 
-KG: MF, you were going to make the PDF. 
+KG: MF, you were going to make the PDF.
 
 MF: No?
 
-KG: You were talking about - we are going to follow Allen’s process. 
+KG: You were talking about - we are going to follow Allen’s process.
 
-MF: Yeah. We – we are going to go through AWB’s documents and incorporate as much as we can into ecmarkup and into the spec document itself wherever possible. And then we will get feedback on any remaining differences between what we can automatically produce and what we can manually produce at the following meeting. But that hasn’t been done yet. 
+MF: Yeah. We – we are going to go through AWB’s documents and incorporate as much as we can into ecmarkup and into the spec document itself wherever possible. And then we will get feedback on any remaining differences between what we can automatically produce and what we can manually produce at the following meeting. But that hasn’t been done yet.
 
 SHN: Thank you. Can I ask, would you be ready to do this for the next edition, coming up in June?
 
 MF: Yes.
-  
-SHN: Thank you. So we will keep following that. It is relevant. You can see from the statistics, it’s still quite relevant. So thank you for your efforts.
-And that’s the end of my core slides. My next slides provide you with information on where the documents lie. There’s a list of documents. I will upload the slides after tomorrow. There are a bunch of documents you may wish to look at, minutes of the last meetings and what is going on in ECMA TC39 and GA. I won’t read them to you. There’s a list of them.
-Our stats, So these are our stats for the last 4 years. And clearly, this is the highest in person meeting in the last while. This is an indication of how we move forward with other meetings. Also, participation. The last one we had, it was good. But this meeting may take the cake.
+
+SHN: Thank you. So we will keep following that. It is relevant. You can see from the statistics, it’s still quite relevant. So thank you for your efforts. And that’s the end of my core slides. My next slides provide you with information on where the documents lie. There’s a list of documents. I will upload the slides after tomorrow. There are a bunch of documents you may wish to look at, minutes of the last meetings and what is going on in ECMA TC39 and GA. I won’t read them to you. There’s a list of them. Our stats, So these are our stats for the last 4 years. And clearly, this is the highest in person meeting in the last while. This is an indication of how we move forward with other meetings. Also, participation. The last one we had, it was good. But this meeting may take the cake.
 
 SHN: The next meetings are highlighted there. Already RPR has mentioned them. And that is the last slide that I have. Reminder when the general assembly and our ExeCom. Tomorrow will continue with the slide as we finish the agenda, do some activities on the 100th meeting.
 
-SHN: We have some celebrations and we have swag. There is a swag item for everyone. But if you choose to do your summaries and conclusions, you may get a second swag. If you choose to support note-taking and somebody tells me who they are, you may get a third swag.
-Bribery, but that’s the mode I work in today. So let me know. I will be watching. Thanks to SYG for helping me with the swag and design. If there are any questions, please ask.
+SHN: We have some celebrations and we have swag. There is a swag item for everyone. But if you choose to do your summaries and conclusions, you may get a second swag. If you choose to support note-taking and somebody tells me who they are, you may get a third swag. Bribery, but that’s the mode I work in today. So let me know. I will be watching. Thanks to SYG for helping me with the swag and design. If there are any questions, please ask.
 
 RPR: Thank you Samina. That was excellent.
 
 ### Speaker's Summary of Key Points
+
 Summary:
 
 - Timelines 2024:
 A reminder of the timeline for the approval of a new addition of 262 were noted.  At the April ExeCom on the 24-25 April, where TC chairs bring in the recommendation of the next addition.  The 60-day opt-out period and a 60-day open for comments were noted.  The anticipated editions are ECMA-262 15th edition and ECMA-402 11th edition for approval for the upcoming June 2024 GA meeting.
 
-- Approval vote accepted by acclamation of ES2024 and opt-out period, for both ECMA-262 and  ECMA-402 was agreed by the committee.
+- Approval vote accepted by acclamation of ES2024 and opt-out period, for both ECMA-262 and ECMA-402 was agreed by the committee.
 
 - New work items:
-New work items were reviewed, i.e. TC54 Software and system transparency (Cyclone/DX), and a the potential TC55 WinterCG to be discussed at the next Execom. The 2023 workshops were also highlighted to encourage the committee to consider future topics which may be of interest and may generate new work items. 
+New work items were reviewed, i.e. TC54 Software and system transparency (Cyclone/DX), and a the potential TC55 WinterCG to be discussed at the next Execom. The 2023 workshops were also highlighted to encourage the committee to consider future topics which may be of interest and may generate new work items.
 
 - Statistics:
 The yearly statistics were reviewed, and noted that both the html access and downloads of the ECMA-262 continue to have strong demand.
@@ -136,106 +127,115 @@ The pending new members were noted, Replay.io (SPC), HeroDevs (SME), and Sentry 
 Feedback on ES2024 PDF version solution was provided, based on Allen W-B process, from Kevin Gibbons and Michael Ficarra.  The process is being reviewed and incorporated into the ecmarkup where possible. Feedback will be provided on what can be automatically and manually produced, this has not been done, but the aim is to be ready for the next edition coming up in June.
 
 ## ECMA262 Status Updates
+
 Presenter: Kevin Gibbons (KG)
 
 - [slides](https://docs.google.com/presentation/d/1CxVe7IC5Nie1kvm688bX6We0xH7YEmpFAJHC44cac9k/edit)
-  
+
 KG: Editors update. This will be brief. Only a couple of normative changes. We landed Object.groupBy and Map.groupBy, and Promise.withResolvers which got stage 4 at the last meeting. And only one editorial change worth calling out. We have introduced an AO to simplify using the iterator protocol in the common case. I am mainly calling this out because if you have a proposal that is using the iterator protocol, you may wish to use this abstract operation. I have already PR’d several proposals. If you want I can send a PR for any others. It really is much nicer, I think. And no other editorial changes to call out.
 
 KG: I don’t think I am going to go through the list of upcoming and planned work again. It’s pretty much the same, but I want to call out that last time, I claimed that we were done replacing complex spec values with records and just making the spec internally consistent in that way. And it turns out, there’s a couple left. So this fourth one on the list is still here. And not removed. So yeah. Same things we have always been working on.
 
-KG: I want to especially call out the first one on the list: the spec has a terms and definitions section, containing 10 or 15% of the terms and definitions of the spec. And that’s silly. wW will get rid of that and spread the definitions in the appropriate places.
-If you don’t think we should do that, let us know. But that’s the plan.
+KG: I want to especially call out the first one on the list: the spec has a terms and definitions section, containing 10 or 15% of the terms and definitions of the spec. And that’s silly. wW will get rid of that and spread the definitions in the appropriate places. If you don’t think we should do that, let us know. But that’s the plan.
 
 KG: The last thing, SHN mentioned we need to cut the next edition of the spec. Because of the timelines, that should probably happen before the next meeting. The intention is to freeze the spec at the end of this meeting. We will send out a link. There’s only two things on the agenda that are likely to land in the spec before that happens, which is ArrayBuffer.transfer goes to stage 4 and the `-->` HTML comment bugfix for web reality. If there is consensus, we will land them, and then either way, we will cut the spec after the meeting, possibly including these changes. No other normative changes anticipated. We will send the link and the 60-day IPR opt out can start at that point, which should give us plenty of time. If you have something that you want to get in the spec, for some reason, let us know and know why. But otherwise, the plan is that it’s basically as it is today, plus those two changes.
 
 MLS: KG, do you have a rough date when you think you will do that, and can you send that out to everybody?
 
 KG: Yeah. We will send the link when it’s out. The rough date is the end of the meeting. So Friday. Whatever Friday is. Maybe next week. But within ten days of now. The plan is to post the link on the reflector as an issue.
-  
-MLS: Sounds good. 
 
-PFC: Is there any guidance for proposal authors regarding the complex spec values versus records thing that we should be following? 
+MLS: Sounds good.
+
+PFC: Is there any guidance for proposal authors regarding the complex spec values versus records thing that we should be following?
 
 KG: You are almost certainly doing the right thing already. If you have a named records with lists of fields or whatever, that’s the right thing. If you have, like, a tuple of values whose fields are referred to as, like, "the matcher component of this tuple", rather than using the `.[[Name]]` field access - don’t do that. Do the “you have fields in a record” thing. But you are extremely unlikely to be doing the complex spec values thing. That was just an artifact of history.
 
 RPR: Okay. So I think we are on time. Thank you KG.
+
 ## ECMA402 Status Updates
+
 Presenter: Ben Allen (BAN)
 
-- [slides]()
+- Slides: See Agenda
 
-BAN: So this is a very short update. We only have a couple of minor editorial changes. Let’s see, is that sharing correctly? It looks like it is. 
+BAN: So this is a very short update. We only have a couple of minor editorial changes. Let’s see, is that sharing correctly? It looks like it is.
 
 BAN: Fantastic. So one is related to the new iterator step value AO. Thank you, KG for bringing that over into 402. So yeah. Previously we had used the more elaborate process. This one clarifies things greatly.
 
 BAN: And the other very minor change is some of the ordering used for cable iteration was inconsistent. Most notably, like DatetimeFormat, set row where the rest of 402 and 262 would say current row. And that’s it.
 
-SFC: We also have a few topics for proposals at various stages in the agenda as well. So we can look forward to those coming up throughout the course of the week. 
+SFC: We also have a few topics for proposals at various stages in the agenda as well. So we can look forward to those coming up throughout the course of the week.
 
 RPR: Excellent. All right. Thank you, BAN.
 
 ## ECMA404 Status Updates
+
 Presenter: Chip M (CM)
 
-- [slides]()
+- Slides: See Agenda
 
-RPR: We move on. The next one is ECMA402 status update from Chip. Chip, are you there? 
+RPR: We move on. The next one is ECMA402 status update from Chip. Chip, are you there?
 
-CM: I am. So JSON continues its decades long tradition of stability and relentless backward compatibility. 
+CM: I am. So JSON continues its decades long tradition of stability and relentless backward compatibility.
 
-RPR: Thank you. Always good to hear. 
+RPR: Thank you. Always good to hear.
 
 RPR: All right. I think that’s the most reliable topic on the agenda.
 
 ## Test262 Status Updates
+
 Presenter: Philip Chimento (PFC)
 
-- [slides]()
+- Slides: See Agenda
 
 PFC: In Test262, we’ve merged some tests for proposals recently, including set methods, iterator helpers, accessors, and a test for a normative change that has been waiting for a couple of years to merge into ECMA262, the sync-to-async-iterator changes.
 
 PFC: I will basically repeat what I have said at the past few of these updates: we have more review work than we can comfortably assign to all the maintainers. We do thank you for reviewing tests. As a proposal author, if you could look at tests that people write for your proposal and give a signal about whether you think they’re correct or not. That helps us have more confidence as maintainers to merge them. And I think that’s it on our part.
+
 ## TG3 (Security) Report
+
 Presenter: Jordan Harband (JHD)
 
-- [slides]()
+- Slides: See Agenda
 
-JHD: We have had two meetings of TG3 since the last plenary. We spoke about PR that Nicolò, I believe that will be talking about this week. We also decided to publish an agenda at least 24 hours before each of our meetings, and then if there’s nothing on the agenda, to cancel it.
-However, we have a long enough backlog to not likely cancel for a while. If you have security-related input, please join. That’s all.
+JHD: We have had two meetings of TG3 since the last plenary. We spoke about PR that Nicolò, I believe that will be talking about this week. We also decided to publish an agenda at least 24 hours before each of our meetings, and then if there’s nothing on the agenda, to cancel it. However, we have a long enough backlog to not likely cancel for a while. If you have security-related input, please join. That’s all.
 
 ## TG4 (Source Maps) Report
+
 Presenter: Jon Kuperman (JKP)
 
-- [slides]()
+- Slides: See Agenda
 
-JKP: Cool. Sorry, if this is a bit of a different format, but I recently had to do a quick year-end view of the source maps we have been doing and it’s the first year for us in TC39, I thought that summary would make a good update.
-Last year in the beginning part of the year we formed the group, talked about ideas for new features, recruited members from open source tools, browsers, different companies and tools. In June, I was at the TC39 plenary, presented and became the official TG4 task group. So since then, we have gotten bigger. This is not all of the members, but a lot of them are the most active members. Anyone in the space that wants to collaborate on any work we are doing, it would be fantastic to have, but I am pretty happy with the group that we manage to get so far. We have been getting quite a bit done.
+JKP: Cool. Sorry, if this is a bit of a different format, but I recently had to do a quick year-end view of the source maps we have been doing and it’s the first year for us in TC39, I thought that summary would make a good update. Last year in the beginning part of the year we formed the group, talked about ideas for new features, recruited members from open source tools, browsers, different companies and tools. In June, I was at the TC39 plenary, presented and became the official TG4 task group. So since then, we have gotten bigger. This is not all of the members, but a lot of them are the most active members. Anyone in the space that wants to collaborate on any work we are doing, it would be fantastic to have, but I am pretty happy with the group that we manage to get so far. We have been getting quite a bit done.
 
 JKP: The first big thing we do is that we worked through and approved our official process document. The basic ideas that we sort of mimic TC39 officials stage process, where things go from Stage 1 to Stage 4, that being said, we still will be planning on presenting everything through the TC39 plenary, once we have an internal Stage 4 reached.
 
 JKP: We got a lot done with regards to the existing specification. I have links to the best examples of this here, like directionsing around how to handle invalid versions. Instead of using our own language, source maps, using things like that. Removing X prefixes. So there’s quite a few links here. And then the new features, we have got 3 main proposals that are in flux right now. One of them is adding function scopes and variable names to source maps. So this is big for a lot of different tools. And inspired by a lot of work done previously at Bloomberg and Google. We have a range mappings proposal, so instead of linking to a specific mapping, tools can have a range of mappings, for tools combining through build processes. And then a proposal for debug ID’s, using a unique identifier to source maps. So a lot of ecosystem tooling can easily find the source file it’s referring to.
 
-JKP: The last thing we have done is made our contributing guide. So I have a link here to our CONTRIBUTING.md. It has like everything that I could think of that people need to know to join and contribute. So where we are meeting, on the TC39 calendar, all of the chats, open source repositories, a list of the customers and the big effort right now, which is getting tests in place for all the existing source map functionality. Actively looking for anything who wants to contribute. I keep these short, but we would love to have more folks involved. Thank you very much. 
+JKP: The last thing we have done is made our contributing guide. So I have a link here to our CONTRIBUTING.md. It has like everything that I could think of that people need to know to join and contribute. So where we are meeting, on the TC39 calendar, all of the chats, open source repositories, a list of the customers and the big effort right now, which is getting tests in place for all the existing source map functionality. Actively looking for anything who wants to contribute. I keep these short, but we would love to have more folks involved. Thank you very much.
 
 MF: It looks like you said the proposals, once they reach your internal Stage 4, come to TG1 for review. Is your internal stage 4 post-implementation? Does it match up with our TG1 stage 4?
 
-JKP: For a lot – I can share the process doc in particular, but the way that we had been thinking about it and presented it earlier, the answers are yes. Internally, we would have implementations complete before bringing it to TG1. But the implementations would not exist in the browsers for the language they exist. UI for the debuggers and other tools like that. 
+JKP: For a lot – I can share the process doc in particular, but the way that we had been thinking about it and presented it earlier, the answers are yes. Internally, we would have implementations complete before bringing it to TG1. But the implementations would not exist in the browsers for the language they exist. UI for the debuggers and other tools like that.
 
 MF: The reason I ask is because of a web compatibility concern. The source maps are distributed over the web. And tools would then become reliant on the format. I don’t see what the purpose of the review by TG1 is after that point.
 
 DE: I think Jon accidentally left out a part of the process. He was describing how things advance through stages in TG4. Additionally, each TC39 meeting will keep having an update for TG4’s work, including a summary of all the things that we are doing in TG4. There, we will be inviting people to come to TG4 and do a more detailed technical review. The point we are going to make an annual version cut, then we present the whole annual version to TC39 and ask for consensus about it. We didn’t want to make too much of a back and forth, get consensus in two different places. Because if you want to engage in the more detailed technical discussions, towards design, you should join the group that is doing that. But still, to make sure people have a table of contents, so they can engage in the discussions that they want to, that are relevant to them, that’s why we have these updates every meeting. Hopefully that’s less scary than you were imagining.
 
-DE: Also, I want to point out that implementation by this process that JKP was mentioning is defined as not just browsers. But also, tools. We require both. Because they have complementary forms of implementation. 
+DE: Also, I want to point out that implementation by this process that JKP was mentioning is defined as not just browsers. But also, tools. We require both. Because they have complementary forms of implementation.
 
 JKP:The big thing to speak on, we are trying to find the right balance here.
 
 NRO: I want to try to answer that. Tools are happy to ship experiments, knowing we have to change them. For example, chrome did have tools already shipping the scopes proposal even if it’s a stage 2 in our process. Shipping and breaking changes there are much less bad than normative features. In that, breaking the debugging experience, so we have less web compatibility constraints compared to TG1.
+
 ## Updates from CoC committee
+
 Presenter: Chris de Almeida (CDA)
 
-CDA: Nothing new to report from the code of conduct committee, other than we are always happy to welcome new participants who would be interested in joining us on the code of conduct committee. 
+CDA: Nothing new to report from the code of conduct committee, other than we are always happy to welcome new participants who would be interested in joining us on the code of conduct committee.
+
 ## Needs consensus PR: refactoring the process document
+
 Presenter: Michael Ficarra (MF)
 
 - [PR](https://github.com/tc39/process-document/pull/38)
@@ -246,12 +246,16 @@ MF: The first column, the left one, is targeting more of the outsider just wanti
 
 MF: There’s minor, what I call, normative changes. They are listed right here. The proposal document describes all high-level API and syntax and illustrative examples of usage have moved from stage one entrance criteria to stage two entrance criteria. I think that actually just more correctly reflects how we actually do those things. I've replaced references of ECMAScript editors and ECMA 262 with the relevant editor group and ECMA-262 or ECMA-402 so that it applies to both of the documents we work on. And I removed the test262 entrance criteria from stage 4 since it's required for stage 3 now as per the last meeting's changes. So we've gotten feedback and reviews and a couple of approvals. It's been open since basically the last meeting.
 
-MF: There has only recently been one additional piece of feedback from DE, but it seems mostly positive. I will let him speak to that, if he wants to. Yeah. I kept the timebox really short because I am not interested in litigating this in committee. That's not a valuable use of our time. If anybody has significant concerns, we will withhold consensus and we will address it and bring it back in the next meeting. So I am looking to make this consolidation and clarification to the process document. 
+MF: There has only recently been one additional piece of feedback from DE, but it seems mostly positive. I will let him speak to that, if he wants to. Yeah. I kept the timebox really short because I am not interested in litigating this in committee. That's not a valuable use of our time. If anybody has significant concerns, we will withhold consensus and we will address it and bring it back in the next meeting. So I am looking to make this consolidation and clarification to the process document.
 
 RPR: +1s from CDE and DE on the queue. CDE says "Thanks to MF for doing this. Let’s capture the follow along comments from DE". DE says that his comments are already in the thread. Likewise, DLM says +1. So lots of support.
+
 ### Conclusion
+
 Consensus on merging the PR.
+
 ## Down with [[VarNames]]
+
 Presenter: Shu-yu Guo (SYG)
 
 - [PR](https://github.com/tc39/ecma262/pull/3226)
@@ -263,8 +267,7 @@ SYG: So what is [[VarNames]]? In general, this is taking a step back, high-level
 
 SYG: This is disallowed:
 
-
-```
+```html
 <script>
   eval('var x');
 </script>
@@ -277,21 +280,19 @@ SYG: So, direct sloppy eval, can introduce new vars in the outer scope. Direct s
 
 SYG: We thought that we should also disallow this because after all we already disallow var and let bindings have the same name on the global scope. If you introduce a var, why not disallow it? It seems fine. Except, this is a giant pain in the ass to implement it.
 
-SYG: So why is it a giant pain in the ass to implement?  We should remember the direct eval var semantics here. When you introduce a new var, that binding is deletable. This is true of direct eval introduced var in both functions and global scope.
+SYG: So why is it a giant pain in the ass to implement? We should remember the direct eval var semantics here. When you introduce a new var, that binding is deletable. This is true of direct eval introduced var in both functions and global scope.
 
 SYG: So at the global scope, this means it add as property to globalThis, because remember all global var are properties in globalThis. This basically means that it adds a property to globalThis that is configurable. But, wait a second: if you actually manually do this, if you manually add a configurable binding to globalThis, you can redeclare a lexical binding with the same name. We need a way to distinguish configurable global properties on globalThis, whether they are introduced by normal property assignment like this or via direct eval var statements like this. And that is [[VarNames]].
 
-SYG: It’s basically a list that is on the global environment whose purpose is to distinguish what are the `var`s that are introduced via direct eval.
-Strictly speaking that is not true, it also attracts var that come by way of var statements of the global scope that don’t come from direct eval. But you don't actually need [[VarNames]] for those, because var declarations at the top level that are not from direct eval introduce non-configurable global properties. [[VarNames]] exists because you need to distinguish which of the configurable properties are actually var.
-Because not all vars are non-configurable. Hopefully that is clear.
+SYG: It’s basically a list that is on the global environment whose purpose is to distinguish what are the `var`s that are introduced via direct eval. Strictly speaking that is not true, it also attracts var that come by way of var statements of the global scope that don’t come from direct eval. But you don't actually need [[VarNames]] for those, because var declarations at the top level that are not from direct eval introduce non-configurable global properties. [[VarNames]] exists because you need to distinguish which of the configurable properties are actually var. Because not all vars are non-configurable. Hopefully that is clear.
 
 SYG: This extra name list is kind of annoying. It’s annoying to understand at the spec level. It’s also annoying to implement because like you have to reserve a bit on all global properties basically to remember whether it is in fact a var or not. And I argue, or my claim, is that this complexity that serves no one what are the actual use cases here? You shouldn’t be using sloppy direct eval to introduce global vars anyway, and you can redeclare sloppy vars, you just have to delete them first. If you want to redeclare them, type delete x and could a let x after. That doesn’t seem that great.
 
 SYG: So the current semantics is that we have three cases at the global scope to catch redeclaration errors. 1, is a SyntaxError to redeclare a let or const with a like-named let or const. 2, is it a SyntaxError to redeclare a non-configurable property with a like named let or const. 3 it covers the normal var case, because they are not configurable properties. Number 3, we have the extra case, that says, it is a SyntaxError to declare let or const with a name present in [[VarNames]].
 
-SYG: My proposal is to get rid of the third one. So basically, the upshot of this is that at the global scope, this is now allowed. `let x will shadow. Shadow in the sense that if you do a direct eval of `var x`, and then do a `let x`, `globalThis.x` will refer to the “binding”, refer to the property introduced by the direct eval while normal `x` will refer to `let x`. And I hope this will simplify the spec a little bit. And simplify implementations.
+SYG: My proposal is to get rid of the third one. So basically, the upshot of this is that at the global scope, this is now allowed. `let x will shadow. Shadow in the sense that if you do a direct eval of`var x`, and then do a`let x`,`globalThis.x` will refer to the “binding”, refer to the property introduced by the direct eval while normal `x` will refer to `let x`. And I hope this will simplify the spec a little bit. And simplify implementations.
 
-SYG: As a FYI to the other implementers, SM and JSC are conformant to the current spec and will need to change. V8 was   unfortunately never conformant here, and then we wouldn’t do anything for V8 because the case -- this is currently incorrectly allowed in V8, but my claim is that we should just allow it because I don’t really see why we have this extra thing that doesn’t really serve anybody.
+SYG: As a FYI to the other implementers, SM and JSC are conformant to the current spec and will need to change. V8 was unfortunately never conformant here, and then we wouldn’t do anything for V8 because the case -- this is currently incorrectly allowed in V8, but my claim is that we should just allow it because I don’t really see why we have this extra thing that doesn’t really serve anybody.
 
 SYG: Okay, that is what I am proposing. I will be open to questions.
 
@@ -301,8 +302,7 @@ SYG: Let me respond quickly to that. Would there be a difference in your mind pr
 
 RGN: Sorry, what were the A and B there?
 
-SYG: The alternative is that, one, we pull this out into an actual proposal, go through the staging process, treat it as a proposal, and ask for Stage 2 this meeting. That’s a bunch of work. The alternative is to keep it as a PR, we simply do not have consensus for it now because you want to wait to evaluate.
-We keep it as a PR and we can communicate offline or whenever you are ready, you have looked at it and I will bring it back for consensus and we ask for consensus then. Is there a difference between those two alternatives in your mind?
+SYG: The alternative is that, one, we pull this out into an actual proposal, go through the staging process, treat it as a proposal, and ask for Stage 2 this meeting. That’s a bunch of work. The alternative is to keep it as a PR, we simply do not have consensus for it now because you want to wait to evaluate. We keep it as a PR and we can communicate offline or whenever you are ready, you have looked at it and I will bring it back for consensus and we ask for consensus then. Is there a difference between those two alternatives in your mind?
 
 RGN: There is some benefit in tracking tests and implementation progress, but in practical terms if you feel strongly about introducing a delay without giving it stages, I think that would be fine.
 
@@ -314,15 +314,15 @@ SYG: Okay, I’m happy to pull it out into a proposal.
 
 MM: Thank you.
 
-DLM: Yeah, so we had a lot at this internally, and in general, we are in support of this. Removing it from our implementation will not be difficult. We do sort of share the concerns about maybe there’s some unforeseen implications, but the fact that V8 never implemented this makes me think that we’re not likely to run into problems if we were to do it, that being said, we’re fine with this going through as a staged  proposal. Thank you.
+DLM: Yeah, so we had a lot at this internally, and in general, we are in support of this. Removing it from our implementation will not be difficult. We do sort of share the concerns about maybe there’s some unforeseen implications, but the fact that V8 never implemented this makes me think that we’re not likely to run into problems if we were to do it, that being said, we’re fine with this going through as a staged proposal. Thank you.
 
 MLS: I support a staged proposal as well.
 
 SYG: Okay, that is the queue. I would like to change this, ask for consensus for Stage 2, given that the PR contains the spec text changes. I guess the slight difference here is that the – the request from other delegates to consider the indications, there’s nothing actionable on my side as champion, so can I request for folks who want to think through the implications that they do so before the next plenary.
 
-RPR: I’m seeing a thumbs up from RGN in the room and thumbs up from Michael. DE? Thumbs up from you as well. Okay, that seems clear. And a thumbs up from DE as well. 
+RPR: I’m seeing a thumbs up from RGN in the room and thumbs up from Michael. DE? Thumbs up from you as well. Okay, that seems clear. And a thumbs up from DE as well.
 
-RPR: NRO is asking  do we   need Stage 3?
+RPR: NRO is asking do we need Stage 3?
 
 SYG: Sure. Yeah. Who wants to review a small PR?
 
@@ -340,9 +340,7 @@ SYG: Say I ask for Stage 2.7 at a future meeting, entrance into 2.7 requires tes
 
 DE: After you’re at 2.7, then you may land a test.
 
-SYG: Then for 3, at the point where test 2.62 tests are required, given there are tests
- testing the opposite of this behavior currently, what do we do for tests for proposals that are
- proposing backwards breaking changes?
+SYG: Then for 3, at the point where test 2.62 tests are required, given there are tests testing the opposite of this behavior currently, what do we do for tests for proposals that are proposing backwards breaking changes?
 
 MLS: So change the test so that they test the exact opposite. Which no longer is a syntax error and you can create a variable with the same name as this.
 
@@ -356,8 +354,7 @@ MLS: In 2.7. 2.7 is when you write those tests.
 
 RPR: So, Michael, just to clarify what by -- I should not have called a technicality, but it’s whenever we are asking for Stage 3 reviewers, as we always have done, really we’re asking for Stage 2.7 reviewers. Yeah. I think hopefully that answers NRO questions on the queue as well, I think. And then Kevin Gibbons. It says send a PR. It’s still on TCQ.
 
-KG: Yeah, the test requirement doesn’t require that the tests be landed. They can just be in PR.
-You can have a change to the tests that removes the old tests and adds the new ones and we can review that and then say it’s good.
+KG: Yeah, the test requirement doesn’t require that the tests be landed. They can just be in PR. You can have a change to the tests that removes the old tests and adds the new ones and we can review that and then say it’s good.
 
 SYG: So to recap, the action on me is to move the PR into a proposal repo. I think I got Stage 2. I didn’t hear --
 
@@ -371,7 +368,7 @@ RPR: I saw a thumbs up from KG. RGN gives a +1. In the room there is a +1 from M
 
 SYG: And the final thing to record in the conclusion is I have asked the folks that said they would like time to consider the implications to please do so before the next plenary. And on the queue, that was MM and MLS and perhaps others.
 
-KG: So I guess we didn’t formally discuss, but we have previously allowed proposals to advance   multiple stages, and I think that achieving stages 2.7 and 3 at the same meeting should be reasonable if the requirements for both are met. Of course, that risks that you are writing tests for a proposal that will not in fact get consensus to go forward, but in this case, where the tests are reasonably small, I think that would be a reasonable thing to did if you’re willing to take that risk and want to move a little faster and present fewer times. So I guess I want to hear if anyone in the room objects to the possibility of moving a proposal like this or any other proposal to stages 2.7 and 3 at the same meeting, assuming the requirements are met prior to the meeting.
+KG: So I guess we didn’t formally discuss, but we have previously allowed proposals to advance multiple stages, and I think that achieving stages 2.7 and 3 at the same meeting should be reasonable if the requirements for both are met. Of course, that risks that you are writing tests for a proposal that will not in fact get consensus to go forward, but in this case, where the tests are reasonably small, I think that would be a reasonable thing to did if you’re willing to take that risk and want to move a little faster and present fewer times. So I guess I want to hear if anyone in the room objects to the possibility of moving a proposal like this or any other proposal to stages 2.7 and 3 at the same meeting, assuming the requirements are met prior to the meeting.
 
 RPR: No objections on the queue. This all seems very reasonable. Okay, I think that’s -- that answers that.
 
@@ -380,14 +377,15 @@ RPR: And a plus 1, positive, from SFC. Thank you. We are done within the time fr
 ### Speaker's Summary of Key Points
 
 ### Conclusion
-Stage 2
-Reviewers: RGN, DRR
-Delegates to consider implications before next plenary: MM, MLS
+
+Stage 2 Reviewers: RGN, DRR Delegates to consider implications before next plenary: MM, MLS
+
 ## Allow Annex B scripts to start with -->
+
 Presenter: Nicolò Ribaudo (NRO)
 
 - [proposal](https://github.com/tc39/ecma262/pull/3244)
-- [slides]()
+- Slides: See Agenda
 
 NRO: So normative PR, we have these B specific HTML comments, there is the `-->` or the opposite version, and there are some rules that are strict where they can happen, specifically for these, like, HTML comment, we require it to be at the beginning of the line or potentially precede only by the comments. So we require a newline, followed by these HTML closed comment production, which is basically white spaces. This is, line, block comments without lines in the middle and, like, the comment marker. The problem with the way this is specified is we always require a line terminator in front, so it cannot be on the first line. It has to be at least on the second line. However, all engines I tested that do support HTML comments also support these closing comments in the first line, both in eval, in script tags, and in external files. so this PR is to update the spec to match what these implementations do, to basically add a new case that says -- we already have some special cases for comments at the beginning with the hashbang comment, and so these would also add these HTML-like comment in Annex B together with the PR at the beginning of a file.
 
@@ -395,51 +393,62 @@ NRO: I would like to ask for consensus for this change, which again is not chang
 
 RPR: DLM has support for the change. RGN is also +1. Did you want to say more?
 
-RGN: Yeah, it strikes me as an oversight that we don’t include this in the grammar already and   we are in favor of updating the spec to match the implementations.
+RGN: Yeah, it strikes me as an oversight that we don’t include this in the grammar already and we are in favor of updating the spec to match the implementations.
 
 RPR: Plus one from SYG. Okay, it seems like this has consensus. Thank you, NRO.
+
 ### Speaker's Summary of Key Points
 
-
 ### Conclusion
-* Consensus on merging the PR
+
+- Consensus on merging the PR
+
 ## Allow locale based ignorePunctuation default for Collator
+
 Presenter: Frank Yung-Fong Tang (FYT)
 
-- [proposal]()
-- [slides]()
+- [PR](https://github.com/tc39/ecma402/pull/833)
+- Slides: See Agenda
 
-FYT: So first of all, this -- thank you. So this is for a PR that -- an interesting one. So in ECMA 402 Intl.Collator has an option that’s called ignorePunctuation. And the -- currently in the ECMA 402 spec the default is false, but  what really happens that we find out during our testing V8 increment for very -- I mean, I  think from the very beginning, in -- when the locale is in the Thai locale, the default behavior is true. For all other locale, it’s currently that all the browser implement it actually is false. What happens is if we really look at what happens what happend in the  last several years, that when chromium implemented that, the [[IgnorePunctuation]] depended on the location. But for the Thai language in the CLDR the default is true. So, therefore, it actually is  not -- is not exactly as the specs specify in the implementation, so we have a compatibility issue only for the Thai locale. So whenever it does not piece if I the option for the Thai  locale which is true in chromium. And I think we have [INAUDIBLE] -- we have talked with this  too about this. We have this PR that we’re changing, and the change here basically saying that  instead of treating the default as false, the default is actually locale dependent from the  locale data, and I think Mozilla already look at that, and I think TG2 already have support for  this, so I want to bring this to TG1 for approval. So the default value for this ignore punctuation instead of always hardcode it to  false, is actually reading from the locale data. Any questions?
+FYT: So first of all, this -- thank you. So this is for a PR that -- an interesting one. So in ECMA 402 Intl.Collator has an option that’s called ignorePunctuation. And the -- currently in the ECMA 402 spec the default is false, but what really happens that we find out during our testing V8 increment for very -- I mean, I think from the very beginning, in -- when the locale is in the Thai locale, the default behavior is true. For all other locale, it’s currently that all the browser implement it actually is false. What happens is if we really look at what happens what happend in the last several years, that when chromium implemented that, the [[IgnorePunctuation]] depended on the location. But for the Thai language in the CLDR the default is true. So, therefore, it actually is not -- is not exactly as the specs specify in the implementation, so we have a compatibility issue only for the Thai locale. So whenever it does not piece if I the option for the Thai locale which is true in chromium. And I think we have [INAUDIBLE] -- we have talked with this too about this. We have this PR that we’re changing, and the change here basically saying that instead of treating the default as false, the default is actually locale dependent from the locale data, and I think Mozilla already look at that, and I think TG2 already have support for this, so I want to bring this to TG1 for approval. So the default value for this ignore punctuation instead of always hardcode it to false, is actually reading from the locale data. Any questions?
 
 RPR: Plus one for this change from DLM.
 
-SFC: Yeah, I just -- thanks, Frank, for putting this together, and I think that this style and structure for making locale data available is a good structure and makes it very explicit  which parts of the algorithm are data-dependent, and that is a good -- a good precedent to set, both here and elsewhere. So this style of change is a change that I think we should be embracing here and also anywhere elsewhere it is needed in 402.
+SFC: Yeah, I just -- thanks, Frank, for putting this together, and I think that this style and structure for making locale data available is a good structure and makes it very explicit which parts of the algorithm are data-dependent, and that is a good -- a good precedent to set, both here and elsewhere. So this style of change is a change that I think we should be embracing here and also anywhere elsewhere it is needed in 402.
 
 RPR: Thanks, SFC. USA is also plus 1 on this change, so I think you have good support.
+
 ### Speaker's Summary of Key Points
 
 ### Conclusion
-FYT: Okay, so I think the conclusion for these notes is that we conclude that we got consensus  for merge ECMA 402 PR 833.
+
+FYT: Okay, so I think the conclusion for these notes is that we conclude that we got consensus for merge ECMA 402 PR 833.
+
 ## ApplyUnicodeExtensionToTag and ResolveLocale set the result record's internal slots to non-canonical values
+
 Presenter: Frank Yung-Fong Tang (FYT)
 
-- [proposal]()
-- [slides]()
+- [PR](https://github.com/tc39/ecma402/pull/846)
+- Slides: See Agenda
 
-FYT: The next one, I think, this is accidentally merged by Ben last night. He got confused and clicked the button, literally just within 12 hours. But I think we still need to bring it here. And I put it on the agenda and he got confused. There’s 846. So what happened is that inECMA 402, there are two places that we deal with uniKo extension processing. One is for most of the Intl object. The other one is for the Intl locale itself, the operations are slightly different for agood reason. But the problem is that within one of that particular part, we actually are inconsistent across that too. Which one -- the one that have the problem with that is whenever we have that value currently, we didn’t really -- we didn’t lower case and we didn’t -- we didn’t -- sorry, we didn’t do the canonicalizations for that. Therefore, let me see, where is that? So this is called only by Intl locale object, and this operation that somehow in here, we did not do canonicalization, and what will happen is that some of the calendar value, I think, for example, Islamic civil, which have a different value that didn’t get canonicalized, so this particular PR is a normative PR. We have to put in explicit language we basically copy from the other place in ECMA 402 already where we do the  canonicalization. These two operations have to be operated because the process is different, and we do exactly the right thing. So we’re replacing just strictly reading from that one to a  canonicalization process that deferred to UTS35 plus the other place in ECMA 402.
+FYT: The next one, I think, this is accidentally merged by Ben last night. He got confused and clicked the button, literally just within 12 hours. But I think we still need to bring it here. And I put it on the agenda and he got confused. There’s 846. So what happened is that inECMA 402, there are two places that we deal with uniKo extension processing. One is for most of the Intl object. The other one is for the Intl locale itself, the operations are slightly different for agood reason. But the problem is that within one of that particular part, we actually are inconsistent across that too. Which one -- the one that have the problem with that is whenever we have that value currently, we didn’t really -- we didn’t lower case and we didn’t -- we didn’t -- sorry, we didn’t do the canonicalizations for that. Therefore, let me see, where is that? So this is called only by Intl locale object, and this operation that somehow in here, we did not do canonicalization, and what will happen is that some of the calendar value, I think, for example, Islamic civil, which have a different value that didn’t get canonicalized, so this particular PR is a normative PR. We have to put in explicit language we basically copy from the other place in ECMA 402 already where we do the canonicalization. These two operations have to be operated because the process is different, and we do exactly the right thing. So we’re replacing just strictly reading from that one to a canonicalization process that deferred to UTS35 plus the other place in ECMA 402.
 
 FYT: The impact shouldn’t be too much, except whenever the -- the U extension have a calendar with a couple of them. In particular, I think Islamic civil and maybe two or three other calendars.
 
 FYT: Any questions or any support?
 
 RPR: Nothing on the queue at the moment. Does FYT have support, objections? DLM has +1. Anyone else? Okay, if there’s nobody else, then it looks like this has conclusion.
+
 ### Conclusion
 
-FYT: The conclusion is that we reach consensus to merge ECMA 402  PR 846, which was accidentally mentioned last night, so we’re not going to revert it. Thank  you.
+FYT: The conclusion is that we reach consensus to merge ECMA 402 PR 846, which was accidentally mentioned last night, so we’re not going to revert it. Thank you.
 
 RPR: Excellent. That was a good prediction to merge it already. Super fast. Thank you, Frank.
+
 ## Iterator sequencing for Stage 2
+
 Presenter: Michael Ficarra (MF)
+
 - [proposal](https://github.com/tc39/proposal-iterator-sequencing)
 - [slides](https://docs.google.com/presentation/d/1KhdGLNXOxWFEg3EhDDv9P-dkLxPKBTuI0EkEUc_fdNA/edit#slide=id.p)
 
@@ -447,64 +456,60 @@ MF: All right, iterator sequencing for Stage 2, at the last meeting, my plans he
 
 MF: So I have written the full spec text for both of those methods. The one open issue is whether -- for that first solution, whether we continue with variadic `Iterator.from` as I said I would at the last meeting, or go with KG’s suggestion here of instead -- if you look at the spec text, I guess, you can see `Iterator.from` is kind of split into two sections. It’s the one case and the zero or more case. And this is what Kevin is getting at with the issue here. I can let him explain it more, but the quick summary is just that if you pass one thing to Iterator.from, there’s kind of a fast path, and you’re not getting that with Iterator.from passed many things because the work is delayed because it’s treating that as sequencing those things. So there’s that slight noticeable difference. I’m very neutral on this. I could go either way, whether we introduce a new method called `concat` that is always doing sequencing and doesn’t treat one as a special case or whether we just ignore that -- it’s not really meaningful that one is a special case here.
 
-MF: The other point there is that there is a difference from Array.from which, if you recall, has a second parameter, which is a mapper. I don’t think that’s really related, other than I guess people can see the name of the method and kind of assume its behavior. But if you’re reading code that calls it, I think it’s going to be pretty obvious that people are doing sequencing using Iterator.from. It makes no sense to introduce a mapper to Iterator.from because unlike arrays, we don’t have to worry about doing a second pass over the iterator. So that’s the open design question. And I think that’s actually the only thing  that I wanted to discuss here. Assuming we resolve that discussion of either going for this first path over the solution going with variadic form or introducing a new method, probably called Iterator.concat, assuming we can resolve that, I would like to ask for Stage 2 today and Stage 2 reviewers. So do we have any feedback on that one open issue or any other issues about the proposal?
+MF: The other point there is that there is a difference from Array.from which, if you recall, has a second parameter, which is a mapper. I don’t think that’s really related, other than I guess people can see the name of the method and kind of assume its behavior. But if you’re reading code that calls it, I think it’s going to be pretty obvious that people are doing sequencing using Iterator.from. It makes no sense to introduce a mapper to Iterator.from because unlike arrays, we don’t have to worry about doing a second pass over the iterator. So that’s the open design question. And I think that’s actually the only thing that I wanted to discuss here. Assuming we resolve that discussion of either going for this first path over the solution going with variadic form or introducing a new method, probably called Iterator.concat, assuming we can resolve that, I would like to ask for Stage 2 today and Stage 2 reviewers. So do we have any feedback on that one open issue or any other issues about the proposal?
 
-DLM: Thank you. So in general, when we discussed this, we thought it makes a lot of sense.
-We weren’t certain about flat. I was wondering if there’s examples from other languages that are using something like this or if you have, like, you know, some example use cases that you could mention.
+DLM: Thank you. So in general, when we discussed this, we thought it makes a lot of sense. We weren’t certain about flat. I was wondering if there’s examples from other languages that are using something like this or if you have, like, you know, some example use cases that you could mention.
 
 MF: Use cases of trying to sequence infinite sequences?
 
 DLM: Yeah, the infinite sequence. It wasn’t clear to us why that was useful enough to be added to the language.
 
-MF: Yeah, any generator that produces iterators, you know, these iterators themselves wouldn’t  be infinite, but the sequence would be. I don’t have specific concrete use cases in mind off the top of my head, but I can provide you with them if you want.
+MF: Yeah, any generator that produces iterators, you know, these iterators themselves wouldn’t be infinite, but the sequence would be. I don’t have specific concrete use cases in mind off the top of my head, but I can provide you with them if you want.
 
 DLM: No, honestly, we’re fairly happy with this proposal, so I don’t think you really need to do extra work. I was just curious if you had something kind of off the top of your head. In general, we’ll be supportive of this. It looks good.
 
-MF: Yeah, in my development of this, for that particular one, I had only been doing artificial  things. I had been mapping over the Nats and repeating that many times, but then the natural  numbers, and then you’d have an infinite sequence of iterators of lengths based on the number. But, I hadn’t done anything real with that yet.
+MF: Yeah, in my development of this, for that particular one, I had only been doing artificial things. I had been mapping over the Nats and repeating that many times, but then the natural numbers, and then you’d have an infinite sequence of iterators of lengths based on the number. But, I hadn’t done anything real with that yet.
 
-DLM: no, I think that’s fine. I don’t think it’s really worth arguing about. So, yeah, in  general, we support this proposal for Stage 2. Thank you.
+DLM: no, I think that’s fine. I don’t think it’s really worth arguing about. So, yeah, in general, we support this proposal for Stage 2. Thank you.
 
 MF: Okay.
 
-SYG: I would also like to hear some concrete use cases for the infinite stuff. I think in general, if you’re going down the road of making iterators really featured and more ergonomic, all kinds of combinators, I would like to hear more concrete use cases across the board. It would be -- so the broader context here, and there’s nothing I have against this particular proposal or your other ones, it’s just that if we introduce all this stuff, and come time when people actually want to ship this to production and it turns out that there are performance issues for the ready ergonomic forms that can’t be easily optimized away, that is  generally a concern where we want people -- we want the code that looks nice to also have the potential to be fast, so you can address that concern a number of ways. One is concrete use cases where we can look at something and say, while this -- given this concrete use case,  ergonomic gains here are actually worth the possibility of it being not as highly optimized. Another way is you could decide that you could show that it is in fact very optimizable and that performance will not be a concern. You could demonstrate that with micro benchmarks or something like that.
+SYG: I would also like to hear some concrete use cases for the infinite stuff. I think in general, if you’re going down the road of making iterators really featured and more ergonomic, all kinds of combinators, I would like to hear more concrete use cases across the board. It would be -- so the broader context here, and there’s nothing I have against this particular proposal or your other ones, it’s just that if we introduce all this stuff, and come time when people actually want to ship this to production and it turns out that there are performance issues for the ready ergonomic forms that can’t be easily optimized away, that is generally a concern where we want people -- we want the code that looks nice to also have the potential to be fast, so you can address that concern a number of ways. One is concrete use cases where we can look at something and say, while this -- given this concrete use case, ergonomic gains here are actually worth the possibility of it being not as highly optimized. Another way is you could decide that you could show that it is in fact very optimizable and that performance will not be a concern. You could demonstrate that with micro benchmarks or something like that.
 
 SYG: So per usual, the overall general concern here is performance for the kind of code that we want people to write and eventually to write and ship in production untranspiled. So, hopefully that concern makes sense.
 
-LCA: I just wanted to follow up on the request of, is there other language precedent for this? And if there is, RUST has an iterator.flatten method, which does pretty much this. I was looking for some results on GitHub where this is used, and it doesn’t seem like it’s very widely used. There’s in all of GitHub 520 files that use this method, just wanted to give  some context. Links: RUST Iterator.flatten: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.flatten results in GH code search: https://github.com/search?q=.flat%28+language%3ARust+&type=code
+LCA: I just wanted to follow up on the request of, is there other language precedent for this? And if there is, RUST has an iterator.flatten method, which does pretty much this. I was looking for some results on GitHub where this is used, and it doesn’t seem like it’s very widely used. There’s in all of GitHub 520 files that use this method, just wanted to give some context. Links: RUST Iterator.flatten: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.flatten results in GH code search: https://github.com/search?q=.flat%28+language%3ARust+&type=code
 
-KG: Just to say more about Iterator.from versus concat, the `from` method just seems pretty  unintuitive, that if you pass it two things, it’s going to change the behavior and then also stick them together. Like, that’s not really how any of the existing `from` methods work and not how we’re expecting any future from methods to work, as far as I’m aware. Like, if we have a Set.from that’s going to take a list from its first parameter; or I’m hoping to introduce a version of Math.max that takes an iterable as its first argument and it's definitely not going to take more than one iterable. That would just be weird. So I like the consistency of the `from` methods generally taking the one thing you are coercing and then the second parameter customizes the behavior in the way that Array.from does. But using it as a variadic thing with sequencing seems like it’s going to be really inconsistent with the rest of the language. I would be much happier if there was a static or prototype concat method.
+KG: Just to say more about Iterator.from versus concat, the `from` method just seems pretty unintuitive, that if you pass it two things, it’s going to change the behavior and then also stick them together. Like, that’s not really how any of the existing `from` methods work and not how we’re expecting any future from methods to work, as far as I’m aware. Like, if we have a Set.from that’s going to take a list from its first parameter; or I’m hoping to introduce a version of Math.max that takes an iterable as its first argument and it's definitely not going to take more than one iterable. That would just be weird. So I like the consistency of the `from` methods generally taking the one thing you are coercing and then the second parameter customizes the behavior in the way that Array.from does. But using it as a variadic thing with sequencing seems like it’s going to be really inconsistent with the rest of the language. I would be much happier if there was a static or prototype concat method.
 
-JHD: So I put my topic that I’m neutral on variadic vs separate, but I think I’m slightly leaning towards separate because of the things KG said. The reason I’m on the queue is because if it’s called `concat`, then I will expect based on the precedent of array concat, I can give it a thing or a container of things and it will give me a container of all the things, and so if it can either do that, or have a different name and it would be fine, I just think that that --  like, I don’t think anybody has any assumptions about `@@isConcatSpreadable` or intuition about  it, but -- so setting that aside, just that’s -- that is how concat works. I would like a different name if we can’t have those semantics.
+JHD: So I put my topic that I’m neutral on variadic vs separate, but I think I’m slightly leaning towards separate because of the things KG said. The reason I’m on the queue is because if it’s called `concat`, then I will expect based on the precedent of array concat, I can give it a thing or a container of things and it will give me a container of all the things, and so if it can either do that, or have a different name and it would be fine, I just think that that -- like, I don’t think anybody has any assumptions about `@@isConcatSpreadable` or intuition about it, but -- so setting that aside, just that’s -- that is how concat works. I would like a different name if we can’t have those semantics.
 
 DE [on the queue]: +1 Iterator.from.
 
 MF: thank you. That was helpful feedback. For SYG, I’ll definitely get more use case information and just do as much performance work as I can. I hear really mixed feedback, it seems, on concat versus from. To directly address JHD’s feedback, I’m not interested in bringing a version of the method that has that behavior, so I will look to avoid the name concat so that we can bring a version of the method that has the behavior that I desire. There’s some -- there’s a lot of precedent, and I remember somebody was asking for precedent in another language, I think maybe DLM, there’s a lot of precedent here. You can look in the README or in the slides that I had presented for Stage 1 both in other languages and in libraries. Maybe we can look there for some naming inspiration as well. Maybe append or something. We’ll see. Yeah, and I think that’s all I plan to address for the next one. I will not be asking for Stage 2 based on this feedback. Thank you.
+
 ### Speaker's Summary of Key Points
-For SYG, MF to get more use case information on the use cases for flat, and do performance work.
-Feedback was mixed on concat vs from.
-JHD argued, anything named concat should use the same array flattening semantics, which MF isn’t interested in adopting, so he will investigate other names.
-DLM and others asked about precedent in other languages; this was presented in Stage 1 previously.
+
+For SYG, MF to get more use case information on the use cases for flat, and do performance work. Feedback was mixed on concat vs from. JHD argued, anything named concat should use the same array flattening semantics, which MF isn’t interested in adopting, so he will investigate other names. DLM and others asked about precedent in other languages; this was presented in Stage 1 previously.
+
 ### Conclusion
+
 Did not seek consensus for Stage 2, due to critical feedback. The proposal remains at Stage 1.
 
 ## Iterator unique for stage 1
+
 Presenter: Michael Ficarra (MF)
 
 - [proposal](https://github.com/michaelficarra/proposal-iterator-unique)
 - [slides](https://docs.google.com/presentation/d/1381O5-rNH72MheHOIiTDfzentOn4APPps3R2MYeLzWY/edit#slide=id.p)
 
-MF: So this is a new follow on for iterator helpers, iterator unique. The problem it’s trying to address is getting distinct values out of an iterator, getting the first value in some identified equivalence class. So if you see the example there, we’re calling `Iterator.from` on the string Mississippi, which puts it into code points using the string iterator, and then calling whatever this method is called. For the purposes of this example, it’s called distinct, it yields four values, which are the four unique code points. It happens to be the first instances of those, but that’s not really observable here. You can see in the second part of the example, I have an array of strings, each of them containing a name of one of the US states in alphabetical order. And we’re calling a distinctBy variant, which is passing a mapping function, which maps to some exemplar of the equivalence class, this being the first letter of the state, so then if you iterate that resulting iterator, you get the first alphabetically ordered state starting with that letter. 
+MF: So this is a new follow on for iterator helpers, iterator unique. The problem it’s trying to address is getting distinct values out of an iterator, getting the first value in some identified equivalence class. So if you see the example there, we’re calling `Iterator.from` on the string Mississippi, which puts it into code points using the string iterator, and then calling whatever this method is called. For the purposes of this example, it’s called distinct, it yields four values, which are the four unique code points. It happens to be the first instances of those, but that’s not really observable here. You can see in the second part of the example, I have an array of strings, each of them containing a name of one of the US states in alphabetical order. And we’re calling a distinctBy variant, which is passing a mapping function, which maps to some exemplar of the equivalence class, this being the first letter of the state, so then if you iterate that resulting iterator, you get the first alphabetically ordered state starting with that letter.
 
-MF: So, yeah, this is a thing that I commonly need to do. There’s not too much design 
-space here, I don’t think. Something we definitely want to address at some point is 
-composite keys because you can’t always map to some exemplar that easily. Sometimes you want to compose two aspects of the thing and use that as the exemplar. But there’s no good 
-way to do that right now. I did have a good conversation with ACE, who I don’t think is here at this meeting, might be online, recently about his plans for composite keys going forward after records and tuples have been stalled, and that seems to be compatible with how we’re doing it via mapper in those examples. So I think a mapper is a good solution, assuming we go with those value-based composite keys in the future. I don’t want to go too far down that rabbit hole but if you have questions, I’m happy to answer. 
+MF: So, yeah, this is a thing that I commonly need to do. There’s not too much design space here, I don’t think. Something we definitely want to address at some point is composite keys because you can’t always map to some exemplar that easily. Sometimes you want to compose two aspects of the thing and use that as the exemplar. But there’s no good way to do that right now. I did have a good conversation with ACE, who I don’t think is here at this meeting, might be online, recently about his plans for composite keys going forward after records and tuples have been stalled, and that seems to be compatible with how we’re doing it via mapper in those examples. So I think a mapper is a good solution, assuming we go with those value-based composite keys in the future. I don’t want to go too far down that rabbit hole but if you have questions, I’m happy to answer.
 
-MF: I did research in other languages, and some of them were using the mapper style 
-approach that I showed. Some of them were using a comparator where you pass in a function of two parameters and it tells you whether those things are considered to be the same or not. I think the comparator approach is actually pretty bad. It requires a much less efficient implementation. It also permits comparators that are nonsensical, whereas the mapper doesn’t, just by construction. So I strongly prefer a mapper-based approach, but I would be interested in hearing motivations for including a comparator version. You’ll see later that some languages and libraries do have that, so there must be motivation somewhere, right? And another question is for the mapper, would we pass in an index? We typically have been doing that since the original iterator helpers MVP, but I don’t really see a reason. So if anybody has a reason to do that, let me know. And there’s a lot of names for this kind of thing, some common ones, so we’d have to choose naming preferences as well. But overall, not too big of a design space here. So here you can see examples of other languages that have a uniquing method on their various sequence-like data structures. The summary here is that most of them have the mapping variant, a couple have a comparator. And you can see some of the common names distinct and unique are common, but also “nub” in Haskell for some reason. I don’t think anybody knows. There’s just some funny names there.
+MF: I did research in other languages, and some of them were using the mapper style approach that I showed. Some of them were using a comparator where you pass in a function of two parameters and it tells you whether those things are considered to be the same or not. I think the comparator approach is actually pretty bad. It requires a much less efficient implementation. It also permits comparators that are nonsensical, whereas the mapper doesn’t, just by construction. So I strongly prefer a mapper-based approach, but I would be interested in hearing motivations for including a comparator version. You’ll see later that some languages and libraries do have that, so there must be motivation somewhere, right? And another question is for the mapper, would we pass in an index? We typically have been doing that since the original iterator helpers MVP, but I don’t really see a reason. So if anybody has a reason to do that, let me know. And there’s a lot of names for this kind of thing, some common ones, so we’d have to choose naming preferences as well. But overall, not too big of a design space here. So here you can see examples of other languages that have a uniquing method on their various sequence-like data structures. The summary here is that most of them have the mapping variant, a couple have a comparator. And you can see some of the common names distinct and unique are common, but also “nub” in Haskell for some reason. I don’t think anybody knows. There’s just some funny names there.
 
-MF: And in JavaScript libraries, you can see that it’s pretty much the same story. Unique and distinct are both very common. Unique both with the comparator and without. They’re both very common names, and also the mapping variant is more common than the comparator variant. And, yeah, all but one have a mapping version, so I think people find value in that. So I kind of 
-gave clues as to my preferences earlier, but I’ll go over them again, I guess. I think a comparator style API would be really inefficient, and as I said before, problematic because you can define nonsensical notions of equality using it. So I’d be interested in hearing if anybody has a reason to have that. So I think a single method with an optional mapper is probably best, and I don’t see a reason for an index yet, so also please let me know. And I really don’t have a preference on names among the ones we saw there or whether we use two methods or one, like distinct or distinctBy. So anyway, that’s iterator uniquing, and I’m just going for a Stage 1, and I'd love to hear any feedback.
+MF: And in JavaScript libraries, you can see that it’s pretty much the same story. Unique and distinct are both very common. Unique both with the comparator and without. They’re both very common names, and also the mapping variant is more common than the comparator variant. And, yeah, all but one have a mapping version, so I think people find value in that. So I kind of gave clues as to my preferences earlier, but I’ll go over them again, I guess. I think a comparator style API would be really inefficient, and as I said before, problematic because you can define nonsensical notions of equality using it. So I’d be interested in hearing if anybody has a reason to have that. So I think a single method with an optional mapper is probably best, and I don’t see a reason for an index yet, so also please let me know. And I really don’t have a preference on names among the ones we saw there or whether we use two methods or one, like distinct or distinctBy. So anyway, that’s iterator uniquing, and I’m just going for a Stage 1, and I'd love to hear any feedback.
 
 RPR: We have some queue. So starting with GCL.
 
@@ -514,15 +519,13 @@ MF: Yeah, actually KG had raised that point to me personally earlier, and I forg
 
 RBN: I kind of wanted to ask for a little bit more clarity on when you say that a comparator is not efficient, that’s not a very detailed statement as to why it’s not efficient. I do want to say that I have for a number of years been interested in pursuing proposals that would look and address this within this language in general. And while a comparator that’s just a function, if you pass two values, are they equal, that’s definitely not efficient, but most languages that do have comparators or at least languages like, for example, any language that uses .NET that has comparators, they are generally a combination of an equality function that tests whether A and B are equal, but also a hash generation function that produces a hash code you can use for hashtable lookup, which is much more efficient in most cases.
 
-MF: Yeah, if there’s a more principled way to define a comparator, which, you know, both is efficient using hashes and does not permit nonsensical notions of equality, I’m totally open to that. When I was making those statements, I was only referring to when passed a 
-function of 2 of the values. And that would be inefficient.
+MF: Yeah, if there’s a more principled way to define a comparator, which, you know, both is efficient using hashes and does not permit nonsensical notions of equality, I’m totally open to that. When I was making those statements, I was only referring to when passed a function of 2 of the values. And that would be inefficient.
 
 RBN: Yeah, I do also want to say to the idea of nonsensical notions of equality, I think it’s valuable to say that that’s not something you would want, but also you can already have nonsensical notions of relational equality when you pass things to array.sort. So I don’t think it’s necessarily that critical to completely block something based on the idea of nonsensical equality when a principled developer that’s actually using this properly would not create a nonsensical notion of equality for it to actually matter.
 
 MF: I just want to clarify that with `Array.prototype.sort`, the implementation is allowed to sort them in any order when you define a comparator that does not work properly. So I don’t think that really compares here.
 
-KG: Just on the specific topic of the comparator versus a mapper, I mean, we already have 
-groupBy. groupBy is already a mapper. It is a little different in that the mapper is used for the key of the result, although there’s some possible designs where you have a second thing that’s used for the key of the result. But I think the consistency with groupBy really suggests using a mapper. Especially if we get composite keys.
+KG: Just on the specific topic of the comparator versus a mapper, I mean, we already have groupBy. groupBy is already a mapper. It is a little different in that the mapper is used for the key of the result, although there’s some possible designs where you have a second thing that’s used for the key of the result. But I think the consistency with groupBy really suggests using a mapper. Especially if we get composite keys.
 
 DLM: We discussed this internally. We also had a few concerns about this. We definitely share the concern about the potentially unbound memory use behind the scenes. That’s already been raised. I had a few other questions. One is I assume there’s no array.unique and I was wondering if you considered that as opposed to an iterator.unique. A few other things, like if we had an infinite iterator that only ever produces one decision digit value, that would be an infinite loop. So there’s plenty of ways to write infinite loops, but this might be an unexpected one. And I guess another thing would be side effects when producing values. I assume you would still get that side effect even if a value ends up being discarded and that also ends up being unexpected?
 
@@ -534,42 +537,23 @@ MLS: Yeah, SYG, I think you got it. You know, so we talk about complexity, and i
 
 MF: Can I ask for clarification on that? Are you concerned about the complexity of an implementation of this method, like, in your engine?
 
-MLS: Well, yes. You know, if you have a large object that you’re iterating, then, you know, 
-you have to determine the best way to do -- especially for the distinct, you know, how are you 
-going to do that internally. And with -- then with a callback, which I actually am more 
-comfortable with a callback because then you’re leaving it on whatever you’re calling back to 
-do the actual determining of whether or not something should be in the resulting list. So, 
-yeah, I’m concerned of both memory and complexity. It just seems to be something that probably 
-is better served by user code than by implementation code.
+MLS: Well, yes. You know, if you have a large object that you’re iterating, then, you know, you have to determine the best way to do -- especially for the distinct, you know, how are you going to do that internally. And with -- then with a callback, which I actually am more comfortable with a callback because then you’re leaving it on whatever you’re calling back to do the actual determining of whether or not something should be in the resulting list. So, yeah, I’m concerned of both memory and complexity. It just seems to be something that probably is better served by user code than by implementation code.
 
-MF: I think I’m still confused by your feedback a little bit. I saw two points. One was about 
-implementation complexity, and I -- I assume that the implementation in your engine will be 
-very similar to the way that I’ve polyfilled it, and I may be wrong there, but just backing by 
-a set with a couple of Booleans for special cases, and you already have those in your 
-implementation. For the second thing, I didn’t understand why a mapper would be better than a 
-no mapper variant, and again, this is an assumption of mine, the only difference is that your 
-tree is -- which value you’re treating as the, like, set key, whether that’s the -- the value 
-itself or the result of the mapper. But either way, it should be the same for your implementation, so I’d like -- if you could explain that to me more.
+MF: I think I’m still confused by your feedback a little bit. I saw two points. One was about implementation complexity, and I -- I assume that the implementation in your engine will be very similar to the way that I’ve polyfilled it, and I may be wrong there, but just backing by a set with a couple of Booleans for special cases, and you already have those in your implementation. For the second thing, I didn’t understand why a mapper would be better than a no mapper variant, and again, this is an assumption of mine, the only difference is that your tree is -- which value you’re treating as the, like, set key, whether that’s the -- the value itself or the result of the mapper. But either way, it should be the same for your implementation, so I’d like -- if you could explain that to me more.
 
-MLS: Well, just that we’re adding that into an API, and optimizing that would probably require 
-more work than it’s worthwhile to do. Yes, we just back it with a set, simple. But there’s   
-memory implications to that and other implications as far as complexity in terms of the other 
-tiers of the higher engine.
+MLS: Well, just that we’re adding that into an API, and optimizing that would probably require more work than it’s worthwhile to do. Yes, we just back it with a set, simple. But there’s memory implications to that and other implications as far as complexity in terms of the other tiers of the higher engine.
 
 RPR: Okay, on to JHD.
 
 JHD: Yeah, to echo what DLM said, I would really like to see this solved for arrays as well. I think in general, any problem we want to solve on either arrays or iterators, we kind of want to solve on both. If, you know -- based on the experience with groupBy, maybe a prototype method isn’t even worth trying ever again, although, that’s not -- we got a lot of feedback from implementations that that would be a tough sell, but not that it’s impossible. But if we don’t want to go down that road, a static method is perfectly fine. But it would be nice to have a solution that doesn’t require an iterator.
 
-LCA: To clarify, don’t we already have a solution for array, which is just to pass it to new set 
-and array from the set?
+LCA: To clarify, don’t we already have a solution for array, which is just to pass it to new set and array from the set?
 
-JHD: That does not allow you to give the mapping functionality that would be -- and either way, 
-it does still use an iterator. So, yeah, you can write code kind of similar to the polyfill that’s suggested that would use sets or maps and work. But it would be nice to have a straightforward method.
+JHD: That does not allow you to give the mapping functionality that would be -- and either way, it does still use an iterator. So, yeah, you can write code kind of similar to the polyfill that’s suggested that would use sets or maps and work. But it would be nice to have a straightforward method.
 
 LCA: Okay.
 
-SFC: Yeah, so the groupBy proposal, and this one seemed quite similar in the types of use cases 
-they serve. The groupBy would allow you to perform the mapping and perform uniqueness on the mapping. It’s just that, you know, it may be less efficient because you collect, you know, all the items and then if you just want one of them, then you have to throw away the rest. So it feels like if we think that this is well motivated enough to have an additional method for it, an additional iterator method for it, it seems groupBy is the place to look for inspiration and precedent for how we designed and thing, and I would sort of focus on why is this motivated independently of groupBy and then follow along that line of reasoning.
+SFC: Yeah, so the groupBy proposal, and this one seemed quite similar in the types of use cases they serve. The groupBy would allow you to perform the mapping and perform uniqueness on the mapping. It’s just that, you know, it may be less efficient because you collect, you know, all the items and then if you just want one of them, then you have to throw away the rest. So it feels like if we think that this is well motivated enough to have an additional method for it, an additional iterator method for it, it seems groupBy is the place to look for inspiration and precedent for how we designed and thing, and I would sort of focus on why is this motivated independently of groupBy and then follow along that line of reasoning.
 
 RPR: Thank you, Shane. So we’ve got one minute left.
 
@@ -577,8 +561,7 @@ LCA: I didn’t have time to write this on the queue, but there’s an alternati
 
 MF: Thank you. That was a lot of valuable feedback. I think that given that, I still would like to ask for Stage 1 to further explore this problem space that I’ve described here.
 
-RPR: Okay. So we have a call for consensus for Stage 1 for this proposal. Any support or objections? We’ve got a plus one from LCA. JHD, is that a typo or is plus exclamation 
-mark special?
+RPR: Okay. So we have a call for consensus for Stage 1 for this proposal. Any support or objections? We’ve got a plus one from LCA. JHD, is that a typo or is plus exclamation mark special?
 
 JHD: That’s a plus one, yes.
 
@@ -588,84 +571,60 @@ SYG: MLS raised a question of why not library? Is that in scope for your explora
 
 MF: Yes, that will always be a possible outcome of this, is that we can’t provide anything that’s more efficient or more ergonomic than what we would do anyway with a library. And in this README, I’ve already written -- I think it might be a full fidelity polyfill, only about a dozen lines or so. It’s a bit inconvenient because it uses some temporaries that have to be introduced every time it’s called. But, yeah, that’s definitely a possible outcome.
 
-RPR: With that clarification, we also have JHX and JSC with plus one and JSC 
-saying they also agree with adding to array. Okay, I’ve heard no objections to Stage 1. Congratulations, you have Stage 1.
-
+RPR: With that clarification, we also have JHX and JSC with plus one and JSC saying they also agree with adding to array. Okay, I’ve heard no objections to Stage 1. Congratulations, you have Stage 1.
 
 ### Speaker's Summary of Key Points
 
 ### Conclusion
-* Consensus on stage 1
+
+- Consensus on stage 1
 
 ## Intl.MessageFormat: I have some questions
+
 Presenter: Eemeli Aro (EAO)
 
 - [proposal](https://github.com/tc39/proposal-intl-messageformat)
 - [slides](https://docs.google.com/presentation/d/1c_6VoCMJdSP59LNYEUTjCNZi8nKEw_GvMQMlvEmD91s/edit#slide=id.p)
 
-EAO: Hi, I presented an update on Intl.MessageFormat in September and now I’m back to ask a couple of well, one, maybe two different questions about what are we really doing? 
-So just as a refreshers thai proposal is about adding a new formatter Intl.MessageFormat. Unlike the other existing formatters, takes in a source parameter and its constructor, from which the source of the message that it’s then allowing to be formatted. And very roughly, it has normal source cases. It’s used roughly like this. Where you have a message that is defined as a string in the MessageFormat 2 syntax that you then use to build a message format instance. And then you can call .format() or .formatToParts() on that, feeding some specific values that you want to be taken into account in the formatting.
-There are further details on this as well, but I have talked about this previously a bunch.
+EAO: Hi, I presented an update on Intl.MessageFormat in September and now I’m back to ask a couple of well, one, maybe two different questions about what are we really doing? So just as a refreshers thai proposal is about adding a new formatter Intl.MessageFormat. Unlike the other existing formatters, takes in a source parameter and its constructor, from which the source of the message that it’s then allowing to be formatted. And very roughly, it has normal source cases. It’s used roughly like this. Where you have a message that is defined as a string in the MessageFormat 2 syntax that you then use to build a message format instance. And then you can call .format() or .formatToParts() on that, feeding some specific values that you want to be taken into account in the formatting. There are further details on this as well, but I have talked about this previously a bunch.
 
 EAO: Since my last presentation, the underlying Unicode MessageFormat 2 specification is in a feature freeze and due to be released as a tech preview in hopefully about 2 months, as a part of this spring’s ICU/CLDR releases. Further than that, the Intl.MessageFormat specific itself now is almost completely described by spec language. A couple of missing pieces, but almost all there. The polyfill for all of this is updated to match the spec and again no changes to the API from what I have presented before.
 
-EAO: But so given this situation, I actually earlier was planning on asking for Stage 2 at this meeting. But when that process started, it turns out that there is this fundamental underlying question that I think we need to answer here before we can really move forward.
-When can we consider MessageFormat 2, a new domain-specific language, to be supported in JavaScript with an actual parser for that format? 
-So roughly speaking, as far as I am aware, there are two different viewpoints on this, and one is presented here as option A is that when the underlying specification is finalized and it has a sufficient stability guarantee that we can be sufficiently certain that it will not be changing or breaking in the future. Or then we have option B, where we consider this to not be a sufficient criteria by itself, and that we need effectively years of experience with it in order to be certain that this is really the thing and that it’s got a large amount of signals of external support and usage and it hasn’t changed for quite a long while.
+EAO: But so given this situation, I actually earlier was planning on asking for Stage 2 at this meeting. But when that process started, it turns out that there is this fundamental underlying question that I think we need to answer here before we can really move forward. When can we consider MessageFormat 2, a new domain-specific language, to be supported in JavaScript with an actual parser for that format? So roughly speaking, as far as I am aware, there are two different viewpoints on this, and one is presented here as option A is that when the underlying specification is finalized and it has a sufficient stability guarantee that we can be sufficiently certain that it will not be changing or breaking in the future. Or then we have option B, where we consider this to not be a sufficient criteria by itself, and that we need effectively years of experience with it in order to be certain that this is really the thing and that it’s got a large amount of signals of external support and usage and it hasn’t changed for quite a long while.
 
-EAO: So before I really open the question on this, I have, hopefully, an informative view of what the history of this proposal is. It started effectively presenting something very similar to the current API, back in 2013 already. And from then, there was some discussion which culminated in action being taken finally under the TG2 in 2019. To start organizing, to put together a working group for coming up with a message format for JavaScript that works for the Web.
-And relatively soon after that, this subgroup was effectively reorganized and moved to go under the unicode CLDR TC because it was identified that what we are coming up isn’t good for just JavaScript, but the whole industry, and for something like localization and internationalization the right place for the home is the Unicode Consortium. And going on from there, the specific proposal that I am here championing was accepted for Stage 1 about two years ago now and then it’s had a couple of updates to it – while in Stage 1, where also back in ‘22, the message resources part was spun off. It’s now a separate Stage 1 proposal. And then I gave the update in September, and there was a follow-up incubator call from there.
-So the kind of idea that we really had and still have back from 2019 onwards is that we need a more capable format than existed then or exists now, and that the whole web is really suffering from the lack of any such good solution here.
-So the work on MessageFormat 2 has been building a syntax for Intl.MessageFormat to use. It’s a side benefit where the work started, but it is of course really important for the future of the syntax and all of its parts.
-And now, one important part of why we think that what we have come up is a good solution is that the message format syntax and the data model as well, of how it represents messages, is capable, as far as we know, of representing any message in any other format in addition to itself.
-And really, as one of the viewpoints that I have highlighted from the discussion back in 2019 is from Jan, the maintainer for i18next, one of the largest internationalization and localization libraries in the ecosystem at the moment. I am just going to read this out loud. “For some time I know thought about the next version of i18next [...] but with the current uncertainty what the decision here is - I better do nothing before picking the one that gets not adopted by browsers. [...] If there is a chance that one format gets the defacto standard for web [...] my bet is the tooling will improve. Currently, as a vendor, you just have too many formats for web you need to support (and the web is only one piece of what you need to support)”
-And this, I wanted to highlight because it really – I felt like it describes the sort of situation in which we have been easily for the past 4 or 5 or 8 years in terms of localization for the web, we are all stuck and waiting for something better to come along in order for anything at all to happen.
-So the pitch for MessageFormat 2 is that it is angling to be that better thing.
-And in that context, then, two years ago, we accepted this proposal for Stage 1, and the motivation here, I would like to call your attention to the second item here, which is to “Introduce a native parser and message formatter for MessageFormat 2, a spec currently being developed under the Unicode Consortium.”
-So another way of putting this question is, is that I think we need to reaffirm whether this is a valid motivation for this proposal for us to continue working on.
-And so – what this is leading up to is that for the underlying MessageFormat 2 syntax, we’re currently at a stage where it’s entering into a tech preview phase which I estimate and expect that it comes out and becomes an official finalized part within half a year or maybe a year. But, of course, this is a forward-looking statement. So do with it as you may.
-And the basis always has been that whatever – that the underlying format does need to stabilize in order for us to really consider ever advancing something like Intl.MessageFormat to Stage 4.
-But the question here is, effectively, this same slide from earlier: I would like us to discuss and to come to some sort of an idea for when we can consider a MessageFormat 2 parser in JavaScript? And these, as far as I know, are the two options. And I’d like to open the queue on this.
+EAO: So before I really open the question on this, I have, hopefully, an informative view of what the history of this proposal is. It started effectively presenting something very similar to the current API, back in 2013 already. And from then, there was some discussion which culminated in action being taken finally under the TG2 in 2019. To start organizing, to put together a working group for coming up with a message format for JavaScript that works for the Web. And relatively soon after that, this subgroup was effectively reorganized and moved to go under the unicode CLDR TC because it was identified that what we are coming up isn’t good for just JavaScript, but the whole industry, and for something like localization and internationalization the right place for the home is the Unicode Consortium. And going on from there, the specific proposal that I am here championing was accepted for Stage 1 about two years ago now and then it’s had a couple of updates to it – while in Stage 1, where also back in ‘22, the message resources part was spun off. It’s now a separate Stage 1 proposal. And then I gave the update in September, and there was a follow-up incubator call from there. So the kind of idea that we really had and still have back from 2019 onwards is that we need a more capable format than existed then or exists now, and that the whole web is really suffering from the lack of any such good solution here. So the work on MessageFormat 2 has been building a syntax for Intl.MessageFormat to use. It’s a side benefit where the work started, but it is of course really important for the future of the syntax and all of its parts. And now, one important part of why we think that what we have come up is a good solution is that the message format syntax and the data model as well, of how it represents messages, is capable, as far as we know, of representing any message in any other format in addition to itself. And really, as one of the viewpoints that I have highlighted from the discussion back in 2019 is from Jan, the maintainer for i18next, one of the largest internationalization and localization libraries in the ecosystem at the moment. I am just going to read this out loud. “For some time I know thought about the next version of i18next [...] but with the current uncertainty what the decision here is - I better do nothing before picking the one that gets not adopted by browsers. [...] If there is a chance that one format gets the defacto standard for web [...] my bet is the tooling will improve. Currently, as a vendor, you just have too many formats for web you need to support (and the web is only one piece of what you need to support)” And this, I wanted to highlight because it really – I felt like it describes the sort of situation in which we have been easily for the past 4 or 5 or 8 years in terms of localization for the web, we are all stuck and waiting for something better to come along in order for anything at all to happen. So the pitch for MessageFormat 2 is that it is angling to be that better thing. And in that context, then, two years ago, we accepted this proposal for Stage 1, and the motivation here, I would like to call your attention to the second item here, which is to “Introduce a native parser and message formatter for MessageFormat 2, a spec currently being developed under the Unicode Consortium.” So another way of putting this question is, is that I think we need to reaffirm whether this is a valid motivation for this proposal for us to continue working on. And so – what this is leading up to is that for the underlying MessageFormat 2 syntax, we’re currently at a stage where it’s entering into a tech preview phase which I estimate and expect that it comes out and becomes an official finalized part within half a year or maybe a year. But, of course, this is a forward-looking statement. So do with it as you may. And the basis always has been that whatever – that the underlying format does need to stabilize in order for us to really consider ever advancing something like Intl.MessageFormat to Stage 4. But the question here is, effectively, this same slide from earlier: I would like us to discuss and to come to some sort of an idea for when we can consider a MessageFormat 2 parser in JavaScript? And these, as far as I know, are the two options. And I’d like to open the queue on this.
 
 DE: Thanks for the presentation. I am very excited about the MessageFormat 2 proposal, and really happy that it’s progressing like this. I think option A makes more sense. Not as a general principle for how we should approach new formats or new efforts, but as a tradeoff given how mature and well-supported this effort is, given that we have people from many different companies working together, working on at least three different implementations of formatting, precise definitions that are being put into things adopted by unicode, I think this makes sense for us to standardize relatively soon. Not today. But not several years after it ships in ICU. I think that would be too conservative. You have to remember that other ECMA402 features have actually resulted in the need to add features to ICU–things that weren’t there. And this is one where it will probably be shipping in ICU4C before it goes into ECMA402. So you know, it’s important we get all these formats right. But we also don’t have to unduly delay the development of JavaScript with excessive caution, if this thing is being developed well and it’s on a path to being broadly supported.
 
-CP: As DE mentioned, I am also supporting option A. As one of the champions of these ten years ago, we are never going to get to do option B, in my opinion. And we already have good experience with unicode CLDR. Over the years, we haven’t had many issues, so if they are finalizing the specification, that means it’s good. And MessageFormat 2 has been developed by many people who have been champions of these proposals in this committee, people from Mozilla and so on. And I think it’s a culmination of a lot of work, it’s not something that just pops up and we decide to just upgrade to MessageFormat 2. So I am very supportive of going with option A. 
+CP: As DE mentioned, I am also supporting option A. As one of the champions of these ten years ago, we are never going to get to do option B, in my opinion. And we already have good experience with unicode CLDR. Over the years, we haven’t had many issues, so if they are finalizing the specification, that means it’s good. And MessageFormat 2 has been developed by many people who have been champions of these proposals in this committee, people from Mozilla and so on. And I think it’s a culmination of a lot of work, it’s not something that just pops up and we decide to just upgrade to MessageFormat 2. So I am very supportive of going with option A.
 
 MF: Yeah. I guess I’m the dissenting opinion here. The parsers that we add to JavaScript should be extremely time-tested, things that are effectively permanently relevant. In earlier discussions about this, I gave the example of JSON being there. JSON is, you know, ubiquitous. It’s used as a format for exchanging messages between entirely different ecosystems, it will forever be important whether we like that or not. I don’t think that we can make that claim about MessageFormat 2 yet. It will look very foolish, you know, if 8 years from now, we want to add MessageFormat 3. I am not trying to diminish this effort; I understand that it’s a significant effort defining MessageFormat 2 from a lot of interested and appropriate parties, but I think that to enshrine it in JavaScript, we have to have that confidence of permanent relevance that I don’t see we have until at least some number of years of experience with it.
 
-SYG: I have not had good experience with CLDR. This is responding earlier to CP. CLDR, you had good experience with stability stuff. In 2023, this may have been a one-off event. But in 2023 Chrome experienced a pretty big issue with CLDR changing, and all the other browsers, with CLDR changing the space in English formatting the DATE-TIME. This is something that should have never flown at all. If someone with a passing experience with stability guarantees of the web were in the room, that does not give me a lot of confidence in CLDR as a body, that has the right – the people with the right experience in the room.
-You can argue – I say this as someone who has experienced and outage due to this thing, but do not participate regularly in CLDR. So obviously, it’s a very limited view. I am happy to be corrected, but I don’t get the sense that CLDR cares about stability in the same sense that we care about it. 
+SYG: I have not had good experience with CLDR. This is responding earlier to CP. CLDR, you had good experience with stability stuff. In 2023, this may have been a one-off event. But in 2023 Chrome experienced a pretty big issue with CLDR changing, and all the other browsers, with CLDR changing the space in English formatting the DATE-TIME. This is something that should have never flown at all. If someone with a passing experience with stability guarantees of the web were in the room, that does not give me a lot of confidence in CLDR as a body, that has the right – the people with the right experience in the room. You can argue – I say this as someone who has experienced and outage due to this thing, but do not participate regularly in CLDR. So obviously, it’s a very limited view. I am happy to be corrected, but I don’t get the sense that CLDR cares about stability in the same sense that we care about it.
 
-SFC: I could respond to SYG, but I will stick with my queue item, which is to emphasize again what EAO said earlier, in large part the effort to design the message came out of this body, out of TC39 because it’s been a goal of developing the internationalization specification since early on that we were going to work toward a message formatting library. You know, as like the crowning achievement in the ECMA402 space, and we don’t want to just standardize any random message formatting syntax. But make sure it’s the right one. That’s why we spent so much time and effort in the working group developing the syntax that EAO is presenting here.
-So I want to emphasize that the syntax is largely built for ECMA. And you know, this is not really taking a position on, you know, like does it need also be used in the wild for a certain number of years? But a lot of the other things that we built here, APIs that we introduce into – into the Intl specification are also based on feedback that we have gotten from the CLDR and the ICU including the different features that we add all the different APIs and those are all based on – those are all new APIs added. No one has a relative formatter that looks exactly like the Intl one. A list formatter that looks exactly like the Intl one.
-So these are all things introduced. And the message format is much in the same sense. No one has a message formatter like this one yet, but we are introducing it. We are designing it in order to serve the needs of the web platform users.
-So yeah. That’s my angle on this.
+SFC: I could respond to SYG, but I will stick with my queue item, which is to emphasize again what EAO said earlier, in large part the effort to design the message came out of this body, out of TC39 because it’s been a goal of developing the internationalization specification since early on that we were going to work toward a message formatting library. You know, as like the crowning achievement in the ECMA402 space, and we don’t want to just standardize any random message formatting syntax. But make sure it’s the right one. That’s why we spent so much time and effort in the working group developing the syntax that EAO is presenting here. So I want to emphasize that the syntax is largely built for ECMA. And you know, this is not really taking a position on, you know, like does it need also be used in the wild for a certain number of years? But a lot of the other things that we built here, APIs that we introduce into – into the Intl specification are also based on feedback that we have gotten from the CLDR and the ICU including the different features that we add all the different APIs and those are all based on – those are all new APIs added. No one has a relative formatter that looks exactly like the Intl one. A list formatter that looks exactly like the Intl one. So these are all things introduced. And the message format is much in the same sense. No one has a message formatter like this one yet, but we are introducing it. We are designing it in order to serve the needs of the web platform users. So yeah. That’s my angle on this.
 
-KG: To second what MF said and put a slightly different spin on it, getting domain-specific languages right without usage experience is between inhumanly difficult and impossible. I accept that it’s possible in principle, but I think that experience has shown that most domain-specific languages that are not minuscule - people end up wanting them to be a little bit different after a couple of years of using them. Like, JSON doesn’t have comments. That was on purpose. But now everyone is using JSONC. It doesn’t have trailing commas, etc. And that is the oldest and most stable DSLs. And everyone is familiar with YAML, of course, and there are newer versions which are better. It's not that the first version was not carefully designed, but it’s just that it’s really hard to get these things right without using them in the wild for a long time.
-And we can do our best sitting around thinking about what this ought to be, but the set of designers is several orders of magnitude smaller than the set of users and they will run into use cases and ways of using things that could not have occurred to the designers of a DSL. So the idea of standardizing a DSL without it having been used in practice, in the field, is – I don’t like that idea. I would be much happier if there years of widespread usage experience before it was codified. At least in JavaScript, because we can’t ever change anything.
+KG: To second what MF said and put a slightly different spin on it, getting domain-specific languages right without usage experience is between inhumanly difficult and impossible. I accept that it’s possible in principle, but I think that experience has shown that most domain-specific languages that are not minuscule - people end up wanting them to be a little bit different after a couple of years of using them. Like, JSON doesn’t have comments. That was on purpose. But now everyone is using JSONC. It doesn’t have trailing commas, etc. And that is the oldest and most stable DSLs. And everyone is familiar with YAML, of course, and there are newer versions which are better. It's not that the first version was not carefully designed, but it’s just that it’s really hard to get these things right without using them in the wild for a long time. And we can do our best sitting around thinking about what this ought to be, but the set of designers is several orders of magnitude smaller than the set of users and they will run into use cases and ways of using things that could not have occurred to the designers of a DSL. So the idea of standardizing a DSL without it having been used in practice, in the field, is – I don’t like that idea. I would be much happier if there years of widespread usage experience before it was codified. At least in JavaScript, because we can’t ever change anything.
 
-SYG: This is partly a clarifying question. So help me game out the two options here. So for option A, it seems to imply that MessageFormat 2 as a syntax is currently independently standardized. Like, ignoring JS for a second. MF2 is going to be a thing that the Unicode Consortium recommends as part of its standard body; is that correct? 
+SYG: This is partly a clarifying question. So help me game out the two options here. So for option A, it seems to imply that MessageFormat 2 as a syntax is currently independently standardized. Like, ignoring JS for a second. MF2 is going to be a thing that the Unicode Consortium recommends as part of its standard body; is that correct?
 
-EAO: Yes. 
+EAO: Yes.
 
-SYG: Okay. And then this option is that – sorry, and this slide is about that given that MF2 is an independent standard, when should JS implement a parser that is part of its standard library? 
+SYG: Okay. And then this option is that – sorry, and this slide is about that given that MF2 is an independent standard, when should JS implement a parser that is part of its standard library?
 
-EAO: Yes. 
+EAO: Yes.
 
 SYG: Okay. So then help me game out what the alternative – these two options don’t seem to comprise the universe of alternatives. If it is an independent new standard where other tools and stuff will be writing to consume and produce it, you don’t include any user library that would provide an MF2 parser as an option here. I would like to hear more about why that is not even considered.
 
-DE: Definitely user libraries are important. This is what EAO did through the whole process, maintaining a JavaScript implementation of this. Definitely the idea here is not to put it in the language today. I imagine that even if we go full steam ahead, it’s at least a year out.
-Or if we go a little bit slowly, it’s two years out. The thing that doesn’t make sense to me is this “several years out” idea.
+DE: Definitely user libraries are important. This is what EAO did through the whole process, maintaining a JavaScript implementation of this. Definitely the idea here is not to put it in the language today. I imagine that even if we go full steam ahead, it’s at least a year out. Or if we go a little bit slowly, it’s two years out. The thing that doesn’t make sense to me is this “several years out” idea.
 
 DE: My question is, what do we actually want to be occurring during that time? What kinds of validation steps? A lot of companies have already adopted a format for this sort of templating. And the work can be invested to upgrade to a different format and retrain the translators once there is an ecosystem consensus around it. We don’t have to be on the leading edge of that. But years is more conservative than “let’s see where this is going and figure out how strongly we support this”. In Bloomberg we are working on end to end testing with translators, using this format, integrating into applications. I would encourage others to do that kind of testing. I think we can do a more active strategy that falls slightly in between these options. It’s not standardizing today, but also not waiting ten years
 
 SYG: Hold on. Help me game out option A. What is the alternative – game out the user library thing… what are the concrete downsides, if MF2 is an independent standard and JS library instead of via built in.
 
-DE: It depends which version we go with. With the version that is later in the slide deck, if we include AST but not the surface syntax, that – I see the difference between these two things as superficial. The more significant thing is the data model here.
-The data model differs a bit from any other data model for templating and for doing the formatting.
-So to me, it would seem silly to go with the AST but keep the surface syntax out. If we are gaming out the different options, another option would be to just have the things that we have in ECMA402 and go with, you know, people can use that library that already exists. And, you know, the fact is that it does exist. And because it’s not this second that we’re standardizing it, we can over the course of this proposal over the next couple of years, evaluate how its usage is
+DE: It depends which version we go with. With the version that is later in the slide deck, if we include AST but not the surface syntax, that – I see the difference between these two things as superficial. The more significant thing is the data model here. The data model differs a bit from any other data model for templating and for doing the formatting. So to me, it would seem silly to go with the AST but keep the surface syntax out. If we are gaming out the different options, another option would be to just have the things that we have in ECMA402 and go with, you know, people can use that library that already exists. And, you know, the fact is that it does exist. And because it’s not this second that we’re standardizing it, we can over the course of this proposal over the next couple of years, evaluate how its usage is
 
-SYG: What is the downside to using that library? I don’t understand. 
+SYG: What is the downside to using that library? I don’t understand.
 
 DE: So this is part – part of what incompetent hope is a broader effort, which EAO presented at a previous TPAC of bringing in localization as a first-class resource on the web, so this is building the stack, this has been what the ECMA 402 group has been doing, but the whole time, we have the primitive formatters, higher level APIs, message format, then eventually we have – maybe, it’s not settled – but higher-level understandings of dictionaries of strings and formatting instructions as a web platform ability. We are standardizing the individual elements we can help application developers, you know, have a very solid option in front of them that’s well-supported. This is kind of similar to why we have iterator helpers or why we have anything added to the standard library. Because it helps developers solve a need that they have. This is a common occurring need.
 
@@ -681,24 +640,19 @@ SBE: So I wanted to comment largely on the idea that something needs to be perma
 
 RCA: Well, one of the motivations I had years ago, when I joined this group was message format. And I was looking at slides I presented to TG 2 about the needs and about the users and the developer experience of internationalization and localization on the web. And back then, one of the libraries that EAO mentioned, i18next, had around half a million downloads weekly. I was checking those numbers. And it’s approximately 5 million weekly, if npm doesn’t lie to me. Well, numbers probably are not a motivation. But since 3 or 4 years ago when we first presented these message format working group, things evolved. But the need to internationalize and to localize the web is still the same. And as people and developers are building, they need the right tools for duties work. So I do believe that to provide those tools, it’s extremely important, and on the other hand, those numbers also show us there is some way to go at level of battle proven APIs or syntax for the libraries for the interoperation for use cases for message format. Here, I do believe we need to understand what this committee wants regarding the stability because I do believe that everything on the web right now with a large user base demonstrates the need, the motivation and the certain way to go.
 
-SFC: So to respond to some of the concerns that have been brought up, it sounds like there’s, you know, there’s two questions that I think we should treat separately and one question is, motivation of do we want to have this syntax parser in the ECMAScript standard? And I think that that is worthwhile discussions to have, to make sure we are aligned on that. The second one is, assuming we have a message format syntax like this in the language, then what is the stability policy? And I think that’s the question that EAO is trying to ask of the committee here.
-This is I think the third, maybe fourth time, that we have presented a message format to the committee. So, you know, I have not heard any big concerns about like is this well-motivated. If there are concerns about it being well motivated we should hear us and discuss them. Have incubator calls to make sure we understand better about if there’s any motivational concerns for the proposal. But that’s all.
+SFC: So to respond to some of the concerns that have been brought up, it sounds like there’s, you know, there’s two questions that I think we should treat separately and one question is, motivation of do we want to have this syntax parser in the ECMAScript standard? And I think that that is worthwhile discussions to have, to make sure we are aligned on that. The second one is, assuming we have a message format syntax like this in the language, then what is the stability policy? And I think that’s the question that EAO is trying to ask of the committee here. This is I think the third, maybe fourth time, that we have presented a message format to the committee. So, you know, I have not heard any big concerns about like is this well-motivated. If there are concerns about it being well motivated we should hear us and discuss them. Have incubator calls to make sure we understand better about if there’s any motivational concerns for the proposal. But that’s all.
 
-ZB: So I just wanted to bring up a response to SYG’s comment about CLDR stability. MessageFormat in itself does not really depend on CLDR. It kind of binds together a lot of formatters that we already have and those that already exist in ECMA402 do depend on CLDR and are prone to the web capability issues that we experienced a couple times with CLDR updating and - This function is a black box, but of course that’s unrealistic to expect that everyone will respect and we know that it causes web compat issues. But MessageFormat, you can think of this more of a system that binds together a number of formatters that already exist and we control which ones are automatically included and excluded. The conversation as pointed here, is a question of are we comfortable bringing in a new DSL? And the downside of not bringing a DSL is that we will continue the JavaScript ecosystem as multiple DSLs for localization world and prevent ourselves from going up the stack and standardizing any system. Our position, as internationalization experts, we don’t think there is a sufficient justification to continue exploring DSL space.
-But it’s unprecedented and for that reason EAO’s question is rational. But are we comfortable with the DSL being brought up rather than, if the dependency in CLDR is going to be somehow mitigated by the – lack of DSL here?
+ZB: So I just wanted to bring up a response to SYG’s comment about CLDR stability. MessageFormat in itself does not really depend on CLDR. It kind of binds together a lot of formatters that we already have and those that already exist in ECMA402 do depend on CLDR and are prone to the web capability issues that we experienced a couple times with CLDR updating and - This function is a black box, but of course that’s unrealistic to expect that everyone will respect and we know that it causes web compat issues. But MessageFormat, you can think of this more of a system that binds together a number of formatters that already exist and we control which ones are automatically included and excluded. The conversation as pointed here, is a question of are we comfortable bringing in a new DSL? And the downside of not bringing a DSL is that we will continue the JavaScript ecosystem as multiple DSLs for localization world and prevent ourselves from going up the stack and standardizing any system. Our position, as internationalization experts, we don’t think there is a sufficient justification to continue exploring DSL space. But it’s unprecedented and for that reason EAO’s question is rational. But are we comfortable with the DSL being brought up rather than, if the dependency in CLDR is going to be somehow mitigated by the – lack of DSL here?
 
-PFC: I have two topics back to back. The first one I wanted to point out, there is a precedent set by the IETF for TimeZone and calendar annotations that we used in Temporal. But you could see reasons in it to choose either option A or option B. What this precedent says about option A is – in Temporal’s case, we decided that as soon as this annotation is standardized, we are willing to use it in string parsing for Temporal.
-What is relevant to option B in this precedent is that most of the annotation proposal was already used informally for decades in Java date-time strings. So there are really things that are relevant to both of these options. What we did add to the proposal that wasn’t part of the Java behavior is the calendar annotations. And that’s simply because we had a need that no other library addressed and so we needed a way to express that in a string.
-It looks like there’s a reply to that. I will pause for that before moving on to the next topic.
+PFC: I have two topics back to back. The first one I wanted to point out, there is a precedent set by the IETF for TimeZone and calendar annotations that we used in Temporal. But you could see reasons in it to choose either option A or option B. What this precedent says about option A is – in Temporal’s case, we decided that as soon as this annotation is standardized, we are willing to use it in string parsing for Temporal. What is relevant to option B in this precedent is that most of the annotation proposal was already used informally for decades in Java date-time strings. So there are really things that are relevant to both of these options. What we did add to the proposal that wasn’t part of the Java behavior is the calendar annotations. And that’s simply because we had a need that no other library addressed and so we needed a way to express that in a string. It looks like there’s a reply to that. I will pause for that before moving on to the next topic.
 
 SFC: Yeah, I think that’s me. So like PFC said with the IETF proposal, like, we are like – we are here to work on programming language syntax and the other DSL involved with it. That’s kind of our job. And we did this in Temporal. And those couple of corners that PFC pointed out, we do this in RegExp where we invented mini DSLs. The difference is the syntax is bigger than those. But it’s still a new DSL like the other DSLs that we invent and modify and tweak. And it’s totally not out of the realm of responsibility of a body like ours, to move forward on those types of decisions.
 
 PFC: Okay. I will move on to the other topic. So just to try and understand like where people’s deal breakers are for this, I was wondering, would anybody’s opinion change if the DSL being proposed were the DSL used by gettext, which is another message format tool? I don’t really know the background of what this proposal’s champions consider that the relevance to gettext is, but I am assuming we did not choose to use the gettext DSL because the web platform needed other things. But that DSL has been around for 30 years. As a thought experiment, I am wondering whether that changes anybody’s opinion, if what was being proposed here was the gettext DSL. Like would it be better to have a DSL with 30 years of field experience but is less relevant to the use cases of the web platform?
 
 EAO: The reason why gettext is not being considered by us at the moment is that it’s insufficient for the needs of the web. I could go into details, but they are technical details that are not relevant for the question you are actually asking.
-  
-USA: I am not sure PFC, if you meant that rhetorically or seriously. But I think based on what I have known about gettext, it is actually a great example why being too conservative isn’t exactly helpful. Gettext was designed in different interfaces and as EAO pointed out, it doesn’t quite support any of the use cases of the modern web. This API, on the other hand, was designed with the current practices across the industry and sort of the dynamic nature of the web.
-Holding it for a very long time would just mean that we end up again considering something that is outdated for its time. It wouldn’t be as outdated as gettext, from the late ‘80s, I think. But similar to, perhaps, message format 1, which is in 20 years, it aged, not just because of the time, but because of how the nature of the interface – interface in general has changed
+
+USA: I am not sure PFC, if you meant that rhetorically or seriously. But I think based on what I have known about gettext, it is actually a great example why being too conservative isn’t exactly helpful. Gettext was designed in different interfaces and as EAO pointed out, it doesn’t quite support any of the use cases of the modern web. This API, on the other hand, was designed with the current practices across the industry and sort of the dynamic nature of the web. Holding it for a very long time would just mean that we end up again considering something that is outdated for its time. It wouldn’t be as outdated as gettext, from the late ‘80s, I think. But similar to, perhaps, message format 1, which is in 20 years, it aged, not just because of the time, but because of how the nature of the interface – interface in general has changed
 
 PFC: It wasn’t a rhetorical question, but I am not proposing that we use the gettext DSL here. I would like to know, of the people who are saying we need to have years of field experience before having a DSL, would it change your mind if the DSL being discussed here was gettext, that has the field experience but is less appropriate to our use case? What changes or what doesn’t change?
 
@@ -706,8 +660,7 @@ KG: I think that gettext is like a pretty good example of having a DSL and then 
 
 USA: One thing that I wanted to mention to respond to your point, KG, is that this has – to some extent – this incubation has already happened within various projects and maybe like open source tools or within organizations’ internal tooling. This effort is essentially bringing all of that learned experience from the various stakeholders into a single DSL. So the exact DSL is not already tested because it’s still being fleshed out. But all the motivations, the use cases that it actually addresses have been well-documented.
 
-ZB: Thank you for the thought experiment. I understand it and I think it’s actually a very good example because it’s such a bad example. In other words, I feel like it exposes us to the core of the question here. Gettext and MessageFormat 2 have a completely different history of industry backing in the development cycle. So while gettext, yes, became a dominant localization format for a decade, while being a bad format, and a lesson learned from it is why we shouldn’t create a data model that gettext enforced, it was developed outside of mainstream industry internationalization bodies. It was not designed by Microsoft’s internationalization group in collaboration with Apple’s. MessageFormat 2 is in a different place. From the beginning, it has representation of all major industry players of the core internationalization industry. It benefits from the experience of unicode, but not just unicode, also Google, Mozilla, Apple and other industry players, including my current employer, Amazon, and quite frankly, my position here that I would like to offer is that there’s no one else in the world who cares and understands how localization formats are evolving than the people who are designing MessageFormat 2.
-And getting a DSL in JavaScript is one of the vehicles for us to flip the script on how we can build a single localization system for the most popular programming language in the world, and then force and popularize the tooling for it. I agree with the concern, which is that if we get it wrong, we don’t want to have message format 3. But I would also advocate that by not getting a DSL in JavaScript, we are not really creating an opportunity for some other group of experts to create a MessageFormat 3 or some other syntax; we are just tragically slowing down by a decade development of a web localization system. And I think that would be unfortunate and I think that the opportunity here is very illusionary. I don’t think there’s anything else that can be done or anyone else that can produce an alternative for this group to consider two years or three or five years down the road. It’s MessageFormat 2 or, honestly, status quo.
+ZB: Thank you for the thought experiment. I understand it and I think it’s actually a very good example because it’s such a bad example. In other words, I feel like it exposes us to the core of the question here. Gettext and MessageFormat 2 have a completely different history of industry backing in the development cycle. So while gettext, yes, became a dominant localization format for a decade, while being a bad format, and a lesson learned from it is why we shouldn’t create a data model that gettext enforced, it was developed outside of mainstream industry internationalization bodies. It was not designed by Microsoft’s internationalization group in collaboration with Apple’s. MessageFormat 2 is in a different place. From the beginning, it has representation of all major industry players of the core internationalization industry. It benefits from the experience of unicode, but not just unicode, also Google, Mozilla, Apple and other industry players, including my current employer, Amazon, and quite frankly, my position here that I would like to offer is that there’s no one else in the world who cares and understands how localization formats are evolving than the people who are designing MessageFormat 2. And getting a DSL in JavaScript is one of the vehicles for us to flip the script on how we can build a single localization system for the most popular programming language in the world, and then force and popularize the tooling for it. I agree with the concern, which is that if we get it wrong, we don’t want to have message format 3. But I would also advocate that by not getting a DSL in JavaScript, we are not really creating an opportunity for some other group of experts to create a MessageFormat 3 or some other syntax; we are just tragically slowing down by a decade development of a web localization system. And I think that would be unfortunate and I think that the opportunity here is very illusionary. I don’t think there’s anything else that can be done or anyone else that can produce an alternative for this group to consider two years or three or five years down the road. It’s MessageFormat 2 or, honestly, status quo.
 
 KG: Can you say more about why actually having it in JavaScript matters so much, if – as you say – everyone who could potentially be involved is already involved in the MF2 standardization effort? Like, if there were just a library, but all of the people used and then in a couple of years you came back and said, yeah. It turns out the syntax we are quite happy with. And then we standardize it at that point. What’s – what is the cost you are seeing with that? And also to be clear, it’s not I am saying, I think there will be necessarily some other syntax that people will come up with; it’s that I would give reasonably high odds that it turns out that there will be some changes that you would want to make with the syntax, the same way there have been charges that people want to to make to YAML and SQL and JSON. And we only figured out that once we started to use them.
 
@@ -729,48 +682,29 @@ CDA: Okay. The queue is clear.
 
 DE: Maybe we could have an overflow topic to go into more the ideas that people have for what kinds of investigation would be useful? I feel like we don’t have a solid conclusion yet.
 
-EAO: I was just about to also be asking for overflow time. 
+EAO: I was just about to also be asking for overflow time.
 
-CDA: Okay. There is no queue to capture, but … 
+CDA: Okay. There is no queue to capture, but …
 
-EAO: I would be also happy at this time to continue with my presentation, because I never got to 
-my second question.
+EAO: I would be also happy at this time to continue with my presentation, because I never got to my second question.
 
-CDA: Okay. Is there anything you want to dictate for the notes at this point, or does that not 
-make sense?
+CDA: Okay. Is there anything you want to dictate for the notes at this point, or does that not make sense?
 
 EAO: It’s -- later when we actually conclude this discussion might be better.
 
 ### Speaker's Summary of Key Points
 
-
 ### Conclusion
-* We will have an overflow topic to cover the second half of the slides, and 
+
+- We will have an overflow topic to cover the second half of the slides, and
 
 ## status of the IEEE Software paper about TC39
-Presenter: Mikhail Barash (MBH)
-Slides: https://docs.google.com/presentation/d/1m_Yq3BFaZzSMk-eXzZ8EeLCVwU8RPvW2BYvkS-OAmoc/edit?usp=sharing 
 
-MBH: I want to present an update for the IEEE magazine paper. So just a quick reminder, this is 
-where the delegates would explain with a scientific rigor how TC39 works. This is purely a 
-descriptive effort, not introducing anything new about the work, so there’s this reflector 
-issue and the detailed outline of the paper. What I would like to summarize here is that we 
-essentially think of having a view on the work on the committee from several perspectives,  the 
-ECMA perspective from TC39, what the standard, how the meetings are going, how the decisions are made, the interplay between ECMA and TC39, and there’s an engine perspective, web perspective, formal perspective and the “people” perspective. And I’ll come back to this slide in a moment, but for now, I want to say that we are now seeking more input from the delegates on these three 
-particular topics, so: ECMAScript and the web and its relation to the standard and test- 
-262. A summary of the three major browser engines would be much appreciated. 
-In the “web perspective”, we would like to have more input from the delegates on the relation 
-between ECMA262 and HTML and WebAssembly, also things like CG, web constraints, and we would also like to have some input on the test-262, for example, how the tests are grouped. And you can find more detailed outline as I mentioned in -- using this link. So what what we 
-are looking for is just a very rough draft quality itemized list. This would be perfect. No 
-need the polish anything. If you have any input on that, it would be greatly appreciated 
-and I would like to thank very much those delegates who have already expressed their interest 
-in participating in this effort and especially IS and MF, who have given 
-a lot of input on this. So, yeah, just if you have any input on this, please either do post on 
-the reflector post or send me an email directly. That’s it for this part.
+Presenter: Mikhail Barash (MBH) Slides: https://docs.google.com/presentation/d/1m_Yq3BFaZzSMk-eXzZ8EeLCVwU8RPvW2BYvkS-OAmoc/edit?usp=sharing
 
+MBH: I want to present an update for the IEEE magazine paper. So just a quick reminder, this is where the delegates would explain with a scientific rigor how TC39 works. This is purely a descriptive effort, not introducing anything new about the work, so there’s this reflector issue and the detailed outline of the paper. What I would like to summarize here is that we essentially think of having a view on the work on the committee from several perspectives, the ECMA perspective from TC39, what the standard, how the meetings are going, how the decisions are made, the interplay between ECMA and TC39, and there’s an engine perspective, web perspective, formal perspective and the “people” perspective. And I’ll come back to this slide in a moment, but for now, I want to say that we are now seeking more input from the delegates on these three particular topics, so: ECMAScript and the web and its relation to the standard and test- 262. A summary of the three major browser engines would be much appreciated. In the “web perspective”, we would like to have more input from the delegates on the relation between ECMA262 and HTML and WebAssembly, also things like CG, web constraints, and we would also like to have some input on the test-262, for example, how the tests are grouped. And you can find more detailed outline as I mentioned in -- using this link. So what what we are looking for is just a very rough draft quality itemized list. This would be perfect. No need the polish anything. If you have any input on that, it would be greatly appreciated and I would like to thank very much those delegates who have already expressed their interest in participating in this effort and especially IS and MF, who have given a lot of input on this. So, yeah, just if you have any input on this, please either do post on the reflector post or send me an email directly. That’s it for this part.
 
-USA: Thank you, MBH, there’s nothing on the queue yet. We can give it a minute or so. Are 
-you expecting any comments?
+USA: Thank you, MBH, there’s nothing on the queue yet. We can give it a minute or so. Are you expecting any comments?
 
 MBH: Not actually. Maybe just saying here that we would very much appreciate delegates’ opinion and input on these topics.
 
@@ -778,54 +712,28 @@ USA: All right. Thank you, then. I suppose -- oh, yeah, there is a clarifying qu
 
 EAD: Hello. What is the best way to get involved with this effort?
 
-MBH: Right, so there is this -- the link here, the detailed outline. So this is the outline of 
-the papers, there’s a bit of subsections level. If you have some comments about any 
-of these items, it would be nice if you can leave some comment in this document. 
-If you want to have more input, maybe posting it on the reflector issue would be good, or just 
-sending me an email.
+MBH: Right, so there is this -- the link here, the detailed outline. So this is the outline of the papers, there’s a bit of subsections level. If you have some comments about any of these items, it would be nice if you can leave some comment in this document. If you want to have more input, maybe posting it on the reflector issue would be good, or just sending me an email.
 
-USA: Thank you. I encourage everyone to reach out in private to -- if you have any comments. Moving on, I think, MBH, 
-you’re also next on the queue?
+USA: Thank you. I encourage everyone to reach out in private to -- if you have any comments. Moving on, I think, MBH, you’re also next on the queue?
 
 ## chartering TG5 on “Experiments in Programming Language Standardization”
-Presenter: Mikhail Barash (MBH)
-Slides: https://docs.google.com/presentation/d/1UUCJTCztvP8kYt4pycrxQKF65sT_3eS8w7hZ8nKPFdg/edit?usp=sharing 
 
+Presenter: Mikhail Barash (MBH) Slides: https://docs.google.com/presentation/d/1UUCJTCztvP8kYt4pycrxQKF65sT_3eS8w7hZ8nKPFdg/edit?usp=sharing
 
-MBH: Yes. So just to make it clear, this presentation now is unrelated to the previous one. So 
-though there is only my name here on the slide, this presentation is a result of discussions 
-with YSV and she participated in formulating the scope and the program of work of this new TG 
-that we had proposed on experiments in programming language standardization. So the scope 
-would be to provide a forum for the discussion, development and dissemination of research work 
-on the standardization of ECMAScript and related technologies. Essentially, this is an 
-evolution of the research group that YSV started some time ago. This would be a space for 
-asking questions on how formal approaches could be applied to ECMAScript standardization, so 
-this would bring in academia and provide them with an official venue where they can discuss 
-research related to JavaScript specifically and on standardization of programming languages 
-more broadly. This would also be a place where academia could get early feedback from delegates without bringing it to the entire committee first. We have discussed this with several of ECMA member organizations, and on the slide, you can see the ones who have expressed interest. There is also some interest from organizations who are not part of ECMA. We also had adjacent interest from the Rust community, though to make it clear, we have not spoken to them about this in the form of a task group, as I present now. Also, YSV and I had a number of discussions with other institutions during our presentation last year at the SPLASH 2023 conference, and we expect this list to grow. So the work includes four items. To summarize and present ongoing research work from the academic community on JavaScript and JSON technologies, to investigate and discuss state-of-the-art approaches to aid the development of TC39 proposals, to produce documentation on best practices from research work to ECMA262, and to produce and present tools and technologies to aid in the understanding of -- and the design of ECMA262 and adjacent technologies. I could also say that in terms of kind of focus, this TG would be most probably closely related to TG3 in the sense that it’s not about new proposals, but rather assisting documentation, approaches, technologies, and so on. I would also like to mention that there was a previous discussion on this during the ECMA General Assembly in December 2023. So there was a potential discussion on whether it could be a part of TC49 “Programming Languages”, but now we see most work is probably related to TC39 and it would be too broad otherwise, and also TC39 has an active research community, and we think that it would benefit from sort of an official discussion forum.
-.
-MBH: And the work about experiments in programming language standardization still is largely 
-applicable to TC39, as it was actually inspired here. So this is just some example work that 
-in particular the University of Bergen is interested - looking at different aspects of 
-standardization documents themselves, such as navigation, customizability, and 
-modularization of the standard, extracting sublanguage standards, slicing a standard document, specification verification, consistency checking and executability, implementability, so this is where we can see more relevance to the work done by KAIST. Things like refactoring the standard and so on. The work is planned to be done in GitHub. We would have monthly Zoom calls. We would have external input, from users, other technical committees and standardization organizations, industries, academia, we would use TC39’s Alternative Copyright Notice, and just as a first item on what we already have been working on is that we are summarizing the state-of-the-art in programming language standardization. So I would like to request consensus on chartering the new Task Group with this scope and program of work. Thank you.
+MBH: Yes. So just to make it clear, this presentation now is unrelated to the previous one. So though there is only my name here on the slide, this presentation is a result of discussions with YSV and she participated in formulating the scope and the program of work of this new TG that we had proposed on experiments in programming language standardization. So the scope would be to provide a forum for the discussion, development and dissemination of research work on the standardization of ECMAScript and related technologies. Essentially, this is an evolution of the research group that YSV started some time ago. This would be a space for asking questions on how formal approaches could be applied to ECMAScript standardization, so this would bring in academia and provide them with an official venue where they can discuss research related to JavaScript specifically and on standardization of programming languages more broadly. This would also be a place where academia could get early feedback from delegates without bringing it to the entire committee first. We have discussed this with several of ECMA member organizations, and on the slide, you can see the ones who have expressed interest. There is also some interest from organizations who are not part of ECMA. We also had adjacent interest from the Rust community, though to make it clear, we have not spoken to them about this in the form of a task group, as I present now. Also, YSV and I had a number of discussions with other institutions during our presentation last year at the SPLASH 2023 conference, and we expect this list to grow. So the work includes four items. To summarize and present ongoing research work from the academic community on JavaScript and JSON technologies, to investigate and discuss state-of-the-art approaches to aid the development of TC39 proposals, to produce documentation on best practices from research work to ECMA262, and to produce and present tools and technologies to aid in the understanding of -- and the design of ECMA262 and adjacent technologies. I could also say that in terms of kind of focus, this TG would be most probably closely related to TG3 in the sense that it’s not about new proposals, but rather assisting documentation, approaches, technologies, and so on. I would also like to mention that there was a previous discussion on this during the ECMA General Assembly in December 2023. So there was a potential discussion on whether it could be a part of TC49 “Programming Languages”, but now we see most work is probably related to TC39 and it would be too broad otherwise, and also TC39 has an active research community, and we think that it would benefit from sort of an official discussion forum.
+. MBH: And the work about experiments in programming language standardization still is largely applicable to TC39, as it was actually inspired here. So this is just some example work that in particular the University of Bergen is interested - looking at different aspects of standardization documents themselves, such as navigation, customizability, and modularization of the standard, extracting sublanguage standards, slicing a standard document, specification verification, consistency checking and executability, implementability, so this is where we can see more relevance to the work done by KAIST. Things like refactoring the standard and so on. The work is planned to be done in GitHub. We would have monthly Zoom calls. We would have external input, from users, other technical committees and standardization organizations, industries, academia, we would use TC39’s Alternative Copyright Notice, and just as a first item on what we already have been working on is that we are summarizing the state-of-the-art in programming language standardization. So I would like to request consensus on chartering the new Task Group with this scope and program of work. Thank you.
 
 JHD: When I originally reviewed the slides, they had a much broader scope. It seemed like it was general for programming languages. I appreciate that the scope seems to have been largely narrowed down to EMCAScript. I think that’s appropriate for this ask. But like you mentioned the Rust language community – I think it’s great if learnings can be applied across programming languages, obviously. But, like, Rust has nothing to do with TC39, so, like, I don’t see that -- other than communicating results back and forth or coordinating research or something, like, I don’t see any reason for the TG you’re asking for to interact with rust or any other programming language that’s not this one.
 
-MBH: Right, so in the current program of work, this is -- yeah, as I mentioned, this is narrowed 
-down to TC39. And I think it’s a good place to start with this, and then -- yeah.
+MBH: Right, so in the current program of work, this is -- yeah, as I mentioned, this is narrowed down to TC39. And I think it’s a good place to start with this, and then -- yeah.
 
 JHD: So I mean, I’m glad to see is the scope narrowed, because from the slides, my suggestion was going to be that it should be its own TC, it’s not specific to this committee. But it sounds like the approach has been refined so that doesn’t really apply. So I guess that was sort of the question was, then, why not go for a TC to generally cover that topic? Why have a TG specifically under TC39 and only do this research in that narrow scope?
 
-MBH: Well, I think here it’s -- it’s good to start with something sort of more manageable and we 
-think that there is significant experience and significant expertise, I would say, in PL 
-standardization in TC39, so maybe it’s a good idea to start within TC39, and then expand if we 
-see that this is not broad enough for the kind of work we are trying to do.
+MBH: Well, I think here it’s -- it’s good to start with something sort of more manageable and we think that there is significant experience and significant expertise, I would say, in PL standardization in TC39, so maybe it’s a good idea to start within TC39, and then expand if we see that this is not broad enough for the kind of work we are trying to do.
 
 JHD: Okay. My other point, which I put separate, but it basically overlaps, I think if you could go a slide or two farther down, yeah, here. So it sounds like some of this stuff overlaps with what the editors generally do. I mean, I’m not going to speak for editor group, but I would assume that editors would generally welcome research on how to do things differently. Do you see this TG as making recommendations, or would the results of some things perhaps dictate the way that the spec is organized and so on.
 
-MBH: I guess it would be more on the level of a recommendation and -- and as maybe sort of trying to report on best practices, and then it’s of course, up to the editors on whether they would 
-follow this recommendation or not.
+MBH: I guess it would be more on the level of a recommendation and -- and as maybe sort of trying to report on best practices, and then it’s of course, up to the editors on whether they would follow this recommendation or not.
 
 JHD: Thank you.
 
@@ -841,28 +749,17 @@ MF [on the queue]: +1, love the new program of work
 
 CDA: Yeah, just wanted to say plus one to chartering this task group. Similar to some of the comments JHD was making I was somewhat skeptical when I saw the original slides. It sounded like a whole new technical committee, but the new scope and program of work, it’s a lot easier to see how it falls within the scope of TC39 itself, so definitely would be great to see this. Thanks.
 
-USA: And in the end, I -- there’s me on the queue, and I wanted to sort of plus one the point 
-that DE made. This is very necessary work. If we aim to serve the needs of all the 
-committee, as well as the greater community, so thank you. We also have SFC, who says plus 
-one. And he’s endorsed the formation of this new task group. So for all 
-the positive comments and nothing --
+USA: And in the end, I -- there’s me on the queue, and I wanted to sort of plus one the point that DE made. This is very necessary work. If we aim to serve the needs of all the committee, as well as the greater community, so thank you. We also have SFC, who says plus one. And he’s endorsed the formation of this new task group. So for all the positive comments and nothing --
 
 JHD: I just wanted to add, instead of just typing this out on the queue, so I definitely support this as a TG with the narrowed scope. My original reaction to the previous version of the slides was because I thought that it would be valuable for the scope to be broader and more impact would be able to be had if it was actually a full TC. If this, however, is just kind of a start and eventually it could move to a full TC and have broader impact beyond just this one language, that would be great as well. Thanks.
 
-USA: Thank you, JHD. So I think we have consensus on chartering this new TG. One thing, the 
-first order of business would be to pick chairs for this TG. So there is something for that. 
-I think it was part of the presentation, or was it not?
+USA: Thank you, JHD. So I think we have consensus on chartering this new TG. One thing, the first order of business would be to pick chairs for this TG. So there is something for that. I think it was part of the presentation, or was it not?
 
-MBH: Right, so the original idea was that it would be YSV and myself, but YSV’s focus is 
-currently on other projects at Mozilla, so for the time being, it would primarily be 
-myself who would coordinate the work of this new TG, if the committee is fine with that.
+MBH: Right, so the original idea was that it would be YSV and myself, but YSV’s focus is currently on other projects at Mozilla, so for the time being, it would primarily be myself who would coordinate the work of this new TG, if the committee is fine with that.
 
-You would -- my understanding is that this is okay with respect to ECMA process. The code convener or vice convener is recommended but optional role. I think SHN could clarify.  One thing, however, if you’re looking for somebody to be co-convener, this would be the 
-right place to ask.
+You would -- my understanding is that this is okay with respect to ECMA process. The code convener or vice convener is recommended but optional role. I think SHN could clarify. One thing, however, if you’re looking for somebody to be co-convener, this would be the right place to ask.
 
-SHN: Just to comment, that would be fine. If you get a co-convener, it would be even 
-better so you have the support you need, Mikhail, and maybe next week when you put a little 
-news together regarding this TG5. Thank you.
+SHN: Just to comment, that would be fine. If you get a co-convener, it would be even better so you have the support you need, Mikhail, and maybe next week when you put a little news together regarding this TG5. Thank you.
 
 USA: RGN also expresses plus one from all of Agoric for charting this TG. So, yeah, I think we’re all in agreement. Thank you, MBH.
 
@@ -870,87 +767,82 @@ MBH: Thank you very much.
 
 MBH: Right. The decision has been made to charter a new task group on experiments in programming language standardization. The convener of the group is MBH.
 
-SYG: Can I ask a meta question about charting these TGs? Are there -- so I know that charters in other groups like W3C are -- they have an expiry and then you come back and recharter to see if the scope is still relevant. Do we do that here, or once we charter something, is it in 
-perpetuity until something else happens?
+SYG: Can I ask a meta question about charting these TGs? Are there -- so I know that charters in other groups like W3C are -- they have an expiry and then you come back and recharter to see if the scope is still relevant. Do we do that here, or once we charter something, is it in perpetuity until something else happens?
 
-DE: Unless otherwise stated, it would be in perpetuity by default. I think this is one reason 
-that I’ve encouraged things like sort of Snaps or WinterTC to work within ECMA, because I 
-don’t want to work through the bureaucracy of rechartering and arguing all the time. I think 
-that the mitigation that we adopted for source maps was we would have status updates in the -- 
-in each plenary. It could be very short. And so if we find that the activity ceases, we can, 
-you know, discuss it easily at the status update. It should be very easy to raise at that 
-point.
+DE: Unless otherwise stated, it would be in perpetuity by default. I think this is one reason that I’ve encouraged things like sort of Snaps or WinterTC to work within ECMA, because I don’t want to work through the bureaucracy of rechartering and arguing all the time. I think that the mitigation that we adopted for source maps was we would have status updates in the -- in each plenary. It could be very short. And so if we find that the activity ceases, we can, you know, discuss it easily at the status update. It should be very easy to raise at that point.
 
-SHN: I confirm that would be correct, DE. All the TCs or TGs that we have, we do not 
-have expiry dates. We always work and they stay open.
+SHN: I confirm that would be correct, DE. All the TCs or TGs that we have, we do not have expiry dates. We always work and they stay open.
 
-SYG: Thank you. That sounds good. I think for most of ECMA’s activities where there’s, like -- 
-where the participants have some incentive to also participate in perpetuity, by which I 
-mean, like, browsers, like products are going to continue to exist, there’s no expiry on those, 
-as long as they exist, people will continue to participate. That makes sense to me. For TGs 
-where they have a more academic slant, I know that from personal experience, things tend to 
-fizzle out once some cohort of folks graduate, and I’m wondering if that’s a concern here.
+SYG: Thank you. That sounds good. I think for most of ECMA’s activities where there’s, like -- where the participants have some incentive to also participate in perpetuity, by which I mean, like, browsers, like products are going to continue to exist, there’s no expiry on those, as long as they exist, people will continue to participate. That makes sense to me. For TGs where they have a more academic slant, I know that from personal experience, things tend to fizzle out once some cohort of folks graduate, and I’m wondering if that’s a concern here.
 
 SHN: So this TG, it would most likely result in a technical report. MBH, if you’re on the call, can you confirm that.
 
 MBH: Yes, yes, this is correct.
 
-SHN: And often times we always maintain these technical reports. They may have different 
-additions. So you may have changes in your committee, but it could continue. So, SYG, your 
-concern is fair, you but I think that other TGs we have do continue with the work. They do 
-sometimes have a pause, they do get revived. We watch them. We never let them sit completely 
-idle.
+SHN: And often times we always maintain these technical reports. They may have different additions. So you may have changes in your committee, but it could continue. So, SYG, your concern is fair, you but I think that other TGs we have do continue with the work. They do sometimes have a pause, they do get revived. We watch them. We never let them sit completely idle.
 
-USA: All right. We are over time. Thank you so much, MBH everyone and else for 
-participating in an organization.  Thank you.
+USA: All right. We are over time. Thank you so much, MBH everyone and else for participating in an organization. Thank you.
+
 ### Speaker's Summary of Key Points
-* A new Task Group TG5 will be chartered.
-* The scope of the task group is to provide a forum for discussion, development and dissemination of research work on standardization of ECMAScript and related technologies. 
+
+- A new Task Group TG5 will be chartered.
+- The scope of the task group is to provide a forum for discussion, development and dissemination of research work on standardization of ECMAScript and related technologies.
 
 ### Conclusion
-* TG5 is convened with the stated scope/program.
+
+- TG5 is convened with the stated scope/program.
 
 ## ArrayBuffer transfer for stage 4
+
 Presenter: Jordan Harband (JHD)
+
 - [proposal](https://github.com/tc39/proposal-arraybuffer-transfer)
-- [slides]()
+- Slides: See Agenda
 - [PR](https://github.com/tc39/ecma262/pull/3175)
 
-USA: Before you start, we are going to the break a little bit during this, so, yeah, we 
-can just add -- but, yeah, please go ahead.
+USA: Before you start, we are going to the break a little bit during this, so, yeah, we can just add -- but, yeah, please go ahead.
 
 JHD: Okay. Hi, everyone. I’m Jordan. I’m presenting the ArrayBuffer transfer proposal. Basically, I’m asking today for Stage 4, tests have all been merged. It has been shipped in chrome for quite a while. Since version 114. It is unflagged in Firefox version 122. I believe it is merged into webkit, but not yet released. That may have changed in the last couple weeks, but I haven’t heard anything yet. Serenity OS has it, and there’s polyfills that are published, and there’s a specification PR that is partially editor approved. So essentially, what I would ask for is the conditional Stage 4 on the rest of the editors approving that PR.
 
 JHD: SYG is a co-champion on this as well, and has reviewed this as well. So this is adding an accessor to a ArrayBuffer prototype for detached that tells you true or false, whether that buffer is detached or not. Transfer method, which transfers the buffer to a new one, and that preserves resizable or growability, and a transfer to fix length, method, which does not preserve it. It produces a method -- an ArrayBuffer that is not resizable or growable. That’s all. Hopefully I can ask for conditional Stage 4 for the remaining editor on the PR.
 
-USA: There’s DLM who says it’s for Stage 4. That’s it. Anybody else would like to add a 
-vote of support? Okay, RGN mentions they support Stage 4. All right.
+USA: There’s DLM who says it’s for Stage 4. That’s it. Anybody else would like to add a vote of support? Okay, RGN mentions they support Stage 4. All right.
 
 JHD: Cool. Thank you.
 
 USA: Well, congratulations, Stage 4.
 
 ### Conclusion
+
 Reaches stage 4
+
 ## Set Methods bugfix and update
+
 Presenter: Kevin Gibbons (KG)
+
 - [PR](https://github.com/tc39/proposal-set-methods/pull/105)
 
 KG: So I have an extremely brief update for the set methods proposal. The first and most important thing is that it’s implemented in Chrome, and will be shipping to stable in I believe a couple of weeks. It’s also shipping in Safari since 17, I want to say, and I know Firefox has an implementation underway. I’m not sure what the status there is. But so my hope is to go for Stage 4 at the next meeting.
 
-KG: But unfortunately, one small order of business that we need to take care of first is that I noticed a normative issue with a specification. You may recall that the way sets are implemented internally is as a list of items that never 
-shrinks and only ever grows. This is editorially convenient, but obviously not what actually is done in practice. So there were a couple of places where the spec was failing to account for the markers that are left behind when you delete an element, when computing the size of a set. Those need to be skipped over, and were not being skipped over. This is technically an observable change to the behavior, and since this is Stage 3, I need to ask for consensus for it. But it’s definitely a bugfix and no one would ever have done the other thing. So I am hoping for a rubber stamp on landing this fix to the proposal and then hopefully next meeting I will ask for Stage 4. Can I have consensus on this pull request?
+KG: But unfortunately, one small order of business that we need to take care of first is that I noticed a normative issue with a specification. You may recall that the way sets are implemented internally is as a list of items that never shrinks and only ever grows. This is editorially convenient, but obviously not what actually is done in practice. So there were a couple of places where the spec was failing to account for the markers that are left behind when you delete an element, when computing the size of a set. Those need to be skipped over, and were not being skipped over. This is technically an observable change to the behavior, and since this is Stage 3, I need to ask for consensus for it. But it’s definitely a bugfix and no one would ever have done the other thing. So I am hoping for a rubber stamp on landing this fix to the proposal and then hopefully next meeting I will ask for Stage 4. Can I have consensus on this pull request?
 
 CDA: Plus one from JHD. You also have a plus one from RGN.
 
 KG: Okay, that’s all I got. Thanks very much.
+
 ### Speaker's Summary of Key Points
-* Set methods is shipping in Safari and will soon be shipping in Chrome, hoping to ask for stage 4 next meeting
-* There is a normative bugfix to the spec
+
+- Set methods is shipping in Safari and will soon be shipping in Chrome, hoping to ask for stage 4 next meeting
+- There is a normative bugfix to the spec
+
 ### Conclusion
-* Consensus on the bugfix https://github.com/tc39/proposal-set-methods/pull/105
+
+- Consensus on the bugfix https://github.com/tc39/proposal-set-methods/pull/105
+
 ## Temporal update & proposed normative changes
+
 Presenter: Philip Chimento (PFC)
+
 - [proposal](https://github.com/tc39/proposal-temporal)
 - [slides](https://ptomato.name/talks/tc39-2024-02/)
 
@@ -977,9 +869,9 @@ PFC: (Slide 9) Finally, this question was raised by ABL as part of the Firefox i
 PFC: We tested this on the difference between every date in a 4-year Gregiorian calendar leap year cycle with every other date and it affects 0.2% of those results. And the ones it does affect, they all make sense in our opinion. So we think this is a good change to make.
 
 PFC: Are there any questions so far?
-  
+
 CDA: Nothing on the queue. No. DLM?
-  
+
 DLM: Sorry. It was end of message. + 1 for normative changes.
 
 CDA: Okay. Thanks.
@@ -988,15 +880,16 @@ PFC: I would like to move on to requesting consensus formally then on the PRs.
 
 CDA: You have a + 1 DE and the previous one from DLM.
 
-PFC: Sounds good. I have a proposed conclusion for the note here, which I will copy into the notes in a moment. And I would like to say thanks. And looking forward to hopefully not presenting something like this again. 
+PFC: Sounds good. I have a proposed conclusion for the note here, which I will copy into the notes in a moment. And I would like to say thanks. And looking forward to hopefully not presenting something like this again.
 
 ### Speaker's summary of key points / Conclusion
 
-Consensus was reached on a normative change making week numbering optional for calendars (PR #2756), a normative change to fix a bug in duration rounding (PR #2758), a normative change to return more useful results from date differences in end-of-month edge cases (#2759), and a normative change to fix a bug in ZonedDateTime differences (PR #2760) reached consensus.
-The proposal champions are not aware of any further outstanding bugs, and expect implementations to be able to use the proposal as a stable base in the coming weeks with only editorial changes expected. Follow the checklist in #2628 for updates.
+Consensus was reached on a normative change making week numbering optional for calendars (PR #2756), a normative change to fix a bug in duration rounding (PR #2758), a normative change to return more useful results from date differences in end-of-month edge cases (#2759), and a normative change to fix a bug in ZonedDateTime differences (PR #2760) reached consensus. The proposal champions are not aware of any further outstanding bugs, and expect implementations to be able to use the proposal as a stable base in the coming weeks with only editorial changes expected. Follow the checklist in #2628 for updates.
 
 ## Micro and mini waits in JS for stage 1
+
 Presenter: Shu-yu Guo (SYG)
+
 - [proposal](https://github.com/syg/proposal-atomics-microwait)
 - [slides](https://docs.google.com/presentation/d/1XYn7rgPw-WYAnH3X10GboMwn8xLH3oUx2TlDe6f6lSY/edit)
 
@@ -1016,7 +909,7 @@ SYG: Instead, I am proposing that we do some harm reduction. It’s not that peo
 
 SYG: I have some ideas on how to clamp the timeout. I think this space needs more exploration. But the idea is that, if you are on the main thread, in an agen who cannot block field is true, for the agent specifier, agent record, whatever it’s called, the time out value will be clamped to an implementation-defined positive finite number. Currently, if you cannot block and you pass it – any timeout, I guess, it will just throw. But this is saying, even if you pass it a number, `Infinity`, if you pass that option, it will clamp it to some implementation-defined value under the hood. Possibly zero, which means it will return time value immediately. But the idea there is that, it lets us await – it lets you sleep the thread, for short amounts of time, hopefully not long enough to harm the responsiveness goal of why we made this policy choice to begin with.
 
-SYG: You might be wondering, who is this for? Basically one user for this and that’s Emscripten. This is not hypothetical. This is the tool that people use to compile to WebAssembly. WebAssembly, like JS, doesn’t do anything by itself. You need to embed it somewhere and then pass it in API, so it can do things like paint on the screen, whatever. JS acts as the embedder for WASM. And then the web embeds JS. That’s the layering there. Emscripten has basically an emulation layer written in JS that emulates LibC and kernel syscalls. So that when you run your C++ program, if you need to do thing, like block the thread to wait, it call us out to the JS library that emscripten, if you compile something with pthreads, it’s not something you can do to do, we have SharedArrayBuffers, shared memories, web workers…  if you’re compiling a C++ program, pthread mutexes, they are – implemented with futexes. Futexes basically look like atomic style wait, except we can’t use atomic style wait on the main thread. And this emulates this with a busy loop. This is really bad. Because it is inefficient for power. It’s just not desirable. And because we can’t relax blocking on the main thread, the hope is, maybe we do some harm reduction instead.
+SYG: You might be wondering, who is this for? Basically one user for this and that’s Emscripten. This is not hypothetical. This is the tool that people use to compile to WebAssembly. WebAssembly, like JS, doesn’t do anything by itself. You need to embed it somewhere and then pass it in API, so it can do things like paint on the screen, whatever. JS acts as the embedder for WASM. And then the web embeds JS. That’s the layering there. Emscripten has basically an emulation layer written in JS that emulates LibC and kernel syscalls. So that when you run your C++ program, if you need to do thing, like block the thread to wait, it call us out to the JS library that emscripten, if you compile something with pthreads, it’s not something you can do to do, we have SharedArrayBuffers, shared memories, web workers… if you’re compiling a C++ program, pthread mutexes, they are – implemented with futexes. Futexes basically look like atomic style wait, except we can’t use atomic style wait on the main thread. And this emulates this with a busy loop. This is really bad. Because it is inefficient for power. It’s just not desirable. And because we can’t relax blocking on the main thread, the hope is, maybe we do some harm reduction instead.
 
 SYG: I also independently heard this is useful for game engines with frame budgets. If you are writing a game engine or a rendering library, and you want the 60 budget, you can’t afford to wait on a lock for very long anyway, so they would also use something like this.
 
@@ -1024,17 +917,17 @@ SYG: The open question is how do you actually clamp the value? For HTML, tying t
 
 SYG: So asking for Stage 1. The problem statement is a two-fold problem statement. To be clear, depending on the queue, it is possible to split these two up. These are pretty different. But I think there’s enough connection to try to look at them together. The problem statement is to explore solutions to one, the performance locking code fast paths, and two, to improve the status quo of busy loop workarounds in code that decide to block the main thread away. This is for the contention slow path for trying to put something to sleep.
 
-SYG: And that’s the presentation. I will go to the queue. 
+SYG: And that’s the presentation. I will go to the queue.
 
-MLS: It seems like the pseudocode that you presented, the last slide, that you think it’s okay, but I am going to say you think it’s okay. You think that people will block no matter what and we need to do something to reduce the harm. Even if we clamp it, we’re still going to block the main thread while it’s waiting to try to get the lock. Correct? 
+MLS: It seems like the pseudocode that you presented, the last slide, that you think it’s okay, but I am going to say you think it’s okay. You think that people will block no matter what and we need to do something to reduce the harm. Even if we clamp it, we’re still going to block the main thread while it’s waiting to try to get the lock. Correct?
 
-SYG: That is correct. 
+SYG: That is correct.
 
 MLS: Okay. So I have problems that we’re putting in a foot gun effectively for a JavaScript developer who could maliciously block the VM from doing some other useful work. And I don’t have a good answer for that. It sounds like you don’t necessarily don’t have a good answer about that except for clamping it. Again, you probably need to allow some waiting, if we will allow people to write their own mutexes. That’s my first question.
 
-SYG: sorry. The question is… ? 
+SYG: sorry. The question is… ?
 
-MLS: I think you answered yes. It does allow people to block on the main thread for at least a short period of time. 
+MLS: I think you answered yes. It does allow people to block on the main thread for at least a short period of time.
 
 SYG: Yeah. As for – so I agree that it definitely could block – if you call this, it could block the VM from doing unuseful things. To clarify, this is – you’re responding to the clamping thing only. Is there any – that’s not to the microwaits?
 
@@ -1044,52 +937,50 @@ SYG: Yes.
 
 MLS: If I give a huge spin value, and I put in a loop in my case spin count is pretty large, I am effectively blocking for a percentage of time, even though I go back to block and microwait it again.
 
-SYG: You have written a infinite loop – 
+SYG: You have written a infinite loop –
 
 MLS: Sure. Agreed. Agreed. If the loop doesn’t do anything and just – which can be done today. Certainly.
 
-SYG: Right. 
+SYG: Right.
 
 MLS: So I have a bit of a problem with that. My higher-level question, which is the second thing in the queue, is doesn’t it make sense to provide some optimized lock primitives active instead of giving people building blocks? And the reason I say that, we have found at least on our team, that the people trying to implement locks don't fully understand what is going on in the CPU, you know, you were describing something going on. When you have multiple cues, you have cache line thrashing. Cache lines need to move between cores. Or if you have snoopy caches, activities between CPUs and not making any progress.
 
 MLS: And you’re right. Different CPU respond in different ways, depending on the architecture. Does it make sense to have a higher level goal, some lock primitives and those can be implemented efficiently on different devices so we are not – somewhat at the whim – we provide the appropriate higher-level tools so we are not at the whim of the JavaScript programmer that is detrimental.
 
 SYG: My answer so that is definitely. That is part of the structs proposal. We want high-level mutexs or a condition instead of a futex-like API. But I don’t see that it’s mutually exclusive if the higher-level things are for JS authors. Whereas, this is basically for JS as a compiled target for C in the case of Emscripten. This is a very scoped use case. I completely agree that your average JS programmer is just not served by this. And they really should not use it because you really shouldn’t be writing your own mutex. In the case of Emscripten, there is no choice. Even if we give them a JS mutex, they can’t use that – they are compiling e.g. pthreads mutex's implementation that bottoms out at a syscall like futex or os_unfair_lock or whatever it is on macOS.
-.
-MLS: So I have some problems with what you said. So the use case is at this point Emscripten, a single use case. However, we put in the standard and people – 
+. MLS: So I have some problems with what you said. So the use case is at this point Emscripten, a single use case. However, we put in the standard and people –
 
 SYG: We already put futexes in the standard.
 
 MLS: I understand that. I am just thinking if we should have – if we come up with something that has less detrimental issues for where it’s used. I think you understand where I am coming from
 
-SYG: I agree with you. 
+SYG: I agree with you.
 
-MLS: I know you do. 
- 
+MLS: I know you do.
+
 RBN: This is to MLS’s question about or talking about lock primitives instead of building blocks. If you want to write efficient lock-free algorithms you can’t depend only on synchronization and locking primitives. These algorithms often need spin waiting to be efficient even if you are using these other lock primitives or other synchronization primitives. It’s a building block that is essential to the algorithms. It needs to exist on its own unless it could be wrapped up into another thing, such as a SpinWait primitive, which is basically what this is doing.
 
-MLS: I have already talked about it. I agree that, yeah, there are lock free primitives that do require spin waiting. It’s more difficult to make those as primitives. We can deliver. There are some possibilities, but it depends on the API that we’d want to surface. 
+MLS: I have already talked about it. I agree that, yeah, there are lock free primitives that do require spin waiting. It’s more difficult to make those as primitives. We can deliver. There are some possibilities, but it depends on the API that we’d want to surface.
 
 DLM: We discussed this internally, I think we have casual support for atomic stop microwait. We want that explored more. What I am less concerned about is the clamp time out. If you could expand a little bit on what you’re trying to accomplish with that. Is it easier to make code from a worker thread to a main thread. Trying to make it so that you could put the main thread to sleep. Because that doesn’t seem like a good idea.
 
-SYG: It’s a non-goal to enable you to write the same code that can both work on the main thread and the worker. I think that is architecturally not possible and we should never encourage that anyway.
-Because as Firefox has raised when we added SharedArrayBuffers, it’s not a matter of responsiveness, not not blocking the main thread, architecturally, Gecko at the time, but the main thread was responsible for doing some like IO stuff, in support – like in the service of worker threads. So if you blocked the main thread, you could also deadlock your worker threads unknowingly because of how certain Web APIs were implemented under the hood. And for that reason, code on the web, it is not possible for them to ignore the fact that they are on the main thread versus a worker thread. This is not a goal of this. The goal of this is pretty narrow. The goal of `clampTimeout` is basically just to not spin the CPU and heat up your battery in the – in the locking emulation layer in Emscripten. It’s a very narrow goal. At least that’s the starting point. There is like I said, on this slide, it’s possible. It's useful for game engines with a frame budget, where they need exclusive access to some piece of SharedArrayBuffer stuff. A worker has calculated and put the results in. And they are okay with just dropping a frame, if they can’t get the lock in time.
+SYG: It’s a non-goal to enable you to write the same code that can both work on the main thread and the worker. I think that is architecturally not possible and we should never encourage that anyway. Because as Firefox has raised when we added SharedArrayBuffers, it’s not a matter of responsiveness, not not blocking the main thread, architecturally, Gecko at the time, but the main thread was responsible for doing some like IO stuff, in support – like in the service of worker threads. So if you blocked the main thread, you could also deadlock your worker threads unknowingly because of how certain Web APIs were implemented under the hood. And for that reason, code on the web, it is not possible for them to ignore the fact that they are on the main thread versus a worker thread. This is not a goal of this. The goal of this is pretty narrow. The goal of `clampTimeout` is basically just to not spin the CPU and heat up your battery in the – in the locking emulation layer in Emscripten. It’s a very narrow goal. At least that’s the starting point. There is like I said, on this slide, it’s possible. It's useful for game engines with a frame budget, where they need exclusive access to some piece of SharedArrayBuffer stuff. A worker has calculated and put the results in. And they are okay with just dropping a frame, if they can’t get the lock in time.
 
-SYG: But it’s not meant to block the thread, the main thread in any real sense of block. And the max here is probably like 16 milliseconds. We are thinking 60FPS. The max that might be acceptable to block with a `clampTimeout` clamped to 16 ms. Possibly shorter. 
+SYG: But it’s not meant to block the thread, the main thread in any real sense of block. And the max here is probably like 16 milliseconds. We are thinking 60FPS. The max that might be acceptable to block with a `clampTimeout` clamped to 16 ms. Possibly shorter.
 
-DLM: Just make sure I understand then, clamp time out is basically a longer wait than what you get with microwait. 
+DLM: Just make sure I understand then, clamp time out is basically a longer wait than what you get with microwait.
 
 SYG: Right. So yes. It’s mini – I am calling it mini. Micro versus mini wait. It’s a – like, architectural – on the CPU versus OP level, there’s two yields. One is a CPU hint that says, I will yield not the core, but I yield these other shared units like – it has to do from reading from memory that MLS was referring to. That is about a CPU yield. OS field, that says put my thread to sleep and wake me up later. That could be very long or relatively short. It’s longer than a few nanoseconds. Longer than 100 CPU cycles. And it requires the OS to actually put the thread to sleep. clampedTimeout out is `Atomics.wait` is OS level yield. And it’s totally fair that you might look at this later and say, this is – we think it’s too much. It’s not useful. I think it’s too narrow or whatever. Architecturally undesirable. That’s possible. These are things I want to explore during Stage 1. And it’s possible we come back and promote only the microwait part to Stage 2 and drop the clamping, or split out the proposal.
 
-DLM: Sure. Thank you. That answers my question. We support investigating this for Stage 1. 
+DLM: Sure. Thank you. That answers my question. We support investigating this for Stage 1.
 
-SYG: Okay. I think the queue is empty. In which ways, I will ask again for Stage 1 for both right now. But I did telegraph that we might split or progress independently after the investigation. 
+SYG: Okay. I think the queue is empty. In which ways, I will ask again for Stage 1 for both right now. But I did telegraph that we might split or progress independently after the investigation.
 
-CDA: I support Stage 1. 
+CDA: I support Stage 1.
 
 KG: For the record, is exploring alternative locking primitive in scope?
 
-SYG: Not in this. That is explicitly in the structs proposal. So like I guess, yes, for TC39. No for this. 
+SYG: Not in this. That is explicitly in the structs proposal. So like I guess, yes, for TC39. No for this.
 
 CDA: All right. Any more voices of support for Stage 1? Hearing nothing. But also hear no objections. I believe you have Stage 1. Do you want to dictate any key points, conclusions, or summary for the notes?
 
@@ -1098,28 +989,32 @@ SYG:I don’t think so. I think that’s fine.
 CDA: Ok, thank you. We have another + 1 from RBN.
 
 ### Speaker's summary of key points / Conclusion
-* Proposal reached Stage 1
+
+- Proposal reached Stage 1
+
 ## Promise.try for stage 2
+
 Presenter: Jordan Harband (JHD)
+
 - [proposal](https://github.com/tc39/proposal-promise-try)
 
 JHD: So back way, way, way back in the year 2016, I proposed `Promise.try`. Essentially, I have a function, it might be synchronous or asynchronous; it might return a promise or not; throw an exception or not. I don’t want to care, but I want to wrap it in a promise. So if it is a throw, it does the right thing.
 
 JHD: The easy to remember way to do this is here. `Promise.resolve` and in the `.then`, you run your function. This works fine. But it runs asynchronously when you don’t want that the more modern way is immediately invoked async function where you await the function, and then that has the actually desired semantics.
 
-JHD: At the time that I made this presentation, the general response was that in order for it to qualify for Stage 2, more sort of convincing would need to be done about the utility. Given that you could just use the await syntax and solve the problem. At the time, the userland versions of this proposal were sort of mildly used and I think the general expectation was that or the general hope at least was that nobody would need this functionality and the syntax would be sufficient. However, since that time, two years later, this was published and 46 million downloads a week, this graph over time continues to go up and modulo a few NPM data hiccups are steady at 45 million a week. Pretty clearly there is some use here. It is one package, and it’s from one author. And that author certainly has a lot of other packages, and perhaps the usages are just because they stuck it in one of other packages that also has a lot of usage. I still find myself having a need for this functionality. The workaround I do is this `new Promise` snippet here. Where in the `new Promise` executor, I pass the function to `resolve`. It works. It’s ugly. It’s easy to mess up. And it is confusing when people first encounter it. Given I had looked up this package, and saw that it was now actually used very, very heavily, I thought I would bring it back and either ask for Stage 2 or get a fresh response from the committee about what the committee would see it to have to qualify for Stage 2. That’s all. 
+JHD: At the time that I made this presentation, the general response was that in order for it to qualify for Stage 2, more sort of convincing would need to be done about the utility. Given that you could just use the await syntax and solve the problem. At the time, the userland versions of this proposal were sort of mildly used and I think the general expectation was that or the general hope at least was that nobody would need this functionality and the syntax would be sufficient. However, since that time, two years later, this was published and 46 million downloads a week, this graph over time continues to go up and modulo a few NPM data hiccups are steady at 45 million a week. Pretty clearly there is some use here. It is one package, and it’s from one author. And that author certainly has a lot of other packages, and perhaps the usages are just because they stuck it in one of other packages that also has a lot of usage. I still find myself having a need for this functionality. The workaround I do is this `new Promise` snippet here. Where in the `new Promise` executor, I pass the function to `resolve`. It works. It’s ugly. It’s easy to mess up. And it is confusing when people first encounter it. Given I had looked up this package, and saw that it was now actually used very, very heavily, I thought I would bring it back and either ask for Stage 2 or get a fresh response from the committee about what the committee would see it to have to qualify for Stage 2. That’s all.
 
-NCL: Yeah. I put – the topic, maybe it needs to be a clarifying question. And so I assume that this would show why this is needed. But from – is it needed in this case? Couldn’t it just do `value = await synchronousfunction`? Will it just work the same? 
+NCL: Yeah. I put – the topic, maybe it needs to be a clarifying question. And so I assume that this would show why this is needed. But from – is it needed in this case? Couldn’t it just do `value = await synchronousfunction`? Will it just work the same?
 
-JHD: In this specific snippet, yes, it would work the same, given that top-level await exists. If the goal is to have a promise, on which you want to use the promise combinators. It’s not as trivial as doing that. There will always be use cases where you want the promise and not the awaited value and that’s where `Promise.try` comes into play. 
+JHD: In this specific snippet, yes, it would work the same, given that top-level await exists. If the goal is to have a promise, on which you want to use the promise combinators. It’s not as trivial as doing that. There will always be use cases where you want the promise and not the awaited value and that’s where `Promise.try` comes into play.
 
-CDA: The queue is empty. 
+CDA: The queue is empty.
 
 JHD: If the queue is empty, I would like to ask for Stage 2. The spec is very straightforward. That is the entirety of it, recently rebased on the latest version of the spec.
 
-CDA: KG? 
+CDA: KG?
 
-KG: Yeah. It’s just – I still don’t understand why this comes up. Can you say more about why this comes up? 
+KG: Yeah. It’s just – I still don’t understand why this comes up. Can you say more about why this comes up?
 
 JHD: Yeah. In particular, when I am authoring an API where the consumer passes me a callback function, and then as I indicated when I was responding to NCL, that I want to essentially produce a promise, from that, and then do further work on it. Maybe I want to race it against something else, or `Promise.all` and further work with it, at some point I am going to get to a place where await syntax handles the rest of it. But the initial set up requires in many of my use cases, working with Promises. I do have a work around, so this isn’t a new capability. This is just kind of a more straightforward and elegant way to represent that thing that I find myself having to do now and then.
 
@@ -1127,65 +1022,65 @@ KG: Specifically, when having an API, it takes an async function that you want u
 
 JHD: It’s a function that I don’t know its color.So yes, the user is passing a function, and I don’t know for sure if it’s sync or async or throws or not throws, and I don’t want to have to care. I want to just be given a Promise, and do my best to handle it.
 
-KG: Okay. 
+KG: Okay.
 
-JRL: Another case https://github.com/ampproject/amphtml/pull/15107 we had for this, in AMP we had asynchronous error handling. If the error were wrapped in a promise, we handled everything properly. Because of the code change we had a promise.resolve and invoked a function. That function itself threw an error synchronously. Because we didn’t have synchronous catch handling, only async catch on the promise chain, we failed to properly handle this case. My developers didn’t understand the difference. They thought it would be caught by the promise and handled in the asynchronous promise handing. We forced everyone, if you had a Promise.resolve(fn()), it had to use our version of promise.try and that fixed the bugs for us. We were able to rely on asynchronous error handling from then on. 
+JRL: Another case https://github.com/ampproject/amphtml/pull/15107 we had for this, in AMP we had asynchronous error handling. If the error were wrapped in a promise, we handled everything properly. Because of the code change we had a promise.resolve and invoked a function. That function itself threw an error synchronously. Because we didn’t have synchronous catch handling, only async catch on the promise chain, we failed to properly handle this case. My developers didn’t understand the difference. They thought it would be caught by the promise and handled in the asynchronous promise handing. We forced everyone, if you had a Promise.resolve(fn()), it had to use our version of promise.try and that fixed the bugs for us. We were able to rely on asynchronous error handling from then on.
 
-CDA: Shu? 
+CDA: Shu?
 
-SYG: I guess I will do the queue item first. Any name concerns? Given try seems like a common word, given there’s other – these packages? 
+SYG: I guess I will do the queue item first. Any name concerns? Given try seems like a common word, given there’s other – these packages?
 
-JHD: I mean, given it’s a static method, I don’t anticipate any issue. But I am also not – this seems like the most reasonable name to me, but I am not really attached to it. If it turns out there’s an issue, I am happy to dive back into the web compat mines and figure out something that makes sense and be less risky. I feel this is very low risk personally. 
+JHD: I mean, given it’s a static method, I don’t anticipate any issue. But I am also not – this seems like the most reasonable name to me, but I am not really attached to it. If it turns out there’s an issue, I am happy to dive back into the web compat mines and figure out something that makes sense and be less risky. I feel this is very low risk personally.
 
-SYG: The queue is empty, if I can ask a follow-up question from before. I am still trying to understand it. Use case is you have an API, that takes a callback, that might throw synchronously, but is otherwise async? 
- 
+SYG: The queue is empty, if I can ask a follow-up question from before. I am still trying to understand it. Use case is you have an API, that takes a callback, that might throw synchronously, but is otherwise async?
+
 JHD: Yeah. I mean, it could be. It sort of depends – basically, I can’t trust the user will pass the thing that I think they should (in general, ever). So I would hope – this is a case where sometimes the user needs to do it synchronously, or asynchronous. And obviously, if they are using an async function, it will never throw. That’s ideal when async; I always return a promise. But I can’t rely on the user to exactly match that, and there’s not like an `AsyncFunction.is` predicate - there isn’t a reasonable or meaningful way to check that. Generally what I do is just invoke the function and catch whatever they throw or return and go from there.
 
-SYG: So the two responses, I still would like to read a concrete thing where this happens. Second, if that is the use case, this – if I understand correctly, if that is the use case, you would – the recommendation would be that you always use promise.try, never promise.resolve, when the value producing thing is a call back function. But then this API seems rigid if you can only have it do nonlinear functions. What if you need to pass to generate the value? 
+SYG: So the two responses, I still would like to read a concrete thing where this happens. Second, if that is the use case, this – if I understand correctly, if that is the use case, you would – the recommendation would be that you always use promise.try, never promise.resolve, when the value producing thing is a call back function. But then this API seems rigid if you can only have it do nonlinear functions. What if you need to pass to generate the value?
 
-JHD: I mean, that’s the same as anything else that takes a callback. Right? You bind it or you wrap in an arrow function. And I can show you something concrete. So this is a test framework I maintain called `tape`.  And I have to find where in the file it is. But essentially, a tape callback and – I don’t know if this is the right code. I pulled it off the top of my head. A test call back can be synchronous and asynchronous. If it returns a promise, I want that promise to control the result of the test. But if it throws, I still need to catch it. If it returns something synchronously that is not a promise, I ignore it. I just searched for promise, I may be at the wrong spot in the file. I think that’s right.
+JHD: I mean, that’s the same as anything else that takes a callback. Right? You bind it or you wrap in an arrow function. And I can show you something concrete. So this is a test framework I maintain called `tape`. And I have to find where in the file it is. But essentially, a tape callback and – I don’t know if this is the right code. I pulled it off the top of my head. A test call back can be synchronous and asynchronous. If it returns a promise, I want that promise to control the result of the test. But if it throws, I still need to catch it. If it returns something synchronously that is not a promise, I ignore it. I just searched for promise, I may be at the wrong spot in the file. I think that’s right.
 
 SYG: in this case, callback returns a thenable
 
 JHD: Yes. The – again, I pulled this off the top of my head so it may not be the concrete thing you’re looking for. I will get back to you regardless of whether or not that delays Stage 2. But essentially when I call the user callback and throw an exception, I do want to be able to catch it. Again, this may not be a good example. I probably should not have tried to pull one up off the cuff. But I can certainly dig up more of them.
-  
-SYG: Like the cost is so low here, I am not really – I don’t have anything against it. I just don’t quite understand – like the kind of thing you might use it for sounds reasonable, but then there’s things in matrix saying, that’s bad and you shouldn’t do that and I just don’t know. 
 
-JHD: Sure. I mean, there’s lots of editorializing about the goodness and badness of patterns, either way. The other sort of nice effect of this proposal is there remain only two more ways or two more reasons I know of that you would use – sorry, three more ways, reasons I know of that you use `new Promise` in modern code. One is, of course, the one that always is: to wrap a callback taking API. Another this proposal replaces. And then the third is inverting a promise, you know, turning failure into success and success into failure. And I like the idea of, in general, of getting rid of all – you know, all but the one reason for using `new Promise` because it’s confusing when users run across a new promise construction in code. That’s not the primary motivation for the proposal. It’s just a nice benefit, I think, of landing this pattern that people do use. 
+SYG: Like the cost is so low here, I am not really – I don’t have anything against it. I just don’t quite understand – like the kind of thing you might use it for sounds reasonable, but then there’s things in matrix saying, that’s bad and you shouldn’t do that and I just don’t know.
 
-CDA: There’s a clarifying question from GCL. 
+JHD: Sure. I mean, there’s lots of editorializing about the goodness and badness of patterns, either way. The other sort of nice effect of this proposal is there remain only two more ways or two more reasons I know of that you would use – sorry, three more ways, reasons I know of that you use `new Promise` in modern code. One is, of course, the one that always is: to wrap a callback taking API. Another this proposal replaces. And then the third is inverting a promise, you know, turning failure into success and success into failure. And I like the idea of, in general, of getting rid of all – you know, all but the one reason for using `new Promise` because it’s confusing when users run across a new promise construction in code. That’s not the primary motivation for the proposal. It’s just a nice benefit, I think, of landing this pattern that people do use.
 
-GCL: Sorry, it’s not a question. Shu for an example, that’s more concrete, if you imagine AsyncIterator.prototype.map, that makes a map function. If the map function throws an error, you don’t want to like bubble that up. You want to put that into the async machinery happening. Imagine writing that function in JavaScript instead of spec text, you take the if abrupt reject or whatever logic and that is the same thing that promise.try is. 
+CDA: There’s a clarifying question from GCL.
+
+GCL: Sorry, it’s not a question. Shu for an example, that’s more concrete, if you imagine AsyncIterator.prototype.map, that makes a map function. If the map function throws an error, you don’t want to like bubble that up. You want to put that into the async machinery happening. Imagine writing that function in JavaScript instead of spec text, you take the if abrupt reject or whatever logic and that is the same thing that promise.try is.
 
 SYG: Mechanically, I understand. For the iterator case, like that – that is a case where you already produced a promise, then you must always produce a promise. I am looking for a concrete example where you have a single value – like an API that takes the single value that returns, always returns a promise. And that single value is wrapped, like produced by that factory function, that might throw synchronously, like – you use promise.try inside the in sync loop things
 
-GCL: The map function you pass to that can be synchronous. And you could accidentally throw in that – you might not intend to. Or maybe you do. If you throw inside that function, that shouldn’t break AsyncIterator. 
+GCL: The map function you pass to that can be synchronous. And you could accidentally throw in that – you might not intend to. Or maybe you do. If you throw inside that function, that shouldn’t break AsyncIterator.
 
-SYG: But okay. But in the loop case, you already have a promise. You would be on the lookout for – these exceptions and then reject that promise. Or like you couldn’t be like chaining these individual rejected promises. Right? 
+SYG: But okay. But in the loop case, you already have a promise. You would be on the lookout for – these exceptions and then reject that promise. Or like you couldn’t be like chaining these individual rejected promises. Right?
 
 JHD: So I mean my general usage here would just be to kick myself into the world of promises and then I would do stuff that I would hope people find normal after that. However, I mean when I have an array of things, `Promise.all`, I am obviously doing some unique things to respond to individual rejections differently than the aggregate and so on. So there certainly may be some use cases, even though I don’t have any off the top of my head
 
 SYG: [inaudible] on paper, on paper it seems like yes, it could come up. I would like to just read some things so I can better see. Even one of your, perhaps, polyfills where you have written to reach for this and it wasn’t there and you had to get the work around. I wanted to see some instances of that and then I can better understand
 
-JHD: I am happy to provide those regardless. It would be – it would be nice if I could advance this to Stage 2 and then providing those could be a Stage 3 requirement. But I am also comfortable if you would rather not advance until you have those things. As I said, in the beginning, right, I would love to have Stage 2, but I am also fine with getting an updated response for what I need to get to Stage 2. 
+JHD: I am happy to provide those regardless. It would be – it would be nice if I could advance this to Stage 2 and then providing those could be a Stage 3 requirement. But I am also comfortable if you would rather not advance until you have those things. As I said, in the beginning, right, I would love to have Stage 2, but I am also fine with getting an updated response for what I need to get to Stage 2.
 
-SYG: I think you could, given that there doesn't seem to be a lot of design room here, I think you could, for folks who have expressed reservation, work with us off-line and go straight to 2.7 or 3. If you want to get to Stage 2 today, and not 2.7, like are you planning on more design work for promise.try? 
+SYG: I think you could, given that there doesn't seem to be a lot of design room here, I think you could, for folks who have expressed reservation, work with us off-line and go straight to 2.7 or 3. If you want to get to Stage 2 today, and not 2.7, like are you planning on more design work for promise.try?
 
-JHD: No. That’s a fair point. I really just haven’t learned to think in the new stage yet. Realistically jumping to 2.7 makes sense to me. But it has already been 7 years, 8 years since I last presented so I was trying to get a little bit of advancement at a time. Yeah. Certainly, if Stage 2 is fine, I am also content to go to 2.7 and write the test for this before tomorrow.  So we have a – 
+JHD: No. That’s a fair point. I really just haven’t learned to think in the new stage yet. Realistically jumping to 2.7 makes sense to me. But it has already been 7 years, 8 years since I last presented so I was trying to get a little bit of advancement at a time. Yeah. Certainly, if Stage 2 is fine, I am also content to go to 2.7 and write the test for this before tomorrow. So we have a –
 
 LCA: The tests are for stage 3
 
-JHD: Yeah. I mean, I can have those prepared. 
+JHD: Yeah. I mean, I can have those prepared.
 
-CDA: We have a couple of people in the queue. JRL? 
+CDA: We have a couple of people in the queue. JRL?
 
-JRL: Shu’s comment this could only be a unary function, we’re addressing that bypassing the argument that is are called to AsyncVariable.run. And async? Shot.run to the call back. So you can handle any function with any number of parameters? 
+JRL: Shu’s comment this could only be a unary function, we’re addressing that bypassing the argument that is are called to AsyncVariable.run. And async? Shot.run to the call back. So you can handle any function with any number of parameters?
 
-CDA: KG? 
+CDA: KG?
 
-KG: I am just curious if this comes up for other people in the room very much? Just because I have never run into this pattern. And I know that JHD and I write code in a pretty different style. So I am not surprised that it does come up for JHD. The fact that it doesn’t come up for me isn’t very informative. So I would just like to hear if this is a thing that other people run into very much. It’s a pretty simple bit of sugar. Our bar for adding sugar should be low, but it should be this comes up pretty often, not like this comes up for 2 or 3 cases. 
+KG: I am just curious if this comes up for other people in the room very much? Just because I have never run into this pattern. And I know that JHD and I write code in a pretty different style. So I am not surprised that it does come up for JHD. The fact that it doesn’t come up for me isn’t very informative. So I would just like to hear if this is a thing that other people run into very much. It’s a pretty simple bit of sugar. Our bar for adding sugar should be low, but it should be this comes up pretty often, not like this comes up for 2 or 3 cases.
 
-CDA: Did you want to answer the question? 
+CDA: Did you want to answer the question?
 
 JHD: I agree with what Kevin is saying. I think it comes up pretty often in my experience. I don’t expect that too much from everybody else’s and I am happy when more people have experienced a problem than fewer. So if anyone else – I mean, I think Justin has shared an example, so it’s at least not just me. But certainly the more the merrier.
 
@@ -1209,15 +1104,14 @@ JHD: So then I would still like to ask for Stage 2. Yes?
 
 CDA: Do we have any explicit support for Stage 2 for promise.try?.
 
-SYG: What I was proposing was show me, and we can go to 2 or 2.7 directly, although maybe 2 -- 
-I’m not comfortable with 2 right now until I see some concrete line. Basically any line so I 
-can just read what the -- where you would use it. And then which could be, like, you know, now 
-or tomorrow or something, and then it seems like we wouldn’t -- I want to think more about 
-passing the arguments in addition to nothing.
+SYG: What I was proposing was show me, and we can go to 2 or 2.7 directly, although maybe 2 -- I’m not comfortable with 2 right now until I see some concrete line. Basically any line so I can just read what the -- where you would use it. And then which could be, like, you know, now or tomorrow or something, and then it seems like we wouldn’t -- I want to think more about passing the arguments in addition to nothing.
 
 JHD: Okay, so then to reiterate for the notes, I’m -- `Promise.try` is not advancing right now, however, I will provide Shu and, you know, the wider committee with some more concrete -- with some concrete examples to evaluate, and if Shu, since he’s the only one who has expressed this concretely, but if anyone else as well lets me know that they’re comfortable, then I may come back later in the meeting assuming there’s time, and request Stage 2 or possibly 2.7, even though I didn’t put that on the agenda in advance. Thank you.
+
 ## Joint iteration for stage 2
+
 Presenter: Michael Ficarra (MF)
+
 - [proposal](https://github.com/tc39/proposal-joint-iteration)
 - [slides](https://docs.google.com/presentation/d/150lLig7sNDr173RVzRgNRKrrUBKzKPImrHjGnfrETzQ/edit)
 
@@ -1247,11 +1141,11 @@ MF: All right. Would anybody like to provide any guidance on those two biggest q
 
 CDA: Nothing on the queue.
 
-GCL: Yeah, I just wanted to say that I agree that we should not try to do that  in this proposal. We should stick to what you’ve suggested
+GCL: Yeah, I just wanted to say that I agree that we should not try to do that in this proposal. We should stick to what you’ve suggested
 
 MF: yeah, just iteration.
 
-JHD: Yeah, and just to respond to that, I could certainly try and make a follow-up proposal, but like every single semantic of how things are jointly combined would be the same and would have to follow it. And the array proposal could never, like -- either could never advance beyond the iteration one or the two would have to stay in, you know -- whichever was behind would have to follow the one ahead of it and so on. If that’s a procedural thing I’m required  to do, I can do that, but it seems strange to separate it since they’re going to be so tightly coupled regardless.
+JHD: Yeah, and just to respond to that, I could certainly try and make a follow-up proposal, but like every single semantic of how things are jointly combined would be the same and would have to follow it. And the array proposal could never, like -- either could never advance beyond the iteration one or the two would have to stay in, you know -- whichever was behind would have to follow the one ahead of it and so on. If that’s a procedural thing I’m required to do, I can do that, but it seems strange to separate it since they’re going to be so tightly coupled regardless.
 
 MF: I wouldn't go assuming right away that it's going to be trivial to figure out the semantics of this array variant. Yes, it'll probably be heavily influenced, but you never know if there are, like, special cases that need to be handled or whatever. I wouldn't just jump to that conclusion.
 
@@ -1300,16 +1194,16 @@ MF: Thank you. Then I have at least two. Any others are welcome, but I have the 
 MF: All right, thank you, everyone.
 
 ## revisit Promise.try
+
 Presenter: Jordan Harband (JHD)
 
 JHD: So Shu was given a diff of -- like a concrete example of code in Matrix and indicated he’d be willing to reconsider Stage 2, and the chairs were kind enough to slot me in right now. So I’m again going to ask for Stage 2, but not any higher because of the open issue about passing arguments. So there’s no one -- since there’s no one on the queue, I guess I’ll take that to mean there’s consensus for Stage 2.
 
-CDA: Do we have some explicit support for Stage 2 for promise.try? I am not seeing or hearing 
-anything.
+CDA: Do we have some explicit support for Stage 2 for promise.try? I am not seeing or hearing anything.
 
 JHD: Sitting next to Kit Kats, if that helps.
 
-CDA  It sounds like this is not going to progress to Stage 2.
+CDA It sounds like this is not going to progress to Stage 2.
 
 CDA: I mean, I guess if everybody here --
 
@@ -1328,19 +1222,21 @@ JHD: Thank you.
 ### Conclusion
 
 Stage 2.
+
 ## Math.sum
+
 Presenter: Kevin Gibbons (KG)
+
 - [proposal](https://github.com/tc39/proposal-math-sum)
 - [slides](https://docs.google.com/presentation/d/13S_WcLPhJ43El9dXCfC0uO4d1PakHmJbNVr-S4g3K3Q/edit)
 
-KG: We should have a built-in mechanism for summing a list of values. This is my thesis. And if we are going to do this, then we can do something that’s a little better than naive summation, because naive summation accumulates floating point summation in a really bad way. And in the last meeting, WH pointed out there are a number of algorithms for doing full precision addition for floating point, and since then I have gone and implemented one of them, and, yeah, it’s pretty straightforward. So since at the last meeting WH expressed the preference that this be fully precise and a couple of other people expressed the opinion that while it may or may not need to be fully precise, it does need to be  fully specified, which means either being fully precise or picking one algorithm  for the specification to bless, the simplest thing and I think best for user seems to me to be to choosing fully precise summation. That’s what I’m proposing, an API for summing a number of arguments and giving you the full precision result. I have an implementation in JavaScript. Python also has fsum, which uses the same algorithm except that for some reason theirs doesn’t handle intermediate overflow. Like, if you sum, you know, 2 to the 52nd plus 2 to the 52nd plus 2 to the 52nd plus, minus 2 to the 52nd and so on, it will overflow to infinity. But you can just keep track of that in an easy way and not overflow to infinity in that case and as long as the resulting sum ends up finite, you can just give the right answer.
+KG: We should have a built-in mechanism for summing a list of values. This is my thesis. And if we are going to do this, then we can do something that’s a little better than naive summation, because naive summation accumulates floating point summation in a really bad way. And in the last meeting, WH pointed out there are a number of algorithms for doing full precision addition for floating point, and since then I have gone and implemented one of them, and, yeah, it’s pretty straightforward. So since at the last meeting WH expressed the preference that this be fully precise and a couple of other people expressed the opinion that while it may or may not need to be fully precise, it does need to be fully specified, which means either being fully precise or picking one algorithm for the specification to bless, the simplest thing and I think best for user seems to me to be to choosing fully precise summation. That’s what I’m proposing, an API for summing a number of arguments and giving you the full precision result. I have an implementation in JavaScript. Python also has fsum, which uses the same algorithm except that for some reason theirs doesn’t handle intermediate overflow. Like, if you sum, you know, 2 to the 52nd plus 2 to the 52nd plus 2 to the 52nd plus, minus 2 to the 52nd and so on, it will overflow to infinity. But you can just keep track of that in an easy way and not overflow to infinity in that case and as long as the resulting sum ends up finite, you can just give the right answer.
 
 KG: Unfortunately, it’s hard for me to quantify exactly how expensive this would be. There’s obviously a fair amount of overhead relative to the simple method of just adding things up in a C style for loop. There’s like at least five to ten times more arithmetic operations per value, but, like, in practical, that’s probably not a problem until you have a huge number of values and the case that you have a huge number of values is precisely the case that you care most about accumulation of floating point errors, so I’m inclined to say just do full precision summation. That’s the proposal.
 
 KG: So, questions. First, why not take an iterable? And the answer is that we already have math.max and math.max is variadic. I think we should have an iterable taking version of math.max, say math.maxFrom and math.sumFrom, and if this advances, I will probably follow up with that right away. Or maybe we should only have the iterable-taking version of sum because the varargs version encourages to you spread an array and that doesn’t work if you have more than 36,000 or so items in your array. Of course, it depend on the implementation, but at least in some implementations, once your array gets too big, you’ll blow the stack and get a range error, and that’s like a really annoying case to run into. So maybe we should just not have the varargs version and only have the iterable taking version. I’m open to either, having both or having only the iterable taking version. I’d like to hear from anyone if they have opinions on that.
 
-KG: Another open question is whether to coerce arguments to numbers. Math.max coerces to numbers. 
-You may remember at the presentation last time, we talked about not doing coercion to numbers or primitives in general anymore, at least to types other than Boolean. The argument for consistency with math.max is pretty strong, but this kind of coercion is pretty nasty in a number of other cases that we’ve discussed. Again, I could go either way. I genuinely don’t know how I am leaning on this, so I’d like to hear opinions on the merits of consistency versus avoiding the weird coercion cases.
+KG: Another open question is whether to coerce arguments to numbers. Math.max coerces to numbers. You may remember at the presentation last time, we talked about not doing coercion to numbers or primitives in general anymore, at least to types other than Boolean. The argument for consistency with math.max is pretty strong, but this kind of coercion is pretty nasty in a number of other cases that we’ve discussed. Again, I could go either way. I genuinely don’t know how I am leaning on this, so I’d like to hear opinions on the merits of consistency versus avoiding the weird coercion cases.
 
 KG: This one isn’t an open question, but just to mention this can’t work with bigints. You can’t -- it has to work with an empty list or it’s really hard to use, and you can’t get a value that works for both numbers and BigInts when you have an empty list. So if you need to sum a list of BigInts, it has to be in its own method, and of course BigInts don’t have to deal with the floating point precision anyway, so it’s kind of a different beast.
 
@@ -1472,5 +1368,4 @@ KG: Okay. You can review it right now if you can read fast.
 
 CDA: All right, you’ll have to settle for just JHD at the moment, I think.
 
-KG: Okay, thanks, all. 
-
+KG: Okay, thanks, all.

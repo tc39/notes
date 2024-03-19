@@ -1,0 +1,1434 @@
+100th TC39 Meeting
+7th Feb 2024
+-----
+
+Delegates: re-use your existing abbreviations! If you’re a new delegate and don’t already have an abbreviation, choose any three-letter combination that is not already in use, and send a PR to add it upstream.
+
+You can find Abbreviations in delegates.txt
+
+**Attendees:**
+| Name                   | Abbreviation | Organization      |
+| ---------------------- | ------------ | ----------------- |
+| Daniel Minor           | DLM          | Mozilla           |
+| Eemeli Aro             | EAO          | Mozilla           |
+| Richard Gibson         | RGN          | Agoric            |
+| Istvan Sebestyen       | IS           | Ecma              |
+| Linus Groh             | LGH          | Bloomberg         |
+| Nicolò Ribaudo         | NRO          | Igalia            |
+| Philip Chimento        | PFC          | Igalia            |
+| Chris de Almeida       | CDA          | IBM               |
+| Luca Casonato          | LCA          | Deno              |
+| Gus Caplan             | GCL          | OpenJS Foundation |
+| Duncan MacGregor       | DMM          | ServiceNow        |
+| Shu-yu Guo             | SYG          | Google            |
+| Jan Olaf Martin        | JOM          | Google            |
+| J. S. Choi             | JSC          | Invited expert    |
+| Kyle Barron-Kraus      | KBK          | ServiceNow        |
+| Ethan Arrowood         | EAD          | Vercel            |
+| Michael Saboff         | MLS          | Apple             |
+| Daniel Rosenwasser     | DRR          | Microsoft         |
+| Caridy Patiño          | CP           | Salesforce        |
+| Bradford C. Smity      | BSH          | Google            |
+| Ross Kirsling          | RKG          | Sony              |
+| Devin Rousso           | DRO          | Invited Expert    |
+| Romulo Cintra          | RCA          | Igalia            |
+| Ben Allen              | BAN          | Igalia            |
+| Leo Balter             | LEO          | Salesforce        |
+| Ron Buckton            | RBN          | Microsoft         |
+| Chip Morningstar       | CM           | Invited expert    |
+| Jordan Harband         | JHD          | HeroDevs          |
+| Justin Ridgewell       | JRL          | Google            |
+| Rodrigo Fernandez      | ROF          | ServiceNow        |
+| Mikhail Barash         | MBH          | Univ. Bergen      |
+| Samina Husain          | SHN          | Ecma              |
+|                        |              |                   |
+## Continuation: Intl.MessageFormat update and discussion
+Presenter: Eemeli Aro (EAO)
+
+- [proposal](https://github.com/tc39/proposal-intl-messageformat)
+- [slides](https://docs.google.com/presentation/d/1c_6VoCMJdSP59LNYEUTjCNZi8nKEw_GvMQMlvEmD91s/edit?usp=sharing)
+
+EAO: The discussion yesterday ended up covering this Q1 that I presented here. It was a very informative discussion. Thank you, everyone, for that. We did at the end of it, from my point of view, come up with what we have some push back about advancing this until there are, quoting KG here, can he have businesses, using this proposal for years, at least as the proposal is currently structured, it is unlikely that we can advance this beyond Stage 1 for at least the next few years or so. This is unfortunate for many reasons.
+
+EAO: And in order to kind of work around this issue of being stuck here, one possibility that I would be willing to consider here is, what if we left out the syntax? And what if we left out the MessageFormat syntax parser, specifically, from the proposal? And this is actually a surprisingly small change to the whole external API or the implementation itself. Even as it’s currently proposed, the source could not be just a string, but also this MessageData structure, which is defined as a part of the MessageFormat to work, as this feels like a relatively ergonomic and efficient way of representing all currently available localizable message that is we have been able to find as in formats and specific messages, even. And it is universal in that we can take a representation of a message that, for example, in ICU MessageFormat, would read something as above for formatting a message total price and then the price as a currency. And it would allow you had this represented in the MessageData model. And the significant bit here is that this representation is not just for ICU MessageFormat, not just for MessageFormat 2. Fluent works with it, really, all formats that we have been able to identify work with this data model. And this is something that we would be willing to consider as the next step here, to leave out the syntax and work based on the data model, which in very briefly, is JSON-representable, as TypeScript interfaces and types for convenience.
+
+EAO: So at the top level, the whole of the message, it’s an object, that has a type and a declarations field. And then if it’s a simple message, that means it doesn’t have any variance, then it has a single pattern in it, if it does have variance, then it has the selector or selectors that define how the choice is made between the variants and the variants themselves with the keys and value as a pattern. And they can include some variable declarations effectively at the start of this. And within a pattern, which is a sequence either of literal strings or expressions or markup, we have these sorts of  values. And, yeah. The question, then, effectively becomes on which I would like us to consider here. Is that if we leave out the syntax, is what remains really motivated enough for inclusion in JavaScript the language? And overall, I mean, the – the proposal in its current form questions like, how do we express a message in syntax and a for yours form and work with a message in a data structure, how do we format the message and how do we define custom operations on messages? And now, leaving out the syntax leaves out just effectively the first part of this. And it leaves us with a very, in fact, valuable runtime definition for how MessageFormatting really works or ought to work on the web and provides an interface definition for that, and provides a sort of focal point for the discussions about localization to continue and for the work in this whole field, to to – to coalesce around. And hence my question here: is this sufficient motivation, if we leave out the syntax for the proposal to – for the proposal to continue, so that we can later, when there’s more of a sense that there’s – there are these sorts of external indicators for success, that we could bring in the syntax string form as an alternative form of the source to be used.
+
+EAO: Now, I would like to open the queue for discussion. And I think Nicolo is first. 
+
+NRO: Yeah. One reason for having this proposal as built in the language so that people don’t have to all – shipments with polyfills, implementation. If you remove parsing – is it just very little that could be effectively just added as a third party library. How big is the remaining part? 
+
+EAO: I don’t have a number in kilobytes to give you. It is not huge because the whole – whole of of it is structured in a way that it’s relying on the Intl formatters for effectively their activities. This is entirely intentional, in fact: one of the key points here is something – I don’t know if you Zibi mentioned it yesterday, but the JavaScript layers and one of the layers we’re working on to make the localization of the whole web much easier. And one of the places where we like to very much continue the conversation after TC39 is  WHATWG and W3C, and define DOM localization or at least open up the discussion about that. And there, for instance, being able to rely on JavaScript providing an interface for the imperative API for localization and MessageFormat would be hugely valuable. 
+
+DE: So, you mentioned that it would be unfortunate if this proposal were to stay at Stage 1 for many years. Could you elaborate on that? 
+
+EAO: We have a certain amount of momentum here, and we have put the whole JavaScript ecosystem of internationalization or localization immensely on hold for the past 4 or 5 years while we have been working on this. It would be really nice to be able to have the work that goes on beyond TC39 and the users beyond TC39 be able to start getting some utility out of the work we have done so far. And also, be able to as I mentioned previously, progress the work in WHATWG and W3C on top of this. If this is stuck at Stage 1 for multiple years, then it’s not really – it’s a much more difficult proposition to expect much to happen here. In the JavaScript scope.
+
+DE: So as far as getting utility out of this work in JavaScript, can we deploy this when it’s at Stage 1 with the polyfill? Would that be too risky for organizations? 
+
+EAO: Deploy – what do you mean? 
+
+DE: An organization like Bloomberg or Mozilla could just already adapt this format through the JavaScript implementation of it. Personally, for Bloomberg, I see this as more risky, if it’s not kind of co-validated by standards processes. But it seems like that’s what they are proposing. Not the developments stop, but development take place in prototyping outside of, you know, the native JavaScript implementation. Do you think that is possible? 
+
+EAO: Anything is possible because this is code afterall. My sense is that if we don’t have the solidity and authority of TC39 backing this, any alternative is going to be facing much, much of a harder road to get forward. We will still advance. This will – the work we have been doing will still be useful. It’s just be less so and less unified for the whole ecosystem. 
+
+DE: Okay. So my second point was, talking with KG and MF this morning, we were talking about rather than saying, many years, if we could elaborate kind of a definition of what kind of experience we want to get to Stage 2.7. And roughly, I think we were talking about, and those two can clarify their own positions, once we get a number of organizations at a number of sizes trying this out end-to-end in production with some number of applications, then we have gotten experience. We have different ideas about how long we think that will take. They can continue to think that that will take many years and we can try to organize for that to occur faster. But I was hoping that we could articulate a kind of objective criteria for Stage 2.7. Stage 2 then is a little bit more complicated. In my opinion, it should be a somewhat intermediate level of experience. But maybe we can derive that in a future meeting. So if we come up with these measures, then hopefully what we could tell the internationalization communities, we’ve just maybe implicitly over-promised on how quickly this could be done. We thought it would take five years. Well, you know, it will be longer. But the committee could explicitly endorse the development of this and continue prototyping, and layout what it needs for Stage 2.7, and in terms of experience, we can deliver on that experience. Do you think that’s a path we can take? 
+
+EAO: It sounds like yes, there is opportunity for the metastructure here to advance. But my question is, given that there is, I believe, significant identifiable utility from the proposal, even if the syntax part of it is left out, and given that the syntax part of it is the part that would be slowing this down by some amount of time, that could be quite significant – could be years, could be less, but is unknowable, effectively, at this time. My strong preference would be to advance the part that is we can at this time, and then return later with a follow-up proposal adding the syntax parsing to this. 
+
+DE: Yeah. I agree that the more significant part of the proposal is the data model and the syntax is maybe more likely to be unstable. So yeah. I would want to call on the three people who raised concerns in the past, if they – you know, none of them are in the queue. What do you think of what EAO is proposing? 
+
+KG: I would certainly be less concerned with going to Stage 2 with just the API portions of it. Most of my concerns are about the DSL specifically. And not the API. That type – I agree with Dan, that I don’t think it’s necessarily going to be forever, to get the DSL to be sufficiently established, that we want to add it to the language. I don’t think it’s necessarily going to be ten years. But if you would prefer to focus on the proposal without the DSL, I do think that’s likelier to – I am more comfortable with that going forward. 
+
+MF: I’m not as convinced that the data model alone would be unproblematic,  that all the possible things that we would want to change are syntax stuff. That’s maybe my – you know, unfamiliarity, though, with the proposal. But otherwise, I agree with the other points from DE and KG. 
+
+KG: Stage 2, we often make changes to the API of things. And like, I think it’s much easier. The main reason I am more comfortable with this going forward with just the data model is that it’s much easier to augment or tweak the data model than to tweak the syntax. If you need to add a new type, that’s trivial to do in the data model and much harder with a set syntax. So I think those changes are to some extent to be expected during Stage 2, not like massive rewrites of the whole thing. But if we decide that there is additional bool, or, I don’t know, a new type, that can happen in Stage 2 and wouldn’t be shocking or particularly problematic
+
+MF: That’s true. Only considering Stage 2, I do think that it helps to advance just the data model without the surface syntax. 
+
+DE: That’s great. So we could both advance the data model sooner and articulate maturity criteria for the surface syntax. What would we need to understand that the data model is mature enough for Stage 2? What criteria? What would you be looking for? Because MF, you seem to express some concerns. And I want to know, like, what the champion ground should be doing in response to your concern, besides just going away. 
+
+MF: So this is kind of what we were talking about earlier. I don’t think I have concerns directly, like, within our process for advancing the data model to Stage 2. The concerns are about the signaling to the community, and there’s two-fold concerns there as – the one side of it is that the kinds of changes we expect during Stage 2 and the other side of it is the duration we typically expect between Stage 2 and 2.7. A clear path forward. And I am not sure we are making the right communication to the community with this proposal at Stage 2. 
+
+DE: Okay. It’s clear that communication with the community is important for everyone, for the presenter as well. Keeping it at Stage 1 would be also a signal to the community that it might discourage investment, in particular. Making things go more slowly as Eemeli was saying. Can you elaborate on what the benefits of keeping it at Stage 1 in terms of communication. 
+
+MF: I am fully in agreement with you, keeping it at Stage 1 with no other communication would possibly be seen as a negative signal to the community. It discourages further adoption. I think it would be best, if it was to stay at Stage 1, it’s best to – and I think we talked about this earlier – encourage the use of the polyfill and whatever other positive signals we need to try to gain the additional data points we need to further advance it. 
+
+DE: Yeah, I think it’s great that Eemeli has created a polyfill for all this and is promoting its use. I think going to advance to 2 would increase people’s likelihood to use the polyfill and give us feedback. Do you have significant concerns? Would you be opposed if the champion group came back and said, we are promoting the data model for Stage 2. What kinds of things would go into your consideration whether it’s the wrong signal
+
+MF: No. I would not have strong opposition to that. The – and sorry. We have had a lot of this conversation earlier and are kind of repeating it to each other in committee. So it’s kind of awkward
+But yes. I think that like – a lot of the stronger criteria is more appropriate at 2.7. So like this wider adoption by a variety of different consumers, consumers who were not participating in the development of the standard itself. That kind of stuff should be gating 2.7 and not 2. Yeah. Most of my concerns about 2 were just about what kind of signaling to the community that does. And sorry, I don’t think I directly addressed your question. 
+
+CDA: We have less than 7 minutes left. If we could keep moving through the queue. EAO? 
+
+EAO: Yeah. Just thought I would note I put together today a PR draft status, what the changes are required in order to get rid of the syntax parser in the spec in its current form and it’s about 5 or 10 lines of a div removing about one phrase of functionality from implementation to find method. The change is minimal. I invite anyone here to look at that change, if they are so interested. Because the spec itself is already defined completely. The runtime operations in terms of the data model, rather than the syntax. 
+
+RCA: I am in agreement with the current proposal. But I would like to understand or have a clear definition of the next steps regarding the syntax. As we mentioned yesterday, we needed and it wasn’t then clear what were the requirements to that. So I think that point would be extremely important to work on the proposal for the syntax parser in parallel.
+  
+SFC: Yeah. So Stage 2, we keep talking about we need this, you know, to have the experience using the syntax and all that, which is fine. But that seems like, to me, a requirement for Stage 2.7. But Stage 2 basically means that we as the committee think that the proposal is motivated. And we do want to see a syntax-based MessageFormat in the language. I see no reason that Stage 2 needs to be blocked on the syntax having, you know, on the ground experience for a certain number of years. Right? 
+So I think it might be good to clarify that if we as a committee believe that the proposal is motivated, does that really need to block Stage 2, maybe only 2.7. We can then continue to progress with the – having a higher understanding of the proposal and knowing that the committee is behind us. You know, as we develop – continue to develop the proposal. And to get this experience that we are looking for. 
+
+LCA: Yeah. I was wondering, how useful do you think the data structure is for using MessageFormat with the data structure even after the syntax is introduced? Like is there still going to be users that use MessageFormat with the data structure, even after there’s a surface syntax? 
+
+EAO: Short answer here is yes, absolutely. Largely, this is something like MessageFormat 2 is interesting to people and organizations and about projects and applications that are already interested in localization. And this means that all of these things, all of these interested parties already have some solution for the localization and one of the important things that the data model things is that it brings this ability to bring your own parser. And this means that a user could bring in effectively – keep their messages in their current shape only, air quotes only, the runtime formatting of how those messages are being used. And this is likely to make it much, much easier for migration from existing or legacy formats to MessageFormat 2, for instance. 
+
+LCA: Okay. Thank you. That clarifies things. 
+
+JSC: Yeah. Real quick. The data model is abstract enough to also add JSON and XML forms. That’s all. 
+
+DA: Within the MessageFormat, development group, campaign group, Mozilla like, Eemeli has been taking the position of everyone should adopt the surface syntax whereas other people in the group have been advocating for, well, the important thing is the data model because I want to stay with the XML format. Or other things. The data model will be useful. It doesn’t add expressiveness because you could always serialize it. But that’s – it’s not even something that everybody is completely set on, they want to adopt this particular DSL as opposed to adopting other serialization. Is that accurate, Eemeli? 
+
+EAO Yes. 
+
+CDA: All right. We have 1 minute left.
+
+EAO: Is it valid for me to ask for Stage 2 possibly at this point or should that be done at the next meeting? That would be Stage 2 without the syntax parser in the proposal as it currently is. 
+
+CDA: The agenda did not call for a proposed stage advancement. 
+
+EAO: If that’s saying that it’s not valid for me to ask for that, then I shall not. And I notice a reply from asking to discuss more in TC39 2. This is fine. This is what we will do. 
+
+CDA: You can certainly ask. It’s not invalid to ask for it. KG? 
+
+KG: Just for signaling purposes, I guess I am fine regardless of whether it happens at this meeting – I would be fine going to Stage 2 with just the data model. So I don’t know if other people object to it happening at this meeting, but yeah, if you want to go with just the data model, for Stage 2, that’s fine with me. 
+
+SFC: In TG2 we reviewed the proposal and had similar discussions now, but I think that, you know, this idea of a data-model-only proposal was briefly mentioned as a possibility that we might consider, but I don’t know if all the TG2 delegates have reviewed that portion of the proposal. So I think it would be – there’s no harm in waiting a couple of months to have everyone on board and have a strong thumbs up next meeting for Stage 2 with that form of the proposal. 
+
+DE: It would be good if I could ask for concerns that anybody has with this resolution next meeting. Especially for non-TG2 people, Michael or Shu, raised concerns, have thoughts on this. Maybe we could do that off-line. [In chat, SYG confirmed no objection to Stage 2 without the syntax.]
+
+CDA: Okay. You got a + 1 for Stage 2 with the data model from Luca and + 1 from JS Choi. Some folks don’t want to advance at this time. 
+
+EAO: Yeah. I am not going to ask for Stage 2. The point SFC made is valid. We need to discuss in TG2 before we ask for Stage 2 here. 
+
+### Speaker's Summary of Key Points
+* Some TC members have strong concerns about adopting any novel DSL before it has seen significant real-world usage.
+* This means that with the syntax parser, it could take multiple years until the proposal is standardized.
+* Leaving out the syntax parser, and only initially supporting a data model representation of messages, would unblock progress.
+
+* To standardize the syntax of a DSL, it would be meaningful/persuasive to see around a dozen organizations of various sizes, including ones which were not involved in MF2 development, make significant use in production of MF2 syntax across their stack (engaging application developers, translators, infrastructure developers, …). This will likely be required for Stage 2.7. It remains to be defined whether an intermediate, lower amount of experience would be sufficient for Stage 2.
+### Conclusion
+* In a future TC39 meeting, there will be a presentation on Intl.MessageFormat for Stage 2, leaving out the parser. The committee has not expressed any concerns about this approach, but it remains to be reviewed in TG2.
+* TC39 encourages continued development, prototyping and deployment of MessageFormat 2 syntax, e.g., implemented in a JS-level library
+
+## RegExp.escape hex escape discussion + for stage 2.7
+Presenter: Jordan Harband (JHD)
+
+- [proposal]()
+- [slides]()
+
+JHD: All right. Good morning, everybody. I am here to talk about RegExp.escape. So there is one outstanding issue, I am going to talk about that in a minute . . . but setting that aside, this is the entirety of the spec. It’s adding a few more escapes. This is adding a few more escapes that are valid in unicodeMode RegExps, and here is the RegExp.escape function that does the escaping. Essentially, asides from this other issue, I would say this is ready for Stage 2.7. To start writing tests.
+
+JHD: The remaining issue, however, is about hex escapes. So the current specification . . . so there was a question about using hex escapes. So, for example, you can see this example here, where if you put an ampersand in there, it puts a slash in front of hex escapes. So the sort of – the preference of myself, the champion, and KG, as well, would be to have the more readable escapes which are not the hex escapes. MF has indicated that this – he prefers to have the hex escapes because it makes the regular expression grammar less complex and MF feel free to step in if I was misstating your question. It is that "the readability of the output of RegExp.escape doesn’t matter". There you go. Do we change this to use hex escapes or not? My preference is not to. But I would want to hear thoughts before the committee about the pros or cons of the two approaches. If we decide to make the change, I will not be asking for stage advancement today. That is only in the case that we decide not to make the change. 
+
+MF: Yeah. I guess I want to clarify my position here. My position is not based on the RegExp.escape output. I frankly could not care less what the RegExp.escape output looks like. In fact, I like negative care about – I want nobody else to care about what the output of RegExp.escape is. The concern should have been expressed as this feature for RegExp escaping adds RegExp syntax unnecessarily. There are new identity escapes for a bunch of ASCII characters being added by this proposal, so that the output of RegExp.escape can then use those identity escapes. We should not be putting those two together. If we want identity escapes added, add identity escapes. What this means is, people who never intend to use RegExp.escape are still getting this feature. They still have to be on the lookout for identity escapes inside the RegExp. They are able to use this. I don’t want to encourage people to use this. So we can add RegExp.escape with identical functionality as far as the behavior of the RegExp without doing that. So that’s why. And I don’t see a downside of using hex escapes for RegExp.escape.
+
+KG: Yeah. First thing is just, I don’t think JHD mentioned polyfillability. This is a concern some other people made which is that because the use of the more readable version requires changes to the RegExp syntax, it can’t be polyfilled. It cannot be easily polyfilled because you have to replace the RegExp parser and all that, which is a valid concern. The second thing is, I think we should prioritize the output of this being readable, even though it is intended to be executed rather than read because you will still end up reading it. Like, you’re going to debug this and you’re going to print stuff. Like, it is code, but code is data. And data gets consumed by humans a lot of the time. I think it’s worth putting some effort into making the output more legible. That’s all. 
+
+MLS: Is it meant for humans or tooling/APIs, and I think it’s meant for tooling/APIs. This part, as far as escaping things, there’s – the different modes of RegExp allow different escapes, IdentityEscapes, you don’t have characters here, but it could be the case that at some point, some of these characters that we would escape would be part of the fourth mode of regular expressions (and I hope not). So I think we have to be a little careful about what precedent we set with what escapes we generate. So going back to my rhetorical question: I think that, yes, humans will read this, but we have to be careful that in making it readable, even though it’s for machine consumption, we don’t shoot ourselves in the foot with something future.
+
+MF: So I agree with MLS here. Tooling is obviously the consumer. I think that you said it was a rhetorical question. Not all of us are actually in agreement about that. But I agree with that, that tooling is the consumer, passing directly to an evaluator, or to do further processing, and God forbid you ever actually have to look at a RegExp. People can’t read them to begin with. You’re already not reading a RegExp. You put it in a visualizer. If you are concerned your Chrome DevTools doesn’t have a visualizer for your regex or an explainer, they can add that, right? That’s a tooling solution. You don’t need to read RegExp. You shouldn’t read RegExp. You should use explainers anyway.
+
+SYG: We also support not adding – agree with MF, and probably should not add new IdentityEscapes here. For the same reasons, I think. Everything seems pretty reasonable. 
+
+JRL: Justin prefers hex escapes. We need hex escapes for digitals.
+
+RBN: Yeah. Kind of piling on with this as well, I also don’t think that we should be trying to introduce new IdentityEscapes. Because as has also been said, introduce a new mode for RegExp like we have for unicode and the new kind of extended unicode that supports set notation. We may, in those more restrictive modes, want to introduce escapes from the occasions meaning something different than what they mean in non-unicodeModes. Therefore, having the escape mechanism generate IdentityEscapes for things that might have a different meaning and different modes is not a good idea. And I think using or adding these here would essentially preclude us from ever using them for some other meaning. 
+ 
+MM: Agree no regular expression syntax changes.
+
+KG: I am in the strong minority, so I will let it go. I will respond to RBN. I would object to any use of any of these punctuators meaning anything other than IdentityEscape. `\-` cannot mean anything other than `-` in any mode ever. So it's fine for `\-` to mean `-` instead of being an error. But since there’s other concerns, I am fine letting this go and getting unreadable output. Whatever. 
+
+JHD: Well, then, in that case, I will come back at hopefully the next meeting to request 2.7 with the changes that remove the syntax changes and add the additional hex escaping, and that’s it for today. 
+### Conclusion
+- Will incorporate hex escaping, and return at a future meeting to request stage 2.7.
+## WasmGC shared memory proposal and shared structs proposal convergence update
+Presenter: Shu-yu Guo (SYG)
+
+- [proposal]()
+- [slides]()
+
+
+SYG: This is not asking for stage advancement. This is an FYI to committee about some changes that are happening in the WasmGC space with respect to shareholder memory and our plans to basically converge with that compatibility. And to be clear, this is not new. This has always kind of been the plan for shared structs. And giving an update now that the WasmGC side of things have picked up steam and there is a formal proposal there.
+
+SYG: What has been happening over in the Wasm land, WasmGC is an extension to MVP Wasm, purely about having access to linear memory, like ArrayBuffer or SharedArrayBuffers. WasmGC adds the ability in Wasm to allocate and manage structs and arrays. Basically, letting the Wasm runtime leverage the GC that is already there, and this enables manage languages to better target WASM so JavaScript and Kotlin, C#, things of that nature, that already are managed, do not have manual memory manage like C or C++. Instead of requiring compiled languages to ship a GC runtime and all that, this extension leaps them to directly use what the underlying engine already has, in terms of garbage collection. lets them use V8's GC, Safari, SpiderMonkey et cetera. This ships next year and the next is enabling multi-language memory sharing, like JavaScript and Kotlin have shared multithreading and it's a tried and true way to scale for that.
+
+SYG: The overview of WasmGC shared memory proposal, still early days, a lot of discussions on going with the stakeholders over in the Wasm group, the general overview of that proposal looks something like this: there are also shared, WasmGC structs, and they cannot point to unshared things. So we don’t leave the unsafe edges to share to unshare things because that’s not safe. It also helps the – the reasons goes, it helps the code better, you have the two worlds shared, but this will be Wasm and not JS: that restriction is currently proposed on the type level. On the Wasm side, it has a typed system that is validated before the module is compiled and run. There’s going to be a shared bit on types there on the Wasm side. That enforces this restriction.
+
+SYG: And also, like the JS proposal, the Wasm side proposal is that these shared WasmGC structs are shared. You are sending the pointer to that object, you are not rewrapping it like we currently do for SharedArrayBuffer, which is again for folks not familiar with API, SharedArrayBuffer object itself is never shared. That is a JS object and it can not be shared. What happens when you postMessage a SharedArrayBuffer, that you construct a new shared away buffer on the other thread that happens to point to the same underlying piece of shared memory. So that is not the sharing that is happening here. What is happening here is that the objects themselves, the structs are shared. Wasm functions can be shared. These are not JS functions. They don’t have identity, they’re not like first-class things to attach properties to, a prototype, these are just things in a table, I think, and those things can be shared because they don’t have the issues that makes them deeply shareable, like in JS. And like the JS proposal, the JS function in web API still cannot be shared for the same reason we can’t share them on the JS side. They are deeply tied to the realm they are created in.
+
+SYG: The question is, if JS functions in web apps are unshared, how is shared Wasm useful? Like do they call out the embedder? Remember that Wasm itself also doesn’t do anything. Just like JS, if you look at ECMA-262, it doesn’t do anything. You need to embed it in something else to do print screen, fetch, IO, et cetera. And for Wasm, Wasm is usually embedded on the web JS and JS is embedded on web inside your web engine. So JS is what can be thought of as the syscall layer for Wasm. And the thinking here is that to bridge the shared and unshared worlds, there is a thread local, basically a thread local syscall table on the Wasm side. This table will have the same structure across all the threads. And each thread fills in its own copy of the APIs that it needs on the thread. If you need to fetch, we say slot 0 is this thread’s fetch. And the APIs work across the APIs even if they have separate JS functions. So the core functionality there is thread-local storage. Where each thread has its own view of something.
+
+SYG: What happens when you want to get these shared objects out of Wasm into JS, for example to send to postMessage? And here is basically I think the other main point of convergence with the JS struct proposal, the JS reflection of shared Wasm are actually shared like the JS proposal, and they have not just user created WasmGC struct, but WebAssembly API layer, this WebAssembly namespace object on the global, there’s a bunch of things in there, I have dot foo as a stand in, but WebAssembly, global, table. But a bunch of stuff, the constructors on WebAssembly can now be shared. If you have shared Wasm, those things have a shared counterpart to their unshared counterpart. And those shared things like WebAssembly.Global would behave like actual shared objects. Specifically, because those things have prototypes today, the idea is that they’re shared versions will have realm-local prototypes, similar to something I presented previously for, on the JS side, how would you do realm-local prototypes or thread-local prototype for user-declared struct types. This is semantically proposed to be the same semantically, but not user program. These things already exists. And you can basically think of that as the thread, say, version of primitive object wrapping. Like today, if you have a boolean, a number, you can call prototype methods on it, but where does it come from? From this magical wrapping. When you do a .foo access on some primitive, you look up what the prototype object corresponding to that primitive is in your current realm and do this magical wrapping. So it’s basically like that, except thread safe and realm-local. I guess the primitive thing is already realm-local. So the idea is that these shared things on WebAssembly will behave, just like what we are thinking how JS shares structs should behave.
+
+SYG: The last bullet point is that for user-defined WasmGC structs and array in the unshared world today, if you get them out of WASM, if you export them out of WASM into JS, they appear as opaque things and the only thing you can do with them is basically use them for their identity in the keys of maps, WeakMaps and so on. There is no ergonomics way today to get field access off of them. What you have to do is export getters, manually out of Wasm, if you want to get the data out. This is kind of a known limitation that the Wasm side punted on making more ergonomics until use cases really arise, but in the current prototypes and partners we are working with, no great need has arisen. Everyone expects to be muted in the future, but not yet. Until the use cases arise, I don’t think this changes for the shared side either.
+
+SYG: Here is a breakdown of where things converge and where things diverge. So core to both the JS and the Wasm proposals, things that have to be shared and have their and have the exact same form, is the memory model. I think that is a non-negotiable, like we have the same memory model for SharedArrayBuffers and linear memory – we must have the same memory model structured data as well.
+
+SYG: Both proposals propose objects that are actually shared and not rewrapped. Both need some kind of run time checking for shared to unshared edges. JS doesn’t have a type system, so we must do this checking, and JS reflections, have Wasm things, must do this checking. And as I’ve explained, both need some notion of thread and possibly thread and run local stores. Both thread and run local. This is somewhat open to discussion still, but some kind of local storage, scope to either thread or around that can bridge the shared and unshared worlds. And a consequence of that last bullet point is that shared objects must be usable as keys in WeakMaps. So that’s what’s core to both. What only the JS proposal needs to concern itself with is the JS author and experience. The syntax of shared structs, the type 
+registry idea I presented last time that we were shopping around with with RBN and MAH and 
+other folks, that’s a JS only concern, because there’s a DX concern for folks working in JS and 
+TS.
+
+[technical problems :) ]
+
+SYG: All right, so where was I? The JS only concerns, so the author and 
+experience part and also high level synchronization primitive, MLS brought this up 
+last time. I do believe that JS needs high level synchronization primitives beyond what we have today, which are just few texts, and I’ve been thinking of things like not just text of condition, but maybe instead of a non-recursive single mutex we can have something like a slim read-write lock, as the high level lock. Condition variables, I think, are a foregone conclusion as well and need async locking for the JS side. So for the Wasm side -- its outside the purview of us and the core concerns. There is the Wasm 
+authoring experience for how Wasm tool chains would take advantage of that proposal. We don’t 
+care about that. The static check on shared stuff, that is also only a Wasm concern. And very low level synchronization primitives I’m going to claim for now are Wasm only concerns. This might change, but Wasm -- something like a few texts or what I’m thinking 
+of as a managed waiter queue, which is basically  the only reason the few -- it is 
+basically a waiter queue, except it’s indirected through the memory address, and as far as I 
+can tell, that’s because memory addresses are the only keys that you have to work with in, 
+like, C, but if you have direct references, you could just give people managed waiter queues 
+directly, which are basically few texts that are a little faster, and I think that remains the 
+right level of abstraction for Wasm. Because they are compiling high level synchronization 
+primitives that down level to something else directly. They are not going to be able to use 
+whatever high level things we provide them. So this a pretty high level view of separation and 
+where the concerns are separate and where the concerns are not separate.
+
+SYG: So what are the next steps for the Wasm proposal and for this proposal? So for the Wasm 
+proposal is -- well, okay, before I get to that, the goal here is that it’s good for the 
+platform to converge. I don’t think we want to be in a future state where something like this 
+capability only exist on the JS side or only exists on the Wasm side. We should be thinking 
+about convergence from the get-go, because it’s going to leak abstraction-wise anyway. If only 
+happens in Wasm, it’s going to be usable on the web via JS through the Wasm JS API, maybe in a 
+really weird way, so we should converge the two proposals. And there is -- there’s commitment 
+that -- from both sides that this is what we do. And Wasm and JS share some of the goals, but 
+not all the goals, namely what kind of authoring experience we want to enable, like, our 
+constituency are, you know, JavaScript programmers, TypeScript programmers. Wasm’s main 
+constituency is not the Kotlin programmers and the Java programmers but the toolchain 
+authors to be able to compile Java. We share some goals but not all of them. I think next 
+step for the JS side is to -- is that we split the feature set of the current proposal, because 
+it’s already getting large -- fairly large, is to have an MVP feature set that ensures the Wasm 
+conversions and a base authoring experience. I don’t want something that -- I think I don’t 
+want something that is extremely unergonomic to the author. But we can probably pair some nice to 
+haves and we can cut those onto it later, and the rest of the stuff that is post MVP we can 
+deprioritize while we’re working in lock step with Wasm, basically.
+
+SYG: And the plan is to come back for Stage 2 for this MVP feature set. So, okay, before I dive 
+into some deeper dive -- deeper dive into some interesting technical kings that came up with 
+the Wasm discussions that have not come up in the JS discussions, any queue items about the 
+high level overview I have provided? I see two things on the queue.
+
+LCA: Yeah, I have a question about the syscall table. Is the syscall table scoped to the thread 
+by itself or to the thread plus the instance, and sort of the real question I’m asking is is 
+the instance locked to a given thread or is the instance shared across the threads, Wasm 
+instance?
+
+SYG: I’m pretty sure the instance is shared across threads, so the things that, like, per thread 
+has a view of would be this table and whatever TLS thing.
+
+LCA: Okay, so that makes it impractical to run two Wasm instances with different trust levels in 
+the same JavaScript thread, is that correct?
+
+SYG: I mean, you can -- then you can make two instances with different tables.
+
+LCA: But you said the table is -- like, okay, so --
+
+SYG: So the instance has a table and the table has a thread local -- has a per thread view, but 
+you can have another instance with another table. This -- there’s a separate table and that 
+table has its own thread local view.
+
+LCA: Okay, how would this table be populated on a different thread?
+
+SYG: There would be a handshake initialization phase, basically, where, like, initially -- 
+currently, I actually don’t they how Emscripten generates this stuff, but it generates some 
+bootstrap code basically, so when you send over your instance to run before it can run, there 
+would need some boot call strap thing like populate my table, and this was identified -- this 
+the exact handshake thing was identified as a real bad DX problem for JS author and experience. 
+I’ve raised the same thing with the Wasm folks and they said, well, we already do this 
+handshake phase today, so we think we can live with it, but this is early days still, maybe 
+I’ll also find that it’s problematic.
+
+LCA: Because I was talking to some Wasm folks a couple weeks ago, and they had mentioned that 
+there was thought about, like, removing this handshake and being able to start the thread from 
+the Wasm itself, which, yeah, I don’t know, I’m not  sure how exactly I feel about that.
+
+SYG: Yeah, I think it’s still early days.
+
+MAH: Yeah, my question is somewhat related. Currently if Wasm moves towards removing the 
+handshake and then it most likely would have to rely on the global table that is not by the 
+module instances, and that effectually would end up creating an observable, mutable states for 
+not even the realm, but for the whole agent. And that is problematic, so it’s -- like, this is a 
+Wasm concern, but it has impact on JavaScript or it can have an impact on JavaScript, depending 
+on which route Wasm takes.
+
+SYG: I hear your concern. I did not share that concern, as you know. But I think the most 
+a productive thing is if you’re not already engaged in the CG, to bring this concern up there. 
+Because whatever we say here, we still don’t have any force over what they did.
+
+MAH: I mean, at some point, WebAssembly is going to be exposed to the JavaScript realm. Is that a host question, then?
+
+SYG: What do you mean it’s a host question for, like, blink?
+
+MAH: Yeah, so it’s WebAssembly’ is technically something introduced by being better of the 
+JavaScript engine.
+
+SYG: Well, in the web setting that is true. In other settings, JS is not the embedder of Wasm. 
+It’s not true everywhere, anyway. But in the web it is.
+
+MAH: Yeah, we’re going to continue engaging there. We had a condition, I hope, that they -- that 
+we can continue engaging there, because that’s -- it would be a shame to have to -- for 
+environments are concerned about global state like that, to have the remove Wasm for it.
+
+SYG: So I think this global mutable state is a concern from you, I’m month sure where you should 
+best raise that. If it’s -- maybe you’re right, though, it is a -- you know, if you get the 
+HTML side to agree that this is a concern, a principle they want to uphold, that might have 
+some force on what Wasm does. But I don’t think that’s a widely shared concern everywhere.
+
+MAH: Yeah. I mean, WebAssembly is not web only, so that’s the concern.
+
+SYG: True too.
+
+MAH: All right, thanks.
+
+DMM: So you mentioned condition variables, and I’m concerned that if you don’t allow blocking on 
+the main thread, they’re going to be extremely difficult to use from that main thread to get 
+the coordination of releasing the locks, waiting and reacquiring the locks to be correct. I 
+wonder if we should actually be aiming for some higher level constructs that will be less prone 
+to getting it very wrong.
+
+SYG: The main thread will basically need special handling for all of this. As it is today, the 
+main thread can’t straightforwardly use mutexes because it can’t block, unless it wants to 
+emulate blocking. That will remain the case, so your concern is valid, and I think the -- 
+these APIs will still -- like, most of the uses will be workers with other workers. Not 
+workers with the main thread. The main thread would just need to be special.
+
+DMM: I tend to agree, but I think something like a blocking queue or something like that is 
+easier to implement with a minimal sort of timeout for getting things rather than --
+
+SYG: Thank you for calling that out. That’s an even longer term proposal, to have something like 
+concurrent collections.
+
+MM: Okay, so first of all, let me say I appreciate the Wasm update, in particular the -- seeing 
+progress on was WasmGC is very exciting, I’m been excited about WasmGC from the very beginning 
+did, this concurrency model in in general shared memory multithreading is perfectly reasonable 
+and attractive thing for the growth of Wasm. It’s very much in line with the design sense of 
+Wasm. It’s completely abhorrent to the design sense of JavaScript as well as the contamination 
+that it would do the existing ecosystem, as I’ve explained before. So I do understand that JavaScript and Wasm are going to -- you know, do co-exist and will continue to co-exist after shared state multithreading getting introduced to Wasm. I think it’s really important to keep it out of JavaScript. That I think that the shared structs proposal should, as a proposal for JavaScript should never happen, and that the -- if the shared structs are only on the Wasm side, well, the Wasm side already has its own story for providing behavior on the Wasm side as well, so the whole issue of having functions on the JavaScript side, having behavior somehow associated on the JavaScript side, can be avoided if we simply avoid shared structs completely on the JavaScript side. And finally, the kind of engine integrity concerns that motivated you in particular to recommend the the creation of TG3, I think any introduction, any further introduction and shared state multithreading into JavaScript, especially of on the heap with regard to objects that are visible to WeakMaps, et cetera, I think those things should be very scary from an engine integrity point of view, and this should be taken to TG3 for critical review on those grounds for exactly the reasons that motivated you to want TG3 created in the first place.
+
+SYG: I have a reply, but I see other replies on the queue.
+
+DRR: Is your suggestion that shared structs can only be created by wasm and consumed by JS? Or entirely inaccessible from JS?
+
+MM: So the -- so I don’t know. Let me float a hypothesis that may or may not be consistent with the rest of the picture, and maybe you can tell me. The hypothesis is that, you know, the host already exposes host objects to JavaScript, as long as the -- what’s necessary on the JavaScript side to account for the behavior of an object exposed to JavaScript as if it is, you know, in the category of host object, as long as that’s consistent with all of the constraints that anything exposed as the host object in the spec right now must maintain. And excuse me for using non-spec terminology. I know the host object is no longer the terminology. But all the object and variants, et cetera, that apply to these things, the concurrency of what happens on the host side of invoking a host object isn’t necessarily visible to JavaScript and hopefully can be -- can remain non-visible to JavaScript, so I think the answer is, yes, they could be accessible as things for JavaScript to invoke, but to keep all of the shared state multithreading out of JavaScript and not have it infect the JavaScript script spec itself. The main concern there would be the TG3 one, which is is even that level of interoperation with Wasm dangerous to JavaScript integrity level? And for that one, I do not know the answer.
+
+KG: Yeah, so, Mark, I first want to express agreement with the concerns that this is, like, a very scary thing to do and kind after different from something in JavaScript before, which with the exception of course of SharedArrayBuffers, which are multithread state. But I do want to really strongly disagree with the thesis that therefore we should not do it. I think that the threading story in JavaScript is currently very poor and that that is, like, doing major harm to users of the web. It causes people’s experience to be worse in a really concrete way, that using the web is bad because of our failure to make threading more convenient in JavaScript. And shared state is a big part of how one makes threading more convenient. So I think this is a really, really important direction for us to go, despite sharing your concerns about the security story, both in terms of the complexity and potential for bugs in browser engines and the additional complexity for JavaScript authors and people trying to analyze JavaScript programs. I think it’s just too important  not to do, despite sharing those concerns.
+
+MM: We are in complete disagreement here. The experience with languages that have shared state multithreading, in particular, conventional shared state multithreading with fine-grain locking, which is what we’re talking about here, like Java and C# and others, is that a large number of programmers at the same skill level as the average JavaScript programmer and even a substantially higher skill levels that -- feel like they can, you know, look at this, think they can program it correctly and make a mess. The history of programs of memory multithreading programming languages has just been awful, with regard the how bug prone they are, both with regard to, you know -- both in regard inconsistency and in regard to deadlock. And the -- if we were talking about something like the Rust approach to shared memory multithreading, that would be very different, but we’re not. And obviously it would be -- it would be a tremendous research effort to try -- to try to conceive of something like that in JavaScript and probably would not work. I think that the friendliness of JavaScript to the web and the fact that so much code out there written by programmers as normal skill work is largely to the credit of the communicating event concurrency model, especially concurrent communicating loops with promises, the whole -- you know, the paradigm that JavaScript really brought to world has just been incredibly more successful at enabling programmers at reasonable scale to write code that deals with concurrency. And I think SharedArrayBuffers was a terrible, terrible mistake, and I think so far the reason it hasn’t caused more disaster is because it’s so unusable in its current form that it largely goes unused. And every step that we make towards making it more usable will create more actual practical problems on the web.
+
+RBN: MM's statements seem to indicate that shared memory concurrency is in general just a bad idea, which I point specifically to the developers with adequate experience with the language to be able to write web applications and that the event model based concurrency mechanisms are effective, but when you get into very large, very high complexity applications that reach the point where they essentially require multithreading, this concurrency is not efficient enough, it’s not reliable enough. You’re using one core on systems that might have 32, and when you’re looking at very large applications like Office online, like anything that’s using WebGL, you can very easily run into issues because you cannot farm some of this work out to other threads without using a Worker and using SharedArrayBuffer to do that type of work is inefficient, it’s complicated, and it’s, as you said, essentially unusable, and that’s I don’t think a benefit. It may have pushed a certain style of development and a certain class of developers to focus on it, but it leaves out these very important scenarios that we are unable to actually leverage and by saying “only make this WasmGC” isn’t saying that the few people that need it will use Wasm for it. It’s saying that these large applications that have high throughput, lots of users that need these benefits will most likely move wholesale off of JavaScript to a Wasm-compiled language just to gain the benefits that we could provide them, and I really don’t think that’s a benefit for the language, to essentially hobble ourselves and prevent this type of future development. We can look into concerns about security and performance. We can look into concerns about ease of use and avoiding foot guns, but I think throwing it completely out the window and saying we’re never going to touch this is not a very good direction to go.
+
+MM: So once again, I do disagree completely. The -- if a program does not need to be correct, it can be made arbitrarily fast. And if shared memory -- you know, share array buffers are unusable in the sense that it deters programmers from trying them. Shared-memory multithreading, conventional shared-memory multithreading in languages like java and C# have the opposite problem, which is that programmers think they can use them, they try to use them and they make a mess. So many people have put so much effort at enabling Wasm on the web specifically so that people who need something other than JavaScript have an alternative that Wasm even supports, you know, as -- is also a compilation target from a good Rust implementation, if someone actually wants the benefits of shared memory multithreading without the error proneness, rust is pretty much the only production language I would recommend. It’s available in Wasm. It cannot be made available the corresponding currency model cannot be made available in JavaScript. And conventional shared-memory multithreading should just not be -- you know, it’s an attractive nuisance to most programmers. It just causes tremendous amounts of buggy concurrent programs, and the nature of the bugs tend to be non-deterministic and much harder to debug than the kinds of concurrency bugs you get in other types of programs.
+
+SYG: In the interest of time, MM, let me tell you what’s going to happen. This is going to come to WasmGC. It’s not possible to contain it in WasmGC in the way you would like. So the reality will be that if this does not move forward in JS, this will come to WasmGC as a capability, which means it will be a capabilities on the web, which will mean it will be usable for JavaScript for those that want it with a bad authoring experience. And even that is repairable at some extent at the Wasm layer. Which is not repairable is the syntax. That, I think, it’s my bet for what the reality will be if this comes to WasmGC. Not isolation within the Wasm world, because these shared objects will need to come out of Wasm to be post messaged, to do other things with. I don’t think there’s a way to contain the observation of the parallel non-determinism stuff you’re worried about without preventing Wasm objects to ever escape to JS, and that is just not possible.
+
+MM: Well, so I would -- so I find that claim interesting. I’m very skeptical of that claim. So I would like to examine those possibilities with you. I don’t see right now why that is impossible.
+
+SYG: I just told you why it’s not possible.
+
+MM: I did not -- in that case, I did not understand your explanation.
+
+SYG: Let me try again. If you have Wasm objects that are shared, you have to get them out of Wasm to do something useful with them such as pass them to the web APIs or other embedder APIs to actually have effects on the world like I/O. Once you get them out, you would need to explain some behavior that those Wasm objects on the JS side have. You would need to be able to get data out of those objects. You would need to post message them. You would need to possibly pass them back into Wasm. So there’s no way to contain the observation of the parallelism and the non-determinism, because you need to actually get stuff out -- you have to get data out to -- unless you’re saying the boundary itself is restricted. Then we can have your world, but that ship has sailed.
+
+MM: No, the -- let me repeat something that I explained, that I said in an answer to an earlier question, that itself I’m uncertain about. But my hypothesis is that the Wasm shared objects can be exposed to JavaScript as if they’re host objects without any change to the JavaScript language, that they can fit within all of the constraints that the JavaScript language specifies that host objects must be constrained by, the object invariants, et cetera, and that the JavaScript’s point of view, the -- you know aux of the concurrency in those host objects is internal to those host objects, and if the JavaScript language did not 
+have to be aware of that concurrency.
+
+SYG: Then it sounds like your concern is spec and purity and not worried about what might happen 
+in the ecosystem.
+
+MM: No, I am worried about what might happen in the ecosystem. The particular -- that 
+particular way of co-existing keeps all behavior, all shared -- all of the expression of 
+behavior under concurrency on the Wasm side. It does not -- it never has a JavaScript function 
+having to think about the shared state concurrency, having to think about the, you know -- the 
+locking versus race conditions. You keep all of that on the Wasm side of the behavior of those 
+objects. And you expose red safe objects to the JavaScript side.
+
+SYG: That is not possible. Like, you can export Wasm functions that are callable from JS that 
+can act on Wasm objects that exhibit data races.
+
+MM: You can. The -- I mean, you know, you can write buggy code in anything. The idea would be 
+that the -- to -- is that on the Wasm side, the way you use -- the way you would use this 
+co-existence is to do all of your concurrency handling and variant maintenance on the Wasm side 
+of the behavior and expose to the JS side APIs implemented on the Wasm side where the JS side 
+just sees thread safe APIs.
+
+RPR: Okay, we are almost at time. And we have both KG and DE in the queue.
+
+KG: Yeah, so I guess I was mostly just restating what RBN said. MM, you’re 
+correct that JavaScript model of concurrency has worked really well for it and it’s enabled 
+people to write programs - not always bug-free programs, because the concurrency still gives issues - 
+but it’s enabled regular people to write concurrent programs, and that’s great. But that’s not 
+enough. We need parallelism. Concurrency is just not sufficient. The experience of a user of a web page if the web page does not have a good way to be parallel is worse, because everything the contending for the main thread including the UI. I don’t think we should consider that an acceptable state affairs. I think we really 
+do need to have some story for parallelism as well in JavaScript. Not just concurrency.
+
+MM: Once again, if a program doesn’t need to be correct, I can make it arbitrarily fast.
+.
+KG: It does need to be correct, and it also needs to be fast. And if there’s no way to do 
+parallelism, it can't be fast. And if it can be parallel, it’s possible - 
+difficult, but possible - to be both correct and fast, and that’s a state that is necessary.
+
+MM: The shared structs proposal is not a route for regular programmers to write code that is 
+correct.
+
+DE: Thanks for doing the extension. So this proposal seems really good to me. I’m still curious which parts you’re going to put in 
+the MVP and which parts not. But even just starting with the Wasm API only part, I think that 
+would give some building blocks that would allow adoption of this within JavaScript in a way 
+that’s easier adopt than rewriting your whole program in Wasm. The shared struct type registry 
+and making prototype the actual -- the actual prototype of a JavaScript object, accessing the 
+thread local storage, that seems quite important to avoid the need for wrappers. And syntax 
+would -- I’m in favor of the syntax if we can figure it out. I’m glad -- I’m really glad that 
+you’re maintaining the correspondence of these two proposals and thinking about them together.
+
+SYG: Thanks. For what’s in the core MVP, that is still -- we’re still hashing that out with RBN 
+and -- yeah, with RBN. But I guess depending on Mark’s veto here, it is possible that we get 
+experience first via the JS-Wasm API and depending on how things go, that we -- like, that is 
+how you consume these things in the future, I think then we’re doing the language a disservice 
+and we’re doing our users a disservice, but we’re not closing off the capability. And frankly, 
+MM, that’s not in your purview the block on the Wasm side. So I feel like that is just 
+coming one way or another, so at least in response to Kevin, I think we will have this on the 
+web perhaps in a really crappy DX way, and maybe we can try to repair that later.
+
+MM: I’m sorry, just what in what I said sounded like there was something on the Wasm side I was 
+interested in blocking?
+
+SYG: Well, I heard one concern from you earlier that we ought to have more guard rails for the kind of correct programs that we enable JavaScript program force write, and shared-memory multithreading programming is taking a significant chunk of guardrail off in the way of performance you don’t find desirable. I don’t even disagree with that, and the need and demand is there and that’s why it’s being proposed in Wasm and originally why I to proposed it in JS. And if concern is this whether proliferate wacky behaviors because of libraries that have wacky bugs on the web, that future may be coming anyway, and I think blocking the JS side of things does not address that concern, if that is your concern.
+
+DE: Sorry, I also wanted to add that I found that the handshake part very interesting, the fact 
+that in WebAssembly, multithreading people are okay with this explicit handshake. And maybe 
+that gives us a way forward for the shared struct type registry, which is kind of one of the 
+difficult points.
+
+SYG: I did not hear. So that was a previous difficult point, but this seems more fundamental and 
+what MM said today in --
+
+DE: Oh, sure. I was passing MM's point, this would be the next one, maybe.
+
+SYG: Right, the global mutable state via the registry, if the handshake were acceptable, then 
+there will be less of a need for that. I agree. Yeah.
+
+### Speaker's Summary of Key Points
+
+SYG: Well, this is -- just an update. So no consensus was asked for. The -- I’m still 
+interested in bringing a proposal back for Stage 2, but Mark has telegraphed basically that he 
+will veto such a thing. So it may be unproductive. On the other hand, I have also the signal
+that Mark may be in the minority here, and depending other discussions today, we’ll see how 
+that goes.
+
+### Conclusion
+
+
+## iterator chunking for stage 1
+Presenter: Michael Ficarra (MF)
+
+- [proposal]()
+- [slides]()
+
+MF: All right, this is chunking. Okay, so I’m trying to solve two problems in this proposal. The first problem is consuming non-overlapping subsequences of an iterator. For example, if you want to consume this iterator of digits, 0 through 9, two digits at a time, you would get a resulting iterator that yields arrays that are indicated by these orange outlines, so you would have an iterator that yields the array containing 0 and 1 and then yields the array containing 2 and 3 and so on. And that’s how I’ve visualized things within this presentation. So if you wanted to consume things three at a time, you could also do that, this chunking operation is parameterized by the length of subsequences you want to consume. Notice how also once you reach the end of the iterator, you have to do something with the remaining items, if they don’t fully fill up your chunk, and we’ll get to that later, but I think that we should probably include those just as a smaller chunk. And similarly, if you were to do four, it would look like this. And also five.
+
+MF: So I did a search on GitHub code search for people using current library implementations of chunk today in their code bases to get an idea of what kinds of use cases this covers and actually it surprisingly covered even more than I had originally considered. So some of the big use cases that I saw were of course pagination. Pagination is probably the biggest. You know, lots of people making web interfaces and stuff. But also, like any columnar layout, any grid layout and calendars were a common use case there. Any kind of batch processing, which obviously is very, very generic and applies in a lot of cases. There were people doing matrix operation, people doing certain kinds of encoding where encoding required splitting up the data into chunks. And even, when people knew the input structure size, they would use the chunking operation to do bucketing by computing the chunk size. Which was, I guess, a clever reuse of code. So that’s chunking.
+
+MF: The other problem that I’m looking to solve here is consuming overlapping subsequences, so chunking was non-overlapping subsequences, and this operation is overlapping subsequences. So you see here if we wanted to consume that same iterator four at a time, but only stepping by one instead of stepping by four, the arrays that are yielded would look like this. Similarly, if you step by two, you don’t have to step by one, you can step by two, it would look like this. So any of these overlapping subsequences. So you can see that this is kind of a generalization of the previous operation. So we’re going to call that operation sliding window. So doing a similar code search here revealed that it’s not quite as common as chunk. That specialization really is the more common case. But these are the kinds of cases that I found. So any kind of, like, running computation, such as a computed average. People use windows for algorithms that need to do like a look-around to understand the context, so any kind of pairwise comparison, they were using window, and this last one is actually probably more general than it sounds at first, but when you have an infinite cycle, carousels are just a sliding window over that cycle. And carousels, you know, are the name we give to the visual UI element, but there are many kinds of operations and data transforms that require an analogue to a carousel. So the design space is pretty big with this proposal, unlike the proposals I presented yesterday. As I said before, chunk is just a specialization of windows where the chunk size is both the window size and the step. So that’s something to consider, do we care about introducing something that’s just a specialization of another thing?
+
+MF: I saw differences in whether we would name the operation via, like -- the thing that you’re doing, which is like chunking, there’s a verb form, or the things you get out, which are called chunks, which is a noun form, so we’d have to consider that. I don’t know if we have precedent for anything like that at this point. There were a lot of libraries that when you did not specify size, they defaulted it to two. It seems reasonable to do. The thing I talked about earlier with truncation of that final chunk, I think that this is actually an unproblematic strategy. At first I thought, oh, you’re going to be doing further processing that kind of expects chunks to be the size that you said they were going to be. But it’s actually -- it’s really easy to handle that case. If you are doing processing that really needs to have that expectation, you just filter out by size. You know, you just check the chunk size first before you do the operation on it. And I don’t think it’s really worth parameterizing that behavior or anything. Window truncation has a similar problem, but I think actually is a little bit more problematic. So when the step is not one, you can step the window kind of over the boundary of the end of the iterator. And you also have the case where the whole iterator doesn’t even fill up a single chunk. So we need to figure out what to do with those. Some libraries do offer the ability to specify padding elements. I don’t know whether that would be worth it or not. It’s something to look into. When you pass not great inputs, what’s the behavior? That we need to figure out. That varies wildly in implementations I’ve seen, both in JavaScript and outside JavaScript, so the chunk length of zero or step size of zero, we need to figure that out. And also this last case, which is possibly a whole other area to explore, which is sliding in and sliding out. The sliding window algorithm I showed before, it starts with the start of the array aligned with the start of the iterator and ends with the end of the array aligned with the end of the iterator, but there are use cases for where you want to start with the end of the array aligned with the start of the iterator and you’re going to end with the start of the array aligned with the end of the iterator, if that makes sense. So that could also be added on to here. But it seemed that was even less common than doing a sliding window generally.
+
+MF: So here is a summary of prior art in languages outside of JavaScript. This is a very, very common operation, so just about everywhere has some equivalent of chunks and almost all of them have a windows operation as well. Only two languages I looked into did not actually have a chunking operation. And you can see that the behavior of passing zero differs a bunch. And then this table summarizes the JavaScript libraries that provide this functionality. Again, there are a lot of JavaScript libraries that provide this functionality. Oh, as far as naming, by the way, there’s also a lot of variety in the names. I did like the names that have batch in them. I had not seen that before doing this research, but given that one of the major use cases was just arbitrary batching of work, I liked that naming. So a lot of JavaScript libraries provide this functionality. They also kind of vary on how they treat invalid inputs. Windows, it looks like only half, not even, of those JavaScript libraries provide a separate window function. And only one, iter-tools, provided this sliding in and out behavior that I was mentioning where you go past the end in one direction. And I think that was the only one of any that I had looked at, including other languages.
+
+MF: So, yeah, pretty big design space, but very common operation, very useful. So I do have preferences here which I’ll go over. I do think we should have a chunks method, which is that kind of specialization of windows. There are some other good names. You know, we can consider those later. I don’t have a preference on whether verb or noun naming is appropriate, but if anybody has relevant precedent, I would like to hear that. The final chunk can be truncated if necessary. I think that that’s non-problematic. I think the appropriate way to handle these invalid inputs is to throw, and on a chunk size of zero, I think the natural thing that falls out is infinite empty arrays. But I'm willing to compromise on such a thing. Oh, and the optional chunk size, I don’t have a preference on. As far as windows, I think it’s probably worthwhile to also have windows, the use cases seemed compelling enough to me. I don’t think that it’s necessary to actually support a step other than one. The vast majority of windows uses were using a step of one. And I think that kind of simplifies the things that we’re concerned with and we don’t have to be concerned with other really exotic use cases, and I think people can also simulate if they want to use a step other than one.
+
+MF: And sliding in and out, I think I’ll leave that to somebody else to figure out later if that’s a
+thing that we need to solve.
+
+MF: That's my summary of this problem space that I wanted to explore. And I am looking for Stage 1.
+
+DLM: We discussed this internally, we were in favor of this. I used chunking and sliding windows before. They both have value. And we support this for Stage 1. Thank you. 
+
+JHD: Yeah. So definitely supported for Stage 1 and as to no surprise, I am sure, I want the feature for arrays as well, not just not iterators, but that doesn’t block anything today, of course. Thank you.
+
+KG: This is much less necessary on arrays because you can index around. 
+ 
+LCA: An additional thing for the design space is whether the chunks are arrays or iterators this is not too relevant for synchronous iterators here, but for AsyncIterators it may be relevant whether the chunk is returned once the first element is yielded from the underlying iterator or ones for elements have been collected, you then yield the iterator that yields those elements immediately. Maybe that is an additional space for the design space. Also, very much in favour of this. 
+  
+SFC: Yeah. I looked through a lot of my codebase and found dozens and dozens of times when I use functions and chunks, 0 copy, converting from an array of bytes to an array of i32 or something like that. For windows, useful for looking at segments. If you have a list of breakpoints, for example. Also, for validating like if a list is sorted with windows length, those types. There’s a lot of use cases here and I definitely would like to see this built into the language. Because it seems useful. 
+
+CDA: JRL with a support for both. LGH  + 1 for Stage 1.
+
+DRR: Soft preference for throwing if the chunk size is zero. It feels like you get into trouble. But I don’t have a strong preference and I think I would support Stage 1 in general. 
+
+LCA: + 1 for Daniel’s point about throwing. 
+
+CDA: Queue is clear. 
+
+MF: On that point, I would say that it seems like – yeah. Really 50-50 here. For prior art on how to handle zero, if anybody else has more information on why you would have the preference of throwing or why you might have the other preference of infinite empty arrays, that would be helpful, put it on the issue tracker or something. We can have that discussion and try to figure that out.
+
+CDA: Okay. Nothing else in the queue. Sounds like you have ample support for Stage 1. No objections I am hearing or seeing in the room. MF, did you want to dictate any key points summary, conclusion for the notes? 
+### Speaker's Summary of Key Points
+At Stage 1, there’s still so much up in the air. It seems like there was strong support for exploring both those directions, the non-overlapping and the overlapping subsequence problems
+### Conclusion
+* Stage 1
+
+## Can we reach consensus on what is Consensus?
+Presenter: Michael Saboff (MLS)
+
+- [slides](https://github.com/msaboff/tc39/blob/master/TC39%20Consensus.pdf)
+
+MLS: Okay, so what I have today is kind of a meta discussion, specifically I wanted to talk about how we work with regards to consensus and how it applies to TC39. So you look in the dictionary and you find a bunch of different definitions for consensus. The word consensus is actually from the Latin and it means agreement.
+
+MLS: I provided a few of the dictionary definitions, generally accepted opinion, judgment arrived at with most of those concerned. So on and so forth. There are some definitions that use the word unanimity. Since, you know, we’re part of ECMA, TC39, well, what does ECMA have to say about consensus? And it turns out 
+that ECMA doesn’t really say much about consensus. In fact, it’s silent. But in the ECMA rules, we read three sections here where it talks about voting. Majority voting by TC members, each member only has one vote. Recommended that in the course that voting is -- I guess you’d say that we try not to use voting. It’s kind of frowned upon, but if needed, we use votes.
+
+MLS: And then sometimes the output of a TC is actually a report, and there may be the desire for a minority report if there’s some disagreement among a committee. So let’s talk about what we do here at TC39. In our terminology. Now, in most cases, we do follow the notion of general agreement. Oftentimes, at the end of a presentation, we hear, do we have consensus for X, advancement for stage 2, blah blah, blah, and we look for delegates to explicitly support something, and somebody puts a thumbs up in TCQ and that seems all well and good. Although, we now rarely ask “does anyone block consensus”, we changed the terminology there and say “withhold consensus”, or when somebody asks do we have consensus, somebody may reply, "I withhold consensus and, it’s a positive way to ask that question. Fundamentally, our decision making process at TC39 is unanimity. We must all agree for something to move forward, and one (indiscernible)
+
+MLS: Ontarioer can block consensus, and that’s what I want to speak about today. Basically, you know, "I withhold consensus" is identical to a veto. And I don’t think that should be contentious, that statement. A single member in the committee has the power to decide what we do or actually in most cases what we don’t do. I don’t want to impugn at this point the motives of anybody that’s used that, this meeting or other meetings. But we can all probably think of past instances in our own, you know, review of things where we would question the motives of somebody that would want to block something. And for me, it’s more of a principle and the general impact of the working atmosphere of the committee. Now there are some people 
+that may say, well, but I’m right.Thoreau wrote an essay called on the duty of civil disobedience, and there’s a quote in there that says "any man more right than his neighbor constitutes a majority of one already". I don’t think that this is a proper application of Thoreau in our committee because he wrote this essay specifically to talk about the evils of slavery and his disagreement with the Mexican-American war. That was in the 1800s. So I doubt that our deliberations have the same moral considerations, although some may disagree with me.
+
+MLS: There may be some that we view that it’s our individual responsibility to safeguard JavaScript 
+for the future. I actually see that as one of my responsibilities. But as a member of the larger committee. That we need to work together with other members. Now, even if one has honorable intentions when they withhold consensus, there’s a dark side to this sole dissenter policy we use. At times, I believe that some members have weaponized this withholding consensus and to step forward as an autocrat for the current topic, whatever the topic is. These are usually rare cases of withholding consensus where it seems in my mind, it seems more like a code of conduct violation than it is a good decision-making process. So here are some of the issues that I have with our current consensus process. And these are my observations. 
+
+MLS: Typically withholding consensus is usually by a smaller number of committee members. And I would add that those withhold consensus, they tend to be more vocal. Maybe that’s their personality. I think a lot has to be their time on the committee, and they feel comfortable speaking up. I’m going to say that it appears that some also think that they wield a greater authority than others on the committee. Now, I do want to say that there are certainly people that have been on this committee far longer than I have, and I think I’m pushing eight years at this point, and they have experience working not only on the committee, but in the language. They understand JavaScript probably better than most people that attend. And there are cases where a single withhold has ended discussion of a particular topic, not just for that meeting, but going forward. The topic typically is not brought up again in some cases. I want you to consider a newcomer, somebody that, you know, they come to a meeting for the first time, and they see this single dissent policy in action, and I think that there are some cases where they would be -- it might energize them, hey, I’m part of this committee, and I have some authority to change things by blocking, but I think it’s more of the case that someone comes to committee the first time, they’re starting to feel things out, how does the committee work, where to I fit in, when is it okay for me to talk and things like that, and it may turn them off. And the last issue is I actually think that the lone veto policy, it hurts the working relationship with our committee. I will stipulate that we have competitors, I work for a browser -- a company that makes a browser. And there are other people in this room, I’m sitting next to one, his company makes a browser and SYG, we actually have a pretty good relationship with these folks, but we have different aims. There’s also people that have experience with using JavaScript as developers, and it’s part of their day-to-day work, and they come with different desires and different backgrounds than I do. And we come together from these diverse JavaScript backgrounds to try to shepherd the language in a way that benefits the whole community of developers and implementers. I might add that JavaScript, originally it was designed for web browsers, but it’s also used in servers and it’s also used in embedded devices. That JavaScript truly is probably the most used programming language in the world, and it’s being used in more and more cases.
+
+MLS: So to be clear, I want to make it very clear that I am not advocating that we increase the number of proposals that we move forward in the stage process – that we open the floodgates, as it were. And that means I don’t think we should reduce the rigor with which we decide what’s in our standards. But I think that we need to collectively see if we can come up with a better – some modifications to our consensus 
+process. I present four options here. There could be others. I’m fully aware that any change to our consensus process requires the current consensus process to make that change. That we need 100% agreement if we make any change to the consensus process. So in some aspect, I’m providing some information as – how we can maybe modify things or not, but I don’t know how successful it would be. The four options would be, we maintain our current process. One person can veto any proposal or any other current thing we discuss. When I say that, there is time, like I believe it was the last meeting, we were talking about the naming of the new stage we were adding that we used consensus to lower the bar to a majority process and use the majority process that we agreed upon via our current con says to actually reach the name that we would use for the new stage. So there are times when we do temporarily reduce the threshold for a decision to be made. So we can make in our current process we will do that occasionally. We can increase the number of consensus withholders required, and make it more than one, and we can  talk about what that would be. But, you know, we just increase it. Voting, okay, so voting, 
+If we vote, what’s the majority? You know, is it a simple majority? Is it some kind of supermajority? And then general consensus, which actually I believe it’s how most of the other TCs work, and lot of other standards organizations work, general consensus, we move forward if there’s no or minimal dissent, and if we stop moving forward, we stop with a decision or we don’t agree to a decision if there’s significant concerns. I favor the fourth option here. But that’s -- this is up for discussion, and I brought this for discussion.
+
+JHD: So what I wrote was the -- like, a temporary cost of a delay or block or something versus, like, the eternal cost of shipping something that’s harmful to someone. The value that I see from our current consensus process is that everyone can’t be in the room. Everybody who is affected by JavaScript isn’t necessarily represented in the room either. But the hope is that for everybody out there, at least one person in this room can represent their interests in some way. And allowing one person to essentially stop progress on something and ensure that their considerations are taken into account, makes sure that even the minority is given a voice in that regard. The options you presented up here, I mean, I’m sure we could come up with more, but just these, the issue with B is that some companies have a lot of people in the room. So disadvantaging invited experts who are one person or companies that only have one delegate in favor of the companies that can afford to send or sponsor more people to join, like that’s tricky. And then if you try and restrict to “by member company”, what do you do about invited experts? Then, you know, and what about non-profits, like the OpenJS Foundation that represents many interests? It’s sort of difficult to quantify how much impact anyone should have, and so for me, it seems like allowing one person to veto it makes -- you know, whatever terminology you want to use for that, is making sure that no one’s overlooked. That no one is crushed by the wheel of human -- the natural human desire for progress. Whether it’s better or worse.
+
+MLS: So let me respond to that. A couple things that I failed to mention. One is that I would think that if a lone dissenter can articulate their argument in such a way that it’s clear that surprises me that they cannot find somebody else, probably from another organization represented here to agree with them.
+
+JHD: I mean, clearly I would agree with you. But as you alluded to earlier, many of us have been a lone objector at times. For example, tail calls wouldn’t be in the spec if you had not been the lone objector.
+
+MLS: Tail calls were in the spec. We were talking about taking it out. If any of these other options are considered.
+
+JHD: But I don’t know if you remember that.
+
+MLS: I have probably stronger memories than most on it. I was not the sole one that argued for not removing it. There were others.
+
+MLS: Okay, well, anyway, regardless of the specifics, it’s that in that example, or any of these examples, there are times when someone’s position is strongly held but isn’t persuasive to anyone else, but that doesn’t mean that it’s invalid. And I agree that there are times when this -- the lone objector thing has been weaponized, and that’s inappropriate, and in many of the occasions, it has either been procedurally nullified or socially and persuasively nullified, and in some of them, it has not been.
+
+MLS: Right.
+
+JHD: So that is absolutely a tradeoff of option A here. That we have to consider. But the -- generally when I look at two options, like, you know, the current process or something else, I would look at what is the worst and best case down each path. The worst case of the current path is that sometimes something that should happen doesn’t. And the best case is that things that shouldn’t happen, don’t happen. It’s not like I’ve thought out this best and worst statement to where I’m probably not being fully articulate, but I think I see that that as a worthy tradeoff, in that we can always revisit something, like, there’s -- the quote that I like is “in software, yes is permanent, no is temporary”, and I think that for JavaScript, that’s especially true. So we can always revisit a block. We cannot revisit something we’ve shipped.
+
+MLS: So let me add just a couple comments. Sometimes that block ends up being permanent because 
+of the fortitude of the presenter and how they felt, you know, they were underappreciated. The other thing is that the tradeoff, if we do maintain the current process, is I think it has detrimental effect on newcomers
+
+JHD: I completely agree with all of that, but I think the same principle can apply if it’s in fact of value, then surely another presenter will materialize at times, right? A block is only permanent if its value is questionable.
+
+NRO: Yeah, just a reply from something JHD said, like, he said that we should make sure that, like, companies that can afford to bring more delegates and have more power than other companies, and I would hope that if well, like, end up with, like choosing some rules for consensus that has some number in it, like let’s say we need two people to withhold consensus, then people from the same company would count as one for that purpose.
+
+??: I think that’s reasonable, yeah.
+
+LEO: Yeah, I was going to say option B seemed like the frictionless option, but thanks, JHD, for bringing up some concerns. There’s a lot of other things to formalize. Meanwhile, I would love if you could actually help me clarify, like, more about option D. Because it seems interesting, but I’m not sure if I fully understand what we define as minimal dissent. What would be the process? If you can give me a little bit more about it.
+
+MLS: So we use D almost all the time. It is -- is there consensus, you know, do we have consensus on this, and usually we get thumbs up or silence. And what I’m talking about, that would be our normal way of operating, and that’s the way that most TCs, my understanding, I don’t attend -- I’ve attended TC53 a couple times, but that’s the only other TC I’m aware of, but talking to people in ECMA. Now, when there is someone that withholds consent, the issue then I think becomes is this something that you’re -- that you think is critical, because there’s some times that we have desires that we want some -- let’s say an API a certain way or something like that and we don’t really like it, but we’re willing to move forward with it. That’s different than I think this is fundamentally lousy for language and we’re going to rue the day that we did this. But I would think if we get to the point where someone is saying this is a huge mistake for the language, that we should be able to get other people on board. D does not have we need two or five or whatever, but it’s clear to the committee that there are significant concerns so we shouldn’t move forward with the current proposal as it stands. It’s not quantified like some of the other, you know, B and C are. And definitely it seems interesting and definitely seems like most of what we’ve been doing today.
+
+LEO: If we want to explore that, we want to present how we want option A from happening again.
+
+MLS: And anything that we come up with, any way that by come up with it, there’s probably ways to 
+weaponize it. It becomes more difficult with some of the other -- with just one person, it’s pretty easy. I can decide I don’t like it and I’m going to withhold, withhold, withhold. If we increase it, now you have to get more people involved, so on and to sort and a majority and now you have to get a block. I don’t want us to become political, and I think in some ways we are political.
+
+LEO: Thank you.
+
+CDA: I don’t really need to speak, but I was noting that I think D is our current process. That’s all.
+
+RGN: I would echo a lot of the points that JHD already articulated pretty well, in particular that we have seen -- we have seen lone objectors, and they’re lone only in the sense that other people that agree or they’re representing don’t happen to be in the room. But having seen them, I can’t imagine a world in which we can get consensus, doesn't open the floodgates, doesn’t allow things to enter the language that with the current model, the extra negotiation required, does put things in a better state. It’s just -- it’s really dangerous, I think, to allow that kind of override in a process sense as opposed to attacking the weaponization more indirectly through things like the code of conduct violations that the egregious examples all seem to demonstrate.
+
+USA: MLS, would you like to respond to that?
+
+MLS: No.
+
+USA: There is a reply to that by NRO. Sorry, DE, we’ll get to your reply later, if that’s okay.
+
+NRO: Yeah, if you’re concerned with, like, being a lone objector because other objectors are not 
+in the room, we can have rules there place of that. We can say if there’s a lone objector, like, other delegates have time until the meeting after to object or something like that. Like, once we -- like, once we agree on some sort of rule, like, applying it in a way that’s still equitable and doesn’t advantage some companies, some delegates compared to others, so it’s still doable.
+
+SFC: All right, yeah, just pointed out that the thing about the lone objector that RGN brought up, is that I think there’s definitely cases where, like, you know, the lone objectors have very good points, and, you know, like, if you were to almost temperature check a lot of delegates many the room, there might be other delegates that agree with them, but might not agree strong enough and want to, you know, put their position out there to actually join formally as a second objector. I know that that’s, you know -- I’ve sort of been in that situation before, you know, like I don’t like to be a lone objector for things other than things of internationalization concerns, because that’s what I’m here for. Right? So I think that that’s, you know -- like, if there is a lone objector, like, you know, I think that that’s a very strong, you know, position to have, and, like we should respect that because it already is kind of difficult to be that lone objector.
+
+MLS: But, Shane, would you agree that there’s been times when it’s been weaponized and destructive to the committee’s work?
+
+SFC: I don’t agree with the phrasing of that question.
+
+MLS: Do you believe that the lone objector policy that we have has been misused in the past?
+
+SFC: I don’t -- that seems like a loaded question.
+
+MLS: That’s a yes/no question.
+
+SFC: I’m not taking a position on that question. All I’m saying is that I believe that the lone objector process has been useful at times. I’m not taking a position on whether it’s been weaponized at times as well.
+
+MLS: Okay.
+
+PFC: Not having been a participant at the time that this model was established, I would like to understand the rationale better for why we went with this model in the first place. Is there anybody who can talk about that and then I might have some things to say after that, depending on whether it matches what my understanding is.
+
+MM: I can speak somewhat to historical issues. WH is the only person I know of on the committee that has a longer historical memory than I do. I joined the committee in 2007. And this was already the rule at the time that I joined. But the history right at that moment is very interesting because shortly before I joined, most of the rest of the committee, in fact, all but one of the committee, wanted to go forward with ECMAScript 4 as the next version of JavaScript. And there was one sole objector at one point, which was 
+DC, who I think very correctly said this -- you know, "this language proposal is really bad", and like the Henry Fonda character in 12 Angry Men, having blocked unanimity with an articulate objection, I think that’s key to why number D is still the best characterization of our process, but he then gradually convinced other members of the committee to move over  20 to his position, and we collaborated ECMAScript 3.1, which eventually became ECMAScript 5. If we had even a requirement of a vote of two, at the moment when everybody wanted to do ECMAScript 4 except for DC, we would have ended up with ECMAScript 4, which I think this very much speaks to JHD’s point regarding “yes is permanent, no is temporary” in software. The way I would put it is everything we -- you know, every possible process we might come up with can be weaponized. The only thing that restrains weaponization of a process is social norms, which we need to lean into perhaps more than we have been. But the social norms around this -- from the beginning is that if you’re a lone objector, it’s your responsibility to very clearly address your objection in enough -- you know, clearly enough that people understand what it is they need to argue with, and that has been largely the norm that I’ve seen us engage in with regard to lone objectors. The -- so the way I would put JHD’s point is that the rule that we’ve got now fails safe. Any other rule fails unsafe, but all rules are able to be weaponized, so under weaponization, something that fails safe is better than the alternative.
+
+PFC: So I actually did want to continue on my point about the rationale here. I’m not familiar with the details of the argument at the time about ECMAScript 4. But I guess more generally, my impression, and you can correct me if I’m wrong, was that this kind of process was instituted because no browser vendor wanted it to be possible for all of the other browser vendors to gang up on them to force something through that would, for example, work in an anticompetitive way. So I don’t know if that’s accurate. But if that was the goal, I definitely support that goal. I don’t think that should be possible.
+
+MM: I can speak to that some. The -- I did not see that -- I mean, you know, I’ve had lots and lots of offline conversations. Obviously having been part of this process since 2007, lots and lots of conversations online and offline with many of the parties. I did not -- that particular thing as a rationale for this rule does not ring a bell, especially because, and this is a point I want to emphasize, it was always understood that any of the -- that any of the major browsers have a veto anyway. It was always understood that if something gets accepted in committee, and a browser maker says “well, I just won’t do that”, that it’s dead. 
+And we have had -- we’ve seen that in practice where one browser vendor has just objected to something and everybody else understood it was, you know -- it was dead if we couldn’t get the browser vendor to agree to it, and that was -- that was whether or not we have the lone dissenter rule. There’s this, you know, obvious dynamic in practice, which is without the up of all the major browsers, it doesn’t really matter what TC39 says. The reality is what the browser makers do. So all the browser makers have a single voice veto no matter what rule we adopt in committee.
+
+MLS: MM, do you think that that has changed now that we have node and XS and the other engines?
+
+MM: I think -- okay, so I’ll just speak to the dynamic that I think I see socially, which is if we did not have the current rule, if we weakened the current rule, that if node, who is -- is node still participating actively on the committee?
+
+MLS: No, they’re currently not as far as I know.
+
+MM: Okay.
+
+??: Oh, they are.
+
+DE: JS foundation remains a member, and node – so they are here. The node project right now is working on articulating more common standards positions, so I’m optimistic we’ll see more representation. At the same time, node is not a JavaScript engine. Node embeds a JavaScript engine.
+
+MLS: They embed, right.
+
+DE: But they could embed it in a way that violates the spec, because the spec does put constraints on posts. And they also are involved a lot with modules.
+
+JHD: To be clear, node definitely has representation. Multiple of us are in the standards group 
+for OpenJS, so they definitely have representation.
+
+MM: I’ll state what I think I observe just in terms of the social dynamics of the committee, I think in the absence of the current rule, not only would the major browser vendors have a veto, effectively, because everybody would understand that the thing is dead if it’s not implemented by all the major browser vendors, I think node would also effectively have a veto, if node says  they won’t do it, somehow disable it, everybody would still understand it will therefore not actually be part of JavaScript no matter what TC39 says, I do not think based on the social dynamics that I’m see on TC39, I do not think that we would extend the same consideration to Moddable, much as I would like to think we should. I think that the view of JavaScript from embedded is dismissed by enough of the committee that in the absence of the current rules, I could imagine Moddable saying they won’t ship something as just being -- as not being taken to be a de facto veto under the -- under this more relaxed consensus rule.
+
+USA: Thank you, MM. Next we have a topic by DE.
+
+PFC: Sorry, I was not given the opportunity to finish my topic. My point about this is that there are effects of the lone objector model that I wholeheartedly support. Even if those weren’t the original rationale, but I’m sure there are some effects of the original rationale as well that I continue to support. On the other hand, it’s not only weaponization of the process that I’ve seen, and failure to enforce the social norms around that, but there are also things like, do we really want a lone objector model where one delegate from one member company can object even though all of the other delegates from that member company are in favor of something, and isn’t that something that they should have hashed out before the meeting? Or, you know, if I’m being really honest, should I personally have the ability to be a lone objector? I honestly don’t think so. So I think there are other things that we could consider that keep the good parts of being a lone objector and maybe ameliorate some of the bad parts.
+
+USA: There’s a reply by LEO.
+
+
+LEO: Okay, just to move on, one of the things that I’d just like to highlight, and I’m going to be short, less than 30 seconds, one of the things we are talking about a lot of concerns, if not all, most of them are valid, like from all the perspectives. But trying to go back and bring into the perspective of, like, why we are doing this consensus process, as we were discussing yesterday, there’s a whole importance of, like trying to find consensus so we can actually guarantee as a standards process that, like, things that we move on are actually going to have like commitment from all the participants of TC39, that things are going implemented and consistent and reliable as a standards process. Yes, we want to guarantee that part. This is actuality non-negotiable, and what we’re discussing here is how we actually mitigate bad actors that there’s been perceived, which I agree with Michael at this point, like, yes, there are some episodes that we recall, like might not be on everyone’s perspective, but I agree some -- many people here will recall some episodes that we feel like an aggression to the process, like, people bad acting to it. Thank you.
+
+USA: Thank you, Leo. DE, before we move on with the queue, we have under ten minutes left. I request you all to be quick. But, yeah, DE, please go on.
+
+DE: Sorry, I’m not sure how quick this can be. But please cut me off if needed. MLS, you raise very good points about the dysfunctional aspects of our current decision-making process. I definitely agree that the distribution of vetoes is not uniform among the committee, and I don’t think that corresponds to some people being kind of more aware of problems or something like that than others. It’s -- it’s sort of somehow about style and various things you mentioned. I think it’s -- it’s important that we revisit this because this involves how newcomers can participate, it involves, you know, whether people have the incentive to invest in JavaScript, and there are a few kind of dysfunctional scenarios that I see. So just to name a couple, sometimes we have an either/or decision, and it really is subjective matter. Are we going to paint the bikeshed green or blue, whatever? And then somebody stands up and says, it must be green. And you know, just because they really think that doesn’t mean that they’re right, that it’s, you know, a life or death decision. It may be that, you know, a preponderance of the committee believes it should be blue. It’s a little bit weird that we let our process to be distorted to hold ourselves hostage and, you know, paint it green to get through the block. That’s kind of an okay case, though, because that’s a case that doesn’t matter so much.
+
+DE: A case that’s more harmful is where features get vetoed into a proposal. Where somebody says, you need to have this extra capability or I’ll block this proposal. This also happens pretty frequently in committee, and this adds complexity to the language. So it ends up being not true that we’re fail-safe in right direction. Sometimes we fail in the direction of more complexity. And this is not always good for our users. Because we have a shared vision in the committee, often, that we want to advance a particular proposal, so we make this kind of compromise. But really, this disregards the feelings, you know, the well-founded motivation of people in committee to have things be in some other way. Based on this kind of personal style or authority. Anyway, it will be challenging to modify this. I think at a minimum, if we make any sort of procedure to move on when we have one of these veto situations, which is highly contended and very unpopular, it should at least be in the next meeting that we consider what the next steps are. We should at least have time to decompress. And -- but I do think we should form some kind of procedure for questioning or reviewing a block and other groups like the W3C have such procedures, and it would be good to analyze those and figure out what -- what might make sense. You know, the points that JHD and MM made defending the current process, yes, I’m aware this is a standard line that we’ve given, but that does not negate the dysfunctions that MLS has noted.
+
+CM: One of the things I’d like to point out: it’s my observation that if somebody’s blocking consensus, it’s not necessarily the end of the conversation. And in my experience, discounting people who are gaming the system or dealing in bad faith (which I recognize is a real but separate concern), in the cases where there’s passionate disagreement, typically what happens is rather than the stage process moving forward, the people who are dissenting and the people who are proposing whatever it is that’s being dissented against, typically end up having a more intense, more direct (person-to-person in some cases) conversation, and one of the things that comes out of that is a lot of exploration of, well, what is it that you’re actually concerned about? What is the heart of what you’re actually concerned with? And that very often will lead to a meeting of the minds once you have a better shared understanding between people or if it turns out that actually what somebody’s really concerned about is this very particular aspect of whatever and at that point that opens the door to compromise or modification of whatever the proposal is in a way that overcomes the concerns of the person who is objecting and yet satisfies the needs or concerns of the person who is promoting whatever the proposal is. And I’ve seen this process unfold that way numerous times. And I think that is a key process element in terms of getting the most satisfactory highest quality outcome.
+
+MLS: Two things, first of all, we’re at time. I’d like to ask for some time to drain the queue from the Chairs.
+
+USA: We have three minutes, or two minutes left in the time box. How much more time, MLS, do you think it would need?
+
+MLS: I see there’s five topics in the queue. Can we give that, like, eight minutes?
+
+USA: I think we should go for eight minutes, but maybe not extend this more, because this could go for a very long time.
+
+MLS: And we can discuss this at a future date as well. CM, I agree with you in principle, but in practice, I don’t think that’s always the case, because I think there’s personalities involved, and if someone is intimidated by a block, they may stop. That’s one of the concerns I have.
+
+USA: All right, the next on the queue, we have SYG. Again, I encourage you all to be brief.
+
+SYG: Hello. Thank you, MLS, for bringing this topic. I also agree with -- I agree with your whole program, basically, that I think there is serious dysfunction and deficiencies in the process and we should try to improve it. I’ll give a little spiel on why I find the lone veto thing uncomfortable. I don’t think it’s actually the -- like, why do people not like stop energy? Personally, I think it’s because you get the sense that the person giving out stop energy is not open to incentives. Like, I’m here as part of my job. I’m not here trying to do what’s right in my heart by the language. I’m here representing a particular set of JS constituents that responds to a set of incentives, a lot of which is economic, like we want Chrome to succeed, we want web platform to succeed, and that is -- that kind of sets the rules of engagement. That means that I think -- I think that means that fundamentally, I would like to present myself, and I hope other people see me this way, I give evidence convincible. Where I find the lone veto really uncomfortable is that we give the veto power to folks who I do not feel respond to incentives. They are trying to do what is a deep conviction on what they think the language ought to do or ought to be that is at odds with what I see in the incentives, in the demand, in the data that we see out in the ecosystem, and if I don’t believe I can convince those people, that says it’s not productive to engage with those lone vetoes, and I find that deeply harmful to a standards body that is at the end of the day about businesses coming together to agree on an interoperable thing that hopefully encourages a platform, that flourishes with more new businesses get built, whatever, whatever, there’s obviously a neolib slant it to, but I’m not here because I love JavaScript. I’m here because I think this is good for the world in some material sense. And I would like to work with other people who also feel that way. And the easiest way for me to feel that I work with other people that feel that way is that they come with, I guess, you know, thing that are more rooted in something in the real 
+world than I believe this is the right thing and it looks right and things -- you know, strong convictions that just I don’t know how to work with. And I think that is the thing that even if we get rid of the lone veto process and we improve that, that is something I would like to -- maybe that’s the social norms that MM was talking about. That’s something I would like to see shifted. Because it’s difficult for know really weigh the different opinions if everyone is literally just supposed to be the same weight. But that’s not how the world actually works. For JS, even in our small corner of the world. Anyway, I think I’ve said enough.
+
+DRR: I think I want to echo SYG’s sentiment there. One of the issues that I often find is if there is sort of like this disengagement following the block. There’s not a willingness to elaborate in some capacity. A block can be "I find this distasteful" and it would be okay if it was left at that. Or, like, that can be sort of a follow-up in some way. I often don’t feel like I can accomplish things because iit becomes a sort of chasing game of "come to the next committee meeting", try to hash it out, and then still not getting the level of detail that you’re expecting out of something like a block. So I think that that is another fundamental problem with the model as it stands.
+
+CP: My comments about this mostly are on risk. Clearly we want to protect the outcome of what we do here. And it seems that some of the sentiments, and I do agree with them from the presentation from MLS, is can we get more people to put energy on this effort, can we get more people to participate or not feel that they are intimidated by this process is. So maybe there’s more practical things we can do in terms of maybe there is no veto on Stage 1, Stage 2. I also feel that sometimes when someone is dissenting on particular proposal, whether that’s a proposal in general or they have certain things that they want to be added to the proposal in order to advance, I don’t feel that we have a process today to document that in such a way that people who are following the proposal, even all the delegates that are not here for the presentations, to really follow up. So you have to go to the notes and see where the notes 
+are, try to understand what happened in the discussion, so I think we might be able to put in place a process that requires the champions of the proposal to have very well documented the dissent in the documentation that they have for the proposal, and maybe some of that will also help to alleviate some of these problems that we have. Because if you are weaponizing this process, well, that will get documented in the actual proposal, not just the notes. And so I think that there is an incentive for people to sort of avoid that kind of situation as well, if that’s the angle that they have, which I have seen some of it, but not really to the point that would be fatal for this committee. So I think more practical things like that would be things that we could implement really easy, and maybe see what has happened with that.
+	
+CDA: If we’re trying to make a change to our process, I would like to see us articulate a precise problem definition. I think everybody has perhaps a different version of what the shape of the problem looks like. So it’s something I’d like to articulate specifically before we decide what we want to do about it, if anything.
+
+NRO: Yeah, MLS already quickly mentioned this, but, like, moving away from this model where a single person can object will have more people objecting. I think in this meeting, both in person and online, there are probably less than ten people that would be comfortable with blocking a proposal. I’m not one of those. And we already have, like -- we already discussed a couple meetings ago about, like, disagreeing with the proposal explicitly while blocking it, but it feels like daunting, and being, like, knowing that if we hold consensus for a prose poll without necessarily stopping it unless other people agree with me, that would help surfacing these disagreements.
+
+USA: All right, thank you, NRO. That was all. MLS, would you like to make a conclusion?
+
+MLS: First of all, I’d like to thank the committee for listening to what I brought up. I believe there are some issues, but there’s issues on both sides. There’s concerns that we would allow things in a language of the fail safe that Mark talks about. But we -- I think we do need to address the issues raised. And I think it bears further discussion at future plenary meetings. No -- nothing concrete to -- for a conclusion.
+## ShadowRealms update
+Presenter: Leo Balter (LEO)
+
+- [proposal](https://github.com/tc39/proposal-shadowrealm)
+- [slides](https://docs.google.com/presentation/d/1fd5-VKtl0LxYitLHr_bJ82_xaLs1w5xSmD0dCdh2TvU)
+
+LEO: I’m going to move this eventually to CP. Hi, everyone. We are here again to talk about ShadowRealm. If I have the historic points, I think this proposal has been here for 15 years now. Is that correct? Yes, and -- all right. So a couple TC39 meetings ago, so ShadowRealm got demoted from Stage 3 to Stage 2. We didn’t have Stage 2.7 by that time. As long as I recall. But the whole idea was trying to make sure the Stage 3 would be meaningful, as readiness for implementation, in which we all agreed and, these are a screenshot from the nodes of the previous meeting and it consists of a note from Stage 2 with advancement to Stage 3 dependent upon having a list of suitable APIs exposed to ShadowRealm along with sufficient tests to ensure correct behavior in implementations. So this is the work that we’ve been 
+trying to do and making sure it is going well. So I’m just, again, capturing parts of the conclusions from that meeting. And what we want to do here is making sure we provide at least suitable APIs to be exposed to sufficient tasks. We presented a thread where we presented some lists and we already collected some feedback. And so most of, like, our update today is that, yes, we have documented the selection criteria. We completed the work. We have an initial list of API names to be included. And we increased the test coverage to match the list of API names that are included. CP will follow up with the rationale for the API inclusion and exclusion. We mostly focus on the known use case, if it preserves confidentiality, and if it operates with the boundary as a model we shaped within the EMCAScript proposal. And we can go and revisit that, but, like, for 262 itself, there is one actual change to report, but it’s mostly, like, that we already adapt a ShadowRealm spec text to the recent improvement for host ensure can compile string, and it’s just going to be an adaptation.
+
+LEO: Yes, there are things that we are seeking today. One of them is a big question. For me, it’s like the question that, like, I’m just learning about the Stage 2.7, and I’m going to be asking everyone here, does 
+it -- like, the meaning of this, for what we have as the next steps, does it -- do we meet this proposal as a Stage 2.7? And also, like, we would love to get commitment from two implementers as we described from the previous conclusion to reveal and provide feedback about the HTML integration. Just want to be clear, part of this review is mostly going through what week, in which we are doing this work, but we also, like, given that this opportunity here to also consult with TC39.
+
+LEO: CP, do you want to go on a technical aspect?
+
+CP: It’s been a long journey. The main point of contention is whether this is ready to be implemented or not? This proposal has also been in the making for quite some time now. Obviously, we don’t have the experts in these meetings, I'm referring to the experts on HTML and the integration with HTML. We have some of them, but the majority of the people involved in this effort are not in this committee. That poses an additional challenge for this proposal. Not many proposals have this complexity in terms of integration. We also think that the group of people working on this, which are not expert on HTML, we are trying to be pragmatic, to define the list with the names of the APIs exposed through the global object in the ShadowRealm, and this list, by nature, will grow over time. Because that’s what the global objects do. All the global names added to the global object over time grow, essentially. We know this list is going to grow so we are taking the stand that we only want to have a list of the things that we believe are critical for this to function. And we are trying to go over the APIs and selecting based on certain criterias we have defined. And knowing that some APIs will be excluded initially, but can be included as we progress, we get more people using ShadowRealm, and the use cases being defined. And also, the market will tell us what APIs to pay attention to, once we have it there in browsers. So based on that, the list is not going to be very extensive. I'm trying to set the right expectations.
+
+CP: The second thing is that some of these APIs that we have today, in host, are not necessarily suitable or cannot within the confinement process we defined for the ShadowRealm. That is the callable boundary, which prevents objects from one realm to be mixed with objects from another realm. You cannot reference an object from a realm inside a ShadowRealm and vice versa. That boundary imposes a significant restriction for some of the APIs in browsers. When you have an API that produces an object, that is useful only in the context of the DOM, and inside a ShadowRealm, you don’t have access to the DOM, that API doesn’t really work inside the ShadowRealm because the object cannot be passed to the principal realm to be used with the DOM.
+
+CP: There are other cases where we have a family of APIs that needs to be included, because they are necessary for some of the basic functions of the context that we create inside the ShadowRealm. An example of that is the errors. If an error occurs inside a ShadowRealm, you want to be able to observe the occurrence if it was not captured by try catch, for example. And therefore, the only way that we have today to capture the error is by getting the host to dispatch an event on the global object, which in browsers, it is an EventTarget. And therefore, you have to have a set of APIs to observe those events. We already agree with implementers that the global object in the ShadowRealm will be an event target (that’s now part of the spec). Therefore, the family of APIs that are needed for a developer to be able to observe those errors and get these events are also included in the ShadowRealm as part of the global APIs. So that’s another type of API that we have to consider and, therefore, added to the list of APIs that needs to be high level in the first list.
+
+CP: Then we have another family of APIs that are potentially exposing information that we don’t – we’re not sure about. And this is basically in the confidentiality aspect of the ShadowRealm, with we have many APIs that are giving you information about the outside world, specifically, the outer realm or information that can be modified by the outer world and then you have access to that information. Because we’re not sure about those, we prefer to keep those excluded for now. And then having a process of looking at them individually and deciding whether or not we can do something different about those APIs, for example we can try to censor some of that information. A good example is the performance global object, which gives you access to certain APIs that expose information about the memory allocation, including the different scripts that are using in the outer realm, to denote how much memory they are using, that is the kind of information that we are not sure, we better censor that or go for a different approach, which there are some precedence of. For example, the iframe sandbox attribute in HTML allows you to control what can be observed or accessed. We can introduce something like that in the future for the ShadowRealm constructor as well. The developer will have the controls, what are the things that can be used or observed from inside the ShadowRealm as a way to relax the confidentiality of the ShadowRealm.
+
+CP: I think that’s the last bucket of APIs we looked at. Again, we are committed to continue looking at these APIs, if there is an API that was excluded in the first list, open an issue and we will revisit them and find solutions. As I said, the list of APIs exposed inside the ShadowRealm is going to grow. That is more or less the process that we have to follow to decide what APIs to be included in the initial list for implementers to look at and tell us whether they agree or not, whether they think this is implementable or not, which is another aspect of this process. And then getting the thumbs up from two of them at least to get to a Stage 3. So for now, all we are asking for is to revisit the current stage, which is 2, to see if we can advance to Stage 2.7. Based on what we're reading about the new definition of 2.7, it seems fine. But more important for us is to get the commitment from implementers to help us to review those pull requests we have opened for spec and for the test, some of the test hasn’t been merged because the spec is not merged yet…  that’s a problem. We need implementers to pay attention to prioritize this so we can get feedback as soon as possible, preferable before the next meeting, so we can try to get to Stage 3. That’s all we are asking for today. 
+
+DE: For the HTML integration, I am not the person who has to approve the review. But there were a couple of things that were already requested that have not yet been done. One is on ensuring the global object for ShadowRealm can have methods and attributes like `atob` or crypto. And one is a piece of documentation summarizing the criteria for web spec authors on whether to expose an interface or something like that to ShadowRealms. I really would encourage browsers to review. Somebody in the champion group or browsers have to complete the other pieces of work from the HTML integration is complete.
+
+CP: Are you talking about the rationale? I think we have some of them here. But we also have an apis.md in the repo. Is that what you’re referencing? 
+
+DE: I haven’t seen a single – I mean, you’ve posted one recently, very recently before this presentation about a rubric that people could use. I think that needs to be socialized and made sure that it is intelligible to web spec authors and I have given you feedback about how this could be made more intelligible. About globals – maybe this was finished like 12 hours ago. Okay. Thank you. PFC, for pointing this out.
+
+PFC: It was finished far more than 12 hours ago. 12 hours ago was the last time that PR was updated with other stuff. The ability to have properties in the global object and have them deletable, that’s been done for I think a couple of weeks now. 
+
+DE: Sorry. Last time I looked at it, there were TODOs in the specification. 
+
+JHD: I support Stage 2.7. I think that’s exactly the appropriate signal to send. Like the design for ShadowRealm is basically finished. But please don’t ship it until, you know, it hits stage 3 because we are working out integration issues. So yay for 2.7.
+
+DLM: Yeah. So we agree that this meets the requirements for Stage 2.7. And we have been actively looking at HTML integration, but we will do our best to complete that before the next meeting, but we can’t really commit to that because we don’t know what sort of issues we might uncover.
+
+SYG: I want to point out that there are two kinds of reviews. I don’t have any concerns with 2.7. This seems like it meets the criteria as written. But there’s kind of the spec side review where we can look at the PR that the champions are written for the list of APIs and give a judgment. That looks good, that doesn’t, there are issues. Then I want to put Mozilla on the spot here (sorry). MAG’s feedback earlier I thought came from during actual implementation where like it looked like maybe the spec side of something – I forget which API it was – looked fine. When you tried to implement it, he found architectural assumptions or something else that became problematic. And I want to kind of point out that that kind of – the second kind of review is one very labour intensive, two, it’s unlikely to happen during 2.7. And I would welcome the champions kind of trying to – try to move the needle there. We are not going to go out and implement everything right there and then to see if it actually works out. I am wondering, how is Mozilla feeling about that? 
+
+DLM: Yeah. So that’s exactly when I – yeah. That’s why I avoid using review in my comment earlier. Yeah, that’s the part that we are most concerned about, looking at the implementation of these and it’s true, at least within our codebase, there’s assumptions that things are either made thread or worker, that might be violated by add to go ShadowRealm so we need to go step by step. MAG, is sick this week, but I saw his comment where he thought, exposing console would be difficult because of relying assumptions in the codebase. That’s the review we are most interested in. The spec review is handled by other people, that detail, going through and see what issues to encounter and maybe that’s something more for Stage 3, but it’s something we would like to get started on now
+
+SYG: The V8 in Chrome might not get to that part of the actual implementation of the specific APIs. Until later, and I understand that is – that puts a wrench in things in terms of what stage that makes sense. 2.7 makes sense. If Chrome does it – usually Chrome doesn’t do it until Stage 3, but given this has come up before and expected to possibly be a problem, that needs significant remedy, not just "oh, we fixed this part here". Maybe it requires re-architecture here and there, or rewriting specs. But that could change the shape of the API, of the proposal again. I want to be transparent about that. I don’t have a good recommendation for what we ought to stage-wise. The shape is what we would design. But to actually discover the implementation issues might still be delayed until like the spec review are all done, but there’s some kind of loop here. After it’s done, we implement and then maybe we need to come back, but hopefully we don’t. But it’s a large list of APIs, so it will be a while. 
+
+LEO: Sorry. To things to answer here. One of them, I just think it’s like most reasonable to make sure before we request Stage 3 we have concerns addressed, especially as you mentioned, he’s not here, we won’t seek anything without his seeing like – it’s also okay. I think it’s a good response to like his being actively working is one of the expert on it. So it’s totally reasonable to make sure all the concerns are clear out. The other part like implementation wise on the loop, we actually – we have taken measures to make sure this work is supported as well. Like from our end. And hopefully we can mitigate concerns about delay. Happy to share more details after.
+
+DE: I just want to withdraw the concerns I stated about 2.7 is mistaken. At least with respect to the mechanics of globals. Yeah. I still look forward to this explanation about criteria. 
+
+SYG: And for the notes, to be perfectly explicit, I think some necessary criteria for 3 are the tests, which you are working on, the PRs for the APIs which you are working on, given it’s basically all X TC39 concerns, and the pickle we got ourselves into last time, we moved to 3 without integration, done, and integration being a large part of the semantics. This time, to readvance to 3, I would like to see or hear explicit sign off from the HTML folks. So at least the editors. So AVK and DD from Apple and Google respectively. And the tests, and then so at least those are – I don’t know go that’s it, but those are at least necessary conditions. 
+
+LEO: Yeah. Would it be better for clarification to get a sign off from HTML (WhatWG) as an entity. I know we agree in one signs off as this is HTML
+
+SYG: That’s fine. My sign off doesn’t mean much. I need – this is not my area of expertise. I want the external signoff. 
+
+LEO: Great. With that, I want to ensure we resolve the concerns pointed out by Mozilla as well. I think it’s a nice commitment. Do we have Stage 2.7?
+
+USA: That’s a positive silence. 
+
+DE: Is your concern we should hear from HTML by Stage 3 or by Stage 2.7
+
+SYG: (?) Stage 3. Ready to implement signal, I would like to hear from the HTML folks that they find the principles for what APIs ought to be included and the PRs acceptable. 
+
+DE: I feel a little bit cautious about using this space between 2.7 and 3 for this. Because we previously – maybe do you want to use this space for this, for host concerns? But in theory, the initial difference 2.7 and 3 was about whether we had tests. 
+
+SYG: I see. 
+
+MF: That’s not entirely true. The requirement was "Tests and any necessary experience". Whatever we deemed necessary when it reached 2.7. My intent was to include things like this.
+
+DE: I am fine using this to establish precedent as we say of host concerns or by stage 3, not necessarily by 2.7. If that’s what you want to say, I want to make that an explicit decision to make
+
+SYG: I want to avoid the outcome where we re-advance to Stage 3 and come back and say we still don’t know how to implement parts of it.
+
+DE: Right, that’s the reason not to advance to Stage 3, it should be 2.7 today. Okay. So sorry. Neither SYG nor I are objecting to it moving to 2.7. 
+
+USA: Thank you, everyone for the discussion. And congratulations, LEO. 
+
+### Summary
+
+### Conclusion/Resolution
+
+Consensus for Stage 2.7
+Proposal champions will seek external signoff from WHATWG HTML stakeholders and Mathew Gaudet (Mozilla) regarding the proposed list of suitable APIs to be exposed to ShadowRealms, along with sufficient tests to ensure correct behaviour in implementations.
+The external signoff on HTML integration is set as entrance criteria to meet Stage 3 as ready to implement signal for the ShadowRealm proposal.
+In general, in some cases, it may be OK to delay full validation of host integration issues to Stage 3, rather than everything being resolved by Stage 2.7.
+## Raw String Literals for Stage 1
+Presenter: John Hax (JHX)
+
+- [proposal](https://github.com/hax/proposal-raw-string-literals)
+
+JHX: Hello, everyone. I am JHX. And today I would like to process raw string literal for Stage 1.
+The problem developers often need to include some hexing there in the programs, which may contain things like quotation marks. These symbols require escaping or regular or double quote strings. Further we can’t use 'String.raw' built-in function to escape. However, there’s one important symbol that can be avoided for escaping which is the backtick. Here is a very simple example of a database query in SQL. It requires fields to be wrapped in tactics. We can’t do this in JS. We have to escape them. The reason we must escape is that the backtick itself is the delimiter for the strings and you can’t include it directly in the text.
+
+JHX: This problem is even worse when you need to use String.raw because you simply can’t express a backtick directly in the template. If using string.raw. Because string.raw even escaping is gone. Of course, we can use interpolation to reserve backticks. But I think obviously I think it’s not a pleasant writing or reading experience.
+
+JHX: Of course we can also unescape the backticks manually. Like this. Or even just to use any characters. But yeah. I think it’s not good because every time you write some text, you need to first convert the text. For example, in our previous example, maybe you tried a SQL, being a SQL, and copied the code into the JavaScript and you need to first convert, convert. Another classic instance involves embedding JavaScript code within JS. It’s worse, we not only need to escape the backticks, but also the dollars and the open curly brace. Because it’s also a delimiter. Actually, open curly brace is more – the backticks, if you forget to escape it, it doesn’t immediately lead to syntax error. Such – so in our company code, we actually have some bugs related to this. The correct code is like this. But the – this is the wrong code. It’s actually functional. But if the nail, if the name is coming from the external input, you can – just have injection risk.
+
+JHX: So this scenario above, straightforward, in the application, these issues happen significantly. Recently, we have been developing using GPT help people to program. So I write some prompts in the mark down for maps and the markdown include the fancy code box which – 6 backticks and the content error. Some example JavaScript code which itself contains template literals. So you can imagine how complex such code, if you really want to write the code directly in the JavaScript, it may look like this. Yeah.There are many, many escaping. And actually, I didn’t write code like that. So when I write it as an example in the README, I actually made many mistakes. There are too many. It’s hard to write it correctly. So actually, I just could use – arrived, use external files. But they also have some problems. Firstly, it’s forcing you to separate the text and the source code.And if the – and because it’s just a profile, you don’t have the interpolation, actually, in my application, I need that, but those are – finally, I have to use them. Some third party templates. And if you use a separate file, different platforms will have different file APIs and file additional IO, and often async operations.So I think yeah. It may work. But have too many limitations. You can write some tools to solve some of them. But the first point, the text and source code separation, it’s unavoidable. The underlying issue JavaScript occurrence not have raw string literals.
+
+JHX: So to summarize the motivation of this proposal, currently, JavaScript do not – lack general way to create a simple string literacy that can take any arbitrary text. This usually having literacy any other program language notably, and JavaScript itself in the text. The course of the problem is our strings have a fixed starting and delimiter. As long as that’s the case, we will always have to have escaping mechanism of the string contents. They need to specify the delimiter in the contents.
+
+JHX: This is particularly problematic, the backtick is common in many languages. So with such motivation, I believe we need a raw string literary, which should meet the following objectives. First, I think we – we should provide a mechanism that will yous all string values ton provided by the user without the need for any escape sequence whatsoever. Of course, all strings must be representable without escape sequences. It must always be possible for the user to specify delimiters, guaranteed not calling any text context. Second, I think the purple shows interpolation, the same fashion. Because all string must be representable without escape, it must always be possible for the user to specify an interpolation delimiter that will be a guarantee with any text contents. And three, it should support tag functions, just as current tagged templates.
+
+JHX: In addition to these 3 things, I also uncovered other needs while borrowing this demain. I hope to meet the need, as much as possible, although some may conflict with each other and they can’t be achieved at the same time, here is a list of them. For example, firstly, about indentation. Actually, this one might also be matched with the 'String.dedent' proposal. But a syntax conclusion, I think likely to pass better ergonomics and maybe some other benefits. And 5, easy to mitigate. It means that the current users of template should be using text. And 6, the info string, I hope we could have some mechanism like mark down. If you might 3 and indent. And the rest of the first lane is the info string. Normally, it’s to have, for example, the language, the language – so host can use it, for example, for syntax highlighting.
+
+JHX: And the – it will be nice to have a mechanism to do comments. People may put user interpolation for that purpose, but if we can’t have higher mechanisms to do comments, I think that’s good. And would also – it would be nice to have an escape in a specified place. This point is – for example, we support that. And the final point, if you nest, I mean, I write a nest – if the syntax allow, a short delimiter outside and long inside, if you write nester, to go back to this part and change the delimiter. This also helps like generators [inaudible]. And modify this already.
+
+JHX: So here are some things I want to achieve but maybe we cannot get everything. But I just have a list here. The possible solution, the current starts with @sken130's draft. However, there are many possible syntaxes. Here are the documents that will have many languages and Swift and Rust use different style. They wrap the string with the hash. For example, if we adopt the style design, the code – the previous example will look like this. The hash to wrap the string and so you can use the backtick in the…  if you wrap it, left the curl brace, it makes normal strings. If you want to do in place, you should use – must use the hash here. And a number of hashes should – in the source style, you can use any number of hash here. For example, if there are three hash, you can use three hash with any and use 3 hash here to label the interpolation like that.
+
+JHX: So I plan to investigate the different syntax options if this proposal approved as stage 1 and I plan to discuss the possible syntax design in future meetings.
+
+USA: The queue is currently empty. But let’s give it a minute or so to – Justin? 
+
+JRL: There’s three cases, and template literals that are representable. Two which you have solved. The closing ticks. If you want to enter a backtick anywhere, you solve that by requiring an extra backticks,  the interpolation sigil, which you solve by requiring the sigil in interpolations. But also backslash at the end of the string. It can’t be represented in the new format. 
+
+JHX: Yeah. This is another case.
+
+DE: I am not sure whether this topic is worthy of further committee investigation. We have template literals. We could consider some of these, I think, extra new syntax is a complicated way to go about it. Representing more things within template strings, I could see that, but if we have something at Stage 1, I would want to make sure that the changes to syntax stay pretty simple. 
+
+JHX: Yeah. There are many – many possible syntax solution. It needs some time to investigate all the options. There are already many other language supports raw string literals. So I think we can try to find some way to, some simple way to add too many costs. 
+
+LCA: So I think that it is generally useful to support the string literals that support is wide of raw string data in them as possible. I have run into some use cases you have described myself. I do agree with DE, that I think the syntax here should be incredibly minimal, and should not come at the cost of any other future syntax. I don’t think it’s worth taking one of the ASCII characters that we have not used yet to start a new string literal or anything like that. Which I think rules out some of the design options. But yeah. I do think it may be worth continuing to investigate, if there is something that is relatively minimal that would solve this use case. 
+
+SYG: For the – moving it Stage 1, I would like to understand all of the requirements, I think you gave a list of like 7 or 8 requirements. It seems that they’re not actually all requirements. I would like to better understand what are the non-negotiables given there are other constraints like minimal syntax, what is the non-negotiable requirements for you that a solution must have? 
+
+JHX: I might have used the wrong words. Actually, only the first three I think is the – the most important. All others goes – if we can without much cost, I would like to try to achieve them. But they are – they’re not must have.
+
+SYG: Okay. Thanks. So those 3. 
+
+DRR: Yeah. I know this is proposed for Stage 1. So the syntax is still not a concrete thing. But from what you have shown on the slides right now, I would kind of describe it as sort of kicking the can down the road when it comes to being able to escape specific text. Meaning, if you want to have a new kind of string, that uses a different scheme, you now have to decide how you escape out of that new scheme as well in some capacity. And so one thing to consider is that if you have something like this, the embedder needs to be to say – meaning the *author* of the actual file containing the string – needs the ability to say what the start and the end of the string looks like. Because otherwise, now you have the entire issue of, "how do I want to say I wanted a pound and a backtick in this specific location?" or whatever. So basically, I don’t think it – it holds its weight unless it gives that affordance – unless you were able to do that as an author in JavaScript.
+
+USA: That’s the entire queue. So JHX, do you have any take-aways from that? Would you like to…
+
+JHX: I want to explain the motivation of the proposal. It seems that I am not sure whether I should add a specific syntax. If that’s a must you have?
+
+USA: I think there was at least one instanceof asking the syntax to be more or less. DE would you like to speak to that again?
+
+DE: There seemed to be agreement that the syntax should be simple. Maybe it would – it would be thighs to have an example of proposed syntax that would be simple. But I don’t know whether or not that should be a Stage 1 requirement. Certainly a Stage 2 requirement.
+
+JHX: For example, do you think this syntax is simple or ? 
+
+DE: I am not – sorry. I am not a fan of that syntax. We have hash being one thing already. There’s a second meeting proposed – 
+
+JHX: But it is also possible to use some other symbols. 
+
+USA: Yeah. I think one important thing you mentioned, it’s something to be discussed before Stage 2. So I think hex, would you like to ask for Stage 1 with the understanding that you would have further discussions and possibly like an incubator call or something to discuss in more detail what possible syntax could be viable? 
+
+JHX: Yes. 
+
+USA: All right. So let the queue sit for that just a little bit. LCA? 
+
+LCA: Yeah. For what it’s worth, you asked whether this syntax is minimal enough? I don’t think so. I think the hash sign should be used for something that is more useful than another string literal. And if we used it here we probably can’t use it anywhere else so I don’t think we should use it. So something else. Like my definition of minimal does not necessarily mean that it has to be a single character. I think it has – this is a string literal that fewer people are going to write than regular string literals. It could be more verbose to write. But it shouldn’t – like, use a production that we are – nice to use for some more useful feature in the future.
+
+JHX: Yeah. But I want to do some explanation. Here, we just use a hash as an example. Actually, it could be some more symbol. But even hash here, it doesn’t conflict with current – with any – any proposal I know would use hash. Because it’s actually a combination of hash and the backtick. 
+
+LCA: This would conflict with any proposal that would use hash as a like – in a position where an identifier is valid. For example, the replacement character in pipe. Which I think we settled on another character for that, but yeah.
+
+NRO: There have been some doubts whether we want to do this. Like we should decide to do this or not and discuss what syntax this could have.
+
+RBN: I don’t know if he’s present at the moment, but the comment, MM has talked about template literals and the involvement in bringing to committee and I think he – he recall him saying on a number of occasions regret it wasn’t a syntax that could allow truly embedded languages, in embedded sine because of the escaping problems. So for one, I think that it might be worth discovering – discussing and investigating solutions to template literal like syntax that doesn’t suffer from the issues with escaping the trailing backslash and issues with also – with escaping backtick and escaping dollar curly. I agree with Nicolo, what the actual syntax ends up being is a concern to address in Stage 1, if we address the concerns of just the limitations and shortcomings of template literals is worth vetting on its own. What I am seeing in syntax here isn’t what was – what I saw on the repo last week. The syntax will fluctuate as things we narrow in on if this is [pb]. I do think it’s worth investigating, at the very least.
+
+MM: I am just confirming what RBN said about the history and my concerns.It is a very big regret that template literals went forward without having the escapeability that it should need. If we could fix that, that would be wonderful. But we can’t fix it because of compat. And I am skeptical to introduce a new similar template literal syntax to a language to coexist with the old one. I think that the existing one takes too much of the wind out of the need for a better one.
+
+USA: All right. And with that, that’s the whole queue. JHX, what do you believe is the next step?
+
+JHX: I am not sure. I still want to ask for Stage 1 because I think it’s a problem at least worth exploring. I understand the concern about the syntax. But we should do some explanation.
+
+USA: So what if you ask for Stage 1 and enumerate a list of suggestions that you will sort of work through within Stage 1 and would present before the committee before Stage 2. How does this sound?
+
+JHX: Yeah. 
+
+USA: So I suppose you are asking for consensus? The meantime, could you enumerate the things you will work on. I suppose syntax is one of them, as you mentioned. While we wait for the queue, you could enumerate the conclusions. DE is proposing a scope. 
+
+DE: The proposed scope would be, I believe, correct me – an investigation on how to deal with the limits of template strings, especially when it comes to including backticks or escapes for raw strings. Is this the scope, or are there more issues? 
+
+JHX: I think this could be the scope.
+
+USA: All right. Then with this scope in mind, let’s get consensus for raw string literals for Stage 1.
+
+DE: Could we name the proposal something different because – or…?
+
+USA: Do you have any suggestions? 
+
+DE: Overcoming template literal restrictions . . . 
+
+USA: Okay. 
+
+DE: So “improve escaped template literals”. That was LCA’s suggestion that I like.
+
+JHX: Okay. Like improve escape – okay. Yeah. We can change the name. Yeah.
+
+USA: All right. Congratulations JHX. And you have – while we break for the break, would you like to go to the notes and write down a conclusion? 
+
+JHX: Okay.
+
+### Conclusion/Resolution
+
+Proposal reaches Stage 1 with the scope of “an investigation on how to deal with the limits of template strings, especially when it comes to including backticks or escapes for raw strings” and the new title “improve escaped template literals”.
+
+##  Uint8Array Base64 for stages 2.7 and 3
+Presenter: Kevin Gibbons (KG)
+
+- [proposal](https://github.com/tc39/proposal-arraybuffer-base64)
+- [slides](https://docs.google.com/presentation/d/1c4-RAJsGcmvzFClOn3ia26njuEqoecl43WmK5u1XAmE/edit#slide=id.g106f4536d9_0_109)
+
+
+KG: Okay. Hello.
+I am coming to the committee with the “`Uint8Array` to and from Base64” proposal for stages 2.7 and 3. The proposal is on GitHub. As a reminder, the thesis statement is that we should have a built-in mechanism for converting binary data to and from Base64. It’s grown, but that’s the scope.
+The basic API hasn’t changed in a long time. There are methods on `Uint8Array.prototype` called `toBase64` and `toHex`, and static methods for `fromBase64` and `fromHex`.
+These have options, and some details that we will get to later.
+There is also a pair of methods for writing into an existing Unit8Array. These take a target and give a `read` and `written` pair that tells us how many characters from the input you read and how many bytes to the output you have written.
+And this is again for both Base64 and hexing. There was a question whether this should be a static or prototype method. As static, it takes the TypedArray as an argument, and as prototype it takes it as receiver.
+I am okay with either. There was some support for the prototype method. We already have `TypedArray.prototype.set`; it’s similar to that. I am open to either. And I am hoping that this is a small enough issue that wherever we go, the proposal can advance to stage 3 at this moment. Although if the fact that this is still open means it can’t, that’s okay. And I will just come back again.
+But this is the – the only open question that I have for the committee, unless I am forgetting something. I want to call attention to the fact that this is the first time that there would be something that is on one specific kind of TypedArray.
+I think that’s fine. It’s a sequence of bytes, this is the sequence-of-bytes type. But it is the first time we're doing this so we should take special care. All right, getting into some of the details. The first is the base64 methods take an alphabet parameter which takes either the string base64 or the string base64 URL. The default is base64. The hex methods do not support an alphabet parameter. The input can be mixed case hex, the output is either always uppercase or always lowercase. I am blanking on which it is but it's not customizable. There are also some details about the handling of invalid characters. Base64 and not hex supports ascii whitespace because the standard base64 implementations all support ascii whitespace. Not other kinds of whitespace, this is a very small list, not the whole unicode edition of whitespace. And if you encounter any non-alphabet character with the exception of ascii whitespace in the case of base64, then the decoding methods throw an exception. So in addition to input being invalid because of having invalid characters in it, in the case of base64 it can also be invalid because you don't have a full chunk. Recall that base64 requires chunks of four characters to decode. What happens if the input, the length of the input is not a multiple of four characters, ignoring whitespace. So we decided ultimately that this should be customizable by an options bag argument, which I've chosen to spell last chunk handling. It can, there's three valid values for it. Either loose handling, which is sort of the most permissive and matches what `atob` does on the web, which allows you to omit padding or to include padding. So it will just assume that if it gets to a partial chunk it will assume that this should have padding. Now there's a caveat there, which is that for valid base64 data you can have either one or two padding characters, you can't have three. So you can't have precisely one alphabet character and then three padding characters, which means that even in loose mode if you have precisely one additional character that's going to be an exception. So this doesn't allow all possible final chunks, only final chunks that could conceivably have been produced by omitting padding. In addition to this there's the strict option, which requires the padding characters to be present and also enforces that the two or four additional bits that are represented in the final two or three characters of the base64 that don't map to the decoded byte stream requires those to be zero. This helps to enforce that your base64 encoding is canonical, although you will also have to enforce absence of whitespace if you want to enforce canonical encodings. There's no option to enforce absence of whitespace but it's easy to do with a regex or something. And then the last and sort of most interesting way that you might choose to handle the last chunk not being complete is to just stop. And in particular this is something that you might want to do if you are expecting to get more input in the future, which might allow you to complete the chunk. So in the "stop-before-partial" case you stop decoding without an error and just return or write the bytes that you have decoded thus far. In the case of producing a new uint8array value, this is hard to use because you don't know exactly where in the string you stopped reading, unless you know that there's no whitespace in which case you can figure it out. But in the case of the API that gives you a read-written pair you can just use the "read" to say okay this is how far into the string I read before I stopped before the partial chunk and then you can pick up from there when decoding in the future. So it's not as useful on the not writing into an existing
+buffer methods. But it's present on both for consistency. And it's not present on the hex methods because the hex things don't have nearly the same complexity. So it didn't seem worth having the additional complexity to the API surface there. Okay.
+Another detail that we discussed and decided not to do was supporting writing to a specific offset of a given buffer. You can of course do this using subarray to create a view and then writing to the subarray, but this is something that I think we could add as an additional options bag option later. It's a little hard to feature test, but you can feature test for it, or of course you can just use the subarray. Or, you know, instead of adding this parameter later, if we decided we wanted that, we could maybe do something more holistic like having a view that you can retarget. You can shift the offset, the byte offset of an existing typed array without allocating a new one. There's lots of things we could do here, so it seems like it doesn't need to be solved for this version of the proposal. And the last thing to note is that there's no explicit support for streaming, but it is fairly straightforward to do it in userland using the stop before partial mode for handling final chunks. You have to use a little code in userland, but it's efficient in the sense that it never requires you to do an additional pass over the input in userland.
+So you can keep most of the work in the engine's implementation of the basic C4 decoder. All right. There's spec text. It's been looked at by a few people. Anbo's raised a couple of issues which I've addressed. There's tests in PR. I don't think anyone formally signed up to review, but several people have given reviews.
+And that's it. That's the proposal. I'm asking for, well, first, I am asking the committee for opinions and or consensus on this last open issue [Uint8Array.fromBase64Into vs Uint8Array.prototype.setFromBase64Into]. In particular, people seem to be leaning towards the second form. So I'm hoping that we can just adopt the second form and then go to stage three. I'll need to update the tests, but it's a very small diff to the tests.
+And then I'm hoping to ask for a stage three after that. So let's get to the queue.
+
+GCL: Yeah, I think this is a good proposal. I’m a fan. I think I would tend towards the prototype version, just because it matches what we’re doing in the language a little more. But, yeah, they not a super strong opinion. so, yeah.
+
+SFC: Yeah, it’s exciting to see this proposal continue to advance. I’ve been watching this for quite some time. And I’m really happy to see at this stage where we’re considering Stage 2, 27 or 3. On the question on the screen, the prototype version reduced positional arguments, and once you get above one or two positional arguments, things get really messy. So I much prefer the second version because there’s one positional argument plus options bag, which is fairly clean.
+
+LCA: Yeah, I’m+1 for Stage 2.7 and Stage 3, I’m sort of impartial about placement. I echo Shane’s comment, but yeah, don’t really care. I’m very happy that we managed to resolve the streaming something, so thank you, Kevin, for working through that. I know it was a bit difficult.
+
+KG: Thanks to Peter as well for working with me on that.
+
+SYG: Okay. I would still -- so V8 is happy with 3 regardless, but we would still like the output offset now rather than later. To provide some context, I finally had help from the team to run a microbenchmark to measure the cost on trying to isolate the cost of subarrays, the fresh subarrays each time, so what -- this is answering the question what performance are we leaving of the table in a hot path if you have to make fresh subarrays every time, and in the microbenchmark, is [posted in repo](https://github.com/tc39/proposal-arraybuffer-base64/pull/34#issuecomment-1933114603), and using an offset [INAUDIBLE] and 31% faster an Firefox, so congrats to Safari for being the fastest, but we -- these are, you know, double digit deltas, so in a hot pass, if we want to inline something like this, for Base64, I’m not sure -- I’m not saying that this has that performance requirement, Base64 does, but APIs of this sort, that decode stuff, we’re her worried about that as I said previously for UTF8. But for APIs of this sort, not taking offset does leave performance on the table. As for the alternative of repointing a TypedArray, that strikes me as kind of scary. That seems like it opens up a whole other can of worms, and this is -- taking an offset seems much more direct. So I would still prefer to have this for sooner than late, but pure preference. But I think for a future proposal, just kind of looking ahead for a future proposal on UTF8, it’s going to be a very similar shape. I think that will be a harder requirement there to have an offset. So this question will come up again. Otherwise happy with Stage 3.
+
+KG: Yeah, and I do want to say that I’m explicitly wanting to leave open the possibility of adding an offset later. Especially if it is done for TextEncoder's encodeInto as well. I think that it is something that we could do; despite it being slightly difficult to feature-test, it is possible.
+
+KKL: [on the queue] favors the prototype version. 
+
+LGH: I already submitted some feedback on the spec text, but I’m happy to do an official review if you need more people, and we also had various people within Bloomberg express excitement, about the flexibility of the API, so the option bags having different options on how to treat the behavior instead of hard coding those things. So definitely excited to see this advance as well.
+
+RGN: [on the queue] says +1 for Stage 2.7 and 3, end of message. 
+
+DLM: [on the queue] says  also +1 for Stage 3.
+
+JHD: [on the queue] also +1 for Stage 3 and being a reviewer.
+
+DE: SYG expressed support for adding this outputOffset option. Is there a particular reason why we’re not adding that? We could just land the patch since it’s all written. https://github.com/tc39/proposal-arraybuffer-base64/pull/34
+
+KG: Yeah, it was contentious, although mostly among Anne, who doesn’t participate in TC39, and DD, who also doesn’t participate in TC39. And I guess Peter expressed that he saw both sides of it. I don’t want to speak for him. But I mostly took this out because the web platform people said that they didn’t really like it, and the hope is to maintain rough consistency with the text encoder and encodeInto method, which is somewhat similar. I don’t think we have to be absolutely identical, but it would be kind of a shame if we added this parameter here and then the web platform did something different for offsets for text encoder.
+
+DE: I want to suggest that when we’re considering this accelerated UTF-8 API that we include 
+reconsideration of this issue and, for example, maybe at that point, we’ll decide we really want this parameter and add it to both the new API and the old one [meaning, both base64 and utf8]. Thanks.
+
+KG: And I want to -- I don’t know if Peter’s in attendance. I want to make sure that since previously the proposal did not meet Moddable’s needs, I want to make sure we give Peter a chance to say if this meets his needs. I know there’s some design questions that not everyone is completely happy with. But, yeah.
+
+PHE: Thanks for checking. I am content with where this has landed. It addresses the most basic needs that we have in and the most fundamental concerns that were raised. I’m happy that there was some common ground between what the Wasm folks wanted and the embedded folks wanted or needed. That kind of let us get there, so I mean, I think that’s the best possible outcome. So some reservations, which you and I have discussed, but nothing significant enough to impede stage advancement at this meeting.
+
+KG: Okay. Thanks very much. So I’ve heard a fair bit of support, and everyone who spoke about the bikeshedding issue preferred the prototype. So I would like to ask for Stage 3 for this proposal with the caveat that it will be updated to accept my PR to do the prototype placement and I will separately do the tests; so tests are not 100% complete since they are testing the slightly wrong form of this, but I think I can still ask for Stage 3 with that caveat. I’ve already heard several explicit supports, so just a final chance for people to object.
+
+RPR: Any objections to stage 3 with the prototype method choice? A repeated +1 from JHD for 
+the Stage 3 and existing tests and prototype. I think we can call it. Congratulations, you 
+have consensus for Stage 3.
+
+Everybody: Yay.
+
+### Conclusion/Resolution
+- The base64 proposal reaches Stage 3
+- On the bikeshedding question, the proposal will switch to a prototype method from a static method https://github.com/tc39/proposal-arraybuffer-base64/pull/45
+
+## Extractors update
+
+
+Presenter: Ron Buckton (RBN)
+
+- [proposal](https://github.com/tc39/proposal-extractors)
+-[slides](https://onedrive.live.com/view.aspx?resid=934F1675ED4C1638%21299428&authkey=!AEyZcVuri5fJLbQ)
+
+RBN: I wish I could be there for the 100th meeting. But that didn’t pan out on my side. But I am happy to present a few topics at this meeting. I’d like to briefly talk about Extractors. This is a proposal that I brought to committee over a year ago in discussion around how we wanted to handle things like custom matchers and pattern matching, and having a syntax that was consistent across pattern matching and destructuring and some of those use cases. The motivation for this proposal is that there’s currently no way to evaluate user defined logic during destructuring. The pattern matching proposal has a mechanism for user defined logic when matching via custom matchers. The idea with the extractor syntax is to leverage a common pattern that you see in multiple languages to interject into that matching process in a way that would be consistent for both pattern matching and destructuring, and this is again present in multiple different languages in different ways. Scala uses extractor objects, which I presented in depth in a previous plenary, Rust uses pattern matching, C# uses `Deconstruct`, and the list goes on and on. Now, what I had proposed previously included the concept of what essentially looks like a call expression, but in a declaration position. Here you see `const Parse(a, b, c) = input`. In the Scala world this is what is called an extractor, and it would leverage something called the `unapply` method. The basic concept that is calling the constructor is "application" of arguments, while extraction is the “unapplication” of a result into its arguments, pulling that one value out into the multiple things that may have produced it. This is extremely useful for things like algebraic data types, for patterns, for custom parsing, and for validation, and this proposal introduces these mechanisms through the use of this syntax. So examples here show parse, which uses an identifier reference, Option.some, which is a dotted name, and nested destructuring, so you could have an element that then is further destructured using normal destructuring syntax or using these extractor patterns inside of object literal destructuring nesting them within themselves, et cetera.
+
+RBN: I last presented on this in September of 2022. At the time, this proposal included two concepts, the idea of array extractors, which used the argument syntax, and object extractors, which used a Rust-like curly brace syntax for object destructuring. One of the goals was to match some thinking and direction we had for proposals like algebraic data type based enums. We’ve previously presented a proposal for enums, and I’m planning to re-present at some point in the future, and we were trying to find ways to make a syntax that would match the end goals for each of these proposals to have something consistent in the long term. 
+
+RBN: Now, in between when this was adopted at Stage 1 in September of 2022 and now, we’ve been mostly having discussions about this syntax within the pattern matching champions group. One of the things that we’ve decided is that the object extractor syntax is something that we don’t want to continue to include going forward. It takes up too much syntax space and introduces some complexity that we’d like to consider removing. So that’s basically the change that I’m here to discuss today.
+
+RBN: Let’s talk about extractors and binding and assignment patterns. This is the thing that we’re actually proposing – the part that focuses on pattern matching is being discussed more thoroughly within the pattern matching proposal. So the change here is that object extractors are being removed. Again, we are concerned that it eats up too much syntax space, essentially identifier curly (`const Identifier{} = …`), which would get in the way of other potential uses or contextual keywords that might do other things in the future, and that syntax, because it is such a large chunk of syntax space that it eats up, we found that we could just instead push this inside the first argument or the first extracted value in these extractors. As a result, we can now favor nesting structuring instead of this new syntax, and again, some of the thinking I’ve had around how this might look for some potential future with algebraic data types is potentially also incorporating the destructuring-like syntax or the using direct curly brace instead of paren + curly brace (i.e. `({ … })`). As a result, this simplifies what we’re actually looking for are the with the proposal and has less potential future conflicts
+
+RBN: As for the things we are still keeping, we’re still looking at this novel syntax. We still have the same main motivations for doing things like data validation, transformation and normalization in the midst of destructuring, to be able to leverage things like prior art from scala extractors, rust variable pattern, C#’s `Deconstruct` and many other languages, and align with what we’re doing in the pattern matching proposal. We’re also keeping the ability to reference a qualified name, which is similar to what we currently allow for decorators as decorators can have an identifier or a dotted identifier, so A.B.C, et cetera, and this uses that same mechanism. When you would run into a dotted name, we would resolve the root identifier of that dotted name in the current lexical environment as an identifier reference and then the dotted members are then just property access off of it. That result that it resolves to is then used as a custom matcher
+
+RBN: When you have binding patterns, you would be able to, say, parse input, you would be able to emulate the list-like semantics  restructuring, so here List(a, b) would allow you extract something that produces a list of two elements or an option type where you might say Option.some(value) is the thing on the right. In the pattern matching space, you could have multiple branches ot match against, where if you don’t match one branch, you move on to the next potential branch. In the destructuring case, you have only a single branch that can be the thing that matches. If it fails to match, you would throw an error and this is consistent with if you tried to do array destructuring on null or on an object that doesn't have an iterator, we would throw an error. And we would also have the same capability in assignment patterns.
+
+RBN: Right now it’s already legal syntax to write a call on the left side, but we throw because it’s not a reference, so you can’t actually utilize this syntax in JavaScript today. One of the advantages of removing the curly brace syntax is again we don’t have to be concerned about the potential conflicts, future conflicts with cover grammars as a result of trying to use identifier curly in one wave, it looks like it’s on the left side of an assignment and another way if it’s just a normal expression.
+
+RBN: As I mentioned before, we’ve also been talking about this in the pattern matching group, and in that group, we’ve discussed the same changes, that the patterns that use extractors are custom matchers using the paren syntax and would not be using the curly brace syntax either. As a result this basically looks like pattern matching, with the same types of syntax with the same capabilities and when it resolves the dotted identifier, it looks up the object reference and calls the custom matcher method of that object.
+
+RBN: This example here is a relatively simple data structure. But while this says Point, you could imagine that it could be literally any data structure that has some type of user defined shape. Point, here, is a fairly simple example. It allows us to do some type of construction and create an object that we can later deconstruct. But it’s slightly improved over just regular object destructuring because we have the ability to do brand checks and validation of the thing that you’re trying to destructure. With something like Point, this might not seem quite as necessary, but you look into something more complex, when I have a class of different things such as this example I have a Geometry where you have a Point, a Line, a Rectangle, a Circle, an Ellipse, et cetera. You’ll see here Line and Rectangle share the same object structure. They both take a `point1` and `point2`. They both likely have a `point1` and `point2` property. But when you go to do destructuring or pattern matching, you would need to brand-check against the individual types to distinguish between them. The type ID that comes from the brand check is extremely important to the matching case, because I don’t want to draw a Rectangle when I meant to draw a Line. Leveraging the custom matcher syntax allows us to hook into the same mechanism to perform this type of validation. Another example here shows just some very basic examples, such as matching with qualified names, if you had something that looks like an algebraic data type enum, even if those don’t currently exist, you can emulate the pattern using objects and classes and custom matchers. With this I can do things like match on a message indicating whether I should write something to the console versus moving a character on the screen by a certain X and Y coordinate. And finally, an example of nested matching using nested objects that have a given shape.
+
+RBN: This is another example I showed earlier in the September meeting in 2022. We could, for example, support nested destructuring and pattern matching against regular expressions. This is something we’re also pursuing in the pattern matching group. Which is the ability to do pattern matching on regular expressions. This pulls this out into an object so you can use it for reference. The pattern matching syntax would actually theoretically allow you to embed the RegExp pattern directly within destructuring or pattern matching. This basically is a custom matcher that returns a single element that either you can pick out the group and a group value that you need or you can look at things by ordinal position within the RegExp match result.
+
+RBN : This proposal has some relationships to a few other proposals that have either been discussed or are upcoming. As I’ve mentioned before, this is very strongly tied to the pattern matching proposal which is currently at Stage 1. This is a preferred syntax versus a prior syntax that was being considered for kind of doing nested matching after doing a custom nested pattern matching after doing a custom match against something. So you can see there’s some parallels here. The basic patterns of doing object-based patterns, doing array-based patterns, doing string-based patterns, et cetera, and involving custom matchers, for example, looks 
+somewhat similar.
+
+RBN: Another proposal that has been discussed and is currently Stage 1 is the parameter decorators proposal. There is a small amount of overlap between these two in that they both can target a parameter, but there are definitely different use cases for these. Parameter decorators are designed to face outward and can only appear at the top level of a parameter declaration and run very -- and they’re useful for reflection, attaching metadata and meta programming when you’re dealing with the function declaration itself. Things outside control of the body, such as doing registration of things or binding something from a route parameter to a -- I’m sorry, binding something from an HTTP route to a specific parameter or of the body is not something an extractor can do because the extractor has to run when the function is invoked. Extractors face inward and can be nested anywhere in a parameter and much more in depth and closer to the code and, again, only run during invocation, you can’t use them for reflection, metadata or metaprogramming. These two proposals, while they have a place within a function declaration where they touch at the parameter level, they’re really not designed to be conflicting. They’re designed to be complementary to each other. 
+
+RBN: As far as upcoming proposals, we have presented before around this idea of an enum proposal. We have been rethinking that proposal and what its goals are. Our original intent was around producing something that was more aligned with TypeScript enums, which essentially are either string-to-number or string-to-string based mappings, but we found that there’s a lot more potential in the idea of algebraic data types and more capabilities we could express there. There’s still some interest in pursuing that and bringing it back again to TC39 to discuss further, so that’s still something that’s on our agenda.
+
+RBN: This is an update. I just wanted to give everyone an idea of where the extractors proposal is. The object extractors part of the proposal had some contention before and some concerns about where it might go if we proposed it for Stage 2. But I think that we generally agree within the pattern matching group that we can serve the same needs without these object extractor patterns and learn just the array extractor patterns, and I think that the various directions I’m wanting to take this proposal and the various tie-ins to this proposal and cross cutting into concerns coming down into the future are consistent with that approach. And again, this is just focused right now on binding and assignment patterns because the pattern matching side is handled in the pattern matching proposal. So that’s all I really have for this one. I don’t know if there’s feedback. Let’s go to the queue at this point.
+
+RGN:I think this is really nicely general. I appreciate it’s separation from pattern matching, it looks like it’s got a lot of foundational support that can really assist with a number of patterns, if you’ll excuse the pun, that come up in lots of places. So I’m excited about it. Thank you for the update.
+
+DE: Similarly to Richard, I’m very happy about the current shape of the proposal. I think the object extractors made it a little difficult for people to understand the first time, but this is very natural evolution. My biggest concern about pattern matching besides complexity was that this sort of custom destructuring wasn’t available outside of pattern matching, and this resolves that very well. I think it stands on its own, but also would be fine to advance with pattern matching. So, yeah, thank you. 
+
+RBN: And I would like to say that the goal is, right now, I still have some things that I need to do to work towards this being ready for Stage 2, but the goal is to have this proposed for advancement to Stage 2 around the time that we’re ready to propose pattern matching to Stage 2, if not before, but at least by that point.
+
+MM: Yeah, so first I’d like to express my strong, strong support for this. As you and many people on the committee know, I’m often a skeptic about new syntax added to the language, that it does not pay for itself. This one pays for itself. This one has a tremendous amount of reach. And it’s fairly small and elegant for something with this much reach, this many different things you can apply it to in a coherent and unified manner. I do have some questions. First of all, I want to clarify, the object extractor, the thing that you withdrew was simply the way to express the syntax. There was no loss of power, is that correct?
+
+RBN: Essentially. So the difference -- let me see if I can go back to a slide that relates to that. Previous extractor syntax would -- it would still have done the same resolution mechanism and still have called the symbol.custom matcher method. At the time the return value of that method was an object that had either a `matched: true` or `matched: false` and then a `value` property. For an array extractor, which is the syntax that we kept, the value would be an array, and for an object extractor the value would be an object. So you would have these two branching paths based on the kind of extraction you want to do. But that really doesn’t fall out of how the syntax is used. So we now pass in some type of hint that indicates how you are using the extractor, and that’s something we still need to do for other reasons. But it does mean that you have this -- this dichotomy between “what I am requesting” and “what can I actually give”. So you could give a value that was incorrect. By switching things to just the array pattern syntax, we’re actually able to vastly simplify the logic for a custom matcher. 
+
+RBN: I had an example here showing Point. Before this, the example here would have been if it’s a match, then I am returning a more complex result that has `matched: true`. If it’s not, I have to return `matched: false`. Now since it’s only really ever just array extractors, you just return either an array value, or something that’s truthy, or something that’s falsy. There’s a hint that gets passed in that indicates whether the pattern is expecting you to return an Array or a Boolean, but that’s primarily an optimization mechanism. If you say that something is a match and in the pattern matching case and you’re just using `when Point: …`, you don’t need to do the extra work to allocate the array. Note though that this isn’t something you can do in the destructuring case, but it’s something you would do in the pattern matching case for type/brand tests.
+
+MM: I’m sorry, where is the hint passed in?
+
+RBN: It would be a second argument here. It’s not shown in this example, but the parameters would be: subject, hint.
+
+MM: Do you have an example that uses the hint?
+
+RBN: I do not have one in this proposal at the moment because it was not necessary, and I’m using the semantics we’ll be using for pattern matches. The pattern matching case would be `when Point:`. And that’s not something you can do in the destructuring case because that would just be an identifier that you would be declaring. So it’s not necessary for the cases that we’re actually presenting for this proposal. In the pattern matching case you could use the hint as Huawei to not produce the array object if I’m carrying, is this a match, yes or no, and not further destructuring.
+
+MM: So I am agnostic on that. I’d like to dive into that more, but that certainly, with regard to going for Stage 2, which I understand you’re not even doing today, that certainly is a fine for an investigation that can proceed within Stage 2. 
+
+MM: The other questions I had with -- was with regard to the pattern matching proposal. The places in this slide deck where you showed pattern matches was just showing the match when as a -- the switch-like alternative for doing a bunch of sequential pattern matches. I certainly want extractors combined with the match when syntax. What -- given  match and extractors, is there any other functionality from pattern matches that’s left on the table or could we just do match when plus extractor and get all the functionality?
+
+CDA: Sorry, MM, we’ve got a point of order from JHD.
+
+JHD: It would be great if we could refrain from discussing pattern matching until the pattern matching champion group is ready to present it. That question will definitely be answered in our future presentation.
+
+MM: Okay. Okay.
+
+RBN ??: Definitely a lot of things that we’re looking at as pattern matches as well leverages this capability.
+
+SYG: So some general performance questions. So the -- the queue item is any performance lessons from C#. There’s some interesting -- so the overall, like, high level hand wavy concern, which is maybe even too strong to call it a concern at this point is when decorators were presented, one of the performance principles we wanted it to uphold better was if it -- if something looks declarative, it ought to perform declaratively. This thing looks pretty declarative, but calls arbitrary function, which does arbitrary things, and I realize that even in languages where this is present with a static type system like in C# that does still call an arbitrary function, is that correct?
+
+RBN: That is correct.
+
+SYG: So in that case, I’m wondering -- so, one, that puts my mind a little bit more at ease that there’s a static language with can perhaps even stronger performance expectations, and I’m wondering what lessons have you learned in are there best practices that that the C# community puts out like don’t put too much custom crap in your custom matchers or something. And that’s question number one, and two, just more of a statement, I guess, it’s -- what kind of values would flow into the subject argument there for the custom matchers? Would it in practice end up being megamorphic all the time because arbitrary things flow in there all the time that you have to check for the presence of shapes.
+
+RBN: It depends, really. Actually one of the goals I’m looking at is to find ways of optimizing that experience by being able to declare a closed set of potential object shapes that you might expect. But just like any function, you would have to expect that the -- the thing that you come in can differ from what you expect, because -- but it’s the nature of JavaScript. But just like anything in destructuring today, if you had an object literal or array destructures anding, you don’t know what the thing on the right-hand side is until you go to perform that, so you’re still having to run code that gets the symbol.iterator method, and if doesn’t exist, to throw and if it does exist you have to run possibly user to code the evaluate that. There might be performance optimizations that could be made by a run time by known shapes and known expectations, but in the -- at the end of the day, this is still basically just array destructuring. It just has that -- there’s that extra bit of user defined code that you could run that you might not be running, but you still could if it’s a getter or has all this other behavior behind symbol iterator.
+
+SYG: Side bar comment, the array destructuring is,  Array destructuring is so much slower than object destructuring.
+
+RBN: Yes, and that’s something that we -- I’ve been talking about with the pattern matching group about, is there a potential future for a -- if we in the future, say, had an algebraic data type data structure and question could define something that says you have a return value that is fail, a unary value or an n-ary value, the unitary value could be a simpler case for doing nested object destructuring having to deal with all of the array destructuring wrappers around it. Again, there’s not much progress there, plus we’d need to get an ADT enum proposal to Stage 1 to really start considering what the implications would be there.
+
+SYG: To go back to my question about the Pom fore. My subject, I wasn’t asking what’s possible in principle, I understand that to be correct, of course it can be anything. But just as we’ve discovered kind of empirically in practice, many functions end up being monomorphic in just how they’re used. I’m wondering if you have been intuition on empirically, will these custom matchers be more polymorphic than other functions that might end up being monomorphic because of how they’re intended to be used?
+
+RBN: I don’t have any specific metrics to share related to that. It’s really hard to know. The closest that you could get is what you normally see with a switch statement. When you see things like match, you’re not usually matching on -- it could be one of 100 different things that are -- some might be numbers, some might be Boolean, some might be objects, but you will see cases where you’re going to be matching on multiple different types of objects. We see that in the TypeScript compiler because we use an AST for our syntax tree, and therefore, we have nodes of different shapes all the time. There’s nothing we can do about that and that’s where I’m eventually hoping ADT enums will give us benefit.
+
+SYG: What’s the type of the subject argument in C# use cases?
+
+RBN: So C#’s use case, the way C# works it uses a method called deconstruct that is attached to the object as an own method or an extension method. But since C# does all of its binding at compile time, the type is already known. You could have something that is just an object and it tries to deconstruct it. But, again, I don’t really have metrics to share. We can get back to you what those specifically are in those cases. Again, with C#’s deconstruct, you often have strong type checking because it can actually know what the types are on the left side based on what the deconstruct arguments are on the right side return value.
+
+DRR: So could I jump in and give a little bit of context. So I just checked in with a couple of people on the C# side now. Basically, in terms of how arbitrary the code is that can execute, how much of a problem that is – they anecdotally said that is generally not an issue. With respect to how polymorphic it is, I can dig in a little bit on that. What I will say, though, it’s a little bit different in that on `Deconstruct` for C#, the general approach is not to, you know, return an array or something that’s iterable. They have the benefit of being able to use something called `out` parameters, which are basically things that you can write back to on the stack. So there is a--- you know, whether or not this is something that can be optimizable and run efficiently is something that we’d be curious to get some feedback on as well, because if we were to adopt that in the TypeScript compiler, we would want to be able to have assurance that that’s not going to be slow.
+
+SYG: And we share that goal, and let’s keep in touch.
+
+RPR: Okay. We are at time, but we’ve got an opportunity for a small extension if you want to keep going.
+
+RBN: Yeah, I think the only -- I can do just a short extension, I think Kevin has one comment that I think is worth discussing. But I’m not asking for any type of advancement.
+
+RPR: Okay. Let’s keep going with the queue, then.
+
+KG: This is a very narrow point, but I think there’s probably some room for design here that allows users to do exactly the same thing, but still not involve the array protocol. Like many people know you can do -- you can destructure an array using named numeric properties like `{0:x, 1:y}`. This is far too early to actually worry about, just I think that we should at least consider the possibility of designs that allow us to avoid the actual array destructuring protocol.
+
+RBN: We have been discussing that as well in the pattern matching calls. The -- right now, my opinion has been to keep with array destructuring because that is the -- kind of how things work for array-like things today. And the expectation that people have of what they do with the result or how they formulate those results, just more, again, is a consistency argument. But if we do find that that type of destructuring is more valuable, that is something we have been discussing as a possibility, where array could -- you could put an array here and that would work, but you would have to reform late how you would do something like the RegExp example, that just has a symbol iterator so you don’t have collisions between group names and element names. It would make this type of example more complicated because if I have a group named zero or group named one, I can’t use that as an array-like element in those cases.
+
+LLC: Yeah, does this array-like destructuring support, like, rest parameter destructuring, like `...ident`?
+
+RBN As it is proposed and in the explainer, yes.
+
+LCC: Okay. Thank you.
+
+BSH: [on the queue, read by RPR] asks is the hints argument expected to avoid unnecessary production of values that won’t get assigned to anything?
+
+RPR: Again, this is specific more to the pattern matching case.
+
+RBN: Yes, really, I think that’s pretty much what that is supposed to mean. Again, it basically -- the hint is telling you what the result is going to be used for, so there’s no need to return an array if you’re only testing for a match, which would only care about truthiness. So it’s a bit of an optimization. It does provide you also a bit of a hint that if I’m expecting to destructure and only returning true, that’s not going to work and we’ll throw an error anyway and at least the note informs the call the intent is behind that use. And those are more questions for how pattern matching tends to employ this -- for assignment and binding patterns, the hint argument isn’t all that useful.
+
+BSH: Okay, thank you. I was wrong, I do need to speak. To be clear, if you have a very deeply nested thing, and you really are trying to dig way down deep into it to pull out just one little piece, you don’t need to build the whole structure, right? If the assignment is really just trying to assign the subpart of a subpart of a subpart of a subpart, then you don’t need to build all the other parts? So that’s what by picturing. My question has nothing to do with pattern matching.
+
+RBN: Are you talking about a hint that contains more about how the result will be further destructured? You’re having to construct some type of complicated object shape to represent what I’m going to pick into before I even test whether the thing is actually a match. So I don’t know if that’s actually valuable. So in the case where you have something that could potentially match or could potentially fail, you would be paying the cost for every single thing regardless whether you pass or fail. Whereas in the case where I always have to destructure if I succeed , you’re only paying the cost when you succeed. I think it’s more valuable to have `hint` be simple rather than be something more complex.
+
+LLC: Agree with that. And I wonder if for cases where you have, like, a large number of different items that could possibly be destructured, and you’re likely only going to use one of them, but they’re all very expense to have compute, you could use getters and the destructuring would only pull off the getter that was actually used here?
+
+RBN: Well, again, one of the things that’s interesting is you have the opportunity to write your code to do the cheaper tests first, so if I know that I’m -- if I’m testing is this a point before I do any destructuring that’s what this does here. If X is in subject, I’m doing my brand check first before I do any other further work. That’s an efficient way to write your code anyway. Regardless of how you’re writing it, you want to make sure you need to do the work before you do anything more complex. While people can vary in how efficient they write their code, there’s an opportunity to write code efficiently for this. So I don’t know that getters are all that helpful. There’s no real getters that apply here. On the destructuring side, even if you’re trying to produce something more complex, usually those cases aren’t -- you’re not normally producing a new object that has a very complex shape when you’re doing this type of thing. You could -- it’s completely feasible, but the majority of those cases would need you to construct, from whole cloth, a brand new object shape. There are cases that will happen. I don’t know if I had them here. I had them earlier on. Some of the examples in earlier languages, so I may not have it here, but one of the examples from scala that I showed early on showed using extractors to perform parsing. These are some extra slides I that are from the previous presentation, so if anyone wants to review them, they’ll be in there. But scala has examples of doing unapply, to pull apart a string into something more complex. This is something that is more complex than the average case, but is something that you might feasibly want to do, though it’s definitely not going to be as performant as the more common cases.
+
+RPR: Thank you. I think that’s the end of the queue.
+
+RBN: All right. I appreciate the feedback. I hope to have -- this back at committee again in the near future, and I wanted to give an update on where things were to keep the committee in the loop. We’ve been discussing this regularly in the pattern matching calls that we meet quite often, we discuss this also in the pattern matching discussion on Matrix. Most of that discussion has been happening there because the goal is to have both the binding pattern, assignment pattern version and the pattern matching version work together and be consistent in both respects, so there’s a lot of discussion around cross-cutting concerns and how this all works happening there. So thank you.
+
+### Conclusion/Resolution
+- Only an update, no consensus needed at this time.
+- Object extractors removed from proposal.
+- Investigating the performance characteristics of iterator-destructuring vs. explicit array indexing for extractors.
+## Intl.MessageFormat
+
+
+RPR: Thank you, Ron. Okay, next we have the continuation of -- from Eemeli, although I don't actually know if Eemeli is here on the messageformat.
+
+DE: I’ll present if Eemeli isn’t here. So I wanted to review a potential summary for Intl.MessageFormat next steps. Right now the proposal is at Stage 1, and I wanted to lay out what future work would be like. So here this big paragraph I have, I wrote this and I wanted to verify it with the group. So one piece of feedback that we’ve gotten is that it would be meaningful or persuasive to see, maybe a dozen organizations of various sizes, including ones that were not involved in MessageFormat 2 development to make significant use in production of MessageFormat 2 syntax across their stack. And that this will likely be required for Stage 2.7. The requirements for Stage 2, the exact requirements, I think are a little bit undecided. I think people were a bit more -- em Eemeli during his presentation expressing maybe the strongest possible interpretation of the need for a delay. But I think we could discuss that more in the future. Anyway, I wanted to put this in the summary to encourage this kind of future development. And in the conclusion noting that probably in the following TC39 meeting, there will be a presentation on Intl.MessageFormat for Stage 2, leaving out the parser and focusing on the data model. The committee has not expressed concerns about this approach. But it remains to be reviewed by TG2. And that TC39 encourages continued development prototyping and deployment of MessageFormat 2 syntax, for example, as implemented in the JS level library. 
+
+DE: I really want to avoid giving the impression that TC39 kind of thinks that development is a bad idea. I don’t think anybody here has argued that. But taking out the syntax might be misinterpreted as that, so this is why I am proposing such a shared conclusion text. Any thoughts? Any concerns? Do we have consensus on this statement of, you know, encouragement?
+
+MF: thumbs up from Michael Ficarra 
+
+JHD: thumbs up
+
+MS: Just a nit, don’t stick to the following meeting, exchange at a future meeting, that will include the following meeting.
+
+
+DE: Okay, done.
+JSC: And JS Choi has a + 1, end of message. 
+
+### Conclusion/Resolution
+
+
+RPR: Okay, all wrapped up. Thank you. Okay. I think 
+we’ve kind of come to end of the normal agenda. I know Chris wanted to do ECMA recognition 
+awards, but I think we’ve actually got now at least a 20 minute gap, maybe a bit more. Dan, 
+would like -- we don’t have enough time to fit in any of the usual topics. But, Dan, would you 
+like to use this to do some scrubbing of Stage 1 proposals?
+
+## Scrub Stage 1 proposals 
+Presenter: Daniel Ehrenberg 
+
+DE: Yeah, let’s do it. So I’ll share my screen again. This is continuing something that my 
+colleague in Bloomberg, Peter, has kind of started of looking through past Stage 2 and 3 
+proposals to figure out what our next steps should be. In the chat, in the delegates chat, in 
+the past week or two, the question was raised what about this Stage 1 proposal, should we 
+withdraw it? And so that kind of raises the question, well, we have a lot of Stage 1 proposals. Why don’t we do the scrubbing process through them. And this is intended to be completely informal, no particular preparation expected. But don’t feel like have to answer if you’re put on the spot. So let’s just talk this through, and then in a future meeting, we can figure out -- we can actually put something on the agenda to propose a particular action on the proposals. So “export V from mod”.
+
+JHD: So I brought this one up within the last handful of meetings. I will have to check the notes to remember the conclusion. The purpose of bringings up was to say is this going to be worth my effort to champion and bring it back. So if --, If the notes contain an encouragement of that path, then I will update the presented date and the champion date. But if not, then I would withdraw it or I would want to mark it as withdrawn.
+
+DE: That’s great. Thanks for bringing it up. Does anyone want to encourage or discourage 
+JHD from progressing this proposal? Feel free to also provide feedback asynchronously.
+
+DE: Observables, so observables, 
+as many of you know, are under discussion as a what way HTML proposal. They were previously 
+proposed as a TC39 proposal. I think the move to WHATWG was partly because there was somebody 
+in -- somebody who was excited to work on it within that forum, partly might have been due to a 
+misunderstanding about TC39 having rejected the proposal, which I don’t think we did. Anyway, 
+should we withdraw this proposal and be content with it proceeding in WHATWG, or what would you 
+all like do?
+
+MM: So as the co-champion with Jafar, the I am not interested in putting effort into this by 
+myself. So if that’s the conditions under -- only conditions under which it would advance, 
+then it won’t advance. Jafar, as far as I know, has not been active for a very, very long 
+time. I haven’t heard from him in a very, very long time. I was not -- I do think that 
+this -- you know, that this thing, if it happens, should be, you know, just abstractly, if -- 
+if give an choice between WHATWG and TC39, TC39 is the appropriate venue, but obviously only if 
+someone’s willing to push it here, which I’m not. I’m not willing to do -- to do it alone.
+
+JHD: I'm on the queue for, like, basically +1ing that. If I thought that it would -- that the -- how would it put it in? The folks who are enthusiastic about working on it in the web, if I thought that they would pause their efforts and, you know, and help us or not advance a solution -- a more general solution in the language, then I would be happy to join as a champion and help with that. But I have had a few backchannel conversations and do not get the sense that they are willing to do that, which, you know, makes that -- the effort of doing it here complicated.
+
+MM: Okay. I also want to take the opportunity to compliment Jafar on the extraordinary job he did. I was really along for the ride. He was the driving champion, and he just did a great job of this. Very powerful and elegant.
+
+DE: So is anybody interested in getting involved in the WHATWG standards effort and having 
+trouble finding a path towards that, or is anybody interested in -- no one’s interested in reviving this, we should probably move.
+
+MLS: Is Jafar part of the WHATWG effort?
+
+DE: No, I don’t think -- at least not visibly involved in any of these sort of standards. But 
+Len LicSh, the current maintainer of RX JS is very much involved.
+
+JHD: I’ve spoken to Ben,   And if he got enough of a signal this committee that convinced it would happen 
+roughly as quickly in TC39, he would prefer it here, but his overarching priority is to get it 
+shipped on the web, one way or another.
+
+DE: Right. I suspect that Ben would have enough community sway to make that transition occur. 
+So it really comes down to if anybody wants to actively work on this, and if not, then we 
+should, you know, just be happy that it’s progressing in this other forum. Okay,.
+
+LEO: DE, if you’re planning to go through all the list, I recommend we just organize some 
+verification work and we can reach out to all the implementers, otherwise we might take like 
+a -- just like too many long minutes to go through each one of them. Like, we can do some 
+verification to see, like, if there is intent to continue work on those proposals. I can help 
+on that, but yes.
+
+DE: So, yeah, like, I don’t have anything else that we should use the time for, and this is a 
+thing that’s been on all of our shared backlog for a really long time. 
+
+RPR: In the previous meetings when we’ve done these scrubs, I think they have proved effective use of time. 
+
+DE: For secure EMCAScript 
+
+MM: We are currently working on it. And as well as a lot of issues around it. We will be changing the name from secure EMCAScript to hardened JavaScript. That’s the name we’ve been using. That name’s worked much better and it avoids some of the political issues around using the term security. Not just political, but also clarity. Hardened is clearly more evocative of integrity, and integrity better names what this 
+is about rather than the vague security. So, yes, this is -- this stays active, and we can do 
+the rename later.
+
+RPR: Just to address Michael’s point of order on the queue, yes, please use the queue to question 
+whoever is leading the topic. Yes. And there’s just under 10 minutes left.
+
+DE: Math extensions. So this proposal started with a couple things 2 degrees to radiants. Last -- when it was present, I wasn’t sure of the motivation of these particular things. Does anyone want to pick up this proposal? Okay. So we could move that to withdrawn. 
+
+LEO I personally, I have no interest in continuing this work(array.of  AND array.FROM). Is it this work? I have no intention to continue the work on these other proposals right now.
+
+KG: I still think they’re worth doing, and would pick them up if I get through everything else. So array.of is a variadic argument way of creating an array. Array.from takes an iterable 
+and gives you an array. This would be the same on map and set and WeakMap and WeakSet. So you 
+could do set.of 2, 3, 4 or whatever.
+
+RPR: And there is support from MF.
+
+DE: Generator error functions. Yeah, isn’t it kind of weird that you can make a function or an async function as an arrow, but not a generator? And one idea here was that we make this syntax, which I like a lot, generator instead of a star. But I don’t know how often this comes up. So does anybody want to work on this? It’s pretty tricky syntactically if we try to go with the star. And then the generator keyword feels redundant, so I think that was the conundrum we ran into. Any interest? Okay. So we will withdraw.
+
+DE: Math.signbit proposal  So this was a floating point function that could help make it kind of easier to see the sign of positive and negative zero. And JF Bastien proposed it. I think it was kind of -- got a negative reception due to it being a bad thing to go, maybe, I’m not sure. Mark, were you one of the people with opinions on this?
+
+MM: Well, I don’t remember.
+
+DE: Okay. Yeah, I’m kind of curious whether this would still be sort of vetoed the way that it was previously.
+
+MM: I certainly do not remember vetoing it and just looking at the short summary here, I don’t imagine that I would object to it.
+
+DE: Okay. That’s -- that’s nice to hear.
+
+DE: Error stacks, if I could put you on the spot, do you want to give a  status update.
+
+JHD: Yeah, the -- we were discussing this in matrix last week, I think. So it still should remain Stage 1. I would like to advance it. The last time I did when you thought it was ready for Stage 2, I was given new feedback and a requirement, which is that it -- the current -- currently all it does is strictly specify the format of the stack and not the exact contents. And the new ask I was given was to extend it to fully specify everything, like, the union of all browsers’ behavior for the contents of the stack and I have not yet had time to boil an ocean, so I haven’t gotten back it to to it yet, but it still remains something a lot of people are interested in. So I would love some help or some signal that I should bring it back and that requirement will no longer be imposed.
+
+RPR: And Mark has a clarifying question.
+
+MM: Yeah, I should -- it says spec drafted by the two of us, which is correct. I thought I was also co-champion.
+
+JHD: You are, and if that’s not listed, I will try and update that so it lists you.
+
+MM:  Okay. And the table -- it was not listed. But that’s fine. Good. And with regard -- and since it’s Stage 1, I can postpone all my other questions. Thank you. Yes, I’m also interested there continuing to collaborate on this.
+
+RPR: Thank you, Mark. The -- oh, and Chris. Chris says it might be worth bringing back error 
+stacks to committee without further work, even if just for discussion refresher.
+
+JHD: Yeah, I mean, I can certainly do that. I will just reask for Stage 2 in the future meeting and see what the feedback is at that time. I’m happy to do that. Just please someone, if that would be a waste of my and committee time, please let me know asynchronously, so I don’t do that.
+
+DE: Can I ask to clarification for Chris what they would like to see and what -- what discussion 
+they’re interested in having.
+
+CDA: It’s really just, there’s a possibility that the -- without further work, that it would be received better by the committee as it’s made up of today. Put it that way.
+
+DE: Did you see the discussion we had on Matrix about this?
+
+CDA: I did. So you don’t believe it would be fruitful to bring it back as is and talk about it?
+
+DE: I’m not saying it wouldn’t be fruitful. But I think there’s some more work to do here. Along the lines of what JHD said, so I hope that people can be inspired to do that work, and if it makes sense to bring it to committee, to collect volunteers, then that would be great.
+
+CDA: To be clear, I wasn’t suggesting that there wasn’t more work to be done. Just rather that it might be possible that a discussion in plenary might help inform that work. That’s all.
+
+DE: As JHD, I think you said, this is open to volunteers, and --
+
+JHD: Yeah, so I will plan on bringing it back for further discussion as a refresher. And in the meantime, please let me or MM know any feedback you have or if you’re willing to help.
+
+RPR: The queue is empty.
+
+DE: Do expression. I’m really excited about these.
+
+KG: I’ve mentioned this to a couple people, but just to repeat, we have, like, fully half a dozen fairly large syntax proposals in the works. And I think that the time of the committee as a whole and the time of me personally, at the current margin, would be better spent on new APIs than new syntax. However, that doesn’t mean I don’t think it’s a good proposal. I don’t think it necessarily needs to be withdrawn. I just don’t think it’s a good use of our time right now given how much syntax stuff is going on. If we wanted to, like, spend a little less effort on syntax in general and maybe concentrate on certain parts of the syntax, I think this would be a good candidate for it. But I am not currently working on this. That doesn’t mean I think it should be withdrawn, just that I’m not currently working on it.
+
+DE: Cool, so you seem to be making a lot of progress towards resolving the previous open issues. How far along did you get? Like, what would be the next steps if someone else wanted to pick 
+this up?
+
+KG: Major things are specifying the semantics of break and continue, making sure those work in arbitrary expression position, making sure the list of things that are prohibited is comprehensive so you don’t have weird edge edge cases if you a put a loop at the end of the do expression etc, and potentially investigating the precise syntax - there was discussion of maybe using `expr {}` instead of `do {}` or various things like that. But mostly small stuff.
+
+DE: Okay. Great. So any volunteers to take on this work? It could be really great for pattern matches, for example, because that would allow statements in the -- sorry, JHD.
+
+JHD: Yeah, I mean, I’m not -- I don’t have an empty enough plate right now to volunteer to champion this proposal, but I don’t want this to move to inactive. I think that it will still, in the future, as my plate empties, I would like to revisit it.
+
+JWK I’m the same as JHD.
+
+RPR: Okay, I think that’s time for now. So thanks, Dan, for progressing those. All right, great. So we’re getting towards the end of the day. And we’re through the kind of like regular agenda topics. Chris I know has a few words the say on our process for how we interact with ECMA recognition awards. So we’re nearly there. We’re just having some technical difficulties. Okay. Screen -- we’re figuring out screen sharing. Now is the time of the day to wake up. We’re almost there. Sure, you’re allowed in. All right, you’re sharing your screen.
+
+##  Ecma Recognition Awards
+
+CDA: All right. Ecma recognition awards. The Ecma award program was established to recognize 
+contributions by individuals to development of standards and the benefit of the ICT and consumer electronics industries. So we have a number of lovely people from TC39 that have previously received this award. I’m sure you all recognize some of the names here. We dropped the ball in 2022. We did not have any nominations -- or nominees despite definitely having some folks that could have been nominated. So let’s not repeat that. We can nominate at any time of the year and these get reviewed at the GA meetings. If you have someone you would like to nominate, please let the chairs know. It’s helpful to have the nomination written up with the justification. But we can also help you with that. For the year 2023, we had three nominations. It’s not unheard of to have multiple nominations in a year, but we felt like we needed to make up a little bit for not putting anyone up in 2022. We were kind of spoiled for choice on our shortlist of people to nominate. Which is great. But, yeah, can’t nominate everybody. So there are still some folks probably deserving that maybe we can put up for this year. We will do better about reminding people to think about nominations for this every year so we do not drop the ball again. So start thinking about 
+that. If you have anyone in mind, please let us know. And now I will kick it over to Samina.
+
+SHN: I’ll share my screen. Okay, thank you, thank you for that lead, CDA. So nominations for awards, yes, we had three nominations. And, the December general assembly unanimously approved and are excited to accept the three that we have here. So Myles Borins, I don’t think Myles is on the call. And he -- 
+I did invite him to join, but he wasn’t able to attend. He did receive his recognition. We’ve 
+got Shane who is sitting here. And we have Mark Miller online, and I had the chance to give Mark his recognition award in words when I saw him in December. 
+But I’d like to be through a little bit about the citation that was written for each of them, 
+so we’ll start with Myles. Who in this room has worked with Myles? Would anybody like to share any other words than what’s on the screen about Myles? An anecdote? 
+
+RPR: I would definitely follow up by saying I worked with Myles probably most intensely on 
+getting ES module support into node. As he chaired the subgroup, the task group, well, 
+associated with that. And I just can’t believe how determined and diligent he was about seeing 
+that process through to completion, because, you know, we standardized ES modules a long time 
+ago, getting it into node was a very big deal, but loss of people had opinions, and -- but lots 
+of people had opinions and I’m just super grateful and impressed with his both technical and 
+social skills to, you know, to rally people together to make that a success.
+
+SHN: It’s nice to hear. Also at the GA, I heard nothing but really positive words from some of 
+the people that were there. So I think Myles is very much appreciative of this and very 
+humbled and surprised when he received the award. He has received his award. The next 
+individual is Shane, who is sitting here. And this is a citation that you all put together for 
+Shane. Shane, would you join me for a moment so I can give you the award in person, please. 
+Thank you for all your contributions. 
+
+SFC: Oh, wow, look at this. It’s made of glass. It is, it’s made of glass, and we’ll take some official professional Hollywood -- please. So first of all, it’s very much of an honor to be recognized for this. And to  have had the opportunity to work with so many talented individuals to make web platform more 
+accessible to users around the world. We -- what we are building the most thoroughly designed 
+internationalization API in the industry. Not only does it form the base for 
+internationalization on the web platform, but now it’s even being used to form the basis for 
+internationalization in other programming languages on including rust and the ICFRX project I 
+also work on to bring internationalization to rust and to client side and low resource devices 
+and WebAssembly. So just wanted to extend my thanks first of all to the Google 
+internationalization team for continuing to sponsor my participation in this group. To the 
+ECMA 402 editors and proposal champions that I’ve had the opportunity to work with, including 
+Daniel Ehrenberg, Richard, Ujjwal, Ziibi, Ben, Justin, Romulo and many more and also  to ECMA 
+402 implementers including the IC4X team and of course to ECMA, including Samina and the chairs 
+of the -- of TC39. So thank you again for the honor and recognition. It means lot to me and I 
+look forward to continuing to be a champion for internationalization for some time to come. 
+Thank you very much. Thank you.
+
+SHN: Okay, and last but not least, Mark, you’re on the call. I can see you there. So Mark 
+Miller, I had the pleasure to meet you in Cupertino. I’m glad you’re online. This is the citation that the team put together for you for your outstanding contributions of many years of work in TC39. Mark, would you like to share a few words.
+
+MM: Yeah, actually, I’d like to -- first of all, I’ll just -- just all of the thanks that you 
+would expect, I’d like to just express all of that, and then use my moment to relay a 
+conversation that Samina and I had, which is a few years ago, we had around TC39 over a period 
+of about a year where people gave their vision talks, their vision for what the future of the 
+language holds. And then we stopped, and in the absence of that, we’re just sort of each 
+working on these point proposals, each advancing different agendas. And I think those vision 
+talks help us understand the variety of agendas people are interested in advancing and help get 
+shared enthusiasm for some of those agendas. So I would like to suggest that that kind of 
+orienting activity, that’s also addressing the larger world, that that’s something we should do 
+again.
+
+SHN: Thank you, Mark. Mark, your vision talks, you’ve sent me your links, so I will be watching 
+them and we’re going to find a way to put good use to them and use that to continue to develop 
+further. Any anecdotes or any meeting where Mark was difficult and you want to remind him of that? All right. Mark, thank you very much. I’m sorry you’re not here. We’re going to have a little bit of cake later. We can certainly save some, but I’m not sure it will make it in the mail to you. But we have some 
+swag and I’ll make sure I get one to you. Thank you.
+
+
+LEO: Like, if that’s not to interrupt swag time, I’d like to say a thing -- So my first TC39 meeting -- like, 8 years ago, I came in to TC39 because I was -- I juster started 
+working with test262, and I found some bugs on typed a arrays, bugs including on specifications 
+and implementations, and I was totally horrified to be in that meeting. Like, I was like, I’m 
+just a web developer, what should I do here? And Mark was the first person to actually talk to 
+me. But I used to work with -- I was working with Rick at the time and he actually gave me, 
+like, some notion who would be in the room. And he also told me who was Mark Miller, like, if 
+you use any micro S, if you have the finder, the Miller columns are named after him, and there 
+are so many other things that you can just come in deep. Mark is a person who is not only part 
+of the EMCAScript, but the web. He’s a very important part, and I totally recommend everyone 
+to go have a chat with Mark to, like, know more of, like project Xanadu. There’s so many 
+brilliant stories to discuss with Mark. It’s extracting some bits of the history of the web. 
+So so amazing. And all the awards here are very well deserved.
+
+SHN: Thank you, Leo. That’s great. Thanks for that comment. Mark, you’ll be inundated with 
+conversation and maybe I should and to do a video series, adventures with Mark or historic 
+moments of TC39 with Mark. If you’re good with that.
+
+MM: Certainly doing highlights on the TC39 history starting in 2007, I’d be very happy to do 
+that.
+
+SHN Thank you. Well, that leads me to my next little few slides, if I may, Mark. Thank you 
+very much. And we’ll continue the conversation. I’m just going to go to my next slides. So 
+100th meeting, we had this conversation at the last plenary or the one before. We couldn’t 
+quite agree this was 100, but we like to number. It’s pretty close to 100. Maybe it’s 102, 
+with you but we’ll stick with the 100. Little bit of history. With the help of Istvan, who 
+you all know and Allen who has done a lot of work on history, I just took a caption of one of 
+the information from his book, which is the very first TC39 meeting, nearly 30 years ago. It’s 
+impressive how sustaining this particular TC39 is. And the impact it’s made on the world, on 
+what we do, how we communicate, how we interact. And I looked at the list of attendees for 
+that meeting, there were 30 attendees for that meeting, we have double that by now. I don’t 
+recognize the names, but I do recognize the organizations. But who in this room recognizes 
+names of the persons who attended that very first meeting? Oh, that’s good. I’m sure -- Mark, 
+I see your hand is up. I’m sure -- Mark, you weren’t in that first meeting, though. You’re 
+mute.
+
+MM: I was not. The name that jumped out at me is the name that everybody here recognizes, Mr. Eich. That’s Brendan. If Waldemar is not here, I probably don’t recognize anybody else.
+
+SHN: No, Waldemar is not there. I think at that time he did represent Netscape, but he wasn’t on 
+this particular meeting. I think he started to coming to later ones. Of course Brandon’s name 
+I recognize. That’s a small anecdote. You’ve been around for a while and it has sustained 
+itself extremely well. If I just go to my next slide. So this is just a little bit of a 
+timeline of what’s been happening with the different EMCAScripts. So you had the first one in 
+1997. And it’s continued since. And there were some gaps. It was not every single year 
+directly. There was even a year that it was abandoned for some time, and then picked up again. 
+But basically since 2016, it’s been every year. So it’s also extremely impressive. So just 
+the foundation that you’re working on is extremely strong. All right. So I didn’t know this, 
+but I learned it, and maybe all of you in this room already know about the book. Do you all 
+know about the book, the first 20 years of the -- the first 20 years? No? So the book can be 
+downloaded for free. And we mentioned Brandon’s name just a moment ago, he is one of the 
+authors, together with Allen. Allen’s the one that pointed out the book. He and I had some 
+good conversations regarding this history and I found some other link, which I will share these 
+leads. Why have them posted on GitHub, and it gives a little bit of history and archive which 
+information about TC39 and egg EMCAScript it’s a journey to where the came today, and I asked 
+Allen will he write the next chapter? He’s done the first 20 years and 10 years have passed 
+since then and who is going to do the next 10 years? Allen didn’t bite. I couldn’t entice him 
+enough to do it, and I thought maybe somebody in this room is going to pick that up. And I’ll 
+leave that as a challenge to you. The next chapter and where will it take us, it would be 
+really great if somebody in room wrote that next chapter, unless of coursing Mark, you’d like 
+to write it. You’re online. Would you like to do the next 20 years?
+
+MM: I’m not signing up for that. If somebody else wants to take the lead, I’m certainly happy 
+to contribute.
+
+SHN: Thank you. I was afraid of that answer. But anyway, we’ll leave it as a challenge. But it 
+could be interesting. And I think it would be very interesting, and I can imagine that the 
+stories will continue. Does anybody else have any anecdotes on this? Istvan, I see that 
+you’re on the call. You’re on mute. I know it’s extremely late for you, but you know TC39 
+also for many years. If you would like to share a few words, you’re welcome. But no pressure.
+
+IS: First of all, if you can go back to the previous slide, I can give you a couple of names. 
+Okay, one more. Yeah, here. Yeah. So first of all, the two people who were absolutely 
+essential in creating TC39, it was my predecessor, is secretary-general of ECMA, Jan van 
+denberg, and he knew everybody on earth and one of those gentlemen is also here in the list of 
+participate, and that was Carl [INAUDIBLE] from Netscape. And Carl was really an absolutely 
+great guy, and then he continued after -- afterwards also in other companies, and we always had 
+contact with him. And even a couple of years ago until lately he worked all in the ECMA 
+executive committee. And Carl knew also very well Jan van denberg, and when Netscape wanted to 
+standardize JavaScript, and first to all, they tried in IETF and tried in the worldwide web 
+consortium, but somehow they didn’t accept the proposal that it was necessary and to have some 
+kind of scripting languages on the web, which was a big mistake, in my opinion. And then 
+recognized, and then Jan van denberg, and they convinced ECMA to take over this task, and 
+then this is the results of it, and I recognize several people from ISO and also from the ECMA 
+page like Mike Skarb from Hewlett-Packard and William Meyer from GTB associates who was 
+actually a lawyer, and he worked at that final for Microsoft, so it is very, very interesting. 
+And then of course, you know, Gary Robson, who was then elected as the first chairman of TC39, 
+he was a very well-known figure and he worked at that time for Sun. And then the vice chairman 
+was Carl Carl gait, et cetera. I knew some of the people and they were absolutely great guys 
+and did a very good job, not only here in TC39, but also generally in standardization. So 
+maybe that’s, you know, what I can tell you from this first -- from this -- from this table, 
+you know, participation in the first meeting and the first elected officers. And if you go to 
+the next one, next slide, yeah, so if you -- yeah, here. So actually, at the beginning, it was 
+extremely difficult standardization. I was not here, but you can see from this -- from the -- 
+that -- how difficult it was standardized. The first version, it was very quickly 
+standardized, actually, so it must have been an absolutely great performance of the group that 
+they managed within half a year to come out with a first version of the standard. Also, the 
+second version they came up. And if I remember, maybe for 250 pages or even less, something 
+like that. Now, today we are between 800 and 900. And then later on, the development, it 
+really slowed down, so when I came to ECMA, it was 2006. Then it was that they had already 
+been work on it and fighting with each other and it was Phil pieman who was then the chairman 
+of TC39, and John, like myself, didn’t understand anything about JavaScript or ECMAScript. But 
+he was a great standardization guy and he made it possible, you know, to come up with a 
+compromise solution, and that was actually when we came out with JavaScript finally in December 2009. Which then 5.1, 2011, et cetera. And when the decision was made, actually, in 
+2016 to come up with the yearly release, honestly, I didn’t believe that it would be possible 
+to come out year by year. So I have to congratulate to the current members of the group that  
+you are still able after so many -- after about 8 years after 2016, you know, to come out so 
+precisely every June with a new edition of the standard. So I really would like to congratulations to everybody on that. And maybe that was the -- that was the end of what I wanted  
+to say about the standardization that I have seen here.
+
+
+SHN: Thanks. Thank you, Istvan, and yes, it’s definitely a big congratulations to the whole committee here. I’m going to move forward to the celebration part. And I’m sorry that there are people online that are not here.
+
+RPR: Kevin has a fun fact.
+
+KG: You presented the attendees of the first meeting. Here's attendees of the second [on screen], which I’m amused by because that’s my dad.
+
+SHN: That’s right. You’re the only father and son combination here. Yeah, congratulations. 
+Should have invited your father here. All right. If I move forward. Oh, I need to share 
+again. Thank you. Thank you for that anecdote. All right. So the 100th meeting. So I want to thank Shu for helping. I’m certainly not an artist and he is much more of one, and Shu put together the 100th logo and the idea, and we got these hats. So baseball caps and beanies and some stickers for the swag, and when we go to room on the other side, you may all share the -- you may all have the ones you want and please collect something for your colleagues, but let me know how many are collecting and we’ll make sure that everybody gets something. Somehow, if not here, then in Helsinki, if not in Helsinki, in Tokyo, if not in Tokyo, through some mail. But fear not, you will have something. Thank you, that’s the end of the presentation. 
+
+There is cake to celebrate with. I should point out I reached out to a number of people that have won awards previously and have been active in TC39 for a long time and one of them was Jory, who you all 
+know very well. 
+We’ve got cake on the other side, so whenever you want to join the meeting, we can do that. Thank you.
+
+RPR: Thanks all. So that’s wrapping up for today. Let’s head over to the break room. And 
+response to Justin, the cake is definitely not a lie.
+
+
+

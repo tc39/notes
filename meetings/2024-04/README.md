@@ -23,4 +23,4 @@
 
 ## Other
 
-- Committee reached consensus on _non-binding_ guidelines regarding coercion (and not doing it)
+* Committee reached consensus on _non-binding_ guidelines regarding coercion (and not doing it)

@@ -71,7 +71,7 @@ USA: Next we have DLM, who says that they support this, and then we have MM.
 
 MM: Yeah, I support -- you did keep qualifying everything with browser-based engines. If Moddable is in the room, I don’t know if you are, I would like to hear if this change works with your engine or if you’re already compatible with it.
 
-USA:  Doesn’t sound like it.
+USA: Doesn’t sound like it.
 
 MM: Okay, so in any case, I’ll let my +1 stand. I’m in favor of this.
 
@@ -79,12 +79,12 @@ USA: Thank you, MM. And that was it for the queue. With that,RKG, you had a numb
 
 ### Speaker's Summary of Key Points
 
-* Timing of property key resolution for bracketed assignment will be updated to match V8/SM/JSC.
-* Specifically, the type of [[ReferencedName]] in Referenced Records will be loosened so as to allow ToPropertyKey to happen late.
+- Timing of property key resolution for bracketed assignment will be updated to match V8/SM/JSC.
+- Specifically, the type of [[ReferencedName]] in Referenced Records will be loosened so as to allow ToPropertyKey to happen late.
 
 ### Conclusion
 
-* Normative PR has consensus to merge.
+- Normative PR has consensus to merge.
 
 ## Intl.MessageFormat status update
 
@@ -170,17 +170,17 @@ EAO: Just thought I’d mention that if you want to play around with this, the p
 
 ### Speaker's Summary of Key Points
 
-* The speaker listed out the different roadblocks in terms of realizing the initial goals of the proposal. While there was some hesitation for the inclusion of the newly designed syntax, there were concerns against shipping the proposal without a standard syntax.
-* Many committee members expressed support for the goals of the proposal again, reasserting that they are in favor of it.
-* Additional helpful context was shared and the presented ended with enthusiasm regarding the future of this proposal.
+- The speaker listed out the different roadblocks in terms of realizing the initial goals of the proposal. While there was some hesitation for the inclusion of the newly designed syntax, there were concerns against shipping the proposal without a standard syntax.
+- Many committee members expressed support for the goals of the proposal again, reasserting that they are in favor of it.
+- Additional helpful context was shared and the presented ended with enthusiasm regarding the future of this proposal.
 
 ### Conclusion
 
-* The proposal has hit some blockers during its development.
-* There is, however, still a great deal of positive sentiment in the committee regarding the proposal’s stated goals (adding a message formatting mechanism to ECMAScript).
-* USA joined the proposal as co-champion in order to assist EAO.
-* There will be explorations by the champions regarding the possibility of exposing MF2 elsewhere on the web.
-* The champions will also work on improving adoption and gain experience for the syntax.
+- The proposal has hit some blockers during its development.
+- There is, however, still a great deal of positive sentiment in the committee regarding the proposal’s stated goals (adding a message formatting mechanism to ECMAScript).
+- USA joined the proposal as co-champion in order to assist EAO.
+- There will be explorations by the champions regarding the possibility of exposing MF2 elsewhere on the web.
+- The champions will also work on improving adoption and gain experience for the syntax.
 
 ## Discard Bindings for Stage 2
 
@@ -189,7 +189,7 @@ Presenter: Ron Buckton (RBN)
 - [proposal](https://github.com/tc39/proposal-discard-binding)
 - [slides](https://1drv.ms/p/s!AjgWTO11Fk-TkqpoWw0poDW3dawBQg?e=O3UP1c)
 
-RBN: So good morning. For the next few minutes, I’ll be talking about discard bindings proposal based on where we stand with the proposal right now and the potential for where this is going to go in the future. So to start, just a brief overview. The concept of a “discard”:  it’s a “non-named placeholder for a variable binding”. It allows you to align unnecessary variable names in various contexts such as using and wait using declarations, function/method parameters, array structure patterns, extractor patterns and pattern matching. We currently are proposing the use of the void keyword in place of a binding identifier, and the idea of discards in general has prior art across numerous languages, C C++, C#, Python, rust, and Go, C and C++ allow you to align parameter names, for example, C#, Python, rust and go all use the underscore and now added to that list is java is adopting underscore with the mechanism which it uses for establishing discards.
+RBN: So good morning. For the next few minutes, I’ll be talking about discard bindings proposal based on where we stand with the proposal right now and the potential for where this is going to go in the future. So to start, just a brief overview. The concept of a “discard”: it’s a “non-named placeholder for a variable binding”. It allows you to align unnecessary variable names in various contexts such as using and wait using declarations, function/method parameters, array structure patterns, extractor patterns and pattern matching. We currently are proposing the use of the void keyword in place of a binding identifier, and the idea of discards in general has prior art across numerous languages, C C++, C#, Python, rust, and Go, C and C++ allow you to align parameter names, for example, C#, Python, rust and go all use the underscore and now added to that list is java is adopting underscore with the mechanism which it uses for establishing discards.
 
 RBN: So, the motivations of the proposal where things stand, one of the reasons we want to have discards is that there are often a need for side effects from declarations without the actual variable binding. So, again, parameters that you might not want to necessarily name, that you’re not going to use when you’re overloading a method or sort of overriding a method or passing a function as callback. Variable bindings that you need for their effect, reading a property or skipping a value in an array structuring or in the case of using declarations, a binding that establishes a resource that exists within this lifetime a bound to a block scope, but you don’t intend to use the resource value after the fact. This is the case for things like locks in a shared memory environment. But also could be used for things like log and tracing patterns in a function, et cetera.
 
@@ -237,7 +237,7 @@ RBN: So I will say it again. The linting support for underbar prefix parameters 
 
 MM: I understand. I still am strongly against underscore. I think it’s too complicated.
 
-JRL:  I am the opposite of MM, I guess. I am absolutely against any sort of ASCII keyword. Anything not underbar, underscore. The point about discard binding is to mark that I know I am not using this value. It’s purposeful, but it doesn’t have any sort of weight when you are scanning this. It should look slightly different, but disappear. Underscore is the only thing that does it well. Maybe another ASCII punctuator could do this, but nothing that has the same precedent as underscore. The complexity around scoping is just because we have chosen arbitrary rules here in this presentation. We can make it just so you can redeclare underscore and nothing else changes about anything else in the syntax. It seems such a better solution to me.
+JRL: I am the opposite of MM, I guess. I am absolutely against any sort of ASCII keyword. Anything not underbar, underscore. The point about discard binding is to mark that I know I am not using this value. It’s purposeful, but it doesn’t have any sort of weight when you are scanning this. It should look slightly different, but disappear. Underscore is the only thing that does it well. Maybe another ASCII punctuator could do this, but nothing that has the same precedent as underscore. The complexity around scoping is just because we have chosen arbitrary rules here in this presentation. We can make it just so you can redeclare underscore and nothing else changes about anything else in the syntax. It seems such a better solution to me.
 
 RBN: Yeah. I will say that using an ASCII punctuator is problematic. For one, we are short on ASCII punctuators we can use. When possible to use keywords be they existing reserve keywords to reserve the limited set of ASCII punctuators we have for this case. And the other problem is that most of the ASCII punctuators consider using other uses that make this not viable. You could not use a plus or - or asterisk because it turns into a compound assignment and that doesn’t work. You are left with a small subset of symbols that have other potential uses that are more idiomatic (?) of what a discard – other operations versus a discard. In my opinion, the two things that mean discard are either underscore because that’s the accepted way of representing a discard in most of the languages. Or void because that has the same semantic meaning of discarding something, discard a value that is a result. Such as in void expression. Void and underscore work. It doesn't, it indicates something more like decorators might be employed. Hash, that’s generally used for things like private names. So it really doesn’t feel like those are valuable use cases. So it becomes more complicated to pick those. I think having some ASCII word is the best approach, whether that is underscore allowing any variable that is [dup]ly (?) indicated more than ones to be legal rather than illegal. Or using something like void.
 
@@ -279,14 +279,14 @@ USA: Okay. Great. Thank you, RBN.
 
 ### Speaker's Summary of Key Points
 
-* Proposal specification text written for `void` syntax
-* Some interest in pursuing `_` over `void`
-* WH noted an issue with the cover grammars for `void` and `await using` that must be addressed
+- Proposal specification text written for `void` syntax
+- Some interest in pursuing `_` over `void`
+- WH noted an issue with the cover grammars for `void` and `await using` that must be addressed
 
 ### Conclusion
 
-* Did not advance due to cover grammar concerns.
-* Further discussion necessary regarding `_` vs `void`.
+- Did not advance due to cover grammar concerns.
+- Further discussion necessary regarding `_` vs `void`.
 
 ## Extractors for Stage 2
 
@@ -299,15 +299,15 @@ RBN: So again, good morning, talking about extractors. Potential for Stage 2
 
 So the motivation for extractors is that currently, I have had some questions and comments about changing the motivating statement here. It says there’s no mechanism for executing user handler logic. You can execute some if you have a getter, for example. That will run user code or if you have a computer property name, evaluate user code there. Those don’t affect the structuring process. It’s a mechanism to have user-defined code have an effect on the process itself. Rather than side effects that occur in the structuring.
 
-RBN: The pattern-matching process, user-defined logic while matching. This exists both in the pattern matching world and in the destructuring  world. There are similarities with this proposal to other languages. Scala has extractor objects which is when I proposed this, I started with, we had a tour of Scala’s support for this capability. (?) has some syntax and maybe not all the same mechanisms, which in a potential future enum proposal, the idea is to align some of the design aligns with the Rust-style syntax but using justifies it depends on something like extractors to have the same type of behavior. F# has something similar. C# has type testing and deconstruction. As one – (?) and destructuring user-defined logic. OCaml and Swift.
+RBN: The pattern-matching process, user-defined logic while matching. This exists both in the pattern matching world and in the destructuring world. There are similarities with this proposal to other languages. Scala has extractor objects which is when I proposed this, I started with, we had a tour of Scala’s support for this capability. (?) has some syntax and maybe not all the same mechanisms, which in a potential future enum proposal, the idea is to align some of the design aligns with the Rust-style syntax but using justifies it depends on something like extractors to have the same type of behavior. F# has something similar. C# has type testing and deconstruction. As one – (?) and destructuring user-defined logic. OCaml and Swift.
 
 RBN: This is designed to look as the opposite to function application or construction. So where function application construction takes a series of arguments to produce a single result, extractor a single subject, and produces a series of results. Dual or opposite behavior in these cases.
 
-RBN: One of the capabilities of extractors is that they allow you to have dotted references starting with some reference to an identifier that is in scope, identifier reference. That is then evaluated, converted or checked to that is an object that has a symbol method. And that is what is evaluated to produce a result that is either in the case of a destructuring extractor, either array or iterator. Or it is a false eval indicating something failed or an incapable  matching case (?) there’s additional opposites considered – that are discussed in the pattern matching proposal. Things like nested destructuring. So you can use an extractor who has maybe a single argument or multiple arguments to further deconstructed in other values. And it can itself be nested within another pattern so that you can pull things apart and do data transformations and validations within the destructuring pattern, which is the key bit that is not really feasible to do for binding patterns and parameters today in a consistent way.
+RBN: One of the capabilities of extractors is that they allow you to have dotted references starting with some reference to an identifier that is in scope, identifier reference. That is then evaluated, converted or checked to that is an object that has a symbol method. And that is what is evaluated to produce a result that is either in the case of a destructuring extractor, either array or iterator. Or it is a false eval indicating something failed or an incapable matching case (?) there’s additional opposites considered – that are discussed in the pattern matching proposal. Things like nested destructuring. So you can use an extractor who has maybe a single argument or multiple arguments to further deconstructed in other values. And it can itself be nested within another pattern so that you can pull things apart and do data transformations and validations within the destructuring pattern, which is the key bit that is not really feasible to do for binding patterns and parameters today in a consistent way.
 
 So again this also shows examples of using these within parameters.
 
-RBN: So: brief history. September 2022, this was proposed for option at Stage 1 and included array extractors and object extractors. Array extractors used the parenthesized syntax, because the bracket wouldn’t work in the assignment pattern type case. So we used parentheses to ? big wait. (?)  This used a curly brace, and is more of an object pattern approach within it. We only saw advancement at that time for extractors in bind patterns. The reason for that is the other side is being pursued as part of the pattern matching. These proposals are linked as far as cross-cutting concerns. All the design considerations for pattern matching apply for extractors but since pattern matching doesn’t talk about the deconstructing, binding assignment patterns, it’s not a good fit for that proposal itself.
+RBN: So: brief history. September 2022, this was proposed for option at Stage 1 and included array extractors and object extractors. Array extractors used the parenthesized syntax, because the bracket wouldn’t work in the assignment pattern type case. So we used parentheses to ? big wait. (?) This used a curly brace, and is more of an object pattern approach within it. We only saw advancement at that time for extractors in bind patterns. The reason for that is the other side is being pursued as part of the pattern matching. These proposals are linked as far as cross-cutting concerns. All the design considerations for pattern matching apply for extractors but since pattern matching doesn’t talk about the deconstructing, binding assignment patterns, it’s not a good fit for that proposal itself.
 
 RBN: It was felt better to have this as a separate or on its own proposal. In 2023 there were a number of discussions with the champions, we agreed to incorporate array extractors to pattern matching proposal. Object extractors were removed. To the possibility of them eating up too much syntax space. No line break curly type things that we might need to extend the language in other places, and in February 2024 we provided an update on the proposal that showed the extractors, object extractors portion was officially dropped. And we discussed the – that further consideration needs to be made with iterator extractor performance. The history… We want this part of the restructuring process. Transformation and normalization during restructuring which isn’t possible in JavaScript without very opaque, complex syntax that only works inside an assignment pattern. Or requires moving things into or breaking things like into multiple statements within a FunctionBody which kind of defeats the purpose of something that is concise and clean. The idea being to make these things very small and easy to use both in pattern matching case and have the same capability also in the destructuring case.
 
@@ -323,7 +323,7 @@ The extractor MemberExpression is again used to reference the matcher based on w
 
 RBN: In binding patterns extractor performs an array on a successful match and denoted by parentheses. This is more the – it’s better explained in the assignment pattern discussion which comes next. But some examples include being able to have a parser that can parse input and three outputs. This is the example that would come out of, say, Scala. The Scala tour that shows how extractors works essentially has this example in it. It’s designed to parallel destructuring patterns where they are placed, how they can be nested, and they’re designed to mirror the application side of things. So array destructuring pattern = array has a similar look and feel. As a result, the syntax for extractors has a similar feel to the application side of things. You can say, list AB and a list of 12 or a new list of 12, `option.sum` is an extractor of value from `option.sum` of 1, would pull valueOf 1 out and put it into the variable value. The dual syntax, so it’s recognizable. It’s not some arbitrary different syntax you have to learn. And the feel as a result is idiomatic within the JavaScript syntactically.
 
-RBN: In assignment patterns, we have discussed how a – if to use a bracket, instead of parentheses in the `option.sum` on the bottom here that would actually be legal JavaScript and considered an access expression. An assignment is not what we want. We have to get rid of the syntax using parentheses. And that matches the duality versus the extraction side. As far as custom matchers, the actual example culled from Scala’s code tour. It shows how in Scala this is an unapplied method in the case of the pattern matching proposal this is a single custom matcher. It’s doing the same thing. Here I am executing this result and pulling the value which matches the first element in the result. Null is a  value. If it doesn’t match it will fail. The array itself can be used to pick apart the elements that would be part of this. So you can pull out a custom ID. To extract the value.
+RBN: In assignment patterns, we have discussed how a – if to use a bracket, instead of parentheses in the `option.sum` on the bottom here that would actually be legal JavaScript and considered an access expression. An assignment is not what we want. We have to get rid of the syntax using parentheses. And that matches the duality versus the extraction side. As far as custom matchers, the actual example culled from Scala’s code tour. It shows how in Scala this is an unapplied method in the case of the pattern matching proposal this is a single custom matcher. It’s doing the same thing. Here I am executing this result and pulling the value which matches the first element in the result. Null is a value. If it doesn’t match it will fail. The array itself can be used to pick apart the elements that would be part of this. So you can pull out a custom ID. To extract the value.
 
 RBN: A custom matcher receives 3 arguments. The first argument is consistent across both pattern matching and extractors. It’s a single input value. They are essentially a unary function, but have additional functions passed in. The second argument is hint. Pattern matching can say, for example, X is point. And that use the custom matcher. In this case, syntax is not doing further destruct, I don’t need a result. I can use the hint in that case, Boolean that says, I don’t need an array result. I can skip the extra work that can’t be used in the binding assignment patterns. You can’t const ID = whatever because that’s legal JavaScript
 
@@ -363,13 +363,13 @@ GKZ: Hi. In general, I am excited and supportive of this proposal and pattern ma
 
 RBN: In practice, in most examples that I have seen of actual real world code that uses similar syntax, you tend not to get very deep layers of extraction just like any that is more complicated, you want to break it down. In general, I usually say, I see 2 layers like an extractor being used. It’s the – let me see if I can find the example here. It’s this case where you have `option.sum` of geometry.point. Where you are something that might be an option.none or it could be `Option.Some` of one of those two things. And you want to break that down. It’s more generally more efficient to collapse this down especially since there’s the pattern matching proposal using for caching it increase performance and allow iterators to be re-used across matches – but the potential the `Option.sum` is the extracted – reused since we have validated that in the first branch. The other thing that is really interesting is, if I go back to the regular expressions example, let me see. That was… this one. Is that if you have a piece – a function that says I am going to validate these inputs and do the destructors, the first has to match ISO DATE-TIME. If that succeeds, I can do the return zone thing undefined because that doesn’t work, what throws? You will end up with a error indicating that undefined can’t be further destructured – I can’t remember the exact spec text in the engines. But I have seen false can’t be iterated. And that's bad user behavior. So now you have to write your API that even in the failing case I have to return to something that is useful or on the customer side, I have to handle it, having a failed return value. So it adds more work on either the side of the implementing function or the side of the person who is consuming it. That extractors help alleviate because the process of doing the extraction, doing the validation and the extraction happens step-by-step. When the error is thrown, it says, this doesn’t match. It’s more readable and usable then just `undefined` is not a valid – not an object or whatever you end up with in those cases.
 
-GKZ:  Regarding what you first mentioned, I definitely clarify, I am suggesting that this should always be applied to I have some kind of datatype. And it should always be the case where I am saying, this is of that datatype versus whatever we’re taking a string and destructuring that.
+GKZ: Regarding what you first mentioned, I definitely clarify, I am suggesting that this should always be applied to I have some kind of datatype. And it should always be the case where I am saying, this is of that datatype versus whatever we’re taking a string and destructuring that.
 
 RBN: I think the majority of the cases will be that. But I have seen more than enough. The cases I have had around things like – I don’t think it’s currently in the slides, but an example of a book example that takes into multiple arguments and does coercion to an instant. That’s based on an actual code that I had written. It is one of the motivating reasons why I started looking into the proposal in the first place. I want to do the validation and save the complexity to handle defaults and all of the cases and one of the validate is a string. I want to be able to do data manipulation to make them consistent and case and that’s not the 95%. Since it’s based on Scala extractors, work is flexible enough to handle both cases even if the majority of cases are data types.
 
 GKZ: We can move on to the next point of queue. Having the 5% use case supporting, it means that understanding code that is using this feature will be more difficult for the programmer to understand what it’s doing because they can’t make the assumption that this is always matching, this is of the datatype, but it could also be doing some kind of completely arbitrary thing as well. So somehow, having more power makes it also harder to understand what it’s doing. Especially in the match use-case, you can imagine someone will want to know they exhaustively checked the input value, if the programmer is looking at the code or a static analysis tool. And this could either – each extractor case could look at we have matching this value. Now moving to the next datatype and we have matched this or just doing something – I agree that is more powerful and there’s definitely use cases for it. There’s a cost and tradeoff to allowing that in terms of understandability.
 
-RBN:   Yeah. I would like to get to Mark Miller’s topic. I have thought about that. If you can ping me after, I would appreciate it.
+RBN: Yeah. I would like to get to Mark Miller’s topic. I have thought about that. If you can ping me after, I would appreciate it.
 
 MM: Hi. First of all, my compliments plus a thousand of these. I want to see this in the language. When you refer to extractor in a destructuring, and you still use it refutable, I want to clarify: first of all, allowing extractors in destructuring makes destructuring refutable in the sense it can fail. My question is, when it fails in a destructuring, it always ends up causing an exception to be thrown. Correct?
 
@@ -387,15 +387,15 @@ MM: Okay. Good.
 
 USA: Ron, that is like the end of time. Unfortunately. There are a couple more items. Also, there was a reply by WH who said that he agrees with the concern that was raised earlier by GKZ. But how would you like to proceed with this?
 
-RBN: At this point, we are short on time, but I would like to potentially ask for consensus on Stage 2. I think a lot of these things are – most are relatively minor things to discuss whether they apply to non-datatype is something  I am in favor for (?). This is based on how – we have all the semantics described we are willing for. There are a couple of things to clean up in the specific syntax as we go. We have met the bar for Stage 2. Is there support for Stage 2
+RBN: At this point, we are short on time, but I would like to potentially ask for consensus on Stage 2. I think a lot of these things are – most are relatively minor things to discuss whether they apply to non-datatype is something I am in favor for (?). This is based on how – we have all the semantics described we are willing for. There are a couple of things to clean up in the specific syntax as we go. We have met the bar for Stage 2. Is there support for Stage 2
 
 WH: I have concerns which we didn’t get to in the queue.
 
-USA:  Waldemar, to clarify, do you think your concerns would block Stage 2?
+USA: Waldemar, to clarify, do you think your concerns would block Stage 2?
 
 WH: They should be addressed before Stage 2. I like the proposal, but I have some concerns. I think we should go through the queue before asking for Stage 2.
 
-RBN:  If that’s the point, if there’s any additional time on the agenda over the next few days, you would like to consider an extension to discuss that in the future. I think we are probably breaking for lunch soon or now.
+RBN: If that’s the point, if there’s any additional time on the agenda over the next few days, you would like to consider an extension to discuss that in the future. I think we are probably breaking for lunch soon or now.
 
 USA: Yes. So, RBN, thank you. We will capture the queue and put an extension on the books. I cannot promise you we will get to it by the end, but if you manage to preserve enough time then we will. Thank you.
 
@@ -405,14 +405,14 @@ USA: Thank you all. Okay. Then we are on time, slightly. 3 minutes behind for lu
 
 ### Speaker's Summary of Key Points
 
-* Aligns with Extractors in Pattern Matching
-* Proposal specification text written
-* Destructuring performance investigation: may switch to array-as-object destructuring in Stage 2, preference to push for array/iterator destructuring performance improvements in engines as there are more benefits.
-* Continued on Day 4.
+- Aligns with Extractors in Pattern Matching
+- Proposal specification text written
+- Destructuring performance investigation: may switch to array-as-object destructuring in Stage 2, preference to push for array/iterator destructuring performance improvements in engines as there are more benefits.
+- Continued on Day 4.
 
 ### Conclusion
 
-* Continued on Day 4.
+- Continued on Day 4.
 
 ## eval/new Function changes for Trusted Types as Normative PR or Stage 3
 
@@ -421,7 +421,7 @@ Presenter: Nicolò Ribaudo (NRO)
 - [PR](https://github.com/tc39/ecma262/pull/3294)
 - [slides](https://docs.google.com/presentation/d/14AjvbW2-aNvlirB-7pPhIAeM7oWKtjqONRcyp9ID7gg/edit?usp=sharing))
 
-NRO:  So hello, everybody, again. This presentation is for a new proposed change to how we handle eval and `new` function. To accommodate the trusted types proposal. For what is trustedTypes? It traces back that allows using language features that normally would enable access syntax. So you can decide who you like or do not. Some are HTML elements or set in the script. And done through two different ways. One to capability object. You can have an object that represents the capability to  inject arbitrary code and through a global sanitizer hook. When you use one of the features, HTML like without using the proper capability object, these global is called sanitize HTML code to prepare it to be injected. Or it can three an error to prevent it from being rejected.
+NRO: So hello, everybody, again. This presentation is for a new proposed change to how we handle eval and `new` function. To accommodate the trusted types proposal. For what is trustedTypes? It traces back that allows using language features that normally would enable access syntax. So you can decide who you like or do not. Some are HTML elements or set in the script. And done through two different ways. One to capability object. You can have an object that represents the capability to inject arbitrary code and through a global sanitizer hook. When you use one of the features, HTML like without using the proper capability object, these global is called sanitize HTML code to prepare it to be injected. Or it can three an error to prevent it from being rejected.
 
 NRO: Yeah. So an example of how this works is that we have this trustedTypes global. And we can create a policy. Not everybody can create policies. The policies we can create are controlled through the header. And only code that has access to the trusted policy can create strings that can be injected. From this for example, the trustedHTML object is created by somebody that had access to the policy set works. While trying to just inject from the string. And the other way that trusted types work is mechanized through global hook. You can define the default policy, only when the header allows it you can sanitize the code like in this example. In a way you consider safe.
 
@@ -489,13 +489,13 @@ NRO: One of the options that they were thinking of was to – like, instead of u
 
 MF: Yeah. That’s what I was thinking would be a solution here. Because all of the components that are necessary for that are passed out, it doesn’t force us to make the decision for what that canonical `toString` representation is and allows the upstream to maybe base the hash on ust the body, or just the body and the parameters, but in a way that's not like a syntactically valid function construct, or whatever they want to do, that would be out of our hands. I don't want us to be the responsible party there.
 
-NRO:  For additional context, this proposal is right now only implemented in Chrome and Chrome doesn’t use the string as it is. But it strips the function part at the beginning. Because building these reports, they only get the first 40 characters. And so you won't do this – it contains something significant and not like the function prefix. So they are already not using the string as is. So I believe we can just ask them to take responsibility for building the string that they need.
+NRO: For additional context, this proposal is right now only implemented in Chrome and Chrome doesn’t use the string as it is. But it strips the function part at the beginning. Because building these reports, they only get the first 40 characters. And so you won't do this – it contains something significant and not like the function prefix. So they are already not using the string as is. So I believe we can just ask them to take responsibility for building the string that they need.
 
 MF: Yeah. That sounds great. Thank you.
 
 NRO So to clarify, this would be removing the code string parameter here. The spec passes the individual pieces and the host can join the pieces by themselves. MM?
 
-MM: Yeah. I have written down on the TCQ something that I am concerned about in this `toString` discussion. I thought I understood this and now I am much less confident that I understand this and its implications. If you pass – if you just call – under this proposal, if you just call `eval`  and pass it object as argument, what happens?
+MM: Yeah. I have written down on the TCQ something that I am concerned about in this `toString` discussion. I thought I understood this and now I am much less confident that I understand this and its implications. If you pass – if you just call – under this proposal, if you just call `eval` and pass it object as argument, what happens?
 
 NRO: In eval will call, the host will then propose trying to reduce these host `eval` – the host using for any object hook. This hook can return either true or false. If the hook returns false, then nothing changes. And we still have the pre proposal behavior, where eval just returns the object as it is. If this hook returns through, where given the first discussion with Michael and Kevin, the hook would intern the string, a Boolean.
 
@@ -555,7 +555,7 @@ MM I agree. I am fine with 3 and I am fine with 2.7, if there’s – if other p
 
 NRO: Okay. Thanks. SYG?
 
-SYG:  This is a clarifying question. I didn’t quite understand, if you could go back to a previous slide. Let me try to find this slide number. I think slide 14. Yeah. Number 1 there, how is the change to host ensure compile string address number 1?
+SYG: This is a clarifying question. I didn’t quite understand, if you could go back to a previous slide. Let me try to find this slide number. I think slide 14. Yeah. Number 1 there, how is the change to host ensure compile string address number 1?
 
 NRO: Because we are passing the original object to the hook, so like the – by telling – wait. By where does it come from and then giving waive to the hook to check whether the string was originally the trusted object.
 
@@ -613,29 +613,29 @@ NRO: Thanks.
 
 ### Speaker's Summary of Key Points
 
-* To support integration of Trusted Types with `eval` and `new Function`, it is proposed to expose to the host:
-    * The original parameters passed to `new Function`/`eval`
-    * For `new Function`, the final string built by concatenating the various parts
-* We also need to expose a hook to let the host marks some objects as "should be stringified in `eval()`", given that it currently returns all objects as-is
-* It's very hard to test this in test262 given that it's about host hooks, but it has tests in WPT
-* Exposing the full string in `new Function` is problematic because it's currently spec-internal, and instead host specs should rebuilt it by themselves
-* The general approach from the committee is that we should expose to Trusted Types whatever info it needs, and let them decide how to handle questions such as cross-realm behavior
+- To support integration of Trusted Types with `eval` and `new Function`, it is proposed to expose to the host:
+  - The original parameters passed to `new Function`/`eval`
+  - For `new Function`, the final string built by concatenating the various parts
+- We also need to expose a hook to let the host marks some objects as "should be stringified in `eval()`", given that it currently returns all objects as-is
+- It's very hard to test this in test262 given that it's about host hooks, but it has tests in WPT
+- Exposing the full string in `new Function` is problematic because it's currently spec-internal, and instead host specs should rebuilt it by themselves
+- The general approach from the committee is that we should expose to Trusted Types whatever info it needs, and let them decide how to handle questions such as cross-realm behavior
 
 ### Conclusion
 
-* This change has been approved as a Stage 3 proposal
-    * Without exposing the full string for `new Function`
+- This change has been approved as a Stage 3 proposal
+  - Without exposing the full string for `new Function`
 
 ## Array.isTemplateObject next steps
 
-Presenter:  Daniel Ehrenberg (DE)
+Presenter: Daniel Ehrenberg (DE)
 
 - [proposal](https://github.com/tc39/proposal-array-is-template-object)
 - [slides](https://docs.google.com/presentation/d/1LTlzpboYwKxRwigATcFYEh06CIbZvOvmFdPzkNn7vJI/edit#slide=id.p)
 
 DE: Hello. I am going to build off of Nicolo’s presentation.
 
-DE:  Thanks for waiting, everybody. Array.isTemplateObject. This is a proposal for a simple predicate, which we stash on Array because template objects are arrays. And it just lets you know what is passed into it was a template created by the system. If you make an object that looks like a template, you won’t trick the system. It will have an internal slot that denotes whether it was originally a template..
+DE: Thanks for waiting, everybody. Array.isTemplateObject. This is a proposal for a simple predicate, which we stash on Array because template objects are arrays. And it just lets you know what is passed into it was a template created by the system. If you make an object that looks like a template, you won’t trick the system. It will have an internal slot that denotes whether it was originally a template..
 
 DE: So this comes back to the trusted types discussion that NRO had. It’s almost like the other side of the coin. When we’re in `eval` and have these objects that we want to pass to `eva`l that are especially marked how do you create the objects that are trusted strings?
 
@@ -695,7 +695,7 @@ DE: What’s the next point?
 
 MM: First of all, I want to answer both KG and SYG, which is that the discussion of the utility of this has so far been completely browser centric. There is no “JavaScript origins”, it’s not part of the language. But everything outlined here is useful for security outside the browser. All the rationale for why you want to do this. Including, supporting trustedTypes, which are a useful set of concepts outside the browser and the concept of origin.
 
-MM: And that, therefore, the notion that different realms can be trusted is relevant. Now, the first question I have that will help resolve what we need to do in the spec is, if you do the – if the test was for a cross-realm internal slot like you have in the current proposal, and you also tested as part of the spec operation, what you do at current, in many of the examples, which is also that inherits from this realm’s Array.__prototype__. Since templates are born immutable, which they inherit from is locked in, it seems that conjoined tests safely emulates exactly the look in the TemplateMap.
+MM: And that, therefore, the notion that different realms can be trusted is relevant. Now, the first question I have that will help resolve what we need to do in the spec is, if you do the – if the test was for a cross-realm internal slot like you have in the current proposal, and you also tested as part of the spec operation, what you do at current, in many of the examples, which is also that inherits from this realm’s Array.**prototype**. Since templates are born immutable, which they inherit from is locked in, it seems that conjoined tests safely emulates exactly the look in the TemplateMap.
 
 MM: So the spec only has to traffic in observable differences. So if conjoining the slot with the prototype check is not observably different, then the TemplateMap lookup, then we have implemented the TemplateMap lookup by bundling that into the test
 
@@ -715,7 +715,7 @@ KG: We should focus on the semantics and let the editors decide how to write it 
 
 MM: the observable semantics should be its realm-specific. And if it’s realm-specific, then having the exposed API be Array.isTemplateObject,, testing the argument, it does not violate the general design role that we have for good reasons of not having operations that test internal slots on arguments other than `this` argument.
 
-DE: Okay. I want to encourage the SES group to document and, you know, provide a written justification for these design patterns because you say we…  YSV presented this idea that we would document invariants and work towards consensus on them. I think that would be useful here.
+DE: Okay. I want to encourage the SES group to document and, you know, provide a written justification for these design patterns because you say we… YSV presented this idea that we would document invariants and work towards consensus on them. I think that would be useful here.
 
 MM: Yeah. Absolutely.
 
@@ -789,15 +789,15 @@ DE: Great. Thank you.
 
 ### Speaker's Summary of Key Points
 
-* Array.isTemplateObject is a proposal which permits the detection of original template literals in source code.
-* This feature is useful in the context of Trusted Types, where in some contexts (CSP) it may make sense to trust HTML or JavaScript source more if it exists in a template literal, compared to something which is constructed later at runtime.
-* Some delegates weakly hold that they would prefer Realm-indepence (for simplicity), and MM holds moderately strongly (but not enough for a block) that Realm-dependent is better
+- Array.isTemplateObject is a proposal which permits the detection of original template literals in source code.
+- This feature is useful in the context of Trusted Types, where in some contexts (CSP) it may make sense to trust HTML or JavaScript source more if it exists in a template literal, compared to something which is constructed later at runtime.
+- Some delegates weakly hold that they would prefer Realm-indepence (for simplicity), and MM holds moderately strongly (but not enough for a block) that Realm-dependent is better
 
 ### Conclusion
 
-* TC39 continues to understand the importance of this feature and is working to resolve the remaining small issue, which is about whether this test only returns true on same-realm template objects.
-* DE will work with TT folks to learn whether one or the other alternative about Realm independence would be more useful.
-* Array.isTemplateObject remains at Stage 2.
+- TC39 continues to understand the importance of this feature and is working to resolve the remaining small issue, which is about whether this test only returns true on same-realm template objects.
+- DE will work with TT folks to learn whether one or the other alternative about Realm independence would be more useful.
+- Array.isTemplateObject remains at Stage 2.
 
 ## Module sync assert for stage 2
 
@@ -810,7 +810,7 @@ JWK: Let me recap this proposal. The problem to solve is some code must be synch
 
 JWK: And the second part is polyfill. Polyfill must be run synchronously otherwise the application might be broken. The third part for libraries authors, they may want to declare that their library as synchronous. So they won’t actually introduce a breaking change.
 
-JWK: And the solution is simple:  introduce a new directive at the module source. And if this directive appears and the subgraph of this module includes TLA, this is a linking error.
+JWK: And the solution is simple: introduce a new directive at the module source. And if this directive appears and the subgraph of this module includes TLA, this is a linking error.
 
 JWK: So that’s it. And there isn’t much design space for it. That’s it. Do we have a queue? Yes.
 
@@ -946,12 +946,12 @@ JWK: Okay. So I will write a spec and and come back next time.
 
 ### Speaker's Summary of Key Points
 
-* Try to advance
+- Try to advance
 
 ### Conclusion
 
-* Engines don’t believe it is useful enough to implement it in the browser, looks like it will be better in the toolings
-* No spec so not qualified for stage 2. May come back after there is a spec.
+- Engines don’t believe it is useful enough to implement it in the browser, looks like it will be better in the toolings
+- No spec so not qualified for stage 2. May come back after there is a spec.
 
 ## bringing back Error.isError, for stage 1 or 2 (or even 2.7)
 
@@ -1038,7 +1038,7 @@ MM: Well, that certainly not – that certainly does not satisfy my reasons for 
 
 JHD: Yeah. That’s fine. We can discuss that before going for Stage 2.
 
-CDA: 	NRO?
+CDA: NRO?
 
 NRO: mark already said about casually asking. The second one is, if worried about true, you cannot call a random object because it might not exist…
 
@@ -1086,7 +1086,7 @@ EAO: the concerns about potentially overlapping implementation with custom match
 
 CDA: SYG?
 
-SYG: This is a separate thing. I am somewhat worried about my next two items. I am somewhat worried about the ease of misuse possibilities on the web in that if you look at how DOMException is – for those not familiar, DOMException is not currently not a real error. In the sense that it is not like created with all the internal slots of a ECMA262 error. Instead, there’s some things – the HTML spec that says, DOMException and other things subclassing from DOMException  must have 262 error.prototype on its prototype chain and if there are additional facilities granted to errors like stack traces, that DOMExceptions should get them as well. So the way this is hooked up currently is that it’s via prototype chains. From the user perspective, this seems fine. By adding a brand check, I am worried about the possibility of how easy it is to misuse if you are a JavaScript programmer on the web and you want to care if something is a real error, should that return true or if you also or the DOMException? Depending on what you want that answer to be, that may have implications on then does it mean the DOMExceptions must be like layout representationally literal subclasses of errors or done by host hooks and have implications that I want to think through as well? Like I I think we can’t just basically focus on is it a real error in the 262 sense.
+SYG: This is a separate thing. I am somewhat worried about my next two items. I am somewhat worried about the ease of misuse possibilities on the web in that if you look at how DOMException is – for those not familiar, DOMException is not currently not a real error. In the sense that it is not like created with all the internal slots of a ECMA262 error. Instead, there’s some things – the HTML spec that says, DOMException and other things subclassing from DOMException must have 262 error.prototype on its prototype chain and if there are additional facilities granted to errors like stack traces, that DOMExceptions should get them as well. So the way this is hooked up currently is that it’s via prototype chains. From the user perspective, this seems fine. By adding a brand check, I am worried about the possibility of how easy it is to misuse if you are a JavaScript programmer on the web and you want to care if something is a real error, should that return true or if you also or the DOMException? Depending on what you want that answer to be, that may have implications on then does it mean the DOMExceptions must be like layout representationally literal subclasses of errors or done by host hooks and have implications that I want to think through as well? Like I I think we can’t just basically focus on is it a real error in the 262 sense.
 
 JHD: So I think the rubric I would try to think about to answer that question for myself would be, do DOMExceptions – for all the places where errors have special behavior, do DOMExceptions have any special behavior, whether that is structuredClone or sticking stuff into the DOM or sync or whatever, things like that. And if they do have similar special behavior, I might expect to return the – the predicate return true. If they don’t, if I can just make my own object that successfully pretends to be a DOMException they are touch, it doesn’t matter. But like I don’t think that is a requirement. If those other things I mentioned…
 

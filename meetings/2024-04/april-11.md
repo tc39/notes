@@ -236,13 +236,13 @@ CDA: Okay. Thank you, JMN
 
 ### Speaker's Summary of Key Points
 
-* Decimal’s motivation and concrete API were presented in detail. The current version of decimal is based on objects with methods, rather than primitives and literals, and uses the IEEE 754 decimal128 data model.
-* WH raised  number of technical concerns about the data model and the quality of the specification, while agreeing with the fundamental approach.
+- Decimal’s motivation and concrete API were presented in detail. The current version of decimal is based on objects with methods, rather than primitives and literals, and uses the IEEE 754 decimal128 data model.
+- WH raised number of technical concerns about the data model and the quality of the specification, while agreeing with the fundamental approach.
 
 ### Conclusion
 
-* Decimal stays at stage 1
-* WH will work with proposal champions offline to address concerns.
+- Decimal stays at stage 1
+- WH will work with proposal champions offline to address concerns.
 
 ## Shared Structs Discussion
 
@@ -459,16 +459,16 @@ USA: Yeah. Thank you, everyone. And thanks, SYG. Let’s see each other at the t
 
 ### Speaker's Summary of Key Points
 
-* This is the JS side of shared memory in WasmGC
-* Mark Miller reluctantly recognizes that shared memory is coming to WasmGC; wants a opt-in/out mechanism
-* Using source locations for shared struct auto-correlation mechanism isn't a communication channel but also hard to virtualize
-* Owing to power user feedback, methods were deemed necessary for the adoption of the MVP
+- This is the JS side of shared memory in WasmGC
+- Mark Miller reluctantly recognizes that shared memory is coming to WasmGC; wants a opt-in/out mechanism
+- Using source locations for shared struct auto-correlation mechanism isn't a communication channel but also hard to virtualize
+- Owing to power user feedback, methods were deemed necessary for the adoption of the MVP
 
 ### Conclusion
 
-* Champions will engage Mark Miller more to recap how they arrived at adding methods
-* Feature set enumerated in the slides
-* Stage 2 planned next meeting
+- Champions will engage Mark Miller more to recap how they arrived at adding methods
+- Feature set enumerated in the slides
+- Stage 2 planned next meeting
 
 ## Strict Enforcement of 'using'
 
@@ -481,7 +481,7 @@ RBN: Okay so in a previous planning session there was a suggestion about using d
 
 RBN: So, just to, again, kind of stress the motivations here. Right now the `using` declarations do not enforce disposal– or are not enforced by disposals. There’s no way to say that the disposal that I returned from a resource is taken or reused. However any type of [ ] has the chance to drastically help with expansion, especially since there are APIs in Node.js or the web platform that can be potentially upgraded to support disposable or `Symbol.dispose()`, but do not need to necessarily have that level of complexity—or, to have that level of complexity, would require bifurcating those APIs into separate APIs that handle those cases. A Node.js promise handle would have to have another way of getting those file handles from `fs/promises` than what currently used to as a mechanism because you don’t want to break existing callers. So, one option to this is an opt-in mechanism strict at the API producer level to limit adoption blockers from existing APIs that would not be able to use that without bifurcation but also give resource users to the ability to require enforcement. So, the solution that we’re discussing is that an API could return an object instead of being the resource or having, an `Symbol.dispose` method instead as a `Symbol.enter` method that is invoked by – sorry, one moment. That is invoked by a `using` declaration and `await using` declaration, async disposable stack to unwrap and get the actual resource. The reason we consider to be this an optional type API is a nonstrict API to support this would have to add a `Symbol.enter` method to support this. We don’t believe this is a require. It that needs to be passed down to everyone so since that is what you do to not be strict so we’re posing this as an optional behavior that would implicitly do this, theport of using the disposable stack there for it’s not intended to be a separate mechanism to do initial acquisition it’s primarily designed to be an indicator that I want this used via `using` and we theoretically created the resource and the application will try to throw because they try to access a property or method on the result that is consistent with the expected API of a resource and instead has to go through an extra step to get to it, if they want – if they want to – need to explicitly access the APIs directly, building blocks for disposable resources. It’s not intended to delay resource acquisition, just resource enforcement.
 
-RBN: “why opt-in?” - There’s numerous host APIs in the DOMs and other platforms that can be readily made into disposals. Node JS has dispose and they’ve already added this to `fs/promises ` may have this to use with Babel or TypeScript. Just to have this type of enforcement, if this were a mandatory thing that was part of the actual disposable protocol, and that’d be problematic because it adds extra overhead, it adds complex additional documentation. And it doesn’t help existing callers that want to do upgrades because you can’t do a simple refactoring to change from a `try`/`finally` to a `using` declaration – you have to know with what is the correlated API that this has been changed to so it’s not helpful for adopters to start adopting because it’s slow to adoption. Some of the reason there’s been interest in having this strict mechanism is native resources that people can potentially drop on the ground instead of use `using` instead.
+RBN: “why opt-in?” - There’s numerous host APIs in the DOMs and other platforms that can be readily made into disposals. Node JS has dispose and they’ve already added this to `fs/promises` may have this to use with Babel or TypeScript. Just to have this type of enforcement, if this were a mandatory thing that was part of the actual disposable protocol, and that’d be problematic because it adds extra overhead, it adds complex additional documentation. And it doesn’t help existing callers that want to do upgrades because you can’t do a simple refactoring to change from a `try`/`finally` to a `using` declaration – you have to know with what is the correlated API that this has been changed to so it’s not helpful for adopters to start adopting because it’s slow to adoption. Some of the reason there’s been interest in having this strict mechanism is native resources that people can potentially drop on the ground instead of use `using` instead.
 
 RBN: And they already use some type of GC finalizers on the API size to clean up native `fs/promise` file handles. If you drop it on the floor, it will be essentially cleaned up GC and the handle will be released. Most user-defined responsibilities will also be holding on to memory managed objects that are not going to require strict enforcement to deal with releasing native resources.
 
@@ -581,17 +581,17 @@ CDN: Okay. Not hearing or seeing any objections to stage 1. RBN you have stage 1
 
 ### Speaker's Summary of Key Points
 
-* Introduces an opt-in stricter enforcement of `using` and `DisposableStack.prototype.use`.
-* When present, `using` (and `use`) invokes a `[Symbol.enter]()` method whose result becomes the actual resource to guide users to `using` to avoid the “stumbling block” of manually calling `[Symbol.enter]()`.
-* Opt-in as mandatory enforcement would complicate adoption in DOM/NodeJS/Electron/etc.
-* Enforcement alternatives exist incl. `FinalizationRegistry` and turning `[Symbol.dispose]()` into a getter.
-  * Some considered alternatives not strong enough.
-* Some committee members concerned the suggested “stumbling block” approach does not provide enough guarantees.
-* If adopted, pursuing as a follow-on proposal to Explicit Resource Management due to opt-in nature.
+- Introduces an opt-in stricter enforcement of `using` and `DisposableStack.prototype.use`.
+- When present, `using` (and `use`) invokes a `[Symbol.enter]()` method whose result becomes the actual resource to guide users to `using` to avoid the “stumbling block” of manually calling `[Symbol.enter]()`.
+- Opt-in as mandatory enforcement would complicate adoption in DOM/NodeJS/Electron/etc.
+- Enforcement alternatives exist incl. `FinalizationRegistry` and turning `[Symbol.dispose]()` into a getter.
+  - Some considered alternatives not strong enough.
+- Some committee members concerned the suggested “stumbling block” approach does not provide enough guarantees.
+- If adopted, pursuing as a follow-on proposal to Explicit Resource Management due to opt-in nature.
 
 ### Conclusion
 
-* Adopted for Stage 1.
+- Adopted for Stage 1.
 
 ## Stop Coercing Things pt 4
 
@@ -663,16 +663,16 @@ KG: All right, hearing no objections, I will take that as consensus and I will g
 
 ### Speaker's Summary of Key Points
 
-* KG proposed stopping coercion (for new APIs, as a nonbinding guideline) from:
-    * null -> anything
-    * boolean -> string
-    * boolean -> number
-    * primitive -> object in the case of options bags [already the case in 402]
-* There was discussion about not treating primitives as iterables, but this will be revisited in the future, and no decision was made.
+- KG proposed stopping coercion (for new APIs, as a nonbinding guideline) from:
+  - null -> anything
+  - boolean -> string
+  - boolean -> number
+  - primitive -> object in the case of options bags [already the case in 402]
+- There was discussion about not treating primitives as iterables, but this will be revisited in the future, and no decision was made.
 
 ### Conclusion
 
-* Consensus on the non-binding guidelines proposed in the slides
+- Consensus on the non-binding guidelines proposed in the slides
 
 ## (continuation) joint iteration: confirm our stance on #1
 
@@ -730,8 +730,8 @@ MF: Okay, thank you.
 
 ### Conclusion
 
-* It wouldn’t be a blocker in either direction whether array zip was included or excluded to joint iteration in an upcoming meeting.
-* Discussion to continue on GitHub from https://github.com/tc39/proposal-joint-iteration/issues/1#issuecomment-2077815265, including among the opinionated parties, JHD (who has been arguing for array zip) and SYG (arguing against). MF is OK with either outcome.
+- It wouldn’t be a blocker in either direction whether array zip was included or excluded to joint iteration in an upcoming meeting.
+- Discussion to continue on GitHub from https://github.com/tc39/proposal-joint-iteration/issues/1#issuecomment-2077815265, including among the opinionated parties, JHD (who has been arguing for array zip) and SYG (arguing against). MF is OK with either outcome.
 
 ## (continuation) Make eval-introduced global vars redeclarable
 
@@ -797,7 +797,7 @@ RBN: I think you would have to provide some additional context as to what the sp
 
 WH: Okay, the issue is, if you have:
 
-```
+```js
 let x
  (a) = b
 ```
@@ -808,7 +808,7 @@ RBN: One of the reasons – so you’re talking about assignment expressions?
 
 WH: The scenario is this:
 
-```
+```js
 let x
  (a) = b
 ```
@@ -871,13 +871,13 @@ DE: Good. And we also have the performance concern noted. So, good.
 
 ### Speaker's Summary of Key Points
 
-* WH noted the cover grammar does not support ellisions, but they are included in the refined grammar.
-* WH noted an NLT issue that must be addressed before Stage 2.
+- WH noted the cover grammar does not support ellisions, but they are included in the refined grammar.
+- WH noted an NLT issue that must be addressed before Stage 2.
 
 ### Conclusion
 
-* General consensus on proposal direction.
-* Did not advance due issues in grammar that must be resolved before Stage 2.
+- General consensus on proposal direction.
+- Did not advance due issues in grammar that must be resolved before Stage 2.
 
 ## Signals for Stage 1
 
@@ -990,7 +990,7 @@ DE: I want to understand if there’s any objections.
 
 RBN: I do want to bring up – I can briefly describe my concern before we talk about stage 1 advancement. I already posted an issue on the issue tracker, it’s issue 111. I have a concern that we’re putting the cart before the horse and looking at signals and watcher before we look at events and observers. We have the DOM has events. It has edit listen and raise events. No JS has event and emitter and we have already things that are event-like. Most of these things tie into watcher more than signal, but we have these mechanisms for registering call backs and possibly canceling the call backs and signal watcher and all of this is adding yet another mechanism of doing something without this core mechanism that I think we need. Even if it’s not a built in feature of the language but more of a protocol that we can widen out to the DOM and node JS to consistently handle the events and I feel like we’re pushing for a feature that is much more higher level than a building block that we don’t have in the language but obviously is needed because it’s used literally in every host environment but in a different way. So, I want to make sure we’re thinking about that and I think we need a solution for this before it gets to stage 2 because it might have a dramatic impact – at least before it gets to stage 2 because it might have an impact on design for stage 2 API tracker.
 
-DE: Great. I agree that this is about Signal.subtle.Watcher and not Signal.Computed, which is pull-based. And I agree that we can keep iterating on this API.  It would be great to enhance Watcher with those mechanisms and we’ll see how the standards environment proceeds during that time. As you mentioned, several other things were not held back because of the lack of unification, I don’t see why this one should be. I responded to your issue with a number of requirements that are slightly unique about Watcher for an API; we’ll see whether a unified Observable/Event API meets those requirements.
+DE: Great. I agree that this is about Signal.subtle.Watcher and not Signal.Computed, which is pull-based. And I agree that we can keep iterating on this API. It would be great to enhance Watcher with those mechanisms and we’ll see how the standards environment proceeds during that time. As you mentioned, several other things were not held back because of the lack of unification, I don’t see why this one should be. I responded to your issue with a number of requirements that are slightly unique about Watcher for an API; we’ll see whether a unified Observable/Event API meets those requirements.
 
 RBN: Just to add that, why it doesn’t need to be held back why we have this discontinuity is keep building different ways of doing the same thing, and this discontinuity needs to converge somewhere and I think that’s why this should be held from stage 2 because we need a consistent way of addressing this, especially if we’re talking about a core feature that any of the these systems could use for any reason.
 
@@ -1026,14 +1026,13 @@ CDA: Seeing nothing, hearing nothing, signals has stage 1.
 
 CDA: We are past time. If some folks would like to continue discussion, I think we can stay on for a little bit longer or maybe go through the items that are in the queue.
 
-_no transcriptionist_
+> no transcriptionist below
 
 LJH: We should take note of the lessons from fetch(), intended to be a low-level primitive, and so many users used it directly to the point that WinterGC had to spec `fetch()` differently due to impossibility of implementing fetch() on the server
 
 DE: Yes, it would be great if we can improve the ergonomics of direct use; I think Signal.State and Signal.Computed aren’t so bad, but still, it’s challenging and complex to use the Signal.subtle features. We want this signals to be usable in reality, and that means hooking into some relatively complicated/custom framework code.
 
 YK: .... There is a plausible answer for DOM to provided a renderer, but we sliced things because there was not a good single answer. If we shipped something minimal, that might have the same problem in a different form that LJH mentioned, but where people end up using the primitive directly instead of what people want anyway.
-
 
 JRA: Angular is experimenting with Signals over the next few months, and we will be able to report back with details.
 
@@ -1047,7 +1046,6 @@ YK: The version of Signals I implemented before this effort considered these con
 
 MAH: Looking forward to these discussions.
 
-
 DE: Sounds like there are some concerns around lower-level APIs and mutability.
 
 WH: RBN had concerns around events
@@ -1060,15 +1058,15 @@ DE: We'll be having calls to discuss all of these issues externally. Please, if 
 
 ### Speaker's Summary of Key Points
 
-* Signals are a possible addition to the JavaScript standard library to efficiently and consistently handle reactivity/state management. They form a mutable, automatically tracked data dependency graph.
-* A minimal signal API Is proposed based around State and Computed signals, with some advanced “subtle” features (the latter in a more questionable state).
-* The effort here has been based on the collaboration of several frameworks, who are working to validate that this is a possible common model to place underneath their existing systems (in branches), based on a polyfill which is not suitable for production.
-* Some concerns raised by the committee:
-  * RBN asked about the relationship with the Events/Observer pattern. Computed signals are not correctly modelled by events/observers (which are push-based, whereas computeds are pull-based), but Signal.subtle.Watcher might be a candidate. Discussion continues at https://github.com/tc39/proposal-signals/issues/111
-  * JHD asked about the relationship to the React “rules of hooks”. Signal APIs don’t have quite the same constraints, but the champions will follow up with JHD offline to understand concerns better. JHD also asked about capability separation for reading and writing, which is being discussed in https://github.com/tc39/proposal-signals/issues/94 and https://github.com/tc39/proposal-signals/issues/124
-  * MAH asked whether certain powerful APIs such as Signal.subtle.currentComputed (which may represent an unintended communication channel) are needed. The signal champions will follow up on this concern during regular SES calls; it is likely that the subtle APIs can be modified.
+- Signals are a possible addition to the JavaScript standard library to efficiently and consistently handle reactivity/state management. They form a mutable, automatically tracked data dependency graph.
+- A minimal signal API Is proposed based around State and Computed signals, with some advanced “subtle” features (the latter in a more questionable state).
+- The effort here has been based on the collaboration of several frameworks, who are working to validate that this is a possible common model to place underneath their existing systems (in branches), based on a polyfill which is not suitable for production.
+- Some concerns raised by the committee:
+  - RBN asked about the relationship with the Events/Observer pattern. Computed signals are not correctly modelled by events/observers (which are push-based, whereas computeds are pull-based), but Signal.subtle.Watcher might be a candidate. Discussion continues at https://github.com/tc39/proposal-signals/issues/111
+  - JHD asked about the relationship to the React “rules of hooks”. Signal APIs don’t have quite the same constraints, but the champions will follow up with JHD offline to understand concerns better. JHD also asked about capability separation for reading and writing, which is being discussed in https://github.com/tc39/proposal-signals/issues/94 and https://github.com/tc39/proposal-signals/issues/124
+  - MAH asked whether certain powerful APIs such as Signal.subtle.currentComputed (which may represent an unintended communication channel) are needed. The signal champions will follow up on this concern during regular SES calls; it is likely that the subtle APIs can be modified.
 
 ### Conclusion
 
-* Signals reach Stage 1
-* Development of the polyfill and integrations into new and existing frameworks will continue, coordinated through an official public Matrix channel and regular public meetings on the TC39 calendar.
+- Signals reach Stage 1
+- Development of the polyfill and integrations into new and existing frameworks will continue, coordinated through an official public Matrix channel and regular public meetings on the TC39 calendar.

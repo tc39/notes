@@ -36,6 +36,7 @@ You can find Abbreviations in delegates.txt
 | Mikhail Barash     | MBH          | Univ. of Bergen |
 
 ## Explicit Resource Management Normative Updates and Needs Consensus PRs
+
 Presenter: Ron Buckton (RBN)
 
 - [proposal](https://github.com/tc39/proposal-explicit-resource-management)
@@ -193,19 +194,19 @@ RBN: I appreciate that. Thank you. I will update the topic with the summary
 
 ### Speaker's Summary of Key Points
 
-* PR#194 - DisposeCapability Leak in DisposeResources AO. To be solved by adding a NOTE.
-* PR#218 - @@dispose in `await using` throws synchronously. To be solved by wrapping in PromiseCapability.
-* PR#219 - Deterministic Collapse of Await for null/undefined.
-* PR#222 - Missing lookahead restriction to ban `export await using`.
-* PR#220 - Superfluous _ClassBody_ restriction in Early Errors.
+- PR#194 - DisposeCapability Leak in DisposeResources AO. To be solved by adding a NOTE.
+- PR#218 - @@dispose in `await using` throws synchronously. To be solved by wrapping in PromiseCapability.
+- PR#219 - Deterministic Collapse of Await for null/undefined.
+- PR#222 - Missing lookahead restriction to ban `export await using`.
+- PR#220 - Superfluous *ClassBody* restriction in Early Errors.
 
 ### Conclusion
 
-* PR#194 - Editorial only. No consensus required.
-* PR#218 - Has consensus.
-* PR#219 - Consensus on collapsing **all** null/undefined, needs PR updates for consensus on sync throw from @@asyncDispose behavior. To be revisited by Day 4 of plenary.
-* PR#222 - Editorial only. No consensus required.
-* PR#220 - Has consensus.
+- PR#194 - Editorial only. No consensus required.
+- PR#218 - Has consensus.
+- PR#219 - Consensus on collapsing **all** null/undefined, needs PR updates for consensus on sync throw from @@asyncDispose behavior. To be revisited by Day 4 of plenary.
+- PR#222 - Editorial only. No consensus required.
+- PR#220 - Has consensus.
 
 ## AsyncContext Stage 2 updates
 
@@ -311,8 +312,7 @@ NRO: Some concrete case studies, react native. BlueSky uses React Native. As I m
 
 NRO: And another case study is the Element web app. It's a very big app bundled with Webpack. Everything is on the web. Everything instead to be loaded. And only deferred execution. This is the general case. And the way I approached trying to introduce import defer was to start from the entry points. Look for all the declarations where they are obviously not needed at startup. If import and mark it as defer. And I did this for like a few things… maybe half of the incompetent porting was as lazy as the third.
 
-And something is I could not blindly do it because some modules did rely on the relation order
-And the results were that we were – this was on the Web page. We were able to skip roughly 50% of the startup time before the page and maybe interact with it. These results could also be obtained by moving part and the modules and loading them. But it was easy to add import defer compared how hard it is to add dynamic import on the right places which makes some code asynchronous.
+And something is I could not blindly do it because some modules did rely on the relation order And the results were that we were – this was on the Web page. We were able to skip roughly 50% of the startup time before the page and maybe interact with it. These results could also be obtained by moving part and the modules and loading them. But it was easy to add import defer compared how hard it is to add dynamic import on the right places which makes some code asynchronous.
 
 NRO: So what changed since last I presented this proposal? We added import of defer syntax that dynamic pre-loads the model. This is for symmetry. This is the same for other phase.
 
@@ -422,7 +422,7 @@ DE: Please. That would be good because I think Nicolo was giving theoretical arg
 
 ACE: Thanks, DE.
 
-So I can see where you’re coming from Shu and the natural reaction to the proposal. In practice the concern doesn’t hold at least from our experience of using this for over a year, one introducing top-level await to is already kind of – it’s a big change to things, it’s going to  change the order of execution to the app. Even before this proposal, I would hope developers are somewhat conscious of the impact of adding top-level await. And in the future an extra thought of that is, that it cuts off this particular optimization and I think maybe some of the reaction is maybe the word defer, when someone is saying, import defer, that actually we are not deferring everything, the loading of the file, the parsing of the file or evaluation of top-level await. But we are doing our best effort to defer. It’s not just that we can leave the synchronous execution by remaining and by definition we can’t defer asynchronous discussion to a synchronous point. If people think that is import as optimally as you can it kind of makes sense. Why this is important for us at Bloomberg, really what we see is top-level await used quite low down in the network graph, in the module graph. It's like setting up low level things. It’s rare that people need top-level await. Module initialization, apart from interacting with foreign function interfaces to set something up that they want to provide synchronously later on, rather than make everything they export an async function because of the one in initialization. The amount of the module graph cuts off from the optimization to be very, very small. And also, it’s very low down, as NRO was saying. The person doing import defer at the top of the graph, they may not have a natural way of referring to that top-level await module. Like, it’s so far removed from them. And really, what they are saying is, I want this particular dependency, which is many, many levels away from the top-level await, please defer that and the fact that we then defer all the way down until we hit the low level thing and they not aware of and but we can initialize the low level thing because someone looks like they need – but only if someone looks like they need it is a big win. If that helps.
+So I can see where you’re coming from Shu and the natural reaction to the proposal. In practice the concern doesn’t hold at least from our experience of using this for over a year, one introducing top-level await to is already kind of – it’s a big change to things, it’s going to change the order of execution to the app. Even before this proposal, I would hope developers are somewhat conscious of the impact of adding top-level await. And in the future an extra thought of that is, that it cuts off this particular optimization and I think maybe some of the reaction is maybe the word defer, when someone is saying, import defer, that actually we are not deferring everything, the loading of the file, the parsing of the file or evaluation of top-level await. But we are doing our best effort to defer. It’s not just that we can leave the synchronous execution by remaining and by definition we can’t defer asynchronous discussion to a synchronous point. If people think that is import as optimally as you can it kind of makes sense. Why this is important for us at Bloomberg, really what we see is top-level await used quite low down in the network graph, in the module graph. It's like setting up low level things. It’s rare that people need top-level await. Module initialization, apart from interacting with foreign function interfaces to set something up that they want to provide synchronously later on, rather than make everything they export an async function because of the one in initialization. The amount of the module graph cuts off from the optimization to be very, very small. And also, it’s very low down, as NRO was saying. The person doing import defer at the top of the graph, they may not have a natural way of referring to that top-level await module. Like, it’s so far removed from them. And really, what they are saying is, I want this particular dependency, which is many, many levels away from the top-level await, please defer that and the fact that we then defer all the way down until we hit the low level thing and they not aware of and but we can initialize the low level thing because someone looks like they need – but only if someone looks like they need it is a big win. If that helps.
 
 SYG: If I can respond real quickly to that. I think the – one argument I heard was that top-level await already changes ordering. My understanding is that this changes – import defer changes ordering in a more intrusive way, in you introduce top-level await, the ordering that changes is like in the import phase. Sorry. Phase is the wrong word. A different phase of the application. Import defer interleaves top level module evaluation with arbitrary other code evaluation. It defers it much longer. And that kind of interleaving and the thing that is interleaved, being dependent on non-local top-level await deep down in the module graph, like that’s the thing that worries me. TLA, yes, it changes ordering, but it’s localized to still the startup phase of the application.
 
@@ -434,7 +434,7 @@ JRL: We’re still sticking on the same queue item?
 
 NRO: Yes. I would go to JWK now.
 
-JWK: Replying to SYG’s concerns about non-local information, you don’t want the deeper module in the graph will affect the execution ordering of the current module. So in the Webpack implementation we have an option called “require sync asserts”, which means if you want to use defer, you have to assert this module is synchronous. But to emit the synchronous linking error, you also need to traverse the whole graph to find the top-level await module. But by this way, if a module suddenly becomes async, you are not change the execution order, but have a fatal linking error to prevent foot guns. And I have another thing to comment. You don’t want to ship anything in the browser because it might be used in the future (not now), natively in the browser. If the browser is not doing that, and it’s not in the language, then the toolings will have its own conventions for this. For example, Webpack, we are doing magic comments which basically you have a comment, /* webpackDefer: true */. And this comment is inside the import statement (import * as mod /* webpackDefer: true */) then it becomes a deferred module import. And imagine if this feature is widely adopted and people write webpackDefer, viteDefer, etc, I don’t think this will be good for the community.
+JWK: Replying to SYG’s concerns about non-local information, you don’t want the deeper module in the graph will affect the execution ordering of the current module. So in the Webpack implementation we have an option called “require sync asserts”, which means if you want to use defer, you have to assert this module is synchronous. But to emit the synchronous linking error, you also need to traverse the whole graph to find the top-level await module. But by this way, if a module suddenly becomes async, you are not change the execution order, but have a fatal linking error to prevent foot guns. And I have another thing to comment. You don’t want to ship anything in the browser because it might be used in the future (not now), natively in the browser. If the browser is not doing that, and it’s not in the language, then the toolings will have its own conventions for this. For example, Webpack, we are doing magic comments which basically you have a comment, /*webpackDefer: true */. And this comment is inside the import statement (import * as mod /* webpackDefer: true*/) then it becomes a deferred module import. And imagine if this feature is widely adopted and people write webpackDefer, viteDefer, etc, I don’t think this will be good for the community.
 
 SYG: There is value in standardizing this. That is a different value than having all the runtime implementations support it. It happens we cannot separate the two today, but that is not set in stone. I agree there is very well in standardizing this for the take for the tools
 
@@ -476,12 +476,12 @@ NRO: Yeah. Let’s go to my next presentation about the export part
 
 ### Speaker's Summary of Key Points
 
-*  The proposal was re-presented with the following differences from the previous update:
-    * `import.defer(...)` dynamic import syntax
-    * Evaluation happens on any string property access on the namespace
-    * The Wasm-ESM integration doesn't use TLA anymore, making it compatible with the proposal
-* There were some doubts about the value of this proposal in browsers, given that most people bundle their code and don't use the browser's native ESM implementation
-* The committee doesn't agree yet on how we should handle top-level await in deferred imports
+- The proposal was re-presented with the following differences from the previous update:
+  - `import.defer(...)` dynamic import syntax
+  - Evaluation happens on any string property access on the namespace
+  - The Wasm-ESM integration doesn't use TLA anymore, making it compatible with the proposal
+- There were some doubts about the value of this proposal in browsers, given that most people bundle their code and don't use the browser's native ESM implementation
+- The committee doesn't agree yet on how we should handle top-level await in deferred imports
 
 ### Conclusion
 
@@ -598,7 +598,7 @@ JRL: So that officially lunch will end on the hour. So you have 59 minutes.
 
 ### Conclusion
 
-* export defer is no longer part of the import defer proposal, and will be a separate Stage 2 proposal.List
+- export defer is no longer part of the import defer proposal, and will be a separate Stage 2 proposal.List
 
 ## Iterator.range for stage 2.7
 
@@ -809,11 +809,11 @@ JWK: Thank you, everyone.
 
 ### Speaker's Summary of Key Points
 
-* No changes for 1 year, ready for the next stage since Iterator helpers has been shipped in Chrome.
+- No changes for 1 year, ready for the next stage since Iterator helpers has been shipped in Chrome.
 
 ### Conclusion
 
-* Wait for the discussion about floating point numbers, and come back next time
+- Wait for the discussion about floating point numbers, and come back next time
 
 ## `Math.sumExact` for stage 2.7
 
@@ -922,8 +922,6 @@ SYG: Yeah, I found the commutativity thing compelling, because this is going -- 
 
 KG: Yeah, so the -- the reason commutativity is nice in general is it allows you to split up the work and then not worry about how you’re splitting it up. You can imagine you’re adding items to a queue and summing the result at the end, and if the items are produced by workers that are async, the results come in async, and being communicative in general is a useful property because it means you don't have to care about the order that the results came in. Now if all of your workers are producing numbers, including NaN, then this issue isn't an issue. But if one of your workers messes up somehow and produces a non-integer [sic] value, and a separate worker produces NaN, let's say, then at the end, when you sum up the results, you will get either an error or NaN, depending on the exact order in which the workers added their items to the queue. And that seems undesirable to me, especially because in all other cases, it doesn't matter. You get precisely the same answer.
 
-_transcriptionist switch_
-
 WH: KG, you said there’s an issue when somebody “produces a non-integer value”. I think you meant “non-number value”?
 
 KG: I did. I did mean “non-number”. Sorry.
@@ -999,7 +997,7 @@ ACE: But what I want to do today is to just kind of step back to the beginning, 
 
 ACE: So some of the push back we got which is, you know, it was mentioned at the beginning of the proposal and one was the fact that record & tuple were permitted, and really this was one – implementation complexity for adding primitives to language. It’s not on the – it’s difficult, on the hard side. It wasn’t just about that, but also the ergonomics for using these things as a developer. And that’s because these things create a very hard split. Even though they look like object literals, they were different. They cooperate reference objects. Reference of primitives. And the – these things like object literals didn’t have an object – didn’t extend from the object prototype records couldn’t have single keys. Tuples were not arrays. They were all the things when you started to look at them, you realize these things are very different, not objects and arrays.
 
-ACE: The other thing was closely related to primitives, but separable, was the `===` equality – and again, like, this is more to do with the implementation side. This is complex. But also, the performance developers would get from this. And the two kind of strategies that could be used to implement. One is defer all the work until an equality opportunity is performed. And that’s kind of out of spec for it. And we go to the same value in the spec and say these things are equal. Whereas in reality, that – when you implement that isn’t isn’t one lane of code in the engine that says equality, maybe there is, the equality isn’t defined in one place, but in lots of places. And hot paths for things. For some engines, this could make things slower, for all comparisons, because whenever comparing objects, they need to load the object, like to an indirect load of that address, to work out what type of operation they are going to do. Whereas, that current engine, I will skip that. And there’s the – even though we had developers to expect linear time comparison of these things, they kept saying back to us like, sure you’re saying that. "But really, it’s O(1), right? This is optimized."  "No, no. This is probably always going to be a linear time operation."  So it does seem like for `===` developers have an expectation of a lot of performance and the engines weren’t comfortable with that expectation. The other strategy is to do this at creation time. When you create these things, look them up in a global interning table if one exists, match, use the existing one. The downsides here are the other benefit of record & tuple is they are immutable. And there is a convenient way to do this. People might use them purely for those semantics but paying the cost for looking them up and not utilizing these equality semantics. Or, as we know, the hypothesis is that most objects that young, maybe they are just creating these things, doing a one time look up in the map and dropping it. So putting in a global table and just immediately drop them. The other issue is negative 0. Which just kept coming up a lot. If you are interning to make `===` work, either `-0` is not equal to `0` or they are equal but you have to normalize, replacing the `-0` with `0`.
+ACE: The other thing was closely related to primitives, but separable, was the `===` equality – and again, like, this is more to do with the implementation side. This is complex. But also, the performance developers would get from this. And the two kind of strategies that could be used to implement. One is defer all the work until an equality opportunity is performed. And that’s kind of out of spec for it. And we go to the same value in the spec and say these things are equal. Whereas in reality, that – when you implement that isn’t isn’t one lane of code in the engine that says equality, maybe there is, the equality isn’t defined in one place, but in lots of places. And hot paths for things. For some engines, this could make things slower, for all comparisons, because whenever comparing objects, they need to load the object, like to an indirect load of that address, to work out what type of operation they are going to do. Whereas, that current engine, I will skip that. And there’s the – even though we had developers to expect linear time comparison of these things, they kept saying back to us like, sure you’re saying that. "But really, it’s O(1), right? This is optimized." "No, no. This is probably always going to be a linear time operation." So it does seem like for `===` developers have an expectation of a lot of performance and the engines weren’t comfortable with that expectation. The other strategy is to do this at creation time. When you create these things, look them up in a global interning table if one exists, match, use the existing one. The downsides here are the other benefit of record & tuple is they are immutable. And there is a convenient way to do this. People might use them purely for those semantics but paying the cost for looking them up and not utilizing these equality semantics. Or, as we know, the hypothesis is that most objects that young, maybe they are just creating these things, doing a one time look up in the map and dropping it. So putting in a global table and just immediately drop them. The other issue is negative 0. Which just kept coming up a lot. If you are interning to make `===` work, either `-0` is not equal to `0` or they are equal but you have to normalize, replacing the `-0` with `0`.
 
 ACE: So that was the push back. Even if you take those things kind of out of the proposal as it were, there’s a lot of value there and potentially things we could still find, design on them in the committee, like adding value and solving a problem. So one is, these things we are adding, very ergonomic way to create immutable data structures. And I think that is still of value, and perhaps the previous proposal went as – enforced deep immutability, maybe that was going too far because it can limit what you can put in the data structures. And enough value add, if it’s only kind of adding a shallow immutability like an Object.freeze. If you are adding these immutable thing, it’s perfect to also introduce equality semantics. If you have got the immutable things in an immutable language, they are so useful. If things are immutable the equality can’t change and we will talk about that later.
 
@@ -1067,7 +1065,7 @@ ACE: And RBN. I do feel bad as I know you wanted to talk with hash equals and I 
 
 RBN: Hash equals is something I have been thinking about for a number of years. I have brought it up in multiple conversations, and in discussions in the past. I think the only reason I haven’t presented it in proposal is that my current workload related to TC39 proposals is over limit. However, a lot of things we've been talking about in the matrix, especially, have been around like the different a equals+hash type approach versus something like composite key. And there are specific things that composite key enables, but a number of things that it doesn’t really – it’s not the most efficient mechanism for handling things like running case and variant collections or trying to compose things that require – sorry. Like, building custom hash table, I have had recently the need to do such a thing, especially working with experiments with the structs proposal, any lack of concurrent hash table or concurrent map as part of the proposal, and likely not part of that proposal in the future, sometimes it’s necessary to actually be able to generate a hash table to get the calculations and there are libraries and packages that do that out in the ecosystem. A lot aren’t as efficient in the browser because they require using a WeakMap to assign some identity to an object to use it as a pseudo-hash. But having the ability to generate a hash and do comparisons is much more efficient than something like a composite key right off the bat. Composite keys requires allocations, every time you do a get or set, you wrap a [value?] just to represent the key. Where if you had equals/hash, you can do that in one place. You don’t have the overhead for every single `get()` or `set()`. So there’s a lot more efficiency, I think you can find something like equals/hash and it’s consistent throughout other languages. And even the native implementations of JavaScript in most cases, at least every one that I looked at so far, uses equals hash natively. So it’s already doing these things. So there’s value in giving that power to the users because it’s not a terribly complicated feature to be able to leverage.
 
-ACE: Yeah. As I said, I 100% view hash and equals to be useful. Effectively, it’s hash equals is still there. But these  – it’s still below the line. You create these things internally, the engines knows the hashcode and compares them to decide if they are equal. But that’s – as I am presenting it, I am not making that something where the user can say, this is hash a just code for this value. I can agree. I can see – especially with the shared structs proposal, those things are mutable, so they wouldn’t have the built in hash equals, but that’s where perhaps you want your thing, you want the drop downlevel, and what I am saying is, I think a case of equal, wanting to be writing hash equals themselves, a less common case. And the more common case, especially for languages – a lot of languages have these things because it’s traditional to have them. But they also tend to provide data types where you get these for free. You can write a data or record class and it automatically implements a.hashcode and equals operator, but I don’t have to write myself and remember to update as I add new fills to the object.
+ACE: Yeah. As I said, I 100% view hash and equals to be useful. Effectively, it’s hash equals is still there. But these – it’s still below the line. You create these things internally, the engines knows the hashcode and compares them to decide if they are equal. But that’s – as I am presenting it, I am not making that something where the user can say, this is hash a just code for this value. I can agree. I can see – especially with the shared structs proposal, those things are mutable, so they wouldn’t have the built in hash equals, but that’s where perhaps you want your thing, you want the drop downlevel, and what I am saying is, I think a case of equal, wanting to be writing hash equals themselves, a less common case. And the more common case, especially for languages – a lot of languages have these things because it’s traditional to have them. But they also tend to provide data types where you get these for free. You can write a data or record class and it automatically implements a.hashcode and equals operator, but I don’t have to write myself and remember to update as I add new fills to the object.
 
 RBN: Yeah. I do agree that most code doesn’t need to write this themselves. And places like .NET framework, most comparison and equality objects that you would use like a comparator, IComparator or the like – already implement it. You will use case insensitive string comparator. But you have the level of flexibility you need to get in and write the hashing algorithm or write how you want to take various properties on an object and hash them and get shift temperature together to create a valid… and that level of flexibility is something valuable in those cases.
 
@@ -1131,11 +1129,11 @@ CDA: Okay. That brings us to the end of Day 2. We will see you all tomorrow.
 
 ### Speaker's Summary of Key Points
 
-* We covered the feedback received on the 2022 design of the proposal
-* A new design that does not include new primitives or overloading `===` semantics was presented
-* We talked about how this compares to a 'hash+equals' pattern
+- We covered the feedback received on the 2022 design of the proposal
+- A new design that does not include new primitives or overloading `===` semantics was presented
+- We talked about how this compares to a 'hash+equals' pattern
 
 ### Conclusion
 
-* Lots of good feedback was received, with contrasting views in the committee.
-* No conclusions were drawn.
+- Lots of good feedback was received, with contrasting views in the committee.
+- No conclusions were drawn.

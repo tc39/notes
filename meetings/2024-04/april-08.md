@@ -36,7 +36,6 @@ You can find Abbreviations in delegates.txt
 | Mikhail Barash     | MBH          | Univ. of Bergen    |
 |                    |              |                    |
 
-
 USA: And, okay, so let’s move on with the approval of last meeting’s minutes, the minutes from the last meeting have been uploaded on GitHub. Let’s give a minute for the approval. If you do not approve, as a reminder, to the last meeting’s minutes, you should speak up now. Great.
 
 USA: All right, now that the last meeting’s minutes have been approved, I would like to ask you all to confirm the adoption of the current agenda for this meeting. You might have checked it out on the agenda’s repo that we have. That said, if you have any objections regarding the agenda of this meeting, please speak up.
@@ -71,7 +70,7 @@ SHN: Again, as we have new members and we have new invited experts always coming
 
 SHN: My last point on my main slides is some feedback on the review of the solution for a PDF version. I do see that there is a slide set that has been prepared and a lot of effort has been made by Kevin and Michael. Thank you very much for that. I will wait for your discussions. I think you are very soon. In the agenda item. It was just a place siting on my slides to remember we do discuss that. I look forward to that feedback, and of course finding the next steps. And that’s the end of my slides. As I mentioned, everything in the annex, I will leave you to review, which are the documents that are uploaded. The statistics that are there, and of course, the next meeting information for the schedules that we have for not only TC39, but the G and ex-e comm. And with that I will stop sharing and be happy to address any questions. As I can see, there nothing on the queue. Okay, there now a question. Nicolo?
 
-NRO: Yeah, you said that temperature checks have basically the same rules as votes. Unless I misunderstood. I  find this weird, because except for a couple times, we used temperature check as a non-binding ways for champions to see what is the general opinion. So I think it’s good to, like, let experts participate in that.
+NRO: Yeah, you said that temperature checks have basically the same rules as votes. Unless I misunderstood. I find this weird, because except for a couple times, we used temperature check as a non-binding ways for champions to see what is the general opinion. So I think it’s good to, like, let experts participate in that.
 
 SHN: Thank you. Typically, I’ve only been involved in one temperature check in my many meetings that I’ve been involved. And I can only use that as a reference. I do remember it being quite extensive. So thank you for that. And, yes, I understand that it’s for the committee very important because you have different contributors. So I think that would make sense to enable you to have that conversation in that sense. I don’t think you’ve ever had to vote, because we don’t vote, even in an extreme sense. Could somebody just confirm that for me.
 
@@ -125,7 +124,7 @@ CDA: I think you did a good job. I just had these slides from a previous meeting
 
 ### Speaker's Summary of Key Points
 
-* Reminder to take action on Ecma Recognition Awards
+- Reminder to take action on Ecma Recognition Awards
 
 ## ECMA262 Status Updates
 
@@ -239,10 +238,10 @@ USA: Thank you, MF. Would you like to make any concluding remarks?
 
 MF: I don’t think so.
 
-#### Conclusion
+### Conclusion
 
-* MF has incorporated AWB’s PDF generation advice, and found that it will still take a week or two of manual work to produce a high-quality PDF. There are no volunteers among the committee or editors to do this work.
-* For 2024, AWB will (somehow) do this work again. TC39 requests that Ecma include this work in future budgets, as it has done so for 2024.
+- MF has incorporated AWB’s PDF generation advice, and found that it will still take a week or two of manual work to produce a high-quality PDF. There are no volunteers among the committee or editors to do this work.
+- For 2024, AWB will (somehow) do this work again. TC39 requests that Ecma include this work in future budgets, as it has done so for 2024.
 
 ## ECMA402 Status Updates
 
@@ -254,9 +253,9 @@ BAN: All right. And hopefully that is visible. We are currently in freeze, and s
 
 BAN: So the first of them is we previously mishandled single letter BCP47 tags. It wasn't actually a problem because we don’t use those. In order to clarify the algorithm and make it correct we have made it actually correct. We have also done several refactors to simply make our locale resolution algorithms look more like BCP47 algorithms. And likewise, our default locale doesn’t generate any tags with `-u-` extensions, and we have better documented that.
 
- I would say the most meaningful editorial change is we had previously had an alias name that was confusing, dataLocaleData. We had locale localeData and dataLocaleData locale. We have changed the alias to resolvedLocaleData, and made several changes to the names of associated things. We have capitalized some slot names in 402. There are some slot names that have to be lower case because they are in the namespace as certain pattern strings that must be lowercase. However, here are some that didn’t need to be lower case. We have – camelCased these to adhere to the standard used in 262.
+I would say the most meaningful editorial change is we had previously had an alias name that was confusing, dataLocaleData. We had locale localeData and dataLocaleData locale. We have changed the alias to resolvedLocaleData, and made several changes to the names of associated things. We have capitalized some slot names in 402. There are some slot names that have to be lower case because they are in the namespace as certain pattern strings that must be lowercase. However, here are some that didn’t need to be lower case. We have – camelCased these to adhere to the standard used in 262.
 
-This next is unrelated to the BCP 47 changes. Previously the DateTimeFormat spec used ambiguous and non-standard language for table iteration. That is fixed. And also there are some steps where we had steps to lowercase strings that were already guaranteed to be lowercase. And then there’s a few meta changes. Most notably, this one I like: README and notes we have updated old references to the master branch to main, since we are now using main. Finally, we were missing a LICENSE.md  file. So we have added that. And that is it. Thank you.
+This next is unrelated to the BCP 47 changes. Previously the DateTimeFormat spec used ambiguous and non-standard language for table iteration. That is fixed. And also there are some steps where we had steps to lowercase strings that were already guaranteed to be lowercase. And then there’s a few meta changes. Most notably, this one I like: README and notes we have updated old references to the master branch to main, since we are now using main. Finally, we were missing a LICENSE.md file. So we have added that. And that is it. Thank you.
 
 ## ECMA404 Status Updates
 
@@ -300,9 +299,9 @@ CDA: And the other item we wanted to take care of here was, with the increase in
 
 ### Conclusion
 
-* KKL has joined the conveners group for TG3
-* TG3 meeting cadence increasing to weekly
-* APAC-friendly meeting times being removed from schedule due to limited attendance
+- KKL has joined the conveners group for TG3
+- TG3 meeting cadence increasing to weekly
+- APAC-friendly meeting times being removed from schedule due to limited attendance
 
 ## TG4: Source Maps
 
@@ -358,9 +357,10 @@ JHD: So this is just a notification. The champion withdrew that proposal because
 
 ### Conclusion
 
-* The ‘array.last’ proposal has been withdrawn
+- The ‘array.last’ proposal has been withdrawn
 
 ## TC39 website - call for translators
+
 Presenter: Chris de Almeida (CDA)
 
 - [gh issue](https://github.com/tc39/tc39.github.io/issues/406)
@@ -378,7 +378,7 @@ PFC: (Slide 1) My name is Philip Chimento. I am going to be presenting a short u
 
 PFC: (Slide 2) So first a short progress update. I know you are used to hearing this, but we are approaching the finish line of the proposal. Currently, the proposal champions are focussing on making sure that all of the in-progress implementations are successful. So what we have been doing recently is fixing bugs found by implementations. I will present one later in the presentation. We are making targeted changes to make things easier for implementations and addressing concerns that are not specific to any feature like the code size. I will give more detail about this in one of the following slides.
 
-PFC: (Slide 3) If you are an implementation of the language, we would like your help. We want to make sure that any doubts or blockers are addressed before the next plenary in June 2024, to make sure there are no further obstacles to implementation. So if something is preventing you from implementing Temporal, let us know. We would like to work with you to resolve it very soon. So don’t wait. If we need  to make changes to the proposal, we want to make them now and present them in June. If you want to talk about something or ask questions, we have a meeting biweekly on Thursdays, 8 o’clock a.m. Pacific Time. If that time doesn’t work, let me know and we can set up another time to talk. We already have some people working on implementations, who actually join regularly to get the chance to ask any questions that they have. For example, we have somebody working on the Temporal implementation from Boa that joins every time, and we have somebody working on a polyfill implementation and joins regularly and this has been helpful both for the implementations and for the proposal itself. Among other things, it’s how we discovered the bug that I am presenting a bugfix for.
+PFC: (Slide 3) If you are an implementation of the language, we would like your help. We want to make sure that any doubts or blockers are addressed before the next plenary in June 2024, to make sure there are no further obstacles to implementation. So if something is preventing you from implementing Temporal, let us know. We would like to work with you to resolve it very soon. So don’t wait. If we need to make changes to the proposal, we want to make them now and present them in June. If you want to talk about something or ask questions, we have a meeting biweekly on Thursdays, 8 o’clock a.m. Pacific Time. If that time doesn’t work, let me know and we can set up another time to talk. We already have some people working on implementations, who actually join regularly to get the chance to ask any questions that they have. For example, we have somebody working on the Temporal implementation from Boa that joins every time, and we have somebody working on a polyfill implementation and joins regularly and this has been helpful both for the implementations and for the proposal itself. Among other things, it’s how we discovered the bug that I am presenting a bugfix for.
 
 PFC: (Slide 4) A short summary about concerns that have been raised. Several we discussed in the hallway discussions in San Diego during the February plenary. So there are concerns about the compiler binary size on Android on V8. We investigated why it's taking so much space, you can read more details on the issue, but we made a proof of concept showing how to reduce that size, without necessarily changing anything from the proposal. We heard from JavaScriptCore that there are concerns about the growth of the standard library, but not specifically about Temporal.
 
@@ -402,7 +402,7 @@ PFC: All right. (Slide 9) I would like to request consensus on this pull request
 
 USA: All right. Let’s give it a minute. I would also reiterate that any sort of statements of explicit support are also welcome. All right. There doesn’t seem to be anything in the queue. So you have consensus.
 
-PFC: Okay. Thanks. (Slide 10)  I took the liberty of writing a proposed summary for the note, which I will show here and paste into the notes.
+PFC: Okay. Thanks. (Slide 10) I took the liberty of writing a proposed summary for the note, which I will show here and paste into the notes.
 
 ### Speaker's Summary of Key Points
 
@@ -438,11 +438,11 @@ KG: Yeah. Let’s do it.
 
 ### Speaker's Summary of Key Points
 
-* Proposal is shipping in Safari and Chrome and underway in Firefox
+- Proposal is shipping in Safari and Chrome and underway in Firefox
 
 ### Conclusion
 
-* Stage 4
+- Stage 4
 
 ## Set methods for stage 4
 
@@ -467,11 +467,11 @@ KG: Okay. Thanks all for the explicit support. And for implementations and so fo
 
 ### Speaker's Summary of Key Points
 
-* Proposal is shipping in Safari and Chrome and underway in Firefox
+- Proposal is shipping in Safari and Chrome and underway in Firefox
 
 ### Conclusion
 
-* Stage 4 achieved
+- Stage 4 achieved
 
 ## Joint-iteration: confirm our stance on issue 1
 
@@ -575,7 +575,7 @@ JHD: That’s what I meant. I don’t think that’s a primary motivation for th
 
 CDA: KG?
 
-KG: Yeah. I am fine with the main motivation of this. The polyfill-ability  one, I am confused by. Like, you could have a package that did that. If you are not –
+KG: Yeah. I am fine with the main motivation of this. The polyfill-ability one, I am confused by. Like, you could have a package that did that. If you are not –
 
 JHD: Right. You’re right. And I think me mentioning that, caused more confusion.
 
@@ -653,7 +653,7 @@ DE: Does the proposal seem to you, to be useful generally?
 
 DRR: I think that seems clear
 
-CDA: The temperature check interface is now visible. I guess we will give it till another  minute and a half or until there is no movement.
+CDA: The temperature check interface is now visible. I guess we will give it till another minute and a half or until there is no movement.
 
 NRO: My position doesn’t seem bad, but I am not convinced it is useful in general. Other people with my position are 'indifferent', how is that different from what it means.
 
@@ -788,7 +788,7 @@ WH: You can’t escape dash outside of a CharacterClass?
 
 KG: In a U mode Regex.
 
-WH: OK. I am not suggesting we modify RegExp grammar in any way, but I am suggesting, for the characters for which the IdentityEscape exists and is uncontroversial, that we use it. I would prefer `\n` instead of `\x0A` for line break and I would much prefer `\.` to `\x2E` and `\ ` instead of `\x20`.
+WH: OK. I am not suggesting we modify RegExp grammar in any way, but I am suggesting, for the characters for which the IdentityEscape exists and is uncontroversial, that we use it. I would prefer `\n` instead of `\x0A` for line break and I would much prefer `\.` to `\x2E` and `\` instead of `\x20`.
 
 KG: `\`+space has the same problem that it’s not currently legal in u-mode RegExps.
 
@@ -848,10 +848,10 @@ JHD: And that conclusion from before, I will adapt that into a summary in the en
 
 ### Conclusion
 
-* Will make additional changes and return in a future meeting:
-	* unpaired surrogates should be escaped
-	* we should attempt to restore readability for newlines and perhaps a list of other characters, whichever characters we see fit, that also are legal in both U mode and non-U mode RegExps (eg `\n` instead of the hex code for it)
-	* an additional change from MM/RGN with the first character in the string.
+- Will make additional changes and return in a future meeting:
+  - unpaired surrogates should be escaped
+  - we should attempt to restore readability for newlines and perhaps a list of other characters, whichever characters we see fit, that also are legal in both U mode and non-U mode RegExps (eg `\n` instead of the hex code for it)
+  - an additional change from MM/RGN with the first character in the string.
 
 ## Make eval-introduced global vars redeclarable for stage 2.7
 
@@ -898,9 +898,10 @@ SYG: I am going to take that as good. To be perfectly clear, this will require e
 
 ### Conclusion
 
-* Stage 2.7
+- Stage 2.7
 
 ## ESM Source Phase status update and layering change
+
 Presenter: Guy Bedford (GB)
 
 - [proposal](https://github.com/tc39/proposal-esm-phase-imports)
@@ -932,7 +933,7 @@ GB: So just to update on the layering, by going with the source phasing imports 
 
 GB: So the imports layering question, that should be brought up to give some of the background on this briefly. In the – and in terms of when we get to discussion, I would like to say, if we can first discuss the layering question and then all of the other design questions around source phase in general, just to use our time well.
 
-GB: But to give the background on that and dive into that discussion. We are allowing non-ECMA262 objects to be provided through this source phase. And when we brought that up, at plenary, the argument from Jordan was that we are having non- – the sort of objects that are host defined being returned through the module system. And so we should have some kind of way to bless them or know that they are  – they have certain properties at least and Jordan said, there should be a strong branding check that we can have a two string function that cannot be forged, that – and this was deemed to satisfy that binding question. And the way it worked was, we say that these objects extend from an AbstractModuleSource, and you can’t do that in user-lands and hosts can then set the slot and then you know that you have got something that can only be deemed a ModuleSource object. Even though it is a host defined object and not a ECMA262 object.
+GB: But to give the background on that and dive into that discussion. We are allowing non-ECMA262 objects to be provided through this source phase. And when we brought that up, at plenary, the argument from Jordan was that we are having non- – the sort of objects that are host defined being returned through the module system. And so we should have some kind of way to bless them or know that they are – they have certain properties at least and Jordan said, there should be a strong branding check that we can have a two string function that cannot be forged, that – and this was deemed to satisfy that binding question. And the way it worked was, we say that these objects extend from an AbstractModuleSource, and you can’t do that in user-lands and hosts can then set the slot and then you know that you have got something that can only be deemed a ModuleSource object. Even though it is a host defined object and not a ECMA262 object.
 
 And then we could potentially by setting that initial groundwork, we could make sure that we are supporting the properties we need from ECMA262 perspective.
 
@@ -956,7 +957,7 @@ SYG: I mean, specifically, that there are hosts – I don’t mean prototype. I 
 
 NRO: Yes. Thank you for clarifying.
 
-JWK: Did SYG  already answer my question?
+JWK: Did SYG already answer my question?
 
 SYG: Reading your question, I don’t think I did
 
@@ -984,13 +985,14 @@ GB: Sure. If we can just note that the editorial change is moving from a slot, i
 
 ### Speaker's Summary of Key Points
 
-* the editorial change is moving from a slot, internal slot model to a host hook model
+- the editorial change is moving from a slot, internal slot model to a host hook model
 
 ### Conclusion
 
-* Proposal remains Stage 1
+- Proposal remains Stage 1
 
 ## Atomics.microwait() (without mini wait) for stage 2
+
 Presenter: Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/syg/proposal-atomics-microwait)
@@ -1044,4 +1046,4 @@ SYG: Okay. Given that, I withdraw for Stage 2 consensus. I didn’t prepare the 
 
 ### Conclusion
 
-* Atomics.microwait withdrawn for Stage 2 consensus, for now.
+- Atomics.microwait withdrawn for Stage 2 consensus, for now.

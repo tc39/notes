@@ -7,7 +7,7 @@
 | Stage 4         | Set methods                                   |
 | Stage 4         | duplicate named capture groups                |
 | Stage 3         | new Function                                  |
-| Stage ~~2.7~~ 3 | Make eval-introduced global vars redeclarable |
+| Stage 3 | Make eval-introduced global vars redeclarable |
 | Stage 2.7       | Promise.try                                   |
 | Stage 2.7       | Math.sumPrecise                               |
 | Stage 1         | Error.isError                                 |

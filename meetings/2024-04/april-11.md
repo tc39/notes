@@ -757,7 +757,7 @@ CDA: And any objections? … No.
 
 - [proposal](https://github.com/tc39/proposal-extractors)
 
-RBN: We might be able to get through some of the remaining queue on that. I do have a question though. We also had talked earlier, um, when I presented on the deterministic collapse of a weight that required some review by, or that Nickoli wanted to look at the changes to the PR based on the discussion before determining whether that reached consensus and I don’t know if we can address that because I think that’s fairly short?
+RBN: We might be able to get through some of the remaining queue on that. I do have a question though. We also had talked earlier, um, when I presented on the deterministic collapse of a weight that required some review by, or that NRO wanted to look at the changes to the PR based on the discussion before determining whether that reached consensus and I don’t know if we can address that because I think that’s fairly short?
 
 CDA: Noting that NRO is not present.
 

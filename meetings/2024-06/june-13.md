@@ -45,8 +45,7 @@ JMN: So we need to have some kind of robust data model here. And thanks to WH, w
 
 JMN: What we do is, we consider some kind of representation here of these numbers. Basically, you can think about this as some kind of mathematical value plus some kind of precision, you might say (or quanta, the technical term for these things). Idea is that we will have pairs here, lists of two elements. We have some integer there, Q. That’s the quanta. Integer with that range there. And then to represent our good old friend zero, +0 and -0, and some mathematical value which represents this kind of notion of significant digits within range so you can see, for instance, we have a couple of inequalities there. The absolute value of some independent integer is between 0 and 10**34. And the idea is that if you take this mathematical value and scale it by a certain power of 10, you get an integer. That is the kind of significant ant or BigInt. It represents all digits. This is the new class of what we call Decimal128 values. These are spec values, not JS language values. In the same way mathematical values are not JS language values.
 
-JMN: Another thing that I want to draw your attention to is some diffs in the API. One thing that hasn’t changed is we propose having a new library object called Decimal128. The name as posed is subject to bike-shedding. We can open that, but internally have been using Decimal128 for a while now. Just to be clear this is not a new primitive type and there are no new numeric literals here. There’s support for decimal NaN and the decimal variants of positive and negative infinity. The API contains basic arithmetic. Just the basics you expected like addition, subtraction, multiplication, division, and to be clear again, we don’t propose overloading of `+`/`*`/etc.
-These will be methods.
+JMN: Another thing that I want to draw your attention to is some diffs in the API. One thing that hasn’t changed is we propose having a new library object called Decimal128. The name as posed is subject to bike-shedding. We can open that, but internally have been using Decimal128 for a while now. Just to be clear this is not a new primitive type and there are no new numeric literals here. There’s support for decimal NaN and the decimal variants of positive and negative infinity. The API contains basic arithmetic. Just the basics you expected like addition, subtraction, multiplication, division, and to be clear again, we don’t propose overloading of `+`/`*`/etc. These will be methods.
 
 JMN: The constructor is going to take strings. Here is something new: BigInts are okay. That’s intuitively fine. BigInts represent exact data. Right? Within certain ranges, that’s fine. Numbers are fine but work needs to be done there.
 
@@ -167,6 +166,7 @@ CDA: Noting we have about 15 minutes left, Rob?
 Prepared statement from SYG:
 
 > V8 has the following questions and non-blocking concerns:
+>
 > 1. Remains unconvinced by use case but can live with API-only solution.
 > 2. What's the deal with decimal NaN and infinities?
 > 3. Prefers choosing round to nearest, ties to even and that's it. What's the use case for supporting all five? We don't for floating point.
@@ -489,10 +489,10 @@ All right, thank you, Guy, and thank you everyone for putting up with this minor
 
 ### Conclusion
 
-* Proposal advanced to Stage 2.
-* Stage 2 behaviors specified include dynamic import of a source and the module source object and its source analysis.
-* Importing a module source from another realm currently throws, relaxing this behavior is being explored further as part of Stage 2, including a possible upstream spec refactoring for compiled module records and/or module keying. Cross-specification work is also being explored as part of Stage 2.
-* GB will do a follow-up PR to the readme on the Stage 2.7 process and progress going forward.
+- Proposal advanced to Stage 2.
+- Stage 2 behaviors specified include dynamic import of a source and the module source object and its source analysis.
+- Importing a module source from another realm currently throws, relaxing this behavior is being explored further as part of Stage 2, including a possible upstream spec refactoring for compiled module records and/or module keying. Cross-specification work is also being explored as part of Stage 2.
+- GB will do a follow-up PR to the readme on the Stage 2.7 process and progress going forward.
 
 ## Intl.DurationFormat Stage 3 update and normative PRs
 
@@ -547,15 +547,15 @@ USA: Okay, thank you, Ron. And I don’t know if it’s the post lunch, um, lazi
 
 ### Speaker's Summary of Key Points
 
-* Existing requirement is that an ‘await using’ declaration must Await at least once during disposal when execution exits the block.
-* Both ‘using’ and ‘await using’ allow null/undefined values.
-* Every ‘await using’ for a null/undefined value introduces an independent Await
-* Proposes collapsing extraneous Awaits for null/undefined resources to a single Await, or to avoid the Await entirely if there is also a non-null/undefined async resource.
-* PR #219 was awaiting review from NRO, who has since approved.
+- Existing requirement is that an ‘await using’ declaration must Await at least once during disposal when execution exits the block.
+- Both ‘using’ and ‘await using’ allow null/undefined values.
+- Every ‘await using’ for a null/undefined value introduces an independent Await
+- Proposes collapsing extraneous Awaits for null/undefined resources to a single Await, or to avoid the Await entirely if there is also a non-null/undefined async resource.
+- PR #219 was awaiting review from NRO, who has since approved.
 
 ### Conclusion
 
-* Consensus on PR #219
+- Consensus on PR #219
 
 ## Discard Bindings update or stage 2
 
@@ -640,8 +640,7 @@ USA: In the queue first we have DLM with support to what SFC said and then we ha
 
 MF: I want to respect precedent from other languages because many programmers have context in other languages, but I think when we already have precedent in JavaScript, we should respect that more, and we do have this precedent in JavaScript. RBN mentioned how TypeScript uses void, but we have the void operator in JavaScript, which literally means discard this thing. We take an expression and then we don’t use it anymore. And JavaScript programmers with familiarity with that will see the similarity between these features. They seem to work nicely with each other. I don’t think that the precedent from C++ is more important than that.
 
-RBN: Essentially we’ve already broken precedent with those languages with how we already use `void`.
-To paraphrase. I hope that makes sense.
+RBN: Essentially we’ve already broken precedent with those languages with how we already use `void`. To paraphrase. I hope that makes sense.
 
 USA: SFC is on the queue next.
 
@@ -673,19 +672,19 @@ USA: Okay. Congratulations on stage 2 and let’s move on. Would you like to, um
 
 ### Speaker's Summary of Key Points
 
-* Proposed for Stage 2 Advancement in April. WH raised a blocking concern related to the cover grammar (issue #5 in proposal repo).
-* Cover grammar issue resolved in PR #9, approved by WH.
-* Underscore is still under consideration as an alternative to ‘void’, but has complications.
-* Postponing resolution of underscore vs. void until Stage 2.
-* Seeking advancement to Stage 2.
+- Proposed for Stage 2 Advancement in April. WH raised a blocking concern related to the cover grammar (issue #5 in proposal repo).
+- Cover grammar issue resolved in PR #9, approved by WH.
+- Underscore is still under consideration as an alternative to ‘void’, but has complications.
+- Postponing resolution of underscore vs. void until Stage 2.
+- Seeking advancement to Stage 2.
 
 ### Conclusion
 
-* Consensus on advancement to Stage 2.
-* Many delegates expressed a preference for underscore.
-* Some delegates maintain strong preference for ‘void’.
-* Concern raised that utilizing ‘void’ for discards breaks with other languages' use of ‘void’ as a unit type.
-* JS’s existing ‘void’ operator already breaks that parallel.
+- Consensus on advancement to Stage 2.
+- Many delegates expressed a preference for underscore.
+- Some delegates maintain strong preference for ‘void’.
+- Concern raised that utilizing ‘void’ for discards breaks with other languages' use of ‘void’ as a unit type.
+- JS’s existing ‘void’ operator already breaks that parallel.
 
 ## Algorithms for Signals
 
@@ -764,11 +763,9 @@ DE: Right. So that’s why computed signals have this .equals thing in the optio
 
 DMM: Does this require that, well, you say you can find the .equals, but presumably you can define that the objects are immutable.
 
-DE: So part of this is based on trust. You can write whatever you want in the body of a Signal.Computed.
-It doesn’t have to be a pure function. We can’t validate that it is a pure function. But you’ll only be hurting yourself if it is not a stable kind of comparison.
+DE: So part of this is based on trust. You can write whatever you want in the body of a Signal.Computed. It doesn’t have to be a pure function. We can’t validate that it is a pure function. But you’ll only be hurting yourself if it is not a stable kind of comparison.
 
-NRO: Regarding the case of objects with multiple properties. So kind of like a star.
-Is the expectation that I should use a signal for the object or put a signal in each property to only wrap the actual primitive contents?
+NRO: Regarding the case of objects with multiple properties. So kind of like a star. Is the expectation that I should use a signal for the object or put a signal in each property to only wrap the actual primitive contents?
 
 DE: It depends on what you’re trying to do. Signals are atomic and can replace one value for another value. And if you want to do finer grained diffing in that, if you want to do a calculation based on just part of the object, you might want to have a Signal that represents just part of that. Both so if that thing changes and someone’s using something else, they don’t get invalidated and vice-versa. Other invalidations that aren’t relevant to you don’t affect your subsequent calculation. In practice, the set of cases where you end up using a custom equals method is somewhat rare.
 
@@ -844,7 +841,7 @@ NRO: You can repeat the examples, we will write it in the queue with the right d
 
 WH: Okay, A is a Boolean state. B queries A. And if it is false, then it queries C. C queries A, if it is true, then it queries B.
 
-```
+```javascript
 a = state(false);
 b = computed(!a ? c : 5);
 c = computed(a ? b : 7);
@@ -866,12 +863,12 @@ DE: Right. So just to clarify. The cycle detection, because of the lazy get, can
 
 ### Summary / Conclusion
 
-* The goal of signal algorithms, which many frameworks have gradually reinvented, is to accurately recalculate parts of the function from the model to the view, as if the whole thing were run from scratch, but only re-running that part.
-* The pull-based, topological sorting algorithm, with auto-tracking, provides a correct, coherent way to do this incremental re-evaluation. Push-based models suffer from glitches.
-* It is useful for computed signals to be GC’able when not watched, but simultaneously to have Watcher callbacks which are eager. There are data structures that support this combination, but it’s a little tricky.
-* Discussion with the committee was mostly clarifying questions. WH raised a graph scenario to investigate offline for correctness.
-* Signals are at stage one. They have been integrated experimentally into a number of frameworks and libraries, but there is still significantly more experimentation and iteration to do.
-* We encourage involvement at the various levels. Please join our Matrix channel or unofficial Discord. There are a lot of opportunities for getting involved especially around coding both in the polyfill and tests and example use cases.
+- The goal of signal algorithms, which many frameworks have gradually reinvented, is to accurately recalculate parts of the function from the model to the view, as if the whole thing were run from scratch, but only re-running that part.
+- The pull-based, topological sorting algorithm, with auto-tracking, provides a correct, coherent way to do this incremental re-evaluation. Push-based models suffer from glitches.
+- It is useful for computed signals to be GC’able when not watched, but simultaneously to have Watcher callbacks which are eager. There are data structures that support this combination, but it’s a little tricky.
+- Discussion with the committee was mostly clarifying questions. WH raised a graph scenario to investigate offline for correctness.
+- Signals are at stage one. They have been integrated experimentally into a number of frameworks and libraries, but there is still significantly more experimentation and iteration to do.
+- We encourage involvement at the various levels. Please join our Matrix channel or unofficial Discord. There are a lot of opportunities for getting involved especially around coding both in the polyfill and tests and example use cases.
 
 ## Atomics.pause
 
@@ -886,8 +883,7 @@ USA: Sorry for the interruption, SYG. Just a second, I forgot to ask for note-ta
 
 SYG: Right. So this was previously called atomic’s microwait. After feedback that the microwait is kind of unhelpful and that pause, this is renamed pause, which is also perfectly good name and also happens to be what some of this equipancy CPU instructions are already called. But otherwise, this is the spec text I’m showing on the screen here. There’s no changes in the proposed behavior, which is to say there’s basically no behavior. It is purely about timing. So there is no observable behavior.
 
-It does some, it takes an iteration number, which is a hint, if you would like to implement exponential backoff in your waiting algorithm. In your spin loop waiting algorithm, it doesn’t really do anything with the hint, other has it validates it is a non-negative integer, if you pass one in. Otherwise it doesn’t do anything with it and it just returns.
-So hopefully, this is quick, before I ask for stage, I’ll try to ask for stage 2.7 first. But before that, let’s open it to queue.
+It does some, it takes an iteration number, which is a hint, if you would like to implement exponential backoff in your waiting algorithm. In your spin loop waiting algorithm, it doesn’t really do anything with the hint, other has it validates it is a non-negative integer, if you pass one in. Otherwise it doesn’t do anything with it and it just returns. So hopefully, this is quick, before I ask for stage, I’ll try to ask for stage 2.7 first. But before that, let’s open it to queue.
 
 WH: There is something really bizarre here with this API distinguishing +0 from -0. We should never do that unless there is a really compelling reason. So what’s the reason for that?
 
@@ -945,7 +941,7 @@ SYG: The argument itself is intended to be linear. Let me bring up another examp
 
 SYG: But yeah, the argument itself is intended to be, to be linear. I will switch sharing tabs for a second. This is just the example—this bit of pseudocode is how spin loop usually looks in a new text. And there is some spin count. And the idea is that this spin count would be passed to `atomic.pause`. And `atomic.pause` would choose to interpret that input which is linear. And the intention it can interpret that input as exponential back off.
 
-WH: Well, this example actually makes sense with either interpretation, but it does very different things. If you increment *spins* by one, it could mean to spin for one more constant time, or it could mean double the wait.
+WH: Well, this example actually makes sense with either interpretation, but it does very different things. If you increment _spins_ by one, it could mean to spin for one more constant time, or it could mean double the wait.
 
 SYG: Right. And I’m leaving that choice to be the implementation’s choice. Whether that is exactly one more pause. So the usual way you would write this like with the line assembly or an intrinsic that is actually causing a pause, you can choose ST implementer writing C++ or C or whatever do linear back off or exponential back off. The reason I didn’t do that for the JS proposal is because the call overhead is pretty high. If you’re not in jet code. But if you’re in jet code, the call over head could be completely inlined away. So for when you’re in the interpreter, I expect the implementation of atomics . wait to wait a different amount of time depending on input iteration number then for the inlined version in the optimizing jit. Does that motivation make sense?
 
@@ -1051,15 +1047,15 @@ SYG: This is 2.7. The action items for next meeting is that MF and I and probabl
 
 ### Speaker's Summary of Key Points
 
-* Core semantics unchanged (there is no core semantics, it's an unobservable wait)
-* Will remove -0 checking (step 1.b) for optional iteration number argument
-* Ongoing editorial discussion for how to best present implementation guidance notes
-* Asking for Stage 2.7
+- Core semantics unchanged (there is no core semantics, it's an unobservable wait)
+- Will remove -0 checking (step 1.b) for optional iteration number argument
+- Ongoing editorial discussion for how to best present implementation guidance notes
+- Asking for Stage 2.7
 
 ### Conclusion
 
-* Consensus for Stage 2.7
-* Editor group to come up with recommendation for implementation guidance notes and come back next meeting
+- Consensus for Stage 2.7
+- Editor group to come up with recommendation for implementation guidance notes and come back next meeting
 
 ## Shared Structs discussion around methods
 
@@ -1336,12 +1332,11 @@ RPR: We should thank you for calling and you have been awake a lot at the weird 
 
 ### Speaker's Summary of Key Points
 
-* An update, no consensus seeking
-* Presented 2 mechanisms to allow shared structs to have methods: per-Realm [[Prototype]] and auto-correlated struct definitions
-* Mark Miller & co want it to be harder to write thread unsafe code, and would prefer shared structs to only have free functions, without methods
-* Champion group doesn't understand Mark's argument
+- An update, no consensus seeking
+- Presented 2 mechanisms to allow shared structs to have methods: per-Realm [[Prototype]] and auto-correlated struct definitions
+- Mark Miller & co want it to be harder to write thread unsafe code, and would prefer shared structs to only have free functions, without methods
+- Champion group doesn't understand Mark's argument
 
 ### Conclusion
 
-* Stakeholders to continue methods discussion in the already regularly scheduled shared structs working session call
-
+- Stakeholders to continue methods discussion in the already regularly scheduled shared structs working session call

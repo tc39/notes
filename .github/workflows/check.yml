@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: ljharb/actions/node/install@1f631e8a1b9d01db48955c090cf4720b1897942b
-        name: 'nvm install lts/* && npm ci'
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+      - run: npm i
       - run: npm test

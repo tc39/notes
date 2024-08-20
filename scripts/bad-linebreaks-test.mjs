@@ -7,8 +7,8 @@ const afterMD = './scripts/test-samples/bad-linebreaks-sample-after.md';
 const beforeMD = './scripts/test-samples/bad-linebreaks-sample-before.md';
 
 // verify hash values to detect file tampering
-const knownBeforeHash = '5dfa7a6c97c43bf3321f2e9ccafd3ce8';
-const knownAfterHash = '9ed9cc827a7ffa71e6c243a23d7e24a3';
+const knownBeforeHash = '95b97fa317298d9fd864b79ac93710d6';
+const knownAfterHash = '2a79139c3c3292cc5e807f531c714775';
 const beforeHash = await getHashSlingingSlasher(beforeMD);
 const afterHash = await getHashSlingingSlasher(afterMD);
 assert.strictEqual(beforeHash, knownBeforeHash);

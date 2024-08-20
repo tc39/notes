@@ -49,6 +49,12 @@ export function findBadStuff(file, fix = false) {
 
   }
 
+  for (const k of Object.keys(tokens.links)) {
+    // marked treats footer links as special. it's a named property on the tokens array, and links do not have the properties of tokens.
+    // so we just add them as is
+    o.push(`[${k}]: ${tokens.links[k].href}\n`);
+  }
+
   return {
     fixed: o.join(''),
     totalMatches,

@@ -1,10 +1,10 @@
 # February 5, 2020 Meeting Notes
+
 -----
 
 **In-person attendees:** Aki Braun (AKI), Andrew Paprocki (API), Rob Palmer (RPR), Waldemar Horwat (WH), Chip Morningstar (CM), Shane F Carr (SFC), Shu-yu Guo (SYG), Jordan Harband (JHD), Michael Saboff (MLS), Keith Miller (KM), Michael Ficarra (MF), Jonathan Keslin (JKN), Kevin Gibbons (KG), Richard Gibson (RGN), Justin Ridgewell (JRL), Zibi Braniecki (ZB), Myles Borins (MBS), Bradford C. Smith (BCS) Rick Button (RBU), Mary Marchini (MAR), Guilherme Hermeto (GHO)
 
 **Remote attendees:** Dan Ehrenberg (DE), Brian Terlson (BT), David Rudin (DRN), Jason Nutter (JAN), Ron Buckton (RBN), Pieter Ouwerkerk (POK), István Sebestyén (IS), Min Qi Wu (WMQ), Leo Balter (LEO), Valerie Young (VYG), Jack Works (JWK), Mathieu Hofman (MAH), John Hax (JHX), Caridy Patiño (CP), Sergey Rubanov (SRV), Rajiv Batra (!!!), Yulia Startsev (YSV), Bradley Farias (BFS), Gus Caplan (GCL), Caio Lima (CLA)
-
 
 ## Preserve Host Virtualizability (Continue from Day 1)
 
@@ -20,7 +20,7 @@ SYG: I’ve done a little more research. When I first put it yesterday, I was ex
 
 MM: There has been some change since I first heard that proposed. Could you define it?
 
-SYG: Unforgeable is an extended attribute, non-static regular property that is non-writable/non-configurable. This is used in legacy stuff and in the trusted types proposal, making some things unforgeable.  This is something I would like to retain.
+SYG: Unforgeable is an extended attribute, non-static regular property that is non-writable/non-configurable. This is used in legacy stuff and in the trusted types proposal, making some things unforgeable. This is something I would like to retain.
 
 CP: Trusted types was actually the thing that triggered us to look into this problem.
 
@@ -36,7 +36,7 @@ MM: No, I'm not.
 
 WH: So you want to support the cases of scripts hostile to virtualization? There is quite a bit of an industry of people who write scripts that don’t want to run virtualized, and I’m sure you can think of reasons why you might want to do that. So I’m curious how this proposal deals with that use case.
 
-MM: I don't understand that use case, and I'm not familiar with it.  I'll say that there are 2 aspects, that we are unlikely to get to perfect virtualizability in JS on the web platform in any case.  We're holding pure virtualizability as a goal to approach as close as we can get. If a script can detect that it is not on the host we don't consider that a violation of the goals. The core goals are around controlling access to the outside world, and in general control of integrity. And furthermore, for scripts that are not actively trying to subvert virtualizability, there's a nice part about testing.  Being able to create a test harness and run the tests on another host. So there are a variety of benefits of virtualizability that does not achieve perfection.
+MM: I don't understand that use case, and I'm not familiar with it. I'll say that there are 2 aspects, that we are unlikely to get to perfect virtualizability in JS on the web platform in any case. We're holding pure virtualizability as a goal to approach as close as we can get. If a script can detect that it is not on the host we don't consider that a violation of the goals. The core goals are around controlling access to the outside world, and in general control of integrity. And furthermore, for scripts that are not actively trying to subvert virtualizability, there's a nice part about testing. Being able to create a test harness and run the tests on another host. So there are a variety of benefits of virtualizability that does not achieve perfection.
 
 WH: OK
 
@@ -49,8 +49,8 @@ MM: Does anyone object to stage 1?
 Consensus reached for stage 1
 
 ## Update on Realms
-Presenter: Caridy Patiño (CP)
 
+Presenter: Caridy Patiño (CP)
 
 - [Proposal](https://github.com/tc39/proposal-realms)
 - [Slides](https://github.com/tc39/proposal-realms/#presentations)
@@ -69,7 +69,7 @@ CP: Yes
 
 SYG: Good job pairing down the parts of the proposal. I like the current proposal without the hooks and with the lightweight creation. And I would like to review it for stage 3.
 
-GHO: I would like to see some examples about error handling.  How would error handling happen across realms?
+GHO: I would like to see some examples about error handling. How would error handling happen across realms?
 
 CP: there was an issue open a while ago about error handling. The error handling would happen at the agent level rather than the realm. There was another issue for completion record access. The compartment’s evaluator is really an API that allows you to control everything. We still don’t have that formalized. In terms of errors I don’t think the Realms will provide this.
 
@@ -89,7 +89,6 @@ CP: I plan in the next couple of weeks to resolve the open issues and then go fo
 
 DE: Are you going to make a mechanism for CSP style environments before advancement?
 
-
 CP: We are not changing the mechanism in the spec for CSP rules. In future we will have a hook to control that.
 
 DE: Let’s follow up offline. I think it’s important to have a method for environments that can’t evaluate strings.
@@ -100,7 +99,7 @@ CP: yes, I was hoping to.
 
 SYG: Why is it a problem?
 
-DE: It’s fine.  And I can help a review.
+DE: It’s fine. And I can help a review.
 
 SYG: Is it a precedent that editors cannot review?
 
@@ -108,7 +107,7 @@ MF: When we go for stage 3, we like to have reviewers that are not editors as we
 
 MM: CP was vague on compartments, my presentation on SES will be on the compartment API. To answer DE’s question, part of the renaming of evaluator to compartment, it is designed to be used in situations where there are no runtime evaluators.
 
-GCL: On the first slide you mentioned ES module support, and I couldn't find any info on that in the repo.  Is that a follow-on proposal?
+GCL: On the first slide you mentioned ES module support, and I couldn't find any info on that in the repo. Is that a follow-on proposal?
 
 CP: We do have some work that was done by Dave Herman around the APIs, maybe 3 years ago, but we don’t have a champion for that proposal. That is something you would be able to use via the compartment api, using the hooks via the API you can control the modules.
 
@@ -119,6 +118,7 @@ GCL: Ok, thank you
 Not seeking stage advancement this meeting.
 
 Stage 3 reviewers:
+
 - MF (@michaelficarra on GitHub, @smooshMap on Twitter)
 - SYG (@_shu on Twitter)
 - DE (littledan@igalia.com, @littledan on GitHub and Twitter)
@@ -147,6 +147,7 @@ SFC: Stage 4?
 Approved for Stage 4
 
 ## `Intl.Segmenter` Stage 2 update
+
 (Richard Gibson) RGN
 
 - [Proposal](https://github.com/tc39/proposal-intl-segmenter)
@@ -166,7 +167,7 @@ RGN: The concept of a sentence is as universal as any concept can be in language
 
 KG: Do you intend to resolve the open issues before stage 3?
 
-RGN: I  was prepared to ask for Stage 3 with these issues. Now that we have the extra time, I expect them to all be resolved.
+RGN: I was prepared to ask for Stage 3 with these issues. Now that we have the extra time, I expect them to all be resolved.
 
 RPR: Queue is empty.
 
@@ -175,6 +176,7 @@ RPR: Queue is empty.
 Update done, no stage advancement requested. Likely being requested at next meeting
 
 ## `Intl.Locale` for Stage 4
+
 (Zibi Braniecki) ZB
 
 - [Proposal](https://github.com/tc39/proposal-intl-locale/)
@@ -191,6 +193,7 @@ ZB: I would like to request Stage 4.
 Consensus reached for Stage 4
 
 ## Legacy reflection features for functions in JavaScript for Stage 1
+
 (Mark Miller) MM
 
 - [Proposal](https://github.com/claudepache/es-legacy-function-reflection)
@@ -251,6 +254,7 @@ MM: Do we have any objections to Stage 1?
 Consensus reached for stage 1
 
 ## Updates on Explicit Resource Management
+
 (Ron Buckton) RBN
 
 - [Proposal](https://github.com/tc39/proposal-explicit-resource-management)
@@ -302,9 +306,9 @@ RBN: I hadn’t considered that point. I do think it’s useful to have the decl
 
 MM: I like that answer. I think that the issue of burying that operation so it’s easy to miss is a good point. Thank you.
 
-RBN: It can get even more confusing if you have await in the mix. Now you have an `await` in the mix that might look like  I’m awaiting some value. So I'm a little bit concerned about the expression form.
+RBN: It can get even more confusing if you have await in the mix. Now you have an `await` in the mix that might look like I’m awaiting some value. So I'm a little bit concerned about the expression form.
 
-MM: Yeah, that one kills it for me.  Now that you pointed it out, it would exactly lead to that misreading.
+MM: Yeah, that one kills it for me. Now that you pointed it out, it would exactly lead to that misreading.
 
 JHD: Could it be `using async value`?
 
@@ -314,7 +318,7 @@ RBN: async today is a marker keyword. If you look like something like `for await
 
 MM: I agree. Right now we’ve succeeded in saying that all interleaving points, except some esoteric cases, are marked with `await` or `yield`.
 
-WH: To MM's suggestion, `using value expr`, I can think of a lot of havoc this could cause.  Did you mean this to dispose locally within the subexpression …
+WH: To MM's suggestion, `using value expr`, I can think of a lot of havoc this could cause. Did you mean this to dispose locally within the subexpression …
 
 MM: That is not what I would expect it to mean.
 
@@ -322,7 +326,7 @@ WH: … or the end of the block containing the expression?
 
 MM: Yes.
 
-WH: Unless you mean to scope it specifically to the sub-expression, this causes havoc. You have to answer things like, what if I am using this in a function argument initializer?  Or a class that has a `using value expr` subexpression in its `extends` clause?
+WH: Unless you mean to scope it specifically to the sub-expression, this causes havoc. You have to answer things like, what if I am using this in a function argument initializer? Or a class that has a `using value expr` subexpression in its `extends` clause?
 
 RBN: There is a lot of complexity there that I would like to avoid.
 
@@ -330,11 +334,11 @@ MM: I think my suggestion has been killed, I would like to retract.
 
 WH: How do these relate to the concept of things in the tail position?
 
-RBN: Are you specifically talking about tail call optimizations?  I'd have to think about that more.  The idea with TCO is that you can re-use the stack. The values can’t be replaced on the stack, they must still exist when the function exits. It's as if there are more statements that happen that have to return.  I'd have to look at how TCO handles `try..finally`.  I think these are calls that can't be tail-optimized.
+RBN: Are you specifically talking about tail call optimizations? I'd have to think about that more. The idea with TCO is that you can re-use the stack. The values can’t be replaced on the stack, they must still exist when the function exits. It's as if there are more statements that happen that have to return. I'd have to look at how TCO handles `try..finally`. I think these are calls that can't be tail-optimized.
 
 WH: That’s the answer I would expect. Syntactically, `try..finally` wraps around whatever it is. Meanwhile you can stick `using value` in the middle of some block somewhere, it doesn’t wrap around the sequel. It is a TCO defeating mechanism that’s not syntactically apparent.
 
-RBN: One of the reasons I became more interested in pursuing the possibility of the `using` declaration form was Dean Tribble (DT) who originally pioneered this work at Microsoft.  He said that there were concerns from some developers about the using block form that there were certain cases that weren't meeting the needs of developers.  It introduced block scope in areas where they didn't want to introduce block scope.  And the using block form was a long request from the C# language.  The motivation for `using value` was that, if we could abandon the `try using` block form in favor of this, it would introduce benefits such as `try using`, it would allow you to have a catch or finally block when those are released. By making these block scoped, it is very explicit when they are released.
+RBN: One of the reasons I became more interested in pursuing the possibility of the `using` declaration form was Dean Tribble (DT) who originally pioneered this work at Microsoft. He said that there were concerns from some developers about the using block form that there were certain cases that weren't meeting the needs of developers. It introduced block scope in areas where they didn't want to introduce block scope. And the using block form was a long request from the C# language. The motivation for `using value` was that, if we could abandon the `try using` block form in favor of this, it would introduce benefits such as `try using`, it would allow you to have a catch or finally block when those are released. By making these block scoped, it is very explicit when they are released.
 
 WH: I agree with the ergonomics of `using value` and friends. C++ does this everywhere with the RAII idiom. Ergonomically, it does work quite nicely, though there are some corner cases.
 
@@ -350,17 +354,17 @@ RBN: If the dispose throws an error? This is defined in the proposal spec text t
 
 JRL: IF you are using async expose, does it create a rejected AggregateError?
 
-RBN: If you are in an async function and use are using `try using await`, or `using const` declaration form, `AggregateError` would be thrown after all promises are evaluated. There are cases where if you have a Promise that never completes, there are concerns of what that means.  Does it suspend the execution of other disposes that are pending?  But that's no different than if you tried to do this manually with try..finally.
+RBN: If you are in an async function and use are using `try using await`, or `using const` declaration form, `AggregateError` would be thrown after all promises are evaluated. There are cases where if you have a Promise that never completes, there are concerns of what that means. Does it suspend the execution of other disposes that are pending? But that's no different than if you tried to do this manually with try..finally.
 
 JRL: Ok
 
 RBN: I’m not looking for stage advancement. Just an update. Looking to get feedback on the using value syntax in general, and whether we should consider moving specifically to this form and abandoning the try using form.
 
-MM: I like the using forms, I’m fine with using value. The destructuring issue is best dealt with by prohibiting it. With those things in, the try syntax should be out.  We should have only the using syntax.
+MM: I like the using forms, I’m fine with using value. The destructuring issue is best dealt with by prohibiting it. With those things in, the try syntax should be out. We should have only the using syntax.
 
 RBN: Are there any other questions?
 
-GHO: I agree with MM.  The `using value` syntax is preferred for us as well.
+GHO: I agree with MM. The `using value` syntax is preferred for us as well.
 
 RBN: I don’t have anything else for this proposal
 
@@ -391,9 +395,9 @@ MM: What happens if the object is modified during iteration?
 
 JKN: It will match other collection types. For example, in an array [modifying the collection during iteration] will mess with things. For example, deleting an array item will cause it to get skipped.
 
-MM: The spec text you were showing used `getEnumerableOwnProperties` or something.  Those spec operations take snapshots. I would prefer those semantics to having iteration be disrupted by mutation.  Were we to have it be sensitive to object mutation, it would have to be precisely and deterministically specified, such that we don't re-create the `for..in` nightmare. If it were a snapshot, there would be no memory benefit at all. I’m in the same camp as KG, the only case where you get a memory benefit is the more problematic semantics.
+MM: The spec text you were showing used `getEnumerableOwnProperties` or something. Those spec operations take snapshots. I would prefer those semantics to having iteration be disrupted by mutation. Were we to have it be sensitive to object mutation, it would have to be precisely and deterministically specified, such that we don't re-create the `for..in` nightmare. If it were a snapshot, there would be no memory benefit at all. I’m in the same camp as KG, the only case where you get a memory benefit is the more problematic semantics.
 
-JKN: You have a good point that these two spec versions are different: one takes a snapshot at the beginning, and the other takes a new snapshot at every iteration.  I prefer the second.  It is a fraught concern, but it is consistent.
+JKN: You have a good point that these two spec versions are different: one takes a snapshot at the beginning, and the other takes a new snapshot at every iteration. I prefer the second. It is a fraught concern, but it is consistent.
 
 MM: It means that something that currently refactoring keys to `iterateKeys` introduces a semantic change that might surprise people.
 
@@ -411,9 +415,9 @@ BFS: That seems fine to me.
 
 JKN: The proposal makes it very clear for developer intent to work on the live object and not a copy. The more developer intent is clear, the easier it is for an engine to optimize it.
 
-WH: I'm confused by what you just said.  Since this thing does a snapshot of the object at the beginning, how does this express intent to work on the live object?
+WH: I'm confused by what you just said. Since this thing does a snapshot of the object at the beginning, how does this express intent to work on the live object?
 
-JKN: The first alternative in the proposal snapshots at the beginning, but the second alternative in the proposal expresses intent at the spec level because it snapshots at every iteration.  It's almost pulled from what we currently do with `Map` iterator.
+JKN: The first alternative in the proposal snapshots at the beginning, but the second alternative in the proposal expresses intent at the spec level because it snapshots at every iteration. It's almost pulled from what we currently do with `Map` iterator.
 
 WH: So if you delete a property you haven't seen it, then you won't see it?
 
@@ -435,11 +439,11 @@ JKN: I’m referring to arrays.
 
 JHD: Sure, but iterating over objects does not.
 
-JKN: This differs from what you can currently do when iterating over objects today.  Objects are treated as a collection type very frequently.
+JKN: This differs from what you can currently do when iterating over objects today. Objects are treated as a collection type very frequently.
 
 YSV: We did a review of both spec texts. The second one is one we wouldn’t advise, the first makes more sense. It simply creates an array iterator. We don’t think this will achieve the goal you have. It is unclear how much benefit there will be for developers. There is not enough information for us to justify this going to stage 2.
 
-JKN: I hear the concerns over the first set of spec text.  I spent time chatting with BFS about this.  Our thought was that since the array was not observable, then it didn't really need to be an array.  Obviously deeper spec text concerns like what KG mentioned is a Stage 3 concern.  When we're looking at Stage 2 advancement, we're looking at whether this is a valuable thing. I believe it is helpful to make objects more consistent [with other collections]. Seems like the next step is to work with implementers to find where the value lies.
+JKN: I hear the concerns over the first set of spec text. I spent time chatting with BFS about this. Our thought was that since the array was not observable, then it didn't really need to be an array. Obviously deeper spec text concerns like what KG mentioned is a Stage 3 concern. When we're looking at Stage 2 advancement, we're looking at whether this is a valuable thing. I believe it is helpful to make objects more consistent [with other collections]. Seems like the next step is to work with implementers to find where the value lies.
 
 YSV: I wonder if perhaps this would encourage anti-patterns, where if another data structure would be better than an object.
 
@@ -451,7 +455,7 @@ ZB: Stage 2 requires precisely described semantics, which we do not have.
 
 Kumavis?: Yulia stated what I wanted to say. Adding these utilities encourages using objects as collections. Should we do that?
 
-JKN: Whether it's appropriate or not, it's done very commonly today.  If you're going to represent key-value data in JSON, it's an object.
+JKN: Whether it's appropriate or not, it's done very commonly today. If you're going to represent key-value data in JSON, it's an object.
 
 Kumavis?: Do we want to make it easier to use collections?
 
@@ -473,7 +477,6 @@ Not requested for stage advancement.
 
 Presenter: Justin Ridgewell (JRL)
 
-
 - [proposal](https://github.com/tc39/proposal-logical-assignment)
 - [slides](https://docs.google.com/presentation/d/1XbYMm7IkHef6hpvwQlLSxb_b5gSkf1g6iuNL9WM0DQ8/edit?usp=sharing)
 
@@ -493,11 +496,11 @@ SYG: I think the value of short-circuiting, given the additional use cases that 
 
 YSV: So, we support this overall. But we also feel that the nullish coalescing operator is more useful than the other two.
 
-JRL: That was brought up in March 2018.  The additional complexity is that if we only have some operators, but not others, that's confusing to users.  The nullish version (`??=`) is most useful, but I have also used the `&&=` and `||=` forms with booleans in for loops.
+JRL: That was brought up in March 2018. The additional complexity is that if we only have some operators, but not others, that's confusing to users. The nullish version (`??=`) is most useful, but I have also used the `&&=` and `||=` forms with booleans in for loops.
 
 DRR: I think there were two things brought up here and on GitHub. The first, people have a mental model of the compound assignment operators having consistent semantics. I was pointed out that it was a lie because you never re-eval the LHS. It’s a “yes sure, technically” detail, but it doesn’t correspond to how I as a user think about things. Either way, I don’t think that is a sufficient reason to weigh us one way or the other. I also wanted to mention that some of the use cases seem like they're optimizations but they also potentially hide bugs at a later stage when you do perform the assignment. E.g. if you were conditionally triggering a set, and that can do something destructive like changing focus, that might be undesirable behavior that you would want to know about ahead of time. So personally I would think you would always want the effect to happen, to avoid these sort optimizations that might lead to unpredictable code.
 
-JRL: I think that these stem from the fact that whether or not we should do short circuiting. The destructive nature of setters is important. I think people would be surprised if `innerHTML ||= ` is a huge performance penalty just because they didn't understand they would be getting a re-render.
+JRL: I think that these stem from the fact that whether or not we should do short circuiting. The destructive nature of setters is important. I think people would be surprised if `innerHTML ||=` is a huge performance penalty just because they didn't understand they would be getting a re-render.
 
 I think that the large majority of code that I have ever written, I don’t use setters. The fact that this internally has an optimization, it won’t affect 99% of the code I write. Whether it uses a simple or short-circuit set, the users won’t care one way or another. But in cases where it does matter I think people would want short-circuiting.
 
@@ -537,7 +540,7 @@ KG: I agree with the idea of trying to avoid surprises in edge cases, but you ha
 
 DRR: I think we need to use some of the use cases. Without a concrete example, it is hard to argue one way or the other.
 
-SFC: How does this proposal relate to optional chaining?  It seems reasonable that you would want to be able to do `a?.b ??= c`.
+SFC: How does this proposal relate to optional chaining? It seems reasonable that you would want to be able to do `a?.b ??= c`.
 
 JRL: Optional chaining is not a valid LHS. It is left for a future proposal.
 
@@ -636,13 +639,11 @@ RBG: If we do extend serialization, it would be a requirement that that is maint
 
 MM: What is the thing you want to emit that you can't right now?
 
-[Misc]: BigInt
-
 MM: I would be in favor of just changing BigInt.
 
-YSV: I think there's a lot of good ideas. Revivers need some help to be more useful for JavaScript developers.  But because the spec text was not available on time, I can't support stage advancement right now.
+YSV: I think there's a lot of good ideas. Revivers need some help to be more useful for JavaScript developers. But because the spec text was not available on time, I can't support stage advancement right now.
 
-MF: I don’t think that we should have the parse index included, because we should not treat the thing we're parsing differently in different positions: e.g. that could allow a deserializer to change behaviour based on whitespace. I also don't think serialization should be a part of this proposal.  I'm also generally against supporting serialization at all.  So if you would raise that proposal, I have reasons I wouldn't want to do that.  We don't need to be able to generate all valid JSON, just parse all valid JSON. We only need to be able to generate things we want to accept as input to JSON.stringify. That may or may not include BigInts.
+MF: I don’t think that we should have the parse index included, because we should not treat the thing we're parsing differently in different positions: e.g. that could allow a deserializer to change behaviour based on whitespace. I also don't think serialization should be a part of this proposal. I'm also generally against supporting serialization at all. So if you would raise that proposal, I have reasons I wouldn't want to do that. We don't need to be able to generate all valid JSON, just parse all valid JSON. We only need to be able to generate things we want to accept as input to JSON.stringify. That may or may not include BigInts.
 
 RGN: The noteworthy aspect of BigInt is that there is no language ability to emit lossless representations of BigInts. You cannot emit a sequence of digits that is a BigInt.
 
@@ -652,7 +653,7 @@ RBN: About parse indices: I think it's less useful to look at the index as how t
 
 MF: I think if that's the case we're considering we need the information of where you're already parsing it. I think there's more discussion to be had.
 
-API: Because BigInt's toJson throw by default, keep in mind if one piece of code attached a function to toJSON, and then fromJSON has a different function written by a different author, what happens?  That could be a problem.
+API: Because BigInt's toJson throw by default, keep in mind if one piece of code attached a function to toJSON, and then fromJSON has a different function written by a different author, what happens? That could be a problem.
 
 RGN: THat's one of the reasons serialization doesn't currently appear. I personally think it's worth pursuing but not worth pursuing together. It sounds like there's loose agreement to that.
 
@@ -668,7 +669,7 @@ RGN: It's parsing subject to ECMAScript minus Annex B.
 
 WH: In the spec you are saying you are parsing it with respect to ECMA-404.
 
-CM: Putting on my hat as the guardian of the perpetual immutability of JSON, one of the frustrations with BigInt is why can't you just serialize a BigInt as a BigInt, and you're starting to address that on the read side. … I think what you're doing is the right flavor of approach to dealing with the issue of the immutability of JSON. I'm not sure I buy your particular mechanism but I'm not sure I have a better one. I've always found the reviver/replacer mechanism awkward. I don't know if you want to sign up for more than you've signed up for but I think it would be worth investigating, could this entire parsing pathway be made better with the right dimensions of control and flexibility with some of the context sensitive things you’ve flagged as use cases. But I'm also a little concerned that we risk ending up with something clunky and complicated in its own way that is a nightmare.  So it really calls for a tour-de-force of integrated thinking.  In summary, I’m not sure I buy this particular proposal, but I buy the direction of this proposal. I don’t think I’m prepared to support stage 2, I’m not sure if I like the specific mechanism but totally buy the goal.
+CM: Putting on my hat as the guardian of the perpetual immutability of JSON, one of the frustrations with BigInt is why can't you just serialize a BigInt as a BigInt, and you're starting to address that on the read side. … I think what you're doing is the right flavor of approach to dealing with the issue of the immutability of JSON. I'm not sure I buy your particular mechanism but I'm not sure I have a better one. I've always found the reviver/replacer mechanism awkward. I don't know if you want to sign up for more than you've signed up for but I think it would be worth investigating, could this entire parsing pathway be made better with the right dimensions of control and flexibility with some of the context sensitive things you’ve flagged as use cases. But I'm also a little concerned that we risk ending up with something clunky and complicated in its own way that is a nightmare. So it really calls for a tour-de-force of integrated thinking. In summary, I’m not sure I buy this particular proposal, but I buy the direction of this proposal. I don’t think I’m prepared to support stage 2, I’m not sure if I like the specific mechanism but totally buy the goal.
 
 MLS: I don't want to take serialization off the table. I don't like that we can't round-trip the JSON that we can parse. Since we can’t serialize it, how do we expect to generate JSON that we can parse with these constructs? My concern is that we're talking about half the problem, not the whole problem.
 
@@ -676,7 +677,7 @@ RGN: On where does it come from, the answer is elsewhere. Not every language has
 
 API: We have a cross language/cross env situation, with a lowest common denominator. We have to be vigilant that we don’t … It’s a real problem. There is no kind of versioning or capability flags. We’ve run into this with C++ code trying to emit Decimals where there was nothing you could do in other environments.
 
-KG: To reply to MLS: There are lots of other ways we can parse JSON that can't be produced: weird escaping, whitespace, etc.  The parser is already more liberal than the serializer.
+KG: To reply to MLS: There are lots of other ways we can parse JSON that can't be produced: weird escaping, whitespace, etc. The parser is already more liberal than the serializer.
 
 RGN: I’m hearing objections. I will not push for advancement. There is enough positive reception that I will continue pursuing this.
 
@@ -684,11 +685,9 @@ RGN: I’m hearing objections. I will not push for advancement. There is enough 
 
 Given the objections, not requesting stage advancement. But will pursue further
 
-
 ## `ArrayBuffer.fillRandom` for Stage 1
 
 Presenter: Ron Buckton (RBN)
-
 
 - [proposal](https://github.com/rbuckton/proposal-arraybuffer-fillrandom)
 - [slides](https://1drv.ms/p/s!AjgWTO11Fk-TkeB85XK3cCAu49gunA?e=Ksabft)
@@ -699,7 +698,7 @@ MM: I like a lot of things about this and am in favor of Stage 1. I especially l
 
 RBN: I did investigate the possibility of creating a global for this. The most obvious namespace is `Crypto`, I had a concern that this would conflict with the WebCrypto API, but could have conflicts with the Node REPL. I was concerned about introducing a new global that would conflict with or compete with the WebCrypto API existing definitions. I felt `ArrayBuffer` was a satisfactory place for it because it deals with mutating `ArrayBuffers`. Please open an issue on the tracker. I wouldn't want to tie this to something like builtin modules - I am concerned with having to many things tied together.
 
-MM: Ok.  I agree that this shouldn't go on Crypto.  I detest adding new global variables. I’m very concerned that we keep polluting the global namespace because we haven’t advanced builtin modules.
+MM: Ok. I agree that this shouldn't go on Crypto. I detest adding new global variables. I’m very concerned that we keep polluting the global namespace because we haven’t advanced builtin modules.
 
 KG: You may not have noticed that this is a CSPRNG, which is a lot like not having state.
 
@@ -741,7 +740,7 @@ DE: WebCrypto is not under active development. We can contact people who work on
 
 DE: If we are talking about moving WebCrypto into 262, I suggested that we use an IDL. For the JS stdlib I was suggesting that we use an IDL, possibly using WebIDL. It differs a bit from TC39 conventions, and would take a lot of work to get something that we would agree on. So these are things to consider.
 
-MBS: There is active work in Node.js core to add support for Web Crypto to Node, that's hooking into the platform tests.  If there are questions about what we're doing, we can reach out.  With regard to duplicating APIs, with Node adopting these APIs, they are becoming more reliable cross-platform.  So that probably plays to SYG's point about not introducing more redundancy. One thing we've done when making things that might be redundant is trying to make an API which is slightly lower level, though I don't know if that works for crypto in particular. I wonder if there is a space that we could explore where we bring something into our spec that serves as building blocks. But I do know that we run a risk of "standards poaching", where if something is happening that we like, then we pull it in, so I don't know if we can reference some other spec.
+MBS: There is active work in Node.js core to add support for Web Crypto to Node, that's hooking into the platform tests. If there are questions about what we're doing, we can reach out. With regard to duplicating APIs, with Node adopting these APIs, they are becoming more reliable cross-platform. So that probably plays to SYG's point about not introducing more redundancy. One thing we've done when making things that might be redundant is trying to make an API which is slightly lower level, though I don't know if that works for crypto in particular. I wonder if there is a space that we could explore where we bring something into our spec that serves as building blocks. But I do know that we run a risk of "standards poaching", where if something is happening that we like, then we pull it in, so I don't know if we can reference some other spec.
 
 RBN: There are different ways you would reach the API, in WebCrypto it is a global. In node it would be a module. We would need to make sure we have a consistent mechanism to address that.
 
@@ -767,7 +766,7 @@ WH: I get 404s on those: https://rbuckton.github.io/proposal-arraybuffer-fillran
 
 RBN: On the proposal repo, the links are correct. I just clicked on them all, they worked, it might be a networking issue.
 
-WH: I’m going to strongly disagree with SYG here. A cryptographically secure random number generator is basic functionality, this should be accessible within the core ES language. Referring people to other specs to implement this is a little like not having subtraction because some other web spec defines it. We don’t need to coordinate with Node or whatever to define subtraction in the language. The definition of a secure pseudorandom number is something we need in the language.  It needs to go in before UUID to keep folks from parsing UUIDs to get random numbers.  In addition, relative to some of the other options for where to put the random number generating functionality, I think ArrayBuffer is a fine fit; I can’t think o a better one at the moment.  I really like this proposal as-is.
+WH: I’m going to strongly disagree with SYG here. A cryptographically secure random number generator is basic functionality, this should be accessible within the core ES language. Referring people to other specs to implement this is a little like not having subtraction because some other web spec defines it. We don’t need to coordinate with Node or whatever to define subtraction in the language. The definition of a secure pseudorandom number is something we need in the language. It needs to go in before UUID to keep folks from parsing UUIDs to get random numbers. In addition, relative to some of the other options for where to put the random number generating functionality, I think ArrayBuffer is a fine fit; I can’t think o a better one at the moment. I really like this proposal as-is.
 
 KG: It sounded like SYG would be ok with the outcome that we define it in this spec, so that they reference us.
 
@@ -795,7 +794,7 @@ WH: What is bad about that?
 
 SYG: In isolation, you can argue that any thing we duplicate is ok, but it does not set a good precedent for the platform. Is your argument specifically for CSPRNGs.
 
-WH: Yes, this is specifically for CSPRNGs.  This would be very different if it had a larger API surface like crypto or Intl or something.
+WH: Yes, this is specifically for CSPRNGs. This would be very different if it had a larger API surface like crypto or Intl or something.
 
 SYG: what is the harm in then a possible path of getting WebCrypto layered with ours?
 
@@ -825,7 +824,7 @@ WH: I’m not sure what you mean.
 
 RBN: The WebCrypto algorithm is intentionally vague. It is mostly host defined. There is a certain amount of entropy, but it doesn’t specify where the entropy comes from.
 
-So it's not even well-defined in the web platform.  It's more of a host implementation, where when you call this function, you expect the results to have a certain amount of entropy.  So the reason this is proposed as a function on this object is ???.
+So it's not even well-defined in the web platform. It's more of a host implementation, where when you call this function, you expect the results to have a certain amount of entropy. So the reason this is proposed as a function on this object is ???.
 
 KG: I have opened WebCrypto repo, there is an issue opened by the current maintainer saying, “If getRandomValues is upstreamed in ECMA-262, we should update the Web Crypto API to reference their definition (assuming it's compatible).”, so we should upstream it.
 
@@ -855,7 +854,6 @@ RPR: Is there anyone opposed to stage 1?
 
 Advancement to stage 1 assuming changes:
 proposal is renamed to clarify that it is just exploring the space of making crypto random numbers available to users
-
 
 ## ArrayBuffer view stride argument for Stage 1
 
@@ -912,7 +910,6 @@ KM: Maybe this isn’t worth fighting now.
 
 MM: Proxies can be made a lot faster. Despite that, I agree with SYG. Once you have a view with an offset, you’ve bought into views. For array data, strides are natural. The issue is not how common it is. The issue is, when you need it, how important is it for it to be fast? It would never be fast enough to use in an inner loop.
 
-
 MM: One of the things that is nice about the shimability of JS is that shimmable proposals give us the ability to get a feeling for the API. Even though this should not be implemented for real with a proxy, it should be shimmed with a proxy so that we can start using it experimentally.
 
 JRL: I don’t think proxies can ever be fast enough to justify not having a stride parameter. Can you explain the proposed API slide? I'm confused by bytes.
@@ -964,7 +961,6 @@ Consensus reached for stage 1
 ## Update on Weakrefs
 
 Presenter: Daniel Ehrenberg (DE)
-
 
 - [proposal](https://github.com/tc39/proposal-weakrefs)
 - [slides](https://docs.google.com/presentation/d/1a4hrdlEcpyKmBj6VtAVYDkokeW_HLFXcg11xIxhwlWM/edit#slide=id.p)
@@ -1031,9 +1027,7 @@ MM: The line of reasoning KM used is wrong, and is an example of what is so tric
 
 KG: I think MM’s point is that you are correct in that you can do this, but not the way you described.
 
-### Revisited as the first agenda item TOMORROW:
-1 New Topic: Think about what references your finalization group
-Daniel Ehrenberg (Igalia)
-2 New Topic: Weakref-oblivious execution
-Waldemar Horwat
+### Revisited as the first agenda item TOMORROW
 
+1 New Topic: Think about what references your finalization group Daniel Ehrenberg (Igalia)
+2 New Topic: Weakref-oblivious execution Waldemar Horwat

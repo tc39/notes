@@ -1,9 +1,10 @@
 # July 20, 2020 Meeting Notes
+
 -----
 
-**In-person attendees:**  
+**In-person attendees:**
 
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Yulia Startsev       | YSV            | Mozilla            |
@@ -38,24 +39,28 @@
 | Mary Marchini        | MAR            | Netflix            |
 | Rob Palmer           | RPR            | Bloomberg          |
 
-
 ## Adoption of the Agenda
+
 No objections to adopting the agenda as proposed.
 
 ## Approval of the minutes from last meeting
+
 No objections to approving the minutes from the previous meeting.
 
 ## Next meeting host and logistics
+
 BT: The next meeting will be remote. More to come.
 
 ## Secretary's Report
+
 Presenter: Istvan Sebestyen (IS)
 
 - [Slides](https://github.com/tc39/agendas/blob/master/2020/tc39-2020-036.pdf)
 
-IS: (presents slides) ECMAScript 2020 has been approved by the Ecma GA on June 16, 2020. Many, many thanks to everybody in TC39 who has made this possible. Otherwise the GA was via conference call, very short. For TC39 relevant: to elaborate a liaison Agreement with CalConnect was encouraged by the GA. 
+IS: (presents slides) ECMAScript 2020 has been approved by the Ecma GA on June 16, 2020. Many, many thanks to everybody in TC39 who has made this possible. Otherwise the GA was via conference call, very short. For TC39 relevant: to elaborate a liaison Agreement with CalConnect was encouraged by the GA.
 
 ## ECMA262 Update
+
 Presenter: Jordan Harband (JHD)
 
 - [Slides](https://docs.google.com/presentation/d/1O8wGWehzMhqb_Jz2JfmyUxyUepxanc8sEVMlTRUVnfo)
@@ -63,6 +68,7 @@ Presenter: Jordan Harband (JHD)
 JHD: (presents slides)
 
 ## ECMA402 Update
+
 Presenter: Shane F. Carr (SFC)
 
 - [Slides](https://docs.google.com/presentation/d/1C54jVjcuE27wq658CbMi0KEfa5ded_WIWvdq1JP8QDI)
@@ -73,7 +79,7 @@ WH: Does #471 affect output or only avoid errors? I looked at it, it’s full of
 
 SFC: It only affects the RangeError, there is no change to the rounding behaviour. The current problem is that if you have this code, this throws a range error because the currency EUR requires two fraction digits, but you set maximumFractionDigits to 0, and that’s a conflict. However, if your currency had been JPY, for example, then there wouldn't have been a problem since the maximumFractionDigits is already 0 for that currency. It doesn’t fix any other behavior other than eliminating this RangeError. maximumFractionDigits will win out and override the currency. The current workaround is to specify both minimum and maximum at the same time, but that’s undesirable.
 
-```
+```js
 new Intl.NumberFormat("en", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
 ```
 
@@ -92,33 +98,26 @@ SFC: I’ll take that as consensus. And we’ll get consensus on 471 when it com
 Consensus on PR 459.
 
 ## Test262 status update
+
 Presenter: Rick Waldron (RW), Leo Balter (LEO)
 
 - [slides](https://docs.google.com/presentation/d/1tsqTUZioHi8YxRF_CapxcZTjZQYDClEgXOFUm0W4gHg)
 
 RW, LEO: (presents slides)
 
-### Updates by the numbers, since last TC39 Meeting...
+### Updates by the numbers, since last TC39 Meeting
 
-113 new test files
-92 commits
-50 Merged PRs
-26 Closed issues
+113 new test files 92 commits 50 Merged PRs 26 Closed issues
 
 ### General Outstanding Updates
 
-Coverage improvement for Atomics, e.g. relaxation and waitAsync
-Coverage improvement for Promise functions 
-Intl on the fast track
-`eval?.()` w/ further discussions in this TC39 meeting
-Improvements to IsHTMLDDA
-Improvements to Optional Chaining tests
+Coverage improvement for Atomics, e.g. relaxation and waitAsync Coverage improvement for Promise functions Intl on the fast track
+`eval?.()` w/ further discussions in this TC39 meeting Improvements to IsHTMLDDA Improvements to Optional Chaining tests
 
 ### Meta: Renaming master branch to main
 
 The etymology of "master" in git branch name conventions has been traced to the master/slave metaphor.
-Tracker issue: https://github.com/tc39/test262/issues/2699
-Current status: Test262 default's branch is now `main` 
+Tracker issue: https://github.com/tc39/test262/issues/2699 Current status: Test262 default's branch is now `main`
 
 ### Extras
 
@@ -140,9 +139,11 @@ CM: And that’s it!
 BT: Okay, thank you for the update on ECMA404.
 
 ## Update from the Code of Conduct Committee
+
 JHD: There was a tense discussion on the pipeline repo which Aki was able to step in and moderate. Otherwise, it's been uneventful.
 
 ## Retroactive consensus on Unicode 13 property names and aliases (#1896, #1939)
+
 Presenter: Michael Ficarra (MF)
 
 - [PR #1896](https://github.com/tc39/ecma262/pull/1896#issuecomment-642301441)
@@ -165,6 +166,7 @@ MF: Okay, great, thank you.
 BT: Consensus that these two PRs stand as merged.
 
 ## Specify \8 and \9 in sloppy (non-template) strings (#2054)
+
 Presenter: Ross Kirsling (RKG)
 
 - [PR](https://github.com/tc39/ecma262/pull/2054)
@@ -188,6 +190,7 @@ BT: Okay, any objections to merging this PR?
 BT: This PR is good to go.
 
 ## Adding Reflect[Symbol.toStringTag] (#2057)
+
 Presenter: Jordan Harband (JHD)
 
 - [PR](https://github.com/tc39/ecma262/pull/2057)
@@ -211,6 +214,7 @@ BT: Any concerns?
 BT: Sounds like consensus.
 
 ## Should eval?.() be direct eval? (#2062, #2063)
+
 Presenter: Ross Kirsling (RKG)
 
 - [Issue #2062](https://github.com/tc39/ecma262/issues/2062)
@@ -218,11 +222,11 @@ Presenter: Ross Kirsling (RKG)
 
 RKG: (presents PR)
 
-MM: First, let me clarify that with regard to the specific syntax on the table, I don’t care, in the sense that I don’t think that people are going to be accidentally writing this, so the hazards of having it mean the wrong thing is not a big issue. But the reason why I’m going to spend airtime debating is because of the issue of taking this as a precedent for a general policy, in particular what the consideration should be, and whether or not it should be a syntax error. 
+MM: First, let me clarify that with regard to the specific syntax on the table, I don’t care, in the sense that I don’t think that people are going to be accidentally writing this, so the hazards of having it mean the wrong thing is not a big issue. But the reason why I’m going to spend airtime debating is because of the issue of taking this as a precedent for a general policy, in particular what the consideration should be, and whether or not it should be a syntax error.
 
-MM: One of the criteria that we have applied and should continue to apply is what I’m going to call the hierarchy of painful surprises. If there’s a programming construct that some people who have never seen it before will assume means one thing, and some people who have never seen it before will assume means something else, then whichever one of those choices we make, some part of that population will be surprised. With something like optional chaining, it’s not a rare construct, and the thing that has a potential surprise has tremendous utility. So the cost of making it a syntax error is incredibly high. Once it becomes available in the language, it will be used a lot, and those who use the language will rapidly become familiar with it. 
+MM: One of the criteria that we have applied and should continue to apply is what I’m going to call the hierarchy of painful surprises. If there’s a programming construct that some people who have never seen it before will assume means one thing, and some people who have never seen it before will assume means something else, then whichever one of those choices we make, some part of that population will be surprised. With something like optional chaining, it’s not a rare construct, and the thing that has a potential surprise has tremendous utility. So the cost of making it a syntax error is incredibly high. Once it becomes available in the language, it will be used a lot, and those who use the language will rapidly become familiar with it.
 
-MM: With -2**3, the issue for me was not that the person might make different decisions based on whitespace. The issue was that the surprise in both directions would lead to programs silently proceeding with wrong data, leading to painful runtime surprises possibly after code is deployed. The utility of allowing it (i.e. the cost of disallowing it with a syntax error) was very small. The extra cost of having to put it into parentheses to disambiguate it was very small and it avoids anyone having to face the cognitive overhead of remembering which of these two choices to take. The eval?. is not going to be common, it’s going to be very rare, when you’re reading someone else’s code you’ve probably never seen it before, so the reason I don’t care is that you’re not going to assume what it means either way. 
+MM: With -2**3, the issue for me was not that the person might make different decisions based on whitespace. The issue was that the surprise in both directions would lead to programs silently proceeding with wrong data, leading to painful runtime surprises possibly after code is deployed. The utility of allowing it (i.e. the cost of disallowing it with a syntax error) was very small. The extra cost of having to put it into parentheses to disambiguate it was very small and it avoids anyone having to face the cognitive overhead of remembering which of these two choices to take. The eval?. is not going to be common, it’s going to be very rare, when you’re reading someone else’s code you’ve probably never seen it before, so the reason I don’t care is that you’re not going to assume what it means either way.
 
 BT: Point of order, there are 2 minutes left in this timebox.
 
@@ -261,6 +265,7 @@ RKG: Okay.
 Keep spec as it is (indirect eval).
 
 ## Forbid Numeric Separators in NonOctalDecimalIntegerLiteral fractional / exponent parts
+
 Presenter: Leo Balter (LEO)
 
 - [Proposal issue](https://github.com/tc39/proposal-numeric-separator/issues/49)
@@ -300,7 +305,6 @@ LEO: Yes.
 
 WH: What are we agreeing to here? We’re only discussing LegacyNonOctals, not numeric separators. So what is being proposed?
 
-
 LEO: I’m asking to not block numeric separators from advancing to stage 4, because a change would ??? and I’m not really a big fan of that. Also we can tackle a follow-up for a better solution to disallowing exponential parts - perhaps fractional parts as well - from NonOctals, which I believe is also what WH and SYG expressed as what they would want. In this case we would not try to fix numerical separators on Non-octals and ??? and in this case the issue should be closed
 
 WH: I’m fine with that.
@@ -312,6 +316,7 @@ RPR: Sounds like consensus.
 LEO: PR will be closed, numeric separators will be unblocked on this matter.
 
 ## Cognitive Dimensions of Notation: a framework for reflecting on language design
+
 Presenters: Yulia Startsev (YSV), Dr Felienne Hermans (FHS)
 
 - [slides](https://docs.google.com/presentation/d/1OpKfS5UYgcwmBuejoSOBpbgsYXXzO0gG7GJHo65UXPE)
@@ -356,29 +361,31 @@ FHS: I don't think I'd say that it's purely about syntax. Syntax, or even a diag
 
 SYG: This would help us have a shared language with the PL community. But coming from ACM on programming languages, I am not familiar with this framework of languages. Which PL community were you referring to?
 
-FHS: It’s not necessarily the PL community as in PoPL, it’s more at PPIG (Psychology of Programming Interest Group) for example. This is one of the conferences where much of the work in this area has been appearing. But also for example, the international conference for program comprehension that looks at existing comprehension/codebases (...???).  So maybe it's less PoPL side of programming and more ??? that I'm referring to.  I do think it's sad that the PoPL crowd doesn't embrace this yet.
+FHS: It’s not necessarily the PL community as in PoPL, it’s more at PPIG (Psychology of Programming Interest Group) for example. This is one of the conferences where much of the work in this area has been appearing. But also for example, the international conference for program comprehension that looks at existing comprehension/codebases (...???). So maybe it's less PoPL side of programming and more ??? that I'm referring to. I do think it's sad that the PoPL crowd doesn't embrace this yet.
 
-SYG: I'm unfamiliar with that side of PL academia.  I'm more familiar with POPL, PLDI, etc. Are there papers from the PPIG side for example, that have had impacts on academic prototypes, industry prototypes, etc, where they put this framework to work and build things out and see how it goes? If so I’d love to hear more about that.
+SYG: I'm unfamiliar with that side of PL academia. I'm more familiar with POPL, PLDI, etc. Are there papers from the PPIG side for example, that have had impacts on academic prototypes, industry prototypes, etc, where they put this framework to work and build things out and see how it goes? If so I’d love to hear more about that.
 
-FHS: Some of my work, which I showed here, designing an alternative interface for spreadsheet formulas, is being picked up by Microsoft Excel.  Also lots of the evolution papers might not necessarily impact the design of a programming language, but they might impact the design of an API, or the design of how an IDE works to help with understanding. Because if a language has low visibility, then an IDE might help increase that. (???) It's probably because this framework is not so very well known, and also this type of research is not very well-regarded by the technical side of the programming language design community. There's some part of people who publish in PoPL who would say oh, well we just design programming languages, whereas people in software engineering like to look at how people actually use programming languages.
+FHS: Some of my work, which I showed here, designing an alternative interface for spreadsheet formulas, is being picked up by Microsoft Excel. Also lots of the evolution papers might not necessarily impact the design of a programming language, but they might impact the design of an API, or the design of how an IDE works to help with understanding. Because if a language has low visibility, then an IDE might help increase that. (???) It's probably because this framework is not so very well known, and also this type of research is not very well-regarded by the technical side of the programming language design community. There's some part of people who publish in PoPL who would say oh, well we just design programming languages, whereas people in software engineering like to look at how people actually use programming languages.
 
 CM: First of all, very interesting talk. Certainly TC39 has no shortage of peculiar local jargon, though I’m not sure any of the examples you gave are actually examples of that, because most of those are importations from outside TC39. I think there's an anthropology dimension: someone will take things from another group they're a member of, and it will spread like contagion. And I think tracing the patterns of those might be interesting. But the thing I wanted to focus on was error-prone-ness. I think it's a slippery idea. A lot of language design features, you might think of them as speed bumps, because they increase the probability that you'll make certain kinds of errors that are easier to deal with, and decrease the probability that you'll make certain kinds of errors that occur later down the road and are more difficult to deal with. A lot of the programming tools and IDEs and things we've been developing have been designed to try to front-load things, so you tend to have more errors earlier but they’re simpler and easier to deal with. So I think error-prone-ness is way too slippery to be tossed off as a dimension in the way you have.
 
 FHS: Yeah, so I can be brief. I think the only thing I can say there is that error proneness can be clearer than things we use now like “foot-gun” which has the same slipperiness.
 
-CM: Footgun is… it has an extended penumbra of cultural meaning.  But that refers to something where it's not only easy to make a mistake, but it leads you down a garden path to making decisions where you'll be sorry later.
+CM: Footgun is… it has an extended penumbra of cultural meaning. But that refers to something where it's not only easy to make a mistake, but it leads you down a garden path to making decisions where you'll be sorry later.
 
 YSV: We’re focusing very much on specific dimensions, and I think one thing that was very interesting when I started looking at the framework is that many communities develop their own dimensions as they go. But the framework has three parts: there’s the dimension, there’s the user, and there’s the activity. And having a list of activities that interact in this space. And not all dimensions interact in all spaces equally or in the same way.
 And for me what was really interesting was the emphasis that this framework puts on how people experience a programming language. Specifically, when we design, we design for its use, and it's being used by people. The emphasis in this framework on the user, who the user is, and what they're doing would be useful when we are evaluating and designing and asking questions. I see the framework as a starting point for asking questions, like how is this affecting people, and who is it affecting, and what can we find out about those things.
 
 FHS: For anyone remaining on the queue, please reach out through the discourse page (link?), IRC, email, or the August 27 call (details?).
 
-### Remaining queue:
+### Remaining queue
+
 1. New Topic: This will lead to time-consuming taxonomical debates. (WH)
 2. New Topic: These words seem more precise and easier to learn than our current jargon. I support gradually adopting these terms. (DE)
 3. New Topic: While this introduces a more formal framework to discuss language constructs, the impact is still subjective. (MLS)
 
 ## Class static blocks for Stage 2
+
 Presenter: Ron Buckton (RBN)
 
 - [proposal](https://tc39.es/proposal-class-static-block/)
@@ -387,7 +394,8 @@ Presenter: Ron Buckton (RBN)
 KG: About private declarations in particular, I think that most of the examples with private declarations, I feel like those would be nicer using private declarations outside of classes - that proposal. In particular -
 
 RBN: This example? (link)
-```
+
+```js
 private #x;
 class C { outer #x = 1; }
 class D { constructor(c) { c.#x; } }
@@ -421,7 +429,7 @@ RBN: No contention about that at all. I agree that’s the case.
 
 MM: Oh! Okay then I misunderstood something.
 
-RBN: That's how it currently works.  I'm trying to say the class will be TDZ outside the class definition until the class is fully initialized. Which should align with how static fields are initialized.
+RBN: That's how it currently works. I'm trying to say the class will be TDZ outside the class definition until the class is fully initialized. Which should align with how static fields are initialized.
 
 MM: Great. I very much support this for stage 2.
 
@@ -431,8 +439,7 @@ RBN: My question would be, how would you imagine that `var` would work in that c
 
 SYG: Yes
 
-RBN: I’ll be honest, if I could’ve written this as `static(){`, then I would have, but that's already legal JS 
-Because it has special semantics around how `this` works, because otherwise who knows what `this` would be referring to, and then we have the complexity around what happens with return, await, yield. I saw on IRC that there’s some discussion about the class access expressions, that one, I may eventually bring back, but that one had some strange things around evaluation, since its main motivation was around private static and subclassing.
+RBN: I’ll be honest, if I could’ve written this as `static(){`, then I would have, but that's already legal JS Because it has special semantics around how `this` works, because otherwise who knows what `this` would be referring to, and then we have the complexity around what happens with return, await, yield. I saw on IRC that there’s some discussion about the class access expressions, that one, I may eventually bring back, but that one had some strange things around evaluation, since its main motivation was around private static and subclassing.
 So again the main reason that it’s essentially treated kind of like a function but I can’t put parens in because it would conflict with existing syntax, and as such vars would not be hoisted out.
 
 SYG: So you really want this to be thought of as a static constructor, not a static block.
@@ -459,6 +466,7 @@ DE: I think this is a really great proposal. I’m definitely sympathetic to YSV
 Not advancing at this meeting.
 
 ## Host hooks for Job callbacks
+
 Presenter: Shu-yu Guo (SYG)
 
 - [Slides](https://docs.google.com/presentation/d/19S97ZqhibJABqzeP5ZU6Flk6TVgWzXuvJWFbNTTfpWs)
@@ -512,16 +520,16 @@ YSV: It's been a bit mischaracterized as Firefox being the only browser doing th
 
 SYG: That's correct. If there's no JavaScript on the stack then we are aligned. (???)
 
-
-
 SYG: The conclusion is that I will chat with BFS about the polyfill point and will talk with MM about dynamic import but I don’t really know what conclusion to get there
 
 MM: The issue is understanding what dynamic import does according to the EcmaScript spec, because if it implied dynamic scoping, the language would be badly broken in ways we never intended.
 
 ### Conclusion / Resolution
+
 - Meet together offline to continue discussing the issue
 
 ## Handle awkward rounding behaviour
+
 Presenter: Ujjwal Sharma (USA)
 
 - [PR](https://github.com/tc39/ecma402/pull/471)
@@ -529,8 +537,7 @@ Presenter: Ujjwal Sharma (USA)
 
 USA: (presents slides)
 
-SFC: I'm really happy with the work USA has been doing on this and 
-I think it definitely fixes a bug. It’s never good when the same code works in some locales and not in others - this code can throw an exception in some locales and not in others. So I’m very happy with the work USA has been doing in this PR.
+SFC: I'm really happy with the work USA has been doing on this and I think it definitely fixes a bug. It’s never good when the same code works in some locales and not in others - this code can throw an exception in some locales and not in others. So I’m very happy with the work USA has been doing in this PR.
 
 USA: Thank you SFC. I believe I can ask for consensus pending the remaining editorial changes and the test262 PR.
 
@@ -539,4 +546,5 @@ USA: Thank you SFC. I believe I can ask for consensus pending the remaining edit
 RPR: Congratulations, you have consensus.
 
 ### Conclusion/Resolution
+
 - Consensus

@@ -1,4 +1,5 @@
 # April 02, 2020 Meeting Notes
+
 -----
 
 **Notetakers:** Mark Cohen (MPC), Jason Williams (JWS), Rick Button (RBU), Dave Poole (DMP), Philip Chimento (PFC)
@@ -36,7 +37,7 @@ MPC: I wanted to express being in favour of 4 days 5 hours in June. Regarding se
 CM: The long meeting is much more draining in the remote mode, because you just sit in a chair not moving the whole time.
 
 MBS: So i guess a question to that, do people have a preference for 5 days 4 hours vs. 4 days 5 hours?
-MLS: I like 4 days  5 hours.
+MLS: I like 4 days 5 hours.
 
 CM: Yes.
 
@@ -75,7 +76,7 @@ MBS: One of the things I want to mention - I agree that this meeting has been su
 
 WH: To reply to MPC, the hallway track didn't work for me. Hubs makes my computer go haywire. I had a really bad experience with Zoom breakouts — it took a long time and many attempts to get the right people into a breakout session, and that was with extensive moderator help. I wasn't able to set one up on my own without the help of moderators. There is just no way to grab somebody in a hallway and chat with them during a break. We have no good solution for that.
 
-MLS: I second what MBS said, I believe this did work because of the rapport we have, especially for the people who have been attending a year or two, or longer. I agree that 2020 I don’t think we’re going to be able to see each other face-to-face, given the way things are going. I concur that hubs - didn’t give it much chance. I had IRC open, I had the presentation, everybody's    face, hubs is one too many things to figure out how to work. I agree the hallway channel - we need to figure out a better solution until we meet face to face. I’d advocate that we meet face to face regularly. Originally I was saying that the 3 days and longer days would be better, but because of time zones, I actually think that 4 days shorter schedule would be better.
+MLS: I second what MBS said, I believe this did work because of the rapport we have, especially for the people who have been attending a year or two, or longer. I agree that 2020 I don’t think we’re going to be able to see each other face-to-face, given the way things are going. I concur that hubs - didn’t give it much chance. I had IRC open, I had the presentation, everybody's face, hubs is one too many things to figure out how to work. I agree the hallway channel - we need to figure out a better solution until we meet face to face. I’d advocate that we meet face to face regularly. Originally I was saying that the 3 days and longer days would be better, but because of time zones, I actually think that 4 days shorter schedule would be better.
 
 CM: I second the various comments about how we are leveraging our personal relationships that are rooted in our face to face meetings. It will be difficult for new people to build those kinds of relationships. I think that Hubs as an experiment was very much worth trying, but in contrast to MPC’s comment I think it was a total and utter failure, it just does not work on any level for me. Maybe some of this is colored for me by the fact that I’ve been doing VR stuff since the 1990s and this felt like a 1990s VR demo to me. There may be other tools, and the selective pressure for people to come up with alternatives will get stronger so I don’t think it’s a complete write-off, but I think I'd pronounce the Hubs experiment a failure.
 
@@ -195,7 +196,6 @@ DE: Yes, maybe anyone who disagrees can - no, I’m not going to call for volunt
 
 AKI: Every single week for months!
 
-
 DE: Right, so anyone who wants to join that process can try to join the chair group next year. It’s not like you make some comment that’s so insightful that everyone agrees.
 
 MBS: Summarizing that there are things that we are discussing. I’d like to make a formal proposal, to what DE was saying I’m not asking for consensus. Just feedback. I suggest we do a 4 day 5 hour format, at the end of the June meeting we can discuss the 3 day vs 4 day format.
@@ -261,7 +261,7 @@ SYG: It will wait for the unlock. And then if it’s in the contended state, the
 
 RW: Real quick, sorry, in that case isn’t the atom index 2 so when you get to await/async it’ll say -- nevermind, it will unlock
 
-SYG: The fail fast case in the async version, it has to wait for a  ???
+SYG: The fail fast case in the async version, it has to wait for a ???
 
 SYG: (continues to present PR)
 
@@ -366,13 +366,12 @@ SYG: Is number 3, to satisfy the performance goal I layed out, the wrapper has a
 RPR: Are there any objections? No objections.
 
 ### Conclusion/Resolution
-- Consensus reached for Option 3.
 
+- Consensus reached for Option 3.
 
 WH: [After lunch break] I really wish we had a good solution for the hallway track. There were a few difficulties that arose this morning and I had no good way of resolving them. Some of them are doable by GitHub but many are not; I’ve tried. An example of a conversation I wish I could do in a hallway track is the performance implications of always allocating a fresh object by `waitAsync`.
 
 RW: I also just had some of the same conversations on that topic.
-
 
 ## Revisit WeakRefs FinalizationRegistry API change
 
@@ -407,7 +406,7 @@ MM: I appreciate that it might be a controversial position. But I want to hear t
 
 MM: Let’s say we had not bought into it at all. Why would it be controversial? What is the reason to avoid introducing a long running single job application in a worker?
 
-KM: There are a couple of different things. One of the biggest historical problems is how do you handle termination of the main page (if I understand it correctly). It's not spec-complaint to kill a worker  if not waiting on the event loop.
+KM: There are a couple of different things. One of the biggest historical problems is how do you handle termination of the main page (if I understand it correctly). It's not spec-complaint to kill a worker if not waiting on the event loop.
 There is a whole list of things - there is the quesiton of idle sleep, if the user is not doing something, does the long running event thing handle sleeping so that it doesn’t burn through battery life?
 
 MM: It blocks on communication through a SAB.
@@ -474,9 +473,9 @@ SYG: So narrowly normative optional means allowing behavior that can be there or
 
 DE: I think it would be better to be there or not there. If we make it not there it is easier to feature detect. I think normative optional gives the exact right amount of power to hosts. We already have hosts that require things that are normative optional to be present, for example HTML requires Intl to be present. I think this is the most parsimonious host hook we could provide - we were previously talking about parsimony of host hooks, so the cases where it is present or not present or whether it is never present on the web, that is the simplest way to do it.
 
-GCL: I wanted to point ot the distinction of main thread at a spec level might not be ideal, because Node is OK putting this API on its main thread.  And JS setting things aside for the main thread might be a problem in that regard.
+GCL: I wanted to point ot the distinction of main thread at a spec level might not be ideal, because Node is OK putting this API on its main thread. And JS setting things aside for the main thread might be a problem in that regard.
 
-KM: That wasn't the intention.  Just like you have a canBlock flag, you would have a can synchronized.
+KM: That wasn't the intention. Just like you have a canBlock flag, you would have a can synchronized.
 
 GCL: Ok
 
@@ -493,6 +492,7 @@ SYG: Are there any objections to making cleanup on FinalizationRegistration.prot
 KM: One quick note. I would like to apologize for bringing up this so late.
 
 ### Conclusion/Resolution
+
 - Consensus on making cleanup on FinalizationRegistration.prototype literally normative optional.
 - Stakeholders to follow up on the HTML spec for the layering PR to debate on what to do on different threads.
 
@@ -508,7 +508,7 @@ DE: (presents slides)
 
 No comments.
 
-AKI: The last time decorators were on the agenda, it was a deep deep queue… very surprising that there's no queue today.  Is the lack of a queue because people are good and going to work on this offline, or is it because people are tired?
+AKI: The last time decorators were on the agenda, it was a deep deep queue… very surprising that there's no queue today. Is the lack of a queue because people are good and going to work on this offline, or is it because people are tired?
 
 MM: Dan was not proposing anything, but just updating on what has happened so far.
 
@@ -520,8 +520,7 @@ DE: Please email me if you want an invitation.
 
 Presenter: Jordan Harband (JHD)
 
-
-JHD: I have created a GH release for 2020, I have posted it on the reflector. The URL for the main spec is https://github.com/tc39/ecma262/releases/download/es2020/ECMA-262.11th.edition.June.2020.pdf  (GH is down at the moment, I will upload the PDF) We are asking if there is consensus for approval to send this to ECMA.
+JHD: I have created a GH release for 2020, I have posted it on the reflector. The URL for the main spec is https://github.com/tc39/ecma262/releases/download/es2020/ECMA-262.11th.edition.June.2020.pdf (GH is down at the moment, I will upload the PDF) We are asking if there is consensus for approval to send this to ECMA.
 
 MBS: Thank you JHD. Let’s look at the queue.
 
@@ -590,7 +589,9 @@ AKI: Just think about the fame and prestige!
 (silence)
 
 MBS: If you are interested in helping with the editorship, it would be much appreciated.
+
 ### Conclusion/Resolution
+
 - The vote for ECMAScript 2020 passes
 
 ## Incubator call chartering
@@ -643,7 +644,6 @@ WH: Are you talking about participants or proposers when recommending that folks
 
 SYG: I’m talking about participants.
 
-
 WH: Ok, that wasn’t clear.
 
 WH: What is the mechanism for, if when you look at the agenda for a particular meeting, you think there’s an item that you should be in the discussion for, but you cannot make that particular meeting? What’s the mechanism to request deferral?
@@ -675,6 +675,7 @@ JRL: One question. Is this going to be open to external people or is it just res
 SYG: For now, restrict to delegates and invited experts. If they’re currently not a TC39 member we go through the same IPR policy as for invited experts. Part of the intended goal is that there are less surprises and less off the cuff things during plenary. If the feedback that's given ends up not having relevance in TC39 itself, that ends up not serving that goal as well.
 
 ### Conclusion/Resolution
+
 - SYG will create a Reflector thread, move the agenda repo into the TC39 org, and reach out to stakeholders interested in attending the incubator calls.
 
 ## Discuss process changes we implemented in February to accommodate US members and US delegates
@@ -685,7 +686,7 @@ Presenter: Myles Borins (MBS)
 
 MBS: (Presents slides)
 
-JHD: The sense I had at the end of that was that there was not consensus, that we were doing it as a forced emergency response.  So I am pretty sure I made clear that it was in the notes that this was begrudging acceptance because it’s more important to allow all our delegates to participate than to preserve the way things are, but my question is now it has been two months, has there been any updates from those delegates on relaxing that interpretation?
+JHD: The sense I had at the end of that was that there was not consensus, that we were doing it as a forced emergency response. So I am pretty sure I made clear that it was in the notes that this was begrudging acceptance because it’s more important to allow all our delegates to participate than to preserve the way things are, but my question is now it has been two months, has there been any updates from those delegates on relaxing that interpretation?
 
 MF: I don’t think it was a minority of member companies that had concerns of participation due to this. We haven’t asked member companies to state that they have concerns about it but I spoke to a number of other representatives who voiced concerns, and then when we discussed this there were more people who had concerns, so I really don’t think it is just going to go away.
 
@@ -804,13 +805,13 @@ DE: And to follow through with them posting the proposed resolution to the refle
 
 MBS: I guess the ast thing there would be: do we want to add this again in the June agenda as a follow up, or is it ok to just follow up on the Reflector. I think we should just handle it on the reflector, I don’t think this needs more committee time unless there’s an explicit proposal for changes. Does anyone disagree with that?
 
-DE: I just want to say, even if we agree with this now, we should agree with the concrete policy on the reflector, and if anyone wants to bring it to the
-But we would have it be async only by default.
+DE: I just want to say, even if we agree with this now, we should agree with the concrete policy on the reflector, and if anyone wants to bring it to the But we would have it be async only by default.
 
 MBS: I just want to make sure that if there is anything else about this, that can be on the Reflector.
-### Conclusion/Resolution
-- Further discussion will continue on the reflector for now.
 
+### Conclusion/Resolution
+
+- Further discussion will continue on the reflector for now.
 
 ## Hubs Hubs Hubs
 

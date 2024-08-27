@@ -1,11 +1,11 @@
 # July 23, 2020 Meeting Notes
+
 -----
 Delegates: re-use your existing abbreviations! If you’re a new delegate and don’t already have an abbreviation, choose any three-letter combination that is not already in use, and send a PR to add it upstream.
 
+**In-person attendees:**
 
-**In-person attendees:**  
-
-**Remote attendees:** 
+**Remote attendees:**
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Yulia Startsev       | YSV            | Mozilla            |
@@ -33,6 +33,7 @@ Delegates: re-use your existing abbreviations! If you’re a new delegate and do
 | Rob Palmer           | RPR            | Bloomberg          |
 
 ## Examining Structural Racism in TC39
+
 Presenter: Mark Cohen (MPC)
 
 - [issue](https://github.com/tc39/Reflector/issues/305)
@@ -47,6 +48,7 @@ AKI: To everyone: if you have questions about this type of things, don’t ask y
 MPC: Thanks everyone, and please come to #tc39-inclusion to continue the discussion
 
 ## *continuation* Ergonomic brand checks for private fields for stage 3
+
 Jordan Harband (JHD)
 
 - JHX’s position: https://gist.github.com/hax/5e94c7959703ea95d4ff9c9deac12988
@@ -64,7 +66,7 @@ JHX: I think we can check our documents about that. If we use the object access 
 
 JHD: There’s two worlds we’re talking about, one where the reification proposal doesn’t advance and one where it does. If it does advance, #x would be a private symbol (based on the current shape of that proposal), `obj[#x]` and `obj.#x` would work identically, and `#x in obj` would work as JHX expects. In that world, when reification happens, everything is that consistent.
 
-JHD: If it _doesn’t_ happen, what pieces of that world are missing, and what happens when a user runs into them? If they type `#x` by itself (not in front of `in`) or in square brackets, they’ll get a syntax error. Which seems consistent with other places in the language that have “missing pieces” that are errors.
+JHD: If it *doesn’t* happen, what pieces of that world are missing, and what happens when a user runs into them? If they type `#x` by itself (not in front of `in`) or in square brackets, they’ll get a syntax error. Which seems consistent with other places in the language that have “missing pieces” that are errors.
 
 JHD: If we don't do reification, than obj[#x] would just be a syntax error everywhere, and tools would just crash. It's not possible to get it wrong.
 As for many things in the language, if a developer might expect something to work but then it just crashes early, it's something we have generally considered acceptable.
@@ -73,12 +75,12 @@ JHD: It might be different if we knew reification was never possible, in that wo
 
 JHD: The committee already made a choice about private static ???. You could make a table, see that there is a missing piece, try to use that and it just crashes. And that's something we have been considering acceptable.
 
-JHX: When we overload the `.` the private fields use a very different matching/semantics (?) of the property. 
+JHX: When we overload the `.` the private fields use a very different matching/semantics (?) of the property.
 We current don't have a simple line that if you only use the obj.#x and do not care about reification about #x it's ok. Now we overload the second one, the "in" syntax, which is much dynamic and it calls to reification. This does not only give you a syntax error, it makes the mental model more complex. This is the concern, and I think that we can not accept that.
 If we reification there would still be a different line between the syntaxes, but this proposal is in the middle of them.
 
 SYG: My understanding of the linked document is that it uses a farly pedantic understanding of the semantics of the "in" operator, where the LHS is any dynamic value.
-In my experience, this is not the mental model of developers. You are not checking if that value exists in the object, you are checking if it exists as a _key_. This proposal is not at all inconsistent, it makes it _more_ consistent because… obj.#x looks like a property access, and I feel like allowing it on the lhs of "in" would make it more consistent.
+In my experience, this is not the mental model of developers. You are not checking if that value exists in the object, you are checking if it exists as a *key*. This proposal is not at all inconsistent, it makes it *more* consistent because… obj.#x looks like a property access, and I feel like allowing it on the lhs of "in" would make it more consistent.
 
 MM: I support this proposal, but I think that the discussion of the interaction with possible reified private names was too simplistic. If you'll be able to reify them, they wouldn't be private symbols because of security reasons.
 It would be more something like a PrivateName object, which is a weakmap-like object. This proposal would preclude the #x syntax from being how you reify a PrivateName.
@@ -94,7 +96,7 @@ I really think that this is a constraint on future proposals and not on the curr
 
 The objection isn't for the current proposal, but rather it creates requirements for future proposals. Although there's a valid objection, it is not actually on this proposal. It would be a burden on the ability to reify private names.
 
-There is no clear reason why it  clear rea
+There is no clear reason why it clear rea
 
 DE: maybe at this point summarize consistency argument:
 
@@ -156,17 +158,15 @@ JHD: Any objections?
 JHD: I’ll be happy to work with you JHX during stage 3.
 
 ### Conclusion/Resolution
+
 - ~~Advance to stage 3?~~ Nope, challenged in IRC
 
 ## Async Context updates & for Stage 1
+
 Chengzhong Wu (CZW)
 
 - [proposal](https://github.com/legendecas/proposal-async-context)
 - [slides](https://docs.google.com/presentation/d/1Ef2JI4ntkWd-M8fDqOGZGGh7CiPD05L39CZRSv1II_0/edit?usp=sharing)
-
-
-
-
 
 CM: Can you describe what it is that this does, and how it does it? “The problem with being confused is that, first of all, you’re confused,” and I’m confused.
 
@@ -176,32 +176,29 @@ CZW: last time there was a major security issue with async hooks and the ability
 
 CM: Rather than explaining this in terms of how it differs from the previous proposal, let’s talk about it in its own right. First with an example of how it gets used?
 
-CM: wanted a walkthrough  of the examples
+CM: wanted a walkthrough of the examples
 
 DE: sounds like a good plan to me to do that before going to queue items
 
 [Presents slide 13]
 https://docs.google.com/presentation/d/1Ef2JI4ntkWd-M8fDqOGZGGh7CiPD05L39CZRSv1II_0/edit#slide=id.g86607955ef_0_435
 
-CZW: This is an example of a tracking server, with AsyncLocal stuff. Getting the request object for each incoming HTTP request. So, we do a lot of Async operations and here we can get the  context from the async local. And there are no additional params to the function, so the request is lost.
+CZW: This is an example of a tracking server, with AsyncLocal stuff. Getting the request object for each incoming HTTP request. So, we do a lot of Async operations and here we can get the context from the async local. And there are no additional params to the function, so the request is lost.
 
 [Presents slide 14]
 https://docs.google.com/presentation/d/1Ef2JI4ntkWd-M8fDqOGZGGh7CiPD05L39CZRSv1II_0/edit#slide=id.g4446cf2007b006c1_0
 
 We can get the exact initiating request from the database. So this can address the issue.
 
-
-
 CM: In this case, when we call `getContext`, where does `getContext` get the context from? What asyncLocal object is being used? Is it a global variable? Where is the scoping control?
 
-CZW:  Each instance of asyncLocal has to declare their own instance, and the instances will not conflict with each other.
-
+CZW: Each instance of asyncLocal has to declare their own instance, and the instances will not conflict with each other.
 
 CM: So the context is being held in a variable inside the context.js module? I’m just trying to understand the scoping behavior. I’m not sure thrashing through this is the most productive use of the committee’s time.
 
 CZW: So we in Node.js handle the request concurrently. One request may be active for a short time, and yield for the I/O operation. In the access of the request object, in the context for the global, they may conflict with each other because they are concurrently accessed. Async logic flows let each request store things.
 
-CM: If I understand, previously we were keeping it in a global, and now we’re keeping it in a module scope var in context.js but there is nothing in the queryDatabase call.  If someone else invokes import `queryDatabase`, whose execution is interleaved with this, there’s a hidden dep between db.js and context.js module and that ambient state is being passed between both implicitly.
+CM: If I understand, previously we were keeping it in a global, and now we’re keeping it in a module scope var in context.js but there is nothing in the queryDatabase call. If someone else invokes import `queryDatabase`, whose execution is interleaved with this, there’s a hidden dep between db.js and context.js module and that ambient state is being passed between both implicitly.
 
 CZW: The db.js has to explicitly depend on context.js to get the state passed through.
 
@@ -209,13 +206,13 @@ CM: gonna have to think about this one some more; I think there are some not ver
 
 WH: A lot of us are in the same boat.
 
-GCL: If this helps for those of you who are confused about what async local storage is. In Node, we have Async hooks, which track when promises are created, resolved, or rejected. When the promise goes through fulfillment or rejection, and through the fulfillment queue. One level up abstraction of this is AsyncLocalStorage, where you store the state of these promises. Having an async local instance means that you must explicitly participate in holding this data and if you do async code, async stuff that access your data, ??? One of the big reasons this is useful is application performance management (APM) and tracking how resources are used and how long they are being used. Basically one of the big reasons for async hooks and async local storage is  to track the reading of async files, HTTP requests, and then, recording that data. But one of the problems here is that, doing this without support from the engine, (or even with the support of the engine in the case of Node), when the abstraction has to be such that it is not part of the language itself, but some kind of sidechannel thing, results in a large amount of overhead and I think there was an issue in node.js that reported 99perc overhead when using async local storage. By adding this to the language itself, we can integrate these behaviors directly into the language itself and get rid of the overhead.
+GCL: If this helps for those of you who are confused about what async local storage is. In Node, we have Async hooks, which track when promises are created, resolved, or rejected. When the promise goes through fulfillment or rejection, and through the fulfillment queue. One level up abstraction of this is AsyncLocalStorage, where you store the state of these promises. Having an async local instance means that you must explicitly participate in holding this data and if you do async code, async stuff that access your data, ??? One of the big reasons this is useful is application performance management (APM) and tracking how resources are used and how long they are being used. Basically one of the big reasons for async hooks and async local storage is to track the reading of async files, HTTP requests, and then, recording that data. But one of the problems here is that, doing this without support from the engine, (or even with the support of the engine in the case of Node), when the abstraction has to be such that it is not part of the language itself, but some kind of sidechannel thing, results in a large amount of overhead and I think there was an issue in node.js that reported 99perc overhead when using async local storage. By adding this to the language itself, we can integrate these behaviors directly into the language itself and get rid of the overhead.
 
 CM: That has a little bit of a "doctor it hurts when I do this" vibe. What you're saying is, it’s very expensive to do this thing you shouldn’t do. In the example in front of us here the database module is completely non reentrant in a dangerous way so I’m very concerned
 
 DE: For the reasons Gus explained, I think this is an important problem space, I think this is a really important problem space and there were examples where people were saying “I don’t really understand where scopes are made…” The fact that you have these distinct AsyncLocal object seems like a good basis for figuring out these details. I’ve worked in other programming languages that have dynamically-scoped ??? and they seemed useful. We have a presentation of incumbent realms and better tracking about baseUrl and imports. I think the underlying primitive is really something like this. I know there are problems for us to work out, I know there are a lot of problems to solve and figure out before stage 2 but it seems to be a very important problem for us as a committee to solve.
 
-SYG: I want to push back a little about what DE said about incumbents—I think there’s a big difference between fully defined semantics and exposing programmatic control with something similar to dynamic scoping, even when the concepts are similar. 
+SYG: I want to push back a little about what DE said about incumbents—I think there’s a big difference between fully defined semantics and exposing programmatic control with something similar to dynamic scoping, even when the concepts are similar.
 I really could not understand the audio but one of the main thing is the removal of the async hook but the dynamic scoping thing remains and it is still not addressed, which was the main committee concern last time. And that’s it
 
 CZW: AsyncLocal needs to be explicitly referenced to get a value or to change it. The dynamic scoping issue DE mentioned, ??? Dynamic scoping for the issue correctly ???
@@ -224,7 +221,7 @@ SYG: I did not understand, sorry
 
 CZW: Explicitly reference to get the value and there is a better asynclocal ??? Has to be triggered by referencing a single instance. So ??? AsyncLocal provide any dynamic scoping (it was very difficult to understand with the audio feedback) That’s my point for the concern
 
-MM: I will keep it short, because of sound issues my understanding is incomplete, but this still seems like dynamic scoping. The behavior of a callee depends on elements of a calling context that are not explicitly passed as calling arguments. And any such implicit context breaks many algebraic properties of the language. The question is, can a closure capture the dynamic context that is relevant at a given moment in time? Both the answer “yes” and “no” lead to unpleasant consequences.  There is no good answer to the closure question when you have dynamic scoping. We have a large complex language that already has a complex computational model for people to form intuitions, and adding dynamic scoping to it pushed it too far. I am against seeing anything like this advance.
+MM: I will keep it short, because of sound issues my understanding is incomplete, but this still seems like dynamic scoping. The behavior of a callee depends on elements of a calling context that are not explicitly passed as calling arguments. And any such implicit context breaks many algebraic properties of the language. The question is, can a closure capture the dynamic context that is relevant at a given moment in time? Both the answer “yes” and “no” lead to unpleasant consequences. There is no good answer to the closure question when you have dynamic scoping. We have a large complex language that already has a complex computational model for people to form intuitions, and adding dynamic scoping to it pushed it too far. I am against seeing anything like this advance.
 
 CZW: Async local storage can be treated as a value store, where the value has to explicitly reference the variable. It can also get and set the global. It is also possible to not set it in the global, I’m unsure what issue can be with asynclocal and async scoping. Since the async local has to be explicitly referenced in the code, So, I’m not sure if this can solve the concern. The async local itself has to be explicitly referenced, to set the value or get the value. It can be treated as an exclusion global.
 
@@ -236,7 +233,7 @@ MM: The second. Both answers are wrong, but in opposite ways. If you say the clo
 
 GCL: Got it, thank you.
 
-DRO: This is not an objection. It is a question. I am not sure how any of this is not already doable with existing language features. It seems like AsyncLocal is just a wrapper around a static global, that you can get and set with function wrappers in those specific circumstances. Is there anything special about AsyncLocal that isn’t just a wrapper around a value? I'm fine with introducing  a language construct that it's already doable with other language constructs, and I just want to understand what makes this special.
+DRO: This is not an objection. It is a question. I am not sure how any of this is not already doable with existing language features. It seems like AsyncLocal is just a wrapper around a static global, that you can get and set with function wrappers in those specific circumstances. Is there anything special about AsyncLocal that isn’t just a wrapper around a value? I'm fine with introducing a language construct that it's already doable with other language constructs, and I just want to understand what makes this special.
 
 CZW: The difference between asynclocal and a global is ??? the global may be overwritten by another js execution and they are interleaved in the async operations. They can be kept safely in the async local. It’s not accessible from another execution or another request—they are different for each run of the request. This is different from the global, which is global to every execution.
 
@@ -246,9 +243,9 @@ CZW: Yes.
 
 DRO: I think that is a potential point of massive confusion for developers.It breaks the expectation that one variable has one value. Now you can have an AsyncLocal, and in your debugger, you switch to one promise exec to another and something that should be global is now something completely different.
 
-CZW: before the feature we had to implement the same function in the host nod.js and it is hard to have devtools understand that concept. It will be harder to implement without the concept existing in the language itself. This would expand the use-case by adding the ability to the language. 
+CZW: before the feature we had to implement the same function in the host nod.js and it is hard to have devtools understand that concept. It will be harder to implement without the concept existing in the language itself. This would expand the use-case by adding the ability to the language.
 
-DRO: Right, but getting it into the language still requires that developers understand why it's there.  There’s still that first part of explaining to developers this is one reference to multiple values. 
+DRO: Right, but getting it into the language still requires that developers understand why it's there. There’s still that first part of explaining to developers this is one reference to multiple values.
 
 CZW: this is not a new concept, there are many prior art on this , an??? Language like java, I’m believing it would be possible since there are many prior art examples for this
 
@@ -258,7 +255,7 @@ WH: I also had a hard time following the presentation due to audio quality issue
 
 MBS: CM are you ok deferring your question?
 
-CM: My topic entry in the queue, “thread local may be a good point of comparison”, captures what I had to say.  Thread local is indeed a feature that many languages have, but it’s still a very bad idea. This proposal seems to have the analogous features with the analogous hazards.
+CM: My topic entry in the queue, “thread local may be a good point of comparison”, captures what I had to say. Thread local is indeed a feature that many languages have, but it’s still a very bad idea. This proposal seems to have the analogous features with the analogous hazards.
 
 MBS: Any final decision or consensus?
 
@@ -269,19 +266,22 @@ MLS: I agree.
 YSV: We have hitten an invariant here that was not written down. A later presentation will cover this.
 
 ### Conclusion/Resolution
+
 - Not going to stage 1
 
-## *continuation* Ergonomic brand checks for private fields for stage 3
+## *continuation 2* Ergonomic brand checks for private fields for stage 3
 
 JHX: I wasn’t able to respond earlier; I would like to object to this proposal in its current form, because it seems that obj[#x] will never happen. We can try to find alternatives in the future.
 
 JHD: to summarize: JHX believes that there should be an invariant that `x in o` implies `o[x]`, and this proposal does not support that in its current form. I will be discussing this with JHX over the next two months, and will bring it back for discussion in September with a longer timebox.
 
 ### Conclusion/Resolution
+
 - Does not yet advance; remains at stage 2
 - No consensus yet on this invariant in either direction
 
 ## Flex Incubator Calls to weekly meetings
+
 Leo Balter (LEO)
 
 LEO: I’m proposing weekly incubator calls. SYG has been organizing these meetings, and I’d like to have more.
@@ -293,7 +293,7 @@ SYG: Part of the intention of incubator calls is that because they are so focuse
 
 I understand that as implementers our nets are wider and feel more responsibility to attend all of them.
 
-YSV: I feel like I have a responsibility to attend all of them, actually. 
+YSV: I feel like I have a responsibility to attend all of them, actually.
 
 SYG: I understand that for myself too, as the V8 representative, as I should have some familiarity in what's going on since we'll eventually be going to implement that.
 I want to understand how the other people in the room feel, because I would preferably not want you to feel that way.
@@ -305,12 +305,11 @@ While for some bigger topics we can have this, for other smaller topics or speci
 
 I do not know want to make implementers feel to be overburdened byt hose calls and it could alleviate burden in tc39 meetings before going to the meetings
 
-SYG: I want to apologize for how badly I’ve been scheduling the calls. 
+SYG: I want to apologize for how badly I’ve been scheduling the calls.
 
 Specially for the last one where I misread my own doodle, it is not a skillset that I have to smoothly schedule things.
 
 Having a weekly cadence sounds good to me, but I would like someone else to sign up as an additional facilitator to help with scheduling and running the calls.
-
 
 LEO: I’m in this spot although I feel like I’m pretty bad to do this, I hope someone else could help here. I don't think that I would do a very good job, but I can try if there is noone else
 
@@ -328,7 +327,7 @@ SYG: ??? that seems the most sensible point for us to fill in the schedule.
 MBS: I have seen in many cases that if you keep up a regular cadence and then drop things if they are not needed, it ends up working better. If you have like one hour per week dedicated to this,... YSV, in your case if you know that there is this possibility at a fixed time every week and then it can be cancelled, ???
 If we’re not proactively chartering off that time, it’s more likely not going to happen at all.
 
-YSV: I guess I should also respond to that. I would be more open to this if there is demonstrated pressure to have more meetings rather than doing it preemptively. I would prefer not to have it aggressively scheduled and then cancelled, but I'm open if it _has_ to be done on a weekly basis because we need it.
+YSV: I guess I should also respond to that. I would be more open to this if there is demonstrated pressure to have more meetings rather than doing it preemptively. I would prefer not to have it aggressively scheduled and then cancelled, but I'm open if it *has* to be done on a weekly basis because we need it.
 
 I’m also concerned that if we’re doing too much work between meetings that the meetings themselves will be overburdened.
 
@@ -354,10 +353,13 @@ LEO: you’re important for us so I don’t want to go forward if you don’t wa
 I'm not comfortable proposing a change if you are discomfortable with it. It's important for me that people are onboard, and I would prefer to wait.
 
 AKI: We can discuss this in an issue further.
+
 ### Conclusion/Resolution
+
 - Incubator calls remain bi-weekly
 
 ## Incubation call chartering
+
 Presenter: Shu-yu Guo (SYG)
 
 SYG: At the end of each plenary I call out a few proposals that could benefit from a higher frequency feedback loop. To either hear feedback or iterate feedback and bring it back to committee. First, overflow: the security model that we want JS to have. This is a conversation for plenary but it would be good to hash out preliminaries in a call first. That is overflow due to scheduling mishaps. Before I get into nominating specific proposals, with a fortnightly cadence, we usually have 5-6 slots depending if the plenaries are farther apart. So I think a comfortable number of proposals is probably 6. So with that, `Number.range` is probably the first one I’d like to have an incubator call for. There was a lot of back and forth between the iterator and iterable design. There were a lot of voices on either side, so that’d be a good thing to hash out. If the stakeholders for that are still on the call, champions, it would be good to get confirmation to participate with `Number.range`. I think await operations could also use some feedback given that there were some concerns about the DX improvement of these await ops, and if we should have them, if we should have something that’s just for Promise.all, or if we should not have them at all because maybe the DX thing is not as clear cut as we thought. So the second is await operations. The third one is Array.prototype.unique. Everyone seemed to agree from my reading of the room that having a unique operation on arrays would be useful, but disagreed on the particular semantic and especially the proposal as currently written. So that’d be a good item to get feedback on. Right now we have 4 items, to recap, security, Number.range, await operations, and Array.prototype.unique. Are there other proposals that people would like to discuss? I know LEO said earlier in the meeting that there are a bunch of proposals that he wanted to see discussed in the calls, do you have anything to say?
@@ -411,6 +413,7 @@ MM: I want to expand on the question that was answered between WH and SYG. A lot
 SYG: Thank you. Ok, I think that's it. Be active on the Github issues if you're interested in any one of those six topics. Also there's a TC39 calendar, if you're not signed up, please do.
 
 ## ResizableArrayBuffer and GrowableSharedArrayBuffer for Stage 1
+
 Presenter: Shu-yu Guo (SYG)
 
 - [proposal](https://github.com/syg/proposal-resizablearraybuffer)
@@ -506,9 +509,11 @@ AKI: Do we have consensus on Stage 1?
 WH: I think you do!
 
 ### Conclusion/Resolution
+
 - Stage 1!
 
 ## Documenting invariants
+
 Presenter: Yulia Startsev (YSV)
 
 - [repo](https://github.com/codehag/documenting-invariants)
@@ -536,7 +541,7 @@ YSV: That’s a very good point.
 
 SYG: So I think the rationale point is really key here, we have to be really careful.
 
-YSV: I consider the rationale to be crucial to this, and hope that we can add rationale for the invariants we already have.  One of the reasons why I want us to start having this discussion is so that we do start talking about the invariants that we are bringing up to the committee. So that either- and I think we will have to come up with a process for rejected invariants that people deem important that are not held up by the committee, those should be recorded as well. That is a good point. I don’t have an idea yet about how we are going to do that.
+YSV: I consider the rationale to be crucial to this, and hope that we can add rationale for the invariants we already have. One of the reasons why I want us to start having this discussion is so that we do start talking about the invariants that we are bringing up to the committee. So that either- and I think we will have to come up with a process for rejected invariants that people deem important that are not held up by the committee, those should be recorded as well. That is a good point. I don’t have an idea yet about how we are going to do that.
 
 SYG: Thanks
 
@@ -587,7 +592,7 @@ AKI: You are always so thoughtful about this kind of things that I'm sure that m
 
 CM: I just want to endorse your proposal YSV, in the whole vein of documenting our invariants, these are sort of meta-invariants, and I like that we have this quite a bit.
 
-WH: I like the idea, I don’t agree with the content. This is too strict and it’s different from what we’ve actually been doing in practice. We’ve blocked things from stage 1 for stage 2 reasons if we really thought they wouldn’t have much of a chance to advance past stage 2.  But that wouldn’t be allowed under this proposal, so we wouldn’t be able to do that.
+WH: I like the idea, I don’t agree with the content. This is too strict and it’s different from what we’ve actually been doing in practice. We’ve blocked things from stage 1 for stage 2 reasons if we really thought they wouldn’t have much of a chance to advance past stage 2. But that wouldn’t be allowed under this proposal, so we wouldn’t be able to do that.
 
 YSV: That's good feedback. Do you have other comments about the other stages?
 
@@ -626,21 +631,24 @@ MF: My concern was with general public contribution. I don’t think it is neces
 YSV: That is a good clarification, thank you. I will think about this. I’ll post this on the reflector.
 
 Remaining queue:
+
 1. Reply: We could limit participation in a PR by locking it (MBS)
 2. New Topic: where is its home? (AKI)
 
 ### Conclusion/Resolution
+
 - We will start work on documenting invariants.
 - We will start iterating on the process documentation on a private Github repository.
 
 ## Many specific invariants to consider
+
 Mark S. Miller (MM)
 
 - [slides](https://github.com/tc39/agendas/raw/master/2020/07-slides-some-invariants.pdf)
 
 JHD: The typeof ===/== invariant. People have a wide assumption that they are interchangable. Eslint has the eqeqeq rule, it doesn’t autofix. I think it is an important invariant to maintain.
 
-MM: 
+MM:
 
 BFS: There is ecosystem reliance on emergent behavior as if it were an invariant. Particularly minifiers. I think it would be important to evaluate the current ecosystem tooling. While we may want to keep invariant themselves somewhat private while we discuss them, we need to do an ecosystem audit before add invariants for operators in particular.
 

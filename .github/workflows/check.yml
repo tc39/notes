@@ -9,8 +9,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: ljharb/actions/node/install@32a09e8b5346216e84d4cdf4769c70af9903b536
+        name: 'nvm install lts/* && npm ci'
         with:
           node-version: lts/*
-      - run: npm i
       - run: npm test

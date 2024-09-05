@@ -9,13 +9,16 @@ For other meeting notes, see below:
 | TC39-TG1: General ECMAScript® language                       | [tc39/notes/meetings][tg1-notes]                | [tc39/agendas][tg1-agenda]                 |
 | TC39-TG2: ECMAScript® internationalization API specification | [tc39/ecma402/meetings][tg2-notes]              | [tc39/ecma402/projects][tg2-agenda]        |
 | TC39-TG3: Security                                           | [tc39/tg3/meetings][tg3-notes]                  | [tc39/tg3][tg3-agenda]                     |
+| TC39-TG4: Source Maps                                        | [tc39/tg4/meetings][tg4-notes]                  | [tc39/tg4][tg4-agenda]                     |
 | Incubator Meetings                                           | [tc39/incubator-agendas/notes][incubator-notes] | [tc39/incubator-agendas][incubator-agenda] |
 
 [tg1-agenda]: https://github.com/tc39/agendas#tc39-meeting-agendas
 [tg2-agenda]: https://github.com/tc39/ecma402/projects/2
 [tg3-agenda]: https://github.com/tc39/tg3#agenda
+[tg4-agenda]: https://github.com/tc39/tg4#agenda
 [incubator-agenda]: https://github.com/tc39/incubator-agendas#tc39-incubator-call-agendas
 [tg1-notes]: https://github.com/tc39/notes/tree/main/meetings
 [tg2-notes]: https://github.com/tc39/ecma402/tree/main/meetings
 [tg3-notes]: https://github.com/tc39/tg3/tree/main/meetings
+[tg4-notes]: https://github.com/tc39/tg4/tree/main/meetings
 [incubator-notes]: https://github.com/tc39/incubator-agendas/tree/main/notes

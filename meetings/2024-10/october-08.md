@@ -1177,21 +1177,21 @@ SYG: Do I have like 30 seconds to respond to that?
 
 CDA: Sure
 
-SYG: Thanks for the insight NRO. I can’t substantiate the landscape of the tooling maintainership. A lot of the tools are open source projects with volunteer maintainers. One way to frame what Nicolo said for the committee is that if well-funded, relatively, but absolute terms, well-funded browser teams don’t have the risk appetite and tools don’t have risk appetite because they are less funded. I hope the committee sees that as a failure. I hope that like the fundability and the importance of funding tools for—we can somehow move the needle and shift the incentives there, that they can reach the level of funding the browser engines given their rise in importance in the ecosystem. I don’t know how we can make that happen. I would like that to happen and want to try. But yeah. To sum up, there is—we presented a problem statement. This is as you can see, this is not a proposal, in the normal sense, there’s no concrete details for the JSSugar/JS0 idea. There is currently a private repo, I will make public at the end of day or tomorrow for folks to—for folks to post issues on.
+SYG: Thanks for the insight NRO. I can’t substantiate the landscape of the tooling maintainership. A lot of the tools are open source projects with volunteer maintainers. One way to frame what Nicolo said for the committee is that if well-funded, relatively, but also in absolute terms, well-funded browser teams don’t have the risk appetite and tools don’t have risk appetite because they are less funded. I hope the committee sees that as a failure. I hope that like the fundability and the importance of funding tools for—we can somehow move the needle and shift the incentives there, that they can reach the level of funding the browser engines given their rise in importance in the ecosystem. I don’t know how we can make that happen. I would like that to happen and want to try. But yeah. To sum up, there is—we presented a problem statement. This is as you can see, this is not a proposal, in the normal sense, there’s no concrete details for the JSSugar/JS0 idea. There is currently a private repo, I will make public at the end of day or tomorrow for folks to—for folks to post issues on.
 
 SYG: But I think my request, and I will let the other people on the slides speak for themselves, take the problem statement to heart. Think about the JSSugar and JS0, if you have a great idea, please bring that to a future time there. As for some urgency here, you know, things don’t move too fast. But I think we do need a shift in our MO and let’s keep talking about it. I think the most concrete take away for individual proposal champions is that if you have issues, if you have concerns, if you have questions on how you think the proposal would look with this new rough guidance we posted on the slide deck, reach out because like I said, I don’t think it makes sense to make a blanket judgment. We need to do this case by case. Is that okay or too abstract? There is a private repo, discuss it. There’s no broader discussion repo for this problem statement. I am not sure how we do that.
 
 ### Speaker's Summary of Key Points
 
-- List
-- of
-- things
+- Implementers presented a problem statement from their perspective that new features often cause security, performance, and stability issues for end users and that those downsides are not offset by the upside to developers. Because of that, that they will be more conservative in considering features going forward.
+- SYG presented a possible future that splits the standard into two layers so as to more evenly spread out complexity: an underlying layer called JS0, which is directly executable that compliant engines implement, and a top layer called JSSugar, which compliant tools implement and desugars/compiles to JS0.
+- Delegate reaction was mixed. Some delegates liked the idea, and agreed with the implementers' cost analysis. Tooling authors expressed concern, specifically around the cost to maintainers.
 
 ### Conclusion
 
-- List
-- of
-- things
+- Champions requested delegates take problem statement to heart.
+- No consensus on JSSugar/JS0 (there was no plan with concrete specifics anyhow)
+- Lively discussion which will continue in the future
 
 ## Three normative Ecma-204 changes
 

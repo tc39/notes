@@ -745,7 +745,7 @@ WH: I think it’s more than that. I don’t think the stage advancement at the 
 
 USA: All right. I believe that has been recorded. MF, you may start.
 
-### Speaker's Summary of Key Points
+### Speaker's Summary of Key Points, Conclusion
 
 There is confusion about the iteration number argument to the `Atomic.pause` method. This needs to be resolved before the next meeting before stage advancement.
 
@@ -946,7 +946,7 @@ USA: Could you edit it into the notes?
 
 MF: Sure. Sure I will write it in the notes.
 
-### Speaker's Summary of Key Points
+### Speaker's Summary of Key Points, Conclusion
 
 - concurrency control advanced to Stage 1
 - there was much concern about the naming of Semaphore

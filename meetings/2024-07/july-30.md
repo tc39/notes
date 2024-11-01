@@ -79,7 +79,7 @@ MF: Thank you, that was very easy.
 
 Presenter: Frank Yung-Fong Tang (FYT)
 
-- [proposal](​​​​https://github.com/tc39/proposal-intl-locale-info)
+- [proposal](https://github.com/tc39/proposal-intl-locale-info)
 - [slides](https://docs.google.com/presentation/d/1wWDYg5BF1wNNAdC6YbBKvRtKS1acyvIP0eLkWCH2c7M)
 
 FYT: So hi everyone I am FYT and working for Google and today I will give you an update and hopefully we could wrap the thing up pretty soon. Um, so basically, I give you an update recently happen on this location, and then try to seek a consensus for a small PR hopefully that is last one we need to touch for this proposal.
@@ -114,7 +114,7 @@ FYT: Thank you.
 
 ### Conclusion
 
-Intl.Locale Update has consensus and advances to Stage 3
+Intl.Locale Update PR has consensus
 
 ## unordered async iterator helpers for Stage 1
 
@@ -167,7 +167,7 @@ MF: I would, but before that, I would like to just make the acknowledgment that 
 
 MF: Yes, I would like to ask for Stage 1 now.
 
-USA: Wait. We already hard a lot of support so far. Let’s give it a minute or so to see if anybody has any more to add. Nothing on the queue yet. You have consensus. Congratulations on Stage 1.
+USA: Wait. We already heard a lot of support so far. Let’s give it a minute or so to see if anybody has any more to add. Nothing on the queue yet. You have consensus. Congratulations on Stage 1.
 
 MF: Thank you. As I mentioned, I have a couple more things if anybody wants to give feedback, I would be happy to hear. Again, this proposal, just like the concurrency control, is more worked because they are split from further along proposals. This question is further along. This would be the name of `toAsync` and name of `unordered` don’t really match even though they’re doing kind of the same thing of giving this new prototype. Should they match a little more closely? Should async iterator helpers be updated to say `.async()` or change the name `toUnordered()`? I don’t know.
 
@@ -201,7 +201,7 @@ MF: Thank you for the feedback everyone.
 
 USA: And thank you, MF. Would you like to take a minute to dictate key points and a summary?
 
-### Speaker's Summary of Key Points
+### Speaker's Summary of Key Points, Conclusion
 
 MF: Yes, I would. So unordered async iterator helpers has been split out of async iterator helpers and async iterator helpers will no longer be considered in that problem space. Unordered async iterator helpers has reached Stage 1. There’s concern that we may be designing too far ahead, so the champion, myself, has committed to not trying to advance unordered async iterator helpers to Stage 2 until async iterator helpers has further advanced and we have more experience with async iterator helpers in the field.
 
@@ -822,6 +822,6 @@ CDA: We are at time. Ben can you please dictate summary for the notes and conclu
 
 BAN: I was going to say it is great that we can open up a conversation and get this work done in 30 minutes because it is opening pandemic Dora’s box. And thank you for your feedback and your assistance.
 
-### Speaker's Summary of Key Points
+### Speaker's Summary of Key Points, Conclusion
 
 We need to reach out to relevant stakeholders including privacy keys on this language, and on the necessity of this language in the first place. Whether or not this is necessary. Whether this normative text is necessary rather.

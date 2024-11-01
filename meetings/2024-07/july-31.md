@@ -629,7 +629,7 @@ SYG: Support is a strong word.
 
 CDA: Fair enough. On that note, are there any objections for this for Stage 2? Not seeing anything new in the queue. Not hearing any voices. All right. So we’ll say it is Stage 2. CZW, can you dictate a summary and key points for the notes.
 
-### Speaker's Summary of Key Points
+### Speaker's Summary of Key Points, Conclusion
 
 CZW: Yeah, the change has consensus to Stage 2 with the first row as defined by current HTML specification defined and we will bring this topic to TG3 for further discussion. And tests will be added to WPT before we advance to Stage 3.
 
@@ -792,7 +792,7 @@ MAH: It was mine. I was just clarifying that EAO’s question is related to mine
 
 CDA: Could you dictate a summary and conclusion for the notes?
 
-### Speaker's Summary of Key Points
+### Speaker's Summary of Key Points, Conclusion
 
 DE: We discussed this proposal and one thing that the committee agreed on was the name `reflect.trusted` types—sorry, Reflect.isTemplateObject. On the cross brand check we didn’t hear any particular concerns. The two things to follow up on are for SES folks is figuring out—talking through what it’s trying to do and with Mozilla folks also understanding how this relates to their goals with trusted types, as well as implementation costs and complexity for users. Are those the two things that I should follow up on or is there anything more that I should follow up on? Is it accurate to say that we’re sticking with cross realm and we agree on the `reflect.isTemplateObject` name?
 

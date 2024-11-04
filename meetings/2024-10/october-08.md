@@ -96,6 +96,33 @@ AKI: In the GA documents, there are the results from the postal vote on clarifyi
 
 AKI: I think that’s probably all I want to chat with you. RPR already covered the next slide, which is the next TC39 meeting. And the slide after, the upcoming GA, which is in New York in December and the upcoming ExeCom meeting in Geneva. Any questions for ECMA?
 
+### Speaker's Summary of Key Points
+
+1. New ECMA Projects:
+
+- A collaboration with the W3C Web Interoperable Runtimes Community Group WinterCG is underway.
+- Proposal for a TC56 to establish standards for a high-level shading language (HLSL) has been initiated
+
+1. Upcoming ExeCom Meeting:
+
+- Scheduled for 22-23 October in Geneva
+
+1. Collaboration with W3C:
+
+- Ongoing efforts to build cooperative relationships with various W3C working groups.
+- Consider "horizontal reviews" where ECMA and W3C review each other's standards to prevent conflicts and promote sustainability in technology.
+
+1. Invited Experts Policy:
+
+- Annual review to confirm engagement and membership interest of invited experts.
+
+1. Code of Conduct and Documentation:
+
+- A reminder of the code of conduct, particularly the importance of constructive disagreement.
+- Emphasis on documenting summaries and conclusions for agenda items to facilitate future reference and accurate minute-keeping.
+
+1. Upcoming Events Dates Reviewed
+
 ## 262 Editor’s Update
 
 Presenter: Shu-yu Guo (SYG)

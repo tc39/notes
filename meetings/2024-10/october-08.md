@@ -238,7 +238,7 @@ JKP: I am not 100% sure I understand and maybe if NRO is on the call could respo
 
 MM: So specifically, the approval is not asking that any technical content to be approved to become normative today? It’s that the process you have outlined is a good process to go forward, which I am very happy.
 
-NRO: Okay. So the list has had normative changes. The last primitive change was many months ago. And the rest of work we have been doing is just clarifying previously unclear parts of the spec. This is similar to the approval we usually seek around—for ECMA262, we needed to say this is done. Let’s now, as a committee, take to ECMA GA for publishing. So we need now to understand saying TC39 is happy with this document being published as a spec.
+NRO: Okay. So the spec has had normative changes. The last normative change was many months ago. And the rest of work we have been doing is just clarifying previously unclear parts of the spec. This is similar to the approval we usually seek around—for ECMA262, we needed to say this is done. Let’s now, as a committee, take to ECMA GA for publishing. So we need now to communicate that TC39 is happy with this document being published as a spec.
 
 RPR: So to be clear here, Mark, John is proposing the proposal, but this is also TC39’s confirmation point that this specification is ready to proceed.
 
@@ -256,7 +256,7 @@ DE: Yeah, that sounds great.
 
 MM: Okay.
 
-NRO: Yes. Specifically the last day we have to send the notice to the GA to a six-day period I think Thursday evening, because the GA will be on December 11th and we want to do it two months in advance.
+NRO: Yes. Specifically the last day we have to send the notice to the GA to start a sixty-day opt-out period, I think Thursday evening, because the GA will be on December 11th and we want to do it two months in advance.
 
 MM: Okay, okay, thank you. I’ll have something to say on Thursday, thank you.
 
@@ -270,7 +270,7 @@ MM: Okay, good. That was actually my main worry. Okay, great. Okay. So without t
 
 CM: So I think I also missed some stuff here. And this is more of a question about process, I don’t have any particular concerns or objections about these specific standards efforts. But it’s just interestingly different from the way the TG2 process works, where essentially all of the internationalization stuff ends up getting run in excruciating detail through the plenary, and I don’t think we’ve seen much, if any, of the detail of the source maps stuff running through plenary. I don’t have any objection to the way you’ve done it, I actually prefer it. But I’m curious why the process is different and if this different process is acceptable to everyone where the people are actually interested in the source map stuff just engage directly with the TG4 process, why the same logic is not applied equally to TG2?
 
-NRO: We discussed this when TG4 was created and the reason for deferred process and it’s not something you can do within code. It’s just something that is implemented in, like, in develop tools that live in JavaScript execution, and there was—the committee was happy with giving more freedom for this reason to the TG4, also because most delegates were not as, I’d say, interested in source map as what TG2 does, so this has the result of not taking too much committee time.
+NRO: We discussed this when TG4 was created and the reason for deferred process and it’s not something you can observe within JavaScript code. It’s just something that is implemented in, like, in developer tools , and there was — the committee was happy with giving more freedom for this reason to TG4, also because most delegates were not as, I’d say, interested in source map as much as what TG2 does, so this has the result of not taking too much committee time.
 
 CDP: Yeah, I just wanted to mention, these are all fair comments, but they did specifically bring this to committee and get consensus for this method of working.
 
@@ -288,7 +288,7 @@ NRO: License problems is not about the test, it’s about the spec itself.
 
 DE: I see. Yeah, sorry.
 
-NRO: Because it’s the comments and we are trying to re-license it to BSD, which Ecma uses. I—given that there is the 60-day time period in which company cans say we are not okay with content being contributed by us, I don’t think we need to block on that, but I’m not super sure on how these rules work.
+NRO: Because it’s the comments and we are trying to re-license it to BSD, which Ecma uses. I—given that there is the 60-day time period in which company can say "we are not okay with content being contributed by us", I don’t think we need to block on that, but I’m not super sure on how these rules work.
 
 DE: I think Ecma’s BSD license is usually used just for software, and not for the spec text. So let’s be intentional about this. Yeah, I’m hopeful that it’s, as you say, because the contributing organizations are all present, then it should be okay with respect to the spec text.
 
@@ -415,7 +415,7 @@ WH: I agree that this thing should throw on non-iterables. On the question of ea
 
 RPR: Thank you, WH. It’s a weak preference of 2 over 1. NRO prefers throwing.
 
-NRO: Yeah, I—I think we should try here, because, like, it’s very likely—well, it’s definitely possible the user will make mistake by passing a non-traveler, and it’s based on what they want if we wrap it in array brackets. I prefer throwing eagerly, just because that thing will throw eventually, and it’s better to throw consistently rather than just depending on how exactly to use iterator. So that maybe at different times us you have different values and maybe it throws different times in the test.
+NRO: Yeah, I think we should try here, because, like, it’s very likely—well, it’s definitely possible the user will make mistake by passing a non-traveler, and it’s based on what they want if we wrap it in array brackets. I prefer throwing eagerly, just because that thing will throw eventually, and it’s better to throw consistently rather than just depending on how exactly to use iterator. So that maybe at different times us you have different values and maybe it throws different times in the test.
 
 RPR: Thank you. YSV.
 
@@ -1160,7 +1160,7 @@ CDA: Where I have heavy tooling is the least preferred developer experience/envi
 
 YSV: JSSugar is looking at one facet of the problem, which is the syntax side. But more broadly, how are we introducing new things into the language? How we benefit things in the I think beiges, I call it a waiting room for features. Developers can start using the feature. And we can get data about how the feature is being used, we have the rigor and dedication to backwards capability. And basically, the same way we do things. I still have more time to bring this proposal to committee and once it’s ready, this is something we can also discuss. But just to make it really clear. JSSugar is not intended to solve the entire scope of the problem statement we presented. There’s room for others to bring their suggestions. This isn’t the only way to approach this problem
 
-NRO: Yeah. You mentioned that JSSugar has to be designed, keeping in mind lack of experience and making sure that work with the maps. There’s very far from being something that can be transpiled. Like we don’t know yet—like in which to improve because there’s so many. We need a little bit of time. I don’t know what your ideal timeline here would be, but I don’t think we can answer any time soon, if you want this JSSugar, JS 0 to be from developers
+NRO: Yeah. You mentioned that JSSugar has to be designed, keeping in mind lack of experience and making sure that work with the source maps. There’s very far from being something that can be transpiled. Like we don’t know yet—like in which to improve because there’s so many. We need a little bit of time. I don’t know what your ideal timeline here would be, but I don’t think we can answer any time soon, if you want this JSSugar, JS 0 to be from developers
 
 SYG: I would say Yulia’s topic may be directly related to this. I will let her go
 

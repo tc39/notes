@@ -1341,19 +1341,11 @@ JHD: Thank you, MM.
 
 RPR: + 1 from Chris.
 
-RPR: Any .… + 1 from Devon. + 1 from Chip. Do you want to speak? Chip has wanted this for years. All right. Just as to check, do we have any objections to Stage 2.7? Congratulations, JHD. You have Stage 2.7.
-
-### Speaker's Summary of Key Points
-
-- List
-- of
-- things
+RPR: Any .… + 1 from Devon. + 1 from Chip. Do you want to speak? Chip has wanted this for years. All right.
 
 ### Conclusion
 
-- List
-- of
-- things
+RPR: Just as to check, do we have any objections to Stage 2.7? Congratulations, JHD. You have Stage 2.7.
 
 ## Restricting subclassing of built-ins
 

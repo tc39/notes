@@ -1279,6 +1279,8 @@ CDA: There is nothing in the queue.
 
 BAN: Okay. I guess I would like to ask for that conditional acceptance for this one. I would like to ask for consensus and receive conditional acceptances
 
+### Conclusion
+
 CDA: Consensus for the three normative changes?
 
 CDA: Other than the conditional support signalled by my Mozilla friends, any other voices of support for normative changes?
@@ -1288,18 +1290,6 @@ CDA: Any objections to the normative changes?
 CDA: All right. So it’s all riding on Mozilla now.
 
 BAN: Thank you very much. I would to say again, even though it’s kind of put me in an awkward position, I am really glad that you all are sticking to the process on this one
-
-### Speaker's Summary of Key Points
-
-- List
-- of
-- things
-
-### Conclusion
-
-- List
-- of
-- things
 
 ## Exploring an Idea of a Proposal Management and Technical Arbitration Tool
 

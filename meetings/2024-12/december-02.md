@@ -242,7 +242,6 @@ RPR: No objections. So I think we have consensus on this review for merge at the
 Presenter: Eemeli Aro (EAO)
 
 - [proposal](https://github.com/eemeli/proposal-intl-currency-display-choices)
-- [slides](TODO)
 
 EAO: This is a very small proposal. We had a short discussion in TG2 in fact about whether this should be a normative PR instead. But we thought, because there’s a little bit of discussion here that it would be good to have a little bit of space for that and the staging process is a very fine place for that. So the short entirety of this is that we do currency formatting under `Intl.NumberFormat` by using the `style: 'currency'` option and furthermore when formatting currency we have a `currencyDisplay` option that is effectively an enum value that we accept how to format the currency symbol. If you use the default `symbol` you get “$” or “US$” for formatting USD and `narrowSymbol` formats to "$" and `code` that gives you an ISO currency code like USD, or then as a spelled out `name`. All of these are of course localized name such as “U.S. dollars”.
 

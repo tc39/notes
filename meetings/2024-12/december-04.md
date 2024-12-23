@@ -113,19 +113,19 @@ CDA: As MM said, it is not the strongest signal to actually land something in th
 
 ### Speaker's Summary of Key Points
 
-* List
-* of
-* things
+- List
+- of
+- things
 
 ### Conclusion
 
-* List
-* of
-* things
+- List
+- of
+- things
 
 Presented a number of use cases where synchronous access to modules and their execution could be valuable and would like to explore the problem space of these under a Stage 1 process. There were reservations about the import sync design, but we are going to explore the solution space further.
 
-## ESM phase imports for Stage 2.7.
+## ESM phase imports for Stage 2.7
 
 Presenter: Guy Bedford (GB)
 

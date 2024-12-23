@@ -838,13 +838,12 @@ DLM: Cool. Thank you.
 
 ### Speaker's Summary of Key Points
 
-* List
-* of
-* things
+- List
+- of
+- things
 
 ### Conclusion
 
-* List
-* of
-* things
-
+- List
+- of
+- things

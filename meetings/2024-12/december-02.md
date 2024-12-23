@@ -112,7 +112,7 @@ SHN: Great. Thank you very much. I will update the slide with the correct dates 
 
 Presenter: Michael Ficarra (MF)
 
-* [slides](https://docs.google.com/presentation/d/1IS6hsFker8TM_mPtK1VQbFCH2TK3LljOxFu6-zMCjkM/edit)
+- [slides](https://docs.google.com/presentation/d/1IS6hsFker8TM_mPtK1VQbFCH2TK3LljOxFu6-zMCjkM/edit)
 
 MF: Pretty quick update on 262 editorial stuff. So normative changes, the first one here is a needs-consensus PR that we agreed to at the last meeting. We merged this change to `toSorted` to make it stable, as is already required by `Array.prototype.sort`. This was an oversight in the integration of `toSorted` as things changed with the Array sort stability specification at the same time. And the rest are Stage 4 proposal integrations: `Promise.try`, iterator helpers, and duplicate named capture groups. There were plenty of editorial changes, but none that need to be called out to plenary. And the list of upcoming and planned editorial work is the same. We should probably review it sometime soon just to make sure this is what our plan is going forward. But for now nothing has changed there. And that’s it.
 
@@ -429,15 +429,15 @@ DLM: I think I need two people. So that’s perfect. Thank you. If anyone else i
 
 ### Speaker's Summary of Key Points
 
-* Presented update on work that has occurred since October 2024 plenary, including renamed to proposal-upsert, support for both `getOrInsert` and `getOrInsertComputed`.
-* Asked for feedback on handling of modification to the map during `getOrInsertComputed` callback, and on method names.
-* Asked for Stage 2 reviewers.
+- Presented update on work that has occurred since October 2024 plenary, including renamed to proposal-upsert, support for both `getOrInsert` and `getOrInsertComputed`.
+- Asked for feedback on handling of modification to the map during `getOrInsertComputed` callback, and on method names.
+- Asked for Stage 2 reviewers.
 
 ### Conclusion
 
-* Committee was in favour of the non-throwing solution to issue #40 (https://github.com/tc39/proposal-upsert/pull/71)
-* No further feedback on naming of methods, we’ll resolve this in the issue itself. (https://github.com/tc39/proposal-upsert/issues/60)
-* JMN and MF volunteered as Stage 2 reviewers
+- Committee was in favour of the non-throwing solution to issue #40 (https://github.com/tc39/proposal-upsert/pull/71)
+- No further feedback on naming of methods, we’ll resolve this in the issue itself. (https://github.com/tc39/proposal-upsert/issues/60)
+- JMN and MF volunteered as Stage 2 reviewers
 
 ## `Intl.DurationFormat` for Stage 4
 
@@ -474,12 +474,12 @@ USA: Thanks, everyone, for Stage 4.
 
 ### Speaker's Summary of Key Points
 
-* USA went over some details about the purpose and history of the proposal.
-* Stage 4 was requested and there were no objections to stage advancement.
+- USA went over some details about the purpose and history of the proposal.
+- Stage 4 was requested and there were no objections to stage advancement.
 
 ### Conclusion
 
-* DurationFormat reached Stage 4 with supporting comments from DLM and PFC.
+- DurationFormat reached Stage 4 with supporting comments from DLM and PFC.
 
 ## `Error.isError` to stage 3
 
@@ -508,12 +508,12 @@ JHD: Thank you.
 
 ### Speaker's Summary of Key Points
 
-* test262 tests merged
-* Firefox’s `InternalError` should pass this predicate, and champion will monitor implementation status
+- test262 tests merged
+- Firefox’s `InternalError` should pass this predicate, and champion will monitor implementation status
 
 ### Conclusion
 
-* Consensus for stage 3
+- Consensus for stage 3
 
 ## Iterator helpers close receiver on argument validation failure
 
@@ -540,7 +540,7 @@ KG: Okay. Well, hearing no objection, and having two notes of explicit support, 
 
 ### Speaker's Summary of Key Points
 
-* An oversight in iterator helpers meant that we did not close the receiver when an argument failed validation. This PR will correct that. It's almost certainly web-compat given how new iterator helpers are.
+- An oversight in iterator helpers meant that we did not close the receiver when an argument failed validation. This PR will correct that. It's almost certainly web-compat given how new iterator helpers are.
 
 ### Conclusion
 
@@ -573,7 +573,7 @@ RPR: Request granted. Yes. Thank you.
 
 ### Conclusion
 
-* JSL & MM will review `AsyncContext`
+- JSL & MM will review `AsyncContext`
 
 ## The importance of supporting materials
 
@@ -613,7 +613,7 @@ DLM: I think I would have that for another plenary. I wanted to give a brief pre
 
 ### Conclusion
 
-* Not asking for any process changes at the time, just trying to highlight the importance of supporting materials for people who are evaluating proposals, in particular implementers who spend a lot of time on this.
+- Not asking for any process changes at the time, just trying to highlight the importance of supporting materials for people who are evaluating proposals, in particular implementers who spend a lot of time on this.
 
 ## re-using IteratorResult objects in iterator helpers
 
@@ -797,8 +797,8 @@ MF: Yeah, I guess as late as we can make it.
 
 ### Conclusion
 
-* MF will wait until the test262 tests have been merged before asking for Stage 3 again.
-* This topic was not revisited later in the meeting.
+- MF will wait until the test262 tests have been merged before asking for Stage 3 again.
+- This topic was not revisited later in the meeting.
 
 ## ShadowRealm for Stage 3
 
@@ -999,9 +999,8 @@ PFC: Then I think that brings us to the end.
 
 ### Speaker's Summary of Key Points
 
-* Since advancing to stage 2.7, the Web APIs available in ShadowRealm have been determined using a new W3C TAG design principle.
-* Each of these available Web APIs is covered in web-platform-tests with tests run in ShadowRealm, including ShadowRealm started from multiple scopes such as Workers and other ShadowRealms. Some web-platform-tests PRs are still awaiting review.
-* The HTML integration is now agreed upon in principle, and needs some mechanical work done in downstream specs. However, it needs two explicitly positive signals from implementors to move forward.
-* The concerns about test coverage have been resolved, assuming all of the open pull requests are merged.
-* We will get the web-platform-tests merged, look into what can be included from crypto.subtle, and talk to the DOM teams of each of the browser implementations and get a commitment to move this forward. When that is finished, we'll bring this back for Stage 3 as soon as possible.
-
+- Since advancing to stage 2.7, the Web APIs available in ShadowRealm have been determined using a new W3C TAG design principle.
+- Each of these available Web APIs is covered in web-platform-tests with tests run in ShadowRealm, including ShadowRealm started from multiple scopes such as Workers and other ShadowRealms. Some web-platform-tests PRs are still awaiting review.
+- The HTML integration is now agreed upon in principle, and needs some mechanical work done in downstream specs. However, it needs two explicitly positive signals from implementors to move forward.
+- The concerns about test coverage have been resolved, assuming all of the open pull requests are merged.
+- We will get the web-platform-tests merged, look into what can be included from crypto.subtle, and talk to the DOM teams of each of the browser implementations and get a commitment to move this forward. When that is finished, we'll bring this back for Stage 3 as soon as possible.

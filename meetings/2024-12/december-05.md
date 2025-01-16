@@ -25,7 +25,6 @@
 
 Presenter: Shane F. Carr (SFC)
 
-- [proposal]()
 - [slides](https://docs.google.com/presentation/d/1Uzrf-IwPrljF2BhCbCWuwQxlgGSm_bcd3FRbPO3Yrio/edit#slide=id.p)
 
 SFC: Hello everyone. You can see my slides. So a little preface for this presentation: we’ve been going back and forth for a little while now regarding different number related proposals and it concerns me that we haven’t taken a holistic view at how numbers work in ECMAScript and how we want them to work moving forward. We’ve been sort of narrowing in on let’s solve this little problem here and solve this little problem there. So my goal for this presentation is to sort of have a discussion about what we want number—how we want numbers to work in ECMA script in general and then that can sort of give us a framework so when we work on the other proposals we can see how they fit in with the big picture. So that is sort of the goal of this presentation.

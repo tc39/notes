@@ -186,7 +186,6 @@ CDA: A little bit. I mean, pretty quiet for the most part. I think the only thin
 Presenter: Guy Bedford (GB)
 
 - [proposal](https://github.com/tc39/proposal-esm-phase-imports)
-- [slides]()
 
 GB: So this is just a quick update on the ESM phase import proposal. So one of the things when we got Stage 2 earlier this year was, we did not identify our Stage 2.7 reviewers at that time. So this is just a call out for the fact that we are seeking to just confirm those reviewers. I’ve reached out to everyone who I think should have been interested in being a reviewer and have put those who have confirmed interest down. But this is a formal shout out in case we have missed anyone. So if we have missed anyone, we are seeking Stage 2.7 in two days’ time. So ideally if you’re able to review by then, but of course if someone would like to review, they can. And, yeah, so now is the time to speak if anyone else would be interested.
 
@@ -519,7 +518,6 @@ JHD: Thank you.
 Presenter: Kevin Gibbons (KG)
 
 - [proposal](https://github.com/tc39/ecma262/pull/3467)
-- [slides]()
 
 KG: Hello, all. This is a follow up to iterator helpers, which just landed in the spec. It is a normative change to something that is already shipping, but I strongly suspect it’s web compatible, especially given how new iterator helpers are, and I would like to make the change if we can. It's an oversight from specifying it.
 

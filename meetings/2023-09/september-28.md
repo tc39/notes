@@ -1284,7 +1284,7 @@ SFC: I think that the what we are kind of after here is, we want a new concept b
 
 RPR: DLM agrees with Shane. Ross has a new suggestion.
 
-RKN: There’s traction on the chat, *e* had the advantage of being a constant that’s between 2 and 3, and I was thinking, well, if this stage is primarily for Test262 afterall, consider 2.62. Anyway, I am saying that out loud.
+RKG: There’s traction on the chat, *e* had the advantage of being a constant that’s between 2 and 3, and I was thinking, well, if this stage is primarily for Test262 afterall, consider 2.62. Anyway, I am saying that out loud.
 
 RPR: All right. We have spent at least half an hour bikeshedding. On to Eemeli.
 

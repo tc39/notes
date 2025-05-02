@@ -278,7 +278,7 @@ DE: Do we have a definition of this scope or problem statement? Does it differ b
 
 CZW: Well, I think the—this page of the slides explains the iteration. Ultimate goal is to allow AsyncContext integration and we are—we could explore that, like, we said with `symbol.enter` or `symbol.dispose` that I think—even with solution B and C, I think this is—this page shows that we want to include the feasibility and the solutions.
 
-LCA: I think a more written out version of this is on the third to last-page, Chengzhong, the summary slide [[https://docs.google.com/presentation/d/1p_rQ5UagJ3Bgwbds0NL-nBaR3ovJLmyHmKuRMJejs_Y/edit?slide=id.g3494191011f_1_49#slide=id.g3494191011f_1_49](https://docs.google.com/presentation/d/1p_rQ5UagJ3Bgwbds0NL-nBaR3ovJLmyHmKuRMJejs_Y/edit?slide=id.g3494191011f_1_49#slide=id.g3494191011f_1_49)]
+LCA: I think a more written out version of this is on the third to last-page, Chengzhong, the [summary slide](https://docs.google.com/presentation/d/1p_rQ5UagJ3Bgwbds0NL-nBaR3ovJLmyHmKuRMJejs_Y/edit?slide=id.g3494191011f_1_49#slide=id.g3494191011f_1_49)
 
 USA: I’m sorry. We are past time. Can we focus on Stage 1 for now?
 
@@ -307,7 +307,7 @@ LCA: Thank you
 
 Presenter: Dominic Farolino (DMF)
 
-- [proposal]([https://github.com/WICG/observable](https://github.com/WICG/observable))
+- [proposal](https://github.com/WICG/observable)
 - [slides](https://docs.google.com/presentation/d/1i5_zneksrU7i7ZHcl5EQRzUHGkmXRIQKd-bLfrPRNXY/)
 
 DMF: Okay. Perfect. All right. So my name is Domenic Farolino. I work on Google Chrome. And I am working on the observable API. Which is currently a WICG standard—or, specification. Before we go into the slides, I want to give some context. This is a pretty informal presentation. We are not—this is not incubated or proposed in TC39. We are not asking for specific Stage feedback or anything like that. But because we are pursuing this API which used to be pursued in the TC39, and we moved it over to WICG with upstreaming into a WHATWG DOM specification, we—myself and other browser vendors felt it was important to run the proposal and the design by folks in TC39. And try and just, you know, keep everything on the platform updates and ask for opinions on that perspective. That’s what I am doing here.
@@ -358,7 +358,7 @@ CDA: Great. Thanks for coming to the committee to talk about the proposal. We ha
 
 MM: So could you go back to the history where this started in TC39.
 
-DMF: Yes. Yeah. This slide? [[https://docs.google.com/presentation/d/1i5_zneksrU7i7ZHcl5EQRzUHGkmXRIQKd-bLfrPRNXY/edit#slide=id.g30a04a42395_0_27](https://docs.google.com/presentation/d/1i5_zneksrU7i7ZHcl5EQRzUHGkmXRIQKd-bLfrPRNXY/edit#slide=id.g30a04a42395_0_27)]
+DMF: Yes. Yeah. [This slide?](https://docs.google.com/presentation/d/1i5_zneksrU7i7ZHcl5EQRzUHGkmXRIQKd-bLfrPRNXY/edit#slide=id.g30a04a42395_0_27)
 
 MM: Yeah. The—what I remember is that there was an observable proposal in TC39 and I don’t remember the time frame. Does it say Jafar (JH)? It does say that. Good. Good. Good. That history is correct. I thought I had heard a different name. I wanted to make sure this was cochampion by Jafar Husain (JH) and I. When he left the committee, I didn’t have the energy to keep going with it, which I would assume is part of why it went over outside of TC39. I do want to express that although I didn’t have the energy for it, I wish that once the energy arose to pursue it somehow, that it had been pursued in TC39. I do not understand why the right venue is outside of TC39.
 

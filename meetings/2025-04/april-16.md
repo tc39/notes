@@ -253,7 +253,7 @@ USA: Unfortunately, they are on time, though. We would have to bring this back t
 
 MAH: Michael, can you file an issue in maybe—that will help Waldemar understand the request?
 
-MF: Yeah. Will do. (opened [#6]([https://github.com/tc39/proposal-compare-strings-by-codepoint/issues/6](https://github.com/tc39/proposal-compare-strings-by-codepoint/issues/6)))
+MF: Yeah. Will do. (opened [#6](https://github.com/tc39/proposal-compare-strings-by-codepoint/issues/6))
 
 MAH: Thank you.
 
@@ -271,7 +271,7 @@ Stage 1
 
 Presenter: Michael Saboff (MLS)
 
-- [slides]([https://github.com/msaboff/tc39/blob/master/TC39%20Consensus%20Apr%202025.pdf](https://github.com/msaboff/tc39/blob/master/TC39%20Consensus%20Apr%202025.pdf))
+- [slides](https://github.com/msaboff/tc39/blob/master/TC39%20Consensus%20Apr%202025.pdf)
 
 MLS: This is a continuation from our conversation that we had in Seattle. And I asked for an hour, I don’t think this is going to take an hour. But we will see. This is caused conversation in the past. I think from Seattle there’s general agreement there is a problem we need to deal with single dissenters. It’s rare, but there’s been some issues in the past. There’s also, I took away from Seattle, there’s no desire for like a major process change. That we—our social norms seem to be enough to guide us for 9X% where X is a pretty big number. 98%. And it also, I took at here’s no need to have two objectors. I originally proposed 5% at Seattle and people thought that was too onerous and have to figure out what is 5% so on and so forth.
 

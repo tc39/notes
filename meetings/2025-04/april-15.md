@@ -62,7 +62,7 @@ Day Two—15 April 2025
 
 Presenter: Mark Miller (MM)
 
-* [proposal]([https://github.com/tc39/proposal-oom-fails-fast/tree/master](https://github.com/tc39/proposal-oom-fails-fast/tree/master))
+* [proposal](https://github.com/tc39/proposal-oom-fails-fast/tree/master)
 * [slides](https://github.com/tc39/proposal-oom-fails-fast/blob/master/panic-talks/dont-remember-panicking.pdf)
 
 MM: So last time we brought this to the committee, it was called must fail fast, and it got stage 1, and then it got blocked from advancing from there for reasons I will explain. And this is a Stage 1 update. Since then, the proposal—we renamed the proposal “Don’t Remember Panicking.” So I’m going to linger on this slide for a little bit because this is the code example I’m going to use throughout the entire talk, so it’s worth all of us getting oriented in this code example. This is a simple money system. Don’t worry if you stop bugs, it’s purposefully a little bit buggy, which is—in order to illustrate some of the points.
@@ -207,7 +207,7 @@ No conclusion; we’ll discuss further in a continuation topic, including a temp
 
 Presenter: Ron Buckton (RBN)
 
-* [proposal]([https://github.com/rbuckton/proposal-enum](https://github.com/rbuckton/proposal-enum))
+* [proposal](https://github.com/rbuckton/proposal-enum)
 * [slides](https://1drv.ms/p/c/934f1675ed4c1638/EYypvengQohMlG52w1qseW8BCwCkSG0Y-2ip8Zq7pxoOFw?e=Aklyqu)
 
 RBN: Today I want to discuss enum declarations. I am Ron Buckton, I work on the TypeScript team. Enum declarations are essentially enumerated types. Provide a finite domain of constant values that are obvious to indicate choices, discriminants and bitwise flags. And a staple from C-style languages, VB .NET. C#, Java, PHP, Rust, Python, the list goes on and on. The reasons we are discussing this are several. One, the ecosystem is rife with enumerated values. ECMAScript is `typeof`--String based. The DOM has `Node.type`, which has its enumerated values on the Node constructor, this is the same. Buffer encodings are string based, or a string based enumerated type essentially. And Node.js has constants that are enumerated type or value-like functionality. But there’s no grouping. For users there is really no standardized mechanism to define enumerated type, ones that can be used reliably by static type. We talked about ObjectLiterals. But there’s a reason why that’s not really the best choice for this. I will go into that in a moment.
@@ -389,9 +389,9 @@ Advanced to Stage 1
 Presenter: Ruben Bridgewater (RBR)
 
 * [proposal](https://github.com/ljharb/object-property-count)
-* [slides]([https://github.com/tc39/agendas/blob/main/2025/2025.04%20-%20Object.propertyCount%20slides.pdf](https://github.com/tc39/agendas/blob/main/2025/2025.04%20-%20Object.propertyCount%20slides.pdf))
+* [slides](https://github.com/tc39/agendas/blob/main/2025/2025.04%20-%20Object.propertyCount%20slides.pdf)
 
-JHD: Hi, everyone. RBR just became an Invited Expert. He and I are co-championing this proposal. `Object.propertyCount` is solving this problem that RBR is going to talk about is something I run into frequently, and so I was very excited to walk-through this when he approached me with the idea. RBR is a [Node TSC [Technical Steering Committee]]([https://github.com/nodejs/TSC](https://github.com/nodejs/TSC)) and core collaborator. And I will hand it over to him to present better than I would have been able to do. Go for it.
+JHD: Hi, everyone. RBR just became an Invited Expert. He and I are co-championing this proposal. `Object.propertyCount` is solving this problem that RBR is going to talk about is something I run into frequently, and so I was very excited to walk-through this when he approached me with the idea. RBR is a [Node TSC Technical Steering Committee](https://github.com/nodejs/TSC) and core collaborator. And I will hand it over to him to present better than I would have been able to do. Go for it.
 
 RBR: Thank you very much also for having me here. It’s the first time for me to be on the call. So very nice to—I am able to present. So like JavaScript I am pretty certain, every one of you has multiple times heard that JavaScript is a slow language. And thanks to JITs this is mostly no longer true, in most situations, and one thing is, however, that has bothered me, and because the language doesn’t provide any way to implement a lot of algorithms in a very performant way. And one is relating to counting the properties of an object in different ways. So it’s a very common JavaScript performance bottleneck I have run into.
 
@@ -576,7 +576,7 @@ Not everyone in committee was convinced of some of the aspect of the broader sco
 Presenter: Daniel Minor (DLM)
 
 * [proposal](https://github.com/tc39/proposal-explicit-resource-management)
-* [slides]([Explicit Resource Management: Implementer Feedback](https://docs.google.com/presentation/d/1F4kLwEUvBmyyTWq06HQgiJypcCWm3uwOzVDzFQ0xauE/edit#slide=id.p))
+* [slides](https://docs.google.com/presentation/d/1F4kLwEUvBmyyTWq06HQgiJypcCWm3uwOzVDzFQ0xauE/edit#slide=id.p)
 
 DLM: Sure. Tough. I would like to present some feedback about the explicit resource management proposal. Quick reminder about what a specific resource management is. Basic idea the idea is to add a `using` keyword, along with a `Symbol.dispose` and the concept of `DisposableStack`. And generally the idea allows for automatic disposal of resources when the use—when using variable leaves scope. For example this simple little thing here. Where are we in SpiderMonkey. It’s fully implemented. It’s currently shipped in Nightly, but disabled behind a prop and the current implementation follows the spec. In particular, it’s currently maintaining an explicit list of resources to dispose at runtime.
 
@@ -606,11 +606,11 @@ DLM: Okay. Great! Thank you very much.
 
 ### Summary
 
-Allowing the `using` statement in a switch statement with fallthrough complicates implementations. If we disallow this use case, implementations can desugar to try/finally blocks which is simpler and more efficient. The proposal champion put together a pull request for this change: [https://github.com/rbuckton/ecma262/pull/14](https://github.com/rbuckton/ecma262/pull/14).
+Allowing the `using` statement in a switch statement with fallthrough complicates implementations. If we disallow this use case, implementations can desugar to try/finally blocks which is simpler and more efficient. The proposal champion put together a pull request for this change: [rbuckton/ecma262#4](https://github.com/rbuckton/ecma262/pull/14).
 
 ### Conclusion
 
-Consensus to merge [https://github.com/rbuckton/ecma262/pull/14](https://github.com/rbuckton/ecma262/pull/14).
+Consensus to merge [rbuckton/ecma262#14](https://github.com/rbuckton/ecma262/pull/14).
 
 ## Non-extensible applies to Private for stage 1, 2, 2.7
 
@@ -766,7 +766,7 @@ MM: Okay. Great.
 
 ### Speaker’s Summary
 
-* MM presented a new proposal, broken off from [proposal-stabilize]([https://github.com/syg/proposal-nonextensible-applies-to-private](https://github.com/syg/proposal-nonextensible-applies-to-private)), co-championed by SYG and others. It proposes to make private fields respect `Object.preventExtensions` .
+* MM presented a new proposal, broken off from [proposal-stabilize](https://github.com/syg/proposal-nonextensible-applies-to-private), co-championed by SYG and others. It proposes to make private fields respect `Object.preventExtensions` .
 * This proposal would patch up the current counterintuitive behavior of private fields not obeying non-extensibility, prevent hidden state creation via private fields, and improve performance so that nonextensible objects can have fixed memory layouts.
 * The proposal is not backwards compatible and might rarely break existing correct code.
 * Google has deployed usage counters and found minimal impact, but some websites in Germany (some which use a German GIS framework called Cadenza) might be affected. One website has minimal likely impact; it is for a temporary music festival. Google is trying to reach out to the affected German websites and Cadenza, but further help with outreach was requested by SYG.

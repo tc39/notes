@@ -186,7 +186,7 @@ CDA: There are no updates from the CoC committee. There is nothing new to report
 
 ## Normative: add notation to PluralRules
 
-Presenter: Ujjwal Sharmna (USA)
+Presenter: Ujjwal Sharma (USA)
 
 * [proposal](https://github.com/tc39/ecma402/pull/989)
 * [notes](https://notes.igalia.com/p/UpmK0K8eo)
@@ -209,7 +209,7 @@ DLM: Yeah, we support this normative change.
 
 DE: In change sounds good to me. I think we should treat this similar to staged proposals in terms of merging it once we have multiple implementations and test. We could track PRs like this. Anyway, this seems like a very good change to me.
 
-USA: Just FYI, we have tracking for everything, basically, sorry, for all normative PRs for ECMA 402, but noted. [https://github.com/tc39/ecma402/wiki/Proposal-and-PR-Progress-Tracking#ecma-402-prs](https://github.com/tc39/ecma402/wiki/Proposal-and-PR-Progress-Tracking#ecma-402-prs)
+USA: Just FYI, we have tracking for everything, basically, sorry, for all normative PRs for ECMA 402, but noted. [tc39/ecma402/wiki/Proposal-and-PR-Progress-Tracking#ecma-402-prs](https://github.com/tc39/ecma402/wiki/Proposal-and-PR-Progress-Tracking#ecma-402-prs)
 
 DE: Okay, great.
 
@@ -223,11 +223,11 @@ USA: And yeah, and with I guess a couple of supporting opinions, we achieved con
 
 ### Speaker's Summary of Key Points
 
-Normative pull request [https://github.com/tc39/ecma402/pull/989](https://github.com/tc39/ecma402/pull/989) on ECMA 402 was presented to the committee for consensus and this PR added support for a notation option in the plural rules constructor for handling different non-standard notations.
+Normative pull request [tc39/ecma402#989](https://github.com/tc39/ecma402/pull/989) on ECMA 402 was presented to the committee for consensus and this PR added support for a notation option in the plural rules constructor for handling different non-standard notations.
 
 ### Conclusion
 
-The committee reached consensus on [the pull request]([https://github.com/tc39/ecma402/pull/989](https://github.com/tc39/ecma402/pull/989)), with explicit support from DE and DLM.
+The committee reached consensus on [the pull request](https://github.com/tc39/ecma402/pull/989), with explicit support from DE and DLM.
 
 ## Normative: Mark sync module evaluation promise as handled
 
@@ -252,7 +252,7 @@ NRO: And then later when you actually handle the promise, so when you call .then
 
 NRO: So that was Promises, and how does this interact with modules?
 
-[Slide](https://docs.google.com/presentation/d/1kheOg1AZDj-T9n0O-0sbd5IBwvnjiODyJcK1Ez6Q0JU/edit?slide=id.g34836646ca1_0_44#slide=id.g34836646ca1_0_44)]
+[Slide](https://docs.google.com/presentation/d/1kheOg1AZDj-T9n0O-0sbd5IBwvnjiODyJcK1Ez6Q0JU/edit?slide=id.g34836646ca1_0_44#slide=id.g34836646ca1_0_44)
 
 There are multiple types of modules in this spec, or well Module Records, which represent modules. There are a Module Record base class and two main types of actual Module Records. There are Cyclic Module Records andSynthetic Module Records. Cyclic records are modules that support dependencies. And this is some sort of abstract extract base class and our spec provides Source Text Module Records that are variant for JavaScript. For example, the web assembly imports proposals in the WebAssembly is proposing a new type of cyclic on the record, and for synthetic module records, and it’s just modules where you already know the exports and you have to wrap them with some sort of module to make them importable. The way module evolution works changed over the years. Like, originally there was this Evaluate method that would—it was on all module records, and it would trigger evaluation, and if there was an error returned a throw completion, otherwise a normal completion. But then when we introduced the top-level await, we changed the method to return the promise with the detail that only cyclic module records can actually await. If there’s any other type of the module records, like any type of custom host module, there’s a promise in there, returned by the Evaluate method, and this promise must already be settled. So the promise there is just to have a consistent API signature, and not actually used as a promise.
 
@@ -264,7 +264,7 @@ NRO: Then during the evaluation of `a.js`, we perform the steps from the slide b
 
 NRO: So the fix here is to just change these InnerModuleEvaluation abstract evaluation to explicitly call the host hook that marks the promise as handled when we extract the rejection from the promise. And, well, editorially, I’m doing this as a new AO because it's used by the import defer proposal, and we’re going to have it inline in the Module evaluation algorithm.
 
-NRO: Are there observable consequences to this? Yes and no. Technically this is a normative change, as example before, this is observable because it changes the way host hooks are called, and usually they affects how some events are fired. However, on the web, the only non-cyclic module records we have are syntactic model records and we already have the values, we already—we’re just packaging them in a module after creating them, so that promise is never rejected, and this is not observable. Outside of the web, we have commonJS, and when you import from a .cjs file, it would be wrapped in its own Module Record and we evaluate the particular CJS module in the `.Evaluate()` methodevaluation of the module record. However, NodeJS does not expose as rejected through their rejection event the promise for that internal module, because maybe they don’t actually create the promise, and don’t know how it’s implemented. So Node.js already implements the behavior that would be—that we will get by fixing this. Node does not implement the bug. So, yeah, to conclude, is there consensus on fixing this? There’s the pull request ([3535](https://github.com/tc39/ecma262/pull/3535)) already reviewed in the 262 repository.
+NRO: Are there observable consequences to this? Yes and no. Technically this is a normative change, as example before, this is observable because it changes the way host hooks are called, and usually they affects how some events are fired. However, on the web, the only non-cyclic module records we have are syntactic model records and we already have the values, we already—we’re just packaging them in a module after creating them, so that promise is never rejected, and this is not observable. Outside of the web, we have commonJS, and when you import from a .cjs file, it would be wrapped in its own Module Record and we evaluate the particular CJS module in the `.Evaluate()` methodevaluation of the module record. However, NodeJS does not expose as rejected through their rejection event the promise for that internal module, because maybe they don’t actually create the promise, and don’t know how it’s implemented. So Node.js already implements the behavior that would be—that we will get by fixing this. Node does not implement the bug. So, yeah, to conclude, is there consensus on fixing this? There’s the pull request ([#3535](https://github.com/tc39/ecma262/pull/3535)) already reviewed in the 262 repository.
 
 MM: Great. So I’ll start with the easy question. The—you mentioned the situation where the promise—there exists a promise that when born is already settled, and I understand why, and it all makes sense, I just want to verify that it does not violate the constraint, the invariant that user code cannot tell synchronously whether a promise is settled or not. That the only way—the only anything that user code can sense is asynchronously. It finds out that a promise is settled. Is that correct?
 

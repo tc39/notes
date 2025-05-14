@@ -430,7 +430,7 @@ ABO: Thank you for sharing your use cases, and now I will give an update on the 
 
 ABO: So the last time that we presented this in full was in Tokyo, and we gave a brief summary of the changes since then in December; but basically, one of the things that Mozilla highlighted for this proposal was that it increases the size of potential memory leaks.
 
-ABO: If you have this in the web, this code used to only keep alive the callback and any scopes that closes over. If there can be any click event, the callback is not a leak, and for the scopes it crosses over, it is only a leak if it keeps alive things that are not used by the function. And I know that sometimes engines keep more things alive than they should for closed over scopes, but that is a trade-off they make.
+ABO: If you have this in the web, this code used to only keep alive the callback and any scopes that closes over. If there can be any click event, the callback is not a leak, and for the scopes it closes over, it is only a leak if it keeps alive things that are not used by the function. And I know that sometimes engines keep more things alive than they should for closed over scopes, but that is a trade-off they make.
 
 ABO: In the proposal as we presented it in Tokyo, `addEventListener` implicitly captures an `AsyncContext.Snapshot`, and a lot of the entries in the snapshot, a lot of those values will not be used by the callback, even if the snapshot itself is used, so this could be a leak—or will be a leak in most cases.
 

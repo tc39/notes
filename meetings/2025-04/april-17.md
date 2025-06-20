@@ -88,17 +88,17 @@ MM: Now, the question is, the—are you proposing something that would change th
 
 CZW: Yeah, in the coming slide, we will explore different solutions. Definitely, if it is possible, we want only add the using, like, the `symbol.dispose` or `symbol.enter` on the `AsyncContext.variable` and reduce all the functionality with using decoration. And we will also explore how to avoid, like, the concepts of being able to leaking out the encapsulation of the current scope, so maybe we can revisit this question when we go through all the slides later points.
 
-MM: Okay, that sounds good. On this slide in particular, `AsyncContext` swap, that’s something new that’s coming in with this proposal. Is there anything existing?
+MM: Okay, that sounds good. On this slide in particular, `AsyncContextSwap`, that’s something new that’s coming in with this proposal. Is there anything existing?
 
 CZW: It’s the abstract operations in the `AsyncContext` proposal specification. They are not exposed to users. It’s written here as an illustration of how the current run works.
 
-MM: Okay, could you remind me what the—I don’t remember an `AsyncContext` swap, and the name certainly sounds imperative rather than, like, you know, like an assignment more than a shadowing. Could you explain what `AsyncContext` swap is.
+MM: Okay, could you remind me what the—I don’t remember an `AsyncContextSwap`, and the name certainly sounds imperative rather than, like, you know, like an assignment more than a shadowing. Could you explain what `AsyncContextSwap` is.
 
 CZW: It is not an operation exposed to users, so it’s an underlying abstract operations to replace the mappings on the agent that contains the variable value slots. And what is exposed to users is that when the run finishes, the evaluating—evaluating the given function, it will swap back to the map—previous mapping that when the run was invoked.
 
 MM: Okay, I’m not sure I understand, but I think I’ll postpone further questions about it.
 
-GCL: `AsyncContext` swap just takes the current `AsyncContext`, returns it, and then sets the new value to whatever you pass to the AO. So the way it’s used in the specification text is to build a stack, basically, where you, you know, push a new value to the stack by assigning it to the global `AsyncContext`, and then later pop that value by assigning the previous value that was returned.
+GCL: `AsyncContextSwap` just takes the current `AsyncContext`, returns it, and then sets the new value to whatever you pass to the AO. So the way it’s used in the specification text is to build a stack, basically, where you, you know, push a new value to the stack by assigning it to the global `AsyncContext`, and then later pop that value by assigning the previous value that was returned.
 
 DE: And it effectively is enforced because only the two run methods only ever call `AsyncContextSwap`.
 
@@ -198,7 +198,7 @@ RBN: Async functions I kind of understand overhead, because we’re working with
 
 RBN: The—the other point to my topic is that in both B and C, there’s discussion about `symbol.enter`, and the proposal for `symbol.enter` that’s currently at Stage 1 is specifically about `Symbol.enter` being a more complex extra step to enforcing that you’re actually using a declaration with using that if you really, really, really want to or immediate to or have a very specific reason that you can call out to that method the invoke it, which, yes, could result in the potential context leaks you’re discussing, but the point it being a built-in symbol that 99.9% of people won’t have to look at because nail be typing using whatever equals and that value, means that people aren’t going to be reaching for this unless they really need, to people who really need will most likely be taking extra care about stack discipline. I’m not really certain that B and C are necessary in that context.
 
-NRO: Yeah, all times mentioned that this requirement is not all the time. Like, part of this context proposal design was that AsyncContext snapshots will be very cheap to get, they’re just copying a point, and you don’t actually need to, like, iterate through a structure to copy its values, which is why it’s okay to do it, for example, at every single await. So I wouldn’t worry about that too much. It’s just literally copying a point to somewhere else.
+NRO: Yeah, all times mentioned that this requirement is not all the time. Like, part of this context proposal design was that AsyncContext snapshots will be very cheap to get, they’re just copying a pointer, and you don’t actually need to, like, iterate through a structure to copy its values, which is why it’s okay to do it, for example, at every single await. So I wouldn’t worry about that too much. It’s just literally copying a pointer to somewhere else.
 
 SHS: Yeah, gist warranted to point out the overhead question, and there’s the issue of the order it happens. If the finishing the using is where we’re making mutation happen, that does break disposable stack, because you use using to enter the stack, and then you event kind of put more disposables on the stack without using syntax. And so that would not trigger the mutation mutation and that does break the intuition and the composability.
 

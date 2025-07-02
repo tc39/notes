@@ -1441,8 +1441,8 @@ JHD: Well, maybe we can do some offline discussion versus the methods versus par
 
 ### Speaker's Summary of Key Points
 
-- The iterator chunking proposal has had several open design questions which are holding back further development
-- In particular, distinguishing between
+- iterator chunking methods now close the receiver on argument validation failure, matching the recent change to all other iterator helpers
+- presented some options for behaviour of windows method when the underlying iterator does not yield enough items to fill the first window
 
 ### Conclusions
 

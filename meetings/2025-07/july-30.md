@@ -106,14 +106,13 @@ USA: Good. Thank you so much, DLM, and others for contributing. I’ll see you l
 
 ### Speaker's Summary of Key Points
 
-* The Intl Era and Month Code proposal was presented to the committee for advancement to Stage 2.7.
-* A brief description of the proposal was prescribed including the scope and rationale.
-* There was discussion regarding PR69, which changes the spec text to transform some sorts of the spec from prose to algorithmic spec steps.
-* Both of the assigned stage 2.7 reviewers, SFC and EAO, have signed off on the spec.
+* The intl-era-monthCode proposal was presented for stage 2.7
+* Prior to the presentation, a number of months were spent by TG2 to discuss some of the details of this proposal in detail and the spec text had been updated to reflect those changes as well as their results upstream in CLDR
+* The champions presented the changes briefly and explained the scope as well as the limitations in terms of avoiding overspecifying certain details
 
 ### Conclusion
 
-The proposal conditionally reached Stage 2.7, dependent upon final editorial approval by the ECMA-402 editors.
+* The champions requested stage advancement and consensus was reached after a brief discussion around the last remaining editorial change
 
 ## Module Import Hook and new Global for Stage 1
 

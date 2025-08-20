@@ -10,7 +10,6 @@ Day One—28 July 2025
 | Dmitry Makhnev         | DJM          | JetBrains          |
 | Waldemar Horwat        | WH           | Invited Expert     |
 | Guy Bedford            | GB           | Cloudflare         |
-| Chris de Almeida       | CDA          | IBM                |
 | Daniel Minor           | DLM          | Mozilla            |
 | Zbyszek Tenerowicz     | ZTZ          | Consensys          |
 | Jordan Harband         | JHD          | HeroDevs           |
@@ -29,8 +28,17 @@ Day One—28 July 2025
 | Tab Atkins-Bittner     | TAB          | Google             |
 | Istvan Sebestyen       | IS           | Ecma               |
 | Daniel Rosenwasser     | DRR          | Microsoft          |
-| Michael Ficarra        | MF           | F5                 |
 | Andreu Botella         | ABO          | Igalia             |
+| Chris de Almeida       | CDA          | IBM                |
+| Chengzhong Wu          | CZW          | Bloomberg          |
+| Justin Ridgewell       | JRL          | Google             |
+| Kevin Gibbons          | KG           | F5                 |
+| Mathieu Hofman         | MAH          | Agoric             |
+| Michael Ficarra        | MF           | F5                 |
+| Mark S. Miller         | MM           | Agoric             |
+| Rob Palmer             | RPR          | Bloomberg          |
+| Stephen Hicks          | SHS          | Google             |
+| Ujjwal Sharma          | USA          | Igalia             |
 
 ## Opening & Welcome
 
@@ -198,7 +206,7 @@ CDA: Okay. I think we formally have to do that through plenary. Right? We’re c
 
 RPR: Given this was a surprise, I guess—does—maybe—ask, does anyone want more time to think about whether MF is okay as convenor for this task group? Okay. And, in which case, I think we could probably just go ahead right now and ask for—oh, go ahead. SMH.
 
-SMH: Yes, I just want to say, if you have no opposition and if the TG is proposing a convener is accepted by the technical committee as a whole and through the chairs, and you can do in this short notice, you should be fine.
+SHN: Yes, I just want to say, if you have no opposition and if the TG is proposing a convener is accepted by the technical committee as a whole and through the chairs, and you can do in this short notice, you should be fine.
 
 CDA: I support plus one for MF for joining the conveners group of TG5.
 
@@ -1084,11 +1092,11 @@ MM: Great. Thank you.
 
 CDA: Next?
 
-CWU: Yeah. I think this is worth mentioning that the HTML integration is not going to be ended up in the proposal specification text. But I think it is worth to have it together to be reviewed with the proposal spec text together to be advancing to 2.7. Because, I mean, that would helpful to access use cases with the proposal and on the web integration.
+CZW: Yeah. I think this is worth mentioning that the HTML integration is not going to be ended up in the proposal specification text. But I think it is worth to have it together to be reviewed with the proposal spec text together to be advancing to 2.7. Because, I mean, that would helpful to access use cases with the proposal and on the web integration.
 
 ABO: I guess I should point out, it is possible that the spec has to be updated to add things that the web specs can use from the proposal. It would not be changing any of the behavior in the, on the Ecma-262 side of things. It is just adding algorithms for the web specs.
 
-CWU: Yeah. Sure.
+CZW: Yeah. Sure.
 
 CDA: All right. Nothing else on the queue.
 

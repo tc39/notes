@@ -7,7 +7,6 @@ Day Two—29 July 2025
 | Name                   | Abbreviation | Organization       |
 |------------------------|--------------|--------------------|
 | Waldemar Horwat        | WH           | Invited Expert     |
-| Chris de Almeida       | CDA          | IBM                |
 | Jesse Alama            | JMN          | Igalia             |
 | Dmitry Makhnev         | DJM          | JetBrains          |
 | Michael Saboff         | MLS          | Observer           |
@@ -25,6 +24,20 @@ Day Two—29 July 2025
 | Sergey Rubanov         | SRV          | Invited Expert     |
 | Daniel Rosenwasser     | DRR          | Microsoft          |
 | Rezvan Mahdavi Hezaveh | RMH          | Google             |
+| Andreu Botella         | ABO          | Igalia             |
+| Chris de Almeida       | CDA          | IBM                |
+| Justin Ridgewell       | JRL          | Google             |
+| James Snell            | JSL          | Cloudflare         |
+| Kevin Gibbons          | KG           | F5                 |
+| Keith Miller           | KM           | Apple Inc.         |
+| Matthew Gaudet         | MAG          | Mozilla            |
+| Mathieu Hofman         | MAH          | Agoric             |
+| Michael Ficarra        | MF           | F5                 |
+| Mark S. Miller         | MM           | Agoric             |
+| Nicolò Ribaudo         | NRO          | Igalia             |
+| Richard Gibson         | RGN          | Agoric             |
+| Stephen Hicks          | SHS          | Google             |
+| Ujjwal Sharma          | USA          | Igalia             |
 
 ## How to make thenables safer?
 
@@ -463,7 +476,7 @@ RGN: Yeah, I would be happy with that outcome.
 
 USA: Okay.
 
-JDH (on queue):, plus one for stage three conditional for test approval.
+JHD (on queue):, plus one for stage three conditional for test approval.
 
 KM: Yeah, I don’t think we have a problem with stage three, the feedback I got from our DOM folks is that we probably won’t ship until any kinks and everything else, and everything is worked out on the DOM integration side of this. I don’t know fully know what that means in hindsight I should have asked clarification before, but if there is something there from shipping, but we will probably implement the feature before then.
 

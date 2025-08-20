@@ -8,7 +8,6 @@ Day Three—30 July 2025
 |------------------------|--------------|--------------------|
 | Dmitry Makhnev         | DJM          | JetBrains          |
 | Waldemar Horwat        | WH           | Invited Expert     |
-| Chris de Almeida       | CDA          | IBM                |
 | Jesse Alama            | JMN          | Igalia             |
 | Daniel Minor           | DLM          | Mozilla            |
 | Samina Husain          | SHN          | Ecma International |
@@ -24,6 +23,20 @@ Day Three—30 July 2025
 | Daniel Rosenwasser     | DRR          | Microsoft          |
 | Rezvan Mahdavi Hezaveh | RMH          | Google             |
 | Kris Kowal             | KKL          | Agoric             |
+| Andreu Botella         | ABO          | Igalia             |
+| Chris de Almeida       | CDA          | IBM                |
+| Gus Caplan             | GCL          | Deno               |
+| Justin Ridgewell       | JRL          | Google             |
+| James Snell            | JSL          | Cloudflare         |
+| Kevin Gibbons          | KG           | F5                 |
+| Keith Miller           | KM           | Apple Inc.         |
+| Matthew Gaudet         | MAG          | Mozilla            |
+| Mathieu Hofman         | MAH          | Agoric             |
+| Michael Ficarra        | MF           | F5                 |
+| Mark S. Miller         | MM           | Agoric             |
+| Nicolò Ribaudo         | NRO          | Igalia             |
+| Richard Gibson         | RGN          | Agoric             |
+| Steven Salat           | STY          | Vercel             |
 
 ## Opening & Welcome
 
@@ -320,11 +333,11 @@ MM: Can we just ask if there are any objections to stage one?
 
 DLM: Fair enough. Any objections to stage one?
 
-JLS: Not a strong objection, but I would like to see isolation(?) around the wording of the problem a bit more. It just troubling me that is too kind of open-ended.
+JSL: Not a strong objection, but I would like to see isolation(?) around the wording of the problem a bit more. It just troubling me that is too kind of open-ended.
 
 KKL: I agree. Let’s refine that out of band to specifically mean the module map, the specific things we wish to isolate that are not intrinsics.
 
-JLS: I just want to be clear, I’m not wording it as an objection for stage one, but if we can get that cleared during the plenary.
+JSL: I just want to be clear, I’m not wording it as an objection for stage one, but if we can get that cleared during the plenary.
 
 DLM: Yeah, why don't we come back with a problem statement? We need to move on with the next topic. We will bring the problem statement back and have a discussion later on. I will capture the queue and we can move onto the next topic.
 

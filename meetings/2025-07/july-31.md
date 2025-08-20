@@ -13,12 +13,24 @@ Day Four—31 July 2025
 | Istvan Sebestyen   | IS           | Ecma               |
 | Jordan Harband     | JHD          | HeroDevs           |
 | Zbyszek Tenerowicz | ZTZ          | Consensys          |
-| Chris de Almeida   | CDA          | IBM                |
 | Daniel Rosenwasser | DRR          | Microsoft          |
 | Eemeli Aro         | EAO          | Mozilla            |
 | Samina Husain      | SHN          | Ecma International |
 | Aki Rose Braun     | AKI          | Ecma International |
 | Olivier Flückiger  | OFR          | Google             |
+| Chris de Almeida   | CDA          | IBM                |
+| Gus Caplan         | GCL          | Deno               |
+| Justin Ridgewell   | JRL          | Google             |
+| Kevin Gibbons      | KG           | F5                 |
+| Keith Miller       | KM           | Apple Inc.         |
+| Mathieu Hofman     | MAH          | Agoric             |
+| Michael Ficarra    | MF           | F5                 |
+| Mark S. Miller     | MM           | Agoric             |
+| Nicolò Ribaudo     | NRO          | Igalia             |
+| Rob Palmer         | RPR          | Bloomberg          |
+| Richard Gibson     | RGN          | Agoric             |
+| Stephen Hicks      | SHS          | Google             |
+| Ujjwal Sharma      | USA          | Igalia             |
 
 ## Opening & Welcome
 

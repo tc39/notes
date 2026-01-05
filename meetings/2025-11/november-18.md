@@ -246,11 +246,11 @@ PFC: And as usual, we'd like to ask, anything that you can do to help would be g
 
 Presenter: Chris de Almeida (CDA)
 
-Next up, we have the TG3 update. Chris, are you ready for this?
+Next up, we have the TG3 update. CDA, are you ready for this?
 
 CDA: Sure. The threat actors of TG3 continue to meet weekly to craft malicious payloads and discuss the security implications of proposals. If you are interested in either of those things, please join us weekly on Wednesdays. Thank you.
 
-RPR: Thank you, Chris. After TG3 comes TG4. Nicolo, will you be giving us on update on source maps?
+RPR: Thank you, CDA. After TG3 comes TG4. Nicolo, will you be giving us on update on source maps?
 
 ## TG4: Source Maps
 
@@ -873,7 +873,7 @@ CDA: All right, that’s it for the queue.
 
 MF: Okay, then I’d like to formally call for advancement to Stage 3 for joint iteration.
 
-CDA: You’ve already got a few voices of support for Stage 3. Are there any more? I saw thumbs up from Chip. Do we have any objections or dissenting views? Hearing nothing, seeing nothing, you have Stage 3.
+CDA: You’ve already got a few voices of support for Stage 3. Are there any more? I saw thumbs up from CM. Do we have any objections or dissenting views? Hearing nothing, seeing nothing, you have Stage 3.
 
 MF: Thank you. We are going very fast through this agenda.
 
@@ -925,7 +925,7 @@ NRO: About the barrel file thing, so, yeah, the example I had here was just a bu
 
 NRO: Sorry, you can tell me, I don’t remember what the other points were.
 
-CDA: Well, Jordan has got a reply in the queue.
+CDA: Well, JHD has got a reply in the queue.
 
 JHD: Yeah, I just wanted to talk for a minute about barrel files. So this is my opinion informed by many years of experience. If you want to argue with me, please feel free to do so outside of plenary time. Barrel files are at best an attractive nuance and most commonly actively harmful. In every cone bit code base I have experienced, if you convert all your barrel files into deep imports where you only pull in the things you need instead of trying to use tree shaking to do a half as attempt at cleaning up the stuff you brought in that you don’t need, your memory usage, your performance, all of these things will improve dramatically. When I was at Coinbase, the react native app got 71% smaller when we made code conversion overnight. And we definitely shouldn’t be doing anything to encourage barrel files or make them more ergonomic. We should be, you know—that said, Lots of people do use them, so making them more performing is a great thing. And I don’t object to the proposal. I I just wanted to share the perspective.
 
@@ -945,7 +945,7 @@ RBR: About the argument that barrel files should be prevented from being used by
 
 JHD: Just to clarify, I’m more focused on the messaging than on a deluded belief that we can actually change user behavior by making their favorite thing suck. If that were true, like, a lot of things on the web would be better.
 
-CDA: All right. Ashley?
+CDA: All right. ACE?
 
 ACE: I think—I was on the notes, so maybe I misheard GB, but I think GB said that the advice is that all imports should be import defer, even if that’s not what you said, I’ll still say what I said or I’m going to say. So we have import defer already inside Bloomberg using a horrific in line comment instead of the syntax. The—our advice is not the add import defer everywhere. There are easy places where this is hopefully offence to the author, like, if you’re immediately going to use that thing right under the import, definitely don’t defer it because you’re immediately going to trigger the execution, so you’re only adding overhead in that case. Our advice is, like, if you are trying to really defer something, maybe dynamic import is, like, the best thing to use. If the thing is something you’re waiting until a user clicks a button and it’s okay that there might be a delay to do the full thing, if you can go full lazy and that works for the case, go full lazy. If it’s something you’re going to use immediately, use full import and then start considering import defer, and definitely measure—we’re very fortunate we have a lot of very good tooling inside Bloomberg to measure, like, kind of what’s happening during application load and time the first paint and highlighting which modules—I think similar things in browsers with you spend a lot of time evaluating this module, and then you didn’t execute half of it. So I think, yeah, the advice would be slap this on everything like most performance things. And it’s measure first and add it because it’s—you’re seeing that this would be a win.
 
@@ -1192,7 +1192,7 @@ WH: In the spec language.
 
 DRO: Well, that’s my misunderstanding, then.
 
-CDA: There’s a point of order. Philip says a spec is not necessarily for 2. I think that’ definitely—
+CDA: There’s a point of order. PFC says a spec is not necessarily for 2. I think that’s definitely—
 
 JHD: The process document requires a spec to use—I am not reciting it from memory as I used to. Major
 
@@ -1282,11 +1282,11 @@ DRO: Yes. I know that sounds crazy. I was trying to think in terms of if you do 
 
 OFR: Okay. Fair. All right. So then maybe my comment, I think—especially if like this long if else chains, there is not even a way how you could syntactically write it as you say, transpilation needs a function. You cannot actually write it syntactically, you cannot say, okay. It starts here and it ends here with curly braces as far as I understand. And so that I would think is a bit concerning. Yeah. Like, I think historically, it’s difficult for implementation and transpiler to always get the scopes correct. That might be an argument to do the simpler thing. And yeah. Especially if you think about the future interactions with—with using and with all of these kinds of things, it could get quite tricky to get it correct and understandable. So I think slight preference for making it—for making it visible in the else as well.
 
-CDA: All right. We have a couple more minutes. There’s a reply from Nicolo
+CDA: All right. We have a couple more minutes. There’s a reply from NRO
 
 NRO: Yeah. I think the transpilation would make it difficult. Regardless of which direction we go, we give a unique name to the variable. We need some use cases. But that’s not the common case. Like, the common case is letter const. It could be transpiled the other way.
 
-CDA: There are several items in the queue. Devin, do you want to take a look at the queue and cherry pick
+CDA: There are several items in the queue. DRO, do you want to take a look at the queue and cherry pick?
 
 DRO: Is there anyone that is particularly in favour of the idea of not exposing it in the else?
 
@@ -1296,7 +1296,7 @@ DRO: I would love to get a sense as to why.
 
 GCL: In my mind, the like the—purpose of this proposal to exist to introduce a binding, that—and predicated on some condition, and if that condition does not pass, I do not want that binding to be available to other code in my program because it’s been deciding the binding is not value for some reason. If the binding is available elsewhere,I think it's an antipattern to use it. You use cases where data has validated in some way where it hasn’t. This is something we have seen like Kevin pointed out in the element recently, on the matrix sorry, that Rust changed their behavior. They made a breaking change to all things to work to enforce what I described with respect to drop code because it was causing bugs in assume production code to have Canada that outlives or accessible in the alternative of these conditions. So yeah. I would be—I am very against these bindings being available.
 
-CDA: Also + 1 against from Ross and Kevin. Clarifying question from Ashley?
+CDA: Also + 1 against from RKG and KG. Clarifying question from Ashley?
 
 ACE: I guess addressed to GCL and the crowd this general, pro, not being exposed, is it not there at all, meaning, if there was something in the outer scope, a data higher up in an scope, you could reference the outer one or is like data in a TDZ in the else to like so it—it’s there, but it’s not being defined in you tried to access it, it would throw or go to the outer scope
 
@@ -1304,7 +1304,7 @@ GCL: I think the right side of the screen is like what I would expect.
 
 DRO: My understanding would be that you would be able to access the outer data basically. So it wouldn’t be a TDZ or anything like that.
 
-CDA: All right, we are on time. There’s still a lot of things in the queue. I will capture the queue, if we have time for a continuation later, that will be swell. But it doesn’t It seems like there’s a path to Stage 2 today. So thanks, everyone. We are now going to have a short break. Please be back in the room in—at the 20 minute mark, that is just under 19 minutes. Thank you.
+CDA: All right, we are on time. There’s still a lot of things in the queue. I will capture the queue, if we have time for a continuation later, that will be swell. But it doesn’t seem like there’s a path to Stage 2 today. So thanks, everyone. We are now going to have a short break. Please be back in the room in—at the 20 minute mark, that is just under 19 minutes. Thank you.
 
 ### Speaker's Summary of Key Points
 
@@ -1357,7 +1357,7 @@ CDA: I think we should ask for support first.
 
 JRL: Oh, sorry. Does anyone support it?
 
-ACE: Yeah, it’s on the queue, MF, DLM, DJM, GM, WH, which is great. Thanks, WH. CDA, JSL, Christian.
+ACE: Yeah, it’s on the queue, MF, DLM, DJM, GM, WH, which is great. Thanks, WH. CDA, JSL, CHU.
 
 JRL: All right, so lots of support. Are there any objections to stage 2.7? Then I think you just saved us 20 minutes. Congratulations.
 
@@ -1559,7 +1559,7 @@ JAD: Yeah.
 
 JRL: Okay. We have James Snell on—to support Stage 2. Also, CDA supports—“but I have not looked at the spec. Sounds good to me if acceptance criteria have been met”
 
-EAO: \[points at screen] Chris you have now looked at the spec. This is the entirety of the change here. We add a create text module abstract operation, which takes an argument source and returns a normal completion; it performs the following steps when called return. Create default exports in the module of source. And it is used in the place where currently you check for type being JSON, then a specific thing. Rather than just doing that, we do the thing with JSON here. The same text. But if it’s type text then we perform the finish loading imported module, the result is… the only change compared to the JSON is create text module then parse JSON module which does the thing which is a subset—JSON module is parsing the JSON and then you get the module around the JSON. This doesn’t do that. It gives you the string from which the JSON would have been parsed. And then, we add a bit to note here saying that because the note is currently only about type JSON, but this is also about type text.
+EAO: \[points at screen] CDA you have now looked at the spec. This is the entirety of the change here. We add a create text module abstract operation, which takes an argument source and returns a normal completion; it performs the following steps when called return. Create default exports in the module of source. And it is used in the place where currently you check for type being JSON, then a specific thing. Rather than just doing that, we do the thing with JSON here. The same text. But if it’s type text then we perform the finish loading imported module, the result is… the only change compared to the JSON is create text module then parse JSON module which does the thing which is a subset—JSON module is parsing the JSON and then you get the module around the JSON. This doesn’t do that. It gives you the string from which the JSON would have been parsed. And then, we add a bit to note here saying that because the note is currently only about type JSON, but this is also about type text.
 
 JRL: Okay. Jordan, do you want to reply
 
@@ -1731,7 +1731,7 @@ EAO: I would like to ask for that.
 
 CDA: Just be explicit about what the condition is?
 
-EAO: I am asking for conditional 2.7 at this meeting provided that we get an okay from Shane at some point later in this meeting that he’s okay with 2.7. If he doesn’t give that okay this stays at 2 and return to the topic at a later meeting
+EAO: I am asking for conditional 2.7 at this meeting provided that we get an okay from SFC at some point later in this meeting that he’s okay with 2.7. If he doesn’t give that okay this stays at 2 and return to the topic at a later meeting
 
 JRL: Okay. That seems fine to me. Any objections?
 

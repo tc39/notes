@@ -490,7 +490,7 @@ ACE: I think Iain raised an issue from the SpiderMonkey team raising in, and I d
 
 DLM: Okay, we have under one minute folks. Actually, we just ran out of time. And I’m not holding back anyone from lunch. I don’t know, I’ll leave it up to the other chairs whether we want to try to do a quick continuation later on.
 
-CDA: If Ashley wants to do a continuation, we can.
+CDA: If ACE wants to do a continuation, we can.
 
 ACE: Yeah, and the other topic on the queue here is the kind of wider design decision of, like, neither of these things and a different thing. So whatever we do, I think I’ll be coming back to plenary with more slides. And I don’t want to take time away from stuff already on the agenda for this meeting.
 
@@ -582,7 +582,7 @@ NRO: Yes.
 
 MF: It’s not how we’ve designed it. I can think about that. Off the top of my head, I’m not going to be able to give a good reason why we don’t actually manage a resource itself. But let me think about it.
 
-CDA: Kevin?
+CDA: KG?
 
 KG: Yeah, it does work like that in Rust, but Rust obviously has its extremely powerful type checker so that it can actually guarantee that the token that is vended by the lock is the only thing that grants access to the resource. I don’t think it necessarily makes sense to do that in JavaScript, just because we don’t have that type checker. And that’s the main reason you want to do it in Rust. In JavaScript, it’s easy enough to say assuming you have a token, you’re allowed to call a `poll` method or something.
 
@@ -600,7 +600,7 @@ MF: We’re talking about user-defined governors here. If I would write my own p
 
 PFC: Okay. I was going to caution you about some of the cans of worms that we opened in Temporal when we still had protocols there. But it sounds like this doesn’t apply. Great.
 
-CDA: Ruben?
+CDA: RBR?
 
 RBR: So I believe in general, it’s great to have something like that. I’m just wondering if is it actually simple enough for most developers to being used? Because, like, the current helpers that are meant to be replaced with it are actually very simple, often. They’re just straightforward for everyone to understand, and with the governor token, definitely being more powerful, you can do a lot more with it, and I believe it is good from that perspective. Just is it really intuitive as I said? I somehow doubt that, that a lot of people will be able to use it. And there’s another downside that I see with it. It’s actually only governing in one area. You don’t know the resources of that machine that you’re running on and you do not know with whom you might also compete with a different governor on that same machine, so that’s a big problem for me that I would like to solve, because I have looked into the same problem from a different perspective before to take the overall resources of a machine into account.
 
@@ -630,7 +630,7 @@ MF: Yeah, that’s a good question. I hope this interface is not too limiting. A
 
 CHU: Yeah, coming back a little bit to this, what OFR was saying. So thanks for the presentation. I think from a developer’s perspective, I think it is useful. Especially I also think the prospect of kind of, like, you know, getting rid of so many different libraries is something that is pretty interesting. But, yes, as weed say, so I need some time to digest the whole thing, and my only concern so far would be the report, you know, like, API design, so naming, stuff like that. So that’s what people were kind of also saying in the queue. So apart from that, I think it’s good. Yeah.
 
-CDA: Stephen.
+CDA: SHS.
 
 SHS: Yeah, so if you had an additional optional parameter to the acquire method, my understanding is that all of these iterator helpers would be calling acquire. And would not know what to pass to. Obviously it’s optional for a reason, but I guess how do you see that working together?
 
@@ -740,7 +740,7 @@ RBR: If I may answer about that, so the numbers actually even if we would have a
 
 JHD: The other thing to add is that if you’re looking at how many humans have written the code that cares about, you know, non-zero numbers or like specific non-zero numbers, we haven’t done that research yet, but if you’re looking at how many humans run the code that does that, because it appears in Babel helpers that NROs queue item I’m sure will talk about later, it’s such an unimaginably large number of websites and unimaginably large number of humans are impacted, it doesn’t matter if one person wrote the code one time because it’s so prolific.
 
-CDA: Couple things. We have quite a large queue still. We have less than 15 minutes to get through it. We’re getting some feedback from folks remotely that people in the room are hard to hear. Please speak into the microphone. Make sure you are audible. (It was on when JHD was speaking). Maybe like a little closer to your mouth when you speak JHD.
+CDA: Couple things. We have quite a large queue still. We have less than 15 minutes to get through it.
 
 KG: Just to reply to the question about how often you want this just to be zero versus actually caring about the count, I think you actually care about the count pretty frequently. The case this comes up for me is that I’m using object as a string keyed map which is like a pretty normal thing to do. I mean, we do it in our own standard library functions. And I mean, how often do you care about `.size` on maps for the count just being zero versus actually caring about the count. I mean, pretty frequently you care about the actual count. Literally every time you do that, you would also do it here because, again, it’s often when you want this, it’s just because you’re using an object as a map.
 
@@ -750,11 +750,11 @@ KG: I’m very happy to see `keysLength` or `keyCount` whatever we’re calling 
 
 JHD: That is totally fair we need to make the case for them better regardless of API structure. But with the stuff RRB and I looked through all last night, all four have enough use cases we have to take enough time to prepare the case and deliver it. In a future case I’m sure we can do that.
 
-CDA: +1 from Devon and Ross. Matthew is next on the queue.
+CDA: +1 from DRO and RKG. Matthew is next on the queue.
 
 MAH: As I just mentioned we need to know about non-enumerable properties. Care about the keys. Having non-enumerable ones.
 
-CDA: +1 from Christian.
+CDA: +1 from CHU.
 
 CM: Just asking from a position of genuine ignorance: in surveying of all the code that’s out there, I don’t have any doubt that you seen occurrences of these patterns a lot, but can you tell if they’re in performance sensitive contexts? Just because people write the code a lot doesn’t necessarily mean that code gets executed a lot, in the sense of being in a loop or in some operation you’re performing frequently. Do you know anything about that?
 
@@ -818,7 +818,7 @@ JHD: Yeah, I think we should ask—I think we would like to ask for consensus fo
 
 RBR: While doing so, we can always align the names. I don’t worry about this. That should not be a problem.
 
-CDA: Do we have support for advancing `Object.keys` length to Stage 2? You have a +1 from EAO. +1 from Matthieu but frustrated about splitting. Do we have any objections to Stage 2? Okay. Noting we have a little bit of dissent about the naming and the splitting. But it sounds like you have Stage 2 for `Object.keysSomething()`. Length or count. Should be clear for the notes. Thanks. Yes, applause. James noted that the note taking was rather difficult with the quick back and forth. So please go back and check your comments for accuracy if you were speaking in the last 15 to 20 minutes, I would say. RBR and/or JHD, would you like to dictate summary, key points, conclusion, et cetera? You got consensus. Stage 2 for object—
+CDA: Do we have support for advancing `Object.keys` length to Stage 2? You have a +1 from EAO. +1 from MHN but frustrated about splitting. Do we have any objections to Stage 2? Okay. Noting we have a little bit of dissent about the naming and the splitting. But it sounds like you have Stage 2 for `Object.keysSomething()`. Length or count. Should be clear for the notes. Thanks. Yes, applause. JSL noted that the note taking was rather difficult with the quick back and forth. So please go back and check your comments for accuracy if you were speaking in the last 15 to 20 minutes, I would say. RBR and/or JHD, would you like to dictate summary, key points, conclusion, et cetera? You got consensus. Stage 2 for object—
 
 ### Conclusion
 
@@ -1117,7 +1117,7 @@ OFR: I haven’t fully thought about it, but I was wondering what is the intende
 
 JHD: My personal use cases of this are three fold. One would use the one on the left, for a predicate. One of those would actually use the one in the middle, so I can give some sort of explanation for why they're not equal/similar/whatever. And anything that is doing inspection or logging use the one on the right. I would like them as fast as possible, of course, and if we need first to exist, so be it. Unless there’s evidence we need it, it seems like we don’t.
 
-CDA: All right. I just want to note that we have quite a long queue and possibly we're dipping into later stage concerns quite a bit. This is just a proposal going for Stage 1 at this time. So just please be mindful of that and try to be somewhat brief in your comments. Ruben?
+CDA: All right. I just want to note that we have quite a long queue and possibly we're dipping into later stage concerns quite a bit. This is just a proposal going for Stage 1 at this time. So just please be mindful of that and try to be somewhat brief in your comments. RBR?
 
 RBR: When it comes to the all case iterator in general, I share the concerns from OFR that keeping around the state is actually something that might be difficult, also the object might be mutated in between. I believe if we return all, then it should be kind of like—I don’t know. Like a set or array. I don’t care.
 
@@ -1179,15 +1179,15 @@ WH: Yes
 
 JSH: No. Explicitly not.
 
-CDA: Okay. We have a reply from Michael
+CDA: Okay. We have a reply from MF
 
 MF: Yeah. I pretty much share the same sentiment of WH. I do think that this is a useful thing. But I don’t think it’s very common. There’s a small number of libraries that need to do this. And they can exist as libraries. I don’t think it can really do anything that’s all that special, as we were discussing. The difference is that it can show, and should be limited to the difference already, given that we don’t want this introducing new capabilities of piercing proxies or describing internal slots that differ. It would be great if it could additionally describe those things to the end-user, but that can’t go through the language as a string as it would basically expose that information. It doesn’t actually become special. I don’t think it’s either common enough or special enough to warrant its inclusion in the standard library
 
-CDA: Rubin
+CDA: RBR
 
 RBR: I also agree that this does not add anything that user-land cannot reproduce. Absolutely. And it actually exists, I am the main `node:assert` maintainer, and in this case, it’s an opinionated algorithm for the comparison. Every comparison algorithm and JavaScript is an opinionated algorithm. As such, the main difference or difficulty that we have is actually uniformity across all the comparisons. I believe having that as a standard is actually a good idea. Because then we don’t have to bikeshed about it anymore. It’s not a discussion, "why is this working with my one comparison algorithm, but I have the expectation for the other one". That’s something I commonly see when comparing any of the libraries and often bug reports. It’s an opinionated implementation.
 
-CDA: We have a reply from JAD: + 1. This seems like a “dev dependency.” And not needed in the standard library. Mathieu?
+CDA: We have a reply from JAD: + 1. This seems like a “dev dependency.” And not needed in the standard library. MHN?
 
 MAH: Yeah. I am wondering, do all places that do these deep comparisons agree on what is something that is equal? Because if they can’t agree, how can we agree? And find something that everybody agrees with.
 
@@ -1207,7 +1207,7 @@ RBR: So one very big reason for the algorithms deviating is performance. In node
 
 RBR: And in that case, it’s something where a lot of the comparisons are not done because they are seen as "okay, like, it’s good enough" as a comparison. And otherwise, I would slow down the comparison. That is something why I believe putting in the language is beneficial. A written in the engine itself would be a faster way to compare these.
 
-CDA: Okay. We are starting to get low on time. There’s a reply from Keith. And now, a reply from Daniel. I would really like to get to EAO’s topic. KM be brief
+CDA: Okay. We are starting to get low on time. There’s a reply from KM. And now, a reply from DRR. I would really like to get to EAO’s topic. KM be brief
 
 KM: Sure. I guess on that point, an open thing it’s good to know we standardize. They won’t keep the opportunities and it doesn’t have the behavior I want. Yeah.
 

@@ -34,11 +34,11 @@ Day One—20 January 2026
 | Istvan Sebestyen  | IS           | Ecma               |
 | Guy Bedford       | GB           | Cloudflare         |
 | Jack Works        | JWK          | Sujitech           |
-| Chengzhong Wu     | CZW          | Bloomberg          |,
-| Jordan Harband    | JHD          | Socket             |,
-| Kevin Gibbons     | KG           | F5                 |,
-| Michael Ficarra   | MF           | F5                 |,
-| Mark S. Miller    | MM           | Agoric             |,
+| Chengzhong Wu     | CZW          | Bloomberg          |
+| Jordan Harband    | JHD          | Socket             |
+| Kevin Gibbons     | KG           | F5                 |
+| Michael Ficarra   | MF           | F5                 |
+| Mark S. Miller    | MM           | Agoric             |
 | Rob Palmer        | RPR          | Bloomberg          |
 
 ## Opening & Welcome

@@ -2,7 +2,16 @@
 
 import fs from 'fs';
 
-export function checkDelegates(contents = fs.readFileSync('./delegates.txt', 'utf8').toString()) {
+export function checkDelegates(contents) {
+
+  const DELEGATES_FILE_PATH = './delegates.txt';
+
+  let isContentsDelegatesFile = false;
+
+  if (!contents) {
+    contents = fs.readFileSync(DELEGATES_FILE_PATH, 'utf8').toString();
+    isContentsDelegatesFile = true;
+  }
 
   console.debug('checking delegates...');
 
@@ -19,8 +28,36 @@ export function checkDelegates(contents = fs.readFileSync('./delegates.txt', 'ut
     'VM', 'WH', 'YK', 'ZB',
   ]);
 
+  // list of abbreviations that are not ideal.
+  // most of these are here because they are grandfathered in.
+  // new elements should only be false positives.
+  const NON_IDEAL_ABBRS = new Set([
+    'ABU', 'ACB', 'AEC', 'AEH', 'ALH', 'ARB', 'ASH', 'AVC', 'AVK',
+    'AVP', 'AWB', 'AYS', 'BNG', 'BRK', 'CCN', 'CHU', 'CJI', 'CJR',
+    'CJT', 'CZW', 'DAS', 'DDC', 'DEN', 'DFS', 'DFV', 'DHC', 'DJF',
+    'DJW', 'DLM', 'DMM', 'DMP', 'DTL', 'DVE', 'EDB', 'FED', 'FRT',
+    'FYT', 'GCW', 'GKZ', 'GPT', 'GRS', 'HUG', 'HUX', 'IOA', 'IVH',
+    'JAN', 'JAZ', 'JBS', 'JDD', 'JFP', 'JHJ', 'JHL', 'JMN', 'JPB',
+    'JPG', 'JRB', 'JSL', 'JSW', 'JTO', 'JXF', 'JXZ', 'JZY', 'KBK',
+    'KCD', 'KGO', 'KHG', 'KOT', 'KZM', 'LCA', 'LCP', 'LEO', 'LFP',
+    'LGY', 'LIU', 'LWT', 'LWW', 'LZH', 'LZJ', 'LZM', 'MAG', 'MAR',
+    'MCM', 'MCW', 'MED', 'MGR', 'MHA', 'MJN', 'MJS', 'MLS', 'MPC',
+    'MQW', 'MWS', 'MYC', 'MZG', 'NLY', 'PFC', 'PFM', 'PLH', 'PMD',
+    'PZE', 'REK', 'ROF', 'RTM', 'SFC', 'SJL', 'SJY', 'SMK', 'SNS',
+    'SRK', 'SRL', 'SSA', 'STH', 'SYH', 'SYP', 'SZH', 'SZT', 'TAB',
+    'TEK', 'TJC', 'TOC', 'TVC', 'WES', 'WMM', 'WWW', 'WXK', 'WYJ',
+    'XAX', 'XTY', 'XWC', 'YIY', 'YJM', 'YKL', 'YKZ', 'YRL', 'YTX',
+    'YYC', 'ZJL', 'ZRJ', 'ZYY',
+  ]);
 
-  const re = /^(?<name>[^(]+)(?: \((?<abbr>[^)]*)\))?$/;
+  // delegates with only one name. this list should be as close to zero as possible...
+  const MONONYMOUS = new Set([
+    'Surma',
+  ]);
+
+  const allAbbrs = new Set(contents.match(/(?<=\()[^)]*(?=\))/g));
+
+  const re = /^(?<firstName>[^( ]+) ?(?<lastName>[^(]+)?(?: \((?<abbr>[^)]*)\))?$/;
   const abbrs = new Map;
   const lines = contents.split('\n');
 
@@ -30,7 +67,7 @@ export function checkDelegates(contents = fs.readFileSync('./delegates.txt', 'ut
   for (const line of lines) {
     if (line.length === 0) continue;
     const match = re.exec(line);
-    const { abbr } = match.groups;
+    const { abbr, firstName, lastName } = match.groups;
 
     if (previousLine.localeCompare(line, 'en') > 0) {
       throw new Error(`Line ${lineNumber}: Not in lexicographic order.`);
@@ -57,9 +94,45 @@ export function checkDelegates(contents = fs.readFileSync('./delegates.txt', 'ut
     }
     abbrs.set(abbr, lineNumber);
 
+    const idealTLA = getIdealTLA(firstName, lastName);
+
+    if (idealTLA){
+      if (!allAbbrs.has(idealTLA) && !NON_IDEAL_ABBRS.has(abbr) && !TWO_LETTER_ABBRS.has(abbr)){  // duplicates the 2-letter check, but helpful to distinguish these issues
+        throw new Error(`Line ${lineNumber}: Should be using ideal TLA (${idealTLA}).  Note: because code cannot distinguish between a middle name vs a two-part last name, this may be a false positive.`);
+      }
+    } else if (!MONONYMOUS.has(firstName)) {
+      throw new Error(`Line ${lineNumber}: Unexpected mononymous delegate.`);
+    }
+
     previousLine = line;
     ++lineNumber;
   }
 
+  if (isContentsDelegatesFile) {
+
+    for (const abbr of TWO_LETTER_ABBRS) {
+      if (!allAbbrs.has(abbr)){
+        throw new Error(`abbreviation ${abbr} is included in TWO_LETTER_ABBRS, but does not exist in ${DELEGATES_FILE_PATH}`);
+      }
+    }
+
+    for (const abbr of NON_IDEAL_ABBRS) {
+      if (!allAbbrs.has(abbr)){
+        throw new Error(`abbreviation ${abbr} is included in NON_IDEAL_ABBRS, but does not exist in ${DELEGATES_FILE_PATH}`);
+      }
+    }
+
+  }
+
   console.debug('...delegates are valid\n');
+}
+
+function getIdealTLA(firstName, lastName) {
+
+  if (lastName) {
+    return `${firstName.slice(0, 1)}${lastName.slice(0, 1)}${lastName.slice(lastName.length - 1)}`.toUpperCase();
+  }
+
+  return null;
+
 }

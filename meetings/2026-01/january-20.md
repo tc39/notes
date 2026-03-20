@@ -432,7 +432,7 @@ NRO: So if you remember last plenary, we asked for consensus for Stage 2.7, but 
 
 NRO: So there’s a performance cliff when using the two proposals together. So let’s see what that means.
 
-NRO: Assume you have these examples. You have some app that imports some library. This library has a bunch of exports as the library entrypoint. And then when clicking the button it will use the `mainThing` imported from the library. So this graph, this chart on the right, it shows as the cost of doing—using the library. At startup, the initial phase of our app, we have to load the three different files. The library to dependencies and execute all of them. When we use the import defer proposal, if we change in our app, the import from importing the namespace of the library, rather than the whole thing, we get the deferred execution of the library. So we still load these three pieces, but then the execution of the whole library of Q	 the three files is happening later on, when we actually need it.
+NRO: Assume you have these examples. You have some app that imports some library. This library has a bunch of exports as the library entrypoint. And then when clicking the button it will use the `mainThing` imported from the library. So this graph, this chart on the right, it shows as the cost of doing—using the library. At startup, the initial phase of our app, we have to load the three different files. The library to dependencies and execute all of them. When we use the import defer proposal, if we change in our app, the import from importing the namespace of the library, rather than the whole thing, we get the deferred execution of the library. So we still load these three pieces, but then the execution of the whole library of Q the three files is happening later on, when we actually need it.
 
 NRO: Another way we can improve the situation here if the library author starts using the export defer proposal. So our application is still using the simple import syntax, but now their library is using library export from their internal files. So what is—what happens now with the export deferral proposal, our app is causing the main library file to be loaded and executed. Now the utility files are just gone because they are defer exports and are not importing them so it’s if they are not there.
 
@@ -844,7 +844,7 @@ DLM: Yeah, I guess, yeah, we probably shouldn’t take more time with this. Cong
 Presenter: Ruben Bridgewater (RBR)
 
 * [proposal](https://github.com/BridgeAR/error-limit-option)
-* [slides]()
+* slides
 
 RBR: All right. So like since we recently had the proposal for the stack proposal, I sought to also look more into improving errors and there is also the ongoing effort, for example, error stack trace, captureStackTrace, about if that should be an API across, and the platforms or not, and since I don’t believe so, I looked at which APIs do exist in V8 that are specific to V8 at the moment, and where we could instead standardize on something that provides more of how users are effectively using these APIs and to have a better experience overall, because, like, otherwise removal is also not really an option.
 
@@ -985,7 +985,7 @@ DLM: Sorry about that, RBR. Go ahead.
 Presenter: Ruben Bridgewater (RBR)
 
 * [proposal](https://github.com/BridgeAR/error-frames-above)
-* [slides]()
+* slides
 
 RBR: Okay. So like with this proposal, first of all, the name is not set in stone. It’s something completely open for debate from our perspective because it’s—the right name for this one is from my perspective a little bit more challenging than for limit, which is quite intuitive for me personally. Now, what I want to tackle here is, I would like to see this as a complete alternative to standardizing Error.captureStacktrace—no. What is it called? Error capture—yeah. `Error.captureStacktrace` by V8, which we have a proposal for. But the question is, where is this API actually used for? For what use cases? Do people use error stack trace—`Error.captureStacktrace` at the moment? That’s what I tried to think about and provide an API that is A, more intuitive than what people are having as an API right now. And B, more powerful. Reflecting more of the user's intent of what they are trying to achieve. Because what does error capture track trace do? You receive an object. In this case, it doesn’t have to be an error. For that object, we are going to recalculate the stack trace. And I say, recalculate. So if it is an error, we effectively calculate the frames twice. If it is like an object, then it’s only calculated once. And why do people use that with an object? Because they only care about the stack frames, but change the stack frames. They don’t want the stack frames, for example, like they have a helper function, which is just a validation. And they don’t want to show that because it makes the stack frames a little bit more verbose and less helpful for the user. So instead, they just, you know, remove the upper stack frames, and keep all the lower ones.
 
@@ -1198,4 +1198,3 @@ JHD: I guess… real quick. I didn’t mention it earlier. If—review the Githu
 DLM: Thanks, JHD.
 
 DLM: If there’s nothing else, then yeah, let’s call it a day. Thanks, everyone.
-

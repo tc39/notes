@@ -758,15 +758,11 @@ DLM: Yeah. Let's just do I've heard lots of support for stage 1. Maybe we should
 
 ### Speaker's Summary of Key Points
 
-* List
-* of
-* things
+The speaker did not provide a summary.
 
 ### Conclusion
 
-* List
-* of
-* things
+The speaker did not provide a conclusion.
 
 ## Module Scope Ceiling
 
@@ -775,20 +771,7 @@ Presenter: Zbigniew Tenerowicz (ZTZ)
 * [proposal](https://github.com/endojs/proposal-module-global)
 * [slides](https://github.com/endojs/proposal-module-global/tree/main/slides)
 
-### Speaker's Summary of Key Points
-
-* Status update: We intend to address the problem statement of the proposal by severing the connection from `ModuleEnvironmentRecord` to `GlobalEnvironmentRecord` by replacing `OuterEnv` with what we would like to call `ScopeCeiling`.
-* Open question: is the `OuterEnv` use in the spec a spec fiction?
-* Open question: How would we expose `ScopeCeiling` to be used?
-* Conversation included revisiting motivating use-cases and a mention that the updated version may be more palatable to implementers
-
-### Conclusion
-
-* None, just an update
-
-DLM: And USA are you good to take over chairing again?
-
-USA: Yep. I am. Thank you Dan. Let's move on then to module global status update. ZTZ are you there? Yeah. I see you.
+USA: Let's move on then to module global status update. ZTZ are you there? Yeah. I see you.
 
 ZTZ: Yes. I'll make sure this is visible. Okay. So I'm back with a proposal. But it's a completely different proposal now. So previously we got to stage one with just the problem statement. A way to evaluate a module and its dependencies in the context of a new global scope within the same realm. Now I would like to go through an update for how I hope to make that feasible. And the motivating cases did not change. But how much they're motivating might have changed. So I'm just pointing out that the severity of supply-chain security has increased *a little* since I last brought this up. And I also got support from 1Password. Which is in the context of the *LavaMoat* project. But specifically the interesting part from that statement is that Our current implementation is using the `with` *statements*. Which introduces some compatibility and performance issues. And this particular proposal would help alleviate some of the compatibility and performance issues..
 
@@ -913,6 +896,17 @@ USA: Yes. Let's try the 10 minute topic actually. It should join is that what yo
 JRL: Yeah. Exactly. No, I don't believe it's frozen. And Michael agreed earlier. Yeah. Michael says yes.
 
 USA: Great. Let's try that then. Thank you.
+
+### Speaker's Summary of Key Points
+
+* Status update: We intend to address the problem statement of the proposal by severing the connection from `ModuleEnvironmentRecord` to `GlobalEnvironmentRecord` by replacing `OuterEnv` with what we would like to call `ScopeCeiling`.
+* Open question: is the `OuterEnv` use in the spec a spec fiction?
+* Open question: How would we expose `ScopeCeiling` to be used?
+* Conversation included revisiting motivating use-cases and a mention that the updated version may be more palatable to implementers
+
+### Conclusion
+
+* None, just an update
 
 ## Iterator Join
 
@@ -1239,17 +1233,11 @@ GB: Thank you very much. I very much appreciate having no follow-ups further. So
 
 ### Speaker's Summary of Key Points
 
-* List
-* of
-* things
-
-But to summarize, we will make the normative change that allows source phase imports to participate in ambiguous re-export deduplication so that it does not throw if multiple star re-export statements resolve a source phase imports binding, consistent with namespaces and potentially other system bindings on module records. And because of the nature of it, it doesn't require an explicit specification change, but will naturally be the behavior under the current rebase.
+We will make the normative change that allows source phase imports to participate in ambiguous re-export deduplication so that it does not throw if multiple star re-export statements resolve a source phase imports binding, consistent with namespaces and potentially other system bindings on module records. And because of the nature of it, it doesn't require an explicit specification change, but will naturally be the behavior under the current rebase.
 
 ### Conclusion
 
-* List
-* of
-* things
+The speaker did not provide a conclusion.
 
 ## ESM Phase Imports normative PRs
 
@@ -1381,20 +1369,6 @@ GB: Yeah. I think the main difficulty from a presentation perspective is that it
 CDA: I think what we should do at this point because we are now a couple of minutes past time is do a continuation and see what you might be able to do asynchronously between now and then. We have a little bit of time. Later let me see. Not today. Tomorrow. We have about 40 minutes in the last session tomorrow that are available. So we can schedule a continuation then.
 
 GB: Okay. I would be happy to arrange a continuation and maybe myself and Ron can aim to have some of these discussions until then. And then you can progress onto the next item on the agenda
-
-???: All right. Sure. Thank you.
-
-### Speaker's Summary of Key Points
-
-* List
-* of
-* things
-
-### Conclusion
-
-* List
-* of
-* things
 
 ## Thenable Curtailment status update
 

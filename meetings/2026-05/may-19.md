@@ -1655,12 +1655,8 @@ CDA: Thank you. All right. I think that brings us to the end of day one.
 
 ### Speaker's Summary of Key Points
 
-* List
-* of
-* things
+The speaker did not provide a summary.
 
 ### Conclusion
 
-* List
-* of
-* things
+The speaker did not provide a conclusion.

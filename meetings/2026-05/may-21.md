@@ -1212,28 +1212,6 @@ DLM: Okay.
 
 NRO: One thing, GB technically, was the author of the proposal, but that was 10 years ago, so I think he can review whatever the new spec text would be.
 
-DLM: Okay, well, I believe that is the end of the agenda for this part of the day, and the only thing that we could really move up would require GB, and I think he's not available until after the break, so I think with that, we might just end up taking a longer break unless GB happens to be on the call, but I think NRO just said he's not, so.
-
-DLM: Yeah, I guess with that, let's move on to the break, and we'll just have to be a longer break than usual.
-
-JRL: So we're going to 15:20? s
-
-CDA: I think that what might make sense is GB’s constraint is starting I believe, yeah, at, at 3:00 PM. So the break was going to start at 3:00 and go till 3:20. So I think in this case, let's try to be back here at 3:00 and so that gives you all a 25-minute break. Does that sound okay?
-
-DLM: I'm not sure GB is aware of that change, though, but we can bring him at 3 o'clock and see if he's available then.
-
-### Speaker's Summary of Key Points
-
-* List
-* of
-* things
-
-### Conclusion
-
-* List
-* of
-* things
-
 ## Continuation: ESM Phase Imports normative PRs
 
 Presenter: Guy Bedford (GB)
@@ -1367,14 +1345,11 @@ JRL: Perfect. So I think, GB, we got consistency for your change and there's a d
 
 ### Speaker's Summary of Key Points
 
-* Consensus was obtained for PR #61—supporting cross-realm imports of module sources
 * Further discussion on structs proposal identity will be undertaken further before making changes to the module source identity model to ensure alignment
 
 ### Conclusion
 
-* List
-* of
-* things
+* Consensus was obtained for PR #61—supporting cross-realm imports of module sources
 
 ## Continuation: RegExp Buffer Boundaries
 

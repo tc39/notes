@@ -1162,10 +1162,10 @@ JRL: I think beyond that there was strong pushback from browsers that runtime ty
 
 ### Speaker's Summary of Key Points
 
-- The type annotations proposal has continued to evolve on syntax, and a detailed presentation explained why the approach of the champion group is for the semantics being based around type erasure, rather than runtime type checking.
-- There were significant questions from the committee about the motivation for the proposal.
-- The three browsers expressed that runtime type checking in type annotations would be unacceptable.
-- No one advocated for semantics other than type erasure.
+- A TypeScript-style type annotations syntax faces parser conflicts due to "token soups", which cause ambiguities such as parsing `/` (division vs regex) and `<` (less-than vs angle brackets).
+- Standard token soups cannot support constant arithmetic expressions inside types.
+- Diverging from TypeScript to avoid grammar conflicts would introduce a new incompatible type standard.
+- The champions noted that the grammar is tentative and they are exploring syntax options, such as the turbofish operator, to resolve these ambiguities.
 
 ### Conclusion
 
@@ -1225,10 +1225,10 @@ SYG: Sure. I also confess to not appreciating the full details of the grammar pr
 
 ### Speaker's Summary of Key Points
 
-- The type annotations proposal has continued to evolve on syntax, and a detailed presentation explained why the approach of the champion group is for the semantics being based around type erasure, rather than runtime type checking.
-- There were significant questions from the committee about the motivation for the proposal.
-- The three browsers expressed that runtime type checking in type annotations would be unacceptable.
-- No one advocated for semantics other than type erasure.
+- A TypeScript-style type annotations syntax faces parser conflicts due to "token soups", which cause ambiguities such as parsing `/` (division vs regex) and `<` (less-than vs angle brackets).
+- Standard token soups cannot support constant arithmetic expressions inside types.
+- Diverging from TypeScript to avoid grammar conflicts would introduce a new incompatible type standard.
+- The champions noted that the grammar is tentative and they are exploring syntax options, such as the turbofish operator, to resolve these ambiguities.
 
 ### Conclusion
 

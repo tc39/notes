@@ -1453,7 +1453,7 @@ AKI: Hello. I know you think I'm just going to talk about summaries and conclusi
 
 JRL: All right. Thank you. And so finally, we need to thank JetBrains because this has been a fantastic facility. Really well set up. Presentations. The meeting set up. The cafeteria was delicious. This is on par with all of our Tokyo meetings and considerably better than the one I just hosted in Google. So absolutely thank you. Please round of applause. Yeah. DJM, go ahead.
 
-DJM: One? And Gilbert, can you please go inside the room? Our technical person, MBH, if you help here. And thank you so much. Gilbert and Summit Events for help for all the setup and for all these days. Thank you so much.
+DJM: One? And Gilbert, can you please go inside the room? Our technical person. MBH, if you help here. And thank you so much. Gilbert and Summit Events for help for all the setup and for all these days. Thank you so much.
 
 JRL: It's gotta be rough listening to us for three days. All right. I think that is everything. I hope it is. End of day three. Excellent. Thank you all for being here. We actually need to leave the room so that they can set up for the meeting that's not the meeting. The social event that is happening tonight. Dimitri, would you like to tell us about that?
 

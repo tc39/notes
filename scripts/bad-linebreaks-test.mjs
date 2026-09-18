@@ -26,7 +26,7 @@ assert.strictEqual(totalMatches.badLinebreaks, 0);
 assert.strictEqual(totalMatches.extraWhitespace, 0);
 validateLines(fixed, fs.readFileSync(afterMD, 'utf8').toString());
 
-({ fixed, totalMatches } = findBadStuff(beforeMD));
+({ totalMatches } = findBadStuff(beforeMD));
 assert.strictEqual(totalMatches.badLinebreaks, 44);
 assert.strictEqual(totalMatches.extraWhitespace, 131);
 

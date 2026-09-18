@@ -4,19 +4,22 @@
     "bad-linebreaks": "node -e 'import(\"./scripts/bad-linebreaks.mjs\").then(bl => bl.processFiles(false))'",
     "bad-linebreaks:fix": "node -e 'import(\"./scripts/bad-linebreaks.mjs\").then(bl => bl.processFiles(true))'",
     "bad-linebreaks-test": "node ./scripts/bad-linebreaks-test.mjs",
-    "check-delegates": "node -e 'import(\"./scripts/check-delegates.mjs\").then(cd => cd.checkDelegates())'",
-    "check-delegates-test": "node ./scripts/check-delegates-test.mjs",
+    "check-delegates": "npm run generate-delegates -- --check",
     "fix:all": "npm run lint:fix && npm run mdlint:fix && npm run bad-linebreaks:fix",
+    "generate-delegates": "node ./scripts/generate-delegates.mjs",
     "lint": "eslint . --ext .js,.mjs,.cjs",
     "lint:fix": "npm run lint -- --fix",
     "mdlint": "markdownlint-cli2",
     "mdlint:fix": "markdownlint-cli2 --fix",
     "//": "markdownlint most likely to fail, so run that first",
-    "test": "npm run mdlint && npm run bad-linebreaks-test && npm run bad-linebreaks && npm run lint && npm run check-delegates-test && npm run check-delegates"
+    "test": "npm run mdlint && npm run bad-linebreaks-test && npm run bad-linebreaks && npm run lint && npm run check-delegates"
   },
   "devDependencies": {
-    "eslint": "^8.47.0",
+    "@eslint/js": "^10.0.1",
+    "@tc39/data-delegates": "^1.0.0",
+    "eslint": "^10.10.0",
     "glob": "^10.3.3",
+    "globals": "^17.12.0",
     "markdownlint-cli2": "^0.9.0",
     "marked": "^7.0.4"
   }

@@ -352,8 +352,7 @@ SYG: Confidently the time line I think is three releases. Let me pull up the sch
 
 MLS: Good information to have. I don’t think the Committee can ask you to do that, but I think it would be a good information to have.
 
-SYG: I am volunteering to do this because it is clear to me from this conversation that the Committee would like to have only `with`, despite my and folks like justin's personal preference. If that’s the ideal end state, I want to see how likely we can – how likely it is we can get there, but I want to go into it with
-eyes open that we might not be able to get there because it’s already shipped.
+SYG: I am volunteering to do this because it is clear to me from this conversation that the Committee would like to have only `with`, despite my and folks like justin's personal preference. If that’s the ideal end state, I want to see how likely we can – how likely it is we can get there, but I want to go into it with eyes open that we might not be able to get there because it’s already shipped.
 
 YSV: So as next steps for this part, SYG, you’re volunteering to add a counter to see what the current web usage is.
 Yes. think that’s a good conclusion for that for now.
@@ -384,8 +383,7 @@ YSV: I will move us along. Because I believe that the champion still wants to ge
 
 JHD: Yeah, I will be brief. I support stage 3, I have a non-blocking preference that we omit `assert` from the spec, I’m fine if we come up with a stronger category and even better if it indicates that this section will be removed in a future version of the spec if possible. Because then it’s clear that once it’s unshipped from everywhere, if it can be, we would hopefully be able to delete it from the spec entirely. If we made that clear in the document, that would be a nice thing to have.
 
-YSV: Thank you. So NRO, I want to give the floor back to you with a quick summary. There have been a number of expressions of support for stage 3 from various parties. There has been a con
-cern – Michael correct me if I'm wrong, this is a non-blocking concern with regards to shipping both assert and with due to the fact that we have – we don’t have assert currently in the ECMA-262 spec and preferably we wouldn't have it. Chrome offered to include a usage counter to see what the burden would be to do a transition there, however, expressed doubt that it would be not possible to ship both. There have been comment that is people would be okay with shipping both, although shipping with alone would be preferable, is that a correct summary of what we’ve had so far?
+YSV: Thank you. So NRO, I want to give the floor back to you with a quick summary. There have been a number of expressions of support for stage 3 from various parties. There has been a con cern – Michael correct me if I'm wrong, this is a non-blocking concern with regards to shipping both assert and with due to the fact that we have – we don’t have assert currently in the ECMA-262 spec and preferably we wouldn't have it. Chrome offered to include a usage counter to see what the burden would be to do a transition there, however, expressed doubt that it would be not possible to ship both. There have been comment that is people would be okay with shipping both, although shipping with alone would be preferable, is that a correct summary of what we’ve had so far?
 
 MLS Yeah, it would be my – as JHD said earlier, we would not include assert in the spec, but that other documentation by implementations would be used for that. I’m not going to block on that. I do appreciate NRO wanting to use something like Deprecated.
 
@@ -426,8 +424,7 @@ RPR: Thank you for staying longer than originally anticipated Yulia. That was ve
 
 Import attributes are the path forward for the standard, having re-achieved Stage 3.
 The keyword is `with`
-As previously, there is an options bag following it
-The options can form part of the interpretation of the module and "cache key"
+As previously, there is an options bag following it The options can form part of the interpretation of the module and "cache key"
 Unknown attributes in the import statement cause an error.
 Although a couple delegates would prefer sticking with the keyword `assert`, the majority preferred switching to the long-term optimal solution of being more semantically well-aligned using `with`
 Significant debate focused around how to communicate the deprecation.
@@ -438,8 +435,7 @@ Significant debate focused around how to communicate the deprecation.
 JS environments which currently ship `assert` are _not_ encouraged to remove it, but environments which do not yet ship `assert` are discouraged from shipping it.
 Chrome will gather data on usage of `assert` on the web, which can inform the deprecation path.
 Conditional consensus for Stage 3 on this proposal, with the conditions:
-Reviews are still needed from the reviewers who volunteered – JRL and JHD, as well as the editors
-The wording for normative optional+legacy needs to be updated to something stronger, probably "deprecated", and explaining the goal to remove it from the specification.
+Reviews are still needed from the reviewers who volunteered – JRL and JHD, as well as the editors The wording for normative optional+legacy needs to be updated to something stronger, probably "deprecated", and explaining the goal to remove it from the specification.
 
 ## Async Explicit Resource Management
 
@@ -690,9 +686,7 @@ DE: There were arguments on both sides. On one side there is a footgun. On the o
 
 ### Conclusion
 
-Consensus for stage 2
-Plan to iterate during stage 2 on floating point restriction
-WH & JHD to review
+Consensus for stage 2 Plan to iterate during stage 2 on floating point restriction WH & JHD to review
 
 ## Float16Array for Stage 2 & 3
 
@@ -810,10 +804,7 @@ CDA: Can you stop the screen share and somebody can kindly pull up the notes to 
 
 ### Speaker's Summary of Key Points
 
-Implementations were not comfortable with stage 3 because they need time to determine implementability
-interest in ‘bfloat16’ to be explored
-interest in wasm interop to be explored
-should include a rounding method
+Implementations were not comfortable with stage 3 because they need time to determine implementability interest in ‘bfloat16’ to be explored interest in wasm interop to be explored should include a rounding method
 
 ### Conclusion
 
@@ -932,8 +923,7 @@ So one direction that could be pursued here is to withdraw the proposal; another
 
 CDA: We’ve got KG in the queue.
 
-KG: Yes. I very strongly support having regex escape method. It’s gotten trickier with v-mode regexes, because v-mode introduces a handful of punctuators that need to be escaped. And u mode does not allow unescaped characters – so we would need to modify those so that they allow those escaped characters as identity escapes. But with that change, it is
-perfectly possible to have a regex.escape that escapes a thing in such a way it can be used in any context within a regex except in the repetition context. Of course it will mean different things in different contexts, like things will be escaped properly. And, like, that is a thing that people have wanted forever and we have been telling people for a long time, we’ll work on it, and we can’t just continue not doing it and saying we will work on it. It is possible for us to say we are never going to do this and I would not be in favour of that, but that would be a better outcome than the current state where we say we’re going to keep working on it. Because if we say we’re never going to do it, then node is just going to ship the thing that everyone wants and probably browsers will as well and everyone will have the thing that everyone wants, it’s just that we won’t have specified it. That’s silly. We should just do the thing people want. We got to deal with the extra complexity from V mode, but we should just do the thing people want
+KG: Yes. I very strongly support having regex escape method. It’s gotten trickier with v-mode regexes, because v-mode introduces a handful of punctuators that need to be escaped. And u mode does not allow unescaped characters – so we would need to modify those so that they allow those escaped characters as identity escapes. But with that change, it is perfectly possible to have a regex.escape that escapes a thing in such a way it can be used in any context within a regex except in the repetition context. Of course it will mean different things in different contexts, like things will be escaped properly. And, like, that is a thing that people have wanted forever and we have been telling people for a long time, we’ll work on it, and we can’t just continue not doing it and saying we will work on it. It is possible for us to say we are never going to do this and I would not be in favour of that, but that would be a better outcome than the current state where we say we’re going to keep working on it. Because if we say we’re never going to do it, then node is just going to ship the thing that everyone wants and probably browsers will as well and everyone will have the thing that everyone wants, it’s just that we won’t have specified it. That’s silly. We should just do the thing people want. We got to deal with the extra complexity from V mode, but we should just do the thing people want
 
 JHD: My reply is just what he said, the function form will be shipped if we don’t decide to do something because that’s what everyone wants.
 
@@ -1027,10 +1017,7 @@ JHD: Bearing in mind that node at least - that the only reason they haven’t sh
 
 ### Speaker's Summary of Key Points
 
-MM is concerned about composing embedded languages by string mashing
-MM expressed an opinion that the tagged template form is the superior solution
-Everyone else who expressed an opinion is happy with the escape function
-KG agrees with the string mashing concern in general but thinks that in this case in particular can be made fully safe
+MM is concerned about composing embedded languages by string mashing MM expressed an opinion that the tagged template form is the superior solution Everyone else who expressed an opinion is happy with the escape function KG agrees with the string mashing concern in general but thinks that in this case in particular can be made fully safe
 
 ### Conclusion
 

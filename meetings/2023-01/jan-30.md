@@ -5,7 +5,7 @@
 
 **Remote attendees:**
 
-```
+```text
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Waldemar Horwat      | WH             | Google             |
@@ -49,7 +49,7 @@ Presenter: Ujjwal Sharma (USA)
 
 USA: The committee agreed by consensus to work with a stenographer, with no objections or opt-outs from note-taking, details at https://github.com/tc39/Reflector/issues/460
 
-USA:  the next meeting is 21st to the 23rd of March and it will be a hybrid meeting. Thank you to everyone who give the feedback in the survey. We have you quorum ahead of time. We have to approve the meeting minutes. Waiting for objections. I assume you approve the last meeting minutes. Does anyone have any objections against the current agenda? No as well. All right.
+USA: the next meeting is 21st to the 23rd of March and it will be a hybrid meeting. Thank you to everyone who give the feedback in the survey. We have you quorum ahead of time. We have to approve the meeting minutes. Waiting for objections. I assume you approve the last meeting minutes. Does anyone have any objections against the current agenda? No as well. All right.
 
 ## Report from the TC39 Secretariat
 
@@ -67,15 +67,15 @@ IS: Okay, good. Basically I’m not going to repeat it. These are the document t
 
 IS: This is the 001 ECMA statistic for 2022 and the other One this is also just a mirror, the agenda of this meet Meeting. We don’t have more documents here for the general Assembly. Why are this interesting for TC39 TC39 member and parallel Because we have here this double documentation. One is the official one on the TC39 website. The other one is TC39 is using basically for Internet Purposes and here basically this is the GIT hub and Also the other two that we are using. I go now to the next one. Now the next one, this is new. And this came from a discussion that I had with Patrick LUTE and I have already reported that I’m always Getting I would say repeated complaint about our long Meeting minutes. And obviously the reason for the long meeting minutes Are first of all, you know, the long technical notes And those ECMA members who are not interested in the Detailed work of TC39, they are not interested in the Technical notes and many of them have the feeling that The first part which would be the summary part, it is Not really formative enough. So Patrick suggested that we should improve the part That we are outputting, what kind of contribution that Were presented to the TC39 meeting. We are publishing all the contribution that we have Received and we can collect after the meeting, you knowp Know, the different slides. This is always published and stored this ECMA document. But here the issue is why don’t we ask each Contribution to provide us a very short one part – one Paragraph of short summary what their contribution is About. And then we can also from the secretariat maybe also Copy the resolution, what has been then decided on this Contribution. So here the request would be if everybody agrees with It, pleased to provide Patrick or to myself a paragraph Of your contribution and then we could include it into The next meeting minutes in order to improve a little Bit the quality, general quality of our minutes that we Are preparing I go to the next one. The next one is here. The membership changes. Basically there were a number of companies which were Formally approved by the general assembly meeting in December that could already participate and then some Of them indeed participate in the TC39 meeting. The only thing was that I could not formally vote. We didn’t have a formal vote. Associate member is ordinary member and then we have Received this withdraw letter in the secretarial secretariate in November ‘22 from paypal. I have to tell you and remind you because this is a Repeated mistake all the time that if any company wants To withdraw from ECMA, then please, please do do do it before The 1st of October. If you don’t do it before the 1st of October, then Automatically it prolongs for one year and then we have The discussion, you know, is it too late? Is it not too late? Are you going to pay? Are you not going to pay? Et cetera, et cetera. Fortunately it is not my business anymore. But Patrick has to deal with it. But we have the same situation also now with paypal. So for the next year, if somebody wants to quit from ECMA, which of course, you know, I would not wish and Recommend to you, but if it has to be the case, then Please do it before the 1st of October. So this is regarding this slide and let me go here. The next slide is recent TC39 meeting participation. I go immediately to the second page (slide 11) which I don’t know Why – maybe if it is in presentation mode, I don’t Know. It is on the next page. I don’t know why. The point is I can also tell it verbally, you know, so It was nothing dramatic than what we have seen before. We have a steady participation in the meetings. More or less with the same number. Nothing really exciting. I haven’t the slightest idea why I cannot show it to You. I go to the next page which is about the information That I have taken from the ECMA document 002-2023. Regarding the statistics. On this slide, you see the ECMA website, the entire Website.
 
-RPR:  We have  one minute to go I would say.
+RPR: We have one minute to go I would say.
 
 IS: How many?
 
 RPR: One or two?
 
-IS:  I’ll use two.
+IS: I’ll use two.
 
-IS:  So I would say please read it. Next one or so, this is the ECMA website page access 2022. The other one was 2021. I always take it two years you can compare it. It is basically very similar the two years. The same is also true now I am on the next one for 2021. Regarding the ECMA PDF standard down loads. They are very, very similar to the ‘22 figures which is On the next slide and you can see here in 2021, the Share was 58% of all of the down loads ECMA TC39 was Dominated in 2021 but the same is also true for 2022. Now it is a little bit less 55%. But we are still dominating here the scheme. Here these are the access documents. The first access document, so HTML access, I have only Taken the four last year additions for ECMA 262 and for ECMA 402 and you can see also there are significant Number approximately a factor of four between the down Downloads and between the access number. So you can also read here the statistics by yourself. Next slide is the plenary schedule TC39. You know it also from the invitation to this meeting. So I can switch. Also regarding the rules that has been also published On the GIT hub and it is just taking repetition and Here it is coming five or six paces. It is just repetition regarding the ISO renewal of the Two standard. Here I am not going to read it through again. I just – because I have already presented also at the Last meeting in a little bit also I said it here and so I am not going to present it. The two menus are also not terribly new and important Because we have already seen it. So this is for the next year’s general assembly meeting Meeting. One in Japan in Tokyo and the other one in December in The U.S. There is no place for the ExeCom meeting. It is my fault. So I don’t know. So ExeCom meeting and then regarding the – here are the ExeCom meeting and the next one, the last one I have Announced already in the December meeting who is for President and vice-president and treasurer and ExeCom Member for 2023. All approved. No surprises. Congratulations to them. And SAMINA has been approved by the new secretarial secretary General. That’s it. Thank you very much.
+IS: So I would say please read it. Next one or so, this is the ECMA website page access 2022. The other one was 2021. I always take it two years you can compare it. It is basically very similar the two years. The same is also true now I am on the next one for 2021. Regarding the ECMA PDF standard down loads. They are very, very similar to the ‘22 figures which is On the next slide and you can see here in 2021, the Share was 58% of all of the down loads ECMA TC39 was Dominated in 2021 but the same is also true for 2022. Now it is a little bit less 55%. But we are still dominating here the scheme. Here these are the access documents. The first access document, so HTML access, I have only Taken the four last year additions for ECMA 262 and for ECMA 402 and you can see also there are significant Number approximately a factor of four between the down Downloads and between the access number. So you can also read here the statistics by yourself. Next slide is the plenary schedule TC39. You know it also from the invitation to this meeting. So I can switch. Also regarding the rules that has been also published On the GIT hub and it is just taking repetition and Here it is coming five or six paces. It is just repetition regarding the ISO renewal of the Two standard. Here I am not going to read it through again. I just – because I have already presented also at the Last meeting in a little bit also I said it here and so I am not going to present it. The two menus are also not terribly new and important Because we have already seen it. So this is for the next year’s general assembly meeting Meeting. One in Japan in Tokyo and the other one in December in The U.S. There is no place for the ExeCom meeting. It is my fault. So I don’t know. So ExeCom meeting and then regarding the – here are the ExeCom meeting and the next one, the last one I have Announced already in the December meeting who is for President and vice-president and treasurer and ExeCom Member for 2023. All approved. No surprises. Congratulations to them. And SAMINA has been approved by the new secretarial secretary General. That’s it. Thank you very much.
 
 > **Note**
 > The presentation is fully included in the slides (tc39/2023/002.pdf) and also as audio/video in tc39/2023/004.mp4.
@@ -86,17 +86,17 @@ DE: Yeah. I wanted to speak to IS suggestion that we capture the summaries. I wa
 
 DE: If the secretary doesn’t have time for that, it would Be welcome if somebody else in committee did this. LEO did this in past meetings. We’re behind in the summaries. I think it would be welcome. I think the pressure taken off from transcribing should give us all a bit more energy to do this important task of making accessible summaries at meetings.
 
-IS:  So if you give us the document, you are talking about, of course, then we can also do it.
+IS: So if you give us the document, you are talking about, of course, then we can also do it.
 
 DE: : You already have the document. This is the minutes that we give you every meeting. Every heading will have a summary at the bottom. You can look at all those different minutes documents That you have submitted to the filer. They all have summaries and it is just a matter of collating them.
 
-IS:  They’re in the technical notes?
+IS: They’re in the technical notes?
 
-DE:  Yes. We can cut it short between you and myself. If I know, we can also take it ourself. Because we have to take out also the summary, the decision. I’m talking about the decision but here –
+DE: Yes. We can cut it short between you and myself. If I know, we can also take it ourself. Because we have to take out also the summary, the decision. I’m talking about the decision but here –
 
 ??: That’s right. The decisions are all listed in a section in the notes For each particular topic.
 
-IS:  I have no problem with the decision part that is always at the end. I have problems with the summary of the contribution,.
+IS: I have no problem with the decision part that is always at the end. I have problems with the summary of the contribution,.
 
 DE: So to summarize the contribution, for each Contribution Contribution there’s link for supporting documents. I think we can provide the links and the authors and List the conclusion. That would be a useful start for summary document. Of course, more useful to have a summary of the Discussion. But that’s more involved. You have a link, a reference to the contribution.
 
@@ -105,7 +105,7 @@ IS: Okay. So then I suggest that we cut it short outside of this meeting. In ord
 DE: I agree. But I want to emphasize it would definitely be useful to have more detailed summaries of the meetings. If anybody wants to get involved in that, then please,
 You know, be in touch.
 
-IS:  Okay,. So contributors are always welcome for sure. Thank you.
+IS: Okay,. So contributors are always welcome for sure. Thank you.
 
 RPR: Thank you for this. Let’s move on.
 
@@ -117,8 +117,7 @@ RPR: So the next item I’d like to give some reminders about Some things on the
 
 ??: One more thing, we also need a TG3 chair as reminded In the chat.
 
-??: Yes. And MF points out we’re looking for a TG3
-Chair and someone who likes security please do so. That’s all from me. Next up, we have Kevin GIBBONS with ECMA status update Or maybe someone else from the group.
+??: Yes. And MF points out we’re looking for a TG3 Chair and someone who likes security please do so. That’s all from me. Next up, we have Kevin GIBBONS with ECMA status update Or maybe someone else from the group.
 
 ## ECMA262 Status Updates
 
@@ -126,18 +125,18 @@ Presenter: Kevin Gibbons (KG)
 
 - [slides](https://docs.google.com/presentation/d/1kcZOA8jUq-VMUv-NN89uXb-Jpl_wDmV_hyaB4ZJG_xU/)
 
-KG:  So this is the usual editor’s update and going over editorial And normative changes. Very little in the way of notable changes. We are of course continuing to make our usually metrics at Clean up and consistency. The only change that is worth calling to the attention of Plenary was this one [2681](https://github.com/tc39/ecma262/pull/2681), which is a tweak to how the “code evaluation state” is trapped. This is relevant for the machinery, for generators and AC Functions and not relevant for those not looking at those and It is a nontrivial change to that machinery. If you previously looked at it and been confused hopefully the Machinery is more sensible now and the other improvements in The type line for those as well. And then normative changes we’ve landed:
+KG: So this is the usual editor’s update and going over editorial And normative changes. Very little in the way of notable changes. We are of course continuing to make our usually metrics at Clean up and consistency. The only change that is worth calling to the attention of Plenary was this one [2681](https://github.com/tc39/ecma262/pull/2681), which is a tweak to how the “code evaluation state” is trapped. This is relevant for the machinery, for generators and AC Functions and not relevant for those not looking at those and It is a nontrivial change to that machinery. If you previously looked at it and been confused hopefully the Machinery is more sensible now and the other improvements in The type line for those as well. And then normative changes we’ve landed:
 
 KG: The first is this [2819](https://github.com/tc39/ecma262/pull/2819) that is a Tweak to the mechanics of the generators that we got consensus For at the previous meeting or the one before, I forget which. Possibly the one before that. This all got consensus recently the one out for long. 2819 test landed and chipped in a couple of – [2905](https://github.com/tc39/ecma262/pull/2905) is not Actually a normative change. It was this change to the way that the module importing machinery is wired. This is in order to make it easier to do some of the module Related changes that we have coming through proposals. And there’s a change for integration on the HTML side but no Actual immediate normative for – and to [2973](https://github.com/tc39/ecma262/pull/2973) is this sort of Web reality change that in the atomics machinery allows Browsers to optionally make time outs somewhat larger as part Of spectrum integrations. This is something that some browsers are already doing and Many browsers feel they need to do. No notable other sorts of changes to the specification or Environment since then. And then in temples of upcoming work, basically the same list List, I don’t believe we have added anything to this (slide 5). I’m not going to go through it again. But just a note we are still working on refactoring a bunch Of machinery for clarity and consistency. That’s all we had in terms of the editor update.
 
 ### Conclusion/Decision
 
 - Normative changes:
-	- #2819: Avoid mostly-redundant await in async yield*
-	- #2905: Layering: Add HostLoadImportedModule hook
-	- #2973: Allow implementations to pad timeouts in SuspendAgent
+  - #2819: Avoid mostly-redundant await in async yield*
+  - #2905: Layering: Add HostLoadImportedModule hook
+  - #2973: Allow implementations to pad timeouts in SuspendAgent
 - Editorial changes:
-	- #2681: Use Abstract Closure to set the code eval state
+  - #2681: Use Abstract Closure to set the code eval state
 
 ## ECMA402 Status Updates
 
@@ -145,13 +144,13 @@ Presenter: Ujjwal Sharma (USA)
 
 - [pull request](https://github.com/tc39/ecma402/pull/729)
 
-USA:  So hello everyone. I wouldn’t take a lot of your time. And get right to the point. Last meeting if you remember, we presented a couple of Normative issues for  for  for approval and this one wasn’t approved Because of the creation of this request #729 and the meeting itself Itself. Took a while for us to get around to it. But this has been reviewed by the TG2 and the implementers Have confirmed that this is a good change. So I would like to ask for committee consensus on this one.
+USA: So hello everyone. I wouldn’t take a lot of your time. And get right to the point. Last meeting if you remember, we presented a couple of Normative issues for for for approval and this one wasn’t approved Because of the creation of this request #729 and the meeting itself Itself. Took a while for us to get around to it. But this has been reviewed by the TG2 and the implementers Have confirmed that this is a good change. So I would like to ask for committee consensus on this one.
 
 RPR: A point of order from DE.
 
 DE: Do we have a conclusion for the previous topic? For KG’s update?
 
-KG:  No. I don’t think there’s ever a conclusion for those updates. I mean, it’s their updates.
+KG: No. I don’t think there’s ever a conclusion for those updates. I mean, it’s their updates.
 
 ??: Just FYI.
 
@@ -165,9 +164,9 @@ KG: I can put something in the notes. I don’t think it is – there’s much t
 
 DE: Great, thanks.
 
-USA:  Apart from that, nothing to add. Nothing on the queue. So I take it that folks are not against the change. It changes the error handling sort of snippet here in ECMA to Use the correct starting year that is one not negative zero.
+USA: Apart from that, nothing to add. Nothing on the queue. So I take it that folks are not against the change. It changes the error handling sort of snippet here in ECMA to Use the correct starting year that is one not negative zero.
 
-RPR:  Thank you. DLM is Plus one on the change. And the queue is empty.
+RPR: Thank you. DLM is Plus one on the change. And the queue is empty.
 
 USA: Perfect. Thank you all.
 
@@ -177,7 +176,7 @@ USA: I could add that to the notes.
 
 ??: At the end of each item, because the transcriptionist is Giving us obviously the play by play, please can the presenter Write up the conclusion with the main points. This is the usual section that we have in the notes where it Says conclusion.
 
-??:  I’d ask that it include brief rational and discussion point Points that were especially critical.
+??: I’d ask that it include brief rational and discussion point Points that were especially critical.
 
 ??: Thank you.
 
@@ -203,14 +202,14 @@ RPR: Thank you.
 
 Presenter: Philip Chimento (PFC)
 
-PFC:  We don’t have slides. We prepared a couple of paragraphs which I will read out and I can paste these in the notes. If there are no questions, they will be the conclusions. They’re very short.
+PFC: We don’t have slides. We prepared a couple of paragraphs which I will read out and I can paste these in the notes. If there are no questions, they will be the conclusions. They’re very short.
 
 ### Conclusion/Decision
 
 For stage 3 proposals, we now have tests for `isWellFormed`. We've had recent PRs making progress on coverage of `Array.fromAsync`, `RegExp` modifiers, `Temporal`, `Intl.NumberFormat` V3, and `Intl.DurationFormat`. We'd love help on others; some of them already have volunteers so ask in the "TC39 Test262 Maintainers" channel on Matrix if you're interested, to make sure we don't have overlapping efforts on the same thing!
 Our trial run of our new RFC process was successful and we've used it to make some adjustments to our draft process document, which will become official soon. In further news about contributor documentation, we're preparing a document explaining the rationales for some existing choices made in the test262 codebase. We're hoping to add to this as new questions come up so that it's a place where contributors can get answers to the question "why is this like this, and what should I to know if I want to change it?"
 
-RPR:  Thank you PFC.
+RPR: Thank you PFC.
 
 ## Updates from CoC Committee
 
@@ -236,7 +235,7 @@ DE: Occasionally we may want to wait before shipping stage 3 proposals. One reas
 
 DE: We have a number of – just a couple, stage 3 proposals that are not ready to ship. One is Temporal. We keep having normative changes for Temporal. But it’s mostly stable. And in general stage 3 is usually stable and should still be understood to be so. We had ShadowRealm almost shipped in Safari with HTML integration being unfinished. The goal of the presentation is make a way to document clearly when essential pieces are known to be missing to reduce the chance of having disagreement between implementations and when things are shipped. What we want to avoid is a compatibility matrix. We want to avoid a state where different engines ship or different implementations in general ship different things or different subsets of things, and then application developers have to worry about not just is this feature there or not, but which version of the future it is?
 
-DE: So my suggestion here is to document in the proposals repository, maybe in a separate column just for stage 3. Proposals saying this proposal even though stage 3 is “not ready to ship”. The strong default would remain that Stage 3 means something is ready to ship. We would be documenting the exceptional cases. There’s a question of how you would set this value. My suggestion is that the proposal champions themselves set the value. And of course this is considered non binding. It’s fine for engines not to ship this column marks and ship  things that do have it marks, but it’s a clear central documentation point to make sure that we’re on the same page.
+DE: So my suggestion here is to document in the proposals repository, maybe in a separate column just for stage 3. Proposals saying this proposal even though stage 3 is “not ready to ship”. The strong default would remain that Stage 3 means something is ready to ship. We would be documenting the exceptional cases. There’s a question of how you would set this value. My suggestion is that the proposal champions themselves set the value. And of course this is considered non binding. It’s fine for engines not to ship this column marks and ship things that do have it marks, but it’s a clear central documentation point to make sure that we’re on the same page.
 
 DE: Some feedback I have gotten so far about this proposal: some people like that it’s lightweight like this idea. Some people argue there should be a mechanism for settling disputes so in case the champion is kind of being negligent in saying their proposal fine, but then other people say there’s a real problem, then in that case, we should have some way of settling that. I think it’s important that we work it out if the situation like this comes up, but at the same time the strongest version of this that one could imagine ever requiring consensus on becoming shippable (“Stage 3.5”). I think that would add significant friction to our process of having an additional fifth consensus seeking stage. And I think there’s – I’m not the only one in committee who thinks that. I’m not so keen on the very strong version of this. But certainly if there’s any kind of disagreement on the marking of a proposal, it’s fair to bring up anything like that at all in plenary.
 
@@ -248,11 +247,11 @@ DE: So I have the PR for this in the how-we-work repository. And I’m wondering
 
 DLM: Thank you. We discussed this internally at the SpiderMonkey team and we’re in favour of this. Explicit documentation is a good idea and we like the idea. This is a lightweight process and I agree that the idea that any sort of dispute resolution we can worry about that, if and when the dispute comes up. Given the idea this is non-binding and seems like we have a dispute resolution mechanism built in. Anyways, yes, support for this. Thank you.
 
-MLS:  The process document is pretty clear. Implementation types expected at stage 3 are spec compliant, but not shipping. That is the time for implementers to try things out and work out the bugs. At stage 4, the implementation types expected are shipping implementations. Now, saying that, we do implement things at stage 3. We’re not super eager to ship them, they usually go into our technology preview, nightly and things like that. I don’t want to change the process document to say something is shippable or not shippable at stage 3. Certainly, implementors can decide if they want to ship something that is at stage 3, that is their own decision.
+MLS: The process document is pretty clear. Implementation types expected at stage 3 are spec compliant, but not shipping. That is the time for implementers to try things out and work out the bugs. At stage 4, the implementation types expected are shipping implementations. Now, saying that, we do implement things at stage 3. We’re not super eager to ship them, they usually go into our technology preview, nightly and things like that. I don’t want to change the process document to say something is shippable or not shippable at stage 3. Certainly, implementors can decide if they want to ship something that is at stage 3, that is their own decision.
 
 DE: I’m kind of surprised by this comment because I thought that JSC had repeatedly shipped things to the main version of Safari at stage 3.
 
-MLS: It’s rare that we do, unless we have high confidence a proposal is stable and isn’t likely to change. Typically we “ship” a stage 3 proposal in our nightly or technology preview. I made this same statement in the past.  This is the way we tend to work in WebKit.
+MLS: It’s rare that we do, unless we have high confidence a proposal is stable and isn’t likely to change. Typically we “ship” a stage 3 proposal in our nightly or technology preview. I made this same statement in the past. This is the way we tend to work in WebKit.
 
 DE: I mean, the goal here is to build high confidence in stage 3.
 
@@ -264,11 +263,11 @@ MLS: They’re not. Look at the process document. At Stage 3, implementation typ
 
 DE: We had quite a long back and forth about the semantics of this text. I think it’s just genuinely ambiguous and we can form different kinds of shared understanding about the way we want to do things.
 
-MLS: I don’t share the understanding you’re talking about. Again, something is not shippable unless it’s fully stage 4. And even stage 4, sometimes we have to go back. And that happens. Stage 3, yes, we and other implementers will implement various features that are at stage 3 but we certainly are reluctant to ship things that are stage 3 to release versions of Safari. The JSC  engine is used for all kinds of other applications.
+MLS: I don’t share the understanding you’re talking about. Again, something is not shippable unless it’s fully stage 4. And even stage 4, sometimes we have to go back. And that happens. Stage 3, yes, we and other implementers will implement various features that are at stage 3 but we certainly are reluctant to ship things that are stage 3 to release versions of Safari. The JSC engine is used for all kinds of other applications.
 
-JHD:  MLS, I would say that my interpretation of the process document is that things have to be shipped in order to get Stage 4 which means that in fact, they are shippable at stage 3 - but they’re not required to be shipped at stage 3 which is why it’s fine that safari or any other implementation would choose not to ship until stage 4. I don’t see how there’s any argument it’s stage 3 isn’t shippable because if nothing is shipped in stage 3, nothing will ever get stage 4 according to the process document. That’s always how we’ve interpreted it.
+JHD: MLS, I would say that my interpretation of the process document is that things have to be shipped in order to get Stage 4 which means that in fact, they are shippable at stage 3 - but they’re not required to be shipped at stage 3 which is why it’s fine that safari or any other implementation would choose not to ship until stage 4. I don’t see how there’s any argument it’s stage 3 isn’t shippable because if nothing is shipped in stage 3, nothing will ever get stage 4 according to the process document. That’s always how we’ve interpreted it.
 
-MLS: JHD, I disagree with that. We have Test262 tests required for stage 3. We use those to test the implementations. Obviously implementations also do the other testing, like making sure It doesn’t break something else, has good performance and things like that. Again, stage 3 is a feedback process. We are not done when we’re at stage 3. And if we, TC39,  think that at stage 3 we’re going to ship betas to the world, we get ourselves in a place where there’s difficulty. We’re going to talk about an issue of that later in this meeting were we have gotten ourself in some difficulty with an implementation shipping something that is stage 3. I think we would  like to avoid these types of problems.
+MLS: JHD, I disagree with that. We have Test262 tests required for stage 3. We use those to test the implementations. Obviously implementations also do the other testing, like making sure It doesn’t break something else, has good performance and things like that. Again, stage 3 is a feedback process. We are not done when we’re at stage 3. And if we, TC39, think that at stage 3 we’re going to ship betas to the world, we get ourselves in a place where there’s difficulty. We’re going to talk about an issue of that later in this meeting were we have gotten ourself in some difficulty with an implementation shipping something that is stage 3. I think we would like to avoid these types of problems.
 
 JHD: I hear what you’re expressing; I’m not arguing that point at all. I’m saying maybe we’re using different definitions of the word “shippable”. I’m saying that the process document always said that entrance criteria is shipping implementations. You can’t enter stage 4 until a proposal has shipped. I think the word ‘shippable’ like according to that definition means that it happens in stage 3 for someone.
 
@@ -286,7 +285,7 @@ MLS: We haven’t changed our point of view. And if I understand correctly, a lo
 
 DE: So I don’t want to assert anything about your past or present point of view but it’s clear that your point of view is not the universal one. So given that –
 
-MLS: There is no universal one. That is the point I’m making!  There is no universal one.
+MLS: There is no universal one. That is the point I’m making! There is no universal one.
 
 DE: I agree. So I’m wondering given the context –
 
@@ -336,7 +335,7 @@ SYG: Yeah, I agree with JHD’s interpretation. I think somebody has to ship dur
 
 MLS, I’m interested to hear if you think nonbinding documentation is the way to coordinate those exceptional cases like Temporal? I am not advocating changing the process document to explicitly say that no implementations ship until Stage 4.
 
-MLS: The issue is that “non-binding” is just that. So it’s a hint, right? It’s not binding. I’m not sure what signal it sends. The real issue here I think in all of our minds and the elephant in the room is when do we want developers to use a new feature?  I don’t think we  want developers to use it till stage 4 unless they fully understand there is a possibility the feature may change.
+MLS: The issue is that “non-binding” is just that. So it’s a hint, right? It’s not binding. I’m not sure what signal it sends. The real issue here I think in all of our minds and the elephant in the room is when do we want developers to use a new feature? I don’t think we want developers to use it till stage 4 unless they fully understand there is a possibility the feature may change.
 
 MLS: I agree that we need to get some feedback from developers and I think that’s when we hide something behind a flag and let people try it out or make it available in a Canary or something like that.
 
@@ -358,7 +357,7 @@ DE: For a process similar to Apple’s wouldn’t it be useful, given that these
 
 MLS: I find it very useful for every proposal to list the known implementations of the proposal and their shipping status (nightly, canary, release X, behind flag).
 
-YSV: Actually I did do something like this in my personal tracking of the TC39 proposal’s repo ages ago. I don’t know if anyone remembers that. I had the status where we were in shipping. It’s difficult to keep up to date but maybe we can pull ‘canIUse’  data to get information if I understood you correctly Michael.
+YSV: Actually I did do something like this in my personal tracking of the TC39 proposal’s repo ages ago. I don’t know if anyone remembers that. I had the status where we were in shipping. It’s difficult to keep up to date but maybe we can pull ‘canIUse’ data to get information if I understood you correctly Michael.
 
 DE: Yeah. We could enable columns for that in the proposal’s repo. Would that be something that you’re in favour of? For stage 3 and stage 4 proposals.
 
@@ -392,7 +391,7 @@ SYG: MF, I would not agree to a new stage. Let me be somewhat blunt here. I thin
 
 SYG: So anyways I think one of the dimensions that I think you know standards ought not to prevent folks from competing on is the speed with which they implement and ship something. Like, there’s risk involved with being first shippers which I think various implementations have all experienced at this point.There’s also some rewards. And I don't want to take that dimension of competition away. For that I don’t want an extra stage for which there is to be coordinated shipping like a consensus seeking stage. Some things required coordinating shipping, we can agree on that that case by case. That’s totally fine. But as a matter of course, I don’t want a proposal to be we have to kind of flip the bit at the same time. That seems not not explicitly not something that I want. DE’s proposal to document the exceptional cases is a good start. I do believe these are exceptional cases.
 
-DE:  Whatever requires coordination that we do will have to not require sign off from all browsers at once, for example. You’re saying that’s not – we couldn’t set a bit that says now we’re in lock step mode. Is that what you’re saying?
+DE: Whatever requires coordination that we do will have to not require sign off from all browsers at once, for example. You’re saying that’s not – we couldn’t set a bit that says now we’re in lock step mode. Is that what you’re saying?
 
 SYG: That’s what we’re saying. We can all agree to the lockstep mode for exceptional proposals. I don’t want that to be a consensus seeking stage now unless it’s really needed. I don’t see a reason for it. I would argue against it as the consensus seeking stage and not argue against it for exceptional cases. Exceptions come up. That’s why I’m in general opposed to the new stage: I think it gets us closer to the lock step mode. I don’t think that’s the role of the standards committee. That was all.
 
@@ -413,7 +412,7 @@ Presenter: Daniel Ehrenberg (DE)
 - [PR](https://github.com/tc39/how-we-work/pull/122)
 - [slides](https://docs.google.com/presentation/d/1OvxOZrRmKovnVk4CW6GbvLGS5cnnjP6bJyp4cdC5A4U/edit#slide=id.p)
 
-DE:  Strengthening TC39’s consensus process. You know, we use consensus here. Let’s just review some reasons why it’s a good thing to do. First, it’s a conservative default, which means that we’re going to leave things how they are now rather than mess things up if we have any significant concern. Making a change is a big deal involving lots of implementations, lots of JavaScript developers and we want to get it right.
+DE: Strengthening TC39’s consensus process. You know, we use consensus here. Let’s just review some reasons why it’s a good thing to do. First, it’s a conservative default, which means that we’re going to leave things how they are now rather than mess things up if we have any significant concern. Making a change is a big deal involving lots of implementations, lots of JavaScript developers and we want to get it right.
 
 DE: Consensus enables certain specialized delegates to have a strong seat at the stable to preserve, for example, web compatibility and invariants and ensures no critical stakeholders are excluded.
 
@@ -433,7 +432,7 @@ DE: It could be as simple as like, you know, because sometimes we like to have t
 
 DE: It would be great to, you know, a brief rationale why people want to support things. Again, I think this is a really low bar. If people can’t articulate why they think something should happen and only the presenter can, does the committee really have consensus on it?
 
-DE: I would also want to explicitly solicit non-blocking dissent and give space for this to be discussed. Because it currently feels a little too high pressure to raise concerns. This has been a problem for years; years of people being either not  raising their concerns or raising their concerns and seeing them be misinterpreted for a block. Both of those things simultaneously occurred. Maybe a worse problem in the past than recently.
+DE: I would also want to explicitly solicit non-blocking dissent and give space for this to be discussed. Because it currently feels a little too high pressure to raise concerns. This has been a problem for years; years of people being either not raising their concerns or raising their concerns and seeing them be misinterpreted for a block. Both of those things simultaneously occurred. Maybe a worse problem in the past than recently.
 
 DE: So do we have consensus on consensus? Is this a reasonable slight change in the process for gathering consensus at the end of the TC39 topic?
 
@@ -443,7 +442,7 @@ DE: Yeah. Honestly about the stage 2 to stage 3 transition, I completely agree w
 
 WH: I would disagree with that restriction as well.
 
-DE: Well, I feel like we frequently have a thing where the chair says:  is the objection a stage N concern?’ Anyway, I’m fine of excising this from the document. I was trying to fully document what we do now. We can leave that, you know, to be discretionary or something.
+DE: Well, I feel like we frequently have a thing where the chair says: is the objection a stage N concern?’ Anyway, I’m fine of excising this from the document. I was trying to fully document what we do now. We can leave that, you know, to be discretionary or something.
 
 WH: I would prefer to excise that. People are going to read that text and then try to object to objections.
 
@@ -500,11 +499,11 @@ KG: Yes. I don’t think we need to do the whole I nominate, I second, mostly be
 
 DE: They write down the names and reasons in the notes as part of this?
 
-KG: I don’t think they need to have reasons. It’s just presumably the reason is because you think it’s a  good proposal. But I would be in favour of the names at least.
+KG: I don’t think they need to have reasons. It’s just presumably the reason is because you think it’s a good proposal. But I would be in favour of the names at least.
 
 DE: Part of this is I explicitly want to solicit the reasons. Do you think that makes sense?
 
-KG: I’m happy for there to be more discussion during this part of the process. I’m mostly happy about that so people aren’t in full agreement  So everything is excellent have the space to say that. I think the people who think it is good in exactly the form it is, there’s not much more to be said about it. We have just had the champions presenting on all of the reasons it’s good. Now if you like it for a different reason than the champion, say so. If you are just like I agree with the champion, I want to support it, you don’t need to say anything more than I support advancing.
+KG: I’m happy for there to be more discussion during this part of the process. I’m mostly happy about that so people aren’t in full agreement So everything is excellent have the space to say that. I think the people who think it is good in exactly the form it is, there’s not much more to be said about it. We have just had the champions presenting on all of the reasons it’s good. Now if you like it for a different reason than the champion, say so. If you are just like I agree with the champion, I want to support it, you don’t need to say anything more than I support advancing.
 
 DE: Great. Can we agree on on two people as the minimum bar here? I would prefer that. There was a back and forth in the issue. Any thoughts on this?
 
@@ -583,7 +582,7 @@ SYG: `onOverflow` is a hook that gets called when the tab text is Too long. What
 
 SYG: What about to freeze the prototypes? We have tried this in the past. And it is difficult to apply to existing applications Especially ones that want to run off the shelf library code. The ‘override mistake’ is kind of endemic everywhere and difficult To work around. Even if you could do that and you had a completely first party Environment, apps that have polyfills that need to actually Mutate built in prototypes to polyfill missing features, that Then puts the onus on the application to find a freeze point. That is a nontrivial task and deployment concern. There’s size concerns that you have to freeze application to Find prototypes. The technique is general enough that most of the time you get The most bang for your buck to pollute the built in prototypes Like `Object.prototype`. If you have a large application you could also pollute the Application prototypes themselves to exploit privileges and Exploit the application. Strict mode to get non-silent breakages. Not great for DX if you have to point out the potential issue To the application developers and most interestingly which is this is a very recent CVE, I suggest folks with the interest In this things follow through is a detailed story walk through And basically some application called NodeBB, I’ve already Forgotten what it does. It is some sort of server side form software or something Where freezing the prototype would not have prevented the kind Of – the technique that they use to exploit this software Where they overrode something.constructor property via Prototype pollution or data only pollution. The point is data-only attack was – it wasn’t over riding. That’s not the point. It wasn’t overriding. It was with this kind of data only attack where you mutate Something not necessarily in the prototype that could lead you to the security vulnerability that led us to the solution that We’re proposing is not to freeze prototypes. And that CV is interesting that that is an attack that would Have been prevented by this somewhat radical change that we’re Proposing here. Not something that would have been prevented by the freezing Of prototypes. The TLDR is that at scale deployment of prototype freezing Despite it being a capability in the language we have already,
 
-SYG: We have found at scale deployment to be impractical and can’t Use it to remove the noodle on reducing vulnerabilities here. So what we’re thinking is the starting point is can we cut off Access paths to prototypes instead? And the key observation is that prototype exploits – Prototype pollution exploits rely on unintentional paths to The prototype that the developers didn’t consider. You have three strong property keys and the combinations that Give access prototype and `__proto__` and constructor. Can we cut off access? It’s important of intentional and unintentional access. I said in the previous slide is preventing unintentional Access paths. Our assumption here is that static property access via dot is A good proxy measure of intention by the application developer. If you’re actually typing (obj).prototype assume you mean the Prototype than doing something like object bracket key. All of the attacks in the wild rely on computer access i.e. Unintended access. I want to take a quick side bar. This is a core design mistake that the reason – like, the fact that we have these string property access key paths to These deep, you know, object protocol things is a design mistake, core my mistake of JS been there since day 1 and pointing me to the term that Gila Bracha coined called "stratification". That says meta-level facilities must be separated from base-level functionality. Property access is base-level thing. Prototype fiddling is met at that-level thing. To combine the two things via the same language facility like Property access is opening a can of worms of trouble as we’re Seeing right now. Ideally we would have a stratified thing and we would have Explicit reflection APIs that lets you do the prototype Fiddling but property access can’t do that. It’s too late for that. As a side bar in the future “stratification” seems like a good Property to keep for any programming language. So why do we want to solve cutting off the access to these String paths in the language? As we have given the mode  the common root cause of Encapsulation breakage of data versus code we can’t solve that At user land. It’s impractical to deploy. Without language changes importantly remains outside of the Threat model of existing mitigations of a bunch of things like JS prototypes are just how JS works. The if we don’t change just how JS works, the mitigations we Can’t really work around a core feature of the language. And it’s infeasible, for example, to taint check all data flow Flow. The sanitation is about code. And this is not about. This is about the data-only attacks. And tying into the stratification design principle I think Stratifying prototype access is high impact even by itself In the language. We have already moved in the direction and have object.prototype and had to have `__proto__` for existing code. Can we do something more radical with the opt in mode that I’m About to present?
+SYG: We have found at scale deployment to be impractical and can’t Use it to remove the noodle on reducing vulnerabilities here. So what we’re thinking is the starting point is can we cut off Access paths to prototypes instead? And the key observation is that prototype exploits – Prototype pollution exploits rely on unintentional paths to The prototype that the developers didn’t consider. You have three strong property keys and the combinations that Give access prototype and `__proto__` and constructor. Can we cut off access? It’s important of intentional and unintentional access. I said in the previous slide is preventing unintentional Access paths. Our assumption here is that static property access via dot is A good proxy measure of intention by the application developer. If you’re actually typing (obj).prototype assume you mean the Prototype than doing something like object bracket key. All of the attacks in the wild rely on computer access i.e. Unintended access. I want to take a quick side bar. This is a core design mistake that the reason – like, the fact that we have these string property access key paths to These deep, you know, object protocol things is a design mistake, core my mistake of JS been there since day 1 and pointing me to the term that Gila Bracha coined called "stratification". That says meta-level facilities must be separated from base-level functionality. Property access is base-level thing. Prototype fiddling is met at that-level thing. To combine the two things via the same language facility like Property access is opening a can of worms of trouble as we’re Seeing right now. Ideally we would have a stratified thing and we would have Explicit reflection APIs that lets you do the prototype Fiddling but property access can’t do that. It’s too late for that. As a side bar in the future “stratification” seems like a good Property to keep for any programming language. So why do we want to solve cutting off the access to these String paths in the language? As we have given the mode the common root cause of Encapsulation breakage of data versus code we can’t solve that At user land. It’s impractical to deploy. Without language changes importantly remains outside of the Threat model of existing mitigations of a bunch of things like JS prototypes are just how JS works. The if we don’t change just how JS works, the mitigations we Can’t really work around a core feature of the language. And it’s infeasible, for example, to taint check all data flow Flow. The sanitation is about code. And this is not about. This is about the data-only attacks. And tying into the stratification design principle I think Stratifying prototype access is high impact even by itself In the language. We have already moved in the direction and have object.prototype and had to have `__proto__` for existing code. Can we do something more radical with the opt in mode that I’m About to present?
 
 SYG: So current thinking on this, on solving this is the two parted solution. One is opt in secure mode that removes the problematic string-keyed access paths. This is opt in. It is backwards breaking. And at the same time add new reflection APIs and what those reflection APIs look like is totally in the air for pending discussions. Maybe they could be new symbols and maybe could be reflect dot whatever. The idea is we want – you know, we don’t want to take away the capability of prototype fiddling but take away the unintentional really easy to accidentally get wrong capability. So the secure mode which is not a great name but we need to have something to be able to discuss. The whole point of this secure mode is cut off string-based property access when opted into. And there’s two main options on which path to cut. We can cut off `__proto__` and prototype or `__proto__` and constructor. And how do we opt in?
 
@@ -597,9 +596,9 @@ RPR: I think we can move on. The first question is from JHD.
 
 JHD: Yeah, I mean, all the examples in your slides if you opt into a secure mode, you have to know to do that - and if you know to do that, then you also salt your keys, or use `Object.create(null)` or `{ __proto__ null }`, or use a `Map` or something. Unless you turn on the mode by default, I don’t think it would really achieve any of the goals you want. node, for example, already has a flag that lets you remove the `__proto__` accessor and you can run it with that - but lots of arbitrary modules in the ecosystem rely on the functionality. I’m incredibly confident that trying to do this by default would break the web in sufficient quantities that it wouldn’t be viable. I don’t see a lot of value in if it’s required to be opt in, that said, obviously the exploration area is great. Even though the number of prototype pollution attacks that turn into real exploits is nonzero, I think it’s small, but still worth addressing.I feel like the biggest benefit would be removing a bunch of false positive CVEs from the ecosystem that cost a lot of developers’ time. But either way, I mean, I think it’s worth exploring - that’s a stage 1 concern - but I wanted to share my skepticism.
 
-SYG: Noted. I want to lean on SDZ to provide a more detailed answer here. But I want to respond first to this node flag thing. So our hunch is that we’re not saying we’re going to remove `__proto__` entirely. The idea is that this is a two-parted approach where we realize having .property access to __proto__ to .prototype to constructor to keep it working. The way we propose that is with automatic rewriting so we don’t have to manually migrate the entire code base. The other thing about using none prototype objects I think that speaks to the at scale deployment thing. If you had the luxury of time and whatever to basically re rewrite your whole world, then yes you could just never use prototype inheritance at all. That seems a challenge in itself. But at the very least we want to use third party libraries, you can’t really do that. As an application you could opt in the mode. With the automatic rewriting you get the benefits for free. We share your concern. Without the automatic rewriting step that that pure opt in will be difficult to get deploying and working. SDZ, do you have anything to add here?
+SYG: Noted. I want to lean on SDZ to provide a more detailed answer here. But I want to respond first to this node flag thing. So our hunch is that we’re not saying we’re going to remove `__proto__` entirely. The idea is that this is a two-parted approach where we realize having .property access to **proto** to .prototype to constructor to keep it working. The way we propose that is with automatic rewriting so we don’t have to manually migrate the entire code base. The other thing about using none prototype objects I think that speaks to the at scale deployment thing. If you had the luxury of time and whatever to basically re rewrite your whole world, then yes you could just never use prototype inheritance at all. That seems a challenge in itself. But at the very least we want to use third party libraries, you can’t really do that. As an application you could opt in the mode. With the automatic rewriting you get the benefits for free. We share your concern. Without the automatic rewriting step that that pure opt in will be difficult to get deploying and working. SDZ, do you have anything to add here?
 
-SDZ:  Yeah. I want to speak up about the idea of using create null or the literal prototype null as an integration for this. I think it’s important to understand why we think that doesn’t work. We did a few experiments with this. We found a few problems with it. So the first one is you might create an object (inaudible) that doesn’t have any prototype and you think that is secure until some function at to the object might be array or number or string or maybe another object and now that has a prototype prototype, right? What you’re doing is essentially moving the goalpost one level deeper, right? And you really don’t have a way of creating let’s say a string with no prototype or a number with no prototype or array with no prototype. All of which could be polluted if they went into a common practice function. This is code and only protecting one object apart from sort of the issues that you would have in deploying it that is sort of find everywhere where I have an object literal and replace it with this which is granted sort of something that you can do and with the person speaking and saying if you’re willing to do that you are willing to do (inaudible) but I think those would be the strongest reasons why that solution is not good enough.
+SDZ: Yeah. I want to speak up about the idea of using create null or the literal prototype null as an integration for this. I think it’s important to understand why we think that doesn’t work. We did a few experiments with this. We found a few problems with it. So the first one is you might create an object (inaudible) that doesn’t have any prototype and you think that is secure until some function at to the object might be array or number or string or maybe another object and now that has a prototype prototype, right? What you’re doing is essentially moving the goalpost one level deeper, right? And you really don’t have a way of creating let’s say a string with no prototype or a number with no prototype or array with no prototype. All of which could be polluted if they went into a common practice function. This is code and only protecting one object apart from sort of the issues that you would have in deploying it that is sort of find everywhere where I have an object literal and replace it with this which is granted sort of something that you can do and with the person speaking and saying if you’re willing to do that you are willing to do (inaudible) but I think those would be the strongest reasons why that solution is not good enough.
 
 RBR: Thanks. Let’s see next on the queue is Waldemar.
 
@@ -674,7 +673,7 @@ PFC: I support this going to stage 1. I think wherever there’s an unintended e
 
 RPR: Justin.
 
-JRL: Absolutely love this if we could disable the computed  property access where the key is possibly `__proto__`. All of the exploits that I have ever seen have been unintentional accesses to the dudner proto when you don’t know  what the key is because of some user value. If we prevent – if we can change the behavior so that computed access is one behavior that prevents access and intentional dot proto access allows you to set manipulations on the prototype, I think this could be web compatible. I would love to see it work.
+JRL: Absolutely love this if we could disable the computed property access where the key is possibly `__proto__`. All of the exploits that I have ever seen have been unintentional accesses to the dudner proto when you don’t know what the key is because of some user value. If we prevent – if we can change the behavior so that computed access is one behavior that prevents access and intentional dot proto access allows you to set manipulations on the prototype, I think this could be web compatible. I would love to see it work.
 
 MAH: I have a quick reply. I have seen pollution with proto and dot constructor name access. So dot constructor, dot prototype things like that. Just preventing proto will not be enough.
 
@@ -686,8 +685,7 @@ DMM: I think it looks very encouraging. I think it’s worth checking languages 
 
 RPR: And Dan.
 
-DE: This is a really interesting proposal. When I heard about it, it is a little ad hoc. Now that we see this kind of preponderance of vulnerabilities I think it’s important to do in this space. I think it’s important to prioritise mitigation based on both how exploited they are in practice. We can see this is fairly exploited in practice as well as how simple and contained the mitigation is where this is a pretty simple and contained mitigation. So earlier discussion about whether this is a double standard. I think it makes sense for us to bring this proposal to stage
-1 because it scores pretty high on on those metrics.
+DE: This is a really interesting proposal. When I heard about it, it is a little ad hoc. Now that we see this kind of preponderance of vulnerabilities I think it’s important to do in this space. I think it’s important to prioritise mitigation based on both how exploited they are in practice. We can see this is fairly exploited in practice as well as how simple and contained the mitigation is where this is a pretty simple and contained mitigation. So earlier discussion about whether this is a double standard. I think it makes sense for us to bring this proposal to stage 1 because it scores pretty high on on those metrics.
 
 RPR: Mark.
 
@@ -817,7 +815,7 @@ RPR: This all makes sense. Thank you.
 
 ### Conclusion/Decision
 
-* Editors will make this change, with WH's objection noted.
+- Editors will make this change, with WH's objection noted.
 
 ## Symbols as WeakMap keys
 
@@ -826,7 +824,7 @@ Presenter: Ashley Claymore (ACE)
 - [proposal](https://github.com/tc39/proposal-symbols-as-weakmap-keys)
 - [slides](https://docs.google.com/presentation/d/1FMQkmZH5YHsX9G_kPsTQtI3s5bPKJ3hVMJXA2Hz5z1w/)
 
-ACE: This is Symbols as WeakMap keys. If all goes well, towards the end I will be asking for Stage 4. So this is a bit of context for people that might need it, so as far as I could tell, this goes back to at least GCP’s issue on ECMA-262 (issue [#2038](https://github.com/tc39/ecma262/issues/1194)) back in 2018 saying "why can’t we use symbols as WeakMap keys?". And this issue alone minus all the proposal things has a lot of comments on it. So lots of fun things to read. And that is what this proposal addresses. It says, “yes”, you can use some symbols as `WeakMap` keys and not just `WeakMap` keys but also `WeakSet` entries and a `WeakRef` target and also the target and token of `FinalizationRegistry`. So the whole family of weak and garbage collection related APIs. So in terms of the spec there’s no new APIs per-say, it’s just changing things that were previously a `TypeError` to no longer be a `TypeError`, and that is the observable change. So a big part of this proposal is discussing “which symbols?” and the answer is: all symbols except for those that have been returned from `Symbol.for`, a.k.a. ‘registered symbols’. They are not allowed. All other symbols are, whether that’s a good idea or not. So we reached stage 3 back in June. The PR is open to ECMA-262 and just to note that it hasn’t had a editor approval on that yet but seems like it’s just final editorial tweaking, not normative. SYG left good comments and I have updated the PR after those. I’m not 100% sure on the policy here of – I know Stage 4 requires editor signoff, so I guess I would like to ask for Stage 4 modulo editor review. I think the PR is 100% of the way there in terms of normative and very clone on editorial changes. We have the test262 tests merged. Thank you to PFC for writing those. That was massively appreciated. We  also have two implementations, one V8 and one in JavaScriptCore.
+ACE: This is Symbols as WeakMap keys. If all goes well, towards the end I will be asking for Stage 4. So this is a bit of context for people that might need it, so as far as I could tell, this goes back to at least GCP’s issue on ECMA-262 (issue [#2038](https://github.com/tc39/ecma262/issues/1194)) back in 2018 saying "why can’t we use symbols as WeakMap keys?". And this issue alone minus all the proposal things has a lot of comments on it. So lots of fun things to read. And that is what this proposal addresses. It says, “yes”, you can use some symbols as `WeakMap` keys and not just `WeakMap` keys but also `WeakSet` entries and a `WeakRef` target and also the target and token of `FinalizationRegistry`. So the whole family of weak and garbage collection related APIs. So in terms of the spec there’s no new APIs per-say, it’s just changing things that were previously a `TypeError` to no longer be a `TypeError`, and that is the observable change. So a big part of this proposal is discussing “which symbols?” and the answer is: all symbols except for those that have been returned from `Symbol.for`, a.k.a. ‘registered symbols’. They are not allowed. All other symbols are, whether that’s a good idea or not. So we reached stage 3 back in June. The PR is open to ECMA-262 and just to note that it hasn’t had a editor approval on that yet but seems like it’s just final editorial tweaking, not normative. SYG left good comments and I have updated the PR after those. I’m not 100% sure on the policy here of – I know Stage 4 requires editor signoff, so I guess I would like to ask for Stage 4 modulo editor review. I think the PR is 100% of the way there in terms of normative and very clone on editorial changes. We have the test262 tests merged. Thank you to PFC for writing those. That was massively appreciated. We also have two implementations, one V8 and one in JavaScriptCore.
 
 ACE: With that I would like to move on asking for stage 4 with explicit support from at least two people as well.
 
@@ -854,8 +852,8 @@ USA: ACE, congratulations on stage 4. I suppose that’s all for the presentatio
 
 ### Conclusion/Decision
 
-* Stage 4
-* Support from JHD and RMS
+- Stage 4
+- Support from JHD and RMS
 
 ## JSON.parse source text access
 
@@ -864,7 +862,7 @@ Presenter:Richard Gibson (RGN)
 - [proposal](https://github.com/tc39/proposal-json-parse-with-source)
 - [slides](https://docs.google.com/presentation/d/1HZVC1MI889MxMjHfmrqGiJtHc5THdmQpFI_ocAyR3q4/edit)
 
-RGN: So this is an update on `JSON.parse` source text access. Hoping to get through it relatively quickly. I will just jump right in. Background first:  We have a lossiness problem with `JSON.parse`, for example arbitrarily precise sequences of digits in the source are parsed into Numbers instances and even though revive functions exist and can interact with the parsed values, they don’t have access to the source and so it’s already lossy. If I want to represent this sequence of nines as perfectly accurate BigInt, I can’t achieve that with the current functionality available. As a related problem, revivers lack context. So if you want to transform only form part of a data structure,
+RGN: So this is an update on `JSON.parse` source text access. Hoping to get through it relatively quickly. I will just jump right in. Background first: We have a lossiness problem with `JSON.parse`, for example arbitrarily precise sequences of digits in the source are parsed into Numbers instances and even though revive functions exist and can interact with the parsed values, they don’t have access to the source and so it’s already lossy. If I want to represent this sequence of nines as perfectly accurate BigInt, I can’t achieve that with the current functionality available. As a related problem, revivers lack context. So if you want to transform only form part of a data structure,
 you’re left to figure out for yourself what any particular invocation relates to. It’s really easy to confuse for instance a string that looks like a special data type with the actual data type itself and lack of that context causes problems and type confusion.
 
 RPR: Sorry, RGC. Point of order that we need someone to help with the notetaking.
@@ -951,6 +949,5 @@ ACE: Thank you everyone. Really appreciate it.
 
 ### Conclusion/Decision
 
-* Stage 4
-* Explicit support from PFC, MM, JHD, ABU
-
+- Stage 4
+- Explicit support from PFC, MM, JHD, ABU

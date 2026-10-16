@@ -1542,6 +1542,8 @@ RGN: All right. In that case, I don't remember the full details of all of these.
 
 DRR: The queue is empty. Do you have anything else that we want to conclude with, Shane?
 
+Summary: Three in-progress PRs were discussed.
+
 ### Speaker's Summary of Key Points
 
 The speaker did not provide a summary.

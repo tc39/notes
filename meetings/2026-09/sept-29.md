@@ -1546,11 +1546,11 @@ Summary: Three in-progress PRs were discussed.
 
 ### Speaker's Summary of Key Points
 
-The speaker did not provide a summary.
+* The temperature was positive on all proposed changes: array inputs, disallowing significant digits, and excluding time sequence units.
 
 ### Conclusion
 
-No conclusion recorded for the minutes, please refer to transcript for more details.
+* Will return for Stage 2.7 in a future meeting.
 
 ## Intl Unit Protocol Stage 2 Update
 
@@ -1615,11 +1615,12 @@ SFC: Yeah. So the conclusion here is for the protocol, we'll use the spec, which
 
 ### Speaker's Summary of Key Points
 
-The speaker did not provide a summary.
+* The temperature on the currently specified coercion behavior was positive.
+* RGN pushed back on ignoring the protocol for non-unit formatters.
 
 ### Conclusion
 
-No conclusion recorded for the minutes, please refer to transcript for more details.
+* Will return in a future meeting for Stage 2.7
 
 ## Active proposals missing champions: `function-sent` (Stage 2), `collection-normalization` (Stage 2), `destructuring-private` (Stage 2)
 

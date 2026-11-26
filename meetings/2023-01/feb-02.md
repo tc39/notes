@@ -4,7 +4,7 @@
 
 **Remote attendees:**
 
-```
+```text
 | Name                 | Abbreviation   | Organization       |
 | -------------------- | -------------- | ------------------ |
 | Waldemar Horwat      | WH             | Google             |
@@ -83,7 +83,7 @@ MLS: So you want to get-you’re basically lying to get as close to intrinsics a
 
 JHD: Correct. And, Shu, I see your question.
 
-SYG:  Yes. One of the motivations that you said was you agree that it affects few develop, but it affects more users downstream.
+SYG: Yes. One of the motivations that you said was you agree that it affects few develop, but it affects more users downstream.
 
 JHD: Uh-huh.
 
@@ -117,7 +117,7 @@ JHD: That’s right.
 
 YSV: I also recall this proposal initially came from the shadow realms proposal and the desire to be able to get unpolluted globals from, for example, an iframe to then modify them potentially in some way or to be able to use the unpolluted global in some way. And I’m wondering if maybe my memory of the goal of that proposal is different. I do see two potentially separate use cases here. One where overriding the get intrinsics with custom values -- I know SES case and also your use case. I’m wondering is there a more widespread use case we can fit to better or in fact the way to go the what Shu is suggesting, a more bounded API. Those are the questions I got.
 
-JHD: As far as your question on the queue, how widespread is your technique, I can only answer the one package I use for this has 40 million downloads a week. I don’t know if anybody else uses this technique, and that’s the package I use for it. That gives you an idea of the scope and limit of that scope for me. I can’t speak for MM and crew, but I have no correlation with ShadowRealms for this. Without full object transfer ShadowRealm doesn’t do anything for me, however, with either just hidden intrinsics or with what  I’ve currently got proposed, it would also work for ShadowRealm use cases because a new ShadowRealm would have the same capability and you can modify or restrain as you like. I agree with you and SYG that it would be a much smaller and more bounded set to just be hidden intrinsics, thing we can’t reach with property access.
+JHD: As far as your question on the queue, how widespread is your technique, I can only answer the one package I use for this has 40 million downloads a week. I don’t know if anybody else uses this technique, and that’s the package I use for it. That gives you an idea of the scope and limit of that scope for me. I can’t speak for MM and crew, but I have no correlation with ShadowRealms for this. Without full object transfer ShadowRealm doesn’t do anything for me, however, with either just hidden intrinsics or with what I’ve currently got proposed, it would also work for ShadowRealm use cases because a new ShadowRealm would have the same capability and you can modify or restrain as you like. I agree with you and SYG that it would be a much smaller and more bounded set to just be hidden intrinsics, thing we can’t reach with property access.
 
 YSV: Right, just to clarify my ShadowRealm comment, maybe my memory is shaky here, but I recall when we orally discussed in ShadowRealm and -- we decided to not make it transparent in the way you had originally intended, you said you needed an API. And part of my question is are we still solving the same use case in this case?
 
@@ -143,21 +143,21 @@ YSV: Okay, thanks.
 
 JHD: And personally, I would be very loath to tacitly endorse mutating globals, because people already do it with all the discouragement in the ecosystem, but I think that’s worth discussing separately, like Kevin said. I think SYG might be next.
 
-SYG: Yeah, I want to separate this cache some intrinsic at first ride in the Firefox on posted use case as a separate ones and exhaustively do this for every single intrinsic use case that ??  raised. I think the former technique is much wider spread, and I think the current language serves that use case very well, because it’s -- by its nature, you’re getting a few things. Like, I’m implementing -- like, I want to call the original dot map thing. I want to cache that. I think we need a new feature for that. But the exhaustively -- to exhaustively do this for every single intrinsic thing, it’s one of the problems that this is actually solving here, plus the hidden intrinsic thing. That seems like the missing capability for robustness that you want.
+SYG: Yeah, I want to separate this cache some intrinsic at first ride in the Firefox on posted use case as a separate ones and exhaustively do this for every single intrinsic use case that ?? raised. I think the former technique is much wider spread, and I think the current language serves that use case very well, because it’s -- by its nature, you’re getting a few things. Like, I’m implementing -- like, I want to call the original dot map thing. I want to cache that. I think we need a new feature for that. But the exhaustively -- to exhaustively do this for every single intrinsic thing, it’s one of the problems that this is actually solving here, plus the hidden intrinsic thing. That seems like the missing capability for robustness that you want.
 
 JHD: Right. I can actually ask, Shu, you’ve implied and said some performance and memory concerns – any memory concerns about including the potential set of intrinsics be so large as including everything. Is that only for the iteration side or is that also for the retrieval side?
 
-SYG: It is only for the retrieval side. Like the iteration side, because you have made the iteration return strings, that’s no longer an issue for the iteration side. For the retrieval side, the problem is that every time you create a global, if you want the original intrinsics to be reachable via anything, via property access or via -- sorry, not via property access, via a special get intrinsic function, we have to keep slots for that -- for every single intrinsic that you might want to get so we keep the originals, because the normal ones that are  gotten via property access could be overridden.
+SYG: It is only for the retrieval side. Like the iteration side, because you have made the iteration return strings, that’s no longer an issue for the iteration side. For the retrieval side, the problem is that every time you create a global, if you want the original intrinsics to be reachable via anything, via property access or via -- sorry, not via property access, via a special get intrinsic function, we have to keep slots for that -- for every single intrinsic that you might want to get so we keep the originals, because the normal ones that are gotten via property access could be overridden.
 
 JHD: I assume that every implementation by enlarge has some sort of dirty bit where it knows if a built-in property has been modified or not. Does V8 have something similar?
 
-SYG: It is not my understanding that any implementation has that. Why would you track that on properties?  Like, these are just properties like any other properties.
+SYG: It is not my understanding that any implementation has that. Why would you track that on properties? Like, these are just properties like any other properties.
 
 JHD: I see. Okay, yeah, I guess I was assuming that that was some sort of optimization hint. But I mean, obviously I don’t know how these things are implemented. But my thinking just now had been, like, you’d only need to store those pointers for the things that had been modified because you could just -- if you knew which had been modified and not, you could just do the lookup, the property lookup, because you know --
 
-SYG:  That seems way too complex a scheme to implement for this anyhow.
+SYG: That seems way too complex a scheme to implement for this anyhow.
 
-SYG:  But the point is that we -- that the memory concern is this, like, we have to have slots for every single intrinsic, and that is what we don’t want, because that is a per global cost, and especially on mobile, this is a big issue. Like, this is an issue that we’re going to have to also do something special with for temporal just adds so many things. But, you know, there’s really no way around that and the use case for temporal is kind of set in stone, everyone is convinced. I’m trying to think of ways that could satisfy your use case without having to incur that cost.
+SYG: But the point is that we -- that the memory concern is this, like, we have to have slots for every single intrinsic, and that is what we don’t want, because that is a per global cost, and especially on mobile, this is a big issue. Like, this is an issue that we’re going to have to also do something special with for temporal just adds so many things. But, you know, there’s really no way around that and the use case for temporal is kind of set in stone, everyone is convinced. I’m trying to think of ways that could satisfy your use case without having to incur that cost.
 
 MLS: Yeah, I just wanted to say that it sounds like we do a similar thing to what V8 does. When we create a global object, we create it from intrinsics and it’s kind of a special case. We do have some lazily created object-based upon first access for less use things. But it’s -- the process is kind of unique in initialization. So you’re reif ing for us is also going to be some work for us as well.
 
@@ -177,7 +177,7 @@ BT: Before we move on to a new topic, I just wanted to quick -- just remind you 
 
 KG: This is just to say I like the design where you’re returning a string. In particular, for the patching case that we’re discussing, it’s a lot easier to just patch getIntrinsics and not have to worry about the thing that’s returning a string, because that iterator only actually gives you access to the string, so I like the design with the string iterator.
 
-DE: This is an interesting proposal idea. If the performance issues that SYG raised, both for lazy loading style implementations and for implementations of V8’s style can be worked out, then great, I’m not opposed to it. But I think this is part of a more general need, and I think this need comes up in your libraries and you’re handling it, but it’s having code that is high integrity, code that you write that comprehensively closes over all of the original load time global environment. And this is code that’s extremely hard to write. In code that comes up in multiple different environments, like intrinsics of certain JavaScript engines, core kind of extension code in some systems, as well as systems like Node.js core or libraries like the ones you maintain. And sort of platform core code in other cases. In Bloomberg, we do sometimes use a realm that doesn’t have the ShadowRealm boundary for this kind of purpose.  So overall, I think we need to think about some higher level mechanisms to solve this problem comprehensively, because we have lots of evidence from real vulnerabilities that such manual mechanisms, even when they do have access to the intrinsics through various means are error prone, and those errors result in kind of breaking the exact extraction that they’re trying to meet. So, yeah, not opposed to this moving forward, but if we’re trying to solve this problem, I would like us to think about some higher level solutions that may be partly tooling, may be partly thing that are outside of what we standardize. But it would be great if we had some kind of broader solution where you write normal looking code and it comprehensively becomes something that meets these kinds of goals.
+DE: This is an interesting proposal idea. If the performance issues that SYG raised, both for lazy loading style implementations and for implementations of V8’s style can be worked out, then great, I’m not opposed to it. But I think this is part of a more general need, and I think this need comes up in your libraries and you’re handling it, but it’s having code that is high integrity, code that you write that comprehensively closes over all of the original load time global environment. And this is code that’s extremely hard to write. In code that comes up in multiple different environments, like intrinsics of certain JavaScript engines, core kind of extension code in some systems, as well as systems like Node.js core or libraries like the ones you maintain. And sort of platform core code in other cases. In Bloomberg, we do sometimes use a realm that doesn’t have the ShadowRealm boundary for this kind of purpose. So overall, I think we need to think about some higher level mechanisms to solve this problem comprehensively, because we have lots of evidence from real vulnerabilities that such manual mechanisms, even when they do have access to the intrinsics through various means are error prone, and those errors result in kind of breaking the exact extraction that they’re trying to meet. So, yeah, not opposed to this moving forward, but if we’re trying to solve this problem, I would like us to think about some higher level solutions that may be partly tooling, may be partly thing that are outside of what we standardize. But it would be great if we had some kind of broader solution where you write normal looking code and it comprehensively becomes something that meets these kinds of goals.
 
 JHD: I think that would be great. I think that I’ve not sensed an appetite for solving that problem in the committee in the past, and I think that this proposal, which I think is independently motivated, as well as a number of others which I think are independently motivated, could actually combine quite nicely to address the problem you’re describing. But if there’s committee appetite for solving it holistically and having that be an acceptable motivation for these other proposals, that would be great. I think the tradeoff for the smaller part of intrinsics that SYG suggested would be not getting the desired DX to solve that problem. So I think it sounds like there’s a storage/memory tradeoff or whatever to be able to get that DX. Because there’s definitely nothing ergonomic about caching globals on global access, and you have to know what they are.
 
@@ -197,9 +197,9 @@ JRL: This returns of the original value, no matter what?
 
 JHD: That’s intention, yes, unless you replace the getIntrinsic function itself of course.
 
-JRL:  Doesn’t that run up against the lazy loading issue?  I’m sorry, I thought -- when I heard this earlier, I thought you said if you denied a value then get intrinsic could not get it later on.
+JRL: Doesn’t that run up against the lazy loading issue? I’m sorry, I thought -- when I heard this earlier, I thought you said if you denied a value then get intrinsic could not get it later on.
 
-JHD: Currently if you want to deny something, you delete it  off the global or off an object, right? With this proposal, you also will have to wrap the `getIntrinsic` function to deny it. As far as the lazy loading issue, I don’t know how that is implemented, but my assumption is that whatever sort of implicit secret getter is there when you try to access, I don’t know, Map for the first time or something, that that is actually what would be invoked when you try to get the Map intrinsic. So you don’t actually have to load Map until the first time  somebody accesses it on the global or tries to retrieve it. Does that answer your question?
+JHD: Currently if you want to deny something, you delete it off the global or off an object, right? With this proposal, you also will have to wrap the `getIntrinsic` function to deny it. As far as the lazy loading issue, I don’t know how that is implemented, but my assumption is that whatever sort of implicit secret getter is there when you try to access, I don’t know, Map for the first time or something, that that is actually what would be invoked when you try to get the Map intrinsic. So you don’t actually have to load Map until the first time somebody accesses it on the global or tries to retrieve it. Does that answer your question?
 
 JRL: Yeah, so that -- that clears up my question about, like -- I thought -- I could not see the value of this over just having things on the global. But if we can get access to the original regardless of being patched, then that makes it clear.
 
@@ -209,13 +209,13 @@ JRL: So for -- so this -- I understand now. This makes me have to rethink of wha
 
 JHD: My understanding, just before SYG steps in to respond, my understanding is that the issue is not the storage of the object as much as it is the storage of all the pointers to the original objects. Because there’s, like, I don’t know, 1,000 intrinsics or something, so you’d need to store 1,000 intrinsic pointers per realm, whether you lazy loaded the thing it pointed to or not.
 
-JRL: Isn’t that what is required by these semantics, where you can modify 'foo' and still get the intrinsic 'foo'?  You got to have the ‘foo’ pointer somewhere.
+JRL: Isn’t that what is required by these semantics, where you can modify 'foo' and still get the intrinsic 'foo'? You got to have the ‘foo’ pointer somewhere.
 
 JHD: Yes, it is. That’s the tradeoff, that the complete use case requires that.
 
 JRL: Okay.
 
-JHD:  My understanding of SYG’s pushback is could we sacrifice meeting some of that use case by only providing the hidden intrinsics and then the tradeoff is that instead of storing 1,000 pointers per realm, you only have to store 10 to 20 pointers per realm.
+JHD: My understanding of SYG’s pushback is could we sacrifice meeting some of that use case by only providing the hidden intrinsics and then the tradeoff is that instead of storing 1,000 pointers per realm, you only have to store 10 to 20 pointers per realm.
 
 JRL: Okay.
 
@@ -225,14 +225,13 @@ SYG: This is all predicated -- yeah, I think your understanding is correct, this
 
 JRL: Thank you for clearing this up.
 
-BT: Just to note, you’re down to a little bit less than 15
-minutes.
+BT: Just to note, you’re down to a little bit less than 15 minutes.
 
 JHD: That’s fine. So, RBN, your item actually deals with the next part of the presentation, I’d love to go on.
 
 RBN: That’s fine. I asked in matrix whether or not there was more slides because I’m not seeing them, so I wasn’t sure the presentation ended.
 
-JHD:  There are more slides and I think Hax had a item that relate to the the naming, but I wanted to address all of the other items before we got into that.
+JHD: There are more slides and I think Hax had a item that relate to the the naming, but I wanted to address all of the other items before we got into that.
 
 RBN: I’m fine with waiting.
 
@@ -240,7 +239,7 @@ JHD: Awesome. Thank you. So that’s all of it, you know, modulo namings and so 
 
 JHD: Essentially if we had two functions, then we’ve got either two global functions, adding two globals instead of one is less ideal, or we’ve got a global function that has a property on it like, for example, `getIntrinsic` and `getIntrinsic.keys`. That would also be fine, but it’s kind of weird to have a non-constructor function that has an own property on it. We could do it, it’s just there’s no precedent for it. It’s not weird in JavaScript in general, it’s just kind of weird in 262. So in the PR that adds in enumeration, the current thing I went with is a function that when it gets a string, it’s retrieval, and when it gets no argument, it’s iteration. It is completely natural to have an “eww, gross, don’t overload one function to do two things” reaction to that. The alternative, as I see it, is either two functions or the expando property thing I mentioned.
 
-JHD: at this stage, yeah, I wanted to get thoughts. The specific names are not super important, `getIntrinsic`, `getIntrinsicNames`, that can be bikeshedded at any time. It’s more the one function or two, and then if it’s two functions, are both global or is one chained off the other, something like that?  Or is there an alternative suggestion like a namespace option that hasn’t been considered. I’d love to hear about it, and that’s where we can go to RBN.
+JHD: at this stage, yeah, I wanted to get thoughts. The specific names are not super important, `getIntrinsic`, `getIntrinsicNames`, that can be bikeshedded at any time. It’s more the one function or two, and then if it’s two functions, are both global or is one chained off the other, something like that? Or is there an alternative suggestion like a namespace option that hasn’t been considered. I’d love to hear about it, and that’s where we can go to RBN.
 
 RBN: so to my topic, it kind of covers two thing that are slightly related but if I need to split them up, that’s when I see get entrain cig, if you pass it no arguments, then it gives you an iterator is a bit odd, especially if you call it to get property scripter, if you call on no arguments, that doesn’t give you the names of all the property descriptors. We have a separate name for that. So it would be more consistent with the JavaScript naming scheme for the rest of the API to keep this as a separate method that produces those names. And then my second part of that topic was related to -- and I mentioned this in the matrix as well, there have been numerous discussions over the years about adding other things to reflect, and it’s always come back that no `Reflect` should only ever contained the things that are related to proxy operations, which I find unfortunate because reflect is such a broad meaning that generally means reflection, and is often used for those types of things --
 for more than just reflecting of -- or intercepting proxies or providing default behavior for those, so if we were to perhaps relax that restriction that we’ve put on reflect over the years, that this would be the place that you would put that.
@@ -299,11 +298,11 @@ JHD: Thank you SYG and YSV. That’s my action item is make those three issues a
 
 ### Conclusion/Resolution
 
-* Remaining at stage 1
+- Remaining at stage 1
 
 ## Import Assertions
 
-Presenter: Nicolò  Ribaudo (NRO)
+Presenter: Nicolò Ribaudo (NRO)
 
 - [proposal](https://github.com/tc39/proposal-import-assertions/)
 - [slides](https://docs.google.com/presentation/d/1c5y-t-O3wrMEQWb92P1xL7PRcNmFZOOK2-BmC5FUkE8/edit)
@@ -338,7 +337,7 @@ BT: I have a quick question. I think you want Stage 2 with the scoping restricti
 
 DE: So I would be okay with either Stage 2 or Stage 3. Honestly in the lead up to this discussion, I was kind of waffling between them. So that’s why ultimately I don’t think the champion group should be kind of burdened with making these kind of process calls. I think things should somehow be clear cut. But they’re kind of not. And as long as we agree on what the scope of what we’re investigating is and the timeline and we try to communicate that externally, I think we could consider this either Stage 2 or Stage 3.
 
-BT:  Okay. I guess you weren’t making the point that Stage 2 is better for messaging.
+BT: Okay. I guess you weren’t making the point that Stage 2 is better for messaging.
 
 DE: No.
 
@@ -392,9 +391,9 @@ DE: Sure. So I guess I would kind of like to dig into what is insufficient about
 
 MLS: Let’s continue talking about this proposal. I don’t want to monopolize time here. There are other people that are on the queue and let’s move on.
 
-BT:  We have a point of view from YSV.
+BT: We have a point of view from YSV.
 
-YSV:  That was actually the point of view I was going to make. We were veering to a previous agenda item and not talk talking about this one.
+YSV: That was actually the point of view I was going to make. We were veering to a previous agenda item and not talk talking about this one.
 
 DE: We can discuss that later. But I really think that that formed part of the solution. Any way, we’re done with that topic.
 
@@ -494,11 +493,11 @@ DE: There’s been a long-running argument about whether
 
 GB: Specifically I mean just as far as the – I have a delay go ahead.
 
-DE:  Just hear you cutting in and out. I thought you were done. So you can finish.
+DE: Just hear you cutting in and out. I thought you were done. So you can finish.
 
 GB: Apologies. I don’t have a great connection at the moment. I’m on mobile. I do feel it’s worth considering that. I also want to be clear that when the discussion is brought up about being able to unify on the syntax, I do think it’s worth still considering import reflection on exactly how this proposal goes too much and that it can still exist as a proposal side by side with this one.
 
-DE:  If you could fix up your comments in the notes so we can all understand you, that would be great. Then I can catch up on it, what you were saying. One particular question is whether unknown attributes or assertions are ignored. There are clear examples both for attributes that drive the module’s interpretation and for assertions why nice to be ignored and for example for lazy module loading or for a checksum that you’re checking, you kind of want there to be a fall back behavior where it’s ignored. But for type you definitely don’t want it to be ignored if the system didn’t know about the typed attribute. I think that’s something to work out but I don’t think it’s quite linked to the relaxation. It ties in and it’s not the first time this question appears. I agree that will be good to discuss.
+DE: If you could fix up your comments in the notes so we can all understand you, that would be great. Then I can catch up on it, what you were saying. One particular question is whether unknown attributes or assertions are ignored. There are clear examples both for attributes that drive the module’s interpretation and for assertions why nice to be ignored and for example for lazy module loading or for a checksum that you’re checking, you kind of want there to be a fall back behavior where it’s ignored. But for type you definitely don’t want it to be ignored if the system didn’t know about the typed attribute. I think that’s something to work out but I don’t think it’s quite linked to the relaxation. It ties in and it’s not the first time this question appears. I agree that will be good to discuss.
 
 GB: That’s all I wanted to say.
 
@@ -522,13 +521,13 @@ BT: All right. So I think we have consensus on Stage 2. Congratulations?
 
 ### Conclusion/Resolution
 
-* Building off of [earlier discussion of import assertions this meeting](jan-31.md#problems-with-import-assertions-for-module-types-and-a-possible-general-solution--downgrade-to-stage-2), the committee reached the shared the understanding that we should revise this proposal to meet [the requirements of the web platform](https://github.com/whatwg/html/issues/7233) that the module type drive its interpretation.
+- Building off of [earlier discussion of import assertions this meeting](jan-31.md#problems-with-import-assertions-for-module-types-and-a-possible-general-solution--downgrade-to-stage-2), the committee reached the shared the understanding that we should revise this proposal to meet [the requirements of the web platform](https://github.com/whatwg/html/issues/7233) that the module type drive its interpretation.
 
-* To reflect the scope of expected future changes, the committee reached consensus to demote the proposal to Stage 2.
+- To reflect the scope of expected future changes, the committee reached consensus to demote the proposal to Stage 2.
 
-* The champion group plans to develop this proposal further over the next 2-4 months, with a goal to come back to committee with a proposal for Stage 3, based on iterating on:
-  * The syntax (e.g., which keyword(s) are used)
-  * The semantics (e.g., what forms part of the cache key)
+- The champion group plans to develop this proposal further over the next 2-4 months, with a goal to come back to committee with a proposal for Stage 3, based on iterating on:
+  - The syntax (e.g., which keyword(s) are used)
+  - The semantics (e.g., what forms part of the cache key)
 
 ## Decorator `context.access` object API
 
@@ -646,8 +645,8 @@ RBN: I appreciate that, thank you very much.
 
 ### Conclusion/Resolution
 
-* Consensus for target moving to be the first param rather than receiver
-* Consensus for adding a `has` method
+- Consensus for target moving to be the first param rather than receiver
+- Consensus for adding a `has` method
 
 ## Temporal Stage 3 update continuation
 
@@ -680,8 +679,8 @@ USA: All right. That was quick and nice. Next up we have DRR and RBN with decora
 
 ### Conclusion/Resolution
 
-* Consensus on merging https://github.com/tc39/proposal-temporal/pull/2447
-* https://github.com/tc39/proposal-temporal/pull/2479 will be presented again in the following meeting
+- Consensus on merging https://github.com/tc39/proposal-temporal/pull/2447
+- https://github.com/tc39/proposal-temporal/pull/2479 will be presented again in the following meeting
 
 ## Decorators and export Ordering continuation
 
@@ -714,7 +713,7 @@ SYG: Is that speculative or actual? You have partners that are going to do this?
 
 RBN: In cases where it is technically feasible, that is actual and that is a specific constraint – I shouldn’t say constraint. That is a specific capability that we pursued since the beginning. I know early on when YK was the champion, we were looking at making sure when the context – when we eventually looked at the context object, it might have a symbol.toString and history tag or something to use to differentiate the things to help with the overload overloading of legacy to native decorator case. This overloading thing is something we have been pursuing for a while. We suffered losses with this in that when it came to engine specific requirements on how fields work, we needed to – and introduced the access keyword we knew this is a case where we cannot support that migration. For cases like TypeScript legacy decorators and if you decorate a getter or setter we gave you entangled the get/set descriptor that gave you both. That is something that we were intending to because of the fact that the current spec changes made that not feasible, that’s one of the motivations behind the group and auto and there is change on the user side that would allow an existing decorator that supported both to be able to differentiate either by looking at the argument list because every legacy decorator – every legacy class element decorator takes three arguments versus a native decorator which always takes two arguments. So there is a way to to differentiate between the two and that is something that we said since the beginning.
 
-USA: We have a queue. But before we move on with the queue, this is already over time. But we can extend until  until 55 because we have time. Feel free to go on.
+USA: We have a queue. But before we move on with the queue, this is already over time. But we can extend until until 55 because we have time. Feel free to go on.
 
 RBN: Thank you.
 
@@ -832,7 +831,7 @@ KHG: I don’t mean to interrupt. I had an item on the queue and I wanted to tal
 
 USA: We have a number of comments on either side on the queue. First up you have HAX who says I support option 1 and then there’s WMS who says +1 to JHD’s point and Richard who says that I share JHD’s discomfort with option 1 for essentially similar reasons. At the same time, we’re running out of time. That’s all.
 
-DRR: Sounds like we have people who have a preference for option 1, however, also people who are sharing their general discomfort for option 1. But who would prefer not to block on it. You know, I am not strongly in favor of providing every way to do something, but considering an exclusive order sort of situation where you must put it before or or after, you know, a good compromise is one where everyone has an option but unhappy about the other result maybe. So perhaps option 2 is a direction we can pursue. So let me ask this:  Do we have consensus for option 2 where decorators are placed before or after the export keyword or export default but must be one or the other?
+DRR: Sounds like we have people who have a preference for option 1, however, also people who are sharing their general discomfort for option 1. But who would prefer not to block on it. You know, I am not strongly in favor of providing every way to do something, but considering an exclusive order sort of situation where you must put it before or or after, you know, a good compromise is one where everyone has an option but unhappy about the other result maybe. So perhaps option 2 is a direction we can pursue. So let me ask this: Do we have consensus for option 2 where decorators are placed before or after the export keyword or export default but must be one or the other?
 
 USA: So far we have support from DE on option 2 and then NRO says option 2 with syntax error and then option 1, then option 3 and then option 2 without syntax error is there a preference. So I guess that’s in favor of option 2. But with the restriction that you proposed. JHD says begrudgingly consensus on option 2 and RHB says +1 support for option 2. So far only positive for option 2 with the restriction that you propose. That’s all. WH says they support option 2. I think it’s safe to say you have consensus on option 2.
 
@@ -846,7 +845,7 @@ RBN: Yes, please.
 
 JHD: My understanding is that nobody wants to try to elide the export keyword from the toString representation. So I feel like we can either pick that decorators are never included, like, decorators on exported things are never included in the toString or we could pick decorators are only included in the toString when they appear after export, although that seems weird if both positions are allowed. And so it feels like either of those two options would satisfy my understanding of MM’s position. Of course, MM can clarify. And I don’t think that that decision should block option 2. I think that’s just something we should figure out in an issue.
 
-RBN: One thing  I was going to bring up was that I had a suggestion I had been discussing with other folks with Daniel and with KHG offline which is if we had gone with option 1 and had decided that we didn’t want to include export in the to spring, we could have made the distinction that decorators that come before export would not be included. If you decorated a class that doesn’t have the export declaration they would be included. If you are specifically tailoring the code to use the eval of a toString case that is a niche case as it is and the step of having export declaration for the binding as a separate statement is not a far stretch if you are again trying to custom tailor for the environment. It does feel a bit weird to have a distinction if we allow both but in the same vein allowing both would also make it feasible to have a specific case where you are custom tailoring your code to work with the eval case. That said, I still find evalling a toString to be an unsound and unreliable practice even though it has – it does exist in the ecosystem, I have seen it used well for performance and other things and functions but I also believe that forthcoming proposals or in progress proposals things like module blocks might be potentially a better way to do that as well because it doesn’t require strings and worrying about the CSP, for example, being an issue for making that reliable to use regularly. So I think it might be weird but it also does, like you said, make it so that option 2 is still viable.
+RBN: One thing I was going to bring up was that I had a suggestion I had been discussing with other folks with Daniel and with KHG offline which is if we had gone with option 1 and had decided that we didn’t want to include export in the to spring, we could have made the distinction that decorators that come before export would not be included. If you decorated a class that doesn’t have the export declaration they would be included. If you are specifically tailoring the code to use the eval of a toString case that is a niche case as it is and the step of having export declaration for the binding as a separate statement is not a far stretch if you are again trying to custom tailor for the environment. It does feel a bit weird to have a distinction if we allow both but in the same vein allowing both would also make it feasible to have a specific case where you are custom tailoring your code to work with the eval case. That said, I still find evalling a toString to be an unsound and unreliable practice even though it has – it does exist in the ecosystem, I have seen it used well for performance and other things and functions but I also believe that forthcoming proposals or in progress proposals things like module blocks might be potentially a better way to do that as well because it doesn’t require strings and worrying about the CSP, for example, being an issue for making that reliable to use regularly. So I think it might be weird but it also does, like you said, make it so that option 2 is still viable.
 
 DRR: Okay. Any responses to that?
 
@@ -885,8 +884,8 @@ LEO: Just want to add in the minutes, just want to make sure that we have consen
 
 ### Conclusion/Resolution
 
-* Consensus on allowing decorators before the `export` keyword in addition to after the `export` or `export default` keywords, but with a Syntax Error if you specify decorators in both positions (i.e., exclusively one position, or the other, but not both) on a single declaration. Decorators must not come between the `export` and `default` keywords if both are present on the exported declaration.
-* Consensus on the source text cutoff for class declarations remaining only the ClassDeclaration production. Decorators before `export` will not be included in Function.prototype.toString(). Decorators after `export` or `export default`, or on a non-exported class declaration or class expression, will be included in Function.prototype.toString().
+- Consensus on allowing decorators before the `export` keyword in addition to after the `export` or `export default` keywords, but with a Syntax Error if you specify decorators in both positions (i.e., exclusively one position, or the other, but not both) on a single declaration. Decorators must not come between the `export` and `default` keywords if both are present on the exported declaration.
+- Consensus on the source text cutoff for class declarations remaining only the ClassDeclaration production. Decorators before `export` will not be included in Function.prototype.toString(). Decorators after `export` or `export default`, or on a non-exported class declaration or class expression, will be included in Function.prototype.toString().
 
 ## Feedback on transcription
 
@@ -904,11 +903,10 @@ DE: So we have the Ecma GA meeting coming up in June. And you don’t actually h
 
 TC (transcriptionist): I don’t think so. The terminology through the days. As things go on I’m learning the terminology
 
-* Many notes in the chat in support of the transcriptionist
+- Many notes in the chat in support of the transcriptionist
 
-* A round of applause for the transcriptionist
+- A round of applause for the transcriptionist
 
-#### Conclusion/Resolution
+### Conclusion/Resolution
 
 Widespread support for using human, rather than machine transcription, given the inaccuracies in current machine transcription. Further feedback will be collected offline/over time to inform the decision of whether to continue transcription in 2024.
-

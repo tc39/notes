@@ -166,7 +166,7 @@ KG: Last and most important thing is that we are cutting ES2023. We are freezing
 
 RPR: Any other questions for Kevin? Okay, all right. thank you for that
 
-#### Summary
+### Summary
 
 A number of fixes and cleanups have been applied to the specification text. No further significant changes will be made before ES2023 is cut. We will be starting the IPR opt-out period now, and ask for approval next meeting.
 
@@ -227,8 +227,7 @@ SFC: everyone, please get involved with pick my for it. Thank you.
 
 ### Summary
 
-ES2023 cut is on track
-Please see the user preferences proposal, User Locale Preferences https://github.com/WICG/proposals/issues/78
+ES2023 cut is on track Please see the user preferences proposal, User Locale Preferences https://github.com/WICG/proposals/issues/78
 
 ### Conclusion
 
@@ -402,8 +401,8 @@ Consensus on the PR
 Presenter: Michael Ficarra (MF)
 
 - [proposal](https://github.com/tc39/proposal-iterator-helpers)
-- (slides)[https://docs.google.com/presentation/d/1BjtOjv447KcXSsz2GdV-HBnhhUTToRMHuMQO6Zlosnw/]
-- (issue)[https://github.com/tc39/proposal-iterator-helpers/issues/270]
+- [slides](https://docs.google.com/presentation/d/1BjtOjv447KcXSsz2GdV-HBnhhUTToRMHuMQO6Zlosnw/)
+- [issue](https://github.com/tc39/proposal-iterator-helpers/issues/270)
 
 MF: Okay, so we have had a request from the community to re-evaluate the naming. If you want to follow along there the issue is 270. As background, we have two methods called take and drop. Take takes an iterator and a number of elements and produces a new iterator that is exhausted after that number of nexts. Drop takes an iterator and a number of elements and nexts the underlying iterator that many times and then yields all of the remaining elements from the underlying iterator.
 
@@ -435,7 +434,7 @@ LCA: Oh no. So if it kind of depends on whether the iterator was for will weathe
 
 KG: But in any case Rust prevents you from being confused.
 
-_break for lunch_
+_break for lunch._
 
 LCA: Rust has `take` and `skip`, and they have `take_while` and `skip_while`.
 
@@ -481,7 +480,7 @@ MM: Yeah, I support not renaming.
 
 DE: Anybody want to express concerns?
 
-_silence_
+_silence._
 
 MF: Great.
 
@@ -624,12 +623,7 @@ Topic to be continued on day 3 in an overflow session, discussing the nanosecond
 
 ### Conclusion
 
-All 5 PRs got consensus and will be merged
-https://github.com/tc39/proposal-temporal/pull/2522 - Change allowing Temporal.ZonedDateTime.prototype.toLocaleString to work while disallowing Temporal.ZonedDateTime objects passed to Intl.DateTimeFormat methods
-https://github.com/tc39/proposal-temporal/pull/2518 - Change to eliminate ambiguous situations where abstract operations such as MakeDay might return NaN
-https://github.com/tc39/proposal-temporal/pull/2500 - Change in the validation of property bags passed to calendar methods
-https://github.com/tc39/proposal-temporal/pull/2519 - Audit of user-observable lookups and calls of calendar methods, and elimination of redundant ones
-https://github.com/tc39/proposal-temporal/pull/2517 - Bug fix for Duration rounding calculation with largestUnit
+All 5 PRs got consensus and will be merged https://github.com/tc39/proposal-temporal/pull/2522 - Change allowing Temporal.ZonedDateTime.prototype.toLocaleString to work while disallowing Temporal.ZonedDateTime objects passed to Intl.DateTimeFormat methods https://github.com/tc39/proposal-temporal/pull/2518 - Change to eliminate ambiguous situations where abstract operations such as MakeDay might return NaN https://github.com/tc39/proposal-temporal/pull/2500 - Change in the validation of property bags passed to calendar methods https://github.com/tc39/proposal-temporal/pull/2519 - Audit of user-observable lookups and calls of calendar methods, and elimination of redundant ones https://github.com/tc39/proposal-temporal/pull/2517 - Bug fix for Duration rounding calculation with largestUnit
 
 ## Set methods: What to do about `intersection` order?
 

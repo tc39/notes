@@ -8,6 +8,8 @@ const twoLetter = `Chris de Almeida (CDA)\nRob Palmer (RP)\nUjjwal Sharma (USA)`
 const threeLetter = `Chris de Almeida (CDA)\nRob Palmer (ROBPALMER)\nUjjwal Sharma (USA)`;
 const duplicate = `Chris de Almeida (CDA)\nRob Palmer (RPR)\nUjjwal Sharma (USA)\nUjjwal Sharma (USA)`;
 const valid = `Chris de Almeida (CDA)\nMichael Ficarra (MF)\nRob Palmer (RPR)\nUjjwal Sharma (USA)`;
+const mononymous = `Chris de Almeida (CDA)\nYee (YEE)\nRob Palmer (RPR)\nUjjwal Sharma (USA)`;
+const idealTLA = `Chris de Almeida (CAA)\nMichael Ficarra (MF)\nRob Palmer (RPR)\nUjjwal Sharma (USA)`;
 
 assert.throws(() => checkDelegates(lex), { message: 'Line 3: Not in lexicographic order.' }); // also validates expected line number
 assert.throws(() => checkDelegates(missing), { message: /Missing abbreviation for/ });
@@ -15,5 +17,7 @@ assert.throws(() => checkDelegates(uppercaseLatin), { message: /Abbreviations mu
 assert.throws(() => checkDelegates(twoLetter), { message: /not in allowlist. New delegate abbreviations must be three letters/ });
 assert.throws(() => checkDelegates(threeLetter), { message: /New delegate abbreviations must be three letters/ });
 assert.throws(() => checkDelegates(duplicate), { message: /Conflicting usage on line/ });
+assert.throws(() => checkDelegates(mononymous), { message: /Unexpected mononymous delegate/ });
+assert.throws(() => checkDelegates(idealTLA), { message: /Should be using ideal TLA \(CDA\)/ });
 
 assert.doesNotThrow(() => checkDelegates(valid));
